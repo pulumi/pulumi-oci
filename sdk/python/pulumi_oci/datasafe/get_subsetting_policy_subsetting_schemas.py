@@ -119,7 +119,7 @@ def get_subsetting_policy_subsetting_schemas(filters: Optional[Sequence[Union['G
     import pulumi_oci as oci
 
     test_subsetting_policy_subsetting_schemas = oci.datasafe.get_subsetting_policy_subsetting_schemas(subsetting_policy_id=test_subsetting_policy["id"],
-        is_derived_schema=subsetting_policy_subsetting_schema_is_derived_schema == "true",
+        is_derived_schema=subsetting_policy_subsetting_schema_is_derived_schema,
         schema_names=subsetting_policy_subsetting_schema_schema_name)
     ```
 
@@ -160,7 +160,7 @@ def get_subsetting_policy_subsetting_schemas_output(filters: pulumi.Input[Option
     import pulumi_oci as oci
 
     test_subsetting_policy_subsetting_schemas = oci.datasafe.get_subsetting_policy_subsetting_schemas(subsetting_policy_id=test_subsetting_policy["id"],
-        is_derived_schema=subsetting_policy_subsetting_schema_is_derived_schema == "true",
+        is_derived_schema=subsetting_policy_subsetting_schema_is_derived_schema,
         schema_names=subsetting_policy_subsetting_schema_schema_name)
     ```
 

@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testDelegationSubscription = new DelegationSubscription("testDelegationSubscription", DelegationSubscriptionArgs.builder()
  *             .compartmentId(compartmentId)
- *             .serviceProviderId(testServiceProvider.id())
+ *             .serviceProviderId(testServiceProvider.get("id"))
  *             .subscribedServiceType(delegationSubscriptionSubscribedServiceType)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(delegationSubscriptionDescription)

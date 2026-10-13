@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  *                 .sourceAddresses(networkFirewallPolicyTunnelInspectionRuleConditionSourceAddress)
  *                 .build())
  *             .name(networkFirewallPolicyTunnelInspectionRuleName)
- *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+ *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
  *             .protocol(networkFirewallPolicyTunnelInspectionRuleProtocol)
  *             .action(networkFirewallPolicyTunnelInspectionRuleAction)
  *             .description(networkFirewallPolicyTunnelInspectionRuleDescription)

@@ -47,9 +47,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec = new RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec("testDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec", RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs.builder()
- *             .databaseObjectName(testObject.name())
+ *             .databaseObjectName(testObject.get("name"))
  *             .databaseObjectType(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecDatabaseObjectType)
- *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.id())
+ *             .databaseToolsDatabaseApiGatewayConfigId(testConfig.get("id"))
  *             .displayName(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecDisplayName)
  *             .poolKey(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecPoolKey)
  *             .type(databaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecType)

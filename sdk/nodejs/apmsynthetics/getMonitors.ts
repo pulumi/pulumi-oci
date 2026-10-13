@@ -20,8 +20,8 @@ import * as utilities from "../utilities";
  * const testMonitors = oci.apmsynthetics.getMonitors({
  *     apmDomainId: testApmDomain.id,
  *     displayName: monitorDisplayName,
- *     isMaintenanceWindowActive: monitorIsMaintenanceWindowActive === "true",
- *     isMaintenanceWindowSet: monitorIsMaintenanceWindowSet === "true",
+ *     isMaintenanceWindowActive: monitorIsMaintenanceWindowActive,
+ *     isMaintenanceWindowSet: monitorIsMaintenanceWindowSet,
  *     monitorType: monitorMonitorType,
  *     scriptId: testScript.id,
  *     status: monitorStatus,
@@ -131,8 +131,8 @@ export interface GetMonitorsResult {
  * const testMonitors = oci.apmsynthetics.getMonitors({
  *     apmDomainId: testApmDomain.id,
  *     displayName: monitorDisplayName,
- *     isMaintenanceWindowActive: monitorIsMaintenanceWindowActive === "true",
- *     isMaintenanceWindowSet: monitorIsMaintenanceWindowSet === "true",
+ *     isMaintenanceWindowActive: monitorIsMaintenanceWindowActive,
+ *     isMaintenanceWindowSet: monitorIsMaintenanceWindowSet,
  *     monitorType: monitorMonitorType,
  *     scriptId: testScript.id,
  *     status: monitorStatus,

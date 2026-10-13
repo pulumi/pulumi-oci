@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  * const testClusterKubeConfig = oci.containerengine.getClusterKubeConfig({
  *     clusterId: testCluster.id,
  *     endpoint: clusterKubeConfigEndpoint,
- *     expiration: Number(clusterKubeConfigExpiration),
+ *     expiration: clusterKubeConfigExpiration,
  *     tokenVersion: clusterKubeConfigTokenVersion,
  * });
  * ```
@@ -86,7 +86,7 @@ export interface GetClusterKubeConfigResult {
  * const testClusterKubeConfig = oci.containerengine.getClusterKubeConfig({
  *     clusterId: testCluster.id,
  *     endpoint: clusterKubeConfigEndpoint,
- *     expiration: Number(clusterKubeConfigExpiration),
+ *     expiration: clusterKubeConfigExpiration,
  *     tokenVersion: clusterKubeConfigTokenVersion,
  * });
  * ```

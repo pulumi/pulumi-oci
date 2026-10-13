@@ -413,7 +413,7 @@ class ComputeCapacityReservation(pulumi.CustomResource):
                     "ocpus": compute_capacity_reservation_instance_reservation_configs_instance_shape_config_ocpus,
                 },
             }],
-            is_default_reservation=compute_capacity_reservation_is_default_reservation == "true")
+            is_default_reservation=compute_capacity_reservation_is_default_reservation)
         ```
 
         ## Import
@@ -488,7 +488,7 @@ class ComputeCapacityReservation(pulumi.CustomResource):
                     "ocpus": compute_capacity_reservation_instance_reservation_configs_instance_shape_config_ocpus,
                 },
             }],
-            is_default_reservation=compute_capacity_reservation_is_default_reservation == "true")
+            is_default_reservation=compute_capacity_reservation_is_default_reservation)
         ```
 
         ## Import

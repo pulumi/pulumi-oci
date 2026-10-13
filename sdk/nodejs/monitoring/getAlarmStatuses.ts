@@ -31,7 +31,7 @@ import * as utilities from "../utilities";
  *
  * const testAlarmStatuses = oci.monitoring.getAlarmStatuses({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: alarmStatusCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: alarmStatusCompartmentIdInSubtree,
  *     displayName: alarmStatusDisplayName,
  *     entityId: testEntity.id,
  *     resourceId: testResource.id,
@@ -141,7 +141,7 @@ export interface GetAlarmStatusesResult {
  *
  * const testAlarmStatuses = oci.monitoring.getAlarmStatuses({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: alarmStatusCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: alarmStatusCompartmentIdInSubtree,
  *     displayName: alarmStatusDisplayName,
  *     entityId: testEntity.id,
  *     resourceId: testResource.id,

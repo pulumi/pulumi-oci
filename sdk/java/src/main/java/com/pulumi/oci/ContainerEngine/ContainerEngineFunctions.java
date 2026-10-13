@@ -105,8 +105,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddon = ContainerEngineFunctions.getAddon(GetAddonArgs.builder()
-     *             .addonName(testAddonOciContainerengineAddon.name())
-     *             .clusterId(testCluster.id())
+     *             .addonName(testAddonOciContainerengineAddon.get("name"))
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -148,8 +148,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddon = ContainerEngineFunctions.getAddon(GetAddonArgs.builder()
-     *             .addonName(testAddonOciContainerengineAddon.name())
-     *             .clusterId(testCluster.id())
+     *             .addonName(testAddonOciContainerengineAddon.get("name"))
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -191,8 +191,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddon = ContainerEngineFunctions.getAddon(GetAddonArgs.builder()
-     *             .addonName(testAddonOciContainerengineAddon.name())
-     *             .clusterId(testCluster.id())
+     *             .addonName(testAddonOciContainerengineAddon.get("name"))
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -234,8 +234,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddon = ContainerEngineFunctions.getAddon(GetAddonArgs.builder()
-     *             .addonName(testAddonOciContainerengineAddon.name())
-     *             .clusterId(testCluster.id())
+     *             .addonName(testAddonOciContainerengineAddon.get("name"))
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -277,8 +277,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddon = ContainerEngineFunctions.getAddon(GetAddonArgs.builder()
-     *             .addonName(testAddonOciContainerengineAddon.name())
-     *             .clusterId(testCluster.id())
+     *             .addonName(testAddonOciContainerengineAddon.get("name"))
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -321,7 +321,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAddonOptions = ContainerEngineFunctions.getAddonOptions(GetAddonOptionsArgs.builder()
      *             .kubernetesVersion(addonOptionKubernetesVersion)
-     *             .addonName(testAddon.name())
+     *             .addonName(testAddon.get("name"))
      *             .shouldShowAllVersions(addonOptionShouldShowAllVersions)
      *             .build());
      * 
@@ -365,7 +365,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAddonOptions = ContainerEngineFunctions.getAddonOptions(GetAddonOptionsArgs.builder()
      *             .kubernetesVersion(addonOptionKubernetesVersion)
-     *             .addonName(testAddon.name())
+     *             .addonName(testAddon.get("name"))
      *             .shouldShowAllVersions(addonOptionShouldShowAllVersions)
      *             .build());
      * 
@@ -409,7 +409,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAddonOptions = ContainerEngineFunctions.getAddonOptions(GetAddonOptionsArgs.builder()
      *             .kubernetesVersion(addonOptionKubernetesVersion)
-     *             .addonName(testAddon.name())
+     *             .addonName(testAddon.get("name"))
      *             .shouldShowAllVersions(addonOptionShouldShowAllVersions)
      *             .build());
      * 
@@ -453,7 +453,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAddonOptions = ContainerEngineFunctions.getAddonOptions(GetAddonOptionsArgs.builder()
      *             .kubernetesVersion(addonOptionKubernetesVersion)
-     *             .addonName(testAddon.name())
+     *             .addonName(testAddon.get("name"))
      *             .shouldShowAllVersions(addonOptionShouldShowAllVersions)
      *             .build());
      * 
@@ -497,7 +497,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAddonOptions = ContainerEngineFunctions.getAddonOptions(GetAddonOptionsArgs.builder()
      *             .kubernetesVersion(addonOptionKubernetesVersion)
-     *             .addonName(testAddon.name())
+     *             .addonName(testAddon.get("name"))
      *             .shouldShowAllVersions(addonOptionShouldShowAllVersions)
      *             .build());
      * 
@@ -540,7 +540,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddons = ContainerEngineFunctions.getAddons(GetAddonsArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -582,7 +582,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddons = ContainerEngineFunctions.getAddons(GetAddonsArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -624,7 +624,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddons = ContainerEngineFunctions.getAddons(GetAddonsArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -666,7 +666,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddons = ContainerEngineFunctions.getAddons(GetAddonsArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -708,7 +708,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAddons = ContainerEngineFunctions.getAddons(GetAddonsArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -750,7 +750,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCluster = ContainerEngineFunctions.getCluster(GetClusterArgs.builder()
-     *             .clusterId(testClusterOciContainerengineCluster.id())
+     *             .clusterId(testClusterOciContainerengineCluster.get("id"))
      *             .shouldIncludeOidcConfigFile(clusterShouldIncludeOidcConfigFile)
      *             .build());
      * 
@@ -793,7 +793,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCluster = ContainerEngineFunctions.getCluster(GetClusterArgs.builder()
-     *             .clusterId(testClusterOciContainerengineCluster.id())
+     *             .clusterId(testClusterOciContainerengineCluster.get("id"))
      *             .shouldIncludeOidcConfigFile(clusterShouldIncludeOidcConfigFile)
      *             .build());
      * 
@@ -836,7 +836,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCluster = ContainerEngineFunctions.getCluster(GetClusterArgs.builder()
-     *             .clusterId(testClusterOciContainerengineCluster.id())
+     *             .clusterId(testClusterOciContainerengineCluster.get("id"))
      *             .shouldIncludeOidcConfigFile(clusterShouldIncludeOidcConfigFile)
      *             .build());
      * 
@@ -879,7 +879,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCluster = ContainerEngineFunctions.getCluster(GetClusterArgs.builder()
-     *             .clusterId(testClusterOciContainerengineCluster.id())
+     *             .clusterId(testClusterOciContainerengineCluster.get("id"))
      *             .shouldIncludeOidcConfigFile(clusterShouldIncludeOidcConfigFile)
      *             .build());
      * 
@@ -922,7 +922,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCluster = ContainerEngineFunctions.getCluster(GetClusterArgs.builder()
-     *             .clusterId(testClusterOciContainerengineCluster.id())
+     *             .clusterId(testClusterOciContainerengineCluster.get("id"))
      *             .shouldIncludeOidcConfigFile(clusterShouldIncludeOidcConfigFile)
      *             .build());
      * 
@@ -965,7 +965,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterCredentialRotationStatus = ContainerEngineFunctions.getClusterCredentialRotationStatus(GetClusterCredentialRotationStatusArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -1007,7 +1007,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterCredentialRotationStatus = ContainerEngineFunctions.getClusterCredentialRotationStatus(GetClusterCredentialRotationStatusArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -1049,7 +1049,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterCredentialRotationStatus = ContainerEngineFunctions.getClusterCredentialRotationStatus(GetClusterCredentialRotationStatusArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -1091,7 +1091,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterCredentialRotationStatus = ContainerEngineFunctions.getClusterCredentialRotationStatus(GetClusterCredentialRotationStatusArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -1133,7 +1133,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterCredentialRotationStatus = ContainerEngineFunctions.getClusterCredentialRotationStatus(GetClusterCredentialRotationStatusArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -1175,7 +1175,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterKubeConfig = ContainerEngineFunctions.getClusterKubeConfig(GetClusterKubeConfigArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .endpoint(clusterKubeConfigEndpoint)
      *             .expiration(clusterKubeConfigExpiration)
      *             .tokenVersion(clusterKubeConfigTokenVersion)
@@ -1220,7 +1220,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterKubeConfig = ContainerEngineFunctions.getClusterKubeConfig(GetClusterKubeConfigArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .endpoint(clusterKubeConfigEndpoint)
      *             .expiration(clusterKubeConfigExpiration)
      *             .tokenVersion(clusterKubeConfigTokenVersion)
@@ -1265,7 +1265,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterKubeConfig = ContainerEngineFunctions.getClusterKubeConfig(GetClusterKubeConfigArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .endpoint(clusterKubeConfigEndpoint)
      *             .expiration(clusterKubeConfigExpiration)
      *             .tokenVersion(clusterKubeConfigTokenVersion)
@@ -1310,7 +1310,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterKubeConfig = ContainerEngineFunctions.getClusterKubeConfig(GetClusterKubeConfigArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .endpoint(clusterKubeConfigEndpoint)
      *             .expiration(clusterKubeConfigExpiration)
      *             .tokenVersion(clusterKubeConfigTokenVersion)
@@ -1355,7 +1355,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterKubeConfig = ContainerEngineFunctions.getClusterKubeConfig(GetClusterKubeConfigArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .endpoint(clusterKubeConfigEndpoint)
      *             .expiration(clusterKubeConfigExpiration)
      *             .tokenVersion(clusterKubeConfigTokenVersion)
@@ -1400,7 +1400,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterOption = ContainerEngineFunctions.getClusterOption(GetClusterOptionArgs.builder()
-     *             .clusterOptionId(testClusterOptionOciContainerengineClusterOption.id())
+     *             .clusterOptionId(testClusterOptionOciContainerengineClusterOption.get("id"))
      *             .compartmentId(compartmentId)
      *             .shouldListAllPatchVersions(clusterOptionShouldListAllPatchVersions)
      *             .build());
@@ -1444,7 +1444,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterOption = ContainerEngineFunctions.getClusterOption(GetClusterOptionArgs.builder()
-     *             .clusterOptionId(testClusterOptionOciContainerengineClusterOption.id())
+     *             .clusterOptionId(testClusterOptionOciContainerengineClusterOption.get("id"))
      *             .compartmentId(compartmentId)
      *             .shouldListAllPatchVersions(clusterOptionShouldListAllPatchVersions)
      *             .build());
@@ -1488,7 +1488,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterOption = ContainerEngineFunctions.getClusterOption(GetClusterOptionArgs.builder()
-     *             .clusterOptionId(testClusterOptionOciContainerengineClusterOption.id())
+     *             .clusterOptionId(testClusterOptionOciContainerengineClusterOption.get("id"))
      *             .compartmentId(compartmentId)
      *             .shouldListAllPatchVersions(clusterOptionShouldListAllPatchVersions)
      *             .build());
@@ -1532,7 +1532,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterOption = ContainerEngineFunctions.getClusterOption(GetClusterOptionArgs.builder()
-     *             .clusterOptionId(testClusterOptionOciContainerengineClusterOption.id())
+     *             .clusterOptionId(testClusterOptionOciContainerengineClusterOption.get("id"))
      *             .compartmentId(compartmentId)
      *             .shouldListAllPatchVersions(clusterOptionShouldListAllPatchVersions)
      *             .build());
@@ -1576,7 +1576,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterOption = ContainerEngineFunctions.getClusterOption(GetClusterOptionArgs.builder()
-     *             .clusterOptionId(testClusterOptionOciContainerengineClusterOption.id())
+     *             .clusterOptionId(testClusterOptionOciContainerengineClusterOption.get("id"))
      *             .compartmentId(compartmentId)
      *             .shouldListAllPatchVersions(clusterOptionShouldListAllPatchVersions)
      *             .build());
@@ -1620,7 +1620,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterPublicApiEndpointDecommissionStatus = ContainerEngineFunctions.getClusterPublicApiEndpointDecommissionStatus(GetClusterPublicApiEndpointDecommissionStatusArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -1662,7 +1662,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterPublicApiEndpointDecommissionStatus = ContainerEngineFunctions.getClusterPublicApiEndpointDecommissionStatus(GetClusterPublicApiEndpointDecommissionStatusArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -1704,7 +1704,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterPublicApiEndpointDecommissionStatus = ContainerEngineFunctions.getClusterPublicApiEndpointDecommissionStatus(GetClusterPublicApiEndpointDecommissionStatusArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -1746,7 +1746,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterPublicApiEndpointDecommissionStatus = ContainerEngineFunctions.getClusterPublicApiEndpointDecommissionStatus(GetClusterPublicApiEndpointDecommissionStatusArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -1788,7 +1788,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterPublicApiEndpointDecommissionStatus = ContainerEngineFunctions.getClusterPublicApiEndpointDecommissionStatus(GetClusterPublicApiEndpointDecommissionStatusArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -1830,8 +1830,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterWorkloadMapping = ContainerEngineFunctions.getClusterWorkloadMapping(GetClusterWorkloadMappingArgs.builder()
-     *             .clusterId(testCluster.id())
-     *             .workloadMappingId(testWorkloadMapping.id())
+     *             .clusterId(testCluster.get("id"))
+     *             .workloadMappingId(testWorkloadMapping.get("id"))
      *             .build());
      * 
      *     }
@@ -1873,8 +1873,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterWorkloadMapping = ContainerEngineFunctions.getClusterWorkloadMapping(GetClusterWorkloadMappingArgs.builder()
-     *             .clusterId(testCluster.id())
-     *             .workloadMappingId(testWorkloadMapping.id())
+     *             .clusterId(testCluster.get("id"))
+     *             .workloadMappingId(testWorkloadMapping.get("id"))
      *             .build());
      * 
      *     }
@@ -1916,8 +1916,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterWorkloadMapping = ContainerEngineFunctions.getClusterWorkloadMapping(GetClusterWorkloadMappingArgs.builder()
-     *             .clusterId(testCluster.id())
-     *             .workloadMappingId(testWorkloadMapping.id())
+     *             .clusterId(testCluster.get("id"))
+     *             .workloadMappingId(testWorkloadMapping.get("id"))
      *             .build());
      * 
      *     }
@@ -1959,8 +1959,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterWorkloadMapping = ContainerEngineFunctions.getClusterWorkloadMapping(GetClusterWorkloadMappingArgs.builder()
-     *             .clusterId(testCluster.id())
-     *             .workloadMappingId(testWorkloadMapping.id())
+     *             .clusterId(testCluster.get("id"))
+     *             .workloadMappingId(testWorkloadMapping.get("id"))
      *             .build());
      * 
      *     }
@@ -2002,8 +2002,8 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterWorkloadMapping = ContainerEngineFunctions.getClusterWorkloadMapping(GetClusterWorkloadMappingArgs.builder()
-     *             .clusterId(testCluster.id())
-     *             .workloadMappingId(testWorkloadMapping.id())
+     *             .clusterId(testCluster.get("id"))
+     *             .workloadMappingId(testWorkloadMapping.get("id"))
      *             .build());
      * 
      *     }
@@ -2045,7 +2045,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterWorkloadMappings = ContainerEngineFunctions.getClusterWorkloadMappings(GetClusterWorkloadMappingsArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -2087,7 +2087,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterWorkloadMappings = ContainerEngineFunctions.getClusterWorkloadMappings(GetClusterWorkloadMappingsArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -2129,7 +2129,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterWorkloadMappings = ContainerEngineFunctions.getClusterWorkloadMappings(GetClusterWorkloadMappingsArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -2171,7 +2171,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterWorkloadMappings = ContainerEngineFunctions.getClusterWorkloadMappings(GetClusterWorkloadMappingsArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -2213,7 +2213,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testClusterWorkloadMappings = ContainerEngineFunctions.getClusterWorkloadMappings(GetClusterWorkloadMappingsArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -2490,7 +2490,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNodePool = ContainerEngineFunctions.getNodePool(GetNodePoolArgs.builder()
-     *             .nodePoolId(testNodePoolOciContainerengineNodePool.id())
+     *             .nodePoolId(testNodePoolOciContainerengineNodePool.get("id"))
      *             .build());
      * 
      *     }
@@ -2532,7 +2532,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNodePool = ContainerEngineFunctions.getNodePool(GetNodePoolArgs.builder()
-     *             .nodePoolId(testNodePoolOciContainerengineNodePool.id())
+     *             .nodePoolId(testNodePoolOciContainerengineNodePool.get("id"))
      *             .build());
      * 
      *     }
@@ -2574,7 +2574,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNodePool = ContainerEngineFunctions.getNodePool(GetNodePoolArgs.builder()
-     *             .nodePoolId(testNodePoolOciContainerengineNodePool.id())
+     *             .nodePoolId(testNodePoolOciContainerengineNodePool.get("id"))
      *             .build());
      * 
      *     }
@@ -2616,7 +2616,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNodePool = ContainerEngineFunctions.getNodePool(GetNodePoolArgs.builder()
-     *             .nodePoolId(testNodePoolOciContainerengineNodePool.id())
+     *             .nodePoolId(testNodePoolOciContainerengineNodePool.get("id"))
      *             .build());
      * 
      *     }
@@ -2658,7 +2658,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNodePool = ContainerEngineFunctions.getNodePool(GetNodePoolArgs.builder()
-     *             .nodePoolId(testNodePoolOciContainerengineNodePool.id())
+     *             .nodePoolId(testNodePoolOciContainerengineNodePool.get("id"))
      *             .build());
      * 
      *     }
@@ -2700,7 +2700,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNodePoolOption = ContainerEngineFunctions.getNodePoolOption(GetNodePoolOptionArgs.builder()
-     *             .nodePoolOptionId(testNodePoolOptionOciContainerengineNodePoolOption.id())
+     *             .nodePoolOptionId(testNodePoolOptionOciContainerengineNodePoolOption.get("id"))
      *             .compartmentId(compartmentId)
      *             .nodePoolK8sVersion(nodePoolOptionNodePoolK8sVersion)
      *             .nodePoolOsArch(nodePoolOptionNodePoolOsArch)
@@ -2747,7 +2747,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNodePoolOption = ContainerEngineFunctions.getNodePoolOption(GetNodePoolOptionArgs.builder()
-     *             .nodePoolOptionId(testNodePoolOptionOciContainerengineNodePoolOption.id())
+     *             .nodePoolOptionId(testNodePoolOptionOciContainerengineNodePoolOption.get("id"))
      *             .compartmentId(compartmentId)
      *             .nodePoolK8sVersion(nodePoolOptionNodePoolK8sVersion)
      *             .nodePoolOsArch(nodePoolOptionNodePoolOsArch)
@@ -2794,7 +2794,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNodePoolOption = ContainerEngineFunctions.getNodePoolOption(GetNodePoolOptionArgs.builder()
-     *             .nodePoolOptionId(testNodePoolOptionOciContainerengineNodePoolOption.id())
+     *             .nodePoolOptionId(testNodePoolOptionOciContainerengineNodePoolOption.get("id"))
      *             .compartmentId(compartmentId)
      *             .nodePoolK8sVersion(nodePoolOptionNodePoolK8sVersion)
      *             .nodePoolOsArch(nodePoolOptionNodePoolOsArch)
@@ -2841,7 +2841,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNodePoolOption = ContainerEngineFunctions.getNodePoolOption(GetNodePoolOptionArgs.builder()
-     *             .nodePoolOptionId(testNodePoolOptionOciContainerengineNodePoolOption.id())
+     *             .nodePoolOptionId(testNodePoolOptionOciContainerengineNodePoolOption.get("id"))
      *             .compartmentId(compartmentId)
      *             .nodePoolK8sVersion(nodePoolOptionNodePoolK8sVersion)
      *             .nodePoolOsArch(nodePoolOptionNodePoolOsArch)
@@ -2888,7 +2888,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNodePoolOption = ContainerEngineFunctions.getNodePoolOption(GetNodePoolOptionArgs.builder()
-     *             .nodePoolOptionId(testNodePoolOptionOciContainerengineNodePoolOption.id())
+     *             .nodePoolOptionId(testNodePoolOptionOciContainerengineNodePoolOption.get("id"))
      *             .compartmentId(compartmentId)
      *             .nodePoolK8sVersion(nodePoolOptionNodePoolK8sVersion)
      *             .nodePoolOsArch(nodePoolOptionNodePoolOsArch)
@@ -2936,7 +2936,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNodePools = ContainerEngineFunctions.getNodePools(GetNodePoolsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .name(nodePoolName)
      *             .states(nodePoolState)
      *             .build());
@@ -2981,7 +2981,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNodePools = ContainerEngineFunctions.getNodePools(GetNodePoolsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .name(nodePoolName)
      *             .states(nodePoolState)
      *             .build());
@@ -3026,7 +3026,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNodePools = ContainerEngineFunctions.getNodePools(GetNodePoolsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .name(nodePoolName)
      *             .states(nodePoolState)
      *             .build());
@@ -3071,7 +3071,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNodePools = ContainerEngineFunctions.getNodePools(GetNodePoolsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .name(nodePoolName)
      *             .states(nodePoolState)
      *             .build());
@@ -3116,7 +3116,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNodePools = ContainerEngineFunctions.getNodePools(GetNodePoolsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .name(nodePoolName)
      *             .states(nodePoolState)
      *             .build());
@@ -3380,7 +3380,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualNodePool = ContainerEngineFunctions.getVirtualNodePool(GetVirtualNodePoolArgs.builder()
-     *             .virtualNodePoolId(testVirtualNodePoolOciContainerengineVirtualNodePool.id())
+     *             .virtualNodePoolId(testVirtualNodePoolOciContainerengineVirtualNodePool.get("id"))
      *             .build());
      * 
      *     }
@@ -3422,7 +3422,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualNodePool = ContainerEngineFunctions.getVirtualNodePool(GetVirtualNodePoolArgs.builder()
-     *             .virtualNodePoolId(testVirtualNodePoolOciContainerengineVirtualNodePool.id())
+     *             .virtualNodePoolId(testVirtualNodePoolOciContainerengineVirtualNodePool.get("id"))
      *             .build());
      * 
      *     }
@@ -3464,7 +3464,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualNodePool = ContainerEngineFunctions.getVirtualNodePool(GetVirtualNodePoolArgs.builder()
-     *             .virtualNodePoolId(testVirtualNodePoolOciContainerengineVirtualNodePool.id())
+     *             .virtualNodePoolId(testVirtualNodePoolOciContainerengineVirtualNodePool.get("id"))
      *             .build());
      * 
      *     }
@@ -3506,7 +3506,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualNodePool = ContainerEngineFunctions.getVirtualNodePool(GetVirtualNodePoolArgs.builder()
-     *             .virtualNodePoolId(testVirtualNodePoolOciContainerengineVirtualNodePool.id())
+     *             .virtualNodePoolId(testVirtualNodePoolOciContainerengineVirtualNodePool.get("id"))
      *             .build());
      * 
      *     }
@@ -3548,7 +3548,7 @@ public final class ContainerEngineFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVirtualNodePool = ContainerEngineFunctions.getVirtualNodePool(GetVirtualNodePoolArgs.builder()
-     *             .virtualNodePoolId(testVirtualNodePoolOciContainerengineVirtualNodePool.id())
+     *             .virtualNodePoolId(testVirtualNodePoolOciContainerengineVirtualNodePool.get("id"))
      *             .build());
      * 
      *     }
@@ -3646,7 +3646,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkRequestErrors = ContainerEngineFunctions.getWorkRequestErrors(GetWorkRequestErrorsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .workRequestId(testWorkRequest.id())
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -3689,7 +3689,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkRequestErrors = ContainerEngineFunctions.getWorkRequestErrors(GetWorkRequestErrorsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .workRequestId(testWorkRequest.id())
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -3732,7 +3732,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkRequestErrors = ContainerEngineFunctions.getWorkRequestErrors(GetWorkRequestErrorsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .workRequestId(testWorkRequest.id())
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -3775,7 +3775,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkRequestErrors = ContainerEngineFunctions.getWorkRequestErrors(GetWorkRequestErrorsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .workRequestId(testWorkRequest.id())
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -3818,7 +3818,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkRequestErrors = ContainerEngineFunctions.getWorkRequestErrors(GetWorkRequestErrorsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .workRequestId(testWorkRequest.id())
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -3861,7 +3861,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkRequestLogEntries = ContainerEngineFunctions.getWorkRequestLogEntries(GetWorkRequestLogEntriesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .workRequestId(testWorkRequest.id())
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -3904,7 +3904,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkRequestLogEntries = ContainerEngineFunctions.getWorkRequestLogEntries(GetWorkRequestLogEntriesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .workRequestId(testWorkRequest.id())
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -3947,7 +3947,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkRequestLogEntries = ContainerEngineFunctions.getWorkRequestLogEntries(GetWorkRequestLogEntriesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .workRequestId(testWorkRequest.id())
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -3990,7 +3990,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkRequestLogEntries = ContainerEngineFunctions.getWorkRequestLogEntries(GetWorkRequestLogEntriesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .workRequestId(testWorkRequest.id())
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -4033,7 +4033,7 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkRequestLogEntries = ContainerEngineFunctions.getWorkRequestLogEntries(GetWorkRequestLogEntriesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .workRequestId(testWorkRequest.id())
+     *             .workRequestId(testWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -4076,8 +4076,8 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkRequests = ContainerEngineFunctions.getWorkRequests(GetWorkRequestsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
-     *             .resourceId(testResource.id())
+     *             .clusterId(testCluster.get("id"))
+     *             .resourceId(testResource.get("id"))
      *             .resourceType(workRequestResourceType)
      *             .statuses(workRequestStatus)
      *             .build());
@@ -4122,8 +4122,8 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkRequests = ContainerEngineFunctions.getWorkRequests(GetWorkRequestsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
-     *             .resourceId(testResource.id())
+     *             .clusterId(testCluster.get("id"))
+     *             .resourceId(testResource.get("id"))
      *             .resourceType(workRequestResourceType)
      *             .statuses(workRequestStatus)
      *             .build());
@@ -4168,8 +4168,8 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkRequests = ContainerEngineFunctions.getWorkRequests(GetWorkRequestsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
-     *             .resourceId(testResource.id())
+     *             .clusterId(testCluster.get("id"))
+     *             .resourceId(testResource.get("id"))
      *             .resourceType(workRequestResourceType)
      *             .statuses(workRequestStatus)
      *             .build());
@@ -4214,8 +4214,8 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkRequests = ContainerEngineFunctions.getWorkRequests(GetWorkRequestsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
-     *             .resourceId(testResource.id())
+     *             .clusterId(testCluster.get("id"))
+     *             .resourceId(testResource.get("id"))
      *             .resourceType(workRequestResourceType)
      *             .statuses(workRequestStatus)
      *             .build());
@@ -4260,8 +4260,8 @@ public final class ContainerEngineFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkRequests = ContainerEngineFunctions.getWorkRequests(GetWorkRequestsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
-     *             .resourceId(testResource.id())
+     *             .clusterId(testCluster.get("id"))
+     *             .resourceId(testResource.get("id"))
      *             .resourceType(workRequestResourceType)
      *             .statuses(workRequestStatus)
      *             .build());

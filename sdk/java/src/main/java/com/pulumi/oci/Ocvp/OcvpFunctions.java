@@ -111,7 +111,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByol = OcvpFunctions.getByol(GetByolArgs.builder()
-     *             .byolId(testByolOciOcvpByol.id())
+     *             .byolId(testByolOciOcvpByol.get("id"))
      *             .build());
      * 
      *     }
@@ -153,7 +153,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByol = OcvpFunctions.getByol(GetByolArgs.builder()
-     *             .byolId(testByolOciOcvpByol.id())
+     *             .byolId(testByolOciOcvpByol.get("id"))
      *             .build());
      * 
      *     }
@@ -195,7 +195,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByol = OcvpFunctions.getByol(GetByolArgs.builder()
-     *             .byolId(testByolOciOcvpByol.id())
+     *             .byolId(testByolOciOcvpByol.get("id"))
      *             .build());
      * 
      *     }
@@ -237,7 +237,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByol = OcvpFunctions.getByol(GetByolArgs.builder()
-     *             .byolId(testByolOciOcvpByol.id())
+     *             .byolId(testByolOciOcvpByol.get("id"))
      *             .build());
      * 
      *     }
@@ -279,7 +279,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByol = OcvpFunctions.getByol(GetByolArgs.builder()
-     *             .byolId(testByolOciOcvpByol.id())
+     *             .byolId(testByolOciOcvpByol.get("id"))
      *             .build());
      * 
      *     }
@@ -321,7 +321,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByolAllocation = OcvpFunctions.getByolAllocation(GetByolAllocationArgs.builder()
-     *             .byolAllocationId(testByolAllocationOciOcvpByolAllocation.id())
+     *             .byolAllocationId(testByolAllocationOciOcvpByolAllocation.get("id"))
      *             .build());
      * 
      *     }
@@ -363,7 +363,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByolAllocation = OcvpFunctions.getByolAllocation(GetByolAllocationArgs.builder()
-     *             .byolAllocationId(testByolAllocationOciOcvpByolAllocation.id())
+     *             .byolAllocationId(testByolAllocationOciOcvpByolAllocation.get("id"))
      *             .build());
      * 
      *     }
@@ -405,7 +405,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByolAllocation = OcvpFunctions.getByolAllocation(GetByolAllocationArgs.builder()
-     *             .byolAllocationId(testByolAllocationOciOcvpByolAllocation.id())
+     *             .byolAllocationId(testByolAllocationOciOcvpByolAllocation.get("id"))
      *             .build());
      * 
      *     }
@@ -447,7 +447,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByolAllocation = OcvpFunctions.getByolAllocation(GetByolAllocationArgs.builder()
-     *             .byolAllocationId(testByolAllocationOciOcvpByolAllocation.id())
+     *             .byolAllocationId(testByolAllocationOciOcvpByolAllocation.get("id"))
      *             .build());
      * 
      *     }
@@ -489,7 +489,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testByolAllocation = OcvpFunctions.getByolAllocation(GetByolAllocationArgs.builder()
-     *             .byolAllocationId(testByolAllocationOciOcvpByolAllocation.id())
+     *             .byolAllocationId(testByolAllocationOciOcvpByolAllocation.get("id"))
      *             .build());
      * 
      *     }
@@ -534,8 +534,8 @@ public final class OcvpFunctions {
      *         final var testByolAllocations = OcvpFunctions.getByolAllocations(GetByolAllocationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availableUnitsGreaterThanOrEqualTo(byolAllocationAvailableUnitsGreaterThanOrEqualTo)
-     *             .byolAllocationId(testByolAllocation.id())
-     *             .byolId(testByol.id())
+     *             .byolAllocationId(testByolAllocation.get("id"))
+     *             .byolId(testByol.get("id"))
      *             .displayName(byolAllocationDisplayName)
      *             .softwareType(byolAllocationSoftwareType)
      *             .state(byolAllocationState)
@@ -583,8 +583,8 @@ public final class OcvpFunctions {
      *         final var testByolAllocations = OcvpFunctions.getByolAllocations(GetByolAllocationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availableUnitsGreaterThanOrEqualTo(byolAllocationAvailableUnitsGreaterThanOrEqualTo)
-     *             .byolAllocationId(testByolAllocation.id())
-     *             .byolId(testByol.id())
+     *             .byolAllocationId(testByolAllocation.get("id"))
+     *             .byolId(testByol.get("id"))
      *             .displayName(byolAllocationDisplayName)
      *             .softwareType(byolAllocationSoftwareType)
      *             .state(byolAllocationState)
@@ -632,8 +632,8 @@ public final class OcvpFunctions {
      *         final var testByolAllocations = OcvpFunctions.getByolAllocations(GetByolAllocationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availableUnitsGreaterThanOrEqualTo(byolAllocationAvailableUnitsGreaterThanOrEqualTo)
-     *             .byolAllocationId(testByolAllocation.id())
-     *             .byolId(testByol.id())
+     *             .byolAllocationId(testByolAllocation.get("id"))
+     *             .byolId(testByol.get("id"))
      *             .displayName(byolAllocationDisplayName)
      *             .softwareType(byolAllocationSoftwareType)
      *             .state(byolAllocationState)
@@ -681,8 +681,8 @@ public final class OcvpFunctions {
      *         final var testByolAllocations = OcvpFunctions.getByolAllocations(GetByolAllocationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availableUnitsGreaterThanOrEqualTo(byolAllocationAvailableUnitsGreaterThanOrEqualTo)
-     *             .byolAllocationId(testByolAllocation.id())
-     *             .byolId(testByol.id())
+     *             .byolAllocationId(testByolAllocation.get("id"))
+     *             .byolId(testByol.get("id"))
      *             .displayName(byolAllocationDisplayName)
      *             .softwareType(byolAllocationSoftwareType)
      *             .state(byolAllocationState)
@@ -730,8 +730,8 @@ public final class OcvpFunctions {
      *         final var testByolAllocations = OcvpFunctions.getByolAllocations(GetByolAllocationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availableUnitsGreaterThanOrEqualTo(byolAllocationAvailableUnitsGreaterThanOrEqualTo)
-     *             .byolAllocationId(testByolAllocation.id())
-     *             .byolId(testByol.id())
+     *             .byolAllocationId(testByolAllocation.get("id"))
+     *             .byolId(testByol.get("id"))
      *             .displayName(byolAllocationDisplayName)
      *             .softwareType(byolAllocationSoftwareType)
      *             .state(byolAllocationState)
@@ -779,7 +779,7 @@ public final class OcvpFunctions {
      *         final var testByols = OcvpFunctions.getByols(GetByolsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availableUnitsGreaterThanOrEqualTo(byolAvailableUnitsGreaterThanOrEqualTo)
-     *             .byolId(testByol.id())
+     *             .byolId(testByol.get("id"))
      *             .displayName(byolDisplayName)
      *             .softwareType(byolSoftwareType)
      *             .state(byolState)
@@ -827,7 +827,7 @@ public final class OcvpFunctions {
      *         final var testByols = OcvpFunctions.getByols(GetByolsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availableUnitsGreaterThanOrEqualTo(byolAvailableUnitsGreaterThanOrEqualTo)
-     *             .byolId(testByol.id())
+     *             .byolId(testByol.get("id"))
      *             .displayName(byolDisplayName)
      *             .softwareType(byolSoftwareType)
      *             .state(byolState)
@@ -875,7 +875,7 @@ public final class OcvpFunctions {
      *         final var testByols = OcvpFunctions.getByols(GetByolsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availableUnitsGreaterThanOrEqualTo(byolAvailableUnitsGreaterThanOrEqualTo)
-     *             .byolId(testByol.id())
+     *             .byolId(testByol.get("id"))
      *             .displayName(byolDisplayName)
      *             .softwareType(byolSoftwareType)
      *             .state(byolState)
@@ -923,7 +923,7 @@ public final class OcvpFunctions {
      *         final var testByols = OcvpFunctions.getByols(GetByolsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availableUnitsGreaterThanOrEqualTo(byolAvailableUnitsGreaterThanOrEqualTo)
-     *             .byolId(testByol.id())
+     *             .byolId(testByol.get("id"))
      *             .displayName(byolDisplayName)
      *             .softwareType(byolSoftwareType)
      *             .state(byolState)
@@ -971,7 +971,7 @@ public final class OcvpFunctions {
      *         final var testByols = OcvpFunctions.getByols(GetByolsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availableUnitsGreaterThanOrEqualTo(byolAvailableUnitsGreaterThanOrEqualTo)
-     *             .byolId(testByol.id())
+     *             .byolId(testByol.get("id"))
      *             .displayName(byolDisplayName)
      *             .softwareType(byolSoftwareType)
      *             .state(byolState)
@@ -1016,7 +1016,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCluster = OcvpFunctions.getCluster(GetClusterArgs.builder()
-     *             .clusterId(testClusterOciOcvpCluster.id())
+     *             .clusterId(testClusterOciOcvpCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -1058,7 +1058,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCluster = OcvpFunctions.getCluster(GetClusterArgs.builder()
-     *             .clusterId(testClusterOciOcvpCluster.id())
+     *             .clusterId(testClusterOciOcvpCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -1100,7 +1100,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCluster = OcvpFunctions.getCluster(GetClusterArgs.builder()
-     *             .clusterId(testClusterOciOcvpCluster.id())
+     *             .clusterId(testClusterOciOcvpCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -1142,7 +1142,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCluster = OcvpFunctions.getCluster(GetClusterArgs.builder()
-     *             .clusterId(testClusterOciOcvpCluster.id())
+     *             .clusterId(testClusterOciOcvpCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -1184,7 +1184,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCluster = OcvpFunctions.getCluster(GetClusterArgs.builder()
-     *             .clusterId(testClusterOciOcvpCluster.id())
+     *             .clusterId(testClusterOciOcvpCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -1228,7 +1228,7 @@ public final class OcvpFunctions {
      *         final var testClusters = OcvpFunctions.getClusters(GetClustersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(clusterDisplayName)
-     *             .sddcId(testSddc.id())
+     *             .sddcId(testSddc.get("id"))
      *             .state(clusterState)
      *             .build());
      * 
@@ -1273,7 +1273,7 @@ public final class OcvpFunctions {
      *         final var testClusters = OcvpFunctions.getClusters(GetClustersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(clusterDisplayName)
-     *             .sddcId(testSddc.id())
+     *             .sddcId(testSddc.get("id"))
      *             .state(clusterState)
      *             .build());
      * 
@@ -1318,7 +1318,7 @@ public final class OcvpFunctions {
      *         final var testClusters = OcvpFunctions.getClusters(GetClustersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(clusterDisplayName)
-     *             .sddcId(testSddc.id())
+     *             .sddcId(testSddc.get("id"))
      *             .state(clusterState)
      *             .build());
      * 
@@ -1363,7 +1363,7 @@ public final class OcvpFunctions {
      *         final var testClusters = OcvpFunctions.getClusters(GetClustersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(clusterDisplayName)
-     *             .sddcId(testSddc.id())
+     *             .sddcId(testSddc.get("id"))
      *             .state(clusterState)
      *             .build());
      * 
@@ -1408,7 +1408,7 @@ public final class OcvpFunctions {
      *         final var testClusters = OcvpFunctions.getClusters(GetClustersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(clusterDisplayName)
-     *             .sddcId(testSddc.id())
+     *             .sddcId(testSddc.get("id"))
      *             .state(clusterState)
      *             .build());
      * 
@@ -1453,7 +1453,7 @@ public final class OcvpFunctions {
      *         final var testClusters = OcvpFunctions.getClusters(GetClustersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(clusterDisplayName)
-     *             .sddcId(testSddc.id())
+     *             .sddcId(testSddc.get("id"))
      *             .state(clusterState)
      *             .build());
      * 
@@ -1498,7 +1498,7 @@ public final class OcvpFunctions {
      *         final var testClusters = OcvpFunctions.getClusters(GetClustersArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(clusterDisplayName)
-     *             .sddcId(testSddc.id())
+     *             .sddcId(testSddc.get("id"))
      *             .state(clusterState)
      *             .build());
      * 
@@ -1541,7 +1541,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatastore = OcvpFunctions.getDatastore(GetDatastoreArgs.builder()
-     *             .datastoreId(testDatastoreOciOcvpDatastore.id())
+     *             .datastoreId(testDatastoreOciOcvpDatastore.get("id"))
      *             .build());
      * 
      *     }
@@ -1583,7 +1583,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatastore = OcvpFunctions.getDatastore(GetDatastoreArgs.builder()
-     *             .datastoreId(testDatastoreOciOcvpDatastore.id())
+     *             .datastoreId(testDatastoreOciOcvpDatastore.get("id"))
      *             .build());
      * 
      *     }
@@ -1625,7 +1625,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatastore = OcvpFunctions.getDatastore(GetDatastoreArgs.builder()
-     *             .datastoreId(testDatastoreOciOcvpDatastore.id())
+     *             .datastoreId(testDatastoreOciOcvpDatastore.get("id"))
      *             .build());
      * 
      *     }
@@ -1667,7 +1667,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatastore = OcvpFunctions.getDatastore(GetDatastoreArgs.builder()
-     *             .datastoreId(testDatastoreOciOcvpDatastore.id())
+     *             .datastoreId(testDatastoreOciOcvpDatastore.get("id"))
      *             .build());
      * 
      *     }
@@ -1709,7 +1709,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatastore = OcvpFunctions.getDatastore(GetDatastoreArgs.builder()
-     *             .datastoreId(testDatastoreOciOcvpDatastore.id())
+     *             .datastoreId(testDatastoreOciOcvpDatastore.get("id"))
      *             .build());
      * 
      *     }
@@ -1751,7 +1751,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatastoreCluster = OcvpFunctions.getDatastoreCluster(GetDatastoreClusterArgs.builder()
-     *             .datastoreClusterId(testDatastoreClusterOciOcvpDatastoreCluster.id())
+     *             .datastoreClusterId(testDatastoreClusterOciOcvpDatastoreCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -1793,7 +1793,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatastoreCluster = OcvpFunctions.getDatastoreCluster(GetDatastoreClusterArgs.builder()
-     *             .datastoreClusterId(testDatastoreClusterOciOcvpDatastoreCluster.id())
+     *             .datastoreClusterId(testDatastoreClusterOciOcvpDatastoreCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -1835,7 +1835,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatastoreCluster = OcvpFunctions.getDatastoreCluster(GetDatastoreClusterArgs.builder()
-     *             .datastoreClusterId(testDatastoreClusterOciOcvpDatastoreCluster.id())
+     *             .datastoreClusterId(testDatastoreClusterOciOcvpDatastoreCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -1877,7 +1877,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatastoreCluster = OcvpFunctions.getDatastoreCluster(GetDatastoreClusterArgs.builder()
-     *             .datastoreClusterId(testDatastoreClusterOciOcvpDatastoreCluster.id())
+     *             .datastoreClusterId(testDatastoreClusterOciOcvpDatastoreCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -1919,7 +1919,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatastoreCluster = OcvpFunctions.getDatastoreCluster(GetDatastoreClusterArgs.builder()
-     *             .datastoreClusterId(testDatastoreClusterOciOcvpDatastoreCluster.id())
+     *             .datastoreClusterId(testDatastoreClusterOciOcvpDatastoreCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -1963,8 +1963,8 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatastoreClusters = OcvpFunctions.getDatastoreClusters(GetDatastoreClustersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
-     *             .datastoreClusterId(testDatastoreCluster.id())
+     *             .clusterId(testCluster.get("id"))
+     *             .datastoreClusterId(testDatastoreCluster.get("id"))
      *             .displayName(datastoreClusterDisplayName)
      *             .state(datastoreClusterState)
      *             .build());
@@ -2010,8 +2010,8 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatastoreClusters = OcvpFunctions.getDatastoreClusters(GetDatastoreClustersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
-     *             .datastoreClusterId(testDatastoreCluster.id())
+     *             .clusterId(testCluster.get("id"))
+     *             .datastoreClusterId(testDatastoreCluster.get("id"))
      *             .displayName(datastoreClusterDisplayName)
      *             .state(datastoreClusterState)
      *             .build());
@@ -2057,8 +2057,8 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatastoreClusters = OcvpFunctions.getDatastoreClusters(GetDatastoreClustersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
-     *             .datastoreClusterId(testDatastoreCluster.id())
+     *             .clusterId(testCluster.get("id"))
+     *             .datastoreClusterId(testDatastoreCluster.get("id"))
      *             .displayName(datastoreClusterDisplayName)
      *             .state(datastoreClusterState)
      *             .build());
@@ -2104,8 +2104,8 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatastoreClusters = OcvpFunctions.getDatastoreClusters(GetDatastoreClustersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
-     *             .datastoreClusterId(testDatastoreCluster.id())
+     *             .clusterId(testCluster.get("id"))
+     *             .datastoreClusterId(testDatastoreCluster.get("id"))
      *             .displayName(datastoreClusterDisplayName)
      *             .state(datastoreClusterState)
      *             .build());
@@ -2151,8 +2151,8 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatastoreClusters = OcvpFunctions.getDatastoreClusters(GetDatastoreClustersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
-     *             .datastoreClusterId(testDatastoreCluster.id())
+     *             .clusterId(testCluster.get("id"))
+     *             .datastoreClusterId(testDatastoreCluster.get("id"))
      *             .displayName(datastoreClusterDisplayName)
      *             .state(datastoreClusterState)
      *             .build());
@@ -2198,8 +2198,8 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatastores = OcvpFunctions.getDatastores(GetDatastoresArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
-     *             .datastoreId(testDatastore.id())
+     *             .clusterId(testCluster.get("id"))
+     *             .datastoreId(testDatastore.get("id"))
      *             .displayName(datastoreDisplayName)
      *             .state(datastoreState)
      *             .build());
@@ -2245,8 +2245,8 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatastores = OcvpFunctions.getDatastores(GetDatastoresArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
-     *             .datastoreId(testDatastore.id())
+     *             .clusterId(testCluster.get("id"))
+     *             .datastoreId(testDatastore.get("id"))
      *             .displayName(datastoreDisplayName)
      *             .state(datastoreState)
      *             .build());
@@ -2292,8 +2292,8 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatastores = OcvpFunctions.getDatastores(GetDatastoresArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
-     *             .datastoreId(testDatastore.id())
+     *             .clusterId(testCluster.get("id"))
+     *             .datastoreId(testDatastore.get("id"))
      *             .displayName(datastoreDisplayName)
      *             .state(datastoreState)
      *             .build());
@@ -2339,8 +2339,8 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatastores = OcvpFunctions.getDatastores(GetDatastoresArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
-     *             .datastoreId(testDatastore.id())
+     *             .clusterId(testCluster.get("id"))
+     *             .datastoreId(testDatastore.get("id"))
      *             .displayName(datastoreDisplayName)
      *             .state(datastoreState)
      *             .build());
@@ -2386,8 +2386,8 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDatastores = OcvpFunctions.getDatastores(GetDatastoresArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .clusterId(testCluster.id())
-     *             .datastoreId(testDatastore.id())
+     *             .clusterId(testCluster.get("id"))
+     *             .datastoreId(testDatastore.get("id"))
      *             .displayName(datastoreDisplayName)
      *             .state(datastoreState)
      *             .build());
@@ -2431,7 +2431,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHost = OcvpFunctions.getExsiHost(GetExsiHostArgs.builder()
-     *             .esxiHostId(testEsxiHostOciOcvpEsxiHost.id())
+     *             .esxiHostId(testEsxiHostOciOcvpEsxiHost.get("id"))
      *             .build());
      * 
      *     }
@@ -2473,7 +2473,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHost = OcvpFunctions.getExsiHost(GetExsiHostArgs.builder()
-     *             .esxiHostId(testEsxiHostOciOcvpEsxiHost.id())
+     *             .esxiHostId(testEsxiHostOciOcvpEsxiHost.get("id"))
      *             .build());
      * 
      *     }
@@ -2515,7 +2515,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHost = OcvpFunctions.getExsiHost(GetExsiHostArgs.builder()
-     *             .esxiHostId(testEsxiHostOciOcvpEsxiHost.id())
+     *             .esxiHostId(testEsxiHostOciOcvpEsxiHost.get("id"))
      *             .build());
      * 
      *     }
@@ -2557,7 +2557,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHost = OcvpFunctions.getExsiHost(GetExsiHostArgs.builder()
-     *             .esxiHostId(testEsxiHostOciOcvpEsxiHost.id())
+     *             .esxiHostId(testEsxiHostOciOcvpEsxiHost.get("id"))
      *             .build());
      * 
      *     }
@@ -2599,7 +2599,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHost = OcvpFunctions.getExsiHost(GetExsiHostArgs.builder()
-     *             .esxiHostId(testEsxiHostOciOcvpEsxiHost.id())
+     *             .esxiHostId(testEsxiHostOciOcvpEsxiHost.get("id"))
      *             .build());
      * 
      *     }
@@ -2649,13 +2649,13 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .compartmentId(compartmentId)
-     *             .computeInstanceId(testInstance.id())
+     *             .computeInstanceId(testInstance.get("id"))
      *             .displayName(esxiHostDisplayName)
      *             .isBillingDonorsOnly(esxiHostIsBillingDonorsOnly)
      *             .isSwapBillingOnly(esxiHostIsSwapBillingOnly)
-     *             .sddcId(testSddc.id())
+     *             .sddcId(testSddc.get("id"))
      *             .state(esxiHostState)
      *             .build());
      * 
@@ -2706,13 +2706,13 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .compartmentId(compartmentId)
-     *             .computeInstanceId(testInstance.id())
+     *             .computeInstanceId(testInstance.get("id"))
      *             .displayName(esxiHostDisplayName)
      *             .isBillingDonorsOnly(esxiHostIsBillingDonorsOnly)
      *             .isSwapBillingOnly(esxiHostIsSwapBillingOnly)
-     *             .sddcId(testSddc.id())
+     *             .sddcId(testSddc.get("id"))
      *             .state(esxiHostState)
      *             .build());
      * 
@@ -2763,13 +2763,13 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .compartmentId(compartmentId)
-     *             .computeInstanceId(testInstance.id())
+     *             .computeInstanceId(testInstance.get("id"))
      *             .displayName(esxiHostDisplayName)
      *             .isBillingDonorsOnly(esxiHostIsBillingDonorsOnly)
      *             .isSwapBillingOnly(esxiHostIsSwapBillingOnly)
-     *             .sddcId(testSddc.id())
+     *             .sddcId(testSddc.get("id"))
      *             .state(esxiHostState)
      *             .build());
      * 
@@ -2820,13 +2820,13 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .compartmentId(compartmentId)
-     *             .computeInstanceId(testInstance.id())
+     *             .computeInstanceId(testInstance.get("id"))
      *             .displayName(esxiHostDisplayName)
      *             .isBillingDonorsOnly(esxiHostIsBillingDonorsOnly)
      *             .isSwapBillingOnly(esxiHostIsSwapBillingOnly)
-     *             .sddcId(testSddc.id())
+     *             .sddcId(testSddc.get("id"))
      *             .state(esxiHostState)
      *             .build());
      * 
@@ -2877,13 +2877,13 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .compartmentId(compartmentId)
-     *             .computeInstanceId(testInstance.id())
+     *             .computeInstanceId(testInstance.get("id"))
      *             .displayName(esxiHostDisplayName)
      *             .isBillingDonorsOnly(esxiHostIsBillingDonorsOnly)
      *             .isSwapBillingOnly(esxiHostIsSwapBillingOnly)
-     *             .sddcId(testSddc.id())
+     *             .sddcId(testSddc.get("id"))
      *             .state(esxiHostState)
      *             .build());
      * 
@@ -2934,13 +2934,13 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .compartmentId(compartmentId)
-     *             .computeInstanceId(testInstance.id())
+     *             .computeInstanceId(testInstance.get("id"))
      *             .displayName(esxiHostDisplayName)
      *             .isBillingDonorsOnly(esxiHostIsBillingDonorsOnly)
      *             .isSwapBillingOnly(esxiHostIsSwapBillingOnly)
-     *             .sddcId(testSddc.id())
+     *             .sddcId(testSddc.get("id"))
      *             .state(esxiHostState)
      *             .build());
      * 
@@ -2991,13 +2991,13 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEsxiHosts = OcvpFunctions.getExsiHosts(GetExsiHostsArgs.builder()
-     *             .clusterId(testCluster.id())
+     *             .clusterId(testCluster.get("id"))
      *             .compartmentId(compartmentId)
-     *             .computeInstanceId(testInstance.id())
+     *             .computeInstanceId(testInstance.get("id"))
      *             .displayName(esxiHostDisplayName)
      *             .isBillingDonorsOnly(esxiHostIsBillingDonorsOnly)
      *             .isSwapBillingOnly(esxiHostIsSwapBillingOnly)
-     *             .sddcId(testSddc.id())
+     *             .sddcId(testSddc.get("id"))
      *             .state(esxiHostState)
      *             .build());
      * 
@@ -3245,7 +3245,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAppliance = OcvpFunctions.getManagementAppliance(GetManagementApplianceArgs.builder()
-     *             .managementApplianceId(testManagementApplianceOciOcvpManagementAppliance.id())
+     *             .managementApplianceId(testManagementApplianceOciOcvpManagementAppliance.get("id"))
      *             .build());
      * 
      *     }
@@ -3287,7 +3287,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAppliance = OcvpFunctions.getManagementAppliance(GetManagementApplianceArgs.builder()
-     *             .managementApplianceId(testManagementApplianceOciOcvpManagementAppliance.id())
+     *             .managementApplianceId(testManagementApplianceOciOcvpManagementAppliance.get("id"))
      *             .build());
      * 
      *     }
@@ -3329,7 +3329,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAppliance = OcvpFunctions.getManagementAppliance(GetManagementApplianceArgs.builder()
-     *             .managementApplianceId(testManagementApplianceOciOcvpManagementAppliance.id())
+     *             .managementApplianceId(testManagementApplianceOciOcvpManagementAppliance.get("id"))
      *             .build());
      * 
      *     }
@@ -3371,7 +3371,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAppliance = OcvpFunctions.getManagementAppliance(GetManagementApplianceArgs.builder()
-     *             .managementApplianceId(testManagementApplianceOciOcvpManagementAppliance.id())
+     *             .managementApplianceId(testManagementApplianceOciOcvpManagementAppliance.get("id"))
      *             .build());
      * 
      *     }
@@ -3413,7 +3413,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementAppliance = OcvpFunctions.getManagementAppliance(GetManagementApplianceArgs.builder()
-     *             .managementApplianceId(testManagementApplianceOciOcvpManagementAppliance.id())
+     *             .managementApplianceId(testManagementApplianceOciOcvpManagementAppliance.get("id"))
      *             .build());
      * 
      *     }
@@ -3457,8 +3457,8 @@ public final class OcvpFunctions {
      *         final var testManagementAppliances = OcvpFunctions.getManagementAppliances(GetManagementAppliancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(managementApplianceDisplayName)
-     *             .managementApplianceId(testManagementAppliance.id())
-     *             .sddcId(testSddc.id())
+     *             .managementApplianceId(testManagementAppliance.get("id"))
+     *             .sddcId(testSddc.get("id"))
      *             .state(managementApplianceState)
      *             .build());
      * 
@@ -3503,8 +3503,8 @@ public final class OcvpFunctions {
      *         final var testManagementAppliances = OcvpFunctions.getManagementAppliances(GetManagementAppliancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(managementApplianceDisplayName)
-     *             .managementApplianceId(testManagementAppliance.id())
-     *             .sddcId(testSddc.id())
+     *             .managementApplianceId(testManagementAppliance.get("id"))
+     *             .sddcId(testSddc.get("id"))
      *             .state(managementApplianceState)
      *             .build());
      * 
@@ -3549,8 +3549,8 @@ public final class OcvpFunctions {
      *         final var testManagementAppliances = OcvpFunctions.getManagementAppliances(GetManagementAppliancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(managementApplianceDisplayName)
-     *             .managementApplianceId(testManagementAppliance.id())
-     *             .sddcId(testSddc.id())
+     *             .managementApplianceId(testManagementAppliance.get("id"))
+     *             .sddcId(testSddc.get("id"))
      *             .state(managementApplianceState)
      *             .build());
      * 
@@ -3595,8 +3595,8 @@ public final class OcvpFunctions {
      *         final var testManagementAppliances = OcvpFunctions.getManagementAppliances(GetManagementAppliancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(managementApplianceDisplayName)
-     *             .managementApplianceId(testManagementAppliance.id())
-     *             .sddcId(testSddc.id())
+     *             .managementApplianceId(testManagementAppliance.get("id"))
+     *             .sddcId(testSddc.get("id"))
      *             .state(managementApplianceState)
      *             .build());
      * 
@@ -3641,8 +3641,8 @@ public final class OcvpFunctions {
      *         final var testManagementAppliances = OcvpFunctions.getManagementAppliances(GetManagementAppliancesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(managementApplianceDisplayName)
-     *             .managementApplianceId(testManagementAppliance.id())
-     *             .sddcId(testSddc.id())
+     *             .managementApplianceId(testManagementAppliance.get("id"))
+     *             .sddcId(testSddc.get("id"))
      *             .state(managementApplianceState)
      *             .build());
      * 
@@ -4090,7 +4090,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSddc = OcvpFunctions.getSddc(GetSddcArgs.builder()
-     *             .sddcId(testSddcOciOcvpSddc.id())
+     *             .sddcId(testSddcOciOcvpSddc.get("id"))
      *             .build());
      * 
      *     }
@@ -4132,7 +4132,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSddc = OcvpFunctions.getSddc(GetSddcArgs.builder()
-     *             .sddcId(testSddcOciOcvpSddc.id())
+     *             .sddcId(testSddcOciOcvpSddc.get("id"))
      *             .build());
      * 
      *     }
@@ -4174,7 +4174,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSddc = OcvpFunctions.getSddc(GetSddcArgs.builder()
-     *             .sddcId(testSddcOciOcvpSddc.id())
+     *             .sddcId(testSddcOciOcvpSddc.get("id"))
      *             .build());
      * 
      *     }
@@ -4216,7 +4216,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSddc = OcvpFunctions.getSddc(GetSddcArgs.builder()
-     *             .sddcId(testSddcOciOcvpSddc.id())
+     *             .sddcId(testSddcOciOcvpSddc.get("id"))
      *             .build());
      * 
      *     }
@@ -4258,7 +4258,7 @@ public final class OcvpFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSddc = OcvpFunctions.getSddc(GetSddcArgs.builder()
-     *             .sddcId(testSddcOciOcvpSddc.id())
+     *             .sddcId(testSddcOciOcvpSddc.get("id"))
      *             .build());
      * 
      *     }
@@ -4531,7 +4531,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedCommitments = OcvpFunctions.getSupportedCommitments(GetSupportedCommitmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .hostShapeName(testShape.name())
+     *             .hostShapeName(testShape.get("name"))
      *             .build());
      * 
      *     }
@@ -4574,7 +4574,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedCommitments = OcvpFunctions.getSupportedCommitments(GetSupportedCommitmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .hostShapeName(testShape.name())
+     *             .hostShapeName(testShape.get("name"))
      *             .build());
      * 
      *     }
@@ -4617,7 +4617,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedCommitments = OcvpFunctions.getSupportedCommitments(GetSupportedCommitmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .hostShapeName(testShape.name())
+     *             .hostShapeName(testShape.get("name"))
      *             .build());
      * 
      *     }
@@ -4660,7 +4660,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedCommitments = OcvpFunctions.getSupportedCommitments(GetSupportedCommitmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .hostShapeName(testShape.name())
+     *             .hostShapeName(testShape.get("name"))
      *             .build());
      * 
      *     }
@@ -4703,7 +4703,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedCommitments = OcvpFunctions.getSupportedCommitments(GetSupportedCommitmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .hostShapeName(testShape.name())
+     *             .hostShapeName(testShape.get("name"))
      *             .build());
      * 
      *     }
@@ -4746,7 +4746,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedHostShapes = OcvpFunctions.getSupportedHostShapes(GetSupportedHostShapesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .initialHostShapeName(testShape.name())
+     *             .initialHostShapeName(testShape.get("name"))
      *             .isSingleHostSddcSupported(supportedHostShapeIsSingleHostSddcSupported)
      *             .name(supportedHostShapeName)
      *             .build());
@@ -4791,7 +4791,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedHostShapes = OcvpFunctions.getSupportedHostShapes(GetSupportedHostShapesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .initialHostShapeName(testShape.name())
+     *             .initialHostShapeName(testShape.get("name"))
      *             .isSingleHostSddcSupported(supportedHostShapeIsSingleHostSddcSupported)
      *             .name(supportedHostShapeName)
      *             .build());
@@ -4836,7 +4836,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedHostShapes = OcvpFunctions.getSupportedHostShapes(GetSupportedHostShapesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .initialHostShapeName(testShape.name())
+     *             .initialHostShapeName(testShape.get("name"))
      *             .isSingleHostSddcSupported(supportedHostShapeIsSingleHostSddcSupported)
      *             .name(supportedHostShapeName)
      *             .build());
@@ -4881,7 +4881,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedHostShapes = OcvpFunctions.getSupportedHostShapes(GetSupportedHostShapesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .initialHostShapeName(testShape.name())
+     *             .initialHostShapeName(testShape.get("name"))
      *             .isSingleHostSddcSupported(supportedHostShapeIsSingleHostSddcSupported)
      *             .name(supportedHostShapeName)
      *             .build());
@@ -4926,7 +4926,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedHostShapes = OcvpFunctions.getSupportedHostShapes(GetSupportedHostShapesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .initialHostShapeName(testShape.name())
+     *             .initialHostShapeName(testShape.get("name"))
      *             .isSingleHostSddcSupported(supportedHostShapeIsSingleHostSddcSupported)
      *             .name(supportedHostShapeName)
      *             .build());
@@ -4972,7 +4972,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedSkus = OcvpFunctions.getSupportedSkus(GetSupportedSkusArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .hostShapeName(testShape.name())
+     *             .hostShapeName(testShape.get("name"))
      *             .build());
      * 
      *     }
@@ -5016,7 +5016,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedSkus = OcvpFunctions.getSupportedSkus(GetSupportedSkusArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .hostShapeName(testShape.name())
+     *             .hostShapeName(testShape.get("name"))
      *             .build());
      * 
      *     }
@@ -5060,7 +5060,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedSkus = OcvpFunctions.getSupportedSkus(GetSupportedSkusArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .hostShapeName(testShape.name())
+     *             .hostShapeName(testShape.get("name"))
      *             .build());
      * 
      *     }
@@ -5104,7 +5104,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedSkus = OcvpFunctions.getSupportedSkus(GetSupportedSkusArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .hostShapeName(testShape.name())
+     *             .hostShapeName(testShape.get("name"))
      *             .build());
      * 
      *     }
@@ -5148,7 +5148,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedSkus = OcvpFunctions.getSupportedSkus(GetSupportedSkusArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .hostShapeName(testShape.name())
+     *             .hostShapeName(testShape.get("name"))
      *             .build());
      * 
      *     }
@@ -5192,7 +5192,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedVmwareSoftwareVersions = OcvpFunctions.getSupportedVmwareSoftwareVersions(GetSupportedVmwareSoftwareVersionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .hostShapeName(testShape.name())
+     *             .hostShapeName(testShape.get("name"))
      *             .version(supportedVmwareSoftwareVersionVersion)
      *             .versionToUpgrade(supportedVmwareSoftwareVersionVersionToUpgrade)
      *             .build());
@@ -5238,7 +5238,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedVmwareSoftwareVersions = OcvpFunctions.getSupportedVmwareSoftwareVersions(GetSupportedVmwareSoftwareVersionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .hostShapeName(testShape.name())
+     *             .hostShapeName(testShape.get("name"))
      *             .version(supportedVmwareSoftwareVersionVersion)
      *             .versionToUpgrade(supportedVmwareSoftwareVersionVersionToUpgrade)
      *             .build());
@@ -5284,7 +5284,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedVmwareSoftwareVersions = OcvpFunctions.getSupportedVmwareSoftwareVersions(GetSupportedVmwareSoftwareVersionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .hostShapeName(testShape.name())
+     *             .hostShapeName(testShape.get("name"))
      *             .version(supportedVmwareSoftwareVersionVersion)
      *             .versionToUpgrade(supportedVmwareSoftwareVersionVersionToUpgrade)
      *             .build());
@@ -5330,7 +5330,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedVmwareSoftwareVersions = OcvpFunctions.getSupportedVmwareSoftwareVersions(GetSupportedVmwareSoftwareVersionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .hostShapeName(testShape.name())
+     *             .hostShapeName(testShape.get("name"))
      *             .version(supportedVmwareSoftwareVersionVersion)
      *             .versionToUpgrade(supportedVmwareSoftwareVersionVersionToUpgrade)
      *             .build());
@@ -5376,7 +5376,7 @@ public final class OcvpFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSupportedVmwareSoftwareVersions = OcvpFunctions.getSupportedVmwareSoftwareVersions(GetSupportedVmwareSoftwareVersionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .hostShapeName(testShape.name())
+     *             .hostShapeName(testShape.get("name"))
      *             .version(supportedVmwareSoftwareVersionVersion)
      *             .versionToUpgrade(supportedVmwareSoftwareVersionVersionToUpgrade)
      *             .build());

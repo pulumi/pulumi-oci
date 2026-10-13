@@ -54,7 +54,7 @@ public final class OsubSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCommitment = OsubSubscriptionFunctions.getCommitment(GetCommitmentArgs.builder()
-     *             .commitmentId(testCommitmentOciOsubSubscriptionCommitment.id())
+     *             .commitmentId(testCommitmentOciOsubSubscriptionCommitment.get("id"))
      *             .xOneGatewaySubscriptionId(commitmentXOneGatewaySubscriptionId)
      *             .xOneOriginRegion(commitmentXOneOriginRegion)
      *             .build());
@@ -98,7 +98,7 @@ public final class OsubSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCommitment = OsubSubscriptionFunctions.getCommitment(GetCommitmentArgs.builder()
-     *             .commitmentId(testCommitmentOciOsubSubscriptionCommitment.id())
+     *             .commitmentId(testCommitmentOciOsubSubscriptionCommitment.get("id"))
      *             .xOneGatewaySubscriptionId(commitmentXOneGatewaySubscriptionId)
      *             .xOneOriginRegion(commitmentXOneOriginRegion)
      *             .build());
@@ -142,7 +142,7 @@ public final class OsubSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCommitment = OsubSubscriptionFunctions.getCommitment(GetCommitmentArgs.builder()
-     *             .commitmentId(testCommitmentOciOsubSubscriptionCommitment.id())
+     *             .commitmentId(testCommitmentOciOsubSubscriptionCommitment.get("id"))
      *             .xOneGatewaySubscriptionId(commitmentXOneGatewaySubscriptionId)
      *             .xOneOriginRegion(commitmentXOneOriginRegion)
      *             .build());
@@ -186,7 +186,7 @@ public final class OsubSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCommitment = OsubSubscriptionFunctions.getCommitment(GetCommitmentArgs.builder()
-     *             .commitmentId(testCommitmentOciOsubSubscriptionCommitment.id())
+     *             .commitmentId(testCommitmentOciOsubSubscriptionCommitment.get("id"))
      *             .xOneGatewaySubscriptionId(commitmentXOneGatewaySubscriptionId)
      *             .xOneOriginRegion(commitmentXOneOriginRegion)
      *             .build());
@@ -230,7 +230,7 @@ public final class OsubSubscriptionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCommitment = OsubSubscriptionFunctions.getCommitment(GetCommitmentArgs.builder()
-     *             .commitmentId(testCommitmentOciOsubSubscriptionCommitment.id())
+     *             .commitmentId(testCommitmentOciOsubSubscriptionCommitment.get("id"))
      *             .xOneGatewaySubscriptionId(commitmentXOneGatewaySubscriptionId)
      *             .xOneOriginRegion(commitmentXOneOriginRegion)
      *             .build());
@@ -275,7 +275,7 @@ public final class OsubSubscriptionFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCommitments = OsubSubscriptionFunctions.getCommitments(GetCommitmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscribedServiceId(testService.id())
+     *             .subscribedServiceId(testService.get("id"))
      *             .xOneGatewaySubscriptionId(commitmentXOneGatewaySubscriptionId)
      *             .xOneOriginRegion(commitmentXOneOriginRegion)
      *             .build());
@@ -320,7 +320,7 @@ public final class OsubSubscriptionFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCommitments = OsubSubscriptionFunctions.getCommitments(GetCommitmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscribedServiceId(testService.id())
+     *             .subscribedServiceId(testService.get("id"))
      *             .xOneGatewaySubscriptionId(commitmentXOneGatewaySubscriptionId)
      *             .xOneOriginRegion(commitmentXOneOriginRegion)
      *             .build());
@@ -365,7 +365,7 @@ public final class OsubSubscriptionFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCommitments = OsubSubscriptionFunctions.getCommitments(GetCommitmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscribedServiceId(testService.id())
+     *             .subscribedServiceId(testService.get("id"))
      *             .xOneGatewaySubscriptionId(commitmentXOneGatewaySubscriptionId)
      *             .xOneOriginRegion(commitmentXOneOriginRegion)
      *             .build());
@@ -410,7 +410,7 @@ public final class OsubSubscriptionFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCommitments = OsubSubscriptionFunctions.getCommitments(GetCommitmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscribedServiceId(testService.id())
+     *             .subscribedServiceId(testService.get("id"))
      *             .xOneGatewaySubscriptionId(commitmentXOneGatewaySubscriptionId)
      *             .xOneOriginRegion(commitmentXOneOriginRegion)
      *             .build());
@@ -455,7 +455,7 @@ public final class OsubSubscriptionFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCommitments = OsubSubscriptionFunctions.getCommitments(GetCommitmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscribedServiceId(testService.id())
+     *             .subscribedServiceId(testService.get("id"))
      *             .xOneGatewaySubscriptionId(commitmentXOneGatewaySubscriptionId)
      *             .xOneOriginRegion(commitmentXOneOriginRegion)
      *             .build());
@@ -501,7 +501,7 @@ public final class OsubSubscriptionFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRatecards = OsubSubscriptionFunctions.getRatecards(GetRatecardsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .partNumber(ratecardPartNumber)
      *             .timeFrom(ratecardTimeFrom)
      *             .timeTo(ratecardTimeTo)
@@ -549,7 +549,7 @@ public final class OsubSubscriptionFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRatecards = OsubSubscriptionFunctions.getRatecards(GetRatecardsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .partNumber(ratecardPartNumber)
      *             .timeFrom(ratecardTimeFrom)
      *             .timeTo(ratecardTimeTo)
@@ -597,7 +597,7 @@ public final class OsubSubscriptionFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRatecards = OsubSubscriptionFunctions.getRatecards(GetRatecardsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .partNumber(ratecardPartNumber)
      *             .timeFrom(ratecardTimeFrom)
      *             .timeTo(ratecardTimeTo)
@@ -645,7 +645,7 @@ public final class OsubSubscriptionFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRatecards = OsubSubscriptionFunctions.getRatecards(GetRatecardsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .partNumber(ratecardPartNumber)
      *             .timeFrom(ratecardTimeFrom)
      *             .timeTo(ratecardTimeTo)
@@ -693,7 +693,7 @@ public final class OsubSubscriptionFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRatecards = OsubSubscriptionFunctions.getRatecards(GetRatecardsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .partNumber(ratecardPartNumber)
      *             .timeFrom(ratecardTimeFrom)
      *             .timeTo(ratecardTimeTo)
@@ -746,7 +746,7 @@ public final class OsubSubscriptionFunctions {
      *             .buyerEmail(subscriptionBuyerEmail)
      *             .isCommitInfoRequired(subscriptionIsCommitInfoRequired)
      *             .planNumber(subscriptionPlanNumber)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .xOneGatewaySubscriptionId(subscriptionXOneGatewaySubscriptionId)
      *             .xOneOriginRegion(subscriptionXOneOriginRegion)
      *             .build());
@@ -797,7 +797,7 @@ public final class OsubSubscriptionFunctions {
      *             .buyerEmail(subscriptionBuyerEmail)
      *             .isCommitInfoRequired(subscriptionIsCommitInfoRequired)
      *             .planNumber(subscriptionPlanNumber)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .xOneGatewaySubscriptionId(subscriptionXOneGatewaySubscriptionId)
      *             .xOneOriginRegion(subscriptionXOneOriginRegion)
      *             .build());
@@ -848,7 +848,7 @@ public final class OsubSubscriptionFunctions {
      *             .buyerEmail(subscriptionBuyerEmail)
      *             .isCommitInfoRequired(subscriptionIsCommitInfoRequired)
      *             .planNumber(subscriptionPlanNumber)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .xOneGatewaySubscriptionId(subscriptionXOneGatewaySubscriptionId)
      *             .xOneOriginRegion(subscriptionXOneOriginRegion)
      *             .build());
@@ -899,7 +899,7 @@ public final class OsubSubscriptionFunctions {
      *             .buyerEmail(subscriptionBuyerEmail)
      *             .isCommitInfoRequired(subscriptionIsCommitInfoRequired)
      *             .planNumber(subscriptionPlanNumber)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .xOneGatewaySubscriptionId(subscriptionXOneGatewaySubscriptionId)
      *             .xOneOriginRegion(subscriptionXOneOriginRegion)
      *             .build());
@@ -950,7 +950,7 @@ public final class OsubSubscriptionFunctions {
      *             .buyerEmail(subscriptionBuyerEmail)
      *             .isCommitInfoRequired(subscriptionIsCommitInfoRequired)
      *             .planNumber(subscriptionPlanNumber)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .xOneGatewaySubscriptionId(subscriptionXOneGatewaySubscriptionId)
      *             .xOneOriginRegion(subscriptionXOneOriginRegion)
      *             .build());

@@ -54,7 +54,7 @@ public final class DemandSignalFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccDemandSignal = DemandSignalFunctions.getOccDemandSignal(GetOccDemandSignalArgs.builder()
-     *             .occDemandSignalId(testOccDemandSignalOciDemandSignalOccDemandSignal.id())
+     *             .occDemandSignalId(testOccDemandSignalOciDemandSignalOccDemandSignal.get("id"))
      *             .build());
      * 
      *     }
@@ -96,7 +96,7 @@ public final class DemandSignalFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccDemandSignal = DemandSignalFunctions.getOccDemandSignal(GetOccDemandSignalArgs.builder()
-     *             .occDemandSignalId(testOccDemandSignalOciDemandSignalOccDemandSignal.id())
+     *             .occDemandSignalId(testOccDemandSignalOciDemandSignalOccDemandSignal.get("id"))
      *             .build());
      * 
      *     }
@@ -138,7 +138,7 @@ public final class DemandSignalFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccDemandSignal = DemandSignalFunctions.getOccDemandSignal(GetOccDemandSignalArgs.builder()
-     *             .occDemandSignalId(testOccDemandSignalOciDemandSignalOccDemandSignal.id())
+     *             .occDemandSignalId(testOccDemandSignalOciDemandSignalOccDemandSignal.get("id"))
      *             .build());
      * 
      *     }
@@ -180,7 +180,7 @@ public final class DemandSignalFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccDemandSignal = DemandSignalFunctions.getOccDemandSignal(GetOccDemandSignalArgs.builder()
-     *             .occDemandSignalId(testOccDemandSignalOciDemandSignalOccDemandSignal.id())
+     *             .occDemandSignalId(testOccDemandSignalOciDemandSignalOccDemandSignal.get("id"))
      *             .build());
      * 
      *     }
@@ -222,7 +222,7 @@ public final class DemandSignalFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccDemandSignal = DemandSignalFunctions.getOccDemandSignal(GetOccDemandSignalArgs.builder()
-     *             .occDemandSignalId(testOccDemandSignalOciDemandSignalOccDemandSignal.id())
+     *             .occDemandSignalId(testOccDemandSignalOciDemandSignalOccDemandSignal.get("id"))
      *             .build());
      * 
      *     }
@@ -579,7 +579,7 @@ public final class DemandSignalFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccMetricAlarm = DemandSignalFunctions.getOccMetricAlarm(GetOccMetricAlarmArgs.builder()
-     *             .occMetricAlarmId(testOccMetricAlarmOciDemandSignalOccMetricAlarm.id())
+     *             .occMetricAlarmId(testOccMetricAlarmOciDemandSignalOccMetricAlarm.get("id"))
      *             .build());
      * 
      *     }
@@ -621,7 +621,7 @@ public final class DemandSignalFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccMetricAlarm = DemandSignalFunctions.getOccMetricAlarm(GetOccMetricAlarmArgs.builder()
-     *             .occMetricAlarmId(testOccMetricAlarmOciDemandSignalOccMetricAlarm.id())
+     *             .occMetricAlarmId(testOccMetricAlarmOciDemandSignalOccMetricAlarm.get("id"))
      *             .build());
      * 
      *     }
@@ -663,7 +663,7 @@ public final class DemandSignalFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccMetricAlarm = DemandSignalFunctions.getOccMetricAlarm(GetOccMetricAlarmArgs.builder()
-     *             .occMetricAlarmId(testOccMetricAlarmOciDemandSignalOccMetricAlarm.id())
+     *             .occMetricAlarmId(testOccMetricAlarmOciDemandSignalOccMetricAlarm.get("id"))
      *             .build());
      * 
      *     }
@@ -705,7 +705,7 @@ public final class DemandSignalFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccMetricAlarm = DemandSignalFunctions.getOccMetricAlarm(GetOccMetricAlarmArgs.builder()
-     *             .occMetricAlarmId(testOccMetricAlarmOciDemandSignalOccMetricAlarm.id())
+     *             .occMetricAlarmId(testOccMetricAlarmOciDemandSignalOccMetricAlarm.get("id"))
      *             .build());
      * 
      *     }
@@ -747,7 +747,7 @@ public final class DemandSignalFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOccMetricAlarm = DemandSignalFunctions.getOccMetricAlarm(GetOccMetricAlarmArgs.builder()
-     *             .occMetricAlarmId(testOccMetricAlarmOciDemandSignalOccMetricAlarm.id())
+     *             .occMetricAlarmId(testOccMetricAlarmOciDemandSignalOccMetricAlarm.get("id"))
      *             .build());
      * 
      *     }

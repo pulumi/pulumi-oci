@@ -31,7 +31,7 @@ import * as utilities from "../utilities";
  *         domain: rrsetItemsDomain,
  *         rdata: rrsetItemsRdata,
  *         rtype: rrsetItemsRtype,
- *         ttl: Number(rrsetItemsTtl),
+ *         ttl: rrsetItemsTtl,
  *     }],
  *     scope: rrsetScope,
  *     viewId: testView.id,

@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testManagedInstanceGroupAttachSoftwareSourcesManagement = new ManagedInstanceGroupAttachSoftwareSourcesManagement("testManagedInstanceGroupAttachSoftwareSourcesManagement", ManagedInstanceGroupAttachSoftwareSourcesManagementArgs.builder()
- *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+ *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
  *             .softwareSources(managedInstanceGroupAttachSoftwareSourcesManagementSoftwareSources)
  *             .workRequestDetails(ManagedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetailsArgs.builder()
  *                 .description(managedInstanceGroupAttachSoftwareSourcesManagementWorkRequestDetailsDescription)

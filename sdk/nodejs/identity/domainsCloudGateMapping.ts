@@ -50,7 +50,7 @@ import * as utilities from "../utilities";
  *         value: cloudGateMappingTagsValue,
  *     }],
  *     upstreamServerGroup: {
- *         ssl: cloudGateMappingUpstreamServerGroupSsl === "true",
+ *         ssl: cloudGateMappingUpstreamServerGroupSsl,
  *         value: cloudGateMappingUpstreamServerGroupValue,
  *     },
  * });

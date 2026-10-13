@@ -35,7 +35,7 @@ import (
 //				DisplayName:            pulumi.StringRef(operationsInsightsPrivateEndpointDisplayName),
 //				IsUsedForRacDbs:        pulumi.BoolRef(operationsInsightsPrivateEndpointIsUsedForRacDbs),
 //				OpsiPrivateEndpointId:  pulumi.StringRef(testPrivateEndpoint.Id),
-//				States:                 pulumi.ToArray(operationsInsightsPrivateEndpointState),
+//				States:                 operationsInsightsPrivateEndpointState,
 //				VcnId:                  pulumi.StringRef(testVcn.Id),
 //			}, nil)
 //			if err != nil {

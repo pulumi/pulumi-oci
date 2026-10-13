@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testConnection = new Connection("testConnection", ConnectionArgs.builder()
  *             .connectionType(connectionConnectionType)
- *             .projectId(testProject.id())
+ *             .projectId(testProject.get("id"))
  *             .accessToken(connectionAccessToken)
  *             .appPassword(connectionAppPassword)
  *             .baseUrl(connectionBaseUrl)
@@ -61,7 +61,7 @@ import javax.annotation.Nullable;
  *             .displayName(connectionDisplayName)
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .tlsVerifyConfig(ConnectionTlsVerifyConfigArgs.builder()
- *                 .caCertificateBundleId(testCaCertificateBundle.id())
+ *                 .caCertificateBundleId(testCaCertificateBundle.get("id"))
  *                 .tlsVerifyMode(connectionTlsVerifyConfigTlsVerifyMode)
  *                 .build())
  *             .username(connectionUsername)

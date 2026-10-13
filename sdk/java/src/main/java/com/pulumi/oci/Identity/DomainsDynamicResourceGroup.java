@@ -61,7 +61,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testDynamicResourceGroup = new DomainsDynamicResourceGroup("testDynamicResourceGroup", DomainsDynamicResourceGroupArgs.builder()
  *             .displayName(dynamicResourceGroupDisplayName)
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .matchingRule(dynamicResourceGroupMatchingRule)
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:DynamicResourceGroup")
  *             .attributeSets()

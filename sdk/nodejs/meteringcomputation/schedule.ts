@@ -55,7 +55,7 @@ import * as utilities from "../utilities";
  *             namespace: scheduleQueryPropertiesGroupByTagNamespace,
  *             value: scheduleQueryPropertiesGroupByTagValue,
  *         }],
- *         isAggregateByTime: scheduleQueryPropertiesIsAggregateByTime === "true",
+ *         isAggregateByTime: scheduleQueryPropertiesIsAggregateByTime,
  *         queryType: scheduleQueryPropertiesQueryType,
  *     },
  *     savedReportId: testReport.id,

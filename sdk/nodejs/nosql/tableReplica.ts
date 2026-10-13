@@ -22,8 +22,8 @@ import * as utilities from "../utilities";
  *     region: tableReplicaRegion,
  *     tableNameOrId: testTableNameOr.id,
  *     compartmentId: compartmentId,
- *     maxReadUnits: Number(tableReplicaMaxReadUnits),
- *     maxWriteUnits: Number(tableReplicaMaxWriteUnits),
+ *     maxReadUnits: tableReplicaMaxReadUnits,
+ *     maxWriteUnits: tableReplicaMaxWriteUnits,
  * });
  * ```
  *

@@ -682,7 +682,7 @@ class DatabaseToolsMcpServer(pulumi.CustomResource):
                 },
             },
             type=database_tools_mcp_server_type,
-            access_token_expiry_in_seconds=int(database_tools_mcp_server_access_token_expiry_in_seconds),
+            access_token_expiry_in_seconds=database_tools_mcp_server_access_token_expiry_in_seconds,
             custom_roles=[{
                 "description": database_tools_mcp_server_custom_roles_description,
                 "display_name": database_tools_mcp_server_custom_roles_display_name,
@@ -700,7 +700,7 @@ class DatabaseToolsMcpServer(pulumi.CustomResource):
                 "related_resource_id": test_resource["id"],
                 "time_created": database_tools_mcp_server_locks_time_created,
             }],
-            refresh_token_expiry_in_seconds=int(database_tools_mcp_server_refresh_token_expiry_in_seconds),
+            refresh_token_expiry_in_seconds=database_tools_mcp_server_refresh_token_expiry_in_seconds,
             runtime_identity=database_tools_mcp_server_runtime_identity)
         ```
 
@@ -766,7 +766,7 @@ class DatabaseToolsMcpServer(pulumi.CustomResource):
                 },
             },
             type=database_tools_mcp_server_type,
-            access_token_expiry_in_seconds=int(database_tools_mcp_server_access_token_expiry_in_seconds),
+            access_token_expiry_in_seconds=database_tools_mcp_server_access_token_expiry_in_seconds,
             custom_roles=[{
                 "description": database_tools_mcp_server_custom_roles_description,
                 "display_name": database_tools_mcp_server_custom_roles_display_name,
@@ -784,7 +784,7 @@ class DatabaseToolsMcpServer(pulumi.CustomResource):
                 "related_resource_id": test_resource["id"],
                 "time_created": database_tools_mcp_server_locks_time_created,
             }],
-            refresh_token_expiry_in_seconds=int(database_tools_mcp_server_refresh_token_expiry_in_seconds),
+            refresh_token_expiry_in_seconds=database_tools_mcp_server_refresh_token_expiry_in_seconds,
             runtime_identity=database_tools_mcp_server_runtime_identity)
         ```
 

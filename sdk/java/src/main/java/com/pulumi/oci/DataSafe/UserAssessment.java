@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testUserAssessment = new UserAssessment("testUserAssessment", UserAssessmentArgs.builder()
  *             .compartmentId(compartmentId)
- *             .targetId(testTarget.id())
+ *             .targetId(testTarget.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(userAssessmentDescription)
  *             .displayName(userAssessmentDisplayName)

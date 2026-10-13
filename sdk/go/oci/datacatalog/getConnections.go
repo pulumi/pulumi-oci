@@ -36,7 +36,7 @@ import (
 //				DisplayName:         pulumi.StringRef(connectionDisplayName),
 //				DisplayNameContains: pulumi.StringRef(connectionDisplayNameContains),
 //				ExternalKey:         pulumi.StringRef(connectionExternalKey),
-//				Fields:              pulumi.ToArray(connectionFields),
+//				Fields:              connectionFields,
 //				IsDefault:           pulumi.BoolRef(connectionIsDefault),
 //				State:               pulumi.StringRef(connectionState),
 //				TimeCreated:         pulumi.StringRef(connectionTimeCreated),

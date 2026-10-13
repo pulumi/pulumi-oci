@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testWorkRequestRerunManagement = new WorkRequestRerunManagement("testWorkRequestRerunManagement", WorkRequestRerunManagementArgs.builder()
- *             .workRequestId(testWorkRequest.id())
+ *             .workRequestId(testWorkRequest.get("id"))
  *             .managedInstances(workRequestRerunManagementManagedInstances)
  *             .workRequestDetails(WorkRequestRerunManagementWorkRequestDetailsArgs.builder()
  *                 .description(workRequestRerunManagementWorkRequestDetailsDescription)

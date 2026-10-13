@@ -128,7 +128,7 @@ def get_audit_profile_analytic(access_level: Optional[_builtins.str] = None,
 
     test_audit_profile_analytic = oci.datasafe.get_audit_profile_analytic(compartment_id=compartment_id,
         access_level=audit_profile_analytic_access_level,
-        compartment_id_in_subtree=audit_profile_analytic_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=audit_profile_analytic_compartment_id_in_subtree,
         group_bies=audit_profile_analytic_group_by)
     ```
 
@@ -183,7 +183,7 @@ def get_audit_profile_analytic_output(access_level: pulumi.Input[Optional[Option
 
     test_audit_profile_analytic = oci.datasafe.get_audit_profile_analytic(compartment_id=compartment_id,
         access_level=audit_profile_analytic_access_level,
-        compartment_id_in_subtree=audit_profile_analytic_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=audit_profile_analytic_compartment_id_in_subtree,
         group_bies=audit_profile_analytic_group_by)
     ```
 

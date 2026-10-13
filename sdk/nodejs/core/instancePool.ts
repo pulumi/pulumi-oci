@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *             ipv6addressIpv6subnetCidrPairDetails: [{
  *                 ipv6subnetCidr: instancePoolPlacementConfigurationsPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
  *             }],
- *             isAssignIpv6ip: instancePoolPlacementConfigurationsPrimaryVnicSubnetsIsAssignIpv6ip === "true",
+ *             isAssignIpv6ip: instancePoolPlacementConfigurationsPrimaryVnicSubnetsIsAssignIpv6ip,
  *         },
  *         secondaryVnicSubnets: [{
  *             subnetId: testSubnet.id,
@@ -45,10 +45,10 @@ import * as utilities from "../utilities";
  *             ipv6addressIpv6subnetCidrPairDetails: [{
  *                 ipv6subnetCidr: instancePoolPlacementConfigurationsSecondaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
  *             }],
- *             isAssignIpv6ip: instancePoolPlacementConfigurationsSecondaryVnicSubnetsIsAssignIpv6ip === "true",
+ *             isAssignIpv6ip: instancePoolPlacementConfigurationsSecondaryVnicSubnetsIsAssignIpv6ip,
  *         }],
  *     }],
- *     size: Number(instancePoolSize),
+ *     size: instancePoolSize,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -61,19 +61,19 @@ import * as utilities from "../utilities";
  *     lifecycleManagement: {
  *         lifecycleActions: {
  *             preTermination: {
- *                 isEnabled: instancePoolLifecycleManagementLifecycleActionsPreTerminationIsEnabled === "true",
+ *                 isEnabled: instancePoolLifecycleManagementLifecycleActionsPreTerminationIsEnabled,
  *                 onTimeout: {
  *                     preserveBlockVolumeMode: instancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutPreserveBlockVolumeMode,
  *                     preserveBootVolumeMode: instancePoolLifecycleManagementLifecycleActionsPreTerminationOnTimeoutPreserveBootVolumeMode,
  *                 },
- *                 timeout: Number(instancePoolLifecycleManagementLifecycleActionsPreTerminationTimeout),
+ *                 timeout: instancePoolLifecycleManagementLifecycleActionsPreTerminationTimeout,
  *             },
  *         },
  *     },
  *     loadBalancers: [{
  *         backendSetName: testBackendSet.name,
  *         loadBalancerId: testLoadBalancer.id,
- *         port: Number(instancePoolLoadBalancersPort),
+ *         port: instancePoolLoadBalancersPort,
  *         vnicSelection: instancePoolLoadBalancersVnicSelection,
  *     }],
  * });

@@ -84,7 +84,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackup = PsqlFunctions.getBackup(GetBackupArgs.builder()
-     *             .backupId(testBackupOciPsqlBackup.id())
+     *             .backupId(testBackupOciPsqlBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -126,7 +126,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackup = PsqlFunctions.getBackup(GetBackupArgs.builder()
-     *             .backupId(testBackupOciPsqlBackup.id())
+     *             .backupId(testBackupOciPsqlBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -168,7 +168,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackup = PsqlFunctions.getBackup(GetBackupArgs.builder()
-     *             .backupId(testBackupOciPsqlBackup.id())
+     *             .backupId(testBackupOciPsqlBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -210,7 +210,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackup = PsqlFunctions.getBackup(GetBackupArgs.builder()
-     *             .backupId(testBackupOciPsqlBackup.id())
+     *             .backupId(testBackupOciPsqlBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -252,7 +252,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackup = PsqlFunctions.getBackup(GetBackupArgs.builder()
-     *             .backupId(testBackupOciPsqlBackup.id())
+     *             .backupId(testBackupOciPsqlBackup.get("id"))
      *             .build());
      * 
      *     }
@@ -294,7 +294,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = PsqlFunctions.getBackups(GetBackupsArgs.builder()
-     *             .backupId(testBackup.id())
+     *             .backupId(testBackup.get("id"))
      *             .backupSourceType(backupBackupSourceType)
      *             .compartmentId(compartmentId)
      *             .displayName(backupDisplayName)
@@ -343,7 +343,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = PsqlFunctions.getBackups(GetBackupsArgs.builder()
-     *             .backupId(testBackup.id())
+     *             .backupId(testBackup.get("id"))
      *             .backupSourceType(backupBackupSourceType)
      *             .compartmentId(compartmentId)
      *             .displayName(backupDisplayName)
@@ -392,7 +392,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = PsqlFunctions.getBackups(GetBackupsArgs.builder()
-     *             .backupId(testBackup.id())
+     *             .backupId(testBackup.get("id"))
      *             .backupSourceType(backupBackupSourceType)
      *             .compartmentId(compartmentId)
      *             .displayName(backupDisplayName)
@@ -441,7 +441,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = PsqlFunctions.getBackups(GetBackupsArgs.builder()
-     *             .backupId(testBackup.id())
+     *             .backupId(testBackup.get("id"))
      *             .backupSourceType(backupBackupSourceType)
      *             .compartmentId(compartmentId)
      *             .displayName(backupDisplayName)
@@ -490,7 +490,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = PsqlFunctions.getBackups(GetBackupsArgs.builder()
-     *             .backupId(testBackup.id())
+     *             .backupId(testBackup.get("id"))
      *             .backupSourceType(backupBackupSourceType)
      *             .compartmentId(compartmentId)
      *             .displayName(backupDisplayName)
@@ -539,7 +539,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = PsqlFunctions.getBackups(GetBackupsArgs.builder()
-     *             .backupId(testBackup.id())
+     *             .backupId(testBackup.get("id"))
      *             .backupSourceType(backupBackupSourceType)
      *             .compartmentId(compartmentId)
      *             .displayName(backupDisplayName)
@@ -588,7 +588,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackups = PsqlFunctions.getBackups(GetBackupsArgs.builder()
-     *             .backupId(testBackup.id())
+     *             .backupId(testBackup.get("id"))
      *             .backupSourceType(backupBackupSourceType)
      *             .compartmentId(compartmentId)
      *             .displayName(backupDisplayName)
@@ -637,7 +637,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = PsqlFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .configurationId(testConfigurationOciPsqlConfiguration.id())
+     *             .configurationId(testConfigurationOciPsqlConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -679,7 +679,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = PsqlFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .configurationId(testConfigurationOciPsqlConfiguration.id())
+     *             .configurationId(testConfigurationOciPsqlConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -721,7 +721,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = PsqlFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .configurationId(testConfigurationOciPsqlConfiguration.id())
+     *             .configurationId(testConfigurationOciPsqlConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -763,7 +763,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = PsqlFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .configurationId(testConfigurationOciPsqlConfiguration.id())
+     *             .configurationId(testConfigurationOciPsqlConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -805,7 +805,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = PsqlFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .configurationId(testConfigurationOciPsqlConfiguration.id())
+     *             .configurationId(testConfigurationOciPsqlConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -849,7 +849,7 @@ public final class PsqlFunctions {
      *         final var testConfigurations = PsqlFunctions.getConfigurations(GetConfigurationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .configType(configurationConfigType)
-     *             .configurationId(testConfiguration.id())
+     *             .configurationId(testConfiguration.get("id"))
      *             .dbVersion(configurationDbVersion)
      *             .displayName(configurationDisplayName)
      *             .instanceMemorySizeInGbs(configurationInstanceMemorySizeInGbs)
@@ -899,7 +899,7 @@ public final class PsqlFunctions {
      *         final var testConfigurations = PsqlFunctions.getConfigurations(GetConfigurationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .configType(configurationConfigType)
-     *             .configurationId(testConfiguration.id())
+     *             .configurationId(testConfiguration.get("id"))
      *             .dbVersion(configurationDbVersion)
      *             .displayName(configurationDisplayName)
      *             .instanceMemorySizeInGbs(configurationInstanceMemorySizeInGbs)
@@ -949,7 +949,7 @@ public final class PsqlFunctions {
      *         final var testConfigurations = PsqlFunctions.getConfigurations(GetConfigurationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .configType(configurationConfigType)
-     *             .configurationId(testConfiguration.id())
+     *             .configurationId(testConfiguration.get("id"))
      *             .dbVersion(configurationDbVersion)
      *             .displayName(configurationDisplayName)
      *             .instanceMemorySizeInGbs(configurationInstanceMemorySizeInGbs)
@@ -999,7 +999,7 @@ public final class PsqlFunctions {
      *         final var testConfigurations = PsqlFunctions.getConfigurations(GetConfigurationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .configType(configurationConfigType)
-     *             .configurationId(testConfiguration.id())
+     *             .configurationId(testConfiguration.get("id"))
      *             .dbVersion(configurationDbVersion)
      *             .displayName(configurationDisplayName)
      *             .instanceMemorySizeInGbs(configurationInstanceMemorySizeInGbs)
@@ -1049,7 +1049,7 @@ public final class PsqlFunctions {
      *         final var testConfigurations = PsqlFunctions.getConfigurations(GetConfigurationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .configType(configurationConfigType)
-     *             .configurationId(testConfiguration.id())
+     *             .configurationId(testConfiguration.get("id"))
      *             .dbVersion(configurationDbVersion)
      *             .displayName(configurationDisplayName)
      *             .instanceMemorySizeInGbs(configurationInstanceMemorySizeInGbs)
@@ -1099,7 +1099,7 @@ public final class PsqlFunctions {
      *         final var testConfigurations = PsqlFunctions.getConfigurations(GetConfigurationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .configType(configurationConfigType)
-     *             .configurationId(testConfiguration.id())
+     *             .configurationId(testConfiguration.get("id"))
      *             .dbVersion(configurationDbVersion)
      *             .displayName(configurationDisplayName)
      *             .instanceMemorySizeInGbs(configurationInstanceMemorySizeInGbs)
@@ -1149,7 +1149,7 @@ public final class PsqlFunctions {
      *         final var testConfigurations = PsqlFunctions.getConfigurations(GetConfigurationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .configType(configurationConfigType)
-     *             .configurationId(testConfiguration.id())
+     *             .configurationId(testConfiguration.get("id"))
      *             .dbVersion(configurationDbVersion)
      *             .displayName(configurationDisplayName)
      *             .instanceMemorySizeInGbs(configurationInstanceMemorySizeInGbs)
@@ -1197,7 +1197,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystem = PsqlFunctions.getDbSystem(GetDbSystemArgs.builder()
-     *             .dbSystemId(testDbSystemOciPsqlDbSystem.id())
+     *             .dbSystemId(testDbSystemOciPsqlDbSystem.get("id"))
      *             .excludedFields(dbSystemExcludedFields)
      *             .build());
      * 
@@ -1240,7 +1240,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystem = PsqlFunctions.getDbSystem(GetDbSystemArgs.builder()
-     *             .dbSystemId(testDbSystemOciPsqlDbSystem.id())
+     *             .dbSystemId(testDbSystemOciPsqlDbSystem.get("id"))
      *             .excludedFields(dbSystemExcludedFields)
      *             .build());
      * 
@@ -1283,7 +1283,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystem = PsqlFunctions.getDbSystem(GetDbSystemArgs.builder()
-     *             .dbSystemId(testDbSystemOciPsqlDbSystem.id())
+     *             .dbSystemId(testDbSystemOciPsqlDbSystem.get("id"))
      *             .excludedFields(dbSystemExcludedFields)
      *             .build());
      * 
@@ -1326,7 +1326,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystem = PsqlFunctions.getDbSystem(GetDbSystemArgs.builder()
-     *             .dbSystemId(testDbSystemOciPsqlDbSystem.id())
+     *             .dbSystemId(testDbSystemOciPsqlDbSystem.get("id"))
      *             .excludedFields(dbSystemExcludedFields)
      *             .build());
      * 
@@ -1369,7 +1369,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystem = PsqlFunctions.getDbSystem(GetDbSystemArgs.builder()
-     *             .dbSystemId(testDbSystemOciPsqlDbSystem.id())
+     *             .dbSystemId(testDbSystemOciPsqlDbSystem.get("id"))
      *             .excludedFields(dbSystemExcludedFields)
      *             .build());
      * 
@@ -1412,7 +1412,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemConnectionDetail = PsqlFunctions.getDbSystemConnectionDetail(GetDbSystemConnectionDetailArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -1454,7 +1454,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemConnectionDetail = PsqlFunctions.getDbSystemConnectionDetail(GetDbSystemConnectionDetailArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -1496,7 +1496,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemConnectionDetail = PsqlFunctions.getDbSystemConnectionDetail(GetDbSystemConnectionDetailArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -1538,7 +1538,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemConnectionDetail = PsqlFunctions.getDbSystemConnectionDetail(GetDbSystemConnectionDetailArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -1580,7 +1580,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemConnectionDetail = PsqlFunctions.getDbSystemConnectionDetail(GetDbSystemConnectionDetailArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -1622,7 +1622,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemPitrDetail = PsqlFunctions.getDbSystemPitrDetail(GetDbSystemPitrDetailArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -1664,7 +1664,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemPitrDetail = PsqlFunctions.getDbSystemPitrDetail(GetDbSystemPitrDetailArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -1706,7 +1706,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemPitrDetail = PsqlFunctions.getDbSystemPitrDetail(GetDbSystemPitrDetailArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -1748,7 +1748,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemPitrDetail = PsqlFunctions.getDbSystemPitrDetail(GetDbSystemPitrDetailArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -1790,7 +1790,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemPitrDetail = PsqlFunctions.getDbSystemPitrDetail(GetDbSystemPitrDetailArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -1832,7 +1832,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemPrimaryDbInstance = PsqlFunctions.getDbSystemPrimaryDbInstance(GetDbSystemPrimaryDbInstanceArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -1874,7 +1874,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemPrimaryDbInstance = PsqlFunctions.getDbSystemPrimaryDbInstance(GetDbSystemPrimaryDbInstanceArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -1916,7 +1916,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemPrimaryDbInstance = PsqlFunctions.getDbSystemPrimaryDbInstance(GetDbSystemPrimaryDbInstanceArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -1958,7 +1958,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemPrimaryDbInstance = PsqlFunctions.getDbSystemPrimaryDbInstance(GetDbSystemPrimaryDbInstanceArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -2000,7 +2000,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemPrimaryDbInstance = PsqlFunctions.getDbSystemPrimaryDbInstance(GetDbSystemPrimaryDbInstanceArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -2042,7 +2042,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemReplicas = PsqlFunctions.getDbSystemReplicas(GetDbSystemReplicasArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -2084,7 +2084,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemReplicas = PsqlFunctions.getDbSystemReplicas(GetDbSystemReplicasArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -2126,7 +2126,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemReplicas = PsqlFunctions.getDbSystemReplicas(GetDbSystemReplicasArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -2168,7 +2168,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemReplicas = PsqlFunctions.getDbSystemReplicas(GetDbSystemReplicasArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -2210,7 +2210,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDbSystemReplicas = PsqlFunctions.getDbSystemReplicas(GetDbSystemReplicasArgs.builder()
-     *             .dbSystemId(testDbSystem.id())
+     *             .dbSystemId(testDbSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -2574,7 +2574,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDefaultConfiguration = PsqlFunctions.getDefaultConfiguration(GetDefaultConfigurationArgs.builder()
-     *             .defaultConfigurationId(testDefaultConfigurationOciPsqlDefaultConfiguration.id())
+     *             .defaultConfigurationId(testDefaultConfigurationOciPsqlDefaultConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -2616,7 +2616,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDefaultConfiguration = PsqlFunctions.getDefaultConfiguration(GetDefaultConfigurationArgs.builder()
-     *             .defaultConfigurationId(testDefaultConfigurationOciPsqlDefaultConfiguration.id())
+     *             .defaultConfigurationId(testDefaultConfigurationOciPsqlDefaultConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -2658,7 +2658,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDefaultConfiguration = PsqlFunctions.getDefaultConfiguration(GetDefaultConfigurationArgs.builder()
-     *             .defaultConfigurationId(testDefaultConfigurationOciPsqlDefaultConfiguration.id())
+     *             .defaultConfigurationId(testDefaultConfigurationOciPsqlDefaultConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -2700,7 +2700,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDefaultConfiguration = PsqlFunctions.getDefaultConfiguration(GetDefaultConfigurationArgs.builder()
-     *             .defaultConfigurationId(testDefaultConfigurationOciPsqlDefaultConfiguration.id())
+     *             .defaultConfigurationId(testDefaultConfigurationOciPsqlDefaultConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -2742,7 +2742,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDefaultConfiguration = PsqlFunctions.getDefaultConfiguration(GetDefaultConfigurationArgs.builder()
-     *             .defaultConfigurationId(testDefaultConfigurationOciPsqlDefaultConfiguration.id())
+     *             .defaultConfigurationId(testDefaultConfigurationOciPsqlDefaultConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -2784,7 +2784,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDefaultConfigurations = PsqlFunctions.getDefaultConfigurations(GetDefaultConfigurationsArgs.builder()
-     *             .configurationId(testConfiguration.id())
+     *             .configurationId(testConfiguration.get("id"))
      *             .dbVersion(defaultConfigurationDbVersion)
      *             .displayName(defaultConfigurationDisplayName)
      *             .instanceMemorySizeInGbs(defaultConfigurationInstanceMemorySizeInGbs)
@@ -2832,7 +2832,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDefaultConfigurations = PsqlFunctions.getDefaultConfigurations(GetDefaultConfigurationsArgs.builder()
-     *             .configurationId(testConfiguration.id())
+     *             .configurationId(testConfiguration.get("id"))
      *             .dbVersion(defaultConfigurationDbVersion)
      *             .displayName(defaultConfigurationDisplayName)
      *             .instanceMemorySizeInGbs(defaultConfigurationInstanceMemorySizeInGbs)
@@ -2880,7 +2880,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDefaultConfigurations = PsqlFunctions.getDefaultConfigurations(GetDefaultConfigurationsArgs.builder()
-     *             .configurationId(testConfiguration.id())
+     *             .configurationId(testConfiguration.get("id"))
      *             .dbVersion(defaultConfigurationDbVersion)
      *             .displayName(defaultConfigurationDisplayName)
      *             .instanceMemorySizeInGbs(defaultConfigurationInstanceMemorySizeInGbs)
@@ -2928,7 +2928,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDefaultConfigurations = PsqlFunctions.getDefaultConfigurations(GetDefaultConfigurationsArgs.builder()
-     *             .configurationId(testConfiguration.id())
+     *             .configurationId(testConfiguration.get("id"))
      *             .dbVersion(defaultConfigurationDbVersion)
      *             .displayName(defaultConfigurationDisplayName)
      *             .instanceMemorySizeInGbs(defaultConfigurationInstanceMemorySizeInGbs)
@@ -2976,7 +2976,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDefaultConfigurations = PsqlFunctions.getDefaultConfigurations(GetDefaultConfigurationsArgs.builder()
-     *             .configurationId(testConfiguration.id())
+     *             .configurationId(testConfiguration.get("id"))
      *             .dbVersion(defaultConfigurationDbVersion)
      *             .displayName(defaultConfigurationDisplayName)
      *             .instanceMemorySizeInGbs(defaultConfigurationInstanceMemorySizeInGbs)
@@ -3024,7 +3024,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDefaultConfigurations = PsqlFunctions.getDefaultConfigurations(GetDefaultConfigurationsArgs.builder()
-     *             .configurationId(testConfiguration.id())
+     *             .configurationId(testConfiguration.get("id"))
      *             .dbVersion(defaultConfigurationDbVersion)
      *             .displayName(defaultConfigurationDisplayName)
      *             .instanceMemorySizeInGbs(defaultConfigurationInstanceMemorySizeInGbs)
@@ -3072,7 +3072,7 @@ public final class PsqlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDefaultConfigurations = PsqlFunctions.getDefaultConfigurations(GetDefaultConfigurationsArgs.builder()
-     *             .configurationId(testConfiguration.id())
+     *             .configurationId(testConfiguration.get("id"))
      *             .dbVersion(defaultConfigurationDbVersion)
      *             .displayName(defaultConfigurationDisplayName)
      *             .instanceMemorySizeInGbs(defaultConfigurationInstanceMemorySizeInGbs)

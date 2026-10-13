@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBdsInstanceNodeBackupConfiguration = new BdsInstanceNodeBackupConfiguration("testBdsInstanceNodeBackupConfiguration", BdsInstanceNodeBackupConfigurationArgs.builder()
- *             .bdsInstanceId(testBdsInstance.id())
+ *             .bdsInstanceId(testBdsInstance.get("id"))
  *             .levelTypeDetails(BdsInstanceNodeBackupConfigurationLevelTypeDetailsArgs.builder()
  *                 .levelType(bdsInstanceNodeBackupConfigurationLevelTypeDetailsLevelType)
  *                 .nodeHostName(bdsInstanceNodeBackupConfigurationLevelTypeDetailsNodeHostName)

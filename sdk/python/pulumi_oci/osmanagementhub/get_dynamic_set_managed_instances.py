@@ -143,7 +143,7 @@ def get_dynamic_set_managed_instances(compartment_id: Optional[_builtins.str] = 
 
     test_dynamic_set_managed_instances = oci.osmanagementhub.get_dynamic_set_managed_instances(dynamic_set_id=test_dynamic_set["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=dynamic_set_managed_instance_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=dynamic_set_managed_instance_compartment_id_in_subtree,
         display_name=dynamic_set_managed_instance_display_name,
         display_name_contains=dynamic_set_managed_instance_display_name_contains)
     ```
@@ -194,7 +194,7 @@ def get_dynamic_set_managed_instances_output(compartment_id: pulumi.Input[Option
 
     test_dynamic_set_managed_instances = oci.osmanagementhub.get_dynamic_set_managed_instances(dynamic_set_id=test_dynamic_set["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=dynamic_set_managed_instance_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=dynamic_set_managed_instance_compartment_id_in_subtree,
         display_name=dynamic_set_managed_instance_display_name,
         display_name_contains=dynamic_set_managed_instance_display_name_contains)
     ```

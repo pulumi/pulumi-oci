@@ -47,9 +47,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAnalyticsInstanceResourceGroup = new AnalyticsInstanceResourceGroup("testAnalyticsInstanceResourceGroup", AnalyticsInstanceResourceGroupArgs.builder()
- *             .analyticsInstanceId(testAnalyticsInstance.id())
+ *             .analyticsInstanceId(testAnalyticsInstance.get("id"))
  *             .capacity(analyticsInstanceResourceGroupCapacity)
- *             .resourceName(testResource.name())
+ *             .resourceName(testResource.get("name"))
  *             .description(analyticsInstanceResourceGroupDescription)
  *             .displayName(analyticsInstanceResourceGroupDisplayName)
  *             .build());

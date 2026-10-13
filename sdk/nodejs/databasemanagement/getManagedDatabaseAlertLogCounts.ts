@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testManagedDatabaseAlertLogCounts = oci.databasemanagement.getManagedDatabaseAlertLogCounts({
  *     managedDatabaseId: testManagedDatabase.id,
  *     groupBy: managedDatabaseAlertLogCountGroupBy,
- *     isRegularExpression: managedDatabaseAlertLogCountIsRegularExpression === "true",
+ *     isRegularExpression: managedDatabaseAlertLogCountIsRegularExpression,
  *     levelFilter: managedDatabaseAlertLogCountLevelFilter,
  *     logSearchText: managedDatabaseAlertLogCountLogSearchText,
  *     timeGreaterThanOrEqualTo: managedDatabaseAlertLogCountTimeGreaterThanOrEqualTo,
@@ -122,7 +122,7 @@ export interface GetManagedDatabaseAlertLogCountsResult {
  * const testManagedDatabaseAlertLogCounts = oci.databasemanagement.getManagedDatabaseAlertLogCounts({
  *     managedDatabaseId: testManagedDatabase.id,
  *     groupBy: managedDatabaseAlertLogCountGroupBy,
- *     isRegularExpression: managedDatabaseAlertLogCountIsRegularExpression === "true",
+ *     isRegularExpression: managedDatabaseAlertLogCountIsRegularExpression,
  *     levelFilter: managedDatabaseAlertLogCountLevelFilter,
  *     logSearchText: managedDatabaseAlertLogCountLogSearchText,
  *     timeGreaterThanOrEqualTo: managedDatabaseAlertLogCountTimeGreaterThanOrEqualTo,

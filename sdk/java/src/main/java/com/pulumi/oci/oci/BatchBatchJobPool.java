@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBatchJobPool = new BatchBatchJobPool("testBatchJobPool", BatchBatchJobPoolArgs.builder()
- *             .batchContextId(testBatchContext.id())
+ *             .batchContextId(testBatchContext.get("id"))
  *             .compartmentId(compartmentId)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(batchJobPoolDescription)

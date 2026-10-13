@@ -72,7 +72,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccessRequest = OperatorAccessControlFunctions.getAccessRequest(GetAccessRequestArgs.builder()
-     *             .accessRequestId(testAccessRequestOciOperatorAccessControlAccessRequest.id())
+     *             .accessRequestId(testAccessRequestOciOperatorAccessControlAccessRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -114,7 +114,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccessRequest = OperatorAccessControlFunctions.getAccessRequest(GetAccessRequestArgs.builder()
-     *             .accessRequestId(testAccessRequestOciOperatorAccessControlAccessRequest.id())
+     *             .accessRequestId(testAccessRequestOciOperatorAccessControlAccessRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -156,7 +156,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccessRequest = OperatorAccessControlFunctions.getAccessRequest(GetAccessRequestArgs.builder()
-     *             .accessRequestId(testAccessRequestOciOperatorAccessControlAccessRequest.id())
+     *             .accessRequestId(testAccessRequestOciOperatorAccessControlAccessRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -198,7 +198,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccessRequest = OperatorAccessControlFunctions.getAccessRequest(GetAccessRequestArgs.builder()
-     *             .accessRequestId(testAccessRequestOciOperatorAccessControlAccessRequest.id())
+     *             .accessRequestId(testAccessRequestOciOperatorAccessControlAccessRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -240,7 +240,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccessRequest = OperatorAccessControlFunctions.getAccessRequest(GetAccessRequestArgs.builder()
-     *             .accessRequestId(testAccessRequestOciOperatorAccessControlAccessRequest.id())
+     *             .accessRequestId(testAccessRequestOciOperatorAccessControlAccessRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -282,7 +282,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccessRequestAuditLogReport = OperatorAccessControlFunctions.getAccessRequestAuditLogReport(GetAccessRequestAuditLogReportArgs.builder()
-     *             .accessRequestId(testAccessRequest.id())
+     *             .accessRequestId(testAccessRequest.get("id"))
      *             .enableProcessTree(accessRequestAuditLogReportEnableProcessTree)
      *             .build());
      * 
@@ -325,7 +325,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccessRequestAuditLogReport = OperatorAccessControlFunctions.getAccessRequestAuditLogReport(GetAccessRequestAuditLogReportArgs.builder()
-     *             .accessRequestId(testAccessRequest.id())
+     *             .accessRequestId(testAccessRequest.get("id"))
      *             .enableProcessTree(accessRequestAuditLogReportEnableProcessTree)
      *             .build());
      * 
@@ -368,7 +368,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccessRequestAuditLogReport = OperatorAccessControlFunctions.getAccessRequestAuditLogReport(GetAccessRequestAuditLogReportArgs.builder()
-     *             .accessRequestId(testAccessRequest.id())
+     *             .accessRequestId(testAccessRequest.get("id"))
      *             .enableProcessTree(accessRequestAuditLogReportEnableProcessTree)
      *             .build());
      * 
@@ -411,7 +411,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccessRequestAuditLogReport = OperatorAccessControlFunctions.getAccessRequestAuditLogReport(GetAccessRequestAuditLogReportArgs.builder()
-     *             .accessRequestId(testAccessRequest.id())
+     *             .accessRequestId(testAccessRequest.get("id"))
      *             .enableProcessTree(accessRequestAuditLogReportEnableProcessTree)
      *             .build());
      * 
@@ -454,7 +454,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccessRequestAuditLogReport = OperatorAccessControlFunctions.getAccessRequestAuditLogReport(GetAccessRequestAuditLogReportArgs.builder()
-     *             .accessRequestId(testAccessRequest.id())
+     *             .accessRequestId(testAccessRequest.get("id"))
      *             .enableProcessTree(accessRequestAuditLogReportEnableProcessTree)
      *             .build());
      * 
@@ -497,7 +497,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccessRequestHistory = OperatorAccessControlFunctions.getAccessRequestHistory(GetAccessRequestHistoryArgs.builder()
-     *             .accessRequestId(testAccessRequest.id())
+     *             .accessRequestId(testAccessRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -539,7 +539,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccessRequestHistory = OperatorAccessControlFunctions.getAccessRequestHistory(GetAccessRequestHistoryArgs.builder()
-     *             .accessRequestId(testAccessRequest.id())
+     *             .accessRequestId(testAccessRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -581,7 +581,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccessRequestHistory = OperatorAccessControlFunctions.getAccessRequestHistory(GetAccessRequestHistoryArgs.builder()
-     *             .accessRequestId(testAccessRequest.id())
+     *             .accessRequestId(testAccessRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -623,7 +623,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccessRequestHistory = OperatorAccessControlFunctions.getAccessRequestHistory(GetAccessRequestHistoryArgs.builder()
-     *             .accessRequestId(testAccessRequest.id())
+     *             .accessRequestId(testAccessRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -665,7 +665,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAccessRequestHistory = OperatorAccessControlFunctions.getAccessRequestHistory(GetAccessRequestHistoryArgs.builder()
-     *             .accessRequestId(testAccessRequest.id())
+     *             .accessRequestId(testAccessRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -942,7 +942,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperatorAction = OperatorAccessControlFunctions.getAction(GetActionArgs.builder()
-     *             .operatorActionId(testOperatorActionOciOperatorAccessControlOperatorAction.id())
+     *             .operatorActionId(testOperatorActionOciOperatorAccessControlOperatorAction.get("id"))
      *             .build());
      * 
      *     }
@@ -984,7 +984,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperatorAction = OperatorAccessControlFunctions.getAction(GetActionArgs.builder()
-     *             .operatorActionId(testOperatorActionOciOperatorAccessControlOperatorAction.id())
+     *             .operatorActionId(testOperatorActionOciOperatorAccessControlOperatorAction.get("id"))
      *             .build());
      * 
      *     }
@@ -1026,7 +1026,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperatorAction = OperatorAccessControlFunctions.getAction(GetActionArgs.builder()
-     *             .operatorActionId(testOperatorActionOciOperatorAccessControlOperatorAction.id())
+     *             .operatorActionId(testOperatorActionOciOperatorAccessControlOperatorAction.get("id"))
      *             .build());
      * 
      *     }
@@ -1068,7 +1068,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperatorAction = OperatorAccessControlFunctions.getAction(GetActionArgs.builder()
-     *             .operatorActionId(testOperatorActionOciOperatorAccessControlOperatorAction.id())
+     *             .operatorActionId(testOperatorActionOciOperatorAccessControlOperatorAction.get("id"))
      *             .build());
      * 
      *     }
@@ -1110,7 +1110,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperatorAction = OperatorAccessControlFunctions.getAction(GetActionArgs.builder()
-     *             .operatorActionId(testOperatorActionOciOperatorAccessControlOperatorAction.id())
+     *             .operatorActionId(testOperatorActionOciOperatorAccessControlOperatorAction.get("id"))
      *             .build());
      * 
      *     }
@@ -1377,7 +1377,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperatorControl = OperatorAccessControlFunctions.getControl(GetControlArgs.builder()
-     *             .operatorControlId(testOperatorControlOciOperatorAccessControlOperatorControl.id())
+     *             .operatorControlId(testOperatorControlOciOperatorAccessControlOperatorControl.get("id"))
      *             .build());
      * 
      *     }
@@ -1419,7 +1419,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperatorControl = OperatorAccessControlFunctions.getControl(GetControlArgs.builder()
-     *             .operatorControlId(testOperatorControlOciOperatorAccessControlOperatorControl.id())
+     *             .operatorControlId(testOperatorControlOciOperatorAccessControlOperatorControl.get("id"))
      *             .build());
      * 
      *     }
@@ -1461,7 +1461,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperatorControl = OperatorAccessControlFunctions.getControl(GetControlArgs.builder()
-     *             .operatorControlId(testOperatorControlOciOperatorAccessControlOperatorControl.id())
+     *             .operatorControlId(testOperatorControlOciOperatorAccessControlOperatorControl.get("id"))
      *             .build());
      * 
      *     }
@@ -1503,7 +1503,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperatorControl = OperatorAccessControlFunctions.getControl(GetControlArgs.builder()
-     *             .operatorControlId(testOperatorControlOciOperatorAccessControlOperatorControl.id())
+     *             .operatorControlId(testOperatorControlOciOperatorAccessControlOperatorControl.get("id"))
      *             .build());
      * 
      *     }
@@ -1545,7 +1545,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperatorControl = OperatorAccessControlFunctions.getControl(GetControlArgs.builder()
-     *             .operatorControlId(testOperatorControlOciOperatorAccessControlOperatorControl.id())
+     *             .operatorControlId(testOperatorControlOciOperatorAccessControlOperatorControl.get("id"))
      *             .build());
      * 
      *     }
@@ -1587,7 +1587,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperatorControlAssignment = OperatorAccessControlFunctions.getControlAssignment(GetControlAssignmentArgs.builder()
-     *             .operatorControlAssignmentId(testOperatorControlAssignmentOciOperatorAccessControlOperatorControlAssignment.id())
+     *             .operatorControlAssignmentId(testOperatorControlAssignmentOciOperatorAccessControlOperatorControlAssignment.get("id"))
      *             .build());
      * 
      *     }
@@ -1629,7 +1629,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperatorControlAssignment = OperatorAccessControlFunctions.getControlAssignment(GetControlAssignmentArgs.builder()
-     *             .operatorControlAssignmentId(testOperatorControlAssignmentOciOperatorAccessControlOperatorControlAssignment.id())
+     *             .operatorControlAssignmentId(testOperatorControlAssignmentOciOperatorAccessControlOperatorControlAssignment.get("id"))
      *             .build());
      * 
      *     }
@@ -1671,7 +1671,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperatorControlAssignment = OperatorAccessControlFunctions.getControlAssignment(GetControlAssignmentArgs.builder()
-     *             .operatorControlAssignmentId(testOperatorControlAssignmentOciOperatorAccessControlOperatorControlAssignment.id())
+     *             .operatorControlAssignmentId(testOperatorControlAssignmentOciOperatorAccessControlOperatorControlAssignment.get("id"))
      *             .build());
      * 
      *     }
@@ -1713,7 +1713,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperatorControlAssignment = OperatorAccessControlFunctions.getControlAssignment(GetControlAssignmentArgs.builder()
-     *             .operatorControlAssignmentId(testOperatorControlAssignmentOciOperatorAccessControlOperatorControlAssignment.id())
+     *             .operatorControlAssignmentId(testOperatorControlAssignmentOciOperatorAccessControlOperatorControlAssignment.get("id"))
      *             .build());
      * 
      *     }
@@ -1755,7 +1755,7 @@ public final class OperatorAccessControlFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperatorControlAssignment = OperatorAccessControlFunctions.getControlAssignment(GetControlAssignmentArgs.builder()
-     *             .operatorControlAssignmentId(testOperatorControlAssignmentOciOperatorAccessControlOperatorControlAssignment.id())
+     *             .operatorControlAssignmentId(testOperatorControlAssignmentOciOperatorAccessControlOperatorControlAssignment.get("id"))
      *             .build());
      * 
      *     }
@@ -1798,7 +1798,7 @@ public final class OperatorAccessControlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testOperatorControlAssignments = OperatorAccessControlFunctions.getControlAssignments(GetControlAssignmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .operatorControlName(testOperatorControl.name())
+     *             .operatorControlName(testOperatorControl.get("name"))
      *             .resourceName(operatorControlAssignmentResourceName)
      *             .resourceType(operatorControlAssignmentResourceType)
      *             .state(operatorControlAssignmentState)
@@ -1844,7 +1844,7 @@ public final class OperatorAccessControlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testOperatorControlAssignments = OperatorAccessControlFunctions.getControlAssignments(GetControlAssignmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .operatorControlName(testOperatorControl.name())
+     *             .operatorControlName(testOperatorControl.get("name"))
      *             .resourceName(operatorControlAssignmentResourceName)
      *             .resourceType(operatorControlAssignmentResourceType)
      *             .state(operatorControlAssignmentState)
@@ -1890,7 +1890,7 @@ public final class OperatorAccessControlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testOperatorControlAssignments = OperatorAccessControlFunctions.getControlAssignments(GetControlAssignmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .operatorControlName(testOperatorControl.name())
+     *             .operatorControlName(testOperatorControl.get("name"))
      *             .resourceName(operatorControlAssignmentResourceName)
      *             .resourceType(operatorControlAssignmentResourceType)
      *             .state(operatorControlAssignmentState)
@@ -1936,7 +1936,7 @@ public final class OperatorAccessControlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testOperatorControlAssignments = OperatorAccessControlFunctions.getControlAssignments(GetControlAssignmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .operatorControlName(testOperatorControl.name())
+     *             .operatorControlName(testOperatorControl.get("name"))
      *             .resourceName(operatorControlAssignmentResourceName)
      *             .resourceType(operatorControlAssignmentResourceType)
      *             .state(operatorControlAssignmentState)
@@ -1982,7 +1982,7 @@ public final class OperatorAccessControlFunctions {
      *     public static void stack(Context ctx) {
      *         final var testOperatorControlAssignments = OperatorAccessControlFunctions.getControlAssignments(GetControlAssignmentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .operatorControlName(testOperatorControl.name())
+     *             .operatorControlName(testOperatorControl.get("name"))
      *             .resourceName(operatorControlAssignmentResourceName)
      *             .resourceType(operatorControlAssignmentResourceType)
      *             .state(operatorControlAssignmentState)

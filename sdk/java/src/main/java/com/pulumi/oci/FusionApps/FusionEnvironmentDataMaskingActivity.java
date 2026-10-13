@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testFusionEnvironmentDataMaskingActivity = new FusionEnvironmentDataMaskingActivity("testFusionEnvironmentDataMaskingActivity", FusionEnvironmentDataMaskingActivityArgs.builder()
- *             .fusionEnvironmentId(testFusionEnvironment.id())
+ *             .fusionEnvironmentId(testFusionEnvironment.get("id"))
  *             .isResumeDataMasking(fusionEnvironmentDataMaskingActivityIsResumeDataMasking)
  *             .build());
  * 

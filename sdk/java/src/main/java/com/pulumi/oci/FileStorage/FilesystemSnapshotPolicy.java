@@ -66,7 +66,7 @@ import javax.annotation.Nullable;
  *             .locks(FilesystemSnapshotPolicyLockArgs.builder()
  *                 .type(filesystemSnapshotPolicyLocksType)
  *                 .message(filesystemSnapshotPolicyLocksMessage)
- *                 .relatedResourceId(testResource.id())
+ *                 .relatedResourceId(testResource.get("id"))
  *                 .timeCreated(filesystemSnapshotPolicyLocksTimeCreated)
  *                 .build())
  *             .policyPrefix(filesystemSnapshotPolicyPolicyPrefix)

@@ -720,10 +720,10 @@ class Bucket(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_bucket_key_enabled=bucket_is_bucket_key_enabled == "true",
+            is_bucket_key_enabled=bucket_is_bucket_key_enabled,
             kms_key_id=test_key["id"],
             metadata=bucket_metadata,
-            object_events_enabled=bucket_object_events_enabled == "true",
+            object_events_enabled=bucket_object_events_enabled,
             storage_tier=bucket_storage_tier,
             retention_rules=[{
                 "display_name": retention_rule_display_name,
@@ -800,10 +800,10 @@ class Bucket(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_bucket_key_enabled=bucket_is_bucket_key_enabled == "true",
+            is_bucket_key_enabled=bucket_is_bucket_key_enabled,
             kms_key_id=test_key["id"],
             metadata=bucket_metadata,
-            object_events_enabled=bucket_object_events_enabled == "true",
+            object_events_enabled=bucket_object_events_enabled,
             storage_tier=bucket_storage_tier,
             retention_rules=[{
                 "display_name": retention_rule_display_name,

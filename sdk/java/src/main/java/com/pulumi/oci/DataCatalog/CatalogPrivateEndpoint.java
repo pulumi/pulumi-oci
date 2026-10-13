@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *         var testCatalogPrivateEndpoint = new CatalogPrivateEndpoint("testCatalogPrivateEndpoint", CatalogPrivateEndpointArgs.builder()
  *             .compartmentId(compartmentId)
  *             .dnsZones(catalogPrivateEndpointDnsZones)
- *             .subnetId(testSubnet.id())
+ *             .subnetId(testSubnet.get("id"))
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .displayName(catalogPrivateEndpointDisplayName)
  *             .freeformTags(Map.of("bar-key", "value"))

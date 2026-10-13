@@ -48,9 +48,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAcceptedAgreement = new AcceptedAgreement("testAcceptedAgreement", AcceptedAgreementArgs.builder()
- *             .agreementId(testAgreement.id())
+ *             .agreementId(testAgreement.get("id"))
  *             .compartmentId(compartmentId)
- *             .listingId(testListing.id())
+ *             .listingId(testListing.get("id"))
  *             .packageVersion(acceptedAgreementPackageVersion)
  *             .signature(acceptedAgreementSignature)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

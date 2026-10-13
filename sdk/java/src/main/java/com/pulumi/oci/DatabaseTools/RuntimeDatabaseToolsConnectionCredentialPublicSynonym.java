@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testDatabaseToolsConnectionCredentialPublicSynonym = new RuntimeDatabaseToolsConnectionCredentialPublicSynonym("testDatabaseToolsConnectionCredentialPublicSynonym", RuntimeDatabaseToolsConnectionCredentialPublicSynonymArgs.builder()
  *             .credentialKey(databaseToolsConnectionCredentialPublicSynonymCredentialKey)
- *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+ *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
  *             .key(databaseToolsConnectionCredentialPublicSynonymKey)
  *             .build());
  * 

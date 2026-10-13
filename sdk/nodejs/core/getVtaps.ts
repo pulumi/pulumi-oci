@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testVtaps = oci.core.getVtaps({
  *     compartmentId: compartmentId,
  *     displayName: vtapDisplayName,
- *     isVtapEnabled: vtapIsVtapEnabled === "true",
+ *     isVtapEnabled: vtapIsVtapEnabled,
  *     source: vtapSource,
  *     state: vtapState,
  *     targetId: testTarget.id,
@@ -144,7 +144,7 @@ export interface GetVtapsResult {
  * const testVtaps = oci.core.getVtaps({
  *     compartmentId: compartmentId,
  *     displayName: vtapDisplayName,
- *     isVtapEnabled: vtapIsVtapEnabled === "true",
+ *     isVtapEnabled: vtapIsVtapEnabled,
  *     source: vtapSource,
  *     state: vtapState,
  *     targetId: testTarget.id,

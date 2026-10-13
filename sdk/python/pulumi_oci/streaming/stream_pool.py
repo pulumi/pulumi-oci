@@ -425,10 +425,10 @@ class StreamPool(pulumi.CustomResource):
                 "Department": "Finance",
             },
             kafka_settings={
-                "auto_create_topics_enable": stream_pool_kafka_settings_auto_create_topics_enable == "true",
+                "auto_create_topics_enable": stream_pool_kafka_settings_auto_create_topics_enable,
                 "bootstrap_servers": stream_pool_kafka_settings_bootstrap_servers,
-                "log_retention_hours": int(stream_pool_kafka_settings_log_retention_hours),
-                "num_partitions": int(stream_pool_kafka_settings_num_partitions),
+                "log_retention_hours": stream_pool_kafka_settings_log_retention_hours,
+                "num_partitions": stream_pool_kafka_settings_num_partitions,
             },
             private_endpoint_settings={
                 "nsg_ids": stream_pool_private_endpoint_settings_nsg_ids,
@@ -494,10 +494,10 @@ class StreamPool(pulumi.CustomResource):
                 "Department": "Finance",
             },
             kafka_settings={
-                "auto_create_topics_enable": stream_pool_kafka_settings_auto_create_topics_enable == "true",
+                "auto_create_topics_enable": stream_pool_kafka_settings_auto_create_topics_enable,
                 "bootstrap_servers": stream_pool_kafka_settings_bootstrap_servers,
-                "log_retention_hours": int(stream_pool_kafka_settings_log_retention_hours),
-                "num_partitions": int(stream_pool_kafka_settings_num_partitions),
+                "log_retention_hours": stream_pool_kafka_settings_log_retention_hours,
+                "num_partitions": stream_pool_kafka_settings_num_partitions,
             },
             private_endpoint_settings={
                 "nsg_ids": stream_pool_private_endpoint_settings_nsg_ids,

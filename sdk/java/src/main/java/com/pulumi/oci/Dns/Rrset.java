@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *         var testRrset = new Rrset("testRrset", RrsetArgs.builder()
  *             .domain(rrsetDomain)
  *             .rtype(rrsetRtype)
- *             .zoneNameOrId(testZone.id())
+ *             .zoneNameOrId(testZone.get("id"))
  *             .items(RrsetItemArgs.builder()
  *                 .domain(rrsetItemsDomain)
  *                 .rdata(rrsetItemsRdata)
@@ -63,7 +63,7 @@ import javax.annotation.Nullable;
  *                 .ttl(rrsetItemsTtl)
  *                 .build())
  *             .scope(rrsetScope)
- *             .viewId(testView.id())
+ *             .viewId(testView.get("id"))
  *             .build());
  * 
  *     }

@@ -32,7 +32,7 @@ import (
 //			_, err := servicecatalog.GetPrivateApplicationPackages(ctx, &servicecatalog.GetPrivateApplicationPackagesArgs{
 //				PrivateApplicationId:        testPrivateApplication.Id,
 //				DisplayName:                 pulumi.StringRef(privateApplicationPackageDisplayName),
-//				PackageTypes:                pulumi.ToArray(privateApplicationPackagePackageType),
+//				PackageTypes:                privateApplicationPackagePackageType,
 //				PrivateApplicationPackageId: pulumi.StringRef(testPrivateApplicationPackage.Id),
 //			}, nil)
 //			if err != nil {

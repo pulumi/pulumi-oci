@@ -145,7 +145,7 @@ def get_ml_applications(compartment_id: Optional[_builtins.str] = None,
     import pulumi_oci as oci
 
     test_ml_applications = oci.datascience.get_ml_applications(compartment_id=compartment_id,
-        compartment_id_in_subtree=ml_application_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=ml_application_compartment_id_in_subtree,
         ml_application_id=test_ml_application["id"],
         name=ml_application_name,
         state=ml_application_state)
@@ -196,7 +196,7 @@ def get_ml_applications_output(compartment_id: pulumi.Input[Optional[_builtins.s
     import pulumi_oci as oci
 
     test_ml_applications = oci.datascience.get_ml_applications(compartment_id=compartment_id,
-        compartment_id_in_subtree=ml_application_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=ml_application_compartment_id_in_subtree,
         ml_application_id=test_ml_application["id"],
         name=ml_application_name,
         state=ml_application_state)

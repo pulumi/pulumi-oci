@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  *                 .jsonPath(indexKeysJsonPath)
  *                 .build())
  *             .name(indexName)
- *             .tableNameOrId(testTableNameOr.id())
+ *             .tableNameOrId(testTableNameOr.get("id"))
  *             .compartmentId(compartmentId)
  *             .isIfNotExists(indexIsIfNotExists)
  *             .build());

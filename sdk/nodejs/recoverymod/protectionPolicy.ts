@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testProtectionPolicy = new oci.recoverymod.ProtectionPolicy("test_protection_policy", {
- *     backupRetentionPeriodInDays: Number(protectionPolicyBackupRetentionPeriodInDays),
+ *     backupRetentionPeriodInDays: protectionPolicyBackupRetentionPeriodInDays,
  *     compartmentId: compartmentId,
  *     displayName: protectionPolicyDisplayName,
  *     definedTags: {
@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     mustEnforceCloudLocality: protectionPolicyMustEnforceCloudLocality === "true",
+ *     mustEnforceCloudLocality: protectionPolicyMustEnforceCloudLocality,
  *     policyLockedDateTime: protectionPolicyPolicyLockedDateTime,
  * });
  * ```

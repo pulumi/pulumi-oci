@@ -33,7 +33,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isTrustVerificationDisabled: certificateIsTrustVerificationDisabled === "true",
+ *     isTrustVerificationDisabled: certificateIsTrustVerificationDisabled,
  * });
  * ```
  *

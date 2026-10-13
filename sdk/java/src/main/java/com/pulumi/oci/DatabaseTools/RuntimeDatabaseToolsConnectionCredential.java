@@ -48,11 +48,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDatabaseToolsConnectionCredential = new RuntimeDatabaseToolsConnectionCredential("testDatabaseToolsConnectionCredential", RuntimeDatabaseToolsConnectionCredentialArgs.builder()
- *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+ *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
  *             .key(databaseToolsConnectionCredentialKey)
  *             .password(databaseToolsConnectionCredentialPassword)
  *             .type(databaseToolsConnectionCredentialType)
- *             .userName(testUser.name())
+ *             .userName(testUser.get("name"))
  *             .build());
  * 
  *     }

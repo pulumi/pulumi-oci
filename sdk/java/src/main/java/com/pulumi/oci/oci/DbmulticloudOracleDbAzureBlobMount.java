@@ -49,8 +49,8 @@ import javax.annotation.Nullable;
  *         var testOracleDbAzureBlobMount = new DbmulticloudOracleDbAzureBlobMount("testOracleDbAzureBlobMount", DbmulticloudOracleDbAzureBlobMountArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(oracleDbAzureBlobMountDisplayName)
- *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.id())
- *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+ *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.get("id"))
+ *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());

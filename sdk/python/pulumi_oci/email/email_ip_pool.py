@@ -414,7 +414,7 @@ class EmailIpPool(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            last_ip_drain_period_in_hours=int(email_ip_pool_last_ip_drain_period_in_hours))
+            last_ip_drain_period_in_hours=email_ip_pool_last_ip_drain_period_in_hours)
         ```
 
         ## Import
@@ -467,7 +467,7 @@ class EmailIpPool(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            last_ip_drain_period_in_hours=int(email_ip_pool_last_ip_drain_period_in_hours))
+            last_ip_drain_period_in_hours=email_ip_pool_last_ip_drain_period_in_hours)
         ```
 
         ## Import

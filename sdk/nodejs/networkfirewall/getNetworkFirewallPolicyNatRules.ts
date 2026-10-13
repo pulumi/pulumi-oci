@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testNetworkFirewallPolicyNatRules = oci.networkfirewall.getNetworkFirewallPolicyNatRules({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     displayName: networkFirewallPolicyNatRuleDisplayName,
- *     natRulePriorityOrder: Number(networkFirewallPolicyNatRuleNatRulePriorityOrder),
+ *     natRulePriorityOrder: networkFirewallPolicyNatRuleNatRulePriorityOrder,
  * });
  * ```
  */
@@ -84,7 +84,7 @@ export interface GetNetworkFirewallPolicyNatRulesResult {
  * const testNetworkFirewallPolicyNatRules = oci.networkfirewall.getNetworkFirewallPolicyNatRules({
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     displayName: networkFirewallPolicyNatRuleDisplayName,
- *     natRulePriorityOrder: Number(networkFirewallPolicyNatRuleNatRulePriorityOrder),
+ *     natRulePriorityOrder: networkFirewallPolicyNatRuleNatRulePriorityOrder,
  * });
  * ```
  */

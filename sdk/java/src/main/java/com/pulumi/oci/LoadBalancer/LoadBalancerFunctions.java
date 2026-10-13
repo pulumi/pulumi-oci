@@ -99,9 +99,9 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendHealth = LoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
-     *             .backendName(testBackend.name())
-     *             .backendSetName(testBackendSet.name())
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .backendName(testBackend.get("name"))
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -143,9 +143,9 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendHealth = LoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
-     *             .backendName(testBackend.name())
-     *             .backendSetName(testBackendSet.name())
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .backendName(testBackend.get("name"))
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -187,9 +187,9 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendHealth = LoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
-     *             .backendName(testBackend.name())
-     *             .backendSetName(testBackendSet.name())
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .backendName(testBackend.get("name"))
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -231,9 +231,9 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendHealth = LoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
-     *             .backendName(testBackend.name())
-     *             .backendSetName(testBackendSet.name())
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .backendName(testBackend.get("name"))
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -275,9 +275,9 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendHealth = LoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
-     *             .backendName(testBackend.name())
-     *             .backendSetName(testBackendSet.name())
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .backendName(testBackend.get("name"))
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -319,8 +319,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSetHealth = LoadBalancerFunctions.getBackendSetHealth(GetBackendSetHealthArgs.builder()
-     *             .backendSetName(testBackendSet.name())
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -362,8 +362,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSetHealth = LoadBalancerFunctions.getBackendSetHealth(GetBackendSetHealthArgs.builder()
-     *             .backendSetName(testBackendSet.name())
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -405,8 +405,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSetHealth = LoadBalancerFunctions.getBackendSetHealth(GetBackendSetHealthArgs.builder()
-     *             .backendSetName(testBackendSet.name())
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -448,8 +448,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSetHealth = LoadBalancerFunctions.getBackendSetHealth(GetBackendSetHealthArgs.builder()
-     *             .backendSetName(testBackendSet.name())
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -491,8 +491,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSetHealth = LoadBalancerFunctions.getBackendSetHealth(GetBackendSetHealthArgs.builder()
-     *             .backendSetName(testBackendSet.name())
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -538,7 +538,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSets = LoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -584,7 +584,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSets = LoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -630,7 +630,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSets = LoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -676,7 +676,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSets = LoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -722,7 +722,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSets = LoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -764,8 +764,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackends = LoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
-     *             .backendsetName(testBackendSet.name())
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .backendsetName(testBackendSet.get("name"))
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -807,8 +807,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackends = LoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
-     *             .backendsetName(testBackendSet.name())
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .backendsetName(testBackendSet.get("name"))
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -850,8 +850,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackends = LoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
-     *             .backendsetName(testBackendSet.name())
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .backendsetName(testBackendSet.get("name"))
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -893,8 +893,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackends = LoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
-     *             .backendsetName(testBackendSet.name())
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .backendsetName(testBackendSet.get("name"))
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -936,8 +936,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackends = LoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
-     *             .backendsetName(testBackendSet.name())
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .backendsetName(testBackendSet.get("name"))
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -979,7 +979,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = LoadBalancerFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1021,7 +1021,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = LoadBalancerFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1063,7 +1063,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = LoadBalancerFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1105,7 +1105,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = LoadBalancerFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1147,7 +1147,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCertificates = LoadBalancerFunctions.getCertificates(GetCertificatesArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1189,7 +1189,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerHealth = LoadBalancerFunctions.getHealth(GetHealthArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1231,7 +1231,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerHealth = LoadBalancerFunctions.getHealth(GetHealthArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1273,7 +1273,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerHealth = LoadBalancerFunctions.getHealth(GetHealthArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1315,7 +1315,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerHealth = LoadBalancerFunctions.getHealth(GetHealthArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1357,7 +1357,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerHealth = LoadBalancerFunctions.getHealth(GetHealthArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1399,7 +1399,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostnames = LoadBalancerFunctions.getHostnames(GetHostnamesArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1441,7 +1441,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostnames = LoadBalancerFunctions.getHostnames(GetHostnamesArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1483,7 +1483,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostnames = LoadBalancerFunctions.getHostnames(GetHostnamesArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1525,7 +1525,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostnames = LoadBalancerFunctions.getHostnames(GetHostnamesArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1567,7 +1567,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostnames = LoadBalancerFunctions.getHostnames(GetHostnamesArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1615,8 +1615,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListenerRules = LoadBalancerFunctions.getListenerRules(GetListenerRulesArgs.builder()
-     *             .listenerName(testListener.name())
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .listenerName(testListener.get("name"))
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1664,8 +1664,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListenerRules = LoadBalancerFunctions.getListenerRules(GetListenerRulesArgs.builder()
-     *             .listenerName(testListener.name())
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .listenerName(testListener.get("name"))
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1713,8 +1713,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListenerRules = LoadBalancerFunctions.getListenerRules(GetListenerRulesArgs.builder()
-     *             .listenerName(testListener.name())
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .listenerName(testListener.get("name"))
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1762,8 +1762,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListenerRules = LoadBalancerFunctions.getListenerRules(GetListenerRulesArgs.builder()
-     *             .listenerName(testListener.name())
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .listenerName(testListener.get("name"))
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1811,8 +1811,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListenerRules = LoadBalancerFunctions.getListenerRules(GetListenerRulesArgs.builder()
-     *             .listenerName(testListener.name())
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .listenerName(testListener.get("name"))
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1854,7 +1854,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerRoutingPolicies = LoadBalancerFunctions.getLoadBalancerRoutingPolicies(GetLoadBalancerRoutingPoliciesArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1896,7 +1896,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerRoutingPolicies = LoadBalancerFunctions.getLoadBalancerRoutingPolicies(GetLoadBalancerRoutingPoliciesArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1938,7 +1938,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerRoutingPolicies = LoadBalancerFunctions.getLoadBalancerRoutingPolicies(GetLoadBalancerRoutingPoliciesArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1980,7 +1980,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerRoutingPolicies = LoadBalancerFunctions.getLoadBalancerRoutingPolicies(GetLoadBalancerRoutingPoliciesArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -2022,7 +2022,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerRoutingPolicies = LoadBalancerFunctions.getLoadBalancerRoutingPolicies(GetLoadBalancerRoutingPoliciesArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -2064,8 +2064,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerRoutingPolicy = LoadBalancerFunctions.getLoadBalancerRoutingPolicy(GetLoadBalancerRoutingPolicyArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
-     *             .routingPolicyName(testRoutingPolicy.name())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
+     *             .routingPolicyName(testRoutingPolicy.get("name"))
      *             .build());
      * 
      *     }
@@ -2107,8 +2107,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerRoutingPolicy = LoadBalancerFunctions.getLoadBalancerRoutingPolicy(GetLoadBalancerRoutingPolicyArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
-     *             .routingPolicyName(testRoutingPolicy.name())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
+     *             .routingPolicyName(testRoutingPolicy.get("name"))
      *             .build());
      * 
      *     }
@@ -2150,8 +2150,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerRoutingPolicy = LoadBalancerFunctions.getLoadBalancerRoutingPolicy(GetLoadBalancerRoutingPolicyArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
-     *             .routingPolicyName(testRoutingPolicy.name())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
+     *             .routingPolicyName(testRoutingPolicy.get("name"))
      *             .build());
      * 
      *     }
@@ -2193,8 +2193,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerRoutingPolicy = LoadBalancerFunctions.getLoadBalancerRoutingPolicy(GetLoadBalancerRoutingPolicyArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
-     *             .routingPolicyName(testRoutingPolicy.name())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
+     *             .routingPolicyName(testRoutingPolicy.get("name"))
      *             .build());
      * 
      *     }
@@ -2236,8 +2236,8 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLoadBalancerRoutingPolicy = LoadBalancerFunctions.getLoadBalancerRoutingPolicy(GetLoadBalancerRoutingPolicyArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
-     *             .routingPolicyName(testRoutingPolicy.name())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
+     *             .routingPolicyName(testRoutingPolicy.get("name"))
      *             .build());
      * 
      *     }
@@ -2524,7 +2524,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPathRouteSets = LoadBalancerFunctions.getPathRouteSets(GetPathRouteSetsArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -2566,7 +2566,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPathRouteSets = LoadBalancerFunctions.getPathRouteSets(GetPathRouteSetsArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -2608,7 +2608,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPathRouteSets = LoadBalancerFunctions.getPathRouteSets(GetPathRouteSetsArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -2650,7 +2650,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPathRouteSets = LoadBalancerFunctions.getPathRouteSets(GetPathRouteSetsArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -2692,7 +2692,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPathRouteSets = LoadBalancerFunctions.getPathRouteSets(GetPathRouteSetsArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -3154,7 +3154,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRuleSet = LoadBalancerFunctions.getRuleSet(GetRuleSetArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .name(ruleSetName)
      *             .build());
      * 
@@ -3197,7 +3197,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRuleSet = LoadBalancerFunctions.getRuleSet(GetRuleSetArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .name(ruleSetName)
      *             .build());
      * 
@@ -3240,7 +3240,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRuleSet = LoadBalancerFunctions.getRuleSet(GetRuleSetArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .name(ruleSetName)
      *             .build());
      * 
@@ -3283,7 +3283,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRuleSet = LoadBalancerFunctions.getRuleSet(GetRuleSetArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .name(ruleSetName)
      *             .build());
      * 
@@ -3326,7 +3326,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRuleSet = LoadBalancerFunctions.getRuleSet(GetRuleSetArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .name(ruleSetName)
      *             .build());
      * 
@@ -3369,7 +3369,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRuleSets = LoadBalancerFunctions.getRuleSets(GetRuleSetsArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -3411,7 +3411,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRuleSets = LoadBalancerFunctions.getRuleSets(GetRuleSetsArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -3453,7 +3453,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRuleSets = LoadBalancerFunctions.getRuleSets(GetRuleSetsArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -3495,7 +3495,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRuleSets = LoadBalancerFunctions.getRuleSets(GetRuleSetsArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -3537,7 +3537,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRuleSets = LoadBalancerFunctions.getRuleSets(GetRuleSetsArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -3789,7 +3789,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSslCipherSuite = LoadBalancerFunctions.getSslCipherSuite(GetSslCipherSuiteArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .name(sslCipherSuiteName)
      *             .build());
      * 
@@ -3832,7 +3832,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSslCipherSuite = LoadBalancerFunctions.getSslCipherSuite(GetSslCipherSuiteArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .name(sslCipherSuiteName)
      *             .build());
      * 
@@ -3875,7 +3875,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSslCipherSuite = LoadBalancerFunctions.getSslCipherSuite(GetSslCipherSuiteArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .name(sslCipherSuiteName)
      *             .build());
      * 
@@ -3918,7 +3918,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSslCipherSuite = LoadBalancerFunctions.getSslCipherSuite(GetSslCipherSuiteArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .name(sslCipherSuiteName)
      *             .build());
      * 
@@ -3961,7 +3961,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSslCipherSuite = LoadBalancerFunctions.getSslCipherSuite(GetSslCipherSuiteArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .name(sslCipherSuiteName)
      *             .build());
      * 
@@ -4004,7 +4004,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSslCipherSuites = LoadBalancerFunctions.getSslCipherSuites(GetSslCipherSuitesArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -4046,7 +4046,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSslCipherSuites = LoadBalancerFunctions.getSslCipherSuites(GetSslCipherSuitesArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -4088,7 +4088,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSslCipherSuites = LoadBalancerFunctions.getSslCipherSuites(GetSslCipherSuitesArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -4130,7 +4130,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSslCipherSuites = LoadBalancerFunctions.getSslCipherSuites(GetSslCipherSuitesArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -4172,7 +4172,7 @@ public final class LoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSslCipherSuites = LoadBalancerFunctions.getSslCipherSuites(GetSslCipherSuitesArgs.builder()
-     *             .loadBalancerId(testLoadBalancer.id())
+     *             .loadBalancerId(testLoadBalancer.get("id"))
      *             .build());
      * 
      *     }

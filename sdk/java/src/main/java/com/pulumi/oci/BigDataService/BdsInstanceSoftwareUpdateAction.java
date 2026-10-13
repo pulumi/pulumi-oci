@@ -44,7 +44,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBdsInstanceSoftwareUpdateAction = new BdsInstanceSoftwareUpdateAction("testBdsInstanceSoftwareUpdateAction", BdsInstanceSoftwareUpdateActionArgs.builder()
- *             .bdsInstanceId(testBdsInstance.id())
+ *             .bdsInstanceId(testBdsInstance.get("id"))
  *             .softwareUpdateKey(bdsInstanceSoftwareUpdateActionSoftwareUpdateKey)
  *             .build());
  * 

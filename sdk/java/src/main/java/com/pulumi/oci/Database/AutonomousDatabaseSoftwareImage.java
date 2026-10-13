@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *             .compartmentId(compartmentId)
  *             .displayName(autonomousDatabaseSoftwareImageDisplayName)
  *             .imageShapeFamily(autonomousDatabaseSoftwareImageImageShapeFamily)
- *             .sourceCdbId(testSourceCdb.id())
+ *             .sourceCdbId(testSourceCdb.get("id"))
  *             .definedTags(autonomousDatabaseSoftwareImageDefinedTags)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());

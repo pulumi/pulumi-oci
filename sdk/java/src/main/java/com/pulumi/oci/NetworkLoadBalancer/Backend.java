@@ -48,15 +48,15 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBackend = new Backend("testBackend", BackendArgs.builder()
- *             .backendSetName(testBackendSet.name())
- *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+ *             .backendSetName(testBackendSet.get("name"))
+ *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
  *             .port(backendPort)
  *             .ipAddress(backendIpAddress)
  *             .isBackup(backendIsBackup)
  *             .isDrain(backendIsDrain)
  *             .isOffline(backendIsOffline)
  *             .name(backendName)
- *             .targetId(testTarget.id())
+ *             .targetId(testTarget.get("id"))
  *             .weight(backendWeight)
  *             .build());
  * 

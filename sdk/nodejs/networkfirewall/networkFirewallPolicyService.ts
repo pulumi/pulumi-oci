@@ -25,8 +25,8 @@ import * as utilities from "../utilities";
  *     type: networkFirewallPolicyServiceType,
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     portRanges: [{
- *         minimumPort: Number(networkFirewallPolicyServicePortRangesMinimumPort),
- *         maximumPort: Number(networkFirewallPolicyServicePortRangesMaximumPort),
+ *         minimumPort: networkFirewallPolicyServicePortRangesMinimumPort,
+ *         maximumPort: networkFirewallPolicyServicePortRangesMaximumPort,
  *     }],
  *     description: networkFirewallPolicyServiceDescription,
  * });

@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testSubsettingReports = oci.datasafe.getSubsettingReports({
  *     compartmentId: compartmentId,
  *     accessLevel: subsettingReportAccessLevel,
- *     compartmentIdInSubtree: subsettingReportCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: subsettingReportCompartmentIdInSubtree,
  *     subsettingPolicyId: testSubsettingPolicy.id,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
@@ -114,7 +114,7 @@ export interface GetSubsettingReportsResult {
  * const testSubsettingReports = oci.datasafe.getSubsettingReports({
  *     compartmentId: compartmentId,
  *     accessLevel: subsettingReportAccessLevel,
- *     compartmentIdInSubtree: subsettingReportCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: subsettingReportCompartmentIdInSubtree,
  *     subsettingPolicyId: testSubsettingPolicy.id,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,

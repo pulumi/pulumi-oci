@@ -751,7 +751,7 @@ class Assessment(pulumi.CustomResource):
             display_name=assessment_display_name,
             exclude_objects=[{
                 "object": assessment_exclude_objects_object,
-                "is_omit_excluded_table_from_replication": assessment_exclude_objects_is_omit_excluded_table_from_replication == "true",
+                "is_omit_excluded_table_from_replication": assessment_exclude_objects_is_omit_excluded_table_from_replication,
                 "owner": assessment_exclude_objects_owner,
                 "schema": assessment_exclude_objects_schema,
                 "type": assessment_exclude_objects_type,
@@ -759,7 +759,7 @@ class Assessment(pulumi.CustomResource):
             freeform_tags=assessment_freeform_tags,
             include_objects=[{
                 "object": assessment_include_objects_object,
-                "is_omit_excluded_table_from_replication": assessment_include_objects_is_omit_excluded_table_from_replication == "true",
+                "is_omit_excluded_table_from_replication": assessment_include_objects_is_omit_excluded_table_from_replication,
                 "owner": assessment_include_objects_owner,
                 "schema": assessment_include_objects_schema,
                 "type": assessment_include_objects_type,
@@ -844,7 +844,7 @@ class Assessment(pulumi.CustomResource):
             display_name=assessment_display_name,
             exclude_objects=[{
                 "object": assessment_exclude_objects_object,
-                "is_omit_excluded_table_from_replication": assessment_exclude_objects_is_omit_excluded_table_from_replication == "true",
+                "is_omit_excluded_table_from_replication": assessment_exclude_objects_is_omit_excluded_table_from_replication,
                 "owner": assessment_exclude_objects_owner,
                 "schema": assessment_exclude_objects_schema,
                 "type": assessment_exclude_objects_type,
@@ -852,7 +852,7 @@ class Assessment(pulumi.CustomResource):
             freeform_tags=assessment_freeform_tags,
             include_objects=[{
                 "object": assessment_include_objects_object,
-                "is_omit_excluded_table_from_replication": assessment_include_objects_is_omit_excluded_table_from_replication == "true",
+                "is_omit_excluded_table_from_replication": assessment_include_objects_is_omit_excluded_table_from_replication,
                 "owner": assessment_include_objects_owner,
                 "schema": assessment_include_objects_schema,
                 "type": assessment_include_objects_type,

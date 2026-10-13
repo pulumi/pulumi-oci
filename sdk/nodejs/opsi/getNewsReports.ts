@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testNewsReports = oci.opsi.getNewsReports({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: newsReportCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: newsReportCompartmentIdInSubtree,
  *     newsReportId: testNewsReport.id,
  *     states: newsReportState,
  *     statuses: newsReportStatus,
@@ -107,7 +107,7 @@ export interface GetNewsReportsResult {
  *
  * const testNewsReports = oci.opsi.getNewsReports({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: newsReportCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: newsReportCompartmentIdInSubtree,
  *     newsReportId: testNewsReport.id,
  *     states: newsReportState,
  *     statuses: newsReportStatus,

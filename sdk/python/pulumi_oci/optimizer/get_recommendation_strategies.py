@@ -129,7 +129,7 @@ def get_recommendation_strategies(compartment_id: Optional[_builtins.str] = None
     import pulumi_oci as oci
 
     test_recommendation_strategies = oci.optimizer.get_recommendation_strategies(compartment_id=compartment_id,
-        compartment_id_in_subtree=recommendation_strategy_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=recommendation_strategy_compartment_id_in_subtree,
         name=recommendation_strategy_name,
         recommendation_name=test_recommendation["name"])
     ```
@@ -177,7 +177,7 @@ def get_recommendation_strategies_output(compartment_id: pulumi.Input[Optional[_
     import pulumi_oci as oci
 
     test_recommendation_strategies = oci.optimizer.get_recommendation_strategies(compartment_id=compartment_id,
-        compartment_id_in_subtree=recommendation_strategy_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=recommendation_strategy_compartment_id_in_subtree,
         name=recommendation_strategy_name,
         recommendation_name=test_recommendation["name"])
     ```

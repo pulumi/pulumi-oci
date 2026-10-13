@@ -63,7 +63,7 @@ import javax.annotation.Nullable;
  *                 .nodeShape(kafkaClusterBrokerShapeNodeShape)
  *                 .storageSizeInGbs(kafkaClusterBrokerShapeStorageSizeInGbs)
  *                 .build())
- *             .clusterConfigId(testConfig.id())
+ *             .clusterConfigId(testConfig.get("id"))
  *             .clusterConfigVersion(kafkaClusterClusterConfigVersion)
  *             .clusterType(kafkaClusterClusterType)
  *             .compartmentId(compartmentId)

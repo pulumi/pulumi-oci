@@ -612,7 +612,7 @@ public final class LogAnalyticsFunctions {
      *             .metadataEquals(logAnalyticsEntityMetadataEquals)
      *             .name(logAnalyticsEntityName)
      *             .nameContains(logAnalyticsEntityNameContains)
-     *             .sourceId(testSource.id())
+     *             .sourceId(testSource.get("id"))
      *             .state(logAnalyticsEntityState)
      *             .build());
      * 
@@ -671,7 +671,7 @@ public final class LogAnalyticsFunctions {
      *             .metadataEquals(logAnalyticsEntityMetadataEquals)
      *             .name(logAnalyticsEntityName)
      *             .nameContains(logAnalyticsEntityNameContains)
-     *             .sourceId(testSource.id())
+     *             .sourceId(testSource.get("id"))
      *             .state(logAnalyticsEntityState)
      *             .build());
      * 
@@ -730,7 +730,7 @@ public final class LogAnalyticsFunctions {
      *             .metadataEquals(logAnalyticsEntityMetadataEquals)
      *             .name(logAnalyticsEntityName)
      *             .nameContains(logAnalyticsEntityNameContains)
-     *             .sourceId(testSource.id())
+     *             .sourceId(testSource.get("id"))
      *             .state(logAnalyticsEntityState)
      *             .build());
      * 
@@ -789,7 +789,7 @@ public final class LogAnalyticsFunctions {
      *             .metadataEquals(logAnalyticsEntityMetadataEquals)
      *             .name(logAnalyticsEntityName)
      *             .nameContains(logAnalyticsEntityNameContains)
-     *             .sourceId(testSource.id())
+     *             .sourceId(testSource.get("id"))
      *             .state(logAnalyticsEntityState)
      *             .build());
      * 
@@ -848,7 +848,7 @@ public final class LogAnalyticsFunctions {
      *             .metadataEquals(logAnalyticsEntityMetadataEquals)
      *             .name(logAnalyticsEntityName)
      *             .nameContains(logAnalyticsEntityNameContains)
-     *             .sourceId(testSource.id())
+     *             .sourceId(testSource.get("id"))
      *             .state(logAnalyticsEntityState)
      *             .build());
      * 
@@ -1106,7 +1106,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntity = LogAnalyticsFunctions.getLogAnalyticsEntity(GetLogAnalyticsEntityArgs.builder()
-     *             .logAnalyticsEntityId(testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.id())
+     *             .logAnalyticsEntityId(testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.get("id"))
      *             .namespace(logAnalyticsEntityNamespace)
      *             .isShowAssociatedSourcesCount(logAnalyticsEntityIsShowAssociatedSourcesCount)
      *             .build());
@@ -1150,7 +1150,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntity = LogAnalyticsFunctions.getLogAnalyticsEntity(GetLogAnalyticsEntityArgs.builder()
-     *             .logAnalyticsEntityId(testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.id())
+     *             .logAnalyticsEntityId(testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.get("id"))
      *             .namespace(logAnalyticsEntityNamespace)
      *             .isShowAssociatedSourcesCount(logAnalyticsEntityIsShowAssociatedSourcesCount)
      *             .build());
@@ -1194,7 +1194,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntity = LogAnalyticsFunctions.getLogAnalyticsEntity(GetLogAnalyticsEntityArgs.builder()
-     *             .logAnalyticsEntityId(testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.id())
+     *             .logAnalyticsEntityId(testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.get("id"))
      *             .namespace(logAnalyticsEntityNamespace)
      *             .isShowAssociatedSourcesCount(logAnalyticsEntityIsShowAssociatedSourcesCount)
      *             .build());
@@ -1238,7 +1238,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntity = LogAnalyticsFunctions.getLogAnalyticsEntity(GetLogAnalyticsEntityArgs.builder()
-     *             .logAnalyticsEntityId(testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.id())
+     *             .logAnalyticsEntityId(testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.get("id"))
      *             .namespace(logAnalyticsEntityNamespace)
      *             .isShowAssociatedSourcesCount(logAnalyticsEntityIsShowAssociatedSourcesCount)
      *             .build());
@@ -1282,7 +1282,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntity = LogAnalyticsFunctions.getLogAnalyticsEntity(GetLogAnalyticsEntityArgs.builder()
-     *             .logAnalyticsEntityId(testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.id())
+     *             .logAnalyticsEntityId(testLogAnalyticsEntityOciLogAnalyticsLogAnalyticsEntity.get("id"))
      *             .namespace(logAnalyticsEntityNamespace)
      *             .isShowAssociatedSourcesCount(logAnalyticsEntityIsShowAssociatedSourcesCount)
      *             .build());
@@ -1326,7 +1326,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntityAssociationsList = LogAnalyticsFunctions.getLogAnalyticsEntityAssociationsList(GetLogAnalyticsEntityAssociationsListArgs.builder()
-     *             .logAnalyticsEntityId(testLogAnalyticsEntity.id())
+     *             .logAnalyticsEntityId(testLogAnalyticsEntity.get("id"))
      *             .namespace(logAnalyticsEntityAssociationsListNamespace)
      *             .directOrAllAssociations(logAnalyticsEntityAssociationsListDirectOrAllAssociations)
      *             .build());
@@ -1370,7 +1370,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntityAssociationsList = LogAnalyticsFunctions.getLogAnalyticsEntityAssociationsList(GetLogAnalyticsEntityAssociationsListArgs.builder()
-     *             .logAnalyticsEntityId(testLogAnalyticsEntity.id())
+     *             .logAnalyticsEntityId(testLogAnalyticsEntity.get("id"))
      *             .namespace(logAnalyticsEntityAssociationsListNamespace)
      *             .directOrAllAssociations(logAnalyticsEntityAssociationsListDirectOrAllAssociations)
      *             .build());
@@ -1414,7 +1414,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntityAssociationsList = LogAnalyticsFunctions.getLogAnalyticsEntityAssociationsList(GetLogAnalyticsEntityAssociationsListArgs.builder()
-     *             .logAnalyticsEntityId(testLogAnalyticsEntity.id())
+     *             .logAnalyticsEntityId(testLogAnalyticsEntity.get("id"))
      *             .namespace(logAnalyticsEntityAssociationsListNamespace)
      *             .directOrAllAssociations(logAnalyticsEntityAssociationsListDirectOrAllAssociations)
      *             .build());
@@ -1458,7 +1458,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntityAssociationsList = LogAnalyticsFunctions.getLogAnalyticsEntityAssociationsList(GetLogAnalyticsEntityAssociationsListArgs.builder()
-     *             .logAnalyticsEntityId(testLogAnalyticsEntity.id())
+     *             .logAnalyticsEntityId(testLogAnalyticsEntity.get("id"))
      *             .namespace(logAnalyticsEntityAssociationsListNamespace)
      *             .directOrAllAssociations(logAnalyticsEntityAssociationsListDirectOrAllAssociations)
      *             .build());
@@ -1502,7 +1502,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntityAssociationsList = LogAnalyticsFunctions.getLogAnalyticsEntityAssociationsList(GetLogAnalyticsEntityAssociationsListArgs.builder()
-     *             .logAnalyticsEntityId(testLogAnalyticsEntity.id())
+     *             .logAnalyticsEntityId(testLogAnalyticsEntity.get("id"))
      *             .namespace(logAnalyticsEntityAssociationsListNamespace)
      *             .directOrAllAssociations(logAnalyticsEntityAssociationsListDirectOrAllAssociations)
      *             .build());
@@ -1546,7 +1546,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntityTopology = LogAnalyticsFunctions.getLogAnalyticsEntityTopology(GetLogAnalyticsEntityTopologyArgs.builder()
-     *             .logAnalyticsEntityId(testLogAnalyticsEntity.id())
+     *             .logAnalyticsEntityId(testLogAnalyticsEntity.get("id"))
      *             .namespace(logAnalyticsEntityTopologyNamespace)
      *             .context(logAnalyticsEntityTopologyContext)
      *             .metadataEquals(logAnalyticsEntityTopologyMetadataEquals)
@@ -1592,7 +1592,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntityTopology = LogAnalyticsFunctions.getLogAnalyticsEntityTopology(GetLogAnalyticsEntityTopologyArgs.builder()
-     *             .logAnalyticsEntityId(testLogAnalyticsEntity.id())
+     *             .logAnalyticsEntityId(testLogAnalyticsEntity.get("id"))
      *             .namespace(logAnalyticsEntityTopologyNamespace)
      *             .context(logAnalyticsEntityTopologyContext)
      *             .metadataEquals(logAnalyticsEntityTopologyMetadataEquals)
@@ -1638,7 +1638,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntityTopology = LogAnalyticsFunctions.getLogAnalyticsEntityTopology(GetLogAnalyticsEntityTopologyArgs.builder()
-     *             .logAnalyticsEntityId(testLogAnalyticsEntity.id())
+     *             .logAnalyticsEntityId(testLogAnalyticsEntity.get("id"))
      *             .namespace(logAnalyticsEntityTopologyNamespace)
      *             .context(logAnalyticsEntityTopologyContext)
      *             .metadataEquals(logAnalyticsEntityTopologyMetadataEquals)
@@ -1684,7 +1684,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntityTopology = LogAnalyticsFunctions.getLogAnalyticsEntityTopology(GetLogAnalyticsEntityTopologyArgs.builder()
-     *             .logAnalyticsEntityId(testLogAnalyticsEntity.id())
+     *             .logAnalyticsEntityId(testLogAnalyticsEntity.get("id"))
      *             .namespace(logAnalyticsEntityTopologyNamespace)
      *             .context(logAnalyticsEntityTopologyContext)
      *             .metadataEquals(logAnalyticsEntityTopologyMetadataEquals)
@@ -1730,7 +1730,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsEntityTopology = LogAnalyticsFunctions.getLogAnalyticsEntityTopology(GetLogAnalyticsEntityTopologyArgs.builder()
-     *             .logAnalyticsEntityId(testLogAnalyticsEntity.id())
+     *             .logAnalyticsEntityId(testLogAnalyticsEntity.get("id"))
      *             .namespace(logAnalyticsEntityTopologyNamespace)
      *             .context(logAnalyticsEntityTopologyContext)
      *             .metadataEquals(logAnalyticsEntityTopologyMetadataEquals)
@@ -2221,7 +2221,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsLogGroup = LogAnalyticsFunctions.getLogAnalyticsLogGroup(GetLogAnalyticsLogGroupArgs.builder()
-     *             .logAnalyticsLogGroupId(testLogAnalyticsLogGroupOciLogAnalyticsLogAnalyticsLogGroup.id())
+     *             .logAnalyticsLogGroupId(testLogAnalyticsLogGroupOciLogAnalyticsLogAnalyticsLogGroup.get("id"))
      *             .namespace(logAnalyticsLogGroupNamespace)
      *             .build());
      * 
@@ -2264,7 +2264,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsLogGroup = LogAnalyticsFunctions.getLogAnalyticsLogGroup(GetLogAnalyticsLogGroupArgs.builder()
-     *             .logAnalyticsLogGroupId(testLogAnalyticsLogGroupOciLogAnalyticsLogAnalyticsLogGroup.id())
+     *             .logAnalyticsLogGroupId(testLogAnalyticsLogGroupOciLogAnalyticsLogAnalyticsLogGroup.get("id"))
      *             .namespace(logAnalyticsLogGroupNamespace)
      *             .build());
      * 
@@ -2307,7 +2307,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsLogGroup = LogAnalyticsFunctions.getLogAnalyticsLogGroup(GetLogAnalyticsLogGroupArgs.builder()
-     *             .logAnalyticsLogGroupId(testLogAnalyticsLogGroupOciLogAnalyticsLogAnalyticsLogGroup.id())
+     *             .logAnalyticsLogGroupId(testLogAnalyticsLogGroupOciLogAnalyticsLogAnalyticsLogGroup.get("id"))
      *             .namespace(logAnalyticsLogGroupNamespace)
      *             .build());
      * 
@@ -2350,7 +2350,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsLogGroup = LogAnalyticsFunctions.getLogAnalyticsLogGroup(GetLogAnalyticsLogGroupArgs.builder()
-     *             .logAnalyticsLogGroupId(testLogAnalyticsLogGroupOciLogAnalyticsLogAnalyticsLogGroup.id())
+     *             .logAnalyticsLogGroupId(testLogAnalyticsLogGroupOciLogAnalyticsLogAnalyticsLogGroup.get("id"))
      *             .namespace(logAnalyticsLogGroupNamespace)
      *             .build());
      * 
@@ -2393,7 +2393,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsLogGroup = LogAnalyticsFunctions.getLogAnalyticsLogGroup(GetLogAnalyticsLogGroupArgs.builder()
-     *             .logAnalyticsLogGroupId(testLogAnalyticsLogGroupOciLogAnalyticsLogAnalyticsLogGroup.id())
+     *             .logAnalyticsLogGroupId(testLogAnalyticsLogGroupOciLogAnalyticsLogAnalyticsLogGroup.get("id"))
      *             .namespace(logAnalyticsLogGroupNamespace)
      *             .build());
      * 
@@ -2871,7 +2871,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsObjectCollectionRule = LogAnalyticsFunctions.getLogAnalyticsObjectCollectionRule(GetLogAnalyticsObjectCollectionRuleArgs.builder()
-     *             .logAnalyticsObjectCollectionRuleId(testLogAnalyticsObjectCollectionRuleOciLogAnalyticsLogAnalyticsObjectCollectionRule.id())
+     *             .logAnalyticsObjectCollectionRuleId(testLogAnalyticsObjectCollectionRuleOciLogAnalyticsLogAnalyticsObjectCollectionRule.get("id"))
      *             .namespace(logAnalyticsObjectCollectionRuleNamespace)
      *             .build());
      * 
@@ -2914,7 +2914,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsObjectCollectionRule = LogAnalyticsFunctions.getLogAnalyticsObjectCollectionRule(GetLogAnalyticsObjectCollectionRuleArgs.builder()
-     *             .logAnalyticsObjectCollectionRuleId(testLogAnalyticsObjectCollectionRuleOciLogAnalyticsLogAnalyticsObjectCollectionRule.id())
+     *             .logAnalyticsObjectCollectionRuleId(testLogAnalyticsObjectCollectionRuleOciLogAnalyticsLogAnalyticsObjectCollectionRule.get("id"))
      *             .namespace(logAnalyticsObjectCollectionRuleNamespace)
      *             .build());
      * 
@@ -2957,7 +2957,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsObjectCollectionRule = LogAnalyticsFunctions.getLogAnalyticsObjectCollectionRule(GetLogAnalyticsObjectCollectionRuleArgs.builder()
-     *             .logAnalyticsObjectCollectionRuleId(testLogAnalyticsObjectCollectionRuleOciLogAnalyticsLogAnalyticsObjectCollectionRule.id())
+     *             .logAnalyticsObjectCollectionRuleId(testLogAnalyticsObjectCollectionRuleOciLogAnalyticsLogAnalyticsObjectCollectionRule.get("id"))
      *             .namespace(logAnalyticsObjectCollectionRuleNamespace)
      *             .build());
      * 
@@ -3000,7 +3000,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsObjectCollectionRule = LogAnalyticsFunctions.getLogAnalyticsObjectCollectionRule(GetLogAnalyticsObjectCollectionRuleArgs.builder()
-     *             .logAnalyticsObjectCollectionRuleId(testLogAnalyticsObjectCollectionRuleOciLogAnalyticsLogAnalyticsObjectCollectionRule.id())
+     *             .logAnalyticsObjectCollectionRuleId(testLogAnalyticsObjectCollectionRuleOciLogAnalyticsLogAnalyticsObjectCollectionRule.get("id"))
      *             .namespace(logAnalyticsObjectCollectionRuleNamespace)
      *             .build());
      * 
@@ -3043,7 +3043,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogAnalyticsObjectCollectionRule = LogAnalyticsFunctions.getLogAnalyticsObjectCollectionRule(GetLogAnalyticsObjectCollectionRuleArgs.builder()
-     *             .logAnalyticsObjectCollectionRuleId(testLogAnalyticsObjectCollectionRuleOciLogAnalyticsLogAnalyticsObjectCollectionRule.id())
+     *             .logAnalyticsObjectCollectionRuleId(testLogAnalyticsObjectCollectionRuleOciLogAnalyticsLogAnalyticsObjectCollectionRule.get("id"))
      *             .namespace(logAnalyticsObjectCollectionRuleNamespace)
      *             .build());
      * 
@@ -4382,11 +4382,11 @@ public final class LogAnalyticsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNamespaceEffectiveProperties = LogAnalyticsFunctions.getNamespaceEffectiveProperties(GetNamespaceEffectivePropertiesArgs.builder()
      *             .namespace(namespaceEffectivePropertyNamespace)
-     *             .agentId(testAgent.id())
-     *             .entityId(testLogAnalyticsEntity.id())
+     *             .agentId(testAgent.get("id"))
+     *             .entityId(testLogAnalyticsEntity.get("id"))
      *             .isIncludePatterns(namespaceEffectivePropertyIsIncludePatterns)
      *             .name(namespaceEffectivePropertyName)
-     *             .patternId(testPattern.id())
+     *             .patternId(testPattern.get("id"))
      *             .patternIdLong(namespaceEffectivePropertyPatternIdLong)
      *             .sourceName(namespaceEffectivePropertySourceName)
      *             .build());
@@ -4431,11 +4431,11 @@ public final class LogAnalyticsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNamespaceEffectiveProperties = LogAnalyticsFunctions.getNamespaceEffectiveProperties(GetNamespaceEffectivePropertiesArgs.builder()
      *             .namespace(namespaceEffectivePropertyNamespace)
-     *             .agentId(testAgent.id())
-     *             .entityId(testLogAnalyticsEntity.id())
+     *             .agentId(testAgent.get("id"))
+     *             .entityId(testLogAnalyticsEntity.get("id"))
      *             .isIncludePatterns(namespaceEffectivePropertyIsIncludePatterns)
      *             .name(namespaceEffectivePropertyName)
-     *             .patternId(testPattern.id())
+     *             .patternId(testPattern.get("id"))
      *             .patternIdLong(namespaceEffectivePropertyPatternIdLong)
      *             .sourceName(namespaceEffectivePropertySourceName)
      *             .build());
@@ -4480,11 +4480,11 @@ public final class LogAnalyticsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNamespaceEffectiveProperties = LogAnalyticsFunctions.getNamespaceEffectiveProperties(GetNamespaceEffectivePropertiesArgs.builder()
      *             .namespace(namespaceEffectivePropertyNamespace)
-     *             .agentId(testAgent.id())
-     *             .entityId(testLogAnalyticsEntity.id())
+     *             .agentId(testAgent.get("id"))
+     *             .entityId(testLogAnalyticsEntity.get("id"))
      *             .isIncludePatterns(namespaceEffectivePropertyIsIncludePatterns)
      *             .name(namespaceEffectivePropertyName)
-     *             .patternId(testPattern.id())
+     *             .patternId(testPattern.get("id"))
      *             .patternIdLong(namespaceEffectivePropertyPatternIdLong)
      *             .sourceName(namespaceEffectivePropertySourceName)
      *             .build());
@@ -4529,11 +4529,11 @@ public final class LogAnalyticsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNamespaceEffectiveProperties = LogAnalyticsFunctions.getNamespaceEffectiveProperties(GetNamespaceEffectivePropertiesArgs.builder()
      *             .namespace(namespaceEffectivePropertyNamespace)
-     *             .agentId(testAgent.id())
-     *             .entityId(testLogAnalyticsEntity.id())
+     *             .agentId(testAgent.get("id"))
+     *             .entityId(testLogAnalyticsEntity.get("id"))
      *             .isIncludePatterns(namespaceEffectivePropertyIsIncludePatterns)
      *             .name(namespaceEffectivePropertyName)
-     *             .patternId(testPattern.id())
+     *             .patternId(testPattern.get("id"))
      *             .patternIdLong(namespaceEffectivePropertyPatternIdLong)
      *             .sourceName(namespaceEffectivePropertySourceName)
      *             .build());
@@ -4578,11 +4578,11 @@ public final class LogAnalyticsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNamespaceEffectiveProperties = LogAnalyticsFunctions.getNamespaceEffectiveProperties(GetNamespaceEffectivePropertiesArgs.builder()
      *             .namespace(namespaceEffectivePropertyNamespace)
-     *             .agentId(testAgent.id())
-     *             .entityId(testLogAnalyticsEntity.id())
+     *             .agentId(testAgent.get("id"))
+     *             .entityId(testLogAnalyticsEntity.get("id"))
      *             .isIncludePatterns(namespaceEffectivePropertyIsIncludePatterns)
      *             .name(namespaceEffectivePropertyName)
-     *             .patternId(testPattern.id())
+     *             .patternId(testPattern.get("id"))
      *             .patternIdLong(namespaceEffectivePropertyPatternIdLong)
      *             .sourceName(namespaceEffectivePropertySourceName)
      *             .build());
@@ -4841,7 +4841,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceIngestTimeRule = LogAnalyticsFunctions.getNamespaceIngestTimeRule(GetNamespaceIngestTimeRuleArgs.builder()
-     *             .ingestTimeRuleId(testRule.id())
+     *             .ingestTimeRuleId(testRule.get("id"))
      *             .namespace(namespaceIngestTimeRuleNamespace)
      *             .build());
      * 
@@ -4884,7 +4884,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceIngestTimeRule = LogAnalyticsFunctions.getNamespaceIngestTimeRule(GetNamespaceIngestTimeRuleArgs.builder()
-     *             .ingestTimeRuleId(testRule.id())
+     *             .ingestTimeRuleId(testRule.get("id"))
      *             .namespace(namespaceIngestTimeRuleNamespace)
      *             .build());
      * 
@@ -4927,7 +4927,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceIngestTimeRule = LogAnalyticsFunctions.getNamespaceIngestTimeRule(GetNamespaceIngestTimeRuleArgs.builder()
-     *             .ingestTimeRuleId(testRule.id())
+     *             .ingestTimeRuleId(testRule.get("id"))
      *             .namespace(namespaceIngestTimeRuleNamespace)
      *             .build());
      * 
@@ -4970,7 +4970,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceIngestTimeRule = LogAnalyticsFunctions.getNamespaceIngestTimeRule(GetNamespaceIngestTimeRuleArgs.builder()
-     *             .ingestTimeRuleId(testRule.id())
+     *             .ingestTimeRuleId(testRule.get("id"))
      *             .namespace(namespaceIngestTimeRuleNamespace)
      *             .build());
      * 
@@ -5013,7 +5013,7 @@ public final class LogAnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNamespaceIngestTimeRule = LogAnalyticsFunctions.getNamespaceIngestTimeRule(GetNamespaceIngestTimeRuleArgs.builder()
-     *             .ingestTimeRuleId(testRule.id())
+     *             .ingestTimeRuleId(testRule.get("id"))
      *             .namespace(namespaceIngestTimeRuleNamespace)
      *             .build());
      * 
@@ -6412,7 +6412,7 @@ public final class LogAnalyticsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNamespaceScheduledTask = LogAnalyticsFunctions.getNamespaceScheduledTask(GetNamespaceScheduledTaskArgs.builder()
      *             .namespace(namespaceScheduledTaskNamespace)
-     *             .scheduledTaskId(testScheduledTask.id())
+     *             .scheduledTaskId(testScheduledTask.get("id"))
      *             .build());
      * 
      *     }
@@ -6455,7 +6455,7 @@ public final class LogAnalyticsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNamespaceScheduledTask = LogAnalyticsFunctions.getNamespaceScheduledTask(GetNamespaceScheduledTaskArgs.builder()
      *             .namespace(namespaceScheduledTaskNamespace)
-     *             .scheduledTaskId(testScheduledTask.id())
+     *             .scheduledTaskId(testScheduledTask.get("id"))
      *             .build());
      * 
      *     }
@@ -6498,7 +6498,7 @@ public final class LogAnalyticsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNamespaceScheduledTask = LogAnalyticsFunctions.getNamespaceScheduledTask(GetNamespaceScheduledTaskArgs.builder()
      *             .namespace(namespaceScheduledTaskNamespace)
-     *             .scheduledTaskId(testScheduledTask.id())
+     *             .scheduledTaskId(testScheduledTask.get("id"))
      *             .build());
      * 
      *     }
@@ -6541,7 +6541,7 @@ public final class LogAnalyticsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNamespaceScheduledTask = LogAnalyticsFunctions.getNamespaceScheduledTask(GetNamespaceScheduledTaskArgs.builder()
      *             .namespace(namespaceScheduledTaskNamespace)
-     *             .scheduledTaskId(testScheduledTask.id())
+     *             .scheduledTaskId(testScheduledTask.get("id"))
      *             .build());
      * 
      *     }
@@ -6584,7 +6584,7 @@ public final class LogAnalyticsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNamespaceScheduledTask = LogAnalyticsFunctions.getNamespaceScheduledTask(GetNamespaceScheduledTaskArgs.builder()
      *             .namespace(namespaceScheduledTaskNamespace)
-     *             .scheduledTaskId(testScheduledTask.id())
+     *             .scheduledTaskId(testScheduledTask.get("id"))
      *             .build());
      * 
      *     }
@@ -6631,7 +6631,7 @@ public final class LogAnalyticsFunctions {
      *             .displayName(namespaceScheduledTaskDisplayName)
      *             .targetService(namespaceScheduledTaskTargetService)
      *             .taskType(namespaceScheduledTaskTaskType)
-     *             .templateId(testTemplate.id())
+     *             .templateId(testTemplate.get("id"))
      *             .build());
      * 
      *     }
@@ -6678,7 +6678,7 @@ public final class LogAnalyticsFunctions {
      *             .displayName(namespaceScheduledTaskDisplayName)
      *             .targetService(namespaceScheduledTaskTargetService)
      *             .taskType(namespaceScheduledTaskTaskType)
-     *             .templateId(testTemplate.id())
+     *             .templateId(testTemplate.get("id"))
      *             .build());
      * 
      *     }
@@ -6725,7 +6725,7 @@ public final class LogAnalyticsFunctions {
      *             .displayName(namespaceScheduledTaskDisplayName)
      *             .targetService(namespaceScheduledTaskTargetService)
      *             .taskType(namespaceScheduledTaskTaskType)
-     *             .templateId(testTemplate.id())
+     *             .templateId(testTemplate.get("id"))
      *             .build());
      * 
      *     }
@@ -6772,7 +6772,7 @@ public final class LogAnalyticsFunctions {
      *             .displayName(namespaceScheduledTaskDisplayName)
      *             .targetService(namespaceScheduledTaskTargetService)
      *             .taskType(namespaceScheduledTaskTaskType)
-     *             .templateId(testTemplate.id())
+     *             .templateId(testTemplate.get("id"))
      *             .build());
      * 
      *     }
@@ -6819,7 +6819,7 @@ public final class LogAnalyticsFunctions {
      *             .displayName(namespaceScheduledTaskDisplayName)
      *             .targetService(namespaceScheduledTaskTargetService)
      *             .taskType(namespaceScheduledTaskTaskType)
-     *             .templateId(testTemplate.id())
+     *             .templateId(testTemplate.get("id"))
      *             .build());
      * 
      *     }
@@ -7932,7 +7932,7 @@ public final class LogAnalyticsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNamespaceTemplate = LogAnalyticsFunctions.getNamespaceTemplate(GetNamespaceTemplateArgs.builder()
      *             .namespace(namespaceTemplateNamespace)
-     *             .templateId(testTemplate.id())
+     *             .templateId(testTemplate.get("id"))
      *             .build());
      * 
      *     }
@@ -7975,7 +7975,7 @@ public final class LogAnalyticsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNamespaceTemplate = LogAnalyticsFunctions.getNamespaceTemplate(GetNamespaceTemplateArgs.builder()
      *             .namespace(namespaceTemplateNamespace)
-     *             .templateId(testTemplate.id())
+     *             .templateId(testTemplate.get("id"))
      *             .build());
      * 
      *     }
@@ -8018,7 +8018,7 @@ public final class LogAnalyticsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNamespaceTemplate = LogAnalyticsFunctions.getNamespaceTemplate(GetNamespaceTemplateArgs.builder()
      *             .namespace(namespaceTemplateNamespace)
-     *             .templateId(testTemplate.id())
+     *             .templateId(testTemplate.get("id"))
      *             .build());
      * 
      *     }
@@ -8061,7 +8061,7 @@ public final class LogAnalyticsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNamespaceTemplate = LogAnalyticsFunctions.getNamespaceTemplate(GetNamespaceTemplateArgs.builder()
      *             .namespace(namespaceTemplateNamespace)
-     *             .templateId(testTemplate.id())
+     *             .templateId(testTemplate.get("id"))
      *             .build());
      * 
      *     }
@@ -8104,7 +8104,7 @@ public final class LogAnalyticsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testNamespaceTemplate = LogAnalyticsFunctions.getNamespaceTemplate(GetNamespaceTemplateArgs.builder()
      *             .namespace(namespaceTemplateNamespace)
-     *             .templateId(testTemplate.id())
+     *             .templateId(testTemplate.get("id"))
      *             .build());
      * 
      *     }

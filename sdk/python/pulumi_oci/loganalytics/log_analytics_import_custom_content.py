@@ -283,7 +283,7 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
             import_custom_content_file=log_analytics_import_custom_content_import_custom_content_file,
             namespace=log_analytics_import_custom_content_namespace,
             expect=log_analytics_import_custom_content_expect,
-            is_overwrite=log_analytics_import_custom_content_is_overwrite == "true")
+            is_overwrite=log_analytics_import_custom_content_is_overwrite)
         ```
 
         ## Import
@@ -325,7 +325,7 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
             import_custom_content_file=log_analytics_import_custom_content_import_custom_content_file,
             namespace=log_analytics_import_custom_content_namespace,
             expect=log_analytics_import_custom_content_expect,
-            is_overwrite=log_analytics_import_custom_content_is_overwrite == "true")
+            is_overwrite=log_analytics_import_custom_content_is_overwrite)
         ```
 
         ## Import

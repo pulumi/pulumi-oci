@@ -511,8 +511,8 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(pulumi.CustomResource):
             },
             database_api_status=database_tools_database_api_gateway_config_global_database_api_status,
             document_root=database_tools_database_api_gateway_config_global_document_root,
-            http_port=int(database_tools_database_api_gateway_config_global_http_port),
-            https_port=int(database_tools_database_api_gateway_config_global_https_port),
+            http_port=database_tools_database_api_gateway_config_global_http_port,
+            https_port=database_tools_database_api_gateway_config_global_https_port,
             pool_route=database_tools_database_api_gateway_config_global_pool_route,
             pool_routing_header=database_tools_database_api_gateway_config_global_pool_routing_header)
         ```
@@ -581,8 +581,8 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(pulumi.CustomResource):
             },
             database_api_status=database_tools_database_api_gateway_config_global_database_api_status,
             document_root=database_tools_database_api_gateway_config_global_document_root,
-            http_port=int(database_tools_database_api_gateway_config_global_http_port),
-            https_port=int(database_tools_database_api_gateway_config_global_https_port),
+            http_port=database_tools_database_api_gateway_config_global_http_port,
+            https_port=database_tools_database_api_gateway_config_global_https_port,
             pool_route=database_tools_database_api_gateway_config_global_pool_route,
             pool_routing_header=database_tools_database_api_gateway_config_global_pool_routing_header)
         ```

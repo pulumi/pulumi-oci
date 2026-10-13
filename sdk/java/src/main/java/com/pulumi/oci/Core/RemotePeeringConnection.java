@@ -49,11 +49,11 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testRemotePeeringConnection = new RemotePeeringConnection("testRemotePeeringConnection", RemotePeeringConnectionArgs.builder()
  *             .compartmentId(compartmentId)
- *             .drgId(testDrg.id())
+ *             .drgId(testDrg.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(remotePeeringConnectionDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
- *             .peerId(testRemotePeeringConnection2.id())
+ *             .peerId(testRemotePeeringConnection2.get("id"))
  *             .peerRegionName(remotePeeringConnectionPeerRegionName)
  *             .build());
  * 

@@ -311,7 +311,7 @@ def get_cluster(cluster_id: Optional[_builtins.str] = None,
     import pulumi_oci as oci
 
     test_cluster = oci.containerengine.get_cluster(cluster_id=test_cluster_oci_containerengine_cluster["id"],
-        should_include_oidc_config_file=cluster_should_include_oidc_config_file == "true")
+        should_include_oidc_config_file=cluster_should_include_oidc_config_file)
     ```
 
 
@@ -362,7 +362,7 @@ def get_cluster_output(cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
     import pulumi_oci as oci
 
     test_cluster = oci.containerengine.get_cluster(cluster_id=test_cluster_oci_containerengine_cluster["id"],
-        should_include_oidc_config_file=cluster_should_include_oidc_config_file == "true")
+        should_include_oidc_config_file=cluster_should_include_oidc_config_file)
     ```
 
 

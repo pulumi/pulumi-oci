@@ -792,8 +792,8 @@ class FusionEnvironment(pulumi.CustomResource):
             additional_egress_rules=[{
                 "description": fusion_environment_additional_egress_rules_description,
                 "destination_cidr": fusion_environment_additional_egress_rules_destination_cidr,
-                "max_destination_port": int(fusion_environment_additional_egress_rules_max_destination_port),
-                "min_destination_port": int(fusion_environment_additional_egress_rules_min_destination_port),
+                "max_destination_port": fusion_environment_additional_egress_rules_max_destination_port,
+                "min_destination_port": fusion_environment_additional_egress_rules_min_destination_port,
             }],
             additional_language_packs=fusion_environment_additional_language_packs,
             defined_tags={
@@ -803,7 +803,7 @@ class FusionEnvironment(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_ipv6dual_stack_enabled=fusion_environment_is_ipv6dual_stack_enabled == "true",
+            is_ipv6dual_stack_enabled=fusion_environment_is_ipv6dual_stack_enabled,
             kms_key_id=test_key["id"],
             maintenance_policy={
                 "environment_maintenance_override": fusion_environment_maintenance_policy_environment_maintenance_override,
@@ -879,8 +879,8 @@ class FusionEnvironment(pulumi.CustomResource):
             additional_egress_rules=[{
                 "description": fusion_environment_additional_egress_rules_description,
                 "destination_cidr": fusion_environment_additional_egress_rules_destination_cidr,
-                "max_destination_port": int(fusion_environment_additional_egress_rules_max_destination_port),
-                "min_destination_port": int(fusion_environment_additional_egress_rules_min_destination_port),
+                "max_destination_port": fusion_environment_additional_egress_rules_max_destination_port,
+                "min_destination_port": fusion_environment_additional_egress_rules_min_destination_port,
             }],
             additional_language_packs=fusion_environment_additional_language_packs,
             defined_tags={
@@ -890,7 +890,7 @@ class FusionEnvironment(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_ipv6dual_stack_enabled=fusion_environment_is_ipv6dual_stack_enabled == "true",
+            is_ipv6dual_stack_enabled=fusion_environment_is_ipv6dual_stack_enabled,
             kms_key_id=test_key["id"],
             maintenance_policy={
                 "environment_maintenance_override": fusion_environment_maintenance_policy_environment_maintenance_override,

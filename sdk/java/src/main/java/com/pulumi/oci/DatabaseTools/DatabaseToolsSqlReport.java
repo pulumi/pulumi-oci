@@ -70,7 +70,7 @@ import javax.annotation.Nullable;
  *             .locks(DatabaseToolsSqlReportLockArgs.builder()
  *                 .type(databaseToolsSqlReportLocksType)
  *                 .message(databaseToolsSqlReportLocksMessage)
- *                 .relatedResourceId(testResource.id())
+ *                 .relatedResourceId(testResource.get("id"))
  *                 .timeCreated(databaseToolsSqlReportLocksTimeCreated)
  *                 .build())
  *             .purpose(databaseToolsSqlReportPurpose)

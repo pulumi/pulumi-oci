@@ -16,7 +16,7 @@ import * as utilities from "../utilities";
  * const testCompartment = oci.identity.getAvailabilityDomain({
  *     compartmentId: tenancyOcid,
  *     id: id,
- *     adNumber: Number(adNumber),
+ *     adNumber: adNumber,
  * });
  * ```
  */
@@ -80,7 +80,7 @@ export interface GetAvailabilityDomainResult {
  * const testCompartment = oci.identity.getAvailabilityDomain({
  *     compartmentId: tenancyOcid,
  *     id: id,
- *     adNumber: Number(adNumber),
+ *     adNumber: adNumber,
  * });
  * ```
  */

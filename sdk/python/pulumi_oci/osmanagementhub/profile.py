@@ -733,7 +733,7 @@ class Profile(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_default_profile=profile_is_default_profile == "true",
+            is_default_profile=profile_is_default_profile,
             lifecycle_stage_id=test_lifecycle_stage["id"],
             managed_instance_group_id=test_managed_instance_group["id"],
             management_station_id=test_management_station["id"],
@@ -805,7 +805,7 @@ class Profile(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_default_profile=profile_is_default_profile == "true",
+            is_default_profile=profile_is_default_profile,
             lifecycle_stage_id=test_lifecycle_stage["id"],
             managed_instance_group_id=test_managed_instance_group["id"],
             management_station_id=test_management_station["id"],

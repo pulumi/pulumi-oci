@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testCloudDbSystemConnector = new CloudDbSystemConnector("testCloudDbSystemConnector", CloudDbSystemConnectorArgs.builder()
- *             .cloudDbSystemId(testCloudDbSystem.id())
+ *             .cloudDbSystemId(testCloudDbSystem.get("id"))
  *             .connectorType(cloudDbSystemConnectorConnectorType)
  *             .displayName(cloudDbSystemConnectorDisplayName)
  *             .build());

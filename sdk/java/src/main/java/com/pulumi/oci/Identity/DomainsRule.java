@@ -61,7 +61,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testRule = new DomainsRule("testRule", DomainsRuleArgs.builder()
  *             .condition(ruleCondition)
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .name(ruleName)
  *             .policyType(DomainsRulePolicyTypeArgs.builder()
  *                 .value("SignOn")

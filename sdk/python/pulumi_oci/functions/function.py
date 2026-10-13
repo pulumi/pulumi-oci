@@ -689,7 +689,7 @@ class Function(pulumi.CustomResource):
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            detached_mode_timeout_in_seconds=int(function_detached_mode_timeout_in_seconds),
+            detached_mode_timeout_in_seconds=function_detached_mode_timeout_in_seconds,
             failure_destination={
                 "kind": function_failure_destination_kind,
                 "channel_id": test_channel["id"],
@@ -702,7 +702,7 @@ class Function(pulumi.CustomResource):
             },
             provisioned_concurrency_config={
                 "strategy": function_provisioned_concurrency_config_strategy,
-                "count": int(function_provisioned_concurrency_config_count),
+                "count": function_provisioned_concurrency_config_count,
             },
             success_destination={
                 "kind": function_success_destination_kind,
@@ -711,9 +711,9 @@ class Function(pulumi.CustomResource):
                 "stream_id": test_stream["id"],
                 "topic_id": test_notification_topic["id"],
             },
-            timeout_in_seconds=int(function_timeout_in_seconds),
+            timeout_in_seconds=function_timeout_in_seconds,
             trace_config={
-                "is_enabled": function_trace_config_is_enabled == "true",
+                "is_enabled": function_trace_config_is_enabled,
             })
         ```
 
@@ -794,7 +794,7 @@ class Function(pulumi.CustomResource):
             defined_tags={
                 "Operations.CostCenter": "42",
             },
-            detached_mode_timeout_in_seconds=int(function_detached_mode_timeout_in_seconds),
+            detached_mode_timeout_in_seconds=function_detached_mode_timeout_in_seconds,
             failure_destination={
                 "kind": function_failure_destination_kind,
                 "channel_id": test_channel["id"],
@@ -807,7 +807,7 @@ class Function(pulumi.CustomResource):
             },
             provisioned_concurrency_config={
                 "strategy": function_provisioned_concurrency_config_strategy,
-                "count": int(function_provisioned_concurrency_config_count),
+                "count": function_provisioned_concurrency_config_count,
             },
             success_destination={
                 "kind": function_success_destination_kind,
@@ -816,9 +816,9 @@ class Function(pulumi.CustomResource):
                 "stream_id": test_stream["id"],
                 "topic_id": test_notification_topic["id"],
             },
-            timeout_in_seconds=int(function_timeout_in_seconds),
+            timeout_in_seconds=function_timeout_in_seconds,
             trace_config={
-                "is_enabled": function_trace_config_is_enabled == "true",
+                "is_enabled": function_trace_config_is_enabled,
             })
         ```
 

@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testLog = new Log("testLog", LogArgs.builder()
  *             .displayName(logDisplayName)
- *             .logGroupId(testLogGroup.id())
+ *             .logGroupId(testLogGroup.get("id"))
  *             .logType(logLogType)
  *             .configuration(LogConfigurationArgs.builder()
  *                 .source(LogConfigurationSourceArgs.builder()

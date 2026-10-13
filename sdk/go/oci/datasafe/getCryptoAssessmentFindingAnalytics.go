@@ -34,7 +34,7 @@ import (
 //				AccessLevel:             pulumi.StringRef(cryptoAssessmentFindingAnalyticAccessLevel),
 //				Category:                pulumi.StringRef(cryptoAssessmentFindingAnalyticCategory),
 //				CompartmentIdInSubtree:  pulumi.BoolRef(cryptoAssessmentFindingAnalyticCompartmentIdInSubtree),
-//				FindingKeys:             pulumi.ToArray(cryptoAssessmentFindingAnalyticFindingKey),
+//				FindingKeys:             cryptoAssessmentFindingAnalyticFindingKey,
 //				IsQuantumReadinessCheck: pulumi.BoolRef(cryptoAssessmentFindingAnalyticIsQuantumReadinessCheck),
 //			}, nil)
 //			if err != nil {

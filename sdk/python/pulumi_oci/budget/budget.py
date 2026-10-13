@@ -696,10 +696,10 @@ class Budget(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_budget = oci.budget.Budget("test_budget",
-            amount=int(budget_amount),
+            amount=budget_amount,
             compartment_id=tenancy_ocid,
             reset_period=budget_reset_period,
-            budget_processing_period_start_offset=int(budget_budget_processing_period_start_offset),
+            budget_processing_period_start_offset=budget_budget_processing_period_start_offset,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -768,10 +768,10 @@ class Budget(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_budget = oci.budget.Budget("test_budget",
-            amount=int(budget_amount),
+            amount=budget_amount,
             compartment_id=tenancy_ocid,
             reset_period=budget_reset_period,
-            budget_processing_period_start_offset=int(budget_budget_processing_period_start_offset),
+            budget_processing_period_start_offset=budget_budget_processing_period_start_offset,
             defined_tags={
                 "Operations.CostCenter": "42",
             },

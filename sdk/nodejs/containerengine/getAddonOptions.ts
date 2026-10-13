@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testAddonOptions = oci.containerengine.getAddonOptions({
  *     kubernetesVersion: addonOptionKubernetesVersion,
  *     addonName: testAddon.name,
- *     shouldShowAllVersions: addonOptionShouldShowAllVersions === "true",
+ *     shouldShowAllVersions: addonOptionShouldShowAllVersions,
  * });
  * ```
  */
@@ -84,7 +84,7 @@ export interface GetAddonOptionsResult {
  * const testAddonOptions = oci.containerengine.getAddonOptions({
  *     kubernetesVersion: addonOptionKubernetesVersion,
  *     addonName: testAddon.name,
- *     shouldShowAllVersions: addonOptionShouldShowAllVersions === "true",
+ *     shouldShowAllVersions: addonOptionShouldShowAllVersions,
  * });
  * ```
  */

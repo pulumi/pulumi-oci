@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     targetId: testTargetDatabase.id,
  *     trailLocation: auditTrailManagementTrailLocation,
- *     canUpdateLastArchiveTimeOnTarget: auditTrailManagementCanUpdateLastArchiveTimeOnTarget === "true",
+ *     canUpdateLastArchiveTimeOnTarget: auditTrailManagementCanUpdateLastArchiveTimeOnTarget,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -31,7 +31,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isAutoPurgeEnabled: auditTrailManagementIsAutoPurgeEnabled === "true",
+ *     isAutoPurgeEnabled: auditTrailManagementIsAutoPurgeEnabled,
  * });
  * ```
  *

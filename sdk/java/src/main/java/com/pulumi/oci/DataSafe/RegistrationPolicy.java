@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *         var testRegistrationPolicy = new RegistrationPolicy("testRegistrationPolicy", RegistrationPolicyArgs.builder()
  *             .compartmentId(compartmentId)
  *             .features(registrationPolicyFeatures)
- *             .resourceId(testResource.id())
+ *             .resourceId(testResource.get("id"))
  *             .canOverrideFeatures(registrationPolicyCanOverrideFeatures)
  *             .connectionOption(RegistrationPolicyConnectionOptionArgs.builder()
  *                 .connectionType(registrationPolicyConnectionOptionConnectionType)

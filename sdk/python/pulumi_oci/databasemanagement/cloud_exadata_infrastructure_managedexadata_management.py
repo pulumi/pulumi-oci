@@ -168,7 +168,7 @@ class CloudExadataInfrastructureManagedexadataManagement(pulumi.CustomResource):
 
         test_cloud_exadata_infrastructure_managedexadata_management = oci.databasemanagement.CloudExadataInfrastructureManagedexadataManagement("test_cloud_exadata_infrastructure_managedexadata_management",
             cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
-            enable_managedexadata=enable_managedexadata == "true",
+            enable_managedexadata=enable_managedexadata,
             license_model=cloud_exadata_infrastructure_managedexadata_management_license_model)
         ```
 
@@ -206,7 +206,7 @@ class CloudExadataInfrastructureManagedexadataManagement(pulumi.CustomResource):
 
         test_cloud_exadata_infrastructure_managedexadata_management = oci.databasemanagement.CloudExadataInfrastructureManagedexadataManagement("test_cloud_exadata_infrastructure_managedexadata_management",
             cloud_exadata_infrastructure_id=test_cloud_exadata_infrastructure["id"],
-            enable_managedexadata=enable_managedexadata == "true",
+            enable_managedexadata=enable_managedexadata,
             license_model=cloud_exadata_infrastructure_managedexadata_management_license_model)
         ```
 

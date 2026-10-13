@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testTopUtilizedProductLicenses = oci.licensemanager.getTopUtilizedProductLicenses({
  *     compartmentId: compartmentId,
- *     isCompartmentIdInSubtree: topUtilizedProductLicenseIsCompartmentIdInSubtree === "true",
+ *     isCompartmentIdInSubtree: topUtilizedProductLicenseIsCompartmentIdInSubtree,
  * });
  * ```
  */
@@ -73,7 +73,7 @@ export interface GetTopUtilizedProductLicensesResult {
  *
  * const testTopUtilizedProductLicenses = oci.licensemanager.getTopUtilizedProductLicenses({
  *     compartmentId: compartmentId,
- *     isCompartmentIdInSubtree: topUtilizedProductLicenseIsCompartmentIdInSubtree === "true",
+ *     isCompartmentIdInSubtree: topUtilizedProductLicenseIsCompartmentIdInSubtree,
  * });
  * ```
  */

@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  *
  * const testMyOauth2clientCredentials = oci.identity.getDomainsMyOauth2clientCredentials({
  *     idcsEndpoint: testDomain.url,
- *     myOauth2clientCredentialCount: Number(myOauth2clientCredentialMyOauth2clientCredentialCount),
+ *     myOauth2clientCredentialCount: myOauth2clientCredentialMyOauth2clientCredentialCount,
  *     myOauth2clientCredentialFilter: myOauth2clientCredentialMyOauth2clientCredentialFilter,
  *     authorization: myOauth2clientCredentialAuthorization,
  *     resourceTypeSchemaVersion: myOauth2clientCredentialResourceTypeSchemaVersion,
- *     startIndex: Number(myOauth2clientCredentialStartIndex),
+ *     startIndex: myOauth2clientCredentialStartIndex,
  * });
  * ```
  */
@@ -116,11 +116,11 @@ export interface GetDomainsMyOauth2clientCredentialsResult {
  *
  * const testMyOauth2clientCredentials = oci.identity.getDomainsMyOauth2clientCredentials({
  *     idcsEndpoint: testDomain.url,
- *     myOauth2clientCredentialCount: Number(myOauth2clientCredentialMyOauth2clientCredentialCount),
+ *     myOauth2clientCredentialCount: myOauth2clientCredentialMyOauth2clientCredentialCount,
  *     myOauth2clientCredentialFilter: myOauth2clientCredentialMyOauth2clientCredentialFilter,
  *     authorization: myOauth2clientCredentialAuthorization,
  *     resourceTypeSchemaVersion: myOauth2clientCredentialResourceTypeSchemaVersion,
- *     startIndex: Number(myOauth2clientCredentialStartIndex),
+ *     startIndex: myOauth2clientCredentialStartIndex,
  * });
  * ```
  */

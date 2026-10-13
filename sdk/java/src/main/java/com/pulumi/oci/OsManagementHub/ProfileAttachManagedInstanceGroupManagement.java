@@ -46,8 +46,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testProfileAttachManagedInstanceGroupManagement = new ProfileAttachManagedInstanceGroupManagement("testProfileAttachManagedInstanceGroupManagement", ProfileAttachManagedInstanceGroupManagementArgs.builder()
- *             .managedInstanceGroupId(testManagedInstanceGroup.id())
- *             .profileId(testProfile.id())
+ *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
+ *             .profileId(testProfile.get("id"))
  *             .build());
  * 
  *     }

@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testDrgRouteDistribution = new DrgRouteDistribution("testDrgRouteDistribution", DrgRouteDistributionArgs.builder()
  *             .distributionType(drgRouteDistributionDistributionType)
- *             .drgId(testDrg.id())
+ *             .drgId(testDrg.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(drgRouteDistributionDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))

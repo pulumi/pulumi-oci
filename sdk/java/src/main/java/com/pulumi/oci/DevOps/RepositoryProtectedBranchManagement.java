@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testRepositoryProtectedBranchManagement = new RepositoryProtectedBranchManagement("testRepositoryProtectedBranchManagement", RepositoryProtectedBranchManagementArgs.builder()
  *             .branchName(repositoryProtectedBranchManagementBranchName)
- *             .repositoryId(testRepository.id())
+ *             .repositoryId(testRepository.get("id"))
  *             .protectionLevels(repositoryProtectedBranchManagementProtectionLevels)
  *             .build());
  * 

@@ -66,10 +66,10 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testDatabaseUpgrade = new DatabaseUpgrade("testDatabaseUpgrade", DatabaseUpgradeArgs.builder()
  *             .action(databaseUpgradeAction)
- *             .databaseId(testDatabase.id())
+ *             .databaseId(testDatabase.get("id"))
  *             .databaseUpgradeSourceDetails(DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs.builder()
- *                 .databaseSoftwareImageId(testDatabaseSoftwareImage.id())
- *                 .dbHomeId(testDbHome.id())
+ *                 .databaseSoftwareImageId(testDatabaseSoftwareImage.get("id"))
+ *                 .dbHomeId(testDbHome.get("id"))
  *                 .dbVersion(databaseUpgradeDatabaseUpgradeSourceDetailsDbVersion)
  *                 .options(databaseUpgradeDatabaseUpgradeSourceDetailsOptions)
  *                 .source(databaseUpgradeDatabaseUpgradeSourceDetailsSource)

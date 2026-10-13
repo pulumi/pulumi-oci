@@ -44,19 +44,19 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     interfaceDownTimerValueInMilliseconds: Number(crossConnectGroupInterfaceDownTimerValueInMilliseconds),
- *     isInterfaceHoldTimerEnabled: crossConnectGroupIsInterfaceHoldTimerEnabled === "true",
- *     isQosEnabled: crossConnectGroupIsQosEnabled === "true",
+ *     interfaceDownTimerValueInMilliseconds: crossConnectGroupInterfaceDownTimerValueInMilliseconds,
+ *     isInterfaceHoldTimerEnabled: crossConnectGroupIsInterfaceHoldTimerEnabled,
+ *     isQosEnabled: crossConnectGroupIsQosEnabled,
  *     macsecProperties: {
  *         state: crossConnectGroupMacsecPropertiesState,
  *         encryptionCipher: crossConnectGroupMacsecPropertiesEncryptionCipher,
- *         isUnprotectedTrafficAllowed: crossConnectGroupMacsecPropertiesIsUnprotectedTrafficAllowed === "true",
+ *         isUnprotectedTrafficAllowed: crossConnectGroupMacsecPropertiesIsUnprotectedTrafficAllowed,
  *         primaryKey: {
  *             connectivityAssociationKeySecretId: testSecret.id,
  *             connectivityAssociationNameSecretId: testSecret.id,
  *         },
  *     },
- *     minimumLinks: Number(crossConnectGroupMinimumLinks),
+ *     minimumLinks: crossConnectGroupMinimumLinks,
  * });
  * ```
  *

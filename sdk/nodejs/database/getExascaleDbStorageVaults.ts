@@ -25,8 +25,8 @@ import * as utilities from "../utilities";
  *     displayName: exascaleDbStorageVaultDisplayName,
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     state: exascaleDbStorageVaultState,
- *     vmClusterCountGreaterThanOrEqualTo: Number(exascaleDbStorageVaultVmClusterCountGreaterThanOrEqualTo),
- *     vmClusterCountLessThanOrEqualTo: Number(exascaleDbStorageVaultVmClusterCountLessThanOrEqualTo),
+ *     vmClusterCountGreaterThanOrEqualTo: exascaleDbStorageVaultVmClusterCountGreaterThanOrEqualTo,
+ *     vmClusterCountLessThanOrEqualTo: exascaleDbStorageVaultVmClusterCountLessThanOrEqualTo,
  * });
  * ```
  */
@@ -149,8 +149,8 @@ export interface GetExascaleDbStorageVaultsResult {
  *     displayName: exascaleDbStorageVaultDisplayName,
  *     exadataInfrastructureId: testExadataInfrastructure.id,
  *     state: exascaleDbStorageVaultState,
- *     vmClusterCountGreaterThanOrEqualTo: Number(exascaleDbStorageVaultVmClusterCountGreaterThanOrEqualTo),
- *     vmClusterCountLessThanOrEqualTo: Number(exascaleDbStorageVaultVmClusterCountLessThanOrEqualTo),
+ *     vmClusterCountGreaterThanOrEqualTo: exascaleDbStorageVaultVmClusterCountGreaterThanOrEqualTo,
+ *     vmClusterCountLessThanOrEqualTo: exascaleDbStorageVaultVmClusterCountLessThanOrEqualTo,
  * });
  * ```
  */

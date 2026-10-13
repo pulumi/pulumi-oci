@@ -44,7 +44,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSetSecurityAssessmentBaselineManagement = new SetSecurityAssessmentBaselineManagement("testSetSecurityAssessmentBaselineManagement", SetSecurityAssessmentBaselineManagementArgs.builder()
- *             .targetId(testTargetDatabase.id())
+ *             .targetId(testTargetDatabase.get("id"))
  *             .compartmentId(comaprtmentId)
  *             .build());
  * 

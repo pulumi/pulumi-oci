@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  *
  * const testMyCompletedApprovals = oci.identity.getDomainsMyCompletedApprovals({
  *     idcsEndpoint: testDomain.url,
- *     myCompletedApprovalCount: Number(myCompletedApprovalMyCompletedApprovalCount),
+ *     myCompletedApprovalCount: myCompletedApprovalMyCompletedApprovalCount,
  *     myCompletedApprovalFilter: myCompletedApprovalMyCompletedApprovalFilter,
  *     authorization: myCompletedApprovalAuthorization,
  *     resourceTypeSchemaVersion: myCompletedApprovalResourceTypeSchemaVersion,
- *     startIndex: Number(myCompletedApprovalStartIndex),
+ *     startIndex: myCompletedApprovalStartIndex,
  * });
  * ```
  */
@@ -116,11 +116,11 @@ export interface GetDomainsMyCompletedApprovalsResult {
  *
  * const testMyCompletedApprovals = oci.identity.getDomainsMyCompletedApprovals({
  *     idcsEndpoint: testDomain.url,
- *     myCompletedApprovalCount: Number(myCompletedApprovalMyCompletedApprovalCount),
+ *     myCompletedApprovalCount: myCompletedApprovalMyCompletedApprovalCount,
  *     myCompletedApprovalFilter: myCompletedApprovalMyCompletedApprovalFilter,
  *     authorization: myCompletedApprovalAuthorization,
  *     resourceTypeSchemaVersion: myCompletedApprovalResourceTypeSchemaVersion,
- *     startIndex: Number(myCompletedApprovalStartIndex),
+ *     startIndex: myCompletedApprovalStartIndex,
  * });
  * ```
  */

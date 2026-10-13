@@ -215,13 +215,13 @@ def get_domains_cloud_gate_servers(attribute_sets: Optional[Sequence[_builtins.s
     import pulumi_oci as oci
 
     test_cloud_gate_servers = oci.identity.get_domains_cloud_gate_servers(idcs_endpoint=test_domain["url"],
-        cloud_gate_server_count=int(cloud_gate_server_cloud_gate_server_count),
+        cloud_gate_server_count=cloud_gate_server_cloud_gate_server_count,
         cloud_gate_server_filter=cloud_gate_server_cloud_gate_server_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=cloud_gate_server_authorization,
         resource_type_schema_version=cloud_gate_server_resource_type_schema_version,
-        start_index=int(cloud_gate_server_start_index))
+        start_index=cloud_gate_server_start_index)
     ```
 
 
@@ -289,13 +289,13 @@ def get_domains_cloud_gate_servers_output(attribute_sets: pulumi.Input[Optional[
     import pulumi_oci as oci
 
     test_cloud_gate_servers = oci.identity.get_domains_cloud_gate_servers(idcs_endpoint=test_domain["url"],
-        cloud_gate_server_count=int(cloud_gate_server_cloud_gate_server_count),
+        cloud_gate_server_count=cloud_gate_server_cloud_gate_server_count,
         cloud_gate_server_filter=cloud_gate_server_cloud_gate_server_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=cloud_gate_server_authorization,
         resource_type_schema_version=cloud_gate_server_resource_type_schema_version,
-        start_index=int(cloud_gate_server_start_index))
+        start_index=cloud_gate_server_start_index)
     ```
 
 

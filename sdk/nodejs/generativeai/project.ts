@@ -24,8 +24,8 @@ import * as utilities from "../utilities";
  * const testProject = new oci.generativeai.Project("test_project", {
  *     compartmentId: compartmentId,
  *     conversationConfig: {
- *         conversationsRetentionInHours: Number(projectConversationConfigConversationsRetentionInHours),
- *         responsesRetentionInHours: Number(projectConversationConfigResponsesRetentionInHours),
+ *         conversationsRetentionInHours: projectConversationConfigConversationsRetentionInHours,
+ *         responsesRetentionInHours: projectConversationConfigResponsesRetentionInHours,
  *     },
  *     definedTags: {
  *         "Operations.CostCenter": "42",
@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *     },
  *     longTermMemoryConfig: {
  *         standardLongTermMemoryStrategy: {
- *             isEnabled: projectLongTermMemoryConfigStandardLongTermMemoryStrategyIsEnabled === "true",
+ *             isEnabled: projectLongTermMemoryConfigStandardLongTermMemoryStrategyIsEnabled,
  *             embeddingConfig: {
  *                 llmSelection: {
  *                     llmSelectionType: projectLongTermMemoryConfigStandardLongTermMemoryStrategyEmbeddingConfigLlmSelectionLlmSelectionType,
@@ -53,7 +53,7 @@ import * as utilities from "../utilities";
  *         },
  *     },
  *     shortTermMemoryOptimizationConfig: {
- *         isEnabled: projectShortTermMemoryOptimizationConfigIsEnabled === "true",
+ *         isEnabled: projectShortTermMemoryOptimizationConfigIsEnabled,
  *         condenserConfig: {
  *             llmSelection: {
  *                 llmSelectionType: projectShortTermMemoryOptimizationConfigCondenserConfigLlmSelectionLlmSelectionType,

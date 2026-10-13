@@ -35,7 +35,7 @@ import (
 //				CryptoEndpoint: encryptedDataCryptoEndpoint,
 //				KeyId:          testKey.Id,
 //				Plaintext:      encryptedDataPlaintext,
-//				AssociatedData: pulumi.ToMap(encryptedDataAssociatedData),
+//				AssociatedData: encryptedDataAssociatedData,
 //			}, nil)
 //			if err != nil {
 //				return err

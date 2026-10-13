@@ -154,9 +154,9 @@ def get_crypto_assessment_finding_analytics(access_level: Optional[_builtins.str
     test_crypto_assessment_finding_analytics = oci.datasafe.get_crypto_assessment_finding_analytics(compartment_id=compartment_id,
         access_level=crypto_assessment_finding_analytic_access_level,
         category=crypto_assessment_finding_analytic_category,
-        compartment_id_in_subtree=crypto_assessment_finding_analytic_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=crypto_assessment_finding_analytic_compartment_id_in_subtree,
         finding_keys=crypto_assessment_finding_analytic_finding_key,
-        is_quantum_readiness_check=crypto_assessment_finding_analytic_is_quantum_readiness_check == "true")
+        is_quantum_readiness_check=crypto_assessment_finding_analytic_is_quantum_readiness_check)
     ```
 
 
@@ -210,9 +210,9 @@ def get_crypto_assessment_finding_analytics_output(access_level: pulumi.Input[Op
     test_crypto_assessment_finding_analytics = oci.datasafe.get_crypto_assessment_finding_analytics(compartment_id=compartment_id,
         access_level=crypto_assessment_finding_analytic_access_level,
         category=crypto_assessment_finding_analytic_category,
-        compartment_id_in_subtree=crypto_assessment_finding_analytic_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=crypto_assessment_finding_analytic_compartment_id_in_subtree,
         finding_keys=crypto_assessment_finding_analytic_finding_key,
-        is_quantum_readiness_check=crypto_assessment_finding_analytic_is_quantum_readiness_check == "true")
+        is_quantum_readiness_check=crypto_assessment_finding_analytic_is_quantum_readiness_check)
     ```
 
 

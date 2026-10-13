@@ -69,7 +69,7 @@ import javax.annotation.Nullable;
  *                 .ocid(approvalWorkflowAssignmentAssignedToOcid)
  *                 .build())
  *             .assignmentType(approvalWorkflowAssignmentAssignmentType)
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:ApprovalWorkflowAssignment")
  *             .attributeSets("all")
  *             .attributes("")

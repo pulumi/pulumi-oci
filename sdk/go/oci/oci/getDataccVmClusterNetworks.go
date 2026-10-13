@@ -35,7 +35,7 @@ import (
 //				InfrastructureId:      pulumi.StringRef(testInfrastructure.Id),
 //				IsScanEnabled:         pulumi.BoolRef(vmClusterNetworkIsScanEnabled),
 //				NodeCount:             pulumi.IntRef(vmClusterNetworkNodeCount),
-//				States:                pulumi.ToArray(vmClusterNetworkState),
+//				States:                vmClusterNetworkState,
 //				VmNetworkConsumerType: pulumi.StringRef(vmClusterNetworkVmNetworkConsumerType),
 //			}, nil)
 //			if err != nil {

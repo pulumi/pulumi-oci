@@ -482,7 +482,7 @@ class RemediationRecipe(pulumi.CustomResource):
                 "max_permissible_severity": remediation_recipe_detect_configuration_max_permissible_severity,
                 "upgrade_policy": remediation_recipe_detect_configuration_upgrade_policy,
             },
-            is_run_triggered_on_kb_change=remediation_recipe_is_run_triggered_on_kb_change == "true",
+            is_run_triggered_on_kb_change=remediation_recipe_is_run_triggered_on_kb_change,
             knowledge_base_id=test_knowledge_base["id"],
             network_configuration={
                 "subnet_id": test_subnet["id"],
@@ -490,7 +490,7 @@ class RemediationRecipe(pulumi.CustomResource):
             },
             scm_configuration={
                 "branch": remediation_recipe_scm_configuration_branch,
-                "is_automerge_enabled": remediation_recipe_scm_configuration_is_automerge_enabled == "true",
+                "is_automerge_enabled": remediation_recipe_scm_configuration_is_automerge_enabled,
                 "scm_type": remediation_recipe_scm_configuration_scm_type,
                 "build_file_location": remediation_recipe_scm_configuration_build_file_location,
                 "external_scm_type": remediation_recipe_scm_configuration_external_scm_type,
@@ -575,7 +575,7 @@ class RemediationRecipe(pulumi.CustomResource):
                 "max_permissible_severity": remediation_recipe_detect_configuration_max_permissible_severity,
                 "upgrade_policy": remediation_recipe_detect_configuration_upgrade_policy,
             },
-            is_run_triggered_on_kb_change=remediation_recipe_is_run_triggered_on_kb_change == "true",
+            is_run_triggered_on_kb_change=remediation_recipe_is_run_triggered_on_kb_change,
             knowledge_base_id=test_knowledge_base["id"],
             network_configuration={
                 "subnet_id": test_subnet["id"],
@@ -583,7 +583,7 @@ class RemediationRecipe(pulumi.CustomResource):
             },
             scm_configuration={
                 "branch": remediation_recipe_scm_configuration_branch,
-                "is_automerge_enabled": remediation_recipe_scm_configuration_is_automerge_enabled == "true",
+                "is_automerge_enabled": remediation_recipe_scm_configuration_is_automerge_enabled,
                 "scm_type": remediation_recipe_scm_configuration_scm_type,
                 "build_file_location": remediation_recipe_scm_configuration_build_file_location,
                 "external_scm_type": remediation_recipe_scm_configuration_external_scm_type,

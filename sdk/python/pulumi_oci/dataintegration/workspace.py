@@ -722,7 +722,7 @@ class Workspace(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_private_network_enabled=workspace_is_private_network_enabled == "true",
+            is_private_network_enabled=workspace_is_private_network_enabled,
             registry_compartment_id=test_compartment["id"],
             registry_id=test_registry["id"],
             registry_name=test_registry["name"],
@@ -796,7 +796,7 @@ class Workspace(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_private_network_enabled=workspace_is_private_network_enabled == "true",
+            is_private_network_enabled=workspace_is_private_network_enabled,
             registry_compartment_id=test_compartment["id"],
             registry_id=test_registry["id"],
             registry_name=test_registry["name"],

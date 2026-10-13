@@ -50,11 +50,11 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var defaultDrgRouteTable = new DefaultDrgRouteTable("defaultDrgRouteTable", DefaultDrgRouteTableArgs.builder()
- *             .manageDefaultResourceId(testDrg.defaultDrgRouteTables()[0].vcn())
+ *             .manageDefaultResourceId(testDrg.get("defaultDrgRouteTables")[0].get("vcn"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName("managed-default-drg-route-table")
  *             .freeformTags(Map.of("Department", "Finance"))
- *             .importDrgRouteDistributionId(testDrgRouteDistribution.id())
+ *             .importDrgRouteDistributionId(testDrgRouteDistribution.get("id"))
  *             .isEcmpEnabled(true)
  *             .build());
  * 

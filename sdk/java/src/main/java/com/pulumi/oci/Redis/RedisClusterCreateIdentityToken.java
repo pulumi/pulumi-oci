@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testRedisClusterCreateIdentityToken = new RedisClusterCreateIdentityToken("testRedisClusterCreateIdentityToken", RedisClusterCreateIdentityTokenArgs.builder()
  *             .publicKey(redisClusterCreateIdentityTokenPublicKey)
- *             .redisClusterId(testRedisCluster.id())
+ *             .redisClusterId(testRedisCluster.get("id"))
  *             .redisUser(redisClusterCreateIdentityTokenRedisUser)
  *             .build());
  * 

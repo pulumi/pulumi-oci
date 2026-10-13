@@ -143,7 +143,7 @@ def get_multicloud_multicloudpolicies(compartment_id: Optional[_builtins.str] = 
 
     test_multicloudpolicies = oci.oci.get_multicloud_multicloudpolicies(compartment_id=compartment_id,
         display_name=multicloudpolicy_display_name,
-        is_force_refresh=multicloudpolicy_is_force_refresh == "true",
+        is_force_refresh=multicloudpolicy_is_force_refresh,
         subscription_id=test_subscription["id"])
     ```
 
@@ -192,7 +192,7 @@ def get_multicloud_multicloudpolicies_output(compartment_id: pulumi.Input[Option
 
     test_multicloudpolicies = oci.oci.get_multicloud_multicloudpolicies(compartment_id=compartment_id,
         display_name=multicloudpolicy_display_name,
-        is_force_refresh=multicloudpolicy_is_force_refresh == "true",
+        is_force_refresh=multicloudpolicy_is_force_refresh,
         subscription_id=test_subscription["id"])
     ```
 

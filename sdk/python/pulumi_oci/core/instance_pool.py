@@ -550,7 +550,7 @@ class InstancePool(pulumi.CustomResource):
                     "ipv6address_ipv6subnet_cidr_pair_details": [{
                         "ipv6subnet_cidr": instance_pool_placement_configurations_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     }],
-                    "is_assign_ipv6ip": instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip == "true",
+                    "is_assign_ipv6ip": instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip,
                 },
                 "secondary_vnic_subnets": [{
                     "subnet_id": test_subnet["id"],
@@ -558,10 +558,10 @@ class InstancePool(pulumi.CustomResource):
                     "ipv6address_ipv6subnet_cidr_pair_details": [{
                         "ipv6subnet_cidr": instance_pool_placement_configurations_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     }],
-                    "is_assign_ipv6ip": instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip == "true",
+                    "is_assign_ipv6ip": instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip,
                 }],
             }],
-            size=int(instance_pool_size),
+            size=instance_pool_size,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -574,19 +574,19 @@ class InstancePool(pulumi.CustomResource):
             lifecycle_management={
                 "lifecycle_actions": {
                     "pre_termination": {
-                        "is_enabled": instance_pool_lifecycle_management_lifecycle_actions_pre_termination_is_enabled == "true",
+                        "is_enabled": instance_pool_lifecycle_management_lifecycle_actions_pre_termination_is_enabled,
                         "on_timeout": {
                             "preserve_block_volume_mode": instance_pool_lifecycle_management_lifecycle_actions_pre_termination_on_timeout_preserve_block_volume_mode,
                             "preserve_boot_volume_mode": instance_pool_lifecycle_management_lifecycle_actions_pre_termination_on_timeout_preserve_boot_volume_mode,
                         },
-                        "timeout": int(instance_pool_lifecycle_management_lifecycle_actions_pre_termination_timeout),
+                        "timeout": instance_pool_lifecycle_management_lifecycle_actions_pre_termination_timeout,
                     },
                 },
             },
             load_balancers=[{
                 "backend_set_name": test_backend_set["name"],
                 "load_balancer_id": test_load_balancer["id"],
-                "port": int(instance_pool_load_balancers_port),
+                "port": instance_pool_load_balancers_port,
                 "vnic_selection": instance_pool_load_balancers_vnic_selection,
             }])
         ```
@@ -657,7 +657,7 @@ class InstancePool(pulumi.CustomResource):
                     "ipv6address_ipv6subnet_cidr_pair_details": [{
                         "ipv6subnet_cidr": instance_pool_placement_configurations_primary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     }],
-                    "is_assign_ipv6ip": instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip == "true",
+                    "is_assign_ipv6ip": instance_pool_placement_configurations_primary_vnic_subnets_is_assign_ipv6ip,
                 },
                 "secondary_vnic_subnets": [{
                     "subnet_id": test_subnet["id"],
@@ -665,10 +665,10 @@ class InstancePool(pulumi.CustomResource):
                     "ipv6address_ipv6subnet_cidr_pair_details": [{
                         "ipv6subnet_cidr": instance_pool_placement_configurations_secondary_vnic_subnets_ipv6address_ipv6subnet_cidr_pair_details_ipv6subnet_cidr,
                     }],
-                    "is_assign_ipv6ip": instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip == "true",
+                    "is_assign_ipv6ip": instance_pool_placement_configurations_secondary_vnic_subnets_is_assign_ipv6ip,
                 }],
             }],
-            size=int(instance_pool_size),
+            size=instance_pool_size,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -681,19 +681,19 @@ class InstancePool(pulumi.CustomResource):
             lifecycle_management={
                 "lifecycle_actions": {
                     "pre_termination": {
-                        "is_enabled": instance_pool_lifecycle_management_lifecycle_actions_pre_termination_is_enabled == "true",
+                        "is_enabled": instance_pool_lifecycle_management_lifecycle_actions_pre_termination_is_enabled,
                         "on_timeout": {
                             "preserve_block_volume_mode": instance_pool_lifecycle_management_lifecycle_actions_pre_termination_on_timeout_preserve_block_volume_mode,
                             "preserve_boot_volume_mode": instance_pool_lifecycle_management_lifecycle_actions_pre_termination_on_timeout_preserve_boot_volume_mode,
                         },
-                        "timeout": int(instance_pool_lifecycle_management_lifecycle_actions_pre_termination_timeout),
+                        "timeout": instance_pool_lifecycle_management_lifecycle_actions_pre_termination_timeout,
                     },
                 },
             },
             load_balancers=[{
                 "backend_set_name": test_backend_set["name"],
                 "load_balancer_id": test_load_balancer["id"],
-                "port": int(instance_pool_load_balancers_port),
+                "port": instance_pool_load_balancers_port,
                 "vnic_selection": instance_pool_load_balancers_vnic_selection,
             }])
         ```

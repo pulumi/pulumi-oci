@@ -120,7 +120,7 @@ def get_chargeback_plans(chargebackplan_id: Optional[_builtins.str] = None,
 
     test_chargeback_plans = oci.opsi.get_chargeback_plans(chargebackplan_id=test_chargebackplan["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=chargeback_plan_compartment_id_in_subtree == "true")
+        compartment_id_in_subtree=chargeback_plan_compartment_id_in_subtree)
     ```
 
 
@@ -161,7 +161,7 @@ def get_chargeback_plans_output(chargebackplan_id: pulumi.Input[Optional[Optiona
 
     test_chargeback_plans = oci.opsi.get_chargeback_plans(chargebackplan_id=test_chargebackplan["id"],
         compartment_id=compartment_id,
-        compartment_id_in_subtree=chargeback_plan_compartment_id_in_subtree == "true")
+        compartment_id_in_subtree=chargeback_plan_compartment_id_in_subtree)
     ```
 
 

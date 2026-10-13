@@ -53,18 +53,18 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testPluggableDatabasePluggabledatabasemanagementsManagement = new PluggableDatabaseManagementsManagement("testPluggableDatabasePluggabledatabasemanagementsManagement", PluggableDatabaseManagementsManagementArgs.builder()
- *             .pluggableDatabaseId(testPluggableDatabase.id())
+ *             .pluggableDatabaseId(testPluggableDatabase.get("id"))
  *             .enablePluggabledatabasemanagement(enablePluggabledatabasemanagement)
  *             .credentialDetails(PluggableDatabaseManagementsManagementCredentialDetailsArgs.builder()
- *                 .passwordSecretId(testSecret.id())
- *                 .userName(testUser.name())
+ *                 .passwordSecretId(testSecret.get("id"))
+ *                 .userName(testUser.get("name"))
  *                 .build())
- *             .privateEndPointId(testPrivateEndPoint.id())
- *             .serviceName(testService.name())
+ *             .privateEndPointId(testPrivateEndPoint.get("id"))
+ *             .serviceName(testService.get("name"))
  *             .port(pluggableDatabasePluggabledatabasemanagementsManagementPort)
  *             .protocol(pluggableDatabasePluggabledatabasemanagementsManagementProtocol)
  *             .role(pluggableDatabasePluggabledatabasemanagementsManagementRole)
- *             .sslSecretId(testSecret.id())
+ *             .sslSecretId(testSecret.get("id"))
  *             .build());
  * 
  *     }

@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testSecurityAssessmentSecurityFeatures = oci.datasafe.getSecurityAssessmentSecurityFeatures({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentSecurityFeatureAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentSecurityFeatureCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: securityAssessmentSecurityFeatureCompartmentIdInSubtree,
  *     targetId: testTarget.id,
  *     targetsWithColumnEncryption: securityAssessmentSecurityFeatureTargetsWithColumnEncryption,
  *     targetsWithDatabaseVault: securityAssessmentSecurityFeatureTargetsWithDatabaseVault,
@@ -174,7 +174,7 @@ export interface GetSecurityAssessmentSecurityFeaturesResult {
  * const testSecurityAssessmentSecurityFeatures = oci.datasafe.getSecurityAssessmentSecurityFeatures({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentSecurityFeatureAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentSecurityFeatureCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: securityAssessmentSecurityFeatureCompartmentIdInSubtree,
  *     targetId: testTarget.id,
  *     targetsWithColumnEncryption: securityAssessmentSecurityFeatureTargetsWithColumnEncryption,
  *     targetsWithDatabaseVault: securityAssessmentSecurityFeatureTargetsWithDatabaseVault,

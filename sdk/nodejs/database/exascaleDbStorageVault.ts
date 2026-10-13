@@ -25,10 +25,10 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     displayName: exascaleDbStorageVaultDisplayName,
  *     highCapacityDatabaseStorage: {
- *         totalSizeInGbs: Number(exascaleDbStorageVaultHighCapacityDatabaseStorageTotalSizeInGbs),
+ *         totalSizeInGbs: exascaleDbStorageVaultHighCapacityDatabaseStorageTotalSizeInGbs,
  *     },
- *     additionalFlashCacheInPercent: Number(exascaleDbStorageVaultAdditionalFlashCacheInPercent),
- *     autoscaleLimitInGbs: Number(exascaleDbStorageVaultAutoscaleLimitInGbs),
+ *     additionalFlashCacheInPercent: exascaleDbStorageVaultAdditionalFlashCacheInPercent,
+ *     autoscaleLimitInGbs: exascaleDbStorageVaultAutoscaleLimitInGbs,
  *     clusterPlacementGroupId: testClusterPlacementGroup.id,
  *     definedTags: exascaleDbStorageVaultDefinedTags,
  *     description: exascaleDbStorageVaultDescription,
@@ -36,7 +36,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isAutoscaleEnabled: exascaleDbStorageVaultIsAutoscaleEnabled === "true",
+ *     isAutoscaleEnabled: exascaleDbStorageVaultIsAutoscaleEnabled,
  *     subscriptionId: tenantSubscriptionId,
  *     timeZone: exascaleDbStorageVaultTimeZone,
  * });

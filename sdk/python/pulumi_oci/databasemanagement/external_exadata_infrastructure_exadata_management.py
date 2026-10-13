@@ -170,7 +170,7 @@ class ExternalExadataInfrastructureExadataManagement(pulumi.CustomResource):
 
         test_external_exadata_infrastructure_exadata_management = oci.databasemanagement.ExternalExadataInfrastructureExadataManagement("test_external_exadata_infrastructure_exadata_management",
             external_exadata_infrastructure_id=test_external_exadata_infrastructure["id"],
-            enable_exadata=enable_exadata == "true",
+            enable_exadata=enable_exadata,
             license_model=external_exadata_infrastructure_exadata_management_license_model)
         ```
 
@@ -210,7 +210,7 @@ class ExternalExadataInfrastructureExadataManagement(pulumi.CustomResource):
 
         test_external_exadata_infrastructure_exadata_management = oci.databasemanagement.ExternalExadataInfrastructureExadataManagement("test_external_exadata_infrastructure_exadata_management",
             external_exadata_infrastructure_id=test_external_exadata_infrastructure["id"],
-            enable_exadata=enable_exadata == "true",
+            enable_exadata=enable_exadata,
             license_model=external_exadata_infrastructure_exadata_management_license_model)
         ```
 

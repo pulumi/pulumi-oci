@@ -684,7 +684,7 @@ class Pipeline(pulumi.CustomResource):
             target_connection_details={
                 "connection_id": test_connection["id"],
             },
-            cpu_core_count=int(pipeline_cpu_core_count),
+            cpu_core_count=pipeline_cpu_core_count,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -692,7 +692,7 @@ class Pipeline(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_auto_scaling_enabled=pipeline_is_auto_scaling_enabled == "true",
+            is_auto_scaling_enabled=pipeline_is_auto_scaling_enabled,
             locks=[{
                 "type": pipeline_locks_type,
                 "message": pipeline_locks_message,
@@ -778,7 +778,7 @@ class Pipeline(pulumi.CustomResource):
             target_connection_details={
                 "connection_id": test_connection["id"],
             },
-            cpu_core_count=int(pipeline_cpu_core_count),
+            cpu_core_count=pipeline_cpu_core_count,
             defined_tags={
                 "foo-namespace.bar-key": "value",
             },
@@ -786,7 +786,7 @@ class Pipeline(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_auto_scaling_enabled=pipeline_is_auto_scaling_enabled == "true",
+            is_auto_scaling_enabled=pipeline_is_auto_scaling_enabled,
             locks=[{
                 "type": pipeline_locks_type,
                 "message": pipeline_locks_message,

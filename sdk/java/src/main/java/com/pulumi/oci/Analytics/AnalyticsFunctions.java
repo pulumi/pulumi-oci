@@ -57,7 +57,7 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstance = AnalyticsFunctions.getAnalyticsInstance(GetAnalyticsInstanceArgs.builder()
-     *             .analyticsInstanceId(testAnalyticsInstanceOciAnalyticsAnalyticsInstance.id())
+     *             .analyticsInstanceId(testAnalyticsInstanceOciAnalyticsAnalyticsInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -99,7 +99,7 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstance = AnalyticsFunctions.getAnalyticsInstance(GetAnalyticsInstanceArgs.builder()
-     *             .analyticsInstanceId(testAnalyticsInstanceOciAnalyticsAnalyticsInstance.id())
+     *             .analyticsInstanceId(testAnalyticsInstanceOciAnalyticsAnalyticsInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -141,7 +141,7 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstance = AnalyticsFunctions.getAnalyticsInstance(GetAnalyticsInstanceArgs.builder()
-     *             .analyticsInstanceId(testAnalyticsInstanceOciAnalyticsAnalyticsInstance.id())
+     *             .analyticsInstanceId(testAnalyticsInstanceOciAnalyticsAnalyticsInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -183,7 +183,7 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstance = AnalyticsFunctions.getAnalyticsInstance(GetAnalyticsInstanceArgs.builder()
-     *             .analyticsInstanceId(testAnalyticsInstanceOciAnalyticsAnalyticsInstance.id())
+     *             .analyticsInstanceId(testAnalyticsInstanceOciAnalyticsAnalyticsInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -225,7 +225,7 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstance = AnalyticsFunctions.getAnalyticsInstance(GetAnalyticsInstanceArgs.builder()
-     *             .analyticsInstanceId(testAnalyticsInstanceOciAnalyticsAnalyticsInstance.id())
+     *             .analyticsInstanceId(testAnalyticsInstanceOciAnalyticsAnalyticsInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -267,7 +267,7 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstancePrivateAccessChannel = AnalyticsFunctions.getAnalyticsInstancePrivateAccessChannel(GetAnalyticsInstancePrivateAccessChannelArgs.builder()
-     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .analyticsInstanceId(testAnalyticsInstance.get("id"))
      *             .privateAccessChannelKey(analyticsInstancePrivateAccessChannelPrivateAccessChannelKey)
      *             .build());
      * 
@@ -310,7 +310,7 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstancePrivateAccessChannel = AnalyticsFunctions.getAnalyticsInstancePrivateAccessChannel(GetAnalyticsInstancePrivateAccessChannelArgs.builder()
-     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .analyticsInstanceId(testAnalyticsInstance.get("id"))
      *             .privateAccessChannelKey(analyticsInstancePrivateAccessChannelPrivateAccessChannelKey)
      *             .build());
      * 
@@ -353,7 +353,7 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstancePrivateAccessChannel = AnalyticsFunctions.getAnalyticsInstancePrivateAccessChannel(GetAnalyticsInstancePrivateAccessChannelArgs.builder()
-     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .analyticsInstanceId(testAnalyticsInstance.get("id"))
      *             .privateAccessChannelKey(analyticsInstancePrivateAccessChannelPrivateAccessChannelKey)
      *             .build());
      * 
@@ -396,7 +396,7 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstancePrivateAccessChannel = AnalyticsFunctions.getAnalyticsInstancePrivateAccessChannel(GetAnalyticsInstancePrivateAccessChannelArgs.builder()
-     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .analyticsInstanceId(testAnalyticsInstance.get("id"))
      *             .privateAccessChannelKey(analyticsInstancePrivateAccessChannelPrivateAccessChannelKey)
      *             .build());
      * 
@@ -439,7 +439,7 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstancePrivateAccessChannel = AnalyticsFunctions.getAnalyticsInstancePrivateAccessChannel(GetAnalyticsInstancePrivateAccessChannelArgs.builder()
-     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .analyticsInstanceId(testAnalyticsInstance.get("id"))
      *             .privateAccessChannelKey(analyticsInstancePrivateAccessChannelPrivateAccessChannelKey)
      *             .build());
      * 
@@ -482,8 +482,8 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstanceResourceGroup = AnalyticsFunctions.getAnalyticsInstanceResourceGroup(GetAnalyticsInstanceResourceGroupArgs.builder()
-     *             .analyticsInstanceId(testAnalyticsInstance.id())
-     *             .analyticsInstanceResourceGroupId(testAnalyticsInstanceResourceGroupOciAnalyticsAnalyticsInstanceResourceGroup.id())
+     *             .analyticsInstanceId(testAnalyticsInstance.get("id"))
+     *             .analyticsInstanceResourceGroupId(testAnalyticsInstanceResourceGroupOciAnalyticsAnalyticsInstanceResourceGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -525,8 +525,8 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstanceResourceGroup = AnalyticsFunctions.getAnalyticsInstanceResourceGroup(GetAnalyticsInstanceResourceGroupArgs.builder()
-     *             .analyticsInstanceId(testAnalyticsInstance.id())
-     *             .analyticsInstanceResourceGroupId(testAnalyticsInstanceResourceGroupOciAnalyticsAnalyticsInstanceResourceGroup.id())
+     *             .analyticsInstanceId(testAnalyticsInstance.get("id"))
+     *             .analyticsInstanceResourceGroupId(testAnalyticsInstanceResourceGroupOciAnalyticsAnalyticsInstanceResourceGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -568,8 +568,8 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstanceResourceGroup = AnalyticsFunctions.getAnalyticsInstanceResourceGroup(GetAnalyticsInstanceResourceGroupArgs.builder()
-     *             .analyticsInstanceId(testAnalyticsInstance.id())
-     *             .analyticsInstanceResourceGroupId(testAnalyticsInstanceResourceGroupOciAnalyticsAnalyticsInstanceResourceGroup.id())
+     *             .analyticsInstanceId(testAnalyticsInstance.get("id"))
+     *             .analyticsInstanceResourceGroupId(testAnalyticsInstanceResourceGroupOciAnalyticsAnalyticsInstanceResourceGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -611,8 +611,8 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstanceResourceGroup = AnalyticsFunctions.getAnalyticsInstanceResourceGroup(GetAnalyticsInstanceResourceGroupArgs.builder()
-     *             .analyticsInstanceId(testAnalyticsInstance.id())
-     *             .analyticsInstanceResourceGroupId(testAnalyticsInstanceResourceGroupOciAnalyticsAnalyticsInstanceResourceGroup.id())
+     *             .analyticsInstanceId(testAnalyticsInstance.get("id"))
+     *             .analyticsInstanceResourceGroupId(testAnalyticsInstanceResourceGroupOciAnalyticsAnalyticsInstanceResourceGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -654,8 +654,8 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstanceResourceGroup = AnalyticsFunctions.getAnalyticsInstanceResourceGroup(GetAnalyticsInstanceResourceGroupArgs.builder()
-     *             .analyticsInstanceId(testAnalyticsInstance.id())
-     *             .analyticsInstanceResourceGroupId(testAnalyticsInstanceResourceGroupOciAnalyticsAnalyticsInstanceResourceGroup.id())
+     *             .analyticsInstanceId(testAnalyticsInstance.get("id"))
+     *             .analyticsInstanceResourceGroupId(testAnalyticsInstanceResourceGroupOciAnalyticsAnalyticsInstanceResourceGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -697,7 +697,7 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstanceResourceGroups = AnalyticsFunctions.getAnalyticsInstanceResourceGroups(GetAnalyticsInstanceResourceGroupsArgs.builder()
-     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .analyticsInstanceId(testAnalyticsInstance.get("id"))
      *             .name(analyticsInstanceResourceGroupName)
      *             .build());
      * 
@@ -740,7 +740,7 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstanceResourceGroups = AnalyticsFunctions.getAnalyticsInstanceResourceGroups(GetAnalyticsInstanceResourceGroupsArgs.builder()
-     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .analyticsInstanceId(testAnalyticsInstance.get("id"))
      *             .name(analyticsInstanceResourceGroupName)
      *             .build());
      * 
@@ -783,7 +783,7 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstanceResourceGroups = AnalyticsFunctions.getAnalyticsInstanceResourceGroups(GetAnalyticsInstanceResourceGroupsArgs.builder()
-     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .analyticsInstanceId(testAnalyticsInstance.get("id"))
      *             .name(analyticsInstanceResourceGroupName)
      *             .build());
      * 
@@ -826,7 +826,7 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstanceResourceGroups = AnalyticsFunctions.getAnalyticsInstanceResourceGroups(GetAnalyticsInstanceResourceGroupsArgs.builder()
-     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .analyticsInstanceId(testAnalyticsInstance.get("id"))
      *             .name(analyticsInstanceResourceGroupName)
      *             .build());
      * 
@@ -869,7 +869,7 @@ public final class AnalyticsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnalyticsInstanceResourceGroups = AnalyticsFunctions.getAnalyticsInstanceResourceGroups(GetAnalyticsInstanceResourceGroupsArgs.builder()
-     *             .analyticsInstanceId(testAnalyticsInstance.id())
+     *             .analyticsInstanceId(testAnalyticsInstance.get("id"))
      *             .name(analyticsInstanceResourceGroupName)
      *             .build());
      * 

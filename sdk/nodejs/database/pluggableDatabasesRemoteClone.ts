@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *     sourceContainerDbAdminPassword: pluggableDatabasesRemoteCloneSourceContainerDbAdminPassword,
  *     targetContainerDatabaseId: testDatabase.id,
  *     pdbAdminPassword: pluggableDatabasesRemoteClonePdbAdminPassword,
- *     shouldPdbAdminAccountBeLocked: pluggableDatabasesRemoteCloneShouldPdbAdminAccountBeLocked === "true",
+ *     shouldPdbAdminAccountBeLocked: pluggableDatabasesRemoteCloneShouldPdbAdminAccountBeLocked,
  *     targetTdeWalletPassword: pluggableDatabasesRemoteCloneTargetTdeWalletPassword,
  * });
  * ```

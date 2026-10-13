@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  *     dataConfig: managementSavedSearchDataConfig,
  *     description: managementSavedSearchDescription,
  *     displayName: managementSavedSearchDisplayName,
- *     isOobSavedSearch: managementSavedSearchIsOobSavedSearch === "true",
+ *     isOobSavedSearch: managementSavedSearchIsOobSavedSearch,
  *     metadataVersion: managementSavedSearchMetadataVersion,
  *     nls: managementSavedSearchNls,
  *     providerId: testProvider.id,

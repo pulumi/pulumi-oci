@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  *
  * const testMyAuthTokens = oci.identity.getDomainsMyAuthTokens({
  *     idcsEndpoint: testDomain.url,
- *     myAuthTokenCount: Number(myAuthTokenMyAuthTokenCount),
+ *     myAuthTokenCount: myAuthTokenMyAuthTokenCount,
  *     myAuthTokenFilter: myAuthTokenMyAuthTokenFilter,
  *     authorization: myAuthTokenAuthorization,
  *     resourceTypeSchemaVersion: myAuthTokenResourceTypeSchemaVersion,
- *     startIndex: Number(myAuthTokenStartIndex),
+ *     startIndex: myAuthTokenStartIndex,
  * });
  * ```
  */
@@ -116,11 +116,11 @@ export interface GetDomainsMyAuthTokensResult {
  *
  * const testMyAuthTokens = oci.identity.getDomainsMyAuthTokens({
  *     idcsEndpoint: testDomain.url,
- *     myAuthTokenCount: Number(myAuthTokenMyAuthTokenCount),
+ *     myAuthTokenCount: myAuthTokenMyAuthTokenCount,
  *     myAuthTokenFilter: myAuthTokenMyAuthTokenFilter,
  *     authorization: myAuthTokenAuthorization,
  *     resourceTypeSchemaVersion: myAuthTokenResourceTypeSchemaVersion,
- *     startIndex: Number(myAuthTokenStartIndex),
+ *     startIndex: myAuthTokenStartIndex,
  * });
  * ```
  */

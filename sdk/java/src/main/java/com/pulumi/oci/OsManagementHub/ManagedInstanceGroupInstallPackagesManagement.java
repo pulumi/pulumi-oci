@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testManagedInstanceGroupInstallPackagesManagement = new ManagedInstanceGroupInstallPackagesManagement("testManagedInstanceGroupInstallPackagesManagement", ManagedInstanceGroupInstallPackagesManagementArgs.builder()
- *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+ *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
  *             .packageNames(managedInstanceGroupInstallPackagesManagementPackageNames)
  *             .isLatest(managedInstanceGroupInstallPackagesManagementIsLatest)
  *             .workRequestDetails(ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs.builder()

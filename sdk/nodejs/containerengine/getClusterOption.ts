@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testClusterOption = oci.containerengine.getClusterOption({
  *     clusterOptionId: testClusterOptionOciContainerengineClusterOption.id,
  *     compartmentId: compartmentId,
- *     shouldListAllPatchVersions: clusterOptionShouldListAllPatchVersions === "true",
+ *     shouldListAllPatchVersions: clusterOptionShouldListAllPatchVersions,
  * });
  * ```
  */
@@ -85,7 +85,7 @@ export interface GetClusterOptionResult {
  * const testClusterOption = oci.containerengine.getClusterOption({
  *     clusterOptionId: testClusterOptionOciContainerengineClusterOption.id,
  *     compartmentId: compartmentId,
- *     shouldListAllPatchVersions: clusterOptionShouldListAllPatchVersions === "true",
+ *     shouldListAllPatchVersions: clusterOptionShouldListAllPatchVersions,
  * });
  * ```
  */

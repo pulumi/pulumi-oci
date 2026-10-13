@@ -50,10 +50,10 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testSign = new Sign("testSign", SignArgs.builder()
  *             .cryptoEndpoint(signMessageCryptoEndpoint)
- *             .keyId(testKey.id())
+ *             .keyId(testKey.get("id"))
  *             .message(signMessage)
  *             .signingAlgorithm(signSigningAlgorithm)
- *             .keyVersionId(testKeyVersion.id())
+ *             .keyVersionId(testKeyVersion.get("id"))
  *             .loggingContext(signLoggingContext)
  *             .messageType(signMessageType)
  *             .build());

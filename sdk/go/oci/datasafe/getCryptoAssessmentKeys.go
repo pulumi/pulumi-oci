@@ -37,10 +37,10 @@ import (
 //				CompartmentIdInSubtree: pulumi.BoolRef(cryptoAssessmentKeyCompartmentIdInSubtree),
 //				Feature:                pulumi.StringRef(cryptoAssessmentKeyFeature),
 //				KeyId:                  pulumi.StringRef(testKey.Id),
-//				KeyManagerTypes:        pulumi.ToArray(cryptoAssessmentKeyKeyManagerType),
+//				KeyManagerTypes:        cryptoAssessmentKeyKeyManagerType,
 //				KeyType:                pulumi.StringRef(cryptoAssessmentKeyKeyType),
 //				TargetId:               pulumi.StringRef(testTarget.Id),
-//				TargetIds:              pulumi.ToArray(cryptoAssessmentKeyTargetIds),
+//				TargetIds:              cryptoAssessmentKeyTargetIds,
 //			}, nil)
 //			if err != nil {
 //				return err

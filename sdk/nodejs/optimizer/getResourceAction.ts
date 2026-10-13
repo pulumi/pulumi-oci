@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testResourceAction = oci.optimizer.getResourceAction({
  *     resourceActionId: testResourceActionOciOptimizerResourceAction.id,
- *     includeResourceMetadata: resourceActionIncludeResourceMetadata === "true",
+ *     includeResourceMetadata: resourceActionIncludeResourceMetadata,
  * });
  * ```
  */
@@ -137,7 +137,7 @@ export interface GetResourceActionResult {
  *
  * const testResourceAction = oci.optimizer.getResourceAction({
  *     resourceActionId: testResourceActionOciOptimizerResourceAction.id,
- *     includeResourceMetadata: resourceActionIncludeResourceMetadata === "true",
+ *     includeResourceMetadata: resourceActionIncludeResourceMetadata,
  * });
  * ```
  */

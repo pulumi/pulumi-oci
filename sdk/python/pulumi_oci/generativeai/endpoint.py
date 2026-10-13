@@ -450,7 +450,7 @@ class Endpoint(pulumi.CustomResource):
             dedicated_ai_cluster_id=test_dedicated_ai_cluster["id"],
             model_id=test_model["id"],
             content_moderation_config={
-                "is_enabled": endpoint_content_moderation_config_is_enabled == "true",
+                "is_enabled": endpoint_content_moderation_config_is_enabled,
                 "mode": endpoint_content_moderation_config_mode,
                 "model_id": test_model["id"],
             },
@@ -516,7 +516,7 @@ class Endpoint(pulumi.CustomResource):
             dedicated_ai_cluster_id=test_dedicated_ai_cluster["id"],
             model_id=test_model["id"],
             content_moderation_config={
-                "is_enabled": endpoint_content_moderation_config_is_enabled == "true",
+                "is_enabled": endpoint_content_moderation_config_is_enabled,
                 "mode": endpoint_content_moderation_config_mode,
                 "model_id": test_model["id"],
             },

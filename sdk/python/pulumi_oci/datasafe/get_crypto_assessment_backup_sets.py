@@ -192,8 +192,8 @@ def get_crypto_assessment_backup_sets(access_level: Optional[_builtins.str] = No
         assessment_id=test_assessment["id"],
         assessment_type=crypto_assessment_backup_set_assessment_type,
         backup_set_key=crypto_assessment_backup_set_backup_set_key,
-        compartment_id_in_subtree=crypto_assessment_backup_set_compartment_id_in_subtree == "true",
-        is_encrypted=crypto_assessment_backup_set_is_encrypted == "true",
+        compartment_id_in_subtree=crypto_assessment_backup_set_compartment_id_in_subtree,
+        is_encrypted=crypto_assessment_backup_set_is_encrypted,
         target_id=test_target["id"],
         target_ids=crypto_assessment_backup_set_target_ids)
     ```
@@ -263,8 +263,8 @@ def get_crypto_assessment_backup_sets_output(access_level: pulumi.Input[Optional
         assessment_id=test_assessment["id"],
         assessment_type=crypto_assessment_backup_set_assessment_type,
         backup_set_key=crypto_assessment_backup_set_backup_set_key,
-        compartment_id_in_subtree=crypto_assessment_backup_set_compartment_id_in_subtree == "true",
-        is_encrypted=crypto_assessment_backup_set_is_encrypted == "true",
+        compartment_id_in_subtree=crypto_assessment_backup_set_compartment_id_in_subtree,
+        is_encrypted=crypto_assessment_backup_set_is_encrypted,
         target_id=test_target["id"],
         target_ids=crypto_assessment_backup_set_target_ids)
     ```

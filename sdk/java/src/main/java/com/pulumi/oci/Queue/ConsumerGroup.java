@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testConsumerGroup = new ConsumerGroup("testConsumerGroup", ConsumerGroupArgs.builder()
  *             .displayName(consumerGroupDisplayName)
- *             .queueId(testQueue.id())
+ *             .queueId(testQueue.get("id"))
  *             .consumerGroupFilter(consumerGroupConsumerGroupFilter)
  *             .deadLetterQueueDeliveryCount(consumerGroupDeadLetterQueueDeliveryCount)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))

@@ -177,7 +177,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildPipeline = DevOpsFunctions.getBuildPipeline(GetBuildPipelineArgs.builder()
-     *             .buildPipelineId(testBuildPipelineOciDevopsBuildPipeline.id())
+     *             .buildPipelineId(testBuildPipelineOciDevopsBuildPipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -219,7 +219,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildPipeline = DevOpsFunctions.getBuildPipeline(GetBuildPipelineArgs.builder()
-     *             .buildPipelineId(testBuildPipelineOciDevopsBuildPipeline.id())
+     *             .buildPipelineId(testBuildPipelineOciDevopsBuildPipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -261,7 +261,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildPipeline = DevOpsFunctions.getBuildPipeline(GetBuildPipelineArgs.builder()
-     *             .buildPipelineId(testBuildPipelineOciDevopsBuildPipeline.id())
+     *             .buildPipelineId(testBuildPipelineOciDevopsBuildPipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -303,7 +303,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildPipeline = DevOpsFunctions.getBuildPipeline(GetBuildPipelineArgs.builder()
-     *             .buildPipelineId(testBuildPipelineOciDevopsBuildPipeline.id())
+     *             .buildPipelineId(testBuildPipelineOciDevopsBuildPipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -345,7 +345,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildPipeline = DevOpsFunctions.getBuildPipeline(GetBuildPipelineArgs.builder()
-     *             .buildPipelineId(testBuildPipelineOciDevopsBuildPipeline.id())
+     *             .buildPipelineId(testBuildPipelineOciDevopsBuildPipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -387,7 +387,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildPipelineStage = DevOpsFunctions.getBuildPipelineStage(GetBuildPipelineStageArgs.builder()
-     *             .buildPipelineStageId(testBuildPipelineStageOciDevopsBuildPipelineStage.id())
+     *             .buildPipelineStageId(testBuildPipelineStageOciDevopsBuildPipelineStage.get("id"))
      *             .build());
      * 
      *     }
@@ -429,7 +429,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildPipelineStage = DevOpsFunctions.getBuildPipelineStage(GetBuildPipelineStageArgs.builder()
-     *             .buildPipelineStageId(testBuildPipelineStageOciDevopsBuildPipelineStage.id())
+     *             .buildPipelineStageId(testBuildPipelineStageOciDevopsBuildPipelineStage.get("id"))
      *             .build());
      * 
      *     }
@@ -471,7 +471,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildPipelineStage = DevOpsFunctions.getBuildPipelineStage(GetBuildPipelineStageArgs.builder()
-     *             .buildPipelineStageId(testBuildPipelineStageOciDevopsBuildPipelineStage.id())
+     *             .buildPipelineStageId(testBuildPipelineStageOciDevopsBuildPipelineStage.get("id"))
      *             .build());
      * 
      *     }
@@ -513,7 +513,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildPipelineStage = DevOpsFunctions.getBuildPipelineStage(GetBuildPipelineStageArgs.builder()
-     *             .buildPipelineStageId(testBuildPipelineStageOciDevopsBuildPipelineStage.id())
+     *             .buildPipelineStageId(testBuildPipelineStageOciDevopsBuildPipelineStage.get("id"))
      *             .build());
      * 
      *     }
@@ -555,7 +555,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildPipelineStage = DevOpsFunctions.getBuildPipelineStage(GetBuildPipelineStageArgs.builder()
-     *             .buildPipelineStageId(testBuildPipelineStageOciDevopsBuildPipelineStage.id())
+     *             .buildPipelineStageId(testBuildPipelineStageOciDevopsBuildPipelineStage.get("id"))
      *             .build());
      * 
      *     }
@@ -597,7 +597,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildPipelineStages = DevOpsFunctions.getBuildPipelineStages(GetBuildPipelineStagesArgs.builder()
-     *             .buildPipelineId(testBuildPipeline.id())
+     *             .buildPipelineId(testBuildPipeline.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(buildPipelineStageDisplayName)
      *             .id(buildPipelineStageId)
@@ -643,7 +643,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildPipelineStages = DevOpsFunctions.getBuildPipelineStages(GetBuildPipelineStagesArgs.builder()
-     *             .buildPipelineId(testBuildPipeline.id())
+     *             .buildPipelineId(testBuildPipeline.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(buildPipelineStageDisplayName)
      *             .id(buildPipelineStageId)
@@ -689,7 +689,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildPipelineStages = DevOpsFunctions.getBuildPipelineStages(GetBuildPipelineStagesArgs.builder()
-     *             .buildPipelineId(testBuildPipeline.id())
+     *             .buildPipelineId(testBuildPipeline.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(buildPipelineStageDisplayName)
      *             .id(buildPipelineStageId)
@@ -735,7 +735,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildPipelineStages = DevOpsFunctions.getBuildPipelineStages(GetBuildPipelineStagesArgs.builder()
-     *             .buildPipelineId(testBuildPipeline.id())
+     *             .buildPipelineId(testBuildPipeline.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(buildPipelineStageDisplayName)
      *             .id(buildPipelineStageId)
@@ -781,7 +781,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildPipelineStages = DevOpsFunctions.getBuildPipelineStages(GetBuildPipelineStagesArgs.builder()
-     *             .buildPipelineId(testBuildPipeline.id())
+     *             .buildPipelineId(testBuildPipeline.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(buildPipelineStageDisplayName)
      *             .id(buildPipelineStageId)
@@ -827,7 +827,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildPipelineStages = DevOpsFunctions.getBuildPipelineStages(GetBuildPipelineStagesArgs.builder()
-     *             .buildPipelineId(testBuildPipeline.id())
+     *             .buildPipelineId(testBuildPipeline.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(buildPipelineStageDisplayName)
      *             .id(buildPipelineStageId)
@@ -873,7 +873,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildPipelineStages = DevOpsFunctions.getBuildPipelineStages(GetBuildPipelineStagesArgs.builder()
-     *             .buildPipelineId(testBuildPipeline.id())
+     *             .buildPipelineId(testBuildPipeline.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(buildPipelineStageDisplayName)
      *             .id(buildPipelineStageId)
@@ -922,7 +922,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(buildPipelineDisplayName)
      *             .id(buildPipelineId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(buildPipelineState)
      *             .build());
      * 
@@ -968,7 +968,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(buildPipelineDisplayName)
      *             .id(buildPipelineId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(buildPipelineState)
      *             .build());
      * 
@@ -1014,7 +1014,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(buildPipelineDisplayName)
      *             .id(buildPipelineId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(buildPipelineState)
      *             .build());
      * 
@@ -1060,7 +1060,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(buildPipelineDisplayName)
      *             .id(buildPipelineId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(buildPipelineState)
      *             .build());
      * 
@@ -1106,7 +1106,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(buildPipelineDisplayName)
      *             .id(buildPipelineId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(buildPipelineState)
      *             .build());
      * 
@@ -1152,7 +1152,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(buildPipelineDisplayName)
      *             .id(buildPipelineId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(buildPipelineState)
      *             .build());
      * 
@@ -1198,7 +1198,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(buildPipelineDisplayName)
      *             .id(buildPipelineId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(buildPipelineState)
      *             .build());
      * 
@@ -1241,7 +1241,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildRun = DevOpsFunctions.getBuildRun(GetBuildRunArgs.builder()
-     *             .buildRunId(testBuildRunOciDevopsBuildRun.id())
+     *             .buildRunId(testBuildRunOciDevopsBuildRun.get("id"))
      *             .build());
      * 
      *     }
@@ -1283,7 +1283,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildRun = DevOpsFunctions.getBuildRun(GetBuildRunArgs.builder()
-     *             .buildRunId(testBuildRunOciDevopsBuildRun.id())
+     *             .buildRunId(testBuildRunOciDevopsBuildRun.get("id"))
      *             .build());
      * 
      *     }
@@ -1325,7 +1325,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildRun = DevOpsFunctions.getBuildRun(GetBuildRunArgs.builder()
-     *             .buildRunId(testBuildRunOciDevopsBuildRun.id())
+     *             .buildRunId(testBuildRunOciDevopsBuildRun.get("id"))
      *             .build());
      * 
      *     }
@@ -1367,7 +1367,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildRun = DevOpsFunctions.getBuildRun(GetBuildRunArgs.builder()
-     *             .buildRunId(testBuildRunOciDevopsBuildRun.id())
+     *             .buildRunId(testBuildRunOciDevopsBuildRun.get("id"))
      *             .build());
      * 
      *     }
@@ -1409,7 +1409,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildRun = DevOpsFunctions.getBuildRun(GetBuildRunArgs.builder()
-     *             .buildRunId(testBuildRunOciDevopsBuildRun.id())
+     *             .buildRunId(testBuildRunOciDevopsBuildRun.get("id"))
      *             .build());
      * 
      *     }
@@ -1451,11 +1451,11 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildRuns = DevOpsFunctions.getBuildRuns(GetBuildRunsArgs.builder()
-     *             .buildPipelineId(testBuildPipeline.id())
+     *             .buildPipelineId(testBuildPipeline.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(buildRunDisplayName)
      *             .id(buildRunId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(buildRunState)
      *             .build());
      * 
@@ -1498,11 +1498,11 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildRuns = DevOpsFunctions.getBuildRuns(GetBuildRunsArgs.builder()
-     *             .buildPipelineId(testBuildPipeline.id())
+     *             .buildPipelineId(testBuildPipeline.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(buildRunDisplayName)
      *             .id(buildRunId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(buildRunState)
      *             .build());
      * 
@@ -1545,11 +1545,11 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildRuns = DevOpsFunctions.getBuildRuns(GetBuildRunsArgs.builder()
-     *             .buildPipelineId(testBuildPipeline.id())
+     *             .buildPipelineId(testBuildPipeline.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(buildRunDisplayName)
      *             .id(buildRunId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(buildRunState)
      *             .build());
      * 
@@ -1592,11 +1592,11 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildRuns = DevOpsFunctions.getBuildRuns(GetBuildRunsArgs.builder()
-     *             .buildPipelineId(testBuildPipeline.id())
+     *             .buildPipelineId(testBuildPipeline.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(buildRunDisplayName)
      *             .id(buildRunId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(buildRunState)
      *             .build());
      * 
@@ -1639,11 +1639,11 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildRuns = DevOpsFunctions.getBuildRuns(GetBuildRunsArgs.builder()
-     *             .buildPipelineId(testBuildPipeline.id())
+     *             .buildPipelineId(testBuildPipeline.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(buildRunDisplayName)
      *             .id(buildRunId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(buildRunState)
      *             .build());
      * 
@@ -1686,11 +1686,11 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildRuns = DevOpsFunctions.getBuildRuns(GetBuildRunsArgs.builder()
-     *             .buildPipelineId(testBuildPipeline.id())
+     *             .buildPipelineId(testBuildPipeline.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(buildRunDisplayName)
      *             .id(buildRunId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(buildRunState)
      *             .build());
      * 
@@ -1733,11 +1733,11 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBuildRuns = DevOpsFunctions.getBuildRuns(GetBuildRunsArgs.builder()
-     *             .buildPipelineId(testBuildPipeline.id())
+     *             .buildPipelineId(testBuildPipeline.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(buildRunDisplayName)
      *             .id(buildRunId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(buildRunState)
      *             .build());
      * 
@@ -1780,7 +1780,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = DevOpsFunctions.getConnection(GetConnectionArgs.builder()
-     *             .connectionId(testConnectionOciDevopsConnection.id())
+     *             .connectionId(testConnectionOciDevopsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -1822,7 +1822,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = DevOpsFunctions.getConnection(GetConnectionArgs.builder()
-     *             .connectionId(testConnectionOciDevopsConnection.id())
+     *             .connectionId(testConnectionOciDevopsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -1864,7 +1864,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = DevOpsFunctions.getConnection(GetConnectionArgs.builder()
-     *             .connectionId(testConnectionOciDevopsConnection.id())
+     *             .connectionId(testConnectionOciDevopsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -1906,7 +1906,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = DevOpsFunctions.getConnection(GetConnectionArgs.builder()
-     *             .connectionId(testConnectionOciDevopsConnection.id())
+     *             .connectionId(testConnectionOciDevopsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -1948,7 +1948,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = DevOpsFunctions.getConnection(GetConnectionArgs.builder()
-     *             .connectionId(testConnectionOciDevopsConnection.id())
+     *             .connectionId(testConnectionOciDevopsConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -1994,7 +1994,7 @@ public final class DevOpsFunctions {
      *             .connectionType(connectionConnectionType)
      *             .displayName(connectionDisplayName)
      *             .id(connectionId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(connectionState)
      *             .build());
      * 
@@ -2041,7 +2041,7 @@ public final class DevOpsFunctions {
      *             .connectionType(connectionConnectionType)
      *             .displayName(connectionDisplayName)
      *             .id(connectionId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(connectionState)
      *             .build());
      * 
@@ -2088,7 +2088,7 @@ public final class DevOpsFunctions {
      *             .connectionType(connectionConnectionType)
      *             .displayName(connectionDisplayName)
      *             .id(connectionId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(connectionState)
      *             .build());
      * 
@@ -2135,7 +2135,7 @@ public final class DevOpsFunctions {
      *             .connectionType(connectionConnectionType)
      *             .displayName(connectionDisplayName)
      *             .id(connectionId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(connectionState)
      *             .build());
      * 
@@ -2182,7 +2182,7 @@ public final class DevOpsFunctions {
      *             .connectionType(connectionConnectionType)
      *             .displayName(connectionDisplayName)
      *             .id(connectionId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(connectionState)
      *             .build());
      * 
@@ -2229,7 +2229,7 @@ public final class DevOpsFunctions {
      *             .connectionType(connectionConnectionType)
      *             .displayName(connectionDisplayName)
      *             .id(connectionId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(connectionState)
      *             .build());
      * 
@@ -2276,7 +2276,7 @@ public final class DevOpsFunctions {
      *             .connectionType(connectionConnectionType)
      *             .displayName(connectionDisplayName)
      *             .id(connectionId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(connectionState)
      *             .build());
      * 
@@ -2319,7 +2319,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployArtifact = DevOpsFunctions.getDeployArtifact(GetDeployArtifactArgs.builder()
-     *             .deployArtifactId(testDeployArtifactOciDevopsDeployArtifact.id())
+     *             .deployArtifactId(testDeployArtifactOciDevopsDeployArtifact.get("id"))
      *             .build());
      * 
      *     }
@@ -2361,7 +2361,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployArtifact = DevOpsFunctions.getDeployArtifact(GetDeployArtifactArgs.builder()
-     *             .deployArtifactId(testDeployArtifactOciDevopsDeployArtifact.id())
+     *             .deployArtifactId(testDeployArtifactOciDevopsDeployArtifact.get("id"))
      *             .build());
      * 
      *     }
@@ -2403,7 +2403,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployArtifact = DevOpsFunctions.getDeployArtifact(GetDeployArtifactArgs.builder()
-     *             .deployArtifactId(testDeployArtifactOciDevopsDeployArtifact.id())
+     *             .deployArtifactId(testDeployArtifactOciDevopsDeployArtifact.get("id"))
      *             .build());
      * 
      *     }
@@ -2445,7 +2445,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployArtifact = DevOpsFunctions.getDeployArtifact(GetDeployArtifactArgs.builder()
-     *             .deployArtifactId(testDeployArtifactOciDevopsDeployArtifact.id())
+     *             .deployArtifactId(testDeployArtifactOciDevopsDeployArtifact.get("id"))
      *             .build());
      * 
      *     }
@@ -2487,7 +2487,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployArtifact = DevOpsFunctions.getDeployArtifact(GetDeployArtifactArgs.builder()
-     *             .deployArtifactId(testDeployArtifactOciDevopsDeployArtifact.id())
+     *             .deployArtifactId(testDeployArtifactOciDevopsDeployArtifact.get("id"))
      *             .build());
      * 
      *     }
@@ -2532,7 +2532,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(deployArtifactDisplayName)
      *             .id(deployArtifactId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deployArtifactState)
      *             .build());
      * 
@@ -2578,7 +2578,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(deployArtifactDisplayName)
      *             .id(deployArtifactId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deployArtifactState)
      *             .build());
      * 
@@ -2624,7 +2624,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(deployArtifactDisplayName)
      *             .id(deployArtifactId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deployArtifactState)
      *             .build());
      * 
@@ -2670,7 +2670,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(deployArtifactDisplayName)
      *             .id(deployArtifactId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deployArtifactState)
      *             .build());
      * 
@@ -2716,7 +2716,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(deployArtifactDisplayName)
      *             .id(deployArtifactId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deployArtifactState)
      *             .build());
      * 
@@ -2762,7 +2762,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(deployArtifactDisplayName)
      *             .id(deployArtifactId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deployArtifactState)
      *             .build());
      * 
@@ -2808,7 +2808,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(deployArtifactDisplayName)
      *             .id(deployArtifactId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deployArtifactState)
      *             .build());
      * 
@@ -2851,7 +2851,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployEnvironment = DevOpsFunctions.getDeployEnvironment(GetDeployEnvironmentArgs.builder()
-     *             .deployEnvironmentId(testDeployEnvironmentOciDevopsDeployEnvironment.id())
+     *             .deployEnvironmentId(testDeployEnvironmentOciDevopsDeployEnvironment.get("id"))
      *             .build());
      * 
      *     }
@@ -2893,7 +2893,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployEnvironment = DevOpsFunctions.getDeployEnvironment(GetDeployEnvironmentArgs.builder()
-     *             .deployEnvironmentId(testDeployEnvironmentOciDevopsDeployEnvironment.id())
+     *             .deployEnvironmentId(testDeployEnvironmentOciDevopsDeployEnvironment.get("id"))
      *             .build());
      * 
      *     }
@@ -2935,7 +2935,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployEnvironment = DevOpsFunctions.getDeployEnvironment(GetDeployEnvironmentArgs.builder()
-     *             .deployEnvironmentId(testDeployEnvironmentOciDevopsDeployEnvironment.id())
+     *             .deployEnvironmentId(testDeployEnvironmentOciDevopsDeployEnvironment.get("id"))
      *             .build());
      * 
      *     }
@@ -2977,7 +2977,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployEnvironment = DevOpsFunctions.getDeployEnvironment(GetDeployEnvironmentArgs.builder()
-     *             .deployEnvironmentId(testDeployEnvironmentOciDevopsDeployEnvironment.id())
+     *             .deployEnvironmentId(testDeployEnvironmentOciDevopsDeployEnvironment.get("id"))
      *             .build());
      * 
      *     }
@@ -3019,7 +3019,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployEnvironment = DevOpsFunctions.getDeployEnvironment(GetDeployEnvironmentArgs.builder()
-     *             .deployEnvironmentId(testDeployEnvironmentOciDevopsDeployEnvironment.id())
+     *             .deployEnvironmentId(testDeployEnvironmentOciDevopsDeployEnvironment.get("id"))
      *             .build());
      * 
      *     }
@@ -3064,7 +3064,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(deployEnvironmentDisplayName)
      *             .id(deployEnvironmentId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deployEnvironmentState)
      *             .build());
      * 
@@ -3110,7 +3110,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(deployEnvironmentDisplayName)
      *             .id(deployEnvironmentId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deployEnvironmentState)
      *             .build());
      * 
@@ -3156,7 +3156,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(deployEnvironmentDisplayName)
      *             .id(deployEnvironmentId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deployEnvironmentState)
      *             .build());
      * 
@@ -3202,7 +3202,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(deployEnvironmentDisplayName)
      *             .id(deployEnvironmentId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deployEnvironmentState)
      *             .build());
      * 
@@ -3248,7 +3248,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(deployEnvironmentDisplayName)
      *             .id(deployEnvironmentId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deployEnvironmentState)
      *             .build());
      * 
@@ -3294,7 +3294,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(deployEnvironmentDisplayName)
      *             .id(deployEnvironmentId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deployEnvironmentState)
      *             .build());
      * 
@@ -3340,7 +3340,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(deployEnvironmentDisplayName)
      *             .id(deployEnvironmentId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deployEnvironmentState)
      *             .build());
      * 
@@ -3383,7 +3383,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployPipeline = DevOpsFunctions.getDeployPipeline(GetDeployPipelineArgs.builder()
-     *             .deployPipelineId(testDeployPipelineOciDevopsDeployPipeline.id())
+     *             .deployPipelineId(testDeployPipelineOciDevopsDeployPipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -3425,7 +3425,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployPipeline = DevOpsFunctions.getDeployPipeline(GetDeployPipelineArgs.builder()
-     *             .deployPipelineId(testDeployPipelineOciDevopsDeployPipeline.id())
+     *             .deployPipelineId(testDeployPipelineOciDevopsDeployPipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -3467,7 +3467,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployPipeline = DevOpsFunctions.getDeployPipeline(GetDeployPipelineArgs.builder()
-     *             .deployPipelineId(testDeployPipelineOciDevopsDeployPipeline.id())
+     *             .deployPipelineId(testDeployPipelineOciDevopsDeployPipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -3509,7 +3509,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployPipeline = DevOpsFunctions.getDeployPipeline(GetDeployPipelineArgs.builder()
-     *             .deployPipelineId(testDeployPipelineOciDevopsDeployPipeline.id())
+     *             .deployPipelineId(testDeployPipelineOciDevopsDeployPipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -3551,7 +3551,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployPipeline = DevOpsFunctions.getDeployPipeline(GetDeployPipelineArgs.builder()
-     *             .deployPipelineId(testDeployPipelineOciDevopsDeployPipeline.id())
+     *             .deployPipelineId(testDeployPipelineOciDevopsDeployPipeline.get("id"))
      *             .build());
      * 
      *     }
@@ -3596,7 +3596,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(deployPipelineDisplayName)
      *             .id(deployPipelineId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deployPipelineState)
      *             .build());
      * 
@@ -3642,7 +3642,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(deployPipelineDisplayName)
      *             .id(deployPipelineId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deployPipelineState)
      *             .build());
      * 
@@ -3688,7 +3688,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(deployPipelineDisplayName)
      *             .id(deployPipelineId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deployPipelineState)
      *             .build());
      * 
@@ -3734,7 +3734,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(deployPipelineDisplayName)
      *             .id(deployPipelineId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deployPipelineState)
      *             .build());
      * 
@@ -3780,7 +3780,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(deployPipelineDisplayName)
      *             .id(deployPipelineId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deployPipelineState)
      *             .build());
      * 
@@ -3826,7 +3826,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(deployPipelineDisplayName)
      *             .id(deployPipelineId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deployPipelineState)
      *             .build());
      * 
@@ -3872,7 +3872,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(deployPipelineDisplayName)
      *             .id(deployPipelineId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deployPipelineState)
      *             .build());
      * 
@@ -3915,7 +3915,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployStage = DevOpsFunctions.getDeployStage(GetDeployStageArgs.builder()
-     *             .deployStageId(testDeployStageOciDevopsDeployStage.id())
+     *             .deployStageId(testDeployStageOciDevopsDeployStage.get("id"))
      *             .build());
      * 
      *     }
@@ -3957,7 +3957,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployStage = DevOpsFunctions.getDeployStage(GetDeployStageArgs.builder()
-     *             .deployStageId(testDeployStageOciDevopsDeployStage.id())
+     *             .deployStageId(testDeployStageOciDevopsDeployStage.get("id"))
      *             .build());
      * 
      *     }
@@ -3999,7 +3999,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployStage = DevOpsFunctions.getDeployStage(GetDeployStageArgs.builder()
-     *             .deployStageId(testDeployStageOciDevopsDeployStage.id())
+     *             .deployStageId(testDeployStageOciDevopsDeployStage.get("id"))
      *             .build());
      * 
      *     }
@@ -4041,7 +4041,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployStage = DevOpsFunctions.getDeployStage(GetDeployStageArgs.builder()
-     *             .deployStageId(testDeployStageOciDevopsDeployStage.id())
+     *             .deployStageId(testDeployStageOciDevopsDeployStage.get("id"))
      *             .build());
      * 
      *     }
@@ -4083,7 +4083,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployStage = DevOpsFunctions.getDeployStage(GetDeployStageArgs.builder()
-     *             .deployStageId(testDeployStageOciDevopsDeployStage.id())
+     *             .deployStageId(testDeployStageOciDevopsDeployStage.get("id"))
      *             .build());
      * 
      *     }
@@ -4126,7 +4126,7 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeployStages = DevOpsFunctions.getDeployStages(GetDeployStagesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deployPipelineId(testDeployPipeline.id())
+     *             .deployPipelineId(testDeployPipeline.get("id"))
      *             .displayName(deployStageDisplayName)
      *             .id(deployStageId)
      *             .state(deployStageState)
@@ -4172,7 +4172,7 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeployStages = DevOpsFunctions.getDeployStages(GetDeployStagesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deployPipelineId(testDeployPipeline.id())
+     *             .deployPipelineId(testDeployPipeline.get("id"))
      *             .displayName(deployStageDisplayName)
      *             .id(deployStageId)
      *             .state(deployStageState)
@@ -4218,7 +4218,7 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeployStages = DevOpsFunctions.getDeployStages(GetDeployStagesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deployPipelineId(testDeployPipeline.id())
+     *             .deployPipelineId(testDeployPipeline.get("id"))
      *             .displayName(deployStageDisplayName)
      *             .id(deployStageId)
      *             .state(deployStageState)
@@ -4264,7 +4264,7 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeployStages = DevOpsFunctions.getDeployStages(GetDeployStagesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deployPipelineId(testDeployPipeline.id())
+     *             .deployPipelineId(testDeployPipeline.get("id"))
      *             .displayName(deployStageDisplayName)
      *             .id(deployStageId)
      *             .state(deployStageState)
@@ -4310,7 +4310,7 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeployStages = DevOpsFunctions.getDeployStages(GetDeployStagesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deployPipelineId(testDeployPipeline.id())
+     *             .deployPipelineId(testDeployPipeline.get("id"))
      *             .displayName(deployStageDisplayName)
      *             .id(deployStageId)
      *             .state(deployStageState)
@@ -4356,7 +4356,7 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeployStages = DevOpsFunctions.getDeployStages(GetDeployStagesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deployPipelineId(testDeployPipeline.id())
+     *             .deployPipelineId(testDeployPipeline.get("id"))
      *             .displayName(deployStageDisplayName)
      *             .id(deployStageId)
      *             .state(deployStageState)
@@ -4402,7 +4402,7 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeployStages = DevOpsFunctions.getDeployStages(GetDeployStagesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deployPipelineId(testDeployPipeline.id())
+     *             .deployPipelineId(testDeployPipeline.get("id"))
      *             .displayName(deployStageDisplayName)
      *             .id(deployStageId)
      *             .state(deployStageState)
@@ -4447,7 +4447,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployment = DevOpsFunctions.getDeployment(GetDeploymentArgs.builder()
-     *             .deploymentId(testDeploymentOciDevopsDeployment.id())
+     *             .deploymentId(testDeploymentOciDevopsDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -4489,7 +4489,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployment = DevOpsFunctions.getDeployment(GetDeploymentArgs.builder()
-     *             .deploymentId(testDeploymentOciDevopsDeployment.id())
+     *             .deploymentId(testDeploymentOciDevopsDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -4531,7 +4531,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployment = DevOpsFunctions.getDeployment(GetDeploymentArgs.builder()
-     *             .deploymentId(testDeploymentOciDevopsDeployment.id())
+     *             .deploymentId(testDeploymentOciDevopsDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -4573,7 +4573,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployment = DevOpsFunctions.getDeployment(GetDeploymentArgs.builder()
-     *             .deploymentId(testDeploymentOciDevopsDeployment.id())
+     *             .deploymentId(testDeploymentOciDevopsDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -4615,7 +4615,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDeployment = DevOpsFunctions.getDeployment(GetDeploymentArgs.builder()
-     *             .deploymentId(testDeploymentOciDevopsDeployment.id())
+     *             .deploymentId(testDeploymentOciDevopsDeployment.get("id"))
      *             .build());
      * 
      *     }
@@ -4658,10 +4658,10 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeployments = DevOpsFunctions.getDeployments(GetDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deployPipelineId(testDeployPipeline.id())
+     *             .deployPipelineId(testDeployPipeline.get("id"))
      *             .displayName(deploymentDisplayName)
      *             .id(deploymentId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deploymentState)
      *             .timeCreatedGreaterThanOrEqualTo(deploymentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(deploymentTimeCreatedLessThan)
@@ -4707,10 +4707,10 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeployments = DevOpsFunctions.getDeployments(GetDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deployPipelineId(testDeployPipeline.id())
+     *             .deployPipelineId(testDeployPipeline.get("id"))
      *             .displayName(deploymentDisplayName)
      *             .id(deploymentId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deploymentState)
      *             .timeCreatedGreaterThanOrEqualTo(deploymentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(deploymentTimeCreatedLessThan)
@@ -4756,10 +4756,10 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeployments = DevOpsFunctions.getDeployments(GetDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deployPipelineId(testDeployPipeline.id())
+     *             .deployPipelineId(testDeployPipeline.get("id"))
      *             .displayName(deploymentDisplayName)
      *             .id(deploymentId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deploymentState)
      *             .timeCreatedGreaterThanOrEqualTo(deploymentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(deploymentTimeCreatedLessThan)
@@ -4805,10 +4805,10 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeployments = DevOpsFunctions.getDeployments(GetDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deployPipelineId(testDeployPipeline.id())
+     *             .deployPipelineId(testDeployPipeline.get("id"))
      *             .displayName(deploymentDisplayName)
      *             .id(deploymentId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deploymentState)
      *             .timeCreatedGreaterThanOrEqualTo(deploymentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(deploymentTimeCreatedLessThan)
@@ -4854,10 +4854,10 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeployments = DevOpsFunctions.getDeployments(GetDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deployPipelineId(testDeployPipeline.id())
+     *             .deployPipelineId(testDeployPipeline.get("id"))
      *             .displayName(deploymentDisplayName)
      *             .id(deploymentId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deploymentState)
      *             .timeCreatedGreaterThanOrEqualTo(deploymentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(deploymentTimeCreatedLessThan)
@@ -4903,10 +4903,10 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeployments = DevOpsFunctions.getDeployments(GetDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deployPipelineId(testDeployPipeline.id())
+     *             .deployPipelineId(testDeployPipeline.get("id"))
      *             .displayName(deploymentDisplayName)
      *             .id(deploymentId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deploymentState)
      *             .timeCreatedGreaterThanOrEqualTo(deploymentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(deploymentTimeCreatedLessThan)
@@ -4952,10 +4952,10 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDeployments = DevOpsFunctions.getDeployments(GetDeploymentsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .deployPipelineId(testDeployPipeline.id())
+     *             .deployPipelineId(testDeployPipeline.get("id"))
      *             .displayName(deploymentDisplayName)
      *             .id(deploymentId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(deploymentState)
      *             .timeCreatedGreaterThanOrEqualTo(deploymentTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(deploymentTimeCreatedLessThan)
@@ -5000,7 +5000,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = DevOpsFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciDevopsProject.id())
+     *             .projectId(testProjectOciDevopsProject.get("id"))
      *             .build());
      * 
      *     }
@@ -5042,7 +5042,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = DevOpsFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciDevopsProject.id())
+     *             .projectId(testProjectOciDevopsProject.get("id"))
      *             .build());
      * 
      *     }
@@ -5084,7 +5084,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = DevOpsFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciDevopsProject.id())
+     *             .projectId(testProjectOciDevopsProject.get("id"))
      *             .build());
      * 
      *     }
@@ -5126,7 +5126,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = DevOpsFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciDevopsProject.id())
+     *             .projectId(testProjectOciDevopsProject.get("id"))
      *             .build());
      * 
      *     }
@@ -5168,7 +5168,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = DevOpsFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciDevopsProject.id())
+     *             .projectId(testProjectOciDevopsProject.get("id"))
      *             .build());
      * 
      *     }
@@ -5210,7 +5210,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProjectRepositorySetting = DevOpsFunctions.getProjectRepositorySetting(GetProjectRepositorySettingArgs.builder()
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .build());
      * 
      *     }
@@ -5252,7 +5252,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProjectRepositorySetting = DevOpsFunctions.getProjectRepositorySetting(GetProjectRepositorySettingArgs.builder()
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .build());
      * 
      *     }
@@ -5294,7 +5294,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProjectRepositorySetting = DevOpsFunctions.getProjectRepositorySetting(GetProjectRepositorySettingArgs.builder()
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .build());
      * 
      *     }
@@ -5336,7 +5336,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProjectRepositorySetting = DevOpsFunctions.getProjectRepositorySetting(GetProjectRepositorySettingArgs.builder()
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .build());
      * 
      *     }
@@ -5378,7 +5378,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProjectRepositorySetting = DevOpsFunctions.getProjectRepositorySetting(GetProjectRepositorySettingArgs.builder()
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .build());
      * 
      *     }
@@ -5645,7 +5645,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepoFileLine = DevOpsFunctions.getRepoFileLine(GetRepoFileLineArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .revision(repoFileLineRevision)
      *             .filePath(repoFileLineFilePath)
      *             .startLineNumber(repoFileLineStartLineNumber)
@@ -5690,7 +5690,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepoFileLine = DevOpsFunctions.getRepoFileLine(GetRepoFileLineArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .revision(repoFileLineRevision)
      *             .filePath(repoFileLineFilePath)
      *             .startLineNumber(repoFileLineStartLineNumber)
@@ -5735,7 +5735,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepoFileLine = DevOpsFunctions.getRepoFileLine(GetRepoFileLineArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .revision(repoFileLineRevision)
      *             .filePath(repoFileLineFilePath)
      *             .startLineNumber(repoFileLineStartLineNumber)
@@ -5780,7 +5780,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepoFileLine = DevOpsFunctions.getRepoFileLine(GetRepoFileLineArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .revision(repoFileLineRevision)
      *             .filePath(repoFileLineFilePath)
      *             .startLineNumber(repoFileLineStartLineNumber)
@@ -5825,7 +5825,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepoFileLine = DevOpsFunctions.getRepoFileLine(GetRepoFileLineArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .revision(repoFileLineRevision)
      *             .filePath(repoFileLineFilePath)
      *             .startLineNumber(repoFileLineStartLineNumber)
@@ -5872,8 +5872,8 @@ public final class DevOpsFunctions {
      *         final var testRepositories = DevOpsFunctions.getRepositories(GetRepositoriesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .name(repositoryName)
-     *             .projectId(testProject.id())
-     *             .repositoryId(testRepository.id())
+     *             .projectId(testProject.get("id"))
+     *             .repositoryId(testRepository.get("id"))
      *             .state(repositoryState)
      *             .build());
      * 
@@ -5918,8 +5918,8 @@ public final class DevOpsFunctions {
      *         final var testRepositories = DevOpsFunctions.getRepositories(GetRepositoriesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .name(repositoryName)
-     *             .projectId(testProject.id())
-     *             .repositoryId(testRepository.id())
+     *             .projectId(testProject.get("id"))
+     *             .repositoryId(testRepository.get("id"))
      *             .state(repositoryState)
      *             .build());
      * 
@@ -5964,8 +5964,8 @@ public final class DevOpsFunctions {
      *         final var testRepositories = DevOpsFunctions.getRepositories(GetRepositoriesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .name(repositoryName)
-     *             .projectId(testProject.id())
-     *             .repositoryId(testRepository.id())
+     *             .projectId(testProject.get("id"))
+     *             .repositoryId(testRepository.get("id"))
      *             .state(repositoryState)
      *             .build());
      * 
@@ -6010,8 +6010,8 @@ public final class DevOpsFunctions {
      *         final var testRepositories = DevOpsFunctions.getRepositories(GetRepositoriesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .name(repositoryName)
-     *             .projectId(testProject.id())
-     *             .repositoryId(testRepository.id())
+     *             .projectId(testProject.get("id"))
+     *             .repositoryId(testRepository.get("id"))
      *             .state(repositoryState)
      *             .build());
      * 
@@ -6056,8 +6056,8 @@ public final class DevOpsFunctions {
      *         final var testRepositories = DevOpsFunctions.getRepositories(GetRepositoriesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .name(repositoryName)
-     *             .projectId(testProject.id())
-     *             .repositoryId(testRepository.id())
+     *             .projectId(testProject.get("id"))
+     *             .repositoryId(testRepository.get("id"))
      *             .state(repositoryState)
      *             .build());
      * 
@@ -6102,8 +6102,8 @@ public final class DevOpsFunctions {
      *         final var testRepositories = DevOpsFunctions.getRepositories(GetRepositoriesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .name(repositoryName)
-     *             .projectId(testProject.id())
-     *             .repositoryId(testRepository.id())
+     *             .projectId(testProject.get("id"))
+     *             .repositoryId(testRepository.get("id"))
      *             .state(repositoryState)
      *             .build());
      * 
@@ -6148,8 +6148,8 @@ public final class DevOpsFunctions {
      *         final var testRepositories = DevOpsFunctions.getRepositories(GetRepositoriesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .name(repositoryName)
-     *             .projectId(testProject.id())
-     *             .repositoryId(testRepository.id())
+     *             .projectId(testProject.get("id"))
+     *             .repositoryId(testRepository.get("id"))
      *             .state(repositoryState)
      *             .build());
      * 
@@ -6192,7 +6192,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepository = DevOpsFunctions.getRepository(GetRepositoryArgs.builder()
-     *             .repositoryId(testRepositoryOciDevopsRepository.id())
+     *             .repositoryId(testRepositoryOciDevopsRepository.get("id"))
      *             .fields(repositoryFields)
      *             .build());
      * 
@@ -6235,7 +6235,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepository = DevOpsFunctions.getRepository(GetRepositoryArgs.builder()
-     *             .repositoryId(testRepositoryOciDevopsRepository.id())
+     *             .repositoryId(testRepositoryOciDevopsRepository.get("id"))
      *             .fields(repositoryFields)
      *             .build());
      * 
@@ -6278,7 +6278,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepository = DevOpsFunctions.getRepository(GetRepositoryArgs.builder()
-     *             .repositoryId(testRepositoryOciDevopsRepository.id())
+     *             .repositoryId(testRepositoryOciDevopsRepository.get("id"))
      *             .fields(repositoryFields)
      *             .build());
      * 
@@ -6321,7 +6321,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepository = DevOpsFunctions.getRepository(GetRepositoryArgs.builder()
-     *             .repositoryId(testRepositoryOciDevopsRepository.id())
+     *             .repositoryId(testRepositoryOciDevopsRepository.get("id"))
      *             .fields(repositoryFields)
      *             .build());
      * 
@@ -6364,7 +6364,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepository = DevOpsFunctions.getRepository(GetRepositoryArgs.builder()
-     *             .repositoryId(testRepositoryOciDevopsRepository.id())
+     *             .repositoryId(testRepositoryOciDevopsRepository.get("id"))
      *             .fields(repositoryFields)
      *             .build());
      * 
@@ -6407,7 +6407,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryArchiveContent = DevOpsFunctions.getRepositoryArchiveContent(GetRepositoryArchiveContentArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .format(repositoryArchiveContentFormat)
      *             .refName(repositoryArchiveContentRefName)
      *             .build());
@@ -6451,7 +6451,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryArchiveContent = DevOpsFunctions.getRepositoryArchiveContent(GetRepositoryArchiveContentArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .format(repositoryArchiveContentFormat)
      *             .refName(repositoryArchiveContentRefName)
      *             .build());
@@ -6495,7 +6495,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryArchiveContent = DevOpsFunctions.getRepositoryArchiveContent(GetRepositoryArchiveContentArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .format(repositoryArchiveContentFormat)
      *             .refName(repositoryArchiveContentRefName)
      *             .build());
@@ -6539,7 +6539,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryArchiveContent = DevOpsFunctions.getRepositoryArchiveContent(GetRepositoryArchiveContentArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .format(repositoryArchiveContentFormat)
      *             .refName(repositoryArchiveContentRefName)
      *             .build());
@@ -6583,7 +6583,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryArchiveContent = DevOpsFunctions.getRepositoryArchiveContent(GetRepositoryArchiveContentArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .format(repositoryArchiveContentFormat)
      *             .refName(repositoryArchiveContentRefName)
      *             .build());
@@ -6627,7 +6627,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryAuthor = DevOpsFunctions.getRepositoryAuthor(GetRepositoryAuthorArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .refName(repositoryAuthorRefName)
      *             .build());
      * 
@@ -6670,7 +6670,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryAuthor = DevOpsFunctions.getRepositoryAuthor(GetRepositoryAuthorArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .refName(repositoryAuthorRefName)
      *             .build());
      * 
@@ -6713,7 +6713,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryAuthor = DevOpsFunctions.getRepositoryAuthor(GetRepositoryAuthorArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .refName(repositoryAuthorRefName)
      *             .build());
      * 
@@ -6756,7 +6756,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryAuthor = DevOpsFunctions.getRepositoryAuthor(GetRepositoryAuthorArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .refName(repositoryAuthorRefName)
      *             .build());
      * 
@@ -6799,7 +6799,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryAuthor = DevOpsFunctions.getRepositoryAuthor(GetRepositoryAuthorArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .refName(repositoryAuthorRefName)
      *             .build());
      * 
@@ -6842,7 +6842,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryAuthors = DevOpsFunctions.getRepositoryAuthors(GetRepositoryAuthorsArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .refName(repositoryAuthorRefName)
      *             .build());
      * 
@@ -6885,7 +6885,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryAuthors = DevOpsFunctions.getRepositoryAuthors(GetRepositoryAuthorsArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .refName(repositoryAuthorRefName)
      *             .build());
      * 
@@ -6928,7 +6928,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryAuthors = DevOpsFunctions.getRepositoryAuthors(GetRepositoryAuthorsArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .refName(repositoryAuthorRefName)
      *             .build());
      * 
@@ -6971,7 +6971,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryAuthors = DevOpsFunctions.getRepositoryAuthors(GetRepositoryAuthorsArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .refName(repositoryAuthorRefName)
      *             .build());
      * 
@@ -7014,7 +7014,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryAuthors = DevOpsFunctions.getRepositoryAuthors(GetRepositoryAuthorsArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .refName(repositoryAuthorRefName)
      *             .build());
      * 
@@ -7057,8 +7057,8 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryCommit = DevOpsFunctions.getRepositoryCommit(GetRepositoryCommitArgs.builder()
-     *             .commitId(testCommit.id())
-     *             .repositoryId(testRepository.id())
+     *             .commitId(testCommit.get("id"))
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -7100,8 +7100,8 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryCommit = DevOpsFunctions.getRepositoryCommit(GetRepositoryCommitArgs.builder()
-     *             .commitId(testCommit.id())
-     *             .repositoryId(testRepository.id())
+     *             .commitId(testCommit.get("id"))
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -7143,8 +7143,8 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryCommit = DevOpsFunctions.getRepositoryCommit(GetRepositoryCommitArgs.builder()
-     *             .commitId(testCommit.id())
-     *             .repositoryId(testRepository.id())
+     *             .commitId(testCommit.get("id"))
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -7186,8 +7186,8 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryCommit = DevOpsFunctions.getRepositoryCommit(GetRepositoryCommitArgs.builder()
-     *             .commitId(testCommit.id())
-     *             .repositoryId(testRepository.id())
+     *             .commitId(testCommit.get("id"))
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -7229,8 +7229,8 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryCommit = DevOpsFunctions.getRepositoryCommit(GetRepositoryCommitArgs.builder()
-     *             .commitId(testCommit.id())
-     *             .repositoryId(testRepository.id())
+     *             .commitId(testCommit.get("id"))
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -7272,7 +7272,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryCommits = DevOpsFunctions.getRepositoryCommits(GetRepositoryCommitsArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .authorName(repositoryCommitAuthorName)
      *             .commitMessage(repositoryCommitCommitMessage)
      *             .excludeRefName(repositoryCommitExcludeRefName)
@@ -7321,7 +7321,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryCommits = DevOpsFunctions.getRepositoryCommits(GetRepositoryCommitsArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .authorName(repositoryCommitAuthorName)
      *             .commitMessage(repositoryCommitCommitMessage)
      *             .excludeRefName(repositoryCommitExcludeRefName)
@@ -7370,7 +7370,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryCommits = DevOpsFunctions.getRepositoryCommits(GetRepositoryCommitsArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .authorName(repositoryCommitAuthorName)
      *             .commitMessage(repositoryCommitCommitMessage)
      *             .excludeRefName(repositoryCommitExcludeRefName)
@@ -7419,7 +7419,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryCommits = DevOpsFunctions.getRepositoryCommits(GetRepositoryCommitsArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .authorName(repositoryCommitAuthorName)
      *             .commitMessage(repositoryCommitCommitMessage)
      *             .excludeRefName(repositoryCommitExcludeRefName)
@@ -7468,7 +7468,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryCommits = DevOpsFunctions.getRepositoryCommits(GetRepositoryCommitsArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .authorName(repositoryCommitAuthorName)
      *             .commitMessage(repositoryCommitCommitMessage)
      *             .excludeRefName(repositoryCommitExcludeRefName)
@@ -7519,7 +7519,7 @@ public final class DevOpsFunctions {
      *         final var testRepositoryDiff = DevOpsFunctions.getRepositoryDiff(GetRepositoryDiffArgs.builder()
      *             .baseVersion(repositoryDiffBaseVersion)
      *             .filePath(repositoryDiffFilePath)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .targetVersion(repositoryDiffTargetVersion)
      *             .isComparisonFromMergeBase(repositoryDiffIsComparisonFromMergeBase)
      *             .build());
@@ -7565,7 +7565,7 @@ public final class DevOpsFunctions {
      *         final var testRepositoryDiff = DevOpsFunctions.getRepositoryDiff(GetRepositoryDiffArgs.builder()
      *             .baseVersion(repositoryDiffBaseVersion)
      *             .filePath(repositoryDiffFilePath)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .targetVersion(repositoryDiffTargetVersion)
      *             .isComparisonFromMergeBase(repositoryDiffIsComparisonFromMergeBase)
      *             .build());
@@ -7611,7 +7611,7 @@ public final class DevOpsFunctions {
      *         final var testRepositoryDiff = DevOpsFunctions.getRepositoryDiff(GetRepositoryDiffArgs.builder()
      *             .baseVersion(repositoryDiffBaseVersion)
      *             .filePath(repositoryDiffFilePath)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .targetVersion(repositoryDiffTargetVersion)
      *             .isComparisonFromMergeBase(repositoryDiffIsComparisonFromMergeBase)
      *             .build());
@@ -7657,7 +7657,7 @@ public final class DevOpsFunctions {
      *         final var testRepositoryDiff = DevOpsFunctions.getRepositoryDiff(GetRepositoryDiffArgs.builder()
      *             .baseVersion(repositoryDiffBaseVersion)
      *             .filePath(repositoryDiffFilePath)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .targetVersion(repositoryDiffTargetVersion)
      *             .isComparisonFromMergeBase(repositoryDiffIsComparisonFromMergeBase)
      *             .build());
@@ -7703,7 +7703,7 @@ public final class DevOpsFunctions {
      *         final var testRepositoryDiff = DevOpsFunctions.getRepositoryDiff(GetRepositoryDiffArgs.builder()
      *             .baseVersion(repositoryDiffBaseVersion)
      *             .filePath(repositoryDiffFilePath)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .targetVersion(repositoryDiffTargetVersion)
      *             .isComparisonFromMergeBase(repositoryDiffIsComparisonFromMergeBase)
      *             .build());
@@ -7748,10 +7748,10 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRepositoryDiffs = DevOpsFunctions.getRepositoryDiffs(GetRepositoryDiffsArgs.builder()
      *             .baseVersion(repositoryDiffBaseVersion)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .targetVersion(repositoryDiffTargetVersion)
      *             .isComparisonFromMergeBase(repositoryDiffIsComparisonFromMergeBase)
-     *             .targetRepositoryId(testRepository.id())
+     *             .targetRepositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -7794,10 +7794,10 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRepositoryDiffs = DevOpsFunctions.getRepositoryDiffs(GetRepositoryDiffsArgs.builder()
      *             .baseVersion(repositoryDiffBaseVersion)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .targetVersion(repositoryDiffTargetVersion)
      *             .isComparisonFromMergeBase(repositoryDiffIsComparisonFromMergeBase)
-     *             .targetRepositoryId(testRepository.id())
+     *             .targetRepositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -7840,10 +7840,10 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRepositoryDiffs = DevOpsFunctions.getRepositoryDiffs(GetRepositoryDiffsArgs.builder()
      *             .baseVersion(repositoryDiffBaseVersion)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .targetVersion(repositoryDiffTargetVersion)
      *             .isComparisonFromMergeBase(repositoryDiffIsComparisonFromMergeBase)
-     *             .targetRepositoryId(testRepository.id())
+     *             .targetRepositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -7886,10 +7886,10 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRepositoryDiffs = DevOpsFunctions.getRepositoryDiffs(GetRepositoryDiffsArgs.builder()
      *             .baseVersion(repositoryDiffBaseVersion)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .targetVersion(repositoryDiffTargetVersion)
      *             .isComparisonFromMergeBase(repositoryDiffIsComparisonFromMergeBase)
-     *             .targetRepositoryId(testRepository.id())
+     *             .targetRepositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -7932,10 +7932,10 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRepositoryDiffs = DevOpsFunctions.getRepositoryDiffs(GetRepositoryDiffsArgs.builder()
      *             .baseVersion(repositoryDiffBaseVersion)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .targetVersion(repositoryDiffTargetVersion)
      *             .isComparisonFromMergeBase(repositoryDiffIsComparisonFromMergeBase)
-     *             .targetRepositoryId(testRepository.id())
+     *             .targetRepositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -7978,7 +7978,7 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRepositoryFileDiff = DevOpsFunctions.getRepositoryFileDiff(GetRepositoryFileDiffArgs.builder()
      *             .baseVersion(repositoryFileDiffBaseVersion)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .targetVersion(repositoryFileDiffTargetVersion)
      *             .filePath(repositoryFileDiffFilePath)
      *             .isComparisonFromMergeBase(repositoryFileDiffIsComparisonFromMergeBase)
@@ -8024,7 +8024,7 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRepositoryFileDiff = DevOpsFunctions.getRepositoryFileDiff(GetRepositoryFileDiffArgs.builder()
      *             .baseVersion(repositoryFileDiffBaseVersion)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .targetVersion(repositoryFileDiffTargetVersion)
      *             .filePath(repositoryFileDiffFilePath)
      *             .isComparisonFromMergeBase(repositoryFileDiffIsComparisonFromMergeBase)
@@ -8070,7 +8070,7 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRepositoryFileDiff = DevOpsFunctions.getRepositoryFileDiff(GetRepositoryFileDiffArgs.builder()
      *             .baseVersion(repositoryFileDiffBaseVersion)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .targetVersion(repositoryFileDiffTargetVersion)
      *             .filePath(repositoryFileDiffFilePath)
      *             .isComparisonFromMergeBase(repositoryFileDiffIsComparisonFromMergeBase)
@@ -8116,7 +8116,7 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRepositoryFileDiff = DevOpsFunctions.getRepositoryFileDiff(GetRepositoryFileDiffArgs.builder()
      *             .baseVersion(repositoryFileDiffBaseVersion)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .targetVersion(repositoryFileDiffTargetVersion)
      *             .filePath(repositoryFileDiffFilePath)
      *             .isComparisonFromMergeBase(repositoryFileDiffIsComparisonFromMergeBase)
@@ -8162,7 +8162,7 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRepositoryFileDiff = DevOpsFunctions.getRepositoryFileDiff(GetRepositoryFileDiffArgs.builder()
      *             .baseVersion(repositoryFileDiffBaseVersion)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .targetVersion(repositoryFileDiffTargetVersion)
      *             .filePath(repositoryFileDiffFilePath)
      *             .isComparisonFromMergeBase(repositoryFileDiffIsComparisonFromMergeBase)
@@ -8207,7 +8207,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryFileLine = DevOpsFunctions.getRepositoryFileLine(GetRepositoryFileLineArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .revision(repositoryFileLineRevision)
      *             .filePath(repositoryFileLineFilePath)
      *             .startLineNumber(repositoryFileLineStartLineNumber)
@@ -8252,7 +8252,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryFileLine = DevOpsFunctions.getRepositoryFileLine(GetRepositoryFileLineArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .revision(repositoryFileLineRevision)
      *             .filePath(repositoryFileLineFilePath)
      *             .startLineNumber(repositoryFileLineStartLineNumber)
@@ -8297,7 +8297,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryFileLine = DevOpsFunctions.getRepositoryFileLine(GetRepositoryFileLineArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .revision(repositoryFileLineRevision)
      *             .filePath(repositoryFileLineFilePath)
      *             .startLineNumber(repositoryFileLineStartLineNumber)
@@ -8342,7 +8342,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryFileLine = DevOpsFunctions.getRepositoryFileLine(GetRepositoryFileLineArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .revision(repositoryFileLineRevision)
      *             .filePath(repositoryFileLineFilePath)
      *             .startLineNumber(repositoryFileLineStartLineNumber)
@@ -8387,7 +8387,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryFileLine = DevOpsFunctions.getRepositoryFileLine(GetRepositoryFileLineArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .revision(repositoryFileLineRevision)
      *             .filePath(repositoryFileLineFilePath)
      *             .startLineNumber(repositoryFileLineStartLineNumber)
@@ -8433,7 +8433,7 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRepositoryMirrorRecord = DevOpsFunctions.getRepositoryMirrorRecord(GetRepositoryMirrorRecordArgs.builder()
      *             .mirrorRecordType(repositoryMirrorRecordMirrorRecordType)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -8476,7 +8476,7 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRepositoryMirrorRecord = DevOpsFunctions.getRepositoryMirrorRecord(GetRepositoryMirrorRecordArgs.builder()
      *             .mirrorRecordType(repositoryMirrorRecordMirrorRecordType)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -8519,7 +8519,7 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRepositoryMirrorRecord = DevOpsFunctions.getRepositoryMirrorRecord(GetRepositoryMirrorRecordArgs.builder()
      *             .mirrorRecordType(repositoryMirrorRecordMirrorRecordType)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -8562,7 +8562,7 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRepositoryMirrorRecord = DevOpsFunctions.getRepositoryMirrorRecord(GetRepositoryMirrorRecordArgs.builder()
      *             .mirrorRecordType(repositoryMirrorRecordMirrorRecordType)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -8605,7 +8605,7 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRepositoryMirrorRecord = DevOpsFunctions.getRepositoryMirrorRecord(GetRepositoryMirrorRecordArgs.builder()
      *             .mirrorRecordType(repositoryMirrorRecordMirrorRecordType)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -8647,7 +8647,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryMirrorRecords = DevOpsFunctions.getRepositoryMirrorRecords(GetRepositoryMirrorRecordsArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -8689,7 +8689,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryMirrorRecords = DevOpsFunctions.getRepositoryMirrorRecords(GetRepositoryMirrorRecordsArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -8731,7 +8731,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryMirrorRecords = DevOpsFunctions.getRepositoryMirrorRecords(GetRepositoryMirrorRecordsArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -8773,7 +8773,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryMirrorRecords = DevOpsFunctions.getRepositoryMirrorRecords(GetRepositoryMirrorRecordsArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -8815,7 +8815,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryMirrorRecords = DevOpsFunctions.getRepositoryMirrorRecords(GetRepositoryMirrorRecordsArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -8857,7 +8857,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryObject = DevOpsFunctions.getRepositoryObject(GetRepositoryObjectArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .filePath(repositoryObjectFilePath)
      *             .refName(repositoryObjectRefName)
      *             .build());
@@ -8901,7 +8901,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryObject = DevOpsFunctions.getRepositoryObject(GetRepositoryObjectArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .filePath(repositoryObjectFilePath)
      *             .refName(repositoryObjectRefName)
      *             .build());
@@ -8945,7 +8945,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryObject = DevOpsFunctions.getRepositoryObject(GetRepositoryObjectArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .filePath(repositoryObjectFilePath)
      *             .refName(repositoryObjectRefName)
      *             .build());
@@ -8989,7 +8989,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryObject = DevOpsFunctions.getRepositoryObject(GetRepositoryObjectArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .filePath(repositoryObjectFilePath)
      *             .refName(repositoryObjectRefName)
      *             .build());
@@ -9033,7 +9033,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryObject = DevOpsFunctions.getRepositoryObject(GetRepositoryObjectArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .filePath(repositoryObjectFilePath)
      *             .refName(repositoryObjectRefName)
      *             .build());
@@ -9077,7 +9077,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryObjectContent = DevOpsFunctions.getRepositoryObjectContent(GetRepositoryObjectContentArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .sha(repositoryObjectContentSha)
      *             .filePath(repositoryObjectContentFilePath)
      *             .build());
@@ -9121,7 +9121,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryObjectContent = DevOpsFunctions.getRepositoryObjectContent(GetRepositoryObjectContentArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .sha(repositoryObjectContentSha)
      *             .filePath(repositoryObjectContentFilePath)
      *             .build());
@@ -9165,7 +9165,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryObjectContent = DevOpsFunctions.getRepositoryObjectContent(GetRepositoryObjectContentArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .sha(repositoryObjectContentSha)
      *             .filePath(repositoryObjectContentFilePath)
      *             .build());
@@ -9209,7 +9209,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryObjectContent = DevOpsFunctions.getRepositoryObjectContent(GetRepositoryObjectContentArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .sha(repositoryObjectContentSha)
      *             .filePath(repositoryObjectContentFilePath)
      *             .build());
@@ -9253,7 +9253,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryObjectContent = DevOpsFunctions.getRepositoryObjectContent(GetRepositoryObjectContentArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .sha(repositoryObjectContentSha)
      *             .filePath(repositoryObjectContentFilePath)
      *             .build());
@@ -9297,7 +9297,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryPath = DevOpsFunctions.getRepositoryPath(GetRepositoryPathArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .displayName(repositoryPathDisplayName)
      *             .folderPath(repositoryPathFolderPath)
      *             .pathsInSubtree(repositoryPathPathsInSubtree)
@@ -9343,7 +9343,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryPath = DevOpsFunctions.getRepositoryPath(GetRepositoryPathArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .displayName(repositoryPathDisplayName)
      *             .folderPath(repositoryPathFolderPath)
      *             .pathsInSubtree(repositoryPathPathsInSubtree)
@@ -9389,7 +9389,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryPath = DevOpsFunctions.getRepositoryPath(GetRepositoryPathArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .displayName(repositoryPathDisplayName)
      *             .folderPath(repositoryPathFolderPath)
      *             .pathsInSubtree(repositoryPathPathsInSubtree)
@@ -9435,7 +9435,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryPath = DevOpsFunctions.getRepositoryPath(GetRepositoryPathArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .displayName(repositoryPathDisplayName)
      *             .folderPath(repositoryPathFolderPath)
      *             .pathsInSubtree(repositoryPathPathsInSubtree)
@@ -9481,7 +9481,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryPath = DevOpsFunctions.getRepositoryPath(GetRepositoryPathArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .displayName(repositoryPathDisplayName)
      *             .folderPath(repositoryPathFolderPath)
      *             .pathsInSubtree(repositoryPathPathsInSubtree)
@@ -9527,7 +9527,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryPaths = DevOpsFunctions.getRepositoryPaths(GetRepositoryPathsArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .displayName(repositoryPathDisplayName)
      *             .folderPath(repositoryPathFolderPath)
      *             .pathsInSubtree(repositoryPathPathsInSubtree)
@@ -9573,7 +9573,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryPaths = DevOpsFunctions.getRepositoryPaths(GetRepositoryPathsArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .displayName(repositoryPathDisplayName)
      *             .folderPath(repositoryPathFolderPath)
      *             .pathsInSubtree(repositoryPathPathsInSubtree)
@@ -9619,7 +9619,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryPaths = DevOpsFunctions.getRepositoryPaths(GetRepositoryPathsArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .displayName(repositoryPathDisplayName)
      *             .folderPath(repositoryPathFolderPath)
      *             .pathsInSubtree(repositoryPathPathsInSubtree)
@@ -9665,7 +9665,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryPaths = DevOpsFunctions.getRepositoryPaths(GetRepositoryPathsArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .displayName(repositoryPathDisplayName)
      *             .folderPath(repositoryPathFolderPath)
      *             .pathsInSubtree(repositoryPathPathsInSubtree)
@@ -9711,7 +9711,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryPaths = DevOpsFunctions.getRepositoryPaths(GetRepositoryPathsArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .displayName(repositoryPathDisplayName)
      *             .folderPath(repositoryPathFolderPath)
      *             .pathsInSubtree(repositoryPathPathsInSubtree)
@@ -9757,7 +9757,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryProtectedBranches = DevOpsFunctions.getRepositoryProtectedBranches(GetRepositoryProtectedBranchesArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .name(repositoryProtectedBranchName)
      *             .build());
      * 
@@ -9800,7 +9800,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryProtectedBranches = DevOpsFunctions.getRepositoryProtectedBranches(GetRepositoryProtectedBranchesArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .name(repositoryProtectedBranchName)
      *             .build());
      * 
@@ -9843,7 +9843,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryProtectedBranches = DevOpsFunctions.getRepositoryProtectedBranches(GetRepositoryProtectedBranchesArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .name(repositoryProtectedBranchName)
      *             .build());
      * 
@@ -9886,7 +9886,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryProtectedBranches = DevOpsFunctions.getRepositoryProtectedBranches(GetRepositoryProtectedBranchesArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .name(repositoryProtectedBranchName)
      *             .build());
      * 
@@ -9929,7 +9929,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryProtectedBranches = DevOpsFunctions.getRepositoryProtectedBranches(GetRepositoryProtectedBranchesArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .name(repositoryProtectedBranchName)
      *             .build());
      * 
@@ -9973,7 +9973,7 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRepositoryRef = DevOpsFunctions.getRepositoryRef(GetRepositoryRefArgs.builder()
      *             .refName(repositoryRefRefName)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -10016,7 +10016,7 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRepositoryRef = DevOpsFunctions.getRepositoryRef(GetRepositoryRefArgs.builder()
      *             .refName(repositoryRefRefName)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -10059,7 +10059,7 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRepositoryRef = DevOpsFunctions.getRepositoryRef(GetRepositoryRefArgs.builder()
      *             .refName(repositoryRefRefName)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -10102,7 +10102,7 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRepositoryRef = DevOpsFunctions.getRepositoryRef(GetRepositoryRefArgs.builder()
      *             .refName(repositoryRefRefName)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -10145,7 +10145,7 @@ public final class DevOpsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRepositoryRef = DevOpsFunctions.getRepositoryRef(GetRepositoryRefArgs.builder()
      *             .refName(repositoryRefRefName)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -10187,8 +10187,8 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryRefs = DevOpsFunctions.getRepositoryRefs(GetRepositoryRefsArgs.builder()
-     *             .repositoryId(testRepository.id())
-     *             .commitId(testCommit.id())
+     *             .repositoryId(testRepository.get("id"))
+     *             .commitId(testCommit.get("id"))
      *             .refName(repositoryRefRefName)
      *             .refType(repositoryRefRefType)
      *             .build());
@@ -10232,8 +10232,8 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryRefs = DevOpsFunctions.getRepositoryRefs(GetRepositoryRefsArgs.builder()
-     *             .repositoryId(testRepository.id())
-     *             .commitId(testCommit.id())
+     *             .repositoryId(testRepository.get("id"))
+     *             .commitId(testCommit.get("id"))
      *             .refName(repositoryRefRefName)
      *             .refType(repositoryRefRefType)
      *             .build());
@@ -10277,8 +10277,8 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryRefs = DevOpsFunctions.getRepositoryRefs(GetRepositoryRefsArgs.builder()
-     *             .repositoryId(testRepository.id())
-     *             .commitId(testCommit.id())
+     *             .repositoryId(testRepository.get("id"))
+     *             .commitId(testCommit.get("id"))
      *             .refName(repositoryRefRefName)
      *             .refType(repositoryRefRefType)
      *             .build());
@@ -10322,8 +10322,8 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryRefs = DevOpsFunctions.getRepositoryRefs(GetRepositoryRefsArgs.builder()
-     *             .repositoryId(testRepository.id())
-     *             .commitId(testCommit.id())
+     *             .repositoryId(testRepository.get("id"))
+     *             .commitId(testCommit.get("id"))
      *             .refName(repositoryRefRefName)
      *             .refType(repositoryRefRefType)
      *             .build());
@@ -10367,8 +10367,8 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositoryRefs = DevOpsFunctions.getRepositoryRefs(GetRepositoryRefsArgs.builder()
-     *             .repositoryId(testRepository.id())
-     *             .commitId(testCommit.id())
+     *             .repositoryId(testRepository.get("id"))
+     *             .commitId(testCommit.get("id"))
      *             .refName(repositoryRefRefName)
      *             .refType(repositoryRefRefType)
      *             .build());
@@ -10412,7 +10412,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositorySetting = DevOpsFunctions.getRepositorySetting(GetRepositorySettingArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -10454,7 +10454,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositorySetting = DevOpsFunctions.getRepositorySetting(GetRepositorySettingArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -10496,7 +10496,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositorySetting = DevOpsFunctions.getRepositorySetting(GetRepositorySettingArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -10538,7 +10538,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositorySetting = DevOpsFunctions.getRepositorySetting(GetRepositorySettingArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -10580,7 +10580,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRepositorySetting = DevOpsFunctions.getRepositorySetting(GetRepositorySettingArgs.builder()
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .build());
      * 
      *     }
@@ -10622,7 +10622,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrigger = DevOpsFunctions.getTrigger(GetTriggerArgs.builder()
-     *             .triggerId(testTriggerOciDevopsTrigger.id())
+     *             .triggerId(testTriggerOciDevopsTrigger.get("id"))
      *             .build());
      * 
      *     }
@@ -10664,7 +10664,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrigger = DevOpsFunctions.getTrigger(GetTriggerArgs.builder()
-     *             .triggerId(testTriggerOciDevopsTrigger.id())
+     *             .triggerId(testTriggerOciDevopsTrigger.get("id"))
      *             .build());
      * 
      *     }
@@ -10706,7 +10706,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrigger = DevOpsFunctions.getTrigger(GetTriggerArgs.builder()
-     *             .triggerId(testTriggerOciDevopsTrigger.id())
+     *             .triggerId(testTriggerOciDevopsTrigger.get("id"))
      *             .build());
      * 
      *     }
@@ -10748,7 +10748,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrigger = DevOpsFunctions.getTrigger(GetTriggerArgs.builder()
-     *             .triggerId(testTriggerOciDevopsTrigger.id())
+     *             .triggerId(testTriggerOciDevopsTrigger.get("id"))
      *             .build());
      * 
      *     }
@@ -10790,7 +10790,7 @@ public final class DevOpsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTrigger = DevOpsFunctions.getTrigger(GetTriggerArgs.builder()
-     *             .triggerId(testTriggerOciDevopsTrigger.id())
+     *             .triggerId(testTriggerOciDevopsTrigger.get("id"))
      *             .build());
      * 
      *     }
@@ -10835,7 +10835,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(triggerDisplayName)
      *             .id(triggerId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(triggerState)
      *             .build());
      * 
@@ -10881,7 +10881,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(triggerDisplayName)
      *             .id(triggerId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(triggerState)
      *             .build());
      * 
@@ -10927,7 +10927,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(triggerDisplayName)
      *             .id(triggerId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(triggerState)
      *             .build());
      * 
@@ -10973,7 +10973,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(triggerDisplayName)
      *             .id(triggerId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(triggerState)
      *             .build());
      * 
@@ -11019,7 +11019,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(triggerDisplayName)
      *             .id(triggerId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(triggerState)
      *             .build());
      * 
@@ -11065,7 +11065,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(triggerDisplayName)
      *             .id(triggerId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(triggerState)
      *             .build());
      * 
@@ -11111,7 +11111,7 @@ public final class DevOpsFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(triggerDisplayName)
      *             .id(triggerId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(triggerState)
      *             .build());
      * 

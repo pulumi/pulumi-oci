@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testMyRequests = oci.identity.getDomainsMyRequests({
  *     idcsEndpoint: testDomain.url,
- *     myRequestCount: Number(myRequestMyRequestCount),
+ *     myRequestCount: myRequestMyRequestCount,
  *     myRequestFilter: myRequestMyRequestFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: myRequestAuthorization,
  *     resourceTypeSchemaVersion: myRequestResourceTypeSchemaVersion,
- *     startIndex: Number(myRequestStartIndex),
+ *     startIndex: myRequestStartIndex,
  * });
  * ```
  */
@@ -139,13 +139,13 @@ export interface GetDomainsMyRequestsResult {
  *
  * const testMyRequests = oci.identity.getDomainsMyRequests({
  *     idcsEndpoint: testDomain.url,
- *     myRequestCount: Number(myRequestMyRequestCount),
+ *     myRequestCount: myRequestMyRequestCount,
  *     myRequestFilter: myRequestMyRequestFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: myRequestAuthorization,
  *     resourceTypeSchemaVersion: myRequestResourceTypeSchemaVersion,
- *     startIndex: Number(myRequestStartIndex),
+ *     startIndex: myRequestStartIndex,
  * });
  * ```
  */

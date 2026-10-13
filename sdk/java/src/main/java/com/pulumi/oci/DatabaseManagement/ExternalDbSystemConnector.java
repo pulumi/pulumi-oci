@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testExternalDbSystemConnector = new ExternalDbSystemConnector("testExternalDbSystemConnector", ExternalDbSystemConnectorArgs.builder()
  *             .connectorType(externalDbSystemConnectorConnectorType)
- *             .externalDbSystemId(testExternalDbSystem.id())
+ *             .externalDbSystemId(testExternalDbSystem.get("id"))
  *             .displayName(externalDbSystemConnectorDisplayName)
  *             .build());
  * 

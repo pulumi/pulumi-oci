@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testAccountMgmtInfos = oci.identity.getDomainsAccountMgmtInfos({
  *     idcsEndpoint: testDomain.url,
- *     accountMgmtInfoCount: Number(accountMgmtInfoAccountMgmtInfoCount),
+ *     accountMgmtInfoCount: accountMgmtInfoAccountMgmtInfoCount,
  *     accountMgmtInfoFilter: accountMgmtInfoAccountMgmtInfoFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: accountMgmtInfoAuthorization,
  *     resourceTypeSchemaVersion: accountMgmtInfoResourceTypeSchemaVersion,
- *     startIndex: Number(accountMgmtInfoStartIndex),
+ *     startIndex: accountMgmtInfoStartIndex,
  * });
  * ```
  */
@@ -130,13 +130,13 @@ export interface GetDomainsAccountMgmtInfosResult {
  *
  * const testAccountMgmtInfos = oci.identity.getDomainsAccountMgmtInfos({
  *     idcsEndpoint: testDomain.url,
- *     accountMgmtInfoCount: Number(accountMgmtInfoAccountMgmtInfoCount),
+ *     accountMgmtInfoCount: accountMgmtInfoAccountMgmtInfoCount,
  *     accountMgmtInfoFilter: accountMgmtInfoAccountMgmtInfoFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: accountMgmtInfoAuthorization,
  *     resourceTypeSchemaVersion: accountMgmtInfoResourceTypeSchemaVersion,
- *     startIndex: Number(accountMgmtInfoStartIndex),
+ *     startIndex: accountMgmtInfoStartIndex,
  * });
  * ```
  */

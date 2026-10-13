@@ -17,7 +17,7 @@ import * as utilities from "../utilities";
  *
  * const testLicenseMetric = oci.licensemanager.getLicenseMetric({
  *     compartmentId: compartmentId,
- *     isCompartmentIdInSubtree: licenseMetricIsCompartmentIdInSubtree === "true",
+ *     isCompartmentIdInSubtree: licenseMetricIsCompartmentIdInSubtree,
  * });
  * ```
  */
@@ -83,7 +83,7 @@ export interface GetLicenseMetricResult {
  *
  * const testLicenseMetric = oci.licensemanager.getLicenseMetric({
  *     compartmentId: compartmentId,
- *     isCompartmentIdInSubtree: licenseMetricIsCompartmentIdInSubtree === "true",
+ *     isCompartmentIdInSubtree: licenseMetricIsCompartmentIdInSubtree,
  * });
  * ```
  */

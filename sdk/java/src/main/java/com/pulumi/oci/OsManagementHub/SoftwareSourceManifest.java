@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testSoftwareSourceManifest = new SoftwareSourceManifest("testSoftwareSourceManifest", SoftwareSourceManifestArgs.builder()
  *             .updateSoftwareSourceManifestDetails(softwareSourceManifestUpdateSoftwareSourceManifestDetails)
- *             .softwareSourceId(testSoftwareSource.id())
+ *             .softwareSourceId(testSoftwareSource.get("id"))
  *             .build());
  * 
  *     }

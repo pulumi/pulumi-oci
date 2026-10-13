@@ -21,11 +21,11 @@ import * as utilities from "../utilities";
  * const testResourceAnalyticsInstanceOacManagement = new oci.oci.ResourceAnalyticsResourceAnalyticsInstanceOacManagement("test_resource_analytics_instance_oac_management", {
  *     attachmentType: resourceAnalyticsInstanceOacManagementAttachmentType,
  *     resourceAnalyticsInstanceId: testResourceAnalyticsInstance.id,
- *     enableOac: enableOac === "true",
+ *     enableOac: enableOac,
  *     attachmentDetails: {
  *         idcsDomainId: testDomain.id,
  *         capacityType: resourceAnalyticsInstanceOacManagementAttachmentDetailsCapacityType,
- *         capacityValue: Number(resourceAnalyticsInstanceOacManagementAttachmentDetailsCapacityValue),
+ *         capacityValue: resourceAnalyticsInstanceOacManagementAttachmentDetailsCapacityValue,
  *         licenseModel: resourceAnalyticsInstanceOacManagementAttachmentDetailsLicenseModel,
  *         networkDetails: {
  *             subnetId: testSubnet.id,

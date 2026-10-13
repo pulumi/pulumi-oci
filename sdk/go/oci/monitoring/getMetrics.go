@@ -40,8 +40,8 @@ import (
 //			_, err := monitoring.GetMetrics(ctx, &monitoring.GetMetricsArgs{
 //				CompartmentId:          compartmentId,
 //				CompartmentIdInSubtree: pulumi.BoolRef(metricCompartmentIdInSubtree),
-//				DimensionFilters:       pulumi.ToMap(metricDimensionFilters),
-//				GroupBies:              pulumi.ToArray(metricGroupBy),
+//				DimensionFilters:       metricDimensionFilters,
+//				GroupBies:              metricGroupBy,
 //				Name:                   pulumi.StringRef(metricName),
 //				Namespace:              pulumi.StringRef(metricNamespace),
 //				ResourceGroup:          pulumi.StringRef(metricResourceGroup),

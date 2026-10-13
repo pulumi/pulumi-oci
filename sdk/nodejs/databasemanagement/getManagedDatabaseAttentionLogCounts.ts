@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testManagedDatabaseAttentionLogCounts = oci.databasemanagement.getManagedDatabaseAttentionLogCounts({
  *     managedDatabaseId: testManagedDatabase.id,
  *     groupBy: managedDatabaseAttentionLogCountGroupBy,
- *     isRegularExpression: managedDatabaseAttentionLogCountIsRegularExpression === "true",
+ *     isRegularExpression: managedDatabaseAttentionLogCountIsRegularExpression,
  *     logSearchText: managedDatabaseAttentionLogCountLogSearchText,
  *     timeGreaterThanOrEqualTo: managedDatabaseAttentionLogCountTimeGreaterThanOrEqualTo,
  *     timeLessThanOrEqualTo: managedDatabaseAttentionLogCountTimeLessThanOrEqualTo,
@@ -122,7 +122,7 @@ export interface GetManagedDatabaseAttentionLogCountsResult {
  * const testManagedDatabaseAttentionLogCounts = oci.databasemanagement.getManagedDatabaseAttentionLogCounts({
  *     managedDatabaseId: testManagedDatabase.id,
  *     groupBy: managedDatabaseAttentionLogCountGroupBy,
- *     isRegularExpression: managedDatabaseAttentionLogCountIsRegularExpression === "true",
+ *     isRegularExpression: managedDatabaseAttentionLogCountIsRegularExpression,
  *     logSearchText: managedDatabaseAttentionLogCountLogSearchText,
  *     timeGreaterThanOrEqualTo: managedDatabaseAttentionLogCountTimeGreaterThanOrEqualTo,
  *     timeLessThanOrEqualTo: managedDatabaseAttentionLogCountTimeLessThanOrEqualTo,

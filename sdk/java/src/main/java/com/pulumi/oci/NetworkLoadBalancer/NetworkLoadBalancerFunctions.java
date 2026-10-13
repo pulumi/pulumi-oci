@@ -81,9 +81,9 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendHealth = NetworkLoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
-     *             .backendName(testBackend.name())
-     *             .backendSetName(testBackendSet.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .backendName(testBackend.get("name"))
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -125,9 +125,9 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendHealth = NetworkLoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
-     *             .backendName(testBackend.name())
-     *             .backendSetName(testBackendSet.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .backendName(testBackend.get("name"))
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -169,9 +169,9 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendHealth = NetworkLoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
-     *             .backendName(testBackend.name())
-     *             .backendSetName(testBackendSet.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .backendName(testBackend.get("name"))
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -213,9 +213,9 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendHealth = NetworkLoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
-     *             .backendName(testBackend.name())
-     *             .backendSetName(testBackendSet.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .backendName(testBackend.get("name"))
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -257,9 +257,9 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendHealth = NetworkLoadBalancerFunctions.getBackendHealth(GetBackendHealthArgs.builder()
-     *             .backendName(testBackend.name())
-     *             .backendSetName(testBackendSet.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .backendName(testBackend.get("name"))
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -371,7 +371,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSets = NetworkLoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -413,7 +413,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSets = NetworkLoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -455,7 +455,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSets = NetworkLoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -497,7 +497,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSets = NetworkLoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -539,7 +539,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackendSets = NetworkLoadBalancerFunctions.getBackendSets(GetBackendSetsArgs.builder()
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -581,8 +581,8 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackends = NetworkLoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
-     *             .backendSetName(testBackendSet.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -624,8 +624,8 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackends = NetworkLoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
-     *             .backendSetName(testBackendSet.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -667,8 +667,8 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackends = NetworkLoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
-     *             .backendSetName(testBackendSet.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -710,8 +710,8 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackends = NetworkLoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
-     *             .backendSetName(testBackendSet.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -753,8 +753,8 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBackends = NetworkLoadBalancerFunctions.getBackends(GetBackendsArgs.builder()
-     *             .backendSetName(testBackendSet.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -796,8 +796,8 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListener = NetworkLoadBalancerFunctions.getListener(GetListenerArgs.builder()
-     *             .listenerName(testListenerOciNetworkLoadBalancerListener.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .listenerName(testListenerOciNetworkLoadBalancerListener.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -839,8 +839,8 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListener = NetworkLoadBalancerFunctions.getListener(GetListenerArgs.builder()
-     *             .listenerName(testListenerOciNetworkLoadBalancerListener.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .listenerName(testListenerOciNetworkLoadBalancerListener.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -882,8 +882,8 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListener = NetworkLoadBalancerFunctions.getListener(GetListenerArgs.builder()
-     *             .listenerName(testListenerOciNetworkLoadBalancerListener.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .listenerName(testListenerOciNetworkLoadBalancerListener.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -925,8 +925,8 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListener = NetworkLoadBalancerFunctions.getListener(GetListenerArgs.builder()
-     *             .listenerName(testListenerOciNetworkLoadBalancerListener.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .listenerName(testListenerOciNetworkLoadBalancerListener.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -968,8 +968,8 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListener = NetworkLoadBalancerFunctions.getListener(GetListenerArgs.builder()
-     *             .listenerName(testListenerOciNetworkLoadBalancerListener.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .listenerName(testListenerOciNetworkLoadBalancerListener.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1011,7 +1011,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListeners = NetworkLoadBalancerFunctions.getListeners(GetListenersArgs.builder()
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1053,7 +1053,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListeners = NetworkLoadBalancerFunctions.getListeners(GetListenersArgs.builder()
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1095,7 +1095,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListeners = NetworkLoadBalancerFunctions.getListeners(GetListenersArgs.builder()
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1137,7 +1137,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListeners = NetworkLoadBalancerFunctions.getListeners(GetListenersArgs.builder()
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1179,7 +1179,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListeners = NetworkLoadBalancerFunctions.getListeners(GetListenersArgs.builder()
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1221,7 +1221,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancer = NetworkLoadBalancerFunctions.getNetworkLoadBalancer(GetNetworkLoadBalancerArgs.builder()
-     *             .networkLoadBalancerId(testNetworkLoadBalancerOciNetworkLoadBalancerNetworkLoadBalancer.id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancerOciNetworkLoadBalancerNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1263,7 +1263,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancer = NetworkLoadBalancerFunctions.getNetworkLoadBalancer(GetNetworkLoadBalancerArgs.builder()
-     *             .networkLoadBalancerId(testNetworkLoadBalancerOciNetworkLoadBalancerNetworkLoadBalancer.id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancerOciNetworkLoadBalancerNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1305,7 +1305,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancer = NetworkLoadBalancerFunctions.getNetworkLoadBalancer(GetNetworkLoadBalancerArgs.builder()
-     *             .networkLoadBalancerId(testNetworkLoadBalancerOciNetworkLoadBalancerNetworkLoadBalancer.id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancerOciNetworkLoadBalancerNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1347,7 +1347,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancer = NetworkLoadBalancerFunctions.getNetworkLoadBalancer(GetNetworkLoadBalancerArgs.builder()
-     *             .networkLoadBalancerId(testNetworkLoadBalancerOciNetworkLoadBalancerNetworkLoadBalancer.id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancerOciNetworkLoadBalancerNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1389,7 +1389,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancer = NetworkLoadBalancerFunctions.getNetworkLoadBalancer(GetNetworkLoadBalancerArgs.builder()
-     *             .networkLoadBalancerId(testNetworkLoadBalancerOciNetworkLoadBalancerNetworkLoadBalancer.id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancerOciNetworkLoadBalancerNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1431,9 +1431,9 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancerBackendSetBackendOperationalStatus = NetworkLoadBalancerFunctions.getNetworkLoadBalancerBackendSetBackendOperationalStatus(GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs.builder()
-     *             .backendName(testBackend.name())
-     *             .backendSetName(testBackendSet.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .backendName(testBackend.get("name"))
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1475,9 +1475,9 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancerBackendSetBackendOperationalStatus = NetworkLoadBalancerFunctions.getNetworkLoadBalancerBackendSetBackendOperationalStatus(GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs.builder()
-     *             .backendName(testBackend.name())
-     *             .backendSetName(testBackendSet.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .backendName(testBackend.get("name"))
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1519,9 +1519,9 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancerBackendSetBackendOperationalStatus = NetworkLoadBalancerFunctions.getNetworkLoadBalancerBackendSetBackendOperationalStatus(GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs.builder()
-     *             .backendName(testBackend.name())
-     *             .backendSetName(testBackendSet.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .backendName(testBackend.get("name"))
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1563,9 +1563,9 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancerBackendSetBackendOperationalStatus = NetworkLoadBalancerFunctions.getNetworkLoadBalancerBackendSetBackendOperationalStatus(GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs.builder()
-     *             .backendName(testBackend.name())
-     *             .backendSetName(testBackendSet.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .backendName(testBackend.get("name"))
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1607,9 +1607,9 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancerBackendSetBackendOperationalStatus = NetworkLoadBalancerFunctions.getNetworkLoadBalancerBackendSetBackendOperationalStatus(GetNetworkLoadBalancerBackendSetBackendOperationalStatusArgs.builder()
-     *             .backendName(testBackend.name())
-     *             .backendSetName(testBackendSet.name())
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .backendName(testBackend.get("name"))
+     *             .backendSetName(testBackendSet.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1651,7 +1651,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancerHealth = NetworkLoadBalancerFunctions.getNetworkLoadBalancerHealth(GetNetworkLoadBalancerHealthArgs.builder()
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1693,7 +1693,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancerHealth = NetworkLoadBalancerFunctions.getNetworkLoadBalancerHealth(GetNetworkLoadBalancerHealthArgs.builder()
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1735,7 +1735,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancerHealth = NetworkLoadBalancerFunctions.getNetworkLoadBalancerHealth(GetNetworkLoadBalancerHealthArgs.builder()
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1777,7 +1777,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancerHealth = NetworkLoadBalancerFunctions.getNetworkLoadBalancerHealth(GetNetworkLoadBalancerHealthArgs.builder()
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }
@@ -1819,7 +1819,7 @@ public final class NetworkLoadBalancerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkLoadBalancerHealth = NetworkLoadBalancerFunctions.getNetworkLoadBalancerHealth(GetNetworkLoadBalancerHealthArgs.builder()
-     *             .networkLoadBalancerId(testNetworkLoadBalancer.id())
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
      *             .build());
      * 
      *     }

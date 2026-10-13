@@ -32,7 +32,7 @@ import (
 //			_, err := onesubsription.GetInvoices(ctx, &onesubsription.GetInvoicesArgs{
 //				ArCustomerTransactionId: testArCustomerTransaction.Id,
 //				CompartmentId:           compartmentId,
-//				Fields:                  pulumi.ToArray(invoiceFields),
+//				Fields:                  invoiceFields,
 //				TimeFrom:                pulumi.StringRef(invoiceTimeFrom),
 //				TimeTo:                  pulumi.StringRef(invoiceTimeTo),
 //			}, nil)

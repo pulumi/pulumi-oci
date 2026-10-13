@@ -31,8 +31,8 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := datasafe.GetSubsettingReportSubsettedObjects(ctx, &datasafe.GetSubsettingReportSubsettedObjectsArgs{
 //				SubsettingReportId: testSubsettingReport.Id,
-//				Objects:            pulumi.ToArray(subsettingReportSubsettedObjectObject),
-//				SchemaNames:        pulumi.ToArray(subsettingReportSubsettedObjectSchemaName),
+//				Objects:            subsettingReportSubsettedObjectObject,
+//				SchemaNames:        subsettingReportSubsettedObjectSchemaName,
 //			}, nil)
 //			if err != nil {
 //				return err

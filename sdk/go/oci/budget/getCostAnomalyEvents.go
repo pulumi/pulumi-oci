@@ -35,8 +35,8 @@ import (
 //				CostImpact:                pulumi.Float64Ref(costAnomalyEventCostImpact),
 //				CostImpactPercentage:      pulumi.Float64Ref(costAnomalyEventCostImpactPercentage),
 //				Name:                      pulumi.StringRef(costAnomalyEventName),
-//				Regions:                   pulumi.ToArray(costAnomalyEventRegion),
-//				TargetTenantIds:           pulumi.ToArray(testTargetTenant.Id),
+//				Regions:                   costAnomalyEventRegion,
+//				TargetTenantIds:           testTargetTenant.Id,
 //				TimeAnomalyEventEndDate:   pulumi.StringRef(costAnomalyEventTimeAnomalyEventEndDate),
 //				TimeAnomalyEventStartDate: pulumi.StringRef(costAnomalyEventTimeAnomalyEventStartDate),
 //			}, nil)

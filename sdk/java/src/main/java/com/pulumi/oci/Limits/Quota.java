@@ -60,7 +60,7 @@ import javax.annotation.Nullable;
  *             .locks(QuotaLockArgs.builder()
  *                 .type(quotaLocksType)
  *                 .message(quotaLocksMessage)
- *                 .relatedResourceId(testRelatedResource.id())
+ *                 .relatedResourceId(testRelatedResource.get("id"))
  *                 .build())
  *             .build());
  * 

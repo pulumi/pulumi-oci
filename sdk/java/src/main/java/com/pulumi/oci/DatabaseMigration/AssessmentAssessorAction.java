@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAssessmentAssessorAction = new AssessmentAssessorAction("testAssessmentAssessorAction", AssessmentAssessorActionArgs.builder()
- *             .assessmentId(testAssessment.id())
+ *             .assessmentId(testAssessment.get("id"))
  *             .assessorAction(assessmentAssessorActionAssessorAction)
  *             .assessorName(assessmentAssessorActionAssessorName)
  *             .items(AssessmentAssessorActionItemArgs.builder()

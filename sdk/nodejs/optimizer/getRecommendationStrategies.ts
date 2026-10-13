@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testRecommendationStrategies = oci.optimizer.getRecommendationStrategies({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: recommendationStrategyCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: recommendationStrategyCompartmentIdInSubtree,
  *     name: recommendationStrategyName,
  *     recommendationName: testRecommendation.name,
  * });
@@ -95,7 +95,7 @@ export interface GetRecommendationStrategiesResult {
  *
  * const testRecommendationStrategies = oci.optimizer.getRecommendationStrategies({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: recommendationStrategyCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: recommendationStrategyCompartmentIdInSubtree,
  *     name: recommendationStrategyName,
  *     recommendationName: testRecommendation.name,
  * });

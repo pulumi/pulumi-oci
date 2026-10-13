@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testCloudDbSystemCloudStackMonitoringsManagement = new CloudDbSystemCloudStackMonitoringsManagement("testCloudDbSystemCloudStackMonitoringsManagement", CloudDbSystemCloudStackMonitoringsManagementArgs.builder()
- *             .cloudDbSystemId(testCloudDbSystem.id())
+ *             .cloudDbSystemId(testCloudDbSystem.get("id"))
  *             .enableCloudStackMonitoring(enableCloudStackMonitoring)
  *             .isEnabled(cloudDbSystemCloudStackMonitoringsManagementIsEnabled)
  *             .metadata(cloudDbSystemCloudStackMonitoringsManagementMetadata)

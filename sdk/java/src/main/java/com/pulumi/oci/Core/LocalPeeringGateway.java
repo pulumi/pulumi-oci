@@ -50,12 +50,12 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testLocalPeeringGateway = new LocalPeeringGateway("testLocalPeeringGateway", LocalPeeringGatewayArgs.builder()
  *             .compartmentId(compartmentId)
- *             .vcnId(testVcn.id())
+ *             .vcnId(testVcn.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(localPeeringGatewayDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
- *             .peerId(testLocalPeeringGateway2.id())
- *             .routeTableId(testRouteTable.id())
+ *             .peerId(testLocalPeeringGateway2.get("id"))
+ *             .routeTableId(testRouteTable.get("id"))
  *             .build());
  * 
  *     }

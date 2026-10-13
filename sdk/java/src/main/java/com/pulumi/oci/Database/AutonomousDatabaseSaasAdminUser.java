@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAutonomousDatabaseSaasAdminUser = new AutonomousDatabaseSaasAdminUser("testAutonomousDatabaseSaasAdminUser", AutonomousDatabaseSaasAdminUserArgs.builder()
- *             .autonomousDatabaseId(testAutonomousDatabase.id())
+ *             .autonomousDatabaseId(testAutonomousDatabase.get("id"))
  *             .password(autonomousDatabaseSaasAdminUserPassword)
  *             .accessType(autonomousDatabaseSaasAdminUserAccessType)
  *             .duration(autonomousDatabaseSaasAdminUserDuration)

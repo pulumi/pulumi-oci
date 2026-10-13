@@ -92,7 +92,7 @@ import javax.annotation.Nullable;
  *         var testVcn = new Vcn("testVcn", VcnArgs.builder()
  *             .compartmentId(compartmentId)
  *             .byoipv6cidrDetails(VcnByoipv6cidrDetailArgs.builder()
- *                 .byoipv6rangeId(testByoipv6range.id())
+ *                 .byoipv6rangeId(testByoipv6range.get("id"))
  *                 .ipv6cidrBlock(vcnByoipv6cidrDetailsIpv6cidrBlock)
  *                 .build())
  *             .cidrBlock(vcnCidrBlock)

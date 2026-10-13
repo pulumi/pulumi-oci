@@ -437,7 +437,7 @@ class Endpoint(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            inference_units=int(endpoint_inference_units))
+            inference_units=endpoint_inference_units)
         ```
 
         ## Import
@@ -495,7 +495,7 @@ class Endpoint(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            inference_units=int(endpoint_inference_units))
+            inference_units=endpoint_inference_units)
         ```
 
         ## Import

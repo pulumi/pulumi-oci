@@ -58,10 +58,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testCloudAutonomousVmCluster = new CloudAutonomousVmCluster("testCloudAutonomousVmCluster", CloudAutonomousVmClusterArgs.builder()
- *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+ *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.get("id"))
  *             .compartmentId(compartmentId)
  *             .displayName(cloudAutonomousVmClusterDisplayName)
- *             .subnetId(testSubnet.id())
+ *             .subnetId(testSubnet.get("id"))
  *             .autonomousDataStorageSizeInTbs(cloudAutonomousVmClusterAutonomousDataStorageSizeInTbs)
  *             .clusterTimeZone(cloudAutonomousVmClusterClusterTimeZone)
  *             .computeModel(cloudAutonomousVmClusterComputeModel)
@@ -97,7 +97,7 @@ import javax.annotation.Nullable;
  *             .scanListenerPortTls(cloudAutonomousVmClusterScanListenerPortTls)
  *             .securityAttributes(cloudAutonomousVmClusterSecurityAttributes)
  *             .sgaPercentage(cloudAutonomousVmClusterSgaPercentage)
- *             .subscriptionId(testSubscription.id())
+ *             .subscriptionId(testSubscription.get("id"))
  *             .totalContainerDatabases(cloudAutonomousVmClusterTotalContainerDatabases)
  *             .build());
  * 

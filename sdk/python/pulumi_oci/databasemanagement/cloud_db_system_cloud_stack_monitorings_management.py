@@ -199,8 +199,8 @@ class CloudDbSystemCloudStackMonitoringsManagement(pulumi.CustomResource):
 
         test_cloud_db_system_cloud_stack_monitorings_management = oci.databasemanagement.CloudDbSystemCloudStackMonitoringsManagement("test_cloud_db_system_cloud_stack_monitorings_management",
             cloud_db_system_id=test_cloud_db_system["id"],
-            enable_cloud_stack_monitoring=enable_cloud_stack_monitoring == "true",
-            is_enabled=cloud_db_system_cloud_stack_monitorings_management_is_enabled == "true",
+            enable_cloud_stack_monitoring=enable_cloud_stack_monitoring,
+            is_enabled=cloud_db_system_cloud_stack_monitorings_management_is_enabled,
             metadata=cloud_db_system_cloud_stack_monitorings_management_metadata)
         ```
 
@@ -237,8 +237,8 @@ class CloudDbSystemCloudStackMonitoringsManagement(pulumi.CustomResource):
 
         test_cloud_db_system_cloud_stack_monitorings_management = oci.databasemanagement.CloudDbSystemCloudStackMonitoringsManagement("test_cloud_db_system_cloud_stack_monitorings_management",
             cloud_db_system_id=test_cloud_db_system["id"],
-            enable_cloud_stack_monitoring=enable_cloud_stack_monitoring == "true",
-            is_enabled=cloud_db_system_cloud_stack_monitorings_management_is_enabled == "true",
+            enable_cloud_stack_monitoring=enable_cloud_stack_monitoring,
+            is_enabled=cloud_db_system_cloud_stack_monitorings_management_is_enabled,
             metadata=cloud_db_system_cloud_stack_monitorings_management_metadata)
         ```
 

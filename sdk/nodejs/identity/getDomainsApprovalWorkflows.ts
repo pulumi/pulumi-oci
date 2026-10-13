@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testApprovalWorkflows = oci.identity.getDomainsApprovalWorkflows({
  *     idcsEndpoint: testDomain.url,
- *     approvalWorkflowCount: Number(approvalWorkflowApprovalWorkflowCount),
+ *     approvalWorkflowCount: approvalWorkflowApprovalWorkflowCount,
  *     approvalWorkflowFilter: approvalWorkflowApprovalWorkflowFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: approvalWorkflowAuthorization,
  *     resourceTypeSchemaVersion: approvalWorkflowResourceTypeSchemaVersion,
- *     startIndex: Number(approvalWorkflowStartIndex),
+ *     startIndex: approvalWorkflowStartIndex,
  * });
  * ```
  */
@@ -124,13 +124,13 @@ export interface GetDomainsApprovalWorkflowsResult {
  *
  * const testApprovalWorkflows = oci.identity.getDomainsApprovalWorkflows({
  *     idcsEndpoint: testDomain.url,
- *     approvalWorkflowCount: Number(approvalWorkflowApprovalWorkflowCount),
+ *     approvalWorkflowCount: approvalWorkflowApprovalWorkflowCount,
  *     approvalWorkflowFilter: approvalWorkflowApprovalWorkflowFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: approvalWorkflowAuthorization,
  *     resourceTypeSchemaVersion: approvalWorkflowResourceTypeSchemaVersion,
- *     startIndex: Number(approvalWorkflowStartIndex),
+ *     startIndex: approvalWorkflowStartIndex,
  * });
  * ```
  */

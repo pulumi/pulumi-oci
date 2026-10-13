@@ -49,8 +49,8 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testSqlFirewallPolicyManagement = new SqlFirewallPolicyManagement("testSqlFirewallPolicyManagement", SqlFirewallPolicyManagementArgs.builder()
  *             .compartmentId(compartmentId)
- *             .targetId(testTargetDatabase.id())
- *             .dbUserName(testUser.name())
+ *             .targetId(testTargetDatabase.get("id"))
+ *             .dbUserName(testUser.get("name"))
  *             .allowedClientIps(sqlFirewallPolicyManagementAllowedClientIps)
  *             .allowedClientOsUsernames(sqlFirewallPolicyManagementAllowedClientOsUsernames)
  *             .allowedClientPrograms(sqlFirewallPolicyManagementAllowedClientPrograms)

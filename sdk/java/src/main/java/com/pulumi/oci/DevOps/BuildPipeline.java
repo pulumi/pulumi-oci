@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBuildPipeline = new BuildPipeline("testBuildPipeline", BuildPipelineArgs.builder()
- *             .projectId(testProject.id())
+ *             .projectId(testProject.get("id"))
  *             .buildPipelineParameters(BuildPipelineBuildPipelineParametersArgs.builder()
  *                 .items(BuildPipelineBuildPipelineParametersItemArgs.builder()
  *                     .defaultValue(buildPipelineBuildPipelineParametersItemsDefaultValue)

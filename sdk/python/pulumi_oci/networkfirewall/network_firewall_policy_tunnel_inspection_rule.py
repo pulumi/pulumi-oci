@@ -389,7 +389,7 @@ class NetworkFirewallPolicyTunnelInspectionRule(pulumi.CustomResource):
                 "before_rule": network_firewall_policy_tunnel_inspection_rule_position_before_rule,
             },
             profile={
-                "must_return_traffic_to_source": network_firewall_policy_tunnel_inspection_rule_profile_must_return_traffic_to_source == "true",
+                "must_return_traffic_to_source": network_firewall_policy_tunnel_inspection_rule_profile_must_return_traffic_to_source,
             })
         ```
 
@@ -454,7 +454,7 @@ class NetworkFirewallPolicyTunnelInspectionRule(pulumi.CustomResource):
                 "before_rule": network_firewall_policy_tunnel_inspection_rule_position_before_rule,
             },
             profile={
-                "must_return_traffic_to_source": network_firewall_policy_tunnel_inspection_rule_profile_must_return_traffic_to_source == "true",
+                "must_return_traffic_to_source": network_firewall_policy_tunnel_inspection_rule_profile_must_return_traffic_to_source,
             })
         ```
 

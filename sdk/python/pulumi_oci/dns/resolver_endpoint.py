@@ -613,8 +613,8 @@ class ResolverEndpoint(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_resolver_endpoint = oci.dns.ResolverEndpoint("test_resolver_endpoint",
-            is_forwarding=resolver_endpoint_is_forwarding == "true",
-            is_listening=resolver_endpoint_is_listening == "true",
+            is_forwarding=resolver_endpoint_is_forwarding,
+            is_listening=resolver_endpoint_is_listening,
             name=resolver_endpoint_name,
             resolver_id=test_resolver["id"],
             subnet_id=test_subnet["id"],
@@ -679,8 +679,8 @@ class ResolverEndpoint(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_resolver_endpoint = oci.dns.ResolverEndpoint("test_resolver_endpoint",
-            is_forwarding=resolver_endpoint_is_forwarding == "true",
-            is_listening=resolver_endpoint_is_listening == "true",
+            is_forwarding=resolver_endpoint_is_forwarding,
+            is_listening=resolver_endpoint_is_listening,
             name=resolver_endpoint_name,
             resolver_id=test_resolver["id"],
             subnet_id=test_subnet["id"],

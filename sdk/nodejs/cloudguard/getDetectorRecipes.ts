@@ -34,9 +34,9 @@ import * as utilities from "../utilities";
  * const testDetectorRecipes = oci.cloudguard.getDetectorRecipes({
  *     compartmentId: compartmentId,
  *     accessLevel: detectorRecipeAccessLevel,
- *     compartmentIdInSubtree: detectorRecipeCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: detectorRecipeCompartmentIdInSubtree,
  *     displayName: detectorRecipeDisplayName,
- *     resourceMetadataOnly: detectorRecipeResourceMetadataOnly === "true",
+ *     resourceMetadataOnly: detectorRecipeResourceMetadataOnly,
  *     state: detectorRecipeState,
  * });
  * ```
@@ -142,9 +142,9 @@ export interface GetDetectorRecipesResult {
  * const testDetectorRecipes = oci.cloudguard.getDetectorRecipes({
  *     compartmentId: compartmentId,
  *     accessLevel: detectorRecipeAccessLevel,
- *     compartmentIdInSubtree: detectorRecipeCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: detectorRecipeCompartmentIdInSubtree,
  *     displayName: detectorRecipeDisplayName,
- *     resourceMetadataOnly: detectorRecipeResourceMetadataOnly === "true",
+ *     resourceMetadataOnly: detectorRecipeResourceMetadataOnly,
  *     state: detectorRecipeState,
  * });
  * ```

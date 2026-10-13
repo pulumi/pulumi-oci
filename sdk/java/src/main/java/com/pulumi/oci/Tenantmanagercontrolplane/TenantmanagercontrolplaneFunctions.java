@@ -117,7 +117,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssignedSubscription = TenantmanagercontrolplaneFunctions.getAssignedSubscription(GetAssignedSubscriptionArgs.builder()
-     *             .assignedSubscriptionId(testAssignedSubscriptionOciTenantmanagercontrolplaneAssignedSubscription.id())
+     *             .assignedSubscriptionId(testAssignedSubscriptionOciTenantmanagercontrolplaneAssignedSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -159,7 +159,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssignedSubscription = TenantmanagercontrolplaneFunctions.getAssignedSubscription(GetAssignedSubscriptionArgs.builder()
-     *             .assignedSubscriptionId(testAssignedSubscriptionOciTenantmanagercontrolplaneAssignedSubscription.id())
+     *             .assignedSubscriptionId(testAssignedSubscriptionOciTenantmanagercontrolplaneAssignedSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -201,7 +201,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssignedSubscription = TenantmanagercontrolplaneFunctions.getAssignedSubscription(GetAssignedSubscriptionArgs.builder()
-     *             .assignedSubscriptionId(testAssignedSubscriptionOciTenantmanagercontrolplaneAssignedSubscription.id())
+     *             .assignedSubscriptionId(testAssignedSubscriptionOciTenantmanagercontrolplaneAssignedSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -243,7 +243,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssignedSubscription = TenantmanagercontrolplaneFunctions.getAssignedSubscription(GetAssignedSubscriptionArgs.builder()
-     *             .assignedSubscriptionId(testAssignedSubscriptionOciTenantmanagercontrolplaneAssignedSubscription.id())
+     *             .assignedSubscriptionId(testAssignedSubscriptionOciTenantmanagercontrolplaneAssignedSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -285,7 +285,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssignedSubscription = TenantmanagercontrolplaneFunctions.getAssignedSubscription(GetAssignedSubscriptionArgs.builder()
-     *             .assignedSubscriptionId(testAssignedSubscriptionOciTenantmanagercontrolplaneAssignedSubscription.id())
+     *             .assignedSubscriptionId(testAssignedSubscriptionOciTenantmanagercontrolplaneAssignedSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -327,7 +327,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssignedSubscriptionLineItems = TenantmanagercontrolplaneFunctions.getAssignedSubscriptionLineItems(GetAssignedSubscriptionLineItemsArgs.builder()
-     *             .assignedSubscriptionId(testAssignedSubscription.id())
+     *             .assignedSubscriptionId(testAssignedSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -369,7 +369,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssignedSubscriptionLineItems = TenantmanagercontrolplaneFunctions.getAssignedSubscriptionLineItems(GetAssignedSubscriptionLineItemsArgs.builder()
-     *             .assignedSubscriptionId(testAssignedSubscription.id())
+     *             .assignedSubscriptionId(testAssignedSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -411,7 +411,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssignedSubscriptionLineItems = TenantmanagercontrolplaneFunctions.getAssignedSubscriptionLineItems(GetAssignedSubscriptionLineItemsArgs.builder()
-     *             .assignedSubscriptionId(testAssignedSubscription.id())
+     *             .assignedSubscriptionId(testAssignedSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -453,7 +453,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssignedSubscriptionLineItems = TenantmanagercontrolplaneFunctions.getAssignedSubscriptionLineItems(GetAssignedSubscriptionLineItemsArgs.builder()
-     *             .assignedSubscriptionId(testAssignedSubscription.id())
+     *             .assignedSubscriptionId(testAssignedSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -495,7 +495,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssignedSubscriptionLineItems = TenantmanagercontrolplaneFunctions.getAssignedSubscriptionLineItems(GetAssignedSubscriptionLineItemsArgs.builder()
-     *             .assignedSubscriptionId(testAssignedSubscription.id())
+     *             .assignedSubscriptionId(testAssignedSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -539,7 +539,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *         final var testAssignedSubscriptions = TenantmanagercontrolplaneFunctions.getAssignedSubscriptions(GetAssignedSubscriptionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .entityVersion(assignedSubscriptionEntityVersion)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -583,7 +583,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *         final var testAssignedSubscriptions = TenantmanagercontrolplaneFunctions.getAssignedSubscriptions(GetAssignedSubscriptionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .entityVersion(assignedSubscriptionEntityVersion)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -627,7 +627,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *         final var testAssignedSubscriptions = TenantmanagercontrolplaneFunctions.getAssignedSubscriptions(GetAssignedSubscriptionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .entityVersion(assignedSubscriptionEntityVersion)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -671,7 +671,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *         final var testAssignedSubscriptions = TenantmanagercontrolplaneFunctions.getAssignedSubscriptions(GetAssignedSubscriptionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .entityVersion(assignedSubscriptionEntityVersion)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -715,7 +715,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *         final var testAssignedSubscriptions = TenantmanagercontrolplaneFunctions.getAssignedSubscriptions(GetAssignedSubscriptionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .entityVersion(assignedSubscriptionEntityVersion)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -757,7 +757,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDomain = TenantmanagercontrolplaneFunctions.getDomain(GetDomainArgs.builder()
-     *             .domainId(testDomainOciTenantmanagercontrolplaneDomain.id())
+     *             .domainId(testDomainOciTenantmanagercontrolplaneDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -799,7 +799,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDomain = TenantmanagercontrolplaneFunctions.getDomain(GetDomainArgs.builder()
-     *             .domainId(testDomainOciTenantmanagercontrolplaneDomain.id())
+     *             .domainId(testDomainOciTenantmanagercontrolplaneDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -841,7 +841,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDomain = TenantmanagercontrolplaneFunctions.getDomain(GetDomainArgs.builder()
-     *             .domainId(testDomainOciTenantmanagercontrolplaneDomain.id())
+     *             .domainId(testDomainOciTenantmanagercontrolplaneDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -883,7 +883,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDomain = TenantmanagercontrolplaneFunctions.getDomain(GetDomainArgs.builder()
-     *             .domainId(testDomainOciTenantmanagercontrolplaneDomain.id())
+     *             .domainId(testDomainOciTenantmanagercontrolplaneDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -925,7 +925,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDomain = TenantmanagercontrolplaneFunctions.getDomain(GetDomainArgs.builder()
-     *             .domainId(testDomainOciTenantmanagercontrolplaneDomain.id())
+     *             .domainId(testDomainOciTenantmanagercontrolplaneDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -967,7 +967,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDomainGovernance = TenantmanagercontrolplaneFunctions.getDomainGovernance(GetDomainGovernanceArgs.builder()
-     *             .domainGovernanceId(testDomainGovernanceOciTenantmanagercontrolplaneDomainGovernance.id())
+     *             .domainGovernanceId(testDomainGovernanceOciTenantmanagercontrolplaneDomainGovernance.get("id"))
      *             .build());
      * 
      *     }
@@ -1009,7 +1009,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDomainGovernance = TenantmanagercontrolplaneFunctions.getDomainGovernance(GetDomainGovernanceArgs.builder()
-     *             .domainGovernanceId(testDomainGovernanceOciTenantmanagercontrolplaneDomainGovernance.id())
+     *             .domainGovernanceId(testDomainGovernanceOciTenantmanagercontrolplaneDomainGovernance.get("id"))
      *             .build());
      * 
      *     }
@@ -1051,7 +1051,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDomainGovernance = TenantmanagercontrolplaneFunctions.getDomainGovernance(GetDomainGovernanceArgs.builder()
-     *             .domainGovernanceId(testDomainGovernanceOciTenantmanagercontrolplaneDomainGovernance.id())
+     *             .domainGovernanceId(testDomainGovernanceOciTenantmanagercontrolplaneDomainGovernance.get("id"))
      *             .build());
      * 
      *     }
@@ -1093,7 +1093,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDomainGovernance = TenantmanagercontrolplaneFunctions.getDomainGovernance(GetDomainGovernanceArgs.builder()
-     *             .domainGovernanceId(testDomainGovernanceOciTenantmanagercontrolplaneDomainGovernance.id())
+     *             .domainGovernanceId(testDomainGovernanceOciTenantmanagercontrolplaneDomainGovernance.get("id"))
      *             .build());
      * 
      *     }
@@ -1135,7 +1135,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDomainGovernance = TenantmanagercontrolplaneFunctions.getDomainGovernance(GetDomainGovernanceArgs.builder()
-     *             .domainGovernanceId(testDomainGovernanceOciTenantmanagercontrolplaneDomainGovernance.id())
+     *             .domainGovernanceId(testDomainGovernanceOciTenantmanagercontrolplaneDomainGovernance.get("id"))
      *             .build());
      * 
      *     }
@@ -1178,8 +1178,8 @@ public final class TenantmanagercontrolplaneFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDomainGovernances = TenantmanagercontrolplaneFunctions.getDomainGovernances(GetDomainGovernancesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .domainGovernanceId(testDomainGovernance.id())
-     *             .domainId(testDomain.id())
+     *             .domainGovernanceId(testDomainGovernance.get("id"))
+     *             .domainId(testDomain.get("id"))
      *             .name(domainGovernanceName)
      *             .state(domainGovernanceState)
      *             .build());
@@ -1224,8 +1224,8 @@ public final class TenantmanagercontrolplaneFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDomainGovernances = TenantmanagercontrolplaneFunctions.getDomainGovernances(GetDomainGovernancesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .domainGovernanceId(testDomainGovernance.id())
-     *             .domainId(testDomain.id())
+     *             .domainGovernanceId(testDomainGovernance.get("id"))
+     *             .domainId(testDomain.get("id"))
      *             .name(domainGovernanceName)
      *             .state(domainGovernanceState)
      *             .build());
@@ -1270,8 +1270,8 @@ public final class TenantmanagercontrolplaneFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDomainGovernances = TenantmanagercontrolplaneFunctions.getDomainGovernances(GetDomainGovernancesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .domainGovernanceId(testDomainGovernance.id())
-     *             .domainId(testDomain.id())
+     *             .domainGovernanceId(testDomainGovernance.get("id"))
+     *             .domainId(testDomain.get("id"))
      *             .name(domainGovernanceName)
      *             .state(domainGovernanceState)
      *             .build());
@@ -1316,8 +1316,8 @@ public final class TenantmanagercontrolplaneFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDomainGovernances = TenantmanagercontrolplaneFunctions.getDomainGovernances(GetDomainGovernancesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .domainGovernanceId(testDomainGovernance.id())
-     *             .domainId(testDomain.id())
+     *             .domainGovernanceId(testDomainGovernance.get("id"))
+     *             .domainId(testDomain.get("id"))
      *             .name(domainGovernanceName)
      *             .state(domainGovernanceState)
      *             .build());
@@ -1362,8 +1362,8 @@ public final class TenantmanagercontrolplaneFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDomainGovernances = TenantmanagercontrolplaneFunctions.getDomainGovernances(GetDomainGovernancesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .domainGovernanceId(testDomainGovernance.id())
-     *             .domainId(testDomain.id())
+     *             .domainGovernanceId(testDomainGovernance.get("id"))
+     *             .domainId(testDomain.get("id"))
      *             .name(domainGovernanceName)
      *             .state(domainGovernanceState)
      *             .build());
@@ -1408,7 +1408,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDomains = TenantmanagercontrolplaneFunctions.getDomains(GetDomainsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .domainId(testDomain.id())
+     *             .domainId(testDomain.get("id"))
      *             .name(domainName)
      *             .state(domainState)
      *             .status(domainStatus)
@@ -1454,7 +1454,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDomains = TenantmanagercontrolplaneFunctions.getDomains(GetDomainsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .domainId(testDomain.id())
+     *             .domainId(testDomain.get("id"))
      *             .name(domainName)
      *             .state(domainState)
      *             .status(domainStatus)
@@ -1500,7 +1500,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDomains = TenantmanagercontrolplaneFunctions.getDomains(GetDomainsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .domainId(testDomain.id())
+     *             .domainId(testDomain.get("id"))
      *             .name(domainName)
      *             .state(domainState)
      *             .status(domainStatus)
@@ -1546,7 +1546,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDomains = TenantmanagercontrolplaneFunctions.getDomains(GetDomainsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .domainId(testDomain.id())
+     *             .domainId(testDomain.get("id"))
      *             .name(domainName)
      *             .state(domainState)
      *             .status(domainStatus)
@@ -1592,7 +1592,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDomains = TenantmanagercontrolplaneFunctions.getDomains(GetDomainsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .domainId(testDomain.id())
+     *             .domainId(testDomain.get("id"))
      *             .name(domainName)
      *             .state(domainState)
      *             .status(domainStatus)
@@ -1637,7 +1637,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLink = TenantmanagercontrolplaneFunctions.getLink(GetLinkArgs.builder()
-     *             .linkId(testLinkOciTenantmanagercontrolplaneLink.id())
+     *             .linkId(testLinkOciTenantmanagercontrolplaneLink.get("id"))
      *             .build());
      * 
      *     }
@@ -1679,7 +1679,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLink = TenantmanagercontrolplaneFunctions.getLink(GetLinkArgs.builder()
-     *             .linkId(testLinkOciTenantmanagercontrolplaneLink.id())
+     *             .linkId(testLinkOciTenantmanagercontrolplaneLink.get("id"))
      *             .build());
      * 
      *     }
@@ -1721,7 +1721,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLink = TenantmanagercontrolplaneFunctions.getLink(GetLinkArgs.builder()
-     *             .linkId(testLinkOciTenantmanagercontrolplaneLink.id())
+     *             .linkId(testLinkOciTenantmanagercontrolplaneLink.get("id"))
      *             .build());
      * 
      *     }
@@ -1763,7 +1763,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLink = TenantmanagercontrolplaneFunctions.getLink(GetLinkArgs.builder()
-     *             .linkId(testLinkOciTenantmanagercontrolplaneLink.id())
+     *             .linkId(testLinkOciTenantmanagercontrolplaneLink.get("id"))
      *             .build());
      * 
      *     }
@@ -1805,7 +1805,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLink = TenantmanagercontrolplaneFunctions.getLink(GetLinkArgs.builder()
-     *             .linkId(testLinkOciTenantmanagercontrolplaneLink.id())
+     *             .linkId(testLinkOciTenantmanagercontrolplaneLink.get("id"))
      *             .build());
      * 
      *     }
@@ -2057,7 +2057,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLinkTenancyName = TenantmanagercontrolplaneFunctions.getLinkTenancyName(GetLinkTenancyNameArgs.builder()
-     *             .linkId(testLink.id())
+     *             .linkId(testLink.get("id"))
      *             .build());
      * 
      *     }
@@ -2099,7 +2099,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLinkTenancyName = TenantmanagercontrolplaneFunctions.getLinkTenancyName(GetLinkTenancyNameArgs.builder()
-     *             .linkId(testLink.id())
+     *             .linkId(testLink.get("id"))
      *             .build());
      * 
      *     }
@@ -2141,7 +2141,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLinkTenancyName = TenantmanagercontrolplaneFunctions.getLinkTenancyName(GetLinkTenancyNameArgs.builder()
-     *             .linkId(testLink.id())
+     *             .linkId(testLink.get("id"))
      *             .build());
      * 
      *     }
@@ -2183,7 +2183,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLinkTenancyName = TenantmanagercontrolplaneFunctions.getLinkTenancyName(GetLinkTenancyNameArgs.builder()
-     *             .linkId(testLink.id())
+     *             .linkId(testLink.get("id"))
      *             .build());
      * 
      *     }
@@ -2225,7 +2225,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLinkTenancyName = TenantmanagercontrolplaneFunctions.getLinkTenancyName(GetLinkTenancyNameArgs.builder()
-     *             .linkId(testLink.id())
+     *             .linkId(testLink.get("id"))
      *             .build());
      * 
      *     }
@@ -2267,9 +2267,9 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLinks = TenantmanagercontrolplaneFunctions.getLinks(GetLinksArgs.builder()
-     *             .childTenancyId(testTenancy.id())
+     *             .childTenancyId(testTenancy.get("id"))
      *             .feature(linkFeature)
-     *             .parentTenancyId(testTenancy.id())
+     *             .parentTenancyId(testTenancy.get("id"))
      *             .state(linkState)
      *             .build());
      * 
@@ -2312,9 +2312,9 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLinks = TenantmanagercontrolplaneFunctions.getLinks(GetLinksArgs.builder()
-     *             .childTenancyId(testTenancy.id())
+     *             .childTenancyId(testTenancy.get("id"))
      *             .feature(linkFeature)
-     *             .parentTenancyId(testTenancy.id())
+     *             .parentTenancyId(testTenancy.get("id"))
      *             .state(linkState)
      *             .build());
      * 
@@ -2357,9 +2357,9 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLinks = TenantmanagercontrolplaneFunctions.getLinks(GetLinksArgs.builder()
-     *             .childTenancyId(testTenancy.id())
+     *             .childTenancyId(testTenancy.get("id"))
      *             .feature(linkFeature)
-     *             .parentTenancyId(testTenancy.id())
+     *             .parentTenancyId(testTenancy.get("id"))
      *             .state(linkState)
      *             .build());
      * 
@@ -2402,9 +2402,9 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLinks = TenantmanagercontrolplaneFunctions.getLinks(GetLinksArgs.builder()
-     *             .childTenancyId(testTenancy.id())
+     *             .childTenancyId(testTenancy.get("id"))
      *             .feature(linkFeature)
-     *             .parentTenancyId(testTenancy.id())
+     *             .parentTenancyId(testTenancy.get("id"))
      *             .state(linkState)
      *             .build());
      * 
@@ -2447,9 +2447,9 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLinks = TenantmanagercontrolplaneFunctions.getLinks(GetLinksArgs.builder()
-     *             .childTenancyId(testTenancy.id())
+     *             .childTenancyId(testTenancy.get("id"))
      *             .feature(linkFeature)
-     *             .parentTenancyId(testTenancy.id())
+     *             .parentTenancyId(testTenancy.get("id"))
      *             .state(linkState)
      *             .build());
      * 
@@ -2492,9 +2492,9 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLinks = TenantmanagercontrolplaneFunctions.getLinks(GetLinksArgs.builder()
-     *             .childTenancyId(testTenancy.id())
+     *             .childTenancyId(testTenancy.get("id"))
      *             .feature(linkFeature)
-     *             .parentTenancyId(testTenancy.id())
+     *             .parentTenancyId(testTenancy.get("id"))
      *             .state(linkState)
      *             .build());
      * 
@@ -2537,9 +2537,9 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLinks = TenantmanagercontrolplaneFunctions.getLinks(GetLinksArgs.builder()
-     *             .childTenancyId(testTenancy.id())
+     *             .childTenancyId(testTenancy.get("id"))
      *             .feature(linkFeature)
-     *             .parentTenancyId(testTenancy.id())
+     *             .parentTenancyId(testTenancy.get("id"))
      *             .state(linkState)
      *             .build());
      * 
@@ -2582,7 +2582,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOrganization = TenantmanagercontrolplaneFunctions.getOrganization(GetOrganizationArgs.builder()
-     *             .organizationId(testOrganizationOciTenantmanagercontrolplaneOrganization.id())
+     *             .organizationId(testOrganizationOciTenantmanagercontrolplaneOrganization.get("id"))
      *             .build());
      * 
      *     }
@@ -2624,7 +2624,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOrganization = TenantmanagercontrolplaneFunctions.getOrganization(GetOrganizationArgs.builder()
-     *             .organizationId(testOrganizationOciTenantmanagercontrolplaneOrganization.id())
+     *             .organizationId(testOrganizationOciTenantmanagercontrolplaneOrganization.get("id"))
      *             .build());
      * 
      *     }
@@ -2666,7 +2666,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOrganization = TenantmanagercontrolplaneFunctions.getOrganization(GetOrganizationArgs.builder()
-     *             .organizationId(testOrganizationOciTenantmanagercontrolplaneOrganization.id())
+     *             .organizationId(testOrganizationOciTenantmanagercontrolplaneOrganization.get("id"))
      *             .build());
      * 
      *     }
@@ -2708,7 +2708,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOrganization = TenantmanagercontrolplaneFunctions.getOrganization(GetOrganizationArgs.builder()
-     *             .organizationId(testOrganizationOciTenantmanagercontrolplaneOrganization.id())
+     *             .organizationId(testOrganizationOciTenantmanagercontrolplaneOrganization.get("id"))
      *             .build());
      * 
      *     }
@@ -2750,7 +2750,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOrganization = TenantmanagercontrolplaneFunctions.getOrganization(GetOrganizationArgs.builder()
-     *             .organizationId(testOrganizationOciTenantmanagercontrolplaneOrganization.id())
+     *             .organizationId(testOrganizationOciTenantmanagercontrolplaneOrganization.get("id"))
      *             .build());
      * 
      *     }
@@ -2792,7 +2792,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOrganizationTenancies = TenantmanagercontrolplaneFunctions.getOrganizationTenancies(GetOrganizationTenanciesArgs.builder()
-     *             .organizationId(testOrganization.id())
+     *             .organizationId(testOrganization.get("id"))
      *             .build());
      * 
      *     }
@@ -2834,7 +2834,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOrganizationTenancies = TenantmanagercontrolplaneFunctions.getOrganizationTenancies(GetOrganizationTenanciesArgs.builder()
-     *             .organizationId(testOrganization.id())
+     *             .organizationId(testOrganization.get("id"))
      *             .build());
      * 
      *     }
@@ -2876,7 +2876,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOrganizationTenancies = TenantmanagercontrolplaneFunctions.getOrganizationTenancies(GetOrganizationTenanciesArgs.builder()
-     *             .organizationId(testOrganization.id())
+     *             .organizationId(testOrganization.get("id"))
      *             .build());
      * 
      *     }
@@ -2918,7 +2918,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOrganizationTenancies = TenantmanagercontrolplaneFunctions.getOrganizationTenancies(GetOrganizationTenanciesArgs.builder()
-     *             .organizationId(testOrganization.id())
+     *             .organizationId(testOrganization.get("id"))
      *             .build());
      * 
      *     }
@@ -2960,7 +2960,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOrganizationTenancies = TenantmanagercontrolplaneFunctions.getOrganizationTenancies(GetOrganizationTenanciesArgs.builder()
-     *             .organizationId(testOrganization.id())
+     *             .organizationId(testOrganization.get("id"))
      *             .build());
      * 
      *     }
@@ -3002,8 +3002,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOrganizationTenancy = TenantmanagercontrolplaneFunctions.getOrganizationTenancy(GetOrganizationTenancyArgs.builder()
-     *             .organizationId(testOrganization.id())
-     *             .tenancyId(testTenancy.id())
+     *             .organizationId(testOrganization.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -3045,8 +3045,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOrganizationTenancy = TenantmanagercontrolplaneFunctions.getOrganizationTenancy(GetOrganizationTenancyArgs.builder()
-     *             .organizationId(testOrganization.id())
-     *             .tenancyId(testTenancy.id())
+     *             .organizationId(testOrganization.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -3088,8 +3088,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOrganizationTenancy = TenantmanagercontrolplaneFunctions.getOrganizationTenancy(GetOrganizationTenancyArgs.builder()
-     *             .organizationId(testOrganization.id())
-     *             .tenancyId(testTenancy.id())
+     *             .organizationId(testOrganization.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -3131,8 +3131,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOrganizationTenancy = TenantmanagercontrolplaneFunctions.getOrganizationTenancy(GetOrganizationTenancyArgs.builder()
-     *             .organizationId(testOrganization.id())
-     *             .tenancyId(testTenancy.id())
+     *             .organizationId(testOrganization.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -3174,8 +3174,8 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOrganizationTenancy = TenantmanagercontrolplaneFunctions.getOrganizationTenancy(GetOrganizationTenancyArgs.builder()
-     *             .organizationId(testOrganization.id())
-     *             .tenancyId(testTenancy.id())
+     *             .organizationId(testOrganization.get("id"))
+     *             .tenancyId(testTenancy.get("id"))
      *             .build());
      * 
      *     }
@@ -3427,7 +3427,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecipientInvitation = TenantmanagercontrolplaneFunctions.getRecipientInvitation(GetRecipientInvitationArgs.builder()
-     *             .recipientInvitationId(testRecipientInvitationOciTenantmanagercontrolplaneRecipientInvitation.id())
+     *             .recipientInvitationId(testRecipientInvitationOciTenantmanagercontrolplaneRecipientInvitation.get("id"))
      *             .build());
      * 
      *     }
@@ -3469,7 +3469,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecipientInvitation = TenantmanagercontrolplaneFunctions.getRecipientInvitation(GetRecipientInvitationArgs.builder()
-     *             .recipientInvitationId(testRecipientInvitationOciTenantmanagercontrolplaneRecipientInvitation.id())
+     *             .recipientInvitationId(testRecipientInvitationOciTenantmanagercontrolplaneRecipientInvitation.get("id"))
      *             .build());
      * 
      *     }
@@ -3511,7 +3511,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecipientInvitation = TenantmanagercontrolplaneFunctions.getRecipientInvitation(GetRecipientInvitationArgs.builder()
-     *             .recipientInvitationId(testRecipientInvitationOciTenantmanagercontrolplaneRecipientInvitation.id())
+     *             .recipientInvitationId(testRecipientInvitationOciTenantmanagercontrolplaneRecipientInvitation.get("id"))
      *             .build());
      * 
      *     }
@@ -3553,7 +3553,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecipientInvitation = TenantmanagercontrolplaneFunctions.getRecipientInvitation(GetRecipientInvitationArgs.builder()
-     *             .recipientInvitationId(testRecipientInvitationOciTenantmanagercontrolplaneRecipientInvitation.id())
+     *             .recipientInvitationId(testRecipientInvitationOciTenantmanagercontrolplaneRecipientInvitation.get("id"))
      *             .build());
      * 
      *     }
@@ -3595,7 +3595,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecipientInvitation = TenantmanagercontrolplaneFunctions.getRecipientInvitation(GetRecipientInvitationArgs.builder()
-     *             .recipientInvitationId(testRecipientInvitationOciTenantmanagercontrolplaneRecipientInvitation.id())
+     *             .recipientInvitationId(testRecipientInvitationOciTenantmanagercontrolplaneRecipientInvitation.get("id"))
      *             .build());
      * 
      *     }
@@ -3638,7 +3638,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRecipientInvitations = TenantmanagercontrolplaneFunctions.getRecipientInvitations(GetRecipientInvitationsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .senderTenancyId(testTenancy.id())
+     *             .senderTenancyId(testTenancy.get("id"))
      *             .state(recipientInvitationState)
      *             .status(recipientInvitationStatus)
      *             .build());
@@ -3683,7 +3683,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRecipientInvitations = TenantmanagercontrolplaneFunctions.getRecipientInvitations(GetRecipientInvitationsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .senderTenancyId(testTenancy.id())
+     *             .senderTenancyId(testTenancy.get("id"))
      *             .state(recipientInvitationState)
      *             .status(recipientInvitationStatus)
      *             .build());
@@ -3728,7 +3728,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRecipientInvitations = TenantmanagercontrolplaneFunctions.getRecipientInvitations(GetRecipientInvitationsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .senderTenancyId(testTenancy.id())
+     *             .senderTenancyId(testTenancy.get("id"))
      *             .state(recipientInvitationState)
      *             .status(recipientInvitationStatus)
      *             .build());
@@ -3773,7 +3773,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRecipientInvitations = TenantmanagercontrolplaneFunctions.getRecipientInvitations(GetRecipientInvitationsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .senderTenancyId(testTenancy.id())
+     *             .senderTenancyId(testTenancy.get("id"))
      *             .state(recipientInvitationState)
      *             .status(recipientInvitationStatus)
      *             .build());
@@ -3818,7 +3818,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRecipientInvitations = TenantmanagercontrolplaneFunctions.getRecipientInvitations(GetRecipientInvitationsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .senderTenancyId(testTenancy.id())
+     *             .senderTenancyId(testTenancy.get("id"))
      *             .state(recipientInvitationState)
      *             .status(recipientInvitationStatus)
      *             .build());
@@ -3862,7 +3862,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSenderInvitation = TenantmanagercontrolplaneFunctions.getSenderInvitation(GetSenderInvitationArgs.builder()
-     *             .senderInvitationId(testSenderInvitationOciTenantmanagercontrolplaneSenderInvitation.id())
+     *             .senderInvitationId(testSenderInvitationOciTenantmanagercontrolplaneSenderInvitation.get("id"))
      *             .build());
      * 
      *     }
@@ -3904,7 +3904,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSenderInvitation = TenantmanagercontrolplaneFunctions.getSenderInvitation(GetSenderInvitationArgs.builder()
-     *             .senderInvitationId(testSenderInvitationOciTenantmanagercontrolplaneSenderInvitation.id())
+     *             .senderInvitationId(testSenderInvitationOciTenantmanagercontrolplaneSenderInvitation.get("id"))
      *             .build());
      * 
      *     }
@@ -3946,7 +3946,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSenderInvitation = TenantmanagercontrolplaneFunctions.getSenderInvitation(GetSenderInvitationArgs.builder()
-     *             .senderInvitationId(testSenderInvitationOciTenantmanagercontrolplaneSenderInvitation.id())
+     *             .senderInvitationId(testSenderInvitationOciTenantmanagercontrolplaneSenderInvitation.get("id"))
      *             .build());
      * 
      *     }
@@ -3988,7 +3988,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSenderInvitation = TenantmanagercontrolplaneFunctions.getSenderInvitation(GetSenderInvitationArgs.builder()
-     *             .senderInvitationId(testSenderInvitationOciTenantmanagercontrolplaneSenderInvitation.id())
+     *             .senderInvitationId(testSenderInvitationOciTenantmanagercontrolplaneSenderInvitation.get("id"))
      *             .build());
      * 
      *     }
@@ -4030,7 +4030,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSenderInvitation = TenantmanagercontrolplaneFunctions.getSenderInvitation(GetSenderInvitationArgs.builder()
-     *             .senderInvitationId(testSenderInvitationOciTenantmanagercontrolplaneSenderInvitation.id())
+     *             .senderInvitationId(testSenderInvitationOciTenantmanagercontrolplaneSenderInvitation.get("id"))
      *             .build());
      * 
      *     }
@@ -4074,7 +4074,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *         final var testSenderInvitations = TenantmanagercontrolplaneFunctions.getSenderInvitations(GetSenderInvitationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(senderInvitationDisplayName)
-     *             .recipientTenancyId(testTenancy.id())
+     *             .recipientTenancyId(testTenancy.get("id"))
      *             .state(senderInvitationState)
      *             .status(senderInvitationStatus)
      *             .build());
@@ -4120,7 +4120,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *         final var testSenderInvitations = TenantmanagercontrolplaneFunctions.getSenderInvitations(GetSenderInvitationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(senderInvitationDisplayName)
-     *             .recipientTenancyId(testTenancy.id())
+     *             .recipientTenancyId(testTenancy.get("id"))
      *             .state(senderInvitationState)
      *             .status(senderInvitationStatus)
      *             .build());
@@ -4166,7 +4166,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *         final var testSenderInvitations = TenantmanagercontrolplaneFunctions.getSenderInvitations(GetSenderInvitationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(senderInvitationDisplayName)
-     *             .recipientTenancyId(testTenancy.id())
+     *             .recipientTenancyId(testTenancy.get("id"))
      *             .state(senderInvitationState)
      *             .status(senderInvitationStatus)
      *             .build());
@@ -4212,7 +4212,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *         final var testSenderInvitations = TenantmanagercontrolplaneFunctions.getSenderInvitations(GetSenderInvitationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(senderInvitationDisplayName)
-     *             .recipientTenancyId(testTenancy.id())
+     *             .recipientTenancyId(testTenancy.get("id"))
      *             .state(senderInvitationState)
      *             .status(senderInvitationStatus)
      *             .build());
@@ -4258,7 +4258,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *         final var testSenderInvitations = TenantmanagercontrolplaneFunctions.getSenderInvitations(GetSenderInvitationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(senderInvitationDisplayName)
-     *             .recipientTenancyId(testTenancy.id())
+     *             .recipientTenancyId(testTenancy.get("id"))
      *             .state(senderInvitationState)
      *             .status(senderInvitationStatus)
      *             .build());
@@ -4302,7 +4302,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscription = TenantmanagercontrolplaneFunctions.getSubscription(GetSubscriptionArgs.builder()
-     *             .subscriptionId(testSubscriptionOciTenantmanagercontrolplaneSubscription.id())
+     *             .subscriptionId(testSubscriptionOciTenantmanagercontrolplaneSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -4344,7 +4344,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscription = TenantmanagercontrolplaneFunctions.getSubscription(GetSubscriptionArgs.builder()
-     *             .subscriptionId(testSubscriptionOciTenantmanagercontrolplaneSubscription.id())
+     *             .subscriptionId(testSubscriptionOciTenantmanagercontrolplaneSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -4386,7 +4386,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscription = TenantmanagercontrolplaneFunctions.getSubscription(GetSubscriptionArgs.builder()
-     *             .subscriptionId(testSubscriptionOciTenantmanagercontrolplaneSubscription.id())
+     *             .subscriptionId(testSubscriptionOciTenantmanagercontrolplaneSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -4428,7 +4428,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscription = TenantmanagercontrolplaneFunctions.getSubscription(GetSubscriptionArgs.builder()
-     *             .subscriptionId(testSubscriptionOciTenantmanagercontrolplaneSubscription.id())
+     *             .subscriptionId(testSubscriptionOciTenantmanagercontrolplaneSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -4470,7 +4470,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscription = TenantmanagercontrolplaneFunctions.getSubscription(GetSubscriptionArgs.builder()
-     *             .subscriptionId(testSubscriptionOciTenantmanagercontrolplaneSubscription.id())
+     *             .subscriptionId(testSubscriptionOciTenantmanagercontrolplaneSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -4512,7 +4512,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionAvailableRegions = TenantmanagercontrolplaneFunctions.getSubscriptionAvailableRegions(GetSubscriptionAvailableRegionsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -4554,7 +4554,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionAvailableRegions = TenantmanagercontrolplaneFunctions.getSubscriptionAvailableRegions(GetSubscriptionAvailableRegionsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -4596,7 +4596,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionAvailableRegions = TenantmanagercontrolplaneFunctions.getSubscriptionAvailableRegions(GetSubscriptionAvailableRegionsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -4638,7 +4638,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionAvailableRegions = TenantmanagercontrolplaneFunctions.getSubscriptionAvailableRegions(GetSubscriptionAvailableRegionsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -4680,7 +4680,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionAvailableRegions = TenantmanagercontrolplaneFunctions.getSubscriptionAvailableRegions(GetSubscriptionAvailableRegionsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -4722,7 +4722,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionLineItems = TenantmanagercontrolplaneFunctions.getSubscriptionLineItems(GetSubscriptionLineItemsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -4764,7 +4764,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionLineItems = TenantmanagercontrolplaneFunctions.getSubscriptionLineItems(GetSubscriptionLineItemsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -4806,7 +4806,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionLineItems = TenantmanagercontrolplaneFunctions.getSubscriptionLineItems(GetSubscriptionLineItemsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -4848,7 +4848,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionLineItems = TenantmanagercontrolplaneFunctions.getSubscriptionLineItems(GetSubscriptionLineItemsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -4890,7 +4890,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionLineItems = TenantmanagercontrolplaneFunctions.getSubscriptionLineItems(GetSubscriptionLineItemsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -4932,7 +4932,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionMapping = TenantmanagercontrolplaneFunctions.getSubscriptionMapping(GetSubscriptionMappingArgs.builder()
-     *             .subscriptionMappingId(testSubscriptionMappingOciTenantmanagercontrolplaneSubscriptionMapping.id())
+     *             .subscriptionMappingId(testSubscriptionMappingOciTenantmanagercontrolplaneSubscriptionMapping.get("id"))
      *             .build());
      * 
      *     }
@@ -4974,7 +4974,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionMapping = TenantmanagercontrolplaneFunctions.getSubscriptionMapping(GetSubscriptionMappingArgs.builder()
-     *             .subscriptionMappingId(testSubscriptionMappingOciTenantmanagercontrolplaneSubscriptionMapping.id())
+     *             .subscriptionMappingId(testSubscriptionMappingOciTenantmanagercontrolplaneSubscriptionMapping.get("id"))
      *             .build());
      * 
      *     }
@@ -5016,7 +5016,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionMapping = TenantmanagercontrolplaneFunctions.getSubscriptionMapping(GetSubscriptionMappingArgs.builder()
-     *             .subscriptionMappingId(testSubscriptionMappingOciTenantmanagercontrolplaneSubscriptionMapping.id())
+     *             .subscriptionMappingId(testSubscriptionMappingOciTenantmanagercontrolplaneSubscriptionMapping.get("id"))
      *             .build());
      * 
      *     }
@@ -5058,7 +5058,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionMapping = TenantmanagercontrolplaneFunctions.getSubscriptionMapping(GetSubscriptionMappingArgs.builder()
-     *             .subscriptionMappingId(testSubscriptionMappingOciTenantmanagercontrolplaneSubscriptionMapping.id())
+     *             .subscriptionMappingId(testSubscriptionMappingOciTenantmanagercontrolplaneSubscriptionMapping.get("id"))
      *             .build());
      * 
      *     }
@@ -5100,7 +5100,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionMapping = TenantmanagercontrolplaneFunctions.getSubscriptionMapping(GetSubscriptionMappingArgs.builder()
-     *             .subscriptionMappingId(testSubscriptionMappingOciTenantmanagercontrolplaneSubscriptionMapping.id())
+     *             .subscriptionMappingId(testSubscriptionMappingOciTenantmanagercontrolplaneSubscriptionMapping.get("id"))
      *             .build());
      * 
      *     }
@@ -5142,10 +5142,10 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionMappings = TenantmanagercontrolplaneFunctions.getSubscriptionMappings(GetSubscriptionMappingsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .compartmentId(compartmentId)
      *             .state(subscriptionMappingState)
-     *             .subscriptionMappingId(testSubscriptionMapping.id())
+     *             .subscriptionMappingId(testSubscriptionMapping.get("id"))
      *             .build());
      * 
      *     }
@@ -5187,10 +5187,10 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionMappings = TenantmanagercontrolplaneFunctions.getSubscriptionMappings(GetSubscriptionMappingsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .compartmentId(compartmentId)
      *             .state(subscriptionMappingState)
-     *             .subscriptionMappingId(testSubscriptionMapping.id())
+     *             .subscriptionMappingId(testSubscriptionMapping.get("id"))
      *             .build());
      * 
      *     }
@@ -5232,10 +5232,10 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionMappings = TenantmanagercontrolplaneFunctions.getSubscriptionMappings(GetSubscriptionMappingsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .compartmentId(compartmentId)
      *             .state(subscriptionMappingState)
-     *             .subscriptionMappingId(testSubscriptionMapping.id())
+     *             .subscriptionMappingId(testSubscriptionMapping.get("id"))
      *             .build());
      * 
      *     }
@@ -5277,10 +5277,10 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionMappings = TenantmanagercontrolplaneFunctions.getSubscriptionMappings(GetSubscriptionMappingsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .compartmentId(compartmentId)
      *             .state(subscriptionMappingState)
-     *             .subscriptionMappingId(testSubscriptionMapping.id())
+     *             .subscriptionMappingId(testSubscriptionMapping.get("id"))
      *             .build());
      * 
      *     }
@@ -5322,10 +5322,10 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionMappings = TenantmanagercontrolplaneFunctions.getSubscriptionMappings(GetSubscriptionMappingsArgs.builder()
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .compartmentId(compartmentId)
      *             .state(subscriptionMappingState)
-     *             .subscriptionMappingId(testSubscriptionMapping.id())
+     *             .subscriptionMappingId(testSubscriptionMapping.get("id"))
      *             .build());
      * 
      *     }
@@ -5369,7 +5369,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *         final var testSubscriptions = TenantmanagercontrolplaneFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .entityVersion(subscriptionEntityVersion)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -5413,7 +5413,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *         final var testSubscriptions = TenantmanagercontrolplaneFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .entityVersion(subscriptionEntityVersion)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -5457,7 +5457,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *         final var testSubscriptions = TenantmanagercontrolplaneFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .entityVersion(subscriptionEntityVersion)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -5501,7 +5501,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *         final var testSubscriptions = TenantmanagercontrolplaneFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .entityVersion(subscriptionEntityVersion)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -5545,7 +5545,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *         final var testSubscriptions = TenantmanagercontrolplaneFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .entityVersion(subscriptionEntityVersion)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -5589,7 +5589,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *         final var testSubscriptions = TenantmanagercontrolplaneFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .entityVersion(subscriptionEntityVersion)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -5633,7 +5633,7 @@ public final class TenantmanagercontrolplaneFunctions {
      *         final var testSubscriptions = TenantmanagercontrolplaneFunctions.getSubscriptions(GetSubscriptionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .entityVersion(subscriptionEntityVersion)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }

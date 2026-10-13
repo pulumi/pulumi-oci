@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testBaselineableMetrics = oci.stackmonitoring.getBaselineableMetrics({
  *     baselineableMetricId: testBaselineableMetric.id,
  *     compartmentId: compartmentId,
- *     isOutOfBox: baselineableMetricIsOutOfBox === "true",
+ *     isOutOfBox: baselineableMetricIsOutOfBox,
  *     metricNamespace: baselineableMetricMetricNamespace,
  *     name: baselineableMetricName,
  *     resourceGroup: baselineableMetricResourceGroup,
@@ -128,7 +128,7 @@ export interface GetBaselineableMetricsResult {
  * const testBaselineableMetrics = oci.stackmonitoring.getBaselineableMetrics({
  *     baselineableMetricId: testBaselineableMetric.id,
  *     compartmentId: compartmentId,
- *     isOutOfBox: baselineableMetricIsOutOfBox === "true",
+ *     isOutOfBox: baselineableMetricIsOutOfBox,
  *     metricNamespace: baselineableMetricMetricNamespace,
  *     name: baselineableMetricName,
  *     resourceGroup: baselineableMetricResourceGroup,

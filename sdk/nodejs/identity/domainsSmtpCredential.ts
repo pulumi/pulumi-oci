@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *         value: smtpCredentialTagsValue,
  *     }],
  *     urnietfparamsscimschemasoracleidcsextensionselfChangeUser: {
- *         allowSelfChange: smtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange === "true",
+ *         allowSelfChange: smtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange,
  *     },
  *     user: {
  *         ocid: testUser.ocid,

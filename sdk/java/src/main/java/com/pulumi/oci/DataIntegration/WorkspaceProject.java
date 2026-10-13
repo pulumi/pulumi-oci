@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *         var testWorkspaceProject = new WorkspaceProject("testWorkspaceProject", WorkspaceProjectArgs.builder()
  *             .identifier(workspaceProjectIdentifier)
  *             .name(workspaceProjectName)
- *             .workspaceId(testWorkspace.id())
+ *             .workspaceId(testWorkspace.get("id"))
  *             .description(workspaceProjectDescription)
  *             .key(workspaceProjectKey)
  *             .modelVersion(workspaceProjectModelVersion)

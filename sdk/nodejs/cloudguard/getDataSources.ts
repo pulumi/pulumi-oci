@@ -36,7 +36,7 @@ import * as utilities from "../utilities";
  * const testDataSources = oci.cloudguard.getDataSources({
  *     compartmentId: compartmentId,
  *     accessLevel: dataSourceAccessLevel,
- *     compartmentIdInSubtree: dataSourceCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: dataSourceCompartmentIdInSubtree,
  *     dataSourceFeedProvider: dataSourceDataSourceFeedProvider,
  *     displayName: dataSourceDisplayName,
  *     loggingQueryType: dataSourceLoggingQueryType,
@@ -159,7 +159,7 @@ export interface GetDataSourcesResult {
  * const testDataSources = oci.cloudguard.getDataSources({
  *     compartmentId: compartmentId,
  *     accessLevel: dataSourceAccessLevel,
- *     compartmentIdInSubtree: dataSourceCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: dataSourceCompartmentIdInSubtree,
  *     dataSourceFeedProvider: dataSourceDataSourceFeedProvider,
  *     displayName: dataSourceDisplayName,
  *     loggingQueryType: dataSourceLoggingQueryType,

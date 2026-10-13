@@ -355,7 +355,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = MeteringComputationFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .tenantId(testTenant.id())
+     *             .tenantId(testTenant.get("id"))
      *             .build());
      * 
      *     }
@@ -397,7 +397,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = MeteringComputationFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .tenantId(testTenant.id())
+     *             .tenantId(testTenant.get("id"))
      *             .build());
      * 
      *     }
@@ -439,7 +439,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = MeteringComputationFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .tenantId(testTenant.id())
+     *             .tenantId(testTenant.get("id"))
      *             .build());
      * 
      *     }
@@ -481,7 +481,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = MeteringComputationFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .tenantId(testTenant.id())
+     *             .tenantId(testTenant.get("id"))
      *             .build());
      * 
      *     }
@@ -523,7 +523,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConfiguration = MeteringComputationFunctions.getConfiguration(GetConfigurationArgs.builder()
-     *             .tenantId(testTenant.id())
+     *             .tenantId(testTenant.get("id"))
      *             .build());
      * 
      *     }
@@ -565,7 +565,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomTable = MeteringComputationFunctions.getCustomTable(GetCustomTableArgs.builder()
-     *             .customTableId(testCustomTableOciMeteringComputationCustomTable.id())
+     *             .customTableId(testCustomTableOciMeteringComputationCustomTable.get("id"))
      *             .build());
      * 
      *     }
@@ -607,7 +607,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomTable = MeteringComputationFunctions.getCustomTable(GetCustomTableArgs.builder()
-     *             .customTableId(testCustomTableOciMeteringComputationCustomTable.id())
+     *             .customTableId(testCustomTableOciMeteringComputationCustomTable.get("id"))
      *             .build());
      * 
      *     }
@@ -649,7 +649,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomTable = MeteringComputationFunctions.getCustomTable(GetCustomTableArgs.builder()
-     *             .customTableId(testCustomTableOciMeteringComputationCustomTable.id())
+     *             .customTableId(testCustomTableOciMeteringComputationCustomTable.get("id"))
      *             .build());
      * 
      *     }
@@ -691,7 +691,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomTable = MeteringComputationFunctions.getCustomTable(GetCustomTableArgs.builder()
-     *             .customTableId(testCustomTableOciMeteringComputationCustomTable.id())
+     *             .customTableId(testCustomTableOciMeteringComputationCustomTable.get("id"))
      *             .build());
      * 
      *     }
@@ -733,7 +733,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCustomTable = MeteringComputationFunctions.getCustomTable(GetCustomTableArgs.builder()
-     *             .customTableId(testCustomTableOciMeteringComputationCustomTable.id())
+     *             .customTableId(testCustomTableOciMeteringComputationCustomTable.get("id"))
      *             .build());
      * 
      *     }
@@ -776,7 +776,7 @@ public final class MeteringComputationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCustomTables = MeteringComputationFunctions.getCustomTables(GetCustomTablesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .savedReportId(testSavedReport.id())
+     *             .savedReportId(testSavedReport.get("id"))
      *             .build());
      * 
      *     }
@@ -819,7 +819,7 @@ public final class MeteringComputationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCustomTables = MeteringComputationFunctions.getCustomTables(GetCustomTablesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .savedReportId(testSavedReport.id())
+     *             .savedReportId(testSavedReport.get("id"))
      *             .build());
      * 
      *     }
@@ -862,7 +862,7 @@ public final class MeteringComputationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCustomTables = MeteringComputationFunctions.getCustomTables(GetCustomTablesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .savedReportId(testSavedReport.id())
+     *             .savedReportId(testSavedReport.get("id"))
      *             .build());
      * 
      *     }
@@ -905,7 +905,7 @@ public final class MeteringComputationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCustomTables = MeteringComputationFunctions.getCustomTables(GetCustomTablesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .savedReportId(testSavedReport.id())
+     *             .savedReportId(testSavedReport.get("id"))
      *             .build());
      * 
      *     }
@@ -948,7 +948,7 @@ public final class MeteringComputationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCustomTables = MeteringComputationFunctions.getCustomTables(GetCustomTablesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .savedReportId(testSavedReport.id())
+     *             .savedReportId(testSavedReport.get("id"))
      *             .build());
      * 
      *     }
@@ -1200,7 +1200,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQuery = MeteringComputationFunctions.getQuery(GetQueryArgs.builder()
-     *             .queryId(testQueryOciMeteringComputationQuery.id())
+     *             .queryId(testQueryOciMeteringComputationQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -1242,7 +1242,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQuery = MeteringComputationFunctions.getQuery(GetQueryArgs.builder()
-     *             .queryId(testQueryOciMeteringComputationQuery.id())
+     *             .queryId(testQueryOciMeteringComputationQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -1284,7 +1284,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQuery = MeteringComputationFunctions.getQuery(GetQueryArgs.builder()
-     *             .queryId(testQueryOciMeteringComputationQuery.id())
+     *             .queryId(testQueryOciMeteringComputationQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -1326,7 +1326,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQuery = MeteringComputationFunctions.getQuery(GetQueryArgs.builder()
-     *             .queryId(testQueryOciMeteringComputationQuery.id())
+     *             .queryId(testQueryOciMeteringComputationQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -1368,7 +1368,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testQuery = MeteringComputationFunctions.getQuery(GetQueryArgs.builder()
-     *             .queryId(testQueryOciMeteringComputationQuery.id())
+     *             .queryId(testQueryOciMeteringComputationQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -1410,7 +1410,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedule = MeteringComputationFunctions.getSchedule(GetScheduleArgs.builder()
-     *             .scheduleId(testScheduleOciMeteringComputationSchedule.id())
+     *             .scheduleId(testScheduleOciMeteringComputationSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -1452,7 +1452,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedule = MeteringComputationFunctions.getSchedule(GetScheduleArgs.builder()
-     *             .scheduleId(testScheduleOciMeteringComputationSchedule.id())
+     *             .scheduleId(testScheduleOciMeteringComputationSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -1494,7 +1494,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedule = MeteringComputationFunctions.getSchedule(GetScheduleArgs.builder()
-     *             .scheduleId(testScheduleOciMeteringComputationSchedule.id())
+     *             .scheduleId(testScheduleOciMeteringComputationSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -1536,7 +1536,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedule = MeteringComputationFunctions.getSchedule(GetScheduleArgs.builder()
-     *             .scheduleId(testScheduleOciMeteringComputationSchedule.id())
+     *             .scheduleId(testScheduleOciMeteringComputationSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -1578,7 +1578,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedule = MeteringComputationFunctions.getSchedule(GetScheduleArgs.builder()
-     *             .scheduleId(testScheduleOciMeteringComputationSchedule.id())
+     *             .scheduleId(testScheduleOciMeteringComputationSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -1620,7 +1620,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledRun = MeteringComputationFunctions.getScheduledRun(GetScheduledRunArgs.builder()
-     *             .scheduledRunId(testScheduledRunOciMeteringComputationScheduledRun.id())
+     *             .scheduledRunId(testScheduledRunOciMeteringComputationScheduledRun.get("id"))
      *             .build());
      * 
      *     }
@@ -1662,7 +1662,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledRun = MeteringComputationFunctions.getScheduledRun(GetScheduledRunArgs.builder()
-     *             .scheduledRunId(testScheduledRunOciMeteringComputationScheduledRun.id())
+     *             .scheduledRunId(testScheduledRunOciMeteringComputationScheduledRun.get("id"))
      *             .build());
      * 
      *     }
@@ -1704,7 +1704,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledRun = MeteringComputationFunctions.getScheduledRun(GetScheduledRunArgs.builder()
-     *             .scheduledRunId(testScheduledRunOciMeteringComputationScheduledRun.id())
+     *             .scheduledRunId(testScheduledRunOciMeteringComputationScheduledRun.get("id"))
      *             .build());
      * 
      *     }
@@ -1746,7 +1746,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledRun = MeteringComputationFunctions.getScheduledRun(GetScheduledRunArgs.builder()
-     *             .scheduledRunId(testScheduledRunOciMeteringComputationScheduledRun.id())
+     *             .scheduledRunId(testScheduledRunOciMeteringComputationScheduledRun.get("id"))
      *             .build());
      * 
      *     }
@@ -1788,7 +1788,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledRun = MeteringComputationFunctions.getScheduledRun(GetScheduledRunArgs.builder()
-     *             .scheduledRunId(testScheduledRunOciMeteringComputationScheduledRun.id())
+     *             .scheduledRunId(testScheduledRunOciMeteringComputationScheduledRun.get("id"))
      *             .build());
      * 
      *     }
@@ -1830,7 +1830,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledRuns = MeteringComputationFunctions.getScheduledRuns(GetScheduledRunsArgs.builder()
-     *             .scheduleId(testSchedule.id())
+     *             .scheduleId(testSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -1872,7 +1872,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledRuns = MeteringComputationFunctions.getScheduledRuns(GetScheduledRunsArgs.builder()
-     *             .scheduleId(testSchedule.id())
+     *             .scheduleId(testSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -1914,7 +1914,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledRuns = MeteringComputationFunctions.getScheduledRuns(GetScheduledRunsArgs.builder()
-     *             .scheduleId(testSchedule.id())
+     *             .scheduleId(testSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -1956,7 +1956,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledRuns = MeteringComputationFunctions.getScheduledRuns(GetScheduledRunsArgs.builder()
-     *             .scheduleId(testSchedule.id())
+     *             .scheduleId(testSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -1998,7 +1998,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledRuns = MeteringComputationFunctions.getScheduledRuns(GetScheduledRunsArgs.builder()
-     *             .scheduleId(testSchedule.id())
+     *             .scheduleId(testSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -2255,7 +2255,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsageCarbonEmissionsConfig = MeteringComputationFunctions.getUsageCarbonEmissionsConfig(GetUsageCarbonEmissionsConfigArgs.builder()
-     *             .tenantId(testTenant.id())
+     *             .tenantId(testTenant.get("id"))
      *             .build());
      * 
      *     }
@@ -2297,7 +2297,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsageCarbonEmissionsConfig = MeteringComputationFunctions.getUsageCarbonEmissionsConfig(GetUsageCarbonEmissionsConfigArgs.builder()
-     *             .tenantId(testTenant.id())
+     *             .tenantId(testTenant.get("id"))
      *             .build());
      * 
      *     }
@@ -2339,7 +2339,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsageCarbonEmissionsConfig = MeteringComputationFunctions.getUsageCarbonEmissionsConfig(GetUsageCarbonEmissionsConfigArgs.builder()
-     *             .tenantId(testTenant.id())
+     *             .tenantId(testTenant.get("id"))
      *             .build());
      * 
      *     }
@@ -2381,7 +2381,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsageCarbonEmissionsConfig = MeteringComputationFunctions.getUsageCarbonEmissionsConfig(GetUsageCarbonEmissionsConfigArgs.builder()
-     *             .tenantId(testTenant.id())
+     *             .tenantId(testTenant.get("id"))
      *             .build());
      * 
      *     }
@@ -2423,7 +2423,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsageCarbonEmissionsConfig = MeteringComputationFunctions.getUsageCarbonEmissionsConfig(GetUsageCarbonEmissionsConfigArgs.builder()
-     *             .tenantId(testTenant.id())
+     *             .tenantId(testTenant.get("id"))
      *             .build());
      * 
      *     }
@@ -2675,7 +2675,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsageCarbonEmissionsQuery = MeteringComputationFunctions.getUsageCarbonEmissionsQuery(GetUsageCarbonEmissionsQueryArgs.builder()
-     *             .usageCarbonEmissionsQueryId(testUsageCarbonEmissionsQueryOciMeteringComputationUsageCarbonEmissionsQuery.id())
+     *             .usageCarbonEmissionsQueryId(testUsageCarbonEmissionsQueryOciMeteringComputationUsageCarbonEmissionsQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -2717,7 +2717,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsageCarbonEmissionsQuery = MeteringComputationFunctions.getUsageCarbonEmissionsQuery(GetUsageCarbonEmissionsQueryArgs.builder()
-     *             .usageCarbonEmissionsQueryId(testUsageCarbonEmissionsQueryOciMeteringComputationUsageCarbonEmissionsQuery.id())
+     *             .usageCarbonEmissionsQueryId(testUsageCarbonEmissionsQueryOciMeteringComputationUsageCarbonEmissionsQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -2759,7 +2759,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsageCarbonEmissionsQuery = MeteringComputationFunctions.getUsageCarbonEmissionsQuery(GetUsageCarbonEmissionsQueryArgs.builder()
-     *             .usageCarbonEmissionsQueryId(testUsageCarbonEmissionsQueryOciMeteringComputationUsageCarbonEmissionsQuery.id())
+     *             .usageCarbonEmissionsQueryId(testUsageCarbonEmissionsQueryOciMeteringComputationUsageCarbonEmissionsQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -2801,7 +2801,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsageCarbonEmissionsQuery = MeteringComputationFunctions.getUsageCarbonEmissionsQuery(GetUsageCarbonEmissionsQueryArgs.builder()
-     *             .usageCarbonEmissionsQueryId(testUsageCarbonEmissionsQueryOciMeteringComputationUsageCarbonEmissionsQuery.id())
+     *             .usageCarbonEmissionsQueryId(testUsageCarbonEmissionsQueryOciMeteringComputationUsageCarbonEmissionsQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -2843,7 +2843,7 @@ public final class MeteringComputationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUsageCarbonEmissionsQuery = MeteringComputationFunctions.getUsageCarbonEmissionsQuery(GetUsageCarbonEmissionsQueryArgs.builder()
-     *             .usageCarbonEmissionsQueryId(testUsageCarbonEmissionsQueryOciMeteringComputationUsageCarbonEmissionsQuery.id())
+     *             .usageCarbonEmissionsQueryId(testUsageCarbonEmissionsQueryOciMeteringComputationUsageCarbonEmissionsQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -2886,8 +2886,8 @@ public final class MeteringComputationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUsageStatementEmailRecipientsGroup = MeteringComputationFunctions.getUsageStatementEmailRecipientsGroup(GetUsageStatementEmailRecipientsGroupArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .emailRecipientsGroupId(testGroup.id())
-     *             .subscriptionId(testSubscription.id())
+     *             .emailRecipientsGroupId(testGroup.get("id"))
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -2930,8 +2930,8 @@ public final class MeteringComputationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUsageStatementEmailRecipientsGroup = MeteringComputationFunctions.getUsageStatementEmailRecipientsGroup(GetUsageStatementEmailRecipientsGroupArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .emailRecipientsGroupId(testGroup.id())
-     *             .subscriptionId(testSubscription.id())
+     *             .emailRecipientsGroupId(testGroup.get("id"))
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -2974,8 +2974,8 @@ public final class MeteringComputationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUsageStatementEmailRecipientsGroup = MeteringComputationFunctions.getUsageStatementEmailRecipientsGroup(GetUsageStatementEmailRecipientsGroupArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .emailRecipientsGroupId(testGroup.id())
-     *             .subscriptionId(testSubscription.id())
+     *             .emailRecipientsGroupId(testGroup.get("id"))
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -3018,8 +3018,8 @@ public final class MeteringComputationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUsageStatementEmailRecipientsGroup = MeteringComputationFunctions.getUsageStatementEmailRecipientsGroup(GetUsageStatementEmailRecipientsGroupArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .emailRecipientsGroupId(testGroup.id())
-     *             .subscriptionId(testSubscription.id())
+     *             .emailRecipientsGroupId(testGroup.get("id"))
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -3062,8 +3062,8 @@ public final class MeteringComputationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUsageStatementEmailRecipientsGroup = MeteringComputationFunctions.getUsageStatementEmailRecipientsGroup(GetUsageStatementEmailRecipientsGroupArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .emailRecipientsGroupId(testGroup.id())
-     *             .subscriptionId(testSubscription.id())
+     *             .emailRecipientsGroupId(testGroup.get("id"))
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -3106,7 +3106,7 @@ public final class MeteringComputationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUsageStatementEmailRecipientsGroups = MeteringComputationFunctions.getUsageStatementEmailRecipientsGroups(GetUsageStatementEmailRecipientsGroupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -3149,7 +3149,7 @@ public final class MeteringComputationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUsageStatementEmailRecipientsGroups = MeteringComputationFunctions.getUsageStatementEmailRecipientsGroups(GetUsageStatementEmailRecipientsGroupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -3192,7 +3192,7 @@ public final class MeteringComputationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUsageStatementEmailRecipientsGroups = MeteringComputationFunctions.getUsageStatementEmailRecipientsGroups(GetUsageStatementEmailRecipientsGroupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -3235,7 +3235,7 @@ public final class MeteringComputationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUsageStatementEmailRecipientsGroups = MeteringComputationFunctions.getUsageStatementEmailRecipientsGroups(GetUsageStatementEmailRecipientsGroupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -3278,7 +3278,7 @@ public final class MeteringComputationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testUsageStatementEmailRecipientsGroups = MeteringComputationFunctions.getUsageStatementEmailRecipientsGroups(GetUsageStatementEmailRecipientsGroupsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }

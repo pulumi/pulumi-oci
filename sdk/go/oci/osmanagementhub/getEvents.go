@@ -40,7 +40,7 @@ import (
 //				State:                           pulumi.StringRef(eventState),
 //				TimeCreatedGreaterThanOrEqualTo: pulumi.StringRef(eventTimeCreatedGreaterThanOrEqualTo),
 //				TimeCreatedLessThan:             pulumi.StringRef(eventTimeCreatedLessThan),
-//				Types:                           pulumi.ToArray(eventType),
+//				Types:                           eventType,
 //			}, nil)
 //			if err != nil {
 //				return err

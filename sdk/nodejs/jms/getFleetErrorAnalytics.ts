@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testFleetErrorAnalytics = oci.jms.getFleetErrorAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: fleetErrorAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: fleetErrorAnalyticCompartmentIdInSubtree,
  * });
  * ```
  */
@@ -77,7 +77,7 @@ export interface GetFleetErrorAnalyticsResult {
  *
  * const testFleetErrorAnalytics = oci.jms.getFleetErrorAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: fleetErrorAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: fleetErrorAnalyticCompartmentIdInSubtree,
  * });
  * ```
  */

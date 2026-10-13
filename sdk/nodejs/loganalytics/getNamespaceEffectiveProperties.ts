@@ -21,9 +21,9 @@ import * as utilities from "../utilities";
  *     namespace: namespaceEffectivePropertyNamespace,
  *     agentId: testAgent.id,
  *     entityId: testLogAnalyticsEntity.id,
- *     isIncludePatterns: namespaceEffectivePropertyIsIncludePatterns === "true",
+ *     isIncludePatterns: namespaceEffectivePropertyIsIncludePatterns,
  *     name: namespaceEffectivePropertyName,
- *     patternId: Number(testPattern.id),
+ *     patternId: testPattern.id,
  *     patternIdLong: namespaceEffectivePropertyPatternIdLong,
  *     sourceName: namespaceEffectivePropertySourceName,
  * });
@@ -123,9 +123,9 @@ export interface GetNamespaceEffectivePropertiesResult {
  *     namespace: namespaceEffectivePropertyNamespace,
  *     agentId: testAgent.id,
  *     entityId: testLogAnalyticsEntity.id,
- *     isIncludePatterns: namespaceEffectivePropertyIsIncludePatterns === "true",
+ *     isIncludePatterns: namespaceEffectivePropertyIsIncludePatterns,
  *     name: namespaceEffectivePropertyName,
- *     patternId: Number(testPattern.id),
+ *     patternId: testPattern.id,
  *     patternIdLong: namespaceEffectivePropertyPatternIdLong,
  *     sourceName: namespaceEffectivePropertySourceName,
  * });

@@ -71,7 +71,7 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .packageType(publicationPackageDetailsPackageType)
  *                 .packageVersion(publicationPackageDetailsPackageVersion)
- *                 .imageId(testImage.id())
+ *                 .imageId(testImage.get("id"))
  *                 .build())
  *             .shortDescription(publicationShortDescription)
  *             .supportContacts(PublicationSupportContactArgs.builder()

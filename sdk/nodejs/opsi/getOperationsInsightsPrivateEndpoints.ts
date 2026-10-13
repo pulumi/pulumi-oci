@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  *
  * const testOperationsInsightsPrivateEndpoints = oci.opsi.getOperationsInsightsPrivateEndpoints({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: operationsInsightsPrivateEndpointCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: operationsInsightsPrivateEndpointCompartmentIdInSubtree,
  *     displayName: operationsInsightsPrivateEndpointDisplayName,
- *     isUsedForRacDbs: operationsInsightsPrivateEndpointIsUsedForRacDbs === "true",
+ *     isUsedForRacDbs: operationsInsightsPrivateEndpointIsUsedForRacDbs,
  *     opsiPrivateEndpointId: testPrivateEndpoint.id,
  *     states: operationsInsightsPrivateEndpointState,
  *     vcnId: testVcn.id,
@@ -127,9 +127,9 @@ export interface GetOperationsInsightsPrivateEndpointsResult {
  *
  * const testOperationsInsightsPrivateEndpoints = oci.opsi.getOperationsInsightsPrivateEndpoints({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: operationsInsightsPrivateEndpointCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: operationsInsightsPrivateEndpointCompartmentIdInSubtree,
  *     displayName: operationsInsightsPrivateEndpointDisplayName,
- *     isUsedForRacDbs: operationsInsightsPrivateEndpointIsUsedForRacDbs === "true",
+ *     isUsedForRacDbs: operationsInsightsPrivateEndpointIsUsedForRacDbs,
  *     opsiPrivateEndpointId: testPrivateEndpoint.id,
  *     states: operationsInsightsPrivateEndpointState,
  *     vcnId: testVcn.id,

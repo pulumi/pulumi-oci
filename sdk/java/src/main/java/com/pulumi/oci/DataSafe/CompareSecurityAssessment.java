@@ -47,8 +47,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testCompareSecurityAssessment = new CompareSecurityAssessment("testCompareSecurityAssessment", CompareSecurityAssessmentArgs.builder()
- *             .comparisonSecurityAssessmentId(testSecurityAssessment.id())
- *             .securityAssessmentId(testSecurityAssessment.id())
+ *             .comparisonSecurityAssessmentId(testSecurityAssessment.get("id"))
+ *             .securityAssessmentId(testSecurityAssessment.get("id"))
  *             .build());
  * 
  *     }

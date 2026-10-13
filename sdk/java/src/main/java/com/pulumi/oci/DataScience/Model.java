@@ -60,7 +60,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testModel = new Model("testModel", ModelArgs.builder()
  *             .compartmentId(compartmentId)
- *             .projectId(testProject.id())
+ *             .projectId(testProject.get("id"))
  *             .backupSetting(ModelBackupSettingArgs.builder()
  *                 .backupRegion(modelBackupSettingBackupRegion)
  *                 .isBackupEnabled(modelBackupSettingIsBackupEnabled)

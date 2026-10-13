@@ -91,7 +91,7 @@ import javax.annotation.Nullable;
  *                         .build())
  *                     .displayName(autoScalingConfigurationPoliciesRulesDisplayName)
  *                     .metric(AutoScalingConfigurationPolicyRuleMetricArgs.builder()
- *                         .metricCompartmentId(testCompartment.id())
+ *                         .metricCompartmentId(testCompartment.get("id"))
  *                         .metricSource(autoScalingConfigurationPoliciesRulesMetricMetricSource)
  *                         .metricType(autoScalingConfigurationPoliciesRulesMetricMetricType)
  *                         .namespace(autoScalingConfigurationPoliciesRulesMetricNamespace)

@@ -29,11 +29,11 @@ namespace Pulumi.Oci.BigDataService
         /// {
         ///     var testBdsInstanceBdsCapacityReservationConfiguration = Oci.BigDataService.GetBdsInstanceBdsCapacityReservationConfiguration.Invoke(new()
         ///     {
-        ///         BdsCapacityReservationConfigurationId = Std.Regex.Invoke(new()
+        ///         BdsCapacityReservationConfigurationId = Output.Create(Std.Regex.Invoke(new()
         ///         {
         ///             Pattern = ".*/bdsCapacityReservationConfigurations/([^/]+)$",
         ///             String = testBdsInstanceBdsCapacityReservationConfigurationOciBdsBdsInstanceBdsCapacityReservationConfiguration.Id,
-        ///         }).Result[0],
+        ///         }).Result[0]).Apply(x =&gt; x.ToString(System.Globalization.CultureInfo.InvariantCulture)),
         ///         BdsInstanceId = testBdsInstance.Id,
         ///     });
         /// 
@@ -61,11 +61,11 @@ namespace Pulumi.Oci.BigDataService
         /// {
         ///     var testBdsInstanceBdsCapacityReservationConfiguration = Oci.BigDataService.GetBdsInstanceBdsCapacityReservationConfiguration.Invoke(new()
         ///     {
-        ///         BdsCapacityReservationConfigurationId = Std.Regex.Invoke(new()
+        ///         BdsCapacityReservationConfigurationId = Output.Create(Std.Regex.Invoke(new()
         ///         {
         ///             Pattern = ".*/bdsCapacityReservationConfigurations/([^/]+)$",
         ///             String = testBdsInstanceBdsCapacityReservationConfigurationOciBdsBdsInstanceBdsCapacityReservationConfiguration.Id,
-        ///         }).Result[0],
+        ///         }).Result[0]).Apply(x =&gt; x.ToString(System.Globalization.CultureInfo.InvariantCulture)),
         ///         BdsInstanceId = testBdsInstance.Id,
         ///     });
         /// 
@@ -93,11 +93,11 @@ namespace Pulumi.Oci.BigDataService
         /// {
         ///     var testBdsInstanceBdsCapacityReservationConfiguration = Oci.BigDataService.GetBdsInstanceBdsCapacityReservationConfiguration.Invoke(new()
         ///     {
-        ///         BdsCapacityReservationConfigurationId = Std.Regex.Invoke(new()
+        ///         BdsCapacityReservationConfigurationId = Output.Create(Std.Regex.Invoke(new()
         ///         {
         ///             Pattern = ".*/bdsCapacityReservationConfigurations/([^/]+)$",
         ///             String = testBdsInstanceBdsCapacityReservationConfigurationOciBdsBdsInstanceBdsCapacityReservationConfiguration.Id,
-        ///         }).Result[0],
+        ///         }).Result[0]).Apply(x =&gt; x.ToString(System.Globalization.CultureInfo.InvariantCulture)),
         ///         BdsInstanceId = testBdsInstance.Id,
         ///     });
         /// 

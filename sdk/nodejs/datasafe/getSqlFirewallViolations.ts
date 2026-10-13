@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testSqlFirewallViolations = oci.datasafe.getSqlFirewallViolations({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallViolationAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallViolationCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: sqlFirewallViolationCompartmentIdInSubtree,
  *     scimQuery: sqlFirewallViolationScimQuery,
  * });
  * ```
@@ -96,7 +96,7 @@ export interface GetSqlFirewallViolationsResult {
  * const testSqlFirewallViolations = oci.datasafe.getSqlFirewallViolations({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallViolationAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallViolationCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: sqlFirewallViolationCompartmentIdInSubtree,
  *     scimQuery: sqlFirewallViolationScimQuery,
  * });
  * ```

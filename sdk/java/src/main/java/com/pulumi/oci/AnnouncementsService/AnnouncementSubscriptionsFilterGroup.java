@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAnnouncementSubscriptionsFilterGroup = new AnnouncementSubscriptionsFilterGroup("testAnnouncementSubscriptionsFilterGroup", AnnouncementSubscriptionsFilterGroupArgs.builder()
- *             .announcementSubscriptionId(testAnnouncementSubscription.id())
+ *             .announcementSubscriptionId(testAnnouncementSubscription.get("id"))
  *             .filters(AnnouncementSubscriptionsFilterGroupFilterArgs.builder()
  *                 .type(announcementSubscriptionsFilterGroupFiltersType)
  *                 .value(announcementSubscriptionsFilterGroupFiltersValue)

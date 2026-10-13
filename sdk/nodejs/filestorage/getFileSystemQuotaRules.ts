@@ -20,8 +20,8 @@ import * as utilities from "../utilities";
  * const testFileSystemQuotaRules = oci.filestorage.getFileSystemQuotaRules({
  *     fileSystemId: testFileSystem.id,
  *     principalType: fileSystemQuotaRulePrincipalType,
- *     areViolatorsOnly: fileSystemQuotaRuleAreViolatorsOnly === "true",
- *     principalId: Number(testPrincipal.id),
+ *     areViolatorsOnly: fileSystemQuotaRuleAreViolatorsOnly,
+ *     principalId: testPrincipal.id,
  * });
  * ```
  */
@@ -100,8 +100,8 @@ export interface GetFileSystemQuotaRulesResult {
  * const testFileSystemQuotaRules = oci.filestorage.getFileSystemQuotaRules({
  *     fileSystemId: testFileSystem.id,
  *     principalType: fileSystemQuotaRulePrincipalType,
- *     areViolatorsOnly: fileSystemQuotaRuleAreViolatorsOnly === "true",
- *     principalId: Number(testPrincipal.id),
+ *     areViolatorsOnly: fileSystemQuotaRuleAreViolatorsOnly,
+ *     principalId: testPrincipal.id,
  * });
  * ```
  */

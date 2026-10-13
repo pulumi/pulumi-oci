@@ -66,8 +66,8 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLog = LoggingFunctions.getLog(GetLogArgs.builder()
-     *             .logGroupId(testLogGroup.id())
-     *             .logId(testLogOciLoggingLog.id())
+     *             .logGroupId(testLogGroup.get("id"))
+     *             .logId(testLogOciLoggingLog.get("id"))
      *             .build());
      * 
      *     }
@@ -109,8 +109,8 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLog = LoggingFunctions.getLog(GetLogArgs.builder()
-     *             .logGroupId(testLogGroup.id())
-     *             .logId(testLogOciLoggingLog.id())
+     *             .logGroupId(testLogGroup.get("id"))
+     *             .logId(testLogOciLoggingLog.get("id"))
      *             .build());
      * 
      *     }
@@ -152,8 +152,8 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLog = LoggingFunctions.getLog(GetLogArgs.builder()
-     *             .logGroupId(testLogGroup.id())
-     *             .logId(testLogOciLoggingLog.id())
+     *             .logGroupId(testLogGroup.get("id"))
+     *             .logId(testLogOciLoggingLog.get("id"))
      *             .build());
      * 
      *     }
@@ -195,8 +195,8 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLog = LoggingFunctions.getLog(GetLogArgs.builder()
-     *             .logGroupId(testLogGroup.id())
-     *             .logId(testLogOciLoggingLog.id())
+     *             .logGroupId(testLogGroup.get("id"))
+     *             .logId(testLogOciLoggingLog.get("id"))
      *             .build());
      * 
      *     }
@@ -238,8 +238,8 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLog = LoggingFunctions.getLog(GetLogArgs.builder()
-     *             .logGroupId(testLogGroup.id())
-     *             .logId(testLogOciLoggingLog.id())
+     *             .logGroupId(testLogGroup.get("id"))
+     *             .logId(testLogOciLoggingLog.get("id"))
      *             .build());
      * 
      *     }
@@ -281,7 +281,7 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogGroup = LoggingFunctions.getLogGroup(GetLogGroupArgs.builder()
-     *             .logGroupId(testLogGroupOciLoggingLogGroup.id())
+     *             .logGroupId(testLogGroupOciLoggingLogGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -323,7 +323,7 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogGroup = LoggingFunctions.getLogGroup(GetLogGroupArgs.builder()
-     *             .logGroupId(testLogGroupOciLoggingLogGroup.id())
+     *             .logGroupId(testLogGroupOciLoggingLogGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -365,7 +365,7 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogGroup = LoggingFunctions.getLogGroup(GetLogGroupArgs.builder()
-     *             .logGroupId(testLogGroupOciLoggingLogGroup.id())
+     *             .logGroupId(testLogGroupOciLoggingLogGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -407,7 +407,7 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogGroup = LoggingFunctions.getLogGroup(GetLogGroupArgs.builder()
-     *             .logGroupId(testLogGroupOciLoggingLogGroup.id())
+     *             .logGroupId(testLogGroupOciLoggingLogGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -449,7 +449,7 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogGroup = LoggingFunctions.getLogGroup(GetLogGroupArgs.builder()
-     *             .logGroupId(testLogGroupOciLoggingLogGroup.id())
+     *             .logGroupId(testLogGroupOciLoggingLogGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -711,7 +711,7 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogSavedSearch = LoggingFunctions.getLogSavedSearch(GetLogSavedSearchArgs.builder()
-     *             .logSavedSearchId(testLogSavedSearchOciLoggingLogSavedSearch.id())
+     *             .logSavedSearchId(testLogSavedSearchOciLoggingLogSavedSearch.get("id"))
      *             .build());
      * 
      *     }
@@ -753,7 +753,7 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogSavedSearch = LoggingFunctions.getLogSavedSearch(GetLogSavedSearchArgs.builder()
-     *             .logSavedSearchId(testLogSavedSearchOciLoggingLogSavedSearch.id())
+     *             .logSavedSearchId(testLogSavedSearchOciLoggingLogSavedSearch.get("id"))
      *             .build());
      * 
      *     }
@@ -795,7 +795,7 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogSavedSearch = LoggingFunctions.getLogSavedSearch(GetLogSavedSearchArgs.builder()
-     *             .logSavedSearchId(testLogSavedSearchOciLoggingLogSavedSearch.id())
+     *             .logSavedSearchId(testLogSavedSearchOciLoggingLogSavedSearch.get("id"))
      *             .build());
      * 
      *     }
@@ -837,7 +837,7 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogSavedSearch = LoggingFunctions.getLogSavedSearch(GetLogSavedSearchArgs.builder()
-     *             .logSavedSearchId(testLogSavedSearchOciLoggingLogSavedSearch.id())
+     *             .logSavedSearchId(testLogSavedSearchOciLoggingLogSavedSearch.get("id"))
      *             .build());
      * 
      *     }
@@ -879,7 +879,7 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogSavedSearch = LoggingFunctions.getLogSavedSearch(GetLogSavedSearchArgs.builder()
-     *             .logSavedSearchId(testLogSavedSearchOciLoggingLogSavedSearch.id())
+     *             .logSavedSearchId(testLogSavedSearchOciLoggingLogSavedSearch.get("id"))
      *             .build());
      * 
      *     }
@@ -922,7 +922,7 @@ public final class LoggingFunctions {
      *     public static void stack(Context ctx) {
      *         final var testLogSavedSearches = LoggingFunctions.getLogSavedSearches(GetLogSavedSearchesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .logSavedSearchId(testLogSavedSearch.id())
+     *             .logSavedSearchId(testLogSavedSearch.get("id"))
      *             .name(logSavedSearchName)
      *             .build());
      * 
@@ -966,7 +966,7 @@ public final class LoggingFunctions {
      *     public static void stack(Context ctx) {
      *         final var testLogSavedSearches = LoggingFunctions.getLogSavedSearches(GetLogSavedSearchesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .logSavedSearchId(testLogSavedSearch.id())
+     *             .logSavedSearchId(testLogSavedSearch.get("id"))
      *             .name(logSavedSearchName)
      *             .build());
      * 
@@ -1010,7 +1010,7 @@ public final class LoggingFunctions {
      *     public static void stack(Context ctx) {
      *         final var testLogSavedSearches = LoggingFunctions.getLogSavedSearches(GetLogSavedSearchesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .logSavedSearchId(testLogSavedSearch.id())
+     *             .logSavedSearchId(testLogSavedSearch.get("id"))
      *             .name(logSavedSearchName)
      *             .build());
      * 
@@ -1054,7 +1054,7 @@ public final class LoggingFunctions {
      *     public static void stack(Context ctx) {
      *         final var testLogSavedSearches = LoggingFunctions.getLogSavedSearches(GetLogSavedSearchesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .logSavedSearchId(testLogSavedSearch.id())
+     *             .logSavedSearchId(testLogSavedSearch.get("id"))
      *             .name(logSavedSearchName)
      *             .build());
      * 
@@ -1098,7 +1098,7 @@ public final class LoggingFunctions {
      *     public static void stack(Context ctx) {
      *         final var testLogSavedSearches = LoggingFunctions.getLogSavedSearches(GetLogSavedSearchesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .logSavedSearchId(testLogSavedSearch.id())
+     *             .logSavedSearchId(testLogSavedSearch.get("id"))
      *             .name(logSavedSearchName)
      *             .build());
      * 
@@ -1141,7 +1141,7 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogs = LoggingFunctions.getLogs(GetLogsArgs.builder()
-     *             .logGroupId(testLogGroup.id())
+     *             .logGroupId(testLogGroup.get("id"))
      *             .displayName(logDisplayName)
      *             .logType(logLogType)
      *             .sourceResource(logSourceResource)
@@ -1188,7 +1188,7 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogs = LoggingFunctions.getLogs(GetLogsArgs.builder()
-     *             .logGroupId(testLogGroup.id())
+     *             .logGroupId(testLogGroup.get("id"))
      *             .displayName(logDisplayName)
      *             .logType(logLogType)
      *             .sourceResource(logSourceResource)
@@ -1235,7 +1235,7 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogs = LoggingFunctions.getLogs(GetLogsArgs.builder()
-     *             .logGroupId(testLogGroup.id())
+     *             .logGroupId(testLogGroup.get("id"))
      *             .displayName(logDisplayName)
      *             .logType(logLogType)
      *             .sourceResource(logSourceResource)
@@ -1282,7 +1282,7 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogs = LoggingFunctions.getLogs(GetLogsArgs.builder()
-     *             .logGroupId(testLogGroup.id())
+     *             .logGroupId(testLogGroup.get("id"))
      *             .displayName(logDisplayName)
      *             .logType(logLogType)
      *             .sourceResource(logSourceResource)
@@ -1329,7 +1329,7 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLogs = LoggingFunctions.getLogs(GetLogsArgs.builder()
-     *             .logGroupId(testLogGroup.id())
+     *             .logGroupId(testLogGroup.get("id"))
      *             .displayName(logDisplayName)
      *             .logType(logLogType)
      *             .sourceResource(logSourceResource)
@@ -1376,7 +1376,7 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUnifiedAgentConfiguration = LoggingFunctions.getUnifiedAgentConfiguration(GetUnifiedAgentConfigurationArgs.builder()
-     *             .unifiedAgentConfigurationId(testUnifiedAgentConfigurationOciLoggingUnifiedAgentConfiguration.id())
+     *             .unifiedAgentConfigurationId(testUnifiedAgentConfigurationOciLoggingUnifiedAgentConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -1418,7 +1418,7 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUnifiedAgentConfiguration = LoggingFunctions.getUnifiedAgentConfiguration(GetUnifiedAgentConfigurationArgs.builder()
-     *             .unifiedAgentConfigurationId(testUnifiedAgentConfigurationOciLoggingUnifiedAgentConfiguration.id())
+     *             .unifiedAgentConfigurationId(testUnifiedAgentConfigurationOciLoggingUnifiedAgentConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -1460,7 +1460,7 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUnifiedAgentConfiguration = LoggingFunctions.getUnifiedAgentConfiguration(GetUnifiedAgentConfigurationArgs.builder()
-     *             .unifiedAgentConfigurationId(testUnifiedAgentConfigurationOciLoggingUnifiedAgentConfiguration.id())
+     *             .unifiedAgentConfigurationId(testUnifiedAgentConfigurationOciLoggingUnifiedAgentConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -1502,7 +1502,7 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUnifiedAgentConfiguration = LoggingFunctions.getUnifiedAgentConfiguration(GetUnifiedAgentConfigurationArgs.builder()
-     *             .unifiedAgentConfigurationId(testUnifiedAgentConfigurationOciLoggingUnifiedAgentConfiguration.id())
+     *             .unifiedAgentConfigurationId(testUnifiedAgentConfigurationOciLoggingUnifiedAgentConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -1544,7 +1544,7 @@ public final class LoggingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testUnifiedAgentConfiguration = LoggingFunctions.getUnifiedAgentConfiguration(GetUnifiedAgentConfigurationArgs.builder()
-     *             .unifiedAgentConfigurationId(testUnifiedAgentConfigurationOciLoggingUnifiedAgentConfiguration.id())
+     *             .unifiedAgentConfigurationId(testUnifiedAgentConfigurationOciLoggingUnifiedAgentConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -1588,9 +1588,9 @@ public final class LoggingFunctions {
      *         final var testUnifiedAgentConfigurations = LoggingFunctions.getUnifiedAgentConfigurations(GetUnifiedAgentConfigurationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(unifiedAgentConfigurationDisplayName)
-     *             .groupId(testGroup.id())
+     *             .groupId(testGroup.get("id"))
      *             .isCompartmentIdInSubtree(unifiedAgentConfigurationIsCompartmentIdInSubtree)
-     *             .logId(testLog.id())
+     *             .logId(testLog.get("id"))
      *             .state(unifiedAgentConfigurationState)
      *             .build());
      * 
@@ -1635,9 +1635,9 @@ public final class LoggingFunctions {
      *         final var testUnifiedAgentConfigurations = LoggingFunctions.getUnifiedAgentConfigurations(GetUnifiedAgentConfigurationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(unifiedAgentConfigurationDisplayName)
-     *             .groupId(testGroup.id())
+     *             .groupId(testGroup.get("id"))
      *             .isCompartmentIdInSubtree(unifiedAgentConfigurationIsCompartmentIdInSubtree)
-     *             .logId(testLog.id())
+     *             .logId(testLog.get("id"))
      *             .state(unifiedAgentConfigurationState)
      *             .build());
      * 
@@ -1682,9 +1682,9 @@ public final class LoggingFunctions {
      *         final var testUnifiedAgentConfigurations = LoggingFunctions.getUnifiedAgentConfigurations(GetUnifiedAgentConfigurationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(unifiedAgentConfigurationDisplayName)
-     *             .groupId(testGroup.id())
+     *             .groupId(testGroup.get("id"))
      *             .isCompartmentIdInSubtree(unifiedAgentConfigurationIsCompartmentIdInSubtree)
-     *             .logId(testLog.id())
+     *             .logId(testLog.get("id"))
      *             .state(unifiedAgentConfigurationState)
      *             .build());
      * 
@@ -1729,9 +1729,9 @@ public final class LoggingFunctions {
      *         final var testUnifiedAgentConfigurations = LoggingFunctions.getUnifiedAgentConfigurations(GetUnifiedAgentConfigurationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(unifiedAgentConfigurationDisplayName)
-     *             .groupId(testGroup.id())
+     *             .groupId(testGroup.get("id"))
      *             .isCompartmentIdInSubtree(unifiedAgentConfigurationIsCompartmentIdInSubtree)
-     *             .logId(testLog.id())
+     *             .logId(testLog.get("id"))
      *             .state(unifiedAgentConfigurationState)
      *             .build());
      * 
@@ -1776,9 +1776,9 @@ public final class LoggingFunctions {
      *         final var testUnifiedAgentConfigurations = LoggingFunctions.getUnifiedAgentConfigurations(GetUnifiedAgentConfigurationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(unifiedAgentConfigurationDisplayName)
-     *             .groupId(testGroup.id())
+     *             .groupId(testGroup.get("id"))
      *             .isCompartmentIdInSubtree(unifiedAgentConfigurationIsCompartmentIdInSubtree)
-     *             .logId(testLog.id())
+     *             .logId(testLog.get("id"))
      *             .state(unifiedAgentConfigurationState)
      *             .build());
      * 

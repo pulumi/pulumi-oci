@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *         var testOciCacheBackupExportToObjectStorage = new OciCacheBackupExportToObjectStorage("testOciCacheBackupExportToObjectStorage", OciCacheBackupExportToObjectStorageArgs.builder()
  *             .bucket(ociCacheBackupExportToObjectStorageBucket)
  *             .namespace(ociCacheBackupExportToObjectStorageNamespace)
- *             .ociCacheBackupId(testOciCacheBackup.id())
+ *             .ociCacheBackupId(testOciCacheBackup.get("id"))
  *             .prefix(ociCacheBackupExportToObjectStoragePrefix)
  *             .build());
  * 

@@ -47,8 +47,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testClusterWorkloadMapping = new ClusterWorkloadMapping("testClusterWorkloadMapping", ClusterWorkloadMappingArgs.builder()
- *             .clusterId(testCluster.id())
- *             .mappedCompartmentId(testCompartment.id())
+ *             .clusterId(testCluster.get("id"))
+ *             .mappedCompartmentId(testCompartment.get("id"))
  *             .namespace(clusterWorkloadMappingNamespace)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .freeformTags(Map.of("Department", "Finance"))

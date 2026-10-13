@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testSoftwareSourceReplacePackagesManagement = new SoftwareSourceReplacePackagesManagement("testSoftwareSourceReplacePackagesManagement", SoftwareSourceReplacePackagesManagementArgs.builder()
  *             .packages(softwareSourceReplacePackagesManagementPackages)
- *             .softwareSourceId(testSoftwareSource.id())
+ *             .softwareSourceId(testSoftwareSource.get("id"))
  *             .build());
  * 
  *     }

@@ -23,8 +23,8 @@ import * as utilities from "../utilities";
  *
  * const testAutonomousContainerDatabaseAddStandby = new oci.database.AutonomousContainerDatabaseAddStandby("test_autonomous_container_database_add_standby", {
  *     autonomousContainerDatabaseId: testAutonomousContainerDatabase.id,
- *     fastStartFailOverLagLimitInSeconds: Number(autonomousContainerDatabaseAddStandbyFastStartFailOverLagLimitInSeconds),
- *     isAutomaticFailoverEnabled: autonomousContainerDatabaseAddStandbyIsAutomaticFailoverEnabled === "true",
+ *     fastStartFailOverLagLimitInSeconds: autonomousContainerDatabaseAddStandbyFastStartFailOverLagLimitInSeconds,
+ *     isAutomaticFailoverEnabled: autonomousContainerDatabaseAddStandbyIsAutomaticFailoverEnabled,
  *     peerAutonomousContainerDatabaseBackupConfig: {
  *         backupDestinationDetails: [{
  *             type: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType,
@@ -33,12 +33,12 @@ import * as utilities from "../utilities";
  *             id: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId,
  *             internetProxy: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy,
  *             isRemote: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote,
- *             isRetentionLockEnabled: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled === "true",
+ *             isRetentionLockEnabled: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRetentionLockEnabled,
  *             remoteRegion: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsRemoteRegion,
  *             vpcPassword: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcPassword,
  *             vpcUser: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsVpcUser,
  *         }],
- *         recoveryWindowInDays: Number(autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays),
+ *         recoveryWindowInDays: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays,
  *     },
  *     peerAutonomousContainerDatabaseCompartmentId: testCompartment.id,
  *     peerAutonomousContainerDatabaseDisplayName: autonomousContainerDatabaseAddStandbyPeerAutonomousContainerDatabaseDisplayName,
@@ -46,7 +46,7 @@ import * as utilities from "../utilities";
  *     peerCloudAutonomousVmClusterId: testCloudAutonomousVmCluster.id,
  *     peerDbUniqueName: autonomousContainerDatabaseAddStandbyPeerDbUniqueName,
  *     protectionMode: autonomousContainerDatabaseAddStandbyProtectionMode,
- *     standbyMaintenanceBufferInDays: Number(autonomousContainerDatabaseAddStandbyStandbyMaintenanceBufferInDays),
+ *     standbyMaintenanceBufferInDays: autonomousContainerDatabaseAddStandbyStandbyMaintenanceBufferInDays,
  * });
  * ```
  *

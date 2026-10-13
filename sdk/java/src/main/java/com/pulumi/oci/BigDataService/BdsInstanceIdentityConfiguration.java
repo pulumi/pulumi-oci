@@ -54,18 +54,18 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBdsInstanceIdentityConfiguration = new BdsInstanceIdentityConfiguration("testBdsInstanceIdentityConfiguration", BdsInstanceIdentityConfigurationArgs.builder()
- *             .bdsInstanceId(testBdsInstance.id())
- *             .confidentialApplicationId(testApplication.id())
+ *             .bdsInstanceId(testBdsInstance.get("id"))
+ *             .confidentialApplicationId(testApplication.get("id"))
  *             .displayName(bdsInstanceIdentityConfigurationDisplayName)
- *             .identityDomainId(testDomain.id())
+ *             .identityDomainId(testDomain.get("id"))
  *             .clusterAdminPassword(bdsInstanceIdentityConfigurationClusterAdminPassword)
  *             .iamUserSyncConfigurationDetails(BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs.builder()
  *                 .isPosixAttributesAdditionRequired(bdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsIsPosixAttributesAdditionRequired)
  *                 .build())
- *             .secretId(testSecret.id())
+ *             .secretId(testSecret.get("id"))
  *             .upstConfigurationDetails(BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs.builder()
- *                 .masterEncryptionKeyId(testKey.id())
- *                 .vaultId(testVault.id())
+ *                 .masterEncryptionKeyId(testKey.get("id"))
+ *                 .vaultId(testVault.get("id"))
  *                 .build())
  *             .build());
  * 

@@ -35,10 +35,10 @@ import (
 //				CompartmentIdInSubtree:    pulumi.BoolRef(hostInsightCompartmentIdInSubtree),
 //				EnterpriseManagerBridgeId: pulumi.StringRef(testEnterpriseManagerBridge.Id),
 //				ExadataInsightId:          pulumi.StringRef(testExadataInsight.Id),
-//				HostTypes:                 pulumi.ToArray(hostInsightHostType),
+//				HostTypes:                 hostInsightHostType,
 //				Id:                        pulumi.StringRef(hostInsightId),
-//				States:                    pulumi.ToArray(hostInsightState),
-//				Statuses:                  pulumi.ToArray(hostInsightStatus),
+//				States:                    hostInsightState,
+//				Statuses:                  hostInsightStatus,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -177,7 +177,7 @@ def get_sensitive_types_exports(access_level: Optional[_builtins.str] = None,
 
     test_sensitive_types_exports = oci.datasafe.get_sensitive_types_exports(compartment_id=compartment_id,
         access_level=sensitive_types_export_access_level,
-        compartment_id_in_subtree=sensitive_types_export_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=sensitive_types_export_compartment_id_in_subtree,
         display_name=sensitive_types_export_display_name,
         sensitive_types_export_id=test_sensitive_types_export["id"],
         state=sensitive_types_export_state,
@@ -248,7 +248,7 @@ def get_sensitive_types_exports_output(access_level: pulumi.Input[Optional[Optio
 
     test_sensitive_types_exports = oci.datasafe.get_sensitive_types_exports(compartment_id=compartment_id,
         access_level=sensitive_types_export_access_level,
-        compartment_id_in_subtree=sensitive_types_export_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=sensitive_types_export_compartment_id_in_subtree,
         display_name=sensitive_types_export_display_name,
         sensitive_types_export_id=test_sensitive_types_export["id"],
         state=sensitive_types_export_state,

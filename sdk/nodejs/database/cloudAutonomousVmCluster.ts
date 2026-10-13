@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *     autonomousDataStorageSizeInTbs: cloudAutonomousVmClusterAutonomousDataStorageSizeInTbs,
  *     clusterTimeZone: cloudAutonomousVmClusterClusterTimeZone,
  *     computeModel: cloudAutonomousVmClusterComputeModel,
- *     cpuCoreCountPerNode: Number(cloudAutonomousVmClusterCpuCoreCountPerNode),
+ *     cpuCoreCountPerNode: cloudAutonomousVmClusterCpuCoreCountPerNode,
  *     dbServers: cloudAutonomousVmClusterDbServers,
  *     definedTags: cloudAutonomousVmClusterDefinedTags,
  *     description: cloudAutonomousVmClusterDescription,
@@ -36,17 +36,17 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isMtlsEnabledVmCluster: cloudAutonomousVmClusterIsMtlsEnabledVmCluster === "true",
+ *     isMtlsEnabledVmCluster: cloudAutonomousVmClusterIsMtlsEnabledVmCluster,
  *     licenseModel: cloudAutonomousVmClusterLicenseModel,
  *     maintenanceWindowDetails: {
- *         customActionTimeoutInMins: Number(cloudAutonomousVmClusterMaintenanceWindowDetailsCustomActionTimeoutInMins),
+ *         customActionTimeoutInMins: cloudAutonomousVmClusterMaintenanceWindowDetailsCustomActionTimeoutInMins,
  *         daysOfWeeks: [{
  *             name: cloudAutonomousVmClusterMaintenanceWindowDetailsDaysOfWeekName,
  *         }],
  *         hoursOfDays: cloudAutonomousVmClusterMaintenanceWindowDetailsHoursOfDay,
- *         isCustomActionTimeoutEnabled: cloudAutonomousVmClusterMaintenanceWindowDetailsIsCustomActionTimeoutEnabled === "true",
- *         isMonthlyPatchingEnabled: cloudAutonomousVmClusterMaintenanceWindowDetailsIsMonthlyPatchingEnabled === "true",
- *         leadTimeInWeeks: Number(cloudAutonomousVmClusterMaintenanceWindowDetailsLeadTimeInWeeks),
+ *         isCustomActionTimeoutEnabled: cloudAutonomousVmClusterMaintenanceWindowDetailsIsCustomActionTimeoutEnabled,
+ *         isMonthlyPatchingEnabled: cloudAutonomousVmClusterMaintenanceWindowDetailsIsMonthlyPatchingEnabled,
+ *         leadTimeInWeeks: cloudAutonomousVmClusterMaintenanceWindowDetailsLeadTimeInWeeks,
  *         months: [{
  *             name: cloudAutonomousVmClusterMaintenanceWindowDetailsMonthsName,
  *         }],
@@ -55,15 +55,15 @@ import * as utilities from "../utilities";
  *         skipRus: cloudAutonomousVmClusterMaintenanceWindowDetailsSkipRu,
  *         weeksOfMonths: cloudAutonomousVmClusterMaintenanceWindowDetailsWeeksOfMonth,
  *     },
- *     memoryPerOracleComputeUnitInGbs: Number(cloudAutonomousVmClusterMemoryPerOracleComputeUnitInGbs),
+ *     memoryPerOracleComputeUnitInGbs: cloudAutonomousVmClusterMemoryPerOracleComputeUnitInGbs,
  *     nsgIds: cloudAutonomousVmClusterNsgIds,
- *     opcDryRun: cloudAutonomousVmClusterOpcDryRun === "true",
- *     scanListenerPortNonTls: Number(cloudAutonomousVmClusterScanListenerPortNonTls),
- *     scanListenerPortTls: Number(cloudAutonomousVmClusterScanListenerPortTls),
+ *     opcDryRun: cloudAutonomousVmClusterOpcDryRun,
+ *     scanListenerPortNonTls: cloudAutonomousVmClusterScanListenerPortNonTls,
+ *     scanListenerPortTls: cloudAutonomousVmClusterScanListenerPortTls,
  *     securityAttributes: cloudAutonomousVmClusterSecurityAttributes,
  *     sgaPercentage: cloudAutonomousVmClusterSgaPercentage,
  *     subscriptionId: testSubscription.id,
- *     totalContainerDatabases: Number(cloudAutonomousVmClusterTotalContainerDatabases),
+ *     totalContainerDatabases: cloudAutonomousVmClusterTotalContainerDatabases,
  * });
  * ```
  *

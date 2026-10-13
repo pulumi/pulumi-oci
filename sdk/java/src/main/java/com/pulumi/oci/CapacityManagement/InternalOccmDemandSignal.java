@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testInternalOccmDemandSignal = new InternalOccmDemandSignal("testInternalOccmDemandSignal", InternalOccmDemandSignalArgs.builder()
- *             .occmDemandSignalId(testOccmDemandSignal.id())
+ *             .occmDemandSignalId(testOccmDemandSignal.get("id"))
  *             .lifecycleDetails(internalOccmDemandSignalLifecycleDetails)
  *             .build());
  * 

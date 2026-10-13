@@ -172,7 +172,7 @@ def get_baselineable_metrics(baselineable_metric_id: Optional[_builtins.str] = N
 
     test_baselineable_metrics = oci.stackmonitoring.get_baselineable_metrics(baselineable_metric_id=test_baselineable_metric["id"],
         compartment_id=compartment_id,
-        is_out_of_box=baselineable_metric_is_out_of_box == "true",
+        is_out_of_box=baselineable_metric_is_out_of_box,
         metric_namespace=baselineable_metric_metric_namespace,
         name=baselineable_metric_name,
         resource_group=baselineable_metric_resource_group,
@@ -233,7 +233,7 @@ def get_baselineable_metrics_output(baselineable_metric_id: pulumi.Input[Optiona
 
     test_baselineable_metrics = oci.stackmonitoring.get_baselineable_metrics(baselineable_metric_id=test_baselineable_metric["id"],
         compartment_id=compartment_id,
-        is_out_of_box=baselineable_metric_is_out_of_box == "true",
+        is_out_of_box=baselineable_metric_is_out_of_box,
         metric_namespace=baselineable_metric_metric_namespace,
         name=baselineable_metric_name,
         resource_group=baselineable_metric_resource_group,

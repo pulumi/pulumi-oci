@@ -133,7 +133,7 @@ def get_saved_queries(access_level: Optional[_builtins.str] = None,
 
     test_saved_queries = oci.cloudguard.get_saved_queries(compartment_id=compartment_id,
         access_level=saved_query_access_level,
-        compartment_id_in_subtree=saved_query_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=saved_query_compartment_id_in_subtree,
         display_name=saved_query_display_name)
     ```
 
@@ -179,7 +179,7 @@ def get_saved_queries_output(access_level: pulumi.Input[Optional[Optional[_built
 
     test_saved_queries = oci.cloudguard.get_saved_queries(compartment_id=compartment_id,
         access_level=saved_query_access_level,
-        compartment_id_in_subtree=saved_query_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=saved_query_compartment_id_in_subtree,
         display_name=saved_query_display_name)
     ```
 

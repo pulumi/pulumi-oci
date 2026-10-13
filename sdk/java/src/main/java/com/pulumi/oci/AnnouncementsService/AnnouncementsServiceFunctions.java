@@ -53,7 +53,7 @@ public final class AnnouncementsServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnouncementSubscription = AnnouncementsServiceFunctions.getAnnouncementSubscription(GetAnnouncementSubscriptionArgs.builder()
-     *             .announcementSubscriptionId(testAnnouncementSubscriptionOciAnnouncementsServiceAnnouncementSubscription.id())
+     *             .announcementSubscriptionId(testAnnouncementSubscriptionOciAnnouncementsServiceAnnouncementSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -97,7 +97,7 @@ public final class AnnouncementsServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnouncementSubscription = AnnouncementsServiceFunctions.getAnnouncementSubscription(GetAnnouncementSubscriptionArgs.builder()
-     *             .announcementSubscriptionId(testAnnouncementSubscriptionOciAnnouncementsServiceAnnouncementSubscription.id())
+     *             .announcementSubscriptionId(testAnnouncementSubscriptionOciAnnouncementsServiceAnnouncementSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -141,7 +141,7 @@ public final class AnnouncementsServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnouncementSubscription = AnnouncementsServiceFunctions.getAnnouncementSubscription(GetAnnouncementSubscriptionArgs.builder()
-     *             .announcementSubscriptionId(testAnnouncementSubscriptionOciAnnouncementsServiceAnnouncementSubscription.id())
+     *             .announcementSubscriptionId(testAnnouncementSubscriptionOciAnnouncementsServiceAnnouncementSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -185,7 +185,7 @@ public final class AnnouncementsServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnouncementSubscription = AnnouncementsServiceFunctions.getAnnouncementSubscription(GetAnnouncementSubscriptionArgs.builder()
-     *             .announcementSubscriptionId(testAnnouncementSubscriptionOciAnnouncementsServiceAnnouncementSubscription.id())
+     *             .announcementSubscriptionId(testAnnouncementSubscriptionOciAnnouncementsServiceAnnouncementSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -229,7 +229,7 @@ public final class AnnouncementsServiceFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAnnouncementSubscription = AnnouncementsServiceFunctions.getAnnouncementSubscription(GetAnnouncementSubscriptionArgs.builder()
-     *             .announcementSubscriptionId(testAnnouncementSubscriptionOciAnnouncementsServiceAnnouncementSubscription.id())
+     *             .announcementSubscriptionId(testAnnouncementSubscriptionOciAnnouncementsServiceAnnouncementSubscription.get("id"))
      *             .build());
      * 
      *     }

@@ -496,14 +496,14 @@ class BatchBatchContext(pulumi.CustomResource):
         test_batch_context = oci.oci.BatchBatchContext("test_batch_context",
             compartment_id=compartment_id,
             fleets=[{
-                "max_concurrent_tasks": int(batch_context_fleets_max_concurrent_tasks),
+                "max_concurrent_tasks": batch_context_fleets_max_concurrent_tasks,
                 "name": batch_context_fleets_name,
                 "shape": {
-                    "memory_in_gbs": int(batch_context_fleets_shape_memory_in_gbs),
-                    "ocpus": int(batch_context_fleets_shape_ocpus),
+                    "memory_in_gbs": batch_context_fleets_shape_memory_in_gbs,
+                    "ocpus": batch_context_fleets_shape_ocpus,
                     "shape_name": test_batch_context_shapes["batchContextShapeCollection"][0]["items"][0]["name"],
                     "type": batch_context_fleets_shape_type,
-                    "disk_size_in_gbs": int(batch_context_fleets_shape_disk_size_in_gbs),
+                    "disk_size_in_gbs": batch_context_fleets_shape_disk_size_in_gbs,
                 },
                 "type": batch_context_fleets_type,
             }],
@@ -524,13 +524,13 @@ class BatchBatchContext(pulumi.CustomResource):
                 "tag_key": batch_context_job_priority_configurations_tag_key,
                 "tag_namespace": batch_context_job_priority_configurations_tag_namespace,
                 "values": batch_context_job_priority_configurations_values,
-                "weight": int(batch_context_job_priority_configurations_weight),
+                "weight": batch_context_job_priority_configurations_weight,
             }],
             logging_configuration={
                 "log_group_id": test_log_group["id"],
                 "log_id": test_log["id"],
                 "type": batch_context_logging_configuration_type,
-                "is_job_task_events_propagation_enabled": batch_context_logging_configuration_is_job_task_events_propagation_enabled == "true",
+                "is_job_task_events_propagation_enabled": batch_context_logging_configuration_is_job_task_events_propagation_enabled,
             })
         ```
 
@@ -583,14 +583,14 @@ class BatchBatchContext(pulumi.CustomResource):
         test_batch_context = oci.oci.BatchBatchContext("test_batch_context",
             compartment_id=compartment_id,
             fleets=[{
-                "max_concurrent_tasks": int(batch_context_fleets_max_concurrent_tasks),
+                "max_concurrent_tasks": batch_context_fleets_max_concurrent_tasks,
                 "name": batch_context_fleets_name,
                 "shape": {
-                    "memory_in_gbs": int(batch_context_fleets_shape_memory_in_gbs),
-                    "ocpus": int(batch_context_fleets_shape_ocpus),
+                    "memory_in_gbs": batch_context_fleets_shape_memory_in_gbs,
+                    "ocpus": batch_context_fleets_shape_ocpus,
                     "shape_name": test_batch_context_shapes["batchContextShapeCollection"][0]["items"][0]["name"],
                     "type": batch_context_fleets_shape_type,
-                    "disk_size_in_gbs": int(batch_context_fleets_shape_disk_size_in_gbs),
+                    "disk_size_in_gbs": batch_context_fleets_shape_disk_size_in_gbs,
                 },
                 "type": batch_context_fleets_type,
             }],
@@ -611,13 +611,13 @@ class BatchBatchContext(pulumi.CustomResource):
                 "tag_key": batch_context_job_priority_configurations_tag_key,
                 "tag_namespace": batch_context_job_priority_configurations_tag_namespace,
                 "values": batch_context_job_priority_configurations_values,
-                "weight": int(batch_context_job_priority_configurations_weight),
+                "weight": batch_context_job_priority_configurations_weight,
             }],
             logging_configuration={
                 "log_group_id": test_log_group["id"],
                 "log_id": test_log["id"],
                 "type": batch_context_logging_configuration_type,
-                "is_job_task_events_propagation_enabled": batch_context_logging_configuration_is_job_task_events_propagation_enabled == "true",
+                "is_job_task_events_propagation_enabled": batch_context_logging_configuration_is_job_task_events_propagation_enabled,
             })
         ```
 

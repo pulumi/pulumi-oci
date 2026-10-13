@@ -348,7 +348,7 @@ class Record(pulumi.CustomResource):
             domain=record_items_domain,
             rtype=record_items_rtype,
             rdata=record_items_rdata,
-            ttl=int(record_items_ttl))
+            ttl=record_items_ttl)
         ```
 
         ## Import
@@ -402,7 +402,7 @@ class Record(pulumi.CustomResource):
             domain=record_items_domain,
             rtype=record_items_rtype,
             rdata=record_items_rdata,
-            ttl=int(record_items_ttl))
+            ttl=record_items_ttl)
         ```
 
         ## Import

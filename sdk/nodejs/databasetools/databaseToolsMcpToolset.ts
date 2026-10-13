@@ -25,7 +25,7 @@ import * as utilities from "../utilities";
  *     databaseToolsMcpServerId: testDatabaseToolsMcpServer.id,
  *     displayName: databaseToolsMcpToolsetDisplayName,
  *     type: databaseToolsMcpToolsetType,
- *     version: Number(databaseToolsMcpToolsetVersion),
+ *     version: databaseToolsMcpToolsetVersion,
  *     allowedRoles: databaseToolsMcpToolsetAllowedRoles,
  *     defaultExecutionType: databaseToolsMcpToolsetDefaultExecutionType,
  *     definedTags: {

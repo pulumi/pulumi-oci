@@ -615,13 +615,13 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
             description=workspace_application_patch_description,
             key=workspace_application_patch_key,
             model_version=workspace_application_patch_model_version,
-            object_status=int(workspace_application_patch_object_status),
+            object_status=workspace_application_patch_object_status,
             registry_metadata={
                 "aggregator_key": workspace_application_patch_registry_metadata_aggregator_key,
-                "is_favorite": workspace_application_patch_registry_metadata_is_favorite == "true",
+                "is_favorite": workspace_application_patch_registry_metadata_is_favorite,
                 "key": workspace_application_patch_registry_metadata_key,
                 "labels": workspace_application_patch_registry_metadata_labels,
-                "registry_version": int(workspace_application_patch_registry_metadata_registry_version),
+                "registry_version": workspace_application_patch_registry_metadata_registry_version,
             })
         ```
 
@@ -681,13 +681,13 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
             description=workspace_application_patch_description,
             key=workspace_application_patch_key,
             model_version=workspace_application_patch_model_version,
-            object_status=int(workspace_application_patch_object_status),
+            object_status=workspace_application_patch_object_status,
             registry_metadata={
                 "aggregator_key": workspace_application_patch_registry_metadata_aggregator_key,
-                "is_favorite": workspace_application_patch_registry_metadata_is_favorite == "true",
+                "is_favorite": workspace_application_patch_registry_metadata_is_favorite,
                 "key": workspace_application_patch_registry_metadata_key,
                 "labels": workspace_application_patch_registry_metadata_labels,
-                "registry_version": int(workspace_application_patch_registry_metadata_registry_version),
+                "registry_version": workspace_application_patch_registry_metadata_registry_version,
             })
         ```
 

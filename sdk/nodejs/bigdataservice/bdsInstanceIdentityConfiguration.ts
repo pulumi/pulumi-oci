@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  *     identityDomainId: testDomain.id,
  *     clusterAdminPassword: bdsInstanceIdentityConfigurationClusterAdminPassword,
  *     iamUserSyncConfigurationDetails: {
- *         isPosixAttributesAdditionRequired: bdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsIsPosixAttributesAdditionRequired === "true",
+ *         isPosixAttributesAdditionRequired: bdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsIsPosixAttributesAdditionRequired,
  *     },
  *     secretId: testSecret.id,
  *     upstConfigurationDetails: {

@@ -502,8 +502,8 @@ class MaintenanceWindow(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_outage=maintenance_window_is_outage == "true",
-            is_recurring=maintenance_window_is_recurring == "true",
+            is_outage=maintenance_window_is_outage,
+            is_recurring=maintenance_window_is_recurring,
             recurrences=maintenance_window_recurrences)
         ```
 
@@ -564,8 +564,8 @@ class MaintenanceWindow(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_outage=maintenance_window_is_outage == "true",
-            is_recurring=maintenance_window_is_recurring == "true",
+            is_outage=maintenance_window_is_outage,
+            is_recurring=maintenance_window_is_recurring,
             recurrences=maintenance_window_recurrences)
         ```
 

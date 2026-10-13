@@ -387,7 +387,7 @@ class MaintenanceWindow(pulumi.CustomResource):
             name=maintenance_window_name,
             resources=[{
                 "resource_id": test_resource["id"],
-                "are_members_included": maintenance_window_resources_are_members_included == "true",
+                "are_members_included": maintenance_window_resources_are_members_included,
             }],
             schedule={
                 "schedule_type": maintenance_window_schedule_schedule_type,
@@ -450,7 +450,7 @@ class MaintenanceWindow(pulumi.CustomResource):
             name=maintenance_window_name,
             resources=[{
                 "resource_id": test_resource["id"],
-                "are_members_included": maintenance_window_resources_are_members_included == "true",
+                "are_members_included": maintenance_window_resources_are_members_included,
             }],
             schedule={
                 "schedule_type": maintenance_window_schedule_schedule_type,

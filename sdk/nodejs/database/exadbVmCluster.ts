@@ -30,9 +30,9 @@ import * as utilities from "../utilities";
  *     hostname: exadbVmClusterHostname,
  *     shape: exadbVmClusterShape,
  *     nodeConfig: {
- *         enabledEcpuCountPerNode: Number(exadbVmClusterEnabledEcpuCountPerNode),
- *         totalEcpuCountPerNode: Number(exadbVmClusterTotalEcpuCountPerNode),
- *         vmFileSystemStorageSizeGbsPerNode: Number(exadbVmClusterVmFileSystemStorageSizeInGbsPerNode),
+ *         enabledEcpuCountPerNode: exadbVmClusterEnabledEcpuCountPerNode,
+ *         totalEcpuCountPerNode: exadbVmClusterTotalEcpuCountPerNode,
+ *         vmFileSystemStorageSizeGbsPerNode: exadbVmClusterVmFileSystemStorageSizeInGbsPerNode,
  *     },
  *     nodeResources: [
  *         {
@@ -47,9 +47,9 @@ import * as utilities from "../utilities";
  *     backupNetworkNsgIds: exadbVmClusterBackupNetworkNsgIds,
  *     clusterName: exadbVmClusterClusterName,
  *     dataCollectionOptions: {
- *         isDiagnosticsEventsEnabled: exadbVmClusterDataCollectionOptionsIsDiagnosticsEventsEnabled === "true",
- *         isHealthMonitoringEnabled: exadbVmClusterDataCollectionOptionsIsHealthMonitoringEnabled === "true",
- *         isIncidentLogsEnabled: exadbVmClusterDataCollectionOptionsIsIncidentLogsEnabled === "true",
+ *         isDiagnosticsEventsEnabled: exadbVmClusterDataCollectionOptionsIsDiagnosticsEventsEnabled,
+ *         isHealthMonitoringEnabled: exadbVmClusterDataCollectionOptionsIsHealthMonitoringEnabled,
+ *         isIncidentLogsEnabled: exadbVmClusterDataCollectionOptionsIsIncidentLogsEnabled,
  *     },
  *     definedTags: exadbVmClusterDefinedTags,
  *     domain: exadbVmClusterDomain,
@@ -59,8 +59,8 @@ import * as utilities from "../utilities";
  *     licenseModel: exadbVmClusterLicenseModel,
  *     nsgIds: exadbVmClusterNsgIds,
  *     privateZoneId: testZone.id,
- *     scanListenerPortTcp: Number(exadbVmClusterScanListenerPortTcp),
- *     scanListenerPortTcpSsl: Number(exadbVmClusterScanListenerPortTcpSsl),
+ *     scanListenerPortTcp: exadbVmClusterScanListenerPortTcp,
+ *     scanListenerPortTcpSsl: exadbVmClusterScanListenerPortTcpSsl,
  *     securityAttributes: exadbVmClusterSecurityAttributes,
  *     shapeAttribute: exadbVmClusterShapeAttribute,
  *     subscriptionId: tenantSubscriptionId,

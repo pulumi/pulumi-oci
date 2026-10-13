@@ -19,10 +19,10 @@ import * as utilities from "../utilities";
  *
  * const testResourceActions = oci.optimizer.getResourceActions({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: resourceActionCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: resourceActionCompartmentIdInSubtree,
  *     childTenancyIds: resourceActionChildTenancyIds,
- *     includeOrganization: resourceActionIncludeOrganization === "true",
- *     includeResourceMetadata: resourceActionIncludeResourceMetadata === "true",
+ *     includeOrganization: resourceActionIncludeOrganization,
+ *     includeResourceMetadata: resourceActionIncludeResourceMetadata,
  *     name: resourceActionName,
  *     recommendationId: testRecommendation.id,
  *     recommendationName: testRecommendation.name,
@@ -169,10 +169,10 @@ export interface GetResourceActionsResult {
  *
  * const testResourceActions = oci.optimizer.getResourceActions({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: resourceActionCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: resourceActionCompartmentIdInSubtree,
  *     childTenancyIds: resourceActionChildTenancyIds,
- *     includeOrganization: resourceActionIncludeOrganization === "true",
- *     includeResourceMetadata: resourceActionIncludeResourceMetadata === "true",
+ *     includeOrganization: resourceActionIncludeOrganization,
+ *     includeResourceMetadata: resourceActionIncludeResourceMetadata,
  *     name: resourceActionName,
  *     recommendationId: testRecommendation.id,
  *     recommendationName: testRecommendation.name,

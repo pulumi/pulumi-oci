@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testPluggableDatabasesLocalClone = new PluggableDatabasesLocalClone("testPluggableDatabasesLocalClone", PluggableDatabasesLocalCloneArgs.builder()
  *             .clonedPdbName(pluggableDatabasesLocalCloneClonedPdbName)
- *             .pluggableDatabaseId(testPluggableDatabase.id())
+ *             .pluggableDatabaseId(testPluggableDatabase.get("id"))
  *             .pdbAdminPassword(pluggableDatabasesLocalClonePdbAdminPassword)
  *             .shouldPdbAdminAccountBeLocked(pluggableDatabasesLocalCloneShouldPdbAdminAccountBeLocked)
  *             .targetTdeWalletPassword(pluggableDatabasesLocalCloneTargetTdeWalletPassword)

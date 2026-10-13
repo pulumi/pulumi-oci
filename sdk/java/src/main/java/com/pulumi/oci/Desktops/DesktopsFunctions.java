@@ -60,7 +60,7 @@ public final class DesktopsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDesktop = DesktopsFunctions.getDesktop(GetDesktopArgs.builder()
-     *             .desktopId(testDesktopOciDesktopsDesktop.id())
+     *             .desktopId(testDesktopOciDesktopsDesktop.get("id"))
      *             .build());
      * 
      *     }
@@ -102,7 +102,7 @@ public final class DesktopsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDesktop = DesktopsFunctions.getDesktop(GetDesktopArgs.builder()
-     *             .desktopId(testDesktopOciDesktopsDesktop.id())
+     *             .desktopId(testDesktopOciDesktopsDesktop.get("id"))
      *             .build());
      * 
      *     }
@@ -144,7 +144,7 @@ public final class DesktopsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDesktop = DesktopsFunctions.getDesktop(GetDesktopArgs.builder()
-     *             .desktopId(testDesktopOciDesktopsDesktop.id())
+     *             .desktopId(testDesktopOciDesktopsDesktop.get("id"))
      *             .build());
      * 
      *     }
@@ -186,7 +186,7 @@ public final class DesktopsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDesktop = DesktopsFunctions.getDesktop(GetDesktopArgs.builder()
-     *             .desktopId(testDesktopOciDesktopsDesktop.id())
+     *             .desktopId(testDesktopOciDesktopsDesktop.get("id"))
      *             .build());
      * 
      *     }
@@ -228,7 +228,7 @@ public final class DesktopsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDesktop = DesktopsFunctions.getDesktop(GetDesktopArgs.builder()
-     *             .desktopId(testDesktopOciDesktopsDesktop.id())
+     *             .desktopId(testDesktopOciDesktopsDesktop.get("id"))
      *             .build());
      * 
      *     }
@@ -270,7 +270,7 @@ public final class DesktopsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDesktopPool = DesktopsFunctions.getDesktopPool(GetDesktopPoolArgs.builder()
-     *             .desktopPoolId(testDesktopPoolOciDesktopsDesktopPool.id())
+     *             .desktopPoolId(testDesktopPoolOciDesktopsDesktopPool.get("id"))
      *             .build());
      * 
      *     }
@@ -312,7 +312,7 @@ public final class DesktopsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDesktopPool = DesktopsFunctions.getDesktopPool(GetDesktopPoolArgs.builder()
-     *             .desktopPoolId(testDesktopPoolOciDesktopsDesktopPool.id())
+     *             .desktopPoolId(testDesktopPoolOciDesktopsDesktopPool.get("id"))
      *             .build());
      * 
      *     }
@@ -354,7 +354,7 @@ public final class DesktopsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDesktopPool = DesktopsFunctions.getDesktopPool(GetDesktopPoolArgs.builder()
-     *             .desktopPoolId(testDesktopPoolOciDesktopsDesktopPool.id())
+     *             .desktopPoolId(testDesktopPoolOciDesktopsDesktopPool.get("id"))
      *             .build());
      * 
      *     }
@@ -396,7 +396,7 @@ public final class DesktopsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDesktopPool = DesktopsFunctions.getDesktopPool(GetDesktopPoolArgs.builder()
-     *             .desktopPoolId(testDesktopPoolOciDesktopsDesktopPool.id())
+     *             .desktopPoolId(testDesktopPoolOciDesktopsDesktopPool.get("id"))
      *             .build());
      * 
      *     }
@@ -438,7 +438,7 @@ public final class DesktopsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDesktopPool = DesktopsFunctions.getDesktopPool(GetDesktopPoolArgs.builder()
-     *             .desktopPoolId(testDesktopPoolOciDesktopsDesktopPool.id())
+     *             .desktopPoolId(testDesktopPoolOciDesktopsDesktopPool.get("id"))
      *             .build());
      * 
      *     }
@@ -481,7 +481,7 @@ public final class DesktopsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDesktopPoolDesktops = DesktopsFunctions.getDesktopPoolDesktops(GetDesktopPoolDesktopsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .desktopPoolId(testDesktopPool.id())
+     *             .desktopPoolId(testDesktopPool.get("id"))
      *             .availabilityDomain(desktopPoolDesktopAvailabilityDomain)
      *             .displayName(desktopPoolDesktopDisplayName)
      *             .id(desktopPoolDesktopId)
@@ -528,7 +528,7 @@ public final class DesktopsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDesktopPoolDesktops = DesktopsFunctions.getDesktopPoolDesktops(GetDesktopPoolDesktopsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .desktopPoolId(testDesktopPool.id())
+     *             .desktopPoolId(testDesktopPool.get("id"))
      *             .availabilityDomain(desktopPoolDesktopAvailabilityDomain)
      *             .displayName(desktopPoolDesktopDisplayName)
      *             .id(desktopPoolDesktopId)
@@ -575,7 +575,7 @@ public final class DesktopsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDesktopPoolDesktops = DesktopsFunctions.getDesktopPoolDesktops(GetDesktopPoolDesktopsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .desktopPoolId(testDesktopPool.id())
+     *             .desktopPoolId(testDesktopPool.get("id"))
      *             .availabilityDomain(desktopPoolDesktopAvailabilityDomain)
      *             .displayName(desktopPoolDesktopDisplayName)
      *             .id(desktopPoolDesktopId)
@@ -622,7 +622,7 @@ public final class DesktopsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDesktopPoolDesktops = DesktopsFunctions.getDesktopPoolDesktops(GetDesktopPoolDesktopsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .desktopPoolId(testDesktopPool.id())
+     *             .desktopPoolId(testDesktopPool.get("id"))
      *             .availabilityDomain(desktopPoolDesktopAvailabilityDomain)
      *             .displayName(desktopPoolDesktopDisplayName)
      *             .id(desktopPoolDesktopId)
@@ -669,7 +669,7 @@ public final class DesktopsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDesktopPoolDesktops = DesktopsFunctions.getDesktopPoolDesktops(GetDesktopPoolDesktopsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .desktopPoolId(testDesktopPool.id())
+     *             .desktopPoolId(testDesktopPool.get("id"))
      *             .availabilityDomain(desktopPoolDesktopAvailabilityDomain)
      *             .displayName(desktopPoolDesktopDisplayName)
      *             .id(desktopPoolDesktopId)
@@ -716,7 +716,7 @@ public final class DesktopsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDesktopPoolVolumes = DesktopsFunctions.getDesktopPoolVolumes(GetDesktopPoolVolumesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .desktopPoolId(testDesktopPool.id())
+     *             .desktopPoolId(testDesktopPool.get("id"))
      *             .availabilityDomain(desktopPoolVolumeAvailabilityDomain)
      *             .displayName(desktopPoolVolumeDisplayName)
      *             .id(desktopPoolVolumeId)
@@ -763,7 +763,7 @@ public final class DesktopsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDesktopPoolVolumes = DesktopsFunctions.getDesktopPoolVolumes(GetDesktopPoolVolumesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .desktopPoolId(testDesktopPool.id())
+     *             .desktopPoolId(testDesktopPool.get("id"))
      *             .availabilityDomain(desktopPoolVolumeAvailabilityDomain)
      *             .displayName(desktopPoolVolumeDisplayName)
      *             .id(desktopPoolVolumeId)
@@ -810,7 +810,7 @@ public final class DesktopsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDesktopPoolVolumes = DesktopsFunctions.getDesktopPoolVolumes(GetDesktopPoolVolumesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .desktopPoolId(testDesktopPool.id())
+     *             .desktopPoolId(testDesktopPool.get("id"))
      *             .availabilityDomain(desktopPoolVolumeAvailabilityDomain)
      *             .displayName(desktopPoolVolumeDisplayName)
      *             .id(desktopPoolVolumeId)
@@ -857,7 +857,7 @@ public final class DesktopsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDesktopPoolVolumes = DesktopsFunctions.getDesktopPoolVolumes(GetDesktopPoolVolumesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .desktopPoolId(testDesktopPool.id())
+     *             .desktopPoolId(testDesktopPool.get("id"))
      *             .availabilityDomain(desktopPoolVolumeAvailabilityDomain)
      *             .displayName(desktopPoolVolumeDisplayName)
      *             .id(desktopPoolVolumeId)
@@ -904,7 +904,7 @@ public final class DesktopsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDesktopPoolVolumes = DesktopsFunctions.getDesktopPoolVolumes(GetDesktopPoolVolumesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .desktopPoolId(testDesktopPool.id())
+     *             .desktopPoolId(testDesktopPool.get("id"))
      *             .availabilityDomain(desktopPoolVolumeAvailabilityDomain)
      *             .displayName(desktopPoolVolumeDisplayName)
      *             .id(desktopPoolVolumeId)
@@ -1182,7 +1182,7 @@ public final class DesktopsFunctions {
      *         final var testDesktops = DesktopsFunctions.getDesktops(GetDesktopsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(desktopAvailabilityDomain)
-     *             .desktopPoolId(testDesktopPool.id())
+     *             .desktopPoolId(testDesktopPool.get("id"))
      *             .displayName(desktopDisplayName)
      *             .id(desktopId)
      *             .state(desktopState)
@@ -1229,7 +1229,7 @@ public final class DesktopsFunctions {
      *         final var testDesktops = DesktopsFunctions.getDesktops(GetDesktopsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(desktopAvailabilityDomain)
-     *             .desktopPoolId(testDesktopPool.id())
+     *             .desktopPoolId(testDesktopPool.get("id"))
      *             .displayName(desktopDisplayName)
      *             .id(desktopId)
      *             .state(desktopState)
@@ -1276,7 +1276,7 @@ public final class DesktopsFunctions {
      *         final var testDesktops = DesktopsFunctions.getDesktops(GetDesktopsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(desktopAvailabilityDomain)
-     *             .desktopPoolId(testDesktopPool.id())
+     *             .desktopPoolId(testDesktopPool.get("id"))
      *             .displayName(desktopDisplayName)
      *             .id(desktopId)
      *             .state(desktopState)
@@ -1323,7 +1323,7 @@ public final class DesktopsFunctions {
      *         final var testDesktops = DesktopsFunctions.getDesktops(GetDesktopsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(desktopAvailabilityDomain)
-     *             .desktopPoolId(testDesktopPool.id())
+     *             .desktopPoolId(testDesktopPool.get("id"))
      *             .displayName(desktopDisplayName)
      *             .id(desktopId)
      *             .state(desktopState)
@@ -1370,7 +1370,7 @@ public final class DesktopsFunctions {
      *         final var testDesktops = DesktopsFunctions.getDesktops(GetDesktopsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .availabilityDomain(desktopAvailabilityDomain)
-     *             .desktopPoolId(testDesktopPool.id())
+     *             .desktopPoolId(testDesktopPool.get("id"))
      *             .displayName(desktopDisplayName)
      *             .id(desktopId)
      *             .state(desktopState)

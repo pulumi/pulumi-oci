@@ -323,8 +323,8 @@ public final class FileStorageFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExports = FileStorageFunctions.getExports(GetExportsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .exportSetId(testExportSet.id())
-     *             .fileSystemId(testFileSystem.id())
+     *             .exportSetId(testExportSet.get("id"))
+     *             .fileSystemId(testFileSystem.get("id"))
      *             .id(exportId)
      *             .state(exportState)
      *             .build());
@@ -371,8 +371,8 @@ public final class FileStorageFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExports = FileStorageFunctions.getExports(GetExportsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .exportSetId(testExportSet.id())
-     *             .fileSystemId(testFileSystem.id())
+     *             .exportSetId(testExportSet.get("id"))
+     *             .fileSystemId(testFileSystem.get("id"))
      *             .id(exportId)
      *             .state(exportState)
      *             .build());
@@ -419,8 +419,8 @@ public final class FileStorageFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExports = FileStorageFunctions.getExports(GetExportsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .exportSetId(testExportSet.id())
-     *             .fileSystemId(testFileSystem.id())
+     *             .exportSetId(testExportSet.get("id"))
+     *             .fileSystemId(testFileSystem.get("id"))
      *             .id(exportId)
      *             .state(exportState)
      *             .build());
@@ -467,8 +467,8 @@ public final class FileStorageFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExports = FileStorageFunctions.getExports(GetExportsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .exportSetId(testExportSet.id())
-     *             .fileSystemId(testFileSystem.id())
+     *             .exportSetId(testExportSet.get("id"))
+     *             .fileSystemId(testFileSystem.get("id"))
      *             .id(exportId)
      *             .state(exportState)
      *             .build());
@@ -515,8 +515,8 @@ public final class FileStorageFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExports = FileStorageFunctions.getExports(GetExportsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .exportSetId(testExportSet.id())
-     *             .fileSystemId(testFileSystem.id())
+     *             .exportSetId(testExportSet.get("id"))
+     *             .fileSystemId(testFileSystem.get("id"))
      *             .id(exportId)
      *             .state(exportState)
      *             .build());
@@ -563,8 +563,8 @@ public final class FileStorageFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExports = FileStorageFunctions.getExports(GetExportsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .exportSetId(testExportSet.id())
-     *             .fileSystemId(testFileSystem.id())
+     *             .exportSetId(testExportSet.get("id"))
+     *             .fileSystemId(testFileSystem.get("id"))
      *             .id(exportId)
      *             .state(exportState)
      *             .build());
@@ -611,8 +611,8 @@ public final class FileStorageFunctions {
      *     public static void stack(Context ctx) {
      *         final var testExports = FileStorageFunctions.getExports(GetExportsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .exportSetId(testExportSet.id())
-     *             .fileSystemId(testFileSystem.id())
+     *             .exportSetId(testExportSet.get("id"))
+     *             .fileSystemId(testFileSystem.get("id"))
      *             .id(exportId)
      *             .state(exportState)
      *             .build());
@@ -656,8 +656,8 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFileSystemQuotaRule = FileStorageFunctions.getFileSystemQuotaRule(GetFileSystemQuotaRuleArgs.builder()
-     *             .fileSystemId(testFileSystem.id())
-     *             .quotaRuleId(testRule.id())
+     *             .fileSystemId(testFileSystem.get("id"))
+     *             .quotaRuleId(testRule.get("id"))
      *             .build());
      * 
      *     }
@@ -699,8 +699,8 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFileSystemQuotaRule = FileStorageFunctions.getFileSystemQuotaRule(GetFileSystemQuotaRuleArgs.builder()
-     *             .fileSystemId(testFileSystem.id())
-     *             .quotaRuleId(testRule.id())
+     *             .fileSystemId(testFileSystem.get("id"))
+     *             .quotaRuleId(testRule.get("id"))
      *             .build());
      * 
      *     }
@@ -742,8 +742,8 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFileSystemQuotaRule = FileStorageFunctions.getFileSystemQuotaRule(GetFileSystemQuotaRuleArgs.builder()
-     *             .fileSystemId(testFileSystem.id())
-     *             .quotaRuleId(testRule.id())
+     *             .fileSystemId(testFileSystem.get("id"))
+     *             .quotaRuleId(testRule.get("id"))
      *             .build());
      * 
      *     }
@@ -785,8 +785,8 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFileSystemQuotaRule = FileStorageFunctions.getFileSystemQuotaRule(GetFileSystemQuotaRuleArgs.builder()
-     *             .fileSystemId(testFileSystem.id())
-     *             .quotaRuleId(testRule.id())
+     *             .fileSystemId(testFileSystem.get("id"))
+     *             .quotaRuleId(testRule.get("id"))
      *             .build());
      * 
      *     }
@@ -828,8 +828,8 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFileSystemQuotaRule = FileStorageFunctions.getFileSystemQuotaRule(GetFileSystemQuotaRuleArgs.builder()
-     *             .fileSystemId(testFileSystem.id())
-     *             .quotaRuleId(testRule.id())
+     *             .fileSystemId(testFileSystem.get("id"))
+     *             .quotaRuleId(testRule.get("id"))
      *             .build());
      * 
      *     }
@@ -871,10 +871,10 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFileSystemQuotaRules = FileStorageFunctions.getFileSystemQuotaRules(GetFileSystemQuotaRulesArgs.builder()
-     *             .fileSystemId(testFileSystem.id())
+     *             .fileSystemId(testFileSystem.get("id"))
      *             .principalType(fileSystemQuotaRulePrincipalType)
      *             .areViolatorsOnly(fileSystemQuotaRuleAreViolatorsOnly)
-     *             .principalId(testPrincipal.id())
+     *             .principalId(testPrincipal.get("id"))
      *             .build());
      * 
      *     }
@@ -916,10 +916,10 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFileSystemQuotaRules = FileStorageFunctions.getFileSystemQuotaRules(GetFileSystemQuotaRulesArgs.builder()
-     *             .fileSystemId(testFileSystem.id())
+     *             .fileSystemId(testFileSystem.get("id"))
      *             .principalType(fileSystemQuotaRulePrincipalType)
      *             .areViolatorsOnly(fileSystemQuotaRuleAreViolatorsOnly)
-     *             .principalId(testPrincipal.id())
+     *             .principalId(testPrincipal.get("id"))
      *             .build());
      * 
      *     }
@@ -961,10 +961,10 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFileSystemQuotaRules = FileStorageFunctions.getFileSystemQuotaRules(GetFileSystemQuotaRulesArgs.builder()
-     *             .fileSystemId(testFileSystem.id())
+     *             .fileSystemId(testFileSystem.get("id"))
      *             .principalType(fileSystemQuotaRulePrincipalType)
      *             .areViolatorsOnly(fileSystemQuotaRuleAreViolatorsOnly)
-     *             .principalId(testPrincipal.id())
+     *             .principalId(testPrincipal.get("id"))
      *             .build());
      * 
      *     }
@@ -1006,10 +1006,10 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFileSystemQuotaRules = FileStorageFunctions.getFileSystemQuotaRules(GetFileSystemQuotaRulesArgs.builder()
-     *             .fileSystemId(testFileSystem.id())
+     *             .fileSystemId(testFileSystem.get("id"))
      *             .principalType(fileSystemQuotaRulePrincipalType)
      *             .areViolatorsOnly(fileSystemQuotaRuleAreViolatorsOnly)
-     *             .principalId(testPrincipal.id())
+     *             .principalId(testPrincipal.get("id"))
      *             .build());
      * 
      *     }
@@ -1051,10 +1051,10 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFileSystemQuotaRules = FileStorageFunctions.getFileSystemQuotaRules(GetFileSystemQuotaRulesArgs.builder()
-     *             .fileSystemId(testFileSystem.id())
+     *             .fileSystemId(testFileSystem.get("id"))
      *             .principalType(fileSystemQuotaRulePrincipalType)
      *             .areViolatorsOnly(fileSystemQuotaRuleAreViolatorsOnly)
-     *             .principalId(testPrincipal.id())
+     *             .principalId(testPrincipal.get("id"))
      *             .build());
      * 
      *     }
@@ -1100,10 +1100,10 @@ public final class FileStorageFunctions {
      *             .availabilityDomain(fileSystemAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .displayName(fileSystemDisplayName)
-     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.id())
+     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.get("id"))
      *             .id(fileSystemId)
-     *             .parentFileSystemId(testFileSystem.id())
-     *             .sourceSnapshotId(testSnapshot.id())
+     *             .parentFileSystemId(testFileSystem.get("id"))
+     *             .sourceSnapshotId(testSnapshot.get("id"))
      *             .state(fileSystemState)
      *             .build());
      * 
@@ -1150,10 +1150,10 @@ public final class FileStorageFunctions {
      *             .availabilityDomain(fileSystemAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .displayName(fileSystemDisplayName)
-     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.id())
+     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.get("id"))
      *             .id(fileSystemId)
-     *             .parentFileSystemId(testFileSystem.id())
-     *             .sourceSnapshotId(testSnapshot.id())
+     *             .parentFileSystemId(testFileSystem.get("id"))
+     *             .sourceSnapshotId(testSnapshot.get("id"))
      *             .state(fileSystemState)
      *             .build());
      * 
@@ -1200,10 +1200,10 @@ public final class FileStorageFunctions {
      *             .availabilityDomain(fileSystemAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .displayName(fileSystemDisplayName)
-     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.id())
+     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.get("id"))
      *             .id(fileSystemId)
-     *             .parentFileSystemId(testFileSystem.id())
-     *             .sourceSnapshotId(testSnapshot.id())
+     *             .parentFileSystemId(testFileSystem.get("id"))
+     *             .sourceSnapshotId(testSnapshot.get("id"))
      *             .state(fileSystemState)
      *             .build());
      * 
@@ -1250,10 +1250,10 @@ public final class FileStorageFunctions {
      *             .availabilityDomain(fileSystemAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .displayName(fileSystemDisplayName)
-     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.id())
+     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.get("id"))
      *             .id(fileSystemId)
-     *             .parentFileSystemId(testFileSystem.id())
-     *             .sourceSnapshotId(testSnapshot.id())
+     *             .parentFileSystemId(testFileSystem.get("id"))
+     *             .sourceSnapshotId(testSnapshot.get("id"))
      *             .state(fileSystemState)
      *             .build());
      * 
@@ -1300,10 +1300,10 @@ public final class FileStorageFunctions {
      *             .availabilityDomain(fileSystemAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .displayName(fileSystemDisplayName)
-     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.id())
+     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.get("id"))
      *             .id(fileSystemId)
-     *             .parentFileSystemId(testFileSystem.id())
-     *             .sourceSnapshotId(testSnapshot.id())
+     *             .parentFileSystemId(testFileSystem.get("id"))
+     *             .sourceSnapshotId(testSnapshot.get("id"))
      *             .state(fileSystemState)
      *             .build());
      * 
@@ -1576,7 +1576,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFilesystemSnapshotPolicy = FileStorageFunctions.getFilesystemSnapshotPolicy(GetFilesystemSnapshotPolicyArgs.builder()
-     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicyOciFileStorageFilesystemSnapshotPolicy.id())
+     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicyOciFileStorageFilesystemSnapshotPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1618,7 +1618,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFilesystemSnapshotPolicy = FileStorageFunctions.getFilesystemSnapshotPolicy(GetFilesystemSnapshotPolicyArgs.builder()
-     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicyOciFileStorageFilesystemSnapshotPolicy.id())
+     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicyOciFileStorageFilesystemSnapshotPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1660,7 +1660,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFilesystemSnapshotPolicy = FileStorageFunctions.getFilesystemSnapshotPolicy(GetFilesystemSnapshotPolicyArgs.builder()
-     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicyOciFileStorageFilesystemSnapshotPolicy.id())
+     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicyOciFileStorageFilesystemSnapshotPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1702,7 +1702,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFilesystemSnapshotPolicy = FileStorageFunctions.getFilesystemSnapshotPolicy(GetFilesystemSnapshotPolicyArgs.builder()
-     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicyOciFileStorageFilesystemSnapshotPolicy.id())
+     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicyOciFileStorageFilesystemSnapshotPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1744,7 +1744,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFilesystemSnapshotPolicy = FileStorageFunctions.getFilesystemSnapshotPolicy(GetFilesystemSnapshotPolicyArgs.builder()
-     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicyOciFileStorageFilesystemSnapshotPolicy.id())
+     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicyOciFileStorageFilesystemSnapshotPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1789,7 +1789,7 @@ public final class FileStorageFunctions {
      *             .availabilityDomain(mountTargetAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .displayName(mountTargetDisplayName)
-     *             .exportSetId(testExportSet.id())
+     *             .exportSetId(testExportSet.get("id"))
      *             .id(mountTargetId)
      *             .state(mountTargetState)
      *             .build());
@@ -1836,7 +1836,7 @@ public final class FileStorageFunctions {
      *             .availabilityDomain(mountTargetAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .displayName(mountTargetDisplayName)
-     *             .exportSetId(testExportSet.id())
+     *             .exportSetId(testExportSet.get("id"))
      *             .id(mountTargetId)
      *             .state(mountTargetState)
      *             .build());
@@ -1883,7 +1883,7 @@ public final class FileStorageFunctions {
      *             .availabilityDomain(mountTargetAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .displayName(mountTargetDisplayName)
-     *             .exportSetId(testExportSet.id())
+     *             .exportSetId(testExportSet.get("id"))
      *             .id(mountTargetId)
      *             .state(mountTargetState)
      *             .build());
@@ -1930,7 +1930,7 @@ public final class FileStorageFunctions {
      *             .availabilityDomain(mountTargetAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .displayName(mountTargetDisplayName)
-     *             .exportSetId(testExportSet.id())
+     *             .exportSetId(testExportSet.get("id"))
      *             .id(mountTargetId)
      *             .state(mountTargetState)
      *             .build());
@@ -1977,7 +1977,7 @@ public final class FileStorageFunctions {
      *             .availabilityDomain(mountTargetAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .displayName(mountTargetDisplayName)
-     *             .exportSetId(testExportSet.id())
+     *             .exportSetId(testExportSet.get("id"))
      *             .id(mountTargetId)
      *             .state(mountTargetState)
      *             .build());
@@ -2021,7 +2021,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOutboundConnector = FileStorageFunctions.getOutboundConnector(GetOutboundConnectorArgs.builder()
-     *             .outboundConnectorId(testOutboundConnectorOciFileStorageOutboundConnector.id())
+     *             .outboundConnectorId(testOutboundConnectorOciFileStorageOutboundConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -2063,7 +2063,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOutboundConnector = FileStorageFunctions.getOutboundConnector(GetOutboundConnectorArgs.builder()
-     *             .outboundConnectorId(testOutboundConnectorOciFileStorageOutboundConnector.id())
+     *             .outboundConnectorId(testOutboundConnectorOciFileStorageOutboundConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -2105,7 +2105,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOutboundConnector = FileStorageFunctions.getOutboundConnector(GetOutboundConnectorArgs.builder()
-     *             .outboundConnectorId(testOutboundConnectorOciFileStorageOutboundConnector.id())
+     *             .outboundConnectorId(testOutboundConnectorOciFileStorageOutboundConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -2147,7 +2147,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOutboundConnector = FileStorageFunctions.getOutboundConnector(GetOutboundConnectorArgs.builder()
-     *             .outboundConnectorId(testOutboundConnectorOciFileStorageOutboundConnector.id())
+     *             .outboundConnectorId(testOutboundConnectorOciFileStorageOutboundConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -2189,7 +2189,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOutboundConnector = FileStorageFunctions.getOutboundConnector(GetOutboundConnectorArgs.builder()
-     *             .outboundConnectorId(testOutboundConnectorOciFileStorageOutboundConnector.id())
+     *             .outboundConnectorId(testOutboundConnectorOciFileStorageOutboundConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -2461,7 +2461,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplication = FileStorageFunctions.getReplication(GetReplicationArgs.builder()
-     *             .replicationId(testReplicationOciFileStorageReplication.id())
+     *             .replicationId(testReplicationOciFileStorageReplication.get("id"))
      *             .build());
      * 
      *     }
@@ -2503,7 +2503,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplication = FileStorageFunctions.getReplication(GetReplicationArgs.builder()
-     *             .replicationId(testReplicationOciFileStorageReplication.id())
+     *             .replicationId(testReplicationOciFileStorageReplication.get("id"))
      *             .build());
      * 
      *     }
@@ -2545,7 +2545,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplication = FileStorageFunctions.getReplication(GetReplicationArgs.builder()
-     *             .replicationId(testReplicationOciFileStorageReplication.id())
+     *             .replicationId(testReplicationOciFileStorageReplication.get("id"))
      *             .build());
      * 
      *     }
@@ -2587,7 +2587,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplication = FileStorageFunctions.getReplication(GetReplicationArgs.builder()
-     *             .replicationId(testReplicationOciFileStorageReplication.id())
+     *             .replicationId(testReplicationOciFileStorageReplication.get("id"))
      *             .build());
      * 
      *     }
@@ -2629,7 +2629,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplication = FileStorageFunctions.getReplication(GetReplicationArgs.builder()
-     *             .replicationId(testReplicationOciFileStorageReplication.id())
+     *             .replicationId(testReplicationOciFileStorageReplication.get("id"))
      *             .build());
      * 
      *     }
@@ -2671,7 +2671,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationTarget = FileStorageFunctions.getReplicationTarget(GetReplicationTargetArgs.builder()
-     *             .replicationTargetId(testReplicationTargetOciFileStorageReplicationTarget.id())
+     *             .replicationTargetId(testReplicationTargetOciFileStorageReplicationTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -2713,7 +2713,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationTarget = FileStorageFunctions.getReplicationTarget(GetReplicationTargetArgs.builder()
-     *             .replicationTargetId(testReplicationTargetOciFileStorageReplicationTarget.id())
+     *             .replicationTargetId(testReplicationTargetOciFileStorageReplicationTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -2755,7 +2755,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationTarget = FileStorageFunctions.getReplicationTarget(GetReplicationTargetArgs.builder()
-     *             .replicationTargetId(testReplicationTargetOciFileStorageReplicationTarget.id())
+     *             .replicationTargetId(testReplicationTargetOciFileStorageReplicationTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -2797,7 +2797,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationTarget = FileStorageFunctions.getReplicationTarget(GetReplicationTargetArgs.builder()
-     *             .replicationTargetId(testReplicationTargetOciFileStorageReplicationTarget.id())
+     *             .replicationTargetId(testReplicationTargetOciFileStorageReplicationTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -2839,7 +2839,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationTarget = FileStorageFunctions.getReplicationTarget(GetReplicationTargetArgs.builder()
-     *             .replicationTargetId(testReplicationTargetOciFileStorageReplicationTarget.id())
+     *             .replicationTargetId(testReplicationTargetOciFileStorageReplicationTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -3114,7 +3114,7 @@ public final class FileStorageFunctions {
      *             .availabilityDomain(replicationAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .displayName(replicationDisplayName)
-     *             .fileSystemId(testFileSystem.id())
+     *             .fileSystemId(testFileSystem.get("id"))
      *             .id(replicationId)
      *             .state(replicationState)
      *             .build());
@@ -3161,7 +3161,7 @@ public final class FileStorageFunctions {
      *             .availabilityDomain(replicationAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .displayName(replicationDisplayName)
-     *             .fileSystemId(testFileSystem.id())
+     *             .fileSystemId(testFileSystem.get("id"))
      *             .id(replicationId)
      *             .state(replicationState)
      *             .build());
@@ -3208,7 +3208,7 @@ public final class FileStorageFunctions {
      *             .availabilityDomain(replicationAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .displayName(replicationDisplayName)
-     *             .fileSystemId(testFileSystem.id())
+     *             .fileSystemId(testFileSystem.get("id"))
      *             .id(replicationId)
      *             .state(replicationState)
      *             .build());
@@ -3255,7 +3255,7 @@ public final class FileStorageFunctions {
      *             .availabilityDomain(replicationAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .displayName(replicationDisplayName)
-     *             .fileSystemId(testFileSystem.id())
+     *             .fileSystemId(testFileSystem.get("id"))
      *             .id(replicationId)
      *             .state(replicationState)
      *             .build());
@@ -3302,7 +3302,7 @@ public final class FileStorageFunctions {
      *             .availabilityDomain(replicationAvailabilityDomain)
      *             .compartmentId(compartmentId)
      *             .displayName(replicationDisplayName)
-     *             .fileSystemId(testFileSystem.id())
+     *             .fileSystemId(testFileSystem.get("id"))
      *             .id(replicationId)
      *             .state(replicationState)
      *             .build());
@@ -3346,7 +3346,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSnapshot = FileStorageFunctions.getSnapshot(GetSnapshotArgs.builder()
-     *             .snapshotId(testSnapshotOciFileStorageSnapshot.id())
+     *             .snapshotId(testSnapshotOciFileStorageSnapshot.get("id"))
      *             .build());
      * 
      *     }
@@ -3388,7 +3388,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSnapshot = FileStorageFunctions.getSnapshot(GetSnapshotArgs.builder()
-     *             .snapshotId(testSnapshotOciFileStorageSnapshot.id())
+     *             .snapshotId(testSnapshotOciFileStorageSnapshot.get("id"))
      *             .build());
      * 
      *     }
@@ -3430,7 +3430,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSnapshot = FileStorageFunctions.getSnapshot(GetSnapshotArgs.builder()
-     *             .snapshotId(testSnapshotOciFileStorageSnapshot.id())
+     *             .snapshotId(testSnapshotOciFileStorageSnapshot.get("id"))
      *             .build());
      * 
      *     }
@@ -3472,7 +3472,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSnapshot = FileStorageFunctions.getSnapshot(GetSnapshotArgs.builder()
-     *             .snapshotId(testSnapshotOciFileStorageSnapshot.id())
+     *             .snapshotId(testSnapshotOciFileStorageSnapshot.get("id"))
      *             .build());
      * 
      *     }
@@ -3514,7 +3514,7 @@ public final class FileStorageFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSnapshot = FileStorageFunctions.getSnapshot(GetSnapshotArgs.builder()
-     *             .snapshotId(testSnapshotOciFileStorageSnapshot.id())
+     *             .snapshotId(testSnapshotOciFileStorageSnapshot.get("id"))
      *             .build());
      * 
      *     }
@@ -3563,8 +3563,8 @@ public final class FileStorageFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSnapshots = FileStorageFunctions.getSnapshots(GetSnapshotsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .fileSystemId(testFileSystem.id())
-     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.id())
+     *             .fileSystemId(testFileSystem.get("id"))
+     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.get("id"))
      *             .id(snapshotId)
      *             .state(snapshotState)
      *             .build());
@@ -3615,8 +3615,8 @@ public final class FileStorageFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSnapshots = FileStorageFunctions.getSnapshots(GetSnapshotsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .fileSystemId(testFileSystem.id())
-     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.id())
+     *             .fileSystemId(testFileSystem.get("id"))
+     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.get("id"))
      *             .id(snapshotId)
      *             .state(snapshotState)
      *             .build());
@@ -3667,8 +3667,8 @@ public final class FileStorageFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSnapshots = FileStorageFunctions.getSnapshots(GetSnapshotsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .fileSystemId(testFileSystem.id())
-     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.id())
+     *             .fileSystemId(testFileSystem.get("id"))
+     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.get("id"))
      *             .id(snapshotId)
      *             .state(snapshotState)
      *             .build());
@@ -3719,8 +3719,8 @@ public final class FileStorageFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSnapshots = FileStorageFunctions.getSnapshots(GetSnapshotsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .fileSystemId(testFileSystem.id())
-     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.id())
+     *             .fileSystemId(testFileSystem.get("id"))
+     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.get("id"))
      *             .id(snapshotId)
      *             .state(snapshotState)
      *             .build());
@@ -3771,8 +3771,8 @@ public final class FileStorageFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSnapshots = FileStorageFunctions.getSnapshots(GetSnapshotsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .fileSystemId(testFileSystem.id())
-     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.id())
+     *             .fileSystemId(testFileSystem.get("id"))
+     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.get("id"))
      *             .id(snapshotId)
      *             .state(snapshotState)
      *             .build());
@@ -3823,8 +3823,8 @@ public final class FileStorageFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSnapshots = FileStorageFunctions.getSnapshots(GetSnapshotsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .fileSystemId(testFileSystem.id())
-     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.id())
+     *             .fileSystemId(testFileSystem.get("id"))
+     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.get("id"))
      *             .id(snapshotId)
      *             .state(snapshotState)
      *             .build());
@@ -3875,8 +3875,8 @@ public final class FileStorageFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSnapshots = FileStorageFunctions.getSnapshots(GetSnapshotsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .fileSystemId(testFileSystem.id())
-     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.id())
+     *             .fileSystemId(testFileSystem.get("id"))
+     *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.get("id"))
      *             .id(snapshotId)
      *             .state(snapshotState)
      *             .build());

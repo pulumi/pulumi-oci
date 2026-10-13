@@ -78,7 +78,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalog = DataCatalogFunctions.getCatalog(GetCatalogArgs.builder()
-     *             .catalogId(testCatalogOciDatacatalogCatalog.id())
+     *             .catalogId(testCatalogOciDatacatalogCatalog.get("id"))
      *             .build());
      * 
      *     }
@@ -120,7 +120,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalog = DataCatalogFunctions.getCatalog(GetCatalogArgs.builder()
-     *             .catalogId(testCatalogOciDatacatalogCatalog.id())
+     *             .catalogId(testCatalogOciDatacatalogCatalog.get("id"))
      *             .build());
      * 
      *     }
@@ -162,7 +162,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalog = DataCatalogFunctions.getCatalog(GetCatalogArgs.builder()
-     *             .catalogId(testCatalogOciDatacatalogCatalog.id())
+     *             .catalogId(testCatalogOciDatacatalogCatalog.get("id"))
      *             .build());
      * 
      *     }
@@ -204,7 +204,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalog = DataCatalogFunctions.getCatalog(GetCatalogArgs.builder()
-     *             .catalogId(testCatalogOciDatacatalogCatalog.id())
+     *             .catalogId(testCatalogOciDatacatalogCatalog.get("id"))
      *             .build());
      * 
      *     }
@@ -246,7 +246,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalog = DataCatalogFunctions.getCatalog(GetCatalogArgs.builder()
-     *             .catalogId(testCatalogOciDatacatalogCatalog.id())
+     *             .catalogId(testCatalogOciDatacatalogCatalog.get("id"))
      *             .build());
      * 
      *     }
@@ -288,7 +288,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogPrivateEndpoint = DataCatalogFunctions.getCatalogPrivateEndpoint(GetCatalogPrivateEndpointArgs.builder()
-     *             .catalogPrivateEndpointId(testCatalogPrivateEndpointOciDatacatalogCatalogPrivateEndpoint.id())
+     *             .catalogPrivateEndpointId(testCatalogPrivateEndpointOciDatacatalogCatalogPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -330,7 +330,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogPrivateEndpoint = DataCatalogFunctions.getCatalogPrivateEndpoint(GetCatalogPrivateEndpointArgs.builder()
-     *             .catalogPrivateEndpointId(testCatalogPrivateEndpointOciDatacatalogCatalogPrivateEndpoint.id())
+     *             .catalogPrivateEndpointId(testCatalogPrivateEndpointOciDatacatalogCatalogPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -372,7 +372,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogPrivateEndpoint = DataCatalogFunctions.getCatalogPrivateEndpoint(GetCatalogPrivateEndpointArgs.builder()
-     *             .catalogPrivateEndpointId(testCatalogPrivateEndpointOciDatacatalogCatalogPrivateEndpoint.id())
+     *             .catalogPrivateEndpointId(testCatalogPrivateEndpointOciDatacatalogCatalogPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -414,7 +414,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogPrivateEndpoint = DataCatalogFunctions.getCatalogPrivateEndpoint(GetCatalogPrivateEndpointArgs.builder()
-     *             .catalogPrivateEndpointId(testCatalogPrivateEndpointOciDatacatalogCatalogPrivateEndpoint.id())
+     *             .catalogPrivateEndpointId(testCatalogPrivateEndpointOciDatacatalogCatalogPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -456,7 +456,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogPrivateEndpoint = DataCatalogFunctions.getCatalogPrivateEndpoint(GetCatalogPrivateEndpointArgs.builder()
-     *             .catalogPrivateEndpointId(testCatalogPrivateEndpointOciDatacatalogCatalogPrivateEndpoint.id())
+     *             .catalogPrivateEndpointId(testCatalogPrivateEndpointOciDatacatalogCatalogPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -718,7 +718,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogType = DataCatalogFunctions.getCatalogType(GetCatalogTypeArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .typeKey(catalogTypeTypeKey)
      *             .fields(catalogTypeFields)
      *             .build());
@@ -762,7 +762,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogType = DataCatalogFunctions.getCatalogType(GetCatalogTypeArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .typeKey(catalogTypeTypeKey)
      *             .fields(catalogTypeFields)
      *             .build());
@@ -806,7 +806,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogType = DataCatalogFunctions.getCatalogType(GetCatalogTypeArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .typeKey(catalogTypeTypeKey)
      *             .fields(catalogTypeFields)
      *             .build());
@@ -850,7 +850,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogType = DataCatalogFunctions.getCatalogType(GetCatalogTypeArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .typeKey(catalogTypeTypeKey)
      *             .fields(catalogTypeFields)
      *             .build());
@@ -894,7 +894,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogType = DataCatalogFunctions.getCatalogType(GetCatalogTypeArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .typeKey(catalogTypeTypeKey)
      *             .fields(catalogTypeFields)
      *             .build());
@@ -938,7 +938,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogTypes = DataCatalogFunctions.getCatalogTypes(GetCatalogTypesArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .externalTypeName(catalogTypeExternalTypeName)
      *             .fields(catalogTypeFields)
      *             .isApproved(catalogTypeIsApproved)
@@ -988,7 +988,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogTypes = DataCatalogFunctions.getCatalogTypes(GetCatalogTypesArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .externalTypeName(catalogTypeExternalTypeName)
      *             .fields(catalogTypeFields)
      *             .isApproved(catalogTypeIsApproved)
@@ -1038,7 +1038,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogTypes = DataCatalogFunctions.getCatalogTypes(GetCatalogTypesArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .externalTypeName(catalogTypeExternalTypeName)
      *             .fields(catalogTypeFields)
      *             .isApproved(catalogTypeIsApproved)
@@ -1088,7 +1088,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogTypes = DataCatalogFunctions.getCatalogTypes(GetCatalogTypesArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .externalTypeName(catalogTypeExternalTypeName)
      *             .fields(catalogTypeFields)
      *             .isApproved(catalogTypeIsApproved)
@@ -1138,7 +1138,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogTypes = DataCatalogFunctions.getCatalogTypes(GetCatalogTypesArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .externalTypeName(catalogTypeExternalTypeName)
      *             .fields(catalogTypeFields)
      *             .isApproved(catalogTypeIsApproved)
@@ -1408,7 +1408,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = DataCatalogFunctions.getConnection(GetConnectionArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .connectionKey(connectionConnectionKey)
      *             .dataAssetKey(connectionDataAssetKey)
      *             .fields(connectionFields)
@@ -1453,7 +1453,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = DataCatalogFunctions.getConnection(GetConnectionArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .connectionKey(connectionConnectionKey)
      *             .dataAssetKey(connectionDataAssetKey)
      *             .fields(connectionFields)
@@ -1498,7 +1498,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = DataCatalogFunctions.getConnection(GetConnectionArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .connectionKey(connectionConnectionKey)
      *             .dataAssetKey(connectionDataAssetKey)
      *             .fields(connectionFields)
@@ -1543,7 +1543,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = DataCatalogFunctions.getConnection(GetConnectionArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .connectionKey(connectionConnectionKey)
      *             .dataAssetKey(connectionDataAssetKey)
      *             .fields(connectionFields)
@@ -1588,7 +1588,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = DataCatalogFunctions.getConnection(GetConnectionArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .connectionKey(connectionConnectionKey)
      *             .dataAssetKey(connectionDataAssetKey)
      *             .fields(connectionFields)
@@ -1633,9 +1633,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnections = DataCatalogFunctions.getConnections(GetConnectionsArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .dataAssetKey(connectionDataAssetKey)
-     *             .createdById(testCreatedBy.id())
+     *             .createdById(testCreatedBy.get("id"))
      *             .displayName(connectionDisplayName)
      *             .displayNameContains(connectionDisplayNameContains)
      *             .externalKey(connectionExternalKey)
@@ -1645,7 +1645,7 @@ public final class DataCatalogFunctions {
      *             .timeCreated(connectionTimeCreated)
      *             .timeStatusUpdated(connectionTimeStatusUpdated)
      *             .timeUpdated(connectionTimeUpdated)
-     *             .updatedById(testUpdatedBy.id())
+     *             .updatedById(testUpdatedBy.get("id"))
      *             .build());
      * 
      *     }
@@ -1687,9 +1687,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnections = DataCatalogFunctions.getConnections(GetConnectionsArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .dataAssetKey(connectionDataAssetKey)
-     *             .createdById(testCreatedBy.id())
+     *             .createdById(testCreatedBy.get("id"))
      *             .displayName(connectionDisplayName)
      *             .displayNameContains(connectionDisplayNameContains)
      *             .externalKey(connectionExternalKey)
@@ -1699,7 +1699,7 @@ public final class DataCatalogFunctions {
      *             .timeCreated(connectionTimeCreated)
      *             .timeStatusUpdated(connectionTimeStatusUpdated)
      *             .timeUpdated(connectionTimeUpdated)
-     *             .updatedById(testUpdatedBy.id())
+     *             .updatedById(testUpdatedBy.get("id"))
      *             .build());
      * 
      *     }
@@ -1741,9 +1741,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnections = DataCatalogFunctions.getConnections(GetConnectionsArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .dataAssetKey(connectionDataAssetKey)
-     *             .createdById(testCreatedBy.id())
+     *             .createdById(testCreatedBy.get("id"))
      *             .displayName(connectionDisplayName)
      *             .displayNameContains(connectionDisplayNameContains)
      *             .externalKey(connectionExternalKey)
@@ -1753,7 +1753,7 @@ public final class DataCatalogFunctions {
      *             .timeCreated(connectionTimeCreated)
      *             .timeStatusUpdated(connectionTimeStatusUpdated)
      *             .timeUpdated(connectionTimeUpdated)
-     *             .updatedById(testUpdatedBy.id())
+     *             .updatedById(testUpdatedBy.get("id"))
      *             .build());
      * 
      *     }
@@ -1795,9 +1795,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnections = DataCatalogFunctions.getConnections(GetConnectionsArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .dataAssetKey(connectionDataAssetKey)
-     *             .createdById(testCreatedBy.id())
+     *             .createdById(testCreatedBy.get("id"))
      *             .displayName(connectionDisplayName)
      *             .displayNameContains(connectionDisplayNameContains)
      *             .externalKey(connectionExternalKey)
@@ -1807,7 +1807,7 @@ public final class DataCatalogFunctions {
      *             .timeCreated(connectionTimeCreated)
      *             .timeStatusUpdated(connectionTimeStatusUpdated)
      *             .timeUpdated(connectionTimeUpdated)
-     *             .updatedById(testUpdatedBy.id())
+     *             .updatedById(testUpdatedBy.get("id"))
      *             .build());
      * 
      *     }
@@ -1849,9 +1849,9 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnections = DataCatalogFunctions.getConnections(GetConnectionsArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .dataAssetKey(connectionDataAssetKey)
-     *             .createdById(testCreatedBy.id())
+     *             .createdById(testCreatedBy.get("id"))
      *             .displayName(connectionDisplayName)
      *             .displayNameContains(connectionDisplayNameContains)
      *             .externalKey(connectionExternalKey)
@@ -1861,7 +1861,7 @@ public final class DataCatalogFunctions {
      *             .timeCreated(connectionTimeCreated)
      *             .timeStatusUpdated(connectionTimeStatusUpdated)
      *             .timeUpdated(connectionTimeUpdated)
-     *             .updatedById(testUpdatedBy.id())
+     *             .updatedById(testUpdatedBy.get("id"))
      *             .build());
      * 
      *     }
@@ -1903,7 +1903,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataAsset = DataCatalogFunctions.getDataAsset(GetDataAssetArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .dataAssetKey(dataAssetDataAssetKey)
      *             .fields(dataAssetFields)
      *             .build());
@@ -1947,7 +1947,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataAsset = DataCatalogFunctions.getDataAsset(GetDataAssetArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .dataAssetKey(dataAssetDataAssetKey)
      *             .fields(dataAssetFields)
      *             .build());
@@ -1991,7 +1991,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataAsset = DataCatalogFunctions.getDataAsset(GetDataAssetArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .dataAssetKey(dataAssetDataAssetKey)
      *             .fields(dataAssetFields)
      *             .build());
@@ -2035,7 +2035,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataAsset = DataCatalogFunctions.getDataAsset(GetDataAssetArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .dataAssetKey(dataAssetDataAssetKey)
      *             .fields(dataAssetFields)
      *             .build());
@@ -2079,7 +2079,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataAsset = DataCatalogFunctions.getDataAsset(GetDataAssetArgs.builder()
-     *             .catalogId(testCatalog.id())
+     *             .catalogId(testCatalog.get("id"))
      *             .dataAssetKey(dataAssetDataAssetKey)
      *             .fields(dataAssetFields)
      *             .build());
@@ -2178,7 +2178,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetastore = DataCatalogFunctions.getMetastore(GetMetastoreArgs.builder()
-     *             .metastoreId(testMetastoreOciDatacatalogMetastore.id())
+     *             .metastoreId(testMetastoreOciDatacatalogMetastore.get("id"))
      *             .build());
      * 
      *     }
@@ -2220,7 +2220,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetastore = DataCatalogFunctions.getMetastore(GetMetastoreArgs.builder()
-     *             .metastoreId(testMetastoreOciDatacatalogMetastore.id())
+     *             .metastoreId(testMetastoreOciDatacatalogMetastore.get("id"))
      *             .build());
      * 
      *     }
@@ -2262,7 +2262,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetastore = DataCatalogFunctions.getMetastore(GetMetastoreArgs.builder()
-     *             .metastoreId(testMetastoreOciDatacatalogMetastore.id())
+     *             .metastoreId(testMetastoreOciDatacatalogMetastore.get("id"))
      *             .build());
      * 
      *     }
@@ -2304,7 +2304,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetastore = DataCatalogFunctions.getMetastore(GetMetastoreArgs.builder()
-     *             .metastoreId(testMetastoreOciDatacatalogMetastore.id())
+     *             .metastoreId(testMetastoreOciDatacatalogMetastore.get("id"))
      *             .build());
      * 
      *     }
@@ -2346,7 +2346,7 @@ public final class DataCatalogFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMetastore = DataCatalogFunctions.getMetastore(GetMetastoreArgs.builder()
-     *             .metastoreId(testMetastoreOciDatacatalogMetastore.id())
+     *             .metastoreId(testMetastoreOciDatacatalogMetastore.get("id"))
      *             .build());
      * 
      *     }

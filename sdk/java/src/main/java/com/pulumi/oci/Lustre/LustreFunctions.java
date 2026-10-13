@@ -596,7 +596,7 @@ public final class LustreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLustreFileSystem = LustreFunctions.getFileStorageLustreFileSystem(GetFileStorageLustreFileSystemArgs.builder()
-     *             .lustreFileSystemId(testLustreFileSystemOciLustreFileStorageLustreFileSystem.id())
+     *             .lustreFileSystemId(testLustreFileSystemOciLustreFileStorageLustreFileSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -638,7 +638,7 @@ public final class LustreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLustreFileSystem = LustreFunctions.getFileStorageLustreFileSystem(GetFileStorageLustreFileSystemArgs.builder()
-     *             .lustreFileSystemId(testLustreFileSystemOciLustreFileStorageLustreFileSystem.id())
+     *             .lustreFileSystemId(testLustreFileSystemOciLustreFileStorageLustreFileSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -680,7 +680,7 @@ public final class LustreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLustreFileSystem = LustreFunctions.getFileStorageLustreFileSystem(GetFileStorageLustreFileSystemArgs.builder()
-     *             .lustreFileSystemId(testLustreFileSystemOciLustreFileStorageLustreFileSystem.id())
+     *             .lustreFileSystemId(testLustreFileSystemOciLustreFileStorageLustreFileSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -722,7 +722,7 @@ public final class LustreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLustreFileSystem = LustreFunctions.getFileStorageLustreFileSystem(GetFileStorageLustreFileSystemArgs.builder()
-     *             .lustreFileSystemId(testLustreFileSystemOciLustreFileStorageLustreFileSystem.id())
+     *             .lustreFileSystemId(testLustreFileSystemOciLustreFileStorageLustreFileSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -764,7 +764,7 @@ public final class LustreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLustreFileSystem = LustreFunctions.getFileStorageLustreFileSystem(GetFileStorageLustreFileSystemArgs.builder()
-     *             .lustreFileSystemId(testLustreFileSystemOciLustreFileStorageLustreFileSystem.id())
+     *             .lustreFileSystemId(testLustreFileSystemOciLustreFileStorageLustreFileSystem.get("id"))
      *             .build());
      * 
      *     }
@@ -1128,7 +1128,7 @@ public final class LustreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectStorageLink = LustreFunctions.getFileStorageObjectStorageLink(GetFileStorageObjectStorageLinkArgs.builder()
-     *             .objectStorageLinkId(testObjectStorageLinkOciLustreFileStorageObjectStorageLink.id())
+     *             .objectStorageLinkId(testObjectStorageLinkOciLustreFileStorageObjectStorageLink.get("id"))
      *             .build());
      * 
      *     }
@@ -1170,7 +1170,7 @@ public final class LustreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectStorageLink = LustreFunctions.getFileStorageObjectStorageLink(GetFileStorageObjectStorageLinkArgs.builder()
-     *             .objectStorageLinkId(testObjectStorageLinkOciLustreFileStorageObjectStorageLink.id())
+     *             .objectStorageLinkId(testObjectStorageLinkOciLustreFileStorageObjectStorageLink.get("id"))
      *             .build());
      * 
      *     }
@@ -1212,7 +1212,7 @@ public final class LustreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectStorageLink = LustreFunctions.getFileStorageObjectStorageLink(GetFileStorageObjectStorageLinkArgs.builder()
-     *             .objectStorageLinkId(testObjectStorageLinkOciLustreFileStorageObjectStorageLink.id())
+     *             .objectStorageLinkId(testObjectStorageLinkOciLustreFileStorageObjectStorageLink.get("id"))
      *             .build());
      * 
      *     }
@@ -1254,7 +1254,7 @@ public final class LustreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectStorageLink = LustreFunctions.getFileStorageObjectStorageLink(GetFileStorageObjectStorageLinkArgs.builder()
-     *             .objectStorageLinkId(testObjectStorageLinkOciLustreFileStorageObjectStorageLink.id())
+     *             .objectStorageLinkId(testObjectStorageLinkOciLustreFileStorageObjectStorageLink.get("id"))
      *             .build());
      * 
      *     }
@@ -1296,7 +1296,7 @@ public final class LustreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectStorageLink = LustreFunctions.getFileStorageObjectStorageLink(GetFileStorageObjectStorageLinkArgs.builder()
-     *             .objectStorageLinkId(testObjectStorageLinkOciLustreFileStorageObjectStorageLink.id())
+     *             .objectStorageLinkId(testObjectStorageLinkOciLustreFileStorageObjectStorageLink.get("id"))
      *             .build());
      * 
      *     }
@@ -1338,8 +1338,8 @@ public final class LustreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectStorageLinkSyncJob = LustreFunctions.getFileStorageObjectStorageLinkSyncJob(GetFileStorageObjectStorageLinkSyncJobArgs.builder()
-     *             .objectStorageLinkId(testObjectStorageLink.id())
-     *             .syncJobId(testJob.id())
+     *             .objectStorageLinkId(testObjectStorageLink.get("id"))
+     *             .syncJobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1381,8 +1381,8 @@ public final class LustreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectStorageLinkSyncJob = LustreFunctions.getFileStorageObjectStorageLinkSyncJob(GetFileStorageObjectStorageLinkSyncJobArgs.builder()
-     *             .objectStorageLinkId(testObjectStorageLink.id())
-     *             .syncJobId(testJob.id())
+     *             .objectStorageLinkId(testObjectStorageLink.get("id"))
+     *             .syncJobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1424,8 +1424,8 @@ public final class LustreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectStorageLinkSyncJob = LustreFunctions.getFileStorageObjectStorageLinkSyncJob(GetFileStorageObjectStorageLinkSyncJobArgs.builder()
-     *             .objectStorageLinkId(testObjectStorageLink.id())
-     *             .syncJobId(testJob.id())
+     *             .objectStorageLinkId(testObjectStorageLink.get("id"))
+     *             .syncJobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1467,8 +1467,8 @@ public final class LustreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectStorageLinkSyncJob = LustreFunctions.getFileStorageObjectStorageLinkSyncJob(GetFileStorageObjectStorageLinkSyncJobArgs.builder()
-     *             .objectStorageLinkId(testObjectStorageLink.id())
-     *             .syncJobId(testJob.id())
+     *             .objectStorageLinkId(testObjectStorageLink.get("id"))
+     *             .syncJobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1510,8 +1510,8 @@ public final class LustreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectStorageLinkSyncJob = LustreFunctions.getFileStorageObjectStorageLinkSyncJob(GetFileStorageObjectStorageLinkSyncJobArgs.builder()
-     *             .objectStorageLinkId(testObjectStorageLink.id())
-     *             .syncJobId(testJob.id())
+     *             .objectStorageLinkId(testObjectStorageLink.get("id"))
+     *             .syncJobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1553,7 +1553,7 @@ public final class LustreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectStorageLinkSyncJobs = LustreFunctions.getFileStorageObjectStorageLinkSyncJobs(GetFileStorageObjectStorageLinkSyncJobsArgs.builder()
-     *             .objectStorageLinkId(testObjectStorageLink.id())
+     *             .objectStorageLinkId(testObjectStorageLink.get("id"))
      *             .state(objectStorageLinkSyncJobState)
      *             .build());
      * 
@@ -1596,7 +1596,7 @@ public final class LustreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectStorageLinkSyncJobs = LustreFunctions.getFileStorageObjectStorageLinkSyncJobs(GetFileStorageObjectStorageLinkSyncJobsArgs.builder()
-     *             .objectStorageLinkId(testObjectStorageLink.id())
+     *             .objectStorageLinkId(testObjectStorageLink.get("id"))
      *             .state(objectStorageLinkSyncJobState)
      *             .build());
      * 
@@ -1639,7 +1639,7 @@ public final class LustreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectStorageLinkSyncJobs = LustreFunctions.getFileStorageObjectStorageLinkSyncJobs(GetFileStorageObjectStorageLinkSyncJobsArgs.builder()
-     *             .objectStorageLinkId(testObjectStorageLink.id())
+     *             .objectStorageLinkId(testObjectStorageLink.get("id"))
      *             .state(objectStorageLinkSyncJobState)
      *             .build());
      * 
@@ -1682,7 +1682,7 @@ public final class LustreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectStorageLinkSyncJobs = LustreFunctions.getFileStorageObjectStorageLinkSyncJobs(GetFileStorageObjectStorageLinkSyncJobsArgs.builder()
-     *             .objectStorageLinkId(testObjectStorageLink.id())
+     *             .objectStorageLinkId(testObjectStorageLink.get("id"))
      *             .state(objectStorageLinkSyncJobState)
      *             .build());
      * 
@@ -1725,7 +1725,7 @@ public final class LustreFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testObjectStorageLinkSyncJobs = LustreFunctions.getFileStorageObjectStorageLinkSyncJobs(GetFileStorageObjectStorageLinkSyncJobsArgs.builder()
-     *             .objectStorageLinkId(testObjectStorageLink.id())
+     *             .objectStorageLinkId(testObjectStorageLink.get("id"))
      *             .state(objectStorageLinkSyncJobState)
      *             .build());
      * 
@@ -1772,7 +1772,7 @@ public final class LustreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(objectStorageLinkDisplayName)
      *             .id(objectStorageLinkId)
-     *             .lustreFileSystemId(testLustreFileSystem.id())
+     *             .lustreFileSystemId(testLustreFileSystem.get("id"))
      *             .state(objectStorageLinkState)
      *             .build());
      * 
@@ -1819,7 +1819,7 @@ public final class LustreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(objectStorageLinkDisplayName)
      *             .id(objectStorageLinkId)
-     *             .lustreFileSystemId(testLustreFileSystem.id())
+     *             .lustreFileSystemId(testLustreFileSystem.get("id"))
      *             .state(objectStorageLinkState)
      *             .build());
      * 
@@ -1866,7 +1866,7 @@ public final class LustreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(objectStorageLinkDisplayName)
      *             .id(objectStorageLinkId)
-     *             .lustreFileSystemId(testLustreFileSystem.id())
+     *             .lustreFileSystemId(testLustreFileSystem.get("id"))
      *             .state(objectStorageLinkState)
      *             .build());
      * 
@@ -1913,7 +1913,7 @@ public final class LustreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(objectStorageLinkDisplayName)
      *             .id(objectStorageLinkId)
-     *             .lustreFileSystemId(testLustreFileSystem.id())
+     *             .lustreFileSystemId(testLustreFileSystem.get("id"))
      *             .state(objectStorageLinkState)
      *             .build());
      * 
@@ -1960,7 +1960,7 @@ public final class LustreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(objectStorageLinkDisplayName)
      *             .id(objectStorageLinkId)
-     *             .lustreFileSystemId(testLustreFileSystem.id())
+     *             .lustreFileSystemId(testLustreFileSystem.get("id"))
      *             .state(objectStorageLinkState)
      *             .build());
      * 
@@ -2007,7 +2007,7 @@ public final class LustreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(objectStorageLinkDisplayName)
      *             .id(objectStorageLinkId)
-     *             .lustreFileSystemId(testLustreFileSystem.id())
+     *             .lustreFileSystemId(testLustreFileSystem.get("id"))
      *             .state(objectStorageLinkState)
      *             .build());
      * 
@@ -2054,7 +2054,7 @@ public final class LustreFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(objectStorageLinkDisplayName)
      *             .id(objectStorageLinkId)
-     *             .lustreFileSystemId(testLustreFileSystem.id())
+     *             .lustreFileSystemId(testLustreFileSystem.get("id"))
      *             .state(objectStorageLinkState)
      *             .build());
      * 

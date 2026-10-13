@@ -102,7 +102,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspace = DataIntegrationFunctions.getWorkspace(GetWorkspaceArgs.builder()
-     *             .workspaceId(testWorkspaceOciDataintegrationWorkspace.id())
+     *             .workspaceId(testWorkspaceOciDataintegrationWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -144,7 +144,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspace = DataIntegrationFunctions.getWorkspace(GetWorkspaceArgs.builder()
-     *             .workspaceId(testWorkspaceOciDataintegrationWorkspace.id())
+     *             .workspaceId(testWorkspaceOciDataintegrationWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -186,7 +186,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspace = DataIntegrationFunctions.getWorkspace(GetWorkspaceArgs.builder()
-     *             .workspaceId(testWorkspaceOciDataintegrationWorkspace.id())
+     *             .workspaceId(testWorkspaceOciDataintegrationWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -228,7 +228,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspace = DataIntegrationFunctions.getWorkspace(GetWorkspaceArgs.builder()
-     *             .workspaceId(testWorkspaceOciDataintegrationWorkspace.id())
+     *             .workspaceId(testWorkspaceOciDataintegrationWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -270,7 +270,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspace = DataIntegrationFunctions.getWorkspace(GetWorkspaceArgs.builder()
-     *             .workspaceId(testWorkspaceOciDataintegrationWorkspace.id())
+     *             .workspaceId(testWorkspaceOciDataintegrationWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -313,7 +313,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplication = DataIntegrationFunctions.getWorkspaceApplication(GetWorkspaceApplicationArgs.builder()
      *             .applicationKey(workspaceApplicationApplicationKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -356,7 +356,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplication = DataIntegrationFunctions.getWorkspaceApplication(GetWorkspaceApplicationArgs.builder()
      *             .applicationKey(workspaceApplicationApplicationKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -399,7 +399,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplication = DataIntegrationFunctions.getWorkspaceApplication(GetWorkspaceApplicationArgs.builder()
      *             .applicationKey(workspaceApplicationApplicationKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -442,7 +442,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplication = DataIntegrationFunctions.getWorkspaceApplication(GetWorkspaceApplicationArgs.builder()
      *             .applicationKey(workspaceApplicationApplicationKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -485,7 +485,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplication = DataIntegrationFunctions.getWorkspaceApplication(GetWorkspaceApplicationArgs.builder()
      *             .applicationKey(workspaceApplicationApplicationKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -529,7 +529,7 @@ public final class DataIntegrationFunctions {
      *         final var testWorkspaceApplicationPatch = DataIntegrationFunctions.getWorkspaceApplicationPatch(GetWorkspaceApplicationPatchArgs.builder()
      *             .applicationKey(workspaceApplicationPatchApplicationKey)
      *             .patchKey(workspaceApplicationPatchPatchKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -573,7 +573,7 @@ public final class DataIntegrationFunctions {
      *         final var testWorkspaceApplicationPatch = DataIntegrationFunctions.getWorkspaceApplicationPatch(GetWorkspaceApplicationPatchArgs.builder()
      *             .applicationKey(workspaceApplicationPatchApplicationKey)
      *             .patchKey(workspaceApplicationPatchPatchKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -617,7 +617,7 @@ public final class DataIntegrationFunctions {
      *         final var testWorkspaceApplicationPatch = DataIntegrationFunctions.getWorkspaceApplicationPatch(GetWorkspaceApplicationPatchArgs.builder()
      *             .applicationKey(workspaceApplicationPatchApplicationKey)
      *             .patchKey(workspaceApplicationPatchPatchKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -661,7 +661,7 @@ public final class DataIntegrationFunctions {
      *         final var testWorkspaceApplicationPatch = DataIntegrationFunctions.getWorkspaceApplicationPatch(GetWorkspaceApplicationPatchArgs.builder()
      *             .applicationKey(workspaceApplicationPatchApplicationKey)
      *             .patchKey(workspaceApplicationPatchPatchKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -705,7 +705,7 @@ public final class DataIntegrationFunctions {
      *         final var testWorkspaceApplicationPatch = DataIntegrationFunctions.getWorkspaceApplicationPatch(GetWorkspaceApplicationPatchArgs.builder()
      *             .applicationKey(workspaceApplicationPatchApplicationKey)
      *             .patchKey(workspaceApplicationPatchPatchKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -748,7 +748,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationPatches = DataIntegrationFunctions.getWorkspaceApplicationPatches(GetWorkspaceApplicationPatchesArgs.builder()
      *             .applicationKey(workspaceApplicationPatchApplicationKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .fields(workspaceApplicationPatchFields)
      *             .identifiers(workspaceApplicationPatchIdentifier)
      *             .name(workspaceApplicationPatchName)
@@ -794,7 +794,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationPatches = DataIntegrationFunctions.getWorkspaceApplicationPatches(GetWorkspaceApplicationPatchesArgs.builder()
      *             .applicationKey(workspaceApplicationPatchApplicationKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .fields(workspaceApplicationPatchFields)
      *             .identifiers(workspaceApplicationPatchIdentifier)
      *             .name(workspaceApplicationPatchName)
@@ -840,7 +840,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationPatches = DataIntegrationFunctions.getWorkspaceApplicationPatches(GetWorkspaceApplicationPatchesArgs.builder()
      *             .applicationKey(workspaceApplicationPatchApplicationKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .fields(workspaceApplicationPatchFields)
      *             .identifiers(workspaceApplicationPatchIdentifier)
      *             .name(workspaceApplicationPatchName)
@@ -886,7 +886,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationPatches = DataIntegrationFunctions.getWorkspaceApplicationPatches(GetWorkspaceApplicationPatchesArgs.builder()
      *             .applicationKey(workspaceApplicationPatchApplicationKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .fields(workspaceApplicationPatchFields)
      *             .identifiers(workspaceApplicationPatchIdentifier)
      *             .name(workspaceApplicationPatchName)
@@ -932,7 +932,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationPatches = DataIntegrationFunctions.getWorkspaceApplicationPatches(GetWorkspaceApplicationPatchesArgs.builder()
      *             .applicationKey(workspaceApplicationPatchApplicationKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .fields(workspaceApplicationPatchFields)
      *             .identifiers(workspaceApplicationPatchIdentifier)
      *             .name(workspaceApplicationPatchName)
@@ -979,7 +979,7 @@ public final class DataIntegrationFunctions {
      *         final var testWorkspaceApplicationSchedule = DataIntegrationFunctions.getWorkspaceApplicationSchedule(GetWorkspaceApplicationScheduleArgs.builder()
      *             .applicationKey(workspaceApplicationScheduleApplicationKey)
      *             .scheduleKey(workspaceApplicationScheduleScheduleKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -1023,7 +1023,7 @@ public final class DataIntegrationFunctions {
      *         final var testWorkspaceApplicationSchedule = DataIntegrationFunctions.getWorkspaceApplicationSchedule(GetWorkspaceApplicationScheduleArgs.builder()
      *             .applicationKey(workspaceApplicationScheduleApplicationKey)
      *             .scheduleKey(workspaceApplicationScheduleScheduleKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -1067,7 +1067,7 @@ public final class DataIntegrationFunctions {
      *         final var testWorkspaceApplicationSchedule = DataIntegrationFunctions.getWorkspaceApplicationSchedule(GetWorkspaceApplicationScheduleArgs.builder()
      *             .applicationKey(workspaceApplicationScheduleApplicationKey)
      *             .scheduleKey(workspaceApplicationScheduleScheduleKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -1111,7 +1111,7 @@ public final class DataIntegrationFunctions {
      *         final var testWorkspaceApplicationSchedule = DataIntegrationFunctions.getWorkspaceApplicationSchedule(GetWorkspaceApplicationScheduleArgs.builder()
      *             .applicationKey(workspaceApplicationScheduleApplicationKey)
      *             .scheduleKey(workspaceApplicationScheduleScheduleKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -1155,7 +1155,7 @@ public final class DataIntegrationFunctions {
      *         final var testWorkspaceApplicationSchedule = DataIntegrationFunctions.getWorkspaceApplicationSchedule(GetWorkspaceApplicationScheduleArgs.builder()
      *             .applicationKey(workspaceApplicationScheduleApplicationKey)
      *             .scheduleKey(workspaceApplicationScheduleScheduleKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -1198,7 +1198,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationSchedules = DataIntegrationFunctions.getWorkspaceApplicationSchedules(GetWorkspaceApplicationSchedulesArgs.builder()
      *             .applicationKey(workspaceApplicationScheduleApplicationKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .identifiers(workspaceApplicationScheduleIdentifier)
      *             .keys(workspaceApplicationScheduleKey)
      *             .name(workspaceApplicationScheduleName)
@@ -1245,7 +1245,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationSchedules = DataIntegrationFunctions.getWorkspaceApplicationSchedules(GetWorkspaceApplicationSchedulesArgs.builder()
      *             .applicationKey(workspaceApplicationScheduleApplicationKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .identifiers(workspaceApplicationScheduleIdentifier)
      *             .keys(workspaceApplicationScheduleKey)
      *             .name(workspaceApplicationScheduleName)
@@ -1292,7 +1292,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationSchedules = DataIntegrationFunctions.getWorkspaceApplicationSchedules(GetWorkspaceApplicationSchedulesArgs.builder()
      *             .applicationKey(workspaceApplicationScheduleApplicationKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .identifiers(workspaceApplicationScheduleIdentifier)
      *             .keys(workspaceApplicationScheduleKey)
      *             .name(workspaceApplicationScheduleName)
@@ -1339,7 +1339,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationSchedules = DataIntegrationFunctions.getWorkspaceApplicationSchedules(GetWorkspaceApplicationSchedulesArgs.builder()
      *             .applicationKey(workspaceApplicationScheduleApplicationKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .identifiers(workspaceApplicationScheduleIdentifier)
      *             .keys(workspaceApplicationScheduleKey)
      *             .name(workspaceApplicationScheduleName)
@@ -1386,7 +1386,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationSchedules = DataIntegrationFunctions.getWorkspaceApplicationSchedules(GetWorkspaceApplicationSchedulesArgs.builder()
      *             .applicationKey(workspaceApplicationScheduleApplicationKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .identifiers(workspaceApplicationScheduleIdentifier)
      *             .keys(workspaceApplicationScheduleKey)
      *             .name(workspaceApplicationScheduleName)
@@ -1434,7 +1434,7 @@ public final class DataIntegrationFunctions {
      *         final var testWorkspaceApplicationTaskSchedule = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedule(GetWorkspaceApplicationTaskScheduleArgs.builder()
      *             .applicationKey(workspaceApplicationTaskScheduleApplicationKey)
      *             .taskScheduleKey(workspaceApplicationTaskScheduleTaskScheduleKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -1478,7 +1478,7 @@ public final class DataIntegrationFunctions {
      *         final var testWorkspaceApplicationTaskSchedule = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedule(GetWorkspaceApplicationTaskScheduleArgs.builder()
      *             .applicationKey(workspaceApplicationTaskScheduleApplicationKey)
      *             .taskScheduleKey(workspaceApplicationTaskScheduleTaskScheduleKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -1522,7 +1522,7 @@ public final class DataIntegrationFunctions {
      *         final var testWorkspaceApplicationTaskSchedule = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedule(GetWorkspaceApplicationTaskScheduleArgs.builder()
      *             .applicationKey(workspaceApplicationTaskScheduleApplicationKey)
      *             .taskScheduleKey(workspaceApplicationTaskScheduleTaskScheduleKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -1566,7 +1566,7 @@ public final class DataIntegrationFunctions {
      *         final var testWorkspaceApplicationTaskSchedule = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedule(GetWorkspaceApplicationTaskScheduleArgs.builder()
      *             .applicationKey(workspaceApplicationTaskScheduleApplicationKey)
      *             .taskScheduleKey(workspaceApplicationTaskScheduleTaskScheduleKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -1610,7 +1610,7 @@ public final class DataIntegrationFunctions {
      *         final var testWorkspaceApplicationTaskSchedule = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedule(GetWorkspaceApplicationTaskScheduleArgs.builder()
      *             .applicationKey(workspaceApplicationTaskScheduleApplicationKey)
      *             .taskScheduleKey(workspaceApplicationTaskScheduleTaskScheduleKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -1653,7 +1653,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationTaskSchedules = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedules(GetWorkspaceApplicationTaskSchedulesArgs.builder()
      *             .applicationKey(workspaceApplicationTaskScheduleApplicationKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .identifiers(workspaceApplicationTaskScheduleIdentifier)
      *             .isEnabled(workspaceApplicationTaskScheduleIsEnabled)
      *             .keys(workspaceApplicationTaskScheduleKey)
@@ -1701,7 +1701,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationTaskSchedules = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedules(GetWorkspaceApplicationTaskSchedulesArgs.builder()
      *             .applicationKey(workspaceApplicationTaskScheduleApplicationKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .identifiers(workspaceApplicationTaskScheduleIdentifier)
      *             .isEnabled(workspaceApplicationTaskScheduleIsEnabled)
      *             .keys(workspaceApplicationTaskScheduleKey)
@@ -1749,7 +1749,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationTaskSchedules = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedules(GetWorkspaceApplicationTaskSchedulesArgs.builder()
      *             .applicationKey(workspaceApplicationTaskScheduleApplicationKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .identifiers(workspaceApplicationTaskScheduleIdentifier)
      *             .isEnabled(workspaceApplicationTaskScheduleIsEnabled)
      *             .keys(workspaceApplicationTaskScheduleKey)
@@ -1797,7 +1797,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationTaskSchedules = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedules(GetWorkspaceApplicationTaskSchedulesArgs.builder()
      *             .applicationKey(workspaceApplicationTaskScheduleApplicationKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .identifiers(workspaceApplicationTaskScheduleIdentifier)
      *             .isEnabled(workspaceApplicationTaskScheduleIsEnabled)
      *             .keys(workspaceApplicationTaskScheduleKey)
@@ -1845,7 +1845,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplicationTaskSchedules = DataIntegrationFunctions.getWorkspaceApplicationTaskSchedules(GetWorkspaceApplicationTaskSchedulesArgs.builder()
      *             .applicationKey(workspaceApplicationTaskScheduleApplicationKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .identifiers(workspaceApplicationTaskScheduleIdentifier)
      *             .isEnabled(workspaceApplicationTaskScheduleIsEnabled)
      *             .keys(workspaceApplicationTaskScheduleKey)
@@ -1892,7 +1892,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplications = DataIntegrationFunctions.getWorkspaceApplications(GetWorkspaceApplicationsArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .fields(workspaceApplicationFields)
      *             .identifiers(workspaceApplicationIdentifier)
      *             .name(workspaceApplicationName)
@@ -1938,7 +1938,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplications = DataIntegrationFunctions.getWorkspaceApplications(GetWorkspaceApplicationsArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .fields(workspaceApplicationFields)
      *             .identifiers(workspaceApplicationIdentifier)
      *             .name(workspaceApplicationName)
@@ -1984,7 +1984,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplications = DataIntegrationFunctions.getWorkspaceApplications(GetWorkspaceApplicationsArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .fields(workspaceApplicationFields)
      *             .identifiers(workspaceApplicationIdentifier)
      *             .name(workspaceApplicationName)
@@ -2030,7 +2030,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplications = DataIntegrationFunctions.getWorkspaceApplications(GetWorkspaceApplicationsArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .fields(workspaceApplicationFields)
      *             .identifiers(workspaceApplicationIdentifier)
      *             .name(workspaceApplicationName)
@@ -2076,7 +2076,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceApplications = DataIntegrationFunctions.getWorkspaceApplications(GetWorkspaceApplicationsArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .fields(workspaceApplicationFields)
      *             .identifiers(workspaceApplicationIdentifier)
      *             .name(workspaceApplicationName)
@@ -2123,7 +2123,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceExportRequest = DataIntegrationFunctions.getWorkspaceExportRequest(GetWorkspaceExportRequestArgs.builder()
      *             .exportRequestKey(workspaceExportRequestExportRequestKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -2166,7 +2166,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceExportRequest = DataIntegrationFunctions.getWorkspaceExportRequest(GetWorkspaceExportRequestArgs.builder()
      *             .exportRequestKey(workspaceExportRequestExportRequestKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -2209,7 +2209,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceExportRequest = DataIntegrationFunctions.getWorkspaceExportRequest(GetWorkspaceExportRequestArgs.builder()
      *             .exportRequestKey(workspaceExportRequestExportRequestKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -2252,7 +2252,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceExportRequest = DataIntegrationFunctions.getWorkspaceExportRequest(GetWorkspaceExportRequestArgs.builder()
      *             .exportRequestKey(workspaceExportRequestExportRequestKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -2295,7 +2295,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceExportRequest = DataIntegrationFunctions.getWorkspaceExportRequest(GetWorkspaceExportRequestArgs.builder()
      *             .exportRequestKey(workspaceExportRequestExportRequestKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -2337,7 +2337,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceExportRequests = DataIntegrationFunctions.getWorkspaceExportRequests(GetWorkspaceExportRequestsArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .exportStatus(workspaceExportRequestExportStatus)
      *             .name(workspaceExportRequestName)
      *             .projection(workspaceExportRequestProjection)
@@ -2384,7 +2384,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceExportRequests = DataIntegrationFunctions.getWorkspaceExportRequests(GetWorkspaceExportRequestsArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .exportStatus(workspaceExportRequestExportStatus)
      *             .name(workspaceExportRequestName)
      *             .projection(workspaceExportRequestProjection)
@@ -2431,7 +2431,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceExportRequests = DataIntegrationFunctions.getWorkspaceExportRequests(GetWorkspaceExportRequestsArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .exportStatus(workspaceExportRequestExportStatus)
      *             .name(workspaceExportRequestName)
      *             .projection(workspaceExportRequestProjection)
@@ -2478,7 +2478,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceExportRequests = DataIntegrationFunctions.getWorkspaceExportRequests(GetWorkspaceExportRequestsArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .exportStatus(workspaceExportRequestExportStatus)
      *             .name(workspaceExportRequestName)
      *             .projection(workspaceExportRequestProjection)
@@ -2525,7 +2525,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceExportRequests = DataIntegrationFunctions.getWorkspaceExportRequests(GetWorkspaceExportRequestsArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .exportStatus(workspaceExportRequestExportStatus)
      *             .name(workspaceExportRequestName)
      *             .projection(workspaceExportRequestProjection)
@@ -2573,7 +2573,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceFolder = DataIntegrationFunctions.getWorkspaceFolder(GetWorkspaceFolderArgs.builder()
      *             .folderKey(workspaceFolderFolderKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -2616,7 +2616,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceFolder = DataIntegrationFunctions.getWorkspaceFolder(GetWorkspaceFolderArgs.builder()
      *             .folderKey(workspaceFolderFolderKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -2659,7 +2659,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceFolder = DataIntegrationFunctions.getWorkspaceFolder(GetWorkspaceFolderArgs.builder()
      *             .folderKey(workspaceFolderFolderKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -2702,7 +2702,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceFolder = DataIntegrationFunctions.getWorkspaceFolder(GetWorkspaceFolderArgs.builder()
      *             .folderKey(workspaceFolderFolderKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -2745,7 +2745,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceFolder = DataIntegrationFunctions.getWorkspaceFolder(GetWorkspaceFolderArgs.builder()
      *             .folderKey(workspaceFolderFolderKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -2787,7 +2787,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceFolders = DataIntegrationFunctions.getWorkspaceFolders(GetWorkspaceFoldersArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .aggregatorKey(workspaceFolderAggregatorKey)
      *             .fields(workspaceFolderFields)
      *             .identifiers(workspaceFolderIdentifier)
@@ -2834,7 +2834,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceFolders = DataIntegrationFunctions.getWorkspaceFolders(GetWorkspaceFoldersArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .aggregatorKey(workspaceFolderAggregatorKey)
      *             .fields(workspaceFolderFields)
      *             .identifiers(workspaceFolderIdentifier)
@@ -2881,7 +2881,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceFolders = DataIntegrationFunctions.getWorkspaceFolders(GetWorkspaceFoldersArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .aggregatorKey(workspaceFolderAggregatorKey)
      *             .fields(workspaceFolderFields)
      *             .identifiers(workspaceFolderIdentifier)
@@ -2928,7 +2928,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceFolders = DataIntegrationFunctions.getWorkspaceFolders(GetWorkspaceFoldersArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .aggregatorKey(workspaceFolderAggregatorKey)
      *             .fields(workspaceFolderFields)
      *             .identifiers(workspaceFolderIdentifier)
@@ -2975,7 +2975,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceFolders = DataIntegrationFunctions.getWorkspaceFolders(GetWorkspaceFoldersArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .aggregatorKey(workspaceFolderAggregatorKey)
      *             .fields(workspaceFolderFields)
      *             .identifiers(workspaceFolderIdentifier)
@@ -3023,7 +3023,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceImportRequest = DataIntegrationFunctions.getWorkspaceImportRequest(GetWorkspaceImportRequestArgs.builder()
      *             .importRequestKey(workspaceImportRequestImportRequestKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -3066,7 +3066,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceImportRequest = DataIntegrationFunctions.getWorkspaceImportRequest(GetWorkspaceImportRequestArgs.builder()
      *             .importRequestKey(workspaceImportRequestImportRequestKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -3109,7 +3109,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceImportRequest = DataIntegrationFunctions.getWorkspaceImportRequest(GetWorkspaceImportRequestArgs.builder()
      *             .importRequestKey(workspaceImportRequestImportRequestKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -3152,7 +3152,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceImportRequest = DataIntegrationFunctions.getWorkspaceImportRequest(GetWorkspaceImportRequestArgs.builder()
      *             .importRequestKey(workspaceImportRequestImportRequestKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -3195,7 +3195,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceImportRequest = DataIntegrationFunctions.getWorkspaceImportRequest(GetWorkspaceImportRequestArgs.builder()
      *             .importRequestKey(workspaceImportRequestImportRequestKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -3237,7 +3237,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceImportRequests = DataIntegrationFunctions.getWorkspaceImportRequests(GetWorkspaceImportRequestsArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .importStatus(workspaceImportRequestImportStatus)
      *             .name(workspaceImportRequestName)
      *             .projection(workspaceImportRequestProjection)
@@ -3284,7 +3284,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceImportRequests = DataIntegrationFunctions.getWorkspaceImportRequests(GetWorkspaceImportRequestsArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .importStatus(workspaceImportRequestImportStatus)
      *             .name(workspaceImportRequestName)
      *             .projection(workspaceImportRequestProjection)
@@ -3331,7 +3331,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceImportRequests = DataIntegrationFunctions.getWorkspaceImportRequests(GetWorkspaceImportRequestsArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .importStatus(workspaceImportRequestImportStatus)
      *             .name(workspaceImportRequestName)
      *             .projection(workspaceImportRequestProjection)
@@ -3378,7 +3378,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceImportRequests = DataIntegrationFunctions.getWorkspaceImportRequests(GetWorkspaceImportRequestsArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .importStatus(workspaceImportRequestImportStatus)
      *             .name(workspaceImportRequestName)
      *             .projection(workspaceImportRequestProjection)
@@ -3425,7 +3425,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceImportRequests = DataIntegrationFunctions.getWorkspaceImportRequests(GetWorkspaceImportRequestsArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .importStatus(workspaceImportRequestImportStatus)
      *             .name(workspaceImportRequestName)
      *             .projection(workspaceImportRequestProjection)
@@ -3473,7 +3473,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceProject = DataIntegrationFunctions.getWorkspaceProject(GetWorkspaceProjectArgs.builder()
      *             .projectKey(workspaceProjectProjectKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -3516,7 +3516,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceProject = DataIntegrationFunctions.getWorkspaceProject(GetWorkspaceProjectArgs.builder()
      *             .projectKey(workspaceProjectProjectKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -3559,7 +3559,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceProject = DataIntegrationFunctions.getWorkspaceProject(GetWorkspaceProjectArgs.builder()
      *             .projectKey(workspaceProjectProjectKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -3602,7 +3602,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceProject = DataIntegrationFunctions.getWorkspaceProject(GetWorkspaceProjectArgs.builder()
      *             .projectKey(workspaceProjectProjectKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -3645,7 +3645,7 @@ public final class DataIntegrationFunctions {
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceProject = DataIntegrationFunctions.getWorkspaceProject(GetWorkspaceProjectArgs.builder()
      *             .projectKey(workspaceProjectProjectKey)
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .build());
      * 
      *     }
@@ -3687,7 +3687,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceProjects = DataIntegrationFunctions.getWorkspaceProjects(GetWorkspaceProjectsArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .fields(workspaceProjectFields)
      *             .identifiers(workspaceProjectIdentifier)
      *             .name(workspaceProjectName)
@@ -3733,7 +3733,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceProjects = DataIntegrationFunctions.getWorkspaceProjects(GetWorkspaceProjectsArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .fields(workspaceProjectFields)
      *             .identifiers(workspaceProjectIdentifier)
      *             .name(workspaceProjectName)
@@ -3779,7 +3779,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceProjects = DataIntegrationFunctions.getWorkspaceProjects(GetWorkspaceProjectsArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .fields(workspaceProjectFields)
      *             .identifiers(workspaceProjectIdentifier)
      *             .name(workspaceProjectName)
@@ -3825,7 +3825,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceProjects = DataIntegrationFunctions.getWorkspaceProjects(GetWorkspaceProjectsArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .fields(workspaceProjectFields)
      *             .identifiers(workspaceProjectIdentifier)
      *             .name(workspaceProjectName)
@@ -3871,7 +3871,7 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceProjects = DataIntegrationFunctions.getWorkspaceProjects(GetWorkspaceProjectsArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .fields(workspaceProjectFields)
      *             .identifiers(workspaceProjectIdentifier)
      *             .name(workspaceProjectName)
@@ -3972,9 +3972,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceTasks = DataIntegrationFunctions.getWorkspaceTasks(GetWorkspaceTasksArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .fields(workspaceTaskFields)
-     *             .folderId(testFolder.id())
+     *             .folderId(testFolder.get("id"))
      *             .identifiers(workspaceTaskIdentifier)
      *             .keys(workspaceTaskKey)
      *             .name(workspaceTaskName)
@@ -4020,9 +4020,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceTasks = DataIntegrationFunctions.getWorkspaceTasks(GetWorkspaceTasksArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .fields(workspaceTaskFields)
-     *             .folderId(testFolder.id())
+     *             .folderId(testFolder.get("id"))
      *             .identifiers(workspaceTaskIdentifier)
      *             .keys(workspaceTaskKey)
      *             .name(workspaceTaskName)
@@ -4068,9 +4068,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceTasks = DataIntegrationFunctions.getWorkspaceTasks(GetWorkspaceTasksArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .fields(workspaceTaskFields)
-     *             .folderId(testFolder.id())
+     *             .folderId(testFolder.get("id"))
      *             .identifiers(workspaceTaskIdentifier)
      *             .keys(workspaceTaskKey)
      *             .name(workspaceTaskName)
@@ -4116,9 +4116,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceTasks = DataIntegrationFunctions.getWorkspaceTasks(GetWorkspaceTasksArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .fields(workspaceTaskFields)
-     *             .folderId(testFolder.id())
+     *             .folderId(testFolder.get("id"))
      *             .identifiers(workspaceTaskIdentifier)
      *             .keys(workspaceTaskKey)
      *             .name(workspaceTaskName)
@@ -4164,9 +4164,9 @@ public final class DataIntegrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWorkspaceTasks = DataIntegrationFunctions.getWorkspaceTasks(GetWorkspaceTasksArgs.builder()
-     *             .workspaceId(testWorkspace.id())
+     *             .workspaceId(testWorkspace.get("id"))
      *             .fields(workspaceTaskFields)
-     *             .folderId(testFolder.id())
+     *             .folderId(testFolder.get("id"))
      *             .identifiers(workspaceTaskIdentifier)
      *             .keys(workspaceTaskKey)
      *             .name(workspaceTaskName)

@@ -356,7 +356,7 @@ class DrgRouteTable(pulumi.CustomResource):
                 "Department": "Finance",
             },
             import_drg_route_distribution_id=test_drg_route_distribution["id"],
-            is_ecmp_enabled=drg_route_table_is_ecmp_enabled == "true")
+            is_ecmp_enabled=drg_route_table_is_ecmp_enabled)
         ```
 
         ## Import
@@ -412,7 +412,7 @@ class DrgRouteTable(pulumi.CustomResource):
                 "Department": "Finance",
             },
             import_drg_route_distribution_id=test_drg_route_distribution["id"],
-            is_ecmp_enabled=drg_route_table_is_ecmp_enabled == "true")
+            is_ecmp_enabled=drg_route_table_is_ecmp_enabled)
         ```
 
         ## Import

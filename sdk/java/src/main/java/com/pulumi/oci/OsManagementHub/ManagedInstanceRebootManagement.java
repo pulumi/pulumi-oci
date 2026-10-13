@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testManagedInstanceRebootManagement = new ManagedInstanceRebootManagement("testManagedInstanceRebootManagement", ManagedInstanceRebootManagementArgs.builder()
- *             .managedInstanceId(testManagedInstance.id())
+ *             .managedInstanceId(testManagedInstance.get("id"))
  *             .rebootTimeoutInMins(managedInstanceRebootManagementRebootTimeoutInMins)
  *             .workRequestDetails(ManagedInstanceRebootManagementWorkRequestDetailsArgs.builder()
  *                 .description(managedInstanceRebootManagementWorkRequestDetailsDescription)

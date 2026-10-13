@@ -34,7 +34,7 @@ import * as utilities from "../utilities";
  * const testSecurityAssessmentTemplateAssociationAnalytics = oci.datasafe.getSecurityAssessmentTemplateAssociationAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentTemplateAssociationAnalyticAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentTemplateAssociationAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: securityAssessmentTemplateAssociationAnalyticCompartmentIdInSubtree,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  *     templateAssessmentId: testTemplateAssessment.id,
@@ -152,7 +152,7 @@ export interface GetSecurityAssessmentTemplateAssociationAnalyticsResult {
  * const testSecurityAssessmentTemplateAssociationAnalytics = oci.datasafe.getSecurityAssessmentTemplateAssociationAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentTemplateAssociationAnalyticAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentTemplateAssociationAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: securityAssessmentTemplateAssociationAnalyticCompartmentIdInSubtree,
  *     targetDatabaseGroupId: testTargetDatabaseGroup.id,
  *     targetId: testTarget.id,
  *     templateAssessmentId: testTemplateAssessment.id,

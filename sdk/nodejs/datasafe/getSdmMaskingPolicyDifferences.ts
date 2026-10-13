@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testSdmMaskingPolicyDifferences = oci.datasafe.getSdmMaskingPolicyDifferences({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: sdmMaskingPolicyDifferenceCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: sdmMaskingPolicyDifferenceCompartmentIdInSubtree,
  *     differenceAccessLevel: sdmMaskingPolicyDifferenceDifferenceAccessLevel,
  *     displayName: sdmMaskingPolicyDifferenceDisplayName,
  *     maskingPolicyId: testMaskingPolicy.id,
@@ -126,7 +126,7 @@ export interface GetSdmMaskingPolicyDifferencesResult {
  *
  * const testSdmMaskingPolicyDifferences = oci.datasafe.getSdmMaskingPolicyDifferences({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: sdmMaskingPolicyDifferenceCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: sdmMaskingPolicyDifferenceCompartmentIdInSubtree,
  *     differenceAccessLevel: sdmMaskingPolicyDifferenceDifferenceAccessLevel,
  *     displayName: sdmMaskingPolicyDifferenceDisplayName,
  *     maskingPolicyId: testMaskingPolicy.id,

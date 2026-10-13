@@ -117,7 +117,7 @@ def get_network_firewall_policy_security_rules(display_name: Optional[_builtins.
 
     test_network_firewall_policy_security_rules = oci.networkfirewall.get_network_firewall_policy_security_rules(network_firewall_policy_id=test_network_firewall_policy["id"],
         display_name=network_firewall_policy_security_rule_display_name,
-        security_rule_priority_order=int(network_firewall_policy_security_rule_security_rule_priority_order))
+        security_rule_priority_order=network_firewall_policy_security_rule_security_rule_priority_order)
     ```
 
 
@@ -158,7 +158,7 @@ def get_network_firewall_policy_security_rules_output(display_name: pulumi.Input
 
     test_network_firewall_policy_security_rules = oci.networkfirewall.get_network_firewall_policy_security_rules(network_firewall_policy_id=test_network_firewall_policy["id"],
         display_name=network_firewall_policy_security_rule_display_name,
-        security_rule_priority_order=int(network_firewall_policy_security_rule_security_rule_priority_order))
+        security_rule_priority_order=network_firewall_policy_security_rule_security_rule_priority_order)
     ```
 
 

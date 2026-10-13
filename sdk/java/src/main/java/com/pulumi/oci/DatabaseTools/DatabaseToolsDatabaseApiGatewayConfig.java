@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *             .locks(DatabaseToolsDatabaseApiGatewayConfigLockArgs.builder()
  *                 .type(databaseToolsDatabaseApiGatewayConfigLocksType)
  *                 .message(databaseToolsDatabaseApiGatewayConfigLocksMessage)
- *                 .relatedResourceId(testResource.id())
+ *                 .relatedResourceId(testResource.get("id"))
  *                 .timeCreated(databaseToolsDatabaseApiGatewayConfigLocksTimeCreated)
  *                 .build())
  *             .build());

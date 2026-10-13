@@ -54,8 +54,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isAutoTuneEnabled: volumeIsAutoTuneEnabled === "true",
- *     isReservationsEnabled: volumeIsReservationsEnabled === "true",
+ *     isAutoTuneEnabled: volumeIsAutoTuneEnabled,
+ *     isReservationsEnabled: volumeIsReservationsEnabled,
  *     kmsKeyId: testKey.id,
  *     sizeInGbs: volumeSizeInGbs,
  *     sizeInMbs: volumeSizeInMbs,

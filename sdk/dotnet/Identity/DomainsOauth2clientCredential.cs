@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Identity
     ///                 Scope = oauth2clientCredentialScopesScope,
     ///             },
     ///         },
-    ///         AttributeSets = new[] {},
+    ///         AttributeSets = new() {},
     ///         Attributes = "",
     ///         Authorization = oauth2clientCredentialAuthorization,
     ///         Description = oauth2clientCredentialDescription,

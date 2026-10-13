@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testSubscriptions = oci.onesubsription.getSubscriptions({
  *     compartmentId: compartmentId,
  *     buyerEmail: subscriptionBuyerEmail,
- *     isCommitInfoRequired: subscriptionIsCommitInfoRequired === "true",
+ *     isCommitInfoRequired: subscriptionIsCommitInfoRequired,
  *     planNumber: subscriptionPlanNumber,
  *     subscriptionId: testSubscription.id,
  * });
@@ -104,7 +104,7 @@ export interface GetSubscriptionsResult {
  * const testSubscriptions = oci.onesubsription.getSubscriptions({
  *     compartmentId: compartmentId,
  *     buyerEmail: subscriptionBuyerEmail,
- *     isCommitInfoRequired: subscriptionIsCommitInfoRequired === "true",
+ *     isCommitInfoRequired: subscriptionIsCommitInfoRequired,
  *     planNumber: subscriptionPlanNumber,
  *     subscriptionId: testSubscription.id,
  * });

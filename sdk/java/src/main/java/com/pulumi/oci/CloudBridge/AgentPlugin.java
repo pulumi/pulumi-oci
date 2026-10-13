@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAgentPlugin = new AgentPlugin("testAgentPlugin", AgentPluginArgs.builder()
- *             .agentId(testAgent.id())
+ *             .agentId(testAgent.get("id"))
  *             .pluginName(agentPluginPluginName)
  *             .desiredState(agentPluginDesiredState)
  *             .build());

@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testCloudExadataInfrastructureManagedexadataManagement = new CloudExadataInfrastructureManagedexadataManagement("testCloudExadataInfrastructureManagedexadataManagement", CloudExadataInfrastructureManagedexadataManagementArgs.builder()
- *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
+ *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.get("id"))
  *             .enableManagedexadata(enableManagedexadata)
  *             .licenseModel(cloudExadataInfrastructureManagedexadataManagementLicenseModel)
  *             .build());

@@ -21,8 +21,8 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     displayName: vmClusterNetworkDisplayName,
  *     infrastructureId: testInfrastructure.id,
- *     isScanEnabled: vmClusterNetworkIsScanEnabled === "true",
- *     nodeCount: Number(vmClusterNetworkNodeCount),
+ *     isScanEnabled: vmClusterNetworkIsScanEnabled,
+ *     nodeCount: vmClusterNetworkNodeCount,
  *     states: vmClusterNetworkState,
  *     vmNetworkConsumerType: vmClusterNetworkVmNetworkConsumerType,
  * });
@@ -131,8 +131,8 @@ export interface GetDataccVmClusterNetworksResult {
  *     compartmentId: compartmentId,
  *     displayName: vmClusterNetworkDisplayName,
  *     infrastructureId: testInfrastructure.id,
- *     isScanEnabled: vmClusterNetworkIsScanEnabled === "true",
- *     nodeCount: Number(vmClusterNetworkNodeCount),
+ *     isScanEnabled: vmClusterNetworkIsScanEnabled,
+ *     nodeCount: vmClusterNetworkNodeCount,
  *     states: vmClusterNetworkState,
  *     vmNetworkConsumerType: vmClusterNetworkVmNetworkConsumerType,
  * });

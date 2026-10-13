@@ -159,7 +159,7 @@ def get_protection_policies(compartment_id: Optional[_builtins.str] = None,
 
     test_protection_policies = oci.recoverymod.get_protection_policies(compartment_id=compartment_id,
         display_name=protection_policy_display_name,
-        must_enforce_cloud_locality=protection_policy_must_enforce_cloud_locality == "true",
+        must_enforce_cloud_locality=protection_policy_must_enforce_cloud_locality,
         owner=protection_policy_owner,
         protection_policy_id=test_protection_policy["id"],
         state=protection_policy_state)
@@ -215,7 +215,7 @@ def get_protection_policies_output(compartment_id: pulumi.Input[Optional[Optiona
 
     test_protection_policies = oci.recoverymod.get_protection_policies(compartment_id=compartment_id,
         display_name=protection_policy_display_name,
-        must_enforce_cloud_locality=protection_policy_must_enforce_cloud_locality == "true",
+        must_enforce_cloud_locality=protection_policy_must_enforce_cloud_locality,
         owner=protection_policy_owner,
         protection_policy_id=test_protection_policy["id"],
         state=protection_policy_state)

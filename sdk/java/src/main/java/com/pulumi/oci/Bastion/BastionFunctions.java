@@ -54,7 +54,7 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBastion = BastionFunctions.getBastion(GetBastionArgs.builder()
-     *             .bastionId(testBastionOciBastionBastion.id())
+     *             .bastionId(testBastionOciBastionBastion.get("id"))
      *             .build());
      * 
      *     }
@@ -96,7 +96,7 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBastion = BastionFunctions.getBastion(GetBastionArgs.builder()
-     *             .bastionId(testBastionOciBastionBastion.id())
+     *             .bastionId(testBastionOciBastionBastion.get("id"))
      *             .build());
      * 
      *     }
@@ -138,7 +138,7 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBastion = BastionFunctions.getBastion(GetBastionArgs.builder()
-     *             .bastionId(testBastionOciBastionBastion.id())
+     *             .bastionId(testBastionOciBastionBastion.get("id"))
      *             .build());
      * 
      *     }
@@ -180,7 +180,7 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBastion = BastionFunctions.getBastion(GetBastionArgs.builder()
-     *             .bastionId(testBastionOciBastionBastion.id())
+     *             .bastionId(testBastionOciBastionBastion.get("id"))
      *             .build());
      * 
      *     }
@@ -222,7 +222,7 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBastion = BastionFunctions.getBastion(GetBastionArgs.builder()
-     *             .bastionId(testBastionOciBastionBastion.id())
+     *             .bastionId(testBastionOciBastionBastion.get("id"))
      *             .build());
      * 
      *     }
@@ -265,7 +265,7 @@ public final class BastionFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBastions = BastionFunctions.getBastions(GetBastionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .bastionId(testBastion.id())
+     *             .bastionId(testBastion.get("id"))
      *             .bastionLifecycleState(bastionBastionLifecycleState)
      *             .name(bastionName)
      *             .build());
@@ -310,7 +310,7 @@ public final class BastionFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBastions = BastionFunctions.getBastions(GetBastionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .bastionId(testBastion.id())
+     *             .bastionId(testBastion.get("id"))
      *             .bastionLifecycleState(bastionBastionLifecycleState)
      *             .name(bastionName)
      *             .build());
@@ -355,7 +355,7 @@ public final class BastionFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBastions = BastionFunctions.getBastions(GetBastionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .bastionId(testBastion.id())
+     *             .bastionId(testBastion.get("id"))
      *             .bastionLifecycleState(bastionBastionLifecycleState)
      *             .name(bastionName)
      *             .build());
@@ -400,7 +400,7 @@ public final class BastionFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBastions = BastionFunctions.getBastions(GetBastionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .bastionId(testBastion.id())
+     *             .bastionId(testBastion.get("id"))
      *             .bastionLifecycleState(bastionBastionLifecycleState)
      *             .name(bastionName)
      *             .build());
@@ -445,7 +445,7 @@ public final class BastionFunctions {
      *     public static void stack(Context ctx) {
      *         final var testBastions = BastionFunctions.getBastions(GetBastionsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .bastionId(testBastion.id())
+     *             .bastionId(testBastion.get("id"))
      *             .bastionLifecycleState(bastionBastionLifecycleState)
      *             .name(bastionName)
      *             .build());
@@ -489,7 +489,7 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSession = BastionFunctions.getSession(GetSessionArgs.builder()
-     *             .sessionId(testSessionOciBastionSession.id())
+     *             .sessionId(testSessionOciBastionSession.get("id"))
      *             .build());
      * 
      *     }
@@ -531,7 +531,7 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSession = BastionFunctions.getSession(GetSessionArgs.builder()
-     *             .sessionId(testSessionOciBastionSession.id())
+     *             .sessionId(testSessionOciBastionSession.get("id"))
      *             .build());
      * 
      *     }
@@ -573,7 +573,7 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSession = BastionFunctions.getSession(GetSessionArgs.builder()
-     *             .sessionId(testSessionOciBastionSession.id())
+     *             .sessionId(testSessionOciBastionSession.get("id"))
      *             .build());
      * 
      *     }
@@ -615,7 +615,7 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSession = BastionFunctions.getSession(GetSessionArgs.builder()
-     *             .sessionId(testSessionOciBastionSession.id())
+     *             .sessionId(testSessionOciBastionSession.get("id"))
      *             .build());
      * 
      *     }
@@ -657,7 +657,7 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSession = BastionFunctions.getSession(GetSessionArgs.builder()
-     *             .sessionId(testSessionOciBastionSession.id())
+     *             .sessionId(testSessionOciBastionSession.get("id"))
      *             .build());
      * 
      *     }
@@ -699,9 +699,9 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSessions = BastionFunctions.getSessions(GetSessionsArgs.builder()
-     *             .bastionId(testBastion.id())
+     *             .bastionId(testBastion.get("id"))
      *             .displayName(sessionDisplayName)
-     *             .sessionId(testSession.id())
+     *             .sessionId(testSession.get("id"))
      *             .sessionLifecycleState(sessionSessionLifecycleState)
      *             .build());
      * 
@@ -744,9 +744,9 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSessions = BastionFunctions.getSessions(GetSessionsArgs.builder()
-     *             .bastionId(testBastion.id())
+     *             .bastionId(testBastion.get("id"))
      *             .displayName(sessionDisplayName)
-     *             .sessionId(testSession.id())
+     *             .sessionId(testSession.get("id"))
      *             .sessionLifecycleState(sessionSessionLifecycleState)
      *             .build());
      * 
@@ -789,9 +789,9 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSessions = BastionFunctions.getSessions(GetSessionsArgs.builder()
-     *             .bastionId(testBastion.id())
+     *             .bastionId(testBastion.get("id"))
      *             .displayName(sessionDisplayName)
-     *             .sessionId(testSession.id())
+     *             .sessionId(testSession.get("id"))
      *             .sessionLifecycleState(sessionSessionLifecycleState)
      *             .build());
      * 
@@ -834,9 +834,9 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSessions = BastionFunctions.getSessions(GetSessionsArgs.builder()
-     *             .bastionId(testBastion.id())
+     *             .bastionId(testBastion.get("id"))
      *             .displayName(sessionDisplayName)
-     *             .sessionId(testSession.id())
+     *             .sessionId(testSession.get("id"))
      *             .sessionLifecycleState(sessionSessionLifecycleState)
      *             .build());
      * 
@@ -879,9 +879,9 @@ public final class BastionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSessions = BastionFunctions.getSessions(GetSessionsArgs.builder()
-     *             .bastionId(testBastion.id())
+     *             .bastionId(testBastion.get("id"))
      *             .displayName(sessionDisplayName)
-     *             .sessionId(testSession.id())
+     *             .sessionId(testSession.get("id"))
      *             .sessionLifecycleState(sessionSessionLifecycleState)
      *             .build());
      * 

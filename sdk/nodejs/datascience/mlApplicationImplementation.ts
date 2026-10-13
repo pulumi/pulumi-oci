@@ -38,17 +38,17 @@ import * as utilities from "../utilities";
  *     },
  *     logging: {
  *         aggregatedInstanceViewLog: {
- *             enableLogging: mlApplicationImplementationLoggingAggregatedInstanceViewLogEnableLogging === "true",
+ *             enableLogging: mlApplicationImplementationLoggingAggregatedInstanceViewLogEnableLogging,
  *             logGroupId: testLogGroup.id,
  *             logId: testLog.id,
  *         },
  *         implementationLog: {
- *             enableLogging: mlApplicationImplementationLoggingImplementationLogEnableLogging === "true",
+ *             enableLogging: mlApplicationImplementationLoggingImplementationLogEnableLogging,
  *             logGroupId: testLogGroup.id,
  *             logId: testLog.id,
  *         },
  *         triggerLog: {
- *             enableLogging: mlApplicationImplementationLoggingTriggerLogEnableLogging === "true",
+ *             enableLogging: mlApplicationImplementationLoggingTriggerLogEnableLogging,
  *             logGroupId: testLogGroup.id,
  *             logId: testLog.id,
  *         },

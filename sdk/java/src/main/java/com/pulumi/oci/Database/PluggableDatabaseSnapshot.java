@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testPluggableDatabaseSnapshot = new PluggableDatabaseSnapshot("testPluggableDatabaseSnapshot", PluggableDatabaseSnapshotArgs.builder()
  *             .name(pluggableDatabaseSnapshotName)
- *             .pluggableDatabaseId(testPluggableDatabase.id())
+ *             .pluggableDatabaseId(testPluggableDatabase.get("id"))
  *             .definedTags(pluggableDatabaseSnapshotDefinedTags)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());

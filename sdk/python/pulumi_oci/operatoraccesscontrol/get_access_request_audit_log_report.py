@@ -130,7 +130,7 @@ def get_access_request_audit_log_report(access_request_id: Optional[_builtins.st
     import pulumi_oci as oci
 
     test_access_request_audit_log_report = oci.operatoraccesscontrol.get_access_request_audit_log_report(access_request_id=test_access_request["id"],
-        enable_process_tree=int(access_request_audit_log_report_enable_process_tree))
+        enable_process_tree=access_request_audit_log_report_enable_process_tree)
     ```
 
 
@@ -166,7 +166,7 @@ def get_access_request_audit_log_report_output(access_request_id: pulumi.Input[O
     import pulumi_oci as oci
 
     test_access_request_audit_log_report = oci.operatoraccesscontrol.get_access_request_audit_log_report(access_request_id=test_access_request["id"],
-        enable_process_tree=int(access_request_audit_log_report_enable_process_tree))
+        enable_process_tree=access_request_audit_log_report_enable_process_tree)
     ```
 
 

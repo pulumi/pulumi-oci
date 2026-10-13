@@ -63,7 +63,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpMonitor = HealthChecksFunctions.getHttpMonitor(GetHttpMonitorArgs.builder()
-     *             .monitorId(testMonitor.id())
+     *             .monitorId(testMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -105,7 +105,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpMonitor = HealthChecksFunctions.getHttpMonitor(GetHttpMonitorArgs.builder()
-     *             .monitorId(testMonitor.id())
+     *             .monitorId(testMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -147,7 +147,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpMonitor = HealthChecksFunctions.getHttpMonitor(GetHttpMonitorArgs.builder()
-     *             .monitorId(testMonitor.id())
+     *             .monitorId(testMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -189,7 +189,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpMonitor = HealthChecksFunctions.getHttpMonitor(GetHttpMonitorArgs.builder()
-     *             .monitorId(testMonitor.id())
+     *             .monitorId(testMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -231,7 +231,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpMonitor = HealthChecksFunctions.getHttpMonitor(GetHttpMonitorArgs.builder()
-     *             .monitorId(testMonitor.id())
+     *             .monitorId(testMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -495,7 +495,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpProbeResults = HealthChecksFunctions.getHttpProbeResults(GetHttpProbeResultsArgs.builder()
-     *             .probeConfigurationId(testProbeConfiguration.id())
+     *             .probeConfigurationId(testProbeConfiguration.get("id"))
      *             .startTimeGreaterThanOrEqualTo(httpProbeResultStartTimeGreaterThanOrEqualTo)
      *             .startTimeLessThanOrEqualTo(httpProbeResultStartTimeLessThanOrEqualTo)
      *             .target(httpProbeResultTarget)
@@ -542,7 +542,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpProbeResults = HealthChecksFunctions.getHttpProbeResults(GetHttpProbeResultsArgs.builder()
-     *             .probeConfigurationId(testProbeConfiguration.id())
+     *             .probeConfigurationId(testProbeConfiguration.get("id"))
      *             .startTimeGreaterThanOrEqualTo(httpProbeResultStartTimeGreaterThanOrEqualTo)
      *             .startTimeLessThanOrEqualTo(httpProbeResultStartTimeLessThanOrEqualTo)
      *             .target(httpProbeResultTarget)
@@ -589,7 +589,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpProbeResults = HealthChecksFunctions.getHttpProbeResults(GetHttpProbeResultsArgs.builder()
-     *             .probeConfigurationId(testProbeConfiguration.id())
+     *             .probeConfigurationId(testProbeConfiguration.get("id"))
      *             .startTimeGreaterThanOrEqualTo(httpProbeResultStartTimeGreaterThanOrEqualTo)
      *             .startTimeLessThanOrEqualTo(httpProbeResultStartTimeLessThanOrEqualTo)
      *             .target(httpProbeResultTarget)
@@ -636,7 +636,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpProbeResults = HealthChecksFunctions.getHttpProbeResults(GetHttpProbeResultsArgs.builder()
-     *             .probeConfigurationId(testProbeConfiguration.id())
+     *             .probeConfigurationId(testProbeConfiguration.get("id"))
      *             .startTimeGreaterThanOrEqualTo(httpProbeResultStartTimeGreaterThanOrEqualTo)
      *             .startTimeLessThanOrEqualTo(httpProbeResultStartTimeLessThanOrEqualTo)
      *             .target(httpProbeResultTarget)
@@ -683,7 +683,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHttpProbeResults = HealthChecksFunctions.getHttpProbeResults(GetHttpProbeResultsArgs.builder()
-     *             .probeConfigurationId(testProbeConfiguration.id())
+     *             .probeConfigurationId(testProbeConfiguration.get("id"))
      *             .startTimeGreaterThanOrEqualTo(httpProbeResultStartTimeGreaterThanOrEqualTo)
      *             .startTimeLessThanOrEqualTo(httpProbeResultStartTimeLessThanOrEqualTo)
      *             .target(httpProbeResultTarget)
@@ -728,7 +728,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPingMonitor = HealthChecksFunctions.getPingMonitor(GetPingMonitorArgs.builder()
-     *             .monitorId(testMonitor.id())
+     *             .monitorId(testMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -770,7 +770,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPingMonitor = HealthChecksFunctions.getPingMonitor(GetPingMonitorArgs.builder()
-     *             .monitorId(testMonitor.id())
+     *             .monitorId(testMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -812,7 +812,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPingMonitor = HealthChecksFunctions.getPingMonitor(GetPingMonitorArgs.builder()
-     *             .monitorId(testMonitor.id())
+     *             .monitorId(testMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -854,7 +854,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPingMonitor = HealthChecksFunctions.getPingMonitor(GetPingMonitorArgs.builder()
-     *             .monitorId(testMonitor.id())
+     *             .monitorId(testMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -896,7 +896,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPingMonitor = HealthChecksFunctions.getPingMonitor(GetPingMonitorArgs.builder()
-     *             .monitorId(testMonitor.id())
+     *             .monitorId(testMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -1179,7 +1179,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPingProbeResults = HealthChecksFunctions.getPingProbeResults(GetPingProbeResultsArgs.builder()
-     *             .probeConfigurationId(testProbeConfiguration.id())
+     *             .probeConfigurationId(testProbeConfiguration.get("id"))
      *             .startTimeGreaterThanOrEqualTo(pingProbeResultStartTimeGreaterThanOrEqualTo)
      *             .startTimeLessThanOrEqualTo(pingProbeResultStartTimeLessThanOrEqualTo)
      *             .target(pingProbeResultTarget)
@@ -1230,7 +1230,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPingProbeResults = HealthChecksFunctions.getPingProbeResults(GetPingProbeResultsArgs.builder()
-     *             .probeConfigurationId(testProbeConfiguration.id())
+     *             .probeConfigurationId(testProbeConfiguration.get("id"))
      *             .startTimeGreaterThanOrEqualTo(pingProbeResultStartTimeGreaterThanOrEqualTo)
      *             .startTimeLessThanOrEqualTo(pingProbeResultStartTimeLessThanOrEqualTo)
      *             .target(pingProbeResultTarget)
@@ -1281,7 +1281,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPingProbeResults = HealthChecksFunctions.getPingProbeResults(GetPingProbeResultsArgs.builder()
-     *             .probeConfigurationId(testProbeConfiguration.id())
+     *             .probeConfigurationId(testProbeConfiguration.get("id"))
      *             .startTimeGreaterThanOrEqualTo(pingProbeResultStartTimeGreaterThanOrEqualTo)
      *             .startTimeLessThanOrEqualTo(pingProbeResultStartTimeLessThanOrEqualTo)
      *             .target(pingProbeResultTarget)
@@ -1332,7 +1332,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPingProbeResults = HealthChecksFunctions.getPingProbeResults(GetPingProbeResultsArgs.builder()
-     *             .probeConfigurationId(testProbeConfiguration.id())
+     *             .probeConfigurationId(testProbeConfiguration.get("id"))
      *             .startTimeGreaterThanOrEqualTo(pingProbeResultStartTimeGreaterThanOrEqualTo)
      *             .startTimeLessThanOrEqualTo(pingProbeResultStartTimeLessThanOrEqualTo)
      *             .target(pingProbeResultTarget)
@@ -1383,7 +1383,7 @@ public final class HealthChecksFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPingProbeResults = HealthChecksFunctions.getPingProbeResults(GetPingProbeResultsArgs.builder()
-     *             .probeConfigurationId(testProbeConfiguration.id())
+     *             .probeConfigurationId(testProbeConfiguration.get("id"))
      *             .startTimeGreaterThanOrEqualTo(pingProbeResultStartTimeGreaterThanOrEqualTo)
      *             .startTimeLessThanOrEqualTo(pingProbeResultStartTimeLessThanOrEqualTo)
      *             .target(pingProbeResultTarget)

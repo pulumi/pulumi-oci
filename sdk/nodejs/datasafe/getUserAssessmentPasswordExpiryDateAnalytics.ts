@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  * const testUserAssessmentPasswordExpiryDateAnalytics = oci.datasafe.getUserAssessmentPasswordExpiryDateAnalytics({
  *     userAssessmentId: testUserAssessment.id,
  *     accessLevel: userAssessmentPasswordExpiryDateAnalyticAccessLevel,
- *     compartmentIdInSubtree: userAssessmentPasswordExpiryDateAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: userAssessmentPasswordExpiryDateAnalyticCompartmentIdInSubtree,
  *     timePasswordExpiryLessThan: userAssessmentPasswordExpiryDateAnalyticTimePasswordExpiryLessThan,
  *     userCategory: userAssessmentPasswordExpiryDateAnalyticUserCategory,
  * });
@@ -118,7 +118,7 @@ export interface GetUserAssessmentPasswordExpiryDateAnalyticsResult {
  * const testUserAssessmentPasswordExpiryDateAnalytics = oci.datasafe.getUserAssessmentPasswordExpiryDateAnalytics({
  *     userAssessmentId: testUserAssessment.id,
  *     accessLevel: userAssessmentPasswordExpiryDateAnalyticAccessLevel,
- *     compartmentIdInSubtree: userAssessmentPasswordExpiryDateAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: userAssessmentPasswordExpiryDateAnalyticCompartmentIdInSubtree,
  *     timePasswordExpiryLessThan: userAssessmentPasswordExpiryDateAnalyticTimePasswordExpiryLessThan,
  *     userCategory: userAssessmentPasswordExpiryDateAnalyticUserCategory,
  * });

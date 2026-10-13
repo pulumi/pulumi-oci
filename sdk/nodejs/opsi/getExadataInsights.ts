@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testExadataInsights = oci.opsi.getExadataInsights({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: exadataInsightCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: exadataInsightCompartmentIdInSubtree,
  *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
  *     exadataTypes: exadataInsightExadataType,
  *     id: exadataInsightId,
@@ -128,7 +128,7 @@ export interface GetExadataInsightsResult {
  *
  * const testExadataInsights = oci.opsi.getExadataInsights({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: exadataInsightCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: exadataInsightCompartmentIdInSubtree,
  *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
  *     exadataTypes: exadataInsightExadataType,
  *     id: exadataInsightId,

@@ -389,7 +389,7 @@ class NatGateway(pulumi.CustomResource):
         test_nat_gateway = oci.core.NatGateway("test_nat_gateway",
             compartment_id=compartment_id,
             vcn_id=test_vcn["id"],
-            block_traffic=nat_gateway_block_traffic == "true",
+            block_traffic=nat_gateway_block_traffic,
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -450,7 +450,7 @@ class NatGateway(pulumi.CustomResource):
         test_nat_gateway = oci.core.NatGateway("test_nat_gateway",
             compartment_id=compartment_id,
             vcn_id=test_vcn["id"],
-            block_traffic=nat_gateway_block_traffic == "true",
+            block_traffic=nat_gateway_block_traffic,
             defined_tags={
                 "Operations.CostCenter": "42",
             },

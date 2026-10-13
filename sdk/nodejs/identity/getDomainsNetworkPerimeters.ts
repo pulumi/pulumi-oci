@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testNetworkPerimeters = oci.identity.getDomainsNetworkPerimeters({
  *     idcsEndpoint: testDomain.url,
- *     networkPerimeterCount: Number(networkPerimeterNetworkPerimeterCount),
+ *     networkPerimeterCount: networkPerimeterNetworkPerimeterCount,
  *     networkPerimeterFilter: networkPerimeterNetworkPerimeterFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: networkPerimeterAuthorization,
  *     resourceTypeSchemaVersion: networkPerimeterResourceTypeSchemaVersion,
- *     startIndex: Number(networkPerimeterStartIndex),
+ *     startIndex: networkPerimeterStartIndex,
  * });
  * ```
  */
@@ -130,13 +130,13 @@ export interface GetDomainsNetworkPerimetersResult {
  *
  * const testNetworkPerimeters = oci.identity.getDomainsNetworkPerimeters({
  *     idcsEndpoint: testDomain.url,
- *     networkPerimeterCount: Number(networkPerimeterNetworkPerimeterCount),
+ *     networkPerimeterCount: networkPerimeterNetworkPerimeterCount,
  *     networkPerimeterFilter: networkPerimeterNetworkPerimeterFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: networkPerimeterAuthorization,
  *     resourceTypeSchemaVersion: networkPerimeterResourceTypeSchemaVersion,
- *     startIndex: Number(networkPerimeterStartIndex),
+ *     startIndex: networkPerimeterStartIndex,
  * });
  * ```
  */

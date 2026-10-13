@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *         var testAnnouncementSubscription = new AnnouncementSubscription("testAnnouncementSubscription", AnnouncementSubscriptionArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(announcementSubscriptionDisplayName)
- *             .onsTopicId(testNotificationTopic.id())
+ *             .onsTopicId(testNotificationTopic.get("id"))
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(announcementSubscriptionDescription)
  *             .filterGroups(AnnouncementSubscriptionFilterGroupsArgs.builder()

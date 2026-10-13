@@ -287,7 +287,7 @@ def get_resource_action(include_resource_metadata: Optional[_builtins.bool] = No
     import pulumi_oci as oci
 
     test_resource_action = oci.optimizer.get_resource_action(resource_action_id=test_resource_action_oci_optimizer_resource_action["id"],
-        include_resource_metadata=resource_action_include_resource_metadata == "true")
+        include_resource_metadata=resource_action_include_resource_metadata)
     ```
 
 
@@ -336,7 +336,7 @@ def get_resource_action_output(include_resource_metadata: pulumi.Input[Optional[
     import pulumi_oci as oci
 
     test_resource_action = oci.optimizer.get_resource_action(resource_action_id=test_resource_action_oci_optimizer_resource_action["id"],
-        include_resource_metadata=resource_action_include_resource_metadata == "true")
+        include_resource_metadata=resource_action_include_resource_metadata)
     ```
 
 

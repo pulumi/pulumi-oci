@@ -99,7 +99,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessment = DatabaseMigrationFunctions.getAssessment(GetAssessmentArgs.builder()
-     *             .assessmentId(testAssessmentOciDatabaseMigrationAssessment.id())
+     *             .assessmentId(testAssessmentOciDatabaseMigrationAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -141,7 +141,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessment = DatabaseMigrationFunctions.getAssessment(GetAssessmentArgs.builder()
-     *             .assessmentId(testAssessmentOciDatabaseMigrationAssessment.id())
+     *             .assessmentId(testAssessmentOciDatabaseMigrationAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -183,7 +183,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessment = DatabaseMigrationFunctions.getAssessment(GetAssessmentArgs.builder()
-     *             .assessmentId(testAssessmentOciDatabaseMigrationAssessment.id())
+     *             .assessmentId(testAssessmentOciDatabaseMigrationAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -225,7 +225,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessment = DatabaseMigrationFunctions.getAssessment(GetAssessmentArgs.builder()
-     *             .assessmentId(testAssessmentOciDatabaseMigrationAssessment.id())
+     *             .assessmentId(testAssessmentOciDatabaseMigrationAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -267,7 +267,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessment = DatabaseMigrationFunctions.getAssessment(GetAssessmentArgs.builder()
-     *             .assessmentId(testAssessmentOciDatabaseMigrationAssessment.id())
+     *             .assessmentId(testAssessmentOciDatabaseMigrationAssessment.get("id"))
      *             .build());
      * 
      *     }
@@ -309,7 +309,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessmentAssessor = DatabaseMigrationFunctions.getAssessmentAssessor(GetAssessmentAssessorArgs.builder()
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessorName(assessmentAssessorAssessorName)
      *             .build());
      * 
@@ -352,7 +352,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessmentAssessor = DatabaseMigrationFunctions.getAssessmentAssessor(GetAssessmentAssessorArgs.builder()
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessorName(assessmentAssessorAssessorName)
      *             .build());
      * 
@@ -395,7 +395,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessmentAssessor = DatabaseMigrationFunctions.getAssessmentAssessor(GetAssessmentAssessorArgs.builder()
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessorName(assessmentAssessorAssessorName)
      *             .build());
      * 
@@ -438,7 +438,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessmentAssessor = DatabaseMigrationFunctions.getAssessmentAssessor(GetAssessmentAssessorArgs.builder()
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessorName(assessmentAssessorAssessorName)
      *             .build());
      * 
@@ -481,7 +481,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessmentAssessor = DatabaseMigrationFunctions.getAssessmentAssessor(GetAssessmentAssessorArgs.builder()
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessorName(assessmentAssessorAssessorName)
      *             .build());
      * 
@@ -579,7 +579,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessmentAssessorCheckAffectedObjects = DatabaseMigrationFunctions.getAssessmentAssessorCheckAffectedObjects(GetAssessmentAssessorCheckAffectedObjectsArgs.builder()
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessorName(assessmentAssessorCheckAffectedObjectAssessorName)
      *             .checkName(assessmentAssessorCheckAffectedObjectCheckName)
      *             .build());
@@ -623,7 +623,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessmentAssessorCheckAffectedObjects = DatabaseMigrationFunctions.getAssessmentAssessorCheckAffectedObjects(GetAssessmentAssessorCheckAffectedObjectsArgs.builder()
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessorName(assessmentAssessorCheckAffectedObjectAssessorName)
      *             .checkName(assessmentAssessorCheckAffectedObjectCheckName)
      *             .build());
@@ -667,7 +667,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessmentAssessorCheckAffectedObjects = DatabaseMigrationFunctions.getAssessmentAssessorCheckAffectedObjects(GetAssessmentAssessorCheckAffectedObjectsArgs.builder()
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessorName(assessmentAssessorCheckAffectedObjectAssessorName)
      *             .checkName(assessmentAssessorCheckAffectedObjectCheckName)
      *             .build());
@@ -711,7 +711,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessmentAssessorCheckAffectedObjects = DatabaseMigrationFunctions.getAssessmentAssessorCheckAffectedObjects(GetAssessmentAssessorCheckAffectedObjectsArgs.builder()
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessorName(assessmentAssessorCheckAffectedObjectAssessorName)
      *             .checkName(assessmentAssessorCheckAffectedObjectCheckName)
      *             .build());
@@ -755,7 +755,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessmentAssessorCheckAffectedObjects = DatabaseMigrationFunctions.getAssessmentAssessorCheckAffectedObjects(GetAssessmentAssessorCheckAffectedObjectsArgs.builder()
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessorName(assessmentAssessorCheckAffectedObjectAssessorName)
      *             .checkName(assessmentAssessorCheckAffectedObjectCheckName)
      *             .build());
@@ -799,7 +799,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessmentAssessorChecks = DatabaseMigrationFunctions.getAssessmentAssessorChecks(GetAssessmentAssessorChecksArgs.builder()
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessorName(assessmentAssessorCheckAssessorName)
      *             .compartmentId(compartmentId)
      *             .displayName(assessmentAssessorCheckDisplayName)
@@ -844,7 +844,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessmentAssessorChecks = DatabaseMigrationFunctions.getAssessmentAssessorChecks(GetAssessmentAssessorChecksArgs.builder()
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessorName(assessmentAssessorCheckAssessorName)
      *             .compartmentId(compartmentId)
      *             .displayName(assessmentAssessorCheckDisplayName)
@@ -889,7 +889,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessmentAssessorChecks = DatabaseMigrationFunctions.getAssessmentAssessorChecks(GetAssessmentAssessorChecksArgs.builder()
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessorName(assessmentAssessorCheckAssessorName)
      *             .compartmentId(compartmentId)
      *             .displayName(assessmentAssessorCheckDisplayName)
@@ -934,7 +934,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessmentAssessorChecks = DatabaseMigrationFunctions.getAssessmentAssessorChecks(GetAssessmentAssessorChecksArgs.builder()
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessorName(assessmentAssessorCheckAssessorName)
      *             .compartmentId(compartmentId)
      *             .displayName(assessmentAssessorCheckDisplayName)
@@ -979,7 +979,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessmentAssessorChecks = DatabaseMigrationFunctions.getAssessmentAssessorChecks(GetAssessmentAssessorChecksArgs.builder()
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .assessorName(assessmentAssessorCheckAssessorName)
      *             .compartmentId(compartmentId)
      *             .displayName(assessmentAssessorCheckDisplayName)
@@ -1024,7 +1024,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessmentAssessors = DatabaseMigrationFunctions.getAssessmentAssessors(GetAssessmentAssessorsArgs.builder()
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .displayName(assessmentAssessorDisplayName)
      *             .state(assessmentAssessorState)
      *             .build());
@@ -1068,7 +1068,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessmentAssessors = DatabaseMigrationFunctions.getAssessmentAssessors(GetAssessmentAssessorsArgs.builder()
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .displayName(assessmentAssessorDisplayName)
      *             .state(assessmentAssessorState)
      *             .build());
@@ -1112,7 +1112,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessmentAssessors = DatabaseMigrationFunctions.getAssessmentAssessors(GetAssessmentAssessorsArgs.builder()
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .displayName(assessmentAssessorDisplayName)
      *             .state(assessmentAssessorState)
      *             .build());
@@ -1156,7 +1156,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessmentAssessors = DatabaseMigrationFunctions.getAssessmentAssessors(GetAssessmentAssessorsArgs.builder()
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .displayName(assessmentAssessorDisplayName)
      *             .state(assessmentAssessorState)
      *             .build());
@@ -1200,7 +1200,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAssessmentAssessors = DatabaseMigrationFunctions.getAssessmentAssessors(GetAssessmentAssessorsArgs.builder()
-     *             .assessmentId(testAssessment.id())
+     *             .assessmentId(testAssessment.get("id"))
      *             .displayName(assessmentAssessorDisplayName)
      *             .state(assessmentAssessorState)
      *             .build());
@@ -1681,7 +1681,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = DatabaseMigrationFunctions.getConnection(GetConnectionArgs.builder()
-     *             .connectionId(testConnectionOciDatabaseMigrationConnection.id())
+     *             .connectionId(testConnectionOciDatabaseMigrationConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -1725,7 +1725,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = DatabaseMigrationFunctions.getConnection(GetConnectionArgs.builder()
-     *             .connectionId(testConnectionOciDatabaseMigrationConnection.id())
+     *             .connectionId(testConnectionOciDatabaseMigrationConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -1769,7 +1769,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = DatabaseMigrationFunctions.getConnection(GetConnectionArgs.builder()
-     *             .connectionId(testConnectionOciDatabaseMigrationConnection.id())
+     *             .connectionId(testConnectionOciDatabaseMigrationConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -1813,7 +1813,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = DatabaseMigrationFunctions.getConnection(GetConnectionArgs.builder()
-     *             .connectionId(testConnectionOciDatabaseMigrationConnection.id())
+     *             .connectionId(testConnectionOciDatabaseMigrationConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -1857,7 +1857,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnection = DatabaseMigrationFunctions.getConnection(GetConnectionArgs.builder()
-     *             .connectionId(testConnectionOciDatabaseMigrationConnection.id())
+     *             .connectionId(testConnectionOciDatabaseMigrationConnection.get("id"))
      *             .build());
      * 
      *     }
@@ -1901,7 +1901,7 @@ public final class DatabaseMigrationFunctions {
      *         final var testConnectionDatabaseconnectiontypes = DatabaseMigrationFunctions.getConnectionDatabaseconnectiontypes(GetConnectionDatabaseconnectiontypesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .connectionTypes(connectionDatabaseconnectiontypeConnectionType)
-     *             .sourceConnectionId(testConnection.id())
+     *             .sourceConnectionId(testConnection.get("id"))
      *             .technologyTypes(connectionDatabaseconnectiontypeTechnologyType)
      *             .build());
      * 
@@ -1946,7 +1946,7 @@ public final class DatabaseMigrationFunctions {
      *         final var testConnectionDatabaseconnectiontypes = DatabaseMigrationFunctions.getConnectionDatabaseconnectiontypes(GetConnectionDatabaseconnectiontypesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .connectionTypes(connectionDatabaseconnectiontypeConnectionType)
-     *             .sourceConnectionId(testConnection.id())
+     *             .sourceConnectionId(testConnection.get("id"))
      *             .technologyTypes(connectionDatabaseconnectiontypeTechnologyType)
      *             .build());
      * 
@@ -1991,7 +1991,7 @@ public final class DatabaseMigrationFunctions {
      *         final var testConnectionDatabaseconnectiontypes = DatabaseMigrationFunctions.getConnectionDatabaseconnectiontypes(GetConnectionDatabaseconnectiontypesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .connectionTypes(connectionDatabaseconnectiontypeConnectionType)
-     *             .sourceConnectionId(testConnection.id())
+     *             .sourceConnectionId(testConnection.get("id"))
      *             .technologyTypes(connectionDatabaseconnectiontypeTechnologyType)
      *             .build());
      * 
@@ -2036,7 +2036,7 @@ public final class DatabaseMigrationFunctions {
      *         final var testConnectionDatabaseconnectiontypes = DatabaseMigrationFunctions.getConnectionDatabaseconnectiontypes(GetConnectionDatabaseconnectiontypesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .connectionTypes(connectionDatabaseconnectiontypeConnectionType)
-     *             .sourceConnectionId(testConnection.id())
+     *             .sourceConnectionId(testConnection.get("id"))
      *             .technologyTypes(connectionDatabaseconnectiontypeTechnologyType)
      *             .build());
      * 
@@ -2081,7 +2081,7 @@ public final class DatabaseMigrationFunctions {
      *         final var testConnectionDatabaseconnectiontypes = DatabaseMigrationFunctions.getConnectionDatabaseconnectiontypes(GetConnectionDatabaseconnectiontypesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .connectionTypes(connectionDatabaseconnectiontypeConnectionType)
-     *             .sourceConnectionId(testConnection.id())
+     *             .sourceConnectionId(testConnection.get("id"))
      *             .technologyTypes(connectionDatabaseconnectiontypeTechnologyType)
      *             .build());
      * 
@@ -2129,7 +2129,7 @@ public final class DatabaseMigrationFunctions {
      *             .compartmentId(compartmentId)
      *             .connectionTypes(connectionConnectionType)
      *             .displayName(connectionDisplayName)
-     *             .sourceConnectionId(testConnection.id())
+     *             .sourceConnectionId(testConnection.get("id"))
      *             .state(connectionState)
      *             .technologySubType(connectionTechnologySubType)
      *             .technologyTypes(connectionTechnologyType)
@@ -2179,7 +2179,7 @@ public final class DatabaseMigrationFunctions {
      *             .compartmentId(compartmentId)
      *             .connectionTypes(connectionConnectionType)
      *             .displayName(connectionDisplayName)
-     *             .sourceConnectionId(testConnection.id())
+     *             .sourceConnectionId(testConnection.get("id"))
      *             .state(connectionState)
      *             .technologySubType(connectionTechnologySubType)
      *             .technologyTypes(connectionTechnologyType)
@@ -2229,7 +2229,7 @@ public final class DatabaseMigrationFunctions {
      *             .compartmentId(compartmentId)
      *             .connectionTypes(connectionConnectionType)
      *             .displayName(connectionDisplayName)
-     *             .sourceConnectionId(testConnection.id())
+     *             .sourceConnectionId(testConnection.get("id"))
      *             .state(connectionState)
      *             .technologySubType(connectionTechnologySubType)
      *             .technologyTypes(connectionTechnologyType)
@@ -2279,7 +2279,7 @@ public final class DatabaseMigrationFunctions {
      *             .compartmentId(compartmentId)
      *             .connectionTypes(connectionConnectionType)
      *             .displayName(connectionDisplayName)
-     *             .sourceConnectionId(testConnection.id())
+     *             .sourceConnectionId(testConnection.get("id"))
      *             .state(connectionState)
      *             .technologySubType(connectionTechnologySubType)
      *             .technologyTypes(connectionTechnologyType)
@@ -2329,7 +2329,7 @@ public final class DatabaseMigrationFunctions {
      *             .compartmentId(compartmentId)
      *             .connectionTypes(connectionConnectionType)
      *             .displayName(connectionDisplayName)
-     *             .sourceConnectionId(testConnection.id())
+     *             .sourceConnectionId(testConnection.get("id"))
      *             .state(connectionState)
      *             .technologySubType(connectionTechnologySubType)
      *             .technologyTypes(connectionTechnologyType)
@@ -2376,7 +2376,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobAdvisorReport = DatabaseMigrationFunctions.getJobAdvisorReport(GetJobAdvisorReportArgs.builder()
-     *             .jobId(testJob.id())
+     *             .jobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -2420,7 +2420,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobAdvisorReport = DatabaseMigrationFunctions.getJobAdvisorReport(GetJobAdvisorReportArgs.builder()
-     *             .jobId(testJob.id())
+     *             .jobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -2464,7 +2464,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobAdvisorReport = DatabaseMigrationFunctions.getJobAdvisorReport(GetJobAdvisorReportArgs.builder()
-     *             .jobId(testJob.id())
+     *             .jobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -2508,7 +2508,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobAdvisorReport = DatabaseMigrationFunctions.getJobAdvisorReport(GetJobAdvisorReportArgs.builder()
-     *             .jobId(testJob.id())
+     *             .jobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -2552,7 +2552,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobAdvisorReport = DatabaseMigrationFunctions.getJobAdvisorReport(GetJobAdvisorReportArgs.builder()
-     *             .jobId(testJob.id())
+     *             .jobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -2594,8 +2594,8 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobAdvisorReportCheckObjects = DatabaseMigrationFunctions.getJobAdvisorReportCheckObjects(GetJobAdvisorReportCheckObjectsArgs.builder()
-     *             .advisorReportCheckId(testAdvisorReportCheck.id())
-     *             .jobId(testJob.id())
+     *             .advisorReportCheckId(testAdvisorReportCheck.get("id"))
+     *             .jobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -2637,8 +2637,8 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobAdvisorReportCheckObjects = DatabaseMigrationFunctions.getJobAdvisorReportCheckObjects(GetJobAdvisorReportCheckObjectsArgs.builder()
-     *             .advisorReportCheckId(testAdvisorReportCheck.id())
-     *             .jobId(testJob.id())
+     *             .advisorReportCheckId(testAdvisorReportCheck.get("id"))
+     *             .jobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -2680,8 +2680,8 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobAdvisorReportCheckObjects = DatabaseMigrationFunctions.getJobAdvisorReportCheckObjects(GetJobAdvisorReportCheckObjectsArgs.builder()
-     *             .advisorReportCheckId(testAdvisorReportCheck.id())
-     *             .jobId(testJob.id())
+     *             .advisorReportCheckId(testAdvisorReportCheck.get("id"))
+     *             .jobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -2723,8 +2723,8 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobAdvisorReportCheckObjects = DatabaseMigrationFunctions.getJobAdvisorReportCheckObjects(GetJobAdvisorReportCheckObjectsArgs.builder()
-     *             .advisorReportCheckId(testAdvisorReportCheck.id())
-     *             .jobId(testJob.id())
+     *             .advisorReportCheckId(testAdvisorReportCheck.get("id"))
+     *             .jobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -2766,8 +2766,8 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobAdvisorReportCheckObjects = DatabaseMigrationFunctions.getJobAdvisorReportCheckObjects(GetJobAdvisorReportCheckObjectsArgs.builder()
-     *             .advisorReportCheckId(testAdvisorReportCheck.id())
-     *             .jobId(testJob.id())
+     *             .advisorReportCheckId(testAdvisorReportCheck.get("id"))
+     *             .jobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -2809,7 +2809,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobAdvisorReportChecks = DatabaseMigrationFunctions.getJobAdvisorReportChecks(GetJobAdvisorReportChecksArgs.builder()
-     *             .jobId(testJob.id())
+     *             .jobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -2851,7 +2851,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobAdvisorReportChecks = DatabaseMigrationFunctions.getJobAdvisorReportChecks(GetJobAdvisorReportChecksArgs.builder()
-     *             .jobId(testJob.id())
+     *             .jobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -2893,7 +2893,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobAdvisorReportChecks = DatabaseMigrationFunctions.getJobAdvisorReportChecks(GetJobAdvisorReportChecksArgs.builder()
-     *             .jobId(testJob.id())
+     *             .jobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -2935,7 +2935,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobAdvisorReportChecks = DatabaseMigrationFunctions.getJobAdvisorReportChecks(GetJobAdvisorReportChecksArgs.builder()
-     *             .jobId(testJob.id())
+     *             .jobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -2977,7 +2977,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobAdvisorReportChecks = DatabaseMigrationFunctions.getJobAdvisorReportChecks(GetJobAdvisorReportChecksArgs.builder()
-     *             .jobId(testJob.id())
+     *             .jobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -3019,7 +3019,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobOutput = DatabaseMigrationFunctions.getJobOutput(GetJobOutputArgs.builder()
-     *             .jobId(testJob.id())
+     *             .jobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -3061,7 +3061,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobOutput = DatabaseMigrationFunctions.getJobOutput(GetJobOutputArgs.builder()
-     *             .jobId(testJob.id())
+     *             .jobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -3103,7 +3103,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobOutput = DatabaseMigrationFunctions.getJobOutput(GetJobOutputArgs.builder()
-     *             .jobId(testJob.id())
+     *             .jobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -3145,7 +3145,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobOutput = DatabaseMigrationFunctions.getJobOutput(GetJobOutputArgs.builder()
-     *             .jobId(testJob.id())
+     *             .jobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -3187,7 +3187,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJobOutput = DatabaseMigrationFunctions.getJobOutput(GetJobOutputArgs.builder()
-     *             .jobId(testJob.id())
+     *             .jobId(testJob.get("id"))
      *             .build());
      * 
      *     }
@@ -3231,7 +3231,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigration = DatabaseMigrationFunctions.getMigration(GetMigrationArgs.builder()
-     *             .migrationId(testMigrationOciDatabaseMigrationMigration.id())
+     *             .migrationId(testMigrationOciDatabaseMigrationMigration.get("id"))
      *             .build());
      * 
      *     }
@@ -3275,7 +3275,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigration = DatabaseMigrationFunctions.getMigration(GetMigrationArgs.builder()
-     *             .migrationId(testMigrationOciDatabaseMigrationMigration.id())
+     *             .migrationId(testMigrationOciDatabaseMigrationMigration.get("id"))
      *             .build());
      * 
      *     }
@@ -3319,7 +3319,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigration = DatabaseMigrationFunctions.getMigration(GetMigrationArgs.builder()
-     *             .migrationId(testMigrationOciDatabaseMigrationMigration.id())
+     *             .migrationId(testMigrationOciDatabaseMigrationMigration.get("id"))
      *             .build());
      * 
      *     }
@@ -3363,7 +3363,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigration = DatabaseMigrationFunctions.getMigration(GetMigrationArgs.builder()
-     *             .migrationId(testMigrationOciDatabaseMigrationMigration.id())
+     *             .migrationId(testMigrationOciDatabaseMigrationMigration.get("id"))
      *             .build());
      * 
      *     }
@@ -3407,7 +3407,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigration = DatabaseMigrationFunctions.getMigration(GetMigrationArgs.builder()
-     *             .migrationId(testMigrationOciDatabaseMigrationMigration.id())
+     *             .migrationId(testMigrationOciDatabaseMigrationMigration.get("id"))
      *             .build());
      * 
      *     }
@@ -3734,7 +3734,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScript = DatabaseMigrationFunctions.getScript(GetScriptArgs.builder()
-     *             .scriptId(testScriptOciDatabaseMigrationScript.id())
+     *             .scriptId(testScriptOciDatabaseMigrationScript.get("id"))
      *             .build());
      * 
      *     }
@@ -3776,7 +3776,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScript = DatabaseMigrationFunctions.getScript(GetScriptArgs.builder()
-     *             .scriptId(testScriptOciDatabaseMigrationScript.id())
+     *             .scriptId(testScriptOciDatabaseMigrationScript.get("id"))
      *             .build());
      * 
      *     }
@@ -3818,7 +3818,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScript = DatabaseMigrationFunctions.getScript(GetScriptArgs.builder()
-     *             .scriptId(testScriptOciDatabaseMigrationScript.id())
+     *             .scriptId(testScriptOciDatabaseMigrationScript.get("id"))
      *             .build());
      * 
      *     }
@@ -3860,7 +3860,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScript = DatabaseMigrationFunctions.getScript(GetScriptArgs.builder()
-     *             .scriptId(testScriptOciDatabaseMigrationScript.id())
+     *             .scriptId(testScriptOciDatabaseMigrationScript.get("id"))
      *             .build());
      * 
      *     }
@@ -3902,7 +3902,7 @@ public final class DatabaseMigrationFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScript = DatabaseMigrationFunctions.getScript(GetScriptArgs.builder()
-     *             .scriptId(testScriptOciDatabaseMigrationScript.id())
+     *             .scriptId(testScriptOciDatabaseMigrationScript.get("id"))
      *             .build());
      * 
      *     }

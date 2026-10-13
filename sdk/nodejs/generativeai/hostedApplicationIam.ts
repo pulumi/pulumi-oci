@@ -45,12 +45,12 @@ import * as utilities from "../utilities";
  *     },
  *     scalingConfig: {
  *         scalingType: hostedApplicationIamScalingConfigScalingType,
- *         maxReplica: Number(hostedApplicationIamScalingConfigMaxReplica),
- *         minReplica: Number(hostedApplicationIamScalingConfigMinReplica),
- *         targetConcurrencyThreshold: Number(hostedApplicationIamScalingConfigTargetConcurrencyThreshold),
- *         targetCpuThreshold: Number(hostedApplicationIamScalingConfigTargetCpuThreshold),
- *         targetMemoryThreshold: Number(hostedApplicationIamScalingConfigTargetMemoryThreshold),
- *         targetRpsThreshold: Number(hostedApplicationIamScalingConfigTargetRpsThreshold),
+ *         maxReplica: hostedApplicationIamScalingConfigMaxReplica,
+ *         minReplica: hostedApplicationIamScalingConfigMinReplica,
+ *         targetConcurrencyThreshold: hostedApplicationIamScalingConfigTargetConcurrencyThreshold,
+ *         targetCpuThreshold: hostedApplicationIamScalingConfigTargetCpuThreshold,
+ *         targetMemoryThreshold: hostedApplicationIamScalingConfigTargetMemoryThreshold,
+ *         targetRpsThreshold: hostedApplicationIamScalingConfigTargetRpsThreshold,
  *     },
  * });
  * ```

@@ -163,7 +163,7 @@ def get_crypto_assessment_findings(category: Optional[_builtins.str] = None,
     test_crypto_assessment_findings = oci.datasafe.get_crypto_assessment_findings(crypto_assessment_id=test_crypto_assessment["id"],
         category=crypto_assessment_finding_category,
         finding_key=crypto_assessment_finding_finding_key,
-        is_quantum_readiness_check=crypto_assessment_finding_is_quantum_readiness_check == "true",
+        is_quantum_readiness_check=crypto_assessment_finding_is_quantum_readiness_check,
         status=crypto_assessment_finding_status,
         title=crypto_assessment_finding_title)
     ```
@@ -219,7 +219,7 @@ def get_crypto_assessment_findings_output(category: pulumi.Input[Optional[Option
     test_crypto_assessment_findings = oci.datasafe.get_crypto_assessment_findings(crypto_assessment_id=test_crypto_assessment["id"],
         category=crypto_assessment_finding_category,
         finding_key=crypto_assessment_finding_finding_key,
-        is_quantum_readiness_check=crypto_assessment_finding_is_quantum_readiness_check == "true",
+        is_quantum_readiness_check=crypto_assessment_finding_is_quantum_readiness_check,
         status=crypto_assessment_finding_status,
         title=crypto_assessment_finding_title)
     ```

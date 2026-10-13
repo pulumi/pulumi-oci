@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testAlerts = oci.datasafe.getAlerts({
  *     compartmentId: compartmentId,
  *     accessLevel: alertAccessLevel,
- *     compartmentIdInSubtree: alertCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: alertCompartmentIdInSubtree,
  *     fields: alertField,
  *     id: alertId,
  *     scimQuery: alertScimQuery,
@@ -113,7 +113,7 @@ export interface GetAlertsResult {
  * const testAlerts = oci.datasafe.getAlerts({
  *     compartmentId: compartmentId,
  *     accessLevel: alertAccessLevel,
- *     compartmentIdInSubtree: alertCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: alertCompartmentIdInSubtree,
  *     fields: alertField,
  *     id: alertId,
  *     scimQuery: alertScimQuery,

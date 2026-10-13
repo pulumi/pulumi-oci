@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *         var testModelGroupArtifact = new ModelGroupArtifact("testModelGroupArtifact", ModelGroupArtifactArgs.builder()
  *             .modelGroupArtifact(modelGroupArtifactModelGroupArtifact)
  *             .contentLength(modelGroupArtifactContentLength)
- *             .modelGroupId(testModelGroup.id())
+ *             .modelGroupId(testModelGroup.get("id"))
  *             .contentDisposition(modelGroupArtifactContentDisposition)
  *             .build());
  * 

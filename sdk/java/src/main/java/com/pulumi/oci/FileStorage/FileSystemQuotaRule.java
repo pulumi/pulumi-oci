@@ -50,12 +50,12 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testFileSystemQuotaRule = new FileSystemQuotaRule("testFileSystemQuotaRule", FileSystemQuotaRuleArgs.builder()
- *             .fileSystemId(testFileSystem.id())
+ *             .fileSystemId(testFileSystem.get("id"))
  *             .isHardQuota(fileSystemQuotaRuleIsHardQuota)
  *             .principalType(fileSystemQuotaRulePrincipalType)
  *             .quotaLimitInGigabytes(fileSystemQuotaRuleQuotaLimitInGigabytes)
  *             .displayName(fileSystemQuotaRuleDisplayName)
- *             .principalId(testPrincipal.id())
+ *             .principalId(testPrincipal.get("id"))
  *             .build());
  * 
  *     }

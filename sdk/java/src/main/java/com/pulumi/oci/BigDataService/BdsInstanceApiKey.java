@@ -47,10 +47,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBdsInstanceApiKey = new BdsInstanceApiKey("testBdsInstanceApiKey", BdsInstanceApiKeyArgs.builder()
- *             .bdsInstanceId(testBdsInstance.id())
+ *             .bdsInstanceId(testBdsInstance.get("id"))
  *             .keyAlias(bdsInstanceApiKeyKeyAlias)
  *             .passphrase(bdsInstanceApiKeyPassphrase)
- *             .userId(testUser.id())
+ *             .userId(testUser.get("id"))
  *             .defaultRegion(bdsInstanceApiKeyDefaultRegion)
  *             .domainOcid(bdsInstanceApiKeyDomainOcid)
  *             .build());

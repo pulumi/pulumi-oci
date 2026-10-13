@@ -33,7 +33,7 @@ import * as utilities from "../utilities";
  * const testSecurityPolicyReports = oci.datasafe.getSecurityPolicyReports({
  *     compartmentId: compartmentId,
  *     accessLevel: securityPolicyReportAccessLevel,
- *     compartmentIdInSubtree: securityPolicyReportCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: securityPolicyReportCompartmentIdInSubtree,
  *     displayName: securityPolicyReportDisplayName,
  *     securityPolicyReportId: testSecurityPolicyReport.id,
  *     state: securityPolicyReportState,
@@ -150,7 +150,7 @@ export interface GetSecurityPolicyReportsResult {
  * const testSecurityPolicyReports = oci.datasafe.getSecurityPolicyReports({
  *     compartmentId: compartmentId,
  *     accessLevel: securityPolicyReportAccessLevel,
- *     compartmentIdInSubtree: securityPolicyReportCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: securityPolicyReportCompartmentIdInSubtree,
  *     displayName: securityPolicyReportDisplayName,
  *     securityPolicyReportId: testSecurityPolicyReport.id,
  *     state: securityPolicyReportState,

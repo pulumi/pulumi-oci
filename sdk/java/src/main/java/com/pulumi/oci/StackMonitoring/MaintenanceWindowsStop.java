@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMaintenanceWindowsStop = new MaintenanceWindowsStop("testMaintenanceWindowsStop", MaintenanceWindowsStopArgs.builder()
- *             .maintenanceWindowId(testMaintenanceWindow.id())
+ *             .maintenanceWindowId(testMaintenanceWindow.get("id"))
  *             .build());
  * 
  *     }

@@ -361,7 +361,7 @@ class Cpe(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_private=cpe_is_private == "true")
+            is_private=cpe_is_private)
         ```
 
         ## Import
@@ -437,7 +437,7 @@ class Cpe(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_private=cpe_is_private == "true")
+            is_private=cpe_is_private)
         ```
 
         ## Import

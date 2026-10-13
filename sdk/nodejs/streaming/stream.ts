@@ -24,13 +24,13 @@ import * as utilities from "../utilities";
  *
  * const testStream = new oci.streaming.Stream("test_stream", {
  *     name: streamName,
- *     partitions: Number(streamPartitions),
+ *     partitions: streamPartitions,
  *     compartmentId: compartmentId,
  *     definedTags: streamDefinedTags,
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     retentionInHours: Number(streamRetentionInHours),
+ *     retentionInHours: streamRetentionInHours,
  *     streamPoolId: testStreamPool.id,
  * });
  * ```

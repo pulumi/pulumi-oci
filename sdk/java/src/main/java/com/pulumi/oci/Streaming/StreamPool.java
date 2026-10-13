@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *             .compartmentId(compartmentId)
  *             .name(streamPoolName)
  *             .customEncryptionKey(StreamPoolCustomEncryptionKeyArgs.builder()
- *                 .kmsKeyId(testKey.id())
+ *                 .kmsKeyId(testKey.get("id"))
  *                 .build())
  *             .definedTags(streamPoolDefinedTags)
  *             .freeformTags(Map.of("Department", "Finance"))
@@ -72,7 +72,7 @@ import javax.annotation.Nullable;
  *             .privateEndpointSettings(StreamPoolPrivateEndpointSettingsArgs.builder()
  *                 .nsgIds(streamPoolPrivateEndpointSettingsNsgIds)
  *                 .privateEndpointIp(streamPoolPrivateEndpointSettingsPrivateEndpointIp)
- *                 .subnetId(testSubnet.id())
+ *                 .subnetId(testSubnet.get("id"))
  *                 .build())
  *             .securityAttributes(streamPoolSecurityAttributes)
  *             .build());

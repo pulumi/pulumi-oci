@@ -170,9 +170,9 @@ def get_detector_recipes(access_level: Optional[_builtins.str] = None,
 
     test_detector_recipes = oci.cloudguard.get_detector_recipes(compartment_id=compartment_id,
         access_level=detector_recipe_access_level,
-        compartment_id_in_subtree=detector_recipe_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=detector_recipe_compartment_id_in_subtree,
         display_name=detector_recipe_display_name,
-        resource_metadata_only=detector_recipe_resource_metadata_only == "true",
+        resource_metadata_only=detector_recipe_resource_metadata_only,
         state=detector_recipe_state)
     ```
 
@@ -240,9 +240,9 @@ def get_detector_recipes_output(access_level: pulumi.Input[Optional[Optional[_bu
 
     test_detector_recipes = oci.cloudguard.get_detector_recipes(compartment_id=compartment_id,
         access_level=detector_recipe_access_level,
-        compartment_id_in_subtree=detector_recipe_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=detector_recipe_compartment_id_in_subtree,
         display_name=detector_recipe_display_name,
-        resource_metadata_only=detector_recipe_resource_metadata_only == "true",
+        resource_metadata_only=detector_recipe_resource_metadata_only,
         state=detector_recipe_state)
     ```
 

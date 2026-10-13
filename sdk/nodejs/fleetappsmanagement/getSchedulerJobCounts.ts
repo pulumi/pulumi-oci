@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testSchedulerJobCounts = oci.fleetappsmanagement.getSchedulerJobCounts({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: schedulerJobCountCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: schedulerJobCountCompartmentIdInSubtree,
  * });
  * ```
  */
@@ -77,7 +77,7 @@ export interface GetSchedulerJobCountsResult {
  *
  * const testSchedulerJobCounts = oci.fleetappsmanagement.getSchedulerJobCounts({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: schedulerJobCountCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: schedulerJobCountCompartmentIdInSubtree,
  * });
  * ```
  */

@@ -639,7 +639,7 @@ class DeploymentBackup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_metadata_only=deployment_backup_is_metadata_only == "true",
+            is_metadata_only=deployment_backup_is_metadata_only,
             locks=[{
                 "type": deployment_backup_locks_type,
                 "message": deployment_backup_locks_message,
@@ -704,7 +704,7 @@ class DeploymentBackup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_metadata_only=deployment_backup_is_metadata_only == "true",
+            is_metadata_only=deployment_backup_is_metadata_only,
             locks=[{
                 "type": deployment_backup_locks_type,
                 "message": deployment_backup_locks_message,

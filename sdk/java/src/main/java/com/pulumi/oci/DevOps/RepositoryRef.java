@@ -49,9 +49,9 @@ import javax.annotation.Nullable;
  *         var testRepositoryRef = new RepositoryRef("testRepositoryRef", RepositoryRefArgs.builder()
  *             .refName(repositoryRefRefName)
  *             .refType(repositoryRefRefType)
- *             .repositoryId(testRepository.id())
- *             .commitId(testCommit.id())
- *             .objectId(testObject.id())
+ *             .repositoryId(testRepository.get("id"))
+ *             .commitId(testCommit.get("id"))
+ *             .objectId(testObject.get("id"))
  *             .build());
  * 
  *     }

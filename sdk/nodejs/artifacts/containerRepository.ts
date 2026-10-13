@@ -29,8 +29,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isImmutable: containerRepositoryIsImmutable === "true",
- *     isPublic: containerRepositoryIsPublic === "true",
+ *     isImmutable: containerRepositoryIsImmutable,
+ *     isPublic: containerRepositoryIsPublic,
  *     readme: {
  *         content: containerRepositoryReadmeContent,
  *         format: containerRepositoryReadmeFormat,

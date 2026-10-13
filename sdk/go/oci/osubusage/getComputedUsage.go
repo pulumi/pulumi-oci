@@ -32,7 +32,7 @@ import (
 //			_, err := osubusage.GetComputedUsage(ctx, &osubusage.GetComputedUsageArgs{
 //				CompartmentId:    compartmentId,
 //				ComputedUsageId:  testComputedUsageOciOsubUsageComputedUsage.Id,
-//				Fields:           pulumi.ToArray(computedUsageFields),
+//				Fields:           computedUsageFields,
 //				XOneOriginRegion: pulumi.StringRef(computedUsageXOneOriginRegion),
 //			}, nil)
 //			if err != nil {

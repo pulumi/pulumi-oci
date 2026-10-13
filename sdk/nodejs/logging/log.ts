@@ -41,8 +41,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isEnabled: logIsEnabled === "true",
- *     retentionDuration: Number(logRetentionDuration),
+ *     isEnabled: logIsEnabled,
+ *     retentionDuration: logRetentionDuration,
  * });
  * ```
  *

@@ -60,7 +60,7 @@ import javax.annotation.Nullable;
  *             .name(workspaceApplicationPatchName)
  *             .objectKeys(workspaceApplicationPatchObjectKeys)
  *             .patchType(workspaceApplicationPatchPatchType)
- *             .workspaceId(testWorkspace.id())
+ *             .workspaceId(testWorkspace.get("id"))
  *             .description(workspaceApplicationPatchDescription)
  *             .key(workspaceApplicationPatchKey)
  *             .modelVersion(workspaceApplicationPatchModelVersion)

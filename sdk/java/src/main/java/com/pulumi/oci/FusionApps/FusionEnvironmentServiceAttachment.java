@@ -48,8 +48,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testFusionEnvironmentServiceAttachment = new FusionEnvironmentServiceAttachment("testFusionEnvironmentServiceAttachment", FusionEnvironmentServiceAttachmentArgs.builder()
- *             .fusionEnvironmentId(testFusionEnvironment.id())
- *             .serviceInstanceId(testInstance.id())
+ *             .fusionEnvironmentId(testFusionEnvironment.get("id"))
+ *             .serviceInstanceId(testInstance.get("id"))
  *             .serviceInstanceType(fusionEnvironmentServiceAttachmentServiceInstanceType)
  *             .build());
  * 

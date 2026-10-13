@@ -40,7 +40,7 @@ import * as utilities from "../utilities";
  * const testConfiguration = new oci.nosql.Configuration("test_configuration", {
  *     compartmentId: compartmentId,
  *     environment: "HOSTED",
- *     isOpcDryRun: configurationIsOpcDryRun === "true",
+ *     isOpcDryRun: configurationIsOpcDryRun,
  *     kmsKey: {
  *         id: configurationKmsKeyId,
  *         kmsVaultId: testVault.id,

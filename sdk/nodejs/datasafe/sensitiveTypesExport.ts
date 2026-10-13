@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isIncludeAllSensitiveTypes: sensitiveTypesExportIsIncludeAllSensitiveTypes === "true",
+ *     isIncludeAllSensitiveTypes: sensitiveTypesExportIsIncludeAllSensitiveTypes,
  *     sensitiveTypeIdsForExports: sensitiveTypesExportSensitiveTypeIdsForExport,
  * });
  * ```

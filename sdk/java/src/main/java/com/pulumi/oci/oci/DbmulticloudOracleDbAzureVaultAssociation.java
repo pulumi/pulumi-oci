@@ -50,8 +50,8 @@ import javax.annotation.Nullable;
  *         var testOracleDbAzureVaultAssociation = new DbmulticloudOracleDbAzureVaultAssociation("testOracleDbAzureVaultAssociation", DbmulticloudOracleDbAzureVaultAssociationArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(oracleDbAzureVaultAssociationDisplayName)
- *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
- *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+ *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
+ *             .oracleDbAzureVaultId(testOracleDbAzureVault.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());

@@ -133,7 +133,7 @@ class CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement(pulumi.C
 
         test_cost_anomaly_monitor_costanomalymonitorenabletoggles_management = oci.oci.CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement("test_cost_anomaly_monitor_costanomalymonitorenabletoggles_management",
             cost_anomaly_monitor_id=test_cost_anomaly_monitor["id"],
-            enable_costanomalymonitorenabletoggle=enable_costanomalymonitorenabletoggle == "true")
+            enable_costanomalymonitorenabletoggle=enable_costanomalymonitorenabletoggle)
         ```
 
 
@@ -167,7 +167,7 @@ class CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement(pulumi.C
 
         test_cost_anomaly_monitor_costanomalymonitorenabletoggles_management = oci.oci.CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement("test_cost_anomaly_monitor_costanomalymonitorenabletoggles_management",
             cost_anomaly_monitor_id=test_cost_anomaly_monitor["id"],
-            enable_costanomalymonitorenabletoggle=enable_costanomalymonitorenabletoggle == "true")
+            enable_costanomalymonitorenabletoggle=enable_costanomalymonitorenabletoggle)
         ```
 
 

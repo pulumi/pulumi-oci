@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *             .connectionPassword(operationsInsightsWarehouseUserConnectionPassword)
  *             .isAwrDataAccess(operationsInsightsWarehouseUserIsAwrDataAccess)
  *             .name(operationsInsightsWarehouseUserName)
- *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+ *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.get("id"))
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .isEmDataAccess(operationsInsightsWarehouseUserIsEmDataAccess)

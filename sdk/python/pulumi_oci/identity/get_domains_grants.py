@@ -215,13 +215,13 @@ def get_domains_grants(attribute_sets: Optional[Sequence[_builtins.str]] = None,
     import pulumi_oci as oci
 
     test_grants = oci.identity.get_domains_grants(idcs_endpoint=test_domain["url"],
-        grant_count=int(grant_grant_count),
+        grant_count=grant_grant_count,
         grant_filter=grant_grant_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=grant_authorization,
         resource_type_schema_version=grant_resource_type_schema_version,
-        start_index=int(grant_start_index))
+        start_index=grant_start_index)
     ```
 
 
@@ -290,13 +290,13 @@ def get_domains_grants_output(attribute_sets: pulumi.Input[Optional[Optional[Seq
     import pulumi_oci as oci
 
     test_grants = oci.identity.get_domains_grants(idcs_endpoint=test_domain["url"],
-        grant_count=int(grant_grant_count),
+        grant_count=grant_grant_count,
         grant_filter=grant_grant_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=grant_authorization,
         resource_type_schema_version=grant_resource_type_schema_version,
-        start_index=int(grant_start_index))
+        start_index=grant_start_index)
     ```
 
 

@@ -50,9 +50,9 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testFleetResource = new FleetResource("testFleetResource", FleetResourceArgs.builder()
  *             .compartmentId(compartmentId)
- *             .fleetId(testFleet.id())
- *             .resourceId(testResource.id())
- *             .tenancyId(testTenancy.id())
+ *             .fleetId(testFleet.get("id"))
+ *             .resourceId(testResource.get("id"))
+ *             .tenancyId(testTenancy.get("id"))
  *             .resourceRegion(fleetResourceResourceRegion)
  *             .resourceType(fleetResourceResourceType)
  *             .build());

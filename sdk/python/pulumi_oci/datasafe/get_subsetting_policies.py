@@ -215,7 +215,7 @@ def get_subsetting_policies(access_level: Optional[_builtins.str] = None,
 
     test_subsetting_policies = oci.datasafe.get_subsetting_policies(compartment_id=compartment_id,
         access_level=subsetting_policy_access_level,
-        compartment_id_in_subtree=subsetting_policy_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=subsetting_policy_compartment_id_in_subtree,
         display_name=subsetting_policy_display_name,
         masking_policy_id=test_masking_policy["id"],
         sensitive_data_model_id=test_sensitive_data_model["id"],
@@ -300,7 +300,7 @@ def get_subsetting_policies_output(access_level: pulumi.Input[Optional[Optional[
 
     test_subsetting_policies = oci.datasafe.get_subsetting_policies(compartment_id=compartment_id,
         access_level=subsetting_policy_access_level,
-        compartment_id_in_subtree=subsetting_policy_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=subsetting_policy_compartment_id_in_subtree,
         display_name=subsetting_policy_display_name,
         masking_policy_id=test_masking_policy["id"],
         sensitive_data_model_id=test_sensitive_data_model["id"],

@@ -215,13 +215,13 @@ def get_domains_customer_secret_keys(attribute_sets: Optional[Sequence[_builtins
     import pulumi_oci as oci
 
     test_customer_secret_keys = oci.identity.get_domains_customer_secret_keys(idcs_endpoint=test_domain["url"],
-        customer_secret_key_count=int(customer_secret_key_customer_secret_key_count),
+        customer_secret_key_count=customer_secret_key_customer_secret_key_count,
         customer_secret_key_filter=customer_secret_key_customer_secret_key_filter,
         attribute_sets=[],
         attributes="",
         authorization=customer_secret_key_authorization,
         resource_type_schema_version=customer_secret_key_resource_type_schema_version,
-        start_index=int(customer_secret_key_start_index))
+        start_index=customer_secret_key_start_index)
     ```
 
 
@@ -290,13 +290,13 @@ def get_domains_customer_secret_keys_output(attribute_sets: pulumi.Input[Optiona
     import pulumi_oci as oci
 
     test_customer_secret_keys = oci.identity.get_domains_customer_secret_keys(idcs_endpoint=test_domain["url"],
-        customer_secret_key_count=int(customer_secret_key_customer_secret_key_count),
+        customer_secret_key_count=customer_secret_key_customer_secret_key_count,
         customer_secret_key_filter=customer_secret_key_customer_secret_key_filter,
         attribute_sets=[],
         attributes="",
         authorization=customer_secret_key_authorization,
         resource_type_schema_version=customer_secret_key_resource_type_schema_version,
-        start_index=int(customer_secret_key_start_index))
+        start_index=customer_secret_key_start_index)
     ```
 
 

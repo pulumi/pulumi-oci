@@ -48,10 +48,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDrgRouteTableRouteRule = new DrgRouteTableRouteRule("testDrgRouteTableRouteRule", DrgRouteTableRouteRuleArgs.builder()
- *             .drgRouteTableId(testDrgRouteTable.id())
+ *             .drgRouteTableId(testDrgRouteTable.get("id"))
  *             .destination(drgRouteTableRouteRuleRouteRulesDestination)
  *             .destinationType(drgRouteTableRouteRuleRouteRulesDestinationType)
- *             .nextHopDrgAttachmentId(testDrgAttachment.id())
+ *             .nextHopDrgAttachmentId(testDrgAttachment.get("id"))
  *             .build());
  * 
  *     }

@@ -32,7 +32,7 @@ import (
 //			_, err := optimizer.GetCategories(ctx, &optimizer.GetCategoriesArgs{
 //				CompartmentId:          compartmentId,
 //				CompartmentIdInSubtree: categoryCompartmentIdInSubtree,
-//				ChildTenancyIds:        pulumi.ToArray(categoryChildTenancyIds),
+//				ChildTenancyIds:        categoryChildTenancyIds,
 //				IncludeOrganization:    pulumi.BoolRef(categoryIncludeOrganization),
 //				Name:                   pulumi.StringRef(categoryName),
 //				State:                  pulumi.StringRef(categoryState),

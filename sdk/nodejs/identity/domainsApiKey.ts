@@ -36,7 +36,7 @@ import * as utilities from "../utilities";
  *         value: apiKeyTagsValue,
  *     }],
  *     urnietfparamsscimschemasoracleidcsextensionselfChangeUser: {
- *         allowSelfChange: apiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange === "true",
+ *         allowSelfChange: apiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange,
  *     },
  *     user: {
  *         ocid: testUser.ocid,

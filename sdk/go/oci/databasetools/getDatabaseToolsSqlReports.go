@@ -33,7 +33,7 @@ import (
 //				CompartmentId: compartmentId,
 //				DisplayName:   pulumi.StringRef(databaseToolsSqlReportDisplayName),
 //				State:         pulumi.StringRef(databaseToolsSqlReportState),
-//				Types:         pulumi.ToArray(databaseToolsSqlReportType),
+//				Types:         databaseToolsSqlReportType,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testOccMetricAlarms = oci.demandsignal.getOccMetricAlarms({
  *     compartmentId: compartmentId,
  *     displayName: occMetricAlarmDisplayName,
- *     isActive: occMetricAlarmIsActive === "true",
+ *     isActive: occMetricAlarmIsActive,
  * });
  * ```
  */
@@ -93,7 +93,7 @@ export interface GetOccMetricAlarmsResult {
  * const testOccMetricAlarms = oci.demandsignal.getOccMetricAlarms({
  *     compartmentId: compartmentId,
  *     displayName: occMetricAlarmDisplayName,
- *     isActive: occMetricAlarmIsActive === "true",
+ *     isActive: occMetricAlarmIsActive,
  * });
  * ```
  */

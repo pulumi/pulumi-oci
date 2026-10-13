@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testCostAnomalyMonitorCostanomalymonitorenabletogglesManagement = new CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement("testCostAnomalyMonitorCostanomalymonitorenabletogglesManagement", CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagementArgs.builder()
- *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+ *             .costAnomalyMonitorId(testCostAnomalyMonitor.get("id"))
  *             .enableCostanomalymonitorenabletoggle(enableCostanomalymonitorenabletoggle)
  *             .build());
  * 

@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  *     schedule: bdsInstanceNodeBackupConfigurationSchedule,
  *     backupType: bdsInstanceNodeBackupConfigurationBackupType,
  *     displayName: bdsInstanceNodeBackupConfigurationDisplayName,
- *     numberOfBackupsToRetain: Number(bdsInstanceNodeBackupConfigurationNumberOfBackupsToRetain),
+ *     numberOfBackupsToRetain: bdsInstanceNodeBackupConfigurationNumberOfBackupsToRetain,
  *     timezone: bdsInstanceNodeBackupConfigurationTimezone,
  * });
  * ```

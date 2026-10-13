@@ -50,13 +50,13 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testNatGateway = new NatGateway("testNatGateway", NatGatewayArgs.builder()
  *             .compartmentId(compartmentId)
- *             .vcnId(testVcn.id())
+ *             .vcnId(testVcn.get("id"))
  *             .blockTraffic(natGatewayBlockTraffic)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(natGatewayDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
- *             .publicIpId(testPublicIp.id())
- *             .routeTableId(testRouteTable.id())
+ *             .publicIpId(testPublicIp.get("id"))
+ *             .routeTableId(testRouteTable.get("id"))
  *             .build());
  * 
  *     }

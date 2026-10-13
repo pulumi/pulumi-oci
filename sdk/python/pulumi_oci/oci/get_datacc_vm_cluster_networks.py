@@ -176,8 +176,8 @@ def get_datacc_vm_cluster_networks(compartment_id: Optional[_builtins.str] = Non
     test_vm_cluster_networks = oci.oci.get_datacc_vm_cluster_networks(compartment_id=compartment_id,
         display_name=vm_cluster_network_display_name,
         infrastructure_id=test_infrastructure["id"],
-        is_scan_enabled=vm_cluster_network_is_scan_enabled == "true",
-        node_count=int(vm_cluster_network_node_count),
+        is_scan_enabled=vm_cluster_network_is_scan_enabled,
+        node_count=vm_cluster_network_node_count,
         states=vm_cluster_network_state,
         vm_network_consumer_type=vm_cluster_network_vm_network_consumer_type)
     ```
@@ -237,8 +237,8 @@ def get_datacc_vm_cluster_networks_output(compartment_id: pulumi.Input[Optional[
     test_vm_cluster_networks = oci.oci.get_datacc_vm_cluster_networks(compartment_id=compartment_id,
         display_name=vm_cluster_network_display_name,
         infrastructure_id=test_infrastructure["id"],
-        is_scan_enabled=vm_cluster_network_is_scan_enabled == "true",
-        node_count=int(vm_cluster_network_node_count),
+        is_scan_enabled=vm_cluster_network_is_scan_enabled,
+        node_count=vm_cluster_network_node_count,
         states=vm_cluster_network_state,
         vm_network_consumer_type=vm_cluster_network_vm_network_consumer_type)
     ```

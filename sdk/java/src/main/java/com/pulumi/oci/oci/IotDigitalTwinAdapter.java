@@ -55,10 +55,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDigitalTwinAdapter = new IotDigitalTwinAdapter("testDigitalTwinAdapter", IotDigitalTwinAdapterArgs.builder()
- *             .iotDomainId(testIotDomain.id())
+ *             .iotDomainId(testIotDomain.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(digitalTwinAdapterDescription)
- *             .digitalTwinModelId(testDigitalTwinModel.id())
+ *             .digitalTwinModelId(testDigitalTwinModel.get("id"))
  *             .digitalTwinModelSpecUri(digitalTwinAdapterDigitalTwinModelSpecUri)
  *             .displayName(digitalTwinAdapterDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))

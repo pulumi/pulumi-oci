@@ -204,11 +204,11 @@ class BdsInstancePatchAction(pulumi.CustomResource):
             cluster_admin_password=bds_instance_patch_action_cluster_admin_password,
             patching_config={
                 "patching_config_strategy": bds_instance_patch_action_patching_config_patching_config_strategy,
-                "batch_size": int(bds_instance_patch_action_patching_config_batch_size),
-                "tolerance_threshold_per_batch": int(bds_instance_patch_action_patching_config_tolerance_threshold_per_batch),
-                "tolerance_threshold_per_domain": int(bds_instance_patch_action_patching_config_tolerance_threshold_per_domain),
-                "wait_time_between_batch_in_seconds": int(bds_instance_patch_action_patching_config_wait_time_between_batch_in_seconds),
-                "wait_time_between_domain_in_seconds": int(bds_instance_patch_action_patching_config_wait_time_between_domain_in_seconds),
+                "batch_size": bds_instance_patch_action_patching_config_batch_size,
+                "tolerance_threshold_per_batch": bds_instance_patch_action_patching_config_tolerance_threshold_per_batch,
+                "tolerance_threshold_per_domain": bds_instance_patch_action_patching_config_tolerance_threshold_per_domain,
+                "wait_time_between_batch_in_seconds": bds_instance_patch_action_patching_config_wait_time_between_batch_in_seconds,
+                "wait_time_between_domain_in_seconds": bds_instance_patch_action_patching_config_wait_time_between_domain_in_seconds,
             },
             secret_id=test_secret["id"])
         ```
@@ -254,11 +254,11 @@ class BdsInstancePatchAction(pulumi.CustomResource):
             cluster_admin_password=bds_instance_patch_action_cluster_admin_password,
             patching_config={
                 "patching_config_strategy": bds_instance_patch_action_patching_config_patching_config_strategy,
-                "batch_size": int(bds_instance_patch_action_patching_config_batch_size),
-                "tolerance_threshold_per_batch": int(bds_instance_patch_action_patching_config_tolerance_threshold_per_batch),
-                "tolerance_threshold_per_domain": int(bds_instance_patch_action_patching_config_tolerance_threshold_per_domain),
-                "wait_time_between_batch_in_seconds": int(bds_instance_patch_action_patching_config_wait_time_between_batch_in_seconds),
-                "wait_time_between_domain_in_seconds": int(bds_instance_patch_action_patching_config_wait_time_between_domain_in_seconds),
+                "batch_size": bds_instance_patch_action_patching_config_batch_size,
+                "tolerance_threshold_per_batch": bds_instance_patch_action_patching_config_tolerance_threshold_per_batch,
+                "tolerance_threshold_per_domain": bds_instance_patch_action_patching_config_tolerance_threshold_per_domain,
+                "wait_time_between_batch_in_seconds": bds_instance_patch_action_patching_config_wait_time_between_batch_in_seconds,
+                "wait_time_between_domain_in_seconds": bds_instance_patch_action_patching_config_wait_time_between_domain_in_seconds,
             },
             secret_id=test_secret["id"])
         ```

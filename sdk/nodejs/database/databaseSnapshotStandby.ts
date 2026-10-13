@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     databaseAdminPassword: databaseSnapshotStandbyDatabaseAdminPassword,
  *     databaseId: testDatabase.id,
  *     standbyConversionType: databaseSnapshotStandbyStandbyConversionType,
- *     snapshotDurationInDays: Number(databaseSnapshotStandbySnapshotDurationInDays),
+ *     snapshotDurationInDays: databaseSnapshotStandbySnapshotDurationInDays,
  * });
  * ```
  *

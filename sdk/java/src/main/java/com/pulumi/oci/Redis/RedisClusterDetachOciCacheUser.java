@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testRedisClusterDetachOciCacheUser = new RedisClusterDetachOciCacheUser("testRedisClusterDetachOciCacheUser", RedisClusterDetachOciCacheUserArgs.builder()
  *             .ociCacheUsers(redisClusterDetachOciCacheUserOciCacheUsers)
- *             .redisClusterId(testRedisCluster.id())
+ *             .redisClusterId(testRedisCluster.get("id"))
  *             .build());
  * 
  *     }

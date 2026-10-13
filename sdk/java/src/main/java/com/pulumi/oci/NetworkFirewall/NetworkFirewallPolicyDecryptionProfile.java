@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testNetworkFirewallPolicyDecryptionProfile = new NetworkFirewallPolicyDecryptionProfile("testNetworkFirewallPolicyDecryptionProfile", NetworkFirewallPolicyDecryptionProfileArgs.builder()
  *             .name(networkFirewallPolicyDecryptionProfileName)
- *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+ *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
  *             .type(networkFirewallPolicyDecryptionProfileType)
  *             .description(networkFirewallPolicyDecryptionProfileDescription)
  *             .areCertificateExtensionsRestricted(networkFirewallPolicyDecryptionProfileAreCertificateExtensionsRestricted)

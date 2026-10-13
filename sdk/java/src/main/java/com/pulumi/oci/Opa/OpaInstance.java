@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *         var testOpaInstance = new OpaInstance("testOpaInstance", OpaInstanceArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(opaInstanceDisplayName)
- *             .shapeName(testShape.name())
+ *             .shapeName(testShape.get("name"))
  *             .consumptionModel(opaInstanceConsumptionModel)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(opaInstanceDescription)

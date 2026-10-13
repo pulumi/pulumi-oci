@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testManagedInstanceGroupInstallPackagesManagement = new oci.osmanagementhub.ManagedInstanceGroupInstallPackagesManagement("test_managed_instance_group_install_packages_management", {
  *     managedInstanceGroupId: testManagedInstanceGroup.id,
  *     packageNames: managedInstanceGroupInstallPackagesManagementPackageNames,
- *     isLatest: managedInstanceGroupInstallPackagesManagementIsLatest === "true",
+ *     isLatest: managedInstanceGroupInstallPackagesManagementIsLatest,
  *     workRequestDetails: {
  *         description: managedInstanceGroupInstallPackagesManagementWorkRequestDetailsDescription,
  *         displayName: managedInstanceGroupInstallPackagesManagementWorkRequestDetailsDisplayName,

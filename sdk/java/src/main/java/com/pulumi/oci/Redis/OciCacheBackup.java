@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *         var testOciCacheBackup = new OciCacheBackup("testOciCacheBackup", OciCacheBackupArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(ociCacheBackupDisplayName)
- *             .sourceClusterId(testRedisCluster.id())
+ *             .sourceClusterId(testRedisCluster.get("id"))
  *             .backupSource(ociCacheBackupBackupSource)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(ociCacheBackupDescription)

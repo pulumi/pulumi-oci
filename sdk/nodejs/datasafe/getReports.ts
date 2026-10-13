@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testReports = oci.datasafe.getReports({
  *     compartmentId: compartmentId,
  *     accessLevel: reportAccessLevel,
- *     compartmentIdInSubtree: reportCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: reportCompartmentIdInSubtree,
  *     dataSource: reportDataSource,
  *     displayName: reportDisplayName,
  *     mimeType: reportMimeType,
@@ -165,7 +165,7 @@ export interface GetReportsResult {
  * const testReports = oci.datasafe.getReports({
  *     compartmentId: compartmentId,
  *     accessLevel: reportAccessLevel,
- *     compartmentIdInSubtree: reportCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: reportCompartmentIdInSubtree,
  *     dataSource: reportDataSource,
  *     displayName: reportDisplayName,
  *     mimeType: reportMimeType,

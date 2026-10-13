@@ -61,7 +61,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testConfig = new Config("testConfig", ConfigArgs.builder()
- *             .apmDomainId(testApmDomain.id())
+ *             .apmDomainId(testApmDomain.get("id"))
  *             .configType(configConfigType)
  *             .agentVersion(configAgentVersion)
  *             .attachInstallDir(configAttachInstallDir)
@@ -79,11 +79,11 @@ import javax.annotation.Nullable;
  *                 .valueSource(configDimensionsValueSource)
  *                 .build())
  *             .displayName(configDisplayName)
- *             .filterId(testFilter.id())
+ *             .filterId(testFilter.get("id"))
  *             .filterText(configFilterText)
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .group(configGroup)
- *             .managementAgentId(testManagementAgent.id())
+ *             .managementAgentId(testManagementAgent.get("id"))
  *             .matchAgentsWithAttributeValue(configMatchAgentsWithAttributeValue)
  *             .metrics(ConfigMetricArgs.builder()
  *                 .description(configMetricsDescription)
@@ -111,7 +111,7 @@ import javax.annotation.Nullable;
  *                 .toleratingResponseTime(configRulesToleratingResponseTime)
  *                 .build())
  *             .runAsUser(configRunAsUser)
- *             .serviceName(testService.name())
+ *             .serviceName(testService.get("name"))
  *             .build());
  * 
  *     }

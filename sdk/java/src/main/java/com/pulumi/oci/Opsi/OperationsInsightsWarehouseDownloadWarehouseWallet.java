@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testOperationsInsightsWarehouseDownloadWarehouseWallet = new OperationsInsightsWarehouseDownloadWarehouseWallet("testOperationsInsightsWarehouseDownloadWarehouseWallet", OperationsInsightsWarehouseDownloadWarehouseWalletArgs.builder()
- *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+ *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.get("id"))
  *             .operationsInsightsWarehouseWalletPassword(operationsInsightsWarehouseDownloadWarehouseWalletOperationsInsightsWarehouseWalletPassword)
  *             .build());
  * 

@@ -33,7 +33,7 @@ import * as utilities from "../utilities";
  * const testDatabaseSecurityConfigs = oci.datasafe.getDatabaseSecurityConfigs({
  *     compartmentId: compartmentId,
  *     accessLevel: databaseSecurityConfigAccessLevel,
- *     compartmentIdInSubtree: databaseSecurityConfigCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: databaseSecurityConfigCompartmentIdInSubtree,
  *     databaseSecurityConfigId: testDatabaseSecurityConfig.id,
  *     displayName: databaseSecurityConfigDisplayName,
  *     state: databaseSecurityConfigState,
@@ -175,7 +175,7 @@ export interface GetDatabaseSecurityConfigsResult {
  * const testDatabaseSecurityConfigs = oci.datasafe.getDatabaseSecurityConfigs({
  *     compartmentId: compartmentId,
  *     accessLevel: databaseSecurityConfigAccessLevel,
- *     compartmentIdInSubtree: databaseSecurityConfigCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: databaseSecurityConfigCompartmentIdInSubtree,
  *     databaseSecurityConfigId: testDatabaseSecurityConfig.id,
  *     displayName: databaseSecurityConfigDisplayName,
  *     state: databaseSecurityConfigState,

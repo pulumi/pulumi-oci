@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testSubscriptionMapping = new SubscriptionMapping("testSubscriptionMapping", SubscriptionMappingArgs.builder()
  *             .compartmentId(compartmentId)
- *             .subscriptionId(testSubscription.id())
+ *             .subscriptionId(testSubscription.get("id"))
  *             .build());
  * 
  *     }

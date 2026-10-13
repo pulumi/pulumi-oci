@@ -436,7 +436,7 @@ class InstVbsInstance(pulumi.CustomResource):
                 "bar-key": "value",
             },
             idcs_access_token=vbs_instance_idcs_access_token,
-            is_resource_usage_agreement_granted=vbs_instance_is_resource_usage_agreement_granted == "true",
+            is_resource_usage_agreement_granted=vbs_instance_is_resource_usage_agreement_granted,
             resource_compartment_id=resource_compartment_id)
         ```
 
@@ -494,7 +494,7 @@ class InstVbsInstance(pulumi.CustomResource):
                 "bar-key": "value",
             },
             idcs_access_token=vbs_instance_idcs_access_token,
-            is_resource_usage_agreement_granted=vbs_instance_is_resource_usage_agreement_granted == "true",
+            is_resource_usage_agreement_granted=vbs_instance_is_resource_usage_agreement_granted,
             resource_compartment_id=resource_compartment_id)
         ```
 

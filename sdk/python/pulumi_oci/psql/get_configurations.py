@@ -204,8 +204,8 @@ def get_configurations(compartment_id: Optional[_builtins.str] = None,
         configuration_id=test_configuration["id"],
         db_version=configuration_db_version,
         display_name=configuration_display_name,
-        instance_memory_size_in_gbs=int(configuration_instance_memory_size_in_gbs),
-        instance_ocpu_count=int(configuration_instance_ocpu_count),
+        instance_memory_size_in_gbs=configuration_instance_memory_size_in_gbs,
+        instance_ocpu_count=configuration_instance_ocpu_count,
         shape=configuration_shape,
         state=configuration_state)
     ```
@@ -275,8 +275,8 @@ def get_configurations_output(compartment_id: pulumi.Input[Optional[Optional[_bu
         configuration_id=test_configuration["id"],
         db_version=configuration_db_version,
         display_name=configuration_display_name,
-        instance_memory_size_in_gbs=int(configuration_instance_memory_size_in_gbs),
-        instance_ocpu_count=int(configuration_instance_ocpu_count),
+        instance_memory_size_in_gbs=configuration_instance_memory_size_in_gbs,
+        instance_ocpu_count=configuration_instance_ocpu_count,
         shape=configuration_shape,
         state=configuration_state)
     ```

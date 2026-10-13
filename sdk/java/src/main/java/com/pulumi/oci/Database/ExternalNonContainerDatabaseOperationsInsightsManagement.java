@@ -48,8 +48,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testExternalNonContainerDatabaseOperationsInsightsManagement = new ExternalNonContainerDatabaseOperationsInsightsManagement("testExternalNonContainerDatabaseOperationsInsightsManagement", ExternalNonContainerDatabaseOperationsInsightsManagementArgs.builder()
- *             .externalDatabaseConnectorId(testExternalDatabaseConnector.id())
- *             .externalNonContainerDatabaseId(testExternalNonContainerDatabase.id())
+ *             .externalDatabaseConnectorId(testExternalDatabaseConnector.get("id"))
+ *             .externalNonContainerDatabaseId(testExternalNonContainerDatabase.get("id"))
  *             .enableOperationsInsights(true)
  *             .build());
  * 

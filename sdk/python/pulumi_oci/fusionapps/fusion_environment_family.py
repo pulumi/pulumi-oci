@@ -378,7 +378,7 @@ class FusionEnvironmentFamily(pulumi.CustomResource):
             },
             family_maintenance_policy={
                 "concurrent_maintenance": fusion_environment_family_family_maintenance_policy_concurrent_maintenance,
-                "is_monthly_patching_enabled": fusion_environment_family_family_maintenance_policy_is_monthly_patching_enabled == "true",
+                "is_monthly_patching_enabled": fusion_environment_family_family_maintenance_policy_is_monthly_patching_enabled,
                 "quarterly_upgrade_begin_times": fusion_environment_family_family_maintenance_policy_quarterly_upgrade_begin_times,
             },
             freeform_tags={
@@ -436,7 +436,7 @@ class FusionEnvironmentFamily(pulumi.CustomResource):
             },
             family_maintenance_policy={
                 "concurrent_maintenance": fusion_environment_family_family_maintenance_policy_concurrent_maintenance,
-                "is_monthly_patching_enabled": fusion_environment_family_family_maintenance_policy_is_monthly_patching_enabled == "true",
+                "is_monthly_patching_enabled": fusion_environment_family_family_maintenance_policy_is_monthly_patching_enabled,
                 "quarterly_upgrade_begin_times": fusion_environment_family_family_maintenance_policy_quarterly_upgrade_begin_times,
             },
             freeform_tags={

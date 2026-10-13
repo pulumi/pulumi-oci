@@ -68,7 +68,7 @@ import javax.annotation.Nullable;
  *                 .sensitiveTypeIds(sensitiveDataModelReferentialRelationParentSensitiveTypeIds)
  *                 .build())
  *             .relationType(sensitiveDataModelReferentialRelationRelationType)
- *             .sensitiveDataModelId(testSensitiveDataModel.id())
+ *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
  *             .isSensitive(sensitiveDataModelReferentialRelationIsSensitive)
  *             .build());
  * 

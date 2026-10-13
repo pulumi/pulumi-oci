@@ -189,7 +189,7 @@ def get_library_masking_formats(access_level: Optional[_builtins.str] = None,
 
     test_library_masking_formats = oci.datasafe.get_library_masking_formats(compartment_id=compartment_id,
         access_level=library_masking_format_access_level,
-        compartment_id_in_subtree=library_masking_format_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=library_masking_format_compartment_id_in_subtree,
         display_name=library_masking_format_display_name,
         library_masking_format_id=test_library_masking_format["id"],
         library_masking_format_source=library_masking_format_library_masking_format_source,
@@ -264,7 +264,7 @@ def get_library_masking_formats_output(access_level: pulumi.Input[Optional[Optio
 
     test_library_masking_formats = oci.datasafe.get_library_masking_formats(compartment_id=compartment_id,
         access_level=library_masking_format_access_level,
-        compartment_id_in_subtree=library_masking_format_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=library_masking_format_compartment_id_in_subtree,
         display_name=library_masking_format_display_name,
         library_masking_format_id=test_library_masking_format["id"],
         library_masking_format_source=library_masking_format_library_masking_format_source,

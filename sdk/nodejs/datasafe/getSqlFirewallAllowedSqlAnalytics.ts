@@ -33,7 +33,7 @@ import * as utilities from "../utilities";
  * const testSqlFirewallAllowedSqlAnalytics = oci.datasafe.getSqlFirewallAllowedSqlAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallAllowedSqlAnalyticAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallAllowedSqlAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: sqlFirewallAllowedSqlAnalyticCompartmentIdInSubtree,
  *     groupBies: sqlFirewallAllowedSqlAnalyticGroupBy,
  *     scimQuery: sqlFirewallAllowedSqlAnalyticScimQuery,
  * });
@@ -126,7 +126,7 @@ export interface GetSqlFirewallAllowedSqlAnalyticsResult {
  * const testSqlFirewallAllowedSqlAnalytics = oci.datasafe.getSqlFirewallAllowedSqlAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: sqlFirewallAllowedSqlAnalyticAccessLevel,
- *     compartmentIdInSubtree: sqlFirewallAllowedSqlAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: sqlFirewallAllowedSqlAnalyticCompartmentIdInSubtree,
  *     groupBies: sqlFirewallAllowedSqlAnalyticGroupBy,
  *     scimQuery: sqlFirewallAllowedSqlAnalyticScimQuery,
  * });

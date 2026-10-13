@@ -51,7 +51,7 @@ public final class VisualBuilderFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbInstance = VisualBuilderFunctions.getVbInstance(GetVbInstanceArgs.builder()
-     *             .vbInstanceId(testVbInstanceOciVisualBuilderVbInstance.id())
+     *             .vbInstanceId(testVbInstanceOciVisualBuilderVbInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -93,7 +93,7 @@ public final class VisualBuilderFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbInstance = VisualBuilderFunctions.getVbInstance(GetVbInstanceArgs.builder()
-     *             .vbInstanceId(testVbInstanceOciVisualBuilderVbInstance.id())
+     *             .vbInstanceId(testVbInstanceOciVisualBuilderVbInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -135,7 +135,7 @@ public final class VisualBuilderFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbInstance = VisualBuilderFunctions.getVbInstance(GetVbInstanceArgs.builder()
-     *             .vbInstanceId(testVbInstanceOciVisualBuilderVbInstance.id())
+     *             .vbInstanceId(testVbInstanceOciVisualBuilderVbInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -177,7 +177,7 @@ public final class VisualBuilderFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbInstance = VisualBuilderFunctions.getVbInstance(GetVbInstanceArgs.builder()
-     *             .vbInstanceId(testVbInstanceOciVisualBuilderVbInstance.id())
+     *             .vbInstanceId(testVbInstanceOciVisualBuilderVbInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -219,7 +219,7 @@ public final class VisualBuilderFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbInstance = VisualBuilderFunctions.getVbInstance(GetVbInstanceArgs.builder()
-     *             .vbInstanceId(testVbInstanceOciVisualBuilderVbInstance.id())
+     *             .vbInstanceId(testVbInstanceOciVisualBuilderVbInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -261,7 +261,7 @@ public final class VisualBuilderFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbInstanceApplications = VisualBuilderFunctions.getVbInstanceApplications(GetVbInstanceApplicationsArgs.builder()
-     *             .vbInstanceId(testVbInstance.id())
+     *             .vbInstanceId(testVbInstance.get("id"))
      *             .idcsOpenId("idcs_open_id_value")
      *             .build());
      * 
@@ -304,7 +304,7 @@ public final class VisualBuilderFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbInstanceApplications = VisualBuilderFunctions.getVbInstanceApplications(GetVbInstanceApplicationsArgs.builder()
-     *             .vbInstanceId(testVbInstance.id())
+     *             .vbInstanceId(testVbInstance.get("id"))
      *             .idcsOpenId("idcs_open_id_value")
      *             .build());
      * 
@@ -347,7 +347,7 @@ public final class VisualBuilderFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbInstanceApplications = VisualBuilderFunctions.getVbInstanceApplications(GetVbInstanceApplicationsArgs.builder()
-     *             .vbInstanceId(testVbInstance.id())
+     *             .vbInstanceId(testVbInstance.get("id"))
      *             .idcsOpenId("idcs_open_id_value")
      *             .build());
      * 
@@ -390,7 +390,7 @@ public final class VisualBuilderFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbInstanceApplications = VisualBuilderFunctions.getVbInstanceApplications(GetVbInstanceApplicationsArgs.builder()
-     *             .vbInstanceId(testVbInstance.id())
+     *             .vbInstanceId(testVbInstance.get("id"))
      *             .idcsOpenId("idcs_open_id_value")
      *             .build());
      * 
@@ -433,7 +433,7 @@ public final class VisualBuilderFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVbInstanceApplications = VisualBuilderFunctions.getVbInstanceApplications(GetVbInstanceApplicationsArgs.builder()
-     *             .vbInstanceId(testVbInstance.id())
+     *             .vbInstanceId(testVbInstance.get("id"))
      *             .idcsOpenId("idcs_open_id_value")
      *             .build());
      * 

@@ -199,8 +199,8 @@ def get_multicloud_resource_anchors(compartment_id: Optional[_builtins.str] = No
         lifecycle_state=lifecycle_state,
         display_name=resource_anchor_display_name,
         id=resource_anchor_id,
-        is_compartment_id_in_subtree=is_compartment_id_in_subtree == "true",
-        should_fetch_compartment_name=should_fetch_compartment_name == "true",
+        is_compartment_id_in_subtree=is_compartment_id_in_subtree,
+        should_fetch_compartment_name=should_fetch_compartment_name,
         subscription_service_name=subscription_service_name,
         subscription_id=subscription_id)
     ```
@@ -275,8 +275,8 @@ def get_multicloud_resource_anchors_output(compartment_id: pulumi.Input[Optional
         lifecycle_state=lifecycle_state,
         display_name=resource_anchor_display_name,
         id=resource_anchor_id,
-        is_compartment_id_in_subtree=is_compartment_id_in_subtree == "true",
-        should_fetch_compartment_name=should_fetch_compartment_name == "true",
+        is_compartment_id_in_subtree=is_compartment_id_in_subtree,
+        should_fetch_compartment_name=should_fetch_compartment_name,
         subscription_service_name=subscription_service_name,
         subscription_id=subscription_id)
     ```

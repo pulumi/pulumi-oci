@@ -54,7 +54,7 @@ public final class ContainerInstancesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerInstance = ContainerInstancesFunctions.getContainerInstance(GetContainerInstanceArgs.builder()
-     *             .containerInstanceId(testContainerInstanceOciContainerInstancesContainerInstance.id())
+     *             .containerInstanceId(testContainerInstanceOciContainerInstancesContainerInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -96,7 +96,7 @@ public final class ContainerInstancesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerInstance = ContainerInstancesFunctions.getContainerInstance(GetContainerInstanceArgs.builder()
-     *             .containerInstanceId(testContainerInstanceOciContainerInstancesContainerInstance.id())
+     *             .containerInstanceId(testContainerInstanceOciContainerInstancesContainerInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -138,7 +138,7 @@ public final class ContainerInstancesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerInstance = ContainerInstancesFunctions.getContainerInstance(GetContainerInstanceArgs.builder()
-     *             .containerInstanceId(testContainerInstanceOciContainerInstancesContainerInstance.id())
+     *             .containerInstanceId(testContainerInstanceOciContainerInstancesContainerInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -180,7 +180,7 @@ public final class ContainerInstancesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerInstance = ContainerInstancesFunctions.getContainerInstance(GetContainerInstanceArgs.builder()
-     *             .containerInstanceId(testContainerInstanceOciContainerInstancesContainerInstance.id())
+     *             .containerInstanceId(testContainerInstanceOciContainerInstancesContainerInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -222,7 +222,7 @@ public final class ContainerInstancesFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testContainerInstance = ContainerInstancesFunctions.getContainerInstance(GetContainerInstanceArgs.builder()
-     *             .containerInstanceId(testContainerInstanceOciContainerInstancesContainerInstance.id())
+     *             .containerInstanceId(testContainerInstanceOciContainerInstancesContainerInstance.get("id"))
      *             .build());
      * 
      *     }

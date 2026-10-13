@@ -492,11 +492,11 @@ class Connector(pulumi.CustomResource):
             },
             target={
                 "kind": service_connector_target_kind,
-                "batch_rollover_size_in_mbs": int(service_connector_target_batch_rollover_size_in_mbs),
-                "batch_rollover_time_in_ms": int(service_connector_target_batch_rollover_time_in_ms),
-                "batch_size_in_kbs": int(service_connector_target_batch_size_in_kbs),
-                "batch_size_in_num": int(service_connector_target_batch_size_in_num),
-                "batch_time_in_sec": int(service_connector_target_batch_time_in_sec),
+                "batch_rollover_size_in_mbs": service_connector_target_batch_rollover_size_in_mbs,
+                "batch_rollover_time_in_ms": service_connector_target_batch_rollover_time_in_ms,
+                "batch_size_in_kbs": service_connector_target_batch_size_in_kbs,
+                "batch_size_in_num": service_connector_target_batch_size_in_num,
+                "batch_time_in_sec": service_connector_target_batch_time_in_sec,
                 "bucket": service_connector_target_bucket,
                 "compartment_id": compartment_id,
                 "dimensions": [{
@@ -507,7 +507,7 @@ class Connector(pulumi.CustomResource):
                     },
                     "name": service_connector_target_dimensions_name,
                 }],
-                "enable_formatted_messaging": service_connector_target_enable_formatted_messaging == "true",
+                "enable_formatted_messaging": service_connector_target_enable_formatted_messaging,
                 "function_id": test_function["id"],
                 "log_group_id": test_log_group["id"],
                 "log_source_identifier": service_connector_target_log_source_identifier,
@@ -527,8 +527,8 @@ class Connector(pulumi.CustomResource):
             },
             tasks=[{
                 "kind": service_connector_tasks_kind,
-                "batch_size_in_kbs": int(service_connector_tasks_batch_size_in_kbs),
-                "batch_time_in_sec": int(service_connector_tasks_batch_time_in_sec),
+                "batch_size_in_kbs": service_connector_tasks_batch_size_in_kbs,
+                "batch_time_in_sec": service_connector_tasks_batch_time_in_sec,
                 "condition": service_connector_tasks_condition,
                 "function_id": test_function["id"],
             }])
@@ -628,11 +628,11 @@ class Connector(pulumi.CustomResource):
             },
             target={
                 "kind": service_connector_target_kind,
-                "batch_rollover_size_in_mbs": int(service_connector_target_batch_rollover_size_in_mbs),
-                "batch_rollover_time_in_ms": int(service_connector_target_batch_rollover_time_in_ms),
-                "batch_size_in_kbs": int(service_connector_target_batch_size_in_kbs),
-                "batch_size_in_num": int(service_connector_target_batch_size_in_num),
-                "batch_time_in_sec": int(service_connector_target_batch_time_in_sec),
+                "batch_rollover_size_in_mbs": service_connector_target_batch_rollover_size_in_mbs,
+                "batch_rollover_time_in_ms": service_connector_target_batch_rollover_time_in_ms,
+                "batch_size_in_kbs": service_connector_target_batch_size_in_kbs,
+                "batch_size_in_num": service_connector_target_batch_size_in_num,
+                "batch_time_in_sec": service_connector_target_batch_time_in_sec,
                 "bucket": service_connector_target_bucket,
                 "compartment_id": compartment_id,
                 "dimensions": [{
@@ -643,7 +643,7 @@ class Connector(pulumi.CustomResource):
                     },
                     "name": service_connector_target_dimensions_name,
                 }],
-                "enable_formatted_messaging": service_connector_target_enable_formatted_messaging == "true",
+                "enable_formatted_messaging": service_connector_target_enable_formatted_messaging,
                 "function_id": test_function["id"],
                 "log_group_id": test_log_group["id"],
                 "log_source_identifier": service_connector_target_log_source_identifier,
@@ -663,8 +663,8 @@ class Connector(pulumi.CustomResource):
             },
             tasks=[{
                 "kind": service_connector_tasks_kind,
-                "batch_size_in_kbs": int(service_connector_tasks_batch_size_in_kbs),
-                "batch_time_in_sec": int(service_connector_tasks_batch_time_in_sec),
+                "batch_size_in_kbs": service_connector_tasks_batch_size_in_kbs,
+                "batch_time_in_sec": service_connector_tasks_batch_time_in_sec,
                 "condition": service_connector_tasks_condition,
                 "function_id": test_function["id"],
             }])

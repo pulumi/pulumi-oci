@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  *
  * const testMyPendingApprovals = oci.identity.getDomainsMyPendingApprovals({
  *     idcsEndpoint: testDomain.url,
- *     myPendingApprovalCount: Number(myPendingApprovalMyPendingApprovalCount),
+ *     myPendingApprovalCount: myPendingApprovalMyPendingApprovalCount,
  *     myPendingApprovalFilter: myPendingApprovalMyPendingApprovalFilter,
  *     authorization: myPendingApprovalAuthorization,
  *     resourceTypeSchemaVersion: myPendingApprovalResourceTypeSchemaVersion,
- *     startIndex: Number(myPendingApprovalStartIndex),
+ *     startIndex: myPendingApprovalStartIndex,
  * });
  * ```
  */
@@ -116,11 +116,11 @@ export interface GetDomainsMyPendingApprovalsResult {
  *
  * const testMyPendingApprovals = oci.identity.getDomainsMyPendingApprovals({
  *     idcsEndpoint: testDomain.url,
- *     myPendingApprovalCount: Number(myPendingApprovalMyPendingApprovalCount),
+ *     myPendingApprovalCount: myPendingApprovalMyPendingApprovalCount,
  *     myPendingApprovalFilter: myPendingApprovalMyPendingApprovalFilter,
  *     authorization: myPendingApprovalAuthorization,
  *     resourceTypeSchemaVersion: myPendingApprovalResourceTypeSchemaVersion,
- *     startIndex: Number(myPendingApprovalStartIndex),
+ *     startIndex: myPendingApprovalStartIndex,
  * });
  * ```
  */

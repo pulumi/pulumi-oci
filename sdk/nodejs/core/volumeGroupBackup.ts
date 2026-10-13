@@ -31,11 +31,11 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isIndefiniteRetentionEnabled: volumeGroupBackupIsIndefiniteRetentionEnabled === "true",
- *     isPreventDeletionEnabled: volumeGroupBackupIsPreventDeletionEnabled === "true",
- *     isRetentionLockEnabled: volumeGroupBackupIsRetentionLockEnabled === "true",
+ *     isIndefiniteRetentionEnabled: volumeGroupBackupIsIndefiniteRetentionEnabled,
+ *     isPreventDeletionEnabled: volumeGroupBackupIsPreventDeletionEnabled,
+ *     isRetentionLockEnabled: volumeGroupBackupIsRetentionLockEnabled,
  *     retentionPeriod: {
- *         retentionTimeAmount: Number(volumeGroupBackupRetentionPeriodRetentionTimeAmount),
+ *         retentionTimeAmount: volumeGroupBackupRetentionPeriodRetentionTimeAmount,
  *         retentionTimeUnit: volumeGroupBackupRetentionPeriodRetentionTimeUnit,
  *     },
  *     type: volumeGroupBackupType,

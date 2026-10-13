@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *
  * const testJobAdvisorReportCheck = new oci.databasemigration.JobAdvisorReportCheck("test_job_advisor_report_check", {
  *     advisorReportCheckId: testAdvisorReportCheck.id,
- *     isReviewed: jobAdvisorReportCheckIsReviewed === "true",
+ *     isReviewed: jobAdvisorReportCheckIsReviewed,
  *     jobId: testJob.id,
  * });
  * ```

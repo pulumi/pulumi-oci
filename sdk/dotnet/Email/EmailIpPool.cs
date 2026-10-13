@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Email
     ///     {
     ///         CompartmentId = compartmentId,
     ///         Name = emailIpPoolName,
-    ///         OutboundIps = new[] {},
+    ///         OutboundIps = new() {},
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },

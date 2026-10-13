@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  *
  * const testContainerRepositories = oci.artifacts.getContainerRepositories({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: containerRepositoryCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: containerRepositoryCompartmentIdInSubtree,
  *     displayName: containerRepositoryDisplayName,
- *     isPublic: containerRepositoryIsPublic === "true",
+ *     isPublic: containerRepositoryIsPublic,
  *     repositoryId: testRepository.id,
  *     state: containerRepositoryState,
  * });
@@ -116,9 +116,9 @@ export interface GetContainerRepositoriesResult {
  *
  * const testContainerRepositories = oci.artifacts.getContainerRepositories({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: containerRepositoryCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: containerRepositoryCompartmentIdInSubtree,
  *     displayName: containerRepositoryDisplayName,
- *     isPublic: containerRepositoryIsPublic === "true",
+ *     isPublic: containerRepositoryIsPublic,
  *     repositoryId: testRepository.id,
  *     state: containerRepositoryState,
  * });

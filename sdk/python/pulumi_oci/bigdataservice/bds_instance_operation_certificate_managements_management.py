@@ -330,8 +330,8 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
         test_bds_instance_operation_certificate_managements_management = oci.bigdataservice.BdsInstanceOperationCertificateManagementsManagement("test_bds_instance_operation_certificate_managements_management",
             bds_instance_id=test_bds_instance["id"],
             services=bds_instance_operation_certificate_managements_management_services,
-            enable_operation_certificate_management=enable_operation_certificate_management == "true",
-            renew_operation_certificate_management=renew_operation_certificate_management == "true",
+            enable_operation_certificate_management=enable_operation_certificate_management,
+            renew_operation_certificate_management=renew_operation_certificate_management,
             cluster_admin_password=bds_instance_operation_certificate_managements_management_cluster_admin_password,
             host_cert_details=[{
                 "certificate": bds_instance_operation_certificate_managements_management_host_cert_details_certificate,
@@ -380,8 +380,8 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
         test_bds_instance_operation_certificate_managements_management = oci.bigdataservice.BdsInstanceOperationCertificateManagementsManagement("test_bds_instance_operation_certificate_managements_management",
             bds_instance_id=test_bds_instance["id"],
             services=bds_instance_operation_certificate_managements_management_services,
-            enable_operation_certificate_management=enable_operation_certificate_management == "true",
-            renew_operation_certificate_management=renew_operation_certificate_management == "true",
+            enable_operation_certificate_management=enable_operation_certificate_management,
+            renew_operation_certificate_management=renew_operation_certificate_management,
             cluster_admin_password=bds_instance_operation_certificate_managements_management_cluster_admin_password,
             host_cert_details=[{
                 "certificate": bds_instance_operation_certificate_managements_management_host_cert_details_certificate,

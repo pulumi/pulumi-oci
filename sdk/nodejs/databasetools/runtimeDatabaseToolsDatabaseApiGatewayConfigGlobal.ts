@@ -38,8 +38,8 @@ import * as utilities from "../utilities";
  *     },
  *     databaseApiStatus: databaseToolsDatabaseApiGatewayConfigGlobalDatabaseApiStatus,
  *     documentRoot: databaseToolsDatabaseApiGatewayConfigGlobalDocumentRoot,
- *     httpPort: Number(databaseToolsDatabaseApiGatewayConfigGlobalHttpPort),
- *     httpsPort: Number(databaseToolsDatabaseApiGatewayConfigGlobalHttpsPort),
+ *     httpPort: databaseToolsDatabaseApiGatewayConfigGlobalHttpPort,
+ *     httpsPort: databaseToolsDatabaseApiGatewayConfigGlobalHttpsPort,
  *     poolRoute: databaseToolsDatabaseApiGatewayConfigGlobalPoolRoute,
  *     poolRoutingHeader: databaseToolsDatabaseApiGatewayConfigGlobalPoolRoutingHeader,
  * });

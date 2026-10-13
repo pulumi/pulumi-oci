@@ -439,7 +439,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogItem = FleetAppsManagementFunctions.getCatalogItem(GetCatalogItemArgs.builder()
-     *             .catalogItemId(testCatalogItemOciFleetAppsManagementCatalogItem.id())
+     *             .catalogItemId(testCatalogItemOciFleetAppsManagementCatalogItem.get("id"))
      *             .build());
      * 
      *     }
@@ -481,7 +481,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogItem = FleetAppsManagementFunctions.getCatalogItem(GetCatalogItemArgs.builder()
-     *             .catalogItemId(testCatalogItemOciFleetAppsManagementCatalogItem.id())
+     *             .catalogItemId(testCatalogItemOciFleetAppsManagementCatalogItem.get("id"))
      *             .build());
      * 
      *     }
@@ -523,7 +523,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogItem = FleetAppsManagementFunctions.getCatalogItem(GetCatalogItemArgs.builder()
-     *             .catalogItemId(testCatalogItemOciFleetAppsManagementCatalogItem.id())
+     *             .catalogItemId(testCatalogItemOciFleetAppsManagementCatalogItem.get("id"))
      *             .build());
      * 
      *     }
@@ -565,7 +565,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogItem = FleetAppsManagementFunctions.getCatalogItem(GetCatalogItemArgs.builder()
-     *             .catalogItemId(testCatalogItemOciFleetAppsManagementCatalogItem.id())
+     *             .catalogItemId(testCatalogItemOciFleetAppsManagementCatalogItem.get("id"))
      *             .build());
      * 
      *     }
@@ -607,7 +607,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogItem = FleetAppsManagementFunctions.getCatalogItem(GetCatalogItemArgs.builder()
-     *             .catalogItemId(testCatalogItemOciFleetAppsManagementCatalogItem.id())
+     *             .catalogItemId(testCatalogItemOciFleetAppsManagementCatalogItem.get("id"))
      *             .build());
      * 
      *     }
@@ -649,7 +649,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogItemVariablesDefinition = FleetAppsManagementFunctions.getCatalogItemVariablesDefinition(GetCatalogItemVariablesDefinitionArgs.builder()
-     *             .catalogItemId(testCatalogItem.id())
+     *             .catalogItemId(testCatalogItem.get("id"))
      *             .build());
      * 
      *     }
@@ -691,7 +691,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogItemVariablesDefinition = FleetAppsManagementFunctions.getCatalogItemVariablesDefinition(GetCatalogItemVariablesDefinitionArgs.builder()
-     *             .catalogItemId(testCatalogItem.id())
+     *             .catalogItemId(testCatalogItem.get("id"))
      *             .build());
      * 
      *     }
@@ -733,7 +733,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogItemVariablesDefinition = FleetAppsManagementFunctions.getCatalogItemVariablesDefinition(GetCatalogItemVariablesDefinitionArgs.builder()
-     *             .catalogItemId(testCatalogItem.id())
+     *             .catalogItemId(testCatalogItem.get("id"))
      *             .build());
      * 
      *     }
@@ -775,7 +775,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogItemVariablesDefinition = FleetAppsManagementFunctions.getCatalogItemVariablesDefinition(GetCatalogItemVariablesDefinitionArgs.builder()
-     *             .catalogItemId(testCatalogItem.id())
+     *             .catalogItemId(testCatalogItem.get("id"))
      *             .build());
      * 
      *     }
@@ -817,7 +817,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCatalogItemVariablesDefinition = FleetAppsManagementFunctions.getCatalogItemVariablesDefinition(GetCatalogItemVariablesDefinitionArgs.builder()
-     *             .catalogItemId(testCatalogItem.id())
+     *             .catalogItemId(testCatalogItem.get("id"))
      *             .build());
      * 
      *     }
@@ -860,7 +860,7 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCatalogItems = FleetAppsManagementFunctions.getCatalogItems(GetCatalogItemsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .catalogListingId(testListing.id())
+     *             .catalogListingId(testListing.get("id"))
      *             .catalogListingVersionCriteria(catalogItemCatalogListingVersionCriteria)
      *             .configSourceType(catalogItemConfigSourceType)
      *             .displayName(catalogItemDisplayName)
@@ -909,7 +909,7 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCatalogItems = FleetAppsManagementFunctions.getCatalogItems(GetCatalogItemsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .catalogListingId(testListing.id())
+     *             .catalogListingId(testListing.get("id"))
      *             .catalogListingVersionCriteria(catalogItemCatalogListingVersionCriteria)
      *             .configSourceType(catalogItemConfigSourceType)
      *             .displayName(catalogItemDisplayName)
@@ -958,7 +958,7 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCatalogItems = FleetAppsManagementFunctions.getCatalogItems(GetCatalogItemsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .catalogListingId(testListing.id())
+     *             .catalogListingId(testListing.get("id"))
      *             .catalogListingVersionCriteria(catalogItemCatalogListingVersionCriteria)
      *             .configSourceType(catalogItemConfigSourceType)
      *             .displayName(catalogItemDisplayName)
@@ -1007,7 +1007,7 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCatalogItems = FleetAppsManagementFunctions.getCatalogItems(GetCatalogItemsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .catalogListingId(testListing.id())
+     *             .catalogListingId(testListing.get("id"))
      *             .catalogListingVersionCriteria(catalogItemCatalogListingVersionCriteria)
      *             .configSourceType(catalogItemConfigSourceType)
      *             .displayName(catalogItemDisplayName)
@@ -1056,7 +1056,7 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCatalogItems = FleetAppsManagementFunctions.getCatalogItems(GetCatalogItemsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .catalogListingId(testListing.id())
+     *             .catalogListingId(testListing.get("id"))
      *             .catalogListingVersionCriteria(catalogItemCatalogListingVersionCriteria)
      *             .configSourceType(catalogItemConfigSourceType)
      *             .displayName(catalogItemDisplayName)
@@ -1433,7 +1433,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompliancePolicy = FleetAppsManagementFunctions.getCompliancePolicy(GetCompliancePolicyArgs.builder()
-     *             .compliancePolicyId(testCompliancePolicyOciFleetAppsManagementCompliancePolicy.id())
+     *             .compliancePolicyId(testCompliancePolicyOciFleetAppsManagementCompliancePolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1475,7 +1475,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompliancePolicy = FleetAppsManagementFunctions.getCompliancePolicy(GetCompliancePolicyArgs.builder()
-     *             .compliancePolicyId(testCompliancePolicyOciFleetAppsManagementCompliancePolicy.id())
+     *             .compliancePolicyId(testCompliancePolicyOciFleetAppsManagementCompliancePolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1517,7 +1517,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompliancePolicy = FleetAppsManagementFunctions.getCompliancePolicy(GetCompliancePolicyArgs.builder()
-     *             .compliancePolicyId(testCompliancePolicyOciFleetAppsManagementCompliancePolicy.id())
+     *             .compliancePolicyId(testCompliancePolicyOciFleetAppsManagementCompliancePolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1559,7 +1559,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompliancePolicy = FleetAppsManagementFunctions.getCompliancePolicy(GetCompliancePolicyArgs.builder()
-     *             .compliancePolicyId(testCompliancePolicyOciFleetAppsManagementCompliancePolicy.id())
+     *             .compliancePolicyId(testCompliancePolicyOciFleetAppsManagementCompliancePolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1601,7 +1601,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompliancePolicy = FleetAppsManagementFunctions.getCompliancePolicy(GetCompliancePolicyArgs.builder()
-     *             .compliancePolicyId(testCompliancePolicyOciFleetAppsManagementCompliancePolicy.id())
+     *             .compliancePolicyId(testCompliancePolicyOciFleetAppsManagementCompliancePolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1643,7 +1643,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompliancePolicyRule = FleetAppsManagementFunctions.getCompliancePolicyRule(GetCompliancePolicyRuleArgs.builder()
-     *             .compliancePolicyRuleId(testCompliancePolicyRuleOciFleetAppsManagementCompliancePolicyRule.id())
+     *             .compliancePolicyRuleId(testCompliancePolicyRuleOciFleetAppsManagementCompliancePolicyRule.get("id"))
      *             .build());
      * 
      *     }
@@ -1685,7 +1685,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompliancePolicyRule = FleetAppsManagementFunctions.getCompliancePolicyRule(GetCompliancePolicyRuleArgs.builder()
-     *             .compliancePolicyRuleId(testCompliancePolicyRuleOciFleetAppsManagementCompliancePolicyRule.id())
+     *             .compliancePolicyRuleId(testCompliancePolicyRuleOciFleetAppsManagementCompliancePolicyRule.get("id"))
      *             .build());
      * 
      *     }
@@ -1727,7 +1727,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompliancePolicyRule = FleetAppsManagementFunctions.getCompliancePolicyRule(GetCompliancePolicyRuleArgs.builder()
-     *             .compliancePolicyRuleId(testCompliancePolicyRuleOciFleetAppsManagementCompliancePolicyRule.id())
+     *             .compliancePolicyRuleId(testCompliancePolicyRuleOciFleetAppsManagementCompliancePolicyRule.get("id"))
      *             .build());
      * 
      *     }
@@ -1769,7 +1769,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompliancePolicyRule = FleetAppsManagementFunctions.getCompliancePolicyRule(GetCompliancePolicyRuleArgs.builder()
-     *             .compliancePolicyRuleId(testCompliancePolicyRuleOciFleetAppsManagementCompliancePolicyRule.id())
+     *             .compliancePolicyRuleId(testCompliancePolicyRuleOciFleetAppsManagementCompliancePolicyRule.get("id"))
      *             .build());
      * 
      *     }
@@ -1811,7 +1811,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCompliancePolicyRule = FleetAppsManagementFunctions.getCompliancePolicyRule(GetCompliancePolicyRuleArgs.builder()
-     *             .compliancePolicyRuleId(testCompliancePolicyRuleOciFleetAppsManagementCompliancePolicyRule.id())
+     *             .compliancePolicyRuleId(testCompliancePolicyRuleOciFleetAppsManagementCompliancePolicyRule.get("id"))
      *             .build());
      * 
      *     }
@@ -1854,10 +1854,10 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCompliancePolicyRules = FleetAppsManagementFunctions.getCompliancePolicyRules(GetCompliancePolicyRulesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .compliancePolicyId(testCompliancePolicy.id())
+     *             .compliancePolicyId(testCompliancePolicy.get("id"))
      *             .displayName(compliancePolicyRuleDisplayName)
      *             .id(compliancePolicyRuleId)
-     *             .patchName(testPatch.name())
+     *             .patchName(testPatch.get("name"))
      *             .state(compliancePolicyRuleState)
      *             .build());
      * 
@@ -1901,10 +1901,10 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCompliancePolicyRules = FleetAppsManagementFunctions.getCompliancePolicyRules(GetCompliancePolicyRulesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .compliancePolicyId(testCompliancePolicy.id())
+     *             .compliancePolicyId(testCompliancePolicy.get("id"))
      *             .displayName(compliancePolicyRuleDisplayName)
      *             .id(compliancePolicyRuleId)
-     *             .patchName(testPatch.name())
+     *             .patchName(testPatch.get("name"))
      *             .state(compliancePolicyRuleState)
      *             .build());
      * 
@@ -1948,10 +1948,10 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCompliancePolicyRules = FleetAppsManagementFunctions.getCompliancePolicyRules(GetCompliancePolicyRulesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .compliancePolicyId(testCompliancePolicy.id())
+     *             .compliancePolicyId(testCompliancePolicy.get("id"))
      *             .displayName(compliancePolicyRuleDisplayName)
      *             .id(compliancePolicyRuleId)
-     *             .patchName(testPatch.name())
+     *             .patchName(testPatch.get("name"))
      *             .state(compliancePolicyRuleState)
      *             .build());
      * 
@@ -1995,10 +1995,10 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCompliancePolicyRules = FleetAppsManagementFunctions.getCompliancePolicyRules(GetCompliancePolicyRulesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .compliancePolicyId(testCompliancePolicy.id())
+     *             .compliancePolicyId(testCompliancePolicy.get("id"))
      *             .displayName(compliancePolicyRuleDisplayName)
      *             .id(compliancePolicyRuleId)
-     *             .patchName(testPatch.name())
+     *             .patchName(testPatch.get("name"))
      *             .state(compliancePolicyRuleState)
      *             .build());
      * 
@@ -2042,10 +2042,10 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCompliancePolicyRules = FleetAppsManagementFunctions.getCompliancePolicyRules(GetCompliancePolicyRulesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .compliancePolicyId(testCompliancePolicy.id())
+     *             .compliancePolicyId(testCompliancePolicy.get("id"))
      *             .displayName(compliancePolicyRuleDisplayName)
      *             .id(compliancePolicyRuleId)
-     *             .patchName(testPatch.name())
+     *             .patchName(testPatch.get("name"))
      *             .state(compliancePolicyRuleState)
      *             .build());
      * 
@@ -2089,10 +2089,10 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCompliancePolicyRules = FleetAppsManagementFunctions.getCompliancePolicyRules(GetCompliancePolicyRulesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .compliancePolicyId(testCompliancePolicy.id())
+     *             .compliancePolicyId(testCompliancePolicy.get("id"))
      *             .displayName(compliancePolicyRuleDisplayName)
      *             .id(compliancePolicyRuleId)
-     *             .patchName(testPatch.name())
+     *             .patchName(testPatch.get("name"))
      *             .state(compliancePolicyRuleState)
      *             .build());
      * 
@@ -2136,10 +2136,10 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCompliancePolicyRules = FleetAppsManagementFunctions.getCompliancePolicyRules(GetCompliancePolicyRulesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .compliancePolicyId(testCompliancePolicy.id())
+     *             .compliancePolicyId(testCompliancePolicy.get("id"))
      *             .displayName(compliancePolicyRuleDisplayName)
      *             .id(compliancePolicyRuleId)
-     *             .patchName(testPatch.name())
+     *             .patchName(testPatch.get("name"))
      *             .state(compliancePolicyRuleState)
      *             .build());
      * 
@@ -2486,11 +2486,11 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(complianceRecordCompartmentIdInSubtree)
      *             .complianceState(complianceRecordComplianceState)
-     *             .entityId(testEntity.id())
+     *             .entityId(testEntity.get("id"))
      *             .productName(complianceRecordProductName)
      *             .productStack(complianceRecordProductStack)
-     *             .resourceId(testResource.id())
-     *             .targetName(testTarget.name())
+     *             .resourceId(testResource.get("id"))
+     *             .targetName(testTarget.get("name"))
      *             .build());
      * 
      *     }
@@ -2535,11 +2535,11 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(complianceRecordCompartmentIdInSubtree)
      *             .complianceState(complianceRecordComplianceState)
-     *             .entityId(testEntity.id())
+     *             .entityId(testEntity.get("id"))
      *             .productName(complianceRecordProductName)
      *             .productStack(complianceRecordProductStack)
-     *             .resourceId(testResource.id())
-     *             .targetName(testTarget.name())
+     *             .resourceId(testResource.get("id"))
+     *             .targetName(testTarget.get("name"))
      *             .build());
      * 
      *     }
@@ -2584,11 +2584,11 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(complianceRecordCompartmentIdInSubtree)
      *             .complianceState(complianceRecordComplianceState)
-     *             .entityId(testEntity.id())
+     *             .entityId(testEntity.get("id"))
      *             .productName(complianceRecordProductName)
      *             .productStack(complianceRecordProductStack)
-     *             .resourceId(testResource.id())
-     *             .targetName(testTarget.name())
+     *             .resourceId(testResource.get("id"))
+     *             .targetName(testTarget.get("name"))
      *             .build());
      * 
      *     }
@@ -2633,11 +2633,11 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(complianceRecordCompartmentIdInSubtree)
      *             .complianceState(complianceRecordComplianceState)
-     *             .entityId(testEntity.id())
+     *             .entityId(testEntity.get("id"))
      *             .productName(complianceRecordProductName)
      *             .productStack(complianceRecordProductStack)
-     *             .resourceId(testResource.id())
-     *             .targetName(testTarget.name())
+     *             .resourceId(testResource.get("id"))
+     *             .targetName(testTarget.get("name"))
      *             .build());
      * 
      *     }
@@ -2682,11 +2682,11 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(complianceRecordCompartmentIdInSubtree)
      *             .complianceState(complianceRecordComplianceState)
-     *             .entityId(testEntity.id())
+     *             .entityId(testEntity.get("id"))
      *             .productName(complianceRecordProductName)
      *             .productStack(complianceRecordProductStack)
-     *             .resourceId(testResource.id())
-     *             .targetName(testTarget.name())
+     *             .resourceId(testResource.get("id"))
+     *             .targetName(testTarget.get("name"))
      *             .build());
      * 
      *     }
@@ -2728,7 +2728,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleet = FleetAppsManagementFunctions.getFleet(GetFleetArgs.builder()
-     *             .fleetId(testFleetOciFleetAppsManagementFleet.id())
+     *             .fleetId(testFleetOciFleetAppsManagementFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2770,7 +2770,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleet = FleetAppsManagementFunctions.getFleet(GetFleetArgs.builder()
-     *             .fleetId(testFleetOciFleetAppsManagementFleet.id())
+     *             .fleetId(testFleetOciFleetAppsManagementFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2812,7 +2812,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleet = FleetAppsManagementFunctions.getFleet(GetFleetArgs.builder()
-     *             .fleetId(testFleetOciFleetAppsManagementFleet.id())
+     *             .fleetId(testFleetOciFleetAppsManagementFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2854,7 +2854,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleet = FleetAppsManagementFunctions.getFleet(GetFleetArgs.builder()
-     *             .fleetId(testFleetOciFleetAppsManagementFleet.id())
+     *             .fleetId(testFleetOciFleetAppsManagementFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2896,7 +2896,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleet = FleetAppsManagementFunctions.getFleet(GetFleetArgs.builder()
-     *             .fleetId(testFleetOciFleetAppsManagementFleet.id())
+     *             .fleetId(testFleetOciFleetAppsManagementFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2938,7 +2938,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCompliance = FleetAppsManagementFunctions.getFleetCompliance(GetFleetComplianceArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2980,7 +2980,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCompliance = FleetAppsManagementFunctions.getFleetCompliance(GetFleetComplianceArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -3022,7 +3022,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCompliance = FleetAppsManagementFunctions.getFleetCompliance(GetFleetComplianceArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -3064,7 +3064,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCompliance = FleetAppsManagementFunctions.getFleetCompliance(GetFleetComplianceArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -3106,7 +3106,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCompliance = FleetAppsManagementFunctions.getFleetCompliance(GetFleetComplianceArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -3148,8 +3148,8 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetComplianceReport = FleetAppsManagementFunctions.getFleetComplianceReport(GetFleetComplianceReportArgs.builder()
-     *             .complianceReportId(testReport.id())
-     *             .fleetId(testFleet.id())
+     *             .complianceReportId(testReport.get("id"))
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -3191,8 +3191,8 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetComplianceReport = FleetAppsManagementFunctions.getFleetComplianceReport(GetFleetComplianceReportArgs.builder()
-     *             .complianceReportId(testReport.id())
-     *             .fleetId(testFleet.id())
+     *             .complianceReportId(testReport.get("id"))
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -3234,8 +3234,8 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetComplianceReport = FleetAppsManagementFunctions.getFleetComplianceReport(GetFleetComplianceReportArgs.builder()
-     *             .complianceReportId(testReport.id())
-     *             .fleetId(testFleet.id())
+     *             .complianceReportId(testReport.get("id"))
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -3277,8 +3277,8 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetComplianceReport = FleetAppsManagementFunctions.getFleetComplianceReport(GetFleetComplianceReportArgs.builder()
-     *             .complianceReportId(testReport.id())
-     *             .fleetId(testFleet.id())
+     *             .complianceReportId(testReport.get("id"))
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -3320,8 +3320,8 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetComplianceReport = FleetAppsManagementFunctions.getFleetComplianceReport(GetFleetComplianceReportArgs.builder()
-     *             .complianceReportId(testReport.id())
-     *             .fleetId(testFleet.id())
+     *             .complianceReportId(testReport.get("id"))
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -3363,8 +3363,8 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCredential = FleetAppsManagementFunctions.getFleetCredential(GetFleetCredentialArgs.builder()
-     *             .fleetCredentialId(testFleetCredentialOciFleetAppsManagementFleetCredential.id())
-     *             .fleetId(testFleet.id())
+     *             .fleetCredentialId(testFleetCredentialOciFleetAppsManagementFleetCredential.get("id"))
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -3406,8 +3406,8 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCredential = FleetAppsManagementFunctions.getFleetCredential(GetFleetCredentialArgs.builder()
-     *             .fleetCredentialId(testFleetCredentialOciFleetAppsManagementFleetCredential.id())
-     *             .fleetId(testFleet.id())
+     *             .fleetCredentialId(testFleetCredentialOciFleetAppsManagementFleetCredential.get("id"))
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -3449,8 +3449,8 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCredential = FleetAppsManagementFunctions.getFleetCredential(GetFleetCredentialArgs.builder()
-     *             .fleetCredentialId(testFleetCredentialOciFleetAppsManagementFleetCredential.id())
-     *             .fleetId(testFleet.id())
+     *             .fleetCredentialId(testFleetCredentialOciFleetAppsManagementFleetCredential.get("id"))
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -3492,8 +3492,8 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCredential = FleetAppsManagementFunctions.getFleetCredential(GetFleetCredentialArgs.builder()
-     *             .fleetCredentialId(testFleetCredentialOciFleetAppsManagementFleetCredential.id())
-     *             .fleetId(testFleet.id())
+     *             .fleetCredentialId(testFleetCredentialOciFleetAppsManagementFleetCredential.get("id"))
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -3535,8 +3535,8 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCredential = FleetAppsManagementFunctions.getFleetCredential(GetFleetCredentialArgs.builder()
-     *             .fleetCredentialId(testFleetCredentialOciFleetAppsManagementFleetCredential.id())
-     *             .fleetId(testFleet.id())
+     *             .fleetCredentialId(testFleetCredentialOciFleetAppsManagementFleetCredential.get("id"))
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -3578,11 +3578,11 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCredentials = FleetAppsManagementFunctions.getFleetCredentials(GetFleetCredentialsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .credentialLevel(fleetCredentialCredentialLevel)
      *             .displayName(fleetCredentialDisplayName)
      *             .id(fleetCredentialId)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(fleetCredentialState)
      *             .target(fleetCredentialTarget)
      *             .build());
@@ -3626,11 +3626,11 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCredentials = FleetAppsManagementFunctions.getFleetCredentials(GetFleetCredentialsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .credentialLevel(fleetCredentialCredentialLevel)
      *             .displayName(fleetCredentialDisplayName)
      *             .id(fleetCredentialId)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(fleetCredentialState)
      *             .target(fleetCredentialTarget)
      *             .build());
@@ -3674,11 +3674,11 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCredentials = FleetAppsManagementFunctions.getFleetCredentials(GetFleetCredentialsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .credentialLevel(fleetCredentialCredentialLevel)
      *             .displayName(fleetCredentialDisplayName)
      *             .id(fleetCredentialId)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(fleetCredentialState)
      *             .target(fleetCredentialTarget)
      *             .build());
@@ -3722,11 +3722,11 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCredentials = FleetAppsManagementFunctions.getFleetCredentials(GetFleetCredentialsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .credentialLevel(fleetCredentialCredentialLevel)
      *             .displayName(fleetCredentialDisplayName)
      *             .id(fleetCredentialId)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(fleetCredentialState)
      *             .target(fleetCredentialTarget)
      *             .build());
@@ -3770,11 +3770,11 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCredentials = FleetAppsManagementFunctions.getFleetCredentials(GetFleetCredentialsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .credentialLevel(fleetCredentialCredentialLevel)
      *             .displayName(fleetCredentialDisplayName)
      *             .id(fleetCredentialId)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(fleetCredentialState)
      *             .target(fleetCredentialTarget)
      *             .build());
@@ -3818,11 +3818,11 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetProducts = FleetAppsManagementFunctions.getFleetProducts(GetFleetProductsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(fleetProductDisplayName)
      *             .resourceDisplayName(fleetProductResourceDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -3864,11 +3864,11 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetProducts = FleetAppsManagementFunctions.getFleetProducts(GetFleetProductsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(fleetProductDisplayName)
      *             .resourceDisplayName(fleetProductResourceDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -3910,11 +3910,11 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetProducts = FleetAppsManagementFunctions.getFleetProducts(GetFleetProductsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(fleetProductDisplayName)
      *             .resourceDisplayName(fleetProductResourceDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -3956,11 +3956,11 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetProducts = FleetAppsManagementFunctions.getFleetProducts(GetFleetProductsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(fleetProductDisplayName)
      *             .resourceDisplayName(fleetProductResourceDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -4002,11 +4002,11 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetProducts = FleetAppsManagementFunctions.getFleetProducts(GetFleetProductsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(fleetProductDisplayName)
      *             .resourceDisplayName(fleetProductResourceDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -4048,7 +4048,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetProperties = FleetAppsManagementFunctions.getFleetProperties(GetFleetPropertiesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .displayName(fleetPropertyDisplayName)
      *             .id(fleetPropertyId)
      *             .state(fleetPropertyState)
@@ -4093,7 +4093,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetProperties = FleetAppsManagementFunctions.getFleetProperties(GetFleetPropertiesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .displayName(fleetPropertyDisplayName)
      *             .id(fleetPropertyId)
      *             .state(fleetPropertyState)
@@ -4138,7 +4138,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetProperties = FleetAppsManagementFunctions.getFleetProperties(GetFleetPropertiesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .displayName(fleetPropertyDisplayName)
      *             .id(fleetPropertyId)
      *             .state(fleetPropertyState)
@@ -4183,7 +4183,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetProperties = FleetAppsManagementFunctions.getFleetProperties(GetFleetPropertiesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .displayName(fleetPropertyDisplayName)
      *             .id(fleetPropertyId)
      *             .state(fleetPropertyState)
@@ -4228,7 +4228,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetProperties = FleetAppsManagementFunctions.getFleetProperties(GetFleetPropertiesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .displayName(fleetPropertyDisplayName)
      *             .id(fleetPropertyId)
      *             .state(fleetPropertyState)
@@ -4273,8 +4273,8 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetProperty = FleetAppsManagementFunctions.getFleetProperty(GetFleetPropertyArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .fleetPropertyId(testProperty.id())
+     *             .fleetId(testFleet.get("id"))
+     *             .fleetPropertyId(testProperty.get("id"))
      *             .build());
      * 
      *     }
@@ -4316,8 +4316,8 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetProperty = FleetAppsManagementFunctions.getFleetProperty(GetFleetPropertyArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .fleetPropertyId(testProperty.id())
+     *             .fleetId(testFleet.get("id"))
+     *             .fleetPropertyId(testProperty.get("id"))
      *             .build());
      * 
      *     }
@@ -4359,8 +4359,8 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetProperty = FleetAppsManagementFunctions.getFleetProperty(GetFleetPropertyArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .fleetPropertyId(testProperty.id())
+     *             .fleetId(testFleet.get("id"))
+     *             .fleetPropertyId(testProperty.get("id"))
      *             .build());
      * 
      *     }
@@ -4402,8 +4402,8 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetProperty = FleetAppsManagementFunctions.getFleetProperty(GetFleetPropertyArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .fleetPropertyId(testProperty.id())
+     *             .fleetId(testFleet.get("id"))
+     *             .fleetPropertyId(testProperty.get("id"))
      *             .build());
      * 
      *     }
@@ -4445,8 +4445,8 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetProperty = FleetAppsManagementFunctions.getFleetProperty(GetFleetPropertyArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .fleetPropertyId(testProperty.id())
+     *             .fleetId(testFleet.get("id"))
+     *             .fleetPropertyId(testProperty.get("id"))
      *             .build());
      * 
      *     }
@@ -4488,8 +4488,8 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetResource = FleetAppsManagementFunctions.getFleetResource(GetFleetResourceArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .fleetResourceId(testResource.id())
+     *             .fleetId(testFleet.get("id"))
+     *             .fleetResourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -4531,8 +4531,8 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetResource = FleetAppsManagementFunctions.getFleetResource(GetFleetResourceArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .fleetResourceId(testResource.id())
+     *             .fleetId(testFleet.get("id"))
+     *             .fleetResourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -4574,8 +4574,8 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetResource = FleetAppsManagementFunctions.getFleetResource(GetFleetResourceArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .fleetResourceId(testResource.id())
+     *             .fleetId(testFleet.get("id"))
+     *             .fleetResourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -4617,8 +4617,8 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetResource = FleetAppsManagementFunctions.getFleetResource(GetFleetResourceArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .fleetResourceId(testResource.id())
+     *             .fleetId(testFleet.get("id"))
+     *             .fleetResourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -4660,8 +4660,8 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetResource = FleetAppsManagementFunctions.getFleetResource(GetFleetResourceArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .fleetResourceId(testResource.id())
+     *             .fleetId(testFleet.get("id"))
+     *             .fleetResourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -4703,7 +4703,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetResources = FleetAppsManagementFunctions.getFleetResources(GetFleetResourcesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .displayName(fleetResourceDisplayName)
      *             .fleetResourceType(fleetResourceFleetResourceType)
      *             .id(fleetResourceId)
@@ -4749,7 +4749,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetResources = FleetAppsManagementFunctions.getFleetResources(GetFleetResourcesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .displayName(fleetResourceDisplayName)
      *             .fleetResourceType(fleetResourceFleetResourceType)
      *             .id(fleetResourceId)
@@ -4795,7 +4795,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetResources = FleetAppsManagementFunctions.getFleetResources(GetFleetResourcesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .displayName(fleetResourceDisplayName)
      *             .fleetResourceType(fleetResourceFleetResourceType)
      *             .id(fleetResourceId)
@@ -4841,7 +4841,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetResources = FleetAppsManagementFunctions.getFleetResources(GetFleetResourcesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .displayName(fleetResourceDisplayName)
      *             .fleetResourceType(fleetResourceFleetResourceType)
      *             .id(fleetResourceId)
@@ -4887,7 +4887,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetResources = FleetAppsManagementFunctions.getFleetResources(GetFleetResourcesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .displayName(fleetResourceDisplayName)
      *             .fleetResourceType(fleetResourceFleetResourceType)
      *             .id(fleetResourceId)
@@ -4933,11 +4933,11 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetTargets = FleetAppsManagementFunctions.getFleetTargets(GetFleetTargetsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .displayName(fleetTargetDisplayName)
      *             .product(fleetTargetProduct)
      *             .resourceDisplayName(fleetTargetResourceDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(fleetTargetState)
      *             .build());
      * 
@@ -4980,11 +4980,11 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetTargets = FleetAppsManagementFunctions.getFleetTargets(GetFleetTargetsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .displayName(fleetTargetDisplayName)
      *             .product(fleetTargetProduct)
      *             .resourceDisplayName(fleetTargetResourceDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(fleetTargetState)
      *             .build());
      * 
@@ -5027,11 +5027,11 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetTargets = FleetAppsManagementFunctions.getFleetTargets(GetFleetTargetsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .displayName(fleetTargetDisplayName)
      *             .product(fleetTargetProduct)
      *             .resourceDisplayName(fleetTargetResourceDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(fleetTargetState)
      *             .build());
      * 
@@ -5074,11 +5074,11 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetTargets = FleetAppsManagementFunctions.getFleetTargets(GetFleetTargetsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .displayName(fleetTargetDisplayName)
      *             .product(fleetTargetProduct)
      *             .resourceDisplayName(fleetTargetResourceDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(fleetTargetState)
      *             .build());
      * 
@@ -5121,11 +5121,11 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetTargets = FleetAppsManagementFunctions.getFleetTargets(GetFleetTargetsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .displayName(fleetTargetDisplayName)
      *             .product(fleetTargetProduct)
      *             .resourceDisplayName(fleetTargetResourceDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(fleetTargetState)
      *             .build());
      * 
@@ -5760,9 +5760,9 @@ public final class FleetAppsManagementFunctions {
      *         final var testInventoryRecords = FleetAppsManagementFunctions.getInventoryRecords(GetInventoryRecordsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(inventoryRecordCompartmentIdInSubtree)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .isDetailsRequired(inventoryRecordIsDetailsRequired)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -5806,9 +5806,9 @@ public final class FleetAppsManagementFunctions {
      *         final var testInventoryRecords = FleetAppsManagementFunctions.getInventoryRecords(GetInventoryRecordsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(inventoryRecordCompartmentIdInSubtree)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .isDetailsRequired(inventoryRecordIsDetailsRequired)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -5852,9 +5852,9 @@ public final class FleetAppsManagementFunctions {
      *         final var testInventoryRecords = FleetAppsManagementFunctions.getInventoryRecords(GetInventoryRecordsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(inventoryRecordCompartmentIdInSubtree)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .isDetailsRequired(inventoryRecordIsDetailsRequired)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -5898,9 +5898,9 @@ public final class FleetAppsManagementFunctions {
      *         final var testInventoryRecords = FleetAppsManagementFunctions.getInventoryRecords(GetInventoryRecordsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(inventoryRecordCompartmentIdInSubtree)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .isDetailsRequired(inventoryRecordIsDetailsRequired)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -5944,9 +5944,9 @@ public final class FleetAppsManagementFunctions {
      *         final var testInventoryRecords = FleetAppsManagementFunctions.getInventoryRecords(GetInventoryRecordsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(inventoryRecordCompartmentIdInSubtree)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .isDetailsRequired(inventoryRecordIsDetailsRequired)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .build());
      * 
      *     }
@@ -5990,7 +5990,7 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInventoryResources = FleetAppsManagementFunctions.getInventoryResources(GetInventoryResourcesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .resourceCompartmentId(testCompartment.id())
+     *             .resourceCompartmentId(testCompartment.get("id"))
      *             .definedTagEquals(inventoryResourceDefinedTagEquals)
      *             .displayName(inventoryResourceDisplayName)
      *             .freeformTagEquals(inventoryResourceFreeformTagEquals)
@@ -6041,7 +6041,7 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInventoryResources = FleetAppsManagementFunctions.getInventoryResources(GetInventoryResourcesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .resourceCompartmentId(testCompartment.id())
+     *             .resourceCompartmentId(testCompartment.get("id"))
      *             .definedTagEquals(inventoryResourceDefinedTagEquals)
      *             .displayName(inventoryResourceDisplayName)
      *             .freeformTagEquals(inventoryResourceFreeformTagEquals)
@@ -6092,7 +6092,7 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInventoryResources = FleetAppsManagementFunctions.getInventoryResources(GetInventoryResourcesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .resourceCompartmentId(testCompartment.id())
+     *             .resourceCompartmentId(testCompartment.get("id"))
      *             .definedTagEquals(inventoryResourceDefinedTagEquals)
      *             .displayName(inventoryResourceDisplayName)
      *             .freeformTagEquals(inventoryResourceFreeformTagEquals)
@@ -6143,7 +6143,7 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInventoryResources = FleetAppsManagementFunctions.getInventoryResources(GetInventoryResourcesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .resourceCompartmentId(testCompartment.id())
+     *             .resourceCompartmentId(testCompartment.get("id"))
      *             .definedTagEquals(inventoryResourceDefinedTagEquals)
      *             .displayName(inventoryResourceDisplayName)
      *             .freeformTagEquals(inventoryResourceFreeformTagEquals)
@@ -6194,7 +6194,7 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testInventoryResources = FleetAppsManagementFunctions.getInventoryResources(GetInventoryResourcesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .resourceCompartmentId(testCompartment.id())
+     *             .resourceCompartmentId(testCompartment.get("id"))
      *             .definedTagEquals(inventoryResourceDefinedTagEquals)
      *             .displayName(inventoryResourceDisplayName)
      *             .freeformTagEquals(inventoryResourceFreeformTagEquals)
@@ -6243,7 +6243,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceWindow = FleetAppsManagementFunctions.getMaintenanceWindow(GetMaintenanceWindowArgs.builder()
-     *             .maintenanceWindowId(testMaintenanceWindowOciFleetAppsManagementMaintenanceWindow.id())
+     *             .maintenanceWindowId(testMaintenanceWindowOciFleetAppsManagementMaintenanceWindow.get("id"))
      *             .build());
      * 
      *     }
@@ -6285,7 +6285,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceWindow = FleetAppsManagementFunctions.getMaintenanceWindow(GetMaintenanceWindowArgs.builder()
-     *             .maintenanceWindowId(testMaintenanceWindowOciFleetAppsManagementMaintenanceWindow.id())
+     *             .maintenanceWindowId(testMaintenanceWindowOciFleetAppsManagementMaintenanceWindow.get("id"))
      *             .build());
      * 
      *     }
@@ -6327,7 +6327,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceWindow = FleetAppsManagementFunctions.getMaintenanceWindow(GetMaintenanceWindowArgs.builder()
-     *             .maintenanceWindowId(testMaintenanceWindowOciFleetAppsManagementMaintenanceWindow.id())
+     *             .maintenanceWindowId(testMaintenanceWindowOciFleetAppsManagementMaintenanceWindow.get("id"))
      *             .build());
      * 
      *     }
@@ -6369,7 +6369,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceWindow = FleetAppsManagementFunctions.getMaintenanceWindow(GetMaintenanceWindowArgs.builder()
-     *             .maintenanceWindowId(testMaintenanceWindowOciFleetAppsManagementMaintenanceWindow.id())
+     *             .maintenanceWindowId(testMaintenanceWindowOciFleetAppsManagementMaintenanceWindow.get("id"))
      *             .build());
      * 
      *     }
@@ -6411,7 +6411,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceWindow = FleetAppsManagementFunctions.getMaintenanceWindow(GetMaintenanceWindowArgs.builder()
-     *             .maintenanceWindowId(testMaintenanceWindowOciFleetAppsManagementMaintenanceWindow.id())
+     *             .maintenanceWindowId(testMaintenanceWindowOciFleetAppsManagementMaintenanceWindow.get("id"))
      *             .build());
      * 
      *     }
@@ -7608,7 +7608,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPatch = FleetAppsManagementFunctions.getPatch(GetPatchArgs.builder()
-     *             .patchId(testPatchOciFleetAppsManagementPatch.id())
+     *             .patchId(testPatchOciFleetAppsManagementPatch.get("id"))
      *             .build());
      * 
      *     }
@@ -7650,7 +7650,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPatch = FleetAppsManagementFunctions.getPatch(GetPatchArgs.builder()
-     *             .patchId(testPatchOciFleetAppsManagementPatch.id())
+     *             .patchId(testPatchOciFleetAppsManagementPatch.get("id"))
      *             .build());
      * 
      *     }
@@ -7692,7 +7692,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPatch = FleetAppsManagementFunctions.getPatch(GetPatchArgs.builder()
-     *             .patchId(testPatchOciFleetAppsManagementPatch.id())
+     *             .patchId(testPatchOciFleetAppsManagementPatch.get("id"))
      *             .build());
      * 
      *     }
@@ -7734,7 +7734,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPatch = FleetAppsManagementFunctions.getPatch(GetPatchArgs.builder()
-     *             .patchId(testPatchOciFleetAppsManagementPatch.id())
+     *             .patchId(testPatchOciFleetAppsManagementPatch.get("id"))
      *             .build());
      * 
      *     }
@@ -7776,7 +7776,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPatch = FleetAppsManagementFunctions.getPatch(GetPatchArgs.builder()
-     *             .patchId(testPatchOciFleetAppsManagementPatch.id())
+     *             .patchId(testPatchOciFleetAppsManagementPatch.get("id"))
      *             .build());
      * 
      *     }
@@ -7822,8 +7822,8 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .id(patchId)
      *             .name(patchName)
-     *             .patchTypeId(testPatchType.id())
-     *             .productId(testProduct.id())
+     *             .patchTypeId(testPatchType.get("id"))
+     *             .productId(testProduct.get("id"))
      *             .shouldCompliancePolicyRulesBeApplied(patchShouldCompliancePolicyRulesBeApplied)
      *             .state(patchState)
      *             .timeReleasedGreaterThanOrEqualTo(patchTimeReleasedGreaterThanOrEqualTo)
@@ -7875,8 +7875,8 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .id(patchId)
      *             .name(patchName)
-     *             .patchTypeId(testPatchType.id())
-     *             .productId(testProduct.id())
+     *             .patchTypeId(testPatchType.get("id"))
+     *             .productId(testProduct.get("id"))
      *             .shouldCompliancePolicyRulesBeApplied(patchShouldCompliancePolicyRulesBeApplied)
      *             .state(patchState)
      *             .timeReleasedGreaterThanOrEqualTo(patchTimeReleasedGreaterThanOrEqualTo)
@@ -7928,8 +7928,8 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .id(patchId)
      *             .name(patchName)
-     *             .patchTypeId(testPatchType.id())
-     *             .productId(testProduct.id())
+     *             .patchTypeId(testPatchType.get("id"))
+     *             .productId(testProduct.get("id"))
      *             .shouldCompliancePolicyRulesBeApplied(patchShouldCompliancePolicyRulesBeApplied)
      *             .state(patchState)
      *             .timeReleasedGreaterThanOrEqualTo(patchTimeReleasedGreaterThanOrEqualTo)
@@ -7981,8 +7981,8 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .id(patchId)
      *             .name(patchName)
-     *             .patchTypeId(testPatchType.id())
-     *             .productId(testProduct.id())
+     *             .patchTypeId(testPatchType.get("id"))
+     *             .productId(testProduct.get("id"))
      *             .shouldCompliancePolicyRulesBeApplied(patchShouldCompliancePolicyRulesBeApplied)
      *             .state(patchState)
      *             .timeReleasedGreaterThanOrEqualTo(patchTimeReleasedGreaterThanOrEqualTo)
@@ -8034,8 +8034,8 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .id(patchId)
      *             .name(patchName)
-     *             .patchTypeId(testPatchType.id())
-     *             .productId(testProduct.id())
+     *             .patchTypeId(testPatchType.get("id"))
+     *             .productId(testProduct.get("id"))
      *             .shouldCompliancePolicyRulesBeApplied(patchShouldCompliancePolicyRulesBeApplied)
      *             .state(patchState)
      *             .timeReleasedGreaterThanOrEqualTo(patchTimeReleasedGreaterThanOrEqualTo)
@@ -8087,8 +8087,8 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .id(patchId)
      *             .name(patchName)
-     *             .patchTypeId(testPatchType.id())
-     *             .productId(testProduct.id())
+     *             .patchTypeId(testPatchType.get("id"))
+     *             .productId(testProduct.get("id"))
      *             .shouldCompliancePolicyRulesBeApplied(patchShouldCompliancePolicyRulesBeApplied)
      *             .state(patchState)
      *             .timeReleasedGreaterThanOrEqualTo(patchTimeReleasedGreaterThanOrEqualTo)
@@ -8140,8 +8140,8 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .id(patchId)
      *             .name(patchName)
-     *             .patchTypeId(testPatchType.id())
-     *             .productId(testProduct.id())
+     *             .patchTypeId(testPatchType.get("id"))
+     *             .productId(testProduct.get("id"))
      *             .shouldCompliancePolicyRulesBeApplied(patchShouldCompliancePolicyRulesBeApplied)
      *             .state(patchState)
      *             .timeReleasedGreaterThanOrEqualTo(patchTimeReleasedGreaterThanOrEqualTo)
@@ -8189,7 +8189,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPlatformConfiguration = FleetAppsManagementFunctions.getPlatformConfiguration(GetPlatformConfigurationArgs.builder()
-     *             .platformConfigurationId(testPlatformConfigurationOciFleetAppsManagementPlatformConfiguration.id())
+     *             .platformConfigurationId(testPlatformConfigurationOciFleetAppsManagementPlatformConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -8231,7 +8231,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPlatformConfiguration = FleetAppsManagementFunctions.getPlatformConfiguration(GetPlatformConfigurationArgs.builder()
-     *             .platformConfigurationId(testPlatformConfigurationOciFleetAppsManagementPlatformConfiguration.id())
+     *             .platformConfigurationId(testPlatformConfigurationOciFleetAppsManagementPlatformConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -8273,7 +8273,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPlatformConfiguration = FleetAppsManagementFunctions.getPlatformConfiguration(GetPlatformConfigurationArgs.builder()
-     *             .platformConfigurationId(testPlatformConfigurationOciFleetAppsManagementPlatformConfiguration.id())
+     *             .platformConfigurationId(testPlatformConfigurationOciFleetAppsManagementPlatformConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -8315,7 +8315,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPlatformConfiguration = FleetAppsManagementFunctions.getPlatformConfiguration(GetPlatformConfigurationArgs.builder()
-     *             .platformConfigurationId(testPlatformConfigurationOciFleetAppsManagementPlatformConfiguration.id())
+     *             .platformConfigurationId(testPlatformConfigurationOciFleetAppsManagementPlatformConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -8357,7 +8357,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPlatformConfiguration = FleetAppsManagementFunctions.getPlatformConfiguration(GetPlatformConfigurationArgs.builder()
-     *             .platformConfigurationId(testPlatformConfigurationOciFleetAppsManagementPlatformConfiguration.id())
+     *             .platformConfigurationId(testPlatformConfigurationOciFleetAppsManagementPlatformConfiguration.get("id"))
      *             .build());
      * 
      *     }
@@ -9078,7 +9078,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProperty = FleetAppsManagementFunctions.getProperty(GetPropertyArgs.builder()
-     *             .propertyId(testPropertyOciFleetAppsManagementProperty.id())
+     *             .propertyId(testPropertyOciFleetAppsManagementProperty.get("id"))
      *             .build());
      * 
      *     }
@@ -9120,7 +9120,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProperty = FleetAppsManagementFunctions.getProperty(GetPropertyArgs.builder()
-     *             .propertyId(testPropertyOciFleetAppsManagementProperty.id())
+     *             .propertyId(testPropertyOciFleetAppsManagementProperty.get("id"))
      *             .build());
      * 
      *     }
@@ -9162,7 +9162,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProperty = FleetAppsManagementFunctions.getProperty(GetPropertyArgs.builder()
-     *             .propertyId(testPropertyOciFleetAppsManagementProperty.id())
+     *             .propertyId(testPropertyOciFleetAppsManagementProperty.get("id"))
      *             .build());
      * 
      *     }
@@ -9204,7 +9204,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProperty = FleetAppsManagementFunctions.getProperty(GetPropertyArgs.builder()
-     *             .propertyId(testPropertyOciFleetAppsManagementProperty.id())
+     *             .propertyId(testPropertyOciFleetAppsManagementProperty.get("id"))
      *             .build());
      * 
      *     }
@@ -9246,7 +9246,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProperty = FleetAppsManagementFunctions.getProperty(GetPropertyArgs.builder()
-     *             .propertyId(testPropertyOciFleetAppsManagementProperty.id())
+     *             .propertyId(testPropertyOciFleetAppsManagementProperty.get("id"))
      *             .build());
      * 
      *     }
@@ -9288,7 +9288,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProvision = FleetAppsManagementFunctions.getProvision(GetProvisionArgs.builder()
-     *             .provisionId(testProvisionOciFleetAppsManagementProvision.id())
+     *             .provisionId(testProvisionOciFleetAppsManagementProvision.get("id"))
      *             .build());
      * 
      *     }
@@ -9330,7 +9330,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProvision = FleetAppsManagementFunctions.getProvision(GetProvisionArgs.builder()
-     *             .provisionId(testProvisionOciFleetAppsManagementProvision.id())
+     *             .provisionId(testProvisionOciFleetAppsManagementProvision.get("id"))
      *             .build());
      * 
      *     }
@@ -9372,7 +9372,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProvision = FleetAppsManagementFunctions.getProvision(GetProvisionArgs.builder()
-     *             .provisionId(testProvisionOciFleetAppsManagementProvision.id())
+     *             .provisionId(testProvisionOciFleetAppsManagementProvision.get("id"))
      *             .build());
      * 
      *     }
@@ -9414,7 +9414,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProvision = FleetAppsManagementFunctions.getProvision(GetProvisionArgs.builder()
-     *             .provisionId(testProvisionOciFleetAppsManagementProvision.id())
+     *             .provisionId(testProvisionOciFleetAppsManagementProvision.get("id"))
      *             .build());
      * 
      *     }
@@ -9456,7 +9456,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProvision = FleetAppsManagementFunctions.getProvision(GetProvisionArgs.builder()
-     *             .provisionId(testProvisionOciFleetAppsManagementProvision.id())
+     *             .provisionId(testProvisionOciFleetAppsManagementProvision.get("id"))
      *             .build());
      * 
      *     }
@@ -9501,7 +9501,7 @@ public final class FleetAppsManagementFunctions {
      *         final var testProvisions = FleetAppsManagementFunctions.getProvisions(GetProvisionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(provisionDisplayName)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .id(provisionId)
      *             .state(provisionState)
      *             .build());
@@ -9548,7 +9548,7 @@ public final class FleetAppsManagementFunctions {
      *         final var testProvisions = FleetAppsManagementFunctions.getProvisions(GetProvisionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(provisionDisplayName)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .id(provisionId)
      *             .state(provisionState)
      *             .build());
@@ -9595,7 +9595,7 @@ public final class FleetAppsManagementFunctions {
      *         final var testProvisions = FleetAppsManagementFunctions.getProvisions(GetProvisionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(provisionDisplayName)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .id(provisionId)
      *             .state(provisionState)
      *             .build());
@@ -9642,7 +9642,7 @@ public final class FleetAppsManagementFunctions {
      *         final var testProvisions = FleetAppsManagementFunctions.getProvisions(GetProvisionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(provisionDisplayName)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .id(provisionId)
      *             .state(provisionState)
      *             .build());
@@ -9689,7 +9689,7 @@ public final class FleetAppsManagementFunctions {
      *         final var testProvisions = FleetAppsManagementFunctions.getProvisions(GetProvisionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(provisionDisplayName)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .id(provisionId)
      *             .state(provisionState)
      *             .build());
@@ -9736,7 +9736,7 @@ public final class FleetAppsManagementFunctions {
      *         final var testProvisions = FleetAppsManagementFunctions.getProvisions(GetProvisionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(provisionDisplayName)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .id(provisionId)
      *             .state(provisionState)
      *             .build());
@@ -9783,7 +9783,7 @@ public final class FleetAppsManagementFunctions {
      *         final var testProvisions = FleetAppsManagementFunctions.getProvisions(GetProvisionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(provisionDisplayName)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .id(provisionId)
      *             .state(provisionState)
      *             .build());
@@ -9830,7 +9830,7 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .targetId(fleetTargetId)
      *             .targetName(fleetTargetName)
-     *             .patchId(testPatch.id())
+     *             .patchId(testPatch.get("id"))
      *             .patchLevel(recommendedPatchPatchLevel)
      *             .patchType(recommendedPatchPatchType)
      *             .severity(recommendedPatchSeverity)
@@ -9878,7 +9878,7 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .targetId(fleetTargetId)
      *             .targetName(fleetTargetName)
-     *             .patchId(testPatch.id())
+     *             .patchId(testPatch.get("id"))
      *             .patchLevel(recommendedPatchPatchLevel)
      *             .patchType(recommendedPatchPatchType)
      *             .severity(recommendedPatchSeverity)
@@ -9926,7 +9926,7 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .targetId(fleetTargetId)
      *             .targetName(fleetTargetName)
-     *             .patchId(testPatch.id())
+     *             .patchId(testPatch.get("id"))
      *             .patchLevel(recommendedPatchPatchLevel)
      *             .patchType(recommendedPatchPatchType)
      *             .severity(recommendedPatchSeverity)
@@ -9974,7 +9974,7 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .targetId(fleetTargetId)
      *             .targetName(fleetTargetName)
-     *             .patchId(testPatch.id())
+     *             .patchId(testPatch.get("id"))
      *             .patchLevel(recommendedPatchPatchLevel)
      *             .patchType(recommendedPatchPatchType)
      *             .severity(recommendedPatchSeverity)
@@ -10022,7 +10022,7 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .targetId(fleetTargetId)
      *             .targetName(fleetTargetName)
-     *             .patchId(testPatch.id())
+     *             .patchId(testPatch.get("id"))
      *             .patchLevel(recommendedPatchPatchLevel)
      *             .patchType(recommendedPatchPatchType)
      *             .severity(recommendedPatchSeverity)
@@ -10282,7 +10282,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunbook = FleetAppsManagementFunctions.getRunbook(GetRunbookArgs.builder()
-     *             .runbookId(testRunbookOciFleetAppsManagementRunbook.id())
+     *             .runbookId(testRunbookOciFleetAppsManagementRunbook.get("id"))
      *             .build());
      * 
      *     }
@@ -10324,7 +10324,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunbook = FleetAppsManagementFunctions.getRunbook(GetRunbookArgs.builder()
-     *             .runbookId(testRunbookOciFleetAppsManagementRunbook.id())
+     *             .runbookId(testRunbookOciFleetAppsManagementRunbook.get("id"))
      *             .build());
      * 
      *     }
@@ -10366,7 +10366,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunbook = FleetAppsManagementFunctions.getRunbook(GetRunbookArgs.builder()
-     *             .runbookId(testRunbookOciFleetAppsManagementRunbook.id())
+     *             .runbookId(testRunbookOciFleetAppsManagementRunbook.get("id"))
      *             .build());
      * 
      *     }
@@ -10408,7 +10408,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunbook = FleetAppsManagementFunctions.getRunbook(GetRunbookArgs.builder()
-     *             .runbookId(testRunbookOciFleetAppsManagementRunbook.id())
+     *             .runbookId(testRunbookOciFleetAppsManagementRunbook.get("id"))
      *             .build());
      * 
      *     }
@@ -10450,7 +10450,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunbook = FleetAppsManagementFunctions.getRunbook(GetRunbookArgs.builder()
-     *             .runbookId(testRunbookOciFleetAppsManagementRunbook.id())
+     *             .runbookId(testRunbookOciFleetAppsManagementRunbook.get("id"))
      *             .build());
      * 
      *     }
@@ -10493,7 +10493,7 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRunbookExport = FleetAppsManagementFunctions.getRunbookExport(GetRunbookExportArgs.builder()
      *             .exportId(runbookExportId)
-     *             .runbookId(testRunbook.id())
+     *             .runbookId(testRunbook.get("id"))
      *             .build());
      * 
      *     }
@@ -10536,7 +10536,7 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRunbookExport = FleetAppsManagementFunctions.getRunbookExport(GetRunbookExportArgs.builder()
      *             .exportId(runbookExportId)
-     *             .runbookId(testRunbook.id())
+     *             .runbookId(testRunbook.get("id"))
      *             .build());
      * 
      *     }
@@ -10579,7 +10579,7 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRunbookExport = FleetAppsManagementFunctions.getRunbookExport(GetRunbookExportArgs.builder()
      *             .exportId(runbookExportId)
-     *             .runbookId(testRunbook.id())
+     *             .runbookId(testRunbook.get("id"))
      *             .build());
      * 
      *     }
@@ -10622,7 +10622,7 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRunbookExport = FleetAppsManagementFunctions.getRunbookExport(GetRunbookExportArgs.builder()
      *             .exportId(runbookExportId)
-     *             .runbookId(testRunbook.id())
+     *             .runbookId(testRunbook.get("id"))
      *             .build());
      * 
      *     }
@@ -10665,7 +10665,7 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRunbookExport = FleetAppsManagementFunctions.getRunbookExport(GetRunbookExportArgs.builder()
      *             .exportId(runbookExportId)
-     *             .runbookId(testRunbook.id())
+     *             .runbookId(testRunbook.get("id"))
      *             .build());
      * 
      *     }
@@ -10923,7 +10923,7 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRunbookImport = FleetAppsManagementFunctions.getRunbookImport(GetRunbookImportArgs.builder()
      *             .importId(runbookImportId)
-     *             .runbookId(testRunbook.id())
+     *             .runbookId(testRunbook.get("id"))
      *             .build());
      * 
      *     }
@@ -10966,7 +10966,7 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRunbookImport = FleetAppsManagementFunctions.getRunbookImport(GetRunbookImportArgs.builder()
      *             .importId(runbookImportId)
-     *             .runbookId(testRunbook.id())
+     *             .runbookId(testRunbook.get("id"))
      *             .build());
      * 
      *     }
@@ -11009,7 +11009,7 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRunbookImport = FleetAppsManagementFunctions.getRunbookImport(GetRunbookImportArgs.builder()
      *             .importId(runbookImportId)
-     *             .runbookId(testRunbook.id())
+     *             .runbookId(testRunbook.get("id"))
      *             .build());
      * 
      *     }
@@ -11052,7 +11052,7 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRunbookImport = FleetAppsManagementFunctions.getRunbookImport(GetRunbookImportArgs.builder()
      *             .importId(runbookImportId)
-     *             .runbookId(testRunbook.id())
+     *             .runbookId(testRunbook.get("id"))
      *             .build());
      * 
      *     }
@@ -11095,7 +11095,7 @@ public final class FleetAppsManagementFunctions {
      *     public static void stack(Context ctx) {
      *         final var testRunbookImport = FleetAppsManagementFunctions.getRunbookImport(GetRunbookImportArgs.builder()
      *             .importId(runbookImportId)
-     *             .runbookId(testRunbook.id())
+     *             .runbookId(testRunbook.get("id"))
      *             .build());
      * 
      *     }
@@ -11352,7 +11352,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunbookVersion = FleetAppsManagementFunctions.getRunbookVersion(GetRunbookVersionArgs.builder()
-     *             .runbookVersionId(testRunbookVersionOciFleetAppsManagementRunbookVersion.id())
+     *             .runbookVersionId(testRunbookVersionOciFleetAppsManagementRunbookVersion.get("id"))
      *             .build());
      * 
      *     }
@@ -11394,7 +11394,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunbookVersion = FleetAppsManagementFunctions.getRunbookVersion(GetRunbookVersionArgs.builder()
-     *             .runbookVersionId(testRunbookVersionOciFleetAppsManagementRunbookVersion.id())
+     *             .runbookVersionId(testRunbookVersionOciFleetAppsManagementRunbookVersion.get("id"))
      *             .build());
      * 
      *     }
@@ -11436,7 +11436,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunbookVersion = FleetAppsManagementFunctions.getRunbookVersion(GetRunbookVersionArgs.builder()
-     *             .runbookVersionId(testRunbookVersionOciFleetAppsManagementRunbookVersion.id())
+     *             .runbookVersionId(testRunbookVersionOciFleetAppsManagementRunbookVersion.get("id"))
      *             .build());
      * 
      *     }
@@ -11478,7 +11478,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunbookVersion = FleetAppsManagementFunctions.getRunbookVersion(GetRunbookVersionArgs.builder()
-     *             .runbookVersionId(testRunbookVersionOciFleetAppsManagementRunbookVersion.id())
+     *             .runbookVersionId(testRunbookVersionOciFleetAppsManagementRunbookVersion.get("id"))
      *             .build());
      * 
      *     }
@@ -11520,7 +11520,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRunbookVersion = FleetAppsManagementFunctions.getRunbookVersion(GetRunbookVersionArgs.builder()
-     *             .runbookVersionId(testRunbookVersionOciFleetAppsManagementRunbookVersion.id())
+     *             .runbookVersionId(testRunbookVersionOciFleetAppsManagementRunbookVersion.get("id"))
      *             .build());
      * 
      *     }
@@ -11565,7 +11565,7 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .id(runbookVersionId)
      *             .name(runbookVersionName)
-     *             .runbookId(testRunbook.id())
+     *             .runbookId(testRunbook.get("id"))
      *             .state(runbookVersionState)
      *             .build());
      * 
@@ -11611,7 +11611,7 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .id(runbookVersionId)
      *             .name(runbookVersionName)
-     *             .runbookId(testRunbook.id())
+     *             .runbookId(testRunbook.get("id"))
      *             .state(runbookVersionState)
      *             .build());
      * 
@@ -11657,7 +11657,7 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .id(runbookVersionId)
      *             .name(runbookVersionName)
-     *             .runbookId(testRunbook.id())
+     *             .runbookId(testRunbook.get("id"))
      *             .state(runbookVersionState)
      *             .build());
      * 
@@ -11703,7 +11703,7 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .id(runbookVersionId)
      *             .name(runbookVersionName)
-     *             .runbookId(testRunbook.id())
+     *             .runbookId(testRunbook.get("id"))
      *             .state(runbookVersionState)
      *             .build());
      * 
@@ -11749,7 +11749,7 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .id(runbookVersionId)
      *             .name(runbookVersionName)
-     *             .runbookId(testRunbook.id())
+     *             .runbookId(testRunbook.get("id"))
      *             .state(runbookVersionState)
      *             .build());
      * 
@@ -11795,7 +11795,7 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .id(runbookVersionId)
      *             .name(runbookVersionName)
-     *             .runbookId(testRunbook.id())
+     *             .runbookId(testRunbook.get("id"))
      *             .state(runbookVersionState)
      *             .build());
      * 
@@ -11841,7 +11841,7 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentId(compartmentId)
      *             .id(runbookVersionId)
      *             .name(runbookVersionName)
-     *             .runbookId(testRunbook.id())
+     *             .runbookId(testRunbook.get("id"))
      *             .state(runbookVersionState)
      *             .build());
      * 
@@ -12227,7 +12227,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedulerDefinition = FleetAppsManagementFunctions.getSchedulerDefinition(GetSchedulerDefinitionArgs.builder()
-     *             .schedulerDefinitionId(testSchedulerDefinitionOciFleetAppsManagementSchedulerDefinition.id())
+     *             .schedulerDefinitionId(testSchedulerDefinitionOciFleetAppsManagementSchedulerDefinition.get("id"))
      *             .build());
      * 
      *     }
@@ -12269,7 +12269,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedulerDefinition = FleetAppsManagementFunctions.getSchedulerDefinition(GetSchedulerDefinitionArgs.builder()
-     *             .schedulerDefinitionId(testSchedulerDefinitionOciFleetAppsManagementSchedulerDefinition.id())
+     *             .schedulerDefinitionId(testSchedulerDefinitionOciFleetAppsManagementSchedulerDefinition.get("id"))
      *             .build());
      * 
      *     }
@@ -12311,7 +12311,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedulerDefinition = FleetAppsManagementFunctions.getSchedulerDefinition(GetSchedulerDefinitionArgs.builder()
-     *             .schedulerDefinitionId(testSchedulerDefinitionOciFleetAppsManagementSchedulerDefinition.id())
+     *             .schedulerDefinitionId(testSchedulerDefinitionOciFleetAppsManagementSchedulerDefinition.get("id"))
      *             .build());
      * 
      *     }
@@ -12353,7 +12353,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedulerDefinition = FleetAppsManagementFunctions.getSchedulerDefinition(GetSchedulerDefinitionArgs.builder()
-     *             .schedulerDefinitionId(testSchedulerDefinitionOciFleetAppsManagementSchedulerDefinition.id())
+     *             .schedulerDefinitionId(testSchedulerDefinitionOciFleetAppsManagementSchedulerDefinition.get("id"))
      *             .build());
      * 
      *     }
@@ -12395,7 +12395,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedulerDefinition = FleetAppsManagementFunctions.getSchedulerDefinition(GetSchedulerDefinitionArgs.builder()
-     *             .schedulerDefinitionId(testSchedulerDefinitionOciFleetAppsManagementSchedulerDefinition.id())
+     *             .schedulerDefinitionId(testSchedulerDefinitionOciFleetAppsManagementSchedulerDefinition.get("id"))
      *             .build());
      * 
      *     }
@@ -12437,7 +12437,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedulerDefinitionScheduledFleets = FleetAppsManagementFunctions.getSchedulerDefinitionScheduledFleets(GetSchedulerDefinitionScheduledFleetsArgs.builder()
-     *             .schedulerDefinitionId(testSchedulerDefinition.id())
+     *             .schedulerDefinitionId(testSchedulerDefinition.get("id"))
      *             .displayName(schedulerDefinitionScheduledFleetDisplayName)
      *             .build());
      * 
@@ -12480,7 +12480,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedulerDefinitionScheduledFleets = FleetAppsManagementFunctions.getSchedulerDefinitionScheduledFleets(GetSchedulerDefinitionScheduledFleetsArgs.builder()
-     *             .schedulerDefinitionId(testSchedulerDefinition.id())
+     *             .schedulerDefinitionId(testSchedulerDefinition.get("id"))
      *             .displayName(schedulerDefinitionScheduledFleetDisplayName)
      *             .build());
      * 
@@ -12523,7 +12523,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedulerDefinitionScheduledFleets = FleetAppsManagementFunctions.getSchedulerDefinitionScheduledFleets(GetSchedulerDefinitionScheduledFleetsArgs.builder()
-     *             .schedulerDefinitionId(testSchedulerDefinition.id())
+     *             .schedulerDefinitionId(testSchedulerDefinition.get("id"))
      *             .displayName(schedulerDefinitionScheduledFleetDisplayName)
      *             .build());
      * 
@@ -12566,7 +12566,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedulerDefinitionScheduledFleets = FleetAppsManagementFunctions.getSchedulerDefinitionScheduledFleets(GetSchedulerDefinitionScheduledFleetsArgs.builder()
-     *             .schedulerDefinitionId(testSchedulerDefinition.id())
+     *             .schedulerDefinitionId(testSchedulerDefinition.get("id"))
      *             .displayName(schedulerDefinitionScheduledFleetDisplayName)
      *             .build());
      * 
@@ -12609,7 +12609,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedulerDefinitionScheduledFleets = FleetAppsManagementFunctions.getSchedulerDefinitionScheduledFleets(GetSchedulerDefinitionScheduledFleetsArgs.builder()
-     *             .schedulerDefinitionId(testSchedulerDefinition.id())
+     *             .schedulerDefinitionId(testSchedulerDefinition.get("id"))
      *             .displayName(schedulerDefinitionScheduledFleetDisplayName)
      *             .build());
      * 
@@ -12655,12 +12655,12 @@ public final class FleetAppsManagementFunctions {
      *         final var testSchedulerDefinitions = FleetAppsManagementFunctions.getSchedulerDefinitions(GetSchedulerDefinitionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(schedulerDefinitionDisplayName)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .id(schedulerDefinitionId)
-     *             .maintenanceWindowId(testMaintenanceWindow.id())
+     *             .maintenanceWindowId(testMaintenanceWindow.get("id"))
      *             .product(schedulerDefinitionProduct)
-     *             .runbookId(testRunbook.id())
-     *             .runbookVersionName(testRunbookVersion.name())
+     *             .runbookId(testRunbook.get("id"))
+     *             .runbookVersionName(testRunbookVersion.get("name"))
      *             .state(schedulerDefinitionState)
      *             .timeScheduledGreaterThanOrEqualTo(schedulerDefinitionTimeScheduledGreaterThanOrEqualTo)
      *             .timeScheduledLessThan(schedulerDefinitionTimeScheduledLessThan)
@@ -12708,12 +12708,12 @@ public final class FleetAppsManagementFunctions {
      *         final var testSchedulerDefinitions = FleetAppsManagementFunctions.getSchedulerDefinitions(GetSchedulerDefinitionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(schedulerDefinitionDisplayName)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .id(schedulerDefinitionId)
-     *             .maintenanceWindowId(testMaintenanceWindow.id())
+     *             .maintenanceWindowId(testMaintenanceWindow.get("id"))
      *             .product(schedulerDefinitionProduct)
-     *             .runbookId(testRunbook.id())
-     *             .runbookVersionName(testRunbookVersion.name())
+     *             .runbookId(testRunbook.get("id"))
+     *             .runbookVersionName(testRunbookVersion.get("name"))
      *             .state(schedulerDefinitionState)
      *             .timeScheduledGreaterThanOrEqualTo(schedulerDefinitionTimeScheduledGreaterThanOrEqualTo)
      *             .timeScheduledLessThan(schedulerDefinitionTimeScheduledLessThan)
@@ -12761,12 +12761,12 @@ public final class FleetAppsManagementFunctions {
      *         final var testSchedulerDefinitions = FleetAppsManagementFunctions.getSchedulerDefinitions(GetSchedulerDefinitionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(schedulerDefinitionDisplayName)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .id(schedulerDefinitionId)
-     *             .maintenanceWindowId(testMaintenanceWindow.id())
+     *             .maintenanceWindowId(testMaintenanceWindow.get("id"))
      *             .product(schedulerDefinitionProduct)
-     *             .runbookId(testRunbook.id())
-     *             .runbookVersionName(testRunbookVersion.name())
+     *             .runbookId(testRunbook.get("id"))
+     *             .runbookVersionName(testRunbookVersion.get("name"))
      *             .state(schedulerDefinitionState)
      *             .timeScheduledGreaterThanOrEqualTo(schedulerDefinitionTimeScheduledGreaterThanOrEqualTo)
      *             .timeScheduledLessThan(schedulerDefinitionTimeScheduledLessThan)
@@ -12814,12 +12814,12 @@ public final class FleetAppsManagementFunctions {
      *         final var testSchedulerDefinitions = FleetAppsManagementFunctions.getSchedulerDefinitions(GetSchedulerDefinitionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(schedulerDefinitionDisplayName)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .id(schedulerDefinitionId)
-     *             .maintenanceWindowId(testMaintenanceWindow.id())
+     *             .maintenanceWindowId(testMaintenanceWindow.get("id"))
      *             .product(schedulerDefinitionProduct)
-     *             .runbookId(testRunbook.id())
-     *             .runbookVersionName(testRunbookVersion.name())
+     *             .runbookId(testRunbook.get("id"))
+     *             .runbookVersionName(testRunbookVersion.get("name"))
      *             .state(schedulerDefinitionState)
      *             .timeScheduledGreaterThanOrEqualTo(schedulerDefinitionTimeScheduledGreaterThanOrEqualTo)
      *             .timeScheduledLessThan(schedulerDefinitionTimeScheduledLessThan)
@@ -12867,12 +12867,12 @@ public final class FleetAppsManagementFunctions {
      *         final var testSchedulerDefinitions = FleetAppsManagementFunctions.getSchedulerDefinitions(GetSchedulerDefinitionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(schedulerDefinitionDisplayName)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .id(schedulerDefinitionId)
-     *             .maintenanceWindowId(testMaintenanceWindow.id())
+     *             .maintenanceWindowId(testMaintenanceWindow.get("id"))
      *             .product(schedulerDefinitionProduct)
-     *             .runbookId(testRunbook.id())
-     *             .runbookVersionName(testRunbookVersion.name())
+     *             .runbookId(testRunbook.get("id"))
+     *             .runbookVersionName(testRunbookVersion.get("name"))
      *             .state(schedulerDefinitionState)
      *             .timeScheduledGreaterThanOrEqualTo(schedulerDefinitionTimeScheduledGreaterThanOrEqualTo)
      *             .timeScheduledLessThan(schedulerDefinitionTimeScheduledLessThan)
@@ -12920,12 +12920,12 @@ public final class FleetAppsManagementFunctions {
      *         final var testSchedulerDefinitions = FleetAppsManagementFunctions.getSchedulerDefinitions(GetSchedulerDefinitionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(schedulerDefinitionDisplayName)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .id(schedulerDefinitionId)
-     *             .maintenanceWindowId(testMaintenanceWindow.id())
+     *             .maintenanceWindowId(testMaintenanceWindow.get("id"))
      *             .product(schedulerDefinitionProduct)
-     *             .runbookId(testRunbook.id())
-     *             .runbookVersionName(testRunbookVersion.name())
+     *             .runbookId(testRunbook.get("id"))
+     *             .runbookVersionName(testRunbookVersion.get("name"))
      *             .state(schedulerDefinitionState)
      *             .timeScheduledGreaterThanOrEqualTo(schedulerDefinitionTimeScheduledGreaterThanOrEqualTo)
      *             .timeScheduledLessThan(schedulerDefinitionTimeScheduledLessThan)
@@ -12973,12 +12973,12 @@ public final class FleetAppsManagementFunctions {
      *         final var testSchedulerDefinitions = FleetAppsManagementFunctions.getSchedulerDefinitions(GetSchedulerDefinitionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(schedulerDefinitionDisplayName)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .id(schedulerDefinitionId)
-     *             .maintenanceWindowId(testMaintenanceWindow.id())
+     *             .maintenanceWindowId(testMaintenanceWindow.get("id"))
      *             .product(schedulerDefinitionProduct)
-     *             .runbookId(testRunbook.id())
-     *             .runbookVersionName(testRunbookVersion.name())
+     *             .runbookId(testRunbook.get("id"))
+     *             .runbookVersionName(testRunbookVersion.get("name"))
      *             .state(schedulerDefinitionState)
      *             .timeScheduledGreaterThanOrEqualTo(schedulerDefinitionTimeScheduledGreaterThanOrEqualTo)
      *             .timeScheduledLessThan(schedulerDefinitionTimeScheduledLessThan)
@@ -13027,11 +13027,11 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentIdInSubtree(schedulerExecutionCompartmentIdInSubtree)
      *             .displayName(schedulerExecutionDisplayName)
      *             .lifecycleOperation(schedulerExecutionLifecycleOperation)
-     *             .resourceId(testResource.id())
-     *             .runbookId(testRunbook.id())
-     *             .runbookVersionName(testRunbookVersion.name())
-     *             .schedulerDefintionId(testSchedulerDefintion.id())
-     *             .schedulerJobId(testJob.id())
+     *             .resourceId(testResource.get("id"))
+     *             .runbookId(testRunbook.get("id"))
+     *             .runbookVersionName(testRunbookVersion.get("name"))
+     *             .schedulerDefintionId(testSchedulerDefintion.get("id"))
+     *             .schedulerJobId(testJob.get("id"))
      *             .substate(schedulerExecutionSubstate)
      *             .timeScheduledGreaterThanOrEqualTo(schedulerExecutionTimeScheduledGreaterThanOrEqualTo)
      *             .timeScheduledLessThan(schedulerExecutionTimeScheduledLessThan)
@@ -13080,11 +13080,11 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentIdInSubtree(schedulerExecutionCompartmentIdInSubtree)
      *             .displayName(schedulerExecutionDisplayName)
      *             .lifecycleOperation(schedulerExecutionLifecycleOperation)
-     *             .resourceId(testResource.id())
-     *             .runbookId(testRunbook.id())
-     *             .runbookVersionName(testRunbookVersion.name())
-     *             .schedulerDefintionId(testSchedulerDefintion.id())
-     *             .schedulerJobId(testJob.id())
+     *             .resourceId(testResource.get("id"))
+     *             .runbookId(testRunbook.get("id"))
+     *             .runbookVersionName(testRunbookVersion.get("name"))
+     *             .schedulerDefintionId(testSchedulerDefintion.get("id"))
+     *             .schedulerJobId(testJob.get("id"))
      *             .substate(schedulerExecutionSubstate)
      *             .timeScheduledGreaterThanOrEqualTo(schedulerExecutionTimeScheduledGreaterThanOrEqualTo)
      *             .timeScheduledLessThan(schedulerExecutionTimeScheduledLessThan)
@@ -13133,11 +13133,11 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentIdInSubtree(schedulerExecutionCompartmentIdInSubtree)
      *             .displayName(schedulerExecutionDisplayName)
      *             .lifecycleOperation(schedulerExecutionLifecycleOperation)
-     *             .resourceId(testResource.id())
-     *             .runbookId(testRunbook.id())
-     *             .runbookVersionName(testRunbookVersion.name())
-     *             .schedulerDefintionId(testSchedulerDefintion.id())
-     *             .schedulerJobId(testJob.id())
+     *             .resourceId(testResource.get("id"))
+     *             .runbookId(testRunbook.get("id"))
+     *             .runbookVersionName(testRunbookVersion.get("name"))
+     *             .schedulerDefintionId(testSchedulerDefintion.get("id"))
+     *             .schedulerJobId(testJob.get("id"))
      *             .substate(schedulerExecutionSubstate)
      *             .timeScheduledGreaterThanOrEqualTo(schedulerExecutionTimeScheduledGreaterThanOrEqualTo)
      *             .timeScheduledLessThan(schedulerExecutionTimeScheduledLessThan)
@@ -13186,11 +13186,11 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentIdInSubtree(schedulerExecutionCompartmentIdInSubtree)
      *             .displayName(schedulerExecutionDisplayName)
      *             .lifecycleOperation(schedulerExecutionLifecycleOperation)
-     *             .resourceId(testResource.id())
-     *             .runbookId(testRunbook.id())
-     *             .runbookVersionName(testRunbookVersion.name())
-     *             .schedulerDefintionId(testSchedulerDefintion.id())
-     *             .schedulerJobId(testJob.id())
+     *             .resourceId(testResource.get("id"))
+     *             .runbookId(testRunbook.get("id"))
+     *             .runbookVersionName(testRunbookVersion.get("name"))
+     *             .schedulerDefintionId(testSchedulerDefintion.get("id"))
+     *             .schedulerJobId(testJob.get("id"))
      *             .substate(schedulerExecutionSubstate)
      *             .timeScheduledGreaterThanOrEqualTo(schedulerExecutionTimeScheduledGreaterThanOrEqualTo)
      *             .timeScheduledLessThan(schedulerExecutionTimeScheduledLessThan)
@@ -13239,11 +13239,11 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentIdInSubtree(schedulerExecutionCompartmentIdInSubtree)
      *             .displayName(schedulerExecutionDisplayName)
      *             .lifecycleOperation(schedulerExecutionLifecycleOperation)
-     *             .resourceId(testResource.id())
-     *             .runbookId(testRunbook.id())
-     *             .runbookVersionName(testRunbookVersion.name())
-     *             .schedulerDefintionId(testSchedulerDefintion.id())
-     *             .schedulerJobId(testJob.id())
+     *             .resourceId(testResource.get("id"))
+     *             .runbookId(testRunbook.get("id"))
+     *             .runbookVersionName(testRunbookVersion.get("name"))
+     *             .schedulerDefintionId(testSchedulerDefintion.get("id"))
+     *             .schedulerJobId(testJob.get("id"))
      *             .substate(schedulerExecutionSubstate)
      *             .timeScheduledGreaterThanOrEqualTo(schedulerExecutionTimeScheduledGreaterThanOrEqualTo)
      *             .timeScheduledLessThan(schedulerExecutionTimeScheduledLessThan)
@@ -13292,11 +13292,11 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentIdInSubtree(schedulerExecutionCompartmentIdInSubtree)
      *             .displayName(schedulerExecutionDisplayName)
      *             .lifecycleOperation(schedulerExecutionLifecycleOperation)
-     *             .resourceId(testResource.id())
-     *             .runbookId(testRunbook.id())
-     *             .runbookVersionName(testRunbookVersion.name())
-     *             .schedulerDefintionId(testSchedulerDefintion.id())
-     *             .schedulerJobId(testJob.id())
+     *             .resourceId(testResource.get("id"))
+     *             .runbookId(testRunbook.get("id"))
+     *             .runbookVersionName(testRunbookVersion.get("name"))
+     *             .schedulerDefintionId(testSchedulerDefintion.get("id"))
+     *             .schedulerJobId(testJob.get("id"))
      *             .substate(schedulerExecutionSubstate)
      *             .timeScheduledGreaterThanOrEqualTo(schedulerExecutionTimeScheduledGreaterThanOrEqualTo)
      *             .timeScheduledLessThan(schedulerExecutionTimeScheduledLessThan)
@@ -13345,11 +13345,11 @@ public final class FleetAppsManagementFunctions {
      *             .compartmentIdInSubtree(schedulerExecutionCompartmentIdInSubtree)
      *             .displayName(schedulerExecutionDisplayName)
      *             .lifecycleOperation(schedulerExecutionLifecycleOperation)
-     *             .resourceId(testResource.id())
-     *             .runbookId(testRunbook.id())
-     *             .runbookVersionName(testRunbookVersion.name())
-     *             .schedulerDefintionId(testSchedulerDefintion.id())
-     *             .schedulerJobId(testJob.id())
+     *             .resourceId(testResource.get("id"))
+     *             .runbookId(testRunbook.get("id"))
+     *             .runbookVersionName(testRunbookVersion.get("name"))
+     *             .schedulerDefintionId(testSchedulerDefintion.get("id"))
+     *             .schedulerJobId(testJob.get("id"))
      *             .substate(schedulerExecutionSubstate)
      *             .timeScheduledGreaterThanOrEqualTo(schedulerExecutionTimeScheduledGreaterThanOrEqualTo)
      *             .timeScheduledLessThan(schedulerExecutionTimeScheduledLessThan)
@@ -13695,12 +13695,12 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedulerJobJobActivityResources = FleetAppsManagementFunctions.getSchedulerJobJobActivityResources(GetSchedulerJobJobActivityResourcesArgs.builder()
-     *             .jobActivityId(testJobActivity.id())
-     *             .schedulerJobId(testJob.id())
-     *             .resourceTaskId(testResourceTask.id())
+     *             .jobActivityId(testJobActivity.get("id"))
+     *             .schedulerJobId(testJob.get("id"))
+     *             .resourceTaskId(testResourceTask.get("id"))
      *             .sequence(schedulerJobJobActivityResourceSequence)
      *             .stepName(schedulerJobJobActivityResourceStepName)
-     *             .targetName(testTarget.name())
+     *             .targetName(testTarget.get("name"))
      *             .build());
      * 
      *     }
@@ -13742,12 +13742,12 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedulerJobJobActivityResources = FleetAppsManagementFunctions.getSchedulerJobJobActivityResources(GetSchedulerJobJobActivityResourcesArgs.builder()
-     *             .jobActivityId(testJobActivity.id())
-     *             .schedulerJobId(testJob.id())
-     *             .resourceTaskId(testResourceTask.id())
+     *             .jobActivityId(testJobActivity.get("id"))
+     *             .schedulerJobId(testJob.get("id"))
+     *             .resourceTaskId(testResourceTask.get("id"))
      *             .sequence(schedulerJobJobActivityResourceSequence)
      *             .stepName(schedulerJobJobActivityResourceStepName)
-     *             .targetName(testTarget.name())
+     *             .targetName(testTarget.get("name"))
      *             .build());
      * 
      *     }
@@ -13789,12 +13789,12 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedulerJobJobActivityResources = FleetAppsManagementFunctions.getSchedulerJobJobActivityResources(GetSchedulerJobJobActivityResourcesArgs.builder()
-     *             .jobActivityId(testJobActivity.id())
-     *             .schedulerJobId(testJob.id())
-     *             .resourceTaskId(testResourceTask.id())
+     *             .jobActivityId(testJobActivity.get("id"))
+     *             .schedulerJobId(testJob.get("id"))
+     *             .resourceTaskId(testResourceTask.get("id"))
      *             .sequence(schedulerJobJobActivityResourceSequence)
      *             .stepName(schedulerJobJobActivityResourceStepName)
-     *             .targetName(testTarget.name())
+     *             .targetName(testTarget.get("name"))
      *             .build());
      * 
      *     }
@@ -13836,12 +13836,12 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedulerJobJobActivityResources = FleetAppsManagementFunctions.getSchedulerJobJobActivityResources(GetSchedulerJobJobActivityResourcesArgs.builder()
-     *             .jobActivityId(testJobActivity.id())
-     *             .schedulerJobId(testJob.id())
-     *             .resourceTaskId(testResourceTask.id())
+     *             .jobActivityId(testJobActivity.get("id"))
+     *             .schedulerJobId(testJob.get("id"))
+     *             .resourceTaskId(testResourceTask.get("id"))
      *             .sequence(schedulerJobJobActivityResourceSequence)
      *             .stepName(schedulerJobJobActivityResourceStepName)
-     *             .targetName(testTarget.name())
+     *             .targetName(testTarget.get("name"))
      *             .build());
      * 
      *     }
@@ -13883,12 +13883,12 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedulerJobJobActivityResources = FleetAppsManagementFunctions.getSchedulerJobJobActivityResources(GetSchedulerJobJobActivityResourcesArgs.builder()
-     *             .jobActivityId(testJobActivity.id())
-     *             .schedulerJobId(testJob.id())
-     *             .resourceTaskId(testResourceTask.id())
+     *             .jobActivityId(testJobActivity.get("id"))
+     *             .schedulerJobId(testJob.get("id"))
+     *             .resourceTaskId(testResourceTask.get("id"))
      *             .sequence(schedulerJobJobActivityResourceSequence)
      *             .stepName(schedulerJobJobActivityResourceStepName)
-     *             .targetName(testTarget.name())
+     *             .targetName(testTarget.get("name"))
      *             .build());
      * 
      *     }
@@ -13930,12 +13930,12 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedulerJobJobActivitySteps = FleetAppsManagementFunctions.getSchedulerJobJobActivitySteps(GetSchedulerJobJobActivityStepsArgs.builder()
-     *             .jobActivityId(testJobActivity.id())
-     *             .schedulerJobId(testJob.id())
-     *             .resourceTaskId(testResourceTask.id())
+     *             .jobActivityId(testJobActivity.get("id"))
+     *             .schedulerJobId(testJob.get("id"))
+     *             .resourceTaskId(testResourceTask.get("id"))
      *             .sequence(schedulerJobJobActivityStepSequence)
      *             .stepName(schedulerJobJobActivityStepStepName)
-     *             .targetName(testTarget.name())
+     *             .targetName(testTarget.get("name"))
      *             .build());
      * 
      *     }
@@ -13977,12 +13977,12 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedulerJobJobActivitySteps = FleetAppsManagementFunctions.getSchedulerJobJobActivitySteps(GetSchedulerJobJobActivityStepsArgs.builder()
-     *             .jobActivityId(testJobActivity.id())
-     *             .schedulerJobId(testJob.id())
-     *             .resourceTaskId(testResourceTask.id())
+     *             .jobActivityId(testJobActivity.get("id"))
+     *             .schedulerJobId(testJob.get("id"))
+     *             .resourceTaskId(testResourceTask.get("id"))
      *             .sequence(schedulerJobJobActivityStepSequence)
      *             .stepName(schedulerJobJobActivityStepStepName)
-     *             .targetName(testTarget.name())
+     *             .targetName(testTarget.get("name"))
      *             .build());
      * 
      *     }
@@ -14024,12 +14024,12 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedulerJobJobActivitySteps = FleetAppsManagementFunctions.getSchedulerJobJobActivitySteps(GetSchedulerJobJobActivityStepsArgs.builder()
-     *             .jobActivityId(testJobActivity.id())
-     *             .schedulerJobId(testJob.id())
-     *             .resourceTaskId(testResourceTask.id())
+     *             .jobActivityId(testJobActivity.get("id"))
+     *             .schedulerJobId(testJob.get("id"))
+     *             .resourceTaskId(testResourceTask.get("id"))
      *             .sequence(schedulerJobJobActivityStepSequence)
      *             .stepName(schedulerJobJobActivityStepStepName)
-     *             .targetName(testTarget.name())
+     *             .targetName(testTarget.get("name"))
      *             .build());
      * 
      *     }
@@ -14071,12 +14071,12 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedulerJobJobActivitySteps = FleetAppsManagementFunctions.getSchedulerJobJobActivitySteps(GetSchedulerJobJobActivityStepsArgs.builder()
-     *             .jobActivityId(testJobActivity.id())
-     *             .schedulerJobId(testJob.id())
-     *             .resourceTaskId(testResourceTask.id())
+     *             .jobActivityId(testJobActivity.get("id"))
+     *             .schedulerJobId(testJob.get("id"))
+     *             .resourceTaskId(testResourceTask.get("id"))
      *             .sequence(schedulerJobJobActivityStepSequence)
      *             .stepName(schedulerJobJobActivityStepStepName)
-     *             .targetName(testTarget.name())
+     *             .targetName(testTarget.get("name"))
      *             .build());
      * 
      *     }
@@ -14118,12 +14118,12 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSchedulerJobJobActivitySteps = FleetAppsManagementFunctions.getSchedulerJobJobActivitySteps(GetSchedulerJobJobActivityStepsArgs.builder()
-     *             .jobActivityId(testJobActivity.id())
-     *             .schedulerJobId(testJob.id())
-     *             .resourceTaskId(testResourceTask.id())
+     *             .jobActivityId(testJobActivity.get("id"))
+     *             .schedulerJobId(testJob.get("id"))
+     *             .resourceTaskId(testResourceTask.get("id"))
      *             .sequence(schedulerJobJobActivityStepSequence)
      *             .stepName(schedulerJobJobActivityStepStepName)
-     *             .targetName(testTarget.name())
+     *             .targetName(testTarget.get("name"))
      *             .build());
      * 
      *     }
@@ -14620,7 +14620,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTaskRecord = FleetAppsManagementFunctions.getTaskRecord(GetTaskRecordArgs.builder()
-     *             .taskRecordId(testTaskRecordOciFleetAppsManagementTaskRecord.id())
+     *             .taskRecordId(testTaskRecordOciFleetAppsManagementTaskRecord.get("id"))
      *             .build());
      * 
      *     }
@@ -14662,7 +14662,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTaskRecord = FleetAppsManagementFunctions.getTaskRecord(GetTaskRecordArgs.builder()
-     *             .taskRecordId(testTaskRecordOciFleetAppsManagementTaskRecord.id())
+     *             .taskRecordId(testTaskRecordOciFleetAppsManagementTaskRecord.get("id"))
      *             .build());
      * 
      *     }
@@ -14704,7 +14704,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTaskRecord = FleetAppsManagementFunctions.getTaskRecord(GetTaskRecordArgs.builder()
-     *             .taskRecordId(testTaskRecordOciFleetAppsManagementTaskRecord.id())
+     *             .taskRecordId(testTaskRecordOciFleetAppsManagementTaskRecord.get("id"))
      *             .build());
      * 
      *     }
@@ -14746,7 +14746,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTaskRecord = FleetAppsManagementFunctions.getTaskRecord(GetTaskRecordArgs.builder()
-     *             .taskRecordId(testTaskRecordOciFleetAppsManagementTaskRecord.id())
+     *             .taskRecordId(testTaskRecordOciFleetAppsManagementTaskRecord.get("id"))
      *             .build());
      * 
      *     }
@@ -14788,7 +14788,7 @@ public final class FleetAppsManagementFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTaskRecord = FleetAppsManagementFunctions.getTaskRecord(GetTaskRecordArgs.builder()
-     *             .taskRecordId(testTaskRecordOciFleetAppsManagementTaskRecord.id())
+     *             .taskRecordId(testTaskRecordOciFleetAppsManagementTaskRecord.get("id"))
      *             .build());
      * 
      *     }

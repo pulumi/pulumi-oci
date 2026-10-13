@@ -920,7 +920,7 @@ public final class ObjectStorageFunctions {
      *             .httpResponseContentLanguage(objectHttpResponseContentLanguage)
      *             .httpResponseContentType(objectHttpResponseContentType)
      *             .httpResponseExpires(objectHttpResponseExpires)
-     *             .versionId(testVersion.id())
+     *             .versionId(testVersion.get("id"))
      *             .build());
      * 
      *     }
@@ -971,7 +971,7 @@ public final class ObjectStorageFunctions {
      *             .httpResponseContentLanguage(objectHttpResponseContentLanguage)
      *             .httpResponseContentType(objectHttpResponseContentType)
      *             .httpResponseExpires(objectHttpResponseExpires)
-     *             .versionId(testVersion.id())
+     *             .versionId(testVersion.get("id"))
      *             .build());
      * 
      *     }
@@ -1022,7 +1022,7 @@ public final class ObjectStorageFunctions {
      *             .httpResponseContentLanguage(objectHttpResponseContentLanguage)
      *             .httpResponseContentType(objectHttpResponseContentType)
      *             .httpResponseExpires(objectHttpResponseExpires)
-     *             .versionId(testVersion.id())
+     *             .versionId(testVersion.get("id"))
      *             .build());
      * 
      *     }
@@ -1073,7 +1073,7 @@ public final class ObjectStorageFunctions {
      *             .httpResponseContentLanguage(objectHttpResponseContentLanguage)
      *             .httpResponseContentType(objectHttpResponseContentType)
      *             .httpResponseExpires(objectHttpResponseExpires)
-     *             .versionId(testVersion.id())
+     *             .versionId(testVersion.get("id"))
      *             .build());
      * 
      *     }
@@ -1124,7 +1124,7 @@ public final class ObjectStorageFunctions {
      *             .httpResponseContentLanguage(objectHttpResponseContentLanguage)
      *             .httpResponseContentType(objectHttpResponseContentType)
      *             .httpResponseExpires(objectHttpResponseExpires)
-     *             .versionId(testVersion.id())
+     *             .versionId(testVersion.get("id"))
      *             .build());
      * 
      *     }
@@ -1983,7 +1983,7 @@ public final class ObjectStorageFunctions {
      *         final var testPreauthenticatedRequest = ObjectStorageFunctions.getPreauthrequest(GetPreauthrequestArgs.builder()
      *             .bucket(preauthenticatedRequestBucket)
      *             .namespace(preauthenticatedRequestNamespace)
-     *             .parId(testPar.id())
+     *             .parId(testPar.get("id"))
      *             .build());
      * 
      *     }
@@ -2027,7 +2027,7 @@ public final class ObjectStorageFunctions {
      *         final var testPreauthenticatedRequest = ObjectStorageFunctions.getPreauthrequest(GetPreauthrequestArgs.builder()
      *             .bucket(preauthenticatedRequestBucket)
      *             .namespace(preauthenticatedRequestNamespace)
-     *             .parId(testPar.id())
+     *             .parId(testPar.get("id"))
      *             .build());
      * 
      *     }
@@ -2071,7 +2071,7 @@ public final class ObjectStorageFunctions {
      *         final var testPreauthenticatedRequest = ObjectStorageFunctions.getPreauthrequest(GetPreauthrequestArgs.builder()
      *             .bucket(preauthenticatedRequestBucket)
      *             .namespace(preauthenticatedRequestNamespace)
-     *             .parId(testPar.id())
+     *             .parId(testPar.get("id"))
      *             .build());
      * 
      *     }
@@ -2115,7 +2115,7 @@ public final class ObjectStorageFunctions {
      *         final var testPreauthenticatedRequest = ObjectStorageFunctions.getPreauthrequest(GetPreauthrequestArgs.builder()
      *             .bucket(preauthenticatedRequestBucket)
      *             .namespace(preauthenticatedRequestNamespace)
-     *             .parId(testPar.id())
+     *             .parId(testPar.get("id"))
      *             .build());
      * 
      *     }
@@ -2159,7 +2159,7 @@ public final class ObjectStorageFunctions {
      *         final var testPreauthenticatedRequest = ObjectStorageFunctions.getPreauthrequest(GetPreauthrequestArgs.builder()
      *             .bucket(preauthenticatedRequestBucket)
      *             .namespace(preauthenticatedRequestNamespace)
-     *             .parId(testPar.id())
+     *             .parId(testPar.get("id"))
      *             .build());
      * 
      *     }
@@ -3108,7 +3108,7 @@ public final class ObjectStorageFunctions {
      *         final var testReplicationPolicy = ObjectStorageFunctions.getReplicationPolicy(GetReplicationPolicyArgs.builder()
      *             .bucket(replicationPolicyBucket)
      *             .namespace(replicationPolicyNamespace)
-     *             .replicationId(testReplication.id())
+     *             .replicationId(testReplication.get("id"))
      *             .build());
      * 
      *     }
@@ -3152,7 +3152,7 @@ public final class ObjectStorageFunctions {
      *         final var testReplicationPolicy = ObjectStorageFunctions.getReplicationPolicy(GetReplicationPolicyArgs.builder()
      *             .bucket(replicationPolicyBucket)
      *             .namespace(replicationPolicyNamespace)
-     *             .replicationId(testReplication.id())
+     *             .replicationId(testReplication.get("id"))
      *             .build());
      * 
      *     }
@@ -3196,7 +3196,7 @@ public final class ObjectStorageFunctions {
      *         final var testReplicationPolicy = ObjectStorageFunctions.getReplicationPolicy(GetReplicationPolicyArgs.builder()
      *             .bucket(replicationPolicyBucket)
      *             .namespace(replicationPolicyNamespace)
-     *             .replicationId(testReplication.id())
+     *             .replicationId(testReplication.get("id"))
      *             .build());
      * 
      *     }
@@ -3240,7 +3240,7 @@ public final class ObjectStorageFunctions {
      *         final var testReplicationPolicy = ObjectStorageFunctions.getReplicationPolicy(GetReplicationPolicyArgs.builder()
      *             .bucket(replicationPolicyBucket)
      *             .namespace(replicationPolicyNamespace)
-     *             .replicationId(testReplication.id())
+     *             .replicationId(testReplication.get("id"))
      *             .build());
      * 
      *     }
@@ -3284,7 +3284,7 @@ public final class ObjectStorageFunctions {
      *         final var testReplicationPolicy = ObjectStorageFunctions.getReplicationPolicy(GetReplicationPolicyArgs.builder()
      *             .bucket(replicationPolicyBucket)
      *             .namespace(replicationPolicyNamespace)
-     *             .replicationId(testReplication.id())
+     *             .replicationId(testReplication.get("id"))
      *             .build());
      * 
      *     }

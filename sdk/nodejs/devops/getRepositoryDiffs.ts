@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  *     baseVersion: repositoryDiffBaseVersion,
  *     repositoryId: testRepository.id,
  *     targetVersion: repositoryDiffTargetVersion,
- *     isComparisonFromMergeBase: repositoryDiffIsComparisonFromMergeBase === "true",
+ *     isComparisonFromMergeBase: repositoryDiffIsComparisonFromMergeBase,
  *     targetRepositoryId: testRepository.id,
  * });
  * ```
@@ -99,7 +99,7 @@ export interface GetRepositoryDiffsResult {
  *     baseVersion: repositoryDiffBaseVersion,
  *     repositoryId: testRepository.id,
  *     targetVersion: repositoryDiffTargetVersion,
- *     isComparisonFromMergeBase: repositoryDiffIsComparisonFromMergeBase === "true",
+ *     isComparisonFromMergeBase: repositoryDiffIsComparisonFromMergeBase,
  *     targetRepositoryId: testRepository.id,
  * });
  * ```

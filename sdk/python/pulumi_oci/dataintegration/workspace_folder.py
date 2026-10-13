@@ -474,17 +474,17 @@ class WorkspaceFolder(pulumi.CustomResource):
             name=workspace_folder_name,
             registry_metadata={
                 "aggregator_key": workspace_folder_registry_metadata_aggregator_key,
-                "is_favorite": workspace_folder_registry_metadata_is_favorite == "true",
+                "is_favorite": workspace_folder_registry_metadata_is_favorite,
                 "key": workspace_folder_registry_metadata_key,
                 "labels": workspace_folder_registry_metadata_labels,
-                "registry_version": int(workspace_folder_registry_metadata_registry_version),
+                "registry_version": workspace_folder_registry_metadata_registry_version,
             },
             workspace_id=test_workspace["id"],
             category_name=test_category["name"],
             description=workspace_folder_description,
             key=workspace_folder_key,
             model_version=workspace_folder_model_version,
-            object_status=int(workspace_folder_object_status))
+            object_status=workspace_folder_object_status)
         ```
 
         ## Import
@@ -537,17 +537,17 @@ class WorkspaceFolder(pulumi.CustomResource):
             name=workspace_folder_name,
             registry_metadata={
                 "aggregator_key": workspace_folder_registry_metadata_aggregator_key,
-                "is_favorite": workspace_folder_registry_metadata_is_favorite == "true",
+                "is_favorite": workspace_folder_registry_metadata_is_favorite,
                 "key": workspace_folder_registry_metadata_key,
                 "labels": workspace_folder_registry_metadata_labels,
-                "registry_version": int(workspace_folder_registry_metadata_registry_version),
+                "registry_version": workspace_folder_registry_metadata_registry_version,
             },
             workspace_id=test_workspace["id"],
             category_name=test_category["name"],
             description=workspace_folder_description,
             key=workspace_folder_key,
             model_version=workspace_folder_model_version,
-            object_status=int(workspace_folder_object_status))
+            object_status=workspace_folder_object_status)
         ```
 
         ## Import

@@ -34,15 +34,15 @@ import (
 //				AccessLevel:            pulumi.StringRef(cryptoAssessmentCertificateAccessLevel),
 //				AssessmentId:           pulumi.StringRef(testAssessment.Id),
 //				AssessmentType:         pulumi.StringRef(cryptoAssessmentCertificateAssessmentType),
-//				CertificateTypes:       pulumi.ToArray(cryptoAssessmentCertificateCertificateType),
+//				CertificateTypes:       cryptoAssessmentCertificateCertificateType,
 //				CompartmentIdInSubtree: pulumi.BoolRef(cryptoAssessmentCertificateCompartmentIdInSubtree),
 //				DaysToExpiry:           pulumi.IntRef(cryptoAssessmentCertificateDaysToExpiry),
 //				ExpiryBucket:           pulumi.StringRef(cryptoAssessmentCertificateExpiryBucket),
-//				PublicKeyTypes:         pulumi.ToArray(cryptoAssessmentCertificatePublicKeyType),
-//				SignatureAlgorithms:    pulumi.ToArray(cryptoAssessmentCertificateSignatureAlgorithm),
-//				Statuses:               pulumi.ToArray(cryptoAssessmentCertificateStatus),
+//				PublicKeyTypes:         cryptoAssessmentCertificatePublicKeyType,
+//				SignatureAlgorithms:    cryptoAssessmentCertificateSignatureAlgorithm,
+//				Statuses:               cryptoAssessmentCertificateStatus,
 //				TargetId:               pulumi.StringRef(testTarget.Id),
-//				TargetIds:              pulumi.ToArray(cryptoAssessmentCertificateTargetIds),
+//				TargetIds:              cryptoAssessmentCertificateTargetIds,
 //			}, nil)
 //			if err != nil {
 //				return err

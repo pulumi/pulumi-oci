@@ -32,7 +32,7 @@ import (
 //			_, err := osmanagementhub.GetManagedInstanceInstalledPackages(ctx, &osmanagementhub.GetManagedInstanceInstalledPackagesArgs{
 //				ManagedInstanceId:    testManagedInstance.Id,
 //				CompartmentId:        pulumi.StringRef(compartmentId),
-//				DisplayNames:         pulumi.ToArray(managedInstanceInstalledPackageDisplayName),
+//				DisplayNames:         managedInstanceInstalledPackageDisplayName,
 //				DisplayNameContains:  pulumi.StringRef(managedInstanceInstalledPackageDisplayNameContains),
 //				TimeInstallDateEnd:   pulumi.StringRef(managedInstanceInstalledPackageTimeInstallDateEnd),
 //				TimeInstallDateStart: pulumi.StringRef(managedInstanceInstalledPackageTimeInstallDateStart),

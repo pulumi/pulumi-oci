@@ -192,8 +192,8 @@ def get_mysql_db_systems(compartment_id: Optional[_builtins.str] = None,
         database_managements=mysql_db_system_database_management,
         db_system_id=test_db_system["id"],
         display_name=mysql_db_system_display_name,
-        is_heat_wave_cluster_attached=mysql_db_system_is_heat_wave_cluster_attached == "true",
-        is_up_to_date=mysql_db_system_is_up_to_date == "true",
+        is_heat_wave_cluster_attached=mysql_db_system_is_heat_wave_cluster_attached,
+        is_up_to_date=mysql_db_system_is_up_to_date,
         state=mysql_db_system_state)
     ```
 
@@ -259,8 +259,8 @@ def get_mysql_db_systems_output(compartment_id: pulumi.Input[Optional[_builtins.
         database_managements=mysql_db_system_database_management,
         db_system_id=test_db_system["id"],
         display_name=mysql_db_system_display_name,
-        is_heat_wave_cluster_attached=mysql_db_system_is_heat_wave_cluster_attached == "true",
-        is_up_to_date=mysql_db_system_is_up_to_date == "true",
+        is_heat_wave_cluster_attached=mysql_db_system_is_heat_wave_cluster_attached,
+        is_up_to_date=mysql_db_system_is_up_to_date,
         state=mysql_db_system_state)
     ```
 

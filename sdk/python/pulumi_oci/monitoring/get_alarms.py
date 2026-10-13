@@ -143,7 +143,7 @@ def get_alarms(compartment_id: Optional[_builtins.str] = None,
     import pulumi_oci as oci
 
     test_alarms = oci.monitoring.get_alarms(compartment_id=compartment_id,
-        compartment_id_in_subtree=alarm_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=alarm_compartment_id_in_subtree,
         display_name=alarm_display_name,
         state=alarm_state)
     ```
@@ -197,7 +197,7 @@ def get_alarms_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = No
     import pulumi_oci as oci
 
     test_alarms = oci.monitoring.get_alarms(compartment_id=compartment_id,
-        compartment_id_in_subtree=alarm_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=alarm_compartment_id_in_subtree,
         display_name=alarm_display_name,
         state=alarm_state)
     ```

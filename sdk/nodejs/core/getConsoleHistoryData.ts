@@ -19,8 +19,8 @@ import * as utilities from "../utilities";
  *
  * const testConsoleHistoryData = oci.core.getConsoleHistoryData({
  *     consoleHistoryId: testConsoleHistory.id,
- *     length: Number(consoleHistoryContentLength),
- *     offset: Number(consoleHistoryContentOffset),
+ *     length: consoleHistoryContentLength,
+ *     offset: consoleHistoryContentOffset,
  * });
  * ```
  */
@@ -82,8 +82,8 @@ export interface GetConsoleHistoryDataResult {
  *
  * const testConsoleHistoryData = oci.core.getConsoleHistoryData({
  *     consoleHistoryId: testConsoleHistory.id,
- *     length: Number(consoleHistoryContentLength),
- *     offset: Number(consoleHistoryContentOffset),
+ *     length: consoleHistoryContentLength,
+ *     offset: consoleHistoryContentOffset,
  * });
  * ```
  */

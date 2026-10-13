@@ -182,10 +182,10 @@ def get_managed_lists(access_level: Optional[_builtins.str] = None,
 
     test_managed_lists = oci.cloudguard.get_managed_lists(compartment_id=compartment_id,
         access_level=managed_list_access_level,
-        compartment_id_in_subtree=managed_list_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=managed_list_compartment_id_in_subtree,
         display_name=managed_list_display_name,
         list_type=managed_list_list_type,
-        resource_metadata_only=managed_list_resource_metadata_only == "true",
+        resource_metadata_only=managed_list_resource_metadata_only,
         state=managed_list_state)
     ```
 
@@ -256,10 +256,10 @@ def get_managed_lists_output(access_level: pulumi.Input[Optional[Optional[_built
 
     test_managed_lists = oci.cloudguard.get_managed_lists(compartment_id=compartment_id,
         access_level=managed_list_access_level,
-        compartment_id_in_subtree=managed_list_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=managed_list_compartment_id_in_subtree,
         display_name=managed_list_display_name,
         list_type=managed_list_list_type,
-        resource_metadata_only=managed_list_resource_metadata_only == "true",
+        resource_metadata_only=managed_list_resource_metadata_only,
         state=managed_list_state)
     ```
 

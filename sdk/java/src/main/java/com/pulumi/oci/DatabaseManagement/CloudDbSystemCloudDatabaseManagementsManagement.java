@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testCloudDbSystemCloudDatabaseManagementsManagement = new CloudDbSystemCloudDatabaseManagementsManagement("testCloudDbSystemCloudDatabaseManagementsManagement", CloudDbSystemCloudDatabaseManagementsManagementArgs.builder()
- *             .cloudDbSystemId(testCloudDbSystem.id())
+ *             .cloudDbSystemId(testCloudDbSystem.get("id"))
  *             .enableCloudDatabaseManagement(enableCloudDatabaseManagement)
  *             .isEnabled(cloudDbSystemCloudDatabaseManagementsManagementIsEnabled)
  *             .metadata(cloudDbSystemCloudDatabaseManagementsManagementMetadata)

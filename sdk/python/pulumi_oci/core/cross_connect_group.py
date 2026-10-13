@@ -486,19 +486,19 @@ class CrossConnectGroup(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            interface_down_timer_value_in_milliseconds=int(cross_connect_group_interface_down_timer_value_in_milliseconds),
-            is_interface_hold_timer_enabled=cross_connect_group_is_interface_hold_timer_enabled == "true",
-            is_qos_enabled=cross_connect_group_is_qos_enabled == "true",
+            interface_down_timer_value_in_milliseconds=cross_connect_group_interface_down_timer_value_in_milliseconds,
+            is_interface_hold_timer_enabled=cross_connect_group_is_interface_hold_timer_enabled,
+            is_qos_enabled=cross_connect_group_is_qos_enabled,
             macsec_properties={
                 "state": cross_connect_group_macsec_properties_state,
                 "encryption_cipher": cross_connect_group_macsec_properties_encryption_cipher,
-                "is_unprotected_traffic_allowed": cross_connect_group_macsec_properties_is_unprotected_traffic_allowed == "true",
+                "is_unprotected_traffic_allowed": cross_connect_group_macsec_properties_is_unprotected_traffic_allowed,
                 "primary_key": {
                     "connectivity_association_key_secret_id": test_secret["id"],
                     "connectivity_association_name_secret_id": test_secret["id"],
                 },
             },
-            minimum_links=int(cross_connect_group_minimum_links))
+            minimum_links=cross_connect_group_minimum_links)
         ```
 
         ## Import
@@ -570,19 +570,19 @@ class CrossConnectGroup(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            interface_down_timer_value_in_milliseconds=int(cross_connect_group_interface_down_timer_value_in_milliseconds),
-            is_interface_hold_timer_enabled=cross_connect_group_is_interface_hold_timer_enabled == "true",
-            is_qos_enabled=cross_connect_group_is_qos_enabled == "true",
+            interface_down_timer_value_in_milliseconds=cross_connect_group_interface_down_timer_value_in_milliseconds,
+            is_interface_hold_timer_enabled=cross_connect_group_is_interface_hold_timer_enabled,
+            is_qos_enabled=cross_connect_group_is_qos_enabled,
             macsec_properties={
                 "state": cross_connect_group_macsec_properties_state,
                 "encryption_cipher": cross_connect_group_macsec_properties_encryption_cipher,
-                "is_unprotected_traffic_allowed": cross_connect_group_macsec_properties_is_unprotected_traffic_allowed == "true",
+                "is_unprotected_traffic_allowed": cross_connect_group_macsec_properties_is_unprotected_traffic_allowed,
                 "primary_key": {
                     "connectivity_association_key_secret_id": test_secret["id"],
                     "connectivity_association_name_secret_id": test_secret["id"],
                 },
             },
-            minimum_links=int(cross_connect_group_minimum_links))
+            minimum_links=cross_connect_group_minimum_links)
         ```
 
         ## Import

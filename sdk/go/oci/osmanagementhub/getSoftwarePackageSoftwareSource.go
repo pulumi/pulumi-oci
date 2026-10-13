@@ -33,15 +33,15 @@ import (
 //			_, err := osmanagementhub.GetSoftwarePackageSoftwareSource(ctx, &osmanagementhub.GetSoftwarePackageSoftwareSourceArgs{
 //				CompartmentId:         compartmentId,
 //				SoftwarePackageName:   testSoftwarePackage.Name,
-//				ArchTypes:             pulumi.ToArray(softwarePackageSoftwareSourceArchType),
-//				Availabilities:        pulumi.ToArray(softwarePackageSoftwareSourceAvailability),
-//				AvailabilityAnywheres: pulumi.ToArray(softwarePackageSoftwareSourceAvailabilityAnywhere),
-//				AvailabilityAtOcis:    pulumi.ToArray(softwarePackageSoftwareSourceAvailabilityAtOci),
+//				ArchTypes:             softwarePackageSoftwareSourceArchType,
+//				Availabilities:        softwarePackageSoftwareSourceAvailability,
+//				AvailabilityAnywheres: softwarePackageSoftwareSourceAvailabilityAnywhere,
+//				AvailabilityAtOcis:    softwarePackageSoftwareSourceAvailabilityAtOci,
 //				DisplayName:           pulumi.StringRef(softwarePackageSoftwareSourceDisplayName),
 //				DisplayNameContains:   pulumi.StringRef(softwarePackageSoftwareSourceDisplayNameContains),
-//				OsFamilies:            pulumi.ToArray(softwarePackageSoftwareSourceOsFamily),
-//				SoftwareSourceTypes:   pulumi.ToArray(softwarePackageSoftwareSourceSoftwareSourceType),
-//				States:                pulumi.ToArray(softwarePackageSoftwareSourceState),
+//				OsFamilies:            softwarePackageSoftwareSourceOsFamily,
+//				SoftwareSourceTypes:   softwarePackageSoftwareSourceSoftwareSourceType,
+//				States:                softwarePackageSoftwareSourceState,
 //			}, nil)
 //			if err != nil {
 //				return err

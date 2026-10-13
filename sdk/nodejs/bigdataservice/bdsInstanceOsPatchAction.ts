@@ -25,14 +25,14 @@ import * as utilities from "../utilities";
  *     bdsInstanceId: testBdsInstance.id,
  *     clusterAdminPassword: bdsInstanceOsPatchActionClusterAdminPassword,
  *     osPatchVersion: bdsInstanceOsPatchActionOsPatchVersion,
- *     isDryRun: isDryRun === "true",
+ *     isDryRun: isDryRun,
  *     patchingConfigs: {
  *         patchingConfigStrategy: bdsInstanceOsPatchActionPatchingConfigStrategy,
- *         batchSize: Number(bdsInstanceOsPatchActionBatchSize),
- *         waitTimeBetweenBatchInSeconds: Number(bdsInstanceOsPatchActionWaitTimeBetweenBatchInSeconds),
- *         toleranceThresholdPerBatch: Number(bdsInstanceOsPatchActionToleranceThresholdPerBatch),
- *         waitTimeBetweenDomainInSeconds: Number(bdsInstanceOsPatchActionWaitTimeBetweenDomainInSeconds),
- *         toleranceThresholdPerDomain: Number(bdsInstanceOsPatchActionToleranceThresholdPerDomain),
+ *         batchSize: bdsInstanceOsPatchActionBatchSize,
+ *         waitTimeBetweenBatchInSeconds: bdsInstanceOsPatchActionWaitTimeBetweenBatchInSeconds,
+ *         toleranceThresholdPerBatch: bdsInstanceOsPatchActionToleranceThresholdPerBatch,
+ *         waitTimeBetweenDomainInSeconds: bdsInstanceOsPatchActionWaitTimeBetweenDomainInSeconds,
+ *         toleranceThresholdPerDomain: bdsInstanceOsPatchActionToleranceThresholdPerDomain,
  *     },
  * });
  * ```

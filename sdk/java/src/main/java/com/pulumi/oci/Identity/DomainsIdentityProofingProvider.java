@@ -68,7 +68,7 @@ import javax.annotation.Nullable;
  *                 .name(identityProofingProviderConfigurationName)
  *                 .value(identityProofingProviderConfigurationValue)
  *                 .build())
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .name(identityProofingProviderName)
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:IdentityProofingProvider")
  *             .attributeSets("all")

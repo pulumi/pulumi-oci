@@ -44,8 +44,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testPreMaskingReportManagement = new MaskingPolicyHealthReportManagement("testPreMaskingReportManagement", MaskingPolicyHealthReportManagementArgs.builder()
- *             .targetId(testTargetDatabase.id())
- *             .maskingPolicyId(testMaskingPolicy.id())
+ *             .targetId(testTargetDatabase.get("id"))
+ *             .maskingPolicyId(testMaskingPolicy.get("id"))
  *             .build());
  * 
  *     }

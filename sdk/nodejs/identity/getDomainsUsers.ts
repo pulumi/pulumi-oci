@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testUsers = oci.identity.getDomainsUsers({
  *     idcsEndpoint: testDomain.url,
- *     userCount: Number(userUserCount),
+ *     userCount: userUserCount,
  *     userFilter: userUserFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: userAuthorization,
  *     resourceTypeSchemaVersion: userResourceTypeSchemaVersion,
- *     startIndex: Number(userStartIndex),
+ *     startIndex: userStartIndex,
  * });
  * ```
  */
@@ -130,13 +130,13 @@ export interface GetDomainsUsersResult {
  *
  * const testUsers = oci.identity.getDomainsUsers({
  *     idcsEndpoint: testDomain.url,
- *     userCount: Number(userUserCount),
+ *     userCount: userUserCount,
  *     userFilter: userUserFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: userAuthorization,
  *     resourceTypeSchemaVersion: userResourceTypeSchemaVersion,
- *     startIndex: Number(userStartIndex),
+ *     startIndex: userStartIndex,
  * });
  * ```
  */

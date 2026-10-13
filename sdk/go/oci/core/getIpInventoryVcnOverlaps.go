@@ -30,8 +30,8 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := core.GetIpInventoryVcnOverlaps(ctx, &core.GetIpInventoryVcnOverlapsArgs{
-//				CompartmentLists: pulumi.ToArray(ipInventoryVcnOverlapCompartmentList),
-//				RegionLists:      pulumi.ToArray(ipInventoryVcnOverlapRegionList),
+//				CompartmentLists: ipInventoryVcnOverlapCompartmentList,
+//				RegionLists:      ipInventoryVcnOverlapRegionList,
 //				VcnId:            testVcn.Id,
 //			}, nil)
 //			if err != nil {

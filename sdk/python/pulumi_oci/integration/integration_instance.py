@@ -1160,8 +1160,8 @@ class IntegrationInstance(pulumi.CustomResource):
             compartment_id=compartment_id,
             display_name=integration_instance_display_name,
             integration_instance_type=integration_instance_integration_instance_type,
-            is_byol=integration_instance_is_byol == "true",
-            message_packs=int(integration_instance_message_packs),
+            is_byol=integration_instance_is_byol,
+            message_packs=integration_instance_message_packs,
             alternate_custom_endpoints=[{
                 "hostname": integration_instance_alternate_custom_endpoints_hostname,
                 "certificate_secret_id": test_secret["id"],
@@ -1179,9 +1179,9 @@ class IntegrationInstance(pulumi.CustomResource):
                 "bar-key": "value",
             },
             idcs_at=integration_instance_idcs_at,
-            is_disaster_recovery_enabled=integration_instance_is_disaster_recovery_enabled == "true",
-            is_file_server_enabled=integration_instance_is_file_server_enabled == "true",
-            is_visual_builder_enabled=integration_instance_is_visual_builder_enabled == "true",
+            is_disaster_recovery_enabled=integration_instance_is_disaster_recovery_enabled,
+            is_file_server_enabled=integration_instance_is_file_server_enabled,
+            is_visual_builder_enabled=integration_instance_is_visual_builder_enabled,
             network_endpoint_details={
                 "network_endpoint_type": integration_instance_network_endpoint_details_network_endpoint_type,
                 "allowlisted_http_ips": integration_instance_network_endpoint_details_allowlisted_http_ips,
@@ -1196,7 +1196,7 @@ class IntegrationInstance(pulumi.CustomResource):
                         "allowlisted_ips": integration_instance_network_endpoint_details_design_time_allowlisted_http_vcns_allowlisted_ips,
                     }],
                 },
-                "is_integration_vcn_allowlisted": integration_instance_network_endpoint_details_is_integration_vcn_allowlisted == "true",
+                "is_integration_vcn_allowlisted": integration_instance_network_endpoint_details_is_integration_vcn_allowlisted,
                 "runtime": {
                     "allowlisted_http_ips": integration_instance_network_endpoint_details_runtime_allowlisted_http_ips,
                     "allowlisted_http_vcns": [{
@@ -1281,8 +1281,8 @@ class IntegrationInstance(pulumi.CustomResource):
             compartment_id=compartment_id,
             display_name=integration_instance_display_name,
             integration_instance_type=integration_instance_integration_instance_type,
-            is_byol=integration_instance_is_byol == "true",
-            message_packs=int(integration_instance_message_packs),
+            is_byol=integration_instance_is_byol,
+            message_packs=integration_instance_message_packs,
             alternate_custom_endpoints=[{
                 "hostname": integration_instance_alternate_custom_endpoints_hostname,
                 "certificate_secret_id": test_secret["id"],
@@ -1300,9 +1300,9 @@ class IntegrationInstance(pulumi.CustomResource):
                 "bar-key": "value",
             },
             idcs_at=integration_instance_idcs_at,
-            is_disaster_recovery_enabled=integration_instance_is_disaster_recovery_enabled == "true",
-            is_file_server_enabled=integration_instance_is_file_server_enabled == "true",
-            is_visual_builder_enabled=integration_instance_is_visual_builder_enabled == "true",
+            is_disaster_recovery_enabled=integration_instance_is_disaster_recovery_enabled,
+            is_file_server_enabled=integration_instance_is_file_server_enabled,
+            is_visual_builder_enabled=integration_instance_is_visual_builder_enabled,
             network_endpoint_details={
                 "network_endpoint_type": integration_instance_network_endpoint_details_network_endpoint_type,
                 "allowlisted_http_ips": integration_instance_network_endpoint_details_allowlisted_http_ips,
@@ -1317,7 +1317,7 @@ class IntegrationInstance(pulumi.CustomResource):
                         "allowlisted_ips": integration_instance_network_endpoint_details_design_time_allowlisted_http_vcns_allowlisted_ips,
                     }],
                 },
-                "is_integration_vcn_allowlisted": integration_instance_network_endpoint_details_is_integration_vcn_allowlisted == "true",
+                "is_integration_vcn_allowlisted": integration_instance_network_endpoint_details_is_integration_vcn_allowlisted,
                 "runtime": {
                     "allowlisted_http_ips": integration_instance_network_endpoint_details_runtime_allowlisted_http_ips,
                     "allowlisted_http_vcns": [{

@@ -32,7 +32,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := managementagent.GetManagementAgentCount(ctx, &managementagent.GetManagementAgentCountArgs{
 //				CompartmentId: compartmentId,
-//				GroupBies:     pulumi.ToArray(managementAgentCountGroupBy),
+//				GroupBies:     managementAgentCountGroupBy,
 //				HasPlugins:    pulumi.BoolRef(managementAgentCountHasPlugins),
 //				InstallType:   pulumi.StringRef(managementAgentCountInstallType),
 //			}, nil)

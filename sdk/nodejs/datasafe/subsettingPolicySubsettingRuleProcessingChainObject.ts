@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     processingChainObjectKey: subsettingPolicySubsettingRuleProcessingChainObjectProcessingChainObjectKey,
  *     subsettingPolicyId: testSubsettingPolicy.id,
  *     subsettingRuleKey: subsettingPolicySubsettingRuleProcessingChainObjectSubsettingRuleKey,
- *     isEnabledForProcessing: subsettingPolicySubsettingRuleProcessingChainObjectIsEnabledForProcessing === "true",
+ *     isEnabledForProcessing: subsettingPolicySubsettingRuleProcessingChainObjectIsEnabledForProcessing,
  * });
  * ```
  *

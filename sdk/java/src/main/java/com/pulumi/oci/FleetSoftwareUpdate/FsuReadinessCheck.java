@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  *             .displayName(fsuReadinessCheckDisplayName)
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .targets(FsuReadinessCheckTargetArgs.builder()
- *                 .entityId(testEntity.id())
+ *                 .entityId(testEntity.get("id"))
  *                 .entityType(fsuReadinessCheckTargetsEntityType)
  *                 .build())
  *             .build());

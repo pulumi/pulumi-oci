@@ -74,7 +74,7 @@ import javax.annotation.Nullable;
  *         var testTag = new Tag("testTag", TagArgs.builder()
  *             .description(tagDescription)
  *             .name(tagName)
- *             .tagNamespaceId(testTagNamespace.id())
+ *             .tagNamespaceId(testTagNamespace.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .isCostTracking(tagIsCostTracking)

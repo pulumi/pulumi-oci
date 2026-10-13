@@ -50,10 +50,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testHeatWaveCluster = new HeatWaveCluster("testHeatWaveCluster", HeatWaveClusterArgs.builder()
- *             .dbSystemId(testDbSystem.id())
+ *             .dbSystemId(testDbSystem.get("id"))
  *             .clusterSize(heatWaveClusterClusterSize)
  *             .isLakehouseEnabled(heatWaveClusterIsLakehouseEnabled)
- *             .shapeName(testShape.name())
+ *             .shapeName(testShape.get("name"))
  *             .build());
  * 
  *     }

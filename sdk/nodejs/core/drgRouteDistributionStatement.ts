@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *         attachmentType: drgRouteDistributionStatementStatementsMatchCriteriaAttachmentType,
  *         drgAttachmentId: testDrgAttachment.id,
  *     },
- *     priority: Number(drgRouteDistributionStatementStatementsPriority),
+ *     priority: drgRouteDistributionStatementStatementsPriority,
  * });
  * ```
  *

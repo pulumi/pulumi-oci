@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testFleetErrors = oci.jms.getFleetErrors({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: fleetErrorCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: fleetErrorCompartmentIdInSubtree,
  *     fleetId: testFleet.id,
  *     timeFirstSeenGreaterThanOrEqualTo: fleetErrorTimeFirstSeenGreaterThanOrEqualTo,
  *     timeFirstSeenLessThanOrEqualTo: fleetErrorTimeFirstSeenLessThanOrEqualTo,
@@ -118,7 +118,7 @@ export interface GetFleetErrorsResult {
  *
  * const testFleetErrors = oci.jms.getFleetErrors({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: fleetErrorCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: fleetErrorCompartmentIdInSubtree,
  *     fleetId: testFleet.id,
  *     timeFirstSeenGreaterThanOrEqualTo: fleetErrorTimeFirstSeenGreaterThanOrEqualTo,
  *     timeFirstSeenLessThanOrEqualTo: fleetErrorTimeFirstSeenLessThanOrEqualTo,

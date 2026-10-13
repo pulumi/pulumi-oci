@@ -175,7 +175,7 @@ def get_alert_analytic(access_level: Optional[_builtins.str] = None,
 
     test_alert_analytic = oci.datasafe.get_alert_analytic(compartment_id=compartment_id,
         access_level=alert_analytic_access_level,
-        compartment_id_in_subtree=alert_analytic_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=alert_analytic_compartment_id_in_subtree,
         group_bies=alert_analytic_group_by,
         query_time_zone=alert_analytic_query_time_zone,
         scim_query=alert_analytic_scim_query,
@@ -245,7 +245,7 @@ def get_alert_analytic_output(access_level: pulumi.Input[Optional[Optional[_buil
 
     test_alert_analytic = oci.datasafe.get_alert_analytic(compartment_id=compartment_id,
         access_level=alert_analytic_access_level,
-        compartment_id_in_subtree=alert_analytic_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=alert_analytic_compartment_id_in_subtree,
         group_bies=alert_analytic_group_by,
         query_time_zone=alert_analytic_query_time_zone,
         scim_query=alert_analytic_scim_query,

@@ -149,7 +149,7 @@ def get_software_source_module_streams(filters: Optional[Sequence[Union['GetSoft
     import pulumi_oci as oci
 
     test_software_source_module_streams = oci.osmanagementhub.get_software_source_module_streams(software_source_id=test_software_source["id"],
-        is_latest=software_source_module_stream_is_latest == "true",
+        is_latest=software_source_module_stream_is_latest,
         module_name=software_source_module_stream_module_name,
         module_name_contains=software_source_module_stream_module_name_contains,
         name=software_source_module_stream_name)
@@ -201,7 +201,7 @@ def get_software_source_module_streams_output(filters: pulumi.Input[Optional[Opt
     import pulumi_oci as oci
 
     test_software_source_module_streams = oci.osmanagementhub.get_software_source_module_streams(software_source_id=test_software_source["id"],
-        is_latest=software_source_module_stream_is_latest == "true",
+        is_latest=software_source_module_stream_is_latest,
         module_name=software_source_module_stream_module_name,
         module_name_contains=software_source_module_stream_module_name_contains,
         name=software_source_module_stream_name)

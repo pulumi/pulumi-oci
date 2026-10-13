@@ -187,7 +187,7 @@ def get_functions_runtime_versions(display_name: Optional[_builtins.str] = None,
         functions_runtime_id=functions_runtime_id,
         functions_runtime_name=functions_runtime_name,
         functions_runtime_version_id=functions_runtime_version_id,
-        is_current_version=functions_runtime_version_is_current_version == "true",
+        is_current_version=functions_runtime_version_is_current_version,
         language_version=functions_runtime_version_language_version,
         os_version=functions_runtime_version_os_version,
         state=functions_runtime_version_state)
@@ -254,7 +254,7 @@ def get_functions_runtime_versions_output(display_name: pulumi.Input[Optional[Op
         functions_runtime_id=functions_runtime_id,
         functions_runtime_name=functions_runtime_name,
         functions_runtime_version_id=functions_runtime_version_id,
-        is_current_version=functions_runtime_version_is_current_version == "true",
+        is_current_version=functions_runtime_version_is_current_version,
         language_version=functions_runtime_version_language_version,
         os_version=functions_runtime_version_os_version,
         state=functions_runtime_version_state)

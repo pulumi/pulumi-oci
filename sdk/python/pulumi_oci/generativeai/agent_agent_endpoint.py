@@ -712,8 +712,8 @@ class AgentAgentEndpoint(pulumi.CustomResource):
             agent_id=test_agent["id"],
             compartment_id=compartment_id,
             content_moderation_config={
-                "should_enable_on_input": agent_endpoint_content_moderation_config_should_enable_on_input == "true",
-                "should_enable_on_output": agent_endpoint_content_moderation_config_should_enable_on_output == "true",
+                "should_enable_on_input": agent_endpoint_content_moderation_config_should_enable_on_input,
+                "should_enable_on_output": agent_endpoint_content_moderation_config_should_enable_on_output,
             },
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -737,7 +737,7 @@ class AgentAgentEndpoint(pulumi.CustomResource):
                 },
             },
             human_input_config={
-                "should_enable_human_input": agent_endpoint_human_input_config_should_enable_human_input == "true",
+                "should_enable_human_input": agent_endpoint_human_input_config_should_enable_human_input,
             },
             metadata=agent_endpoint_metadata,
             output_config={
@@ -747,7 +747,7 @@ class AgentAgentEndpoint(pulumi.CustomResource):
                     "output_location_type": agent_endpoint_output_config_output_location_output_location_type,
                     "prefix": agent_endpoint_output_config_output_location_prefix,
                 },
-                "retention_period_in_minutes": int(agent_endpoint_output_config_retention_period_in_minutes),
+                "retention_period_in_minutes": agent_endpoint_output_config_retention_period_in_minutes,
             },
             provisioned_capacity_config={
                 "provisioned_capacity_id": test_provisioned_capacity["id"],
@@ -761,12 +761,12 @@ class AgentAgentEndpoint(pulumi.CustomResource):
                 }],
             },
             session_config={
-                "idle_timeout_in_seconds": int(agent_endpoint_session_config_idle_timeout_in_seconds),
+                "idle_timeout_in_seconds": agent_endpoint_session_config_idle_timeout_in_seconds,
             },
-            should_enable_citation=agent_endpoint_should_enable_citation == "true",
-            should_enable_multi_language=agent_endpoint_should_enable_multi_language == "true",
-            should_enable_session=agent_endpoint_should_enable_session == "true",
-            should_enable_trace=agent_endpoint_should_enable_trace == "true")
+            should_enable_citation=agent_endpoint_should_enable_citation,
+            should_enable_multi_language=agent_endpoint_should_enable_multi_language,
+            should_enable_session=agent_endpoint_should_enable_session,
+            should_enable_trace=agent_endpoint_should_enable_trace)
         ```
 
         ## Import
@@ -825,8 +825,8 @@ class AgentAgentEndpoint(pulumi.CustomResource):
             agent_id=test_agent["id"],
             compartment_id=compartment_id,
             content_moderation_config={
-                "should_enable_on_input": agent_endpoint_content_moderation_config_should_enable_on_input == "true",
-                "should_enable_on_output": agent_endpoint_content_moderation_config_should_enable_on_output == "true",
+                "should_enable_on_input": agent_endpoint_content_moderation_config_should_enable_on_input,
+                "should_enable_on_output": agent_endpoint_content_moderation_config_should_enable_on_output,
             },
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -850,7 +850,7 @@ class AgentAgentEndpoint(pulumi.CustomResource):
                 },
             },
             human_input_config={
-                "should_enable_human_input": agent_endpoint_human_input_config_should_enable_human_input == "true",
+                "should_enable_human_input": agent_endpoint_human_input_config_should_enable_human_input,
             },
             metadata=agent_endpoint_metadata,
             output_config={
@@ -860,7 +860,7 @@ class AgentAgentEndpoint(pulumi.CustomResource):
                     "output_location_type": agent_endpoint_output_config_output_location_output_location_type,
                     "prefix": agent_endpoint_output_config_output_location_prefix,
                 },
-                "retention_period_in_minutes": int(agent_endpoint_output_config_retention_period_in_minutes),
+                "retention_period_in_minutes": agent_endpoint_output_config_retention_period_in_minutes,
             },
             provisioned_capacity_config={
                 "provisioned_capacity_id": test_provisioned_capacity["id"],
@@ -874,12 +874,12 @@ class AgentAgentEndpoint(pulumi.CustomResource):
                 }],
             },
             session_config={
-                "idle_timeout_in_seconds": int(agent_endpoint_session_config_idle_timeout_in_seconds),
+                "idle_timeout_in_seconds": agent_endpoint_session_config_idle_timeout_in_seconds,
             },
-            should_enable_citation=agent_endpoint_should_enable_citation == "true",
-            should_enable_multi_language=agent_endpoint_should_enable_multi_language == "true",
-            should_enable_session=agent_endpoint_should_enable_session == "true",
-            should_enable_trace=agent_endpoint_should_enable_trace == "true")
+            should_enable_citation=agent_endpoint_should_enable_citation,
+            should_enable_multi_language=agent_endpoint_should_enable_multi_language,
+            should_enable_session=agent_endpoint_should_enable_session,
+            should_enable_trace=agent_endpoint_should_enable_trace)
         ```
 
         ## Import

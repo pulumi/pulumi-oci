@@ -31,7 +31,7 @@ import * as utilities from "../utilities";
  *     authorization: identityProofingProviderTemplateAuthorization,
  *     configurations: [{
  *         name: identityProofingProviderTemplateConfigurationName,
- *         sensitivity: identityProofingProviderTemplateConfigurationSensitivity === "true",
+ *         sensitivity: identityProofingProviderTemplateConfigurationSensitivity,
  *         type: identityProofingProviderTemplateConfigurationType,
  *     }],
  *     ocid: identityProofingProviderTemplateOcid,

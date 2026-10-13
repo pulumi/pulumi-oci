@@ -182,7 +182,7 @@ def get_subsetting_policy_health_reports(access_level: Optional[_builtins.str] =
 
     test_subsetting_policy_health_reports = oci.datasafe.get_subsetting_policy_health_reports(compartment_id=compartment_id,
         access_level=subsetting_policy_health_report_access_level,
-        compartment_id_in_subtree=subsetting_policy_health_report_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=subsetting_policy_health_report_compartment_id_in_subtree,
         display_name=subsetting_policy_health_report_display_name,
         state=subsetting_policy_health_report_state,
         subsetting_policy_health_report_id=test_subsetting_policy_health_report["id"],
@@ -248,7 +248,7 @@ def get_subsetting_policy_health_reports_output(access_level: pulumi.Input[Optio
 
     test_subsetting_policy_health_reports = oci.datasafe.get_subsetting_policy_health_reports(compartment_id=compartment_id,
         access_level=subsetting_policy_health_report_access_level,
-        compartment_id_in_subtree=subsetting_policy_health_report_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=subsetting_policy_health_report_compartment_id_in_subtree,
         display_name=subsetting_policy_health_report_display_name,
         state=subsetting_policy_health_report_state,
         subsetting_policy_health_report_id=test_subsetting_policy_health_report["id"],

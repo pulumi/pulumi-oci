@@ -38,7 +38,7 @@ import (
 //				CompartmentIdInSubtree: pulumi.BoolRef(cryptoAssessmentBackupSetCompartmentIdInSubtree),
 //				IsEncrypted:            pulumi.BoolRef(cryptoAssessmentBackupSetIsEncrypted),
 //				TargetId:               pulumi.StringRef(testTarget.Id),
-//				TargetIds:              pulumi.ToArray(cryptoAssessmentBackupSetTargetIds),
+//				TargetIds:              cryptoAssessmentBackupSetTargetIds,
 //			}, nil)
 //			if err != nil {
 //				return err

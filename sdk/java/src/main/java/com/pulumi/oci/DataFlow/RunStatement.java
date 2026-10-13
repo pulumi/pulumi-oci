@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testRunStatement = new RunStatement("testRunStatement", RunStatementArgs.builder()
  *             .code(runStatementCode)
- *             .runId(testRun.id())
+ *             .runId(testRun.get("id"))
  *             .build());
  * 
  *     }

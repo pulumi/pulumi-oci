@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testUsage = new Usage("testUsage", UsageArgs.builder()
  *             .granularity(usageGranularity)
- *             .tenantId(testTenant.id())
+ *             .tenantId(testTenant.get("id"))
  *             .timeUsageEnded(usageTimeUsageEnded)
  *             .timeUsageStarted(usageTimeUsageStarted)
  *             .compartmentDepth(usageCompartmentDepth)

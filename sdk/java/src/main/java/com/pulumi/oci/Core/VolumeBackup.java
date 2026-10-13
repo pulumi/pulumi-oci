@@ -57,14 +57,14 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testVolumeBackup = new VolumeBackup("testVolumeBackup", VolumeBackupArgs.builder()
- *             .volumeId(testVolume.id())
+ *             .volumeId(testVolume.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(volumeBackupDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .isIndefiniteRetentionEnabled(volumeBackupIsIndefiniteRetentionEnabled)
  *             .isPreventDeletionEnabled(volumeBackupIsPreventDeletionEnabled)
  *             .isRetentionLockEnabled(volumeBackupIsRetentionLockEnabled)
- *             .kmsKeyId(testKey.id())
+ *             .kmsKeyId(testKey.get("id"))
  *             .retentionPeriod(VolumeBackupRetentionPeriodArgs.builder()
  *                 .retentionTimeAmount(volumeBackupRetentionPeriodRetentionTimeAmount)
  *                 .retentionTimeUnit(volumeBackupRetentionPeriodRetentionTimeUnit)

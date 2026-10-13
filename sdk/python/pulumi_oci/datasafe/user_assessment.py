@@ -657,7 +657,7 @@ class UserAssessment(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_assessment_scheduled=user_assessment_is_assessment_scheduled == "true",
+            is_assessment_scheduled=user_assessment_is_assessment_scheduled,
             schedule=user_assessment_schedule,
             target_type=user_assessment_target_type)
         ```
@@ -721,7 +721,7 @@ class UserAssessment(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_assessment_scheduled=user_assessment_is_assessment_scheduled == "true",
+            is_assessment_scheduled=user_assessment_is_assessment_scheduled,
             schedule=user_assessment_schedule,
             target_type=user_assessment_target_type)
         ```

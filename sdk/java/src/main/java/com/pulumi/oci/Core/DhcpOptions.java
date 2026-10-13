@@ -75,7 +75,7 @@ import javax.annotation.Nullable;
  *                     .type("SearchDomain")
  *                     .searchDomainNames("test.com")
  *                     .build())
- *             .vcnId(testVcn.id())
+ *             .vcnId(testVcn.get("id"))
  *             .displayName(dhcpOptionsDisplayName)
  *             .build());
  * 
@@ -124,7 +124,7 @@ import javax.annotation.Nullable;
  *                     .type("SearchDomain")
  *                     .searchDomainNames("test.com")
  *                     .build())
- *             .vcnId(testVcn.id())
+ *             .vcnId(testVcn.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(dhcpOptionsDisplayName)
  *             .domainNameType(dhcpOptionsDomainNameType)

@@ -39,7 +39,7 @@ import * as utilities from "../utilities";
  *         streamName: testStream.name,
  *         softwareSourceId: testSoftwareSource.id,
  *     }],
- *     isDryRun: managedInstanceGroupManageModuleStreamsManagementIsDryRun === "true",
+ *     isDryRun: managedInstanceGroupManageModuleStreamsManagementIsDryRun,
  *     removes: [{
  *         moduleName: managedInstanceGroupManageModuleStreamsManagementRemoveModuleName,
  *         profileName: testProfile.name,

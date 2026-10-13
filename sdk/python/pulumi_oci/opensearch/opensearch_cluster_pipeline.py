@@ -739,9 +739,9 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
             compartment_id=compartment_id,
             data_prepper_configuration_body=opensearch_cluster_pipeline_data_prepper_configuration_body,
             display_name=opensearch_cluster_pipeline_display_name,
-            memory_gb=int(opensearch_cluster_pipeline_memory_gb),
-            node_count=int(opensearch_cluster_pipeline_node_count),
-            ocpu_count=int(opensearch_cluster_pipeline_ocpu_count),
+            memory_gb=opensearch_cluster_pipeline_memory_gb,
+            node_count=opensearch_cluster_pipeline_node_count,
+            ocpu_count=opensearch_cluster_pipeline_ocpu_count,
             pipeline_configuration_body=opensearch_cluster_pipeline_pipeline_configuration_body,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -751,7 +751,7 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
             },
             node_shape=opensearch_cluster_pipeline_node_shape,
             nsg_id=test_nsg["id"],
-            opc_dry_run=opensearch_cluster_pipeline_opc_dry_run == "true",
+            opc_dry_run=opensearch_cluster_pipeline_opc_dry_run,
             reverse_connection_endpoints=[{
                 "customer_fqdn": opensearch_cluster_pipeline_reverse_connection_endpoints_customer_fqdn,
                 "customer_ip": opensearch_cluster_pipeline_reverse_connection_endpoints_customer_ip,
@@ -818,9 +818,9 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
             compartment_id=compartment_id,
             data_prepper_configuration_body=opensearch_cluster_pipeline_data_prepper_configuration_body,
             display_name=opensearch_cluster_pipeline_display_name,
-            memory_gb=int(opensearch_cluster_pipeline_memory_gb),
-            node_count=int(opensearch_cluster_pipeline_node_count),
-            ocpu_count=int(opensearch_cluster_pipeline_ocpu_count),
+            memory_gb=opensearch_cluster_pipeline_memory_gb,
+            node_count=opensearch_cluster_pipeline_node_count,
+            ocpu_count=opensearch_cluster_pipeline_ocpu_count,
             pipeline_configuration_body=opensearch_cluster_pipeline_pipeline_configuration_body,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -830,7 +830,7 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
             },
             node_shape=opensearch_cluster_pipeline_node_shape,
             nsg_id=test_nsg["id"],
-            opc_dry_run=opensearch_cluster_pipeline_opc_dry_run == "true",
+            opc_dry_run=opensearch_cluster_pipeline_opc_dry_run,
             reverse_connection_endpoints=[{
                 "customer_fqdn": opensearch_cluster_pipeline_reverse_connection_endpoints_customer_fqdn,
                 "customer_ip": opensearch_cluster_pipeline_reverse_connection_endpoints_customer_ip,

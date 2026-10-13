@@ -34,8 +34,8 @@ import * as utilities from "../utilities";
  *         value: migrationAdvancedParametersValue,
  *     }],
  *     advisorSettings: {
- *         isIgnoreErrors: migrationAdvisorSettingsIsIgnoreErrors === "true",
- *         isSkipAdvisor: migrationAdvisorSettingsIsSkipAdvisor === "true",
+ *         isIgnoreErrors: migrationAdvisorSettingsIsIgnoreErrors,
+ *         isSkipAdvisor: migrationAdvisorSettingsIsSkipAdvisor,
  *     },
  *     assessmentId: testAssessment.id,
  *     bulkIncludeExcludeData: migrationBulkIncludeExcludeData,
@@ -68,16 +68,16 @@ import * as utilities from "../utilities";
  *     displayName: migrationDisplayName,
  *     excludeObjects: [{
  *         object: migrationExcludeObjectsObject,
- *         isOmitExcludedTableFromReplication: migrationExcludeObjectsIsOmitExcludedTableFromReplication === "true",
+ *         isOmitExcludedTableFromReplication: migrationExcludeObjectsIsOmitExcludedTableFromReplication,
  *         owner: migrationExcludeObjectsOwner,
  *         schema: migrationExcludeObjectsSchema,
  *         type: migrationExcludeObjectsType,
  *     }],
  *     freeformTags: migrationFreeformTags,
  *     ggsDetails: {
- *         acceptableLag: Number(migrationGgsDetailsAcceptableLag),
+ *         acceptableLag: migrationGgsDetailsAcceptableLag,
  *         extract: {
- *             longTransDuration: Number(migrationGgsDetailsExtractLongTransDuration),
+ *             longTransDuration: migrationGgsDetailsExtractLongTransDuration,
  *             performanceProfile: migrationGgsDetailsExtractPerformanceProfile,
  *         },
  *         replicat: {
@@ -92,10 +92,10 @@ import * as utilities from "../utilities";
  *         },
  *         url: migrationHubDetailsUrl,
  *         vaultId: testVault.id,
- *         acceptableLag: Number(migrationHubDetailsAcceptableLag),
+ *         acceptableLag: migrationHubDetailsAcceptableLag,
  *         computeId: testCompute.id,
  *         extract: {
- *             longTransDuration: Number(migrationHubDetailsExtractLongTransDuration),
+ *             longTransDuration: migrationHubDetailsExtractLongTransDuration,
  *             performanceProfile: migrationHubDetailsExtractPerformanceProfile,
  *         },
  *         replicat: {
@@ -104,7 +104,7 @@ import * as utilities from "../utilities";
  *     },
  *     includeObjects: [{
  *         object: migrationIncludeObjectsObject,
- *         isOmitExcludedTableFromReplication: migrationIncludeObjectsIsOmitExcludedTableFromReplication === "true",
+ *         isOmitExcludedTableFromReplication: migrationIncludeObjectsIsOmitExcludedTableFromReplication,
  *         owner: migrationIncludeObjectsOwner,
  *         schema: migrationIncludeObjectsSchema,
  *         type: migrationIncludeObjectsType,
@@ -114,9 +114,9 @@ import * as utilities from "../utilities";
  *         dataPumpParameters: {
  *             estimate: migrationInitialLoadSettingsDataPumpParametersEstimate,
  *             excludeParameters: migrationInitialLoadSettingsDataPumpParametersExcludeParameters,
- *             exportParallelismDegree: Number(migrationInitialLoadSettingsDataPumpParametersExportParallelismDegree),
- *             importParallelismDegree: Number(migrationInitialLoadSettingsDataPumpParametersImportParallelismDegree),
- *             isCluster: migrationInitialLoadSettingsDataPumpParametersIsCluster === "true",
+ *             exportParallelismDegree: migrationInitialLoadSettingsDataPumpParametersExportParallelismDegree,
+ *             importParallelismDegree: migrationInitialLoadSettingsDataPumpParametersImportParallelismDegree,
+ *             isCluster: migrationInitialLoadSettingsDataPumpParametersIsCluster,
  *             tableExistsAction: migrationInitialLoadSettingsDataPumpParametersTableExistsAction,
  *         },
  *         exportDirectoryObject: {
@@ -128,9 +128,9 @@ import * as utilities from "../utilities";
  *             name: migrationInitialLoadSettingsImportDirectoryObjectName,
  *             path: migrationInitialLoadSettingsImportDirectoryObjectPath,
  *         },
- *         isConsistent: migrationInitialLoadSettingsIsConsistent === "true",
- *         isIgnoreExistingObjects: migrationInitialLoadSettingsIsIgnoreExistingObjects === "true",
- *         isTzUtc: migrationInitialLoadSettingsIsTzUtc === "true",
+ *         isConsistent: migrationInitialLoadSettingsIsConsistent,
+ *         isIgnoreExistingObjects: migrationInitialLoadSettingsIsIgnoreExistingObjects,
+ *         isTzUtc: migrationInitialLoadSettingsIsTzUtc,
  *         jobMode: migrationInitialLoadSettingsJobMode,
  *         metadataRemaps: [{
  *             newValue: migrationInitialLoadSettingsMetadataRemapsNewValue,
@@ -141,9 +141,9 @@ import * as utilities from "../utilities";
  *         tablespaceDetails: {
  *             targetType: migrationInitialLoadSettingsTablespaceDetailsTargetType,
  *             blockSizeInKbs: migrationInitialLoadSettingsTablespaceDetailsBlockSizeInKbs,
- *             extendSizeInMbs: Number(migrationInitialLoadSettingsTablespaceDetailsExtendSizeInMbs),
- *             isAutoCreate: migrationInitialLoadSettingsTablespaceDetailsIsAutoCreate === "true",
- *             isBigFile: migrationInitialLoadSettingsTablespaceDetailsIsBigFile === "true",
+ *             extendSizeInMbs: migrationInitialLoadSettingsTablespaceDetailsExtendSizeInMbs,
+ *             isAutoCreate: migrationInitialLoadSettingsTablespaceDetailsIsAutoCreate,
+ *             isBigFile: migrationInitialLoadSettingsTablespaceDetailsIsBigFile,
  *             remapTarget: migrationInitialLoadSettingsTablespaceDetailsRemapTarget,
  *         },
  *     },

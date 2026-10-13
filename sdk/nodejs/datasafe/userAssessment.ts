@@ -33,7 +33,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isAssessmentScheduled: userAssessmentIsAssessmentScheduled === "true",
+ *     isAssessmentScheduled: userAssessmentIsAssessmentScheduled,
  *     schedule: userAssessmentSchedule,
  *     targetType: userAssessmentTargetType,
  * });

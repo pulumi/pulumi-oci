@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testAutonomousDatabasesEstimateCostSavings = oci.database.getAutonomousDatabasesEstimateCostSavings({
  *     autonomousDatabaseId: testAutonomousDatabase.id,
- *     isCpuAutoscale: autonomousDatabasesEstimateCostSavingIsCpuAutoscale === "true",
+ *     isCpuAutoscale: autonomousDatabasesEstimateCostSavingIsCpuAutoscale,
  * });
  * ```
  */
@@ -79,7 +79,7 @@ export interface GetAutonomousDatabasesEstimateCostSavingsResult {
  *
  * const testAutonomousDatabasesEstimateCostSavings = oci.database.getAutonomousDatabasesEstimateCostSavings({
  *     autonomousDatabaseId: testAutonomousDatabase.id,
- *     isCpuAutoscale: autonomousDatabasesEstimateCostSavingIsCpuAutoscale === "true",
+ *     isCpuAutoscale: autonomousDatabasesEstimateCostSavingIsCpuAutoscale,
  * });
  * ```
  */

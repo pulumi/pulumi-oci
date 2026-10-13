@@ -33,9 +33,9 @@ import * as utilities from "../utilities";
  * const testUnifiedAuditPolicyDefinitions = oci.datasafe.getUnifiedAuditPolicyDefinitions({
  *     compartmentId: compartmentId,
  *     accessLevel: unifiedAuditPolicyDefinitionAccessLevel,
- *     compartmentIdInSubtree: unifiedAuditPolicyDefinitionCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: unifiedAuditPolicyDefinitionCompartmentIdInSubtree,
  *     displayName: unifiedAuditPolicyDefinitionDisplayName,
- *     isSeeded: unifiedAuditPolicyDefinitionIsSeeded === "true",
+ *     isSeeded: unifiedAuditPolicyDefinitionIsSeeded,
  *     state: unifiedAuditPolicyDefinitionState,
  *     unifiedAuditPolicyCategory: unifiedAuditPolicyDefinitionUnifiedAuditPolicyCategory,
  *     unifiedAuditPolicyDefinitionId: testUnifiedAuditPolicyDefinition.id,
@@ -164,9 +164,9 @@ export interface GetUnifiedAuditPolicyDefinitionsResult {
  * const testUnifiedAuditPolicyDefinitions = oci.datasafe.getUnifiedAuditPolicyDefinitions({
  *     compartmentId: compartmentId,
  *     accessLevel: unifiedAuditPolicyDefinitionAccessLevel,
- *     compartmentIdInSubtree: unifiedAuditPolicyDefinitionCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: unifiedAuditPolicyDefinitionCompartmentIdInSubtree,
  *     displayName: unifiedAuditPolicyDefinitionDisplayName,
- *     isSeeded: unifiedAuditPolicyDefinitionIsSeeded === "true",
+ *     isSeeded: unifiedAuditPolicyDefinitionIsSeeded,
  *     state: unifiedAuditPolicyDefinitionState,
  *     unifiedAuditPolicyCategory: unifiedAuditPolicyDefinitionUnifiedAuditPolicyCategory,
  *     unifiedAuditPolicyDefinitionId: testUnifiedAuditPolicyDefinition.id,

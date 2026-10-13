@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testManagementStationAssociateManagedInstancesManagement = new ManagementStationAssociateManagedInstancesManagement("testManagementStationAssociateManagedInstancesManagement", ManagementStationAssociateManagedInstancesManagementArgs.builder()
  *             .managedInstances(managementStationAssociateManagedInstancesManagementManagedInstances)
- *             .managementStationId(testManagementStation.id())
+ *             .managementStationId(testManagementStation.get("id"))
  *             .workRequestDetails(ManagementStationAssociateManagedInstancesManagementWorkRequestDetailsArgs.builder()
  *                 .description(managementStationAssociateManagedInstancesManagementWorkRequestDetailsDescription)
  *                 .displayName(managementStationAssociateManagedInstancesManagementWorkRequestDetailsDisplayName)

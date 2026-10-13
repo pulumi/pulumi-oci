@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  *     repositoryId: testRepository.id,
  *     displayName: repositoryPathDisplayName,
  *     folderPath: repositoryPathFolderPath,
- *     pathsInSubtree: repositoryPathPathsInSubtree === "true",
+ *     pathsInSubtree: repositoryPathPathsInSubtree,
  *     ref: repositoryPathRef,
  * });
  * ```
@@ -96,7 +96,7 @@ export interface GetRepositoryPathResult {
  *     repositoryId: testRepository.id,
  *     displayName: repositoryPathDisplayName,
  *     folderPath: repositoryPathFolderPath,
- *     pathsInSubtree: repositoryPathPathsInSubtree === "true",
+ *     pathsInSubtree: repositoryPathPathsInSubtree,
  *     ref: repositoryPathRef,
  * });
  * ```

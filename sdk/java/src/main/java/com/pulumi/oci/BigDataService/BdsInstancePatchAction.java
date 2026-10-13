@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBdsInstancePatchAction = new BdsInstancePatchAction("testBdsInstancePatchAction", BdsInstancePatchActionArgs.builder()
- *             .bdsInstanceId(testBdsInstance.id())
+ *             .bdsInstanceId(testBdsInstance.get("id"))
  *             .version(bdsInstancePatchActionVersion)
  *             .clusterAdminPassword(bdsInstancePatchActionClusterAdminPassword)
  *             .patchingConfig(BdsInstancePatchActionPatchingConfigArgs.builder()
@@ -60,7 +60,7 @@ import javax.annotation.Nullable;
  *                 .waitTimeBetweenBatchInSeconds(bdsInstancePatchActionPatchingConfigWaitTimeBetweenBatchInSeconds)
  *                 .waitTimeBetweenDomainInSeconds(bdsInstancePatchActionPatchingConfigWaitTimeBetweenDomainInSeconds)
  *                 .build())
- *             .secretId(testSecret.id())
+ *             .secretId(testSecret.get("id"))
  *             .build());
  * 
  *     }

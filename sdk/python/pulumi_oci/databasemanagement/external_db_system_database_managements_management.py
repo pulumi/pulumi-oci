@@ -166,7 +166,7 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
 
         test_external_db_system_database_managements_management = oci.databasemanagement.ExternalDbSystemDatabaseManagementsManagement("test_external_db_system_database_managements_management",
             external_db_system_id=test_external_db_system["id"],
-            enable_database_management=enable_database_management == "true",
+            enable_database_management=enable_database_management,
             license_model=external_db_system_database_managements_management_license_model)
         ```
 
@@ -202,7 +202,7 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
 
         test_external_db_system_database_managements_management = oci.databasemanagement.ExternalDbSystemDatabaseManagementsManagement("test_external_db_system_database_managements_management",
             external_db_system_id=test_external_db_system["id"],
-            enable_database_management=enable_database_management == "true",
+            enable_database_management=enable_database_management,
             license_model=external_db_system_database_managements_management_license_model)
         ```
 

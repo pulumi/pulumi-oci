@@ -216,7 +216,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicSet = OsManagementHubFunctions.getDynamicSet(GetDynamicSetArgs.builder()
-     *             .dynamicSetId(testDynamicSetOciOsManagementHubDynamicSet.id())
+     *             .dynamicSetId(testDynamicSetOciOsManagementHubDynamicSet.get("id"))
      *             .build());
      * 
      *     }
@@ -258,7 +258,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicSet = OsManagementHubFunctions.getDynamicSet(GetDynamicSetArgs.builder()
-     *             .dynamicSetId(testDynamicSetOciOsManagementHubDynamicSet.id())
+     *             .dynamicSetId(testDynamicSetOciOsManagementHubDynamicSet.get("id"))
      *             .build());
      * 
      *     }
@@ -300,7 +300,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicSet = OsManagementHubFunctions.getDynamicSet(GetDynamicSetArgs.builder()
-     *             .dynamicSetId(testDynamicSetOciOsManagementHubDynamicSet.id())
+     *             .dynamicSetId(testDynamicSetOciOsManagementHubDynamicSet.get("id"))
      *             .build());
      * 
      *     }
@@ -342,7 +342,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicSet = OsManagementHubFunctions.getDynamicSet(GetDynamicSetArgs.builder()
-     *             .dynamicSetId(testDynamicSetOciOsManagementHubDynamicSet.id())
+     *             .dynamicSetId(testDynamicSetOciOsManagementHubDynamicSet.get("id"))
      *             .build());
      * 
      *     }
@@ -384,7 +384,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicSet = OsManagementHubFunctions.getDynamicSet(GetDynamicSetArgs.builder()
-     *             .dynamicSetId(testDynamicSetOciOsManagementHubDynamicSet.id())
+     *             .dynamicSetId(testDynamicSetOciOsManagementHubDynamicSet.get("id"))
      *             .build());
      * 
      *     }
@@ -426,7 +426,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicSetManagedInstances = OsManagementHubFunctions.getDynamicSetManagedInstances(GetDynamicSetManagedInstancesArgs.builder()
-     *             .dynamicSetId(testDynamicSet.id())
+     *             .dynamicSetId(testDynamicSet.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(dynamicSetManagedInstanceCompartmentIdInSubtree)
      *             .displayName(dynamicSetManagedInstanceDisplayName)
@@ -472,7 +472,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicSetManagedInstances = OsManagementHubFunctions.getDynamicSetManagedInstances(GetDynamicSetManagedInstancesArgs.builder()
-     *             .dynamicSetId(testDynamicSet.id())
+     *             .dynamicSetId(testDynamicSet.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(dynamicSetManagedInstanceCompartmentIdInSubtree)
      *             .displayName(dynamicSetManagedInstanceDisplayName)
@@ -518,7 +518,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicSetManagedInstances = OsManagementHubFunctions.getDynamicSetManagedInstances(GetDynamicSetManagedInstancesArgs.builder()
-     *             .dynamicSetId(testDynamicSet.id())
+     *             .dynamicSetId(testDynamicSet.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(dynamicSetManagedInstanceCompartmentIdInSubtree)
      *             .displayName(dynamicSetManagedInstanceDisplayName)
@@ -564,7 +564,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicSetManagedInstances = OsManagementHubFunctions.getDynamicSetManagedInstances(GetDynamicSetManagedInstancesArgs.builder()
-     *             .dynamicSetId(testDynamicSet.id())
+     *             .dynamicSetId(testDynamicSet.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(dynamicSetManagedInstanceCompartmentIdInSubtree)
      *             .displayName(dynamicSetManagedInstanceDisplayName)
@@ -610,7 +610,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDynamicSetManagedInstances = OsManagementHubFunctions.getDynamicSetManagedInstances(GetDynamicSetManagedInstancesArgs.builder()
-     *             .dynamicSetId(testDynamicSet.id())
+     *             .dynamicSetId(testDynamicSet.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(dynamicSetManagedInstanceCompartmentIdInSubtree)
      *             .displayName(dynamicSetManagedInstanceDisplayName)
@@ -659,7 +659,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(dynamicSetDisplayName)
      *             .displayNameContains(dynamicSetDisplayNameContains)
-     *             .dynamicSetId(testDynamicSet.id())
+     *             .dynamicSetId(testDynamicSet.get("id"))
      *             .build());
      * 
      *     }
@@ -704,7 +704,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(dynamicSetDisplayName)
      *             .displayNameContains(dynamicSetDisplayNameContains)
-     *             .dynamicSetId(testDynamicSet.id())
+     *             .dynamicSetId(testDynamicSet.get("id"))
      *             .build());
      * 
      *     }
@@ -749,7 +749,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(dynamicSetDisplayName)
      *             .displayNameContains(dynamicSetDisplayNameContains)
-     *             .dynamicSetId(testDynamicSet.id())
+     *             .dynamicSetId(testDynamicSet.get("id"))
      *             .build());
      * 
      *     }
@@ -794,7 +794,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(dynamicSetDisplayName)
      *             .displayNameContains(dynamicSetDisplayNameContains)
-     *             .dynamicSetId(testDynamicSet.id())
+     *             .dynamicSetId(testDynamicSet.get("id"))
      *             .build());
      * 
      *     }
@@ -839,7 +839,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(dynamicSetDisplayName)
      *             .displayNameContains(dynamicSetDisplayNameContains)
-     *             .dynamicSetId(testDynamicSet.id())
+     *             .dynamicSetId(testDynamicSet.get("id"))
      *             .build());
      * 
      *     }
@@ -884,7 +884,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(dynamicSetDisplayName)
      *             .displayNameContains(dynamicSetDisplayNameContains)
-     *             .dynamicSetId(testDynamicSet.id())
+     *             .dynamicSetId(testDynamicSet.get("id"))
      *             .build());
      * 
      *     }
@@ -929,7 +929,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(dynamicSetDisplayName)
      *             .displayNameContains(dynamicSetDisplayNameContains)
-     *             .dynamicSetId(testDynamicSet.id())
+     *             .dynamicSetId(testDynamicSet.get("id"))
      *             .build());
      * 
      *     }
@@ -1626,7 +1626,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEvent = OsManagementHubFunctions.getEvent(GetEventArgs.builder()
-     *             .eventId(testEventOciOsManagementHubEvent.id())
+     *             .eventId(testEventOciOsManagementHubEvent.get("id"))
      *             .build());
      * 
      *     }
@@ -1668,7 +1668,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEvent = OsManagementHubFunctions.getEvent(GetEventArgs.builder()
-     *             .eventId(testEventOciOsManagementHubEvent.id())
+     *             .eventId(testEventOciOsManagementHubEvent.get("id"))
      *             .build());
      * 
      *     }
@@ -1710,7 +1710,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEvent = OsManagementHubFunctions.getEvent(GetEventArgs.builder()
-     *             .eventId(testEventOciOsManagementHubEvent.id())
+     *             .eventId(testEventOciOsManagementHubEvent.get("id"))
      *             .build());
      * 
      *     }
@@ -1752,7 +1752,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEvent = OsManagementHubFunctions.getEvent(GetEventArgs.builder()
-     *             .eventId(testEventOciOsManagementHubEvent.id())
+     *             .eventId(testEventOciOsManagementHubEvent.get("id"))
      *             .build());
      * 
      *     }
@@ -1794,7 +1794,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEvent = OsManagementHubFunctions.getEvent(GetEventArgs.builder()
-     *             .eventId(testEventOciOsManagementHubEvent.id())
+     *             .eventId(testEventOciOsManagementHubEvent.get("id"))
      *             .build());
      * 
      *     }
@@ -1842,7 +1842,7 @@ public final class OsManagementHubFunctions {
      *             .eventSummaryContains(eventEventSummaryContains)
      *             .id(eventId)
      *             .isManagedByAutonomousLinux(eventIsManagedByAutonomousLinux)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(eventState)
      *             .timeCreatedGreaterThanOrEqualTo(eventTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(eventTimeCreatedLessThan)
@@ -1894,7 +1894,7 @@ public final class OsManagementHubFunctions {
      *             .eventSummaryContains(eventEventSummaryContains)
      *             .id(eventId)
      *             .isManagedByAutonomousLinux(eventIsManagedByAutonomousLinux)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(eventState)
      *             .timeCreatedGreaterThanOrEqualTo(eventTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(eventTimeCreatedLessThan)
@@ -1946,7 +1946,7 @@ public final class OsManagementHubFunctions {
      *             .eventSummaryContains(eventEventSummaryContains)
      *             .id(eventId)
      *             .isManagedByAutonomousLinux(eventIsManagedByAutonomousLinux)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(eventState)
      *             .timeCreatedGreaterThanOrEqualTo(eventTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(eventTimeCreatedLessThan)
@@ -1998,7 +1998,7 @@ public final class OsManagementHubFunctions {
      *             .eventSummaryContains(eventEventSummaryContains)
      *             .id(eventId)
      *             .isManagedByAutonomousLinux(eventIsManagedByAutonomousLinux)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(eventState)
      *             .timeCreatedGreaterThanOrEqualTo(eventTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(eventTimeCreatedLessThan)
@@ -2050,7 +2050,7 @@ public final class OsManagementHubFunctions {
      *             .eventSummaryContains(eventEventSummaryContains)
      *             .id(eventId)
      *             .isManagedByAutonomousLinux(eventIsManagedByAutonomousLinux)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(eventState)
      *             .timeCreatedGreaterThanOrEqualTo(eventTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(eventTimeCreatedLessThan)
@@ -2102,7 +2102,7 @@ public final class OsManagementHubFunctions {
      *             .eventSummaryContains(eventEventSummaryContains)
      *             .id(eventId)
      *             .isManagedByAutonomousLinux(eventIsManagedByAutonomousLinux)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(eventState)
      *             .timeCreatedGreaterThanOrEqualTo(eventTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(eventTimeCreatedLessThan)
@@ -2154,7 +2154,7 @@ public final class OsManagementHubFunctions {
      *             .eventSummaryContains(eventEventSummaryContains)
      *             .id(eventId)
      *             .isManagedByAutonomousLinux(eventIsManagedByAutonomousLinux)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(eventState)
      *             .timeCreatedGreaterThanOrEqualTo(eventTimeCreatedGreaterThanOrEqualTo)
      *             .timeCreatedLessThan(eventTimeCreatedLessThan)
@@ -2200,7 +2200,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleEnvironment = OsManagementHubFunctions.getLifecycleEnvironment(GetLifecycleEnvironmentArgs.builder()
-     *             .lifecycleEnvironmentId(testLifecycleEnvironmentOciOsManagementHubLifecycleEnvironment.id())
+     *             .lifecycleEnvironmentId(testLifecycleEnvironmentOciOsManagementHubLifecycleEnvironment.get("id"))
      *             .build());
      * 
      *     }
@@ -2242,7 +2242,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleEnvironment = OsManagementHubFunctions.getLifecycleEnvironment(GetLifecycleEnvironmentArgs.builder()
-     *             .lifecycleEnvironmentId(testLifecycleEnvironmentOciOsManagementHubLifecycleEnvironment.id())
+     *             .lifecycleEnvironmentId(testLifecycleEnvironmentOciOsManagementHubLifecycleEnvironment.get("id"))
      *             .build());
      * 
      *     }
@@ -2284,7 +2284,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleEnvironment = OsManagementHubFunctions.getLifecycleEnvironment(GetLifecycleEnvironmentArgs.builder()
-     *             .lifecycleEnvironmentId(testLifecycleEnvironmentOciOsManagementHubLifecycleEnvironment.id())
+     *             .lifecycleEnvironmentId(testLifecycleEnvironmentOciOsManagementHubLifecycleEnvironment.get("id"))
      *             .build());
      * 
      *     }
@@ -2326,7 +2326,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleEnvironment = OsManagementHubFunctions.getLifecycleEnvironment(GetLifecycleEnvironmentArgs.builder()
-     *             .lifecycleEnvironmentId(testLifecycleEnvironmentOciOsManagementHubLifecycleEnvironment.id())
+     *             .lifecycleEnvironmentId(testLifecycleEnvironmentOciOsManagementHubLifecycleEnvironment.get("id"))
      *             .build());
      * 
      *     }
@@ -2368,7 +2368,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleEnvironment = OsManagementHubFunctions.getLifecycleEnvironment(GetLifecycleEnvironmentArgs.builder()
-     *             .lifecycleEnvironmentId(testLifecycleEnvironmentOciOsManagementHubLifecycleEnvironment.id())
+     *             .lifecycleEnvironmentId(testLifecycleEnvironmentOciOsManagementHubLifecycleEnvironment.get("id"))
      *             .build());
      * 
      *     }
@@ -2415,7 +2415,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentId(compartmentId)
      *             .displayNames(lifecycleEnvironmentDisplayName)
      *             .displayNameContains(lifecycleEnvironmentDisplayNameContains)
-     *             .lifecycleEnvironmentId(testLifecycleEnvironment.id())
+     *             .lifecycleEnvironmentId(testLifecycleEnvironment.get("id"))
      *             .locations(lifecycleEnvironmentLocation)
      *             .locationNotEqualTos(lifecycleEnvironmentLocationNotEqualTo)
      *             .osFamily(lifecycleEnvironmentOsFamily)
@@ -2466,7 +2466,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentId(compartmentId)
      *             .displayNames(lifecycleEnvironmentDisplayName)
      *             .displayNameContains(lifecycleEnvironmentDisplayNameContains)
-     *             .lifecycleEnvironmentId(testLifecycleEnvironment.id())
+     *             .lifecycleEnvironmentId(testLifecycleEnvironment.get("id"))
      *             .locations(lifecycleEnvironmentLocation)
      *             .locationNotEqualTos(lifecycleEnvironmentLocationNotEqualTo)
      *             .osFamily(lifecycleEnvironmentOsFamily)
@@ -2517,7 +2517,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentId(compartmentId)
      *             .displayNames(lifecycleEnvironmentDisplayName)
      *             .displayNameContains(lifecycleEnvironmentDisplayNameContains)
-     *             .lifecycleEnvironmentId(testLifecycleEnvironment.id())
+     *             .lifecycleEnvironmentId(testLifecycleEnvironment.get("id"))
      *             .locations(lifecycleEnvironmentLocation)
      *             .locationNotEqualTos(lifecycleEnvironmentLocationNotEqualTo)
      *             .osFamily(lifecycleEnvironmentOsFamily)
@@ -2568,7 +2568,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentId(compartmentId)
      *             .displayNames(lifecycleEnvironmentDisplayName)
      *             .displayNameContains(lifecycleEnvironmentDisplayNameContains)
-     *             .lifecycleEnvironmentId(testLifecycleEnvironment.id())
+     *             .lifecycleEnvironmentId(testLifecycleEnvironment.get("id"))
      *             .locations(lifecycleEnvironmentLocation)
      *             .locationNotEqualTos(lifecycleEnvironmentLocationNotEqualTo)
      *             .osFamily(lifecycleEnvironmentOsFamily)
@@ -2619,7 +2619,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentId(compartmentId)
      *             .displayNames(lifecycleEnvironmentDisplayName)
      *             .displayNameContains(lifecycleEnvironmentDisplayNameContains)
-     *             .lifecycleEnvironmentId(testLifecycleEnvironment.id())
+     *             .lifecycleEnvironmentId(testLifecycleEnvironment.get("id"))
      *             .locations(lifecycleEnvironmentLocation)
      *             .locationNotEqualTos(lifecycleEnvironmentLocationNotEqualTo)
      *             .osFamily(lifecycleEnvironmentOsFamily)
@@ -2670,7 +2670,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentId(compartmentId)
      *             .displayNames(lifecycleEnvironmentDisplayName)
      *             .displayNameContains(lifecycleEnvironmentDisplayNameContains)
-     *             .lifecycleEnvironmentId(testLifecycleEnvironment.id())
+     *             .lifecycleEnvironmentId(testLifecycleEnvironment.get("id"))
      *             .locations(lifecycleEnvironmentLocation)
      *             .locationNotEqualTos(lifecycleEnvironmentLocationNotEqualTo)
      *             .osFamily(lifecycleEnvironmentOsFamily)
@@ -2721,7 +2721,7 @@ public final class OsManagementHubFunctions {
      *             .compartmentId(compartmentId)
      *             .displayNames(lifecycleEnvironmentDisplayName)
      *             .displayNameContains(lifecycleEnvironmentDisplayNameContains)
-     *             .lifecycleEnvironmentId(testLifecycleEnvironment.id())
+     *             .lifecycleEnvironmentId(testLifecycleEnvironment.get("id"))
      *             .locations(lifecycleEnvironmentLocation)
      *             .locationNotEqualTos(lifecycleEnvironmentLocationNotEqualTo)
      *             .osFamily(lifecycleEnvironmentOsFamily)
@@ -2767,7 +2767,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleStage = OsManagementHubFunctions.getLifecycleStage(GetLifecycleStageArgs.builder()
-     *             .lifecycleStageId(testLifecycleStageOciOsManagementHubLifecycleStage.id())
+     *             .lifecycleStageId(testLifecycleStageOciOsManagementHubLifecycleStage.get("id"))
      *             .build());
      * 
      *     }
@@ -2809,7 +2809,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleStage = OsManagementHubFunctions.getLifecycleStage(GetLifecycleStageArgs.builder()
-     *             .lifecycleStageId(testLifecycleStageOciOsManagementHubLifecycleStage.id())
+     *             .lifecycleStageId(testLifecycleStageOciOsManagementHubLifecycleStage.get("id"))
      *             .build());
      * 
      *     }
@@ -2851,7 +2851,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleStage = OsManagementHubFunctions.getLifecycleStage(GetLifecycleStageArgs.builder()
-     *             .lifecycleStageId(testLifecycleStageOciOsManagementHubLifecycleStage.id())
+     *             .lifecycleStageId(testLifecycleStageOciOsManagementHubLifecycleStage.get("id"))
      *             .build());
      * 
      *     }
@@ -2893,7 +2893,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleStage = OsManagementHubFunctions.getLifecycleStage(GetLifecycleStageArgs.builder()
-     *             .lifecycleStageId(testLifecycleStageOciOsManagementHubLifecycleStage.id())
+     *             .lifecycleStageId(testLifecycleStageOciOsManagementHubLifecycleStage.get("id"))
      *             .build());
      * 
      *     }
@@ -2935,7 +2935,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLifecycleStage = OsManagementHubFunctions.getLifecycleStage(GetLifecycleStageArgs.builder()
-     *             .lifecycleStageId(testLifecycleStageOciOsManagementHubLifecycleStage.id())
+     *             .lifecycleStageId(testLifecycleStageOciOsManagementHubLifecycleStage.get("id"))
      *             .build());
      * 
      *     }
@@ -3040,7 +3040,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstance = OsManagementHubFunctions.getManagedInstance(GetManagedInstanceArgs.builder()
-     *             .managedInstanceId(testManagedInstanceOciOsManagementHubManagedInstance.id())
+     *             .managedInstanceId(testManagedInstanceOciOsManagementHubManagedInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -3082,7 +3082,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstance = OsManagementHubFunctions.getManagedInstance(GetManagedInstanceArgs.builder()
-     *             .managedInstanceId(testManagedInstanceOciOsManagementHubManagedInstance.id())
+     *             .managedInstanceId(testManagedInstanceOciOsManagementHubManagedInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -3124,7 +3124,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstance = OsManagementHubFunctions.getManagedInstance(GetManagedInstanceArgs.builder()
-     *             .managedInstanceId(testManagedInstanceOciOsManagementHubManagedInstance.id())
+     *             .managedInstanceId(testManagedInstanceOciOsManagementHubManagedInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -3166,7 +3166,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstance = OsManagementHubFunctions.getManagedInstance(GetManagedInstanceArgs.builder()
-     *             .managedInstanceId(testManagedInstanceOciOsManagementHubManagedInstance.id())
+     *             .managedInstanceId(testManagedInstanceOciOsManagementHubManagedInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -3208,7 +3208,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstance = OsManagementHubFunctions.getManagedInstance(GetManagedInstanceArgs.builder()
-     *             .managedInstanceId(testManagedInstanceOciOsManagementHubManagedInstance.id())
+     *             .managedInstanceId(testManagedInstanceOciOsManagementHubManagedInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -3250,7 +3250,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceAvailablePackages = OsManagementHubFunctions.getManagedInstanceAvailablePackages(GetManagedInstanceAvailablePackagesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceAvailablePackageDisplayName)
      *             .displayNameContains(managedInstanceAvailablePackageDisplayNameContains)
@@ -3295,7 +3295,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceAvailablePackages = OsManagementHubFunctions.getManagedInstanceAvailablePackages(GetManagedInstanceAvailablePackagesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceAvailablePackageDisplayName)
      *             .displayNameContains(managedInstanceAvailablePackageDisplayNameContains)
@@ -3340,7 +3340,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceAvailablePackages = OsManagementHubFunctions.getManagedInstanceAvailablePackages(GetManagedInstanceAvailablePackagesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceAvailablePackageDisplayName)
      *             .displayNameContains(managedInstanceAvailablePackageDisplayNameContains)
@@ -3385,7 +3385,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceAvailablePackages = OsManagementHubFunctions.getManagedInstanceAvailablePackages(GetManagedInstanceAvailablePackagesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceAvailablePackageDisplayName)
      *             .displayNameContains(managedInstanceAvailablePackageDisplayNameContains)
@@ -3430,7 +3430,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceAvailablePackages = OsManagementHubFunctions.getManagedInstanceAvailablePackages(GetManagedInstanceAvailablePackagesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceAvailablePackageDisplayName)
      *             .displayNameContains(managedInstanceAvailablePackageDisplayNameContains)
@@ -3475,7 +3475,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceAvailableSoftwareSources = OsManagementHubFunctions.getManagedInstanceAvailableSoftwareSources(GetManagedInstanceAvailableSoftwareSourcesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceAvailableSoftwareSourceDisplayName)
      *             .displayNameContains(managedInstanceAvailableSoftwareSourceDisplayNameContains)
@@ -3520,7 +3520,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceAvailableSoftwareSources = OsManagementHubFunctions.getManagedInstanceAvailableSoftwareSources(GetManagedInstanceAvailableSoftwareSourcesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceAvailableSoftwareSourceDisplayName)
      *             .displayNameContains(managedInstanceAvailableSoftwareSourceDisplayNameContains)
@@ -3565,7 +3565,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceAvailableSoftwareSources = OsManagementHubFunctions.getManagedInstanceAvailableSoftwareSources(GetManagedInstanceAvailableSoftwareSourcesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceAvailableSoftwareSourceDisplayName)
      *             .displayNameContains(managedInstanceAvailableSoftwareSourceDisplayNameContains)
@@ -3610,7 +3610,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceAvailableSoftwareSources = OsManagementHubFunctions.getManagedInstanceAvailableSoftwareSources(GetManagedInstanceAvailableSoftwareSourcesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceAvailableSoftwareSourceDisplayName)
      *             .displayNameContains(managedInstanceAvailableSoftwareSourceDisplayNameContains)
@@ -3655,7 +3655,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceAvailableSoftwareSources = OsManagementHubFunctions.getManagedInstanceAvailableSoftwareSources(GetManagedInstanceAvailableSoftwareSourcesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceAvailableSoftwareSourceDisplayName)
      *             .displayNameContains(managedInstanceAvailableSoftwareSourceDisplayNameContains)
@@ -3700,7 +3700,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceAvailableWindowsUpdates = OsManagementHubFunctions.getManagedInstanceAvailableWindowsUpdates(GetManagedInstanceAvailableWindowsUpdatesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .classificationTypes(managedInstanceAvailableWindowsUpdateClassificationType)
      *             .compartmentId(compartmentId)
      *             .displayName(managedInstanceAvailableWindowsUpdateDisplayName)
@@ -3748,7 +3748,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceAvailableWindowsUpdates = OsManagementHubFunctions.getManagedInstanceAvailableWindowsUpdates(GetManagedInstanceAvailableWindowsUpdatesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .classificationTypes(managedInstanceAvailableWindowsUpdateClassificationType)
      *             .compartmentId(compartmentId)
      *             .displayName(managedInstanceAvailableWindowsUpdateDisplayName)
@@ -3796,7 +3796,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceAvailableWindowsUpdates = OsManagementHubFunctions.getManagedInstanceAvailableWindowsUpdates(GetManagedInstanceAvailableWindowsUpdatesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .classificationTypes(managedInstanceAvailableWindowsUpdateClassificationType)
      *             .compartmentId(compartmentId)
      *             .displayName(managedInstanceAvailableWindowsUpdateDisplayName)
@@ -3844,7 +3844,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceAvailableWindowsUpdates = OsManagementHubFunctions.getManagedInstanceAvailableWindowsUpdates(GetManagedInstanceAvailableWindowsUpdatesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .classificationTypes(managedInstanceAvailableWindowsUpdateClassificationType)
      *             .compartmentId(compartmentId)
      *             .displayName(managedInstanceAvailableWindowsUpdateDisplayName)
@@ -3892,7 +3892,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceAvailableWindowsUpdates = OsManagementHubFunctions.getManagedInstanceAvailableWindowsUpdates(GetManagedInstanceAvailableWindowsUpdatesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .classificationTypes(managedInstanceAvailableWindowsUpdateClassificationType)
      *             .compartmentId(compartmentId)
      *             .displayName(managedInstanceAvailableWindowsUpdateDisplayName)
@@ -3940,7 +3940,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceErrata = OsManagementHubFunctions.getManagedInstanceErrata(GetManagedInstanceErrataArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .classificationTypes(managedInstanceErrataClassificationType)
      *             .compartmentId(compartmentId)
      *             .names(managedInstanceErrataName)
@@ -3986,7 +3986,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceErrata = OsManagementHubFunctions.getManagedInstanceErrata(GetManagedInstanceErrataArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .classificationTypes(managedInstanceErrataClassificationType)
      *             .compartmentId(compartmentId)
      *             .names(managedInstanceErrataName)
@@ -4032,7 +4032,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceErrata = OsManagementHubFunctions.getManagedInstanceErrata(GetManagedInstanceErrataArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .classificationTypes(managedInstanceErrataClassificationType)
      *             .compartmentId(compartmentId)
      *             .names(managedInstanceErrataName)
@@ -4078,7 +4078,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceErrata = OsManagementHubFunctions.getManagedInstanceErrata(GetManagedInstanceErrataArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .classificationTypes(managedInstanceErrataClassificationType)
      *             .compartmentId(compartmentId)
      *             .names(managedInstanceErrataName)
@@ -4124,7 +4124,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceErrata = OsManagementHubFunctions.getManagedInstanceErrata(GetManagedInstanceErrataArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .classificationTypes(managedInstanceErrataClassificationType)
      *             .compartmentId(compartmentId)
      *             .names(managedInstanceErrataName)
@@ -4170,7 +4170,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroup = OsManagementHubFunctions.getManagedInstanceGroup(GetManagedInstanceGroupArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroupOciOsManagementHubManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroupOciOsManagementHubManagedInstanceGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -4212,7 +4212,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroup = OsManagementHubFunctions.getManagedInstanceGroup(GetManagedInstanceGroupArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroupOciOsManagementHubManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroupOciOsManagementHubManagedInstanceGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -4254,7 +4254,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroup = OsManagementHubFunctions.getManagedInstanceGroup(GetManagedInstanceGroupArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroupOciOsManagementHubManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroupOciOsManagementHubManagedInstanceGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -4296,7 +4296,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroup = OsManagementHubFunctions.getManagedInstanceGroup(GetManagedInstanceGroupArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroupOciOsManagementHubManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroupOciOsManagementHubManagedInstanceGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -4338,7 +4338,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroup = OsManagementHubFunctions.getManagedInstanceGroup(GetManagedInstanceGroupArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroupOciOsManagementHubManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroupOciOsManagementHubManagedInstanceGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -4380,7 +4380,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailableModules = OsManagementHubFunctions.getManagedInstanceGroupAvailableModules(GetManagedInstanceGroupAvailableModulesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(managedInstanceGroupAvailableModuleName)
      *             .nameContains(managedInstanceGroupAvailableModuleNameContains)
@@ -4425,7 +4425,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailableModules = OsManagementHubFunctions.getManagedInstanceGroupAvailableModules(GetManagedInstanceGroupAvailableModulesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(managedInstanceGroupAvailableModuleName)
      *             .nameContains(managedInstanceGroupAvailableModuleNameContains)
@@ -4470,7 +4470,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailableModules = OsManagementHubFunctions.getManagedInstanceGroupAvailableModules(GetManagedInstanceGroupAvailableModulesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(managedInstanceGroupAvailableModuleName)
      *             .nameContains(managedInstanceGroupAvailableModuleNameContains)
@@ -4515,7 +4515,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailableModules = OsManagementHubFunctions.getManagedInstanceGroupAvailableModules(GetManagedInstanceGroupAvailableModulesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(managedInstanceGroupAvailableModuleName)
      *             .nameContains(managedInstanceGroupAvailableModuleNameContains)
@@ -4560,7 +4560,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailableModules = OsManagementHubFunctions.getManagedInstanceGroupAvailableModules(GetManagedInstanceGroupAvailableModulesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(managedInstanceGroupAvailableModuleName)
      *             .nameContains(managedInstanceGroupAvailableModuleNameContains)
@@ -4606,7 +4606,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailablePackages = OsManagementHubFunctions.getManagedInstanceGroupAvailablePackages(GetManagedInstanceGroupAvailablePackagesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceGroupAvailablePackageDisplayName)
      *             .displayNameContains(managedInstanceGroupAvailablePackageDisplayNameContains)
@@ -4653,7 +4653,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailablePackages = OsManagementHubFunctions.getManagedInstanceGroupAvailablePackages(GetManagedInstanceGroupAvailablePackagesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceGroupAvailablePackageDisplayName)
      *             .displayNameContains(managedInstanceGroupAvailablePackageDisplayNameContains)
@@ -4700,7 +4700,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailablePackages = OsManagementHubFunctions.getManagedInstanceGroupAvailablePackages(GetManagedInstanceGroupAvailablePackagesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceGroupAvailablePackageDisplayName)
      *             .displayNameContains(managedInstanceGroupAvailablePackageDisplayNameContains)
@@ -4747,7 +4747,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailablePackages = OsManagementHubFunctions.getManagedInstanceGroupAvailablePackages(GetManagedInstanceGroupAvailablePackagesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceGroupAvailablePackageDisplayName)
      *             .displayNameContains(managedInstanceGroupAvailablePackageDisplayNameContains)
@@ -4794,7 +4794,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailablePackages = OsManagementHubFunctions.getManagedInstanceGroupAvailablePackages(GetManagedInstanceGroupAvailablePackagesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceGroupAvailablePackageDisplayName)
      *             .displayNameContains(managedInstanceGroupAvailablePackageDisplayNameContains)
@@ -4840,7 +4840,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailableSoftwareSources = OsManagementHubFunctions.getManagedInstanceGroupAvailableSoftwareSources(GetManagedInstanceGroupAvailableSoftwareSourcesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceGroupAvailableSoftwareSourceDisplayName)
      *             .displayNameContains(managedInstanceGroupAvailableSoftwareSourceDisplayNameContains)
@@ -4885,7 +4885,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailableSoftwareSources = OsManagementHubFunctions.getManagedInstanceGroupAvailableSoftwareSources(GetManagedInstanceGroupAvailableSoftwareSourcesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceGroupAvailableSoftwareSourceDisplayName)
      *             .displayNameContains(managedInstanceGroupAvailableSoftwareSourceDisplayNameContains)
@@ -4930,7 +4930,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailableSoftwareSources = OsManagementHubFunctions.getManagedInstanceGroupAvailableSoftwareSources(GetManagedInstanceGroupAvailableSoftwareSourcesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceGroupAvailableSoftwareSourceDisplayName)
      *             .displayNameContains(managedInstanceGroupAvailableSoftwareSourceDisplayNameContains)
@@ -4975,7 +4975,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailableSoftwareSources = OsManagementHubFunctions.getManagedInstanceGroupAvailableSoftwareSources(GetManagedInstanceGroupAvailableSoftwareSourcesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceGroupAvailableSoftwareSourceDisplayName)
      *             .displayNameContains(managedInstanceGroupAvailableSoftwareSourceDisplayNameContains)
@@ -5020,7 +5020,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupAvailableSoftwareSources = OsManagementHubFunctions.getManagedInstanceGroupAvailableSoftwareSources(GetManagedInstanceGroupAvailableSoftwareSourcesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceGroupAvailableSoftwareSourceDisplayName)
      *             .displayNameContains(managedInstanceGroupAvailableSoftwareSourceDisplayNameContains)
@@ -5066,7 +5066,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupInstalledPackages = OsManagementHubFunctions.getManagedInstanceGroupInstalledPackages(GetManagedInstanceGroupInstalledPackagesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceGroupInstalledPackageDisplayName)
      *             .displayNameContains(managedInstanceGroupInstalledPackageDisplayNameContains)
@@ -5114,7 +5114,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupInstalledPackages = OsManagementHubFunctions.getManagedInstanceGroupInstalledPackages(GetManagedInstanceGroupInstalledPackagesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceGroupInstalledPackageDisplayName)
      *             .displayNameContains(managedInstanceGroupInstalledPackageDisplayNameContains)
@@ -5162,7 +5162,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupInstalledPackages = OsManagementHubFunctions.getManagedInstanceGroupInstalledPackages(GetManagedInstanceGroupInstalledPackagesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceGroupInstalledPackageDisplayName)
      *             .displayNameContains(managedInstanceGroupInstalledPackageDisplayNameContains)
@@ -5210,7 +5210,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupInstalledPackages = OsManagementHubFunctions.getManagedInstanceGroupInstalledPackages(GetManagedInstanceGroupInstalledPackagesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceGroupInstalledPackageDisplayName)
      *             .displayNameContains(managedInstanceGroupInstalledPackageDisplayNameContains)
@@ -5258,7 +5258,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupInstalledPackages = OsManagementHubFunctions.getManagedInstanceGroupInstalledPackages(GetManagedInstanceGroupInstalledPackagesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceGroupInstalledPackageDisplayName)
      *             .displayNameContains(managedInstanceGroupInstalledPackageDisplayNameContains)
@@ -5305,12 +5305,12 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupManagedInstances = OsManagementHubFunctions.getManagedInstanceGroupManagedInstances(GetManagedInstanceGroupManagedInstancesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(managedInstanceGroupManagedInstanceCompartmentIdInSubtree)
      *             .displayNames(managedInstanceGroupManagedInstanceDisplayName)
      *             .displayNameContains(managedInstanceGroupManagedInstanceDisplayNameContains)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -5352,12 +5352,12 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupManagedInstances = OsManagementHubFunctions.getManagedInstanceGroupManagedInstances(GetManagedInstanceGroupManagedInstancesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(managedInstanceGroupManagedInstanceCompartmentIdInSubtree)
      *             .displayNames(managedInstanceGroupManagedInstanceDisplayName)
      *             .displayNameContains(managedInstanceGroupManagedInstanceDisplayNameContains)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -5399,12 +5399,12 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupManagedInstances = OsManagementHubFunctions.getManagedInstanceGroupManagedInstances(GetManagedInstanceGroupManagedInstancesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(managedInstanceGroupManagedInstanceCompartmentIdInSubtree)
      *             .displayNames(managedInstanceGroupManagedInstanceDisplayName)
      *             .displayNameContains(managedInstanceGroupManagedInstanceDisplayNameContains)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -5446,12 +5446,12 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupManagedInstances = OsManagementHubFunctions.getManagedInstanceGroupManagedInstances(GetManagedInstanceGroupManagedInstancesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(managedInstanceGroupManagedInstanceCompartmentIdInSubtree)
      *             .displayNames(managedInstanceGroupManagedInstanceDisplayName)
      *             .displayNameContains(managedInstanceGroupManagedInstanceDisplayNameContains)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -5493,12 +5493,12 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupManagedInstances = OsManagementHubFunctions.getManagedInstanceGroupManagedInstances(GetManagedInstanceGroupManagedInstancesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(managedInstanceGroupManagedInstanceCompartmentIdInSubtree)
      *             .displayNames(managedInstanceGroupManagedInstanceDisplayName)
      *             .displayNameContains(managedInstanceGroupManagedInstanceDisplayNameContains)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -5560,11 +5560,11 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupModules = OsManagementHubFunctions.getManagedInstanceGroupModules(GetManagedInstanceGroupModulesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(managedInstanceGroupModuleName)
      *             .nameContains(managedInstanceGroupModuleNameContains)
-     *             .streamName(testStream.name())
+     *             .streamName(testStream.get("name"))
      *             .build());
      * 
      *     }
@@ -5626,11 +5626,11 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupModules = OsManagementHubFunctions.getManagedInstanceGroupModules(GetManagedInstanceGroupModulesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(managedInstanceGroupModuleName)
      *             .nameContains(managedInstanceGroupModuleNameContains)
-     *             .streamName(testStream.name())
+     *             .streamName(testStream.get("name"))
      *             .build());
      * 
      *     }
@@ -5692,11 +5692,11 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupModules = OsManagementHubFunctions.getManagedInstanceGroupModules(GetManagedInstanceGroupModulesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(managedInstanceGroupModuleName)
      *             .nameContains(managedInstanceGroupModuleNameContains)
-     *             .streamName(testStream.name())
+     *             .streamName(testStream.get("name"))
      *             .build());
      * 
      *     }
@@ -5758,11 +5758,11 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupModules = OsManagementHubFunctions.getManagedInstanceGroupModules(GetManagedInstanceGroupModulesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(managedInstanceGroupModuleName)
      *             .nameContains(managedInstanceGroupModuleNameContains)
-     *             .streamName(testStream.name())
+     *             .streamName(testStream.get("name"))
      *             .build());
      * 
      *     }
@@ -5824,11 +5824,11 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceGroupModules = OsManagementHubFunctions.getManagedInstanceGroupModules(GetManagedInstanceGroupModulesArgs.builder()
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(managedInstanceGroupModuleName)
      *             .nameContains(managedInstanceGroupModuleNameContains)
-     *             .streamName(testStream.name())
+     *             .streamName(testStream.get("name"))
      *             .build());
      * 
      *     }
@@ -5877,9 +5877,9 @@ public final class OsManagementHubFunctions {
      *             .isManagedByAutonomousLinux(managedInstanceGroupIsManagedByAutonomousLinux)
      *             .locations(managedInstanceGroupLocation)
      *             .locationNotEqualTos(managedInstanceGroupLocationNotEqualTo)
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .osFamily(managedInstanceGroupOsFamily)
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .state(managedInstanceGroupState)
      *             .build());
      * 
@@ -5929,9 +5929,9 @@ public final class OsManagementHubFunctions {
      *             .isManagedByAutonomousLinux(managedInstanceGroupIsManagedByAutonomousLinux)
      *             .locations(managedInstanceGroupLocation)
      *             .locationNotEqualTos(managedInstanceGroupLocationNotEqualTo)
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .osFamily(managedInstanceGroupOsFamily)
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .state(managedInstanceGroupState)
      *             .build());
      * 
@@ -5981,9 +5981,9 @@ public final class OsManagementHubFunctions {
      *             .isManagedByAutonomousLinux(managedInstanceGroupIsManagedByAutonomousLinux)
      *             .locations(managedInstanceGroupLocation)
      *             .locationNotEqualTos(managedInstanceGroupLocationNotEqualTo)
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .osFamily(managedInstanceGroupOsFamily)
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .state(managedInstanceGroupState)
      *             .build());
      * 
@@ -6033,9 +6033,9 @@ public final class OsManagementHubFunctions {
      *             .isManagedByAutonomousLinux(managedInstanceGroupIsManagedByAutonomousLinux)
      *             .locations(managedInstanceGroupLocation)
      *             .locationNotEqualTos(managedInstanceGroupLocationNotEqualTo)
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .osFamily(managedInstanceGroupOsFamily)
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .state(managedInstanceGroupState)
      *             .build());
      * 
@@ -6085,9 +6085,9 @@ public final class OsManagementHubFunctions {
      *             .isManagedByAutonomousLinux(managedInstanceGroupIsManagedByAutonomousLinux)
      *             .locations(managedInstanceGroupLocation)
      *             .locationNotEqualTos(managedInstanceGroupLocationNotEqualTo)
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .osFamily(managedInstanceGroupOsFamily)
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .state(managedInstanceGroupState)
      *             .build());
      * 
@@ -6137,9 +6137,9 @@ public final class OsManagementHubFunctions {
      *             .isManagedByAutonomousLinux(managedInstanceGroupIsManagedByAutonomousLinux)
      *             .locations(managedInstanceGroupLocation)
      *             .locationNotEqualTos(managedInstanceGroupLocationNotEqualTo)
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .osFamily(managedInstanceGroupOsFamily)
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .state(managedInstanceGroupState)
      *             .build());
      * 
@@ -6189,9 +6189,9 @@ public final class OsManagementHubFunctions {
      *             .isManagedByAutonomousLinux(managedInstanceGroupIsManagedByAutonomousLinux)
      *             .locations(managedInstanceGroupLocation)
      *             .locationNotEqualTos(managedInstanceGroupLocationNotEqualTo)
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
      *             .osFamily(managedInstanceGroupOsFamily)
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .state(managedInstanceGroupState)
      *             .build());
      * 
@@ -6234,7 +6234,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceInstalledPackages = OsManagementHubFunctions.getManagedInstanceInstalledPackages(GetManagedInstanceInstalledPackagesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceInstalledPackageDisplayName)
      *             .displayNameContains(managedInstanceInstalledPackageDisplayNameContains)
@@ -6281,7 +6281,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceInstalledPackages = OsManagementHubFunctions.getManagedInstanceInstalledPackages(GetManagedInstanceInstalledPackagesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceInstalledPackageDisplayName)
      *             .displayNameContains(managedInstanceInstalledPackageDisplayNameContains)
@@ -6328,7 +6328,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceInstalledPackages = OsManagementHubFunctions.getManagedInstanceInstalledPackages(GetManagedInstanceInstalledPackagesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceInstalledPackageDisplayName)
      *             .displayNameContains(managedInstanceInstalledPackageDisplayNameContains)
@@ -6375,7 +6375,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceInstalledPackages = OsManagementHubFunctions.getManagedInstanceInstalledPackages(GetManagedInstanceInstalledPackagesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceInstalledPackageDisplayName)
      *             .displayNameContains(managedInstanceInstalledPackageDisplayNameContains)
@@ -6422,7 +6422,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceInstalledPackages = OsManagementHubFunctions.getManagedInstanceInstalledPackages(GetManagedInstanceInstalledPackagesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(managedInstanceInstalledPackageDisplayName)
      *             .displayNameContains(managedInstanceInstalledPackageDisplayNameContains)
@@ -6469,7 +6469,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceInstalledWindowsUpdates = OsManagementHubFunctions.getManagedInstanceInstalledWindowsUpdates(GetManagedInstanceInstalledWindowsUpdatesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(managedInstanceInstalledWindowsUpdateDisplayName)
      *             .displayNameContains(managedInstanceInstalledWindowsUpdateDisplayNameContains)
@@ -6515,7 +6515,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceInstalledWindowsUpdates = OsManagementHubFunctions.getManagedInstanceInstalledWindowsUpdates(GetManagedInstanceInstalledWindowsUpdatesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(managedInstanceInstalledWindowsUpdateDisplayName)
      *             .displayNameContains(managedInstanceInstalledWindowsUpdateDisplayNameContains)
@@ -6561,7 +6561,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceInstalledWindowsUpdates = OsManagementHubFunctions.getManagedInstanceInstalledWindowsUpdates(GetManagedInstanceInstalledWindowsUpdatesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(managedInstanceInstalledWindowsUpdateDisplayName)
      *             .displayNameContains(managedInstanceInstalledWindowsUpdateDisplayNameContains)
@@ -6607,7 +6607,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceInstalledWindowsUpdates = OsManagementHubFunctions.getManagedInstanceInstalledWindowsUpdates(GetManagedInstanceInstalledWindowsUpdatesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(managedInstanceInstalledWindowsUpdateDisplayName)
      *             .displayNameContains(managedInstanceInstalledWindowsUpdateDisplayNameContains)
@@ -6653,7 +6653,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceInstalledWindowsUpdates = OsManagementHubFunctions.getManagedInstanceInstalledWindowsUpdates(GetManagedInstanceInstalledWindowsUpdatesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(managedInstanceInstalledWindowsUpdateDisplayName)
      *             .displayNameContains(managedInstanceInstalledWindowsUpdateDisplayNameContains)
@@ -6699,7 +6699,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceModules = OsManagementHubFunctions.getManagedInstanceModules(GetManagedInstanceModulesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(managedInstanceModuleName)
      *             .nameContains(managedInstanceModuleNameContains)
@@ -6744,7 +6744,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceModules = OsManagementHubFunctions.getManagedInstanceModules(GetManagedInstanceModulesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(managedInstanceModuleName)
      *             .nameContains(managedInstanceModuleNameContains)
@@ -6789,7 +6789,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceModules = OsManagementHubFunctions.getManagedInstanceModules(GetManagedInstanceModulesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(managedInstanceModuleName)
      *             .nameContains(managedInstanceModuleNameContains)
@@ -6834,7 +6834,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceModules = OsManagementHubFunctions.getManagedInstanceModules(GetManagedInstanceModulesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(managedInstanceModuleName)
      *             .nameContains(managedInstanceModuleNameContains)
@@ -6879,7 +6879,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceModules = OsManagementHubFunctions.getManagedInstanceModules(GetManagedInstanceModulesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(managedInstanceModuleName)
      *             .nameContains(managedInstanceModuleNameContains)
@@ -6924,7 +6924,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceSnaps = OsManagementHubFunctions.getManagedInstanceSnaps(GetManagedInstanceSnapsArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(managedInstanceSnapName)
      *             .nameContains(managedInstanceSnapNameContains)
@@ -6969,7 +6969,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceSnaps = OsManagementHubFunctions.getManagedInstanceSnaps(GetManagedInstanceSnapsArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(managedInstanceSnapName)
      *             .nameContains(managedInstanceSnapNameContains)
@@ -7014,7 +7014,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceSnaps = OsManagementHubFunctions.getManagedInstanceSnaps(GetManagedInstanceSnapsArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(managedInstanceSnapName)
      *             .nameContains(managedInstanceSnapNameContains)
@@ -7059,7 +7059,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceSnaps = OsManagementHubFunctions.getManagedInstanceSnaps(GetManagedInstanceSnapsArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(managedInstanceSnapName)
      *             .nameContains(managedInstanceSnapNameContains)
@@ -7104,7 +7104,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceSnaps = OsManagementHubFunctions.getManagedInstanceSnaps(GetManagedInstanceSnapsArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(managedInstanceSnapName)
      *             .nameContains(managedInstanceSnapNameContains)
@@ -7149,7 +7149,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceUpdatablePackages = OsManagementHubFunctions.getManagedInstanceUpdatablePackages(GetManagedInstanceUpdatablePackagesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .advisoryNames(managedInstanceUpdatablePackageAdvisoryName)
      *             .advisorySeverities(managedInstanceUpdatablePackageAdvisorySeverity)
      *             .classificationTypes(managedInstanceUpdatablePackageClassificationType)
@@ -7197,7 +7197,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceUpdatablePackages = OsManagementHubFunctions.getManagedInstanceUpdatablePackages(GetManagedInstanceUpdatablePackagesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .advisoryNames(managedInstanceUpdatablePackageAdvisoryName)
      *             .advisorySeverities(managedInstanceUpdatablePackageAdvisorySeverity)
      *             .classificationTypes(managedInstanceUpdatablePackageClassificationType)
@@ -7245,7 +7245,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceUpdatablePackages = OsManagementHubFunctions.getManagedInstanceUpdatablePackages(GetManagedInstanceUpdatablePackagesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .advisoryNames(managedInstanceUpdatablePackageAdvisoryName)
      *             .advisorySeverities(managedInstanceUpdatablePackageAdvisorySeverity)
      *             .classificationTypes(managedInstanceUpdatablePackageClassificationType)
@@ -7293,7 +7293,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceUpdatablePackages = OsManagementHubFunctions.getManagedInstanceUpdatablePackages(GetManagedInstanceUpdatablePackagesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .advisoryNames(managedInstanceUpdatablePackageAdvisoryName)
      *             .advisorySeverities(managedInstanceUpdatablePackageAdvisorySeverity)
      *             .classificationTypes(managedInstanceUpdatablePackageClassificationType)
@@ -7341,7 +7341,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedInstanceUpdatablePackages = OsManagementHubFunctions.getManagedInstanceUpdatablePackages(GetManagedInstanceUpdatablePackagesArgs.builder()
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .advisoryNames(managedInstanceUpdatablePackageAdvisoryName)
      *             .advisorySeverities(managedInstanceUpdatablePackageAdvisorySeverity)
      *             .classificationTypes(managedInstanceUpdatablePackageClassificationType)
@@ -7452,7 +7452,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStation = OsManagementHubFunctions.getManagementStation(GetManagementStationArgs.builder()
-     *             .managementStationId(testManagementStationOciOsManagementHubManagementStation.id())
+     *             .managementStationId(testManagementStationOciOsManagementHubManagementStation.get("id"))
      *             .build());
      * 
      *     }
@@ -7494,7 +7494,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStation = OsManagementHubFunctions.getManagementStation(GetManagementStationArgs.builder()
-     *             .managementStationId(testManagementStationOciOsManagementHubManagementStation.id())
+     *             .managementStationId(testManagementStationOciOsManagementHubManagementStation.get("id"))
      *             .build());
      * 
      *     }
@@ -7536,7 +7536,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStation = OsManagementHubFunctions.getManagementStation(GetManagementStationArgs.builder()
-     *             .managementStationId(testManagementStationOciOsManagementHubManagementStation.id())
+     *             .managementStationId(testManagementStationOciOsManagementHubManagementStation.get("id"))
      *             .build());
      * 
      *     }
@@ -7578,7 +7578,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStation = OsManagementHubFunctions.getManagementStation(GetManagementStationArgs.builder()
-     *             .managementStationId(testManagementStationOciOsManagementHubManagementStation.id())
+     *             .managementStationId(testManagementStationOciOsManagementHubManagementStation.get("id"))
      *             .build());
      * 
      *     }
@@ -7620,7 +7620,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStation = OsManagementHubFunctions.getManagementStation(GetManagementStationArgs.builder()
-     *             .managementStationId(testManagementStationOciOsManagementHubManagementStation.id())
+     *             .managementStationId(testManagementStationOciOsManagementHubManagementStation.get("id"))
      *             .build());
      * 
      *     }
@@ -7662,7 +7662,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStationMirrors = OsManagementHubFunctions.getManagementStationMirrors(GetManagementStationMirrorsArgs.builder()
-     *             .managementStationId(testManagementStation.id())
+     *             .managementStationId(testManagementStation.get("id"))
      *             .displayName(managementStationMirrorDisplayName)
      *             .displayNameContains(managementStationMirrorDisplayNameContains)
      *             .mirrorStates(managementStationMirrorMirrorStates)
@@ -7707,7 +7707,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStationMirrors = OsManagementHubFunctions.getManagementStationMirrors(GetManagementStationMirrorsArgs.builder()
-     *             .managementStationId(testManagementStation.id())
+     *             .managementStationId(testManagementStation.get("id"))
      *             .displayName(managementStationMirrorDisplayName)
      *             .displayNameContains(managementStationMirrorDisplayNameContains)
      *             .mirrorStates(managementStationMirrorMirrorStates)
@@ -7752,7 +7752,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStationMirrors = OsManagementHubFunctions.getManagementStationMirrors(GetManagementStationMirrorsArgs.builder()
-     *             .managementStationId(testManagementStation.id())
+     *             .managementStationId(testManagementStation.get("id"))
      *             .displayName(managementStationMirrorDisplayName)
      *             .displayNameContains(managementStationMirrorDisplayNameContains)
      *             .mirrorStates(managementStationMirrorMirrorStates)
@@ -7797,7 +7797,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStationMirrors = OsManagementHubFunctions.getManagementStationMirrors(GetManagementStationMirrorsArgs.builder()
-     *             .managementStationId(testManagementStation.id())
+     *             .managementStationId(testManagementStation.get("id"))
      *             .displayName(managementStationMirrorDisplayName)
      *             .displayNameContains(managementStationMirrorDisplayNameContains)
      *             .mirrorStates(managementStationMirrorMirrorStates)
@@ -7842,7 +7842,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagementStationMirrors = OsManagementHubFunctions.getManagementStationMirrors(GetManagementStationMirrorsArgs.builder()
-     *             .managementStationId(testManagementStation.id())
+     *             .managementStationId(testManagementStation.get("id"))
      *             .displayName(managementStationMirrorDisplayName)
      *             .displayNameContains(managementStationMirrorDisplayNameContains)
      *             .mirrorStates(managementStationMirrorMirrorStates)
@@ -7895,7 +7895,7 @@ public final class OsManagementHubFunctions {
      *             .id(managementStationId)
      *             .locations(managementStationLocation)
      *             .locationNotEqualTos(managementStationLocationNotEqualTo)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .state(managementStationState)
      *             .build());
      * 
@@ -7946,7 +7946,7 @@ public final class OsManagementHubFunctions {
      *             .id(managementStationId)
      *             .locations(managementStationLocation)
      *             .locationNotEqualTos(managementStationLocationNotEqualTo)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .state(managementStationState)
      *             .build());
      * 
@@ -7997,7 +7997,7 @@ public final class OsManagementHubFunctions {
      *             .id(managementStationId)
      *             .locations(managementStationLocation)
      *             .locationNotEqualTos(managementStationLocationNotEqualTo)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .state(managementStationState)
      *             .build());
      * 
@@ -8048,7 +8048,7 @@ public final class OsManagementHubFunctions {
      *             .id(managementStationId)
      *             .locations(managementStationLocation)
      *             .locationNotEqualTos(managementStationLocationNotEqualTo)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .state(managementStationState)
      *             .build());
      * 
@@ -8099,7 +8099,7 @@ public final class OsManagementHubFunctions {
      *             .id(managementStationId)
      *             .locations(managementStationLocation)
      *             .locationNotEqualTos(managementStationLocationNotEqualTo)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .state(managementStationState)
      *             .build());
      * 
@@ -8150,7 +8150,7 @@ public final class OsManagementHubFunctions {
      *             .id(managementStationId)
      *             .locations(managementStationLocation)
      *             .locationNotEqualTos(managementStationLocationNotEqualTo)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .state(managementStationState)
      *             .build());
      * 
@@ -8201,7 +8201,7 @@ public final class OsManagementHubFunctions {
      *             .id(managementStationId)
      *             .locations(managementStationLocation)
      *             .locationNotEqualTos(managementStationLocationNotEqualTo)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .state(managementStationState)
      *             .build());
      * 
@@ -8244,7 +8244,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfile = OsManagementHubFunctions.getProfile(GetProfileArgs.builder()
-     *             .profileId(testProfileOciOsManagementHubProfile.id())
+     *             .profileId(testProfileOciOsManagementHubProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -8286,7 +8286,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfile = OsManagementHubFunctions.getProfile(GetProfileArgs.builder()
-     *             .profileId(testProfileOciOsManagementHubProfile.id())
+     *             .profileId(testProfileOciOsManagementHubProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -8328,7 +8328,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfile = OsManagementHubFunctions.getProfile(GetProfileArgs.builder()
-     *             .profileId(testProfileOciOsManagementHubProfile.id())
+     *             .profileId(testProfileOciOsManagementHubProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -8370,7 +8370,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfile = OsManagementHubFunctions.getProfile(GetProfileArgs.builder()
-     *             .profileId(testProfileOciOsManagementHubProfile.id())
+     *             .profileId(testProfileOciOsManagementHubProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -8412,7 +8412,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfile = OsManagementHubFunctions.getProfile(GetProfileArgs.builder()
-     *             .profileId(testProfileOciOsManagementHubProfile.id())
+     *             .profileId(testProfileOciOsManagementHubProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -8454,7 +8454,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfileAvailableSoftwareSources = OsManagementHubFunctions.getProfileAvailableSoftwareSources(GetProfileAvailableSoftwareSourcesArgs.builder()
-     *             .profileId(testProfile.id())
+     *             .profileId(testProfile.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(profileAvailableSoftwareSourceDisplayName)
      *             .displayNameContains(profileAvailableSoftwareSourceDisplayNameContains)
@@ -8499,7 +8499,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfileAvailableSoftwareSources = OsManagementHubFunctions.getProfileAvailableSoftwareSources(GetProfileAvailableSoftwareSourcesArgs.builder()
-     *             .profileId(testProfile.id())
+     *             .profileId(testProfile.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(profileAvailableSoftwareSourceDisplayName)
      *             .displayNameContains(profileAvailableSoftwareSourceDisplayNameContains)
@@ -8544,7 +8544,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfileAvailableSoftwareSources = OsManagementHubFunctions.getProfileAvailableSoftwareSources(GetProfileAvailableSoftwareSourcesArgs.builder()
-     *             .profileId(testProfile.id())
+     *             .profileId(testProfile.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(profileAvailableSoftwareSourceDisplayName)
      *             .displayNameContains(profileAvailableSoftwareSourceDisplayNameContains)
@@ -8589,7 +8589,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfileAvailableSoftwareSources = OsManagementHubFunctions.getProfileAvailableSoftwareSources(GetProfileAvailableSoftwareSourcesArgs.builder()
-     *             .profileId(testProfile.id())
+     *             .profileId(testProfile.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(profileAvailableSoftwareSourceDisplayName)
      *             .displayNameContains(profileAvailableSoftwareSourceDisplayNameContains)
@@ -8634,7 +8634,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfileAvailableSoftwareSources = OsManagementHubFunctions.getProfileAvailableSoftwareSources(GetProfileAvailableSoftwareSourcesArgs.builder()
-     *             .profileId(testProfile.id())
+     *             .profileId(testProfile.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayNames(profileAvailableSoftwareSourceDisplayName)
      *             .displayNameContains(profileAvailableSoftwareSourceDisplayNameContains)
@@ -8679,7 +8679,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfileVersion = OsManagementHubFunctions.getProfileVersion(GetProfileVersionArgs.builder()
-     *             .profileId(testProfile.id())
+     *             .profileId(testProfile.get("id"))
      *             .profileVersion(profileVersionProfileVersion)
      *             .build());
      * 
@@ -8722,7 +8722,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfileVersion = OsManagementHubFunctions.getProfileVersion(GetProfileVersionArgs.builder()
-     *             .profileId(testProfile.id())
+     *             .profileId(testProfile.get("id"))
      *             .profileVersion(profileVersionProfileVersion)
      *             .build());
      * 
@@ -8765,7 +8765,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfileVersion = OsManagementHubFunctions.getProfileVersion(GetProfileVersionArgs.builder()
-     *             .profileId(testProfile.id())
+     *             .profileId(testProfile.get("id"))
      *             .profileVersion(profileVersionProfileVersion)
      *             .build());
      * 
@@ -8808,7 +8808,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfileVersion = OsManagementHubFunctions.getProfileVersion(GetProfileVersionArgs.builder()
-     *             .profileId(testProfile.id())
+     *             .profileId(testProfile.get("id"))
      *             .profileVersion(profileVersionProfileVersion)
      *             .build());
      * 
@@ -8851,7 +8851,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfileVersion = OsManagementHubFunctions.getProfileVersion(GetProfileVersionArgs.builder()
-     *             .profileId(testProfile.id())
+     *             .profileId(testProfile.get("id"))
      *             .profileVersion(profileVersionProfileVersion)
      *             .build());
      * 
@@ -8904,7 +8904,7 @@ public final class OsManagementHubFunctions {
      *             .managementStations(profileManagementStation)
      *             .managementStationNotEqualTos(profileManagementStationNotEqualTo)
      *             .osFamily(profileOsFamily)
-     *             .profileId(testProfile.id())
+     *             .profileId(testProfile.get("id"))
      *             .profileTypes(profileProfileType)
      *             .profileVersion(profileProfileVersion)
      *             .registrationTypes(profileRegistrationType)
@@ -8961,7 +8961,7 @@ public final class OsManagementHubFunctions {
      *             .managementStations(profileManagementStation)
      *             .managementStationNotEqualTos(profileManagementStationNotEqualTo)
      *             .osFamily(profileOsFamily)
-     *             .profileId(testProfile.id())
+     *             .profileId(testProfile.get("id"))
      *             .profileTypes(profileProfileType)
      *             .profileVersion(profileProfileVersion)
      *             .registrationTypes(profileRegistrationType)
@@ -9018,7 +9018,7 @@ public final class OsManagementHubFunctions {
      *             .managementStations(profileManagementStation)
      *             .managementStationNotEqualTos(profileManagementStationNotEqualTo)
      *             .osFamily(profileOsFamily)
-     *             .profileId(testProfile.id())
+     *             .profileId(testProfile.get("id"))
      *             .profileTypes(profileProfileType)
      *             .profileVersion(profileProfileVersion)
      *             .registrationTypes(profileRegistrationType)
@@ -9075,7 +9075,7 @@ public final class OsManagementHubFunctions {
      *             .managementStations(profileManagementStation)
      *             .managementStationNotEqualTos(profileManagementStationNotEqualTo)
      *             .osFamily(profileOsFamily)
-     *             .profileId(testProfile.id())
+     *             .profileId(testProfile.get("id"))
      *             .profileTypes(profileProfileType)
      *             .profileVersion(profileProfileVersion)
      *             .registrationTypes(profileRegistrationType)
@@ -9132,7 +9132,7 @@ public final class OsManagementHubFunctions {
      *             .managementStations(profileManagementStation)
      *             .managementStationNotEqualTos(profileManagementStationNotEqualTo)
      *             .osFamily(profileOsFamily)
-     *             .profileId(testProfile.id())
+     *             .profileId(testProfile.get("id"))
      *             .profileTypes(profileProfileType)
      *             .profileVersion(profileProfileVersion)
      *             .registrationTypes(profileRegistrationType)
@@ -9189,7 +9189,7 @@ public final class OsManagementHubFunctions {
      *             .managementStations(profileManagementStation)
      *             .managementStationNotEqualTos(profileManagementStationNotEqualTo)
      *             .osFamily(profileOsFamily)
-     *             .profileId(testProfile.id())
+     *             .profileId(testProfile.get("id"))
      *             .profileTypes(profileProfileType)
      *             .profileVersion(profileProfileVersion)
      *             .registrationTypes(profileRegistrationType)
@@ -9246,7 +9246,7 @@ public final class OsManagementHubFunctions {
      *             .managementStations(profileManagementStation)
      *             .managementStationNotEqualTos(profileManagementStationNotEqualTo)
      *             .osFamily(profileOsFamily)
-     *             .profileId(testProfile.id())
+     *             .profileId(testProfile.get("id"))
      *             .profileTypes(profileProfileType)
      *             .profileVersion(profileProfileVersion)
      *             .registrationTypes(profileRegistrationType)
@@ -9293,7 +9293,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledJob = OsManagementHubFunctions.getScheduledJob(GetScheduledJobArgs.builder()
-     *             .scheduledJobId(testScheduledJobOciOsManagementHubScheduledJob.id())
+     *             .scheduledJobId(testScheduledJobOciOsManagementHubScheduledJob.get("id"))
      *             .build());
      * 
      *     }
@@ -9335,7 +9335,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledJob = OsManagementHubFunctions.getScheduledJob(GetScheduledJobArgs.builder()
-     *             .scheduledJobId(testScheduledJobOciOsManagementHubScheduledJob.id())
+     *             .scheduledJobId(testScheduledJobOciOsManagementHubScheduledJob.get("id"))
      *             .build());
      * 
      *     }
@@ -9377,7 +9377,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledJob = OsManagementHubFunctions.getScheduledJob(GetScheduledJobArgs.builder()
-     *             .scheduledJobId(testScheduledJobOciOsManagementHubScheduledJob.id())
+     *             .scheduledJobId(testScheduledJobOciOsManagementHubScheduledJob.get("id"))
      *             .build());
      * 
      *     }
@@ -9419,7 +9419,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledJob = OsManagementHubFunctions.getScheduledJob(GetScheduledJobArgs.builder()
-     *             .scheduledJobId(testScheduledJobOciOsManagementHubScheduledJob.id())
+     *             .scheduledJobId(testScheduledJobOciOsManagementHubScheduledJob.get("id"))
      *             .build());
      * 
      *     }
@@ -9461,7 +9461,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testScheduledJob = OsManagementHubFunctions.getScheduledJob(GetScheduledJobArgs.builder()
-     *             .scheduledJobId(testScheduledJobOciOsManagementHubScheduledJob.id())
+     *             .scheduledJobId(testScheduledJobOciOsManagementHubScheduledJob.get("id"))
      *             .build());
      * 
      *     }
@@ -9507,16 +9507,16 @@ public final class OsManagementHubFunctions {
      *             .compartmentIdInSubtree(scheduledJobCompartmentIdInSubtree)
      *             .displayName(scheduledJobDisplayName)
      *             .displayNameContains(scheduledJobDisplayNameContains)
-     *             .dynamicSetId(testDynamicSet.id())
+     *             .dynamicSetId(testDynamicSet.get("id"))
      *             .id(scheduledJobId)
      *             .isManagedByAutonomousLinux(scheduledJobIsManagedByAutonomousLinux)
      *             .isRestricted(scheduledJobIsRestricted)
-     *             .lifecycleStageId(testLifecycleStage.id())
+     *             .lifecycleStageId(testLifecycleStage.get("id"))
      *             .locations(scheduledJobLocation)
      *             .locationNotEqualTos(scheduledJobLocationNotEqualTo)
-     *             .managedCompartmentId(testCompartment.id())
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedCompartmentId(testCompartment.get("id"))
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .operationType(scheduledJobOperationType)
      *             .scheduleType(scheduledJobScheduleType)
      *             .state(scheduledJobState)
@@ -9567,16 +9567,16 @@ public final class OsManagementHubFunctions {
      *             .compartmentIdInSubtree(scheduledJobCompartmentIdInSubtree)
      *             .displayName(scheduledJobDisplayName)
      *             .displayNameContains(scheduledJobDisplayNameContains)
-     *             .dynamicSetId(testDynamicSet.id())
+     *             .dynamicSetId(testDynamicSet.get("id"))
      *             .id(scheduledJobId)
      *             .isManagedByAutonomousLinux(scheduledJobIsManagedByAutonomousLinux)
      *             .isRestricted(scheduledJobIsRestricted)
-     *             .lifecycleStageId(testLifecycleStage.id())
+     *             .lifecycleStageId(testLifecycleStage.get("id"))
      *             .locations(scheduledJobLocation)
      *             .locationNotEqualTos(scheduledJobLocationNotEqualTo)
-     *             .managedCompartmentId(testCompartment.id())
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedCompartmentId(testCompartment.get("id"))
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .operationType(scheduledJobOperationType)
      *             .scheduleType(scheduledJobScheduleType)
      *             .state(scheduledJobState)
@@ -9627,16 +9627,16 @@ public final class OsManagementHubFunctions {
      *             .compartmentIdInSubtree(scheduledJobCompartmentIdInSubtree)
      *             .displayName(scheduledJobDisplayName)
      *             .displayNameContains(scheduledJobDisplayNameContains)
-     *             .dynamicSetId(testDynamicSet.id())
+     *             .dynamicSetId(testDynamicSet.get("id"))
      *             .id(scheduledJobId)
      *             .isManagedByAutonomousLinux(scheduledJobIsManagedByAutonomousLinux)
      *             .isRestricted(scheduledJobIsRestricted)
-     *             .lifecycleStageId(testLifecycleStage.id())
+     *             .lifecycleStageId(testLifecycleStage.get("id"))
      *             .locations(scheduledJobLocation)
      *             .locationNotEqualTos(scheduledJobLocationNotEqualTo)
-     *             .managedCompartmentId(testCompartment.id())
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedCompartmentId(testCompartment.get("id"))
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .operationType(scheduledJobOperationType)
      *             .scheduleType(scheduledJobScheduleType)
      *             .state(scheduledJobState)
@@ -9687,16 +9687,16 @@ public final class OsManagementHubFunctions {
      *             .compartmentIdInSubtree(scheduledJobCompartmentIdInSubtree)
      *             .displayName(scheduledJobDisplayName)
      *             .displayNameContains(scheduledJobDisplayNameContains)
-     *             .dynamicSetId(testDynamicSet.id())
+     *             .dynamicSetId(testDynamicSet.get("id"))
      *             .id(scheduledJobId)
      *             .isManagedByAutonomousLinux(scheduledJobIsManagedByAutonomousLinux)
      *             .isRestricted(scheduledJobIsRestricted)
-     *             .lifecycleStageId(testLifecycleStage.id())
+     *             .lifecycleStageId(testLifecycleStage.get("id"))
      *             .locations(scheduledJobLocation)
      *             .locationNotEqualTos(scheduledJobLocationNotEqualTo)
-     *             .managedCompartmentId(testCompartment.id())
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedCompartmentId(testCompartment.get("id"))
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .operationType(scheduledJobOperationType)
      *             .scheduleType(scheduledJobScheduleType)
      *             .state(scheduledJobState)
@@ -9747,16 +9747,16 @@ public final class OsManagementHubFunctions {
      *             .compartmentIdInSubtree(scheduledJobCompartmentIdInSubtree)
      *             .displayName(scheduledJobDisplayName)
      *             .displayNameContains(scheduledJobDisplayNameContains)
-     *             .dynamicSetId(testDynamicSet.id())
+     *             .dynamicSetId(testDynamicSet.get("id"))
      *             .id(scheduledJobId)
      *             .isManagedByAutonomousLinux(scheduledJobIsManagedByAutonomousLinux)
      *             .isRestricted(scheduledJobIsRestricted)
-     *             .lifecycleStageId(testLifecycleStage.id())
+     *             .lifecycleStageId(testLifecycleStage.get("id"))
      *             .locations(scheduledJobLocation)
      *             .locationNotEqualTos(scheduledJobLocationNotEqualTo)
-     *             .managedCompartmentId(testCompartment.id())
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedCompartmentId(testCompartment.get("id"))
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .operationType(scheduledJobOperationType)
      *             .scheduleType(scheduledJobScheduleType)
      *             .state(scheduledJobState)
@@ -9807,16 +9807,16 @@ public final class OsManagementHubFunctions {
      *             .compartmentIdInSubtree(scheduledJobCompartmentIdInSubtree)
      *             .displayName(scheduledJobDisplayName)
      *             .displayNameContains(scheduledJobDisplayNameContains)
-     *             .dynamicSetId(testDynamicSet.id())
+     *             .dynamicSetId(testDynamicSet.get("id"))
      *             .id(scheduledJobId)
      *             .isManagedByAutonomousLinux(scheduledJobIsManagedByAutonomousLinux)
      *             .isRestricted(scheduledJobIsRestricted)
-     *             .lifecycleStageId(testLifecycleStage.id())
+     *             .lifecycleStageId(testLifecycleStage.get("id"))
      *             .locations(scheduledJobLocation)
      *             .locationNotEqualTos(scheduledJobLocationNotEqualTo)
-     *             .managedCompartmentId(testCompartment.id())
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedCompartmentId(testCompartment.get("id"))
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .operationType(scheduledJobOperationType)
      *             .scheduleType(scheduledJobScheduleType)
      *             .state(scheduledJobState)
@@ -9867,16 +9867,16 @@ public final class OsManagementHubFunctions {
      *             .compartmentIdInSubtree(scheduledJobCompartmentIdInSubtree)
      *             .displayName(scheduledJobDisplayName)
      *             .displayNameContains(scheduledJobDisplayNameContains)
-     *             .dynamicSetId(testDynamicSet.id())
+     *             .dynamicSetId(testDynamicSet.get("id"))
      *             .id(scheduledJobId)
      *             .isManagedByAutonomousLinux(scheduledJobIsManagedByAutonomousLinux)
      *             .isRestricted(scheduledJobIsRestricted)
-     *             .lifecycleStageId(testLifecycleStage.id())
+     *             .lifecycleStageId(testLifecycleStage.get("id"))
      *             .locations(scheduledJobLocation)
      *             .locationNotEqualTos(scheduledJobLocationNotEqualTo)
-     *             .managedCompartmentId(testCompartment.id())
-     *             .managedInstanceGroupId(testManagedInstanceGroup.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedCompartmentId(testCompartment.get("id"))
+     *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .operationType(scheduledJobOperationType)
      *             .scheduleType(scheduledJobScheduleType)
      *             .state(scheduledJobState)
@@ -9923,7 +9923,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwarePackage = OsManagementHubFunctions.getSoftwarePackage(GetSoftwarePackageArgs.builder()
-     *             .softwarePackageName(testSoftwarePackageOciOsManagementHubSoftwarePackage.name())
+     *             .softwarePackageName(testSoftwarePackageOciOsManagementHubSoftwarePackage.get("name"))
      *             .build());
      * 
      *     }
@@ -9965,7 +9965,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwarePackage = OsManagementHubFunctions.getSoftwarePackage(GetSoftwarePackageArgs.builder()
-     *             .softwarePackageName(testSoftwarePackageOciOsManagementHubSoftwarePackage.name())
+     *             .softwarePackageName(testSoftwarePackageOciOsManagementHubSoftwarePackage.get("name"))
      *             .build());
      * 
      *     }
@@ -10007,7 +10007,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwarePackage = OsManagementHubFunctions.getSoftwarePackage(GetSoftwarePackageArgs.builder()
-     *             .softwarePackageName(testSoftwarePackageOciOsManagementHubSoftwarePackage.name())
+     *             .softwarePackageName(testSoftwarePackageOciOsManagementHubSoftwarePackage.get("name"))
      *             .build());
      * 
      *     }
@@ -10049,7 +10049,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwarePackage = OsManagementHubFunctions.getSoftwarePackage(GetSoftwarePackageArgs.builder()
-     *             .softwarePackageName(testSoftwarePackageOciOsManagementHubSoftwarePackage.name())
+     *             .softwarePackageName(testSoftwarePackageOciOsManagementHubSoftwarePackage.get("name"))
      *             .build());
      * 
      *     }
@@ -10091,7 +10091,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwarePackage = OsManagementHubFunctions.getSoftwarePackage(GetSoftwarePackageArgs.builder()
-     *             .softwarePackageName(testSoftwarePackageOciOsManagementHubSoftwarePackage.name())
+     *             .softwarePackageName(testSoftwarePackageOciOsManagementHubSoftwarePackage.get("name"))
      *             .build());
      * 
      *     }
@@ -10135,7 +10135,7 @@ public final class OsManagementHubFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSoftwarePackageSoftwareSource = OsManagementHubFunctions.getSoftwarePackageSoftwareSource(GetSoftwarePackageSoftwareSourceArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .softwarePackageName(testSoftwarePackage.name())
+     *             .softwarePackageName(testSoftwarePackage.get("name"))
      *             .archTypes(softwarePackageSoftwareSourceArchType)
      *             .availabilities(softwarePackageSoftwareSourceAvailability)
      *             .availabilityAnywheres(softwarePackageSoftwareSourceAvailabilityAnywhere)
@@ -10188,7 +10188,7 @@ public final class OsManagementHubFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSoftwarePackageSoftwareSource = OsManagementHubFunctions.getSoftwarePackageSoftwareSource(GetSoftwarePackageSoftwareSourceArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .softwarePackageName(testSoftwarePackage.name())
+     *             .softwarePackageName(testSoftwarePackage.get("name"))
      *             .archTypes(softwarePackageSoftwareSourceArchType)
      *             .availabilities(softwarePackageSoftwareSourceAvailability)
      *             .availabilityAnywheres(softwarePackageSoftwareSourceAvailabilityAnywhere)
@@ -10241,7 +10241,7 @@ public final class OsManagementHubFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSoftwarePackageSoftwareSource = OsManagementHubFunctions.getSoftwarePackageSoftwareSource(GetSoftwarePackageSoftwareSourceArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .softwarePackageName(testSoftwarePackage.name())
+     *             .softwarePackageName(testSoftwarePackage.get("name"))
      *             .archTypes(softwarePackageSoftwareSourceArchType)
      *             .availabilities(softwarePackageSoftwareSourceAvailability)
      *             .availabilityAnywheres(softwarePackageSoftwareSourceAvailabilityAnywhere)
@@ -10294,7 +10294,7 @@ public final class OsManagementHubFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSoftwarePackageSoftwareSource = OsManagementHubFunctions.getSoftwarePackageSoftwareSource(GetSoftwarePackageSoftwareSourceArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .softwarePackageName(testSoftwarePackage.name())
+     *             .softwarePackageName(testSoftwarePackage.get("name"))
      *             .archTypes(softwarePackageSoftwareSourceArchType)
      *             .availabilities(softwarePackageSoftwareSourceAvailability)
      *             .availabilityAnywheres(softwarePackageSoftwareSourceAvailabilityAnywhere)
@@ -10347,7 +10347,7 @@ public final class OsManagementHubFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSoftwarePackageSoftwareSource = OsManagementHubFunctions.getSoftwarePackageSoftwareSource(GetSoftwarePackageSoftwareSourceArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .softwarePackageName(testSoftwarePackage.name())
+     *             .softwarePackageName(testSoftwarePackage.get("name"))
      *             .archTypes(softwarePackageSoftwareSourceArchType)
      *             .availabilities(softwarePackageSoftwareSourceAvailability)
      *             .availabilityAnywheres(softwarePackageSoftwareSourceAvailabilityAnywhere)
@@ -10734,7 +10734,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSource = OsManagementHubFunctions.getSoftwareSource(GetSoftwareSourceArgs.builder()
-     *             .softwareSourceId(testSoftwareSourceOciOsManagementHubSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSourceOciOsManagementHubSoftwareSource.get("id"))
      *             .build());
      * 
      *     }
@@ -10776,7 +10776,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSource = OsManagementHubFunctions.getSoftwareSource(GetSoftwareSourceArgs.builder()
-     *             .softwareSourceId(testSoftwareSourceOciOsManagementHubSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSourceOciOsManagementHubSoftwareSource.get("id"))
      *             .build());
      * 
      *     }
@@ -10818,7 +10818,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSource = OsManagementHubFunctions.getSoftwareSource(GetSoftwareSourceArgs.builder()
-     *             .softwareSourceId(testSoftwareSourceOciOsManagementHubSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSourceOciOsManagementHubSoftwareSource.get("id"))
      *             .build());
      * 
      *     }
@@ -10860,7 +10860,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSource = OsManagementHubFunctions.getSoftwareSource(GetSoftwareSourceArgs.builder()
-     *             .softwareSourceId(testSoftwareSourceOciOsManagementHubSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSourceOciOsManagementHubSoftwareSource.get("id"))
      *             .build());
      * 
      *     }
@@ -10902,7 +10902,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSource = OsManagementHubFunctions.getSoftwareSource(GetSoftwareSourceArgs.builder()
-     *             .softwareSourceId(testSoftwareSourceOciOsManagementHubSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSourceOciOsManagementHubSoftwareSource.get("id"))
      *             .build());
      * 
      *     }
@@ -10945,7 +10945,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceAvailableSoftwarePackages = OsManagementHubFunctions.getSoftwareSourceAvailableSoftwarePackages(GetSoftwareSourceAvailableSoftwarePackagesArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .displayName(softwareSourceAvailableSoftwarePackageDisplayName)
      *             .displayNameContains(softwareSourceAvailableSoftwarePackageDisplayNameContains)
      *             .isLatest(softwareSourceAvailableSoftwarePackageIsLatest)
@@ -10991,7 +10991,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceAvailableSoftwarePackages = OsManagementHubFunctions.getSoftwareSourceAvailableSoftwarePackages(GetSoftwareSourceAvailableSoftwarePackagesArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .displayName(softwareSourceAvailableSoftwarePackageDisplayName)
      *             .displayNameContains(softwareSourceAvailableSoftwarePackageDisplayNameContains)
      *             .isLatest(softwareSourceAvailableSoftwarePackageIsLatest)
@@ -11037,7 +11037,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceAvailableSoftwarePackages = OsManagementHubFunctions.getSoftwareSourceAvailableSoftwarePackages(GetSoftwareSourceAvailableSoftwarePackagesArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .displayName(softwareSourceAvailableSoftwarePackageDisplayName)
      *             .displayNameContains(softwareSourceAvailableSoftwarePackageDisplayNameContains)
      *             .isLatest(softwareSourceAvailableSoftwarePackageIsLatest)
@@ -11083,7 +11083,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceAvailableSoftwarePackages = OsManagementHubFunctions.getSoftwareSourceAvailableSoftwarePackages(GetSoftwareSourceAvailableSoftwarePackagesArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .displayName(softwareSourceAvailableSoftwarePackageDisplayName)
      *             .displayNameContains(softwareSourceAvailableSoftwarePackageDisplayNameContains)
      *             .isLatest(softwareSourceAvailableSoftwarePackageIsLatest)
@@ -11129,7 +11129,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceAvailableSoftwarePackages = OsManagementHubFunctions.getSoftwareSourceAvailableSoftwarePackages(GetSoftwareSourceAvailableSoftwarePackagesArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .displayName(softwareSourceAvailableSoftwarePackageDisplayName)
      *             .displayNameContains(softwareSourceAvailableSoftwarePackageDisplayNameContains)
      *             .isLatest(softwareSourceAvailableSoftwarePackageIsLatest)
@@ -11174,7 +11174,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceManifest = OsManagementHubFunctions.getSoftwareSourceManifest(GetSoftwareSourceManifestArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .build());
      * 
      *     }
@@ -11216,7 +11216,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceManifest = OsManagementHubFunctions.getSoftwareSourceManifest(GetSoftwareSourceManifestArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .build());
      * 
      *     }
@@ -11258,7 +11258,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceManifest = OsManagementHubFunctions.getSoftwareSourceManifest(GetSoftwareSourceManifestArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .build());
      * 
      *     }
@@ -11300,7 +11300,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceManifest = OsManagementHubFunctions.getSoftwareSourceManifest(GetSoftwareSourceManifestArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .build());
      * 
      *     }
@@ -11342,7 +11342,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceManifest = OsManagementHubFunctions.getSoftwareSourceManifest(GetSoftwareSourceManifestArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .build());
      * 
      *     }
@@ -11385,8 +11385,8 @@ public final class OsManagementHubFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStream = OsManagementHubFunctions.getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs.builder()
      *             .moduleName(softwareSourceModuleStreamModuleName)
-     *             .softwareSourceId(testSoftwareSource.id())
-     *             .streamName(testStream.name())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
+     *             .streamName(testStream.get("name"))
      *             .build());
      * 
      *     }
@@ -11429,8 +11429,8 @@ public final class OsManagementHubFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStream = OsManagementHubFunctions.getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs.builder()
      *             .moduleName(softwareSourceModuleStreamModuleName)
-     *             .softwareSourceId(testSoftwareSource.id())
-     *             .streamName(testStream.name())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
+     *             .streamName(testStream.get("name"))
      *             .build());
      * 
      *     }
@@ -11473,8 +11473,8 @@ public final class OsManagementHubFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStream = OsManagementHubFunctions.getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs.builder()
      *             .moduleName(softwareSourceModuleStreamModuleName)
-     *             .softwareSourceId(testSoftwareSource.id())
-     *             .streamName(testStream.name())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
+     *             .streamName(testStream.get("name"))
      *             .build());
      * 
      *     }
@@ -11517,8 +11517,8 @@ public final class OsManagementHubFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStream = OsManagementHubFunctions.getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs.builder()
      *             .moduleName(softwareSourceModuleStreamModuleName)
-     *             .softwareSourceId(testSoftwareSource.id())
-     *             .streamName(testStream.name())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
+     *             .streamName(testStream.get("name"))
      *             .build());
      * 
      *     }
@@ -11561,8 +11561,8 @@ public final class OsManagementHubFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStream = OsManagementHubFunctions.getSoftwareSourceModuleStream(GetSoftwareSourceModuleStreamArgs.builder()
      *             .moduleName(softwareSourceModuleStreamModuleName)
-     *             .softwareSourceId(testSoftwareSource.id())
-     *             .streamName(testStream.name())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
+     *             .streamName(testStream.get("name"))
      *             .build());
      * 
      *     }
@@ -11605,9 +11605,9 @@ public final class OsManagementHubFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreamProfile = OsManagementHubFunctions.getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs.builder()
      *             .moduleName(softwareSourceModuleStreamProfileModuleName)
-     *             .profileName(testProfile.name())
-     *             .softwareSourceId(testSoftwareSource.id())
-     *             .streamName(testStream.name())
+     *             .profileName(testProfile.get("name"))
+     *             .softwareSourceId(testSoftwareSource.get("id"))
+     *             .streamName(testStream.get("name"))
      *             .build());
      * 
      *     }
@@ -11650,9 +11650,9 @@ public final class OsManagementHubFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreamProfile = OsManagementHubFunctions.getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs.builder()
      *             .moduleName(softwareSourceModuleStreamProfileModuleName)
-     *             .profileName(testProfile.name())
-     *             .softwareSourceId(testSoftwareSource.id())
-     *             .streamName(testStream.name())
+     *             .profileName(testProfile.get("name"))
+     *             .softwareSourceId(testSoftwareSource.get("id"))
+     *             .streamName(testStream.get("name"))
      *             .build());
      * 
      *     }
@@ -11695,9 +11695,9 @@ public final class OsManagementHubFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreamProfile = OsManagementHubFunctions.getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs.builder()
      *             .moduleName(softwareSourceModuleStreamProfileModuleName)
-     *             .profileName(testProfile.name())
-     *             .softwareSourceId(testSoftwareSource.id())
-     *             .streamName(testStream.name())
+     *             .profileName(testProfile.get("name"))
+     *             .softwareSourceId(testSoftwareSource.get("id"))
+     *             .streamName(testStream.get("name"))
      *             .build());
      * 
      *     }
@@ -11740,9 +11740,9 @@ public final class OsManagementHubFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreamProfile = OsManagementHubFunctions.getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs.builder()
      *             .moduleName(softwareSourceModuleStreamProfileModuleName)
-     *             .profileName(testProfile.name())
-     *             .softwareSourceId(testSoftwareSource.id())
-     *             .streamName(testStream.name())
+     *             .profileName(testProfile.get("name"))
+     *             .softwareSourceId(testSoftwareSource.get("id"))
+     *             .streamName(testStream.get("name"))
      *             .build());
      * 
      *     }
@@ -11785,9 +11785,9 @@ public final class OsManagementHubFunctions {
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreamProfile = OsManagementHubFunctions.getSoftwareSourceModuleStreamProfile(GetSoftwareSourceModuleStreamProfileArgs.builder()
      *             .moduleName(softwareSourceModuleStreamProfileModuleName)
-     *             .profileName(testProfile.name())
-     *             .softwareSourceId(testSoftwareSource.id())
-     *             .streamName(testStream.name())
+     *             .profileName(testProfile.get("name"))
+     *             .softwareSourceId(testSoftwareSource.get("id"))
+     *             .streamName(testStream.get("name"))
      *             .build());
      * 
      *     }
@@ -11830,10 +11830,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreamProfiles = OsManagementHubFunctions.getSoftwareSourceModuleStreamProfiles(GetSoftwareSourceModuleStreamProfilesArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .moduleName(softwareSourceModuleStreamProfileModuleName)
      *             .name(softwareSourceModuleStreamProfileName)
-     *             .streamName(testStream.name())
+     *             .streamName(testStream.get("name"))
      *             .build());
      * 
      *     }
@@ -11876,10 +11876,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreamProfiles = OsManagementHubFunctions.getSoftwareSourceModuleStreamProfiles(GetSoftwareSourceModuleStreamProfilesArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .moduleName(softwareSourceModuleStreamProfileModuleName)
      *             .name(softwareSourceModuleStreamProfileName)
-     *             .streamName(testStream.name())
+     *             .streamName(testStream.get("name"))
      *             .build());
      * 
      *     }
@@ -11922,10 +11922,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreamProfiles = OsManagementHubFunctions.getSoftwareSourceModuleStreamProfiles(GetSoftwareSourceModuleStreamProfilesArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .moduleName(softwareSourceModuleStreamProfileModuleName)
      *             .name(softwareSourceModuleStreamProfileName)
-     *             .streamName(testStream.name())
+     *             .streamName(testStream.get("name"))
      *             .build());
      * 
      *     }
@@ -11968,10 +11968,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreamProfiles = OsManagementHubFunctions.getSoftwareSourceModuleStreamProfiles(GetSoftwareSourceModuleStreamProfilesArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .moduleName(softwareSourceModuleStreamProfileModuleName)
      *             .name(softwareSourceModuleStreamProfileName)
-     *             .streamName(testStream.name())
+     *             .streamName(testStream.get("name"))
      *             .build());
      * 
      *     }
@@ -12014,10 +12014,10 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreamProfiles = OsManagementHubFunctions.getSoftwareSourceModuleStreamProfiles(GetSoftwareSourceModuleStreamProfilesArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .moduleName(softwareSourceModuleStreamProfileModuleName)
      *             .name(softwareSourceModuleStreamProfileName)
-     *             .streamName(testStream.name())
+     *             .streamName(testStream.get("name"))
      *             .build());
      * 
      *     }
@@ -12060,7 +12060,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreams = OsManagementHubFunctions.getSoftwareSourceModuleStreams(GetSoftwareSourceModuleStreamsArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .isLatest(softwareSourceModuleStreamIsLatest)
      *             .moduleName(softwareSourceModuleStreamModuleName)
      *             .moduleNameContains(softwareSourceModuleStreamModuleNameContains)
@@ -12107,7 +12107,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreams = OsManagementHubFunctions.getSoftwareSourceModuleStreams(GetSoftwareSourceModuleStreamsArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .isLatest(softwareSourceModuleStreamIsLatest)
      *             .moduleName(softwareSourceModuleStreamModuleName)
      *             .moduleNameContains(softwareSourceModuleStreamModuleNameContains)
@@ -12154,7 +12154,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreams = OsManagementHubFunctions.getSoftwareSourceModuleStreams(GetSoftwareSourceModuleStreamsArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .isLatest(softwareSourceModuleStreamIsLatest)
      *             .moduleName(softwareSourceModuleStreamModuleName)
      *             .moduleNameContains(softwareSourceModuleStreamModuleNameContains)
@@ -12201,7 +12201,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreams = OsManagementHubFunctions.getSoftwareSourceModuleStreams(GetSoftwareSourceModuleStreamsArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .isLatest(softwareSourceModuleStreamIsLatest)
      *             .moduleName(softwareSourceModuleStreamModuleName)
      *             .moduleNameContains(softwareSourceModuleStreamModuleNameContains)
@@ -12248,7 +12248,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceModuleStreams = OsManagementHubFunctions.getSoftwareSourceModuleStreams(GetSoftwareSourceModuleStreamsArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .isLatest(softwareSourceModuleStreamIsLatest)
      *             .moduleName(softwareSourceModuleStreamModuleName)
      *             .moduleNameContains(softwareSourceModuleStreamModuleNameContains)
@@ -12294,8 +12294,8 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourcePackageGroup = OsManagementHubFunctions.getSoftwareSourcePackageGroup(GetSoftwareSourcePackageGroupArgs.builder()
-     *             .packageGroupId(testGroup.id())
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .packageGroupId(testGroup.get("id"))
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .build());
      * 
      *     }
@@ -12337,8 +12337,8 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourcePackageGroup = OsManagementHubFunctions.getSoftwareSourcePackageGroup(GetSoftwareSourcePackageGroupArgs.builder()
-     *             .packageGroupId(testGroup.id())
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .packageGroupId(testGroup.get("id"))
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .build());
      * 
      *     }
@@ -12380,8 +12380,8 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourcePackageGroup = OsManagementHubFunctions.getSoftwareSourcePackageGroup(GetSoftwareSourcePackageGroupArgs.builder()
-     *             .packageGroupId(testGroup.id())
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .packageGroupId(testGroup.get("id"))
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .build());
      * 
      *     }
@@ -12423,8 +12423,8 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourcePackageGroup = OsManagementHubFunctions.getSoftwareSourcePackageGroup(GetSoftwareSourcePackageGroupArgs.builder()
-     *             .packageGroupId(testGroup.id())
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .packageGroupId(testGroup.get("id"))
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .build());
      * 
      *     }
@@ -12466,8 +12466,8 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourcePackageGroup = OsManagementHubFunctions.getSoftwareSourcePackageGroup(GetSoftwareSourcePackageGroupArgs.builder()
-     *             .packageGroupId(testGroup.id())
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .packageGroupId(testGroup.get("id"))
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .build());
      * 
      *     }
@@ -12510,7 +12510,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourcePackageGroups = OsManagementHubFunctions.getSoftwareSourcePackageGroups(GetSoftwareSourcePackageGroupsArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .compartmentId(compartmentId)
      *             .groupTypes(softwareSourcePackageGroupGroupType)
      *             .name(softwareSourcePackageGroupName)
@@ -12557,7 +12557,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourcePackageGroups = OsManagementHubFunctions.getSoftwareSourcePackageGroups(GetSoftwareSourcePackageGroupsArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .compartmentId(compartmentId)
      *             .groupTypes(softwareSourcePackageGroupGroupType)
      *             .name(softwareSourcePackageGroupName)
@@ -12604,7 +12604,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourcePackageGroups = OsManagementHubFunctions.getSoftwareSourcePackageGroups(GetSoftwareSourcePackageGroupsArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .compartmentId(compartmentId)
      *             .groupTypes(softwareSourcePackageGroupGroupType)
      *             .name(softwareSourcePackageGroupName)
@@ -12651,7 +12651,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourcePackageGroups = OsManagementHubFunctions.getSoftwareSourcePackageGroups(GetSoftwareSourcePackageGroupsArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .compartmentId(compartmentId)
      *             .groupTypes(softwareSourcePackageGroupGroupType)
      *             .name(softwareSourcePackageGroupName)
@@ -12698,7 +12698,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourcePackageGroups = OsManagementHubFunctions.getSoftwareSourcePackageGroups(GetSoftwareSourcePackageGroupsArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .compartmentId(compartmentId)
      *             .groupTypes(softwareSourcePackageGroupGroupType)
      *             .name(softwareSourcePackageGroupName)
@@ -12744,8 +12744,8 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceSoftwarePackage = OsManagementHubFunctions.getSoftwareSourceSoftwarePackage(GetSoftwareSourceSoftwarePackageArgs.builder()
-     *             .softwarePackageName(testSoftwarePackage.name())
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwarePackageName(testSoftwarePackage.get("name"))
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .build());
      * 
      *     }
@@ -12787,8 +12787,8 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceSoftwarePackage = OsManagementHubFunctions.getSoftwareSourceSoftwarePackage(GetSoftwareSourceSoftwarePackageArgs.builder()
-     *             .softwarePackageName(testSoftwarePackage.name())
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwarePackageName(testSoftwarePackage.get("name"))
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .build());
      * 
      *     }
@@ -12830,8 +12830,8 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceSoftwarePackage = OsManagementHubFunctions.getSoftwareSourceSoftwarePackage(GetSoftwareSourceSoftwarePackageArgs.builder()
-     *             .softwarePackageName(testSoftwarePackage.name())
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwarePackageName(testSoftwarePackage.get("name"))
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .build());
      * 
      *     }
@@ -12873,8 +12873,8 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceSoftwarePackage = OsManagementHubFunctions.getSoftwareSourceSoftwarePackage(GetSoftwareSourceSoftwarePackageArgs.builder()
-     *             .softwarePackageName(testSoftwarePackage.name())
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwarePackageName(testSoftwarePackage.get("name"))
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .build());
      * 
      *     }
@@ -12916,8 +12916,8 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceSoftwarePackage = OsManagementHubFunctions.getSoftwareSourceSoftwarePackage(GetSoftwareSourceSoftwarePackageArgs.builder()
-     *             .softwarePackageName(testSoftwarePackage.name())
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwarePackageName(testSoftwarePackage.get("name"))
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .build());
      * 
      *     }
@@ -12960,7 +12960,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceSoftwarePackages = OsManagementHubFunctions.getSoftwareSourceSoftwarePackages(GetSoftwareSourceSoftwarePackagesArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .displayName(softwareSourceSoftwarePackageDisplayName)
      *             .displayNameContains(softwareSourceSoftwarePackageDisplayNameContains)
      *             .isLatest(softwareSourceSoftwarePackageIsLatest)
@@ -13006,7 +13006,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceSoftwarePackages = OsManagementHubFunctions.getSoftwareSourceSoftwarePackages(GetSoftwareSourceSoftwarePackagesArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .displayName(softwareSourceSoftwarePackageDisplayName)
      *             .displayNameContains(softwareSourceSoftwarePackageDisplayNameContains)
      *             .isLatest(softwareSourceSoftwarePackageIsLatest)
@@ -13052,7 +13052,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceSoftwarePackages = OsManagementHubFunctions.getSoftwareSourceSoftwarePackages(GetSoftwareSourceSoftwarePackagesArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .displayName(softwareSourceSoftwarePackageDisplayName)
      *             .displayNameContains(softwareSourceSoftwarePackageDisplayNameContains)
      *             .isLatest(softwareSourceSoftwarePackageIsLatest)
@@ -13098,7 +13098,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceSoftwarePackages = OsManagementHubFunctions.getSoftwareSourceSoftwarePackages(GetSoftwareSourceSoftwarePackagesArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .displayName(softwareSourceSoftwarePackageDisplayName)
      *             .displayNameContains(softwareSourceSoftwarePackageDisplayNameContains)
      *             .isLatest(softwareSourceSoftwarePackageIsLatest)
@@ -13144,7 +13144,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSoftwareSourceSoftwarePackages = OsManagementHubFunctions.getSoftwareSourceSoftwarePackages(GetSoftwareSourceSoftwarePackagesArgs.builder()
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .displayName(softwareSourceSoftwarePackageDisplayName)
      *             .displayNameContains(softwareSourceSoftwarePackageDisplayNameContains)
      *             .isLatest(softwareSourceSoftwarePackageIsLatest)
@@ -13421,7 +13421,7 @@ public final class OsManagementHubFunctions {
      *             .isMandatoryForAutonomousLinux(softwareSourceIsMandatoryForAutonomousLinux)
      *             .isMirrorSyncAllowed(softwareSourceIsMirrorSyncAllowed)
      *             .osFamilies(softwareSourceOsFamily)
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .softwareSourceTypes(softwareSourceSoftwareSourceType)
      *             .states(softwareSourceState)
      *             .vendorName(softwareSourceVendorName)
@@ -13478,7 +13478,7 @@ public final class OsManagementHubFunctions {
      *             .isMandatoryForAutonomousLinux(softwareSourceIsMandatoryForAutonomousLinux)
      *             .isMirrorSyncAllowed(softwareSourceIsMirrorSyncAllowed)
      *             .osFamilies(softwareSourceOsFamily)
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .softwareSourceTypes(softwareSourceSoftwareSourceType)
      *             .states(softwareSourceState)
      *             .vendorName(softwareSourceVendorName)
@@ -13535,7 +13535,7 @@ public final class OsManagementHubFunctions {
      *             .isMandatoryForAutonomousLinux(softwareSourceIsMandatoryForAutonomousLinux)
      *             .isMirrorSyncAllowed(softwareSourceIsMirrorSyncAllowed)
      *             .osFamilies(softwareSourceOsFamily)
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .softwareSourceTypes(softwareSourceSoftwareSourceType)
      *             .states(softwareSourceState)
      *             .vendorName(softwareSourceVendorName)
@@ -13592,7 +13592,7 @@ public final class OsManagementHubFunctions {
      *             .isMandatoryForAutonomousLinux(softwareSourceIsMandatoryForAutonomousLinux)
      *             .isMirrorSyncAllowed(softwareSourceIsMirrorSyncAllowed)
      *             .osFamilies(softwareSourceOsFamily)
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .softwareSourceTypes(softwareSourceSoftwareSourceType)
      *             .states(softwareSourceState)
      *             .vendorName(softwareSourceVendorName)
@@ -13649,7 +13649,7 @@ public final class OsManagementHubFunctions {
      *             .isMandatoryForAutonomousLinux(softwareSourceIsMandatoryForAutonomousLinux)
      *             .isMirrorSyncAllowed(softwareSourceIsMirrorSyncAllowed)
      *             .osFamilies(softwareSourceOsFamily)
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .softwareSourceTypes(softwareSourceSoftwareSourceType)
      *             .states(softwareSourceState)
      *             .vendorName(softwareSourceVendorName)
@@ -13706,7 +13706,7 @@ public final class OsManagementHubFunctions {
      *             .isMandatoryForAutonomousLinux(softwareSourceIsMandatoryForAutonomousLinux)
      *             .isMirrorSyncAllowed(softwareSourceIsMirrorSyncAllowed)
      *             .osFamilies(softwareSourceOsFamily)
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .softwareSourceTypes(softwareSourceSoftwareSourceType)
      *             .states(softwareSourceState)
      *             .vendorName(softwareSourceVendorName)
@@ -13763,7 +13763,7 @@ public final class OsManagementHubFunctions {
      *             .isMandatoryForAutonomousLinux(softwareSourceIsMandatoryForAutonomousLinux)
      *             .isMirrorSyncAllowed(softwareSourceIsMirrorSyncAllowed)
      *             .osFamilies(softwareSourceOsFamily)
-     *             .softwareSourceId(testSoftwareSource.id())
+     *             .softwareSourceId(testSoftwareSource.get("id"))
      *             .softwareSourceTypes(softwareSourceSoftwareSourceType)
      *             .states(softwareSourceState)
      *             .vendorName(softwareSourceVendorName)
@@ -13808,7 +13808,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWindowsUpdate = OsManagementHubFunctions.getWindowsUpdate(GetWindowsUpdateArgs.builder()
-     *             .windowsUpdateId(testWindowsUpdateOciOsManagementHubWindowsUpdate.id())
+     *             .windowsUpdateId(testWindowsUpdateOciOsManagementHubWindowsUpdate.get("id"))
      *             .build());
      * 
      *     }
@@ -13850,7 +13850,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWindowsUpdate = OsManagementHubFunctions.getWindowsUpdate(GetWindowsUpdateArgs.builder()
-     *             .windowsUpdateId(testWindowsUpdateOciOsManagementHubWindowsUpdate.id())
+     *             .windowsUpdateId(testWindowsUpdateOciOsManagementHubWindowsUpdate.get("id"))
      *             .build());
      * 
      *     }
@@ -13892,7 +13892,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWindowsUpdate = OsManagementHubFunctions.getWindowsUpdate(GetWindowsUpdateArgs.builder()
-     *             .windowsUpdateId(testWindowsUpdateOciOsManagementHubWindowsUpdate.id())
+     *             .windowsUpdateId(testWindowsUpdateOciOsManagementHubWindowsUpdate.get("id"))
      *             .build());
      * 
      *     }
@@ -13934,7 +13934,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWindowsUpdate = OsManagementHubFunctions.getWindowsUpdate(GetWindowsUpdateArgs.builder()
-     *             .windowsUpdateId(testWindowsUpdateOciOsManagementHubWindowsUpdate.id())
+     *             .windowsUpdateId(testWindowsUpdateOciOsManagementHubWindowsUpdate.get("id"))
      *             .build());
      * 
      *     }
@@ -13976,7 +13976,7 @@ public final class OsManagementHubFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWindowsUpdate = OsManagementHubFunctions.getWindowsUpdate(GetWindowsUpdateArgs.builder()
-     *             .windowsUpdateId(testWindowsUpdateOciOsManagementHubWindowsUpdate.id())
+     *             .windowsUpdateId(testWindowsUpdateOciOsManagementHubWindowsUpdate.get("id"))
      *             .build());
      * 
      *     }

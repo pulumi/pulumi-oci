@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testManagedInstanceGroupRemovePackagesManagement = new ManagedInstanceGroupRemovePackagesManagement("testManagedInstanceGroupRemovePackagesManagement", ManagedInstanceGroupRemovePackagesManagementArgs.builder()
- *             .managedInstanceGroupId(testManagedInstanceGroup.id())
+ *             .managedInstanceGroupId(testManagedInstanceGroup.get("id"))
  *             .packageNames(managedInstanceGroupRemovePackagesManagementPackageNames)
  *             .workRequestDetails(ManagedInstanceGroupRemovePackagesManagementWorkRequestDetailsArgs.builder()
  *                 .description(managedInstanceGroupRemovePackagesManagementWorkRequestDetailsDescription)

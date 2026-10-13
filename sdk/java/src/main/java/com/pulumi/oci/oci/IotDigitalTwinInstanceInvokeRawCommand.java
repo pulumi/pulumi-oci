@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDigitalTwinInstanceInvokeRawCommand = new IotDigitalTwinInstanceInvokeRawCommand("testDigitalTwinInstanceInvokeRawCommand", IotDigitalTwinInstanceInvokeRawCommandArgs.builder()
- *             .digitalTwinInstanceId(testDigitalTwinInstance.id())
+ *             .digitalTwinInstanceId(testDigitalTwinInstance.get("id"))
  *             .requestDataFormat(digitalTwinInstanceInvokeRawCommandRequestDataFormat)
  *             .requestEndpoint(digitalTwinInstanceInvokeRawCommandRequestEndpoint)
  *             .requestData(digitalTwinInstanceInvokeRawCommandRequestData)

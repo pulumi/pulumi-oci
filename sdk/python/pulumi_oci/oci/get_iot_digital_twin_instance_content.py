@@ -83,7 +83,7 @@ def get_iot_digital_twin_instance_content(digital_twin_instance_id: Optional[_bu
     import pulumi_oci as oci
 
     test_digital_twin_instance_content = oci.oci.get_iot_digital_twin_instance_content(digital_twin_instance_id=test_digital_twin_instance["id"],
-        should_include_metadata=digital_twin_instance_content_should_include_metadata == "true")
+        should_include_metadata=digital_twin_instance_content_should_include_metadata)
     ```
 
 
@@ -116,7 +116,7 @@ def get_iot_digital_twin_instance_content_output(digital_twin_instance_id: pulum
     import pulumi_oci as oci
 
     test_digital_twin_instance_content = oci.oci.get_iot_digital_twin_instance_content(digital_twin_instance_id=test_digital_twin_instance["id"],
-        should_include_metadata=digital_twin_instance_content_should_include_metadata == "true")
+        should_include_metadata=digital_twin_instance_content_should_include_metadata)
     ```
 
 

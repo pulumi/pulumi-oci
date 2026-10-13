@@ -57,9 +57,9 @@ import javax.annotation.Nullable;
  *             .ipAddress(ipv6IpAddress)
  *             .ipv6subnetCidr(ipv6Ipv6subnetCidr)
  *             .lifetime(ipv6Lifetime)
- *             .routeTableId(testRouteTable.id())
- *             .subnetId(testSubnet.id())
- *             .vnicId(testVnicAttachment.id())
+ *             .routeTableId(testRouteTable.get("id"))
+ *             .subnetId(testSubnet.get("id"))
+ *             .vnicId(testVnicAttachment.get("id"))
  *             .build());
  * 
  *     }

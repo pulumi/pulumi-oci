@@ -33,7 +33,7 @@ import (
 //				CatalogId:     testCatalog.Id,
 //				ConnectionKey: connectionConnectionKey,
 //				DataAssetKey:  connectionDataAssetKey,
-//				Fields:        pulumi.ToArray(connectionFields),
+//				Fields:        connectionFields,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -31,12 +31,12 @@ import * as utilities from "../utilities";
  *     dnssecState: zoneDnssecState,
  *     externalDownstreams: [{
  *         address: zoneExternalDownstreamsAddress,
- *         port: Number(zoneExternalDownstreamsPort),
+ *         port: zoneExternalDownstreamsPort,
  *         tsigKeyId: testTsigKey.id,
  *     }],
  *     externalMasters: [{
  *         address: zoneExternalMastersAddress,
- *         port: Number(zoneExternalMastersPort),
+ *         port: zoneExternalMastersPort,
  *         tsigKeyId: testTsigKey.id,
  *     }],
  *     freeformTags: zoneFreeformTags,

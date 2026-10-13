@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  *         runbookId: testRunbook.id,
  *         runbookVersionName: testRunbookVersion.name,
  *         displayName: schedulerDefinitionActionGroupsDisplayName,
- *         sequence: Number(schedulerDefinitionActionGroupsSequence),
+ *         sequence: schedulerDefinitionActionGroupsSequence,
  *     }],
  *     compartmentId: compartmentId,
  *     schedule: {

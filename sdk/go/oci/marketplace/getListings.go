@@ -44,16 +44,16 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := marketplace.GetListings(ctx, &marketplace.GetListingsArgs{
-//				Categories:       pulumi.ToArray(listingCategory),
+//				Categories:       listingCategory,
 //				CompartmentId:    pulumi.StringRef(compartmentId),
 //				ImageId:          pulumi.StringRef(testImage.Id),
 //				IsFeatured:       pulumi.BoolRef(listingIsFeatured),
 //				ListingId:        pulumi.StringRef(testListing.Id),
-//				ListingTypes:     pulumi.ToArray(listingListingTypes),
-//				Names:            pulumi.ToArray(listingName),
-//				OperatingSystems: pulumi.ToArray(listingOperatingSystems),
+//				ListingTypes:     listingListingTypes,
+//				Names:            listingName,
+//				OperatingSystems: listingOperatingSystems,
 //				PackageType:      pulumi.StringRef(listingPackageType),
-//				Pricings:         pulumi.ToArray(listingPricing),
+//				Pricings:         listingPricing,
 //				PublisherId:      pulumi.StringRef(testPublisher.Id),
 //			}, nil)
 //			if err != nil {

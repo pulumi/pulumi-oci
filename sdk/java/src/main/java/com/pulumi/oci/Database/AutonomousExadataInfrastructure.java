@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  *             .availabilityDomain(autonomousExadataInfrastructureAvailabilityDomain)
  *             .compartmentId(compartmentId)
  *             .shape(autonomousExadataInfrastructureShape)
- *             .subnetId(testSubnet.id())
+ *             .subnetId(testSubnet.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(autonomousExadataInfrastructureDisplayName)
  *             .domain(autonomousExadataInfrastructureDomain)

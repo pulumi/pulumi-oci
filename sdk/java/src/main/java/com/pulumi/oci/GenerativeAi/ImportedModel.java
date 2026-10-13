@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *                 .branch(importedModelDataSourceBranch)
  *                 .bucket(importedModelDataSourceBucket)
  *                 .commit(importedModelDataSourceCommit)
- *                 .modelId(testModel.id())
+ *                 .modelId(testModel.get("id"))
  *                 .namespace(importedModelDataSourceNamespace)
  *                 .prefixName(importedModelDataSourcePrefixName)
  *                 .region(importedModelDataSourceRegion)

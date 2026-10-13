@@ -142,7 +142,7 @@ def get_audit_events(access_level: Optional[_builtins.str] = None,
 
     test_audit_events = oci.datasafe.get_audit_events(compartment_id=compartment_id,
         access_level=audit_event_access_level,
-        compartment_id_in_subtree=audit_event_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=audit_event_compartment_id_in_subtree,
         scim_query=audit_event_scim_query)
     ```
 
@@ -202,7 +202,7 @@ def get_audit_events_output(access_level: pulumi.Input[Optional[Optional[_builti
 
     test_audit_events = oci.datasafe.get_audit_events(compartment_id=compartment_id,
         access_level=audit_event_access_level,
-        compartment_id_in_subtree=audit_event_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=audit_event_compartment_id_in_subtree,
         scim_query=audit_event_scim_query)
     ```
 

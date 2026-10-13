@@ -640,7 +640,7 @@ class Schedule(pulumi.CustomResource):
             resource_filters=[{
                 "attribute": schedule_resource_filters_attribute,
                 "condition": schedule_resource_filters_condition,
-                "should_include_child_compartments": schedule_resource_filters_should_include_child_compartments == "true",
+                "should_include_child_compartments": schedule_resource_filters_should_include_child_compartments,
                 "values": [{
                     "namespace": schedule_resource_filters_value_namespace,
                     "tag_key": schedule_resource_filters_value_tag_key,
@@ -725,7 +725,7 @@ class Schedule(pulumi.CustomResource):
             resource_filters=[{
                 "attribute": schedule_resource_filters_attribute,
                 "condition": schedule_resource_filters_condition,
-                "should_include_child_compartments": schedule_resource_filters_should_include_child_compartments == "true",
+                "should_include_child_compartments": schedule_resource_filters_should_include_child_compartments,
                 "values": [{
                     "namespace": schedule_resource_filters_value_namespace,
                     "tag_key": schedule_resource_filters_value_tag_key,

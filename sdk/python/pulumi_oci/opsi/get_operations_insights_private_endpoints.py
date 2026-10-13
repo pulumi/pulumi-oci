@@ -171,9 +171,9 @@ def get_operations_insights_private_endpoints(compartment_id: Optional[_builtins
     import pulumi_oci as oci
 
     test_operations_insights_private_endpoints = oci.opsi.get_operations_insights_private_endpoints(compartment_id=compartment_id,
-        compartment_id_in_subtree=operations_insights_private_endpoint_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=operations_insights_private_endpoint_compartment_id_in_subtree,
         display_name=operations_insights_private_endpoint_display_name,
-        is_used_for_rac_dbs=operations_insights_private_endpoint_is_used_for_rac_dbs == "true",
+        is_used_for_rac_dbs=operations_insights_private_endpoint_is_used_for_rac_dbs,
         opsi_private_endpoint_id=test_private_endpoint["id"],
         states=operations_insights_private_endpoint_state,
         vcn_id=test_vcn["id"])
@@ -232,9 +232,9 @@ def get_operations_insights_private_endpoints_output(compartment_id: pulumi.Inpu
     import pulumi_oci as oci
 
     test_operations_insights_private_endpoints = oci.opsi.get_operations_insights_private_endpoints(compartment_id=compartment_id,
-        compartment_id_in_subtree=operations_insights_private_endpoint_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=operations_insights_private_endpoint_compartment_id_in_subtree,
         display_name=operations_insights_private_endpoint_display_name,
-        is_used_for_rac_dbs=operations_insights_private_endpoint_is_used_for_rac_dbs == "true",
+        is_used_for_rac_dbs=operations_insights_private_endpoint_is_used_for_rac_dbs,
         opsi_private_endpoint_id=test_private_endpoint["id"],
         states=operations_insights_private_endpoint_state,
         vcn_id=test_vcn["id"])

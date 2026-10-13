@@ -128,7 +128,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testUser = new DomainsUser("testUser", DomainsUserArgs.builder()
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .schemas("urn:ietf:params:scim:schemas:core:2.0:User")
  *             .userName("userName")
  *             .active(userActive)
@@ -368,7 +368,7 @@ import javax.annotation.Nullable;
  *                 .isFederatedUser(userUrnietfparamsscimschemasoracleidcsextensionuserUserIsFederatedUser)
  *                 .isGroupMembershipNormalized(userUrnietfparamsscimschemasoracleidcsextensionuserUserIsGroupMembershipNormalized)
  *                 .isGroupMembershipSyncedToUsersGroups(userUrnietfparamsscimschemasoracleidcsextensionuserUserIsGroupMembershipSyncedToUsersGroups)
- *                 .notificationEmailTemplateId(testNotificationEmailTemplate.id())
+ *                 .notificationEmailTemplateId(testNotificationEmailTemplate.get("id"))
  *                 .preferredUiLandingPage(userUrnIetfParamsScimSchemasOracleIdcsExtensionUserUserPreferredUiLandingPage)
  *                 .serviceUser(userUrnIetfParamsScimSchemasOracleIdcsExtensionUserUserServiceUser)
  *                 .syncedFromApp(DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserSyncedFromAppArgs.builder()

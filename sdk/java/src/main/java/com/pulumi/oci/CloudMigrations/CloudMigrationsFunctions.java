@@ -78,7 +78,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigration = CloudMigrationsFunctions.getMigration(GetMigrationArgs.builder()
-     *             .migrationId(testMigrationOciCloudMigrationsMigration.id())
+     *             .migrationId(testMigrationOciCloudMigrationsMigration.get("id"))
      *             .build());
      * 
      *     }
@@ -120,7 +120,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigration = CloudMigrationsFunctions.getMigration(GetMigrationArgs.builder()
-     *             .migrationId(testMigrationOciCloudMigrationsMigration.id())
+     *             .migrationId(testMigrationOciCloudMigrationsMigration.get("id"))
      *             .build());
      * 
      *     }
@@ -162,7 +162,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigration = CloudMigrationsFunctions.getMigration(GetMigrationArgs.builder()
-     *             .migrationId(testMigrationOciCloudMigrationsMigration.id())
+     *             .migrationId(testMigrationOciCloudMigrationsMigration.get("id"))
      *             .build());
      * 
      *     }
@@ -204,7 +204,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigration = CloudMigrationsFunctions.getMigration(GetMigrationArgs.builder()
-     *             .migrationId(testMigrationOciCloudMigrationsMigration.id())
+     *             .migrationId(testMigrationOciCloudMigrationsMigration.get("id"))
      *             .build());
      * 
      *     }
@@ -246,7 +246,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigration = CloudMigrationsFunctions.getMigration(GetMigrationArgs.builder()
-     *             .migrationId(testMigrationOciCloudMigrationsMigration.id())
+     *             .migrationId(testMigrationOciCloudMigrationsMigration.get("id"))
      *             .build());
      * 
      *     }
@@ -288,7 +288,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationAsset = CloudMigrationsFunctions.getMigrationAsset(GetMigrationAssetArgs.builder()
-     *             .migrationAssetId(testMigrationAssetOciCloudMigrationsMigrationAsset.id())
+     *             .migrationAssetId(testMigrationAssetOciCloudMigrationsMigrationAsset.get("id"))
      *             .build());
      * 
      *     }
@@ -330,7 +330,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationAsset = CloudMigrationsFunctions.getMigrationAsset(GetMigrationAssetArgs.builder()
-     *             .migrationAssetId(testMigrationAssetOciCloudMigrationsMigrationAsset.id())
+     *             .migrationAssetId(testMigrationAssetOciCloudMigrationsMigrationAsset.get("id"))
      *             .build());
      * 
      *     }
@@ -372,7 +372,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationAsset = CloudMigrationsFunctions.getMigrationAsset(GetMigrationAssetArgs.builder()
-     *             .migrationAssetId(testMigrationAssetOciCloudMigrationsMigrationAsset.id())
+     *             .migrationAssetId(testMigrationAssetOciCloudMigrationsMigrationAsset.get("id"))
      *             .build());
      * 
      *     }
@@ -414,7 +414,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationAsset = CloudMigrationsFunctions.getMigrationAsset(GetMigrationAssetArgs.builder()
-     *             .migrationAssetId(testMigrationAssetOciCloudMigrationsMigrationAsset.id())
+     *             .migrationAssetId(testMigrationAssetOciCloudMigrationsMigrationAsset.get("id"))
      *             .build());
      * 
      *     }
@@ -456,7 +456,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationAsset = CloudMigrationsFunctions.getMigrationAsset(GetMigrationAssetArgs.builder()
-     *             .migrationAssetId(testMigrationAssetOciCloudMigrationsMigrationAsset.id())
+     *             .migrationAssetId(testMigrationAssetOciCloudMigrationsMigrationAsset.get("id"))
      *             .build());
      * 
      *     }
@@ -499,8 +499,8 @@ public final class CloudMigrationsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMigrationAssets = CloudMigrationsFunctions.getMigrationAssets(GetMigrationAssetsArgs.builder()
      *             .displayName(migrationAssetDisplayName)
-     *             .migrationAssetId(testMigrationAsset.id())
-     *             .migrationId(testMigration.id())
+     *             .migrationAssetId(testMigrationAsset.get("id"))
+     *             .migrationId(testMigration.get("id"))
      *             .state(migrationAssetState)
      *             .build());
      * 
@@ -544,8 +544,8 @@ public final class CloudMigrationsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMigrationAssets = CloudMigrationsFunctions.getMigrationAssets(GetMigrationAssetsArgs.builder()
      *             .displayName(migrationAssetDisplayName)
-     *             .migrationAssetId(testMigrationAsset.id())
-     *             .migrationId(testMigration.id())
+     *             .migrationAssetId(testMigrationAsset.get("id"))
+     *             .migrationId(testMigration.get("id"))
      *             .state(migrationAssetState)
      *             .build());
      * 
@@ -589,8 +589,8 @@ public final class CloudMigrationsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMigrationAssets = CloudMigrationsFunctions.getMigrationAssets(GetMigrationAssetsArgs.builder()
      *             .displayName(migrationAssetDisplayName)
-     *             .migrationAssetId(testMigrationAsset.id())
-     *             .migrationId(testMigration.id())
+     *             .migrationAssetId(testMigrationAsset.get("id"))
+     *             .migrationId(testMigration.get("id"))
      *             .state(migrationAssetState)
      *             .build());
      * 
@@ -634,8 +634,8 @@ public final class CloudMigrationsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMigrationAssets = CloudMigrationsFunctions.getMigrationAssets(GetMigrationAssetsArgs.builder()
      *             .displayName(migrationAssetDisplayName)
-     *             .migrationAssetId(testMigrationAsset.id())
-     *             .migrationId(testMigration.id())
+     *             .migrationAssetId(testMigrationAsset.get("id"))
+     *             .migrationId(testMigration.get("id"))
      *             .state(migrationAssetState)
      *             .build());
      * 
@@ -679,8 +679,8 @@ public final class CloudMigrationsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMigrationAssets = CloudMigrationsFunctions.getMigrationAssets(GetMigrationAssetsArgs.builder()
      *             .displayName(migrationAssetDisplayName)
-     *             .migrationAssetId(testMigrationAsset.id())
-     *             .migrationId(testMigration.id())
+     *             .migrationAssetId(testMigrationAsset.get("id"))
+     *             .migrationId(testMigration.get("id"))
      *             .state(migrationAssetState)
      *             .build());
      * 
@@ -724,8 +724,8 @@ public final class CloudMigrationsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMigrationAssets = CloudMigrationsFunctions.getMigrationAssets(GetMigrationAssetsArgs.builder()
      *             .displayName(migrationAssetDisplayName)
-     *             .migrationAssetId(testMigrationAsset.id())
-     *             .migrationId(testMigration.id())
+     *             .migrationAssetId(testMigrationAsset.get("id"))
+     *             .migrationId(testMigration.get("id"))
      *             .state(migrationAssetState)
      *             .build());
      * 
@@ -769,8 +769,8 @@ public final class CloudMigrationsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMigrationAssets = CloudMigrationsFunctions.getMigrationAssets(GetMigrationAssetsArgs.builder()
      *             .displayName(migrationAssetDisplayName)
-     *             .migrationAssetId(testMigrationAsset.id())
-     *             .migrationId(testMigration.id())
+     *             .migrationAssetId(testMigrationAsset.get("id"))
+     *             .migrationId(testMigration.get("id"))
      *             .state(migrationAssetState)
      *             .build());
      * 
@@ -813,7 +813,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlan = CloudMigrationsFunctions.getMigrationPlan(GetMigrationPlanArgs.builder()
-     *             .migrationPlanId(testMigrationPlanOciCloudMigrationsMigrationPlan.id())
+     *             .migrationPlanId(testMigrationPlanOciCloudMigrationsMigrationPlan.get("id"))
      *             .build());
      * 
      *     }
@@ -855,7 +855,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlan = CloudMigrationsFunctions.getMigrationPlan(GetMigrationPlanArgs.builder()
-     *             .migrationPlanId(testMigrationPlanOciCloudMigrationsMigrationPlan.id())
+     *             .migrationPlanId(testMigrationPlanOciCloudMigrationsMigrationPlan.get("id"))
      *             .build());
      * 
      *     }
@@ -897,7 +897,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlan = CloudMigrationsFunctions.getMigrationPlan(GetMigrationPlanArgs.builder()
-     *             .migrationPlanId(testMigrationPlanOciCloudMigrationsMigrationPlan.id())
+     *             .migrationPlanId(testMigrationPlanOciCloudMigrationsMigrationPlan.get("id"))
      *             .build());
      * 
      *     }
@@ -939,7 +939,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlan = CloudMigrationsFunctions.getMigrationPlan(GetMigrationPlanArgs.builder()
-     *             .migrationPlanId(testMigrationPlanOciCloudMigrationsMigrationPlan.id())
+     *             .migrationPlanId(testMigrationPlanOciCloudMigrationsMigrationPlan.get("id"))
      *             .build());
      * 
      *     }
@@ -981,7 +981,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlan = CloudMigrationsFunctions.getMigrationPlan(GetMigrationPlanArgs.builder()
-     *             .migrationPlanId(testMigrationPlanOciCloudMigrationsMigrationPlan.id())
+     *             .migrationPlanId(testMigrationPlanOciCloudMigrationsMigrationPlan.get("id"))
      *             .build());
      * 
      *     }
@@ -1023,11 +1023,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlanAvailableShape = CloudMigrationsFunctions.getMigrationPlanAvailableShape(GetMigrationPlanAvailableShapeArgs.builder()
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .availabilityDomain(migrationPlanAvailableShapeAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .dvhHostId(testDvhHost.id())
-     *             .reservedCapacityId(testReservedCapacity.id())
+     *             .dvhHostId(testDvhHost.get("id"))
+     *             .reservedCapacityId(testReservedCapacity.get("id"))
      *             .build());
      * 
      *     }
@@ -1069,11 +1069,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlanAvailableShape = CloudMigrationsFunctions.getMigrationPlanAvailableShape(GetMigrationPlanAvailableShapeArgs.builder()
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .availabilityDomain(migrationPlanAvailableShapeAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .dvhHostId(testDvhHost.id())
-     *             .reservedCapacityId(testReservedCapacity.id())
+     *             .dvhHostId(testDvhHost.get("id"))
+     *             .reservedCapacityId(testReservedCapacity.get("id"))
      *             .build());
      * 
      *     }
@@ -1115,11 +1115,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlanAvailableShape = CloudMigrationsFunctions.getMigrationPlanAvailableShape(GetMigrationPlanAvailableShapeArgs.builder()
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .availabilityDomain(migrationPlanAvailableShapeAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .dvhHostId(testDvhHost.id())
-     *             .reservedCapacityId(testReservedCapacity.id())
+     *             .dvhHostId(testDvhHost.get("id"))
+     *             .reservedCapacityId(testReservedCapacity.get("id"))
      *             .build());
      * 
      *     }
@@ -1161,11 +1161,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlanAvailableShape = CloudMigrationsFunctions.getMigrationPlanAvailableShape(GetMigrationPlanAvailableShapeArgs.builder()
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .availabilityDomain(migrationPlanAvailableShapeAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .dvhHostId(testDvhHost.id())
-     *             .reservedCapacityId(testReservedCapacity.id())
+     *             .dvhHostId(testDvhHost.get("id"))
+     *             .reservedCapacityId(testReservedCapacity.get("id"))
      *             .build());
      * 
      *     }
@@ -1207,11 +1207,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlanAvailableShape = CloudMigrationsFunctions.getMigrationPlanAvailableShape(GetMigrationPlanAvailableShapeArgs.builder()
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .availabilityDomain(migrationPlanAvailableShapeAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .dvhHostId(testDvhHost.id())
-     *             .reservedCapacityId(testReservedCapacity.id())
+     *             .dvhHostId(testDvhHost.get("id"))
+     *             .reservedCapacityId(testReservedCapacity.get("id"))
      *             .build());
      * 
      *     }
@@ -1253,11 +1253,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlanAvailableShapes = CloudMigrationsFunctions.getMigrationPlanAvailableShapes(GetMigrationPlanAvailableShapesArgs.builder()
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .availabilityDomain(migrationPlanAvailableShapeAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .dvhHostId(testDvhHost.id())
-     *             .reservedCapacityId(testReservedCapacity.id())
+     *             .dvhHostId(testDvhHost.get("id"))
+     *             .reservedCapacityId(testReservedCapacity.get("id"))
      *             .build());
      * 
      *     }
@@ -1299,11 +1299,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlanAvailableShapes = CloudMigrationsFunctions.getMigrationPlanAvailableShapes(GetMigrationPlanAvailableShapesArgs.builder()
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .availabilityDomain(migrationPlanAvailableShapeAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .dvhHostId(testDvhHost.id())
-     *             .reservedCapacityId(testReservedCapacity.id())
+     *             .dvhHostId(testDvhHost.get("id"))
+     *             .reservedCapacityId(testReservedCapacity.get("id"))
      *             .build());
      * 
      *     }
@@ -1345,11 +1345,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlanAvailableShapes = CloudMigrationsFunctions.getMigrationPlanAvailableShapes(GetMigrationPlanAvailableShapesArgs.builder()
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .availabilityDomain(migrationPlanAvailableShapeAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .dvhHostId(testDvhHost.id())
-     *             .reservedCapacityId(testReservedCapacity.id())
+     *             .dvhHostId(testDvhHost.get("id"))
+     *             .reservedCapacityId(testReservedCapacity.get("id"))
      *             .build());
      * 
      *     }
@@ -1391,11 +1391,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlanAvailableShapes = CloudMigrationsFunctions.getMigrationPlanAvailableShapes(GetMigrationPlanAvailableShapesArgs.builder()
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .availabilityDomain(migrationPlanAvailableShapeAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .dvhHostId(testDvhHost.id())
-     *             .reservedCapacityId(testReservedCapacity.id())
+     *             .dvhHostId(testDvhHost.get("id"))
+     *             .reservedCapacityId(testReservedCapacity.get("id"))
      *             .build());
      * 
      *     }
@@ -1437,11 +1437,11 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMigrationPlanAvailableShapes = CloudMigrationsFunctions.getMigrationPlanAvailableShapes(GetMigrationPlanAvailableShapesArgs.builder()
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .availabilityDomain(migrationPlanAvailableShapeAvailabilityDomain)
      *             .compartmentId(compartmentId)
-     *             .dvhHostId(testDvhHost.id())
-     *             .reservedCapacityId(testReservedCapacity.id())
+     *             .dvhHostId(testDvhHost.get("id"))
+     *             .reservedCapacityId(testReservedCapacity.get("id"))
      *             .build());
      * 
      *     }
@@ -1485,8 +1485,8 @@ public final class CloudMigrationsFunctions {
      *         final var testMigrationPlans = CloudMigrationsFunctions.getMigrationPlans(GetMigrationPlansArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(migrationPlanDisplayName)
-     *             .migrationId(testMigration.id())
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationId(testMigration.get("id"))
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .state(migrationPlanState)
      *             .build());
      * 
@@ -1531,8 +1531,8 @@ public final class CloudMigrationsFunctions {
      *         final var testMigrationPlans = CloudMigrationsFunctions.getMigrationPlans(GetMigrationPlansArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(migrationPlanDisplayName)
-     *             .migrationId(testMigration.id())
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationId(testMigration.get("id"))
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .state(migrationPlanState)
      *             .build());
      * 
@@ -1577,8 +1577,8 @@ public final class CloudMigrationsFunctions {
      *         final var testMigrationPlans = CloudMigrationsFunctions.getMigrationPlans(GetMigrationPlansArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(migrationPlanDisplayName)
-     *             .migrationId(testMigration.id())
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationId(testMigration.get("id"))
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .state(migrationPlanState)
      *             .build());
      * 
@@ -1623,8 +1623,8 @@ public final class CloudMigrationsFunctions {
      *         final var testMigrationPlans = CloudMigrationsFunctions.getMigrationPlans(GetMigrationPlansArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(migrationPlanDisplayName)
-     *             .migrationId(testMigration.id())
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationId(testMigration.get("id"))
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .state(migrationPlanState)
      *             .build());
      * 
@@ -1669,8 +1669,8 @@ public final class CloudMigrationsFunctions {
      *         final var testMigrationPlans = CloudMigrationsFunctions.getMigrationPlans(GetMigrationPlansArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(migrationPlanDisplayName)
-     *             .migrationId(testMigration.id())
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationId(testMigration.get("id"))
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .state(migrationPlanState)
      *             .build());
      * 
@@ -1715,8 +1715,8 @@ public final class CloudMigrationsFunctions {
      *         final var testMigrationPlans = CloudMigrationsFunctions.getMigrationPlans(GetMigrationPlansArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(migrationPlanDisplayName)
-     *             .migrationId(testMigration.id())
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationId(testMigration.get("id"))
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .state(migrationPlanState)
      *             .build());
      * 
@@ -1761,8 +1761,8 @@ public final class CloudMigrationsFunctions {
      *         final var testMigrationPlans = CloudMigrationsFunctions.getMigrationPlans(GetMigrationPlansArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(migrationPlanDisplayName)
-     *             .migrationId(testMigration.id())
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationId(testMigration.get("id"))
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .state(migrationPlanState)
      *             .build());
      * 
@@ -1807,7 +1807,7 @@ public final class CloudMigrationsFunctions {
      *         final var testMigrations = CloudMigrationsFunctions.getMigrations(GetMigrationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(migrationDisplayName)
-     *             .migrationId(testMigration.id())
+     *             .migrationId(testMigration.get("id"))
      *             .state(migrationState)
      *             .build());
      * 
@@ -1852,7 +1852,7 @@ public final class CloudMigrationsFunctions {
      *         final var testMigrations = CloudMigrationsFunctions.getMigrations(GetMigrationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(migrationDisplayName)
-     *             .migrationId(testMigration.id())
+     *             .migrationId(testMigration.get("id"))
      *             .state(migrationState)
      *             .build());
      * 
@@ -1897,7 +1897,7 @@ public final class CloudMigrationsFunctions {
      *         final var testMigrations = CloudMigrationsFunctions.getMigrations(GetMigrationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(migrationDisplayName)
-     *             .migrationId(testMigration.id())
+     *             .migrationId(testMigration.get("id"))
      *             .state(migrationState)
      *             .build());
      * 
@@ -1942,7 +1942,7 @@ public final class CloudMigrationsFunctions {
      *         final var testMigrations = CloudMigrationsFunctions.getMigrations(GetMigrationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(migrationDisplayName)
-     *             .migrationId(testMigration.id())
+     *             .migrationId(testMigration.get("id"))
      *             .state(migrationState)
      *             .build());
      * 
@@ -1987,7 +1987,7 @@ public final class CloudMigrationsFunctions {
      *         final var testMigrations = CloudMigrationsFunctions.getMigrations(GetMigrationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(migrationDisplayName)
-     *             .migrationId(testMigration.id())
+     *             .migrationId(testMigration.get("id"))
      *             .state(migrationState)
      *             .build());
      * 
@@ -2032,7 +2032,7 @@ public final class CloudMigrationsFunctions {
      *         final var testMigrations = CloudMigrationsFunctions.getMigrations(GetMigrationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(migrationDisplayName)
-     *             .migrationId(testMigration.id())
+     *             .migrationId(testMigration.get("id"))
      *             .state(migrationState)
      *             .build());
      * 
@@ -2077,7 +2077,7 @@ public final class CloudMigrationsFunctions {
      *         final var testMigrations = CloudMigrationsFunctions.getMigrations(GetMigrationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(migrationDisplayName)
-     *             .migrationId(testMigration.id())
+     *             .migrationId(testMigration.get("id"))
      *             .state(migrationState)
      *             .build());
      * 
@@ -2120,7 +2120,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationSchedule = CloudMigrationsFunctions.getReplicationSchedule(GetReplicationScheduleArgs.builder()
-     *             .replicationScheduleId(testReplicationScheduleOciCloudMigrationsReplicationSchedule.id())
+     *             .replicationScheduleId(testReplicationScheduleOciCloudMigrationsReplicationSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -2162,7 +2162,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationSchedule = CloudMigrationsFunctions.getReplicationSchedule(GetReplicationScheduleArgs.builder()
-     *             .replicationScheduleId(testReplicationScheduleOciCloudMigrationsReplicationSchedule.id())
+     *             .replicationScheduleId(testReplicationScheduleOciCloudMigrationsReplicationSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -2204,7 +2204,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationSchedule = CloudMigrationsFunctions.getReplicationSchedule(GetReplicationScheduleArgs.builder()
-     *             .replicationScheduleId(testReplicationScheduleOciCloudMigrationsReplicationSchedule.id())
+     *             .replicationScheduleId(testReplicationScheduleOciCloudMigrationsReplicationSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -2246,7 +2246,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationSchedule = CloudMigrationsFunctions.getReplicationSchedule(GetReplicationScheduleArgs.builder()
-     *             .replicationScheduleId(testReplicationScheduleOciCloudMigrationsReplicationSchedule.id())
+     *             .replicationScheduleId(testReplicationScheduleOciCloudMigrationsReplicationSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -2288,7 +2288,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testReplicationSchedule = CloudMigrationsFunctions.getReplicationSchedule(GetReplicationScheduleArgs.builder()
-     *             .replicationScheduleId(testReplicationScheduleOciCloudMigrationsReplicationSchedule.id())
+     *             .replicationScheduleId(testReplicationScheduleOciCloudMigrationsReplicationSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -2332,7 +2332,7 @@ public final class CloudMigrationsFunctions {
      *         final var testReplicationSchedules = CloudMigrationsFunctions.getReplicationSchedules(GetReplicationSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(replicationScheduleDisplayName)
-     *             .replicationScheduleId(testReplicationSchedule.id())
+     *             .replicationScheduleId(testReplicationSchedule.get("id"))
      *             .state(replicationScheduleState)
      *             .build());
      * 
@@ -2377,7 +2377,7 @@ public final class CloudMigrationsFunctions {
      *         final var testReplicationSchedules = CloudMigrationsFunctions.getReplicationSchedules(GetReplicationSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(replicationScheduleDisplayName)
-     *             .replicationScheduleId(testReplicationSchedule.id())
+     *             .replicationScheduleId(testReplicationSchedule.get("id"))
      *             .state(replicationScheduleState)
      *             .build());
      * 
@@ -2422,7 +2422,7 @@ public final class CloudMigrationsFunctions {
      *         final var testReplicationSchedules = CloudMigrationsFunctions.getReplicationSchedules(GetReplicationSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(replicationScheduleDisplayName)
-     *             .replicationScheduleId(testReplicationSchedule.id())
+     *             .replicationScheduleId(testReplicationSchedule.get("id"))
      *             .state(replicationScheduleState)
      *             .build());
      * 
@@ -2467,7 +2467,7 @@ public final class CloudMigrationsFunctions {
      *         final var testReplicationSchedules = CloudMigrationsFunctions.getReplicationSchedules(GetReplicationSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(replicationScheduleDisplayName)
-     *             .replicationScheduleId(testReplicationSchedule.id())
+     *             .replicationScheduleId(testReplicationSchedule.get("id"))
      *             .state(replicationScheduleState)
      *             .build());
      * 
@@ -2512,7 +2512,7 @@ public final class CloudMigrationsFunctions {
      *         final var testReplicationSchedules = CloudMigrationsFunctions.getReplicationSchedules(GetReplicationSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(replicationScheduleDisplayName)
-     *             .replicationScheduleId(testReplicationSchedule.id())
+     *             .replicationScheduleId(testReplicationSchedule.get("id"))
      *             .state(replicationScheduleState)
      *             .build());
      * 
@@ -2557,7 +2557,7 @@ public final class CloudMigrationsFunctions {
      *         final var testReplicationSchedules = CloudMigrationsFunctions.getReplicationSchedules(GetReplicationSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(replicationScheduleDisplayName)
-     *             .replicationScheduleId(testReplicationSchedule.id())
+     *             .replicationScheduleId(testReplicationSchedule.get("id"))
      *             .state(replicationScheduleState)
      *             .build());
      * 
@@ -2602,7 +2602,7 @@ public final class CloudMigrationsFunctions {
      *         final var testReplicationSchedules = CloudMigrationsFunctions.getReplicationSchedules(GetReplicationSchedulesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(replicationScheduleDisplayName)
-     *             .replicationScheduleId(testReplicationSchedule.id())
+     *             .replicationScheduleId(testReplicationSchedule.get("id"))
      *             .state(replicationScheduleState)
      *             .build());
      * 
@@ -2645,7 +2645,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAsset = CloudMigrationsFunctions.getTargetAsset(GetTargetAssetArgs.builder()
-     *             .targetAssetId(testTargetAssetOciCloudMigrationsTargetAsset.id())
+     *             .targetAssetId(testTargetAssetOciCloudMigrationsTargetAsset.get("id"))
      *             .build());
      * 
      *     }
@@ -2687,7 +2687,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAsset = CloudMigrationsFunctions.getTargetAsset(GetTargetAssetArgs.builder()
-     *             .targetAssetId(testTargetAssetOciCloudMigrationsTargetAsset.id())
+     *             .targetAssetId(testTargetAssetOciCloudMigrationsTargetAsset.get("id"))
      *             .build());
      * 
      *     }
@@ -2729,7 +2729,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAsset = CloudMigrationsFunctions.getTargetAsset(GetTargetAssetArgs.builder()
-     *             .targetAssetId(testTargetAssetOciCloudMigrationsTargetAsset.id())
+     *             .targetAssetId(testTargetAssetOciCloudMigrationsTargetAsset.get("id"))
      *             .build());
      * 
      *     }
@@ -2771,7 +2771,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAsset = CloudMigrationsFunctions.getTargetAsset(GetTargetAssetArgs.builder()
-     *             .targetAssetId(testTargetAssetOciCloudMigrationsTargetAsset.id())
+     *             .targetAssetId(testTargetAssetOciCloudMigrationsTargetAsset.get("id"))
      *             .build());
      * 
      *     }
@@ -2813,7 +2813,7 @@ public final class CloudMigrationsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTargetAsset = CloudMigrationsFunctions.getTargetAsset(GetTargetAssetArgs.builder()
-     *             .targetAssetId(testTargetAssetOciCloudMigrationsTargetAsset.id())
+     *             .targetAssetId(testTargetAssetOciCloudMigrationsTargetAsset.get("id"))
      *             .build());
      * 
      *     }
@@ -2856,9 +2856,9 @@ public final class CloudMigrationsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testTargetAssets = CloudMigrationsFunctions.getTargetAssets(GetTargetAssetsArgs.builder()
      *             .displayName(targetAssetDisplayName)
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .state(targetAssetState)
-     *             .targetAssetId(testTargetAsset.id())
+     *             .targetAssetId(testTargetAsset.get("id"))
      *             .build());
      * 
      *     }
@@ -2901,9 +2901,9 @@ public final class CloudMigrationsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testTargetAssets = CloudMigrationsFunctions.getTargetAssets(GetTargetAssetsArgs.builder()
      *             .displayName(targetAssetDisplayName)
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .state(targetAssetState)
-     *             .targetAssetId(testTargetAsset.id())
+     *             .targetAssetId(testTargetAsset.get("id"))
      *             .build());
      * 
      *     }
@@ -2946,9 +2946,9 @@ public final class CloudMigrationsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testTargetAssets = CloudMigrationsFunctions.getTargetAssets(GetTargetAssetsArgs.builder()
      *             .displayName(targetAssetDisplayName)
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .state(targetAssetState)
-     *             .targetAssetId(testTargetAsset.id())
+     *             .targetAssetId(testTargetAsset.get("id"))
      *             .build());
      * 
      *     }
@@ -2991,9 +2991,9 @@ public final class CloudMigrationsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testTargetAssets = CloudMigrationsFunctions.getTargetAssets(GetTargetAssetsArgs.builder()
      *             .displayName(targetAssetDisplayName)
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .state(targetAssetState)
-     *             .targetAssetId(testTargetAsset.id())
+     *             .targetAssetId(testTargetAsset.get("id"))
      *             .build());
      * 
      *     }
@@ -3036,9 +3036,9 @@ public final class CloudMigrationsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testTargetAssets = CloudMigrationsFunctions.getTargetAssets(GetTargetAssetsArgs.builder()
      *             .displayName(targetAssetDisplayName)
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .state(targetAssetState)
-     *             .targetAssetId(testTargetAsset.id())
+     *             .targetAssetId(testTargetAsset.get("id"))
      *             .build());
      * 
      *     }
@@ -3081,9 +3081,9 @@ public final class CloudMigrationsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testTargetAssets = CloudMigrationsFunctions.getTargetAssets(GetTargetAssetsArgs.builder()
      *             .displayName(targetAssetDisplayName)
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .state(targetAssetState)
-     *             .targetAssetId(testTargetAsset.id())
+     *             .targetAssetId(testTargetAsset.get("id"))
      *             .build());
      * 
      *     }
@@ -3126,9 +3126,9 @@ public final class CloudMigrationsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testTargetAssets = CloudMigrationsFunctions.getTargetAssets(GetTargetAssetsArgs.builder()
      *             .displayName(targetAssetDisplayName)
-     *             .migrationPlanId(testMigrationPlan.id())
+     *             .migrationPlanId(testMigrationPlan.get("id"))
      *             .state(targetAssetState)
-     *             .targetAssetId(testTargetAsset.id())
+     *             .targetAssetId(testTargetAsset.get("id"))
      *             .build());
      * 
      *     }

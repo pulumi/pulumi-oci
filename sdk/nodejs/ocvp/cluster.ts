@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  *
  * const testCluster = new oci.ocvp.Cluster("test_cluster", {
  *     computeAvailabilityDomain: clusterComputeAvailabilityDomain,
- *     esxiHostsCount: Number(clusterEsxiHostsCount),
+ *     esxiHostsCount: clusterEsxiHostsCount,
  *     networkConfiguration: {
  *         nsxEdgeVtepVlanId: testVlan.id,
  *         nsxVtepVlanId: testVlan.id,
@@ -66,7 +66,7 @@ import * as utilities from "../utilities";
  *     initialHostShapeName: testShape.name,
  *     initialVcfByolAllocationId: testByolAllocation.id,
  *     instanceDisplayNamePrefix: clusterInstanceDisplayNamePrefix,
- *     isShieldedInstanceEnabled: clusterIsShieldedInstanceEnabled === "true",
+ *     isShieldedInstanceEnabled: clusterIsShieldedInstanceEnabled,
  *     vmwareSoftwareVersion: clusterVmwareSoftwareVersion,
  *     workloadNetworkCidr: clusterWorkloadNetworkCidr,
  * });

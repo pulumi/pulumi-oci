@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testVmInstance = new oci.oci.DataccVmInstance("test_vm_instance", {
  *     compartmentId: compartmentId,
- *     cpusEnabled: Number(vmInstanceCpusEnabled),
+ *     cpusEnabled: vmInstanceCpusEnabled,
  *     infrastructureId: testInfrastructure.id,
  *     sshPublicKeys: vmInstanceSshPublicKeys,
  *     bootStorageSizeInGbs: vmInstanceBootStorageSizeInGbs,

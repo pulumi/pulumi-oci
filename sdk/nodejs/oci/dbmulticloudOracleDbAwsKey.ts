@@ -32,7 +32,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isAwsKeyEnabled: oracleDbAwsKeyIsAwsKeyEnabled === "true",
+ *     isAwsKeyEnabled: oracleDbAwsKeyIsAwsKeyEnabled,
  *     location: oracleDbAwsKeyLocation,
  *     properties: oracleDbAwsKeyProperties,
  *     type: oracleDbAwsKeyType,

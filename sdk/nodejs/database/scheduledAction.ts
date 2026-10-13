@@ -24,8 +24,8 @@ import * as utilities from "../utilities";
  *     schedulingWindowId: testSchedulingWindow.id,
  *     actionMembers: [{
  *         memberId: testMember.id,
- *         memberOrder: Number(scheduledActionActionMembersMemberOrder),
- *         estimatedTimeInMins: Number(scheduledActionActionMembersEstimatedTimeInMins),
+ *         memberOrder: scheduledActionActionMembersMemberOrder,
+ *         estimatedTimeInMins: scheduledActionActionMembersEstimatedTimeInMins,
  *     }],
  *     actionParams: scheduledActionActionParams,
  *     definedTags: scheduledActionDefinedTags,

@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testOauthClientCertificate = new DomainsOauthClientCertificate("testOauthClientCertificate", DomainsOauthClientCertificateArgs.builder()
  *             .certificateAlias(oauthClientCertificateCertificateAlias)
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:OAuthClientCertificate")
  *             .x509base64certificate(oauthClientCertificateX509base64certificate)
  *             .authorization(oauthClientCertificateAuthorization)

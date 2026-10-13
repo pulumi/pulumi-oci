@@ -70,7 +70,7 @@ public final class WafFunctions {
      *             .displayName(webAppFirewallDisplayName)
      *             .id(webAppFirewallId)
      *             .states(webAppFirewallState)
-     *             .webAppFirewallPolicyId(testWebAppFirewallPolicy.id())
+     *             .webAppFirewallPolicyId(testWebAppFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -116,7 +116,7 @@ public final class WafFunctions {
      *             .displayName(webAppFirewallDisplayName)
      *             .id(webAppFirewallId)
      *             .states(webAppFirewallState)
-     *             .webAppFirewallPolicyId(testWebAppFirewallPolicy.id())
+     *             .webAppFirewallPolicyId(testWebAppFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -162,7 +162,7 @@ public final class WafFunctions {
      *             .displayName(webAppFirewallDisplayName)
      *             .id(webAppFirewallId)
      *             .states(webAppFirewallState)
-     *             .webAppFirewallPolicyId(testWebAppFirewallPolicy.id())
+     *             .webAppFirewallPolicyId(testWebAppFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -208,7 +208,7 @@ public final class WafFunctions {
      *             .displayName(webAppFirewallDisplayName)
      *             .id(webAppFirewallId)
      *             .states(webAppFirewallState)
-     *             .webAppFirewallPolicyId(testWebAppFirewallPolicy.id())
+     *             .webAppFirewallPolicyId(testWebAppFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -254,7 +254,7 @@ public final class WafFunctions {
      *             .displayName(webAppFirewallDisplayName)
      *             .id(webAppFirewallId)
      *             .states(webAppFirewallState)
-     *             .webAppFirewallPolicyId(testWebAppFirewallPolicy.id())
+     *             .webAppFirewallPolicyId(testWebAppFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -296,7 +296,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkAddressList = WafFunctions.getNetworkAddressList(GetNetworkAddressListArgs.builder()
-     *             .networkAddressListId(testNetworkAddressListOciWafNetworkAddressList.id())
+     *             .networkAddressListId(testNetworkAddressListOciWafNetworkAddressList.get("id"))
      *             .build());
      * 
      *     }
@@ -338,7 +338,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkAddressList = WafFunctions.getNetworkAddressList(GetNetworkAddressListArgs.builder()
-     *             .networkAddressListId(testNetworkAddressListOciWafNetworkAddressList.id())
+     *             .networkAddressListId(testNetworkAddressListOciWafNetworkAddressList.get("id"))
      *             .build());
      * 
      *     }
@@ -380,7 +380,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkAddressList = WafFunctions.getNetworkAddressList(GetNetworkAddressListArgs.builder()
-     *             .networkAddressListId(testNetworkAddressListOciWafNetworkAddressList.id())
+     *             .networkAddressListId(testNetworkAddressListOciWafNetworkAddressList.get("id"))
      *             .build());
      * 
      *     }
@@ -422,7 +422,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkAddressList = WafFunctions.getNetworkAddressList(GetNetworkAddressListArgs.builder()
-     *             .networkAddressListId(testNetworkAddressListOciWafNetworkAddressList.id())
+     *             .networkAddressListId(testNetworkAddressListOciWafNetworkAddressList.get("id"))
      *             .build());
      * 
      *     }
@@ -464,7 +464,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNetworkAddressList = WafFunctions.getNetworkAddressList(GetNetworkAddressListArgs.builder()
-     *             .networkAddressListId(testNetworkAddressListOciWafNetworkAddressList.id())
+     *             .networkAddressListId(testNetworkAddressListOciWafNetworkAddressList.get("id"))
      *             .build());
      * 
      *     }
@@ -1186,7 +1186,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewall = WafFunctions.getWebAppFirewall(GetWebAppFirewallArgs.builder()
-     *             .webAppFirewallId(testWebAppFirewallOciWafWebAppFirewall.id())
+     *             .webAppFirewallId(testWebAppFirewallOciWafWebAppFirewall.get("id"))
      *             .build());
      * 
      *     }
@@ -1228,7 +1228,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewall = WafFunctions.getWebAppFirewall(GetWebAppFirewallArgs.builder()
-     *             .webAppFirewallId(testWebAppFirewallOciWafWebAppFirewall.id())
+     *             .webAppFirewallId(testWebAppFirewallOciWafWebAppFirewall.get("id"))
      *             .build());
      * 
      *     }
@@ -1270,7 +1270,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewall = WafFunctions.getWebAppFirewall(GetWebAppFirewallArgs.builder()
-     *             .webAppFirewallId(testWebAppFirewallOciWafWebAppFirewall.id())
+     *             .webAppFirewallId(testWebAppFirewallOciWafWebAppFirewall.get("id"))
      *             .build());
      * 
      *     }
@@ -1312,7 +1312,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewall = WafFunctions.getWebAppFirewall(GetWebAppFirewallArgs.builder()
-     *             .webAppFirewallId(testWebAppFirewallOciWafWebAppFirewall.id())
+     *             .webAppFirewallId(testWebAppFirewallOciWafWebAppFirewall.get("id"))
      *             .build());
      * 
      *     }
@@ -1354,7 +1354,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewall = WafFunctions.getWebAppFirewall(GetWebAppFirewallArgs.builder()
-     *             .webAppFirewallId(testWebAppFirewallOciWafWebAppFirewall.id())
+     *             .webAppFirewallId(testWebAppFirewallOciWafWebAppFirewall.get("id"))
      *             .build());
      * 
      *     }
@@ -1621,7 +1621,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewallPolicy = WafFunctions.getWebAppFirewallPolicy(GetWebAppFirewallPolicyArgs.builder()
-     *             .webAppFirewallPolicyId(testWebAppFirewallPolicyOciWafWebAppFirewallPolicy.id())
+     *             .webAppFirewallPolicyId(testWebAppFirewallPolicyOciWafWebAppFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1663,7 +1663,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewallPolicy = WafFunctions.getWebAppFirewallPolicy(GetWebAppFirewallPolicyArgs.builder()
-     *             .webAppFirewallPolicyId(testWebAppFirewallPolicyOciWafWebAppFirewallPolicy.id())
+     *             .webAppFirewallPolicyId(testWebAppFirewallPolicyOciWafWebAppFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1705,7 +1705,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewallPolicy = WafFunctions.getWebAppFirewallPolicy(GetWebAppFirewallPolicyArgs.builder()
-     *             .webAppFirewallPolicyId(testWebAppFirewallPolicyOciWafWebAppFirewallPolicy.id())
+     *             .webAppFirewallPolicyId(testWebAppFirewallPolicyOciWafWebAppFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1747,7 +1747,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewallPolicy = WafFunctions.getWebAppFirewallPolicy(GetWebAppFirewallPolicyArgs.builder()
-     *             .webAppFirewallPolicyId(testWebAppFirewallPolicyOciWafWebAppFirewallPolicy.id())
+     *             .webAppFirewallPolicyId(testWebAppFirewallPolicyOciWafWebAppFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -1789,7 +1789,7 @@ public final class WafFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWebAppFirewallPolicy = WafFunctions.getWebAppFirewallPolicy(GetWebAppFirewallPolicyArgs.builder()
-     *             .webAppFirewallPolicyId(testWebAppFirewallPolicyOciWafWebAppFirewallPolicy.id())
+     *             .webAppFirewallPolicyId(testWebAppFirewallPolicyOciWafWebAppFirewallPolicy.get("id"))
      *             .build());
      * 
      *     }

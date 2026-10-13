@@ -95,7 +95,7 @@ def get_top_utilized_product_licenses(compartment_id: Optional[_builtins.str] = 
     import pulumi_oci as oci
 
     test_top_utilized_product_licenses = oci.licensemanager.get_top_utilized_product_licenses(compartment_id=compartment_id,
-        is_compartment_id_in_subtree=top_utilized_product_license_is_compartment_id_in_subtree == "true")
+        is_compartment_id_in_subtree=top_utilized_product_license_is_compartment_id_in_subtree)
     ```
 
 
@@ -128,7 +128,7 @@ def get_top_utilized_product_licenses_output(compartment_id: pulumi.Input[Option
     import pulumi_oci as oci
 
     test_top_utilized_product_licenses = oci.licensemanager.get_top_utilized_product_licenses(compartment_id=compartment_id,
-        is_compartment_id_in_subtree=top_utilized_product_license_is_compartment_id_in_subtree == "true")
+        is_compartment_id_in_subtree=top_utilized_product_license_is_compartment_id_in_subtree)
     ```
 
 

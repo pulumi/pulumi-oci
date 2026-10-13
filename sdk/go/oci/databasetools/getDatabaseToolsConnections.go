@@ -33,10 +33,10 @@ import (
 //				CompartmentId:             compartmentId,
 //				DisplayName:               pulumi.StringRef(databaseToolsConnectionDisplayName),
 //				RelatedResourceIdentifier: pulumi.StringRef(databaseToolsConnectionRelatedResourceIdentifier),
-//				RuntimeIdentities:         pulumi.ToArray(databaseToolsConnectionRuntimeIdentity),
-//				RuntimeSupports:           pulumi.ToArray(databaseToolsConnectionRuntimeSupport),
+//				RuntimeIdentities:         databaseToolsConnectionRuntimeIdentity,
+//				RuntimeSupports:           databaseToolsConnectionRuntimeSupport,
 //				State:                     pulumi.StringRef(databaseToolsConnectionState),
-//				Types:                     pulumi.ToArray(databaseToolsConnectionType),
+//				Types:                     databaseToolsConnectionType,
 //			}, nil)
 //			if err != nil {
 //				return err

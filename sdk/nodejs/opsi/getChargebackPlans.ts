@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testChargebackPlans = oci.opsi.getChargebackPlans({
  *     chargebackplanId: testChargebackplan.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: chargebackPlanCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: chargebackPlanCompartmentIdInSubtree,
  * });
  * ```
  */
@@ -88,7 +88,7 @@ export interface GetChargebackPlansResult {
  * const testChargebackPlans = oci.opsi.getChargebackPlans({
  *     chargebackplanId: testChargebackplan.id,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: chargebackPlanCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: chargebackPlanCompartmentIdInSubtree,
  * });
  * ```
  */

@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testDatabaseToolsConnectionCredentialExecuteGrantee = new RuntimeDatabaseToolsConnectionCredentialExecuteGrantee("testDatabaseToolsConnectionCredentialExecuteGrantee", RuntimeDatabaseToolsConnectionCredentialExecuteGranteeArgs.builder()
  *             .credentialKey(databaseToolsConnectionCredentialExecuteGranteeCredentialKey)
- *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+ *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
  *             .key(databaseToolsConnectionCredentialExecuteGranteeKey)
  *             .build());
  * 

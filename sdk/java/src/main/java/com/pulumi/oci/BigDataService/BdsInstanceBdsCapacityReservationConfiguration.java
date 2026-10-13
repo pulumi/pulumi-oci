@@ -48,8 +48,8 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBdsInstanceBdsCapacityReservationConfiguration = new BdsInstanceBdsCapacityReservationConfiguration("testBdsInstanceBdsCapacityReservationConfiguration", BdsInstanceBdsCapacityReservationConfigurationArgs.builder()
- *             .bdsCapacityReservationId(testBdsCapacityReservation.id())
- *             .bdsInstanceId(testBdsInstance.id())
+ *             .bdsCapacityReservationId(testBdsCapacityReservation.get("id"))
+ *             .bdsInstanceId(testBdsInstance.get("id"))
  *             .displayName(bdsInstanceBdsCapacityReservationConfigurationDisplayName)
  *             .build());
  * 

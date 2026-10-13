@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testOnPremConnectors = oci.datasafe.getOnpremConnectors({
  *     compartmentId: compartmentId,
  *     accessLevel: onPremConnectorAccessLevel,
- *     compartmentIdInSubtree: onPremConnectorCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: onPremConnectorCompartmentIdInSubtree,
  *     displayName: onPremConnectorDisplayName,
  *     onPremConnectorId: testOnPremConnector.id,
  *     state: onPremConnectorState,
@@ -114,7 +114,7 @@ export interface GetOnpremConnectorsResult {
  * const testOnPremConnectors = oci.datasafe.getOnpremConnectors({
  *     compartmentId: compartmentId,
  *     accessLevel: onPremConnectorAccessLevel,
- *     compartmentIdInSubtree: onPremConnectorCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: onPremConnectorCompartmentIdInSubtree,
  *     displayName: onPremConnectorDisplayName,
  *     onPremConnectorId: testOnPremConnector.id,
  *     state: onPremConnectorState,

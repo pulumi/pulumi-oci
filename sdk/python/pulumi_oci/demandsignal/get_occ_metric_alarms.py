@@ -126,7 +126,7 @@ def get_occ_metric_alarms(compartment_id: Optional[_builtins.str] = None,
 
     test_occ_metric_alarms = oci.demandsignal.get_occ_metric_alarms(compartment_id=compartment_id,
         display_name=occ_metric_alarm_display_name,
-        is_active=occ_metric_alarm_is_active == "true")
+        is_active=occ_metric_alarm_is_active)
     ```
 
 
@@ -167,7 +167,7 @@ def get_occ_metric_alarms_output(compartment_id: pulumi.Input[Optional[_builtins
 
     test_occ_metric_alarms = oci.demandsignal.get_occ_metric_alarms(compartment_id=compartment_id,
         display_name=occ_metric_alarm_display_name,
-        is_active=occ_metric_alarm_is_active == "true")
+        is_active=occ_metric_alarm_is_active)
     ```
 
 

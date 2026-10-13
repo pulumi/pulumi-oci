@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  *
  * const testContainerConfiguration = new oci.artifacts.ContainerConfiguration("test_container_configuration", {
  *     compartmentId: compartmentId,
- *     isRepositoryCreatedOnFirstPush: containerConfigurationIsRepositoryCreatedOnFirstPush === "true",
+ *     isRepositoryCreatedOnFirstPush: containerConfigurationIsRepositoryCreatedOnFirstPush,
  * });
  * ```
  *

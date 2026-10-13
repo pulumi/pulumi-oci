@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *     contentEncoding: objectContentEncoding,
  *     contentLanguage: objectContentLanguage,
  *     contentType: objectContentType,
- *     deleteAllObjectVersions: objectDeleteAllObjectVersions === "true",
+ *     deleteAllObjectVersions: objectDeleteAllObjectVersions,
  *     metadata: objectMetadata,
  *     storageTier: objectStorageTier,
  *     opcSseKmsKeyId: objectOpcSseKmsKeyId,

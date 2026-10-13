@@ -167,7 +167,7 @@ def get_adhoc_queries(access_level: Optional[_builtins.str] = None,
     test_adhoc_queries = oci.cloudguard.get_adhoc_queries(compartment_id=compartment_id,
         access_level=adhoc_query_access_level,
         adhoc_query_status=adhoc_query_adhoc_query_status,
-        compartment_id_in_subtree=adhoc_query_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=adhoc_query_compartment_id_in_subtree,
         time_ended_filter_query_param=adhoc_query_time_ended_filter_query_param,
         time_started_filter_query_param=adhoc_query_time_started_filter_query_param)
     ```
@@ -239,7 +239,7 @@ def get_adhoc_queries_output(access_level: pulumi.Input[Optional[Optional[_built
     test_adhoc_queries = oci.cloudguard.get_adhoc_queries(compartment_id=compartment_id,
         access_level=adhoc_query_access_level,
         adhoc_query_status=adhoc_query_adhoc_query_status,
-        compartment_id_in_subtree=adhoc_query_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=adhoc_query_compartment_id_in_subtree,
         time_ended_filter_query_param=adhoc_query_time_ended_filter_query_param,
         time_started_filter_query_param=adhoc_query_time_started_filter_query_param)
     ```

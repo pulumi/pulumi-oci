@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *     resourceFilters: [{
  *         attribute: scheduleResourceFiltersAttribute,
  *         condition: scheduleResourceFiltersCondition,
- *         shouldIncludeChildCompartments: scheduleResourceFiltersShouldIncludeChildCompartments === "true",
+ *         shouldIncludeChildCompartments: scheduleResourceFiltersShouldIncludeChildCompartments,
  *         values: [{
  *             namespace: scheduleResourceFiltersValueNamespace,
  *             tagKey: scheduleResourceFiltersValueTagKey,

@@ -215,13 +215,13 @@ def get_domains_auth_tokens(attribute_sets: Optional[Sequence[_builtins.str]] = 
     import pulumi_oci as oci
 
     test_auth_tokens = oci.identity.get_domains_auth_tokens(idcs_endpoint=test_domain["url"],
-        auth_token_count=int(auth_token_auth_token_count),
+        auth_token_count=auth_token_auth_token_count,
         auth_token_filter=auth_token_auth_token_filter,
         attribute_sets=[],
         attributes="",
         authorization=auth_token_authorization,
         resource_type_schema_version=auth_token_resource_type_schema_version,
-        start_index=int(auth_token_start_index))
+        start_index=auth_token_start_index)
     ```
 
 
@@ -290,13 +290,13 @@ def get_domains_auth_tokens_output(attribute_sets: pulumi.Input[Optional[Optiona
     import pulumi_oci as oci
 
     test_auth_tokens = oci.identity.get_domains_auth_tokens(idcs_endpoint=test_domain["url"],
-        auth_token_count=int(auth_token_auth_token_count),
+        auth_token_count=auth_token_auth_token_count,
         auth_token_filter=auth_token_auth_token_filter,
         attribute_sets=[],
         attributes="",
         authorization=auth_token_authorization,
         resource_type_schema_version=auth_token_resource_type_schema_version,
-        start_index=int(auth_token_start_index))
+        start_index=auth_token_start_index)
     ```
 
 

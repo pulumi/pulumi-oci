@@ -48,7 +48,7 @@ public final class OpaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpaInstance = OpaFunctions.getOpaInstance(GetOpaInstanceArgs.builder()
-     *             .opaInstanceId(testOpaInstanceOciOpaOpaInstance.id())
+     *             .opaInstanceId(testOpaInstanceOciOpaOpaInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -90,7 +90,7 @@ public final class OpaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpaInstance = OpaFunctions.getOpaInstance(GetOpaInstanceArgs.builder()
-     *             .opaInstanceId(testOpaInstanceOciOpaOpaInstance.id())
+     *             .opaInstanceId(testOpaInstanceOciOpaOpaInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -132,7 +132,7 @@ public final class OpaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpaInstance = OpaFunctions.getOpaInstance(GetOpaInstanceArgs.builder()
-     *             .opaInstanceId(testOpaInstanceOciOpaOpaInstance.id())
+     *             .opaInstanceId(testOpaInstanceOciOpaOpaInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -174,7 +174,7 @@ public final class OpaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpaInstance = OpaFunctions.getOpaInstance(GetOpaInstanceArgs.builder()
-     *             .opaInstanceId(testOpaInstanceOciOpaOpaInstance.id())
+     *             .opaInstanceId(testOpaInstanceOciOpaOpaInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -216,7 +216,7 @@ public final class OpaFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpaInstance = OpaFunctions.getOpaInstance(GetOpaInstanceArgs.builder()
-     *             .opaInstanceId(testOpaInstanceOciOpaOpaInstance.id())
+     *             .opaInstanceId(testOpaInstanceOciOpaOpaInstance.get("id"))
      *             .build());
      * 
      *     }

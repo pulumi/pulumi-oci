@@ -49,7 +49,7 @@ public final class GenericArtifactsContentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testArtifactByPath = GenericArtifactsContentFunctions.getArtifactByPath(GetArtifactByPathArgs.builder()
      *             .artifactPath(artifactByPathArtifactPath)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .version(artifactByPathVersion)
      *             .build());
      * 
@@ -93,7 +93,7 @@ public final class GenericArtifactsContentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testArtifactByPath = GenericArtifactsContentFunctions.getArtifactByPath(GetArtifactByPathArgs.builder()
      *             .artifactPath(artifactByPathArtifactPath)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .version(artifactByPathVersion)
      *             .build());
      * 
@@ -137,7 +137,7 @@ public final class GenericArtifactsContentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testArtifactByPath = GenericArtifactsContentFunctions.getArtifactByPath(GetArtifactByPathArgs.builder()
      *             .artifactPath(artifactByPathArtifactPath)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .version(artifactByPathVersion)
      *             .build());
      * 
@@ -181,7 +181,7 @@ public final class GenericArtifactsContentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testArtifactByPath = GenericArtifactsContentFunctions.getArtifactByPath(GetArtifactByPathArgs.builder()
      *             .artifactPath(artifactByPathArtifactPath)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .version(artifactByPathVersion)
      *             .build());
      * 
@@ -225,7 +225,7 @@ public final class GenericArtifactsContentFunctions {
      *     public static void stack(Context ctx) {
      *         final var testArtifactByPath = GenericArtifactsContentFunctions.getArtifactByPath(GetArtifactByPathArgs.builder()
      *             .artifactPath(artifactByPathArtifactPath)
-     *             .repositoryId(testRepository.id())
+     *             .repositoryId(testRepository.get("id"))
      *             .version(artifactByPathVersion)
      *             .build());
      * 
@@ -268,7 +268,7 @@ public final class GenericArtifactsContentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGenericArtifactsContent = GenericArtifactsContentFunctions.getGenericArtifactsContent(GetGenericArtifactsContentArgs.builder()
-     *             .artifactId(testArtifact.id())
+     *             .artifactId(testArtifact.get("id"))
      *             .build());
      * 
      *     }
@@ -310,7 +310,7 @@ public final class GenericArtifactsContentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGenericArtifactsContent = GenericArtifactsContentFunctions.getGenericArtifactsContent(GetGenericArtifactsContentArgs.builder()
-     *             .artifactId(testArtifact.id())
+     *             .artifactId(testArtifact.get("id"))
      *             .build());
      * 
      *     }
@@ -352,7 +352,7 @@ public final class GenericArtifactsContentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGenericArtifactsContent = GenericArtifactsContentFunctions.getGenericArtifactsContent(GetGenericArtifactsContentArgs.builder()
-     *             .artifactId(testArtifact.id())
+     *             .artifactId(testArtifact.get("id"))
      *             .build());
      * 
      *     }
@@ -394,7 +394,7 @@ public final class GenericArtifactsContentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGenericArtifactsContent = GenericArtifactsContentFunctions.getGenericArtifactsContent(GetGenericArtifactsContentArgs.builder()
-     *             .artifactId(testArtifact.id())
+     *             .artifactId(testArtifact.get("id"))
      *             .build());
      * 
      *     }
@@ -436,7 +436,7 @@ public final class GenericArtifactsContentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGenericArtifactsContent = GenericArtifactsContentFunctions.getGenericArtifactsContent(GetGenericArtifactsContentArgs.builder()
-     *             .artifactId(testArtifact.id())
+     *             .artifactId(testArtifact.get("id"))
      *             .build());
      * 
      *     }

@@ -55,7 +55,7 @@ public final class ComputeCloudFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCccInfrastructure = ComputeCloudFunctions.getAtCustomerCccInfrastructure(GetAtCustomerCccInfrastructureArgs.builder()
-     *             .cccInfrastructureId(testCccInfrastructureOciComputeCloudAtCustomerCccInfrastructure.id())
+     *             .cccInfrastructureId(testCccInfrastructureOciComputeCloudAtCustomerCccInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -98,7 +98,7 @@ public final class ComputeCloudFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCccInfrastructure = ComputeCloudFunctions.getAtCustomerCccInfrastructure(GetAtCustomerCccInfrastructureArgs.builder()
-     *             .cccInfrastructureId(testCccInfrastructureOciComputeCloudAtCustomerCccInfrastructure.id())
+     *             .cccInfrastructureId(testCccInfrastructureOciComputeCloudAtCustomerCccInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -141,7 +141,7 @@ public final class ComputeCloudFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCccInfrastructure = ComputeCloudFunctions.getAtCustomerCccInfrastructure(GetAtCustomerCccInfrastructureArgs.builder()
-     *             .cccInfrastructureId(testCccInfrastructureOciComputeCloudAtCustomerCccInfrastructure.id())
+     *             .cccInfrastructureId(testCccInfrastructureOciComputeCloudAtCustomerCccInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -184,7 +184,7 @@ public final class ComputeCloudFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCccInfrastructure = ComputeCloudFunctions.getAtCustomerCccInfrastructure(GetAtCustomerCccInfrastructureArgs.builder()
-     *             .cccInfrastructureId(testCccInfrastructureOciComputeCloudAtCustomerCccInfrastructure.id())
+     *             .cccInfrastructureId(testCccInfrastructureOciComputeCloudAtCustomerCccInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -227,7 +227,7 @@ public final class ComputeCloudFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCccInfrastructure = ComputeCloudFunctions.getAtCustomerCccInfrastructure(GetAtCustomerCccInfrastructureArgs.builder()
-     *             .cccInfrastructureId(testCccInfrastructureOciComputeCloudAtCustomerCccInfrastructure.id())
+     *             .cccInfrastructureId(testCccInfrastructureOciComputeCloudAtCustomerCccInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -270,7 +270,7 @@ public final class ComputeCloudFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCccInfrastructures = ComputeCloudFunctions.getAtCustomerCccInfrastructures(GetAtCustomerCccInfrastructuresArgs.builder()
      *             .accessLevel(cccInfrastructureAccessLevel)
-     *             .cccInfrastructureId(testCccInfrastructure.id())
+     *             .cccInfrastructureId(testCccInfrastructure.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(cccInfrastructureCompartmentIdInSubtree)
      *             .displayName(cccInfrastructureDisplayName)
@@ -318,7 +318,7 @@ public final class ComputeCloudFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCccInfrastructures = ComputeCloudFunctions.getAtCustomerCccInfrastructures(GetAtCustomerCccInfrastructuresArgs.builder()
      *             .accessLevel(cccInfrastructureAccessLevel)
-     *             .cccInfrastructureId(testCccInfrastructure.id())
+     *             .cccInfrastructureId(testCccInfrastructure.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(cccInfrastructureCompartmentIdInSubtree)
      *             .displayName(cccInfrastructureDisplayName)
@@ -366,7 +366,7 @@ public final class ComputeCloudFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCccInfrastructures = ComputeCloudFunctions.getAtCustomerCccInfrastructures(GetAtCustomerCccInfrastructuresArgs.builder()
      *             .accessLevel(cccInfrastructureAccessLevel)
-     *             .cccInfrastructureId(testCccInfrastructure.id())
+     *             .cccInfrastructureId(testCccInfrastructure.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(cccInfrastructureCompartmentIdInSubtree)
      *             .displayName(cccInfrastructureDisplayName)
@@ -414,7 +414,7 @@ public final class ComputeCloudFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCccInfrastructures = ComputeCloudFunctions.getAtCustomerCccInfrastructures(GetAtCustomerCccInfrastructuresArgs.builder()
      *             .accessLevel(cccInfrastructureAccessLevel)
-     *             .cccInfrastructureId(testCccInfrastructure.id())
+     *             .cccInfrastructureId(testCccInfrastructure.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(cccInfrastructureCompartmentIdInSubtree)
      *             .displayName(cccInfrastructureDisplayName)
@@ -462,7 +462,7 @@ public final class ComputeCloudFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCccInfrastructures = ComputeCloudFunctions.getAtCustomerCccInfrastructures(GetAtCustomerCccInfrastructuresArgs.builder()
      *             .accessLevel(cccInfrastructureAccessLevel)
-     *             .cccInfrastructureId(testCccInfrastructure.id())
+     *             .cccInfrastructureId(testCccInfrastructure.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(cccInfrastructureCompartmentIdInSubtree)
      *             .displayName(cccInfrastructureDisplayName)
@@ -510,7 +510,7 @@ public final class ComputeCloudFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCccInfrastructures = ComputeCloudFunctions.getAtCustomerCccInfrastructures(GetAtCustomerCccInfrastructuresArgs.builder()
      *             .accessLevel(cccInfrastructureAccessLevel)
-     *             .cccInfrastructureId(testCccInfrastructure.id())
+     *             .cccInfrastructureId(testCccInfrastructure.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(cccInfrastructureCompartmentIdInSubtree)
      *             .displayName(cccInfrastructureDisplayName)
@@ -558,7 +558,7 @@ public final class ComputeCloudFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCccInfrastructures = ComputeCloudFunctions.getAtCustomerCccInfrastructures(GetAtCustomerCccInfrastructuresArgs.builder()
      *             .accessLevel(cccInfrastructureAccessLevel)
-     *             .cccInfrastructureId(testCccInfrastructure.id())
+     *             .cccInfrastructureId(testCccInfrastructure.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(cccInfrastructureCompartmentIdInSubtree)
      *             .displayName(cccInfrastructureDisplayName)
@@ -606,7 +606,7 @@ public final class ComputeCloudFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCccUpgradeSchedule = ComputeCloudFunctions.getAtCustomerCccUpgradeSchedule(GetAtCustomerCccUpgradeScheduleArgs.builder()
-     *             .cccUpgradeScheduleId(testCccUpgradeScheduleOciComputeCloudAtCustomerCccUpgradeSchedule.id())
+     *             .cccUpgradeScheduleId(testCccUpgradeScheduleOciComputeCloudAtCustomerCccUpgradeSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -649,7 +649,7 @@ public final class ComputeCloudFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCccUpgradeSchedule = ComputeCloudFunctions.getAtCustomerCccUpgradeSchedule(GetAtCustomerCccUpgradeScheduleArgs.builder()
-     *             .cccUpgradeScheduleId(testCccUpgradeScheduleOciComputeCloudAtCustomerCccUpgradeSchedule.id())
+     *             .cccUpgradeScheduleId(testCccUpgradeScheduleOciComputeCloudAtCustomerCccUpgradeSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -692,7 +692,7 @@ public final class ComputeCloudFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCccUpgradeSchedule = ComputeCloudFunctions.getAtCustomerCccUpgradeSchedule(GetAtCustomerCccUpgradeScheduleArgs.builder()
-     *             .cccUpgradeScheduleId(testCccUpgradeScheduleOciComputeCloudAtCustomerCccUpgradeSchedule.id())
+     *             .cccUpgradeScheduleId(testCccUpgradeScheduleOciComputeCloudAtCustomerCccUpgradeSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -735,7 +735,7 @@ public final class ComputeCloudFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCccUpgradeSchedule = ComputeCloudFunctions.getAtCustomerCccUpgradeSchedule(GetAtCustomerCccUpgradeScheduleArgs.builder()
-     *             .cccUpgradeScheduleId(testCccUpgradeScheduleOciComputeCloudAtCustomerCccUpgradeSchedule.id())
+     *             .cccUpgradeScheduleId(testCccUpgradeScheduleOciComputeCloudAtCustomerCccUpgradeSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -778,7 +778,7 @@ public final class ComputeCloudFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCccUpgradeSchedule = ComputeCloudFunctions.getAtCustomerCccUpgradeSchedule(GetAtCustomerCccUpgradeScheduleArgs.builder()
-     *             .cccUpgradeScheduleId(testCccUpgradeScheduleOciComputeCloudAtCustomerCccUpgradeSchedule.id())
+     *             .cccUpgradeScheduleId(testCccUpgradeScheduleOciComputeCloudAtCustomerCccUpgradeSchedule.get("id"))
      *             .build());
      * 
      *     }
@@ -821,7 +821,7 @@ public final class ComputeCloudFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCccUpgradeSchedules = ComputeCloudFunctions.getAtCustomerCccUpgradeSchedules(GetAtCustomerCccUpgradeSchedulesArgs.builder()
      *             .accessLevel(cccUpgradeScheduleAccessLevel)
-     *             .cccUpgradeScheduleId(testCccUpgradeSchedule.id())
+     *             .cccUpgradeScheduleId(testCccUpgradeSchedule.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(cccUpgradeScheduleCompartmentIdInSubtree)
      *             .displayName(cccUpgradeScheduleDisplayName)
@@ -869,7 +869,7 @@ public final class ComputeCloudFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCccUpgradeSchedules = ComputeCloudFunctions.getAtCustomerCccUpgradeSchedules(GetAtCustomerCccUpgradeSchedulesArgs.builder()
      *             .accessLevel(cccUpgradeScheduleAccessLevel)
-     *             .cccUpgradeScheduleId(testCccUpgradeSchedule.id())
+     *             .cccUpgradeScheduleId(testCccUpgradeSchedule.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(cccUpgradeScheduleCompartmentIdInSubtree)
      *             .displayName(cccUpgradeScheduleDisplayName)
@@ -917,7 +917,7 @@ public final class ComputeCloudFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCccUpgradeSchedules = ComputeCloudFunctions.getAtCustomerCccUpgradeSchedules(GetAtCustomerCccUpgradeSchedulesArgs.builder()
      *             .accessLevel(cccUpgradeScheduleAccessLevel)
-     *             .cccUpgradeScheduleId(testCccUpgradeSchedule.id())
+     *             .cccUpgradeScheduleId(testCccUpgradeSchedule.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(cccUpgradeScheduleCompartmentIdInSubtree)
      *             .displayName(cccUpgradeScheduleDisplayName)
@@ -965,7 +965,7 @@ public final class ComputeCloudFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCccUpgradeSchedules = ComputeCloudFunctions.getAtCustomerCccUpgradeSchedules(GetAtCustomerCccUpgradeSchedulesArgs.builder()
      *             .accessLevel(cccUpgradeScheduleAccessLevel)
-     *             .cccUpgradeScheduleId(testCccUpgradeSchedule.id())
+     *             .cccUpgradeScheduleId(testCccUpgradeSchedule.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(cccUpgradeScheduleCompartmentIdInSubtree)
      *             .displayName(cccUpgradeScheduleDisplayName)
@@ -1013,7 +1013,7 @@ public final class ComputeCloudFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCccUpgradeSchedules = ComputeCloudFunctions.getAtCustomerCccUpgradeSchedules(GetAtCustomerCccUpgradeSchedulesArgs.builder()
      *             .accessLevel(cccUpgradeScheduleAccessLevel)
-     *             .cccUpgradeScheduleId(testCccUpgradeSchedule.id())
+     *             .cccUpgradeScheduleId(testCccUpgradeSchedule.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(cccUpgradeScheduleCompartmentIdInSubtree)
      *             .displayName(cccUpgradeScheduleDisplayName)
@@ -1061,7 +1061,7 @@ public final class ComputeCloudFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCccUpgradeSchedules = ComputeCloudFunctions.getAtCustomerCccUpgradeSchedules(GetAtCustomerCccUpgradeSchedulesArgs.builder()
      *             .accessLevel(cccUpgradeScheduleAccessLevel)
-     *             .cccUpgradeScheduleId(testCccUpgradeSchedule.id())
+     *             .cccUpgradeScheduleId(testCccUpgradeSchedule.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(cccUpgradeScheduleCompartmentIdInSubtree)
      *             .displayName(cccUpgradeScheduleDisplayName)
@@ -1109,7 +1109,7 @@ public final class ComputeCloudFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCccUpgradeSchedules = ComputeCloudFunctions.getAtCustomerCccUpgradeSchedules(GetAtCustomerCccUpgradeSchedulesArgs.builder()
      *             .accessLevel(cccUpgradeScheduleAccessLevel)
-     *             .cccUpgradeScheduleId(testCccUpgradeSchedule.id())
+     *             .cccUpgradeScheduleId(testCccUpgradeSchedule.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(cccUpgradeScheduleCompartmentIdInSubtree)
      *             .displayName(cccUpgradeScheduleDisplayName)

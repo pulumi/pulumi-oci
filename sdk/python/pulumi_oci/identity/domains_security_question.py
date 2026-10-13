@@ -1055,7 +1055,7 @@ class DomainsSecurityQuestion(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_security_question = oci.identity.DomainsSecurityQuestion("test_security_question",
-            active=security_question_active == "true",
+            active=security_question_active,
             idcs_endpoint=test_domain["url"],
             question_texts=[{
                 "locale": "en",
@@ -1195,7 +1195,7 @@ class DomainsSecurityQuestion(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_security_question = oci.identity.DomainsSecurityQuestion("test_security_question",
-            active=security_question_active == "true",
+            active=security_question_active,
             idcs_endpoint=test_domain["url"],
             question_texts=[{
                 "locale": "en",

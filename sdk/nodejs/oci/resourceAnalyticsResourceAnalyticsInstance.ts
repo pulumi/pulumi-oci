@@ -28,7 +28,7 @@ import * as utilities from "../utilities";
  *     },
  *     compartmentId: compartmentId,
  *     subnetId: testSubnet.id,
- *     computeCount: Number(resourceAnalyticsInstanceComputeCount),
+ *     computeCount: resourceAnalyticsInstanceComputeCount,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isMutualTlsRequired: resourceAnalyticsInstanceIsMutualTlsRequired === "true",
+ *     isMutualTlsRequired: resourceAnalyticsInstanceIsMutualTlsRequired,
  *     licenseModel: resourceAnalyticsInstanceLicenseModel,
  *     nsgIds: resourceAnalyticsInstanceNsgIds,
  * });

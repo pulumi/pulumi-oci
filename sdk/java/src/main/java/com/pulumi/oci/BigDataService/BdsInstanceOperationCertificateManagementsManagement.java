@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBdsInstanceOperationCertificateManagementsManagement = new BdsInstanceOperationCertificateManagementsManagement("testBdsInstanceOperationCertificateManagementsManagement", BdsInstanceOperationCertificateManagementsManagementArgs.builder()
- *             .bdsInstanceId(testBdsInstance.id())
+ *             .bdsInstanceId(testBdsInstance.get("id"))
  *             .services(bdsInstanceOperationCertificateManagementsManagementServices)
  *             .enableOperationCertificateManagement(enableOperationCertificateManagement)
  *             .renewOperationCertificateManagement(renewOperationCertificateManagement)
@@ -60,7 +60,7 @@ import javax.annotation.Nullable;
  *                 .privateKey(bdsInstanceOperationCertificateManagementsManagementHostCertDetailsPrivateKey)
  *                 .build())
  *             .rootCertificate(bdsInstanceOperationCertificateManagementsManagementRootCertificate)
- *             .secretId(testSecret.id())
+ *             .secretId(testSecret.get("id"))
  *             .serverKeyPassword(bdsInstanceOperationCertificateManagementsManagementServerKeyPassword)
  *             .build());
  * 

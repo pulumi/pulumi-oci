@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *         var testDbCredential = new DbCredential("testDbCredential", DbCredentialArgs.builder()
  *             .description(dbCredentialDescription)
  *             .password(dbCredentialPassword)
- *             .userId(testUser.id())
+ *             .userId(testUser.get("id"))
  *             .build());
  * 
  *     }

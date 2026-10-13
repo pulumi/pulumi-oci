@@ -346,11 +346,11 @@ class FileSystemQuotaRule(pulumi.CustomResource):
 
         test_file_system_quota_rule = oci.filestorage.FileSystemQuotaRule("test_file_system_quota_rule",
             file_system_id=test_file_system["id"],
-            is_hard_quota=file_system_quota_rule_is_hard_quota == "true",
+            is_hard_quota=file_system_quota_rule_is_hard_quota,
             principal_type=file_system_quota_rule_principal_type,
-            quota_limit_in_gigabytes=int(file_system_quota_rule_quota_limit_in_gigabytes),
+            quota_limit_in_gigabytes=file_system_quota_rule_quota_limit_in_gigabytes,
             display_name=file_system_quota_rule_display_name,
-            principal_id=int(test_principal["id"]))
+            principal_id=test_principal["id"])
         ```
 
         ## Import
@@ -397,11 +397,11 @@ class FileSystemQuotaRule(pulumi.CustomResource):
 
         test_file_system_quota_rule = oci.filestorage.FileSystemQuotaRule("test_file_system_quota_rule",
             file_system_id=test_file_system["id"],
-            is_hard_quota=file_system_quota_rule_is_hard_quota == "true",
+            is_hard_quota=file_system_quota_rule_is_hard_quota,
             principal_type=file_system_quota_rule_principal_type,
-            quota_limit_in_gigabytes=int(file_system_quota_rule_quota_limit_in_gigabytes),
+            quota_limit_in_gigabytes=file_system_quota_rule_quota_limit_in_gigabytes,
             display_name=file_system_quota_rule_display_name,
-            principal_id=int(test_principal["id"]))
+            principal_id=test_principal["id"])
         ```
 
         ## Import

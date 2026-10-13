@@ -433,7 +433,7 @@ class ByolAllocation(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_byol_allocation = oci.ocvp.ByolAllocation("test_byol_allocation",
-            allocated_units=int(byol_allocation_allocated_units),
+            allocated_units=byol_allocation_allocated_units,
             byol_id=test_byol["id"],
             compartment_id=compartment_id,
             display_name=byol_allocation_display_name,
@@ -490,7 +490,7 @@ class ByolAllocation(pulumi.CustomResource):
         import pulumi_oci as oci
 
         test_byol_allocation = oci.ocvp.ByolAllocation("test_byol_allocation",
-            allocated_units=int(byol_allocation_allocated_units),
+            allocated_units=byol_allocation_allocated_units,
             byol_id=test_byol["id"],
             compartment_id=compartment_id,
             display_name=byol_allocation_display_name,

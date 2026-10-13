@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testNetworkSecurityGroupSecurityRule = new NetworkSecurityGroupSecurityRule("testNetworkSecurityGroupSecurityRule", NetworkSecurityGroupSecurityRuleArgs.builder()
- *             .networkSecurityGroupId(testNetworkSecurityGroup.id())
+ *             .networkSecurityGroupId(testNetworkSecurityGroup.get("id"))
  *             .direction(networkSecurityGroupSecurityRuleDirection)
  *             .protocol(networkSecurityGroupSecurityRuleProtocol)
  *             .description(networkSecurityGroupSecurityRuleDescription)

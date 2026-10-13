@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     accessLevel: adhocQueryAccessLevel,
  *     adhocQueryStatus: adhocQueryAdhocQueryStatus,
- *     compartmentIdInSubtree: adhocQueryCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: adhocQueryCompartmentIdInSubtree,
  *     timeEndedFilterQueryParam: adhocQueryTimeEndedFilterQueryParam,
  *     timeStartedFilterQueryParam: adhocQueryTimeStartedFilterQueryParam,
  * });
@@ -141,7 +141,7 @@ export interface GetAdhocQueriesResult {
  *     compartmentId: compartmentId,
  *     accessLevel: adhocQueryAccessLevel,
  *     adhocQueryStatus: adhocQueryAdhocQueryStatus,
- *     compartmentIdInSubtree: adhocQueryCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: adhocQueryCompartmentIdInSubtree,
  *     timeEndedFilterQueryParam: adhocQueryTimeEndedFilterQueryParam,
  *     timeStartedFilterQueryParam: adhocQueryTimeStartedFilterQueryParam,
  * });

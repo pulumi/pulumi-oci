@@ -797,8 +797,8 @@ class AssetSource(pulumi.CustomResource):
             environment_id=test_environment["id"],
             inventory_id=test_inventory["id"],
             type=asset_source_type,
-            are_historical_metrics_collected=asset_source_are_historical_metrics_collected == "true",
-            are_realtime_metrics_collected=asset_source_are_realtime_metrics_collected == "true",
+            are_historical_metrics_collected=asset_source_are_historical_metrics_collected,
+            are_realtime_metrics_collected=asset_source_are_realtime_metrics_collected,
             aws_account_key=asset_source_aws_account_key,
             aws_region=asset_source_aws_region,
             defined_tags={
@@ -810,7 +810,7 @@ class AssetSource(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_cost_information_collected=asset_source_is_cost_information_collected == "true",
+            is_cost_information_collected=asset_source_is_cost_information_collected,
             olvm_endpoint=asset_source_olvm_endpoint,
             replication_credentials={
                 "secret_id": test_secret["id"],
@@ -885,8 +885,8 @@ class AssetSource(pulumi.CustomResource):
             environment_id=test_environment["id"],
             inventory_id=test_inventory["id"],
             type=asset_source_type,
-            are_historical_metrics_collected=asset_source_are_historical_metrics_collected == "true",
-            are_realtime_metrics_collected=asset_source_are_realtime_metrics_collected == "true",
+            are_historical_metrics_collected=asset_source_are_historical_metrics_collected,
+            are_realtime_metrics_collected=asset_source_are_realtime_metrics_collected,
             aws_account_key=asset_source_aws_account_key,
             aws_region=asset_source_aws_region,
             defined_tags={
@@ -898,7 +898,7 @@ class AssetSource(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_cost_information_collected=asset_source_is_cost_information_collected == "true",
+            is_cost_information_collected=asset_source_is_cost_information_collected,
             olvm_endpoint=asset_source_olvm_endpoint,
             replication_credentials={
                 "secret_id": test_secret["id"],

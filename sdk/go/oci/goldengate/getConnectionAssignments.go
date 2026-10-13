@@ -32,8 +32,8 @@ import (
 //			_, err := goldengate.GetConnectionAssignments(ctx, &goldengate.GetConnectionAssignmentsArgs{
 //				CompartmentId:             compartmentId,
 //				ConnectionId:              pulumi.StringRef(testConnection.Id),
-//				ConnectionTypes:           pulumi.ToArray(connectionAssignmentConnectionType),
-//				ConnectionTypeNotEqualTos: pulumi.ToArray(connectionAssignmentConnectionTypeNotEqualTo),
+//				ConnectionTypes:           connectionAssignmentConnectionType,
+//				ConnectionTypeNotEqualTos: connectionAssignmentConnectionTypeNotEqualTo,
 //				DeploymentId:              pulumi.StringRef(testDeployment.Id),
 //				Name:                      pulumi.StringRef(connectionAssignmentName),
 //				State:                     pulumi.StringRef(connectionAssignmentState),

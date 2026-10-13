@@ -31,7 +31,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     retentionPeriod: Number(backupRetentionPeriod),
+ *     retentionPeriod: backupRetentionPeriod,
  * });
  * ```
  *

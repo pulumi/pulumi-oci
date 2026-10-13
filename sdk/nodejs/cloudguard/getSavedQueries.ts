@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testSavedQueries = oci.cloudguard.getSavedQueries({
  *     compartmentId: compartmentId,
  *     accessLevel: savedQueryAccessLevel,
- *     compartmentIdInSubtree: savedQueryCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: savedQueryCompartmentIdInSubtree,
  *     displayName: savedQueryDisplayName,
  * });
  * ```
@@ -97,7 +97,7 @@ export interface GetSavedQueriesResult {
  * const testSavedQueries = oci.cloudguard.getSavedQueries({
  *     compartmentId: compartmentId,
  *     accessLevel: savedQueryAccessLevel,
- *     compartmentIdInSubtree: savedQueryCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: savedQueryCompartmentIdInSubtree,
  *     displayName: savedQueryDisplayName,
  * });
  * ```

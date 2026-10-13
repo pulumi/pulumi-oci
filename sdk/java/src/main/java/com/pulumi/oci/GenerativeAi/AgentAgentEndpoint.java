@@ -66,7 +66,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAgentEndpoint = new AgentAgentEndpoint("testAgentEndpoint", AgentAgentEndpointArgs.builder()
- *             .agentId(testAgent.id())
+ *             .agentId(testAgent.get("id"))
  *             .compartmentId(compartmentId)
  *             .contentModerationConfig(AgentAgentEndpointContentModerationConfigArgs.builder()
  *                 .shouldEnableOnInput(agentEndpointContentModerationConfigShouldEnableOnInput)
@@ -103,7 +103,7 @@ import javax.annotation.Nullable;
  *                 .retentionPeriodInMinutes(agentEndpointOutputConfigRetentionPeriodInMinutes)
  *                 .build())
  *             .provisionedCapacityConfig(AgentAgentEndpointProvisionedCapacityConfigArgs.builder()
- *                 .provisionedCapacityId(testProvisionedCapacity.id())
+ *                 .provisionedCapacityId(testProvisionedCapacity.get("id"))
  *                 .platformRuntimeConfig(AgentAgentEndpointProvisionedCapacityConfigPlatformRuntimeConfigArgs.builder()
  *                     .platformRuntimeConfigType(agentEndpointProvisionedCapacityConfigPlatformRuntimeConfigPlatformRuntimeConfigType)
  *                     .version(agentEndpointProvisionedCapacityConfigPlatformRuntimeConfigVersion)

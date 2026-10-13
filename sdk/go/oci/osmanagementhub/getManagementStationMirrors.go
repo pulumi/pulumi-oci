@@ -33,7 +33,7 @@ import (
 //				ManagementStationId: testManagementStation.Id,
 //				DisplayName:         pulumi.StringRef(managementStationMirrorDisplayName),
 //				DisplayNameContains: pulumi.StringRef(managementStationMirrorDisplayNameContains),
-//				MirrorStates:        pulumi.ToArray(managementStationMirrorMirrorStates),
+//				MirrorStates:        managementStationMirrorMirrorStates,
 //			}, nil)
 //			if err != nil {
 //				return err

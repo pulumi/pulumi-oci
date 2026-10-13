@@ -21,9 +21,9 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     accessLevel: cryptoAssessmentFindingAnalyticAccessLevel,
  *     category: cryptoAssessmentFindingAnalyticCategory,
- *     compartmentIdInSubtree: cryptoAssessmentFindingAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: cryptoAssessmentFindingAnalyticCompartmentIdInSubtree,
  *     findingKeys: cryptoAssessmentFindingAnalyticFindingKey,
- *     isQuantumReadinessCheck: cryptoAssessmentFindingAnalyticIsQuantumReadinessCheck === "true",
+ *     isQuantumReadinessCheck: cryptoAssessmentFindingAnalyticIsQuantumReadinessCheck,
  * });
  * ```
  */
@@ -112,9 +112,9 @@ export interface GetCryptoAssessmentFindingAnalyticsResult {
  *     compartmentId: compartmentId,
  *     accessLevel: cryptoAssessmentFindingAnalyticAccessLevel,
  *     category: cryptoAssessmentFindingAnalyticCategory,
- *     compartmentIdInSubtree: cryptoAssessmentFindingAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: cryptoAssessmentFindingAnalyticCompartmentIdInSubtree,
  *     findingKeys: cryptoAssessmentFindingAnalyticFindingKey,
- *     isQuantumReadinessCheck: cryptoAssessmentFindingAnalyticIsQuantumReadinessCheck === "true",
+ *     isQuantumReadinessCheck: cryptoAssessmentFindingAnalyticIsQuantumReadinessCheck,
  * });
  * ```
  */

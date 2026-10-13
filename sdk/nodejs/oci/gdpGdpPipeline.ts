@@ -42,10 +42,10 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isApprovalNeeded: gdpPipelineIsApprovalNeeded === "true",
- *     isChunkingEnabled: gdpPipelineIsChunkingEnabled === "true",
- *     isFileOverrideInDestinationEnabled: gdpPipelineIsFileOverrideInDestinationEnabled === "true",
- *     isScanningEnabled: gdpPipelineIsScanningEnabled === "true",
+ *     isApprovalNeeded: gdpPipelineIsApprovalNeeded,
+ *     isChunkingEnabled: gdpPipelineIsChunkingEnabled,
+ *     isFileOverrideInDestinationEnabled: gdpPipelineIsFileOverrideInDestinationEnabled,
+ *     isScanningEnabled: gdpPipelineIsScanningEnabled,
  *     serviceLogGroupId: testLogGroup.id,
  * });
  * ```

@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *             .description(apmDomainDescription)
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .isFreeTier(apmDomainIsFreeTier)
- *             .logGroupId(testLogGroup.id())
+ *             .logGroupId(testLogGroup.get("id"))
  *             .build());
  * 
  *     }

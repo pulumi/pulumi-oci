@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *         var testModelVersionSet = new ModelVersionSet("testModelVersionSet", ModelVersionSetArgs.builder()
  *             .compartmentId(compartmentId)
  *             .name(modelVersionSetName)
- *             .projectId(testProject.id())
+ *             .projectId(testProject.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(modelVersionSetDescription)
  *             .freeformTags(Map.of("Department", "Finance"))

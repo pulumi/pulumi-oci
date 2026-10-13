@@ -141,7 +141,7 @@ def get_audit_trail_analytic(access_level: Optional[_builtins.str] = None,
 
     test_audit_trail_analytic = oci.datasafe.get_audit_trail_analytic(compartment_id=compartment_id,
         access_level=audit_trail_analytic_access_level,
-        compartment_id_in_subtree=audit_trail_analytic_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=audit_trail_analytic_compartment_id_in_subtree,
         group_bies=audit_trail_analytic_group_by,
         target_id=test_target["id"])
     ```
@@ -201,7 +201,7 @@ def get_audit_trail_analytic_output(access_level: pulumi.Input[Optional[Optional
 
     test_audit_trail_analytic = oci.datasafe.get_audit_trail_analytic(compartment_id=compartment_id,
         access_level=audit_trail_analytic_access_level,
-        compartment_id_in_subtree=audit_trail_analytic_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=audit_trail_analytic_compartment_id_in_subtree,
         group_bies=audit_trail_analytic_group_by,
         target_id=test_target["id"])
     ```

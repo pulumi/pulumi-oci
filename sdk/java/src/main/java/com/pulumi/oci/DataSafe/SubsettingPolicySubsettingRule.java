@@ -62,7 +62,7 @@ import javax.annotation.Nullable;
  *                 .percent(subsettingPolicySubsettingRuleSubsetRuleEntryPercent)
  *                 .subPartitionsLists(subsettingPolicySubsettingRuleSubsetRuleEntrySubPartitionsList)
  *                 .build())
- *             .subsettingPolicyId(testSubsettingPolicy.id())
+ *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
  *             .description(subsettingPolicySubsettingRuleDescription)
  *             .displayName(subsettingPolicySubsettingRuleDisplayName)
  *             .peerTablesAction(subsettingPolicySubsettingRulePeerTablesAction)

@@ -33,7 +33,7 @@ import * as utilities from "../utilities";
  * const testSecurityPolicyDeployments = oci.datasafe.getSecurityPolicyDeployments({
  *     compartmentId: compartmentId,
  *     accessLevel: securityPolicyDeploymentAccessLevel,
- *     compartmentIdInSubtree: securityPolicyDeploymentCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: securityPolicyDeploymentCompartmentIdInSubtree,
  *     displayName: securityPolicyDeploymentDisplayName,
  *     securityPolicyDeploymentId: testSecurityPolicyDeployment.id,
  *     securityPolicyId: testSecurityPolicy.id,
@@ -170,7 +170,7 @@ export interface GetSecurityPolicyDeploymentsResult {
  * const testSecurityPolicyDeployments = oci.datasafe.getSecurityPolicyDeployments({
  *     compartmentId: compartmentId,
  *     accessLevel: securityPolicyDeploymentAccessLevel,
- *     compartmentIdInSubtree: securityPolicyDeploymentCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: securityPolicyDeploymentCompartmentIdInSubtree,
  *     displayName: securityPolicyDeploymentDisplayName,
  *     securityPolicyDeploymentId: testSecurityPolicyDeployment.id,
  *     securityPolicyId: testSecurityPolicy.id,

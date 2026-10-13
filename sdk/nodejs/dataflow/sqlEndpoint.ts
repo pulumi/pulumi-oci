@@ -30,9 +30,9 @@ import * as utilities from "../utilities";
  *     driverShape: sqlEndpointDriverShape,
  *     executorShape: sqlEndpointExecutorShape,
  *     lakeId: testLake.id,
- *     maxExecutorCount: Number(sqlEndpointMaxExecutorCount),
+ *     maxExecutorCount: sqlEndpointMaxExecutorCount,
  *     metastoreId: testMetastore.id,
- *     minExecutorCount: Number(sqlEndpointMinExecutorCount),
+ *     minExecutorCount: sqlEndpointMinExecutorCount,
  *     networkConfiguration: {
  *         networkType: sqlEndpointNetworkConfigurationNetworkType,
  *         accessControlRules: [{
@@ -67,7 +67,7 @@ import * as utilities from "../utilities";
  *     logCompartmentId: testCompartment.id,
  *     logDisplayName: sqlEndpointLogDisplayName,
  *     logGroupId: testLogGroup.id,
- *     logRetentionDuration: Number(sqlEndpointLogRetentionDuration),
+ *     logRetentionDuration: sqlEndpointLogRetentionDuration,
  *     sparkAdvancedConfigurations: sqlEndpointSparkAdvancedConfigurations,
  * });
  * ```

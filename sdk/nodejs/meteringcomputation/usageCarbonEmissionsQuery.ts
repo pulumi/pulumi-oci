@@ -25,12 +25,12 @@ import * as utilities from "../utilities";
  *     queryDefinition: {
  *         costAnalysisUi: {
  *             graph: usageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiGraph,
- *             isCumulativeGraph: usageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiIsCumulativeGraph === "true",
+ *             isCumulativeGraph: usageCarbonEmissionsQueryQueryDefinitionCostAnalysisUiIsCumulativeGraph,
  *         },
  *         displayName: usageCarbonEmissionsQueryQueryDefinitionDisplayName,
  *         reportQuery: {
  *             tenantId: testTenant.id,
- *             compartmentDepth: Number(usageCarbonEmissionsQueryQueryDefinitionReportQueryCompartmentDepth),
+ *             compartmentDepth: usageCarbonEmissionsQueryQueryDefinitionReportQueryCompartmentDepth,
  *             dateRangeName: usageCarbonEmissionsQueryQueryDefinitionReportQueryDateRangeName,
  *             emissionCalculationMethod: usageCarbonEmissionsQueryQueryDefinitionReportQueryEmissionCalculationMethod,
  *             emissionType: usageCarbonEmissionsQueryQueryDefinitionReportQueryEmissionType,
@@ -41,12 +41,12 @@ import * as utilities from "../utilities";
  *                 namespace: usageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagNamespace,
  *                 value: usageCarbonEmissionsQueryQueryDefinitionReportQueryGroupByTagValue,
  *             }],
- *             isAggregateByTime: usageCarbonEmissionsQueryQueryDefinitionReportQueryIsAggregateByTime === "true",
+ *             isAggregateByTime: usageCarbonEmissionsQueryQueryDefinitionReportQueryIsAggregateByTime,
  *             timeUsageEnded: usageCarbonEmissionsQueryQueryDefinitionReportQueryTimeUsageEnded,
  *             timeUsageStarted: usageCarbonEmissionsQueryQueryDefinitionReportQueryTimeUsageStarted,
  *             usageCarbonEmissionsQueryFilter: usageCarbonEmissionsQueryQueryDefinitionReportQueryUsageCarbonEmissionsQueryFilter,
  *         },
- *         version: Number(usageCarbonEmissionsQueryQueryDefinitionVersion),
+ *         version: usageCarbonEmissionsQueryQueryDefinitionVersion,
  *     },
  * });
  * ```

@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testNamespaceIngestTimeRulesManagement = new NamespaceIngestTimeRulesManagement("testNamespaceIngestTimeRulesManagement", NamespaceIngestTimeRulesManagementArgs.builder()
- *             .ingestTimeRuleId(testRule.id())
+ *             .ingestTimeRuleId(testRule.get("id"))
  *             .namespace(namespaceIngestTimeRulesManagementNamespace)
  *             .enableIngestTimeRule(enableIngestTimeRule)
  *             .build());

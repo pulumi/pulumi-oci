@@ -67,7 +67,7 @@ import javax.annotation.Nullable;
  *             .isMemoryEncryptionEnabled(dedicatedVmHostIsMemoryEncryptionEnabled)
  *             .placementConstraintDetails(DedicatedVmHostPlacementConstraintDetailsArgs.builder()
  *                 .type(dedicatedVmHostPlacementConstraintDetailsType)
- *                 .computeBareMetalHostId(testComputeBareMetalHost.id())
+ *                 .computeBareMetalHostId(testComputeBareMetalHost.get("id"))
  *                 .build())
  *             .build());
  * 

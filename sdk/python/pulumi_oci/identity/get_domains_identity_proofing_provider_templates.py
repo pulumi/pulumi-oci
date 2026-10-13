@@ -215,13 +215,13 @@ def get_domains_identity_proofing_provider_templates(attribute_sets: Optional[Se
     import pulumi_oci as oci
 
     test_identity_proofing_provider_templates = oci.identity.get_domains_identity_proofing_provider_templates(idcs_endpoint=test_domain["url"],
-        identity_proofing_provider_template_count=int(identity_proofing_provider_template_identity_proofing_provider_template_count),
+        identity_proofing_provider_template_count=identity_proofing_provider_template_identity_proofing_provider_template_count,
         identity_proofing_provider_template_filter=identity_proofing_provider_template_identity_proofing_provider_template_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=identity_proofing_provider_template_authorization,
         resource_type_schema_version=identity_proofing_provider_template_resource_type_schema_version,
-        start_index=int(identity_proofing_provider_template_start_index))
+        start_index=identity_proofing_provider_template_start_index)
     ```
 
 
@@ -290,13 +290,13 @@ def get_domains_identity_proofing_provider_templates_output(attribute_sets: pulu
     import pulumi_oci as oci
 
     test_identity_proofing_provider_templates = oci.identity.get_domains_identity_proofing_provider_templates(idcs_endpoint=test_domain["url"],
-        identity_proofing_provider_template_count=int(identity_proofing_provider_template_identity_proofing_provider_template_count),
+        identity_proofing_provider_template_count=identity_proofing_provider_template_identity_proofing_provider_template_count,
         identity_proofing_provider_template_filter=identity_proofing_provider_template_identity_proofing_provider_template_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=identity_proofing_provider_template_authorization,
         resource_type_schema_version=identity_proofing_provider_template_resource_type_schema_version,
-        start_index=int(identity_proofing_provider_template_start_index))
+        start_index=identity_proofing_provider_template_start_index)
     ```
 
 

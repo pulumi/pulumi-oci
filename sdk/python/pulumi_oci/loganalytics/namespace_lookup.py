@@ -711,7 +711,7 @@ class NamespaceLookup(pulumi.CustomResource):
             categories=[{
                 "description": namespace_lookup_categories_description,
                 "display_name": namespace_lookup_categories_display_name,
-                "is_system": namespace_lookup_categories_is_system == "true",
+                "is_system": namespace_lookup_categories_is_system,
                 "name": namespace_lookup_categories_name,
                 "type": namespace_lookup_categories_type,
             }],
@@ -726,7 +726,7 @@ class NamespaceLookup(pulumi.CustomResource):
                 "common_field_name": namespace_lookup_fields_common_field_name,
                 "default_match_value": namespace_lookup_fields_default_match_value,
                 "display_name": namespace_lookup_fields_display_name,
-                "is_common_field": namespace_lookup_fields_is_common_field == "true",
+                "is_common_field": namespace_lookup_fields_is_common_field,
                 "match_operator": namespace_lookup_fields_match_operator,
                 "name": namespace_lookup_fields_name,
                 "position": namespace_lookup_fields_position,
@@ -734,7 +734,7 @@ class NamespaceLookup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_hidden=namespace_lookup_is_hidden == "true",
+            is_hidden=namespace_lookup_is_hidden,
             max_matches=namespace_lookup_max_matches)
         ```
 
@@ -795,7 +795,7 @@ class NamespaceLookup(pulumi.CustomResource):
             categories=[{
                 "description": namespace_lookup_categories_description,
                 "display_name": namespace_lookup_categories_display_name,
-                "is_system": namespace_lookup_categories_is_system == "true",
+                "is_system": namespace_lookup_categories_is_system,
                 "name": namespace_lookup_categories_name,
                 "type": namespace_lookup_categories_type,
             }],
@@ -810,7 +810,7 @@ class NamespaceLookup(pulumi.CustomResource):
                 "common_field_name": namespace_lookup_fields_common_field_name,
                 "default_match_value": namespace_lookup_fields_default_match_value,
                 "display_name": namespace_lookup_fields_display_name,
-                "is_common_field": namespace_lookup_fields_is_common_field == "true",
+                "is_common_field": namespace_lookup_fields_is_common_field,
                 "match_operator": namespace_lookup_fields_match_operator,
                 "name": namespace_lookup_fields_name,
                 "position": namespace_lookup_fields_position,
@@ -818,7 +818,7 @@ class NamespaceLookup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_hidden=namespace_lookup_is_hidden == "true",
+            is_hidden=namespace_lookup_is_hidden,
             max_matches=namespace_lookup_max_matches)
         ```
 

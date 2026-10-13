@@ -171,7 +171,7 @@ def get_sdm_masking_policy_differences(compartment_id: Optional[_builtins.str] =
     import pulumi_oci as oci
 
     test_sdm_masking_policy_differences = oci.datasafe.get_sdm_masking_policy_differences(compartment_id=compartment_id,
-        compartment_id_in_subtree=sdm_masking_policy_difference_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=sdm_masking_policy_difference_compartment_id_in_subtree,
         difference_access_level=sdm_masking_policy_difference_difference_access_level,
         display_name=sdm_masking_policy_difference_display_name,
         masking_policy_id=test_masking_policy["id"],
@@ -232,7 +232,7 @@ def get_sdm_masking_policy_differences_output(compartment_id: pulumi.Input[Optio
     import pulumi_oci as oci
 
     test_sdm_masking_policy_differences = oci.datasafe.get_sdm_masking_policy_differences(compartment_id=compartment_id,
-        compartment_id_in_subtree=sdm_masking_policy_difference_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=sdm_masking_policy_difference_compartment_id_in_subtree,
         difference_access_level=sdm_masking_policy_difference_difference_access_level,
         display_name=sdm_masking_policy_difference_display_name,
         masking_policy_id=test_masking_policy["id"],

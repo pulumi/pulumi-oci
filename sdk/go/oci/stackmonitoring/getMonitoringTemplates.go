@@ -32,10 +32,10 @@ import (
 //			_, err := stackmonitoring.GetMonitoringTemplates(ctx, &stackmonitoring.GetMonitoringTemplatesArgs{
 //				CompartmentId:        pulumi.StringRef(compartmentId),
 //				DisplayName:          pulumi.StringRef(monitoringTemplateDisplayName),
-//				MetricNames:          pulumi.ToArray(testMetric.Name),
+//				MetricNames:          testMetric.Name,
 //				MonitoringTemplateId: pulumi.StringRef(testMonitoringTemplate.Id),
-//				Namespaces:           pulumi.ToArray(monitoringTemplateNamespace),
-//				ResourceTypes:        pulumi.ToArray(monitoringTemplateResourceTypes),
+//				Namespaces:           monitoringTemplateNamespace,
+//				ResourceTypes:        monitoringTemplateResourceTypes,
 //				State:                pulumi.StringRef(monitoringTemplateState),
 //				Status:               pulumi.StringRef(monitoringTemplateStatus),
 //			}, nil)

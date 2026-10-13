@@ -48,12 +48,12 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testSubsettingPolicySubsettingSchemaRelation = new SubsettingPolicySubsettingSchemaRelation("testSubsettingPolicySubsettingSchemaRelation", SubsettingPolicySubsettingSchemaRelationArgs.builder()
  *             .childColumns(subsettingPolicySubsettingSchemaRelationChildColumns)
- *             .childObjectName(testObject.name())
+ *             .childObjectName(testObject.get("name"))
  *             .childSchemaName(subsettingPolicySubsettingSchemaRelationChildSchemaName)
  *             .parentColumns(subsettingPolicySubsettingSchemaRelationParentColumns)
- *             .parentObjectName(testObject.name())
+ *             .parentObjectName(testObject.get("name"))
  *             .parentSchemaName(subsettingPolicySubsettingSchemaRelationParentSchemaName)
- *             .subsettingPolicyId(testSubsettingPolicy.id())
+ *             .subsettingPolicyId(testSubsettingPolicy.get("id"))
  *             .childObjectKey(subsettingPolicySubsettingSchemaRelationChildObjectKey)
  *             .parentObjectKey(subsettingPolicySubsettingSchemaRelationParentObjectKey)
  *             .build());

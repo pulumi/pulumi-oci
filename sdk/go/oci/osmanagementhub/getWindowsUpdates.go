@@ -31,9 +31,9 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := osmanagementhub.GetWindowsUpdates(ctx, &osmanagementhub.GetWindowsUpdatesArgs{
 //				CompartmentId:       compartmentId,
-//				ClassificationTypes: pulumi.ToArray(windowsUpdateClassificationType),
+//				ClassificationTypes: windowsUpdateClassificationType,
 //				DisplayNameContains: pulumi.StringRef(windowsUpdateDisplayNameContains),
-//				Names:               pulumi.ToArray(windowsUpdateName),
+//				Names:               windowsUpdateName,
 //			}, nil)
 //			if err != nil {
 //				return err

@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  *
  * const testSocialIdentityProviders = oci.identity.getDomainsSocialIdentityProviders({
  *     idcsEndpoint: testDomain.url,
- *     socialIdentityProviderCount: Number(socialIdentityProviderSocialIdentityProviderCount),
+ *     socialIdentityProviderCount: socialIdentityProviderSocialIdentityProviderCount,
  *     socialIdentityProviderFilter: socialIdentityProviderSocialIdentityProviderFilter,
  *     authorization: socialIdentityProviderAuthorization,
  *     resourceTypeSchemaVersion: socialIdentityProviderResourceTypeSchemaVersion,
- *     startIndex: Number(socialIdentityProviderStartIndex),
+ *     startIndex: socialIdentityProviderStartIndex,
  * });
  * ```
  */
@@ -116,11 +116,11 @@ export interface GetDomainsSocialIdentityProvidersResult {
  *
  * const testSocialIdentityProviders = oci.identity.getDomainsSocialIdentityProviders({
  *     idcsEndpoint: testDomain.url,
- *     socialIdentityProviderCount: Number(socialIdentityProviderSocialIdentityProviderCount),
+ *     socialIdentityProviderCount: socialIdentityProviderSocialIdentityProviderCount,
  *     socialIdentityProviderFilter: socialIdentityProviderSocialIdentityProviderFilter,
  *     authorization: socialIdentityProviderAuthorization,
  *     resourceTypeSchemaVersion: socialIdentityProviderResourceTypeSchemaVersion,
- *     startIndex: Number(socialIdentityProviderStartIndex),
+ *     startIndex: socialIdentityProviderStartIndex,
  * });
  * ```
  */

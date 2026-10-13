@@ -33,7 +33,7 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     idcsAt: opaInstanceIdcsAt,
- *     isBreakglassEnabled: opaInstanceIsBreakglassEnabled === "true",
+ *     isBreakglassEnabled: opaInstanceIsBreakglassEnabled,
  *     meteringType: opaInstanceMeteringType,
  * });
  * ```

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testCluster = oci.containerengine.getCluster({
  *     clusterId: testClusterOciContainerengineCluster.id,
- *     shouldIncludeOidcConfigFile: clusterShouldIncludeOidcConfigFile === "true",
+ *     shouldIncludeOidcConfigFile: clusterShouldIncludeOidcConfigFile,
  * });
  * ```
  */
@@ -145,7 +145,7 @@ export interface GetClusterResult {
  *
  * const testCluster = oci.containerengine.getCluster({
  *     clusterId: testClusterOciContainerengineCluster.id,
- *     shouldIncludeOidcConfigFile: clusterShouldIncludeOidcConfigFile === "true",
+ *     shouldIncludeOidcConfigFile: clusterShouldIncludeOidcConfigFile,
  * });
  * ```
  */

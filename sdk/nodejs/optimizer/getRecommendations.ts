@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  *
  * const testRecommendations = oci.optimizer.getRecommendations({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: recommendationCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: recommendationCompartmentIdInSubtree,
  *     categoryId: testCategory.id,
  *     categoryName: testCategory.name,
  *     childTenancyIds: recommendationChildTenancyIds,
- *     includeOrganization: recommendationIncludeOrganization === "true",
+ *     includeOrganization: recommendationIncludeOrganization,
  *     name: recommendationName,
  *     state: recommendationState,
  *     status: recommendationStatus,
@@ -152,11 +152,11 @@ export interface GetRecommendationsResult {
  *
  * const testRecommendations = oci.optimizer.getRecommendations({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: recommendationCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: recommendationCompartmentIdInSubtree,
  *     categoryId: testCategory.id,
  *     categoryName: testCategory.name,
  *     childTenancyIds: recommendationChildTenancyIds,
- *     includeOrganization: recommendationIncludeOrganization === "true",
+ *     includeOrganization: recommendationIncludeOrganization,
  *     name: recommendationName,
  *     state: recommendationState,
  *     status: recommendationStatus,

@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *             .displayName(occCustomerGroupDisplayName)
  *             .customersLists(OccCustomerGroupCustomersListArgs.builder()
  *                 .displayName(occCustomerGroupCustomersListDisplayName)
- *                 .tenancyId(testTenancy.id())
+ *                 .tenancyId(testTenancy.get("id"))
  *                 .description(occCustomerGroupCustomersListDescription)
  *                 .status(occCustomerGroupCustomersListStatus)
  *                 .build())

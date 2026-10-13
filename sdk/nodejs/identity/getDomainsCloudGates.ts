@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testCloudGates = oci.identity.getDomainsCloudGates({
  *     idcsEndpoint: testDomain.url,
- *     cloudGateCount: Number(cloudGateCloudGateCount),
+ *     cloudGateCount: cloudGateCloudGateCount,
  *     cloudGateFilter: cloudGateCloudGateFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: cloudGateAuthorization,
  *     resourceTypeSchemaVersion: cloudGateResourceTypeSchemaVersion,
- *     startIndex: Number(cloudGateStartIndex),
+ *     startIndex: cloudGateStartIndex,
  * });
  * ```
  */
@@ -130,13 +130,13 @@ export interface GetDomainsCloudGatesResult {
  *
  * const testCloudGates = oci.identity.getDomainsCloudGates({
  *     idcsEndpoint: testDomain.url,
- *     cloudGateCount: Number(cloudGateCloudGateCount),
+ *     cloudGateCount: cloudGateCloudGateCount,
  *     cloudGateFilter: cloudGateCloudGateFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: cloudGateAuthorization,
  *     resourceTypeSchemaVersion: cloudGateResourceTypeSchemaVersion,
- *     startIndex: Number(cloudGateStartIndex),
+ *     startIndex: cloudGateStartIndex,
  * });
  * ```
  */

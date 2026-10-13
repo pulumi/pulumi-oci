@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testPluginErrorAnalytics = oci.jms.getPluginErrorAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: pluginErrorAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: pluginErrorAnalyticCompartmentIdInSubtree,
  * });
  * ```
  */
@@ -77,7 +77,7 @@ export interface GetPluginErrorAnalyticsResult {
  *
  * const testPluginErrorAnalytics = oci.jms.getPluginErrorAnalytics({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: pluginErrorAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: pluginErrorAnalyticCompartmentIdInSubtree,
  * });
  * ```
  */

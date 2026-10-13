@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testNamedCredential = new NamedCredential("testNamedCredential", NamedCredentialArgs.builder()
- *             .managementAgentId(testManagementAgent.id())
+ *             .managementAgentId(testManagementAgent.get("id"))
  *             .name(namedCredentialName)
  *             .properties(            
  *                 NamedCredentialPropertyArgs.builder()
@@ -70,7 +70,7 @@ import javax.annotation.Nullable;
  *             .build());
  * 
  *         var exampleNamedCredential = new NamedCredential("exampleNamedCredential", NamedCredentialArgs.builder()
- *             .managementAgentId(testManagementAgent.id())
+ *             .managementAgentId(testManagementAgent.get("id"))
  *             .name("Example1")
  *             .properties(            
  *                 NamedCredentialPropertyArgs.builder()

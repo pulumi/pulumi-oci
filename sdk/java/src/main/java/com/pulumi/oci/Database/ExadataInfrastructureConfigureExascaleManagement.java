@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testExadataInfrastructureConfigureExascaleManagement = new ExadataInfrastructureConfigureExascaleManagement("testExadataInfrastructureConfigureExascaleManagement", ExadataInfrastructureConfigureExascaleManagementArgs.builder()
- *             .exadataInfrastructureId(testExadataInfrastructure.id())
+ *             .exadataInfrastructureId(testExadataInfrastructure.get("id"))
  *             .totalStorageInGbs(exadataInfrastructureConfigureExascaleManagementTotalStorageInGbs)
  *             .build());
  * 

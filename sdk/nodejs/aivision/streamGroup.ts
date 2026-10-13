@@ -25,7 +25,7 @@ import * as utilities from "../utilities";
  *     definedTags: streamGroupDefinedTags,
  *     displayName: streamGroupDisplayName,
  *     freeformTags: streamGroupFreeformTags,
- *     isEnabled: streamGroupIsEnabled === "true",
+ *     isEnabled: streamGroupIsEnabled,
  *     streamOverlaps: [{
  *         overlappingStreams: streamGroupStreamOverlapsOverlappingStreams,
  *     }],

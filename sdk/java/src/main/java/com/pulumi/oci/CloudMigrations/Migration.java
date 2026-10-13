@@ -56,10 +56,10 @@ import javax.annotation.Nullable;
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .isCompleted(migrationIsCompleted)
  *             .migrationConfig(MigrationMigrationConfigArgs.builder()
- *                 .subnetId(testSubnet.id())
+ *                 .subnetId(testSubnet.get("id"))
  *                 .build())
  *             .migrationType(migrationMigrationType)
- *             .replicationScheduleId(testReplicationSchedule.id())
+ *             .replicationScheduleId(testReplicationSchedule.get("id"))
  *             .securityAttributes(migrationSecurityAttributes)
  *             .build());
  * 

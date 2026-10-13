@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  * const testSecurityAssessmentSecurityFeatureAnalytics = oci.datasafe.getSecurityAssessmentSecurityFeatureAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentSecurityFeatureAnalyticAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentSecurityFeatureAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: securityAssessmentSecurityFeatureAnalyticCompartmentIdInSubtree,
  *     targetId: testTarget.id,
  * });
  * ```
@@ -105,7 +105,7 @@ export interface GetSecurityAssessmentSecurityFeatureAnalyticsResult {
  * const testSecurityAssessmentSecurityFeatureAnalytics = oci.datasafe.getSecurityAssessmentSecurityFeatureAnalytics({
  *     compartmentId: compartmentId,
  *     accessLevel: securityAssessmentSecurityFeatureAnalyticAccessLevel,
- *     compartmentIdInSubtree: securityAssessmentSecurityFeatureAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: securityAssessmentSecurityFeatureAnalyticCompartmentIdInSubtree,
  *     targetId: testTarget.id,
  * });
  * ```

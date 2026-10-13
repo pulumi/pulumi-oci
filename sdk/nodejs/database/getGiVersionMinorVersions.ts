@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  *     version: giVersionMinorVersionVersion,
  *     availabilityDomain: giVersionMinorVersionAvailabilityDomain,
  *     compartmentId: compartmentId,
- *     isGiVersionForProvisioning: giVersionMinorVersionIsGiVersionForProvisioning === "true",
+ *     isGiVersionForProvisioning: giVersionMinorVersionIsGiVersionForProvisioning,
  *     shape: giVersionMinorVersionShape,
  *     shapeFamily: giVersionMinorVersionShapeFamily,
  * });
@@ -109,7 +109,7 @@ export interface GetGiVersionMinorVersionsResult {
  *     version: giVersionMinorVersionVersion,
  *     availabilityDomain: giVersionMinorVersionAvailabilityDomain,
  *     compartmentId: compartmentId,
- *     isGiVersionForProvisioning: giVersionMinorVersionIsGiVersionForProvisioning === "true",
+ *     isGiVersionForProvisioning: giVersionMinorVersionIsGiVersionForProvisioning,
  *     shape: giVersionMinorVersionShape,
  *     shapeFamily: giVersionMinorVersionShapeFamily,
  * });

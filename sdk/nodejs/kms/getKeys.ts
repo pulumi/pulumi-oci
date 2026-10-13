@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     managementEndpoint: keyManagementEndpoint,
  *     algorithm: keyAlgorithm,
- *     length: Number(keyLength),
+ *     length: keyLength,
  *     curveId: testCurve.id,
  *     protectionMode: keyProtectionMode,
  * });
@@ -134,7 +134,7 @@ export interface GetKeysResult {
  *     compartmentId: compartmentId,
  *     managementEndpoint: keyManagementEndpoint,
  *     algorithm: keyAlgorithm,
- *     length: Number(keyLength),
+ *     length: keyLength,
  *     curveId: testCurve.id,
  *     protectionMode: keyProtectionMode,
  * });

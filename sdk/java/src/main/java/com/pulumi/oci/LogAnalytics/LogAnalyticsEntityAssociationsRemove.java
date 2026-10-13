@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testLogAnalyticsEntityAssociationsRemove = new LogAnalyticsEntityAssociationsRemove("testLogAnalyticsEntityAssociationsRemove", LogAnalyticsEntityAssociationsRemoveArgs.builder()
  *             .associationEntities(logAnalyticsEntityAssociationsRemoveAssociationEntities)
- *             .logAnalyticsEntityId(testLogAnalyticsEntity.id())
+ *             .logAnalyticsEntityId(testLogAnalyticsEntity.get("id"))
  *             .namespace(logAnalyticsEntityAssociationsRemoveNamespace)
  *             .build());
  * 

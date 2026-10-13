@@ -25,7 +25,7 @@ import * as utilities from "../utilities";
  *     queryDefinition: {
  *         costAnalysisUi: {
  *             graph: queryQueryDefinitionCostAnalysisUiGraph,
- *             isCumulativeGraph: queryQueryDefinitionCostAnalysisUiIsCumulativeGraph === "true",
+ *             isCumulativeGraph: queryQueryDefinitionCostAnalysisUiIsCumulativeGraph,
  *         },
  *         displayName: queryQueryDefinitionDisplayName,
  *         reportQuery: {
@@ -45,7 +45,7 @@ import * as utilities from "../utilities";
  *                 namespace: queryQueryDefinitionReportQueryGroupByTagNamespace,
  *                 value: queryQueryDefinitionReportQueryGroupByTagValue,
  *             }],
- *             isAggregateByTime: queryQueryDefinitionReportQueryIsAggregateByTime === "true",
+ *             isAggregateByTime: queryQueryDefinitionReportQueryIsAggregateByTime,
  *             queryType: queryQueryDefinitionReportQueryQueryType,
  *             timeUsageEnded: queryQueryDefinitionReportQueryTimeUsageEnded,
  *             timeUsageStarted: queryQueryDefinitionReportQueryTimeUsageStarted,

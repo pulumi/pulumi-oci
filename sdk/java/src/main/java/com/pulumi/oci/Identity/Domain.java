@@ -73,7 +73,7 @@ import javax.annotation.Nullable;
  *             .adminEmail(domainAdminEmail)
  *             .adminFirstName(domainAdminFirstName)
  *             .adminLastName(domainAdminLastName)
- *             .adminUserName(testUser.name())
+ *             .adminUserName(testUser.get("name"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .isHiddenOnLogin(domainIsHiddenOnLogin)

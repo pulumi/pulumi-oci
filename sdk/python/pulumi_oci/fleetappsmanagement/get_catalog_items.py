@@ -189,7 +189,7 @@ def get_catalog_items(catalog_listing_id: Optional[_builtins.str] = None,
         config_source_type=catalog_item_config_source_type,
         display_name=catalog_item_display_name,
         package_type=catalog_item_package_type,
-        should_list_public_items=catalog_item_should_list_public_items == "true",
+        should_list_public_items=catalog_item_should_list_public_items,
         state=catalog_item_state)
     ```
 
@@ -255,7 +255,7 @@ def get_catalog_items_output(catalog_listing_id: pulumi.Input[Optional[Optional[
         config_source_type=catalog_item_config_source_type,
         display_name=catalog_item_display_name,
         package_type=catalog_item_package_type,
-        should_list_public_items=catalog_item_should_list_public_items == "true",
+        should_list_public_items=catalog_item_should_list_public_items,
         state=catalog_item_state)
     ```
 

@@ -683,12 +683,12 @@ class VolumeBackup(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_indefinite_retention_enabled=volume_backup_is_indefinite_retention_enabled == "true",
-            is_prevent_deletion_enabled=volume_backup_is_prevent_deletion_enabled == "true",
-            is_retention_lock_enabled=volume_backup_is_retention_lock_enabled == "true",
+            is_indefinite_retention_enabled=volume_backup_is_indefinite_retention_enabled,
+            is_prevent_deletion_enabled=volume_backup_is_prevent_deletion_enabled,
+            is_retention_lock_enabled=volume_backup_is_retention_lock_enabled,
             kms_key_id=test_key["id"],
             retention_period={
-                "retention_time_amount": int(volume_backup_retention_period_retention_time_amount),
+                "retention_time_amount": volume_backup_retention_period_retention_time_amount,
                 "retention_time_unit": volume_backup_retention_period_retention_time_unit,
             },
             type=volume_backup_type)
@@ -752,12 +752,12 @@ class VolumeBackup(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_indefinite_retention_enabled=volume_backup_is_indefinite_retention_enabled == "true",
-            is_prevent_deletion_enabled=volume_backup_is_prevent_deletion_enabled == "true",
-            is_retention_lock_enabled=volume_backup_is_retention_lock_enabled == "true",
+            is_indefinite_retention_enabled=volume_backup_is_indefinite_retention_enabled,
+            is_prevent_deletion_enabled=volume_backup_is_prevent_deletion_enabled,
+            is_retention_lock_enabled=volume_backup_is_retention_lock_enabled,
             kms_key_id=test_key["id"],
             retention_period={
-                "retention_time_amount": int(volume_backup_retention_period_retention_time_amount),
+                "retention_time_amount": volume_backup_retention_period_retention_time_amount,
                 "retention_time_unit": volume_backup_retention_period_retention_time_unit,
             },
             type=volume_backup_type)

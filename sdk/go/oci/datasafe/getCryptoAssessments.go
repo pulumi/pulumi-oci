@@ -36,11 +36,11 @@ import (
 //				CompartmentIdInSubtree: pulumi.BoolRef(cryptoAssessmentCompartmentIdInSubtree),
 //				DisplayName:            pulumi.StringRef(cryptoAssessmentDisplayName),
 //				IsAssessmentScheduled:  pulumi.BoolRef(cryptoAssessmentIsAssessmentScheduled),
-//				PostureCategories:      pulumi.ToArray(cryptoAssessmentPostureCategory),
+//				PostureCategories:      cryptoAssessmentPostureCategory,
 //				State:                  pulumi.StringRef(cryptoAssessmentState),
 //				TargetDatabaseGroupId:  pulumi.StringRef(testTargetDatabaseGroup.Id),
 //				TargetId:               pulumi.StringRef(testTarget.Id),
-//				TargetIds:              pulumi.ToArray(cryptoAssessmentTargetIds),
+//				TargetIds:              cryptoAssessmentTargetIds,
 //				TargetType:             pulumi.StringRef(cryptoAssessmentTargetType),
 //				Type:                   pulumi.StringRef(cryptoAssessmentType),
 //			}, nil)

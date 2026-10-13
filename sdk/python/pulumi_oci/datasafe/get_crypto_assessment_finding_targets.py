@@ -188,8 +188,8 @@ def get_crypto_assessment_finding_targets(access_level: Optional[_builtins.str] 
         finding_keys=crypto_assessment_finding_target_finding_key,
         access_level=crypto_assessment_finding_target_access_level,
         assessment_type=crypto_assessment_finding_target_assessment_type,
-        compartment_id_in_subtree=crypto_assessment_finding_target_compartment_id_in_subtree == "true",
-        is_quantum_readiness_check=crypto_assessment_finding_target_is_quantum_readiness_check == "true",
+        compartment_id_in_subtree=crypto_assessment_finding_target_compartment_id_in_subtree,
+        is_quantum_readiness_check=crypto_assessment_finding_target_is_quantum_readiness_check,
         status=crypto_assessment_finding_target_status,
         target_id=test_target["id"],
         target_ids=crypto_assessment_finding_target_target_ids)
@@ -259,8 +259,8 @@ def get_crypto_assessment_finding_targets_output(access_level: pulumi.Input[Opti
         finding_keys=crypto_assessment_finding_target_finding_key,
         access_level=crypto_assessment_finding_target_access_level,
         assessment_type=crypto_assessment_finding_target_assessment_type,
-        compartment_id_in_subtree=crypto_assessment_finding_target_compartment_id_in_subtree == "true",
-        is_quantum_readiness_check=crypto_assessment_finding_target_is_quantum_readiness_check == "true",
+        compartment_id_in_subtree=crypto_assessment_finding_target_compartment_id_in_subtree,
+        is_quantum_readiness_check=crypto_assessment_finding_target_is_quantum_readiness_check,
         status=crypto_assessment_finding_target_status,
         target_id=test_target["id"],
         target_ids=crypto_assessment_finding_target_target_ids)

@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testExternalExadataStorageConnector = new ExternalExadataStorageConnector("testExternalExadataStorageConnector", ExternalExadataStorageConnectorArgs.builder()
- *             .agentId(testAgent.id())
+ *             .agentId(testAgent.get("id"))
  *             .connectionUri(externalExadataStorageConnectorConnectionUri)
  *             .connectorName(externalExadataStorageConnectorConnectorName)
  *             .credentialInfo(ExternalExadataStorageConnectorCredentialInfoArgs.builder()
@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *                 .sslTrustStorePassword(externalExadataStorageConnectorCredentialInfoSslTrustStorePassword)
  *                 .sslTrustStoreType(externalExadataStorageConnectorCredentialInfoSslTrustStoreType)
  *                 .build())
- *             .storageServerId(testStorageServer.id())
+ *             .storageServerId(testStorageServer.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());

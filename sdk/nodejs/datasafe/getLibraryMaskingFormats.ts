@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testLibraryMaskingFormats = oci.datasafe.getLibraryMaskingFormats({
  *     compartmentId: compartmentId,
  *     accessLevel: libraryMaskingFormatAccessLevel,
- *     compartmentIdInSubtree: libraryMaskingFormatCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: libraryMaskingFormatCompartmentIdInSubtree,
  *     displayName: libraryMaskingFormatDisplayName,
  *     libraryMaskingFormatId: testLibraryMaskingFormat.id,
  *     libraryMaskingFormatSource: libraryMaskingFormatLibraryMaskingFormatSource,
@@ -142,7 +142,7 @@ export interface GetLibraryMaskingFormatsResult {
  * const testLibraryMaskingFormats = oci.datasafe.getLibraryMaskingFormats({
  *     compartmentId: compartmentId,
  *     accessLevel: libraryMaskingFormatAccessLevel,
- *     compartmentIdInSubtree: libraryMaskingFormatCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: libraryMaskingFormatCompartmentIdInSubtree,
  *     displayName: libraryMaskingFormatDisplayName,
  *     libraryMaskingFormatId: testLibraryMaskingFormat.id,
  *     libraryMaskingFormatSource: libraryMaskingFormatLibraryMaskingFormatSource,

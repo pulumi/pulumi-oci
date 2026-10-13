@@ -97,7 +97,7 @@ public final class OsubUsageFunctions {
      *     public static void stack(Context ctx) {
      *         final var testComputedUsage = OsubUsageFunctions.getComputedUsage(GetComputedUsageArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .computedUsageId(testComputedUsageOciOsubUsageComputedUsage.id())
+     *             .computedUsageId(testComputedUsageOciOsubUsageComputedUsage.get("id"))
      *             .fields(computedUsageFields)
      *             .xOneOriginRegion(computedUsageXOneOriginRegion)
      *             .build());
@@ -142,7 +142,7 @@ public final class OsubUsageFunctions {
      *     public static void stack(Context ctx) {
      *         final var testComputedUsage = OsubUsageFunctions.getComputedUsage(GetComputedUsageArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .computedUsageId(testComputedUsageOciOsubUsageComputedUsage.id())
+     *             .computedUsageId(testComputedUsageOciOsubUsageComputedUsage.get("id"))
      *             .fields(computedUsageFields)
      *             .xOneOriginRegion(computedUsageXOneOriginRegion)
      *             .build());
@@ -187,7 +187,7 @@ public final class OsubUsageFunctions {
      *     public static void stack(Context ctx) {
      *         final var testComputedUsage = OsubUsageFunctions.getComputedUsage(GetComputedUsageArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .computedUsageId(testComputedUsageOciOsubUsageComputedUsage.id())
+     *             .computedUsageId(testComputedUsageOciOsubUsageComputedUsage.get("id"))
      *             .fields(computedUsageFields)
      *             .xOneOriginRegion(computedUsageXOneOriginRegion)
      *             .build());
@@ -232,7 +232,7 @@ public final class OsubUsageFunctions {
      *     public static void stack(Context ctx) {
      *         final var testComputedUsage = OsubUsageFunctions.getComputedUsage(GetComputedUsageArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .computedUsageId(testComputedUsageOciOsubUsageComputedUsage.id())
+     *             .computedUsageId(testComputedUsageOciOsubUsageComputedUsage.get("id"))
      *             .fields(computedUsageFields)
      *             .xOneOriginRegion(computedUsageXOneOriginRegion)
      *             .build());
@@ -277,7 +277,7 @@ public final class OsubUsageFunctions {
      *     public static void stack(Context ctx) {
      *         final var testComputedUsage = OsubUsageFunctions.getComputedUsage(GetComputedUsageArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .computedUsageId(testComputedUsageOciOsubUsageComputedUsage.id())
+     *             .computedUsageId(testComputedUsageOciOsubUsageComputedUsage.get("id"))
      *             .fields(computedUsageFields)
      *             .xOneOriginRegion(computedUsageXOneOriginRegion)
      *             .build());

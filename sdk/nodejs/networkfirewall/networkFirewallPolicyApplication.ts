@@ -19,12 +19,12 @@ import * as utilities from "../utilities";
  * import * as oci from "@pulumi/oci";
  *
  * const testNetworkFirewallPolicyApplication = new oci.networkfirewall.NetworkFirewallPolicyApplication("test_network_firewall_policy_application", {
- *     icmpType: Number(networkFirewallPolicyApplicationIcmpType),
+ *     icmpType: networkFirewallPolicyApplicationIcmpType,
  *     name: networkFirewallPolicyApplicationName,
  *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
  *     type: networkFirewallPolicyApplicationType,
  *     description: networkFirewallPolicyApplicationDescription,
- *     icmpCode: Number(networkFirewallPolicyApplicationIcmpCode),
+ *     icmpCode: networkFirewallPolicyApplicationIcmpCode,
  * });
  * ```
  *

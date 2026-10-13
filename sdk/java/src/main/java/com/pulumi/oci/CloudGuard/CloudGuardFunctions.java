@@ -444,7 +444,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAdhocQuery = CloudGuardFunctions.getAdhocQuery(GetAdhocQueryArgs.builder()
-     *             .adhocQueryId(testAdhocQueryOciCloudGuardAdhocQuery.id())
+     *             .adhocQueryId(testAdhocQueryOciCloudGuardAdhocQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -486,7 +486,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAdhocQuery = CloudGuardFunctions.getAdhocQuery(GetAdhocQueryArgs.builder()
-     *             .adhocQueryId(testAdhocQueryOciCloudGuardAdhocQuery.id())
+     *             .adhocQueryId(testAdhocQueryOciCloudGuardAdhocQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -528,7 +528,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAdhocQuery = CloudGuardFunctions.getAdhocQuery(GetAdhocQueryArgs.builder()
-     *             .adhocQueryId(testAdhocQueryOciCloudGuardAdhocQuery.id())
+     *             .adhocQueryId(testAdhocQueryOciCloudGuardAdhocQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -570,7 +570,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAdhocQuery = CloudGuardFunctions.getAdhocQuery(GetAdhocQueryArgs.builder()
-     *             .adhocQueryId(testAdhocQueryOciCloudGuardAdhocQuery.id())
+     *             .adhocQueryId(testAdhocQueryOciCloudGuardAdhocQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -612,7 +612,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAdhocQuery = CloudGuardFunctions.getAdhocQuery(GetAdhocQueryArgs.builder()
-     *             .adhocQueryId(testAdhocQueryOciCloudGuardAdhocQuery.id())
+     *             .adhocQueryId(testAdhocQueryOciCloudGuardAdhocQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -869,7 +869,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataMaskRule = CloudGuardFunctions.getDataMaskRule(GetDataMaskRuleArgs.builder()
-     *             .dataMaskRuleId(testDataMaskRuleOciCloudGuardDataMaskRule.id())
+     *             .dataMaskRuleId(testDataMaskRuleOciCloudGuardDataMaskRule.get("id"))
      *             .build());
      * 
      *     }
@@ -911,7 +911,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataMaskRule = CloudGuardFunctions.getDataMaskRule(GetDataMaskRuleArgs.builder()
-     *             .dataMaskRuleId(testDataMaskRuleOciCloudGuardDataMaskRule.id())
+     *             .dataMaskRuleId(testDataMaskRuleOciCloudGuardDataMaskRule.get("id"))
      *             .build());
      * 
      *     }
@@ -953,7 +953,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataMaskRule = CloudGuardFunctions.getDataMaskRule(GetDataMaskRuleArgs.builder()
-     *             .dataMaskRuleId(testDataMaskRuleOciCloudGuardDataMaskRule.id())
+     *             .dataMaskRuleId(testDataMaskRuleOciCloudGuardDataMaskRule.get("id"))
      *             .build());
      * 
      *     }
@@ -995,7 +995,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataMaskRule = CloudGuardFunctions.getDataMaskRule(GetDataMaskRuleArgs.builder()
-     *             .dataMaskRuleId(testDataMaskRuleOciCloudGuardDataMaskRule.id())
+     *             .dataMaskRuleId(testDataMaskRuleOciCloudGuardDataMaskRule.get("id"))
      *             .build());
      * 
      *     }
@@ -1037,7 +1037,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataMaskRule = CloudGuardFunctions.getDataMaskRule(GetDataMaskRuleArgs.builder()
-     *             .dataMaskRuleId(testDataMaskRuleOciCloudGuardDataMaskRule.id())
+     *             .dataMaskRuleId(testDataMaskRuleOciCloudGuardDataMaskRule.get("id"))
      *             .build());
      * 
      *     }
@@ -1083,9 +1083,9 @@ public final class CloudGuardFunctions {
      *             .accessLevel(dataMaskRuleAccessLevel)
      *             .dataMaskRuleStatus(dataMaskRuleDataMaskRuleStatus)
      *             .displayName(dataMaskRuleDisplayName)
-     *             .iamGroupId(testGroup.id())
+     *             .iamGroupId(testGroup.get("id"))
      *             .state(dataMaskRuleState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetType(dataMaskRuleTargetType)
      *             .build());
      * 
@@ -1132,9 +1132,9 @@ public final class CloudGuardFunctions {
      *             .accessLevel(dataMaskRuleAccessLevel)
      *             .dataMaskRuleStatus(dataMaskRuleDataMaskRuleStatus)
      *             .displayName(dataMaskRuleDisplayName)
-     *             .iamGroupId(testGroup.id())
+     *             .iamGroupId(testGroup.get("id"))
      *             .state(dataMaskRuleState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetType(dataMaskRuleTargetType)
      *             .build());
      * 
@@ -1181,9 +1181,9 @@ public final class CloudGuardFunctions {
      *             .accessLevel(dataMaskRuleAccessLevel)
      *             .dataMaskRuleStatus(dataMaskRuleDataMaskRuleStatus)
      *             .displayName(dataMaskRuleDisplayName)
-     *             .iamGroupId(testGroup.id())
+     *             .iamGroupId(testGroup.get("id"))
      *             .state(dataMaskRuleState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetType(dataMaskRuleTargetType)
      *             .build());
      * 
@@ -1230,9 +1230,9 @@ public final class CloudGuardFunctions {
      *             .accessLevel(dataMaskRuleAccessLevel)
      *             .dataMaskRuleStatus(dataMaskRuleDataMaskRuleStatus)
      *             .displayName(dataMaskRuleDisplayName)
-     *             .iamGroupId(testGroup.id())
+     *             .iamGroupId(testGroup.get("id"))
      *             .state(dataMaskRuleState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetType(dataMaskRuleTargetType)
      *             .build());
      * 
@@ -1279,9 +1279,9 @@ public final class CloudGuardFunctions {
      *             .accessLevel(dataMaskRuleAccessLevel)
      *             .dataMaskRuleStatus(dataMaskRuleDataMaskRuleStatus)
      *             .displayName(dataMaskRuleDisplayName)
-     *             .iamGroupId(testGroup.id())
+     *             .iamGroupId(testGroup.get("id"))
      *             .state(dataMaskRuleState)
-     *             .targetId(testTarget.id())
+     *             .targetId(testTarget.get("id"))
      *             .targetType(dataMaskRuleTargetType)
      *             .build());
      * 
@@ -1324,7 +1324,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSource = CloudGuardFunctions.getDataSource(GetDataSourceArgs.builder()
-     *             .dataSourceId(testDataSourceOciCloudGuardDataSource.id())
+     *             .dataSourceId(testDataSourceOciCloudGuardDataSource.get("id"))
      *             .build());
      * 
      *     }
@@ -1366,7 +1366,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSource = CloudGuardFunctions.getDataSource(GetDataSourceArgs.builder()
-     *             .dataSourceId(testDataSourceOciCloudGuardDataSource.id())
+     *             .dataSourceId(testDataSourceOciCloudGuardDataSource.get("id"))
      *             .build());
      * 
      *     }
@@ -1408,7 +1408,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSource = CloudGuardFunctions.getDataSource(GetDataSourceArgs.builder()
-     *             .dataSourceId(testDataSourceOciCloudGuardDataSource.id())
+     *             .dataSourceId(testDataSourceOciCloudGuardDataSource.get("id"))
      *             .build());
      * 
      *     }
@@ -1450,7 +1450,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSource = CloudGuardFunctions.getDataSource(GetDataSourceArgs.builder()
-     *             .dataSourceId(testDataSourceOciCloudGuardDataSource.id())
+     *             .dataSourceId(testDataSourceOciCloudGuardDataSource.get("id"))
      *             .build());
      * 
      *     }
@@ -1492,7 +1492,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSource = CloudGuardFunctions.getDataSource(GetDataSourceArgs.builder()
-     *             .dataSourceId(testDataSourceOciCloudGuardDataSource.id())
+     *             .dataSourceId(testDataSourceOciCloudGuardDataSource.get("id"))
      *             .build());
      * 
      *     }
@@ -1534,7 +1534,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSourceEvent = CloudGuardFunctions.getDataSourceEvent(GetDataSourceEventArgs.builder()
-     *             .dataSourceId(testDataSource.id())
+     *             .dataSourceId(testDataSource.get("id"))
      *             .region(dataSourceEventRegion)
      *             .build());
      * 
@@ -1577,7 +1577,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSourceEvent = CloudGuardFunctions.getDataSourceEvent(GetDataSourceEventArgs.builder()
-     *             .dataSourceId(testDataSource.id())
+     *             .dataSourceId(testDataSource.get("id"))
      *             .region(dataSourceEventRegion)
      *             .build());
      * 
@@ -1620,7 +1620,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSourceEvent = CloudGuardFunctions.getDataSourceEvent(GetDataSourceEventArgs.builder()
-     *             .dataSourceId(testDataSource.id())
+     *             .dataSourceId(testDataSource.get("id"))
      *             .region(dataSourceEventRegion)
      *             .build());
      * 
@@ -1663,7 +1663,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSourceEvent = CloudGuardFunctions.getDataSourceEvent(GetDataSourceEventArgs.builder()
-     *             .dataSourceId(testDataSource.id())
+     *             .dataSourceId(testDataSource.get("id"))
      *             .region(dataSourceEventRegion)
      *             .build());
      * 
@@ -1706,7 +1706,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSourceEvent = CloudGuardFunctions.getDataSourceEvent(GetDataSourceEventArgs.builder()
-     *             .dataSourceId(testDataSource.id())
+     *             .dataSourceId(testDataSource.get("id"))
      *             .region(dataSourceEventRegion)
      *             .build());
      * 
@@ -1751,7 +1751,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSourceEvents = CloudGuardFunctions.getDataSourceEvents(GetDataSourceEventsArgs.builder()
-     *             .dataSourceId(testDataSource.id())
+     *             .dataSourceId(testDataSource.get("id"))
      *             .region(dataSourceEventRegion)
      *             .build());
      * 
@@ -1796,7 +1796,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSourceEvents = CloudGuardFunctions.getDataSourceEvents(GetDataSourceEventsArgs.builder()
-     *             .dataSourceId(testDataSource.id())
+     *             .dataSourceId(testDataSource.get("id"))
      *             .region(dataSourceEventRegion)
      *             .build());
      * 
@@ -1841,7 +1841,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSourceEvents = CloudGuardFunctions.getDataSourceEvents(GetDataSourceEventsArgs.builder()
-     *             .dataSourceId(testDataSource.id())
+     *             .dataSourceId(testDataSource.get("id"))
      *             .region(dataSourceEventRegion)
      *             .build());
      * 
@@ -1886,7 +1886,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSourceEvents = CloudGuardFunctions.getDataSourceEvents(GetDataSourceEventsArgs.builder()
-     *             .dataSourceId(testDataSource.id())
+     *             .dataSourceId(testDataSource.get("id"))
      *             .region(dataSourceEventRegion)
      *             .build());
      * 
@@ -1931,7 +1931,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDataSourceEvents = CloudGuardFunctions.getDataSourceEvents(GetDataSourceEventsArgs.builder()
-     *             .dataSourceId(testDataSource.id())
+     *             .dataSourceId(testDataSource.get("id"))
      *             .region(dataSourceEventRegion)
      *             .build());
      * 
@@ -2294,7 +2294,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDetectorRecipe = CloudGuardFunctions.getDetectorRecipe(GetDetectorRecipeArgs.builder()
-     *             .detectorRecipeId(testDetectorRecipeOciCloudGuardDetectorRecipe.id())
+     *             .detectorRecipeId(testDetectorRecipeOciCloudGuardDetectorRecipe.get("id"))
      *             .build());
      * 
      *     }
@@ -2336,7 +2336,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDetectorRecipe = CloudGuardFunctions.getDetectorRecipe(GetDetectorRecipeArgs.builder()
-     *             .detectorRecipeId(testDetectorRecipeOciCloudGuardDetectorRecipe.id())
+     *             .detectorRecipeId(testDetectorRecipeOciCloudGuardDetectorRecipe.get("id"))
      *             .build());
      * 
      *     }
@@ -2378,7 +2378,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDetectorRecipe = CloudGuardFunctions.getDetectorRecipe(GetDetectorRecipeArgs.builder()
-     *             .detectorRecipeId(testDetectorRecipeOciCloudGuardDetectorRecipe.id())
+     *             .detectorRecipeId(testDetectorRecipeOciCloudGuardDetectorRecipe.get("id"))
      *             .build());
      * 
      *     }
@@ -2420,7 +2420,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDetectorRecipe = CloudGuardFunctions.getDetectorRecipe(GetDetectorRecipeArgs.builder()
-     *             .detectorRecipeId(testDetectorRecipeOciCloudGuardDetectorRecipe.id())
+     *             .detectorRecipeId(testDetectorRecipeOciCloudGuardDetectorRecipe.get("id"))
      *             .build());
      * 
      *     }
@@ -2462,7 +2462,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDetectorRecipe = CloudGuardFunctions.getDetectorRecipe(GetDetectorRecipeArgs.builder()
-     *             .detectorRecipeId(testDetectorRecipeOciCloudGuardDetectorRecipe.id())
+     *             .detectorRecipeId(testDetectorRecipeOciCloudGuardDetectorRecipe.get("id"))
      *             .build());
      * 
      *     }
@@ -2809,7 +2809,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTarget = CloudGuardFunctions.getGuardTarget(GetGuardTargetArgs.builder()
-     *             .targetId(testTargetOciCloudGuardTarget.id())
+     *             .targetId(testTargetOciCloudGuardTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -2851,7 +2851,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTarget = CloudGuardFunctions.getGuardTarget(GetGuardTargetArgs.builder()
-     *             .targetId(testTargetOciCloudGuardTarget.id())
+     *             .targetId(testTargetOciCloudGuardTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -2893,7 +2893,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTarget = CloudGuardFunctions.getGuardTarget(GetGuardTargetArgs.builder()
-     *             .targetId(testTargetOciCloudGuardTarget.id())
+     *             .targetId(testTargetOciCloudGuardTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -2935,7 +2935,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTarget = CloudGuardFunctions.getGuardTarget(GetGuardTargetArgs.builder()
-     *             .targetId(testTargetOciCloudGuardTarget.id())
+     *             .targetId(testTargetOciCloudGuardTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -2977,7 +2977,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTarget = CloudGuardFunctions.getGuardTarget(GetGuardTargetArgs.builder()
-     *             .targetId(testTargetOciCloudGuardTarget.id())
+     *             .targetId(testTargetOciCloudGuardTarget.get("id"))
      *             .build());
      * 
      *     }
@@ -3324,7 +3324,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedList = CloudGuardFunctions.getManagedList(GetManagedListArgs.builder()
-     *             .managedListId(testManagedListOciCloudGuardManagedList.id())
+     *             .managedListId(testManagedListOciCloudGuardManagedList.get("id"))
      *             .build());
      * 
      *     }
@@ -3366,7 +3366,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedList = CloudGuardFunctions.getManagedList(GetManagedListArgs.builder()
-     *             .managedListId(testManagedListOciCloudGuardManagedList.id())
+     *             .managedListId(testManagedListOciCloudGuardManagedList.get("id"))
      *             .build());
      * 
      *     }
@@ -3408,7 +3408,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedList = CloudGuardFunctions.getManagedList(GetManagedListArgs.builder()
-     *             .managedListId(testManagedListOciCloudGuardManagedList.id())
+     *             .managedListId(testManagedListOciCloudGuardManagedList.get("id"))
      *             .build());
      * 
      *     }
@@ -3450,7 +3450,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedList = CloudGuardFunctions.getManagedList(GetManagedListArgs.builder()
-     *             .managedListId(testManagedListOciCloudGuardManagedList.id())
+     *             .managedListId(testManagedListOciCloudGuardManagedList.get("id"))
      *             .build());
      * 
      *     }
@@ -3492,7 +3492,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testManagedList = CloudGuardFunctions.getManagedList(GetManagedListArgs.builder()
-     *             .managedListId(testManagedListOciCloudGuardManagedList.id())
+     *             .managedListId(testManagedListOciCloudGuardManagedList.get("id"))
      *             .build());
      * 
      *     }
@@ -3840,7 +3840,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProblemEntities = CloudGuardFunctions.getProblemEntities(GetProblemEntitiesArgs.builder()
-     *             .problemId(testProblem.id())
+     *             .problemId(testProblem.get("id"))
      *             .build());
      * 
      *     }
@@ -3883,7 +3883,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProblemEntities = CloudGuardFunctions.getProblemEntities(GetProblemEntitiesArgs.builder()
-     *             .problemId(testProblem.id())
+     *             .problemId(testProblem.get("id"))
      *             .build());
      * 
      *     }
@@ -3926,7 +3926,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProblemEntities = CloudGuardFunctions.getProblemEntities(GetProblemEntitiesArgs.builder()
-     *             .problemId(testProblem.id())
+     *             .problemId(testProblem.get("id"))
      *             .build());
      * 
      *     }
@@ -3969,7 +3969,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProblemEntities = CloudGuardFunctions.getProblemEntities(GetProblemEntitiesArgs.builder()
-     *             .problemId(testProblem.id())
+     *             .problemId(testProblem.get("id"))
      *             .build());
      * 
      *     }
@@ -4012,7 +4012,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProblemEntities = CloudGuardFunctions.getProblemEntities(GetProblemEntitiesArgs.builder()
-     *             .problemId(testProblem.id())
+     *             .problemId(testProblem.get("id"))
      *             .build());
      * 
      *     }
@@ -4054,7 +4054,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProblemEntity = CloudGuardFunctions.getProblemEntity(GetProblemEntityArgs.builder()
-     *             .problemId(testProblem.id())
+     *             .problemId(testProblem.get("id"))
      *             .build());
      * 
      *     }
@@ -4096,7 +4096,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProblemEntity = CloudGuardFunctions.getProblemEntity(GetProblemEntityArgs.builder()
-     *             .problemId(testProblem.id())
+     *             .problemId(testProblem.get("id"))
      *             .build());
      * 
      *     }
@@ -4138,7 +4138,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProblemEntity = CloudGuardFunctions.getProblemEntity(GetProblemEntityArgs.builder()
-     *             .problemId(testProblem.id())
+     *             .problemId(testProblem.get("id"))
      *             .build());
      * 
      *     }
@@ -4180,7 +4180,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProblemEntity = CloudGuardFunctions.getProblemEntity(GetProblemEntityArgs.builder()
-     *             .problemId(testProblem.id())
+     *             .problemId(testProblem.get("id"))
      *             .build());
      * 
      *     }
@@ -4222,7 +4222,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProblemEntity = CloudGuardFunctions.getProblemEntity(GetProblemEntityArgs.builder()
-     *             .problemId(testProblem.id())
+     *             .problemId(testProblem.get("id"))
      *             .build());
      * 
      *     }
@@ -4264,7 +4264,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResponderRecipe = CloudGuardFunctions.getResponderRecipe(GetResponderRecipeArgs.builder()
-     *             .responderRecipeId(testResponderRecipeOciCloudGuardResponderRecipe.id())
+     *             .responderRecipeId(testResponderRecipeOciCloudGuardResponderRecipe.get("id"))
      *             .build());
      * 
      *     }
@@ -4306,7 +4306,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResponderRecipe = CloudGuardFunctions.getResponderRecipe(GetResponderRecipeArgs.builder()
-     *             .responderRecipeId(testResponderRecipeOciCloudGuardResponderRecipe.id())
+     *             .responderRecipeId(testResponderRecipeOciCloudGuardResponderRecipe.get("id"))
      *             .build());
      * 
      *     }
@@ -4348,7 +4348,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResponderRecipe = CloudGuardFunctions.getResponderRecipe(GetResponderRecipeArgs.builder()
-     *             .responderRecipeId(testResponderRecipeOciCloudGuardResponderRecipe.id())
+     *             .responderRecipeId(testResponderRecipeOciCloudGuardResponderRecipe.get("id"))
      *             .build());
      * 
      *     }
@@ -4390,7 +4390,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResponderRecipe = CloudGuardFunctions.getResponderRecipe(GetResponderRecipeArgs.builder()
-     *             .responderRecipeId(testResponderRecipeOciCloudGuardResponderRecipe.id())
+     *             .responderRecipeId(testResponderRecipeOciCloudGuardResponderRecipe.get("id"))
      *             .build());
      * 
      *     }
@@ -4432,7 +4432,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResponderRecipe = CloudGuardFunctions.getResponderRecipe(GetResponderRecipeArgs.builder()
-     *             .responderRecipeId(testResponderRecipeOciCloudGuardResponderRecipe.id())
+     *             .responderRecipeId(testResponderRecipeOciCloudGuardResponderRecipe.get("id"))
      *             .build());
      * 
      *     }
@@ -5004,7 +5004,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSavedQuery = CloudGuardFunctions.getSavedQuery(GetSavedQueryArgs.builder()
-     *             .savedQueryId(testSavedQueryOciCloudGuardSavedQuery.id())
+     *             .savedQueryId(testSavedQueryOciCloudGuardSavedQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -5046,7 +5046,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSavedQuery = CloudGuardFunctions.getSavedQuery(GetSavedQueryArgs.builder()
-     *             .savedQueryId(testSavedQueryOciCloudGuardSavedQuery.id())
+     *             .savedQueryId(testSavedQueryOciCloudGuardSavedQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -5088,7 +5088,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSavedQuery = CloudGuardFunctions.getSavedQuery(GetSavedQueryArgs.builder()
-     *             .savedQueryId(testSavedQueryOciCloudGuardSavedQuery.id())
+     *             .savedQueryId(testSavedQueryOciCloudGuardSavedQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -5130,7 +5130,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSavedQuery = CloudGuardFunctions.getSavedQuery(GetSavedQueryArgs.builder()
-     *             .savedQueryId(testSavedQueryOciCloudGuardSavedQuery.id())
+     *             .savedQueryId(testSavedQueryOciCloudGuardSavedQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -5172,7 +5172,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSavedQuery = CloudGuardFunctions.getSavedQuery(GetSavedQueryArgs.builder()
-     *             .savedQueryId(testSavedQueryOciCloudGuardSavedQuery.id())
+     *             .savedQueryId(testSavedQueryOciCloudGuardSavedQuery.get("id"))
      *             .build());
      * 
      *     }
@@ -5446,7 +5446,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicy = CloudGuardFunctions.getSecurityPolicy(GetSecurityPolicyArgs.builder()
-     *             .securityPolicyId(testSecurityPolicyOciCloudGuardSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicyOciCloudGuardSecurityPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -5490,7 +5490,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicy = CloudGuardFunctions.getSecurityPolicy(GetSecurityPolicyArgs.builder()
-     *             .securityPolicyId(testSecurityPolicyOciCloudGuardSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicyOciCloudGuardSecurityPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -5534,7 +5534,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicy = CloudGuardFunctions.getSecurityPolicy(GetSecurityPolicyArgs.builder()
-     *             .securityPolicyId(testSecurityPolicyOciCloudGuardSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicyOciCloudGuardSecurityPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -5578,7 +5578,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicy = CloudGuardFunctions.getSecurityPolicy(GetSecurityPolicyArgs.builder()
-     *             .securityPolicyId(testSecurityPolicyOciCloudGuardSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicyOciCloudGuardSecurityPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -5622,7 +5622,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityPolicy = CloudGuardFunctions.getSecurityPolicy(GetSecurityPolicyArgs.builder()
-     *             .securityPolicyId(testSecurityPolicyOciCloudGuardSecurityPolicy.id())
+     *             .securityPolicyId(testSecurityPolicyOciCloudGuardSecurityPolicy.get("id"))
      *             .build());
      * 
      *     }
@@ -5664,7 +5664,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityRecipe = CloudGuardFunctions.getSecurityRecipe(GetSecurityRecipeArgs.builder()
-     *             .securityRecipeId(testSecurityRecipeOciCloudGuardSecurityRecipe.id())
+     *             .securityRecipeId(testSecurityRecipeOciCloudGuardSecurityRecipe.get("id"))
      *             .build());
      * 
      *     }
@@ -5706,7 +5706,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityRecipe = CloudGuardFunctions.getSecurityRecipe(GetSecurityRecipeArgs.builder()
-     *             .securityRecipeId(testSecurityRecipeOciCloudGuardSecurityRecipe.id())
+     *             .securityRecipeId(testSecurityRecipeOciCloudGuardSecurityRecipe.get("id"))
      *             .build());
      * 
      *     }
@@ -5748,7 +5748,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityRecipe = CloudGuardFunctions.getSecurityRecipe(GetSecurityRecipeArgs.builder()
-     *             .securityRecipeId(testSecurityRecipeOciCloudGuardSecurityRecipe.id())
+     *             .securityRecipeId(testSecurityRecipeOciCloudGuardSecurityRecipe.get("id"))
      *             .build());
      * 
      *     }
@@ -5790,7 +5790,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityRecipe = CloudGuardFunctions.getSecurityRecipe(GetSecurityRecipeArgs.builder()
-     *             .securityRecipeId(testSecurityRecipeOciCloudGuardSecurityRecipe.id())
+     *             .securityRecipeId(testSecurityRecipeOciCloudGuardSecurityRecipe.get("id"))
      *             .build());
      * 
      *     }
@@ -5832,7 +5832,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityRecipe = CloudGuardFunctions.getSecurityRecipe(GetSecurityRecipeArgs.builder()
-     *             .securityRecipeId(testSecurityRecipeOciCloudGuardSecurityRecipe.id())
+     *             .securityRecipeId(testSecurityRecipeOciCloudGuardSecurityRecipe.get("id"))
      *             .build());
      * 
      *     }
@@ -6104,7 +6104,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityZone = CloudGuardFunctions.getSecurityZone(GetSecurityZoneArgs.builder()
-     *             .securityZoneId(testSecurityZoneOciCloudGuardSecurityZone.id())
+     *             .securityZoneId(testSecurityZoneOciCloudGuardSecurityZone.get("id"))
      *             .build());
      * 
      *     }
@@ -6146,7 +6146,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityZone = CloudGuardFunctions.getSecurityZone(GetSecurityZoneArgs.builder()
-     *             .securityZoneId(testSecurityZoneOciCloudGuardSecurityZone.id())
+     *             .securityZoneId(testSecurityZoneOciCloudGuardSecurityZone.get("id"))
      *             .build());
      * 
      *     }
@@ -6188,7 +6188,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityZone = CloudGuardFunctions.getSecurityZone(GetSecurityZoneArgs.builder()
-     *             .securityZoneId(testSecurityZoneOciCloudGuardSecurityZone.id())
+     *             .securityZoneId(testSecurityZoneOciCloudGuardSecurityZone.get("id"))
      *             .build());
      * 
      *     }
@@ -6230,7 +6230,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityZone = CloudGuardFunctions.getSecurityZone(GetSecurityZoneArgs.builder()
-     *             .securityZoneId(testSecurityZoneOciCloudGuardSecurityZone.id())
+     *             .securityZoneId(testSecurityZoneOciCloudGuardSecurityZone.get("id"))
      *             .build());
      * 
      *     }
@@ -6272,7 +6272,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSecurityZone = CloudGuardFunctions.getSecurityZone(GetSecurityZoneArgs.builder()
-     *             .securityZoneId(testSecurityZoneOciCloudGuardSecurityZone.id())
+     *             .securityZoneId(testSecurityZoneOciCloudGuardSecurityZone.get("id"))
      *             .build());
      * 
      *     }
@@ -6319,7 +6319,7 @@ public final class CloudGuardFunctions {
      *             .displayName(securityZoneDisplayName)
      *             .id(securityZoneId)
      *             .isRequiredSecurityZonesInSubtree(securityZoneIsRequiredSecurityZonesInSubtree)
-     *             .securityRecipeId(testSecurityRecipe.id())
+     *             .securityRecipeId(testSecurityRecipe.get("id"))
      *             .state(securityZoneState)
      *             .build());
      * 
@@ -6367,7 +6367,7 @@ public final class CloudGuardFunctions {
      *             .displayName(securityZoneDisplayName)
      *             .id(securityZoneId)
      *             .isRequiredSecurityZonesInSubtree(securityZoneIsRequiredSecurityZonesInSubtree)
-     *             .securityRecipeId(testSecurityRecipe.id())
+     *             .securityRecipeId(testSecurityRecipe.get("id"))
      *             .state(securityZoneState)
      *             .build());
      * 
@@ -6415,7 +6415,7 @@ public final class CloudGuardFunctions {
      *             .displayName(securityZoneDisplayName)
      *             .id(securityZoneId)
      *             .isRequiredSecurityZonesInSubtree(securityZoneIsRequiredSecurityZonesInSubtree)
-     *             .securityRecipeId(testSecurityRecipe.id())
+     *             .securityRecipeId(testSecurityRecipe.get("id"))
      *             .state(securityZoneState)
      *             .build());
      * 
@@ -6463,7 +6463,7 @@ public final class CloudGuardFunctions {
      *             .displayName(securityZoneDisplayName)
      *             .id(securityZoneId)
      *             .isRequiredSecurityZonesInSubtree(securityZoneIsRequiredSecurityZonesInSubtree)
-     *             .securityRecipeId(testSecurityRecipe.id())
+     *             .securityRecipeId(testSecurityRecipe.get("id"))
      *             .state(securityZoneState)
      *             .build());
      * 
@@ -6511,7 +6511,7 @@ public final class CloudGuardFunctions {
      *             .displayName(securityZoneDisplayName)
      *             .id(securityZoneId)
      *             .isRequiredSecurityZonesInSubtree(securityZoneIsRequiredSecurityZonesInSubtree)
-     *             .securityRecipeId(testSecurityRecipe.id())
+     *             .securityRecipeId(testSecurityRecipe.get("id"))
      *             .state(securityZoneState)
      *             .build());
      * 
@@ -6554,7 +6554,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWlpAgent = CloudGuardFunctions.getWlpAgent(GetWlpAgentArgs.builder()
-     *             .wlpAgentId(testWlpAgentOciCloudGuardWlpAgent.id())
+     *             .wlpAgentId(testWlpAgentOciCloudGuardWlpAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -6596,7 +6596,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWlpAgent = CloudGuardFunctions.getWlpAgent(GetWlpAgentArgs.builder()
-     *             .wlpAgentId(testWlpAgentOciCloudGuardWlpAgent.id())
+     *             .wlpAgentId(testWlpAgentOciCloudGuardWlpAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -6638,7 +6638,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWlpAgent = CloudGuardFunctions.getWlpAgent(GetWlpAgentArgs.builder()
-     *             .wlpAgentId(testWlpAgentOciCloudGuardWlpAgent.id())
+     *             .wlpAgentId(testWlpAgentOciCloudGuardWlpAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -6680,7 +6680,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWlpAgent = CloudGuardFunctions.getWlpAgent(GetWlpAgentArgs.builder()
-     *             .wlpAgentId(testWlpAgentOciCloudGuardWlpAgent.id())
+     *             .wlpAgentId(testWlpAgentOciCloudGuardWlpAgent.get("id"))
      *             .build());
      * 
      *     }
@@ -6722,7 +6722,7 @@ public final class CloudGuardFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testWlpAgent = CloudGuardFunctions.getWlpAgent(GetWlpAgentArgs.builder()
-     *             .wlpAgentId(testWlpAgentOciCloudGuardWlpAgent.id())
+     *             .wlpAgentId(testWlpAgentOciCloudGuardWlpAgent.get("id"))
      *             .build());
      * 
      *     }

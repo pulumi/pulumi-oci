@@ -47,11 +47,11 @@ import * as utilities from "../utilities";
  *             preemptibleNodeConfig: {
  *                 preemptionAction: {
  *                     type: nodePoolNodeConfigDetailsPlacementConfigsPreemptibleNodeConfigPreemptionActionType,
- *                     isPreserveBootVolume: nodePoolNodeConfigDetailsPlacementConfigsPreemptibleNodeConfigPreemptionActionIsPreserveBootVolume === "true",
+ *                     isPreserveBootVolume: nodePoolNodeConfigDetailsPlacementConfigsPreemptibleNodeConfigPreemptionActionIsPreserveBootVolume,
  *                 },
  *             },
  *         }],
- *         size: Number(nodePoolNodeConfigDetailsSize),
+ *         size: nodePoolNodeConfigDetailsSize,
  *         computeClusterId: testComputeCluster.id,
  *         definedTags: {
  *             "Operations.CostCenter": "42",
@@ -59,11 +59,11 @@ import * as utilities from "../utilities";
  *         freeformTags: {
  *             Department: "Finance",
  *         },
- *         isPvEncryptionInTransitEnabled: nodePoolNodeConfigDetailsIsPvEncryptionInTransitEnabled === "true",
+ *         isPvEncryptionInTransitEnabled: nodePoolNodeConfigDetailsIsPvEncryptionInTransitEnabled,
  *         kmsKeyId: testKey.id,
  *         nodePoolPodNetworkOptionDetails: {
  *             cniType: nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsCniType,
- *             maxPodsPerNode: Number(nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsMaxPodsPerNode),
+ *             maxPodsPerNode: nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsMaxPodsPerNode,
  *             podNsgIds: nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPodNsgIds,
  *             podSubnetIds: nodePoolNodeConfigDetailsNodePoolPodNetworkOptionDetailsPodSubnetIds,
  *         },
@@ -71,14 +71,14 @@ import * as utilities from "../utilities";
  *     },
  *     nodeEvictionNodePoolSettings: {
  *         evictionGraceDuration: nodePoolNodeEvictionNodePoolSettingsEvictionGraceDuration,
- *         isForceActionAfterGraceDuration: nodePoolNodeEvictionNodePoolSettingsIsForceActionAfterGraceDuration === "true",
- *         isForceDeleteAfterGraceDuration: nodePoolNodeEvictionNodePoolSettingsIsForceDeleteAfterGraceDuration === "true",
+ *         isForceActionAfterGraceDuration: nodePoolNodeEvictionNodePoolSettingsIsForceActionAfterGraceDuration,
+ *         isForceDeleteAfterGraceDuration: nodePoolNodeEvictionNodePoolSettingsIsForceDeleteAfterGraceDuration,
  *     },
  *     nodeImageName: testImage.name,
  *     nodeMetadata: nodePoolNodeMetadata,
  *     nodePoolCyclingDetails: {
  *         cycleModes: nodePoolNodePoolCyclingDetailsCycleModes,
- *         isNodeCyclingEnabled: nodePoolNodePoolCyclingDetailsIsNodeCyclingEnabled === "true",
+ *         isNodeCyclingEnabled: nodePoolNodePoolCyclingDetailsIsNodeCyclingEnabled,
  *         maximumSurge: nodePoolNodePoolCyclingDetailsMaximumSurge,
  *         maximumUnavailable: nodePoolNodePoolCyclingDetailsMaximumUnavailable,
  *     },
@@ -94,13 +94,13 @@ import * as utilities from "../utilities";
  *     primaryVnic: {
  *         securityAttributes: nodePoolPrimaryVnicSecurityAttributes,
  *     },
- *     quantityPerSubnet: Number(nodePoolQuantityPerSubnet),
+ *     quantityPerSubnet: nodePoolQuantityPerSubnet,
  *     secondaryVnics: [{
  *         createVnicDetails: {
  *             subnetId: testSubnet.id,
  *             applicationResources: nodePoolSecondaryVnicsCreateVnicDetailsApplicationResources,
- *             assignIpv6ip: nodePoolSecondaryVnicsCreateVnicDetailsAssignIpv6ip === "true",
- *             assignPublicIp: nodePoolSecondaryVnicsCreateVnicDetailsAssignPublicIp === "true",
+ *             assignIpv6ip: nodePoolSecondaryVnicsCreateVnicDetailsAssignIpv6ip,
+ *             assignPublicIp: nodePoolSecondaryVnicsCreateVnicDetailsAssignPublicIp,
  *             definedTags: {
  *                 "Operations.CostCenter": "42",
  *             },
@@ -108,17 +108,17 @@ import * as utilities from "../utilities";
  *             freeformTags: {
  *                 Department: "Finance",
  *             },
- *             ipCount: Number(nodePoolSecondaryVnicsCreateVnicDetailsIpCount),
+ *             ipCount: nodePoolSecondaryVnicsCreateVnicDetailsIpCount,
  *             ipv6addressIpv6subnetCidrPairDetails: [{
  *                 ipv6address: nodePoolSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6address,
  *                 ipv6subnetCidr: nodePoolSecondaryVnicsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailsIpv6subnetCidr,
  *             }],
  *             nsgIds: nodePoolSecondaryVnicsCreateVnicDetailsNsgIds,
  *             securityAttributes: nodePoolSecondaryVnicsCreateVnicDetailsSecurityAttributes,
- *             skipSourceDestCheck: nodePoolSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck === "true",
+ *             skipSourceDestCheck: nodePoolSecondaryVnicsCreateVnicDetailsSkipSourceDestCheck,
  *         },
  *         displayName: nodePoolSecondaryVnicsDisplayName,
- *         nicIndex: Number(nodePoolSecondaryVnicsNicIndex),
+ *         nicIndex: nodePoolSecondaryVnicsNicIndex,
  *     }],
  *     sshPublicKey: nodePoolSshPublicKey,
  *     subnetIds: nodePoolSubnetIds,

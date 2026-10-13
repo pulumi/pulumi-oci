@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testMlApplicationImplementations = oci.datascience.getMlApplicationImplementations({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: mlApplicationImplementationCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: mlApplicationImplementationCompartmentIdInSubtree,
  *     mlApplicationId: testMlApplication.id,
  *     mlApplicationImplementationId: testMlApplicationImplementation.id,
  *     name: mlApplicationImplementationName,
@@ -116,7 +116,7 @@ export interface GetMlApplicationImplementationsResult {
  *
  * const testMlApplicationImplementations = oci.datascience.getMlApplicationImplementations({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: mlApplicationImplementationCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: mlApplicationImplementationCompartmentIdInSubtree,
  *     mlApplicationId: testMlApplication.id,
  *     mlApplicationImplementationId: testMlApplicationImplementation.id,
  *     name: mlApplicationImplementationName,

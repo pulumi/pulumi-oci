@@ -32,7 +32,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     maxHostCount: Number(privateEndpointMaxHostCount),
+ *     maxHostCount: privateEndpointMaxHostCount,
  *     nsgIds: privateEndpointNsgIds,
  *     scanDetails: [{
  *         fqdn: privateEndpointScanDetailsFqdn,

@@ -51,9 +51,9 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isHiddenOnLogin: domainIsHiddenOnLogin === "true",
- *     isNotificationBypassed: domainIsNotificationBypassed === "true",
- *     isPrimaryEmailRequired: domainIsPrimaryEmailRequired === "true",
+ *     isHiddenOnLogin: domainIsHiddenOnLogin,
+ *     isNotificationBypassed: domainIsNotificationBypassed,
+ *     isPrimaryEmailRequired: domainIsPrimaryEmailRequired,
  * });
  * ```
  *

@@ -27,7 +27,7 @@ import * as utilities from "../utilities";
  *         value: "IdentityProvider",
  *     },
  *     schemas: ["urn:ietf:params:scim:schemas:oracle:idcs:Policy"],
- *     active: policyActive === "true",
+ *     active: policyActive,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: policyAuthorization,
@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *     policyGroovy: policyPolicyGroovy,
  *     resourceTypeSchemaVersion: policyResourceTypeSchemaVersion,
  *     rules: [{
- *         sequence: Number(policyRulesSequence),
+ *         sequence: policyRulesSequence,
  *         value: "TODO",
  *     }],
  *     tags: [{

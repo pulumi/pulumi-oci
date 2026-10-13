@@ -156,7 +156,7 @@ def get_subsetting_reports(access_level: Optional[_builtins.str] = None,
 
     test_subsetting_reports = oci.datasafe.get_subsetting_reports(compartment_id=compartment_id,
         access_level=subsetting_report_access_level,
-        compartment_id_in_subtree=subsetting_report_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=subsetting_report_compartment_id_in_subtree,
         subsetting_policy_id=test_subsetting_policy["id"],
         target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"])
@@ -212,7 +212,7 @@ def get_subsetting_reports_output(access_level: pulumi.Input[Optional[Optional[_
 
     test_subsetting_reports = oci.datasafe.get_subsetting_reports(compartment_id=compartment_id,
         access_level=subsetting_report_access_level,
-        compartment_id_in_subtree=subsetting_report_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=subsetting_report_compartment_id_in_subtree,
         subsetting_policy_id=test_subsetting_policy["id"],
         target_database_group_id=test_target_database_group["id"],
         target_id=test_target["id"])

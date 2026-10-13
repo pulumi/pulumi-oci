@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *         var testBastion = new Bastion("testBastion", BastionArgs.builder()
  *             .bastionType(bastionBastionType)
  *             .compartmentId(compartmentId)
- *             .targetSubnetId(testSubnet.id())
+ *             .targetSubnetId(testSubnet.get("id"))
  *             .clientCidrBlockAllowLists(bastionClientCidrBlockAllowList)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .dnsProxyStatus(bastionDnsProxyStatus)

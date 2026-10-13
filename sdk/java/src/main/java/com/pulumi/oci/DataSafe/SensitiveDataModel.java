@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testSensitiveDataModel = new SensitiveDataModel("testSensitiveDataModel", SensitiveDataModelArgs.builder()
  *             .compartmentId(compartmentId)
- *             .targetId(testTarget.id())
+ *             .targetId(testTarget.get("id"))
  *             .appSuiteName(sensitiveDataModelAppSuiteName)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(sensitiveDataModelDescription)

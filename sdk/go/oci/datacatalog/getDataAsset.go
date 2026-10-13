@@ -32,7 +32,7 @@ import (
 //			_, err := datacatalog.GetDataAsset(ctx, &datacatalog.GetDataAssetArgs{
 //				CatalogId:    testCatalog.Id,
 //				DataAssetKey: dataAssetDataAssetKey,
-//				Fields:       pulumi.ToArray(dataAssetFields),
+//				Fields:       dataAssetFields,
 //			}, nil)
 //			if err != nil {
 //				return err

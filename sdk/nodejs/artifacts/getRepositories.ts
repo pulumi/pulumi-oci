@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     displayName: repositoryDisplayName,
  *     id: repositoryId,
- *     isImmutable: repositoryIsImmutable === "true",
+ *     isImmutable: repositoryIsImmutable,
  *     state: repositoryState,
  * });
  * ```
@@ -110,7 +110,7 @@ export interface GetRepositoriesResult {
  *     compartmentId: compartmentId,
  *     displayName: repositoryDisplayName,
  *     id: repositoryId,
- *     isImmutable: repositoryIsImmutable === "true",
+ *     isImmutable: repositoryIsImmutable,
  *     state: repositoryState,
  * });
  * ```

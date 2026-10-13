@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testIotDomain = new IotIotDomain("testIotDomain", IotIotDomainArgs.builder()
  *             .compartmentId(compartmentId)
- *             .iotDomainGroupId(testIotDomainGroup.id())
+ *             .iotDomainGroupId(testIotDomainGroup.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(iotDomainDescription)
  *             .displayName(iotDomainDisplayName)

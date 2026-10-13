@@ -214,7 +214,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAgentInstallers = JmsFunctions.getAgentInstallers(GetAgentInstallersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .osFamily(agentInstallerOsFamily)
      *             .platformArchitecture(agentInstallerPlatformArchitecture)
      *             .build());
@@ -259,7 +259,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAgentInstallers = JmsFunctions.getAgentInstallers(GetAgentInstallersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .osFamily(agentInstallerOsFamily)
      *             .platformArchitecture(agentInstallerPlatformArchitecture)
      *             .build());
@@ -304,7 +304,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAgentInstallers = JmsFunctions.getAgentInstallers(GetAgentInstallersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .osFamily(agentInstallerOsFamily)
      *             .platformArchitecture(agentInstallerPlatformArchitecture)
      *             .build());
@@ -349,7 +349,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAgentInstallers = JmsFunctions.getAgentInstallers(GetAgentInstallersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .osFamily(agentInstallerOsFamily)
      *             .platformArchitecture(agentInstallerPlatformArchitecture)
      *             .build());
@@ -394,7 +394,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAgentInstallers = JmsFunctions.getAgentInstallers(GetAgentInstallersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .osFamily(agentInstallerOsFamily)
      *             .platformArchitecture(agentInstallerPlatformArchitecture)
      *             .build());
@@ -439,7 +439,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAgentInstallers = JmsFunctions.getAgentInstallers(GetAgentInstallersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .osFamily(agentInstallerOsFamily)
      *             .platformArchitecture(agentInstallerPlatformArchitecture)
      *             .build());
@@ -484,7 +484,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testAgentInstallers = JmsFunctions.getAgentInstallers(GetAgentInstallersArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .osFamily(agentInstallerOsFamily)
      *             .platformArchitecture(agentInstallerPlatformArchitecture)
      *             .build());
@@ -836,7 +836,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleet = JmsFunctions.getFleet(GetFleetArgs.builder()
-     *             .fleetId(testFleetOciJmsFleet.id())
+     *             .fleetId(testFleetOciJmsFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -878,7 +878,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleet = JmsFunctions.getFleet(GetFleetArgs.builder()
-     *             .fleetId(testFleetOciJmsFleet.id())
+     *             .fleetId(testFleetOciJmsFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -920,7 +920,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleet = JmsFunctions.getFleet(GetFleetArgs.builder()
-     *             .fleetId(testFleetOciJmsFleet.id())
+     *             .fleetId(testFleetOciJmsFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -962,7 +962,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleet = JmsFunctions.getFleet(GetFleetArgs.builder()
-     *             .fleetId(testFleetOciJmsFleet.id())
+     *             .fleetId(testFleetOciJmsFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -1004,7 +1004,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleet = JmsFunctions.getFleet(GetFleetArgs.builder()
-     *             .fleetId(testFleetOciJmsFleet.id())
+     *             .fleetId(testFleetOciJmsFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -1046,7 +1046,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetAdvancedFeatureConfiguration = JmsFunctions.getFleetAdvancedFeatureConfiguration(GetFleetAdvancedFeatureConfigurationArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -1088,7 +1088,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetAdvancedFeatureConfiguration = JmsFunctions.getFleetAdvancedFeatureConfiguration(GetFleetAdvancedFeatureConfigurationArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -1130,7 +1130,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetAdvancedFeatureConfiguration = JmsFunctions.getFleetAdvancedFeatureConfiguration(GetFleetAdvancedFeatureConfigurationArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -1172,7 +1172,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetAdvancedFeatureConfiguration = JmsFunctions.getFleetAdvancedFeatureConfiguration(GetFleetAdvancedFeatureConfigurationArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -1214,7 +1214,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetAdvancedFeatureConfiguration = JmsFunctions.getFleetAdvancedFeatureConfiguration(GetFleetAdvancedFeatureConfigurationArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -1256,7 +1256,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetAgentConfiguration = JmsFunctions.getFleetAgentConfiguration(GetFleetAgentConfigurationArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -1298,7 +1298,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetAgentConfiguration = JmsFunctions.getFleetAgentConfiguration(GetFleetAgentConfigurationArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -1340,7 +1340,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetAgentConfiguration = JmsFunctions.getFleetAgentConfiguration(GetFleetAgentConfigurationArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -1382,7 +1382,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetAgentConfiguration = JmsFunctions.getFleetAgentConfiguration(GetFleetAgentConfigurationArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -1424,7 +1424,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetAgentConfiguration = JmsFunctions.getFleetAgentConfiguration(GetFleetAgentConfigurationArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -1466,7 +1466,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetBlocklists = JmsFunctions.getFleetBlocklists(GetFleetBlocklistsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .managedInstanceId(fleetBlocklistManagedInstanceId)
      *             .operation(fleetBlocklistOperation)
      *             .build());
@@ -1510,7 +1510,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetBlocklists = JmsFunctions.getFleetBlocklists(GetFleetBlocklistsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .managedInstanceId(fleetBlocklistManagedInstanceId)
      *             .operation(fleetBlocklistOperation)
      *             .build());
@@ -1554,7 +1554,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetBlocklists = JmsFunctions.getFleetBlocklists(GetFleetBlocklistsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .managedInstanceId(fleetBlocklistManagedInstanceId)
      *             .operation(fleetBlocklistOperation)
      *             .build());
@@ -1598,7 +1598,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetBlocklists = JmsFunctions.getFleetBlocklists(GetFleetBlocklistsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .managedInstanceId(fleetBlocklistManagedInstanceId)
      *             .operation(fleetBlocklistOperation)
      *             .build());
@@ -1642,7 +1642,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetBlocklists = JmsFunctions.getFleetBlocklists(GetFleetBlocklistsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .managedInstanceId(fleetBlocklistManagedInstanceId)
      *             .operation(fleetBlocklistOperation)
      *             .build());
@@ -1686,12 +1686,12 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetContainers = JmsFunctions.getFleetContainers(GetFleetContainersArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .applicationName(testApplication.name())
+     *             .fleetId(testFleet.get("id"))
+     *             .applicationName(testApplication.get("name"))
      *             .displayName(fleetContainerDisplayName)
      *             .jreSecurityStatus(fleetContainerJreSecurityStatus)
      *             .jreVersion(fleetContainerJreVersion)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeStartedGreaterThanOrEqualTo(fleetContainerTimeStartedGreaterThanOrEqualTo)
      *             .timeStartedLessThanOrEqualTo(fleetContainerTimeStartedLessThanOrEqualTo)
      *             .build());
@@ -1735,12 +1735,12 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetContainers = JmsFunctions.getFleetContainers(GetFleetContainersArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .applicationName(testApplication.name())
+     *             .fleetId(testFleet.get("id"))
+     *             .applicationName(testApplication.get("name"))
      *             .displayName(fleetContainerDisplayName)
      *             .jreSecurityStatus(fleetContainerJreSecurityStatus)
      *             .jreVersion(fleetContainerJreVersion)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeStartedGreaterThanOrEqualTo(fleetContainerTimeStartedGreaterThanOrEqualTo)
      *             .timeStartedLessThanOrEqualTo(fleetContainerTimeStartedLessThanOrEqualTo)
      *             .build());
@@ -1784,12 +1784,12 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetContainers = JmsFunctions.getFleetContainers(GetFleetContainersArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .applicationName(testApplication.name())
+     *             .fleetId(testFleet.get("id"))
+     *             .applicationName(testApplication.get("name"))
      *             .displayName(fleetContainerDisplayName)
      *             .jreSecurityStatus(fleetContainerJreSecurityStatus)
      *             .jreVersion(fleetContainerJreVersion)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeStartedGreaterThanOrEqualTo(fleetContainerTimeStartedGreaterThanOrEqualTo)
      *             .timeStartedLessThanOrEqualTo(fleetContainerTimeStartedLessThanOrEqualTo)
      *             .build());
@@ -1833,12 +1833,12 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetContainers = JmsFunctions.getFleetContainers(GetFleetContainersArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .applicationName(testApplication.name())
+     *             .fleetId(testFleet.get("id"))
+     *             .applicationName(testApplication.get("name"))
      *             .displayName(fleetContainerDisplayName)
      *             .jreSecurityStatus(fleetContainerJreSecurityStatus)
      *             .jreVersion(fleetContainerJreVersion)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeStartedGreaterThanOrEqualTo(fleetContainerTimeStartedGreaterThanOrEqualTo)
      *             .timeStartedLessThanOrEqualTo(fleetContainerTimeStartedLessThanOrEqualTo)
      *             .build());
@@ -1882,12 +1882,12 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetContainers = JmsFunctions.getFleetContainers(GetFleetContainersArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .applicationName(testApplication.name())
+     *             .fleetId(testFleet.get("id"))
+     *             .applicationName(testApplication.get("name"))
      *             .displayName(fleetContainerDisplayName)
      *             .jreSecurityStatus(fleetContainerJreSecurityStatus)
      *             .jreVersion(fleetContainerJreVersion)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeStartedGreaterThanOrEqualTo(fleetContainerTimeStartedGreaterThanOrEqualTo)
      *             .timeStartedLessThanOrEqualTo(fleetContainerTimeStartedLessThanOrEqualTo)
      *             .build());
@@ -1932,7 +1932,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetCryptoAnalysisResult = JmsFunctions.getFleetCryptoAnalysisResult(GetFleetCryptoAnalysisResultArgs.builder()
      *             .cryptoAnalysisResultId(fleetCryptoAnalysisResultId)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -1975,7 +1975,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetCryptoAnalysisResult = JmsFunctions.getFleetCryptoAnalysisResult(GetFleetCryptoAnalysisResultArgs.builder()
      *             .cryptoAnalysisResultId(fleetCryptoAnalysisResultId)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2018,7 +2018,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetCryptoAnalysisResult = JmsFunctions.getFleetCryptoAnalysisResult(GetFleetCryptoAnalysisResultArgs.builder()
      *             .cryptoAnalysisResultId(fleetCryptoAnalysisResultId)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2061,7 +2061,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetCryptoAnalysisResult = JmsFunctions.getFleetCryptoAnalysisResult(GetFleetCryptoAnalysisResultArgs.builder()
      *             .cryptoAnalysisResultId(fleetCryptoAnalysisResultId)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2104,7 +2104,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetCryptoAnalysisResult = JmsFunctions.getFleetCryptoAnalysisResult(GetFleetCryptoAnalysisResultArgs.builder()
      *             .cryptoAnalysisResultId(fleetCryptoAnalysisResultId)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2146,7 +2146,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCryptoAnalysisResults = JmsFunctions.getFleetCryptoAnalysisResults(GetFleetCryptoAnalysisResultsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .aggregationMode(fleetCryptoAnalysisResultAggregationMode)
      *             .findingCount(fleetCryptoAnalysisResultFindingCount)
      *             .findingCountGreaterThan(fleetCryptoAnalysisResultFindingCountGreaterThan)
@@ -2197,7 +2197,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCryptoAnalysisResults = JmsFunctions.getFleetCryptoAnalysisResults(GetFleetCryptoAnalysisResultsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .aggregationMode(fleetCryptoAnalysisResultAggregationMode)
      *             .findingCount(fleetCryptoAnalysisResultFindingCount)
      *             .findingCountGreaterThan(fleetCryptoAnalysisResultFindingCountGreaterThan)
@@ -2248,7 +2248,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCryptoAnalysisResults = JmsFunctions.getFleetCryptoAnalysisResults(GetFleetCryptoAnalysisResultsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .aggregationMode(fleetCryptoAnalysisResultAggregationMode)
      *             .findingCount(fleetCryptoAnalysisResultFindingCount)
      *             .findingCountGreaterThan(fleetCryptoAnalysisResultFindingCountGreaterThan)
@@ -2299,7 +2299,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCryptoAnalysisResults = JmsFunctions.getFleetCryptoAnalysisResults(GetFleetCryptoAnalysisResultsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .aggregationMode(fleetCryptoAnalysisResultAggregationMode)
      *             .findingCount(fleetCryptoAnalysisResultFindingCount)
      *             .findingCountGreaterThan(fleetCryptoAnalysisResultFindingCountGreaterThan)
@@ -2350,7 +2350,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetCryptoAnalysisResults = JmsFunctions.getFleetCryptoAnalysisResults(GetFleetCryptoAnalysisResultsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .aggregationMode(fleetCryptoAnalysisResultAggregationMode)
      *             .findingCount(fleetCryptoAnalysisResultFindingCount)
      *             .findingCountGreaterThan(fleetCryptoAnalysisResultFindingCountGreaterThan)
@@ -2401,7 +2401,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetDiagnoses = JmsFunctions.getFleetDiagnoses(GetFleetDiagnosesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2443,7 +2443,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetDiagnoses = JmsFunctions.getFleetDiagnoses(GetFleetDiagnosesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2485,7 +2485,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetDiagnoses = JmsFunctions.getFleetDiagnoses(GetFleetDiagnosesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2527,7 +2527,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetDiagnoses = JmsFunctions.getFleetDiagnoses(GetFleetDiagnosesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2569,7 +2569,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetDiagnoses = JmsFunctions.getFleetDiagnoses(GetFleetDiagnosesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2612,7 +2612,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetDrsFile = JmsFunctions.getFleetDrsFile(GetFleetDrsFileArgs.builder()
      *             .drsFileKey(fleetDrsFileDrsFileKey)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2655,7 +2655,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetDrsFile = JmsFunctions.getFleetDrsFile(GetFleetDrsFileArgs.builder()
      *             .drsFileKey(fleetDrsFileDrsFileKey)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2698,7 +2698,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetDrsFile = JmsFunctions.getFleetDrsFile(GetFleetDrsFileArgs.builder()
      *             .drsFileKey(fleetDrsFileDrsFileKey)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2741,7 +2741,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetDrsFile = JmsFunctions.getFleetDrsFile(GetFleetDrsFileArgs.builder()
      *             .drsFileKey(fleetDrsFileDrsFileKey)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2784,7 +2784,7 @@ public final class JmsFunctions {
      *     public static void stack(Context ctx) {
      *         final var testFleetDrsFile = JmsFunctions.getFleetDrsFile(GetFleetDrsFileArgs.builder()
      *             .drsFileKey(fleetDrsFileDrsFileKey)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2826,7 +2826,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetDrsFiles = JmsFunctions.getFleetDrsFiles(GetFleetDrsFilesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2868,7 +2868,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetDrsFiles = JmsFunctions.getFleetDrsFiles(GetFleetDrsFilesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2910,7 +2910,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetDrsFiles = JmsFunctions.getFleetDrsFiles(GetFleetDrsFilesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2952,7 +2952,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetDrsFiles = JmsFunctions.getFleetDrsFiles(GetFleetDrsFilesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -2994,7 +2994,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetDrsFiles = JmsFunctions.getFleetDrsFiles(GetFleetDrsFilesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -3339,7 +3339,7 @@ public final class JmsFunctions {
      *         final var testFleetErrors = JmsFunctions.getFleetErrors(GetFleetErrorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(fleetErrorCompartmentIdInSubtree)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .timeFirstSeenGreaterThanOrEqualTo(fleetErrorTimeFirstSeenGreaterThanOrEqualTo)
      *             .timeFirstSeenLessThanOrEqualTo(fleetErrorTimeFirstSeenLessThanOrEqualTo)
      *             .timeLastSeenGreaterThanOrEqualTo(fleetErrorTimeLastSeenGreaterThanOrEqualTo)
@@ -3387,7 +3387,7 @@ public final class JmsFunctions {
      *         final var testFleetErrors = JmsFunctions.getFleetErrors(GetFleetErrorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(fleetErrorCompartmentIdInSubtree)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .timeFirstSeenGreaterThanOrEqualTo(fleetErrorTimeFirstSeenGreaterThanOrEqualTo)
      *             .timeFirstSeenLessThanOrEqualTo(fleetErrorTimeFirstSeenLessThanOrEqualTo)
      *             .timeLastSeenGreaterThanOrEqualTo(fleetErrorTimeLastSeenGreaterThanOrEqualTo)
@@ -3435,7 +3435,7 @@ public final class JmsFunctions {
      *         final var testFleetErrors = JmsFunctions.getFleetErrors(GetFleetErrorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(fleetErrorCompartmentIdInSubtree)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .timeFirstSeenGreaterThanOrEqualTo(fleetErrorTimeFirstSeenGreaterThanOrEqualTo)
      *             .timeFirstSeenLessThanOrEqualTo(fleetErrorTimeFirstSeenLessThanOrEqualTo)
      *             .timeLastSeenGreaterThanOrEqualTo(fleetErrorTimeLastSeenGreaterThanOrEqualTo)
@@ -3483,7 +3483,7 @@ public final class JmsFunctions {
      *         final var testFleetErrors = JmsFunctions.getFleetErrors(GetFleetErrorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(fleetErrorCompartmentIdInSubtree)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .timeFirstSeenGreaterThanOrEqualTo(fleetErrorTimeFirstSeenGreaterThanOrEqualTo)
      *             .timeFirstSeenLessThanOrEqualTo(fleetErrorTimeFirstSeenLessThanOrEqualTo)
      *             .timeLastSeenGreaterThanOrEqualTo(fleetErrorTimeLastSeenGreaterThanOrEqualTo)
@@ -3531,7 +3531,7 @@ public final class JmsFunctions {
      *         final var testFleetErrors = JmsFunctions.getFleetErrors(GetFleetErrorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(fleetErrorCompartmentIdInSubtree)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .timeFirstSeenGreaterThanOrEqualTo(fleetErrorTimeFirstSeenGreaterThanOrEqualTo)
      *             .timeFirstSeenLessThanOrEqualTo(fleetErrorTimeFirstSeenLessThanOrEqualTo)
      *             .timeLastSeenGreaterThanOrEqualTo(fleetErrorTimeLastSeenGreaterThanOrEqualTo)
@@ -3579,7 +3579,7 @@ public final class JmsFunctions {
      *         final var testFleetErrors = JmsFunctions.getFleetErrors(GetFleetErrorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(fleetErrorCompartmentIdInSubtree)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .timeFirstSeenGreaterThanOrEqualTo(fleetErrorTimeFirstSeenGreaterThanOrEqualTo)
      *             .timeFirstSeenLessThanOrEqualTo(fleetErrorTimeFirstSeenLessThanOrEqualTo)
      *             .timeLastSeenGreaterThanOrEqualTo(fleetErrorTimeLastSeenGreaterThanOrEqualTo)
@@ -3627,7 +3627,7 @@ public final class JmsFunctions {
      *         final var testFleetErrors = JmsFunctions.getFleetErrors(GetFleetErrorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(fleetErrorCompartmentIdInSubtree)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .timeFirstSeenGreaterThanOrEqualTo(fleetErrorTimeFirstSeenGreaterThanOrEqualTo)
      *             .timeFirstSeenLessThanOrEqualTo(fleetErrorTimeFirstSeenLessThanOrEqualTo)
      *             .timeLastSeenGreaterThanOrEqualTo(fleetErrorTimeLastSeenGreaterThanOrEqualTo)
@@ -3673,7 +3673,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetExportSetting = JmsFunctions.getFleetExportSetting(GetFleetExportSettingArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -3715,7 +3715,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetExportSetting = JmsFunctions.getFleetExportSetting(GetFleetExportSettingArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -3757,7 +3757,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetExportSetting = JmsFunctions.getFleetExportSetting(GetFleetExportSettingArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -3799,7 +3799,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetExportSetting = JmsFunctions.getFleetExportSetting(GetFleetExportSettingArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -3841,7 +3841,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetExportSetting = JmsFunctions.getFleetExportSetting(GetFleetExportSettingArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -3883,7 +3883,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetExportStatus = JmsFunctions.getFleetExportStatus(GetFleetExportStatusArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -3925,7 +3925,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetExportStatus = JmsFunctions.getFleetExportStatus(GetFleetExportStatusArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -3967,7 +3967,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetExportStatus = JmsFunctions.getFleetExportStatus(GetFleetExportStatusArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -4009,7 +4009,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetExportStatus = JmsFunctions.getFleetExportStatus(GetFleetExportStatusArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -4051,7 +4051,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetExportStatus = JmsFunctions.getFleetExportStatus(GetFleetExportStatusArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -4093,7 +4093,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResult = JmsFunctions.getFleetJavaMigrationAnalysisResult(GetFleetJavaMigrationAnalysisResultArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .javaMigrationAnalysisResultId(fleetJavaMigrationAnalysisResultId)
      *             .build());
      * 
@@ -4136,7 +4136,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResult = JmsFunctions.getFleetJavaMigrationAnalysisResult(GetFleetJavaMigrationAnalysisResultArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .javaMigrationAnalysisResultId(fleetJavaMigrationAnalysisResultId)
      *             .build());
      * 
@@ -4179,7 +4179,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResult = JmsFunctions.getFleetJavaMigrationAnalysisResult(GetFleetJavaMigrationAnalysisResultArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .javaMigrationAnalysisResultId(fleetJavaMigrationAnalysisResultId)
      *             .build());
      * 
@@ -4222,7 +4222,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResult = JmsFunctions.getFleetJavaMigrationAnalysisResult(GetFleetJavaMigrationAnalysisResultArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .javaMigrationAnalysisResultId(fleetJavaMigrationAnalysisResultId)
      *             .build());
      * 
@@ -4265,7 +4265,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResult = JmsFunctions.getFleetJavaMigrationAnalysisResult(GetFleetJavaMigrationAnalysisResultArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .javaMigrationAnalysisResultId(fleetJavaMigrationAnalysisResultId)
      *             .build());
      * 
@@ -4308,7 +4308,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResults = JmsFunctions.getFleetJavaMigrationAnalysisResults(GetFleetJavaMigrationAnalysisResultsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .applicationName(fleetJavaMigrationAnalysisResultApplicationName)
      *             .hostName(fleetJavaMigrationAnalysisResultHostName)
      *             .managedInstanceId(fleetJavaMigrationAnalysisResultManagedInstanceId)
@@ -4355,7 +4355,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResults = JmsFunctions.getFleetJavaMigrationAnalysisResults(GetFleetJavaMigrationAnalysisResultsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .applicationName(fleetJavaMigrationAnalysisResultApplicationName)
      *             .hostName(fleetJavaMigrationAnalysisResultHostName)
      *             .managedInstanceId(fleetJavaMigrationAnalysisResultManagedInstanceId)
@@ -4402,7 +4402,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResults = JmsFunctions.getFleetJavaMigrationAnalysisResults(GetFleetJavaMigrationAnalysisResultsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .applicationName(fleetJavaMigrationAnalysisResultApplicationName)
      *             .hostName(fleetJavaMigrationAnalysisResultHostName)
      *             .managedInstanceId(fleetJavaMigrationAnalysisResultManagedInstanceId)
@@ -4449,7 +4449,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResults = JmsFunctions.getFleetJavaMigrationAnalysisResults(GetFleetJavaMigrationAnalysisResultsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .applicationName(fleetJavaMigrationAnalysisResultApplicationName)
      *             .hostName(fleetJavaMigrationAnalysisResultHostName)
      *             .managedInstanceId(fleetJavaMigrationAnalysisResultManagedInstanceId)
@@ -4496,7 +4496,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetJavaMigrationAnalysisResults = JmsFunctions.getFleetJavaMigrationAnalysisResults(GetFleetJavaMigrationAnalysisResultsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .applicationName(fleetJavaMigrationAnalysisResultApplicationName)
      *             .hostName(fleetJavaMigrationAnalysisResultHostName)
      *             .managedInstanceId(fleetJavaMigrationAnalysisResultManagedInstanceId)
@@ -4543,12 +4543,12 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetLibraryApplications = JmsFunctions.getFleetLibraryApplications(GetFleetLibraryApplicationsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .libraryKey(fleetLibraryApplicationLibraryKey)
-     *             .applicationId(testApplication.id())
-     *             .applicationName(testApplication.name())
+     *             .applicationId(testApplication.get("id"))
+     *             .applicationName(testApplication.get("name"))
      *             .applicationNameContains(fleetLibraryApplicationApplicationNameContains)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeEnd(fleetLibraryApplicationTimeEnd)
      *             .timeStart(fleetLibraryApplicationTimeStart)
      *             .build());
@@ -4592,12 +4592,12 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetLibraryApplications = JmsFunctions.getFleetLibraryApplications(GetFleetLibraryApplicationsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .libraryKey(fleetLibraryApplicationLibraryKey)
-     *             .applicationId(testApplication.id())
-     *             .applicationName(testApplication.name())
+     *             .applicationId(testApplication.get("id"))
+     *             .applicationName(testApplication.get("name"))
      *             .applicationNameContains(fleetLibraryApplicationApplicationNameContains)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeEnd(fleetLibraryApplicationTimeEnd)
      *             .timeStart(fleetLibraryApplicationTimeStart)
      *             .build());
@@ -4641,12 +4641,12 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetLibraryApplications = JmsFunctions.getFleetLibraryApplications(GetFleetLibraryApplicationsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .libraryKey(fleetLibraryApplicationLibraryKey)
-     *             .applicationId(testApplication.id())
-     *             .applicationName(testApplication.name())
+     *             .applicationId(testApplication.get("id"))
+     *             .applicationName(testApplication.get("name"))
      *             .applicationNameContains(fleetLibraryApplicationApplicationNameContains)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeEnd(fleetLibraryApplicationTimeEnd)
      *             .timeStart(fleetLibraryApplicationTimeStart)
      *             .build());
@@ -4690,12 +4690,12 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetLibraryApplications = JmsFunctions.getFleetLibraryApplications(GetFleetLibraryApplicationsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .libraryKey(fleetLibraryApplicationLibraryKey)
-     *             .applicationId(testApplication.id())
-     *             .applicationName(testApplication.name())
+     *             .applicationId(testApplication.get("id"))
+     *             .applicationName(testApplication.get("name"))
      *             .applicationNameContains(fleetLibraryApplicationApplicationNameContains)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeEnd(fleetLibraryApplicationTimeEnd)
      *             .timeStart(fleetLibraryApplicationTimeStart)
      *             .build());
@@ -4739,12 +4739,12 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetLibraryApplications = JmsFunctions.getFleetLibraryApplications(GetFleetLibraryApplicationsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .libraryKey(fleetLibraryApplicationLibraryKey)
-     *             .applicationId(testApplication.id())
-     *             .applicationName(testApplication.name())
+     *             .applicationId(testApplication.get("id"))
+     *             .applicationName(testApplication.get("name"))
      *             .applicationNameContains(fleetLibraryApplicationApplicationNameContains)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeEnd(fleetLibraryApplicationTimeEnd)
      *             .timeStart(fleetLibraryApplicationTimeStart)
      *             .build());
@@ -4788,12 +4788,12 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetLibraryManagedInstances = JmsFunctions.getFleetLibraryManagedInstances(GetFleetLibraryManagedInstancesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .libraryKey(fleetLibraryManagedInstanceLibraryKey)
-     *             .applicationId(testApplication.id())
+     *             .applicationId(testApplication.get("id"))
      *             .hostName(fleetLibraryManagedInstanceHostName)
      *             .hostnameContains(fleetLibraryManagedInstanceHostnameContains)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeEnd(fleetLibraryManagedInstanceTimeEnd)
      *             .timeStart(fleetLibraryManagedInstanceTimeStart)
      *             .build());
@@ -4837,12 +4837,12 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetLibraryManagedInstances = JmsFunctions.getFleetLibraryManagedInstances(GetFleetLibraryManagedInstancesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .libraryKey(fleetLibraryManagedInstanceLibraryKey)
-     *             .applicationId(testApplication.id())
+     *             .applicationId(testApplication.get("id"))
      *             .hostName(fleetLibraryManagedInstanceHostName)
      *             .hostnameContains(fleetLibraryManagedInstanceHostnameContains)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeEnd(fleetLibraryManagedInstanceTimeEnd)
      *             .timeStart(fleetLibraryManagedInstanceTimeStart)
      *             .build());
@@ -4886,12 +4886,12 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetLibraryManagedInstances = JmsFunctions.getFleetLibraryManagedInstances(GetFleetLibraryManagedInstancesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .libraryKey(fleetLibraryManagedInstanceLibraryKey)
-     *             .applicationId(testApplication.id())
+     *             .applicationId(testApplication.get("id"))
      *             .hostName(fleetLibraryManagedInstanceHostName)
      *             .hostnameContains(fleetLibraryManagedInstanceHostnameContains)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeEnd(fleetLibraryManagedInstanceTimeEnd)
      *             .timeStart(fleetLibraryManagedInstanceTimeStart)
      *             .build());
@@ -4935,12 +4935,12 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetLibraryManagedInstances = JmsFunctions.getFleetLibraryManagedInstances(GetFleetLibraryManagedInstancesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .libraryKey(fleetLibraryManagedInstanceLibraryKey)
-     *             .applicationId(testApplication.id())
+     *             .applicationId(testApplication.get("id"))
      *             .hostName(fleetLibraryManagedInstanceHostName)
      *             .hostnameContains(fleetLibraryManagedInstanceHostnameContains)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeEnd(fleetLibraryManagedInstanceTimeEnd)
      *             .timeStart(fleetLibraryManagedInstanceTimeStart)
      *             .build());
@@ -4984,12 +4984,12 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetLibraryManagedInstances = JmsFunctions.getFleetLibraryManagedInstances(GetFleetLibraryManagedInstancesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .libraryKey(fleetLibraryManagedInstanceLibraryKey)
-     *             .applicationId(testApplication.id())
+     *             .applicationId(testApplication.get("id"))
      *             .hostName(fleetLibraryManagedInstanceHostName)
      *             .hostnameContains(fleetLibraryManagedInstanceHostnameContains)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeEnd(fleetLibraryManagedInstanceTimeEnd)
      *             .timeStart(fleetLibraryManagedInstanceTimeStart)
      *             .build());
@@ -5033,7 +5033,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResult = JmsFunctions.getFleetPerformanceTuningAnalysisResult(GetFleetPerformanceTuningAnalysisResultArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .performanceTuningAnalysisResultId(fleetPerformanceTuningAnalysisResultId)
      *             .build());
      * 
@@ -5076,7 +5076,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResult = JmsFunctions.getFleetPerformanceTuningAnalysisResult(GetFleetPerformanceTuningAnalysisResultArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .performanceTuningAnalysisResultId(fleetPerformanceTuningAnalysisResultId)
      *             .build());
      * 
@@ -5119,7 +5119,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResult = JmsFunctions.getFleetPerformanceTuningAnalysisResult(GetFleetPerformanceTuningAnalysisResultArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .performanceTuningAnalysisResultId(fleetPerformanceTuningAnalysisResultId)
      *             .build());
      * 
@@ -5162,7 +5162,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResult = JmsFunctions.getFleetPerformanceTuningAnalysisResult(GetFleetPerformanceTuningAnalysisResultArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .performanceTuningAnalysisResultId(fleetPerformanceTuningAnalysisResultId)
      *             .build());
      * 
@@ -5205,7 +5205,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResult = JmsFunctions.getFleetPerformanceTuningAnalysisResult(GetFleetPerformanceTuningAnalysisResultArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .performanceTuningAnalysisResultId(fleetPerformanceTuningAnalysisResultId)
      *             .build());
      * 
@@ -5248,7 +5248,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResults = JmsFunctions.getFleetPerformanceTuningAnalysisResults(GetFleetPerformanceTuningAnalysisResultsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .applicationId(fleetPerformanceTuningAnalysisResultApplicationId)
      *             .applicationName(fleetPerformanceTuningAnalysisResultApplicationName)
      *             .hostName(fleetPerformanceTuningAnalysisResultHostName)
@@ -5296,7 +5296,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResults = JmsFunctions.getFleetPerformanceTuningAnalysisResults(GetFleetPerformanceTuningAnalysisResultsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .applicationId(fleetPerformanceTuningAnalysisResultApplicationId)
      *             .applicationName(fleetPerformanceTuningAnalysisResultApplicationName)
      *             .hostName(fleetPerformanceTuningAnalysisResultHostName)
@@ -5344,7 +5344,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResults = JmsFunctions.getFleetPerformanceTuningAnalysisResults(GetFleetPerformanceTuningAnalysisResultsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .applicationId(fleetPerformanceTuningAnalysisResultApplicationId)
      *             .applicationName(fleetPerformanceTuningAnalysisResultApplicationName)
      *             .hostName(fleetPerformanceTuningAnalysisResultHostName)
@@ -5392,7 +5392,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResults = JmsFunctions.getFleetPerformanceTuningAnalysisResults(GetFleetPerformanceTuningAnalysisResultsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .applicationId(fleetPerformanceTuningAnalysisResultApplicationId)
      *             .applicationName(fleetPerformanceTuningAnalysisResultApplicationName)
      *             .hostName(fleetPerformanceTuningAnalysisResultHostName)
@@ -5440,7 +5440,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetPerformanceTuningAnalysisResults = JmsFunctions.getFleetPerformanceTuningAnalysisResults(GetFleetPerformanceTuningAnalysisResultsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .applicationId(fleetPerformanceTuningAnalysisResultApplicationId)
      *             .applicationName(fleetPerformanceTuningAnalysisResultApplicationName)
      *             .hostName(fleetPerformanceTuningAnalysisResultHostName)
@@ -5509,10 +5509,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetUncorrelatedPackageApplications = JmsFunctions.getFleetUncorrelatedPackageApplications(GetFleetUncorrelatedPackageApplicationsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .packageName(fleetUncorrelatedPackageApplicationPackageName)
-     *             .applicationId(testApplication.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .applicationId(testApplication.get("id"))
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeEnd(fleetUncorrelatedPackageApplicationTimeEnd)
      *             .timeStart(fleetUncorrelatedPackageApplicationTimeStart)
      *             .build());
@@ -5556,10 +5556,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetUncorrelatedPackageApplications = JmsFunctions.getFleetUncorrelatedPackageApplications(GetFleetUncorrelatedPackageApplicationsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .packageName(fleetUncorrelatedPackageApplicationPackageName)
-     *             .applicationId(testApplication.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .applicationId(testApplication.get("id"))
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeEnd(fleetUncorrelatedPackageApplicationTimeEnd)
      *             .timeStart(fleetUncorrelatedPackageApplicationTimeStart)
      *             .build());
@@ -5603,10 +5603,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetUncorrelatedPackageApplications = JmsFunctions.getFleetUncorrelatedPackageApplications(GetFleetUncorrelatedPackageApplicationsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .packageName(fleetUncorrelatedPackageApplicationPackageName)
-     *             .applicationId(testApplication.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .applicationId(testApplication.get("id"))
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeEnd(fleetUncorrelatedPackageApplicationTimeEnd)
      *             .timeStart(fleetUncorrelatedPackageApplicationTimeStart)
      *             .build());
@@ -5650,10 +5650,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetUncorrelatedPackageApplications = JmsFunctions.getFleetUncorrelatedPackageApplications(GetFleetUncorrelatedPackageApplicationsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .packageName(fleetUncorrelatedPackageApplicationPackageName)
-     *             .applicationId(testApplication.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .applicationId(testApplication.get("id"))
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeEnd(fleetUncorrelatedPackageApplicationTimeEnd)
      *             .timeStart(fleetUncorrelatedPackageApplicationTimeStart)
      *             .build());
@@ -5697,10 +5697,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetUncorrelatedPackageApplications = JmsFunctions.getFleetUncorrelatedPackageApplications(GetFleetUncorrelatedPackageApplicationsArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .packageName(fleetUncorrelatedPackageApplicationPackageName)
-     *             .applicationId(testApplication.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .applicationId(testApplication.get("id"))
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeEnd(fleetUncorrelatedPackageApplicationTimeEnd)
      *             .timeStart(fleetUncorrelatedPackageApplicationTimeStart)
      *             .build());
@@ -5744,10 +5744,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetUncorrelatedPackageManagedInstances = JmsFunctions.getFleetUncorrelatedPackageManagedInstances(GetFleetUncorrelatedPackageManagedInstancesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .packageName(fleetUncorrelatedPackageManagedInstancePackageName)
-     *             .applicationId(testApplication.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .applicationId(testApplication.get("id"))
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeEnd(fleetUncorrelatedPackageManagedInstanceTimeEnd)
      *             .timeStart(fleetUncorrelatedPackageManagedInstanceTimeStart)
      *             .build());
@@ -5791,10 +5791,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetUncorrelatedPackageManagedInstances = JmsFunctions.getFleetUncorrelatedPackageManagedInstances(GetFleetUncorrelatedPackageManagedInstancesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .packageName(fleetUncorrelatedPackageManagedInstancePackageName)
-     *             .applicationId(testApplication.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .applicationId(testApplication.get("id"))
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeEnd(fleetUncorrelatedPackageManagedInstanceTimeEnd)
      *             .timeStart(fleetUncorrelatedPackageManagedInstanceTimeStart)
      *             .build());
@@ -5838,10 +5838,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetUncorrelatedPackageManagedInstances = JmsFunctions.getFleetUncorrelatedPackageManagedInstances(GetFleetUncorrelatedPackageManagedInstancesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .packageName(fleetUncorrelatedPackageManagedInstancePackageName)
-     *             .applicationId(testApplication.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .applicationId(testApplication.get("id"))
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeEnd(fleetUncorrelatedPackageManagedInstanceTimeEnd)
      *             .timeStart(fleetUncorrelatedPackageManagedInstanceTimeStart)
      *             .build());
@@ -5885,10 +5885,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetUncorrelatedPackageManagedInstances = JmsFunctions.getFleetUncorrelatedPackageManagedInstances(GetFleetUncorrelatedPackageManagedInstancesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .packageName(fleetUncorrelatedPackageManagedInstancePackageName)
-     *             .applicationId(testApplication.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .applicationId(testApplication.get("id"))
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeEnd(fleetUncorrelatedPackageManagedInstanceTimeEnd)
      *             .timeStart(fleetUncorrelatedPackageManagedInstanceTimeStart)
      *             .build());
@@ -5932,10 +5932,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetUncorrelatedPackageManagedInstances = JmsFunctions.getFleetUncorrelatedPackageManagedInstances(GetFleetUncorrelatedPackageManagedInstancesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .packageName(fleetUncorrelatedPackageManagedInstancePackageName)
-     *             .applicationId(testApplication.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .applicationId(testApplication.get("id"))
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeEnd(fleetUncorrelatedPackageManagedInstanceTimeEnd)
      *             .timeStart(fleetUncorrelatedPackageManagedInstanceTimeStart)
      *             .build());
@@ -5979,9 +5979,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetUncorrelatedPackages = JmsFunctions.getFleetUncorrelatedPackages(GetFleetUncorrelatedPackagesArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .applicationId(testApplication.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .fleetId(testFleet.get("id"))
+     *             .applicationId(testApplication.get("id"))
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .packageName(fleetUncorrelatedPackagePackageName)
      *             .timeEnd(fleetUncorrelatedPackageTimeEnd)
      *             .timeStart(fleetUncorrelatedPackageTimeStart)
@@ -6026,9 +6026,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetUncorrelatedPackages = JmsFunctions.getFleetUncorrelatedPackages(GetFleetUncorrelatedPackagesArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .applicationId(testApplication.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .fleetId(testFleet.get("id"))
+     *             .applicationId(testApplication.get("id"))
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .packageName(fleetUncorrelatedPackagePackageName)
      *             .timeEnd(fleetUncorrelatedPackageTimeEnd)
      *             .timeStart(fleetUncorrelatedPackageTimeStart)
@@ -6073,9 +6073,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetUncorrelatedPackages = JmsFunctions.getFleetUncorrelatedPackages(GetFleetUncorrelatedPackagesArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .applicationId(testApplication.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .fleetId(testFleet.get("id"))
+     *             .applicationId(testApplication.get("id"))
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .packageName(fleetUncorrelatedPackagePackageName)
      *             .timeEnd(fleetUncorrelatedPackageTimeEnd)
      *             .timeStart(fleetUncorrelatedPackageTimeStart)
@@ -6120,9 +6120,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetUncorrelatedPackages = JmsFunctions.getFleetUncorrelatedPackages(GetFleetUncorrelatedPackagesArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .applicationId(testApplication.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .fleetId(testFleet.get("id"))
+     *             .applicationId(testApplication.get("id"))
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .packageName(fleetUncorrelatedPackagePackageName)
      *             .timeEnd(fleetUncorrelatedPackageTimeEnd)
      *             .timeStart(fleetUncorrelatedPackageTimeStart)
@@ -6167,9 +6167,9 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetUncorrelatedPackages = JmsFunctions.getFleetUncorrelatedPackages(GetFleetUncorrelatedPackagesArgs.builder()
-     *             .fleetId(testFleet.id())
-     *             .applicationId(testApplication.id())
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .fleetId(testFleet.get("id"))
+     *             .applicationId(testApplication.get("id"))
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .packageName(fleetUncorrelatedPackagePackageName)
      *             .timeEnd(fleetUncorrelatedPackageTimeEnd)
      *             .timeStart(fleetUncorrelatedPackageTimeStart)
@@ -6543,7 +6543,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSite = JmsFunctions.getInstallationSite(GetInstallationSiteArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .applicationId(fleetInstallationSiteApplicationId)
      *             .installationPath(fleetInstallationSiteInstallationPath)
      *             .jreDistribution(fleetInstallationSiteJreDistribution)
@@ -6596,7 +6596,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSite = JmsFunctions.getInstallationSite(GetInstallationSiteArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .applicationId(fleetInstallationSiteApplicationId)
      *             .installationPath(fleetInstallationSiteInstallationPath)
      *             .jreDistribution(fleetInstallationSiteJreDistribution)
@@ -6649,7 +6649,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSite = JmsFunctions.getInstallationSite(GetInstallationSiteArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .applicationId(fleetInstallationSiteApplicationId)
      *             .installationPath(fleetInstallationSiteInstallationPath)
      *             .jreDistribution(fleetInstallationSiteJreDistribution)
@@ -6702,7 +6702,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSite = JmsFunctions.getInstallationSite(GetInstallationSiteArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .applicationId(fleetInstallationSiteApplicationId)
      *             .installationPath(fleetInstallationSiteInstallationPath)
      *             .jreDistribution(fleetInstallationSiteJreDistribution)
@@ -6755,7 +6755,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSite = JmsFunctions.getInstallationSite(GetInstallationSiteArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .applicationId(fleetInstallationSiteApplicationId)
      *             .installationPath(fleetInstallationSiteInstallationPath)
      *             .jreDistribution(fleetInstallationSiteJreDistribution)
@@ -6808,7 +6808,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSites = JmsFunctions.getInstallationSites(GetInstallationSitesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .applicationId(fleetInstallationSiteApplicationId)
      *             .installationPath(fleetInstallationSiteInstallationPath)
      *             .jreDistribution(fleetInstallationSiteJreDistribution)
@@ -6861,7 +6861,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSites = JmsFunctions.getInstallationSites(GetInstallationSitesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .applicationId(fleetInstallationSiteApplicationId)
      *             .installationPath(fleetInstallationSiteInstallationPath)
      *             .jreDistribution(fleetInstallationSiteJreDistribution)
@@ -6914,7 +6914,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSites = JmsFunctions.getInstallationSites(GetInstallationSitesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .applicationId(fleetInstallationSiteApplicationId)
      *             .installationPath(fleetInstallationSiteInstallationPath)
      *             .jreDistribution(fleetInstallationSiteJreDistribution)
@@ -6967,7 +6967,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSites = JmsFunctions.getInstallationSites(GetInstallationSitesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .applicationId(fleetInstallationSiteApplicationId)
      *             .installationPath(fleetInstallationSiteInstallationPath)
      *             .jreDistribution(fleetInstallationSiteJreDistribution)
@@ -7020,7 +7020,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testFleetInstallationSites = JmsFunctions.getInstallationSites(GetInstallationSitesArgs.builder()
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .applicationId(fleetInstallationSiteApplicationId)
      *             .installationPath(fleetInstallationSiteInstallationPath)
      *             .jreDistribution(fleetInstallationSiteJreDistribution)
@@ -7328,7 +7328,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadReport = JmsFunctions.getJavaDownloadsJavaDownloadReport(GetJavaDownloadsJavaDownloadReportArgs.builder()
-     *             .javaDownloadReportId(testJavaDownloadReportOciJmsJavaDownloadsJavaDownloadReport.id())
+     *             .javaDownloadReportId(testJavaDownloadReportOciJmsJavaDownloadsJavaDownloadReport.get("id"))
      *             .build());
      * 
      *     }
@@ -7370,7 +7370,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadReport = JmsFunctions.getJavaDownloadsJavaDownloadReport(GetJavaDownloadsJavaDownloadReportArgs.builder()
-     *             .javaDownloadReportId(testJavaDownloadReportOciJmsJavaDownloadsJavaDownloadReport.id())
+     *             .javaDownloadReportId(testJavaDownloadReportOciJmsJavaDownloadsJavaDownloadReport.get("id"))
      *             .build());
      * 
      *     }
@@ -7412,7 +7412,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadReport = JmsFunctions.getJavaDownloadsJavaDownloadReport(GetJavaDownloadsJavaDownloadReportArgs.builder()
-     *             .javaDownloadReportId(testJavaDownloadReportOciJmsJavaDownloadsJavaDownloadReport.id())
+     *             .javaDownloadReportId(testJavaDownloadReportOciJmsJavaDownloadsJavaDownloadReport.get("id"))
      *             .build());
      * 
      *     }
@@ -7454,7 +7454,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadReport = JmsFunctions.getJavaDownloadsJavaDownloadReport(GetJavaDownloadsJavaDownloadReportArgs.builder()
-     *             .javaDownloadReportId(testJavaDownloadReportOciJmsJavaDownloadsJavaDownloadReport.id())
+     *             .javaDownloadReportId(testJavaDownloadReportOciJmsJavaDownloadsJavaDownloadReport.get("id"))
      *             .build());
      * 
      *     }
@@ -7496,7 +7496,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadReport = JmsFunctions.getJavaDownloadsJavaDownloadReport(GetJavaDownloadsJavaDownloadReportArgs.builder()
-     *             .javaDownloadReportId(testJavaDownloadReportOciJmsJavaDownloadsJavaDownloadReport.id())
+     *             .javaDownloadReportId(testJavaDownloadReportOciJmsJavaDownloadsJavaDownloadReport.get("id"))
      *             .build());
      * 
      *     }
@@ -7538,7 +7538,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadReportContent = JmsFunctions.getJavaDownloadsJavaDownloadReportContent(GetJavaDownloadsJavaDownloadReportContentArgs.builder()
-     *             .javaDownloadReportId(testJavaDownloadReport.id())
+     *             .javaDownloadReportId(testJavaDownloadReport.get("id"))
      *             .build());
      * 
      *     }
@@ -7580,7 +7580,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadReportContent = JmsFunctions.getJavaDownloadsJavaDownloadReportContent(GetJavaDownloadsJavaDownloadReportContentArgs.builder()
-     *             .javaDownloadReportId(testJavaDownloadReport.id())
+     *             .javaDownloadReportId(testJavaDownloadReport.get("id"))
      *             .build());
      * 
      *     }
@@ -7622,7 +7622,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadReportContent = JmsFunctions.getJavaDownloadsJavaDownloadReportContent(GetJavaDownloadsJavaDownloadReportContentArgs.builder()
-     *             .javaDownloadReportId(testJavaDownloadReport.id())
+     *             .javaDownloadReportId(testJavaDownloadReport.get("id"))
      *             .build());
      * 
      *     }
@@ -7664,7 +7664,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadReportContent = JmsFunctions.getJavaDownloadsJavaDownloadReportContent(GetJavaDownloadsJavaDownloadReportContentArgs.builder()
-     *             .javaDownloadReportId(testJavaDownloadReport.id())
+     *             .javaDownloadReportId(testJavaDownloadReport.get("id"))
      *             .build());
      * 
      *     }
@@ -7706,7 +7706,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadReportContent = JmsFunctions.getJavaDownloadsJavaDownloadReportContent(GetJavaDownloadsJavaDownloadReportContentArgs.builder()
-     *             .javaDownloadReportId(testJavaDownloadReport.id())
+     *             .javaDownloadReportId(testJavaDownloadReport.get("id"))
      *             .build());
      * 
      *     }
@@ -7750,7 +7750,7 @@ public final class JmsFunctions {
      *         final var testJavaDownloadReports = JmsFunctions.getJavaDownloadsJavaDownloadReports(GetJavaDownloadsJavaDownloadReportsArgs.builder()
      *             .compartmentId(tenancyOcid)
      *             .displayName(javaDownloadReportDisplayName)
-     *             .javaDownloadReportId(testJavaDownloadReport.id())
+     *             .javaDownloadReportId(testJavaDownloadReport.get("id"))
      *             .state(javaDownloadReportState)
      *             .build());
      * 
@@ -7795,7 +7795,7 @@ public final class JmsFunctions {
      *         final var testJavaDownloadReports = JmsFunctions.getJavaDownloadsJavaDownloadReports(GetJavaDownloadsJavaDownloadReportsArgs.builder()
      *             .compartmentId(tenancyOcid)
      *             .displayName(javaDownloadReportDisplayName)
-     *             .javaDownloadReportId(testJavaDownloadReport.id())
+     *             .javaDownloadReportId(testJavaDownloadReport.get("id"))
      *             .state(javaDownloadReportState)
      *             .build());
      * 
@@ -7840,7 +7840,7 @@ public final class JmsFunctions {
      *         final var testJavaDownloadReports = JmsFunctions.getJavaDownloadsJavaDownloadReports(GetJavaDownloadsJavaDownloadReportsArgs.builder()
      *             .compartmentId(tenancyOcid)
      *             .displayName(javaDownloadReportDisplayName)
-     *             .javaDownloadReportId(testJavaDownloadReport.id())
+     *             .javaDownloadReportId(testJavaDownloadReport.get("id"))
      *             .state(javaDownloadReportState)
      *             .build());
      * 
@@ -7885,7 +7885,7 @@ public final class JmsFunctions {
      *         final var testJavaDownloadReports = JmsFunctions.getJavaDownloadsJavaDownloadReports(GetJavaDownloadsJavaDownloadReportsArgs.builder()
      *             .compartmentId(tenancyOcid)
      *             .displayName(javaDownloadReportDisplayName)
-     *             .javaDownloadReportId(testJavaDownloadReport.id())
+     *             .javaDownloadReportId(testJavaDownloadReport.get("id"))
      *             .state(javaDownloadReportState)
      *             .build());
      * 
@@ -7930,7 +7930,7 @@ public final class JmsFunctions {
      *         final var testJavaDownloadReports = JmsFunctions.getJavaDownloadsJavaDownloadReports(GetJavaDownloadsJavaDownloadReportsArgs.builder()
      *             .compartmentId(tenancyOcid)
      *             .displayName(javaDownloadReportDisplayName)
-     *             .javaDownloadReportId(testJavaDownloadReport.id())
+     *             .javaDownloadReportId(testJavaDownloadReport.get("id"))
      *             .state(javaDownloadReportState)
      *             .build());
      * 
@@ -7973,7 +7973,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadToken = JmsFunctions.getJavaDownloadsJavaDownloadToken(GetJavaDownloadsJavaDownloadTokenArgs.builder()
-     *             .javaDownloadTokenId(testJavaDownloadTokenOciJmsJavaDownloadsJavaDownloadToken.id())
+     *             .javaDownloadTokenId(testJavaDownloadTokenOciJmsJavaDownloadsJavaDownloadToken.get("id"))
      *             .build());
      * 
      *     }
@@ -8015,7 +8015,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadToken = JmsFunctions.getJavaDownloadsJavaDownloadToken(GetJavaDownloadsJavaDownloadTokenArgs.builder()
-     *             .javaDownloadTokenId(testJavaDownloadTokenOciJmsJavaDownloadsJavaDownloadToken.id())
+     *             .javaDownloadTokenId(testJavaDownloadTokenOciJmsJavaDownloadsJavaDownloadToken.get("id"))
      *             .build());
      * 
      *     }
@@ -8057,7 +8057,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadToken = JmsFunctions.getJavaDownloadsJavaDownloadToken(GetJavaDownloadsJavaDownloadTokenArgs.builder()
-     *             .javaDownloadTokenId(testJavaDownloadTokenOciJmsJavaDownloadsJavaDownloadToken.id())
+     *             .javaDownloadTokenId(testJavaDownloadTokenOciJmsJavaDownloadsJavaDownloadToken.get("id"))
      *             .build());
      * 
      *     }
@@ -8099,7 +8099,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadToken = JmsFunctions.getJavaDownloadsJavaDownloadToken(GetJavaDownloadsJavaDownloadTokenArgs.builder()
-     *             .javaDownloadTokenId(testJavaDownloadTokenOciJmsJavaDownloadsJavaDownloadToken.id())
+     *             .javaDownloadTokenId(testJavaDownloadTokenOciJmsJavaDownloadsJavaDownloadToken.get("id"))
      *             .build());
      * 
      *     }
@@ -8141,7 +8141,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaDownloadToken = JmsFunctions.getJavaDownloadsJavaDownloadToken(GetJavaDownloadsJavaDownloadTokenArgs.builder()
-     *             .javaDownloadTokenId(testJavaDownloadTokenOciJmsJavaDownloadsJavaDownloadToken.id())
+     *             .javaDownloadTokenId(testJavaDownloadTokenOciJmsJavaDownloadsJavaDownloadToken.get("id"))
      *             .build());
      * 
      *     }
@@ -8633,7 +8633,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaLicenseAcceptanceRecord = JmsFunctions.getJavaDownloadsJavaLicenseAcceptanceRecord(GetJavaDownloadsJavaLicenseAcceptanceRecordArgs.builder()
-     *             .javaLicenseAcceptanceRecordId(testJavaLicenseAcceptanceRecordOciJmsJavaDownloadsJavaLicenseAcceptanceRecord.id())
+     *             .javaLicenseAcceptanceRecordId(testJavaLicenseAcceptanceRecordOciJmsJavaDownloadsJavaLicenseAcceptanceRecord.get("id"))
      *             .build());
      * 
      *     }
@@ -8675,7 +8675,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaLicenseAcceptanceRecord = JmsFunctions.getJavaDownloadsJavaLicenseAcceptanceRecord(GetJavaDownloadsJavaLicenseAcceptanceRecordArgs.builder()
-     *             .javaLicenseAcceptanceRecordId(testJavaLicenseAcceptanceRecordOciJmsJavaDownloadsJavaLicenseAcceptanceRecord.id())
+     *             .javaLicenseAcceptanceRecordId(testJavaLicenseAcceptanceRecordOciJmsJavaDownloadsJavaLicenseAcceptanceRecord.get("id"))
      *             .build());
      * 
      *     }
@@ -8717,7 +8717,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaLicenseAcceptanceRecord = JmsFunctions.getJavaDownloadsJavaLicenseAcceptanceRecord(GetJavaDownloadsJavaLicenseAcceptanceRecordArgs.builder()
-     *             .javaLicenseAcceptanceRecordId(testJavaLicenseAcceptanceRecordOciJmsJavaDownloadsJavaLicenseAcceptanceRecord.id())
+     *             .javaLicenseAcceptanceRecordId(testJavaLicenseAcceptanceRecordOciJmsJavaDownloadsJavaLicenseAcceptanceRecord.get("id"))
      *             .build());
      * 
      *     }
@@ -8759,7 +8759,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaLicenseAcceptanceRecord = JmsFunctions.getJavaDownloadsJavaLicenseAcceptanceRecord(GetJavaDownloadsJavaLicenseAcceptanceRecordArgs.builder()
-     *             .javaLicenseAcceptanceRecordId(testJavaLicenseAcceptanceRecordOciJmsJavaDownloadsJavaLicenseAcceptanceRecord.id())
+     *             .javaLicenseAcceptanceRecordId(testJavaLicenseAcceptanceRecordOciJmsJavaDownloadsJavaLicenseAcceptanceRecord.get("id"))
      *             .build());
      * 
      *     }
@@ -8801,7 +8801,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaLicenseAcceptanceRecord = JmsFunctions.getJavaDownloadsJavaLicenseAcceptanceRecord(GetJavaDownloadsJavaLicenseAcceptanceRecordArgs.builder()
-     *             .javaLicenseAcceptanceRecordId(testJavaLicenseAcceptanceRecordOciJmsJavaDownloadsJavaLicenseAcceptanceRecord.id())
+     *             .javaLicenseAcceptanceRecordId(testJavaLicenseAcceptanceRecordOciJmsJavaDownloadsJavaLicenseAcceptanceRecord.get("id"))
      *             .build());
      * 
      *     }
@@ -10431,7 +10431,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJmsPlugin = JmsFunctions.getJmsPlugin(GetJmsPluginArgs.builder()
-     *             .jmsPluginId(testJmsPluginOciJmsJmsPlugin.id())
+     *             .jmsPluginId(testJmsPluginOciJmsJmsPlugin.get("id"))
      *             .build());
      * 
      *     }
@@ -10473,7 +10473,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJmsPlugin = JmsFunctions.getJmsPlugin(GetJmsPluginArgs.builder()
-     *             .jmsPluginId(testJmsPluginOciJmsJmsPlugin.id())
+     *             .jmsPluginId(testJmsPluginOciJmsJmsPlugin.get("id"))
      *             .build());
      * 
      *     }
@@ -10515,7 +10515,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJmsPlugin = JmsFunctions.getJmsPlugin(GetJmsPluginArgs.builder()
-     *             .jmsPluginId(testJmsPluginOciJmsJmsPlugin.id())
+     *             .jmsPluginId(testJmsPluginOciJmsJmsPlugin.get("id"))
      *             .build());
      * 
      *     }
@@ -10557,7 +10557,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJmsPlugin = JmsFunctions.getJmsPlugin(GetJmsPluginArgs.builder()
-     *             .jmsPluginId(testJmsPluginOciJmsJmsPlugin.id())
+     *             .jmsPluginId(testJmsPluginOciJmsJmsPlugin.get("id"))
      *             .build());
      * 
      *     }
@@ -10599,7 +10599,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJmsPlugin = JmsFunctions.getJmsPlugin(GetJmsPluginArgs.builder()
-     *             .jmsPluginId(testJmsPluginOciJmsJmsPlugin.id())
+     *             .jmsPluginId(testJmsPluginOciJmsJmsPlugin.get("id"))
      *             .build());
      * 
      *     }
@@ -10646,7 +10646,7 @@ public final class JmsFunctions {
      *             .availabilityStatus(jmsPluginAvailabilityStatus)
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(jmsPluginCompartmentIdInSubtree)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .hostnameContains(jmsPluginHostnameContains)
      *             .id(jmsPluginId)
      *             .state(jmsPluginState)
@@ -10698,7 +10698,7 @@ public final class JmsFunctions {
      *             .availabilityStatus(jmsPluginAvailabilityStatus)
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(jmsPluginCompartmentIdInSubtree)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .hostnameContains(jmsPluginHostnameContains)
      *             .id(jmsPluginId)
      *             .state(jmsPluginState)
@@ -10750,7 +10750,7 @@ public final class JmsFunctions {
      *             .availabilityStatus(jmsPluginAvailabilityStatus)
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(jmsPluginCompartmentIdInSubtree)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .hostnameContains(jmsPluginHostnameContains)
      *             .id(jmsPluginId)
      *             .state(jmsPluginState)
@@ -10802,7 +10802,7 @@ public final class JmsFunctions {
      *             .availabilityStatus(jmsPluginAvailabilityStatus)
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(jmsPluginCompartmentIdInSubtree)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .hostnameContains(jmsPluginHostnameContains)
      *             .id(jmsPluginId)
      *             .state(jmsPluginState)
@@ -10854,7 +10854,7 @@ public final class JmsFunctions {
      *             .availabilityStatus(jmsPluginAvailabilityStatus)
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(jmsPluginCompartmentIdInSubtree)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .hostnameContains(jmsPluginHostnameContains)
      *             .id(jmsPluginId)
      *             .state(jmsPluginState)
@@ -10906,7 +10906,7 @@ public final class JmsFunctions {
      *             .availabilityStatus(jmsPluginAvailabilityStatus)
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(jmsPluginCompartmentIdInSubtree)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .hostnameContains(jmsPluginHostnameContains)
      *             .id(jmsPluginId)
      *             .state(jmsPluginState)
@@ -10958,7 +10958,7 @@ public final class JmsFunctions {
      *             .availabilityStatus(jmsPluginAvailabilityStatus)
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(jmsPluginCompartmentIdInSubtree)
-     *             .fleetId(testFleet.id())
+     *             .fleetId(testFleet.get("id"))
      *             .hostnameContains(jmsPluginHostnameContains)
      *             .id(jmsPluginId)
      *             .state(jmsPluginState)
@@ -11005,10 +11005,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListJreUsage = JmsFunctions.getListJreUsage(GetListJreUsageArgs.builder()
-     *             .applicationId(testApplication.id())
-     *             .applicationName(testApplication.name())
+     *             .applicationId(testApplication.get("id"))
+     *             .applicationName(testApplication.get("name"))
      *             .compartmentId(compartmentId)
-     *             .hostId(testHost.id())
+     *             .hostId(testHost.get("id"))
      *             .timeEnd(listJreUsageTimeEnd)
      *             .timeStart(listJreUsageTimeStart)
      *             .build());
@@ -11052,10 +11052,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListJreUsage = JmsFunctions.getListJreUsage(GetListJreUsageArgs.builder()
-     *             .applicationId(testApplication.id())
-     *             .applicationName(testApplication.name())
+     *             .applicationId(testApplication.get("id"))
+     *             .applicationName(testApplication.get("name"))
      *             .compartmentId(compartmentId)
-     *             .hostId(testHost.id())
+     *             .hostId(testHost.get("id"))
      *             .timeEnd(listJreUsageTimeEnd)
      *             .timeStart(listJreUsageTimeStart)
      *             .build());
@@ -11099,10 +11099,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListJreUsage = JmsFunctions.getListJreUsage(GetListJreUsageArgs.builder()
-     *             .applicationId(testApplication.id())
-     *             .applicationName(testApplication.name())
+     *             .applicationId(testApplication.get("id"))
+     *             .applicationName(testApplication.get("name"))
      *             .compartmentId(compartmentId)
-     *             .hostId(testHost.id())
+     *             .hostId(testHost.get("id"))
      *             .timeEnd(listJreUsageTimeEnd)
      *             .timeStart(listJreUsageTimeStart)
      *             .build());
@@ -11146,10 +11146,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListJreUsage = JmsFunctions.getListJreUsage(GetListJreUsageArgs.builder()
-     *             .applicationId(testApplication.id())
-     *             .applicationName(testApplication.name())
+     *             .applicationId(testApplication.get("id"))
+     *             .applicationName(testApplication.get("name"))
      *             .compartmentId(compartmentId)
-     *             .hostId(testHost.id())
+     *             .hostId(testHost.get("id"))
      *             .timeEnd(listJreUsageTimeEnd)
      *             .timeStart(listJreUsageTimeStart)
      *             .build());
@@ -11193,10 +11193,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListJreUsage = JmsFunctions.getListJreUsage(GetListJreUsageArgs.builder()
-     *             .applicationId(testApplication.id())
-     *             .applicationName(testApplication.name())
+     *             .applicationId(testApplication.get("id"))
+     *             .applicationName(testApplication.get("name"))
      *             .compartmentId(compartmentId)
-     *             .hostId(testHost.id())
+     *             .hostId(testHost.get("id"))
      *             .timeEnd(listJreUsageTimeEnd)
      *             .timeStart(listJreUsageTimeStart)
      *             .build());
@@ -11240,10 +11240,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListJreUsage = JmsFunctions.getListJreUsage(GetListJreUsageArgs.builder()
-     *             .applicationId(testApplication.id())
-     *             .applicationName(testApplication.name())
+     *             .applicationId(testApplication.get("id"))
+     *             .applicationName(testApplication.get("name"))
      *             .compartmentId(compartmentId)
-     *             .hostId(testHost.id())
+     *             .hostId(testHost.get("id"))
      *             .timeEnd(listJreUsageTimeEnd)
      *             .timeStart(listJreUsageTimeStart)
      *             .build());
@@ -11287,10 +11287,10 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testListJreUsage = JmsFunctions.getListJreUsage(GetListJreUsageArgs.builder()
-     *             .applicationId(testApplication.id())
-     *             .applicationName(testApplication.name())
+     *             .applicationId(testApplication.get("id"))
+     *             .applicationName(testApplication.get("name"))
      *             .compartmentId(compartmentId)
-     *             .hostId(testHost.id())
+     *             .hostId(testHost.get("id"))
      *             .timeEnd(listJreUsageTimeEnd)
      *             .timeStart(listJreUsageTimeStart)
      *             .build());
@@ -11637,7 +11637,7 @@ public final class JmsFunctions {
      *         final var testPluginErrors = JmsFunctions.getPluginErrors(GetPluginErrorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(pluginErrorCompartmentIdInSubtree)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeFirstSeenGreaterThanOrEqualTo(pluginErrorTimeFirstSeenGreaterThanOrEqualTo)
      *             .timeFirstSeenLessThanOrEqualTo(pluginErrorTimeFirstSeenLessThanOrEqualTo)
      *             .timeLastSeenGreaterThanOrEqualTo(pluginErrorTimeLastSeenGreaterThanOrEqualTo)
@@ -11685,7 +11685,7 @@ public final class JmsFunctions {
      *         final var testPluginErrors = JmsFunctions.getPluginErrors(GetPluginErrorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(pluginErrorCompartmentIdInSubtree)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeFirstSeenGreaterThanOrEqualTo(pluginErrorTimeFirstSeenGreaterThanOrEqualTo)
      *             .timeFirstSeenLessThanOrEqualTo(pluginErrorTimeFirstSeenLessThanOrEqualTo)
      *             .timeLastSeenGreaterThanOrEqualTo(pluginErrorTimeLastSeenGreaterThanOrEqualTo)
@@ -11733,7 +11733,7 @@ public final class JmsFunctions {
      *         final var testPluginErrors = JmsFunctions.getPluginErrors(GetPluginErrorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(pluginErrorCompartmentIdInSubtree)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeFirstSeenGreaterThanOrEqualTo(pluginErrorTimeFirstSeenGreaterThanOrEqualTo)
      *             .timeFirstSeenLessThanOrEqualTo(pluginErrorTimeFirstSeenLessThanOrEqualTo)
      *             .timeLastSeenGreaterThanOrEqualTo(pluginErrorTimeLastSeenGreaterThanOrEqualTo)
@@ -11781,7 +11781,7 @@ public final class JmsFunctions {
      *         final var testPluginErrors = JmsFunctions.getPluginErrors(GetPluginErrorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(pluginErrorCompartmentIdInSubtree)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeFirstSeenGreaterThanOrEqualTo(pluginErrorTimeFirstSeenGreaterThanOrEqualTo)
      *             .timeFirstSeenLessThanOrEqualTo(pluginErrorTimeFirstSeenLessThanOrEqualTo)
      *             .timeLastSeenGreaterThanOrEqualTo(pluginErrorTimeLastSeenGreaterThanOrEqualTo)
@@ -11829,7 +11829,7 @@ public final class JmsFunctions {
      *         final var testPluginErrors = JmsFunctions.getPluginErrors(GetPluginErrorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(pluginErrorCompartmentIdInSubtree)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeFirstSeenGreaterThanOrEqualTo(pluginErrorTimeFirstSeenGreaterThanOrEqualTo)
      *             .timeFirstSeenLessThanOrEqualTo(pluginErrorTimeFirstSeenLessThanOrEqualTo)
      *             .timeLastSeenGreaterThanOrEqualTo(pluginErrorTimeLastSeenGreaterThanOrEqualTo)
@@ -11877,7 +11877,7 @@ public final class JmsFunctions {
      *         final var testPluginErrors = JmsFunctions.getPluginErrors(GetPluginErrorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(pluginErrorCompartmentIdInSubtree)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeFirstSeenGreaterThanOrEqualTo(pluginErrorTimeFirstSeenGreaterThanOrEqualTo)
      *             .timeFirstSeenLessThanOrEqualTo(pluginErrorTimeFirstSeenLessThanOrEqualTo)
      *             .timeLastSeenGreaterThanOrEqualTo(pluginErrorTimeLastSeenGreaterThanOrEqualTo)
@@ -11925,7 +11925,7 @@ public final class JmsFunctions {
      *         final var testPluginErrors = JmsFunctions.getPluginErrors(GetPluginErrorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(pluginErrorCompartmentIdInSubtree)
-     *             .managedInstanceId(testManagedInstance.id())
+     *             .managedInstanceId(testManagedInstance.get("id"))
      *             .timeFirstSeenGreaterThanOrEqualTo(pluginErrorTimeFirstSeenGreaterThanOrEqualTo)
      *             .timeFirstSeenLessThanOrEqualTo(pluginErrorTimeFirstSeenLessThanOrEqualTo)
      *             .timeLastSeenGreaterThanOrEqualTo(pluginErrorTimeLastSeenGreaterThanOrEqualTo)
@@ -12279,8 +12279,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTaskSchedule = JmsFunctions.getTaskSchedule(GetTaskScheduleArgs.builder()
-     *             .taskScheduleId(testTaskScheduleOciJmsTaskSchedule.id())
-     *             .fleetId(testFleet.id())
+     *             .taskScheduleId(testTaskScheduleOciJmsTaskSchedule.get("id"))
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -12322,8 +12322,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTaskSchedule = JmsFunctions.getTaskSchedule(GetTaskScheduleArgs.builder()
-     *             .taskScheduleId(testTaskScheduleOciJmsTaskSchedule.id())
-     *             .fleetId(testFleet.id())
+     *             .taskScheduleId(testTaskScheduleOciJmsTaskSchedule.get("id"))
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -12365,8 +12365,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTaskSchedule = JmsFunctions.getTaskSchedule(GetTaskScheduleArgs.builder()
-     *             .taskScheduleId(testTaskScheduleOciJmsTaskSchedule.id())
-     *             .fleetId(testFleet.id())
+     *             .taskScheduleId(testTaskScheduleOciJmsTaskSchedule.get("id"))
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -12408,8 +12408,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTaskSchedule = JmsFunctions.getTaskSchedule(GetTaskScheduleArgs.builder()
-     *             .taskScheduleId(testTaskScheduleOciJmsTaskSchedule.id())
-     *             .fleetId(testFleet.id())
+     *             .taskScheduleId(testTaskScheduleOciJmsTaskSchedule.get("id"))
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -12451,8 +12451,8 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTaskSchedule = JmsFunctions.getTaskSchedule(GetTaskScheduleArgs.builder()
-     *             .taskScheduleId(testTaskScheduleOciJmsTaskSchedule.id())
-     *             .fleetId(testFleet.id())
+     *             .taskScheduleId(testTaskScheduleOciJmsTaskSchedule.get("id"))
+     *             .fleetId(testFleet.get("id"))
      *             .build());
      * 
      *     }
@@ -12934,7 +12934,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaMigrationAnalysi = JmsFunctions.getUtilsJavaMigrationAnalysi(GetUtilsJavaMigrationAnalysiArgs.builder()
-     *             .javaMigrationAnalysisId(testJavaMigrationAnalysiOciJmsUtilsJavaMigrationAnalysi.id())
+     *             .javaMigrationAnalysisId(testJavaMigrationAnalysiOciJmsUtilsJavaMigrationAnalysi.get("id"))
      *             .build());
      * 
      *     }
@@ -12976,7 +12976,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaMigrationAnalysi = JmsFunctions.getUtilsJavaMigrationAnalysi(GetUtilsJavaMigrationAnalysiArgs.builder()
-     *             .javaMigrationAnalysisId(testJavaMigrationAnalysiOciJmsUtilsJavaMigrationAnalysi.id())
+     *             .javaMigrationAnalysisId(testJavaMigrationAnalysiOciJmsUtilsJavaMigrationAnalysi.get("id"))
      *             .build());
      * 
      *     }
@@ -13018,7 +13018,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaMigrationAnalysi = JmsFunctions.getUtilsJavaMigrationAnalysi(GetUtilsJavaMigrationAnalysiArgs.builder()
-     *             .javaMigrationAnalysisId(testJavaMigrationAnalysiOciJmsUtilsJavaMigrationAnalysi.id())
+     *             .javaMigrationAnalysisId(testJavaMigrationAnalysiOciJmsUtilsJavaMigrationAnalysi.get("id"))
      *             .build());
      * 
      *     }
@@ -13060,7 +13060,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaMigrationAnalysi = JmsFunctions.getUtilsJavaMigrationAnalysi(GetUtilsJavaMigrationAnalysiArgs.builder()
-     *             .javaMigrationAnalysisId(testJavaMigrationAnalysiOciJmsUtilsJavaMigrationAnalysi.id())
+     *             .javaMigrationAnalysisId(testJavaMigrationAnalysiOciJmsUtilsJavaMigrationAnalysi.get("id"))
      *             .build());
      * 
      *     }
@@ -13102,7 +13102,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaMigrationAnalysi = JmsFunctions.getUtilsJavaMigrationAnalysi(GetUtilsJavaMigrationAnalysiArgs.builder()
-     *             .javaMigrationAnalysisId(testJavaMigrationAnalysiOciJmsUtilsJavaMigrationAnalysi.id())
+     *             .javaMigrationAnalysisId(testJavaMigrationAnalysiOciJmsUtilsJavaMigrationAnalysi.get("id"))
      *             .build());
      * 
      *     }
@@ -13144,7 +13144,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaMigrationAnalysis = JmsFunctions.getUtilsJavaMigrationAnalysis(GetUtilsJavaMigrationAnalysisArgs.builder()
-     *             .analysisProjectName(testProject.name())
+     *             .analysisProjectName(testProject.get("name"))
      *             .compartmentId(compartmentId)
      *             .id(javaMigrationAnalysiId)
      *             .build());
@@ -13188,7 +13188,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaMigrationAnalysis = JmsFunctions.getUtilsJavaMigrationAnalysis(GetUtilsJavaMigrationAnalysisArgs.builder()
-     *             .analysisProjectName(testProject.name())
+     *             .analysisProjectName(testProject.get("name"))
      *             .compartmentId(compartmentId)
      *             .id(javaMigrationAnalysiId)
      *             .build());
@@ -13232,7 +13232,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaMigrationAnalysis = JmsFunctions.getUtilsJavaMigrationAnalysis(GetUtilsJavaMigrationAnalysisArgs.builder()
-     *             .analysisProjectName(testProject.name())
+     *             .analysisProjectName(testProject.get("name"))
      *             .compartmentId(compartmentId)
      *             .id(javaMigrationAnalysiId)
      *             .build());
@@ -13276,7 +13276,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaMigrationAnalysis = JmsFunctions.getUtilsJavaMigrationAnalysis(GetUtilsJavaMigrationAnalysisArgs.builder()
-     *             .analysisProjectName(testProject.name())
+     *             .analysisProjectName(testProject.get("name"))
      *             .compartmentId(compartmentId)
      *             .id(javaMigrationAnalysiId)
      *             .build());
@@ -13320,7 +13320,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaMigrationAnalysis = JmsFunctions.getUtilsJavaMigrationAnalysis(GetUtilsJavaMigrationAnalysisArgs.builder()
-     *             .analysisProjectName(testProject.name())
+     *             .analysisProjectName(testProject.get("name"))
      *             .compartmentId(compartmentId)
      *             .id(javaMigrationAnalysiId)
      *             .build());
@@ -13364,7 +13364,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaMigrationAnalysis = JmsFunctions.getUtilsJavaMigrationAnalysis(GetUtilsJavaMigrationAnalysisArgs.builder()
-     *             .analysisProjectName(testProject.name())
+     *             .analysisProjectName(testProject.get("name"))
      *             .compartmentId(compartmentId)
      *             .id(javaMigrationAnalysiId)
      *             .build());
@@ -13408,7 +13408,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testJavaMigrationAnalysis = JmsFunctions.getUtilsJavaMigrationAnalysis(GetUtilsJavaMigrationAnalysisArgs.builder()
-     *             .analysisProjectName(testProject.name())
+     *             .analysisProjectName(testProject.get("name"))
      *             .compartmentId(compartmentId)
      *             .id(javaMigrationAnalysiId)
      *             .build());
@@ -13452,7 +13452,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPerformanceTuningAnalysi = JmsFunctions.getUtilsPerformanceTuningAnalysi(GetUtilsPerformanceTuningAnalysiArgs.builder()
-     *             .performanceTuningAnalysisId(testPerformanceTuningAnalysiOciJmsUtilsPerformanceTuningAnalysi.id())
+     *             .performanceTuningAnalysisId(testPerformanceTuningAnalysiOciJmsUtilsPerformanceTuningAnalysi.get("id"))
      *             .build());
      * 
      *     }
@@ -13494,7 +13494,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPerformanceTuningAnalysi = JmsFunctions.getUtilsPerformanceTuningAnalysi(GetUtilsPerformanceTuningAnalysiArgs.builder()
-     *             .performanceTuningAnalysisId(testPerformanceTuningAnalysiOciJmsUtilsPerformanceTuningAnalysi.id())
+     *             .performanceTuningAnalysisId(testPerformanceTuningAnalysiOciJmsUtilsPerformanceTuningAnalysi.get("id"))
      *             .build());
      * 
      *     }
@@ -13536,7 +13536,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPerformanceTuningAnalysi = JmsFunctions.getUtilsPerformanceTuningAnalysi(GetUtilsPerformanceTuningAnalysiArgs.builder()
-     *             .performanceTuningAnalysisId(testPerformanceTuningAnalysiOciJmsUtilsPerformanceTuningAnalysi.id())
+     *             .performanceTuningAnalysisId(testPerformanceTuningAnalysiOciJmsUtilsPerformanceTuningAnalysi.get("id"))
      *             .build());
      * 
      *     }
@@ -13578,7 +13578,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPerformanceTuningAnalysi = JmsFunctions.getUtilsPerformanceTuningAnalysi(GetUtilsPerformanceTuningAnalysiArgs.builder()
-     *             .performanceTuningAnalysisId(testPerformanceTuningAnalysiOciJmsUtilsPerformanceTuningAnalysi.id())
+     *             .performanceTuningAnalysisId(testPerformanceTuningAnalysiOciJmsUtilsPerformanceTuningAnalysi.get("id"))
      *             .build());
      * 
      *     }
@@ -13620,7 +13620,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPerformanceTuningAnalysi = JmsFunctions.getUtilsPerformanceTuningAnalysi(GetUtilsPerformanceTuningAnalysiArgs.builder()
-     *             .performanceTuningAnalysisId(testPerformanceTuningAnalysiOciJmsUtilsPerformanceTuningAnalysi.id())
+     *             .performanceTuningAnalysisId(testPerformanceTuningAnalysiOciJmsUtilsPerformanceTuningAnalysi.get("id"))
      *             .build());
      * 
      *     }
@@ -13662,7 +13662,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPerformanceTuningAnalysis = JmsFunctions.getUtilsPerformanceTuningAnalysis(GetUtilsPerformanceTuningAnalysisArgs.builder()
-     *             .analysisProjectName(testProject.name())
+     *             .analysisProjectName(testProject.get("name"))
      *             .compartmentId(compartmentId)
      *             .id(performanceTuningAnalysiId)
      *             .performanceTuningAnalysisResult(performanceTuningAnalysiPerformanceTuningAnalysisResult)
@@ -13707,7 +13707,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPerformanceTuningAnalysis = JmsFunctions.getUtilsPerformanceTuningAnalysis(GetUtilsPerformanceTuningAnalysisArgs.builder()
-     *             .analysisProjectName(testProject.name())
+     *             .analysisProjectName(testProject.get("name"))
      *             .compartmentId(compartmentId)
      *             .id(performanceTuningAnalysiId)
      *             .performanceTuningAnalysisResult(performanceTuningAnalysiPerformanceTuningAnalysisResult)
@@ -13752,7 +13752,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPerformanceTuningAnalysis = JmsFunctions.getUtilsPerformanceTuningAnalysis(GetUtilsPerformanceTuningAnalysisArgs.builder()
-     *             .analysisProjectName(testProject.name())
+     *             .analysisProjectName(testProject.get("name"))
      *             .compartmentId(compartmentId)
      *             .id(performanceTuningAnalysiId)
      *             .performanceTuningAnalysisResult(performanceTuningAnalysiPerformanceTuningAnalysisResult)
@@ -13797,7 +13797,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPerformanceTuningAnalysis = JmsFunctions.getUtilsPerformanceTuningAnalysis(GetUtilsPerformanceTuningAnalysisArgs.builder()
-     *             .analysisProjectName(testProject.name())
+     *             .analysisProjectName(testProject.get("name"))
      *             .compartmentId(compartmentId)
      *             .id(performanceTuningAnalysiId)
      *             .performanceTuningAnalysisResult(performanceTuningAnalysiPerformanceTuningAnalysisResult)
@@ -13842,7 +13842,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPerformanceTuningAnalysis = JmsFunctions.getUtilsPerformanceTuningAnalysis(GetUtilsPerformanceTuningAnalysisArgs.builder()
-     *             .analysisProjectName(testProject.name())
+     *             .analysisProjectName(testProject.get("name"))
      *             .compartmentId(compartmentId)
      *             .id(performanceTuningAnalysiId)
      *             .performanceTuningAnalysisResult(performanceTuningAnalysiPerformanceTuningAnalysisResult)
@@ -13887,7 +13887,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPerformanceTuningAnalysis = JmsFunctions.getUtilsPerformanceTuningAnalysis(GetUtilsPerformanceTuningAnalysisArgs.builder()
-     *             .analysisProjectName(testProject.name())
+     *             .analysisProjectName(testProject.get("name"))
      *             .compartmentId(compartmentId)
      *             .id(performanceTuningAnalysiId)
      *             .performanceTuningAnalysisResult(performanceTuningAnalysiPerformanceTuningAnalysisResult)
@@ -13932,7 +13932,7 @@ public final class JmsFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPerformanceTuningAnalysis = JmsFunctions.getUtilsPerformanceTuningAnalysis(GetUtilsPerformanceTuningAnalysisArgs.builder()
-     *             .analysisProjectName(testProject.name())
+     *             .analysisProjectName(testProject.get("name"))
      *             .compartmentId(compartmentId)
      *             .id(performanceTuningAnalysiId)
      *             .performanceTuningAnalysisResult(performanceTuningAnalysiPerformanceTuningAnalysisResult)

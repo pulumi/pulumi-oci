@@ -60,10 +60,10 @@ import javax.annotation.Nullable;
  *             .ipAddress(privateIpIpAddress)
  *             .ipv4subnetCidrAtCreation(privateIpIpv4subnetCidrAtCreation)
  *             .lifetime(privateIpLifetime)
- *             .routeTableId(testRouteTable.id())
- *             .subnetId(testSubnet.id())
- *             .vlanId(testVlan.id())
- *             .vnicId(testVnicAttachment.vnicId())
+ *             .routeTableId(testRouteTable.get("id"))
+ *             .subnetId(testSubnet.get("id"))
+ *             .vlanId(testVlan.get("id"))
+ *             .vnicId(testVnicAttachment.get("vnicId"))
  *             .build());
  * 
  *     }

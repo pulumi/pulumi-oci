@@ -79,7 +79,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testSecurityList = new SecurityList("testSecurityList", SecurityListArgs.builder()
  *             .compartmentId(compartmentId)
- *             .vcnId(testVcn.id())
+ *             .vcnId(testVcn.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(securityListDisplayName)
  *             .egressSecurityRules(SecurityListEgressSecurityRuleArgs.builder()

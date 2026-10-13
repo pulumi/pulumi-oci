@@ -32,7 +32,7 @@ import (
 //			_, err := apmconfig.GetDataFiles(ctx, &apmconfig.GetDataFilesArgs{
 //				ApmDomainId:            testApmDomain.Id,
 //				ApmType:                pulumi.StringRef(dataFileApmType),
-//				Metadata:               pulumi.ToMap(dataFileMetadata),
+//				Metadata:               dataFileMetadata,
 //				Name:                   pulumi.StringRef(dataFileName),
 //				TimeLastModifiedAfter:  pulumi.StringRef(dataFileTimeLastModifiedAfter),
 //				TimeLastModifiedBefore: pulumi.StringRef(dataFileTimeLastModifiedBefore),

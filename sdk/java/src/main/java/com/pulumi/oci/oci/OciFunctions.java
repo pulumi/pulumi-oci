@@ -444,7 +444,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAiDataPlatform = OciFunctions.getAiDataPlatformAiDataPlatform(GetAiDataPlatformAiDataPlatformArgs.builder()
-     *             .aiDataPlatformId(testAiDataPlatformOciAiDataPlatformAiDataPlatform.id())
+     *             .aiDataPlatformId(testAiDataPlatformOciAiDataPlatformAiDataPlatform.get("id"))
      *             .build());
      * 
      *     }
@@ -486,7 +486,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAiDataPlatform = OciFunctions.getAiDataPlatformAiDataPlatform(GetAiDataPlatformAiDataPlatformArgs.builder()
-     *             .aiDataPlatformId(testAiDataPlatformOciAiDataPlatformAiDataPlatform.id())
+     *             .aiDataPlatformId(testAiDataPlatformOciAiDataPlatformAiDataPlatform.get("id"))
      *             .build());
      * 
      *     }
@@ -528,7 +528,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAiDataPlatform = OciFunctions.getAiDataPlatformAiDataPlatform(GetAiDataPlatformAiDataPlatformArgs.builder()
-     *             .aiDataPlatformId(testAiDataPlatformOciAiDataPlatformAiDataPlatform.id())
+     *             .aiDataPlatformId(testAiDataPlatformOciAiDataPlatformAiDataPlatform.get("id"))
      *             .build());
      * 
      *     }
@@ -570,7 +570,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAiDataPlatform = OciFunctions.getAiDataPlatformAiDataPlatform(GetAiDataPlatformAiDataPlatformArgs.builder()
-     *             .aiDataPlatformId(testAiDataPlatformOciAiDataPlatformAiDataPlatform.id())
+     *             .aiDataPlatformId(testAiDataPlatformOciAiDataPlatformAiDataPlatform.get("id"))
      *             .build());
      * 
      *     }
@@ -612,7 +612,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAiDataPlatform = OciFunctions.getAiDataPlatformAiDataPlatform(GetAiDataPlatformAiDataPlatformArgs.builder()
-     *             .aiDataPlatformId(testAiDataPlatformOciAiDataPlatformAiDataPlatform.id())
+     *             .aiDataPlatformId(testAiDataPlatformOciAiDataPlatformAiDataPlatform.get("id"))
      *             .build());
      * 
      *     }
@@ -983,7 +983,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiPlatformInstance = OciFunctions.getApiPlatformApiPlatformInstance(GetApiPlatformApiPlatformInstanceArgs.builder()
-     *             .apiPlatformInstanceId(testApiPlatformInstanceOciApiPlatformApiPlatformInstance.id())
+     *             .apiPlatformInstanceId(testApiPlatformInstanceOciApiPlatformApiPlatformInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -1025,7 +1025,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiPlatformInstance = OciFunctions.getApiPlatformApiPlatformInstance(GetApiPlatformApiPlatformInstanceArgs.builder()
-     *             .apiPlatformInstanceId(testApiPlatformInstanceOciApiPlatformApiPlatformInstance.id())
+     *             .apiPlatformInstanceId(testApiPlatformInstanceOciApiPlatformApiPlatformInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -1067,7 +1067,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiPlatformInstance = OciFunctions.getApiPlatformApiPlatformInstance(GetApiPlatformApiPlatformInstanceArgs.builder()
-     *             .apiPlatformInstanceId(testApiPlatformInstanceOciApiPlatformApiPlatformInstance.id())
+     *             .apiPlatformInstanceId(testApiPlatformInstanceOciApiPlatformApiPlatformInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -1109,7 +1109,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiPlatformInstance = OciFunctions.getApiPlatformApiPlatformInstance(GetApiPlatformApiPlatformInstanceArgs.builder()
-     *             .apiPlatformInstanceId(testApiPlatformInstanceOciApiPlatformApiPlatformInstance.id())
+     *             .apiPlatformInstanceId(testApiPlatformInstanceOciApiPlatformApiPlatformInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -1151,7 +1151,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiPlatformInstance = OciFunctions.getApiPlatformApiPlatformInstance(GetApiPlatformApiPlatformInstanceArgs.builder()
-     *             .apiPlatformInstanceId(testApiPlatformInstanceOciApiPlatformApiPlatformInstance.id())
+     *             .apiPlatformInstanceId(testApiPlatformInstanceOciApiPlatformApiPlatformInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -1508,7 +1508,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiMetadata = OciFunctions.getApiaccesscontrolApiMetadata(GetApiaccesscontrolApiMetadataArgs.builder()
-     *             .apiMetadataId(testApiMetadataOciApiaccesscontrolApiMetadata.id())
+     *             .apiMetadataId(testApiMetadataOciApiaccesscontrolApiMetadata.get("id"))
      *             .build());
      * 
      *     }
@@ -1550,7 +1550,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiMetadata = OciFunctions.getApiaccesscontrolApiMetadata(GetApiaccesscontrolApiMetadataArgs.builder()
-     *             .apiMetadataId(testApiMetadataOciApiaccesscontrolApiMetadata.id())
+     *             .apiMetadataId(testApiMetadataOciApiaccesscontrolApiMetadata.get("id"))
      *             .build());
      * 
      *     }
@@ -1592,7 +1592,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiMetadata = OciFunctions.getApiaccesscontrolApiMetadata(GetApiaccesscontrolApiMetadataArgs.builder()
-     *             .apiMetadataId(testApiMetadataOciApiaccesscontrolApiMetadata.id())
+     *             .apiMetadataId(testApiMetadataOciApiaccesscontrolApiMetadata.get("id"))
      *             .build());
      * 
      *     }
@@ -1634,7 +1634,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiMetadata = OciFunctions.getApiaccesscontrolApiMetadata(GetApiaccesscontrolApiMetadataArgs.builder()
-     *             .apiMetadataId(testApiMetadataOciApiaccesscontrolApiMetadata.id())
+     *             .apiMetadataId(testApiMetadataOciApiaccesscontrolApiMetadata.get("id"))
      *             .build());
      * 
      *     }
@@ -1676,7 +1676,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testApiMetadata = OciFunctions.getApiaccesscontrolApiMetadata(GetApiaccesscontrolApiMetadataArgs.builder()
-     *             .apiMetadataId(testApiMetadataOciApiaccesscontrolApiMetadata.id())
+     *             .apiMetadataId(testApiMetadataOciApiaccesscontrolApiMetadata.get("id"))
      *             .build());
      * 
      *     }
@@ -2348,7 +2348,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivilegedApiControl = OciFunctions.getApiaccesscontrolPrivilegedApiControl(GetApiaccesscontrolPrivilegedApiControlArgs.builder()
-     *             .privilegedApiControlId(testPrivilegedApiControlOciApiaccesscontrolPrivilegedApiControl.id())
+     *             .privilegedApiControlId(testPrivilegedApiControlOciApiaccesscontrolPrivilegedApiControl.get("id"))
      *             .build());
      * 
      *     }
@@ -2390,7 +2390,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivilegedApiControl = OciFunctions.getApiaccesscontrolPrivilegedApiControl(GetApiaccesscontrolPrivilegedApiControlArgs.builder()
-     *             .privilegedApiControlId(testPrivilegedApiControlOciApiaccesscontrolPrivilegedApiControl.id())
+     *             .privilegedApiControlId(testPrivilegedApiControlOciApiaccesscontrolPrivilegedApiControl.get("id"))
      *             .build());
      * 
      *     }
@@ -2432,7 +2432,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivilegedApiControl = OciFunctions.getApiaccesscontrolPrivilegedApiControl(GetApiaccesscontrolPrivilegedApiControlArgs.builder()
-     *             .privilegedApiControlId(testPrivilegedApiControlOciApiaccesscontrolPrivilegedApiControl.id())
+     *             .privilegedApiControlId(testPrivilegedApiControlOciApiaccesscontrolPrivilegedApiControl.get("id"))
      *             .build());
      * 
      *     }
@@ -2474,7 +2474,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivilegedApiControl = OciFunctions.getApiaccesscontrolPrivilegedApiControl(GetApiaccesscontrolPrivilegedApiControlArgs.builder()
-     *             .privilegedApiControlId(testPrivilegedApiControlOciApiaccesscontrolPrivilegedApiControl.id())
+     *             .privilegedApiControlId(testPrivilegedApiControlOciApiaccesscontrolPrivilegedApiControl.get("id"))
      *             .build());
      * 
      *     }
@@ -2516,7 +2516,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivilegedApiControl = OciFunctions.getApiaccesscontrolPrivilegedApiControl(GetApiaccesscontrolPrivilegedApiControlArgs.builder()
-     *             .privilegedApiControlId(testPrivilegedApiControlOciApiaccesscontrolPrivilegedApiControl.id())
+     *             .privilegedApiControlId(testPrivilegedApiControlOciApiaccesscontrolPrivilegedApiControl.get("id"))
      *             .build());
      * 
      *     }
@@ -2880,7 +2880,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivilegedApiRequest = OciFunctions.getApiaccesscontrolPrivilegedApiRequest(GetApiaccesscontrolPrivilegedApiRequestArgs.builder()
-     *             .privilegedApiRequestId(testPrivilegedApiRequestOciApiaccesscontrolPrivilegedApiRequest.id())
+     *             .privilegedApiRequestId(testPrivilegedApiRequestOciApiaccesscontrolPrivilegedApiRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -2922,7 +2922,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivilegedApiRequest = OciFunctions.getApiaccesscontrolPrivilegedApiRequest(GetApiaccesscontrolPrivilegedApiRequestArgs.builder()
-     *             .privilegedApiRequestId(testPrivilegedApiRequestOciApiaccesscontrolPrivilegedApiRequest.id())
+     *             .privilegedApiRequestId(testPrivilegedApiRequestOciApiaccesscontrolPrivilegedApiRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -2964,7 +2964,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivilegedApiRequest = OciFunctions.getApiaccesscontrolPrivilegedApiRequest(GetApiaccesscontrolPrivilegedApiRequestArgs.builder()
-     *             .privilegedApiRequestId(testPrivilegedApiRequestOciApiaccesscontrolPrivilegedApiRequest.id())
+     *             .privilegedApiRequestId(testPrivilegedApiRequestOciApiaccesscontrolPrivilegedApiRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -3006,7 +3006,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivilegedApiRequest = OciFunctions.getApiaccesscontrolPrivilegedApiRequest(GetApiaccesscontrolPrivilegedApiRequestArgs.builder()
-     *             .privilegedApiRequestId(testPrivilegedApiRequestOciApiaccesscontrolPrivilegedApiRequest.id())
+     *             .privilegedApiRequestId(testPrivilegedApiRequestOciApiaccesscontrolPrivilegedApiRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -3048,7 +3048,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPrivilegedApiRequest = OciFunctions.getApiaccesscontrolPrivilegedApiRequest(GetApiaccesscontrolPrivilegedApiRequestArgs.builder()
-     *             .privilegedApiRequestId(testPrivilegedApiRequestOciApiaccesscontrolPrivilegedApiRequest.id())
+     *             .privilegedApiRequestId(testPrivilegedApiRequestOciApiaccesscontrolPrivilegedApiRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -3093,7 +3093,7 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(privilegedApiRequestDisplayName)
      *             .id(privilegedApiRequestId)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .resourceType(privilegedApiRequestResourceType)
      *             .state(privilegedApiRequestState)
      *             .build());
@@ -3140,7 +3140,7 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(privilegedApiRequestDisplayName)
      *             .id(privilegedApiRequestId)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .resourceType(privilegedApiRequestResourceType)
      *             .state(privilegedApiRequestState)
      *             .build());
@@ -3187,7 +3187,7 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(privilegedApiRequestDisplayName)
      *             .id(privilegedApiRequestId)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .resourceType(privilegedApiRequestResourceType)
      *             .state(privilegedApiRequestState)
      *             .build());
@@ -3234,7 +3234,7 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(privilegedApiRequestDisplayName)
      *             .id(privilegedApiRequestId)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .resourceType(privilegedApiRequestResourceType)
      *             .state(privilegedApiRequestState)
      *             .build());
@@ -3281,7 +3281,7 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(privilegedApiRequestDisplayName)
      *             .id(privilegedApiRequestId)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .resourceType(privilegedApiRequestResourceType)
      *             .state(privilegedApiRequestState)
      *             .build());
@@ -3328,7 +3328,7 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(privilegedApiRequestDisplayName)
      *             .id(privilegedApiRequestId)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .resourceType(privilegedApiRequestResourceType)
      *             .state(privilegedApiRequestState)
      *             .build());
@@ -3375,7 +3375,7 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(privilegedApiRequestDisplayName)
      *             .id(privilegedApiRequestId)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .resourceType(privilegedApiRequestResourceType)
      *             .state(privilegedApiRequestState)
      *             .build());
@@ -3419,7 +3419,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchContext = OciFunctions.getBatchBatchContext(GetBatchBatchContextArgs.builder()
-     *             .batchContextId(testBatchContextOciBatchBatchContext.id())
+     *             .batchContextId(testBatchContextOciBatchBatchContext.get("id"))
      *             .build());
      * 
      *     }
@@ -3461,7 +3461,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchContext = OciFunctions.getBatchBatchContext(GetBatchBatchContextArgs.builder()
-     *             .batchContextId(testBatchContextOciBatchBatchContext.id())
+     *             .batchContextId(testBatchContextOciBatchBatchContext.get("id"))
      *             .build());
      * 
      *     }
@@ -3503,7 +3503,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchContext = OciFunctions.getBatchBatchContext(GetBatchBatchContextArgs.builder()
-     *             .batchContextId(testBatchContextOciBatchBatchContext.id())
+     *             .batchContextId(testBatchContextOciBatchBatchContext.get("id"))
      *             .build());
      * 
      *     }
@@ -3545,7 +3545,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchContext = OciFunctions.getBatchBatchContext(GetBatchBatchContextArgs.builder()
-     *             .batchContextId(testBatchContextOciBatchBatchContext.id())
+     *             .batchContextId(testBatchContextOciBatchBatchContext.get("id"))
      *             .build());
      * 
      *     }
@@ -3587,7 +3587,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchContext = OciFunctions.getBatchBatchContext(GetBatchBatchContextArgs.builder()
-     *             .batchContextId(testBatchContextOciBatchBatchContext.id())
+     *             .batchContextId(testBatchContextOciBatchBatchContext.get("id"))
      *             .build());
      * 
      *     }
@@ -4164,7 +4164,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchJobPool = OciFunctions.getBatchBatchJobPool(GetBatchBatchJobPoolArgs.builder()
-     *             .batchJobPoolId(testBatchJobPoolOciBatchBatchJobPool.id())
+     *             .batchJobPoolId(testBatchJobPoolOciBatchBatchJobPool.get("id"))
      *             .build());
      * 
      *     }
@@ -4206,7 +4206,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchJobPool = OciFunctions.getBatchBatchJobPool(GetBatchBatchJobPoolArgs.builder()
-     *             .batchJobPoolId(testBatchJobPoolOciBatchBatchJobPool.id())
+     *             .batchJobPoolId(testBatchJobPoolOciBatchBatchJobPool.get("id"))
      *             .build());
      * 
      *     }
@@ -4248,7 +4248,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchJobPool = OciFunctions.getBatchBatchJobPool(GetBatchBatchJobPoolArgs.builder()
-     *             .batchJobPoolId(testBatchJobPoolOciBatchBatchJobPool.id())
+     *             .batchJobPoolId(testBatchJobPoolOciBatchBatchJobPool.get("id"))
      *             .build());
      * 
      *     }
@@ -4290,7 +4290,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchJobPool = OciFunctions.getBatchBatchJobPool(GetBatchBatchJobPoolArgs.builder()
-     *             .batchJobPoolId(testBatchJobPoolOciBatchBatchJobPool.id())
+     *             .batchJobPoolId(testBatchJobPoolOciBatchBatchJobPool.get("id"))
      *             .build());
      * 
      *     }
@@ -4332,7 +4332,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchJobPool = OciFunctions.getBatchBatchJobPool(GetBatchBatchJobPoolArgs.builder()
-     *             .batchJobPoolId(testBatchJobPoolOciBatchBatchJobPool.id())
+     *             .batchJobPoolId(testBatchJobPoolOciBatchBatchJobPool.get("id"))
      *             .build());
      * 
      *     }
@@ -4374,7 +4374,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchJobPools = OciFunctions.getBatchBatchJobPools(GetBatchBatchJobPoolsArgs.builder()
-     *             .batchContextId(testBatchContext.id())
+     *             .batchContextId(testBatchContext.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(batchJobPoolDisplayName)
      *             .id(batchJobPoolId)
@@ -4420,7 +4420,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchJobPools = OciFunctions.getBatchBatchJobPools(GetBatchBatchJobPoolsArgs.builder()
-     *             .batchContextId(testBatchContext.id())
+     *             .batchContextId(testBatchContext.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(batchJobPoolDisplayName)
      *             .id(batchJobPoolId)
@@ -4466,7 +4466,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchJobPools = OciFunctions.getBatchBatchJobPools(GetBatchBatchJobPoolsArgs.builder()
-     *             .batchContextId(testBatchContext.id())
+     *             .batchContextId(testBatchContext.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(batchJobPoolDisplayName)
      *             .id(batchJobPoolId)
@@ -4512,7 +4512,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchJobPools = OciFunctions.getBatchBatchJobPools(GetBatchBatchJobPoolsArgs.builder()
-     *             .batchContextId(testBatchContext.id())
+     *             .batchContextId(testBatchContext.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(batchJobPoolDisplayName)
      *             .id(batchJobPoolId)
@@ -4558,7 +4558,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchJobPools = OciFunctions.getBatchBatchJobPools(GetBatchBatchJobPoolsArgs.builder()
-     *             .batchContextId(testBatchContext.id())
+     *             .batchContextId(testBatchContext.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(batchJobPoolDisplayName)
      *             .id(batchJobPoolId)
@@ -4604,7 +4604,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchJobPools = OciFunctions.getBatchBatchJobPools(GetBatchBatchJobPoolsArgs.builder()
-     *             .batchContextId(testBatchContext.id())
+     *             .batchContextId(testBatchContext.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(batchJobPoolDisplayName)
      *             .id(batchJobPoolId)
@@ -4650,7 +4650,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchJobPools = OciFunctions.getBatchBatchJobPools(GetBatchBatchJobPoolsArgs.builder()
-     *             .batchContextId(testBatchContext.id())
+     *             .batchContextId(testBatchContext.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(batchJobPoolDisplayName)
      *             .id(batchJobPoolId)
@@ -4696,7 +4696,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchTaskEnvironment = OciFunctions.getBatchBatchTaskEnvironment(GetBatchBatchTaskEnvironmentArgs.builder()
-     *             .batchTaskEnvironmentId(testBatchTaskEnvironmentOciBatchBatchTaskEnvironment.id())
+     *             .batchTaskEnvironmentId(testBatchTaskEnvironmentOciBatchBatchTaskEnvironment.get("id"))
      *             .build());
      * 
      *     }
@@ -4738,7 +4738,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchTaskEnvironment = OciFunctions.getBatchBatchTaskEnvironment(GetBatchBatchTaskEnvironmentArgs.builder()
-     *             .batchTaskEnvironmentId(testBatchTaskEnvironmentOciBatchBatchTaskEnvironment.id())
+     *             .batchTaskEnvironmentId(testBatchTaskEnvironmentOciBatchBatchTaskEnvironment.get("id"))
      *             .build());
      * 
      *     }
@@ -4780,7 +4780,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchTaskEnvironment = OciFunctions.getBatchBatchTaskEnvironment(GetBatchBatchTaskEnvironmentArgs.builder()
-     *             .batchTaskEnvironmentId(testBatchTaskEnvironmentOciBatchBatchTaskEnvironment.id())
+     *             .batchTaskEnvironmentId(testBatchTaskEnvironmentOciBatchBatchTaskEnvironment.get("id"))
      *             .build());
      * 
      *     }
@@ -4822,7 +4822,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchTaskEnvironment = OciFunctions.getBatchBatchTaskEnvironment(GetBatchBatchTaskEnvironmentArgs.builder()
-     *             .batchTaskEnvironmentId(testBatchTaskEnvironmentOciBatchBatchTaskEnvironment.id())
+     *             .batchTaskEnvironmentId(testBatchTaskEnvironmentOciBatchBatchTaskEnvironment.get("id"))
      *             .build());
      * 
      *     }
@@ -4864,7 +4864,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchTaskEnvironment = OciFunctions.getBatchBatchTaskEnvironment(GetBatchBatchTaskEnvironmentArgs.builder()
-     *             .batchTaskEnvironmentId(testBatchTaskEnvironmentOciBatchBatchTaskEnvironment.id())
+     *             .batchTaskEnvironmentId(testBatchTaskEnvironmentOciBatchBatchTaskEnvironment.get("id"))
      *             .build());
      * 
      *     }
@@ -5221,7 +5221,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchTaskProfile = OciFunctions.getBatchBatchTaskProfile(GetBatchBatchTaskProfileArgs.builder()
-     *             .batchTaskProfileId(testBatchTaskProfileOciBatchBatchTaskProfile.id())
+     *             .batchTaskProfileId(testBatchTaskProfileOciBatchBatchTaskProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -5263,7 +5263,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchTaskProfile = OciFunctions.getBatchBatchTaskProfile(GetBatchBatchTaskProfileArgs.builder()
-     *             .batchTaskProfileId(testBatchTaskProfileOciBatchBatchTaskProfile.id())
+     *             .batchTaskProfileId(testBatchTaskProfileOciBatchBatchTaskProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -5305,7 +5305,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchTaskProfile = OciFunctions.getBatchBatchTaskProfile(GetBatchBatchTaskProfileArgs.builder()
-     *             .batchTaskProfileId(testBatchTaskProfileOciBatchBatchTaskProfile.id())
+     *             .batchTaskProfileId(testBatchTaskProfileOciBatchBatchTaskProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -5347,7 +5347,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchTaskProfile = OciFunctions.getBatchBatchTaskProfile(GetBatchBatchTaskProfileArgs.builder()
-     *             .batchTaskProfileId(testBatchTaskProfileOciBatchBatchTaskProfile.id())
+     *             .batchTaskProfileId(testBatchTaskProfileOciBatchBatchTaskProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -5389,7 +5389,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testBatchTaskProfile = OciFunctions.getBatchBatchTaskProfile(GetBatchBatchTaskProfileArgs.builder()
-     *             .batchTaskProfileId(testBatchTaskProfileOciBatchBatchTaskProfile.id())
+     *             .batchTaskProfileId(testBatchTaskProfileOciBatchBatchTaskProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -5746,7 +5746,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiagnosisStore = OciFunctions.getClusterHealthDiagnosisStore(GetClusterHealthDiagnosisStoreArgs.builder()
-     *             .diagnosisStoreId(testDiagnosisStoreOciClusterHealthDiagnosisStore.id())
+     *             .diagnosisStoreId(testDiagnosisStoreOciClusterHealthDiagnosisStore.get("id"))
      *             .build());
      * 
      *     }
@@ -5788,7 +5788,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiagnosisStore = OciFunctions.getClusterHealthDiagnosisStore(GetClusterHealthDiagnosisStoreArgs.builder()
-     *             .diagnosisStoreId(testDiagnosisStoreOciClusterHealthDiagnosisStore.id())
+     *             .diagnosisStoreId(testDiagnosisStoreOciClusterHealthDiagnosisStore.get("id"))
      *             .build());
      * 
      *     }
@@ -5830,7 +5830,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiagnosisStore = OciFunctions.getClusterHealthDiagnosisStore(GetClusterHealthDiagnosisStoreArgs.builder()
-     *             .diagnosisStoreId(testDiagnosisStoreOciClusterHealthDiagnosisStore.id())
+     *             .diagnosisStoreId(testDiagnosisStoreOciClusterHealthDiagnosisStore.get("id"))
      *             .build());
      * 
      *     }
@@ -5872,7 +5872,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiagnosisStore = OciFunctions.getClusterHealthDiagnosisStore(GetClusterHealthDiagnosisStoreArgs.builder()
-     *             .diagnosisStoreId(testDiagnosisStoreOciClusterHealthDiagnosisStore.id())
+     *             .diagnosisStoreId(testDiagnosisStoreOciClusterHealthDiagnosisStore.get("id"))
      *             .build());
      * 
      *     }
@@ -5914,7 +5914,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDiagnosisStore = OciFunctions.getClusterHealthDiagnosisStore(GetClusterHealthDiagnosisStoreArgs.builder()
-     *             .diagnosisStoreId(testDiagnosisStoreOciClusterHealthDiagnosisStore.id())
+     *             .diagnosisStoreId(testDiagnosisStoreOciClusterHealthDiagnosisStore.get("id"))
      *             .build());
      * 
      *     }
@@ -5957,7 +5957,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDiagnosisStores = OciFunctions.getClusterHealthDiagnosisStores(GetClusterHealthDiagnosisStoresArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .diagnosisStoreId(testDiagnosisStore.id())
+     *             .diagnosisStoreId(testDiagnosisStore.get("id"))
      *             .displayName(diagnosisStoreDisplayName)
      *             .state(diagnosisStoreState)
      *             .build());
@@ -6002,7 +6002,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDiagnosisStores = OciFunctions.getClusterHealthDiagnosisStores(GetClusterHealthDiagnosisStoresArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .diagnosisStoreId(testDiagnosisStore.id())
+     *             .diagnosisStoreId(testDiagnosisStore.get("id"))
      *             .displayName(diagnosisStoreDisplayName)
      *             .state(diagnosisStoreState)
      *             .build());
@@ -6047,7 +6047,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDiagnosisStores = OciFunctions.getClusterHealthDiagnosisStores(GetClusterHealthDiagnosisStoresArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .diagnosisStoreId(testDiagnosisStore.id())
+     *             .diagnosisStoreId(testDiagnosisStore.get("id"))
      *             .displayName(diagnosisStoreDisplayName)
      *             .state(diagnosisStoreState)
      *             .build());
@@ -6092,7 +6092,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDiagnosisStores = OciFunctions.getClusterHealthDiagnosisStores(GetClusterHealthDiagnosisStoresArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .diagnosisStoreId(testDiagnosisStore.id())
+     *             .diagnosisStoreId(testDiagnosisStore.get("id"))
      *             .displayName(diagnosisStoreDisplayName)
      *             .state(diagnosisStoreState)
      *             .build());
@@ -6137,7 +6137,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDiagnosisStores = OciFunctions.getClusterHealthDiagnosisStores(GetClusterHealthDiagnosisStoresArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .diagnosisStoreId(testDiagnosisStore.id())
+     *             .diagnosisStoreId(testDiagnosisStore.get("id"))
      *             .displayName(diagnosisStoreDisplayName)
      *             .state(diagnosisStoreState)
      *             .build());
@@ -6182,7 +6182,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDiagnosisStores = OciFunctions.getClusterHealthDiagnosisStores(GetClusterHealthDiagnosisStoresArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .diagnosisStoreId(testDiagnosisStore.id())
+     *             .diagnosisStoreId(testDiagnosisStore.get("id"))
      *             .displayName(diagnosisStoreDisplayName)
      *             .state(diagnosisStoreState)
      *             .build());
@@ -6227,7 +6227,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDiagnosisStores = OciFunctions.getClusterHealthDiagnosisStores(GetClusterHealthDiagnosisStoresArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .diagnosisStoreId(testDiagnosisStore.id())
+     *             .diagnosisStoreId(testDiagnosisStore.get("id"))
      *             .displayName(diagnosisStoreDisplayName)
      *             .state(diagnosisStoreState)
      *             .build());
@@ -6271,7 +6271,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAlertSubscription = OciFunctions.getCostadCostAlertSubscription(GetCostadCostAlertSubscriptionArgs.builder()
-     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciCostadCostAlertSubscription.id())
+     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciCostadCostAlertSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -6313,7 +6313,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAlertSubscription = OciFunctions.getCostadCostAlertSubscription(GetCostadCostAlertSubscriptionArgs.builder()
-     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciCostadCostAlertSubscription.id())
+     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciCostadCostAlertSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -6355,7 +6355,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAlertSubscription = OciFunctions.getCostadCostAlertSubscription(GetCostadCostAlertSubscriptionArgs.builder()
-     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciCostadCostAlertSubscription.id())
+     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciCostadCostAlertSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -6397,7 +6397,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAlertSubscription = OciFunctions.getCostadCostAlertSubscription(GetCostadCostAlertSubscriptionArgs.builder()
-     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciCostadCostAlertSubscription.id())
+     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciCostadCostAlertSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -6439,7 +6439,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAlertSubscription = OciFunctions.getCostadCostAlertSubscription(GetCostadCostAlertSubscriptionArgs.builder()
-     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciCostadCostAlertSubscription.id())
+     *             .costAlertSubscriptionId(testCostAlertSubscriptionOciCostadCostAlertSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -6701,7 +6701,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEvent = OciFunctions.getCostadCostAnomalyEvent(GetCostadCostAnomalyEventArgs.builder()
-     *             .costAnomalyEventId(testCostAnomalyEventOciCostadCostAnomalyEvent.id())
+     *             .costAnomalyEventId(testCostAnomalyEventOciCostadCostAnomalyEvent.get("id"))
      *             .build());
      * 
      *     }
@@ -6743,7 +6743,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEvent = OciFunctions.getCostadCostAnomalyEvent(GetCostadCostAnomalyEventArgs.builder()
-     *             .costAnomalyEventId(testCostAnomalyEventOciCostadCostAnomalyEvent.id())
+     *             .costAnomalyEventId(testCostAnomalyEventOciCostadCostAnomalyEvent.get("id"))
      *             .build());
      * 
      *     }
@@ -6785,7 +6785,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEvent = OciFunctions.getCostadCostAnomalyEvent(GetCostadCostAnomalyEventArgs.builder()
-     *             .costAnomalyEventId(testCostAnomalyEventOciCostadCostAnomalyEvent.id())
+     *             .costAnomalyEventId(testCostAnomalyEventOciCostadCostAnomalyEvent.get("id"))
      *             .build());
      * 
      *     }
@@ -6827,7 +6827,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEvent = OciFunctions.getCostadCostAnomalyEvent(GetCostadCostAnomalyEventArgs.builder()
-     *             .costAnomalyEventId(testCostAnomalyEventOciCostadCostAnomalyEvent.id())
+     *             .costAnomalyEventId(testCostAnomalyEventOciCostadCostAnomalyEvent.get("id"))
      *             .build());
      * 
      *     }
@@ -6869,7 +6869,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEvent = OciFunctions.getCostadCostAnomalyEvent(GetCostadCostAnomalyEventArgs.builder()
-     *             .costAnomalyEventId(testCostAnomalyEventOciCostadCostAnomalyEvent.id())
+     *             .costAnomalyEventId(testCostAnomalyEventOciCostadCostAnomalyEvent.get("id"))
      *             .build());
      * 
      *     }
@@ -6912,12 +6912,12 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEventAnalytics = OciFunctions.getCostadCostAnomalyEventAnalytics(GetCostadCostAnomalyEventAnalyticsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.get("id"))
      *             .costImpact(costAnomalyEventAnalyticCostImpact)
      *             .costImpactPercentage(costAnomalyEventAnalyticCostImpactPercentage)
      *             .name(costAnomalyEventAnalyticName)
      *             .regions(costAnomalyEventAnalyticRegion)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .timeAnomalyEventEndDate(costAnomalyEventAnalyticTimeAnomalyEventEndDate)
      *             .timeAnomalyEventStartDate(costAnomalyEventAnalyticTimeAnomalyEventStartDate)
      *             .build());
@@ -6962,12 +6962,12 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEventAnalytics = OciFunctions.getCostadCostAnomalyEventAnalytics(GetCostadCostAnomalyEventAnalyticsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.get("id"))
      *             .costImpact(costAnomalyEventAnalyticCostImpact)
      *             .costImpactPercentage(costAnomalyEventAnalyticCostImpactPercentage)
      *             .name(costAnomalyEventAnalyticName)
      *             .regions(costAnomalyEventAnalyticRegion)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .timeAnomalyEventEndDate(costAnomalyEventAnalyticTimeAnomalyEventEndDate)
      *             .timeAnomalyEventStartDate(costAnomalyEventAnalyticTimeAnomalyEventStartDate)
      *             .build());
@@ -7012,12 +7012,12 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEventAnalytics = OciFunctions.getCostadCostAnomalyEventAnalytics(GetCostadCostAnomalyEventAnalyticsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.get("id"))
      *             .costImpact(costAnomalyEventAnalyticCostImpact)
      *             .costImpactPercentage(costAnomalyEventAnalyticCostImpactPercentage)
      *             .name(costAnomalyEventAnalyticName)
      *             .regions(costAnomalyEventAnalyticRegion)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .timeAnomalyEventEndDate(costAnomalyEventAnalyticTimeAnomalyEventEndDate)
      *             .timeAnomalyEventStartDate(costAnomalyEventAnalyticTimeAnomalyEventStartDate)
      *             .build());
@@ -7062,12 +7062,12 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEventAnalytics = OciFunctions.getCostadCostAnomalyEventAnalytics(GetCostadCostAnomalyEventAnalyticsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.get("id"))
      *             .costImpact(costAnomalyEventAnalyticCostImpact)
      *             .costImpactPercentage(costAnomalyEventAnalyticCostImpactPercentage)
      *             .name(costAnomalyEventAnalyticName)
      *             .regions(costAnomalyEventAnalyticRegion)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .timeAnomalyEventEndDate(costAnomalyEventAnalyticTimeAnomalyEventEndDate)
      *             .timeAnomalyEventStartDate(costAnomalyEventAnalyticTimeAnomalyEventStartDate)
      *             .build());
@@ -7112,12 +7112,12 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEventAnalytics = OciFunctions.getCostadCostAnomalyEventAnalytics(GetCostadCostAnomalyEventAnalyticsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.get("id"))
      *             .costImpact(costAnomalyEventAnalyticCostImpact)
      *             .costImpactPercentage(costAnomalyEventAnalyticCostImpactPercentage)
      *             .name(costAnomalyEventAnalyticName)
      *             .regions(costAnomalyEventAnalyticRegion)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .timeAnomalyEventEndDate(costAnomalyEventAnalyticTimeAnomalyEventEndDate)
      *             .timeAnomalyEventStartDate(costAnomalyEventAnalyticTimeAnomalyEventStartDate)
      *             .build());
@@ -7162,12 +7162,12 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEvents = OciFunctions.getCostadCostAnomalyEvents(GetCostadCostAnomalyEventsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.get("id"))
      *             .costImpact(costAnomalyEventCostImpact)
      *             .costImpactPercentage(costAnomalyEventCostImpactPercentage)
      *             .name(costAnomalyEventName)
      *             .regions(costAnomalyEventRegion)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .timeAnomalyEventEndDate(costAnomalyEventTimeAnomalyEventEndDate)
      *             .timeAnomalyEventStartDate(costAnomalyEventTimeAnomalyEventStartDate)
      *             .build());
@@ -7212,12 +7212,12 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEvents = OciFunctions.getCostadCostAnomalyEvents(GetCostadCostAnomalyEventsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.get("id"))
      *             .costImpact(costAnomalyEventCostImpact)
      *             .costImpactPercentage(costAnomalyEventCostImpactPercentage)
      *             .name(costAnomalyEventName)
      *             .regions(costAnomalyEventRegion)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .timeAnomalyEventEndDate(costAnomalyEventTimeAnomalyEventEndDate)
      *             .timeAnomalyEventStartDate(costAnomalyEventTimeAnomalyEventStartDate)
      *             .build());
@@ -7262,12 +7262,12 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEvents = OciFunctions.getCostadCostAnomalyEvents(GetCostadCostAnomalyEventsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.get("id"))
      *             .costImpact(costAnomalyEventCostImpact)
      *             .costImpactPercentage(costAnomalyEventCostImpactPercentage)
      *             .name(costAnomalyEventName)
      *             .regions(costAnomalyEventRegion)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .timeAnomalyEventEndDate(costAnomalyEventTimeAnomalyEventEndDate)
      *             .timeAnomalyEventStartDate(costAnomalyEventTimeAnomalyEventStartDate)
      *             .build());
@@ -7312,12 +7312,12 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEvents = OciFunctions.getCostadCostAnomalyEvents(GetCostadCostAnomalyEventsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.get("id"))
      *             .costImpact(costAnomalyEventCostImpact)
      *             .costImpactPercentage(costAnomalyEventCostImpactPercentage)
      *             .name(costAnomalyEventName)
      *             .regions(costAnomalyEventRegion)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .timeAnomalyEventEndDate(costAnomalyEventTimeAnomalyEventEndDate)
      *             .timeAnomalyEventStartDate(costAnomalyEventTimeAnomalyEventStartDate)
      *             .build());
@@ -7362,12 +7362,12 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyEvents = OciFunctions.getCostadCostAnomalyEvents(GetCostadCostAnomalyEventsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .costAnomalyMonitorId(testCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitor.get("id"))
      *             .costImpact(costAnomalyEventCostImpact)
      *             .costImpactPercentage(costAnomalyEventCostImpactPercentage)
      *             .name(costAnomalyEventName)
      *             .regions(costAnomalyEventRegion)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .timeAnomalyEventEndDate(costAnomalyEventTimeAnomalyEventEndDate)
      *             .timeAnomalyEventStartDate(costAnomalyEventTimeAnomalyEventStartDate)
      *             .build());
@@ -7411,7 +7411,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyMonitor = OciFunctions.getCostadCostAnomalyMonitor(GetCostadCostAnomalyMonitorArgs.builder()
-     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciCostadCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciCostadCostAnomalyMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -7453,7 +7453,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyMonitor = OciFunctions.getCostadCostAnomalyMonitor(GetCostadCostAnomalyMonitorArgs.builder()
-     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciCostadCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciCostadCostAnomalyMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -7495,7 +7495,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyMonitor = OciFunctions.getCostadCostAnomalyMonitor(GetCostadCostAnomalyMonitorArgs.builder()
-     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciCostadCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciCostadCostAnomalyMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -7537,7 +7537,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyMonitor = OciFunctions.getCostadCostAnomalyMonitor(GetCostadCostAnomalyMonitorArgs.builder()
-     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciCostadCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciCostadCostAnomalyMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -7579,7 +7579,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCostAnomalyMonitor = OciFunctions.getCostadCostAnomalyMonitor(GetCostadCostAnomalyMonitorArgs.builder()
-     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciCostadCostAnomalyMonitor.id())
+     *             .costAnomalyMonitorId(testCostAnomalyMonitorOciCostadCostAnomalyMonitor.get("id"))
      *             .build());
      * 
      *     }
@@ -7625,7 +7625,7 @@ public final class OciFunctions {
      *             .name(costAnomalyMonitorName)
      *             .regions(costAnomalyMonitorRegion)
      *             .state(costAnomalyMonitorState)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .build());
      * 
      *     }
@@ -7671,7 +7671,7 @@ public final class OciFunctions {
      *             .name(costAnomalyMonitorName)
      *             .regions(costAnomalyMonitorRegion)
      *             .state(costAnomalyMonitorState)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .build());
      * 
      *     }
@@ -7717,7 +7717,7 @@ public final class OciFunctions {
      *             .name(costAnomalyMonitorName)
      *             .regions(costAnomalyMonitorRegion)
      *             .state(costAnomalyMonitorState)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .build());
      * 
      *     }
@@ -7763,7 +7763,7 @@ public final class OciFunctions {
      *             .name(costAnomalyMonitorName)
      *             .regions(costAnomalyMonitorRegion)
      *             .state(costAnomalyMonitorState)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .build());
      * 
      *     }
@@ -7809,7 +7809,7 @@ public final class OciFunctions {
      *             .name(costAnomalyMonitorName)
      *             .regions(costAnomalyMonitorRegion)
      *             .state(costAnomalyMonitorState)
-     *             .targetTenantIds(testTargetTenant.id())
+     *             .targetTenantIds(testTargetTenant.get("id"))
      *             .build());
      * 
      *     }
@@ -7852,7 +7852,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInfrastructure = OciFunctions.getDataccInfrastructure(GetDataccInfrastructureArgs.builder()
-     *             .infrastructureId(testInfrastructureOciDataccInfrastructure.id())
+     *             .infrastructureId(testInfrastructureOciDataccInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -7895,7 +7895,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInfrastructure = OciFunctions.getDataccInfrastructure(GetDataccInfrastructureArgs.builder()
-     *             .infrastructureId(testInfrastructureOciDataccInfrastructure.id())
+     *             .infrastructureId(testInfrastructureOciDataccInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -7938,7 +7938,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInfrastructure = OciFunctions.getDataccInfrastructure(GetDataccInfrastructureArgs.builder()
-     *             .infrastructureId(testInfrastructureOciDataccInfrastructure.id())
+     *             .infrastructureId(testInfrastructureOciDataccInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -7981,7 +7981,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInfrastructure = OciFunctions.getDataccInfrastructure(GetDataccInfrastructureArgs.builder()
-     *             .infrastructureId(testInfrastructureOciDataccInfrastructure.id())
+     *             .infrastructureId(testInfrastructureOciDataccInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -8024,7 +8024,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInfrastructure = OciFunctions.getDataccInfrastructure(GetDataccInfrastructureArgs.builder()
-     *             .infrastructureId(testInfrastructureOciDataccInfrastructure.id())
+     *             .infrastructureId(testInfrastructureOciDataccInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -8067,7 +8067,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInfrastructureScaleOption = OciFunctions.getDataccInfrastructureScaleOption(GetDataccInfrastructureScaleOptionArgs.builder()
-     *             .infrastructureId(testInfrastructure.id())
+     *             .infrastructureId(testInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -8110,7 +8110,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInfrastructureScaleOption = OciFunctions.getDataccInfrastructureScaleOption(GetDataccInfrastructureScaleOptionArgs.builder()
-     *             .infrastructureId(testInfrastructure.id())
+     *             .infrastructureId(testInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -8153,7 +8153,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInfrastructureScaleOption = OciFunctions.getDataccInfrastructureScaleOption(GetDataccInfrastructureScaleOptionArgs.builder()
-     *             .infrastructureId(testInfrastructure.id())
+     *             .infrastructureId(testInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -8196,7 +8196,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInfrastructureScaleOption = OciFunctions.getDataccInfrastructureScaleOption(GetDataccInfrastructureScaleOptionArgs.builder()
-     *             .infrastructureId(testInfrastructure.id())
+     *             .infrastructureId(testInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -8239,7 +8239,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInfrastructureScaleOption = OciFunctions.getDataccInfrastructureScaleOption(GetDataccInfrastructureScaleOptionArgs.builder()
-     *             .infrastructureId(testInfrastructure.id())
+     *             .infrastructureId(testInfrastructure.get("id"))
      *             .build());
      * 
      *     }
@@ -8501,7 +8501,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceExecution = OciFunctions.getDataccMaintenanceExecution(GetDataccMaintenanceExecutionArgs.builder()
-     *             .maintenanceExecutionId(testMaintenanceExecutionOciDataccMaintenanceExecution.id())
+     *             .maintenanceExecutionId(testMaintenanceExecutionOciDataccMaintenanceExecution.get("id"))
      *             .build());
      * 
      *     }
@@ -8543,7 +8543,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceExecution = OciFunctions.getDataccMaintenanceExecution(GetDataccMaintenanceExecutionArgs.builder()
-     *             .maintenanceExecutionId(testMaintenanceExecutionOciDataccMaintenanceExecution.id())
+     *             .maintenanceExecutionId(testMaintenanceExecutionOciDataccMaintenanceExecution.get("id"))
      *             .build());
      * 
      *     }
@@ -8585,7 +8585,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceExecution = OciFunctions.getDataccMaintenanceExecution(GetDataccMaintenanceExecutionArgs.builder()
-     *             .maintenanceExecutionId(testMaintenanceExecutionOciDataccMaintenanceExecution.id())
+     *             .maintenanceExecutionId(testMaintenanceExecutionOciDataccMaintenanceExecution.get("id"))
      *             .build());
      * 
      *     }
@@ -8627,7 +8627,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceExecution = OciFunctions.getDataccMaintenanceExecution(GetDataccMaintenanceExecutionArgs.builder()
-     *             .maintenanceExecutionId(testMaintenanceExecutionOciDataccMaintenanceExecution.id())
+     *             .maintenanceExecutionId(testMaintenanceExecutionOciDataccMaintenanceExecution.get("id"))
      *             .build());
      * 
      *     }
@@ -8669,7 +8669,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMaintenanceExecution = OciFunctions.getDataccMaintenanceExecution(GetDataccMaintenanceExecutionArgs.builder()
-     *             .maintenanceExecutionId(testMaintenanceExecutionOciDataccMaintenanceExecution.id())
+     *             .maintenanceExecutionId(testMaintenanceExecutionOciDataccMaintenanceExecution.get("id"))
      *             .build());
      * 
      *     }
@@ -8713,8 +8713,8 @@ public final class OciFunctions {
      *         final var testMaintenanceExecutions = OciFunctions.getDataccMaintenanceExecutions(GetDataccMaintenanceExecutionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(maintenanceExecutionDisplayName)
-     *             .infrastructureId(testInfrastructure.id())
-     *             .maintenanceRunId(testMaintenanceRun.id())
+     *             .infrastructureId(testInfrastructure.get("id"))
+     *             .maintenanceRunId(testMaintenanceRun.get("id"))
      *             .maintenanceSubtype(maintenanceExecutionMaintenanceSubtype)
      *             .maintenanceType(maintenanceExecutionMaintenanceType)
      *             .state(maintenanceExecutionState)
@@ -8765,8 +8765,8 @@ public final class OciFunctions {
      *         final var testMaintenanceExecutions = OciFunctions.getDataccMaintenanceExecutions(GetDataccMaintenanceExecutionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(maintenanceExecutionDisplayName)
-     *             .infrastructureId(testInfrastructure.id())
-     *             .maintenanceRunId(testMaintenanceRun.id())
+     *             .infrastructureId(testInfrastructure.get("id"))
+     *             .maintenanceRunId(testMaintenanceRun.get("id"))
      *             .maintenanceSubtype(maintenanceExecutionMaintenanceSubtype)
      *             .maintenanceType(maintenanceExecutionMaintenanceType)
      *             .state(maintenanceExecutionState)
@@ -8817,8 +8817,8 @@ public final class OciFunctions {
      *         final var testMaintenanceExecutions = OciFunctions.getDataccMaintenanceExecutions(GetDataccMaintenanceExecutionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(maintenanceExecutionDisplayName)
-     *             .infrastructureId(testInfrastructure.id())
-     *             .maintenanceRunId(testMaintenanceRun.id())
+     *             .infrastructureId(testInfrastructure.get("id"))
+     *             .maintenanceRunId(testMaintenanceRun.get("id"))
      *             .maintenanceSubtype(maintenanceExecutionMaintenanceSubtype)
      *             .maintenanceType(maintenanceExecutionMaintenanceType)
      *             .state(maintenanceExecutionState)
@@ -8869,8 +8869,8 @@ public final class OciFunctions {
      *         final var testMaintenanceExecutions = OciFunctions.getDataccMaintenanceExecutions(GetDataccMaintenanceExecutionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(maintenanceExecutionDisplayName)
-     *             .infrastructureId(testInfrastructure.id())
-     *             .maintenanceRunId(testMaintenanceRun.id())
+     *             .infrastructureId(testInfrastructure.get("id"))
+     *             .maintenanceRunId(testMaintenanceRun.get("id"))
      *             .maintenanceSubtype(maintenanceExecutionMaintenanceSubtype)
      *             .maintenanceType(maintenanceExecutionMaintenanceType)
      *             .state(maintenanceExecutionState)
@@ -8921,8 +8921,8 @@ public final class OciFunctions {
      *         final var testMaintenanceExecutions = OciFunctions.getDataccMaintenanceExecutions(GetDataccMaintenanceExecutionsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(maintenanceExecutionDisplayName)
-     *             .infrastructureId(testInfrastructure.id())
-     *             .maintenanceRunId(testMaintenanceRun.id())
+     *             .infrastructureId(testInfrastructure.get("id"))
+     *             .maintenanceRunId(testMaintenanceRun.get("id"))
      *             .maintenanceSubtype(maintenanceExecutionMaintenanceSubtype)
      *             .maintenanceType(maintenanceExecutionMaintenanceType)
      *             .state(maintenanceExecutionState)
@@ -8972,7 +8972,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterNetwork = OciFunctions.getDataccVmClusterNetwork(GetDataccVmClusterNetworkArgs.builder()
-     *             .vmClusterNetworkId(testVmClusterNetworkOciDataccVmClusterNetwork.id())
+     *             .vmClusterNetworkId(testVmClusterNetworkOciDataccVmClusterNetwork.get("id"))
      *             .build());
      * 
      *     }
@@ -9015,7 +9015,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterNetwork = OciFunctions.getDataccVmClusterNetwork(GetDataccVmClusterNetworkArgs.builder()
-     *             .vmClusterNetworkId(testVmClusterNetworkOciDataccVmClusterNetwork.id())
+     *             .vmClusterNetworkId(testVmClusterNetworkOciDataccVmClusterNetwork.get("id"))
      *             .build());
      * 
      *     }
@@ -9058,7 +9058,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterNetwork = OciFunctions.getDataccVmClusterNetwork(GetDataccVmClusterNetworkArgs.builder()
-     *             .vmClusterNetworkId(testVmClusterNetworkOciDataccVmClusterNetwork.id())
+     *             .vmClusterNetworkId(testVmClusterNetworkOciDataccVmClusterNetwork.get("id"))
      *             .build());
      * 
      *     }
@@ -9101,7 +9101,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterNetwork = OciFunctions.getDataccVmClusterNetwork(GetDataccVmClusterNetworkArgs.builder()
-     *             .vmClusterNetworkId(testVmClusterNetworkOciDataccVmClusterNetwork.id())
+     *             .vmClusterNetworkId(testVmClusterNetworkOciDataccVmClusterNetwork.get("id"))
      *             .build());
      * 
      *     }
@@ -9144,7 +9144,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmClusterNetwork = OciFunctions.getDataccVmClusterNetwork(GetDataccVmClusterNetworkArgs.builder()
-     *             .vmClusterNetworkId(testVmClusterNetworkOciDataccVmClusterNetwork.id())
+     *             .vmClusterNetworkId(testVmClusterNetworkOciDataccVmClusterNetwork.get("id"))
      *             .build());
      * 
      *     }
@@ -9188,7 +9188,7 @@ public final class OciFunctions {
      *         final var testVmClusterNetworks = OciFunctions.getDataccVmClusterNetworks(GetDataccVmClusterNetworksArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(vmClusterNetworkDisplayName)
-     *             .infrastructureId(testInfrastructure.id())
+     *             .infrastructureId(testInfrastructure.get("id"))
      *             .isScanEnabled(vmClusterNetworkIsScanEnabled)
      *             .nodeCount(vmClusterNetworkNodeCount)
      *             .states(vmClusterNetworkState)
@@ -9236,7 +9236,7 @@ public final class OciFunctions {
      *         final var testVmClusterNetworks = OciFunctions.getDataccVmClusterNetworks(GetDataccVmClusterNetworksArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(vmClusterNetworkDisplayName)
-     *             .infrastructureId(testInfrastructure.id())
+     *             .infrastructureId(testInfrastructure.get("id"))
      *             .isScanEnabled(vmClusterNetworkIsScanEnabled)
      *             .nodeCount(vmClusterNetworkNodeCount)
      *             .states(vmClusterNetworkState)
@@ -9284,7 +9284,7 @@ public final class OciFunctions {
      *         final var testVmClusterNetworks = OciFunctions.getDataccVmClusterNetworks(GetDataccVmClusterNetworksArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(vmClusterNetworkDisplayName)
-     *             .infrastructureId(testInfrastructure.id())
+     *             .infrastructureId(testInfrastructure.get("id"))
      *             .isScanEnabled(vmClusterNetworkIsScanEnabled)
      *             .nodeCount(vmClusterNetworkNodeCount)
      *             .states(vmClusterNetworkState)
@@ -9332,7 +9332,7 @@ public final class OciFunctions {
      *         final var testVmClusterNetworks = OciFunctions.getDataccVmClusterNetworks(GetDataccVmClusterNetworksArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(vmClusterNetworkDisplayName)
-     *             .infrastructureId(testInfrastructure.id())
+     *             .infrastructureId(testInfrastructure.get("id"))
      *             .isScanEnabled(vmClusterNetworkIsScanEnabled)
      *             .nodeCount(vmClusterNetworkNodeCount)
      *             .states(vmClusterNetworkState)
@@ -9380,7 +9380,7 @@ public final class OciFunctions {
      *         final var testVmClusterNetworks = OciFunctions.getDataccVmClusterNetworks(GetDataccVmClusterNetworksArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(vmClusterNetworkDisplayName)
-     *             .infrastructureId(testInfrastructure.id())
+     *             .infrastructureId(testInfrastructure.get("id"))
      *             .isScanEnabled(vmClusterNetworkIsScanEnabled)
      *             .nodeCount(vmClusterNetworkNodeCount)
      *             .states(vmClusterNetworkState)
@@ -9426,7 +9426,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmInstance = OciFunctions.getDataccVmInstance(GetDataccVmInstanceArgs.builder()
-     *             .vmInstanceId(testVmInstanceOciDataccVmInstance.id())
+     *             .vmInstanceId(testVmInstanceOciDataccVmInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -9468,7 +9468,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmInstance = OciFunctions.getDataccVmInstance(GetDataccVmInstanceArgs.builder()
-     *             .vmInstanceId(testVmInstanceOciDataccVmInstance.id())
+     *             .vmInstanceId(testVmInstanceOciDataccVmInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -9510,7 +9510,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmInstance = OciFunctions.getDataccVmInstance(GetDataccVmInstanceArgs.builder()
-     *             .vmInstanceId(testVmInstanceOciDataccVmInstance.id())
+     *             .vmInstanceId(testVmInstanceOciDataccVmInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -9552,7 +9552,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmInstance = OciFunctions.getDataccVmInstance(GetDataccVmInstanceArgs.builder()
-     *             .vmInstanceId(testVmInstanceOciDataccVmInstance.id())
+     *             .vmInstanceId(testVmInstanceOciDataccVmInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -9594,7 +9594,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVmInstance = OciFunctions.getDataccVmInstance(GetDataccVmInstanceArgs.builder()
-     *             .vmInstanceId(testVmInstanceOciDataccVmInstance.id())
+     *             .vmInstanceId(testVmInstanceOciDataccVmInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -9637,9 +9637,9 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVmInstances = OciFunctions.getDataccVmInstances(GetDataccVmInstancesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .baseServerId(testBaseServer.id())
+     *             .baseServerId(testBaseServer.get("id"))
      *             .displayName(vmInstanceDisplayName)
-     *             .infrastructureId(testInfrastructure.id())
+     *             .infrastructureId(testInfrastructure.get("id"))
      *             .states(vmInstanceState)
      *             .build());
      * 
@@ -9683,9 +9683,9 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVmInstances = OciFunctions.getDataccVmInstances(GetDataccVmInstancesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .baseServerId(testBaseServer.id())
+     *             .baseServerId(testBaseServer.get("id"))
      *             .displayName(vmInstanceDisplayName)
-     *             .infrastructureId(testInfrastructure.id())
+     *             .infrastructureId(testInfrastructure.get("id"))
      *             .states(vmInstanceState)
      *             .build());
      * 
@@ -9729,9 +9729,9 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVmInstances = OciFunctions.getDataccVmInstances(GetDataccVmInstancesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .baseServerId(testBaseServer.id())
+     *             .baseServerId(testBaseServer.get("id"))
      *             .displayName(vmInstanceDisplayName)
-     *             .infrastructureId(testInfrastructure.id())
+     *             .infrastructureId(testInfrastructure.get("id"))
      *             .states(vmInstanceState)
      *             .build());
      * 
@@ -9775,9 +9775,9 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVmInstances = OciFunctions.getDataccVmInstances(GetDataccVmInstancesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .baseServerId(testBaseServer.id())
+     *             .baseServerId(testBaseServer.get("id"))
      *             .displayName(vmInstanceDisplayName)
-     *             .infrastructureId(testInfrastructure.id())
+     *             .infrastructureId(testInfrastructure.get("id"))
      *             .states(vmInstanceState)
      *             .build());
      * 
@@ -9821,9 +9821,9 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVmInstances = OciFunctions.getDataccVmInstances(GetDataccVmInstancesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .baseServerId(testBaseServer.id())
+     *             .baseServerId(testBaseServer.get("id"))
      *             .displayName(vmInstanceDisplayName)
-     *             .infrastructureId(testInfrastructure.id())
+     *             .infrastructureId(testInfrastructure.get("id"))
      *             .states(vmInstanceState)
      *             .build());
      * 
@@ -9868,8 +9868,8 @@ public final class OciFunctions {
      *         final var testMultiCloudResourceDiscoveries = OciFunctions.getDbmulticloudMultiCloudResourceDiscoveries(GetDbmulticloudMultiCloudResourceDiscoveriesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(multiCloudResourceDiscoveryDisplayName)
-     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscovery.id())
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscovery.get("id"))
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
      *             .resourceType(multiCloudResourceDiscoveryResourceType)
      *             .resourcesFilters(multiCloudResourceDiscoveryResourcesFilter)
      *             .state(multiCloudResourceDiscoveryState)
@@ -9916,8 +9916,8 @@ public final class OciFunctions {
      *         final var testMultiCloudResourceDiscoveries = OciFunctions.getDbmulticloudMultiCloudResourceDiscoveries(GetDbmulticloudMultiCloudResourceDiscoveriesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(multiCloudResourceDiscoveryDisplayName)
-     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscovery.id())
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscovery.get("id"))
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
      *             .resourceType(multiCloudResourceDiscoveryResourceType)
      *             .resourcesFilters(multiCloudResourceDiscoveryResourcesFilter)
      *             .state(multiCloudResourceDiscoveryState)
@@ -9964,8 +9964,8 @@ public final class OciFunctions {
      *         final var testMultiCloudResourceDiscoveries = OciFunctions.getDbmulticloudMultiCloudResourceDiscoveries(GetDbmulticloudMultiCloudResourceDiscoveriesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(multiCloudResourceDiscoveryDisplayName)
-     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscovery.id())
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscovery.get("id"))
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
      *             .resourceType(multiCloudResourceDiscoveryResourceType)
      *             .resourcesFilters(multiCloudResourceDiscoveryResourcesFilter)
      *             .state(multiCloudResourceDiscoveryState)
@@ -10012,8 +10012,8 @@ public final class OciFunctions {
      *         final var testMultiCloudResourceDiscoveries = OciFunctions.getDbmulticloudMultiCloudResourceDiscoveries(GetDbmulticloudMultiCloudResourceDiscoveriesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(multiCloudResourceDiscoveryDisplayName)
-     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscovery.id())
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscovery.get("id"))
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
      *             .resourceType(multiCloudResourceDiscoveryResourceType)
      *             .resourcesFilters(multiCloudResourceDiscoveryResourcesFilter)
      *             .state(multiCloudResourceDiscoveryState)
@@ -10060,8 +10060,8 @@ public final class OciFunctions {
      *         final var testMultiCloudResourceDiscoveries = OciFunctions.getDbmulticloudMultiCloudResourceDiscoveries(GetDbmulticloudMultiCloudResourceDiscoveriesArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(multiCloudResourceDiscoveryDisplayName)
-     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscovery.id())
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscovery.get("id"))
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
      *             .resourceType(multiCloudResourceDiscoveryResourceType)
      *             .resourcesFilters(multiCloudResourceDiscoveryResourcesFilter)
      *             .state(multiCloudResourceDiscoveryState)
@@ -10106,7 +10106,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMultiCloudResourceDiscovery = OciFunctions.getDbmulticloudMultiCloudResourceDiscovery(GetDbmulticloudMultiCloudResourceDiscoveryArgs.builder()
-     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscoveryOciDbmulticloudMultiCloudResourceDiscovery.id())
+     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscoveryOciDbmulticloudMultiCloudResourceDiscovery.get("id"))
      *             .build());
      * 
      *     }
@@ -10148,7 +10148,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMultiCloudResourceDiscovery = OciFunctions.getDbmulticloudMultiCloudResourceDiscovery(GetDbmulticloudMultiCloudResourceDiscoveryArgs.builder()
-     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscoveryOciDbmulticloudMultiCloudResourceDiscovery.id())
+     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscoveryOciDbmulticloudMultiCloudResourceDiscovery.get("id"))
      *             .build());
      * 
      *     }
@@ -10190,7 +10190,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMultiCloudResourceDiscovery = OciFunctions.getDbmulticloudMultiCloudResourceDiscovery(GetDbmulticloudMultiCloudResourceDiscoveryArgs.builder()
-     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscoveryOciDbmulticloudMultiCloudResourceDiscovery.id())
+     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscoveryOciDbmulticloudMultiCloudResourceDiscovery.get("id"))
      *             .build());
      * 
      *     }
@@ -10232,7 +10232,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMultiCloudResourceDiscovery = OciFunctions.getDbmulticloudMultiCloudResourceDiscovery(GetDbmulticloudMultiCloudResourceDiscoveryArgs.builder()
-     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscoveryOciDbmulticloudMultiCloudResourceDiscovery.id())
+     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscoveryOciDbmulticloudMultiCloudResourceDiscovery.get("id"))
      *             .build());
      * 
      *     }
@@ -10274,7 +10274,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMultiCloudResourceDiscovery = OciFunctions.getDbmulticloudMultiCloudResourceDiscovery(GetDbmulticloudMultiCloudResourceDiscoveryArgs.builder()
-     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscoveryOciDbmulticloudMultiCloudResourceDiscovery.id())
+     *             .multiCloudResourceDiscoveryId(testMultiCloudResourceDiscoveryOciDbmulticloudMultiCloudResourceDiscovery.get("id"))
      *             .build());
      * 
      *     }
@@ -10316,7 +10316,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAwsIdentityConnector = OciFunctions.getDbmulticloudOracleDbAwsIdentityConnector(GetDbmulticloudOracleDbAwsIdentityConnectorArgs.builder()
-     *             .oracleDbAwsIdentityConnectorId(testOracleDbAwsIdentityConnectorOciDbmulticloudOracleDbAwsIdentityConnector.id())
+     *             .oracleDbAwsIdentityConnectorId(testOracleDbAwsIdentityConnectorOciDbmulticloudOracleDbAwsIdentityConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -10358,7 +10358,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAwsIdentityConnector = OciFunctions.getDbmulticloudOracleDbAwsIdentityConnector(GetDbmulticloudOracleDbAwsIdentityConnectorArgs.builder()
-     *             .oracleDbAwsIdentityConnectorId(testOracleDbAwsIdentityConnectorOciDbmulticloudOracleDbAwsIdentityConnector.id())
+     *             .oracleDbAwsIdentityConnectorId(testOracleDbAwsIdentityConnectorOciDbmulticloudOracleDbAwsIdentityConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -10400,7 +10400,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAwsIdentityConnector = OciFunctions.getDbmulticloudOracleDbAwsIdentityConnector(GetDbmulticloudOracleDbAwsIdentityConnectorArgs.builder()
-     *             .oracleDbAwsIdentityConnectorId(testOracleDbAwsIdentityConnectorOciDbmulticloudOracleDbAwsIdentityConnector.id())
+     *             .oracleDbAwsIdentityConnectorId(testOracleDbAwsIdentityConnectorOciDbmulticloudOracleDbAwsIdentityConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -10442,7 +10442,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAwsIdentityConnector = OciFunctions.getDbmulticloudOracleDbAwsIdentityConnector(GetDbmulticloudOracleDbAwsIdentityConnectorArgs.builder()
-     *             .oracleDbAwsIdentityConnectorId(testOracleDbAwsIdentityConnectorOciDbmulticloudOracleDbAwsIdentityConnector.id())
+     *             .oracleDbAwsIdentityConnectorId(testOracleDbAwsIdentityConnectorOciDbmulticloudOracleDbAwsIdentityConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -10484,7 +10484,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAwsIdentityConnector = OciFunctions.getDbmulticloudOracleDbAwsIdentityConnector(GetDbmulticloudOracleDbAwsIdentityConnectorArgs.builder()
-     *             .oracleDbAwsIdentityConnectorId(testOracleDbAwsIdentityConnectorOciDbmulticloudOracleDbAwsIdentityConnector.id())
+     *             .oracleDbAwsIdentityConnectorId(testOracleDbAwsIdentityConnectorOciDbmulticloudOracleDbAwsIdentityConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -10528,7 +10528,7 @@ public final class OciFunctions {
      *         final var testOracleDbAwsIdentityConnectors = OciFunctions.getDbmulticloudOracleDbAwsIdentityConnectors(GetDbmulticloudOracleDbAwsIdentityConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAwsIdentityConnectorDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(oracleDbAwsIdentityConnectorState)
      *             .build());
      * 
@@ -10573,7 +10573,7 @@ public final class OciFunctions {
      *         final var testOracleDbAwsIdentityConnectors = OciFunctions.getDbmulticloudOracleDbAwsIdentityConnectors(GetDbmulticloudOracleDbAwsIdentityConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAwsIdentityConnectorDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(oracleDbAwsIdentityConnectorState)
      *             .build());
      * 
@@ -10618,7 +10618,7 @@ public final class OciFunctions {
      *         final var testOracleDbAwsIdentityConnectors = OciFunctions.getDbmulticloudOracleDbAwsIdentityConnectors(GetDbmulticloudOracleDbAwsIdentityConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAwsIdentityConnectorDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(oracleDbAwsIdentityConnectorState)
      *             .build());
      * 
@@ -10663,7 +10663,7 @@ public final class OciFunctions {
      *         final var testOracleDbAwsIdentityConnectors = OciFunctions.getDbmulticloudOracleDbAwsIdentityConnectors(GetDbmulticloudOracleDbAwsIdentityConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAwsIdentityConnectorDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(oracleDbAwsIdentityConnectorState)
      *             .build());
      * 
@@ -10708,7 +10708,7 @@ public final class OciFunctions {
      *         final var testOracleDbAwsIdentityConnectors = OciFunctions.getDbmulticloudOracleDbAwsIdentityConnectors(GetDbmulticloudOracleDbAwsIdentityConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAwsIdentityConnectorDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(oracleDbAwsIdentityConnectorState)
      *             .build());
      * 
@@ -10751,7 +10751,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAwsKey = OciFunctions.getDbmulticloudOracleDbAwsKey(GetDbmulticloudOracleDbAwsKeyArgs.builder()
-     *             .oracleDbAwsKeyId(testOracleDbAwsKeyOciDbmulticloudOracleDbAwsKey.id())
+     *             .oracleDbAwsKeyId(testOracleDbAwsKeyOciDbmulticloudOracleDbAwsKey.get("id"))
      *             .build());
      * 
      *     }
@@ -10793,7 +10793,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAwsKey = OciFunctions.getDbmulticloudOracleDbAwsKey(GetDbmulticloudOracleDbAwsKeyArgs.builder()
-     *             .oracleDbAwsKeyId(testOracleDbAwsKeyOciDbmulticloudOracleDbAwsKey.id())
+     *             .oracleDbAwsKeyId(testOracleDbAwsKeyOciDbmulticloudOracleDbAwsKey.get("id"))
      *             .build());
      * 
      *     }
@@ -10835,7 +10835,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAwsKey = OciFunctions.getDbmulticloudOracleDbAwsKey(GetDbmulticloudOracleDbAwsKeyArgs.builder()
-     *             .oracleDbAwsKeyId(testOracleDbAwsKeyOciDbmulticloudOracleDbAwsKey.id())
+     *             .oracleDbAwsKeyId(testOracleDbAwsKeyOciDbmulticloudOracleDbAwsKey.get("id"))
      *             .build());
      * 
      *     }
@@ -10877,7 +10877,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAwsKey = OciFunctions.getDbmulticloudOracleDbAwsKey(GetDbmulticloudOracleDbAwsKeyArgs.builder()
-     *             .oracleDbAwsKeyId(testOracleDbAwsKeyOciDbmulticloudOracleDbAwsKey.id())
+     *             .oracleDbAwsKeyId(testOracleDbAwsKeyOciDbmulticloudOracleDbAwsKey.get("id"))
      *             .build());
      * 
      *     }
@@ -10919,7 +10919,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAwsKey = OciFunctions.getDbmulticloudOracleDbAwsKey(GetDbmulticloudOracleDbAwsKeyArgs.builder()
-     *             .oracleDbAwsKeyId(testOracleDbAwsKeyOciDbmulticloudOracleDbAwsKey.id())
+     *             .oracleDbAwsKeyId(testOracleDbAwsKeyOciDbmulticloudOracleDbAwsKey.get("id"))
      *             .build());
      * 
      *     }
@@ -10963,8 +10963,8 @@ public final class OciFunctions {
      *         final var testOracleDbAwsKeys = OciFunctions.getDbmulticloudOracleDbAwsKeys(GetDbmulticloudOracleDbAwsKeysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAwsKeyDisplayName)
-     *             .oracleDbAwsConnectorId(testOracleDbAwsConnector.id())
-     *             .oracleDbAwsKeyId(testOracleDbAwsKey.id())
+     *             .oracleDbAwsConnectorId(testOracleDbAwsConnector.get("id"))
+     *             .oracleDbAwsKeyId(testOracleDbAwsKey.get("id"))
      *             .state(oracleDbAwsKeyState)
      *             .build());
      * 
@@ -11009,8 +11009,8 @@ public final class OciFunctions {
      *         final var testOracleDbAwsKeys = OciFunctions.getDbmulticloudOracleDbAwsKeys(GetDbmulticloudOracleDbAwsKeysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAwsKeyDisplayName)
-     *             .oracleDbAwsConnectorId(testOracleDbAwsConnector.id())
-     *             .oracleDbAwsKeyId(testOracleDbAwsKey.id())
+     *             .oracleDbAwsConnectorId(testOracleDbAwsConnector.get("id"))
+     *             .oracleDbAwsKeyId(testOracleDbAwsKey.get("id"))
      *             .state(oracleDbAwsKeyState)
      *             .build());
      * 
@@ -11055,8 +11055,8 @@ public final class OciFunctions {
      *         final var testOracleDbAwsKeys = OciFunctions.getDbmulticloudOracleDbAwsKeys(GetDbmulticloudOracleDbAwsKeysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAwsKeyDisplayName)
-     *             .oracleDbAwsConnectorId(testOracleDbAwsConnector.id())
-     *             .oracleDbAwsKeyId(testOracleDbAwsKey.id())
+     *             .oracleDbAwsConnectorId(testOracleDbAwsConnector.get("id"))
+     *             .oracleDbAwsKeyId(testOracleDbAwsKey.get("id"))
      *             .state(oracleDbAwsKeyState)
      *             .build());
      * 
@@ -11101,8 +11101,8 @@ public final class OciFunctions {
      *         final var testOracleDbAwsKeys = OciFunctions.getDbmulticloudOracleDbAwsKeys(GetDbmulticloudOracleDbAwsKeysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAwsKeyDisplayName)
-     *             .oracleDbAwsConnectorId(testOracleDbAwsConnector.id())
-     *             .oracleDbAwsKeyId(testOracleDbAwsKey.id())
+     *             .oracleDbAwsConnectorId(testOracleDbAwsConnector.get("id"))
+     *             .oracleDbAwsKeyId(testOracleDbAwsKey.get("id"))
      *             .state(oracleDbAwsKeyState)
      *             .build());
      * 
@@ -11147,8 +11147,8 @@ public final class OciFunctions {
      *         final var testOracleDbAwsKeys = OciFunctions.getDbmulticloudOracleDbAwsKeys(GetDbmulticloudOracleDbAwsKeysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAwsKeyDisplayName)
-     *             .oracleDbAwsConnectorId(testOracleDbAwsConnector.id())
-     *             .oracleDbAwsKeyId(testOracleDbAwsKey.id())
+     *             .oracleDbAwsConnectorId(testOracleDbAwsConnector.get("id"))
+     *             .oracleDbAwsKeyId(testOracleDbAwsKey.get("id"))
      *             .state(oracleDbAwsKeyState)
      *             .build());
      * 
@@ -11191,7 +11191,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureBlobContainer = OciFunctions.getDbmulticloudOracleDbAzureBlobContainer(GetDbmulticloudOracleDbAzureBlobContainerArgs.builder()
-     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainerOciDbmulticloudOracleDbAzureBlobContainer.id())
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainerOciDbmulticloudOracleDbAzureBlobContainer.get("id"))
      *             .build());
      * 
      *     }
@@ -11233,7 +11233,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureBlobContainer = OciFunctions.getDbmulticloudOracleDbAzureBlobContainer(GetDbmulticloudOracleDbAzureBlobContainerArgs.builder()
-     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainerOciDbmulticloudOracleDbAzureBlobContainer.id())
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainerOciDbmulticloudOracleDbAzureBlobContainer.get("id"))
      *             .build());
      * 
      *     }
@@ -11275,7 +11275,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureBlobContainer = OciFunctions.getDbmulticloudOracleDbAzureBlobContainer(GetDbmulticloudOracleDbAzureBlobContainerArgs.builder()
-     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainerOciDbmulticloudOracleDbAzureBlobContainer.id())
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainerOciDbmulticloudOracleDbAzureBlobContainer.get("id"))
      *             .build());
      * 
      *     }
@@ -11317,7 +11317,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureBlobContainer = OciFunctions.getDbmulticloudOracleDbAzureBlobContainer(GetDbmulticloudOracleDbAzureBlobContainerArgs.builder()
-     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainerOciDbmulticloudOracleDbAzureBlobContainer.id())
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainerOciDbmulticloudOracleDbAzureBlobContainer.get("id"))
      *             .build());
      * 
      *     }
@@ -11359,7 +11359,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureBlobContainer = OciFunctions.getDbmulticloudOracleDbAzureBlobContainer(GetDbmulticloudOracleDbAzureBlobContainerArgs.builder()
-     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainerOciDbmulticloudOracleDbAzureBlobContainer.id())
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainerOciDbmulticloudOracleDbAzureBlobContainer.get("id"))
      *             .build());
      * 
      *     }
@@ -11405,7 +11405,7 @@ public final class OciFunctions {
      *             .azureStorageAccountName(oracleDbAzureBlobContainerAzureStorageAccountName)
      *             .azureStorageContainerName(oracleDbAzureBlobContainerAzureStorageContainerName)
      *             .displayName(oracleDbAzureBlobContainerDisplayName)
-     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.id())
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.get("id"))
      *             .state(oracleDbAzureBlobContainerState)
      *             .build());
      * 
@@ -11452,7 +11452,7 @@ public final class OciFunctions {
      *             .azureStorageAccountName(oracleDbAzureBlobContainerAzureStorageAccountName)
      *             .azureStorageContainerName(oracleDbAzureBlobContainerAzureStorageContainerName)
      *             .displayName(oracleDbAzureBlobContainerDisplayName)
-     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.id())
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.get("id"))
      *             .state(oracleDbAzureBlobContainerState)
      *             .build());
      * 
@@ -11499,7 +11499,7 @@ public final class OciFunctions {
      *             .azureStorageAccountName(oracleDbAzureBlobContainerAzureStorageAccountName)
      *             .azureStorageContainerName(oracleDbAzureBlobContainerAzureStorageContainerName)
      *             .displayName(oracleDbAzureBlobContainerDisplayName)
-     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.id())
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.get("id"))
      *             .state(oracleDbAzureBlobContainerState)
      *             .build());
      * 
@@ -11546,7 +11546,7 @@ public final class OciFunctions {
      *             .azureStorageAccountName(oracleDbAzureBlobContainerAzureStorageAccountName)
      *             .azureStorageContainerName(oracleDbAzureBlobContainerAzureStorageContainerName)
      *             .displayName(oracleDbAzureBlobContainerDisplayName)
-     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.id())
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.get("id"))
      *             .state(oracleDbAzureBlobContainerState)
      *             .build());
      * 
@@ -11593,7 +11593,7 @@ public final class OciFunctions {
      *             .azureStorageAccountName(oracleDbAzureBlobContainerAzureStorageAccountName)
      *             .azureStorageContainerName(oracleDbAzureBlobContainerAzureStorageContainerName)
      *             .displayName(oracleDbAzureBlobContainerDisplayName)
-     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.id())
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.get("id"))
      *             .state(oracleDbAzureBlobContainerState)
      *             .build());
      * 
@@ -11636,7 +11636,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureBlobMount = OciFunctions.getDbmulticloudOracleDbAzureBlobMount(GetDbmulticloudOracleDbAzureBlobMountArgs.builder()
-     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMountOciDbmulticloudOracleDbAzureBlobMount.id())
+     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMountOciDbmulticloudOracleDbAzureBlobMount.get("id"))
      *             .build());
      * 
      *     }
@@ -11678,7 +11678,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureBlobMount = OciFunctions.getDbmulticloudOracleDbAzureBlobMount(GetDbmulticloudOracleDbAzureBlobMountArgs.builder()
-     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMountOciDbmulticloudOracleDbAzureBlobMount.id())
+     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMountOciDbmulticloudOracleDbAzureBlobMount.get("id"))
      *             .build());
      * 
      *     }
@@ -11720,7 +11720,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureBlobMount = OciFunctions.getDbmulticloudOracleDbAzureBlobMount(GetDbmulticloudOracleDbAzureBlobMountArgs.builder()
-     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMountOciDbmulticloudOracleDbAzureBlobMount.id())
+     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMountOciDbmulticloudOracleDbAzureBlobMount.get("id"))
      *             .build());
      * 
      *     }
@@ -11762,7 +11762,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureBlobMount = OciFunctions.getDbmulticloudOracleDbAzureBlobMount(GetDbmulticloudOracleDbAzureBlobMountArgs.builder()
-     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMountOciDbmulticloudOracleDbAzureBlobMount.id())
+     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMountOciDbmulticloudOracleDbAzureBlobMount.get("id"))
      *             .build());
      * 
      *     }
@@ -11804,7 +11804,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureBlobMount = OciFunctions.getDbmulticloudOracleDbAzureBlobMount(GetDbmulticloudOracleDbAzureBlobMountArgs.builder()
-     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMountOciDbmulticloudOracleDbAzureBlobMount.id())
+     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMountOciDbmulticloudOracleDbAzureBlobMount.get("id"))
      *             .build());
      * 
      *     }
@@ -11848,9 +11848,9 @@ public final class OciFunctions {
      *         final var testOracleDbAzureBlobMounts = OciFunctions.getDbmulticloudOracleDbAzureBlobMounts(GetDbmulticloudOracleDbAzureBlobMountsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAzureBlobMountDisplayName)
-     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.id())
-     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMount.id())
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.get("id"))
+     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMount.get("id"))
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
      *             .state(oracleDbAzureBlobMountState)
      *             .build());
      * 
@@ -11895,9 +11895,9 @@ public final class OciFunctions {
      *         final var testOracleDbAzureBlobMounts = OciFunctions.getDbmulticloudOracleDbAzureBlobMounts(GetDbmulticloudOracleDbAzureBlobMountsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAzureBlobMountDisplayName)
-     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.id())
-     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMount.id())
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.get("id"))
+     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMount.get("id"))
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
      *             .state(oracleDbAzureBlobMountState)
      *             .build());
      * 
@@ -11942,9 +11942,9 @@ public final class OciFunctions {
      *         final var testOracleDbAzureBlobMounts = OciFunctions.getDbmulticloudOracleDbAzureBlobMounts(GetDbmulticloudOracleDbAzureBlobMountsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAzureBlobMountDisplayName)
-     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.id())
-     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMount.id())
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.get("id"))
+     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMount.get("id"))
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
      *             .state(oracleDbAzureBlobMountState)
      *             .build());
      * 
@@ -11989,9 +11989,9 @@ public final class OciFunctions {
      *         final var testOracleDbAzureBlobMounts = OciFunctions.getDbmulticloudOracleDbAzureBlobMounts(GetDbmulticloudOracleDbAzureBlobMountsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAzureBlobMountDisplayName)
-     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.id())
-     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMount.id())
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.get("id"))
+     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMount.get("id"))
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
      *             .state(oracleDbAzureBlobMountState)
      *             .build());
      * 
@@ -12036,9 +12036,9 @@ public final class OciFunctions {
      *         final var testOracleDbAzureBlobMounts = OciFunctions.getDbmulticloudOracleDbAzureBlobMounts(GetDbmulticloudOracleDbAzureBlobMountsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAzureBlobMountDisplayName)
-     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.id())
-     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMount.id())
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureBlobContainerId(testOracleDbAzureBlobContainer.get("id"))
+     *             .oracleDbAzureBlobMountId(testOracleDbAzureBlobMount.get("id"))
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
      *             .state(oracleDbAzureBlobMountState)
      *             .build());
      * 
@@ -12081,7 +12081,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureConnector = OciFunctions.getDbmulticloudOracleDbAzureConnector(GetDbmulticloudOracleDbAzureConnectorArgs.builder()
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnectorOciDbmulticloudOracleDbAzureConnector.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnectorOciDbmulticloudOracleDbAzureConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -12123,7 +12123,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureConnector = OciFunctions.getDbmulticloudOracleDbAzureConnector(GetDbmulticloudOracleDbAzureConnectorArgs.builder()
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnectorOciDbmulticloudOracleDbAzureConnector.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnectorOciDbmulticloudOracleDbAzureConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -12165,7 +12165,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureConnector = OciFunctions.getDbmulticloudOracleDbAzureConnector(GetDbmulticloudOracleDbAzureConnectorArgs.builder()
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnectorOciDbmulticloudOracleDbAzureConnector.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnectorOciDbmulticloudOracleDbAzureConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -12207,7 +12207,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureConnector = OciFunctions.getDbmulticloudOracleDbAzureConnector(GetDbmulticloudOracleDbAzureConnectorArgs.builder()
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnectorOciDbmulticloudOracleDbAzureConnector.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnectorOciDbmulticloudOracleDbAzureConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -12249,7 +12249,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureConnector = OciFunctions.getDbmulticloudOracleDbAzureConnector(GetDbmulticloudOracleDbAzureConnectorArgs.builder()
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnectorOciDbmulticloudOracleDbAzureConnector.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnectorOciDbmulticloudOracleDbAzureConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -12292,9 +12292,9 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureConnectors = OciFunctions.getDbmulticloudOracleDbAzureConnectors(GetDbmulticloudOracleDbAzureConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dbClusterResourceId(testResource.id())
+     *             .dbClusterResourceId(testResource.get("id"))
      *             .displayName(oracleDbAzureConnectorDisplayName)
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
      *             .state(oracleDbAzureConnectorState)
      *             .build());
      * 
@@ -12338,9 +12338,9 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureConnectors = OciFunctions.getDbmulticloudOracleDbAzureConnectors(GetDbmulticloudOracleDbAzureConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dbClusterResourceId(testResource.id())
+     *             .dbClusterResourceId(testResource.get("id"))
      *             .displayName(oracleDbAzureConnectorDisplayName)
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
      *             .state(oracleDbAzureConnectorState)
      *             .build());
      * 
@@ -12384,9 +12384,9 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureConnectors = OciFunctions.getDbmulticloudOracleDbAzureConnectors(GetDbmulticloudOracleDbAzureConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dbClusterResourceId(testResource.id())
+     *             .dbClusterResourceId(testResource.get("id"))
      *             .displayName(oracleDbAzureConnectorDisplayName)
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
      *             .state(oracleDbAzureConnectorState)
      *             .build());
      * 
@@ -12430,9 +12430,9 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureConnectors = OciFunctions.getDbmulticloudOracleDbAzureConnectors(GetDbmulticloudOracleDbAzureConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dbClusterResourceId(testResource.id())
+     *             .dbClusterResourceId(testResource.get("id"))
      *             .displayName(oracleDbAzureConnectorDisplayName)
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
      *             .state(oracleDbAzureConnectorState)
      *             .build());
      * 
@@ -12476,9 +12476,9 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureConnectors = OciFunctions.getDbmulticloudOracleDbAzureConnectors(GetDbmulticloudOracleDbAzureConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .dbClusterResourceId(testResource.id())
+     *             .dbClusterResourceId(testResource.get("id"))
      *             .displayName(oracleDbAzureConnectorDisplayName)
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
      *             .state(oracleDbAzureConnectorState)
      *             .build());
      * 
@@ -12521,7 +12521,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureKey = OciFunctions.getDbmulticloudOracleDbAzureKey(GetDbmulticloudOracleDbAzureKeyArgs.builder()
-     *             .oracleDbAzureKeyId(testOracleDbAzureKeyOciDbmulticloudOracleDbAzureKey.id())
+     *             .oracleDbAzureKeyId(testOracleDbAzureKeyOciDbmulticloudOracleDbAzureKey.get("id"))
      *             .build());
      * 
      *     }
@@ -12563,7 +12563,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureKey = OciFunctions.getDbmulticloudOracleDbAzureKey(GetDbmulticloudOracleDbAzureKeyArgs.builder()
-     *             .oracleDbAzureKeyId(testOracleDbAzureKeyOciDbmulticloudOracleDbAzureKey.id())
+     *             .oracleDbAzureKeyId(testOracleDbAzureKeyOciDbmulticloudOracleDbAzureKey.get("id"))
      *             .build());
      * 
      *     }
@@ -12605,7 +12605,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureKey = OciFunctions.getDbmulticloudOracleDbAzureKey(GetDbmulticloudOracleDbAzureKeyArgs.builder()
-     *             .oracleDbAzureKeyId(testOracleDbAzureKeyOciDbmulticloudOracleDbAzureKey.id())
+     *             .oracleDbAzureKeyId(testOracleDbAzureKeyOciDbmulticloudOracleDbAzureKey.get("id"))
      *             .build());
      * 
      *     }
@@ -12647,7 +12647,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureKey = OciFunctions.getDbmulticloudOracleDbAzureKey(GetDbmulticloudOracleDbAzureKeyArgs.builder()
-     *             .oracleDbAzureKeyId(testOracleDbAzureKeyOciDbmulticloudOracleDbAzureKey.id())
+     *             .oracleDbAzureKeyId(testOracleDbAzureKeyOciDbmulticloudOracleDbAzureKey.get("id"))
      *             .build());
      * 
      *     }
@@ -12689,7 +12689,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureKey = OciFunctions.getDbmulticloudOracleDbAzureKey(GetDbmulticloudOracleDbAzureKeyArgs.builder()
-     *             .oracleDbAzureKeyId(testOracleDbAzureKeyOciDbmulticloudOracleDbAzureKey.id())
+     *             .oracleDbAzureKeyId(testOracleDbAzureKeyOciDbmulticloudOracleDbAzureKey.get("id"))
      *             .build());
      * 
      *     }
@@ -12733,8 +12733,8 @@ public final class OciFunctions {
      *         final var testOracleDbAzureKeys = OciFunctions.getDbmulticloudOracleDbAzureKeys(GetDbmulticloudOracleDbAzureKeysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAzureKeyDisplayName)
-     *             .oracleDbAzureKeyId(testOracleDbAzureKey.id())
-     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .oracleDbAzureKeyId(testOracleDbAzureKey.get("id"))
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.get("id"))
      *             .state(oracleDbAzureKeyState)
      *             .build());
      * 
@@ -12779,8 +12779,8 @@ public final class OciFunctions {
      *         final var testOracleDbAzureKeys = OciFunctions.getDbmulticloudOracleDbAzureKeys(GetDbmulticloudOracleDbAzureKeysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAzureKeyDisplayName)
-     *             .oracleDbAzureKeyId(testOracleDbAzureKey.id())
-     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .oracleDbAzureKeyId(testOracleDbAzureKey.get("id"))
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.get("id"))
      *             .state(oracleDbAzureKeyState)
      *             .build());
      * 
@@ -12825,8 +12825,8 @@ public final class OciFunctions {
      *         final var testOracleDbAzureKeys = OciFunctions.getDbmulticloudOracleDbAzureKeys(GetDbmulticloudOracleDbAzureKeysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAzureKeyDisplayName)
-     *             .oracleDbAzureKeyId(testOracleDbAzureKey.id())
-     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .oracleDbAzureKeyId(testOracleDbAzureKey.get("id"))
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.get("id"))
      *             .state(oracleDbAzureKeyState)
      *             .build());
      * 
@@ -12871,8 +12871,8 @@ public final class OciFunctions {
      *         final var testOracleDbAzureKeys = OciFunctions.getDbmulticloudOracleDbAzureKeys(GetDbmulticloudOracleDbAzureKeysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAzureKeyDisplayName)
-     *             .oracleDbAzureKeyId(testOracleDbAzureKey.id())
-     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .oracleDbAzureKeyId(testOracleDbAzureKey.get("id"))
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.get("id"))
      *             .state(oracleDbAzureKeyState)
      *             .build());
      * 
@@ -12917,8 +12917,8 @@ public final class OciFunctions {
      *         final var testOracleDbAzureKeys = OciFunctions.getDbmulticloudOracleDbAzureKeys(GetDbmulticloudOracleDbAzureKeysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAzureKeyDisplayName)
-     *             .oracleDbAzureKeyId(testOracleDbAzureKey.id())
-     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .oracleDbAzureKeyId(testOracleDbAzureKey.get("id"))
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.get("id"))
      *             .state(oracleDbAzureKeyState)
      *             .build());
      * 
@@ -12961,7 +12961,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureVault = OciFunctions.getDbmulticloudOracleDbAzureVault(GetDbmulticloudOracleDbAzureVaultArgs.builder()
-     *             .oracleDbAzureVaultId(testOracleDbAzureVaultOciDbmulticloudOracleDbAzureVault.id())
+     *             .oracleDbAzureVaultId(testOracleDbAzureVaultOciDbmulticloudOracleDbAzureVault.get("id"))
      *             .build());
      * 
      *     }
@@ -13003,7 +13003,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureVault = OciFunctions.getDbmulticloudOracleDbAzureVault(GetDbmulticloudOracleDbAzureVaultArgs.builder()
-     *             .oracleDbAzureVaultId(testOracleDbAzureVaultOciDbmulticloudOracleDbAzureVault.id())
+     *             .oracleDbAzureVaultId(testOracleDbAzureVaultOciDbmulticloudOracleDbAzureVault.get("id"))
      *             .build());
      * 
      *     }
@@ -13045,7 +13045,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureVault = OciFunctions.getDbmulticloudOracleDbAzureVault(GetDbmulticloudOracleDbAzureVaultArgs.builder()
-     *             .oracleDbAzureVaultId(testOracleDbAzureVaultOciDbmulticloudOracleDbAzureVault.id())
+     *             .oracleDbAzureVaultId(testOracleDbAzureVaultOciDbmulticloudOracleDbAzureVault.get("id"))
      *             .build());
      * 
      *     }
@@ -13087,7 +13087,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureVault = OciFunctions.getDbmulticloudOracleDbAzureVault(GetDbmulticloudOracleDbAzureVaultArgs.builder()
-     *             .oracleDbAzureVaultId(testOracleDbAzureVaultOciDbmulticloudOracleDbAzureVault.id())
+     *             .oracleDbAzureVaultId(testOracleDbAzureVaultOciDbmulticloudOracleDbAzureVault.get("id"))
      *             .build());
      * 
      *     }
@@ -13129,7 +13129,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureVault = OciFunctions.getDbmulticloudOracleDbAzureVault(GetDbmulticloudOracleDbAzureVaultArgs.builder()
-     *             .oracleDbAzureVaultId(testOracleDbAzureVaultOciDbmulticloudOracleDbAzureVault.id())
+     *             .oracleDbAzureVaultId(testOracleDbAzureVaultOciDbmulticloudOracleDbAzureVault.get("id"))
      *             .build());
      * 
      *     }
@@ -13171,7 +13171,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureVaultAssociation = OciFunctions.getDbmulticloudOracleDbAzureVaultAssociation(GetDbmulticloudOracleDbAzureVaultAssociationArgs.builder()
-     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociationOciDbmulticloudOracleDbAzureVaultAssociation.id())
+     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociationOciDbmulticloudOracleDbAzureVaultAssociation.get("id"))
      *             .build());
      * 
      *     }
@@ -13213,7 +13213,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureVaultAssociation = OciFunctions.getDbmulticloudOracleDbAzureVaultAssociation(GetDbmulticloudOracleDbAzureVaultAssociationArgs.builder()
-     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociationOciDbmulticloudOracleDbAzureVaultAssociation.id())
+     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociationOciDbmulticloudOracleDbAzureVaultAssociation.get("id"))
      *             .build());
      * 
      *     }
@@ -13255,7 +13255,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureVaultAssociation = OciFunctions.getDbmulticloudOracleDbAzureVaultAssociation(GetDbmulticloudOracleDbAzureVaultAssociationArgs.builder()
-     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociationOciDbmulticloudOracleDbAzureVaultAssociation.id())
+     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociationOciDbmulticloudOracleDbAzureVaultAssociation.get("id"))
      *             .build());
      * 
      *     }
@@ -13297,7 +13297,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureVaultAssociation = OciFunctions.getDbmulticloudOracleDbAzureVaultAssociation(GetDbmulticloudOracleDbAzureVaultAssociationArgs.builder()
-     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociationOciDbmulticloudOracleDbAzureVaultAssociation.id())
+     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociationOciDbmulticloudOracleDbAzureVaultAssociation.get("id"))
      *             .build());
      * 
      *     }
@@ -13339,7 +13339,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbAzureVaultAssociation = OciFunctions.getDbmulticloudOracleDbAzureVaultAssociation(GetDbmulticloudOracleDbAzureVaultAssociationArgs.builder()
-     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociationOciDbmulticloudOracleDbAzureVaultAssociation.id())
+     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociationOciDbmulticloudOracleDbAzureVaultAssociation.get("id"))
      *             .build());
      * 
      *     }
@@ -13383,9 +13383,9 @@ public final class OciFunctions {
      *         final var testOracleDbAzureVaultAssociations = OciFunctions.getDbmulticloudOracleDbAzureVaultAssociations(GetDbmulticloudOracleDbAzureVaultAssociationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAzureVaultAssociationDisplayName)
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
-     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociation.id())
-     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
+     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociation.get("id"))
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.get("id"))
      *             .state(oracleDbAzureVaultAssociationState)
      *             .build());
      * 
@@ -13430,9 +13430,9 @@ public final class OciFunctions {
      *         final var testOracleDbAzureVaultAssociations = OciFunctions.getDbmulticloudOracleDbAzureVaultAssociations(GetDbmulticloudOracleDbAzureVaultAssociationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAzureVaultAssociationDisplayName)
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
-     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociation.id())
-     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
+     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociation.get("id"))
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.get("id"))
      *             .state(oracleDbAzureVaultAssociationState)
      *             .build());
      * 
@@ -13477,9 +13477,9 @@ public final class OciFunctions {
      *         final var testOracleDbAzureVaultAssociations = OciFunctions.getDbmulticloudOracleDbAzureVaultAssociations(GetDbmulticloudOracleDbAzureVaultAssociationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAzureVaultAssociationDisplayName)
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
-     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociation.id())
-     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
+     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociation.get("id"))
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.get("id"))
      *             .state(oracleDbAzureVaultAssociationState)
      *             .build());
      * 
@@ -13524,9 +13524,9 @@ public final class OciFunctions {
      *         final var testOracleDbAzureVaultAssociations = OciFunctions.getDbmulticloudOracleDbAzureVaultAssociations(GetDbmulticloudOracleDbAzureVaultAssociationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAzureVaultAssociationDisplayName)
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
-     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociation.id())
-     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
+     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociation.get("id"))
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.get("id"))
      *             .state(oracleDbAzureVaultAssociationState)
      *             .build());
      * 
@@ -13571,9 +13571,9 @@ public final class OciFunctions {
      *         final var testOracleDbAzureVaultAssociations = OciFunctions.getDbmulticloudOracleDbAzureVaultAssociations(GetDbmulticloudOracleDbAzureVaultAssociationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAzureVaultAssociationDisplayName)
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
-     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociation.id())
-     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
+     *             .oracleDbAzureVaultAssociationId(testOracleDbAzureVaultAssociation.get("id"))
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.get("id"))
      *             .state(oracleDbAzureVaultAssociationState)
      *             .build());
      * 
@@ -13618,9 +13618,9 @@ public final class OciFunctions {
      *         final var testOracleDbAzureVaults = OciFunctions.getDbmulticloudOracleDbAzureVaults(GetDbmulticloudOracleDbAzureVaultsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAzureVaultDisplayName)
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
      *             .oracleDbAzureResourceGroup(oracleDbAzureVaultOracleDbAzureResourceGroup)
-     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.get("id"))
      *             .state(oracleDbAzureVaultState)
      *             .build());
      * 
@@ -13665,9 +13665,9 @@ public final class OciFunctions {
      *         final var testOracleDbAzureVaults = OciFunctions.getDbmulticloudOracleDbAzureVaults(GetDbmulticloudOracleDbAzureVaultsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAzureVaultDisplayName)
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
      *             .oracleDbAzureResourceGroup(oracleDbAzureVaultOracleDbAzureResourceGroup)
-     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.get("id"))
      *             .state(oracleDbAzureVaultState)
      *             .build());
      * 
@@ -13712,9 +13712,9 @@ public final class OciFunctions {
      *         final var testOracleDbAzureVaults = OciFunctions.getDbmulticloudOracleDbAzureVaults(GetDbmulticloudOracleDbAzureVaultsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAzureVaultDisplayName)
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
      *             .oracleDbAzureResourceGroup(oracleDbAzureVaultOracleDbAzureResourceGroup)
-     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.get("id"))
      *             .state(oracleDbAzureVaultState)
      *             .build());
      * 
@@ -13759,9 +13759,9 @@ public final class OciFunctions {
      *         final var testOracleDbAzureVaults = OciFunctions.getDbmulticloudOracleDbAzureVaults(GetDbmulticloudOracleDbAzureVaultsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAzureVaultDisplayName)
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
      *             .oracleDbAzureResourceGroup(oracleDbAzureVaultOracleDbAzureResourceGroup)
-     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.get("id"))
      *             .state(oracleDbAzureVaultState)
      *             .build());
      * 
@@ -13806,9 +13806,9 @@ public final class OciFunctions {
      *         final var testOracleDbAzureVaults = OciFunctions.getDbmulticloudOracleDbAzureVaults(GetDbmulticloudOracleDbAzureVaultsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbAzureVaultDisplayName)
-     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.id())
+     *             .oracleDbAzureConnectorId(testOracleDbAzureConnector.get("id"))
      *             .oracleDbAzureResourceGroup(oracleDbAzureVaultOracleDbAzureResourceGroup)
-     *             .oracleDbAzureVaultId(testOracleDbAzureVault.id())
+     *             .oracleDbAzureVaultId(testOracleDbAzureVault.get("id"))
      *             .state(oracleDbAzureVaultState)
      *             .build());
      * 
@@ -13851,7 +13851,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbGcpIdentityConnector = OciFunctions.getDbmulticloudOracleDbGcpIdentityConnector(GetDbmulticloudOracleDbGcpIdentityConnectorArgs.builder()
-     *             .oracleDbGcpIdentityConnectorId(testOracleDbGcpIdentityConnectorOciDbmulticloudOracleDbGcpIdentityConnector.id())
+     *             .oracleDbGcpIdentityConnectorId(testOracleDbGcpIdentityConnectorOciDbmulticloudOracleDbGcpIdentityConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -13893,7 +13893,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbGcpIdentityConnector = OciFunctions.getDbmulticloudOracleDbGcpIdentityConnector(GetDbmulticloudOracleDbGcpIdentityConnectorArgs.builder()
-     *             .oracleDbGcpIdentityConnectorId(testOracleDbGcpIdentityConnectorOciDbmulticloudOracleDbGcpIdentityConnector.id())
+     *             .oracleDbGcpIdentityConnectorId(testOracleDbGcpIdentityConnectorOciDbmulticloudOracleDbGcpIdentityConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -13935,7 +13935,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbGcpIdentityConnector = OciFunctions.getDbmulticloudOracleDbGcpIdentityConnector(GetDbmulticloudOracleDbGcpIdentityConnectorArgs.builder()
-     *             .oracleDbGcpIdentityConnectorId(testOracleDbGcpIdentityConnectorOciDbmulticloudOracleDbGcpIdentityConnector.id())
+     *             .oracleDbGcpIdentityConnectorId(testOracleDbGcpIdentityConnectorOciDbmulticloudOracleDbGcpIdentityConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -13977,7 +13977,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbGcpIdentityConnector = OciFunctions.getDbmulticloudOracleDbGcpIdentityConnector(GetDbmulticloudOracleDbGcpIdentityConnectorArgs.builder()
-     *             .oracleDbGcpIdentityConnectorId(testOracleDbGcpIdentityConnectorOciDbmulticloudOracleDbGcpIdentityConnector.id())
+     *             .oracleDbGcpIdentityConnectorId(testOracleDbGcpIdentityConnectorOciDbmulticloudOracleDbGcpIdentityConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -14019,7 +14019,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbGcpIdentityConnector = OciFunctions.getDbmulticloudOracleDbGcpIdentityConnector(GetDbmulticloudOracleDbGcpIdentityConnectorArgs.builder()
-     *             .oracleDbGcpIdentityConnectorId(testOracleDbGcpIdentityConnectorOciDbmulticloudOracleDbGcpIdentityConnector.id())
+     *             .oracleDbGcpIdentityConnectorId(testOracleDbGcpIdentityConnectorOciDbmulticloudOracleDbGcpIdentityConnector.get("id"))
      *             .build());
      * 
      *     }
@@ -14063,7 +14063,7 @@ public final class OciFunctions {
      *         final var testOracleDbGcpIdentityConnectors = OciFunctions.getDbmulticloudOracleDbGcpIdentityConnectors(GetDbmulticloudOracleDbGcpIdentityConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbGcpIdentityConnectorDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(oracleDbGcpIdentityConnectorState)
      *             .build());
      * 
@@ -14108,7 +14108,7 @@ public final class OciFunctions {
      *         final var testOracleDbGcpIdentityConnectors = OciFunctions.getDbmulticloudOracleDbGcpIdentityConnectors(GetDbmulticloudOracleDbGcpIdentityConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbGcpIdentityConnectorDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(oracleDbGcpIdentityConnectorState)
      *             .build());
      * 
@@ -14153,7 +14153,7 @@ public final class OciFunctions {
      *         final var testOracleDbGcpIdentityConnectors = OciFunctions.getDbmulticloudOracleDbGcpIdentityConnectors(GetDbmulticloudOracleDbGcpIdentityConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbGcpIdentityConnectorDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(oracleDbGcpIdentityConnectorState)
      *             .build());
      * 
@@ -14198,7 +14198,7 @@ public final class OciFunctions {
      *         final var testOracleDbGcpIdentityConnectors = OciFunctions.getDbmulticloudOracleDbGcpIdentityConnectors(GetDbmulticloudOracleDbGcpIdentityConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbGcpIdentityConnectorDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(oracleDbGcpIdentityConnectorState)
      *             .build());
      * 
@@ -14243,7 +14243,7 @@ public final class OciFunctions {
      *         final var testOracleDbGcpIdentityConnectors = OciFunctions.getDbmulticloudOracleDbGcpIdentityConnectors(GetDbmulticloudOracleDbGcpIdentityConnectorsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbGcpIdentityConnectorDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .state(oracleDbGcpIdentityConnectorState)
      *             .build());
      * 
@@ -14286,7 +14286,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbGcpKey = OciFunctions.getDbmulticloudOracleDbGcpKey(GetDbmulticloudOracleDbGcpKeyArgs.builder()
-     *             .oracleDbGcpKeyId(testOracleDbGcpKeyOciDbmulticloudOracleDbGcpKey.id())
+     *             .oracleDbGcpKeyId(testOracleDbGcpKeyOciDbmulticloudOracleDbGcpKey.get("id"))
      *             .build());
      * 
      *     }
@@ -14328,7 +14328,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbGcpKey = OciFunctions.getDbmulticloudOracleDbGcpKey(GetDbmulticloudOracleDbGcpKeyArgs.builder()
-     *             .oracleDbGcpKeyId(testOracleDbGcpKeyOciDbmulticloudOracleDbGcpKey.id())
+     *             .oracleDbGcpKeyId(testOracleDbGcpKeyOciDbmulticloudOracleDbGcpKey.get("id"))
      *             .build());
      * 
      *     }
@@ -14370,7 +14370,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbGcpKey = OciFunctions.getDbmulticloudOracleDbGcpKey(GetDbmulticloudOracleDbGcpKeyArgs.builder()
-     *             .oracleDbGcpKeyId(testOracleDbGcpKeyOciDbmulticloudOracleDbGcpKey.id())
+     *             .oracleDbGcpKeyId(testOracleDbGcpKeyOciDbmulticloudOracleDbGcpKey.get("id"))
      *             .build());
      * 
      *     }
@@ -14412,7 +14412,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbGcpKey = OciFunctions.getDbmulticloudOracleDbGcpKey(GetDbmulticloudOracleDbGcpKeyArgs.builder()
-     *             .oracleDbGcpKeyId(testOracleDbGcpKeyOciDbmulticloudOracleDbGcpKey.id())
+     *             .oracleDbGcpKeyId(testOracleDbGcpKeyOciDbmulticloudOracleDbGcpKey.get("id"))
      *             .build());
      * 
      *     }
@@ -14454,7 +14454,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbGcpKey = OciFunctions.getDbmulticloudOracleDbGcpKey(GetDbmulticloudOracleDbGcpKeyArgs.builder()
-     *             .oracleDbGcpKeyId(testOracleDbGcpKeyOciDbmulticloudOracleDbGcpKey.id())
+     *             .oracleDbGcpKeyId(testOracleDbGcpKeyOciDbmulticloudOracleDbGcpKey.get("id"))
      *             .build());
      * 
      *     }
@@ -14496,7 +14496,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbGcpKeyRing = OciFunctions.getDbmulticloudOracleDbGcpKeyRing(GetDbmulticloudOracleDbGcpKeyRingArgs.builder()
-     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRingOciDbmulticloudOracleDbGcpKeyRing.id())
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRingOciDbmulticloudOracleDbGcpKeyRing.get("id"))
      *             .build());
      * 
      *     }
@@ -14538,7 +14538,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbGcpKeyRing = OciFunctions.getDbmulticloudOracleDbGcpKeyRing(GetDbmulticloudOracleDbGcpKeyRingArgs.builder()
-     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRingOciDbmulticloudOracleDbGcpKeyRing.id())
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRingOciDbmulticloudOracleDbGcpKeyRing.get("id"))
      *             .build());
      * 
      *     }
@@ -14580,7 +14580,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbGcpKeyRing = OciFunctions.getDbmulticloudOracleDbGcpKeyRing(GetDbmulticloudOracleDbGcpKeyRingArgs.builder()
-     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRingOciDbmulticloudOracleDbGcpKeyRing.id())
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRingOciDbmulticloudOracleDbGcpKeyRing.get("id"))
      *             .build());
      * 
      *     }
@@ -14622,7 +14622,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbGcpKeyRing = OciFunctions.getDbmulticloudOracleDbGcpKeyRing(GetDbmulticloudOracleDbGcpKeyRingArgs.builder()
-     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRingOciDbmulticloudOracleDbGcpKeyRing.id())
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRingOciDbmulticloudOracleDbGcpKeyRing.get("id"))
      *             .build());
      * 
      *     }
@@ -14664,7 +14664,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOracleDbGcpKeyRing = OciFunctions.getDbmulticloudOracleDbGcpKeyRing(GetDbmulticloudOracleDbGcpKeyRingArgs.builder()
-     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRingOciDbmulticloudOracleDbGcpKeyRing.id())
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRingOciDbmulticloudOracleDbGcpKeyRing.get("id"))
      *             .build());
      * 
      *     }
@@ -14708,8 +14708,8 @@ public final class OciFunctions {
      *         final var testOracleDbGcpKeyRings = OciFunctions.getDbmulticloudOracleDbGcpKeyRings(GetDbmulticloudOracleDbGcpKeyRingsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbGcpKeyRingDisplayName)
-     *             .oracleDbGcpConnectorId(testOracleDbGcpConnector.id())
-     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.id())
+     *             .oracleDbGcpConnectorId(testOracleDbGcpConnector.get("id"))
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.get("id"))
      *             .state(oracleDbGcpKeyRingState)
      *             .build());
      * 
@@ -14754,8 +14754,8 @@ public final class OciFunctions {
      *         final var testOracleDbGcpKeyRings = OciFunctions.getDbmulticloudOracleDbGcpKeyRings(GetDbmulticloudOracleDbGcpKeyRingsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbGcpKeyRingDisplayName)
-     *             .oracleDbGcpConnectorId(testOracleDbGcpConnector.id())
-     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.id())
+     *             .oracleDbGcpConnectorId(testOracleDbGcpConnector.get("id"))
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.get("id"))
      *             .state(oracleDbGcpKeyRingState)
      *             .build());
      * 
@@ -14800,8 +14800,8 @@ public final class OciFunctions {
      *         final var testOracleDbGcpKeyRings = OciFunctions.getDbmulticloudOracleDbGcpKeyRings(GetDbmulticloudOracleDbGcpKeyRingsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbGcpKeyRingDisplayName)
-     *             .oracleDbGcpConnectorId(testOracleDbGcpConnector.id())
-     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.id())
+     *             .oracleDbGcpConnectorId(testOracleDbGcpConnector.get("id"))
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.get("id"))
      *             .state(oracleDbGcpKeyRingState)
      *             .build());
      * 
@@ -14846,8 +14846,8 @@ public final class OciFunctions {
      *         final var testOracleDbGcpKeyRings = OciFunctions.getDbmulticloudOracleDbGcpKeyRings(GetDbmulticloudOracleDbGcpKeyRingsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbGcpKeyRingDisplayName)
-     *             .oracleDbGcpConnectorId(testOracleDbGcpConnector.id())
-     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.id())
+     *             .oracleDbGcpConnectorId(testOracleDbGcpConnector.get("id"))
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.get("id"))
      *             .state(oracleDbGcpKeyRingState)
      *             .build());
      * 
@@ -14892,8 +14892,8 @@ public final class OciFunctions {
      *         final var testOracleDbGcpKeyRings = OciFunctions.getDbmulticloudOracleDbGcpKeyRings(GetDbmulticloudOracleDbGcpKeyRingsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbGcpKeyRingDisplayName)
-     *             .oracleDbGcpConnectorId(testOracleDbGcpConnector.id())
-     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.id())
+     *             .oracleDbGcpConnectorId(testOracleDbGcpConnector.get("id"))
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.get("id"))
      *             .state(oracleDbGcpKeyRingState)
      *             .build());
      * 
@@ -14938,8 +14938,8 @@ public final class OciFunctions {
      *         final var testOracleDbGcpKeys = OciFunctions.getDbmulticloudOracleDbGcpKeys(GetDbmulticloudOracleDbGcpKeysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbGcpKeyDisplayName)
-     *             .oracleDbGcpKeyId(testOracleDbGcpKey.id())
-     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.id())
+     *             .oracleDbGcpKeyId(testOracleDbGcpKey.get("id"))
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.get("id"))
      *             .state(oracleDbGcpKeyState)
      *             .build());
      * 
@@ -14984,8 +14984,8 @@ public final class OciFunctions {
      *         final var testOracleDbGcpKeys = OciFunctions.getDbmulticloudOracleDbGcpKeys(GetDbmulticloudOracleDbGcpKeysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbGcpKeyDisplayName)
-     *             .oracleDbGcpKeyId(testOracleDbGcpKey.id())
-     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.id())
+     *             .oracleDbGcpKeyId(testOracleDbGcpKey.get("id"))
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.get("id"))
      *             .state(oracleDbGcpKeyState)
      *             .build());
      * 
@@ -15030,8 +15030,8 @@ public final class OciFunctions {
      *         final var testOracleDbGcpKeys = OciFunctions.getDbmulticloudOracleDbGcpKeys(GetDbmulticloudOracleDbGcpKeysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbGcpKeyDisplayName)
-     *             .oracleDbGcpKeyId(testOracleDbGcpKey.id())
-     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.id())
+     *             .oracleDbGcpKeyId(testOracleDbGcpKey.get("id"))
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.get("id"))
      *             .state(oracleDbGcpKeyState)
      *             .build());
      * 
@@ -15076,8 +15076,8 @@ public final class OciFunctions {
      *         final var testOracleDbGcpKeys = OciFunctions.getDbmulticloudOracleDbGcpKeys(GetDbmulticloudOracleDbGcpKeysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbGcpKeyDisplayName)
-     *             .oracleDbGcpKeyId(testOracleDbGcpKey.id())
-     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.id())
+     *             .oracleDbGcpKeyId(testOracleDbGcpKey.get("id"))
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.get("id"))
      *             .state(oracleDbGcpKeyState)
      *             .build());
      * 
@@ -15122,8 +15122,8 @@ public final class OciFunctions {
      *         final var testOracleDbGcpKeys = OciFunctions.getDbmulticloudOracleDbGcpKeys(GetDbmulticloudOracleDbGcpKeysArgs.builder()
      *             .compartmentId(compartmentId)
      *             .displayName(oracleDbGcpKeyDisplayName)
-     *             .oracleDbGcpKeyId(testOracleDbGcpKey.id())
-     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.id())
+     *             .oracleDbGcpKeyId(testOracleDbGcpKey.get("id"))
+     *             .oracleDbGcpKeyRingId(testOracleDbGcpKeyRing.get("id"))
      *             .state(oracleDbGcpKeyState)
      *             .build());
      * 
@@ -15166,7 +15166,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstance = OciFunctions.getDdfsInstance(GetDdfsInstanceArgs.builder()
-     *             .instanceId(testInstanceOciDdfsInstance.id())
+     *             .instanceId(testInstanceOciDdfsInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -15208,7 +15208,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstance = OciFunctions.getDdfsInstance(GetDdfsInstanceArgs.builder()
-     *             .instanceId(testInstanceOciDdfsInstance.id())
+     *             .instanceId(testInstanceOciDdfsInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -15250,7 +15250,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstance = OciFunctions.getDdfsInstance(GetDdfsInstanceArgs.builder()
-     *             .instanceId(testInstanceOciDdfsInstance.id())
+     *             .instanceId(testInstanceOciDdfsInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -15292,7 +15292,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstance = OciFunctions.getDdfsInstance(GetDdfsInstanceArgs.builder()
-     *             .instanceId(testInstanceOciDdfsInstance.id())
+     *             .instanceId(testInstanceOciDdfsInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -15334,7 +15334,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInstance = OciFunctions.getDdfsInstance(GetDdfsInstanceArgs.builder()
-     *             .instanceId(testInstanceOciDdfsInstance.id())
+     *             .instanceId(testInstanceOciDdfsInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -15691,7 +15691,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStack = OciFunctions.getDifStack(GetDifStackArgs.builder()
-     *             .stackId(testStackOciDifStack.id())
+     *             .stackId(testStackOciDifStack.get("id"))
      *             .build());
      * 
      *     }
@@ -15733,7 +15733,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStack = OciFunctions.getDifStack(GetDifStackArgs.builder()
-     *             .stackId(testStackOciDifStack.id())
+     *             .stackId(testStackOciDifStack.get("id"))
      *             .build());
      * 
      *     }
@@ -15775,7 +15775,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStack = OciFunctions.getDifStack(GetDifStackArgs.builder()
-     *             .stackId(testStackOciDifStack.id())
+     *             .stackId(testStackOciDifStack.get("id"))
      *             .build());
      * 
      *     }
@@ -15817,7 +15817,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStack = OciFunctions.getDifStack(GetDifStackArgs.builder()
-     *             .stackId(testStackOciDifStack.id())
+     *             .stackId(testStackOciDifStack.get("id"))
      *             .build());
      * 
      *     }
@@ -15859,7 +15859,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStack = OciFunctions.getDifStack(GetDifStackArgs.builder()
-     *             .stackId(testStackOciDifStack.id())
+     *             .stackId(testStackOciDifStack.get("id"))
      *             .build());
      * 
      *     }
@@ -16216,7 +16216,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGdpPipeline = OciFunctions.getGdpGdpPipeline(GetGdpGdpPipelineArgs.builder()
-     *             .gdpPipelineId(testGdpPipelineOciGdpGdpPipeline.id())
+     *             .gdpPipelineId(testGdpPipelineOciGdpGdpPipeline.get("id"))
      *             .env(gdpEnv)
      *             .build());
      * 
@@ -16259,7 +16259,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGdpPipeline = OciFunctions.getGdpGdpPipeline(GetGdpGdpPipelineArgs.builder()
-     *             .gdpPipelineId(testGdpPipelineOciGdpGdpPipeline.id())
+     *             .gdpPipelineId(testGdpPipelineOciGdpGdpPipeline.get("id"))
      *             .env(gdpEnv)
      *             .build());
      * 
@@ -16302,7 +16302,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGdpPipeline = OciFunctions.getGdpGdpPipeline(GetGdpGdpPipelineArgs.builder()
-     *             .gdpPipelineId(testGdpPipelineOciGdpGdpPipeline.id())
+     *             .gdpPipelineId(testGdpPipelineOciGdpGdpPipeline.get("id"))
      *             .env(gdpEnv)
      *             .build());
      * 
@@ -16345,7 +16345,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGdpPipeline = OciFunctions.getGdpGdpPipeline(GetGdpGdpPipelineArgs.builder()
-     *             .gdpPipelineId(testGdpPipelineOciGdpGdpPipeline.id())
+     *             .gdpPipelineId(testGdpPipelineOciGdpGdpPipeline.get("id"))
      *             .env(gdpEnv)
      *             .build());
      * 
@@ -16388,7 +16388,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testGdpPipeline = OciFunctions.getGdpGdpPipeline(GetGdpGdpPipelineArgs.builder()
-     *             .gdpPipelineId(testGdpPipelineOciGdpGdpPipeline.id())
+     *             .gdpPipelineId(testGdpPipelineOciGdpGdpPipeline.get("id"))
      *             .env(gdpEnv)
      *             .build());
      * 
@@ -16739,7 +16739,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinAdapter = OciFunctions.getIotDigitalTwinAdapter(GetIotDigitalTwinAdapterArgs.builder()
-     *             .digitalTwinAdapterId(testDigitalTwinAdapterOciIotDigitalTwinAdapter.id())
+     *             .digitalTwinAdapterId(testDigitalTwinAdapterOciIotDigitalTwinAdapter.get("id"))
      *             .build());
      * 
      *     }
@@ -16781,7 +16781,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinAdapter = OciFunctions.getIotDigitalTwinAdapter(GetIotDigitalTwinAdapterArgs.builder()
-     *             .digitalTwinAdapterId(testDigitalTwinAdapterOciIotDigitalTwinAdapter.id())
+     *             .digitalTwinAdapterId(testDigitalTwinAdapterOciIotDigitalTwinAdapter.get("id"))
      *             .build());
      * 
      *     }
@@ -16823,7 +16823,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinAdapter = OciFunctions.getIotDigitalTwinAdapter(GetIotDigitalTwinAdapterArgs.builder()
-     *             .digitalTwinAdapterId(testDigitalTwinAdapterOciIotDigitalTwinAdapter.id())
+     *             .digitalTwinAdapterId(testDigitalTwinAdapterOciIotDigitalTwinAdapter.get("id"))
      *             .build());
      * 
      *     }
@@ -16865,7 +16865,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinAdapter = OciFunctions.getIotDigitalTwinAdapter(GetIotDigitalTwinAdapterArgs.builder()
-     *             .digitalTwinAdapterId(testDigitalTwinAdapterOciIotDigitalTwinAdapter.id())
+     *             .digitalTwinAdapterId(testDigitalTwinAdapterOciIotDigitalTwinAdapter.get("id"))
      *             .build());
      * 
      *     }
@@ -16907,7 +16907,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinAdapter = OciFunctions.getIotDigitalTwinAdapter(GetIotDigitalTwinAdapterArgs.builder()
-     *             .digitalTwinAdapterId(testDigitalTwinAdapterOciIotDigitalTwinAdapter.id())
+     *             .digitalTwinAdapterId(testDigitalTwinAdapterOciIotDigitalTwinAdapter.get("id"))
      *             .build());
      * 
      *     }
@@ -16949,8 +16949,8 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinAdapters = OciFunctions.getIotDigitalTwinAdapters(GetIotDigitalTwinAdaptersArgs.builder()
-     *             .iotDomainId(testIotDomain.id())
-     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .iotDomainId(testIotDomain.get("id"))
+     *             .digitalTwinModelId(testDigitalTwinModel.get("id"))
      *             .digitalTwinModelSpecUri(digitalTwinAdapterDigitalTwinModelSpecUri)
      *             .displayName(digitalTwinAdapterDisplayName)
      *             .id(digitalTwinAdapterId)
@@ -16996,8 +16996,8 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinAdapters = OciFunctions.getIotDigitalTwinAdapters(GetIotDigitalTwinAdaptersArgs.builder()
-     *             .iotDomainId(testIotDomain.id())
-     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .iotDomainId(testIotDomain.get("id"))
+     *             .digitalTwinModelId(testDigitalTwinModel.get("id"))
      *             .digitalTwinModelSpecUri(digitalTwinAdapterDigitalTwinModelSpecUri)
      *             .displayName(digitalTwinAdapterDisplayName)
      *             .id(digitalTwinAdapterId)
@@ -17043,8 +17043,8 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinAdapters = OciFunctions.getIotDigitalTwinAdapters(GetIotDigitalTwinAdaptersArgs.builder()
-     *             .iotDomainId(testIotDomain.id())
-     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .iotDomainId(testIotDomain.get("id"))
+     *             .digitalTwinModelId(testDigitalTwinModel.get("id"))
      *             .digitalTwinModelSpecUri(digitalTwinAdapterDigitalTwinModelSpecUri)
      *             .displayName(digitalTwinAdapterDisplayName)
      *             .id(digitalTwinAdapterId)
@@ -17090,8 +17090,8 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinAdapters = OciFunctions.getIotDigitalTwinAdapters(GetIotDigitalTwinAdaptersArgs.builder()
-     *             .iotDomainId(testIotDomain.id())
-     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .iotDomainId(testIotDomain.get("id"))
+     *             .digitalTwinModelId(testDigitalTwinModel.get("id"))
      *             .digitalTwinModelSpecUri(digitalTwinAdapterDigitalTwinModelSpecUri)
      *             .displayName(digitalTwinAdapterDisplayName)
      *             .id(digitalTwinAdapterId)
@@ -17137,8 +17137,8 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinAdapters = OciFunctions.getIotDigitalTwinAdapters(GetIotDigitalTwinAdaptersArgs.builder()
-     *             .iotDomainId(testIotDomain.id())
-     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .iotDomainId(testIotDomain.get("id"))
+     *             .digitalTwinModelId(testDigitalTwinModel.get("id"))
      *             .digitalTwinModelSpecUri(digitalTwinAdapterDigitalTwinModelSpecUri)
      *             .displayName(digitalTwinAdapterDisplayName)
      *             .id(digitalTwinAdapterId)
@@ -17184,7 +17184,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinInstance = OciFunctions.getIotDigitalTwinInstance(GetIotDigitalTwinInstanceArgs.builder()
-     *             .digitalTwinInstanceId(testDigitalTwinInstanceOciIotDigitalTwinInstance.id())
+     *             .digitalTwinInstanceId(testDigitalTwinInstanceOciIotDigitalTwinInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -17226,7 +17226,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinInstance = OciFunctions.getIotDigitalTwinInstance(GetIotDigitalTwinInstanceArgs.builder()
-     *             .digitalTwinInstanceId(testDigitalTwinInstanceOciIotDigitalTwinInstance.id())
+     *             .digitalTwinInstanceId(testDigitalTwinInstanceOciIotDigitalTwinInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -17268,7 +17268,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinInstance = OciFunctions.getIotDigitalTwinInstance(GetIotDigitalTwinInstanceArgs.builder()
-     *             .digitalTwinInstanceId(testDigitalTwinInstanceOciIotDigitalTwinInstance.id())
+     *             .digitalTwinInstanceId(testDigitalTwinInstanceOciIotDigitalTwinInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -17310,7 +17310,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinInstance = OciFunctions.getIotDigitalTwinInstance(GetIotDigitalTwinInstanceArgs.builder()
-     *             .digitalTwinInstanceId(testDigitalTwinInstanceOciIotDigitalTwinInstance.id())
+     *             .digitalTwinInstanceId(testDigitalTwinInstanceOciIotDigitalTwinInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -17352,7 +17352,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinInstance = OciFunctions.getIotDigitalTwinInstance(GetIotDigitalTwinInstanceArgs.builder()
-     *             .digitalTwinInstanceId(testDigitalTwinInstanceOciIotDigitalTwinInstance.id())
+     *             .digitalTwinInstanceId(testDigitalTwinInstanceOciIotDigitalTwinInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -17395,7 +17395,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinInstanceContent = OciFunctions.getIotDigitalTwinInstanceContent(GetIotDigitalTwinInstanceContentArgs.builder()
-     *             .digitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .digitalTwinInstanceId(testDigitalTwinInstance.get("id"))
      *             .shouldIncludeMetadata(digitalTwinInstanceContentShouldIncludeMetadata)
      *             .build());
      * 
@@ -17439,7 +17439,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinInstanceContent = OciFunctions.getIotDigitalTwinInstanceContent(GetIotDigitalTwinInstanceContentArgs.builder()
-     *             .digitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .digitalTwinInstanceId(testDigitalTwinInstance.get("id"))
      *             .shouldIncludeMetadata(digitalTwinInstanceContentShouldIncludeMetadata)
      *             .build());
      * 
@@ -17483,7 +17483,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinInstanceContent = OciFunctions.getIotDigitalTwinInstanceContent(GetIotDigitalTwinInstanceContentArgs.builder()
-     *             .digitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .digitalTwinInstanceId(testDigitalTwinInstance.get("id"))
      *             .shouldIncludeMetadata(digitalTwinInstanceContentShouldIncludeMetadata)
      *             .build());
      * 
@@ -17527,7 +17527,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinInstanceContent = OciFunctions.getIotDigitalTwinInstanceContent(GetIotDigitalTwinInstanceContentArgs.builder()
-     *             .digitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .digitalTwinInstanceId(testDigitalTwinInstance.get("id"))
      *             .shouldIncludeMetadata(digitalTwinInstanceContentShouldIncludeMetadata)
      *             .build());
      * 
@@ -17571,7 +17571,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinInstanceContent = OciFunctions.getIotDigitalTwinInstanceContent(GetIotDigitalTwinInstanceContentArgs.builder()
-     *             .digitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .digitalTwinInstanceId(testDigitalTwinInstance.get("id"))
      *             .shouldIncludeMetadata(digitalTwinInstanceContentShouldIncludeMetadata)
      *             .build());
      * 
@@ -17614,9 +17614,9 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinInstances = OciFunctions.getIotDigitalTwinInstances(GetIotDigitalTwinInstancesArgs.builder()
-     *             .iotDomainId(testIotDomain.id())
+     *             .iotDomainId(testIotDomain.get("id"))
      *             .connectivityType(digitalTwinInstanceConnectivityType)
-     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .digitalTwinModelId(testDigitalTwinModel.get("id"))
      *             .digitalTwinModelSpecUri(digitalTwinInstanceDigitalTwinModelSpecUri)
      *             .displayName(digitalTwinInstanceDisplayName)
      *             .id(digitalTwinInstanceId)
@@ -17662,9 +17662,9 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinInstances = OciFunctions.getIotDigitalTwinInstances(GetIotDigitalTwinInstancesArgs.builder()
-     *             .iotDomainId(testIotDomain.id())
+     *             .iotDomainId(testIotDomain.get("id"))
      *             .connectivityType(digitalTwinInstanceConnectivityType)
-     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .digitalTwinModelId(testDigitalTwinModel.get("id"))
      *             .digitalTwinModelSpecUri(digitalTwinInstanceDigitalTwinModelSpecUri)
      *             .displayName(digitalTwinInstanceDisplayName)
      *             .id(digitalTwinInstanceId)
@@ -17710,9 +17710,9 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinInstances = OciFunctions.getIotDigitalTwinInstances(GetIotDigitalTwinInstancesArgs.builder()
-     *             .iotDomainId(testIotDomain.id())
+     *             .iotDomainId(testIotDomain.get("id"))
      *             .connectivityType(digitalTwinInstanceConnectivityType)
-     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .digitalTwinModelId(testDigitalTwinModel.get("id"))
      *             .digitalTwinModelSpecUri(digitalTwinInstanceDigitalTwinModelSpecUri)
      *             .displayName(digitalTwinInstanceDisplayName)
      *             .id(digitalTwinInstanceId)
@@ -17758,9 +17758,9 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinInstances = OciFunctions.getIotDigitalTwinInstances(GetIotDigitalTwinInstancesArgs.builder()
-     *             .iotDomainId(testIotDomain.id())
+     *             .iotDomainId(testIotDomain.get("id"))
      *             .connectivityType(digitalTwinInstanceConnectivityType)
-     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .digitalTwinModelId(testDigitalTwinModel.get("id"))
      *             .digitalTwinModelSpecUri(digitalTwinInstanceDigitalTwinModelSpecUri)
      *             .displayName(digitalTwinInstanceDisplayName)
      *             .id(digitalTwinInstanceId)
@@ -17806,9 +17806,9 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinInstances = OciFunctions.getIotDigitalTwinInstances(GetIotDigitalTwinInstancesArgs.builder()
-     *             .iotDomainId(testIotDomain.id())
+     *             .iotDomainId(testIotDomain.get("id"))
      *             .connectivityType(digitalTwinInstanceConnectivityType)
-     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .digitalTwinModelId(testDigitalTwinModel.get("id"))
      *             .digitalTwinModelSpecUri(digitalTwinInstanceDigitalTwinModelSpecUri)
      *             .displayName(digitalTwinInstanceDisplayName)
      *             .id(digitalTwinInstanceId)
@@ -17854,7 +17854,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinModel = OciFunctions.getIotDigitalTwinModel(GetIotDigitalTwinModelArgs.builder()
-     *             .digitalTwinModelId(testDigitalTwinModelOciIotDigitalTwinModel.id())
+     *             .digitalTwinModelId(testDigitalTwinModelOciIotDigitalTwinModel.get("id"))
      *             .build());
      * 
      *     }
@@ -17896,7 +17896,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinModel = OciFunctions.getIotDigitalTwinModel(GetIotDigitalTwinModelArgs.builder()
-     *             .digitalTwinModelId(testDigitalTwinModelOciIotDigitalTwinModel.id())
+     *             .digitalTwinModelId(testDigitalTwinModelOciIotDigitalTwinModel.get("id"))
      *             .build());
      * 
      *     }
@@ -17938,7 +17938,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinModel = OciFunctions.getIotDigitalTwinModel(GetIotDigitalTwinModelArgs.builder()
-     *             .digitalTwinModelId(testDigitalTwinModelOciIotDigitalTwinModel.id())
+     *             .digitalTwinModelId(testDigitalTwinModelOciIotDigitalTwinModel.get("id"))
      *             .build());
      * 
      *     }
@@ -17980,7 +17980,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinModel = OciFunctions.getIotDigitalTwinModel(GetIotDigitalTwinModelArgs.builder()
-     *             .digitalTwinModelId(testDigitalTwinModelOciIotDigitalTwinModel.id())
+     *             .digitalTwinModelId(testDigitalTwinModelOciIotDigitalTwinModel.get("id"))
      *             .build());
      * 
      *     }
@@ -18022,7 +18022,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinModel = OciFunctions.getIotDigitalTwinModel(GetIotDigitalTwinModelArgs.builder()
-     *             .digitalTwinModelId(testDigitalTwinModelOciIotDigitalTwinModel.id())
+     *             .digitalTwinModelId(testDigitalTwinModelOciIotDigitalTwinModel.get("id"))
      *             .build());
      * 
      *     }
@@ -18064,7 +18064,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinModelSpec = OciFunctions.getIotDigitalTwinModelSpec(GetIotDigitalTwinModelSpecArgs.builder()
-     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .digitalTwinModelId(testDigitalTwinModel.get("id"))
      *             .build());
      * 
      *     }
@@ -18106,7 +18106,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinModelSpec = OciFunctions.getIotDigitalTwinModelSpec(GetIotDigitalTwinModelSpecArgs.builder()
-     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .digitalTwinModelId(testDigitalTwinModel.get("id"))
      *             .build());
      * 
      *     }
@@ -18148,7 +18148,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinModelSpec = OciFunctions.getIotDigitalTwinModelSpec(GetIotDigitalTwinModelSpecArgs.builder()
-     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .digitalTwinModelId(testDigitalTwinModel.get("id"))
      *             .build());
      * 
      *     }
@@ -18190,7 +18190,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinModelSpec = OciFunctions.getIotDigitalTwinModelSpec(GetIotDigitalTwinModelSpecArgs.builder()
-     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .digitalTwinModelId(testDigitalTwinModel.get("id"))
      *             .build());
      * 
      *     }
@@ -18232,7 +18232,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinModelSpec = OciFunctions.getIotDigitalTwinModelSpec(GetIotDigitalTwinModelSpecArgs.builder()
-     *             .digitalTwinModelId(testDigitalTwinModel.id())
+     *             .digitalTwinModelId(testDigitalTwinModel.get("id"))
      *             .build());
      * 
      *     }
@@ -18274,7 +18274,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinModels = OciFunctions.getIotDigitalTwinModels(GetIotDigitalTwinModelsArgs.builder()
-     *             .iotDomainId(testIotDomain.id())
+     *             .iotDomainId(testIotDomain.get("id"))
      *             .displayName(digitalTwinModelDisplayName)
      *             .id(digitalTwinModelId)
      *             .specUriStartsWith(digitalTwinModelSpecUriStartsWith)
@@ -18320,7 +18320,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinModels = OciFunctions.getIotDigitalTwinModels(GetIotDigitalTwinModelsArgs.builder()
-     *             .iotDomainId(testIotDomain.id())
+     *             .iotDomainId(testIotDomain.get("id"))
      *             .displayName(digitalTwinModelDisplayName)
      *             .id(digitalTwinModelId)
      *             .specUriStartsWith(digitalTwinModelSpecUriStartsWith)
@@ -18366,7 +18366,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinModels = OciFunctions.getIotDigitalTwinModels(GetIotDigitalTwinModelsArgs.builder()
-     *             .iotDomainId(testIotDomain.id())
+     *             .iotDomainId(testIotDomain.get("id"))
      *             .displayName(digitalTwinModelDisplayName)
      *             .id(digitalTwinModelId)
      *             .specUriStartsWith(digitalTwinModelSpecUriStartsWith)
@@ -18412,7 +18412,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinModels = OciFunctions.getIotDigitalTwinModels(GetIotDigitalTwinModelsArgs.builder()
-     *             .iotDomainId(testIotDomain.id())
+     *             .iotDomainId(testIotDomain.get("id"))
      *             .displayName(digitalTwinModelDisplayName)
      *             .id(digitalTwinModelId)
      *             .specUriStartsWith(digitalTwinModelSpecUriStartsWith)
@@ -18458,7 +18458,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinModels = OciFunctions.getIotDigitalTwinModels(GetIotDigitalTwinModelsArgs.builder()
-     *             .iotDomainId(testIotDomain.id())
+     *             .iotDomainId(testIotDomain.get("id"))
      *             .displayName(digitalTwinModelDisplayName)
      *             .id(digitalTwinModelId)
      *             .specUriStartsWith(digitalTwinModelSpecUriStartsWith)
@@ -18504,7 +18504,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinRelationship = OciFunctions.getIotDigitalTwinRelationship(GetIotDigitalTwinRelationshipArgs.builder()
-     *             .digitalTwinRelationshipId(testDigitalTwinRelationshipOciIotDigitalTwinRelationship.id())
+     *             .digitalTwinRelationshipId(testDigitalTwinRelationshipOciIotDigitalTwinRelationship.get("id"))
      *             .build());
      * 
      *     }
@@ -18546,7 +18546,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinRelationship = OciFunctions.getIotDigitalTwinRelationship(GetIotDigitalTwinRelationshipArgs.builder()
-     *             .digitalTwinRelationshipId(testDigitalTwinRelationshipOciIotDigitalTwinRelationship.id())
+     *             .digitalTwinRelationshipId(testDigitalTwinRelationshipOciIotDigitalTwinRelationship.get("id"))
      *             .build());
      * 
      *     }
@@ -18588,7 +18588,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinRelationship = OciFunctions.getIotDigitalTwinRelationship(GetIotDigitalTwinRelationshipArgs.builder()
-     *             .digitalTwinRelationshipId(testDigitalTwinRelationshipOciIotDigitalTwinRelationship.id())
+     *             .digitalTwinRelationshipId(testDigitalTwinRelationshipOciIotDigitalTwinRelationship.get("id"))
      *             .build());
      * 
      *     }
@@ -18630,7 +18630,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinRelationship = OciFunctions.getIotDigitalTwinRelationship(GetIotDigitalTwinRelationshipArgs.builder()
-     *             .digitalTwinRelationshipId(testDigitalTwinRelationshipOciIotDigitalTwinRelationship.id())
+     *             .digitalTwinRelationshipId(testDigitalTwinRelationshipOciIotDigitalTwinRelationship.get("id"))
      *             .build());
      * 
      *     }
@@ -18672,7 +18672,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinRelationship = OciFunctions.getIotDigitalTwinRelationship(GetIotDigitalTwinRelationshipArgs.builder()
-     *             .digitalTwinRelationshipId(testDigitalTwinRelationshipOciIotDigitalTwinRelationship.id())
+     *             .digitalTwinRelationshipId(testDigitalTwinRelationshipOciIotDigitalTwinRelationship.get("id"))
      *             .build());
      * 
      *     }
@@ -18714,13 +18714,13 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinRelationships = OciFunctions.getIotDigitalTwinRelationships(GetIotDigitalTwinRelationshipsArgs.builder()
-     *             .iotDomainId(testIotDomain.id())
+     *             .iotDomainId(testIotDomain.get("id"))
      *             .contentPath(digitalTwinRelationshipContentPath)
      *             .displayName(digitalTwinRelationshipDisplayName)
      *             .id(digitalTwinRelationshipId)
-     *             .sourceDigitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .sourceDigitalTwinInstanceId(testDigitalTwinInstance.get("id"))
      *             .state(digitalTwinRelationshipState)
-     *             .targetDigitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .targetDigitalTwinInstanceId(testDigitalTwinInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -18762,13 +18762,13 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinRelationships = OciFunctions.getIotDigitalTwinRelationships(GetIotDigitalTwinRelationshipsArgs.builder()
-     *             .iotDomainId(testIotDomain.id())
+     *             .iotDomainId(testIotDomain.get("id"))
      *             .contentPath(digitalTwinRelationshipContentPath)
      *             .displayName(digitalTwinRelationshipDisplayName)
      *             .id(digitalTwinRelationshipId)
-     *             .sourceDigitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .sourceDigitalTwinInstanceId(testDigitalTwinInstance.get("id"))
      *             .state(digitalTwinRelationshipState)
-     *             .targetDigitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .targetDigitalTwinInstanceId(testDigitalTwinInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -18810,13 +18810,13 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinRelationships = OciFunctions.getIotDigitalTwinRelationships(GetIotDigitalTwinRelationshipsArgs.builder()
-     *             .iotDomainId(testIotDomain.id())
+     *             .iotDomainId(testIotDomain.get("id"))
      *             .contentPath(digitalTwinRelationshipContentPath)
      *             .displayName(digitalTwinRelationshipDisplayName)
      *             .id(digitalTwinRelationshipId)
-     *             .sourceDigitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .sourceDigitalTwinInstanceId(testDigitalTwinInstance.get("id"))
      *             .state(digitalTwinRelationshipState)
-     *             .targetDigitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .targetDigitalTwinInstanceId(testDigitalTwinInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -18858,13 +18858,13 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinRelationships = OciFunctions.getIotDigitalTwinRelationships(GetIotDigitalTwinRelationshipsArgs.builder()
-     *             .iotDomainId(testIotDomain.id())
+     *             .iotDomainId(testIotDomain.get("id"))
      *             .contentPath(digitalTwinRelationshipContentPath)
      *             .displayName(digitalTwinRelationshipDisplayName)
      *             .id(digitalTwinRelationshipId)
-     *             .sourceDigitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .sourceDigitalTwinInstanceId(testDigitalTwinInstance.get("id"))
      *             .state(digitalTwinRelationshipState)
-     *             .targetDigitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .targetDigitalTwinInstanceId(testDigitalTwinInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -18906,13 +18906,13 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDigitalTwinRelationships = OciFunctions.getIotDigitalTwinRelationships(GetIotDigitalTwinRelationshipsArgs.builder()
-     *             .iotDomainId(testIotDomain.id())
+     *             .iotDomainId(testIotDomain.get("id"))
      *             .contentPath(digitalTwinRelationshipContentPath)
      *             .displayName(digitalTwinRelationshipDisplayName)
      *             .id(digitalTwinRelationshipId)
-     *             .sourceDigitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .sourceDigitalTwinInstanceId(testDigitalTwinInstance.get("id"))
      *             .state(digitalTwinRelationshipState)
-     *             .targetDigitalTwinInstanceId(testDigitalTwinInstance.id())
+     *             .targetDigitalTwinInstanceId(testDigitalTwinInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -18954,7 +18954,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIotDomain = OciFunctions.getIotIotDomain(GetIotIotDomainArgs.builder()
-     *             .iotDomainId(testIotDomainOciIotIotDomain.id())
+     *             .iotDomainId(testIotDomainOciIotIotDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -18996,7 +18996,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIotDomain = OciFunctions.getIotIotDomain(GetIotIotDomainArgs.builder()
-     *             .iotDomainId(testIotDomainOciIotIotDomain.id())
+     *             .iotDomainId(testIotDomainOciIotIotDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -19038,7 +19038,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIotDomain = OciFunctions.getIotIotDomain(GetIotIotDomainArgs.builder()
-     *             .iotDomainId(testIotDomainOciIotIotDomain.id())
+     *             .iotDomainId(testIotDomainOciIotIotDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -19080,7 +19080,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIotDomain = OciFunctions.getIotIotDomain(GetIotIotDomainArgs.builder()
-     *             .iotDomainId(testIotDomainOciIotIotDomain.id())
+     *             .iotDomainId(testIotDomainOciIotIotDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -19122,7 +19122,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIotDomain = OciFunctions.getIotIotDomain(GetIotIotDomainArgs.builder()
-     *             .iotDomainId(testIotDomainOciIotIotDomain.id())
+     *             .iotDomainId(testIotDomainOciIotIotDomain.get("id"))
      *             .build());
      * 
      *     }
@@ -19164,7 +19164,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIotDomainGroup = OciFunctions.getIotIotDomainGroup(GetIotIotDomainGroupArgs.builder()
-     *             .iotDomainGroupId(testIotDomainGroupOciIotIotDomainGroup.id())
+     *             .iotDomainGroupId(testIotDomainGroupOciIotIotDomainGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -19206,7 +19206,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIotDomainGroup = OciFunctions.getIotIotDomainGroup(GetIotIotDomainGroupArgs.builder()
-     *             .iotDomainGroupId(testIotDomainGroupOciIotIotDomainGroup.id())
+     *             .iotDomainGroupId(testIotDomainGroupOciIotIotDomainGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -19248,7 +19248,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIotDomainGroup = OciFunctions.getIotIotDomainGroup(GetIotIotDomainGroupArgs.builder()
-     *             .iotDomainGroupId(testIotDomainGroupOciIotIotDomainGroup.id())
+     *             .iotDomainGroupId(testIotDomainGroupOciIotIotDomainGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -19290,7 +19290,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIotDomainGroup = OciFunctions.getIotIotDomainGroup(GetIotIotDomainGroupArgs.builder()
-     *             .iotDomainGroupId(testIotDomainGroupOciIotIotDomainGroup.id())
+     *             .iotDomainGroupId(testIotDomainGroupOciIotIotDomainGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -19332,7 +19332,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIotDomainGroup = OciFunctions.getIotIotDomainGroup(GetIotIotDomainGroupArgs.builder()
-     *             .iotDomainGroupId(testIotDomainGroupOciIotIotDomainGroup.id())
+     *             .iotDomainGroupId(testIotDomainGroupOciIotIotDomainGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -19607,7 +19607,7 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(iotDomainDisplayName)
      *             .id(iotDomainId)
-     *             .iotDomainGroupId(testIotDomainGroup.id())
+     *             .iotDomainGroupId(testIotDomainGroup.get("id"))
      *             .state(iotDomainState)
      *             .build());
      * 
@@ -19653,7 +19653,7 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(iotDomainDisplayName)
      *             .id(iotDomainId)
-     *             .iotDomainGroupId(testIotDomainGroup.id())
+     *             .iotDomainGroupId(testIotDomainGroup.get("id"))
      *             .state(iotDomainState)
      *             .build());
      * 
@@ -19699,7 +19699,7 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(iotDomainDisplayName)
      *             .id(iotDomainId)
-     *             .iotDomainGroupId(testIotDomainGroup.id())
+     *             .iotDomainGroupId(testIotDomainGroup.get("id"))
      *             .state(iotDomainState)
      *             .build());
      * 
@@ -19745,7 +19745,7 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(iotDomainDisplayName)
      *             .id(iotDomainId)
-     *             .iotDomainGroupId(testIotDomainGroup.id())
+     *             .iotDomainGroupId(testIotDomainGroup.get("id"))
      *             .state(iotDomainState)
      *             .build());
      * 
@@ -19791,7 +19791,7 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(iotDomainDisplayName)
      *             .id(iotDomainId)
-     *             .iotDomainGroupId(testIotDomainGroup.id())
+     *             .iotDomainGroupId(testIotDomainGroup.get("id"))
      *             .state(iotDomainState)
      *             .build());
      * 
@@ -19834,7 +19834,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIotFlowRuntime = OciFunctions.getIotIotFlowRuntime(GetIotIotFlowRuntimeArgs.builder()
-     *             .iotFlowRuntimeId(testIotFlowRuntimeOciIotIotFlowRuntime.id())
+     *             .iotFlowRuntimeId(testIotFlowRuntimeOciIotIotFlowRuntime.get("id"))
      *             .build());
      * 
      *     }
@@ -19876,7 +19876,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIotFlowRuntime = OciFunctions.getIotIotFlowRuntime(GetIotIotFlowRuntimeArgs.builder()
-     *             .iotFlowRuntimeId(testIotFlowRuntimeOciIotIotFlowRuntime.id())
+     *             .iotFlowRuntimeId(testIotFlowRuntimeOciIotIotFlowRuntime.get("id"))
      *             .build());
      * 
      *     }
@@ -19918,7 +19918,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIotFlowRuntime = OciFunctions.getIotIotFlowRuntime(GetIotIotFlowRuntimeArgs.builder()
-     *             .iotFlowRuntimeId(testIotFlowRuntimeOciIotIotFlowRuntime.id())
+     *             .iotFlowRuntimeId(testIotFlowRuntimeOciIotIotFlowRuntime.get("id"))
      *             .build());
      * 
      *     }
@@ -19960,7 +19960,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIotFlowRuntime = OciFunctions.getIotIotFlowRuntime(GetIotIotFlowRuntimeArgs.builder()
-     *             .iotFlowRuntimeId(testIotFlowRuntimeOciIotIotFlowRuntime.id())
+     *             .iotFlowRuntimeId(testIotFlowRuntimeOciIotIotFlowRuntime.get("id"))
      *             .build());
      * 
      *     }
@@ -20002,7 +20002,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIotFlowRuntime = OciFunctions.getIotIotFlowRuntime(GetIotIotFlowRuntimeArgs.builder()
-     *             .iotFlowRuntimeId(testIotFlowRuntimeOciIotIotFlowRuntime.id())
+     *             .iotFlowRuntimeId(testIotFlowRuntimeOciIotIotFlowRuntime.get("id"))
      *             .build());
      * 
      *     }
@@ -20044,7 +20044,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIotFlowRuntimeFlow = OciFunctions.getIotIotFlowRuntimeFlow(GetIotIotFlowRuntimeFlowArgs.builder()
-     *             .iotFlowRuntimeId(testIotFlowRuntime.id())
+     *             .iotFlowRuntimeId(testIotFlowRuntime.get("id"))
      *             .build());
      * 
      *     }
@@ -20086,7 +20086,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIotFlowRuntimeFlow = OciFunctions.getIotIotFlowRuntimeFlow(GetIotIotFlowRuntimeFlowArgs.builder()
-     *             .iotFlowRuntimeId(testIotFlowRuntime.id())
+     *             .iotFlowRuntimeId(testIotFlowRuntime.get("id"))
      *             .build());
      * 
      *     }
@@ -20128,7 +20128,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIotFlowRuntimeFlow = OciFunctions.getIotIotFlowRuntimeFlow(GetIotIotFlowRuntimeFlowArgs.builder()
-     *             .iotFlowRuntimeId(testIotFlowRuntime.id())
+     *             .iotFlowRuntimeId(testIotFlowRuntime.get("id"))
      *             .build());
      * 
      *     }
@@ -20170,7 +20170,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIotFlowRuntimeFlow = OciFunctions.getIotIotFlowRuntimeFlow(GetIotIotFlowRuntimeFlowArgs.builder()
-     *             .iotFlowRuntimeId(testIotFlowRuntime.id())
+     *             .iotFlowRuntimeId(testIotFlowRuntime.get("id"))
      *             .build());
      * 
      *     }
@@ -20212,7 +20212,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testIotFlowRuntimeFlow = OciFunctions.getIotIotFlowRuntimeFlow(GetIotIotFlowRuntimeFlowArgs.builder()
-     *             .iotFlowRuntimeId(testIotFlowRuntime.id())
+     *             .iotFlowRuntimeId(testIotFlowRuntime.get("id"))
      *             .build());
      * 
      *     }
@@ -20257,7 +20257,7 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(iotFlowRuntimeDisplayName)
      *             .id(iotFlowRuntimeId)
-     *             .iotDomainId(testIotDomain.id())
+     *             .iotDomainId(testIotDomain.get("id"))
      *             .state(iotFlowRuntimeState)
      *             .build());
      * 
@@ -20303,7 +20303,7 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(iotFlowRuntimeDisplayName)
      *             .id(iotFlowRuntimeId)
-     *             .iotDomainId(testIotDomain.id())
+     *             .iotDomainId(testIotDomain.get("id"))
      *             .state(iotFlowRuntimeState)
      *             .build());
      * 
@@ -20349,7 +20349,7 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(iotFlowRuntimeDisplayName)
      *             .id(iotFlowRuntimeId)
-     *             .iotDomainId(testIotDomain.id())
+     *             .iotDomainId(testIotDomain.get("id"))
      *             .state(iotFlowRuntimeState)
      *             .build());
      * 
@@ -20395,7 +20395,7 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(iotFlowRuntimeDisplayName)
      *             .id(iotFlowRuntimeId)
-     *             .iotDomainId(testIotDomain.id())
+     *             .iotDomainId(testIotDomain.get("id"))
      *             .state(iotFlowRuntimeState)
      *             .build());
      * 
@@ -20441,7 +20441,7 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(iotFlowRuntimeDisplayName)
      *             .id(iotFlowRuntimeId)
-     *             .iotDomainId(testIotDomain.id())
+     *             .iotDomainId(testIotDomain.get("id"))
      *             .state(iotFlowRuntimeState)
      *             .build());
      * 
@@ -20785,7 +20785,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaCluster = OciFunctions.getManagedKafkaKafkaCluster(GetManagedKafkaKafkaClusterArgs.builder()
-     *             .kafkaClusterId(testKafkaClusterOciManagedKafkaKafkaCluster.id())
+     *             .kafkaClusterId(testKafkaClusterOciManagedKafkaKafkaCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -20827,7 +20827,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaCluster = OciFunctions.getManagedKafkaKafkaCluster(GetManagedKafkaKafkaClusterArgs.builder()
-     *             .kafkaClusterId(testKafkaClusterOciManagedKafkaKafkaCluster.id())
+     *             .kafkaClusterId(testKafkaClusterOciManagedKafkaKafkaCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -20869,7 +20869,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaCluster = OciFunctions.getManagedKafkaKafkaCluster(GetManagedKafkaKafkaClusterArgs.builder()
-     *             .kafkaClusterId(testKafkaClusterOciManagedKafkaKafkaCluster.id())
+     *             .kafkaClusterId(testKafkaClusterOciManagedKafkaKafkaCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -20911,7 +20911,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaCluster = OciFunctions.getManagedKafkaKafkaCluster(GetManagedKafkaKafkaClusterArgs.builder()
-     *             .kafkaClusterId(testKafkaClusterOciManagedKafkaKafkaCluster.id())
+     *             .kafkaClusterId(testKafkaClusterOciManagedKafkaKafkaCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -20953,7 +20953,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaCluster = OciFunctions.getManagedKafkaKafkaCluster(GetManagedKafkaKafkaClusterArgs.builder()
-     *             .kafkaClusterId(testKafkaClusterOciManagedKafkaKafkaCluster.id())
+     *             .kafkaClusterId(testKafkaClusterOciManagedKafkaKafkaCluster.get("id"))
      *             .build());
      * 
      *     }
@@ -21050,7 +21050,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaClusterAddons = OciFunctions.getManagedKafkaKafkaClusterAddons(GetManagedKafkaKafkaClusterAddonsArgs.builder()
-     *             .kafkaClusterId(testKafkaCluster.id())
+     *             .kafkaClusterId(testKafkaCluster.get("id"))
      *             .name(kafkaClusterAddonName)
      *             .state(kafkaClusterAddonState)
      *             .build());
@@ -21094,7 +21094,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaClusterAddons = OciFunctions.getManagedKafkaKafkaClusterAddons(GetManagedKafkaKafkaClusterAddonsArgs.builder()
-     *             .kafkaClusterId(testKafkaCluster.id())
+     *             .kafkaClusterId(testKafkaCluster.get("id"))
      *             .name(kafkaClusterAddonName)
      *             .state(kafkaClusterAddonState)
      *             .build());
@@ -21138,7 +21138,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaClusterAddons = OciFunctions.getManagedKafkaKafkaClusterAddons(GetManagedKafkaKafkaClusterAddonsArgs.builder()
-     *             .kafkaClusterId(testKafkaCluster.id())
+     *             .kafkaClusterId(testKafkaCluster.get("id"))
      *             .name(kafkaClusterAddonName)
      *             .state(kafkaClusterAddonState)
      *             .build());
@@ -21182,7 +21182,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaClusterAddons = OciFunctions.getManagedKafkaKafkaClusterAddons(GetManagedKafkaKafkaClusterAddonsArgs.builder()
-     *             .kafkaClusterId(testKafkaCluster.id())
+     *             .kafkaClusterId(testKafkaCluster.get("id"))
      *             .name(kafkaClusterAddonName)
      *             .state(kafkaClusterAddonState)
      *             .build());
@@ -21226,7 +21226,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaClusterAddons = OciFunctions.getManagedKafkaKafkaClusterAddons(GetManagedKafkaKafkaClusterAddonsArgs.builder()
-     *             .kafkaClusterId(testKafkaCluster.id())
+     *             .kafkaClusterId(testKafkaCluster.get("id"))
      *             .name(kafkaClusterAddonName)
      *             .state(kafkaClusterAddonState)
      *             .build());
@@ -21270,7 +21270,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaClusterConfig = OciFunctions.getManagedKafkaKafkaClusterConfig(GetManagedKafkaKafkaClusterConfigArgs.builder()
-     *             .kafkaClusterConfigId(testKafkaClusterConfigOciManagedKafkaKafkaClusterConfig.id())
+     *             .kafkaClusterConfigId(testKafkaClusterConfigOciManagedKafkaKafkaClusterConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -21312,7 +21312,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaClusterConfig = OciFunctions.getManagedKafkaKafkaClusterConfig(GetManagedKafkaKafkaClusterConfigArgs.builder()
-     *             .kafkaClusterConfigId(testKafkaClusterConfigOciManagedKafkaKafkaClusterConfig.id())
+     *             .kafkaClusterConfigId(testKafkaClusterConfigOciManagedKafkaKafkaClusterConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -21354,7 +21354,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaClusterConfig = OciFunctions.getManagedKafkaKafkaClusterConfig(GetManagedKafkaKafkaClusterConfigArgs.builder()
-     *             .kafkaClusterConfigId(testKafkaClusterConfigOciManagedKafkaKafkaClusterConfig.id())
+     *             .kafkaClusterConfigId(testKafkaClusterConfigOciManagedKafkaKafkaClusterConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -21396,7 +21396,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaClusterConfig = OciFunctions.getManagedKafkaKafkaClusterConfig(GetManagedKafkaKafkaClusterConfigArgs.builder()
-     *             .kafkaClusterConfigId(testKafkaClusterConfigOciManagedKafkaKafkaClusterConfig.id())
+     *             .kafkaClusterConfigId(testKafkaClusterConfigOciManagedKafkaKafkaClusterConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -21438,7 +21438,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaClusterConfig = OciFunctions.getManagedKafkaKafkaClusterConfig(GetManagedKafkaKafkaClusterConfigArgs.builder()
-     *             .kafkaClusterConfigId(testKafkaClusterConfigOciManagedKafkaKafkaClusterConfig.id())
+     *             .kafkaClusterConfigId(testKafkaClusterConfigOciManagedKafkaKafkaClusterConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -21480,7 +21480,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaClusterConfigVersion = OciFunctions.getManagedKafkaKafkaClusterConfigVersion(GetManagedKafkaKafkaClusterConfigVersionArgs.builder()
-     *             .kafkaClusterConfigId(testKafkaClusterConfig.id())
+     *             .kafkaClusterConfigId(testKafkaClusterConfig.get("id"))
      *             .versionNumber(kafkaClusterConfigVersionVersionNumber)
      *             .build());
      * 
@@ -21523,7 +21523,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaClusterConfigVersion = OciFunctions.getManagedKafkaKafkaClusterConfigVersion(GetManagedKafkaKafkaClusterConfigVersionArgs.builder()
-     *             .kafkaClusterConfigId(testKafkaClusterConfig.id())
+     *             .kafkaClusterConfigId(testKafkaClusterConfig.get("id"))
      *             .versionNumber(kafkaClusterConfigVersionVersionNumber)
      *             .build());
      * 
@@ -21566,7 +21566,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaClusterConfigVersion = OciFunctions.getManagedKafkaKafkaClusterConfigVersion(GetManagedKafkaKafkaClusterConfigVersionArgs.builder()
-     *             .kafkaClusterConfigId(testKafkaClusterConfig.id())
+     *             .kafkaClusterConfigId(testKafkaClusterConfig.get("id"))
      *             .versionNumber(kafkaClusterConfigVersionVersionNumber)
      *             .build());
      * 
@@ -21609,7 +21609,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaClusterConfigVersion = OciFunctions.getManagedKafkaKafkaClusterConfigVersion(GetManagedKafkaKafkaClusterConfigVersionArgs.builder()
-     *             .kafkaClusterConfigId(testKafkaClusterConfig.id())
+     *             .kafkaClusterConfigId(testKafkaClusterConfig.get("id"))
      *             .versionNumber(kafkaClusterConfigVersionVersionNumber)
      *             .build());
      * 
@@ -21652,7 +21652,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaClusterConfigVersion = OciFunctions.getManagedKafkaKafkaClusterConfigVersion(GetManagedKafkaKafkaClusterConfigVersionArgs.builder()
-     *             .kafkaClusterConfigId(testKafkaClusterConfig.id())
+     *             .kafkaClusterConfigId(testKafkaClusterConfig.get("id"))
      *             .versionNumber(kafkaClusterConfigVersionVersionNumber)
      *             .build());
      * 
@@ -21695,7 +21695,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaClusterConfigVersions = OciFunctions.getManagedKafkaKafkaClusterConfigVersions(GetManagedKafkaKafkaClusterConfigVersionsArgs.builder()
-     *             .kafkaClusterConfigId(testKafkaClusterConfig.id())
+     *             .kafkaClusterConfigId(testKafkaClusterConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -21737,7 +21737,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaClusterConfigVersions = OciFunctions.getManagedKafkaKafkaClusterConfigVersions(GetManagedKafkaKafkaClusterConfigVersionsArgs.builder()
-     *             .kafkaClusterConfigId(testKafkaClusterConfig.id())
+     *             .kafkaClusterConfigId(testKafkaClusterConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -21779,7 +21779,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaClusterConfigVersions = OciFunctions.getManagedKafkaKafkaClusterConfigVersions(GetManagedKafkaKafkaClusterConfigVersionsArgs.builder()
-     *             .kafkaClusterConfigId(testKafkaClusterConfig.id())
+     *             .kafkaClusterConfigId(testKafkaClusterConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -21821,7 +21821,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaClusterConfigVersions = OciFunctions.getManagedKafkaKafkaClusterConfigVersions(GetManagedKafkaKafkaClusterConfigVersionsArgs.builder()
-     *             .kafkaClusterConfigId(testKafkaClusterConfig.id())
+     *             .kafkaClusterConfigId(testKafkaClusterConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -21863,7 +21863,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testKafkaClusterConfigVersions = OciFunctions.getManagedKafkaKafkaClusterConfigVersions(GetManagedKafkaKafkaClusterConfigVersionsArgs.builder()
-     *             .kafkaClusterConfigId(testKafkaClusterConfig.id())
+     *             .kafkaClusterConfigId(testKafkaClusterConfig.get("id"))
      *             .build());
      * 
      *     }
@@ -23561,15 +23561,15 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMulticloudalerts = OciFunctions.getMulticloudMulticloudalerts(GetMulticloudMulticloudalertsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .alertFunctionName(testFunction.name())
+     *             .alertFunctionName(testFunction.get("name"))
      *             .alertStatus(multicloudalertAlertStatus)
      *             .alertType(multicloudalertAlertType)
      *             .displayName(multicloudalertDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .resourceType(multicloudalertResourceType)
      *             .severity(multicloudalertSeverity)
-     *             .subscriptionId(testSubscription.id())
-     *             .subscriptionServiceName(testService.name())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .subscriptionServiceName(testService.get("name"))
      *             .build());
      * 
      *     }
@@ -23616,15 +23616,15 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMulticloudalerts = OciFunctions.getMulticloudMulticloudalerts(GetMulticloudMulticloudalertsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .alertFunctionName(testFunction.name())
+     *             .alertFunctionName(testFunction.get("name"))
      *             .alertStatus(multicloudalertAlertStatus)
      *             .alertType(multicloudalertAlertType)
      *             .displayName(multicloudalertDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .resourceType(multicloudalertResourceType)
      *             .severity(multicloudalertSeverity)
-     *             .subscriptionId(testSubscription.id())
-     *             .subscriptionServiceName(testService.name())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .subscriptionServiceName(testService.get("name"))
      *             .build());
      * 
      *     }
@@ -23671,15 +23671,15 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMulticloudalerts = OciFunctions.getMulticloudMulticloudalerts(GetMulticloudMulticloudalertsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .alertFunctionName(testFunction.name())
+     *             .alertFunctionName(testFunction.get("name"))
      *             .alertStatus(multicloudalertAlertStatus)
      *             .alertType(multicloudalertAlertType)
      *             .displayName(multicloudalertDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .resourceType(multicloudalertResourceType)
      *             .severity(multicloudalertSeverity)
-     *             .subscriptionId(testSubscription.id())
-     *             .subscriptionServiceName(testService.name())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .subscriptionServiceName(testService.get("name"))
      *             .build());
      * 
      *     }
@@ -23726,15 +23726,15 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMulticloudalerts = OciFunctions.getMulticloudMulticloudalerts(GetMulticloudMulticloudalertsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .alertFunctionName(testFunction.name())
+     *             .alertFunctionName(testFunction.get("name"))
      *             .alertStatus(multicloudalertAlertStatus)
      *             .alertType(multicloudalertAlertType)
      *             .displayName(multicloudalertDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .resourceType(multicloudalertResourceType)
      *             .severity(multicloudalertSeverity)
-     *             .subscriptionId(testSubscription.id())
-     *             .subscriptionServiceName(testService.name())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .subscriptionServiceName(testService.get("name"))
      *             .build());
      * 
      *     }
@@ -23781,15 +23781,15 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMulticloudalerts = OciFunctions.getMulticloudMulticloudalerts(GetMulticloudMulticloudalertsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .alertFunctionName(testFunction.name())
+     *             .alertFunctionName(testFunction.get("name"))
      *             .alertStatus(multicloudalertAlertStatus)
      *             .alertType(multicloudalertAlertType)
      *             .displayName(multicloudalertDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .resourceType(multicloudalertResourceType)
      *             .severity(multicloudalertSeverity)
-     *             .subscriptionId(testSubscription.id())
-     *             .subscriptionServiceName(testService.name())
+     *             .subscriptionId(testSubscription.get("id"))
+     *             .subscriptionServiceName(testService.get("name"))
      *             .build());
      * 
      *     }
@@ -23834,7 +23834,7 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(multicloudpolicyDisplayName)
      *             .isForceRefresh(multicloudpolicyIsForceRefresh)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -23879,7 +23879,7 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(multicloudpolicyDisplayName)
      *             .isForceRefresh(multicloudpolicyIsForceRefresh)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -23924,7 +23924,7 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(multicloudpolicyDisplayName)
      *             .isForceRefresh(multicloudpolicyIsForceRefresh)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -23969,7 +23969,7 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(multicloudpolicyDisplayName)
      *             .isForceRefresh(multicloudpolicyIsForceRefresh)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -24014,7 +24014,7 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(multicloudpolicyDisplayName)
      *             .isForceRefresh(multicloudpolicyIsForceRefresh)
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -26293,7 +26293,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalAdminProduct = OciFunctions.getProductCatalogInternalAdminProduct(GetProductCatalogInternalAdminProductArgs.builder()
-     *             .productId(testProduct.id())
+     *             .productId(testProduct.get("id"))
      *             .build());
      * 
      *     }
@@ -26335,7 +26335,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalAdminProduct = OciFunctions.getProductCatalogInternalAdminProduct(GetProductCatalogInternalAdminProductArgs.builder()
-     *             .productId(testProduct.id())
+     *             .productId(testProduct.get("id"))
      *             .build());
      * 
      *     }
@@ -26377,7 +26377,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalAdminProduct = OciFunctions.getProductCatalogInternalAdminProduct(GetProductCatalogInternalAdminProductArgs.builder()
-     *             .productId(testProduct.id())
+     *             .productId(testProduct.get("id"))
      *             .build());
      * 
      *     }
@@ -26419,7 +26419,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalAdminProduct = OciFunctions.getProductCatalogInternalAdminProduct(GetProductCatalogInternalAdminProductArgs.builder()
-     *             .productId(testProduct.id())
+     *             .productId(testProduct.get("id"))
      *             .build());
      * 
      *     }
@@ -26461,7 +26461,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalAdminProduct = OciFunctions.getProductCatalogInternalAdminProduct(GetProductCatalogInternalAdminProductArgs.builder()
-     *             .productId(testProduct.id())
+     *             .productId(testProduct.get("id"))
      *             .build());
      * 
      *     }
@@ -26518,7 +26518,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalProduct = OciFunctions.getProductCatalogInternalProduct(GetProductCatalogInternalProductArgs.builder()
-     *             .productId(testProduct.id())
+     *             .productId(testProduct.get("id"))
      *             .build());
      * 
      *     }
@@ -26560,7 +26560,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalProduct = OciFunctions.getProductCatalogInternalProduct(GetProductCatalogInternalProductArgs.builder()
-     *             .productId(testProduct.id())
+     *             .productId(testProduct.get("id"))
      *             .build());
      * 
      *     }
@@ -26602,7 +26602,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalProduct = OciFunctions.getProductCatalogInternalProduct(GetProductCatalogInternalProductArgs.builder()
-     *             .productId(testProduct.id())
+     *             .productId(testProduct.get("id"))
      *             .build());
      * 
      *     }
@@ -26644,7 +26644,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalProduct = OciFunctions.getProductCatalogInternalProduct(GetProductCatalogInternalProductArgs.builder()
-     *             .productId(testProduct.id())
+     *             .productId(testProduct.get("id"))
      *             .build());
      * 
      *     }
@@ -26686,7 +26686,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testInternalProduct = OciFunctions.getProductCatalogInternalProduct(GetProductCatalogInternalProductArgs.builder()
-     *             .productId(testProduct.id())
+     *             .productId(testProduct.get("id"))
      *             .build());
      * 
      *     }
@@ -26743,7 +26743,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProduct = OciFunctions.getProductCatalogProduct(GetProductCatalogProductArgs.builder()
-     *             .productId(testProductOciOciProductCatalogProduct.id())
+     *             .productId(testProductOciOciProductCatalogProduct.get("id"))
      *             .build());
      * 
      *     }
@@ -26785,7 +26785,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProduct = OciFunctions.getProductCatalogProduct(GetProductCatalogProductArgs.builder()
-     *             .productId(testProductOciOciProductCatalogProduct.id())
+     *             .productId(testProductOciOciProductCatalogProduct.get("id"))
      *             .build());
      * 
      *     }
@@ -26827,7 +26827,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProduct = OciFunctions.getProductCatalogProduct(GetProductCatalogProductArgs.builder()
-     *             .productId(testProductOciOciProductCatalogProduct.id())
+     *             .productId(testProductOciOciProductCatalogProduct.get("id"))
      *             .build());
      * 
      *     }
@@ -26869,7 +26869,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProduct = OciFunctions.getProductCatalogProduct(GetProductCatalogProductArgs.builder()
-     *             .productId(testProductOciOciProductCatalogProduct.id())
+     *             .productId(testProductOciOciProductCatalogProduct.get("id"))
      *             .build());
      * 
      *     }
@@ -26911,7 +26911,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProduct = OciFunctions.getProductCatalogProduct(GetProductCatalogProductArgs.builder()
-     *             .productId(testProductOciOciProductCatalogProduct.id())
+     *             .productId(testProductOciOciProductCatalogProduct.get("id"))
      *             .build());
      * 
      *     }
@@ -26978,9 +26978,9 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(privateServiceAccesDisplayName)
      *             .id(privateServiceAccesId)
-     *             .serviceId(testPsaService.id())
+     *             .serviceId(testPsaService.get("id"))
      *             .state(privateServiceAccesState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -27026,9 +27026,9 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(privateServiceAccesDisplayName)
      *             .id(privateServiceAccesId)
-     *             .serviceId(testPsaService.id())
+     *             .serviceId(testPsaService.get("id"))
      *             .state(privateServiceAccesState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -27074,9 +27074,9 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(privateServiceAccesDisplayName)
      *             .id(privateServiceAccesId)
-     *             .serviceId(testPsaService.id())
+     *             .serviceId(testPsaService.get("id"))
      *             .state(privateServiceAccesState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -27122,9 +27122,9 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(privateServiceAccesDisplayName)
      *             .id(privateServiceAccesId)
-     *             .serviceId(testPsaService.id())
+     *             .serviceId(testPsaService.get("id"))
      *             .state(privateServiceAccesState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -27170,9 +27170,9 @@ public final class OciFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(privateServiceAccesDisplayName)
      *             .id(privateServiceAccesId)
-     *             .serviceId(testPsaService.id())
+     *             .serviceId(testPsaService.get("id"))
      *             .state(privateServiceAccesState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -27236,7 +27236,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPsaServices = OciFunctions.getPsaPsaServices(GetPsaPsaServicesArgs.builder()
      *             .displayName(psaServiceDisplayName)
-     *             .serviceId(testPsaService.id())
+     *             .serviceId(testPsaService.get("id"))
      *             .build());
      * 
      *     }
@@ -27279,7 +27279,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPsaServices = OciFunctions.getPsaPsaServices(GetPsaPsaServicesArgs.builder()
      *             .displayName(psaServiceDisplayName)
-     *             .serviceId(testPsaService.id())
+     *             .serviceId(testPsaService.get("id"))
      *             .build());
      * 
      *     }
@@ -27322,7 +27322,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPsaServices = OciFunctions.getPsaPsaServices(GetPsaPsaServicesArgs.builder()
      *             .displayName(psaServiceDisplayName)
-     *             .serviceId(testPsaService.id())
+     *             .serviceId(testPsaService.get("id"))
      *             .build());
      * 
      *     }
@@ -27365,7 +27365,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPsaServices = OciFunctions.getPsaPsaServices(GetPsaPsaServicesArgs.builder()
      *             .displayName(psaServiceDisplayName)
-     *             .serviceId(testPsaService.id())
+     *             .serviceId(testPsaService.get("id"))
      *             .build());
      * 
      *     }
@@ -27408,7 +27408,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPsaServices = OciFunctions.getPsaPsaServices(GetPsaPsaServicesArgs.builder()
      *             .displayName(psaServiceDisplayName)
-     *             .serviceId(testPsaService.id())
+     *             .serviceId(testPsaService.get("id"))
      *             .build());
      * 
      *     }
@@ -27451,7 +27451,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPsaServices = OciFunctions.getPsaPsaServices(GetPsaPsaServicesArgs.builder()
      *             .displayName(psaServiceDisplayName)
-     *             .serviceId(testPsaService.id())
+     *             .serviceId(testPsaService.get("id"))
      *             .build());
      * 
      *     }
@@ -27494,7 +27494,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPsaServices = OciFunctions.getPsaPsaServices(GetPsaPsaServicesArgs.builder()
      *             .displayName(psaServiceDisplayName)
-     *             .serviceId(testPsaService.id())
+     *             .serviceId(testPsaService.get("id"))
      *             .build());
      * 
      *     }
@@ -27536,7 +27536,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPsaWorkRequest = OciFunctions.getPsaPsaWorkRequest(GetPsaPsaWorkRequestArgs.builder()
-     *             .workRequestId(testPsaWorkRequestOciPsaPsaWorkRequest.id())
+     *             .workRequestId(testPsaWorkRequestOciPsaPsaWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -27578,7 +27578,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPsaWorkRequest = OciFunctions.getPsaPsaWorkRequest(GetPsaPsaWorkRequestArgs.builder()
-     *             .workRequestId(testPsaWorkRequestOciPsaPsaWorkRequest.id())
+     *             .workRequestId(testPsaWorkRequestOciPsaPsaWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -27620,7 +27620,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPsaWorkRequest = OciFunctions.getPsaPsaWorkRequest(GetPsaPsaWorkRequestArgs.builder()
-     *             .workRequestId(testPsaWorkRequestOciPsaPsaWorkRequest.id())
+     *             .workRequestId(testPsaWorkRequestOciPsaPsaWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -27662,7 +27662,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPsaWorkRequest = OciFunctions.getPsaPsaWorkRequest(GetPsaPsaWorkRequestArgs.builder()
-     *             .workRequestId(testPsaWorkRequestOciPsaPsaWorkRequest.id())
+     *             .workRequestId(testPsaWorkRequestOciPsaPsaWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -27704,7 +27704,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPsaWorkRequest = OciFunctions.getPsaPsaWorkRequest(GetPsaPsaWorkRequestArgs.builder()
-     *             .workRequestId(testPsaWorkRequestOciPsaPsaWorkRequest.id())
+     *             .workRequestId(testPsaWorkRequestOciPsaPsaWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -27777,9 +27777,9 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPsaWorkRequests = OciFunctions.getPsaPsaWorkRequests(GetPsaPsaWorkRequestsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .status(psaWorkRequestStatus)
-     *             .workRequestId(testPsaWorkRequest.id())
+     *             .workRequestId(testPsaWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -27822,9 +27822,9 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPsaWorkRequests = OciFunctions.getPsaPsaWorkRequests(GetPsaPsaWorkRequestsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .status(psaWorkRequestStatus)
-     *             .workRequestId(testPsaWorkRequest.id())
+     *             .workRequestId(testPsaWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -27867,9 +27867,9 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPsaWorkRequests = OciFunctions.getPsaPsaWorkRequests(GetPsaPsaWorkRequestsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .status(psaWorkRequestStatus)
-     *             .workRequestId(testPsaWorkRequest.id())
+     *             .workRequestId(testPsaWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -27912,9 +27912,9 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPsaWorkRequests = OciFunctions.getPsaPsaWorkRequests(GetPsaPsaWorkRequestsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .status(psaWorkRequestStatus)
-     *             .workRequestId(testPsaWorkRequest.id())
+     *             .workRequestId(testPsaWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -27957,9 +27957,9 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPsaWorkRequests = OciFunctions.getPsaPsaWorkRequests(GetPsaPsaWorkRequestsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .status(psaWorkRequestStatus)
-     *             .workRequestId(testPsaWorkRequest.id())
+     *             .workRequestId(testPsaWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -28002,9 +28002,9 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPsaWorkRequests = OciFunctions.getPsaPsaWorkRequests(GetPsaPsaWorkRequestsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .status(psaWorkRequestStatus)
-     *             .workRequestId(testPsaWorkRequest.id())
+     *             .workRequestId(testPsaWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -28047,9 +28047,9 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testPsaWorkRequests = OciFunctions.getPsaPsaWorkRequests(GetPsaPsaWorkRequestsArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .status(psaWorkRequestStatus)
-     *             .workRequestId(testPsaWorkRequest.id())
+     *             .workRequestId(testPsaWorkRequest.get("id"))
      *             .build());
      * 
      *     }
@@ -28091,7 +28091,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredRegion = OciFunctions.getResourceAnalyticsMonitoredRegion(GetResourceAnalyticsMonitoredRegionArgs.builder()
-     *             .monitoredRegionId(testMonitoredRegionOciResourceAnalyticsMonitoredRegion.id())
+     *             .monitoredRegionId(testMonitoredRegionOciResourceAnalyticsMonitoredRegion.get("id"))
      *             .build());
      * 
      *     }
@@ -28133,7 +28133,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredRegion = OciFunctions.getResourceAnalyticsMonitoredRegion(GetResourceAnalyticsMonitoredRegionArgs.builder()
-     *             .monitoredRegionId(testMonitoredRegionOciResourceAnalyticsMonitoredRegion.id())
+     *             .monitoredRegionId(testMonitoredRegionOciResourceAnalyticsMonitoredRegion.get("id"))
      *             .build());
      * 
      *     }
@@ -28175,7 +28175,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredRegion = OciFunctions.getResourceAnalyticsMonitoredRegion(GetResourceAnalyticsMonitoredRegionArgs.builder()
-     *             .monitoredRegionId(testMonitoredRegionOciResourceAnalyticsMonitoredRegion.id())
+     *             .monitoredRegionId(testMonitoredRegionOciResourceAnalyticsMonitoredRegion.get("id"))
      *             .build());
      * 
      *     }
@@ -28217,7 +28217,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredRegion = OciFunctions.getResourceAnalyticsMonitoredRegion(GetResourceAnalyticsMonitoredRegionArgs.builder()
-     *             .monitoredRegionId(testMonitoredRegionOciResourceAnalyticsMonitoredRegion.id())
+     *             .monitoredRegionId(testMonitoredRegionOciResourceAnalyticsMonitoredRegion.get("id"))
      *             .build());
      * 
      *     }
@@ -28259,7 +28259,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testMonitoredRegion = OciFunctions.getResourceAnalyticsMonitoredRegion(GetResourceAnalyticsMonitoredRegionArgs.builder()
-     *             .monitoredRegionId(testMonitoredRegionOciResourceAnalyticsMonitoredRegion.id())
+     *             .monitoredRegionId(testMonitoredRegionOciResourceAnalyticsMonitoredRegion.get("id"))
      *             .build());
      * 
      *     }
@@ -28302,7 +28302,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMonitoredRegions = OciFunctions.getResourceAnalyticsMonitoredRegions(GetResourceAnalyticsMonitoredRegionsArgs.builder()
      *             .id(monitoredRegionId)
-     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.get("id"))
      *             .state(monitoredRegionState)
      *             .build());
      * 
@@ -28346,7 +28346,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMonitoredRegions = OciFunctions.getResourceAnalyticsMonitoredRegions(GetResourceAnalyticsMonitoredRegionsArgs.builder()
      *             .id(monitoredRegionId)
-     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.get("id"))
      *             .state(monitoredRegionState)
      *             .build());
      * 
@@ -28390,7 +28390,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMonitoredRegions = OciFunctions.getResourceAnalyticsMonitoredRegions(GetResourceAnalyticsMonitoredRegionsArgs.builder()
      *             .id(monitoredRegionId)
-     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.get("id"))
      *             .state(monitoredRegionState)
      *             .build());
      * 
@@ -28434,7 +28434,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMonitoredRegions = OciFunctions.getResourceAnalyticsMonitoredRegions(GetResourceAnalyticsMonitoredRegionsArgs.builder()
      *             .id(monitoredRegionId)
-     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.get("id"))
      *             .state(monitoredRegionState)
      *             .build());
      * 
@@ -28478,7 +28478,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMonitoredRegions = OciFunctions.getResourceAnalyticsMonitoredRegions(GetResourceAnalyticsMonitoredRegionsArgs.builder()
      *             .id(monitoredRegionId)
-     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.get("id"))
      *             .state(monitoredRegionState)
      *             .build());
      * 
@@ -28522,7 +28522,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMonitoredRegions = OciFunctions.getResourceAnalyticsMonitoredRegions(GetResourceAnalyticsMonitoredRegionsArgs.builder()
      *             .id(monitoredRegionId)
-     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.get("id"))
      *             .state(monitoredRegionState)
      *             .build());
      * 
@@ -28566,7 +28566,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testMonitoredRegions = OciFunctions.getResourceAnalyticsMonitoredRegions(GetResourceAnalyticsMonitoredRegionsArgs.builder()
      *             .id(monitoredRegionId)
-     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.get("id"))
      *             .state(monitoredRegionState)
      *             .build());
      * 
@@ -28609,7 +28609,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceAnalyticsInstance = OciFunctions.getResourceAnalyticsResourceAnalyticsInstance(GetResourceAnalyticsResourceAnalyticsInstanceArgs.builder()
-     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstanceOciResourceAnalyticsResourceAnalyticsInstance.id())
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstanceOciResourceAnalyticsResourceAnalyticsInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -28651,7 +28651,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceAnalyticsInstance = OciFunctions.getResourceAnalyticsResourceAnalyticsInstance(GetResourceAnalyticsResourceAnalyticsInstanceArgs.builder()
-     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstanceOciResourceAnalyticsResourceAnalyticsInstance.id())
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstanceOciResourceAnalyticsResourceAnalyticsInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -28693,7 +28693,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceAnalyticsInstance = OciFunctions.getResourceAnalyticsResourceAnalyticsInstance(GetResourceAnalyticsResourceAnalyticsInstanceArgs.builder()
-     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstanceOciResourceAnalyticsResourceAnalyticsInstance.id())
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstanceOciResourceAnalyticsResourceAnalyticsInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -28735,7 +28735,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceAnalyticsInstance = OciFunctions.getResourceAnalyticsResourceAnalyticsInstance(GetResourceAnalyticsResourceAnalyticsInstanceArgs.builder()
-     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstanceOciResourceAnalyticsResourceAnalyticsInstance.id())
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstanceOciResourceAnalyticsResourceAnalyticsInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -28777,7 +28777,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceAnalyticsInstance = OciFunctions.getResourceAnalyticsResourceAnalyticsInstance(GetResourceAnalyticsResourceAnalyticsInstanceArgs.builder()
-     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstanceOciResourceAnalyticsResourceAnalyticsInstance.id())
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstanceOciResourceAnalyticsResourceAnalyticsInstance.get("id"))
      *             .build());
      * 
      *     }
@@ -29134,7 +29134,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTenancyAttachment = OciFunctions.getResourceAnalyticsTenancyAttachment(GetResourceAnalyticsTenancyAttachmentArgs.builder()
-     *             .tenancyAttachmentId(testTenancyAttachmentOciResourceAnalyticsTenancyAttachment.id())
+     *             .tenancyAttachmentId(testTenancyAttachmentOciResourceAnalyticsTenancyAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -29176,7 +29176,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTenancyAttachment = OciFunctions.getResourceAnalyticsTenancyAttachment(GetResourceAnalyticsTenancyAttachmentArgs.builder()
-     *             .tenancyAttachmentId(testTenancyAttachmentOciResourceAnalyticsTenancyAttachment.id())
+     *             .tenancyAttachmentId(testTenancyAttachmentOciResourceAnalyticsTenancyAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -29218,7 +29218,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTenancyAttachment = OciFunctions.getResourceAnalyticsTenancyAttachment(GetResourceAnalyticsTenancyAttachmentArgs.builder()
-     *             .tenancyAttachmentId(testTenancyAttachmentOciResourceAnalyticsTenancyAttachment.id())
+     *             .tenancyAttachmentId(testTenancyAttachmentOciResourceAnalyticsTenancyAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -29260,7 +29260,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTenancyAttachment = OciFunctions.getResourceAnalyticsTenancyAttachment(GetResourceAnalyticsTenancyAttachmentArgs.builder()
-     *             .tenancyAttachmentId(testTenancyAttachmentOciResourceAnalyticsTenancyAttachment.id())
+     *             .tenancyAttachmentId(testTenancyAttachmentOciResourceAnalyticsTenancyAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -29302,7 +29302,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testTenancyAttachment = OciFunctions.getResourceAnalyticsTenancyAttachment(GetResourceAnalyticsTenancyAttachmentArgs.builder()
-     *             .tenancyAttachmentId(testTenancyAttachmentOciResourceAnalyticsTenancyAttachment.id())
+     *             .tenancyAttachmentId(testTenancyAttachmentOciResourceAnalyticsTenancyAttachment.get("id"))
      *             .build());
      * 
      *     }
@@ -29345,7 +29345,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testTenancyAttachments = OciFunctions.getResourceAnalyticsTenancyAttachments(GetResourceAnalyticsTenancyAttachmentsArgs.builder()
      *             .id(tenancyAttachmentId)
-     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.get("id"))
      *             .state(tenancyAttachmentState)
      *             .build());
      * 
@@ -29389,7 +29389,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testTenancyAttachments = OciFunctions.getResourceAnalyticsTenancyAttachments(GetResourceAnalyticsTenancyAttachmentsArgs.builder()
      *             .id(tenancyAttachmentId)
-     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.get("id"))
      *             .state(tenancyAttachmentState)
      *             .build());
      * 
@@ -29433,7 +29433,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testTenancyAttachments = OciFunctions.getResourceAnalyticsTenancyAttachments(GetResourceAnalyticsTenancyAttachmentsArgs.builder()
      *             .id(tenancyAttachmentId)
-     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.get("id"))
      *             .state(tenancyAttachmentState)
      *             .build());
      * 
@@ -29477,7 +29477,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testTenancyAttachments = OciFunctions.getResourceAnalyticsTenancyAttachments(GetResourceAnalyticsTenancyAttachmentsArgs.builder()
      *             .id(tenancyAttachmentId)
-     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.get("id"))
      *             .state(tenancyAttachmentState)
      *             .build());
      * 
@@ -29521,7 +29521,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testTenancyAttachments = OciFunctions.getResourceAnalyticsTenancyAttachments(GetResourceAnalyticsTenancyAttachmentsArgs.builder()
      *             .id(tenancyAttachmentId)
-     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.get("id"))
      *             .state(tenancyAttachmentState)
      *             .build());
      * 
@@ -29565,7 +29565,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testTenancyAttachments = OciFunctions.getResourceAnalyticsTenancyAttachments(GetResourceAnalyticsTenancyAttachmentsArgs.builder()
      *             .id(tenancyAttachmentId)
-     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.get("id"))
      *             .state(tenancyAttachmentState)
      *             .build());
      * 
@@ -29609,7 +29609,7 @@ public final class OciFunctions {
      *     public static void stack(Context ctx) {
      *         final var testTenancyAttachments = OciFunctions.getResourceAnalyticsTenancyAttachments(GetResourceAnalyticsTenancyAttachmentsArgs.builder()
      *             .id(tenancyAttachmentId)
-     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.id())
+     *             .resourceAnalyticsInstanceId(testResourceAnalyticsInstance.get("id"))
      *             .state(tenancyAttachmentState)
      *             .build());
      * 
@@ -29667,7 +29667,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPartnerSubscriptions = OciFunctions.getSelfPartnerSubscriptions(GetSelfPartnerSubscriptionsArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .displayName(partnerSubscriptionDisplayName)
      *             .build());
      * 
@@ -29710,7 +29710,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPartnerSubscriptions = OciFunctions.getSelfPartnerSubscriptions(GetSelfPartnerSubscriptionsArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .displayName(partnerSubscriptionDisplayName)
      *             .build());
      * 
@@ -29753,7 +29753,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPartnerSubscriptions = OciFunctions.getSelfPartnerSubscriptions(GetSelfPartnerSubscriptionsArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .displayName(partnerSubscriptionDisplayName)
      *             .build());
      * 
@@ -29796,7 +29796,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPartnerSubscriptions = OciFunctions.getSelfPartnerSubscriptions(GetSelfPartnerSubscriptionsArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .displayName(partnerSubscriptionDisplayName)
      *             .build());
      * 
@@ -29839,7 +29839,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testPartnerSubscriptions = OciFunctions.getSelfPartnerSubscriptions(GetSelfPartnerSubscriptionsArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .displayName(partnerSubscriptionDisplayName)
      *             .build());
      * 
@@ -30183,7 +30183,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSelfPartnerSubscriptions = OciFunctions.getSelfSelfPartnerSubscriptions(GetSelfSelfPartnerSubscriptionsArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .displayName(selfPartnerSubscriptionDisplayName)
      *             .build());
      * 
@@ -30226,7 +30226,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSelfPartnerSubscriptions = OciFunctions.getSelfSelfPartnerSubscriptions(GetSelfSelfPartnerSubscriptionsArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .displayName(selfPartnerSubscriptionDisplayName)
      *             .build());
      * 
@@ -30269,7 +30269,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSelfPartnerSubscriptions = OciFunctions.getSelfSelfPartnerSubscriptions(GetSelfSelfPartnerSubscriptionsArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .displayName(selfPartnerSubscriptionDisplayName)
      *             .build());
      * 
@@ -30312,7 +30312,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSelfPartnerSubscriptions = OciFunctions.getSelfSelfPartnerSubscriptions(GetSelfSelfPartnerSubscriptionsArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .displayName(selfPartnerSubscriptionDisplayName)
      *             .build());
      * 
@@ -30355,7 +30355,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSelfPartnerSubscriptions = OciFunctions.getSelfSelfPartnerSubscriptions(GetSelfSelfPartnerSubscriptionsArgs.builder()
-     *             .listingId(testListing.id())
+     *             .listingId(testListing.get("id"))
      *             .displayName(selfPartnerSubscriptionDisplayName)
      *             .build());
      * 
@@ -30398,7 +30398,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscription = OciFunctions.getSelfSubscription(GetSelfSubscriptionArgs.builder()
-     *             .subscriptionId(testSubscriptionOciSelfSubscription.id())
+     *             .subscriptionId(testSubscriptionOciSelfSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -30440,7 +30440,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscription = OciFunctions.getSelfSubscription(GetSelfSubscriptionArgs.builder()
-     *             .subscriptionId(testSubscriptionOciSelfSubscription.id())
+     *             .subscriptionId(testSubscriptionOciSelfSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -30482,7 +30482,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscription = OciFunctions.getSelfSubscription(GetSelfSubscriptionArgs.builder()
-     *             .subscriptionId(testSubscriptionOciSelfSubscription.id())
+     *             .subscriptionId(testSubscriptionOciSelfSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -30524,7 +30524,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscription = OciFunctions.getSelfSubscription(GetSelfSubscriptionArgs.builder()
-     *             .subscriptionId(testSubscriptionOciSelfSubscription.id())
+     *             .subscriptionId(testSubscriptionOciSelfSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -30566,7 +30566,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscription = OciFunctions.getSelfSubscription(GetSelfSubscriptionArgs.builder()
-     *             .subscriptionId(testSubscriptionOciSelfSubscription.id())
+     *             .subscriptionId(testSubscriptionOciSelfSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -30608,7 +30608,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionToken = OciFunctions.getSelfSubscriptionToken(GetSelfSubscriptionTokenArgs.builder()
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -30650,7 +30650,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionToken = OciFunctions.getSelfSubscriptionToken(GetSelfSubscriptionTokenArgs.builder()
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -30692,7 +30692,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionToken = OciFunctions.getSelfSubscriptionToken(GetSelfSubscriptionTokenArgs.builder()
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -30734,7 +30734,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionToken = OciFunctions.getSelfSubscriptionToken(GetSelfSubscriptionTokenArgs.builder()
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }
@@ -30776,7 +30776,7 @@ public final class OciFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testSubscriptionToken = OciFunctions.getSelfSubscriptionToken(GetSelfSubscriptionTokenArgs.builder()
-     *             .subscriptionId(testSubscription.id())
+     *             .subscriptionId(testSubscription.get("id"))
      *             .build());
      * 
      *     }

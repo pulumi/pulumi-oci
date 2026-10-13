@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *             .compartmentId(compartmentId)
  *             .fileSystemPath(objectStorageLinkFileSystemPath)
  *             .isOverwrite(objectStorageLinkIsOverwrite)
- *             .lustreFileSystemId(testLustreFileSystem.id())
+ *             .lustreFileSystemId(testLustreFileSystem.get("id"))
  *             .objectStoragePrefix(objectStorageLinkObjectStoragePrefix)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(objectStorageLinkDisplayName)

@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  *     cryptoAssessmentId: testCryptoAssessment.id,
  *     category: cryptoAssessmentFindingCategory,
  *     findingKey: cryptoAssessmentFindingFindingKey,
- *     isQuantumReadinessCheck: cryptoAssessmentFindingIsQuantumReadinessCheck === "true",
+ *     isQuantumReadinessCheck: cryptoAssessmentFindingIsQuantumReadinessCheck,
  *     status: cryptoAssessmentFindingStatus,
  *     title: cryptoAssessmentFindingTitle,
  * });
@@ -121,7 +121,7 @@ export interface GetCryptoAssessmentFindingsResult {
  *     cryptoAssessmentId: testCryptoAssessment.id,
  *     category: cryptoAssessmentFindingCategory,
  *     findingKey: cryptoAssessmentFindingFindingKey,
- *     isQuantumReadinessCheck: cryptoAssessmentFindingIsQuantumReadinessCheck === "true",
+ *     isQuantumReadinessCheck: cryptoAssessmentFindingIsQuantumReadinessCheck,
  *     status: cryptoAssessmentFindingStatus,
  *     title: cryptoAssessmentFindingTitle,
  * });

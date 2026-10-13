@@ -57,7 +57,7 @@ import javax.annotation.Nullable;
  *             .blockVolumeIds(datastoreBlockVolumeIds)
  *             .compartmentId(compartmentId)
  *             .displayName(datastoreDisplayName)
- *             .datastoreClusterId(testDatastoreCluster.id())
+ *             .datastoreClusterId(testDatastoreCluster.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());

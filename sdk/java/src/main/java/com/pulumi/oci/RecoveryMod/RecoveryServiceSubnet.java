@@ -50,12 +50,12 @@ import javax.annotation.Nullable;
  *         var testRecoveryServiceSubnet = new RecoveryServiceSubnet("testRecoveryServiceSubnet", RecoveryServiceSubnetArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(recoveryServiceSubnetDisplayName)
- *             .vcnId(testVcn.id())
+ *             .vcnId(testVcn.get("id"))
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .nsgIds(recoveryServiceSubnetNsgIds)
  *             .securityAttributes(recoveryServiceSubnetSecurityAttributes)
- *             .subnetId(testSubnet.id())
+ *             .subnetId(testSubnet.get("id"))
  *             .subnets(recoveryServiceSubnetSubnets)
  *             .build());
  * 

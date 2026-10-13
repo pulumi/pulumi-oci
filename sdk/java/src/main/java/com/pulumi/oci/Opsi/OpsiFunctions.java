@@ -141,7 +141,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHub = OpsiFunctions.getAwrHub(GetAwrHubArgs.builder()
-     *             .awrHubId(testAwrHubOciOpsiAwrHub.id())
+     *             .awrHubId(testAwrHubOciOpsiAwrHub.get("id"))
      *             .build());
      * 
      *     }
@@ -183,7 +183,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHub = OpsiFunctions.getAwrHub(GetAwrHubArgs.builder()
-     *             .awrHubId(testAwrHubOciOpsiAwrHub.id())
+     *             .awrHubId(testAwrHubOciOpsiAwrHub.get("id"))
      *             .build());
      * 
      *     }
@@ -225,7 +225,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHub = OpsiFunctions.getAwrHub(GetAwrHubArgs.builder()
-     *             .awrHubId(testAwrHubOciOpsiAwrHub.id())
+     *             .awrHubId(testAwrHubOciOpsiAwrHub.get("id"))
      *             .build());
      * 
      *     }
@@ -267,7 +267,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHub = OpsiFunctions.getAwrHub(GetAwrHubArgs.builder()
-     *             .awrHubId(testAwrHubOciOpsiAwrHub.id())
+     *             .awrHubId(testAwrHubOciOpsiAwrHub.get("id"))
      *             .build());
      * 
      *     }
@@ -309,7 +309,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHub = OpsiFunctions.getAwrHub(GetAwrHubArgs.builder()
-     *             .awrHubId(testAwrHubOciOpsiAwrHub.id())
+     *             .awrHubId(testAwrHubOciOpsiAwrHub.get("id"))
      *             .build());
      * 
      *     }
@@ -352,7 +352,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubAwrSnapshot = OpsiFunctions.getAwrHubAwrSnapshot(GetAwrHubAwrSnapshotArgs.builder()
-     *             .awrHubId(testAwrHub.id())
+     *             .awrHubId(testAwrHub.get("id"))
      *             .awrSourceDatabaseIdentifier(awrHubAwrSnapshotAwrSourceDatabaseIdentifier)
      *             .timeGreaterThanOrEqualTo(awrHubAwrSnapshotTimeGreaterThanOrEqualTo)
      *             .timeLessThanOrEqualTo(awrHubAwrSnapshotTimeLessThanOrEqualTo)
@@ -398,7 +398,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubAwrSnapshot = OpsiFunctions.getAwrHubAwrSnapshot(GetAwrHubAwrSnapshotArgs.builder()
-     *             .awrHubId(testAwrHub.id())
+     *             .awrHubId(testAwrHub.get("id"))
      *             .awrSourceDatabaseIdentifier(awrHubAwrSnapshotAwrSourceDatabaseIdentifier)
      *             .timeGreaterThanOrEqualTo(awrHubAwrSnapshotTimeGreaterThanOrEqualTo)
      *             .timeLessThanOrEqualTo(awrHubAwrSnapshotTimeLessThanOrEqualTo)
@@ -444,7 +444,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubAwrSnapshot = OpsiFunctions.getAwrHubAwrSnapshot(GetAwrHubAwrSnapshotArgs.builder()
-     *             .awrHubId(testAwrHub.id())
+     *             .awrHubId(testAwrHub.get("id"))
      *             .awrSourceDatabaseIdentifier(awrHubAwrSnapshotAwrSourceDatabaseIdentifier)
      *             .timeGreaterThanOrEqualTo(awrHubAwrSnapshotTimeGreaterThanOrEqualTo)
      *             .timeLessThanOrEqualTo(awrHubAwrSnapshotTimeLessThanOrEqualTo)
@@ -490,7 +490,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubAwrSnapshot = OpsiFunctions.getAwrHubAwrSnapshot(GetAwrHubAwrSnapshotArgs.builder()
-     *             .awrHubId(testAwrHub.id())
+     *             .awrHubId(testAwrHub.get("id"))
      *             .awrSourceDatabaseIdentifier(awrHubAwrSnapshotAwrSourceDatabaseIdentifier)
      *             .timeGreaterThanOrEqualTo(awrHubAwrSnapshotTimeGreaterThanOrEqualTo)
      *             .timeLessThanOrEqualTo(awrHubAwrSnapshotTimeLessThanOrEqualTo)
@@ -536,7 +536,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubAwrSnapshot = OpsiFunctions.getAwrHubAwrSnapshot(GetAwrHubAwrSnapshotArgs.builder()
-     *             .awrHubId(testAwrHub.id())
+     *             .awrHubId(testAwrHub.get("id"))
      *             .awrSourceDatabaseIdentifier(awrHubAwrSnapshotAwrSourceDatabaseIdentifier)
      *             .timeGreaterThanOrEqualTo(awrHubAwrSnapshotTimeGreaterThanOrEqualTo)
      *             .timeLessThanOrEqualTo(awrHubAwrSnapshotTimeLessThanOrEqualTo)
@@ -582,7 +582,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubAwrSnapshots = OpsiFunctions.getAwrHubAwrSnapshots(GetAwrHubAwrSnapshotsArgs.builder()
-     *             .awrHubId(testAwrHub.id())
+     *             .awrHubId(testAwrHub.get("id"))
      *             .awrSourceDatabaseIdentifier(awrHubAwrSnapshotAwrSourceDatabaseIdentifier)
      *             .timeGreaterThanOrEqualTo(awrHubAwrSnapshotTimeGreaterThanOrEqualTo)
      *             .timeLessThanOrEqualTo(awrHubAwrSnapshotTimeLessThanOrEqualTo)
@@ -628,7 +628,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubAwrSnapshots = OpsiFunctions.getAwrHubAwrSnapshots(GetAwrHubAwrSnapshotsArgs.builder()
-     *             .awrHubId(testAwrHub.id())
+     *             .awrHubId(testAwrHub.get("id"))
      *             .awrSourceDatabaseIdentifier(awrHubAwrSnapshotAwrSourceDatabaseIdentifier)
      *             .timeGreaterThanOrEqualTo(awrHubAwrSnapshotTimeGreaterThanOrEqualTo)
      *             .timeLessThanOrEqualTo(awrHubAwrSnapshotTimeLessThanOrEqualTo)
@@ -674,7 +674,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubAwrSnapshots = OpsiFunctions.getAwrHubAwrSnapshots(GetAwrHubAwrSnapshotsArgs.builder()
-     *             .awrHubId(testAwrHub.id())
+     *             .awrHubId(testAwrHub.get("id"))
      *             .awrSourceDatabaseIdentifier(awrHubAwrSnapshotAwrSourceDatabaseIdentifier)
      *             .timeGreaterThanOrEqualTo(awrHubAwrSnapshotTimeGreaterThanOrEqualTo)
      *             .timeLessThanOrEqualTo(awrHubAwrSnapshotTimeLessThanOrEqualTo)
@@ -720,7 +720,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubAwrSnapshots = OpsiFunctions.getAwrHubAwrSnapshots(GetAwrHubAwrSnapshotsArgs.builder()
-     *             .awrHubId(testAwrHub.id())
+     *             .awrHubId(testAwrHub.get("id"))
      *             .awrSourceDatabaseIdentifier(awrHubAwrSnapshotAwrSourceDatabaseIdentifier)
      *             .timeGreaterThanOrEqualTo(awrHubAwrSnapshotTimeGreaterThanOrEqualTo)
      *             .timeLessThanOrEqualTo(awrHubAwrSnapshotTimeLessThanOrEqualTo)
@@ -766,7 +766,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubAwrSnapshots = OpsiFunctions.getAwrHubAwrSnapshots(GetAwrHubAwrSnapshotsArgs.builder()
-     *             .awrHubId(testAwrHub.id())
+     *             .awrHubId(testAwrHub.get("id"))
      *             .awrSourceDatabaseIdentifier(awrHubAwrSnapshotAwrSourceDatabaseIdentifier)
      *             .timeGreaterThanOrEqualTo(awrHubAwrSnapshotTimeGreaterThanOrEqualTo)
      *             .timeLessThanOrEqualTo(awrHubAwrSnapshotTimeLessThanOrEqualTo)
@@ -811,7 +811,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubAwrSourcesSummary = OpsiFunctions.getAwrHubAwrSourcesSummary(GetAwrHubAwrSourcesSummaryArgs.builder()
-     *             .awrHubId(testAwrHub.id())
+     *             .awrHubId(testAwrHub.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(awrHubAwrSourcesSummaryName)
      *             .build());
@@ -855,7 +855,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubAwrSourcesSummary = OpsiFunctions.getAwrHubAwrSourcesSummary(GetAwrHubAwrSourcesSummaryArgs.builder()
-     *             .awrHubId(testAwrHub.id())
+     *             .awrHubId(testAwrHub.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(awrHubAwrSourcesSummaryName)
      *             .build());
@@ -899,7 +899,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubAwrSourcesSummary = OpsiFunctions.getAwrHubAwrSourcesSummary(GetAwrHubAwrSourcesSummaryArgs.builder()
-     *             .awrHubId(testAwrHub.id())
+     *             .awrHubId(testAwrHub.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(awrHubAwrSourcesSummaryName)
      *             .build());
@@ -943,7 +943,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubAwrSourcesSummary = OpsiFunctions.getAwrHubAwrSourcesSummary(GetAwrHubAwrSourcesSummaryArgs.builder()
-     *             .awrHubId(testAwrHub.id())
+     *             .awrHubId(testAwrHub.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(awrHubAwrSourcesSummaryName)
      *             .build());
@@ -987,7 +987,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubAwrSourcesSummary = OpsiFunctions.getAwrHubAwrSourcesSummary(GetAwrHubAwrSourcesSummaryArgs.builder()
-     *             .awrHubId(testAwrHub.id())
+     *             .awrHubId(testAwrHub.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(awrHubAwrSourcesSummaryName)
      *             .build());
@@ -1031,7 +1031,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubSource = OpsiFunctions.getAwrHubSource(GetAwrHubSourceArgs.builder()
-     *             .awrHubSourceId(testAwrHubSourceOciOpsiAwrHubSource.id())
+     *             .awrHubSourceId(testAwrHubSourceOciOpsiAwrHubSource.get("id"))
      *             .build());
      * 
      *     }
@@ -1073,7 +1073,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubSource = OpsiFunctions.getAwrHubSource(GetAwrHubSourceArgs.builder()
-     *             .awrHubSourceId(testAwrHubSourceOciOpsiAwrHubSource.id())
+     *             .awrHubSourceId(testAwrHubSourceOciOpsiAwrHubSource.get("id"))
      *             .build());
      * 
      *     }
@@ -1115,7 +1115,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubSource = OpsiFunctions.getAwrHubSource(GetAwrHubSourceArgs.builder()
-     *             .awrHubSourceId(testAwrHubSourceOciOpsiAwrHubSource.id())
+     *             .awrHubSourceId(testAwrHubSourceOciOpsiAwrHubSource.get("id"))
      *             .build());
      * 
      *     }
@@ -1157,7 +1157,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubSource = OpsiFunctions.getAwrHubSource(GetAwrHubSourceArgs.builder()
-     *             .awrHubSourceId(testAwrHubSourceOciOpsiAwrHubSource.id())
+     *             .awrHubSourceId(testAwrHubSourceOciOpsiAwrHubSource.get("id"))
      *             .build());
      * 
      *     }
@@ -1199,7 +1199,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubSource = OpsiFunctions.getAwrHubSource(GetAwrHubSourceArgs.builder()
-     *             .awrHubSourceId(testAwrHubSourceOciOpsiAwrHubSource.id())
+     *             .awrHubSourceId(testAwrHubSourceOciOpsiAwrHubSource.get("id"))
      *             .build());
      * 
      *     }
@@ -1241,8 +1241,8 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubSources = OpsiFunctions.getAwrHubSources(GetAwrHubSourcesArgs.builder()
-     *             .awrHubId(testAwrHub.id())
-     *             .awrHubSourceId(testAwrHubSource.id())
+     *             .awrHubId(testAwrHub.get("id"))
+     *             .awrHubSourceId(testAwrHubSource.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(awrHubSourceName)
      *             .sourceTypes(awrHubSourceSourceType)
@@ -1289,8 +1289,8 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubSources = OpsiFunctions.getAwrHubSources(GetAwrHubSourcesArgs.builder()
-     *             .awrHubId(testAwrHub.id())
-     *             .awrHubSourceId(testAwrHubSource.id())
+     *             .awrHubId(testAwrHub.get("id"))
+     *             .awrHubSourceId(testAwrHubSource.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(awrHubSourceName)
      *             .sourceTypes(awrHubSourceSourceType)
@@ -1337,8 +1337,8 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubSources = OpsiFunctions.getAwrHubSources(GetAwrHubSourcesArgs.builder()
-     *             .awrHubId(testAwrHub.id())
-     *             .awrHubSourceId(testAwrHubSource.id())
+     *             .awrHubId(testAwrHub.get("id"))
+     *             .awrHubSourceId(testAwrHubSource.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(awrHubSourceName)
      *             .sourceTypes(awrHubSourceSourceType)
@@ -1385,8 +1385,8 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubSources = OpsiFunctions.getAwrHubSources(GetAwrHubSourcesArgs.builder()
-     *             .awrHubId(testAwrHub.id())
-     *             .awrHubSourceId(testAwrHubSource.id())
+     *             .awrHubId(testAwrHub.get("id"))
+     *             .awrHubSourceId(testAwrHubSource.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(awrHubSourceName)
      *             .sourceTypes(awrHubSourceSourceType)
@@ -1433,8 +1433,8 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubSources = OpsiFunctions.getAwrHubSources(GetAwrHubSourcesArgs.builder()
-     *             .awrHubId(testAwrHub.id())
-     *             .awrHubSourceId(testAwrHubSource.id())
+     *             .awrHubId(testAwrHub.get("id"))
+     *             .awrHubSourceId(testAwrHubSource.get("id"))
      *             .compartmentId(compartmentId)
      *             .name(awrHubSourceName)
      *             .sourceTypes(awrHubSourceSourceType)
@@ -1481,7 +1481,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubs = OpsiFunctions.getAwrHubs(GetAwrHubsArgs.builder()
-     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(awrHubDisplayName)
      *             .id(awrHubId)
@@ -1527,7 +1527,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubs = OpsiFunctions.getAwrHubs(GetAwrHubsArgs.builder()
-     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(awrHubDisplayName)
      *             .id(awrHubId)
@@ -1573,7 +1573,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubs = OpsiFunctions.getAwrHubs(GetAwrHubsArgs.builder()
-     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(awrHubDisplayName)
      *             .id(awrHubId)
@@ -1619,7 +1619,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubs = OpsiFunctions.getAwrHubs(GetAwrHubsArgs.builder()
-     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(awrHubDisplayName)
      *             .id(awrHubId)
@@ -1665,7 +1665,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testAwrHubs = OpsiFunctions.getAwrHubs(GetAwrHubsArgs.builder()
-     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(awrHubDisplayName)
      *             .id(awrHubId)
@@ -1711,7 +1711,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChargebackPlan = OpsiFunctions.getChargebackPlan(GetChargebackPlanArgs.builder()
-     *             .chargebackplanId(testChargebackplan.id())
+     *             .chargebackplanId(testChargebackplan.get("id"))
      *             .build());
      * 
      *     }
@@ -1753,7 +1753,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChargebackPlan = OpsiFunctions.getChargebackPlan(GetChargebackPlanArgs.builder()
-     *             .chargebackplanId(testChargebackplan.id())
+     *             .chargebackplanId(testChargebackplan.get("id"))
      *             .build());
      * 
      *     }
@@ -1795,7 +1795,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChargebackPlan = OpsiFunctions.getChargebackPlan(GetChargebackPlanArgs.builder()
-     *             .chargebackplanId(testChargebackplan.id())
+     *             .chargebackplanId(testChargebackplan.get("id"))
      *             .build());
      * 
      *     }
@@ -1837,7 +1837,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChargebackPlan = OpsiFunctions.getChargebackPlan(GetChargebackPlanArgs.builder()
-     *             .chargebackplanId(testChargebackplan.id())
+     *             .chargebackplanId(testChargebackplan.get("id"))
      *             .build());
      * 
      *     }
@@ -1879,7 +1879,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChargebackPlan = OpsiFunctions.getChargebackPlan(GetChargebackPlanArgs.builder()
-     *             .chargebackplanId(testChargebackplan.id())
+     *             .chargebackplanId(testChargebackplan.get("id"))
      *             .build());
      * 
      *     }
@@ -1921,7 +1921,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChargebackPlans = OpsiFunctions.getChargebackPlans(GetChargebackPlansArgs.builder()
-     *             .chargebackplanId(testChargebackplan.id())
+     *             .chargebackplanId(testChargebackplan.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(chargebackPlanCompartmentIdInSubtree)
      *             .build());
@@ -1965,7 +1965,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChargebackPlans = OpsiFunctions.getChargebackPlans(GetChargebackPlansArgs.builder()
-     *             .chargebackplanId(testChargebackplan.id())
+     *             .chargebackplanId(testChargebackplan.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(chargebackPlanCompartmentIdInSubtree)
      *             .build());
@@ -2009,7 +2009,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChargebackPlans = OpsiFunctions.getChargebackPlans(GetChargebackPlansArgs.builder()
-     *             .chargebackplanId(testChargebackplan.id())
+     *             .chargebackplanId(testChargebackplan.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(chargebackPlanCompartmentIdInSubtree)
      *             .build());
@@ -2053,7 +2053,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChargebackPlans = OpsiFunctions.getChargebackPlans(GetChargebackPlansArgs.builder()
-     *             .chargebackplanId(testChargebackplan.id())
+     *             .chargebackplanId(testChargebackplan.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(chargebackPlanCompartmentIdInSubtree)
      *             .build());
@@ -2097,7 +2097,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChargebackPlans = OpsiFunctions.getChargebackPlans(GetChargebackPlansArgs.builder()
-     *             .chargebackplanId(testChargebackplan.id())
+     *             .chargebackplanId(testChargebackplan.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(chargebackPlanCompartmentIdInSubtree)
      *             .build());
@@ -2141,7 +2141,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChargebackPlans = OpsiFunctions.getChargebackPlans(GetChargebackPlansArgs.builder()
-     *             .chargebackplanId(testChargebackplan.id())
+     *             .chargebackplanId(testChargebackplan.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(chargebackPlanCompartmentIdInSubtree)
      *             .build());
@@ -2185,7 +2185,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testChargebackPlans = OpsiFunctions.getChargebackPlans(GetChargebackPlansArgs.builder()
-     *             .chargebackplanId(testChargebackplan.id())
+     *             .chargebackplanId(testChargebackplan.get("id"))
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(chargebackPlanCompartmentIdInSubtree)
      *             .build());
@@ -2229,7 +2229,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseInsight = OpsiFunctions.getDatabaseInsight(GetDatabaseInsightArgs.builder()
-     *             .databaseInsightId(testDatabaseInsightOciOpsiDatabaseInsight.id())
+     *             .databaseInsightId(testDatabaseInsightOciOpsiDatabaseInsight.get("id"))
      *             .build());
      * 
      *     }
@@ -2271,7 +2271,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseInsight = OpsiFunctions.getDatabaseInsight(GetDatabaseInsightArgs.builder()
-     *             .databaseInsightId(testDatabaseInsightOciOpsiDatabaseInsight.id())
+     *             .databaseInsightId(testDatabaseInsightOciOpsiDatabaseInsight.get("id"))
      *             .build());
      * 
      *     }
@@ -2313,7 +2313,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseInsight = OpsiFunctions.getDatabaseInsight(GetDatabaseInsightArgs.builder()
-     *             .databaseInsightId(testDatabaseInsightOciOpsiDatabaseInsight.id())
+     *             .databaseInsightId(testDatabaseInsightOciOpsiDatabaseInsight.get("id"))
      *             .build());
      * 
      *     }
@@ -2355,7 +2355,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseInsight = OpsiFunctions.getDatabaseInsight(GetDatabaseInsightArgs.builder()
-     *             .databaseInsightId(testDatabaseInsightOciOpsiDatabaseInsight.id())
+     *             .databaseInsightId(testDatabaseInsightOciOpsiDatabaseInsight.get("id"))
      *             .build());
      * 
      *     }
@@ -2397,7 +2397,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testDatabaseInsight = OpsiFunctions.getDatabaseInsight(GetDatabaseInsightArgs.builder()
-     *             .databaseInsightId(testDatabaseInsightOciOpsiDatabaseInsight.id())
+     *             .databaseInsightId(testDatabaseInsightOciOpsiDatabaseInsight.get("id"))
      *             .build());
      * 
      *     }
@@ -2442,13 +2442,13 @@ public final class OpsiFunctions {
      *         final var testDatabaseInsights = OpsiFunctions.getDatabaseInsights(GetDatabaseInsightsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(databaseInsightCompartmentIdInSubtree)
-     *             .databaseIds(testDatabase.id())
+     *             .databaseIds(testDatabase.get("id"))
      *             .databaseTypes(databaseInsightDatabaseType)
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
-     *             .exadataInsightId(testExadataInsight.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.get("id"))
+     *             .exadataInsightId(testExadataInsight.get("id"))
      *             .fields(databaseInsightFields)
      *             .id(databaseInsightId)
-     *             .opsiPrivateEndpointId(testPrivateEndpoint.id())
+     *             .opsiPrivateEndpointId(testPrivateEndpoint.get("id"))
      *             .states(databaseInsightState)
      *             .statuses(databaseInsightStatus)
      *             .build());
@@ -2495,13 +2495,13 @@ public final class OpsiFunctions {
      *         final var testDatabaseInsights = OpsiFunctions.getDatabaseInsights(GetDatabaseInsightsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(databaseInsightCompartmentIdInSubtree)
-     *             .databaseIds(testDatabase.id())
+     *             .databaseIds(testDatabase.get("id"))
      *             .databaseTypes(databaseInsightDatabaseType)
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
-     *             .exadataInsightId(testExadataInsight.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.get("id"))
+     *             .exadataInsightId(testExadataInsight.get("id"))
      *             .fields(databaseInsightFields)
      *             .id(databaseInsightId)
-     *             .opsiPrivateEndpointId(testPrivateEndpoint.id())
+     *             .opsiPrivateEndpointId(testPrivateEndpoint.get("id"))
      *             .states(databaseInsightState)
      *             .statuses(databaseInsightStatus)
      *             .build());
@@ -2548,13 +2548,13 @@ public final class OpsiFunctions {
      *         final var testDatabaseInsights = OpsiFunctions.getDatabaseInsights(GetDatabaseInsightsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(databaseInsightCompartmentIdInSubtree)
-     *             .databaseIds(testDatabase.id())
+     *             .databaseIds(testDatabase.get("id"))
      *             .databaseTypes(databaseInsightDatabaseType)
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
-     *             .exadataInsightId(testExadataInsight.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.get("id"))
+     *             .exadataInsightId(testExadataInsight.get("id"))
      *             .fields(databaseInsightFields)
      *             .id(databaseInsightId)
-     *             .opsiPrivateEndpointId(testPrivateEndpoint.id())
+     *             .opsiPrivateEndpointId(testPrivateEndpoint.get("id"))
      *             .states(databaseInsightState)
      *             .statuses(databaseInsightStatus)
      *             .build());
@@ -2601,13 +2601,13 @@ public final class OpsiFunctions {
      *         final var testDatabaseInsights = OpsiFunctions.getDatabaseInsights(GetDatabaseInsightsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(databaseInsightCompartmentIdInSubtree)
-     *             .databaseIds(testDatabase.id())
+     *             .databaseIds(testDatabase.get("id"))
      *             .databaseTypes(databaseInsightDatabaseType)
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
-     *             .exadataInsightId(testExadataInsight.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.get("id"))
+     *             .exadataInsightId(testExadataInsight.get("id"))
      *             .fields(databaseInsightFields)
      *             .id(databaseInsightId)
-     *             .opsiPrivateEndpointId(testPrivateEndpoint.id())
+     *             .opsiPrivateEndpointId(testPrivateEndpoint.get("id"))
      *             .states(databaseInsightState)
      *             .statuses(databaseInsightStatus)
      *             .build());
@@ -2654,13 +2654,13 @@ public final class OpsiFunctions {
      *         final var testDatabaseInsights = OpsiFunctions.getDatabaseInsights(GetDatabaseInsightsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(databaseInsightCompartmentIdInSubtree)
-     *             .databaseIds(testDatabase.id())
+     *             .databaseIds(testDatabase.get("id"))
      *             .databaseTypes(databaseInsightDatabaseType)
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
-     *             .exadataInsightId(testExadataInsight.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.get("id"))
+     *             .exadataInsightId(testExadataInsight.get("id"))
      *             .fields(databaseInsightFields)
      *             .id(databaseInsightId)
-     *             .opsiPrivateEndpointId(testPrivateEndpoint.id())
+     *             .opsiPrivateEndpointId(testPrivateEndpoint.get("id"))
      *             .states(databaseInsightState)
      *             .statuses(databaseInsightStatus)
      *             .build());
@@ -2707,13 +2707,13 @@ public final class OpsiFunctions {
      *         final var testDatabaseInsights = OpsiFunctions.getDatabaseInsights(GetDatabaseInsightsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(databaseInsightCompartmentIdInSubtree)
-     *             .databaseIds(testDatabase.id())
+     *             .databaseIds(testDatabase.get("id"))
      *             .databaseTypes(databaseInsightDatabaseType)
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
-     *             .exadataInsightId(testExadataInsight.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.get("id"))
+     *             .exadataInsightId(testExadataInsight.get("id"))
      *             .fields(databaseInsightFields)
      *             .id(databaseInsightId)
-     *             .opsiPrivateEndpointId(testPrivateEndpoint.id())
+     *             .opsiPrivateEndpointId(testPrivateEndpoint.get("id"))
      *             .states(databaseInsightState)
      *             .statuses(databaseInsightStatus)
      *             .build());
@@ -2760,13 +2760,13 @@ public final class OpsiFunctions {
      *         final var testDatabaseInsights = OpsiFunctions.getDatabaseInsights(GetDatabaseInsightsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(databaseInsightCompartmentIdInSubtree)
-     *             .databaseIds(testDatabase.id())
+     *             .databaseIds(testDatabase.get("id"))
      *             .databaseTypes(databaseInsightDatabaseType)
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
-     *             .exadataInsightId(testExadataInsight.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.get("id"))
+     *             .exadataInsightId(testExadataInsight.get("id"))
      *             .fields(databaseInsightFields)
      *             .id(databaseInsightId)
-     *             .opsiPrivateEndpointId(testPrivateEndpoint.id())
+     *             .opsiPrivateEndpointId(testPrivateEndpoint.get("id"))
      *             .states(databaseInsightState)
      *             .statuses(databaseInsightStatus)
      *             .build());
@@ -2810,7 +2810,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEnterpriseManagerBridge = OpsiFunctions.getEnterpriseManagerBridge(GetEnterpriseManagerBridgeArgs.builder()
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridgeOciOpsiEnterpriseManagerBridge.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridgeOciOpsiEnterpriseManagerBridge.get("id"))
      *             .build());
      * 
      *     }
@@ -2852,7 +2852,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEnterpriseManagerBridge = OpsiFunctions.getEnterpriseManagerBridge(GetEnterpriseManagerBridgeArgs.builder()
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridgeOciOpsiEnterpriseManagerBridge.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridgeOciOpsiEnterpriseManagerBridge.get("id"))
      *             .build());
      * 
      *     }
@@ -2894,7 +2894,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEnterpriseManagerBridge = OpsiFunctions.getEnterpriseManagerBridge(GetEnterpriseManagerBridgeArgs.builder()
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridgeOciOpsiEnterpriseManagerBridge.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridgeOciOpsiEnterpriseManagerBridge.get("id"))
      *             .build());
      * 
      *     }
@@ -2936,7 +2936,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEnterpriseManagerBridge = OpsiFunctions.getEnterpriseManagerBridge(GetEnterpriseManagerBridgeArgs.builder()
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridgeOciOpsiEnterpriseManagerBridge.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridgeOciOpsiEnterpriseManagerBridge.get("id"))
      *             .build());
      * 
      *     }
@@ -2978,7 +2978,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEnterpriseManagerBridge = OpsiFunctions.getEnterpriseManagerBridge(GetEnterpriseManagerBridgeArgs.builder()
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridgeOciOpsiEnterpriseManagerBridge.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridgeOciOpsiEnterpriseManagerBridge.get("id"))
      *             .build());
      * 
      *     }
@@ -3349,7 +3349,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataInsight = OpsiFunctions.getExadataInsight(GetExadataInsightArgs.builder()
-     *             .exadataInsightId(testExadataInsightOciOpsiExadataInsight.id())
+     *             .exadataInsightId(testExadataInsightOciOpsiExadataInsight.get("id"))
      *             .build());
      * 
      *     }
@@ -3391,7 +3391,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataInsight = OpsiFunctions.getExadataInsight(GetExadataInsightArgs.builder()
-     *             .exadataInsightId(testExadataInsightOciOpsiExadataInsight.id())
+     *             .exadataInsightId(testExadataInsightOciOpsiExadataInsight.get("id"))
      *             .build());
      * 
      *     }
@@ -3433,7 +3433,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataInsight = OpsiFunctions.getExadataInsight(GetExadataInsightArgs.builder()
-     *             .exadataInsightId(testExadataInsightOciOpsiExadataInsight.id())
+     *             .exadataInsightId(testExadataInsightOciOpsiExadataInsight.get("id"))
      *             .build());
      * 
      *     }
@@ -3475,7 +3475,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataInsight = OpsiFunctions.getExadataInsight(GetExadataInsightArgs.builder()
-     *             .exadataInsightId(testExadataInsightOciOpsiExadataInsight.id())
+     *             .exadataInsightId(testExadataInsightOciOpsiExadataInsight.get("id"))
      *             .build());
      * 
      *     }
@@ -3517,7 +3517,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testExadataInsight = OpsiFunctions.getExadataInsight(GetExadataInsightArgs.builder()
-     *             .exadataInsightId(testExadataInsightOciOpsiExadataInsight.id())
+     *             .exadataInsightId(testExadataInsightOciOpsiExadataInsight.get("id"))
      *             .build());
      * 
      *     }
@@ -3562,7 +3562,7 @@ public final class OpsiFunctions {
      *         final var testExadataInsights = OpsiFunctions.getExadataInsights(GetExadataInsightsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(exadataInsightCompartmentIdInSubtree)
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.get("id"))
      *             .exadataTypes(exadataInsightExadataType)
      *             .id(exadataInsightId)
      *             .states(exadataInsightState)
@@ -3611,7 +3611,7 @@ public final class OpsiFunctions {
      *         final var testExadataInsights = OpsiFunctions.getExadataInsights(GetExadataInsightsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(exadataInsightCompartmentIdInSubtree)
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.get("id"))
      *             .exadataTypes(exadataInsightExadataType)
      *             .id(exadataInsightId)
      *             .states(exadataInsightState)
@@ -3660,7 +3660,7 @@ public final class OpsiFunctions {
      *         final var testExadataInsights = OpsiFunctions.getExadataInsights(GetExadataInsightsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(exadataInsightCompartmentIdInSubtree)
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.get("id"))
      *             .exadataTypes(exadataInsightExadataType)
      *             .id(exadataInsightId)
      *             .states(exadataInsightState)
@@ -3709,7 +3709,7 @@ public final class OpsiFunctions {
      *         final var testExadataInsights = OpsiFunctions.getExadataInsights(GetExadataInsightsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(exadataInsightCompartmentIdInSubtree)
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.get("id"))
      *             .exadataTypes(exadataInsightExadataType)
      *             .id(exadataInsightId)
      *             .states(exadataInsightState)
@@ -3758,7 +3758,7 @@ public final class OpsiFunctions {
      *         final var testExadataInsights = OpsiFunctions.getExadataInsights(GetExadataInsightsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(exadataInsightCompartmentIdInSubtree)
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.get("id"))
      *             .exadataTypes(exadataInsightExadataType)
      *             .id(exadataInsightId)
      *             .states(exadataInsightState)
@@ -3807,7 +3807,7 @@ public final class OpsiFunctions {
      *         final var testExadataInsights = OpsiFunctions.getExadataInsights(GetExadataInsightsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(exadataInsightCompartmentIdInSubtree)
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.get("id"))
      *             .exadataTypes(exadataInsightExadataType)
      *             .id(exadataInsightId)
      *             .states(exadataInsightState)
@@ -3856,7 +3856,7 @@ public final class OpsiFunctions {
      *         final var testExadataInsights = OpsiFunctions.getExadataInsights(GetExadataInsightsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(exadataInsightCompartmentIdInSubtree)
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.get("id"))
      *             .exadataTypes(exadataInsightExadataType)
      *             .id(exadataInsightId)
      *             .states(exadataInsightState)
@@ -3902,7 +3902,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostInsight = OpsiFunctions.getHostInsight(GetHostInsightArgs.builder()
-     *             .hostInsightId(testHostInsightOciOpsiHostInsight.id())
+     *             .hostInsightId(testHostInsightOciOpsiHostInsight.get("id"))
      *             .build());
      * 
      *     }
@@ -3944,7 +3944,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostInsight = OpsiFunctions.getHostInsight(GetHostInsightArgs.builder()
-     *             .hostInsightId(testHostInsightOciOpsiHostInsight.id())
+     *             .hostInsightId(testHostInsightOciOpsiHostInsight.get("id"))
      *             .build());
      * 
      *     }
@@ -3986,7 +3986,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostInsight = OpsiFunctions.getHostInsight(GetHostInsightArgs.builder()
-     *             .hostInsightId(testHostInsightOciOpsiHostInsight.id())
+     *             .hostInsightId(testHostInsightOciOpsiHostInsight.get("id"))
      *             .build());
      * 
      *     }
@@ -4028,7 +4028,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostInsight = OpsiFunctions.getHostInsight(GetHostInsightArgs.builder()
-     *             .hostInsightId(testHostInsightOciOpsiHostInsight.id())
+     *             .hostInsightId(testHostInsightOciOpsiHostInsight.get("id"))
      *             .build());
      * 
      *     }
@@ -4070,7 +4070,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testHostInsight = OpsiFunctions.getHostInsight(GetHostInsightArgs.builder()
-     *             .hostInsightId(testHostInsightOciOpsiHostInsight.id())
+     *             .hostInsightId(testHostInsightOciOpsiHostInsight.get("id"))
      *             .build());
      * 
      *     }
@@ -4115,8 +4115,8 @@ public final class OpsiFunctions {
      *         final var testHostInsights = OpsiFunctions.getHostInsights(GetHostInsightsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(hostInsightCompartmentIdInSubtree)
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
-     *             .exadataInsightId(testExadataInsight.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.get("id"))
+     *             .exadataInsightId(testExadataInsight.get("id"))
      *             .hostTypes(hostInsightHostType)
      *             .id(hostInsightId)
      *             .states(hostInsightState)
@@ -4165,8 +4165,8 @@ public final class OpsiFunctions {
      *         final var testHostInsights = OpsiFunctions.getHostInsights(GetHostInsightsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(hostInsightCompartmentIdInSubtree)
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
-     *             .exadataInsightId(testExadataInsight.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.get("id"))
+     *             .exadataInsightId(testExadataInsight.get("id"))
      *             .hostTypes(hostInsightHostType)
      *             .id(hostInsightId)
      *             .states(hostInsightState)
@@ -4215,8 +4215,8 @@ public final class OpsiFunctions {
      *         final var testHostInsights = OpsiFunctions.getHostInsights(GetHostInsightsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(hostInsightCompartmentIdInSubtree)
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
-     *             .exadataInsightId(testExadataInsight.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.get("id"))
+     *             .exadataInsightId(testExadataInsight.get("id"))
      *             .hostTypes(hostInsightHostType)
      *             .id(hostInsightId)
      *             .states(hostInsightState)
@@ -4265,8 +4265,8 @@ public final class OpsiFunctions {
      *         final var testHostInsights = OpsiFunctions.getHostInsights(GetHostInsightsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(hostInsightCompartmentIdInSubtree)
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
-     *             .exadataInsightId(testExadataInsight.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.get("id"))
+     *             .exadataInsightId(testExadataInsight.get("id"))
      *             .hostTypes(hostInsightHostType)
      *             .id(hostInsightId)
      *             .states(hostInsightState)
@@ -4315,8 +4315,8 @@ public final class OpsiFunctions {
      *         final var testHostInsights = OpsiFunctions.getHostInsights(GetHostInsightsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(hostInsightCompartmentIdInSubtree)
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
-     *             .exadataInsightId(testExadataInsight.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.get("id"))
+     *             .exadataInsightId(testExadataInsight.get("id"))
      *             .hostTypes(hostInsightHostType)
      *             .id(hostInsightId)
      *             .states(hostInsightState)
@@ -4365,8 +4365,8 @@ public final class OpsiFunctions {
      *         final var testHostInsights = OpsiFunctions.getHostInsights(GetHostInsightsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(hostInsightCompartmentIdInSubtree)
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
-     *             .exadataInsightId(testExadataInsight.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.get("id"))
+     *             .exadataInsightId(testExadataInsight.get("id"))
      *             .hostTypes(hostInsightHostType)
      *             .id(hostInsightId)
      *             .states(hostInsightState)
@@ -4415,8 +4415,8 @@ public final class OpsiFunctions {
      *         final var testHostInsights = OpsiFunctions.getHostInsights(GetHostInsightsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(hostInsightCompartmentIdInSubtree)
-     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
-     *             .exadataInsightId(testExadataInsight.id())
+     *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.get("id"))
+     *             .exadataInsightId(testExadataInsight.get("id"))
      *             .hostTypes(hostInsightHostType)
      *             .id(hostInsightId)
      *             .states(hostInsightState)
@@ -5402,7 +5402,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNewsReport = OpsiFunctions.getNewsReport(GetNewsReportArgs.builder()
-     *             .newsReportId(testNewsReportOciOpsiNewsReport.id())
+     *             .newsReportId(testNewsReportOciOpsiNewsReport.get("id"))
      *             .build());
      * 
      *     }
@@ -5444,7 +5444,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNewsReport = OpsiFunctions.getNewsReport(GetNewsReportArgs.builder()
-     *             .newsReportId(testNewsReportOciOpsiNewsReport.id())
+     *             .newsReportId(testNewsReportOciOpsiNewsReport.get("id"))
      *             .build());
      * 
      *     }
@@ -5486,7 +5486,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNewsReport = OpsiFunctions.getNewsReport(GetNewsReportArgs.builder()
-     *             .newsReportId(testNewsReportOciOpsiNewsReport.id())
+     *             .newsReportId(testNewsReportOciOpsiNewsReport.get("id"))
      *             .build());
      * 
      *     }
@@ -5528,7 +5528,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNewsReport = OpsiFunctions.getNewsReport(GetNewsReportArgs.builder()
-     *             .newsReportId(testNewsReportOciOpsiNewsReport.id())
+     *             .newsReportId(testNewsReportOciOpsiNewsReport.get("id"))
      *             .build());
      * 
      *     }
@@ -5570,7 +5570,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testNewsReport = OpsiFunctions.getNewsReport(GetNewsReportArgs.builder()
-     *             .newsReportId(testNewsReportOciOpsiNewsReport.id())
+     *             .newsReportId(testNewsReportOciOpsiNewsReport.get("id"))
      *             .build());
      * 
      *     }
@@ -5614,7 +5614,7 @@ public final class OpsiFunctions {
      *         final var testNewsReports = OpsiFunctions.getNewsReports(GetNewsReportsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(newsReportCompartmentIdInSubtree)
-     *             .newsReportId(testNewsReport.id())
+     *             .newsReportId(testNewsReport.get("id"))
      *             .states(newsReportState)
      *             .statuses(newsReportStatus)
      *             .build());
@@ -5660,7 +5660,7 @@ public final class OpsiFunctions {
      *         final var testNewsReports = OpsiFunctions.getNewsReports(GetNewsReportsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(newsReportCompartmentIdInSubtree)
-     *             .newsReportId(testNewsReport.id())
+     *             .newsReportId(testNewsReport.get("id"))
      *             .states(newsReportState)
      *             .statuses(newsReportStatus)
      *             .build());
@@ -5706,7 +5706,7 @@ public final class OpsiFunctions {
      *         final var testNewsReports = OpsiFunctions.getNewsReports(GetNewsReportsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(newsReportCompartmentIdInSubtree)
-     *             .newsReportId(testNewsReport.id())
+     *             .newsReportId(testNewsReport.get("id"))
      *             .states(newsReportState)
      *             .statuses(newsReportStatus)
      *             .build());
@@ -5752,7 +5752,7 @@ public final class OpsiFunctions {
      *         final var testNewsReports = OpsiFunctions.getNewsReports(GetNewsReportsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(newsReportCompartmentIdInSubtree)
-     *             .newsReportId(testNewsReport.id())
+     *             .newsReportId(testNewsReport.get("id"))
      *             .states(newsReportState)
      *             .statuses(newsReportStatus)
      *             .build());
@@ -5798,7 +5798,7 @@ public final class OpsiFunctions {
      *         final var testNewsReports = OpsiFunctions.getNewsReports(GetNewsReportsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(newsReportCompartmentIdInSubtree)
-     *             .newsReportId(testNewsReport.id())
+     *             .newsReportId(testNewsReport.get("id"))
      *             .states(newsReportState)
      *             .statuses(newsReportStatus)
      *             .build());
@@ -5844,7 +5844,7 @@ public final class OpsiFunctions {
      *         final var testNewsReports = OpsiFunctions.getNewsReports(GetNewsReportsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(newsReportCompartmentIdInSubtree)
-     *             .newsReportId(testNewsReport.id())
+     *             .newsReportId(testNewsReport.get("id"))
      *             .states(newsReportState)
      *             .statuses(newsReportStatus)
      *             .build());
@@ -5890,7 +5890,7 @@ public final class OpsiFunctions {
      *         final var testNewsReports = OpsiFunctions.getNewsReports(GetNewsReportsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(newsReportCompartmentIdInSubtree)
-     *             .newsReportId(testNewsReport.id())
+     *             .newsReportId(testNewsReport.get("id"))
      *             .states(newsReportState)
      *             .statuses(newsReportStatus)
      *             .build());
@@ -5934,7 +5934,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsPrivateEndpoint = OpsiFunctions.getOperationsInsightsPrivateEndpoint(GetOperationsInsightsPrivateEndpointArgs.builder()
-     *             .operationsInsightsPrivateEndpointId(testOperationsInsightsPrivateEndpointOciOpsiOperationsInsightsPrivateEndpoint.id())
+     *             .operationsInsightsPrivateEndpointId(testOperationsInsightsPrivateEndpointOciOpsiOperationsInsightsPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -5976,7 +5976,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsPrivateEndpoint = OpsiFunctions.getOperationsInsightsPrivateEndpoint(GetOperationsInsightsPrivateEndpointArgs.builder()
-     *             .operationsInsightsPrivateEndpointId(testOperationsInsightsPrivateEndpointOciOpsiOperationsInsightsPrivateEndpoint.id())
+     *             .operationsInsightsPrivateEndpointId(testOperationsInsightsPrivateEndpointOciOpsiOperationsInsightsPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -6018,7 +6018,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsPrivateEndpoint = OpsiFunctions.getOperationsInsightsPrivateEndpoint(GetOperationsInsightsPrivateEndpointArgs.builder()
-     *             .operationsInsightsPrivateEndpointId(testOperationsInsightsPrivateEndpointOciOpsiOperationsInsightsPrivateEndpoint.id())
+     *             .operationsInsightsPrivateEndpointId(testOperationsInsightsPrivateEndpointOciOpsiOperationsInsightsPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -6060,7 +6060,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsPrivateEndpoint = OpsiFunctions.getOperationsInsightsPrivateEndpoint(GetOperationsInsightsPrivateEndpointArgs.builder()
-     *             .operationsInsightsPrivateEndpointId(testOperationsInsightsPrivateEndpointOciOpsiOperationsInsightsPrivateEndpoint.id())
+     *             .operationsInsightsPrivateEndpointId(testOperationsInsightsPrivateEndpointOciOpsiOperationsInsightsPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -6102,7 +6102,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsPrivateEndpoint = OpsiFunctions.getOperationsInsightsPrivateEndpoint(GetOperationsInsightsPrivateEndpointArgs.builder()
-     *             .operationsInsightsPrivateEndpointId(testOperationsInsightsPrivateEndpointOciOpsiOperationsInsightsPrivateEndpoint.id())
+     *             .operationsInsightsPrivateEndpointId(testOperationsInsightsPrivateEndpointOciOpsiOperationsInsightsPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -6148,9 +6148,9 @@ public final class OpsiFunctions {
      *             .compartmentIdInSubtree(operationsInsightsPrivateEndpointCompartmentIdInSubtree)
      *             .displayName(operationsInsightsPrivateEndpointDisplayName)
      *             .isUsedForRacDbs(operationsInsightsPrivateEndpointIsUsedForRacDbs)
-     *             .opsiPrivateEndpointId(testPrivateEndpoint.id())
+     *             .opsiPrivateEndpointId(testPrivateEndpoint.get("id"))
      *             .states(operationsInsightsPrivateEndpointState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -6196,9 +6196,9 @@ public final class OpsiFunctions {
      *             .compartmentIdInSubtree(operationsInsightsPrivateEndpointCompartmentIdInSubtree)
      *             .displayName(operationsInsightsPrivateEndpointDisplayName)
      *             .isUsedForRacDbs(operationsInsightsPrivateEndpointIsUsedForRacDbs)
-     *             .opsiPrivateEndpointId(testPrivateEndpoint.id())
+     *             .opsiPrivateEndpointId(testPrivateEndpoint.get("id"))
      *             .states(operationsInsightsPrivateEndpointState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -6244,9 +6244,9 @@ public final class OpsiFunctions {
      *             .compartmentIdInSubtree(operationsInsightsPrivateEndpointCompartmentIdInSubtree)
      *             .displayName(operationsInsightsPrivateEndpointDisplayName)
      *             .isUsedForRacDbs(operationsInsightsPrivateEndpointIsUsedForRacDbs)
-     *             .opsiPrivateEndpointId(testPrivateEndpoint.id())
+     *             .opsiPrivateEndpointId(testPrivateEndpoint.get("id"))
      *             .states(operationsInsightsPrivateEndpointState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -6292,9 +6292,9 @@ public final class OpsiFunctions {
      *             .compartmentIdInSubtree(operationsInsightsPrivateEndpointCompartmentIdInSubtree)
      *             .displayName(operationsInsightsPrivateEndpointDisplayName)
      *             .isUsedForRacDbs(operationsInsightsPrivateEndpointIsUsedForRacDbs)
-     *             .opsiPrivateEndpointId(testPrivateEndpoint.id())
+     *             .opsiPrivateEndpointId(testPrivateEndpoint.get("id"))
      *             .states(operationsInsightsPrivateEndpointState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -6340,9 +6340,9 @@ public final class OpsiFunctions {
      *             .compartmentIdInSubtree(operationsInsightsPrivateEndpointCompartmentIdInSubtree)
      *             .displayName(operationsInsightsPrivateEndpointDisplayName)
      *             .isUsedForRacDbs(operationsInsightsPrivateEndpointIsUsedForRacDbs)
-     *             .opsiPrivateEndpointId(testPrivateEndpoint.id())
+     *             .opsiPrivateEndpointId(testPrivateEndpoint.get("id"))
      *             .states(operationsInsightsPrivateEndpointState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -6388,9 +6388,9 @@ public final class OpsiFunctions {
      *             .compartmentIdInSubtree(operationsInsightsPrivateEndpointCompartmentIdInSubtree)
      *             .displayName(operationsInsightsPrivateEndpointDisplayName)
      *             .isUsedForRacDbs(operationsInsightsPrivateEndpointIsUsedForRacDbs)
-     *             .opsiPrivateEndpointId(testPrivateEndpoint.id())
+     *             .opsiPrivateEndpointId(testPrivateEndpoint.get("id"))
      *             .states(operationsInsightsPrivateEndpointState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -6436,9 +6436,9 @@ public final class OpsiFunctions {
      *             .compartmentIdInSubtree(operationsInsightsPrivateEndpointCompartmentIdInSubtree)
      *             .displayName(operationsInsightsPrivateEndpointDisplayName)
      *             .isUsedForRacDbs(operationsInsightsPrivateEndpointIsUsedForRacDbs)
-     *             .opsiPrivateEndpointId(testPrivateEndpoint.id())
+     *             .opsiPrivateEndpointId(testPrivateEndpoint.get("id"))
      *             .states(operationsInsightsPrivateEndpointState)
-     *             .vcnId(testVcn.id())
+     *             .vcnId(testVcn.get("id"))
      *             .build());
      * 
      *     }
@@ -6481,7 +6481,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsWarehouse = OpsiFunctions.getOperationsInsightsWarehouse(GetOperationsInsightsWarehouseArgs.builder()
-     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouseOciOpsiOperationsInsightsWarehouse.id())
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouseOciOpsiOperationsInsightsWarehouse.get("id"))
      *             .build());
      * 
      *     }
@@ -6524,7 +6524,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsWarehouse = OpsiFunctions.getOperationsInsightsWarehouse(GetOperationsInsightsWarehouseArgs.builder()
-     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouseOciOpsiOperationsInsightsWarehouse.id())
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouseOciOpsiOperationsInsightsWarehouse.get("id"))
      *             .build());
      * 
      *     }
@@ -6567,7 +6567,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsWarehouse = OpsiFunctions.getOperationsInsightsWarehouse(GetOperationsInsightsWarehouseArgs.builder()
-     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouseOciOpsiOperationsInsightsWarehouse.id())
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouseOciOpsiOperationsInsightsWarehouse.get("id"))
      *             .build());
      * 
      *     }
@@ -6610,7 +6610,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsWarehouse = OpsiFunctions.getOperationsInsightsWarehouse(GetOperationsInsightsWarehouseArgs.builder()
-     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouseOciOpsiOperationsInsightsWarehouse.id())
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouseOciOpsiOperationsInsightsWarehouse.get("id"))
      *             .build());
      * 
      *     }
@@ -6653,7 +6653,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsWarehouse = OpsiFunctions.getOperationsInsightsWarehouse(GetOperationsInsightsWarehouseArgs.builder()
-     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouseOciOpsiOperationsInsightsWarehouse.id())
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouseOciOpsiOperationsInsightsWarehouse.get("id"))
      *             .build());
      * 
      *     }
@@ -6696,7 +6696,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsWarehouseResourceUsageSummary = OpsiFunctions.getOperationsInsightsWarehouseResourceUsageSummary(GetOperationsInsightsWarehouseResourceUsageSummaryArgs.builder()
-     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.get("id"))
      *             .build());
      * 
      *     }
@@ -6739,7 +6739,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsWarehouseResourceUsageSummary = OpsiFunctions.getOperationsInsightsWarehouseResourceUsageSummary(GetOperationsInsightsWarehouseResourceUsageSummaryArgs.builder()
-     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.get("id"))
      *             .build());
      * 
      *     }
@@ -6782,7 +6782,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsWarehouseResourceUsageSummary = OpsiFunctions.getOperationsInsightsWarehouseResourceUsageSummary(GetOperationsInsightsWarehouseResourceUsageSummaryArgs.builder()
-     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.get("id"))
      *             .build());
      * 
      *     }
@@ -6825,7 +6825,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsWarehouseResourceUsageSummary = OpsiFunctions.getOperationsInsightsWarehouseResourceUsageSummary(GetOperationsInsightsWarehouseResourceUsageSummaryArgs.builder()
-     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.get("id"))
      *             .build());
      * 
      *     }
@@ -6868,7 +6868,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsWarehouseResourceUsageSummary = OpsiFunctions.getOperationsInsightsWarehouseResourceUsageSummary(GetOperationsInsightsWarehouseResourceUsageSummaryArgs.builder()
-     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.get("id"))
      *             .build());
      * 
      *     }
@@ -6910,7 +6910,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsWarehouseUser = OpsiFunctions.getOperationsInsightsWarehouseUser(GetOperationsInsightsWarehouseUserArgs.builder()
-     *             .operationsInsightsWarehouseUserId(testOperationsInsightsWarehouseUserOciOpsiOperationsInsightsWarehouseUser.id())
+     *             .operationsInsightsWarehouseUserId(testOperationsInsightsWarehouseUserOciOpsiOperationsInsightsWarehouseUser.get("id"))
      *             .build());
      * 
      *     }
@@ -6952,7 +6952,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsWarehouseUser = OpsiFunctions.getOperationsInsightsWarehouseUser(GetOperationsInsightsWarehouseUserArgs.builder()
-     *             .operationsInsightsWarehouseUserId(testOperationsInsightsWarehouseUserOciOpsiOperationsInsightsWarehouseUser.id())
+     *             .operationsInsightsWarehouseUserId(testOperationsInsightsWarehouseUserOciOpsiOperationsInsightsWarehouseUser.get("id"))
      *             .build());
      * 
      *     }
@@ -6994,7 +6994,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsWarehouseUser = OpsiFunctions.getOperationsInsightsWarehouseUser(GetOperationsInsightsWarehouseUserArgs.builder()
-     *             .operationsInsightsWarehouseUserId(testOperationsInsightsWarehouseUserOciOpsiOperationsInsightsWarehouseUser.id())
+     *             .operationsInsightsWarehouseUserId(testOperationsInsightsWarehouseUserOciOpsiOperationsInsightsWarehouseUser.get("id"))
      *             .build());
      * 
      *     }
@@ -7036,7 +7036,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsWarehouseUser = OpsiFunctions.getOperationsInsightsWarehouseUser(GetOperationsInsightsWarehouseUserArgs.builder()
-     *             .operationsInsightsWarehouseUserId(testOperationsInsightsWarehouseUserOciOpsiOperationsInsightsWarehouseUser.id())
+     *             .operationsInsightsWarehouseUserId(testOperationsInsightsWarehouseUserOciOpsiOperationsInsightsWarehouseUser.get("id"))
      *             .build());
      * 
      *     }
@@ -7078,7 +7078,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsWarehouseUser = OpsiFunctions.getOperationsInsightsWarehouseUser(GetOperationsInsightsWarehouseUserArgs.builder()
-     *             .operationsInsightsWarehouseUserId(testOperationsInsightsWarehouseUserOciOpsiOperationsInsightsWarehouseUser.id())
+     *             .operationsInsightsWarehouseUserId(testOperationsInsightsWarehouseUserOciOpsiOperationsInsightsWarehouseUser.get("id"))
      *             .build());
      * 
      *     }
@@ -7120,7 +7120,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsWarehouseUsers = OpsiFunctions.getOperationsInsightsWarehouseUsers(GetOperationsInsightsWarehouseUsersArgs.builder()
-     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(operationsInsightsWarehouseUserDisplayName)
      *             .id(operationsInsightsWarehouseUserId)
@@ -7166,7 +7166,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsWarehouseUsers = OpsiFunctions.getOperationsInsightsWarehouseUsers(GetOperationsInsightsWarehouseUsersArgs.builder()
-     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(operationsInsightsWarehouseUserDisplayName)
      *             .id(operationsInsightsWarehouseUserId)
@@ -7212,7 +7212,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsWarehouseUsers = OpsiFunctions.getOperationsInsightsWarehouseUsers(GetOperationsInsightsWarehouseUsersArgs.builder()
-     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(operationsInsightsWarehouseUserDisplayName)
      *             .id(operationsInsightsWarehouseUserId)
@@ -7258,7 +7258,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsWarehouseUsers = OpsiFunctions.getOperationsInsightsWarehouseUsers(GetOperationsInsightsWarehouseUsersArgs.builder()
-     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(operationsInsightsWarehouseUserDisplayName)
      *             .id(operationsInsightsWarehouseUserId)
@@ -7304,7 +7304,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOperationsInsightsWarehouseUsers = OpsiFunctions.getOperationsInsightsWarehouseUsers(GetOperationsInsightsWarehouseUsersArgs.builder()
-     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.id())
+     *             .operationsInsightsWarehouseId(testOperationsInsightsWarehouse.get("id"))
      *             .compartmentId(compartmentId)
      *             .displayName(operationsInsightsWarehouseUserDisplayName)
      *             .id(operationsInsightsWarehouseUserId)
@@ -7674,7 +7674,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpsiConfiguration = OpsiFunctions.getOpsiConfiguration(GetOpsiConfigurationArgs.builder()
-     *             .opsiConfigurationId(testOpsiConfigurationOciOpsiOpsiConfiguration.id())
+     *             .opsiConfigurationId(testOpsiConfigurationOciOpsiOpsiConfiguration.get("id"))
      *             .configItemCustomStatuses(opsiConfigurationConfigItemCustomStatus)
      *             .configItemFields(opsiConfigurationConfigItemField)
      *             .configItemsApplicableContexts(opsiConfigurationConfigItemsApplicableContext)
@@ -7722,7 +7722,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpsiConfiguration = OpsiFunctions.getOpsiConfiguration(GetOpsiConfigurationArgs.builder()
-     *             .opsiConfigurationId(testOpsiConfigurationOciOpsiOpsiConfiguration.id())
+     *             .opsiConfigurationId(testOpsiConfigurationOciOpsiOpsiConfiguration.get("id"))
      *             .configItemCustomStatuses(opsiConfigurationConfigItemCustomStatus)
      *             .configItemFields(opsiConfigurationConfigItemField)
      *             .configItemsApplicableContexts(opsiConfigurationConfigItemsApplicableContext)
@@ -7770,7 +7770,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpsiConfiguration = OpsiFunctions.getOpsiConfiguration(GetOpsiConfigurationArgs.builder()
-     *             .opsiConfigurationId(testOpsiConfigurationOciOpsiOpsiConfiguration.id())
+     *             .opsiConfigurationId(testOpsiConfigurationOciOpsiOpsiConfiguration.get("id"))
      *             .configItemCustomStatuses(opsiConfigurationConfigItemCustomStatus)
      *             .configItemFields(opsiConfigurationConfigItemField)
      *             .configItemsApplicableContexts(opsiConfigurationConfigItemsApplicableContext)
@@ -7818,7 +7818,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpsiConfiguration = OpsiFunctions.getOpsiConfiguration(GetOpsiConfigurationArgs.builder()
-     *             .opsiConfigurationId(testOpsiConfigurationOciOpsiOpsiConfiguration.id())
+     *             .opsiConfigurationId(testOpsiConfigurationOciOpsiOpsiConfiguration.get("id"))
      *             .configItemCustomStatuses(opsiConfigurationConfigItemCustomStatus)
      *             .configItemFields(opsiConfigurationConfigItemField)
      *             .configItemsApplicableContexts(opsiConfigurationConfigItemsApplicableContext)
@@ -7866,7 +7866,7 @@ public final class OpsiFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testOpsiConfiguration = OpsiFunctions.getOpsiConfiguration(GetOpsiConfigurationArgs.builder()
-     *             .opsiConfigurationId(testOpsiConfigurationOciOpsiOpsiConfiguration.id())
+     *             .opsiConfigurationId(testOpsiConfigurationOciOpsiOpsiConfiguration.get("id"))
      *             .configItemCustomStatuses(opsiConfigurationConfigItemCustomStatus)
      *             .configItemFields(opsiConfigurationConfigItemField)
      *             .configItemsApplicableContexts(opsiConfigurationConfigItemsApplicableContext)

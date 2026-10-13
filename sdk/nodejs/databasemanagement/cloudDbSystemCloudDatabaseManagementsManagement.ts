@@ -20,8 +20,8 @@ import * as utilities from "../utilities";
  *
  * const testCloudDbSystemCloudDatabaseManagementsManagement = new oci.databasemanagement.CloudDbSystemCloudDatabaseManagementsManagement("test_cloud_db_system_cloud_database_managements_management", {
  *     cloudDbSystemId: testCloudDbSystem.id,
- *     enableCloudDatabaseManagement: enableCloudDatabaseManagement === "true",
- *     isEnabled: cloudDbSystemCloudDatabaseManagementsManagementIsEnabled === "true",
+ *     enableCloudDatabaseManagement: enableCloudDatabaseManagement,
+ *     isEnabled: cloudDbSystemCloudDatabaseManagementsManagementIsEnabled,
  *     metadata: cloudDbSystemCloudDatabaseManagementsManagementMetadata,
  * });
  * ```

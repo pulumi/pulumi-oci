@@ -65,7 +65,7 @@ import javax.annotation.Nullable;
  *         var testSecurityAttribute = new SecurityAttribute("testSecurityAttribute", SecurityAttributeArgs.builder()
  *             .description(securityAttributeDescription)
  *             .name(securityAttributeName)
- *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.id())
+ *             .securityAttributeNamespaceId(testSecurityAttributeNamespace.get("id"))
  *             .validator(SecurityAttributeValidatorArgs.builder()
  *                 .validatorType(securityAttributeValidatorValidatorType)
  *                 .values(securityAttributeValidatorValues)

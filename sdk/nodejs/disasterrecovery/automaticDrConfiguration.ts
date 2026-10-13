@@ -23,8 +23,8 @@ import * as utilities from "../utilities";
  *     members: [{
  *         memberId: testMember.id,
  *         memberType: automaticDrConfigurationMembersMemberType,
- *         isAutoFailoverEnabled: automaticDrConfigurationMembersIsAutoFailoverEnabled === "true",
- *         isAutoSwitchoverEnabled: automaticDrConfigurationMembersIsAutoSwitchoverEnabled === "true",
+ *         isAutoFailoverEnabled: automaticDrConfigurationMembersIsAutoFailoverEnabled,
+ *         isAutoSwitchoverEnabled: automaticDrConfigurationMembersIsAutoSwitchoverEnabled,
  *     }],
  *     defaultFailoverDrPlanId: testDrPlan.id,
  *     defaultSwitchoverDrPlanId: testDrPlan.id,

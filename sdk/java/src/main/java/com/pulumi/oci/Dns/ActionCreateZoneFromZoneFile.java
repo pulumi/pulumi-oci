@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  *             .createZoneFromZoneFileDetails(actionCreateZoneFromZoneFileCreateZoneFromZoneFileDetails)
  *             .compartmentId(compartmentId)
  *             .scope(actionCreateZoneFromZoneFileScope)
- *             .viewId(testView.id())
+ *             .viewId(testView.get("id"))
  *             .build());
  * 
  *     }

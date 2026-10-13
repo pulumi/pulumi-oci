@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testDbSystemsUpgrade = new DbSystemsUpgrade("testDbSystemsUpgrade", DbSystemsUpgradeArgs.builder()
  *             .action(dbSystemsUpgradeAction)
- *             .dbSystemId(testDbSystem.id())
+ *             .dbSystemId(testDbSystem.get("id"))
  *             .isSnapshotRetentionDaysForceUpdated(dbSystemsUpgradeIsSnapshotRetentionDaysForceUpdated)
  *             .newGiVersion(dbSystemsUpgradeNewGiVersion)
  *             .snapshotRetentionPeriodInDays(dbSystemsUpgradeSnapshotRetentionPeriodInDays)

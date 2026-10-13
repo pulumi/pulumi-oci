@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *             .agentVersion(agentAgentVersion)
  *             .compartmentId(compartmentId)
  *             .displayName(agentDisplayName)
- *             .environmentId(testEnvironment.id())
+ *             .environmentId(testEnvironment.get("id"))
  *             .osVersion(agentOsVersion)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .freeformTags(Map.of("Department", "Finance"))

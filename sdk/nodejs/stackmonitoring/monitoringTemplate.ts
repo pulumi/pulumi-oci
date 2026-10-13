@@ -36,8 +36,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isAlarmsEnabled: monitoringTemplateIsAlarmsEnabled === "true",
- *     isSplitNotificationEnabled: monitoringTemplateIsSplitNotificationEnabled === "true",
+ *     isAlarmsEnabled: monitoringTemplateIsAlarmsEnabled,
+ *     isSplitNotificationEnabled: monitoringTemplateIsSplitNotificationEnabled,
  *     messageFormat: monitoringTemplateMessageFormat,
  *     repeatNotificationDuration: monitoringTemplateRepeatNotificationDuration,
  * });

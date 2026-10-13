@@ -52,15 +52,15 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSession = new Session("testSession", SessionArgs.builder()
- *             .bastionId(testBastion.id())
+ *             .bastionId(testBastion.get("id"))
  *             .keyDetails(SessionKeyDetailsArgs.builder()
  *                 .publicKeyContent(sessionKeyDetailsPublicKeyContent)
  *                 .build())
  *             .targetResourceDetails(SessionTargetResourceDetailsArgs.builder()
  *                 .sessionType(sessionTargetResourceDetailsSessionType)
  *                 .targetResourceFqdn(sessionTargetResourceDetailsTargetResourceFqdn)
- *                 .targetResourceId(testTargetResource.id())
- *                 .targetResourceOperatingSystemUserName(testUser.name())
+ *                 .targetResourceId(testTargetResource.get("id"))
+ *                 .targetResourceOperatingSystemUserName(testUser.get("name"))
  *                 .targetResourcePort(sessionTargetResourceDetailsTargetResourcePort)
  *                 .targetResourcePrivateIpAddress(sessionTargetResourceDetailsTargetResourcePrivateIpAddress)
  *                 .build())

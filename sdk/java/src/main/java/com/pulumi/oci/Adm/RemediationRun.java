@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testRemediationRun = new RemediationRun("testRemediationRun", RemediationRunArgs.builder()
- *             .remediationRecipeId(testRemediationRecipe.id())
+ *             .remediationRecipeId(testRemediationRecipe.get("id"))
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .displayName(remediationRunDisplayName)
  *             .freeformTags(Map.of("bar-key", "value"))

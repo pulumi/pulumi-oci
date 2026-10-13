@@ -22,11 +22,11 @@ import * as utilities from "../utilities";
  *
  * const testGeneratedKey = new oci.kms.GeneratedKey("test_generated_key", {
  *     cryptoEndpoint: generatedKeyCryptoEndpoint,
- *     includePlaintextKey: generatedKeyIncludePlaintextKey === "true",
+ *     includePlaintextKey: generatedKeyIncludePlaintextKey,
  *     keyId: testKey.id,
  *     keyShape: {
  *         algorithm: generatedKeyKeyShapeAlgorithm,
- *         length: Number(generatedKeyKeyShapeLength),
+ *         length: generatedKeyKeyShapeLength,
  *         curveId: testCurve.id,
  *     },
  *     associatedData: generatedKeyAssociatedData,

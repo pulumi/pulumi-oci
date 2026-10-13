@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testMarketplaceExternalAttestedMetadata = new MarketplaceExternalAttestedMetadata("testMarketplaceExternalAttestedMetadata", MarketplaceExternalAttestedMetadataArgs.builder()
  *             .compartmentId(compartmentId)
- *             .instanceId(testInstance.id())
+ *             .instanceId(testInstance.get("id"))
  *             .build());
  * 
  *     }

@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testManagedDatabasesDatabaseParameter = oci.databasemanagement.getManagedDatabasesDatabaseParameter({
  *     managedDatabaseId: testManagedDatabase.id,
- *     isAllowedValuesIncluded: managedDatabasesDatabaseParameterIsAllowedValuesIncluded === "true",
+ *     isAllowedValuesIncluded: managedDatabasesDatabaseParameterIsAllowedValuesIncluded,
  *     name: managedDatabasesDatabaseParameterName,
  *     source: managedDatabasesDatabaseParameterSource,
  * });
@@ -106,7 +106,7 @@ export interface GetManagedDatabasesDatabaseParameterResult {
  *
  * const testManagedDatabasesDatabaseParameter = oci.databasemanagement.getManagedDatabasesDatabaseParameter({
  *     managedDatabaseId: testManagedDatabase.id,
- *     isAllowedValuesIncluded: managedDatabasesDatabaseParameterIsAllowedValuesIncluded === "true",
+ *     isAllowedValuesIncluded: managedDatabasesDatabaseParameterIsAllowedValuesIncluded,
  *     name: managedDatabasesDatabaseParameterName,
  *     source: managedDatabasesDatabaseParameterSource,
  * });

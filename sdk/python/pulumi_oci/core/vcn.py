@@ -712,8 +712,8 @@ class Vcn(pulumi.CustomResource):
                 "Department": "Finance",
             },
             ipv6private_cidr_blocks=vcn_ipv6private_cidr_blocks,
-            is_ipv6enabled=vcn_is_ipv6enabled == "true",
-            is_oracle_gua_allocation_enabled=vcn_is_oracle_gua_allocation_enabled == "true",
+            is_ipv6enabled=vcn_is_ipv6enabled,
+            is_oracle_gua_allocation_enabled=vcn_is_oracle_gua_allocation_enabled,
             security_attributes=vcn_security_attributes)
         ```
 
@@ -836,8 +836,8 @@ class Vcn(pulumi.CustomResource):
                 "Department": "Finance",
             },
             ipv6private_cidr_blocks=vcn_ipv6private_cidr_blocks,
-            is_ipv6enabled=vcn_is_ipv6enabled == "true",
-            is_oracle_gua_allocation_enabled=vcn_is_oracle_gua_allocation_enabled == "true",
+            is_ipv6enabled=vcn_is_ipv6enabled,
+            is_oracle_gua_allocation_enabled=vcn_is_oracle_gua_allocation_enabled,
             security_attributes=vcn_security_attributes)
         ```
 

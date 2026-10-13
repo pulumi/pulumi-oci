@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testNetworkSecurityGroup = new NetworkSecurityGroup("testNetworkSecurityGroup", NetworkSecurityGroupArgs.builder()
  *             .compartmentId(compartmentId)
- *             .vcnId(testVcn.id())
+ *             .vcnId(testVcn.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(networkSecurityGroupDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))

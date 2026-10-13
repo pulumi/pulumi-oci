@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  * const testExadataIormConfig = new oci.database.ExadataIormConfig("test_exadata_iorm_config", {
  *     dbPlans: [{
  *         dbName: exadataIormConfigDbPlansDbName,
- *         share: Number(exadataIormConfigDbPlansShare),
+ *         share: exadataIormConfigDbPlansShare,
  *     }],
  *     dbSystemId: testDbSystem.id,
  *     objective: "AUTO",

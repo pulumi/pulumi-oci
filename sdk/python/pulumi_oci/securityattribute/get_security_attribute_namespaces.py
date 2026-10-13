@@ -135,7 +135,7 @@ def get_security_attribute_namespaces(compartment_id: Optional[_builtins.str] = 
     import pulumi_oci as oci
 
     test_security_attribute_namespaces = oci.securityattribute.get_security_attribute_namespaces(compartment_id=compartment_id,
-        compartment_id_in_subtree=security_attribute_namespace_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=security_attribute_namespace_compartment_id_in_subtree,
         name=security_attribute_namespace_name,
         state=security_attribute_namespace_state)
     ```
@@ -181,7 +181,7 @@ def get_security_attribute_namespaces_output(compartment_id: pulumi.Input[Option
     import pulumi_oci as oci
 
     test_security_attribute_namespaces = oci.securityattribute.get_security_attribute_namespaces(compartment_id=compartment_id,
-        compartment_id_in_subtree=security_attribute_namespace_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=security_attribute_namespace_compartment_id_in_subtree,
         name=security_attribute_namespace_name,
         state=security_attribute_namespace_state)
     ```

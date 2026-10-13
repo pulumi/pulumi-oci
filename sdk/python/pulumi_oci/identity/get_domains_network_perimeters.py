@@ -215,13 +215,13 @@ def get_domains_network_perimeters(attribute_sets: Optional[Sequence[_builtins.s
     import pulumi_oci as oci
 
     test_network_perimeters = oci.identity.get_domains_network_perimeters(idcs_endpoint=test_domain["url"],
-        network_perimeter_count=int(network_perimeter_network_perimeter_count),
+        network_perimeter_count=network_perimeter_network_perimeter_count,
         network_perimeter_filter=network_perimeter_network_perimeter_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=network_perimeter_authorization,
         resource_type_schema_version=network_perimeter_resource_type_schema_version,
-        start_index=int(network_perimeter_start_index))
+        start_index=network_perimeter_start_index)
     ```
 
 
@@ -290,13 +290,13 @@ def get_domains_network_perimeters_output(attribute_sets: pulumi.Input[Optional[
     import pulumi_oci as oci
 
     test_network_perimeters = oci.identity.get_domains_network_perimeters(idcs_endpoint=test_domain["url"],
-        network_perimeter_count=int(network_perimeter_network_perimeter_count),
+        network_perimeter_count=network_perimeter_network_perimeter_count,
         network_perimeter_filter=network_perimeter_network_perimeter_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=network_perimeter_authorization,
         resource_type_schema_version=network_perimeter_resource_type_schema_version,
-        start_index=int(network_perimeter_start_index))
+        start_index=network_perimeter_start_index)
     ```
 
 

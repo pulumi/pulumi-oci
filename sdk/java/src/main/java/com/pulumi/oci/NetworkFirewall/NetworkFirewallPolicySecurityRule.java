@@ -61,7 +61,7 @@ import javax.annotation.Nullable;
  *                 .sourceAddresses(networkFirewallPolicySecurityRuleConditionSourceAddress)
  *                 .urls(networkFirewallPolicySecurityRuleConditionUrl)
  *                 .build())
- *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+ *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
  *             .description(networkFirewallPolicySecurityRuleDescription)
  *             .inspection(networkFirewallPolicySecurityRuleInspection)
  *             .positions(NetworkFirewallPolicySecurityRulePositionArgs.builder()

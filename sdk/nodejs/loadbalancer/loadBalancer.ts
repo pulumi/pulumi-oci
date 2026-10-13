@@ -60,9 +60,9 @@ import * as utilities from "../utilities";
  *     },
  *     ipMode: loadBalancerIpMode,
  *     ipv6subnetCidr: loadBalancerIpv6subnetCidr,
- *     isDeleteProtectionEnabled: loadBalancerIsDeleteProtectionEnabled === "true",
- *     isPrivate: loadBalancerIsPrivate === "true",
- *     isRequestIdEnabled: loadBalancerIsRequestIdEnabled === "true",
+ *     isDeleteProtectionEnabled: loadBalancerIsDeleteProtectionEnabled,
+ *     isPrivate: loadBalancerIsPrivate,
+ *     isRequestIdEnabled: loadBalancerIsRequestIdEnabled,
  *     networkSecurityGroupIds: loadBalancerNetworkSecurityGroupIds,
  *     requestIdHeader: loadBalancerRequestIdHeader,
  *     reservedIps: [{
@@ -70,8 +70,8 @@ import * as utilities from "../utilities";
  *     }],
  *     securityAttributes: loadBalancerSecurityAttributes,
  *     shapeDetails: {
- *         maximumBandwidthInMbps: Number(loadBalancerShapeDetailsMaximumBandwidthInMbps),
- *         minimumBandwidthInMbps: Number(loadBalancerShapeDetailsMinimumBandwidthInMbps),
+ *         maximumBandwidthInMbps: loadBalancerShapeDetailsMaximumBandwidthInMbps,
+ *         minimumBandwidthInMbps: loadBalancerShapeDetailsMinimumBandwidthInMbps,
  *     },
  * });
  * ```

@@ -719,13 +719,13 @@ class WorkspaceApplication(pulumi.CustomResource):
             },
             key=workspace_application_key,
             model_version=workspace_application_model_version,
-            object_status=int(workspace_application_object_status),
+            object_status=workspace_application_object_status,
             registry_metadata={
                 "aggregator_key": workspace_application_registry_metadata_aggregator_key,
-                "is_favorite": workspace_application_registry_metadata_is_favorite == "true",
+                "is_favorite": workspace_application_registry_metadata_is_favorite,
                 "key": workspace_application_registry_metadata_key,
                 "labels": workspace_application_registry_metadata_labels,
-                "registry_version": int(workspace_application_registry_metadata_registry_version),
+                "registry_version": workspace_application_registry_metadata_registry_version,
             },
             source_application_info={
                 "application_key": workspace_application_source_application_info_application_key,
@@ -799,13 +799,13 @@ class WorkspaceApplication(pulumi.CustomResource):
             },
             key=workspace_application_key,
             model_version=workspace_application_model_version,
-            object_status=int(workspace_application_object_status),
+            object_status=workspace_application_object_status,
             registry_metadata={
                 "aggregator_key": workspace_application_registry_metadata_aggregator_key,
-                "is_favorite": workspace_application_registry_metadata_is_favorite == "true",
+                "is_favorite": workspace_application_registry_metadata_is_favorite,
                 "key": workspace_application_registry_metadata_key,
                 "labels": workspace_application_registry_metadata_labels,
-                "registry_version": int(workspace_application_registry_metadata_registry_version),
+                "registry_version": workspace_application_registry_metadata_registry_version,
             },
             source_application_info={
                 "application_key": workspace_application_source_application_info_application_key,

@@ -590,7 +590,7 @@ class NetworkFirewall(pulumi.CustomResource):
             ipv4address=network_firewall_ipv4address,
             ipv6address=network_firewall_ipv6address,
             nat_configuration={
-                "must_enable_private_nat": network_firewall_nat_configuration_must_enable_private_nat == "true",
+                "must_enable_private_nat": network_firewall_nat_configuration_must_enable_private_nat,
             },
             network_security_group_ids=network_firewall_network_security_group_ids,
             security_attributes=network_firewall_security_attributes,
@@ -660,7 +660,7 @@ class NetworkFirewall(pulumi.CustomResource):
             ipv4address=network_firewall_ipv4address,
             ipv6address=network_firewall_ipv6address,
             nat_configuration={
-                "must_enable_private_nat": network_firewall_nat_configuration_must_enable_private_nat == "true",
+                "must_enable_private_nat": network_firewall_nat_configuration_must_enable_private_nat,
             },
             network_security_group_ids=network_firewall_network_security_group_ids,
             security_attributes=network_firewall_security_attributes,

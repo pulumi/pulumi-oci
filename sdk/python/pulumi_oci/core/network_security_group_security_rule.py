@@ -510,30 +510,30 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
             destination=network_security_group_security_rule_destination,
             destination_type=network_security_group_security_rule_destination_type,
             icmp_options={
-                "type": int(network_security_group_security_rule_icmp_options_type),
-                "code": int(network_security_group_security_rule_icmp_options_code),
+                "type": network_security_group_security_rule_icmp_options_type,
+                "code": network_security_group_security_rule_icmp_options_code,
             },
             source=network_security_group_security_rule_source,
             source_type=network_security_group_security_rule_source_type,
-            stateless=network_security_group_security_rule_stateless == "true",
+            stateless=network_security_group_security_rule_stateless,
             tcp_options={
                 "destination_port_range": {
-                    "max": int(network_security_group_security_rule_tcp_options_destination_port_range_max),
-                    "min": int(network_security_group_security_rule_tcp_options_destination_port_range_min),
+                    "max": network_security_group_security_rule_tcp_options_destination_port_range_max,
+                    "min": network_security_group_security_rule_tcp_options_destination_port_range_min,
                 },
                 "source_port_range": {
-                    "max": int(network_security_group_security_rule_tcp_options_source_port_range_max),
-                    "min": int(network_security_group_security_rule_tcp_options_source_port_range_min),
+                    "max": network_security_group_security_rule_tcp_options_source_port_range_max,
+                    "min": network_security_group_security_rule_tcp_options_source_port_range_min,
                 },
             },
             udp_options={
                 "destination_port_range": {
-                    "max": int(network_security_group_security_rule_udp_options_destination_port_range_max),
-                    "min": int(network_security_group_security_rule_udp_options_destination_port_range_min),
+                    "max": network_security_group_security_rule_udp_options_destination_port_range_max,
+                    "min": network_security_group_security_rule_udp_options_destination_port_range_min,
                 },
                 "source_port_range": {
-                    "max": int(network_security_group_security_rule_udp_options_source_port_range_max),
-                    "min": int(network_security_group_security_rule_udp_options_source_port_range_min),
+                    "max": network_security_group_security_rule_udp_options_source_port_range_max,
+                    "min": network_security_group_security_rule_udp_options_source_port_range_min,
                 },
             })
         ```
@@ -595,30 +595,30 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
             destination=network_security_group_security_rule_destination,
             destination_type=network_security_group_security_rule_destination_type,
             icmp_options={
-                "type": int(network_security_group_security_rule_icmp_options_type),
-                "code": int(network_security_group_security_rule_icmp_options_code),
+                "type": network_security_group_security_rule_icmp_options_type,
+                "code": network_security_group_security_rule_icmp_options_code,
             },
             source=network_security_group_security_rule_source,
             source_type=network_security_group_security_rule_source_type,
-            stateless=network_security_group_security_rule_stateless == "true",
+            stateless=network_security_group_security_rule_stateless,
             tcp_options={
                 "destination_port_range": {
-                    "max": int(network_security_group_security_rule_tcp_options_destination_port_range_max),
-                    "min": int(network_security_group_security_rule_tcp_options_destination_port_range_min),
+                    "max": network_security_group_security_rule_tcp_options_destination_port_range_max,
+                    "min": network_security_group_security_rule_tcp_options_destination_port_range_min,
                 },
                 "source_port_range": {
-                    "max": int(network_security_group_security_rule_tcp_options_source_port_range_max),
-                    "min": int(network_security_group_security_rule_tcp_options_source_port_range_min),
+                    "max": network_security_group_security_rule_tcp_options_source_port_range_max,
+                    "min": network_security_group_security_rule_tcp_options_source_port_range_min,
                 },
             },
             udp_options={
                 "destination_port_range": {
-                    "max": int(network_security_group_security_rule_udp_options_destination_port_range_max),
-                    "min": int(network_security_group_security_rule_udp_options_destination_port_range_min),
+                    "max": network_security_group_security_rule_udp_options_destination_port_range_max,
+                    "min": network_security_group_security_rule_udp_options_destination_port_range_min,
                 },
                 "source_port_range": {
-                    "max": int(network_security_group_security_rule_udp_options_source_port_range_max),
-                    "min": int(network_security_group_security_rule_udp_options_source_port_range_min),
+                    "max": network_security_group_security_rule_udp_options_source_port_range_max,
+                    "min": network_security_group_security_rule_udp_options_source_port_range_min,
                 },
             })
         ```

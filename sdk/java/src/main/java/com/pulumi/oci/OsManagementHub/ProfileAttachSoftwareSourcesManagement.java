@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testProfileAttachSoftwareSourcesManagement = new ProfileAttachSoftwareSourcesManagement("testProfileAttachSoftwareSourcesManagement", ProfileAttachSoftwareSourcesManagementArgs.builder()
- *             .profileId(testProfile.id())
+ *             .profileId(testProfile.get("id"))
  *             .softwareSources(profileAttachSoftwareSourcesManagementSoftwareSources)
  *             .build());
  * 

@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  *
  * const testExternalcontainerdatabaseExternalContainerDbmFeaturesManagement = new oci.databasemanagement.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement("test_externalcontainerdatabase_external_container_dbm_features_management", {
  *     externalContainerDatabaseId: testExternalContainerDatabase.id,
- *     enableExternalContainerDbmFeature: enableExternalContainerDbmFeature === "true",
+ *     enableExternalContainerDbmFeature: enableExternalContainerDbmFeature,
  *     featureDetails: {
  *         feature: externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsFeature,
  *         enableExternalContainerDbmFeature: enableExternalContainerDbmFeature,
@@ -31,8 +31,8 @@ import * as utilities from "../utilities";
  *             managementAgentId: testManagementAgent.id,
  *             privateEndPointId: testPrivateEndPoint.id,
  *         },
- *         canEnableAllCurrentPdbs: externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs === "true",
- *         isAutoEnablePluggableDatabase: externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase === "true",
+ *         canEnableAllCurrentPdbs: externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsCanEnableAllCurrentPdbs,
+ *         isAutoEnablePluggableDatabase: externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsIsAutoEnablePluggableDatabase,
  *         licenseModel: externalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsLicenseModel,
  *     },
  * });

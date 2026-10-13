@@ -32,7 +32,7 @@ import * as utilities from "../utilities";
  *     domain: recordItemsDomain,
  *     rtype: recordItemsRtype,
  *     rdata: recordItemsRdata,
- *     ttl: Number(recordItemsTtl),
+ *     ttl: recordItemsTtl,
  * });
  * ```
  *

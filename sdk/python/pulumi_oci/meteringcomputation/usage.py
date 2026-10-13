@@ -462,7 +462,7 @@ class Usage(pulumi.CustomResource):
                 "namespace": usage_group_by_tag_namespace,
                 "value": usage_group_by_tag_value,
             }],
-            is_aggregate_by_time=usage_is_aggregate_by_time == "true",
+            is_aggregate_by_time=usage_is_aggregate_by_time,
             query_type=usage_query_type)
         ```
 
@@ -526,7 +526,7 @@ class Usage(pulumi.CustomResource):
                 "namespace": usage_group_by_tag_namespace,
                 "value": usage_group_by_tag_value,
             }],
-            is_aggregate_by_time=usage_is_aggregate_by_time == "true",
+            is_aggregate_by_time=usage_is_aggregate_by_time,
             query_type=usage_query_type)
         ```
 

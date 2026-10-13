@@ -60,7 +60,7 @@ public final class AiDocumentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = AiDocumentFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(testModelOciAiDocumentModel.id())
+     *             .modelId(testModelOciAiDocumentModel.get("id"))
      *             .build());
      * 
      *     }
@@ -102,7 +102,7 @@ public final class AiDocumentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = AiDocumentFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(testModelOciAiDocumentModel.id())
+     *             .modelId(testModelOciAiDocumentModel.get("id"))
      *             .build());
      * 
      *     }
@@ -144,7 +144,7 @@ public final class AiDocumentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = AiDocumentFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(testModelOciAiDocumentModel.id())
+     *             .modelId(testModelOciAiDocumentModel.get("id"))
      *             .build());
      * 
      *     }
@@ -186,7 +186,7 @@ public final class AiDocumentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = AiDocumentFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(testModelOciAiDocumentModel.id())
+     *             .modelId(testModelOciAiDocumentModel.get("id"))
      *             .build());
      * 
      *     }
@@ -228,7 +228,7 @@ public final class AiDocumentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = AiDocumentFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(testModelOciAiDocumentModel.id())
+     *             .modelId(testModelOciAiDocumentModel.get("id"))
      *             .build());
      * 
      *     }
@@ -493,7 +493,7 @@ public final class AiDocumentFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(modelDisplayName)
      *             .id(modelId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelState)
      *             .build());
      * 
@@ -539,7 +539,7 @@ public final class AiDocumentFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(modelDisplayName)
      *             .id(modelId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelState)
      *             .build());
      * 
@@ -585,7 +585,7 @@ public final class AiDocumentFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(modelDisplayName)
      *             .id(modelId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelState)
      *             .build());
      * 
@@ -631,7 +631,7 @@ public final class AiDocumentFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(modelDisplayName)
      *             .id(modelId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelState)
      *             .build());
      * 
@@ -677,7 +677,7 @@ public final class AiDocumentFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(modelDisplayName)
      *             .id(modelId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelState)
      *             .build());
      * 
@@ -723,7 +723,7 @@ public final class AiDocumentFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(modelDisplayName)
      *             .id(modelId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelState)
      *             .build());
      * 
@@ -769,7 +769,7 @@ public final class AiDocumentFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(modelDisplayName)
      *             .id(modelId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelState)
      *             .build());
      * 
@@ -812,7 +812,7 @@ public final class AiDocumentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProcessorJob = AiDocumentFunctions.getProcessorJob(GetProcessorJobArgs.builder()
-     *             .processorJobId(testProcessorJobOciAiDocumentProcessorJob.id())
+     *             .processorJobId(testProcessorJobOciAiDocumentProcessorJob.get("id"))
      *             .build());
      * 
      *     }
@@ -854,7 +854,7 @@ public final class AiDocumentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProcessorJob = AiDocumentFunctions.getProcessorJob(GetProcessorJobArgs.builder()
-     *             .processorJobId(testProcessorJobOciAiDocumentProcessorJob.id())
+     *             .processorJobId(testProcessorJobOciAiDocumentProcessorJob.get("id"))
      *             .build());
      * 
      *     }
@@ -896,7 +896,7 @@ public final class AiDocumentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProcessorJob = AiDocumentFunctions.getProcessorJob(GetProcessorJobArgs.builder()
-     *             .processorJobId(testProcessorJobOciAiDocumentProcessorJob.id())
+     *             .processorJobId(testProcessorJobOciAiDocumentProcessorJob.get("id"))
      *             .build());
      * 
      *     }
@@ -938,7 +938,7 @@ public final class AiDocumentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProcessorJob = AiDocumentFunctions.getProcessorJob(GetProcessorJobArgs.builder()
-     *             .processorJobId(testProcessorJobOciAiDocumentProcessorJob.id())
+     *             .processorJobId(testProcessorJobOciAiDocumentProcessorJob.get("id"))
      *             .build());
      * 
      *     }
@@ -980,7 +980,7 @@ public final class AiDocumentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProcessorJob = AiDocumentFunctions.getProcessorJob(GetProcessorJobArgs.builder()
-     *             .processorJobId(testProcessorJobOciAiDocumentProcessorJob.id())
+     *             .processorJobId(testProcessorJobOciAiDocumentProcessorJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1022,7 +1022,7 @@ public final class AiDocumentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = AiDocumentFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciAiDocumentProject.id())
+     *             .projectId(testProjectOciAiDocumentProject.get("id"))
      *             .build());
      * 
      *     }
@@ -1064,7 +1064,7 @@ public final class AiDocumentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = AiDocumentFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciAiDocumentProject.id())
+     *             .projectId(testProjectOciAiDocumentProject.get("id"))
      *             .build());
      * 
      *     }
@@ -1106,7 +1106,7 @@ public final class AiDocumentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = AiDocumentFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciAiDocumentProject.id())
+     *             .projectId(testProjectOciAiDocumentProject.get("id"))
      *             .build());
      * 
      *     }
@@ -1148,7 +1148,7 @@ public final class AiDocumentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = AiDocumentFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciAiDocumentProject.id())
+     *             .projectId(testProjectOciAiDocumentProject.get("id"))
      *             .build());
      * 
      *     }
@@ -1190,7 +1190,7 @@ public final class AiDocumentFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = AiDocumentFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciAiDocumentProject.id())
+     *             .projectId(testProjectOciAiDocumentProject.get("id"))
      *             .build());
      * 
      *     }

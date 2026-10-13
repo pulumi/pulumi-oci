@@ -492,7 +492,7 @@ class SteeringPolicy(pulumi.CustomResource):
                 "name": steering_policy_answers_name,
                 "rdata": steering_policy_answers_rdata,
                 "rtype": steering_policy_answers_rtype,
-                "is_disabled": steering_policy_answers_is_disabled == "true",
+                "is_disabled": steering_policy_answers_is_disabled,
                 "pool": steering_policy_answers_pool,
             }],
             defined_tags=steering_policy_defined_tags,
@@ -503,21 +503,21 @@ class SteeringPolicy(pulumi.CustomResource):
                 "cases": [{
                     "answer_datas": [{
                         "answer_condition": steering_policy_rules_cases_answer_data_answer_condition,
-                        "should_keep": steering_policy_rules_cases_answer_data_should_keep == "true",
-                        "value": int(steering_policy_rules_cases_answer_data_value),
+                        "should_keep": steering_policy_rules_cases_answer_data_should_keep,
+                        "value": steering_policy_rules_cases_answer_data_value,
                     }],
                     "case_condition": steering_policy_rules_cases_case_condition,
-                    "count": int(steering_policy_rules_cases_count),
+                    "count": steering_policy_rules_cases_count,
                 }],
                 "default_answer_datas": [{
                     "answer_condition": steering_policy_rules_default_answer_data_answer_condition,
-                    "should_keep": steering_policy_rules_default_answer_data_should_keep == "true",
-                    "value": int(steering_policy_rules_default_answer_data_value),
+                    "should_keep": steering_policy_rules_default_answer_data_should_keep,
+                    "value": steering_policy_rules_default_answer_data_value,
                 }],
-                "default_count": int(steering_policy_rules_default_count),
+                "default_count": steering_policy_rules_default_count,
                 "description": steering_policy_rules_description,
             }],
-            ttl=int(steering_policy_ttl))
+            ttl=steering_policy_ttl)
         ```
 
         ## Import
@@ -591,7 +591,7 @@ class SteeringPolicy(pulumi.CustomResource):
                 "name": steering_policy_answers_name,
                 "rdata": steering_policy_answers_rdata,
                 "rtype": steering_policy_answers_rtype,
-                "is_disabled": steering_policy_answers_is_disabled == "true",
+                "is_disabled": steering_policy_answers_is_disabled,
                 "pool": steering_policy_answers_pool,
             }],
             defined_tags=steering_policy_defined_tags,
@@ -602,21 +602,21 @@ class SteeringPolicy(pulumi.CustomResource):
                 "cases": [{
                     "answer_datas": [{
                         "answer_condition": steering_policy_rules_cases_answer_data_answer_condition,
-                        "should_keep": steering_policy_rules_cases_answer_data_should_keep == "true",
-                        "value": int(steering_policy_rules_cases_answer_data_value),
+                        "should_keep": steering_policy_rules_cases_answer_data_should_keep,
+                        "value": steering_policy_rules_cases_answer_data_value,
                     }],
                     "case_condition": steering_policy_rules_cases_case_condition,
-                    "count": int(steering_policy_rules_cases_count),
+                    "count": steering_policy_rules_cases_count,
                 }],
                 "default_answer_datas": [{
                     "answer_condition": steering_policy_rules_default_answer_data_answer_condition,
-                    "should_keep": steering_policy_rules_default_answer_data_should_keep == "true",
-                    "value": int(steering_policy_rules_default_answer_data_value),
+                    "should_keep": steering_policy_rules_default_answer_data_should_keep,
+                    "value": steering_policy_rules_default_answer_data_value,
                 }],
-                "default_count": int(steering_policy_rules_default_count),
+                "default_count": steering_policy_rules_default_count,
                 "description": steering_policy_rules_description,
             }],
-            ttl=int(steering_policy_ttl))
+            ttl=steering_policy_ttl)
         ```
 
         ## Import

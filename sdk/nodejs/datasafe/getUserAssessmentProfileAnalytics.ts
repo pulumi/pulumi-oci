@@ -35,7 +35,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     userAssessmentId: testUserAssessment.id,
  *     accessLevel: userAssessmentProfileAnalyticAccessLevel,
- *     compartmentIdInSubtree: userAssessmentProfileAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: userAssessmentProfileAnalyticCompartmentIdInSubtree,
  *     profileName: testProfile.name,
  *     targetId: testTarget.id,
  * });
@@ -134,7 +134,7 @@ export interface GetUserAssessmentProfileAnalyticsResult {
  *     compartmentId: compartmentId,
  *     userAssessmentId: testUserAssessment.id,
  *     accessLevel: userAssessmentProfileAnalyticAccessLevel,
- *     compartmentIdInSubtree: userAssessmentProfileAnalyticCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: userAssessmentProfileAnalyticCompartmentIdInSubtree,
  *     profileName: testProfile.name,
  *     targetId: testTarget.id,
  * });

@@ -28,9 +28,9 @@ import * as utilities from "../utilities";
  *     scans: [{
  *         hostname: vmClusterNetworkScansHostname,
  *         ips: vmClusterNetworkScansIps,
- *         port: Number(vmClusterNetworkScansPort),
- *         scanListenerPortTcp: Number(vmClusterNetworkScansScanListenerPortTcp),
- *         scanListenerPortTcpSsl: Number(vmClusterNetworkScansScanListenerPortTcpSsl),
+ *         port: vmClusterNetworkScansPort,
+ *         scanListenerPortTcp: vmClusterNetworkScansScanListenerPortTcp,
+ *         scanListenerPortTcpSsl: vmClusterNetworkScansScanListenerPortTcpSsl,
  *     }],
  *     vmNetworks: [{
  *         networkType: vmClusterNetworkVmNetworksNetworkType,
@@ -52,14 +52,14 @@ import * as utilities from "../utilities";
  *     drScans: [{
  *         hostname: vmClusterNetworkDrScansHostname,
  *         ips: vmClusterNetworkDrScansIps,
- *         scanListenerPortTcp: Number(vmClusterNetworkDrScansScanListenerPortTcp),
- *         scanListenerPortTcpSsl: Number(vmClusterNetworkDrScansScanListenerPortTcpSsl),
+ *         scanListenerPortTcp: vmClusterNetworkDrScansScanListenerPortTcp,
+ *         scanListenerPortTcpSsl: vmClusterNetworkDrScansScanListenerPortTcpSsl,
  *     }],
  *     freeformTags: {
  *         Department: "Finance",
  *     },
  *     ntps: vmClusterNetworkNtp,
- *     validateVmClusterNetwork: vmClusterNetworkValidateVmClusterNetwork === "true",
+ *     validateVmClusterNetwork: vmClusterNetworkValidateVmClusterNetwork,
  * });
  * ```
  *

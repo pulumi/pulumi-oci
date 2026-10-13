@@ -19,14 +19,14 @@ import * as utilities from "../utilities";
  *     displayName: consumerGroupDisplayName,
  *     queueId: testQueue.id,
  *     consumerGroupFilter: consumerGroupConsumerGroupFilter,
- *     deadLetterQueueDeliveryCount: Number(consumerGroupDeadLetterQueueDeliveryCount),
+ *     deadLetterQueueDeliveryCount: consumerGroupDeadLetterQueueDeliveryCount,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isEnabled: consumerGroupIsEnabled === "true",
+ *     isEnabled: consumerGroupIsEnabled,
  * });
  * ```
  *

@@ -44,7 +44,7 @@ import (
 //				CompartmentId:          compartmentId,
 //				AccessLevel:            pulumi.StringRef(sqlFirewallPolicyAnalyticAccessLevel),
 //				CompartmentIdInSubtree: pulumi.BoolRef(sqlFirewallPolicyAnalyticCompartmentIdInSubtree),
-//				GroupBies:              pulumi.ToArray(sqlFirewallPolicyAnalyticGroupBy),
+//				GroupBies:              sqlFirewallPolicyAnalyticGroupBy,
 //				SecurityPolicyId:       pulumi.StringRef(testSecurityPolicy.Id),
 //				State:                  pulumi.StringRef(sqlFirewallPolicyAnalyticState),
 //				TimeEnded:              pulumi.StringRef(sqlFirewallPolicyAnalyticTimeEnded),

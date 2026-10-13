@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *                 .compartmentId(compartmentId)
  *                 .type(streamDistributionChannelLocksType)
  *                 .message(streamDistributionChannelLocksMessage)
- *                 .relatedResourceId(testResource.id())
+ *                 .relatedResourceId(testResource.get("id"))
  *                 .timeCreated(streamDistributionChannelLocksTimeCreated)
  *                 .build())
  *             .build());

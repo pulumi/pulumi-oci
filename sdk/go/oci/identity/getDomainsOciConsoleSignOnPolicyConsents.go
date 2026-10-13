@@ -33,7 +33,7 @@ import (
 //				IdcsEndpoint:                        testDomain.Url,
 //				OciConsoleSignOnPolicyConsentCount:  pulumi.IntRef(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentCount),
 //				OciConsoleSignOnPolicyConsentFilter: pulumi.StringRef(ociConsoleSignOnPolicyConsentOciConsoleSignOnPolicyConsentFilter),
-//				AttributeSets:                       pulumi.ToArray(ociConsoleSignOnPolicyConsentAttributeSets),
+//				AttributeSets:                       ociConsoleSignOnPolicyConsentAttributeSets,
 //				Attributes:                          pulumi.StringRef(ociConsoleSignOnPolicyConsentAttributes),
 //				Authorization:                       pulumi.StringRef(ociConsoleSignOnPolicyConsentAuthorization),
 //				ResourceTypeSchemaVersion:           pulumi.StringRef(ociConsoleSignOnPolicyConsentResourceTypeSchemaVersion),

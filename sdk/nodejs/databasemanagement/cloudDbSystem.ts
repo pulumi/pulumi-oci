@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     dbSystemDiscoveryId: testDbSystemDiscovery.id,
  *     databaseManagementConfig: {
- *         isEnabled: cloudDbSystemDatabaseManagementConfigIsEnabled === "true",
+ *         isEnabled: cloudDbSystemDatabaseManagementConfigIsEnabled,
  *         metadata: cloudDbSystemDatabaseManagementConfigMetadata,
  *     },
  *     definedTags: {
@@ -35,7 +35,7 @@ import * as utilities from "../utilities";
  *         Department: "Finance",
  *     },
  *     stackMonitoringConfig: {
- *         isEnabled: cloudDbSystemStackMonitoringConfigIsEnabled === "true",
+ *         isEnabled: cloudDbSystemStackMonitoringConfigIsEnabled,
  *         metadata: cloudDbSystemStackMonitoringConfigMetadata,
  *     },
  * });

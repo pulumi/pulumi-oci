@@ -322,7 +322,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCategory = OptimizerFunctions.getCategory(GetCategoryArgs.builder()
-     *             .categoryId(testCategoryOciOptimizerCategory.id())
+     *             .categoryId(testCategoryOciOptimizerCategory.get("id"))
      *             .build());
      * 
      *     }
@@ -364,7 +364,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCategory = OptimizerFunctions.getCategory(GetCategoryArgs.builder()
-     *             .categoryId(testCategoryOciOptimizerCategory.id())
+     *             .categoryId(testCategoryOciOptimizerCategory.get("id"))
      *             .build());
      * 
      *     }
@@ -406,7 +406,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCategory = OptimizerFunctions.getCategory(GetCategoryArgs.builder()
-     *             .categoryId(testCategoryOciOptimizerCategory.id())
+     *             .categoryId(testCategoryOciOptimizerCategory.get("id"))
      *             .build());
      * 
      *     }
@@ -448,7 +448,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCategory = OptimizerFunctions.getCategory(GetCategoryArgs.builder()
-     *             .categoryId(testCategoryOciOptimizerCategory.id())
+     *             .categoryId(testCategoryOciOptimizerCategory.get("id"))
      *             .build());
      * 
      *     }
@@ -490,7 +490,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testCategory = OptimizerFunctions.getCategory(GetCategoryArgs.builder()
-     *             .categoryId(testCategoryOciOptimizerCategory.id())
+     *             .categoryId(testCategoryOciOptimizerCategory.get("id"))
      *             .build());
      * 
      *     }
@@ -532,7 +532,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEnrollmentStatus = OptimizerFunctions.getEnrollmentStatus(GetEnrollmentStatusArgs.builder()
-     *             .enrollmentStatusId(testEnrollmentStatusOciOptimizerEnrollmentStatus.id())
+     *             .enrollmentStatusId(testEnrollmentStatusOciOptimizerEnrollmentStatus.get("id"))
      *             .build());
      * 
      *     }
@@ -574,7 +574,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEnrollmentStatus = OptimizerFunctions.getEnrollmentStatus(GetEnrollmentStatusArgs.builder()
-     *             .enrollmentStatusId(testEnrollmentStatusOciOptimizerEnrollmentStatus.id())
+     *             .enrollmentStatusId(testEnrollmentStatusOciOptimizerEnrollmentStatus.get("id"))
      *             .build());
      * 
      *     }
@@ -616,7 +616,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEnrollmentStatus = OptimizerFunctions.getEnrollmentStatus(GetEnrollmentStatusArgs.builder()
-     *             .enrollmentStatusId(testEnrollmentStatusOciOptimizerEnrollmentStatus.id())
+     *             .enrollmentStatusId(testEnrollmentStatusOciOptimizerEnrollmentStatus.get("id"))
      *             .build());
      * 
      *     }
@@ -658,7 +658,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEnrollmentStatus = OptimizerFunctions.getEnrollmentStatus(GetEnrollmentStatusArgs.builder()
-     *             .enrollmentStatusId(testEnrollmentStatusOciOptimizerEnrollmentStatus.id())
+     *             .enrollmentStatusId(testEnrollmentStatusOciOptimizerEnrollmentStatus.get("id"))
      *             .build());
      * 
      *     }
@@ -700,7 +700,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testEnrollmentStatus = OptimizerFunctions.getEnrollmentStatus(GetEnrollmentStatusArgs.builder()
-     *             .enrollmentStatusId(testEnrollmentStatusOciOptimizerEnrollmentStatus.id())
+     *             .enrollmentStatusId(testEnrollmentStatusOciOptimizerEnrollmentStatus.get("id"))
      *             .build());
      * 
      *     }
@@ -967,8 +967,8 @@ public final class OptimizerFunctions {
      *             .compartmentIdInSubtree(historyCompartmentIdInSubtree)
      *             .includeResourceMetadata(historyIncludeResourceMetadata)
      *             .name(historyName)
-     *             .recommendationId(testRecommendation.id())
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationId(testRecommendation.get("id"))
+     *             .recommendationName(testRecommendation.get("name"))
      *             .resourceType(historyResourceType)
      *             .state(historyState)
      *             .status(historyStatus)
@@ -1018,8 +1018,8 @@ public final class OptimizerFunctions {
      *             .compartmentIdInSubtree(historyCompartmentIdInSubtree)
      *             .includeResourceMetadata(historyIncludeResourceMetadata)
      *             .name(historyName)
-     *             .recommendationId(testRecommendation.id())
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationId(testRecommendation.get("id"))
+     *             .recommendationName(testRecommendation.get("name"))
      *             .resourceType(historyResourceType)
      *             .state(historyState)
      *             .status(historyStatus)
@@ -1069,8 +1069,8 @@ public final class OptimizerFunctions {
      *             .compartmentIdInSubtree(historyCompartmentIdInSubtree)
      *             .includeResourceMetadata(historyIncludeResourceMetadata)
      *             .name(historyName)
-     *             .recommendationId(testRecommendation.id())
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationId(testRecommendation.get("id"))
+     *             .recommendationName(testRecommendation.get("name"))
      *             .resourceType(historyResourceType)
      *             .state(historyState)
      *             .status(historyStatus)
@@ -1120,8 +1120,8 @@ public final class OptimizerFunctions {
      *             .compartmentIdInSubtree(historyCompartmentIdInSubtree)
      *             .includeResourceMetadata(historyIncludeResourceMetadata)
      *             .name(historyName)
-     *             .recommendationId(testRecommendation.id())
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationId(testRecommendation.get("id"))
+     *             .recommendationName(testRecommendation.get("name"))
      *             .resourceType(historyResourceType)
      *             .state(historyState)
      *             .status(historyStatus)
@@ -1171,8 +1171,8 @@ public final class OptimizerFunctions {
      *             .compartmentIdInSubtree(historyCompartmentIdInSubtree)
      *             .includeResourceMetadata(historyIncludeResourceMetadata)
      *             .name(historyName)
-     *             .recommendationId(testRecommendation.id())
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationId(testRecommendation.get("id"))
+     *             .recommendationName(testRecommendation.get("name"))
      *             .resourceType(historyResourceType)
      *             .state(historyState)
      *             .status(historyStatus)
@@ -1217,7 +1217,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfile = OptimizerFunctions.getProfile(GetProfileArgs.builder()
-     *             .profileId(testProfileOciOptimizerProfile.id())
+     *             .profileId(testProfileOciOptimizerProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -1259,7 +1259,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfile = OptimizerFunctions.getProfile(GetProfileArgs.builder()
-     *             .profileId(testProfileOciOptimizerProfile.id())
+     *             .profileId(testProfileOciOptimizerProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -1301,7 +1301,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfile = OptimizerFunctions.getProfile(GetProfileArgs.builder()
-     *             .profileId(testProfileOciOptimizerProfile.id())
+     *             .profileId(testProfileOciOptimizerProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -1343,7 +1343,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfile = OptimizerFunctions.getProfile(GetProfileArgs.builder()
-     *             .profileId(testProfileOciOptimizerProfile.id())
+     *             .profileId(testProfileOciOptimizerProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -1385,7 +1385,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProfile = OptimizerFunctions.getProfile(GetProfileArgs.builder()
-     *             .profileId(testProfileOciOptimizerProfile.id())
+     *             .profileId(testProfileOciOptimizerProfile.get("id"))
      *             .build());
      * 
      *     }
@@ -1430,7 +1430,7 @@ public final class OptimizerFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(profileLevelCompartmentIdInSubtree)
      *             .name(profileLevelName)
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationName(testRecommendation.get("name"))
      *             .build());
      * 
      *     }
@@ -1475,7 +1475,7 @@ public final class OptimizerFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(profileLevelCompartmentIdInSubtree)
      *             .name(profileLevelName)
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationName(testRecommendation.get("name"))
      *             .build());
      * 
      *     }
@@ -1520,7 +1520,7 @@ public final class OptimizerFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(profileLevelCompartmentIdInSubtree)
      *             .name(profileLevelName)
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationName(testRecommendation.get("name"))
      *             .build());
      * 
      *     }
@@ -1565,7 +1565,7 @@ public final class OptimizerFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(profileLevelCompartmentIdInSubtree)
      *             .name(profileLevelName)
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationName(testRecommendation.get("name"))
      *             .build());
      * 
      *     }
@@ -1610,7 +1610,7 @@ public final class OptimizerFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(profileLevelCompartmentIdInSubtree)
      *             .name(profileLevelName)
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationName(testRecommendation.get("name"))
      *             .build());
      * 
      *     }
@@ -1655,7 +1655,7 @@ public final class OptimizerFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(profileLevelCompartmentIdInSubtree)
      *             .name(profileLevelName)
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationName(testRecommendation.get("name"))
      *             .build());
      * 
      *     }
@@ -1700,7 +1700,7 @@ public final class OptimizerFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(profileLevelCompartmentIdInSubtree)
      *             .name(profileLevelName)
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationName(testRecommendation.get("name"))
      *             .build());
      * 
      *     }
@@ -1745,7 +1745,7 @@ public final class OptimizerFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(profileLevelCompartmentIdInSubtree)
      *             .name(profileLevelName)
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationName(testRecommendation.get("name"))
      *             .build());
      * 
      *     }
@@ -1790,7 +1790,7 @@ public final class OptimizerFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(profileLevelCompartmentIdInSubtree)
      *             .name(profileLevelName)
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationName(testRecommendation.get("name"))
      *             .build());
      * 
      *     }
@@ -1835,7 +1835,7 @@ public final class OptimizerFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(profileLevelCompartmentIdInSubtree)
      *             .name(profileLevelName)
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationName(testRecommendation.get("name"))
      *             .build());
      * 
      *     }
@@ -2097,7 +2097,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecommendation = OptimizerFunctions.getRecommendation(GetRecommendationArgs.builder()
-     *             .recommendationId(testRecommendationOciOptimizerRecommendation.id())
+     *             .recommendationId(testRecommendationOciOptimizerRecommendation.get("id"))
      *             .build());
      * 
      *     }
@@ -2139,7 +2139,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecommendation = OptimizerFunctions.getRecommendation(GetRecommendationArgs.builder()
-     *             .recommendationId(testRecommendationOciOptimizerRecommendation.id())
+     *             .recommendationId(testRecommendationOciOptimizerRecommendation.get("id"))
      *             .build());
      * 
      *     }
@@ -2181,7 +2181,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecommendation = OptimizerFunctions.getRecommendation(GetRecommendationArgs.builder()
-     *             .recommendationId(testRecommendationOciOptimizerRecommendation.id())
+     *             .recommendationId(testRecommendationOciOptimizerRecommendation.get("id"))
      *             .build());
      * 
      *     }
@@ -2223,7 +2223,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecommendation = OptimizerFunctions.getRecommendation(GetRecommendationArgs.builder()
-     *             .recommendationId(testRecommendationOciOptimizerRecommendation.id())
+     *             .recommendationId(testRecommendationOciOptimizerRecommendation.get("id"))
      *             .build());
      * 
      *     }
@@ -2265,7 +2265,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testRecommendation = OptimizerFunctions.getRecommendation(GetRecommendationArgs.builder()
-     *             .recommendationId(testRecommendationOciOptimizerRecommendation.id())
+     *             .recommendationId(testRecommendationOciOptimizerRecommendation.get("id"))
      *             .build());
      * 
      *     }
@@ -2310,7 +2310,7 @@ public final class OptimizerFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(recommendationStrategyCompartmentIdInSubtree)
      *             .name(recommendationStrategyName)
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationName(testRecommendation.get("name"))
      *             .build());
      * 
      *     }
@@ -2355,7 +2355,7 @@ public final class OptimizerFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(recommendationStrategyCompartmentIdInSubtree)
      *             .name(recommendationStrategyName)
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationName(testRecommendation.get("name"))
      *             .build());
      * 
      *     }
@@ -2400,7 +2400,7 @@ public final class OptimizerFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(recommendationStrategyCompartmentIdInSubtree)
      *             .name(recommendationStrategyName)
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationName(testRecommendation.get("name"))
      *             .build());
      * 
      *     }
@@ -2445,7 +2445,7 @@ public final class OptimizerFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(recommendationStrategyCompartmentIdInSubtree)
      *             .name(recommendationStrategyName)
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationName(testRecommendation.get("name"))
      *             .build());
      * 
      *     }
@@ -2490,7 +2490,7 @@ public final class OptimizerFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(recommendationStrategyCompartmentIdInSubtree)
      *             .name(recommendationStrategyName)
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationName(testRecommendation.get("name"))
      *             .build());
      * 
      *     }
@@ -2535,7 +2535,7 @@ public final class OptimizerFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(recommendationStrategyCompartmentIdInSubtree)
      *             .name(recommendationStrategyName)
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationName(testRecommendation.get("name"))
      *             .build());
      * 
      *     }
@@ -2580,7 +2580,7 @@ public final class OptimizerFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(recommendationStrategyCompartmentIdInSubtree)
      *             .name(recommendationStrategyName)
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationName(testRecommendation.get("name"))
      *             .build());
      * 
      *     }
@@ -2625,7 +2625,7 @@ public final class OptimizerFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(recommendationStrategyCompartmentIdInSubtree)
      *             .name(recommendationStrategyName)
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationName(testRecommendation.get("name"))
      *             .build());
      * 
      *     }
@@ -2670,7 +2670,7 @@ public final class OptimizerFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(recommendationStrategyCompartmentIdInSubtree)
      *             .name(recommendationStrategyName)
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationName(testRecommendation.get("name"))
      *             .build());
      * 
      *     }
@@ -2715,7 +2715,7 @@ public final class OptimizerFunctions {
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(recommendationStrategyCompartmentIdInSubtree)
      *             .name(recommendationStrategyName)
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationName(testRecommendation.get("name"))
      *             .build());
      * 
      *     }
@@ -2759,8 +2759,8 @@ public final class OptimizerFunctions {
      *         final var testRecommendations = OptimizerFunctions.getRecommendations(GetRecommendationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(recommendationCompartmentIdInSubtree)
-     *             .categoryId(testCategory.id())
-     *             .categoryName(testCategory.name())
+     *             .categoryId(testCategory.get("id"))
+     *             .categoryName(testCategory.get("name"))
      *             .childTenancyIds(recommendationChildTenancyIds)
      *             .includeOrganization(recommendationIncludeOrganization)
      *             .name(recommendationName)
@@ -2809,8 +2809,8 @@ public final class OptimizerFunctions {
      *         final var testRecommendations = OptimizerFunctions.getRecommendations(GetRecommendationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(recommendationCompartmentIdInSubtree)
-     *             .categoryId(testCategory.id())
-     *             .categoryName(testCategory.name())
+     *             .categoryId(testCategory.get("id"))
+     *             .categoryName(testCategory.get("name"))
      *             .childTenancyIds(recommendationChildTenancyIds)
      *             .includeOrganization(recommendationIncludeOrganization)
      *             .name(recommendationName)
@@ -2859,8 +2859,8 @@ public final class OptimizerFunctions {
      *         final var testRecommendations = OptimizerFunctions.getRecommendations(GetRecommendationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(recommendationCompartmentIdInSubtree)
-     *             .categoryId(testCategory.id())
-     *             .categoryName(testCategory.name())
+     *             .categoryId(testCategory.get("id"))
+     *             .categoryName(testCategory.get("name"))
      *             .childTenancyIds(recommendationChildTenancyIds)
      *             .includeOrganization(recommendationIncludeOrganization)
      *             .name(recommendationName)
@@ -2909,8 +2909,8 @@ public final class OptimizerFunctions {
      *         final var testRecommendations = OptimizerFunctions.getRecommendations(GetRecommendationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(recommendationCompartmentIdInSubtree)
-     *             .categoryId(testCategory.id())
-     *             .categoryName(testCategory.name())
+     *             .categoryId(testCategory.get("id"))
+     *             .categoryName(testCategory.get("name"))
      *             .childTenancyIds(recommendationChildTenancyIds)
      *             .includeOrganization(recommendationIncludeOrganization)
      *             .name(recommendationName)
@@ -2959,8 +2959,8 @@ public final class OptimizerFunctions {
      *         final var testRecommendations = OptimizerFunctions.getRecommendations(GetRecommendationsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .compartmentIdInSubtree(recommendationCompartmentIdInSubtree)
-     *             .categoryId(testCategory.id())
-     *             .categoryName(testCategory.name())
+     *             .categoryId(testCategory.get("id"))
+     *             .categoryName(testCategory.get("name"))
      *             .childTenancyIds(recommendationChildTenancyIds)
      *             .includeOrganization(recommendationIncludeOrganization)
      *             .name(recommendationName)
@@ -3007,7 +3007,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceAction = OptimizerFunctions.getResourceAction(GetResourceActionArgs.builder()
-     *             .resourceActionId(testResourceActionOciOptimizerResourceAction.id())
+     *             .resourceActionId(testResourceActionOciOptimizerResourceAction.get("id"))
      *             .includeResourceMetadata(resourceActionIncludeResourceMetadata)
      *             .build());
      * 
@@ -3050,7 +3050,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceAction = OptimizerFunctions.getResourceAction(GetResourceActionArgs.builder()
-     *             .resourceActionId(testResourceActionOciOptimizerResourceAction.id())
+     *             .resourceActionId(testResourceActionOciOptimizerResourceAction.get("id"))
      *             .includeResourceMetadata(resourceActionIncludeResourceMetadata)
      *             .build());
      * 
@@ -3093,7 +3093,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceAction = OptimizerFunctions.getResourceAction(GetResourceActionArgs.builder()
-     *             .resourceActionId(testResourceActionOciOptimizerResourceAction.id())
+     *             .resourceActionId(testResourceActionOciOptimizerResourceAction.get("id"))
      *             .includeResourceMetadata(resourceActionIncludeResourceMetadata)
      *             .build());
      * 
@@ -3136,7 +3136,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceAction = OptimizerFunctions.getResourceAction(GetResourceActionArgs.builder()
-     *             .resourceActionId(testResourceActionOciOptimizerResourceAction.id())
+     *             .resourceActionId(testResourceActionOciOptimizerResourceAction.get("id"))
      *             .includeResourceMetadata(resourceActionIncludeResourceMetadata)
      *             .build());
      * 
@@ -3179,7 +3179,7 @@ public final class OptimizerFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testResourceAction = OptimizerFunctions.getResourceAction(GetResourceActionArgs.builder()
-     *             .resourceActionId(testResourceActionOciOptimizerResourceAction.id())
+     *             .resourceActionId(testResourceActionOciOptimizerResourceAction.get("id"))
      *             .includeResourceMetadata(resourceActionIncludeResourceMetadata)
      *             .build());
      * 
@@ -3228,8 +3228,8 @@ public final class OptimizerFunctions {
      *             .includeOrganization(resourceActionIncludeOrganization)
      *             .includeResourceMetadata(resourceActionIncludeResourceMetadata)
      *             .name(resourceActionName)
-     *             .recommendationId(testRecommendation.id())
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationId(testRecommendation.get("id"))
+     *             .recommendationName(testRecommendation.get("name"))
      *             .resourceType(resourceActionResourceType)
      *             .state(resourceActionState)
      *             .status(resourceActionStatus)
@@ -3280,8 +3280,8 @@ public final class OptimizerFunctions {
      *             .includeOrganization(resourceActionIncludeOrganization)
      *             .includeResourceMetadata(resourceActionIncludeResourceMetadata)
      *             .name(resourceActionName)
-     *             .recommendationId(testRecommendation.id())
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationId(testRecommendation.get("id"))
+     *             .recommendationName(testRecommendation.get("name"))
      *             .resourceType(resourceActionResourceType)
      *             .state(resourceActionState)
      *             .status(resourceActionStatus)
@@ -3332,8 +3332,8 @@ public final class OptimizerFunctions {
      *             .includeOrganization(resourceActionIncludeOrganization)
      *             .includeResourceMetadata(resourceActionIncludeResourceMetadata)
      *             .name(resourceActionName)
-     *             .recommendationId(testRecommendation.id())
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationId(testRecommendation.get("id"))
+     *             .recommendationName(testRecommendation.get("name"))
      *             .resourceType(resourceActionResourceType)
      *             .state(resourceActionState)
      *             .status(resourceActionStatus)
@@ -3384,8 +3384,8 @@ public final class OptimizerFunctions {
      *             .includeOrganization(resourceActionIncludeOrganization)
      *             .includeResourceMetadata(resourceActionIncludeResourceMetadata)
      *             .name(resourceActionName)
-     *             .recommendationId(testRecommendation.id())
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationId(testRecommendation.get("id"))
+     *             .recommendationName(testRecommendation.get("name"))
      *             .resourceType(resourceActionResourceType)
      *             .state(resourceActionState)
      *             .status(resourceActionStatus)
@@ -3436,8 +3436,8 @@ public final class OptimizerFunctions {
      *             .includeOrganization(resourceActionIncludeOrganization)
      *             .includeResourceMetadata(resourceActionIncludeResourceMetadata)
      *             .name(resourceActionName)
-     *             .recommendationId(testRecommendation.id())
-     *             .recommendationName(testRecommendation.name())
+     *             .recommendationId(testRecommendation.get("id"))
+     *             .recommendationName(testRecommendation.get("name"))
      *             .resourceType(resourceActionResourceType)
      *             .state(resourceActionState)
      *             .status(resourceActionStatus)

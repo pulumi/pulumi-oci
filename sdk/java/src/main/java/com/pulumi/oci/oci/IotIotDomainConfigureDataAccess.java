@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testIotDomainConfigureDataAccess = new IotIotDomainConfigureDataAccess("testIotDomainConfigureDataAccess", IotIotDomainConfigureDataAccessArgs.builder()
- *             .iotDomainId(testIotDomain.id())
+ *             .iotDomainId(testIotDomain.get("id"))
  *             .type(iotDomainConfigureDataAccessType)
  *             .dbAllowListedIdentityGroupNames(iotDomainConfigureDataAccessDbAllowListedIdentityGroupNames)
  *             .dbAllowedIdentityDomainHost(iotDomainConfigureDataAccessDbAllowedIdentityDomainHost)

@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testMySmtpCredential = new DomainsMySmtpCredential("testMySmtpCredential", DomainsMySmtpCredentialArgs.builder()
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:smtpCredential")
  *             .authorization(mySmtpCredentialAuthorization)
  *             .description(mySmtpCredentialDescription)

@@ -49,13 +49,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBdsInstanceMetastoreConfig = new BdsInstanceMetastoreConfig("testBdsInstanceMetastoreConfig", BdsInstanceMetastoreConfigArgs.builder()
- *             .bdsApiKeyId(testApiKey.id())
+ *             .bdsApiKeyId(testApiKey.get("id"))
  *             .bdsApiKeyPassphrase(bdsInstanceMetastoreConfigBdsApiKeyPassphrase)
- *             .bdsInstanceId(testBdsInstance.id())
- *             .metastoreId(testMetastore.id())
+ *             .bdsInstanceId(testBdsInstance.get("id"))
+ *             .metastoreId(testMetastore.get("id"))
  *             .clusterAdminPassword(bdsInstanceMetastoreConfigClusterAdminPassword)
  *             .displayName(bdsInstanceMetastoreConfigDisplayName)
- *             .secretId(testSecret.id())
+ *             .secretId(testSecret.get("id"))
  *             .build());
  * 
  *     }

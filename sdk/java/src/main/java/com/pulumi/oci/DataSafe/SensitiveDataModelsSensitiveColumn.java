@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *             .columnName(sensitiveDataModelsSensitiveColumnColumnName)
  *             .object(sensitiveDataModelsSensitiveColumnObject)
  *             .schemaName(sensitiveDataModelsSensitiveColumnSchemaName)
- *             .sensitiveDataModelId(testSensitiveDataModel.id())
+ *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
  *             .appDefinedChildColumnKeys(sensitiveDataModelsSensitiveColumnAppDefinedChildColumnKeys)
  *             .appName(sensitiveDataModelsSensitiveColumnAppName)
  *             .dataType(sensitiveDataModelsSensitiveColumnDataType)
@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *             .objectType(sensitiveDataModelsSensitiveColumnObjectType)
  *             .parentColumnKeys(sensitiveDataModelsSensitiveColumnParentColumnKeys)
  *             .relationType(sensitiveDataModelsSensitiveColumnRelationType)
- *             .sensitiveTypeId(testSensitiveType.id())
+ *             .sensitiveTypeId(testSensitiveType.get("id"))
  *             .status(sensitiveDataModelsSensitiveColumnStatus)
  *             .build());
  * 

@@ -35,14 +35,14 @@ import * as utilities from "../utilities";
  *     },
  *     licenseModel: autonomousExadataInfrastructureLicenseModel,
  *     maintenanceWindowDetails: {
- *         customActionTimeoutInMins: Number(autonomousExadataInfrastructureMaintenanceWindowDetailsCustomActionTimeoutInMins),
+ *         customActionTimeoutInMins: autonomousExadataInfrastructureMaintenanceWindowDetailsCustomActionTimeoutInMins,
  *         daysOfWeeks: [{
  *             name: autonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeekName,
  *         }],
  *         hoursOfDays: autonomousExadataInfrastructureMaintenanceWindowDetailsHoursOfDay,
- *         isCustomActionTimeoutEnabled: autonomousExadataInfrastructureMaintenanceWindowDetailsIsCustomActionTimeoutEnabled === "true",
- *         isMonthlyPatchingEnabled: autonomousExadataInfrastructureMaintenanceWindowDetailsIsMonthlyPatchingEnabled === "true",
- *         leadTimeInWeeks: Number(autonomousExadataInfrastructureMaintenanceWindowDetailsLeadTimeInWeeks),
+ *         isCustomActionTimeoutEnabled: autonomousExadataInfrastructureMaintenanceWindowDetailsIsCustomActionTimeoutEnabled,
+ *         isMonthlyPatchingEnabled: autonomousExadataInfrastructureMaintenanceWindowDetailsIsMonthlyPatchingEnabled,
+ *         leadTimeInWeeks: autonomousExadataInfrastructureMaintenanceWindowDetailsLeadTimeInWeeks,
  *         months: [{
  *             name: autonomousExadataInfrastructureMaintenanceWindowDetailsMonthsName,
  *         }],

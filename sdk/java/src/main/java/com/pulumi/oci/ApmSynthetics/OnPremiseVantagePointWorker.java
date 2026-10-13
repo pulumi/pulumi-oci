@@ -52,9 +52,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testOnPremiseVantagePointWorker = new OnPremiseVantagePointWorker("testOnPremiseVantagePointWorker", OnPremiseVantagePointWorkerArgs.builder()
- *             .apmDomainId(testApmDomain.id())
+ *             .apmDomainId(testApmDomain.get("id"))
  *             .name(onPremiseVantagePointWorkerName)
- *             .onPremiseVantagePointId(testOnPremiseVantagePoint.id())
+ *             .onPremiseVantagePointId(testOnPremiseVantagePoint.get("id"))
  *             .resourcePrincipalTokenPublicKey(onPremiseVantagePointWorkerResourcePrincipalTokenPublicKey)
  *             .version(onPremiseVantagePointWorkerVersion)
  *             .configurationDetails(onPremiseVantagePointWorkerConfigurationDetails)

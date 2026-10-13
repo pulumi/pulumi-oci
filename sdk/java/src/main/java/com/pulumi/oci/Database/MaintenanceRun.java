@@ -56,10 +56,10 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testMaintenanceRun = new MaintenanceRun("testMaintenanceRun", MaintenanceRunArgs.builder()
  *             .patchType(maintenanceRunPatchType)
- *             .targetResourceId(testResource.id())
+ *             .targetResourceId(testResource.get("id"))
  *             .timeScheduled(maintenanceRunTimeScheduled)
  *             .compartmentId(compartmentId)
- *             .databaseSoftwareImageId(testDatabaseSoftwareImage.id())
+ *             .databaseSoftwareImageId(testDatabaseSoftwareImage.get("id"))
  *             .isDstFileUpdateEnabled(maintenanceRunIsDstFileUpdateEnabled)
  *             .patchingMode(maintenanceRunPatchingMode)
  *             .build());

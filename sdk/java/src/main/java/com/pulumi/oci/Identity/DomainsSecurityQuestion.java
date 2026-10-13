@@ -57,7 +57,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testSecurityQuestion = new DomainsSecurityQuestion("testSecurityQuestion", DomainsSecurityQuestionArgs.builder()
  *             .active(securityQuestionActive)
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .questionTexts(DomainsSecurityQuestionQuestionTextArgs.builder()
  *                 .locale("en")
  *                 .value(securityQuestionQuestionTextValue)

@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  *
  * const testPbfListingVersions = oci.functions.getPbfListingVersions({
  *     pbfListingId: testPbfListing.id,
- *     isCurrentVersion: pbfListingVersionIsCurrentVersion === "true",
+ *     isCurrentVersion: pbfListingVersionIsCurrentVersion,
  *     name: pbfListingVersionName,
  *     pbfListingVersionId: testPbfListingVersion.id,
  *     state: pbfListingVersionState,
@@ -114,7 +114,7 @@ export interface GetPbfListingVersionsResult {
  *
  * const testPbfListingVersions = oci.functions.getPbfListingVersions({
  *     pbfListingId: testPbfListing.id,
- *     isCurrentVersion: pbfListingVersionIsCurrentVersion === "true",
+ *     isCurrentVersion: pbfListingVersionIsCurrentVersion,
  *     name: pbfListingVersionName,
  *     pbfListingVersionId: testPbfListingVersion.id,
  *     state: pbfListingVersionState,

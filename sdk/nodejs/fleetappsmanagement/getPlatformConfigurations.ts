@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testPlatformConfigurations = oci.fleetappsmanagement.getPlatformConfigurations({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: platformConfigurationCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: platformConfigurationCompartmentIdInSubtree,
  *     configCategory: platformConfigurationConfigCategory,
  *     displayName: platformConfigurationDisplayName,
  *     id: platformConfigurationId,
@@ -128,7 +128,7 @@ export interface GetPlatformConfigurationsResult {
  *
  * const testPlatformConfigurations = oci.fleetappsmanagement.getPlatformConfigurations({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: platformConfigurationCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: platformConfigurationCompartmentIdInSubtree,
  *     configCategory: platformConfigurationConfigCategory,
  *     displayName: platformConfigurationDisplayName,
  *     id: platformConfigurationId,

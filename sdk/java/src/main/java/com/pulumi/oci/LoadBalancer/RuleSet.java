@@ -83,7 +83,7 @@ import javax.annotation.Nullable;
  *                 .suffix(ruleSetItemsSuffix)
  *                 .value(ruleSetItemsValue)
  *                 .build())
- *             .loadBalancerId(testLoadBalancer.id())
+ *             .loadBalancerId(testLoadBalancer.get("id"))
  *             .name(ruleSetName)
  *             .build());
  * 

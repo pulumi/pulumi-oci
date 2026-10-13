@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAutonomousContainerDatabaseDataguardAssociation = new AutonomousContainerDatabaseDataguardAssociation("testAutonomousContainerDatabaseDataguardAssociation", AutonomousContainerDatabaseDataguardAssociationArgs.builder()
- *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+ *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.get("id"))
  *             .peerAutonomousContainerDatabaseDisplayName(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseDisplayName)
  *             .protectionMode(autonomousContainerDatabaseDataguardAssociationProtectionMode)
  *             .fastStartFailOverLagLimitInSeconds(autonomousContainerDatabaseDataguardAssociationFastStartFailOverLagLimitInSeconds)
@@ -62,7 +62,7 @@ import javax.annotation.Nullable;
  *                 .backupDestinationDetails(AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailArgs.builder()
  *                     .type(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsType)
  *                     .backupRetentionPolicyOnTerminate(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsBackupRetentionPolicyOnTerminate)
- *                     .dbrsPolicyId(testPolicy.id())
+ *                     .dbrsPolicyId(testPolicy.get("id"))
  *                     .id(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsId)
  *                     .internetProxy(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsInternetProxy)
  *                     .isRemote(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigBackupDestinationDetailsIsRemote)
@@ -73,9 +73,9 @@ import javax.annotation.Nullable;
  *                     .build())
  *                 .recoveryWindowInDays(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigRecoveryWindowInDays)
  *                 .build())
- *             .peerAutonomousContainerDatabaseCompartmentId(testCompartment.id())
- *             .peerAutonomousVmClusterId(testAutonomousVmCluster.id())
- *             .peerCloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())
+ *             .peerAutonomousContainerDatabaseCompartmentId(testCompartment.get("id"))
+ *             .peerAutonomousVmClusterId(testAutonomousVmCluster.get("id"))
+ *             .peerCloudAutonomousVmClusterId(testCloudAutonomousVmCluster.get("id"))
  *             .peerDbUniqueName(autonomousContainerDatabaseDataguardAssociationPeerDbUniqueName)
  *             .standbyMaintenanceBufferInDays(autonomousContainerDatabaseDataguardAssociationStandbyMaintenanceBufferInDays)
  *             .build());

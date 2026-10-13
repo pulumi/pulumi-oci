@@ -24,7 +24,7 @@ import * as utilities from "../utilities";
  *
  * const testOccDemandSignal = new oci.demandsignal.OccDemandSignal("test_occ_demand_signal", {
  *     compartmentId: compartmentId,
- *     isActive: occDemandSignalIsActive === "true",
+ *     isActive: occDemandSignalIsActive,
  *     occDemandSignalId: occDemandSignalOccDemandSignalId,
  *     occDemandSignals: [{
  *         resourceType: occDemandSignalOccDemandSignalsResourceType,

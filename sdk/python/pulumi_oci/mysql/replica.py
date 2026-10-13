@@ -601,7 +601,7 @@ class Replica(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_delete_protected=replica_is_delete_protected == "true",
+            is_delete_protected=replica_is_delete_protected,
             replica_overrides={
                 "configuration_id": test_mysql_configuration["id"],
                 "mysql_version": replica_replica_overrides_mysql_version,
@@ -670,7 +670,7 @@ class Replica(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            is_delete_protected=replica_is_delete_protected == "true",
+            is_delete_protected=replica_is_delete_protected,
             replica_overrides={
                 "configuration_id": test_mysql_configuration["id"],
                 "mysql_version": replica_replica_overrides_mysql_version,

@@ -49,9 +49,9 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testBackend = new Backend("testBackend", BackendArgs.builder()
- *             .backendsetName(testBackendSet.name())
+ *             .backendsetName(testBackendSet.get("name"))
  *             .ipAddress(backendIpAddress)
- *             .loadBalancerId(testLoadBalancer.id())
+ *             .loadBalancerId(testLoadBalancer.get("id"))
  *             .port(backendPort)
  *             .backup(backendBackup)
  *             .drain(backendDrain)

@@ -19,11 +19,11 @@ import * as utilities from "../utilities";
  *
  * const testMyApps = oci.identity.getDomainsMyApps({
  *     idcsEndpoint: testDomain.url,
- *     myAppCount: Number(myAppMyAppCount),
+ *     myAppCount: myAppMyAppCount,
  *     myAppFilter: myAppMyAppFilter,
  *     authorization: myAppAuthorization,
  *     resourceTypeSchemaVersion: myAppResourceTypeSchemaVersion,
- *     startIndex: Number(myAppStartIndex),
+ *     startIndex: myAppStartIndex,
  * });
  * ```
  */
@@ -125,11 +125,11 @@ export interface GetDomainsMyAppsResult {
  *
  * const testMyApps = oci.identity.getDomainsMyApps({
  *     idcsEndpoint: testDomain.url,
- *     myAppCount: Number(myAppMyAppCount),
+ *     myAppCount: myAppMyAppCount,
  *     myAppFilter: myAppMyAppFilter,
  *     authorization: myAppAuthorization,
  *     resourceTypeSchemaVersion: myAppResourceTypeSchemaVersion,
- *     startIndex: Number(myAppStartIndex),
+ *     startIndex: myAppStartIndex,
  * });
  * ```
  */

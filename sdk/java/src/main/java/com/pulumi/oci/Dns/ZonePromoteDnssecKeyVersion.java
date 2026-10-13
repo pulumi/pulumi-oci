@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testZonePromoteDnssecKeyVersion = new ZonePromoteDnssecKeyVersion("testZonePromoteDnssecKeyVersion", ZonePromoteDnssecKeyVersionArgs.builder()
  *             .dnssecKeyVersionUuid(zonePromoteDnssecKeyVersionDnssecKeyVersionUuid)
- *             .zoneId(testZone.id())
+ *             .zoneId(testZone.get("id"))
  *             .scope(zonePromoteDnssecKeyVersionScope)
  *             .build());
  * 

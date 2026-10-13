@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testAutonomousContainerDatabaseSnapshotStandby = new AutonomousContainerDatabaseSnapshotStandby("testAutonomousContainerDatabaseSnapshotStandby", AutonomousContainerDatabaseSnapshotStandbyArgs.builder()
- *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
+ *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.get("id"))
  *             .role(autonomousContainerDatabaseSnapshotStandbyRole)
  *             .connectionStringsType(autonomousContainerDatabaseSnapshotStandbyConnectionStringsType)
  *             .build());

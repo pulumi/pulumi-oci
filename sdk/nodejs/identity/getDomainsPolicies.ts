@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testPolicies = oci.identity.getDomainsPolicies({
  *     idcsEndpoint: testDomain.url,
- *     policyCount: Number(policyPolicyCount),
+ *     policyCount: policyPolicyCount,
  *     policyFilter: policyPolicyFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: policyAuthorization,
  *     resourceTypeSchemaVersion: policyResourceTypeSchemaVersion,
- *     startIndex: Number(policyStartIndex),
+ *     startIndex: policyStartIndex,
  * });
  * ```
  */
@@ -130,13 +130,13 @@ export interface GetDomainsPoliciesResult {
  *
  * const testPolicies = oci.identity.getDomainsPolicies({
  *     idcsEndpoint: testDomain.url,
- *     policyCount: Number(policyPolicyCount),
+ *     policyCount: policyPolicyCount,
  *     policyFilter: policyPolicyFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: policyAuthorization,
  *     resourceTypeSchemaVersion: policyResourceTypeSchemaVersion,
- *     startIndex: Number(policyStartIndex),
+ *     startIndex: policyStartIndex,
  * });
  * ```
  */

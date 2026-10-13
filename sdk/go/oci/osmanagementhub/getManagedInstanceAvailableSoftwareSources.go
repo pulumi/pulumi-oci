@@ -32,7 +32,7 @@ import (
 //			_, err := osmanagementhub.GetManagedInstanceAvailableSoftwareSources(ctx, &osmanagementhub.GetManagedInstanceAvailableSoftwareSourcesArgs{
 //				ManagedInstanceId:   testManagedInstance.Id,
 //				CompartmentId:       pulumi.StringRef(compartmentId),
-//				DisplayNames:        pulumi.ToArray(managedInstanceAvailableSoftwareSourceDisplayName),
+//				DisplayNames:        managedInstanceAvailableSoftwareSourceDisplayName,
 //				DisplayNameContains: pulumi.StringRef(managedInstanceAvailableSoftwareSourceDisplayNameContains),
 //			}, nil)
 //			if err != nil {

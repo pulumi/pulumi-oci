@@ -364,11 +364,11 @@ class ComputeHostGroup(pulumi.CustomResource):
             availability_domain=compute_host_group_availability_domain,
             compartment_id=compartment_id,
             display_name=compute_host_group_display_name,
-            is_targeted_placement_required=compute_host_group_is_targeted_placement_required == "true",
+            is_targeted_placement_required=compute_host_group_is_targeted_placement_required,
             configurations=[{
                 "firmware_bundle_id": test_firmware_bundle["id"],
                 "quick_recycle_settings": {
-                    "nvme_wipe": compute_host_group_configurations_quick_recycle_settings_nvme_wipe == "true",
+                    "nvme_wipe": compute_host_group_configurations_quick_recycle_settings_nvme_wipe,
                 },
                 "recycle_level": compute_host_group_configurations_recycle_level,
                 "state": compute_host_group_configurations_state,
@@ -428,11 +428,11 @@ class ComputeHostGroup(pulumi.CustomResource):
             availability_domain=compute_host_group_availability_domain,
             compartment_id=compartment_id,
             display_name=compute_host_group_display_name,
-            is_targeted_placement_required=compute_host_group_is_targeted_placement_required == "true",
+            is_targeted_placement_required=compute_host_group_is_targeted_placement_required,
             configurations=[{
                 "firmware_bundle_id": test_firmware_bundle["id"],
                 "quick_recycle_settings": {
-                    "nvme_wipe": compute_host_group_configurations_quick_recycle_settings_nvme_wipe == "true",
+                    "nvme_wipe": compute_host_group_configurations_quick_recycle_settings_nvme_wipe,
                 },
                 "recycle_level": compute_host_group_configurations_recycle_level,
                 "state": compute_host_group_configurations_state,

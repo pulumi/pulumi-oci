@@ -71,7 +71,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testGroup = new DomainsGroup("testGroup", DomainsGroupArgs.builder()
  *             .displayName(groupDisplayName)
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .schemas("urn:ietf:params:scim:schemas:core:2.0:Group")
  *             .attributeSets()
  *             .attributes("")

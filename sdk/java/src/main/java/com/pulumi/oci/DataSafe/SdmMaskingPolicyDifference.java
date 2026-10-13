@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testSdmMaskingPolicyDifference = new SdmMaskingPolicyDifference("testSdmMaskingPolicyDifference", SdmMaskingPolicyDifferenceArgs.builder()
  *             .compartmentId(compartmentId)
- *             .maskingPolicyId(testMaskingPolicy.id())
+ *             .maskingPolicyId(testMaskingPolicy.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .differenceType(sdmMaskingPolicyDifferenceDifferenceType)
  *             .displayName(sdmMaskingPolicyDifferenceDisplayName)

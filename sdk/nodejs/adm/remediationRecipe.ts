@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *         maxPermissibleSeverity: remediationRecipeDetectConfigurationMaxPermissibleSeverity,
  *         upgradePolicy: remediationRecipeDetectConfigurationUpgradePolicy,
  *     },
- *     isRunTriggeredOnKbChange: remediationRecipeIsRunTriggeredOnKbChange === "true",
+ *     isRunTriggeredOnKbChange: remediationRecipeIsRunTriggeredOnKbChange,
  *     knowledgeBaseId: testKnowledgeBase.id,
  *     networkConfiguration: {
  *         subnetId: testSubnet.id,
@@ -37,7 +37,7 @@ import * as utilities from "../utilities";
  *     },
  *     scmConfiguration: {
  *         branch: remediationRecipeScmConfigurationBranch,
- *         isAutomergeEnabled: remediationRecipeScmConfigurationIsAutomergeEnabled === "true",
+ *         isAutomergeEnabled: remediationRecipeScmConfigurationIsAutomergeEnabled,
  *         scmType: remediationRecipeScmConfigurationScmType,
  *         buildFileLocation: remediationRecipeScmConfigurationBuildFileLocation,
  *         externalScmType: remediationRecipeScmConfigurationExternalScmType,

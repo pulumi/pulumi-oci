@@ -504,9 +504,9 @@ class ClusterPlacementGroup(pulumi.CustomResource):
                     "service": cluster_placement_group_capabilities_items_service,
                     "additional_details": {
                         "service_type": cluster_placement_group_capabilities_items_additional_details_service_type,
-                        "cluster_placement_group_count": int(cluster_placement_group_capabilities_items_additional_details_cluster_placement_group_count),
+                        "cluster_placement_group_count": cluster_placement_group_capabilities_items_additional_details_cluster_placement_group_count,
                         "memory_in_gbs": cluster_placement_group_capabilities_items_additional_details_memory_in_gbs,
-                        "nvmes": int(cluster_placement_group_capabilities_items_additional_details_nvmes),
+                        "nvmes": cluster_placement_group_capabilities_items_additional_details_nvmes,
                         "ocpus": cluster_placement_group_capabilities_items_additional_details_ocpus,
                     },
                 }],
@@ -517,7 +517,7 @@ class ClusterPlacementGroup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            opc_dry_run=cluster_placement_group_opc_dry_run == "true",
+            opc_dry_run=cluster_placement_group_opc_dry_run,
             placement_instruction={
                 "type": cluster_placement_group_placement_instruction_type,
                 "value": cluster_placement_group_placement_instruction_value,
@@ -582,9 +582,9 @@ class ClusterPlacementGroup(pulumi.CustomResource):
                     "service": cluster_placement_group_capabilities_items_service,
                     "additional_details": {
                         "service_type": cluster_placement_group_capabilities_items_additional_details_service_type,
-                        "cluster_placement_group_count": int(cluster_placement_group_capabilities_items_additional_details_cluster_placement_group_count),
+                        "cluster_placement_group_count": cluster_placement_group_capabilities_items_additional_details_cluster_placement_group_count,
                         "memory_in_gbs": cluster_placement_group_capabilities_items_additional_details_memory_in_gbs,
-                        "nvmes": int(cluster_placement_group_capabilities_items_additional_details_nvmes),
+                        "nvmes": cluster_placement_group_capabilities_items_additional_details_nvmes,
                         "ocpus": cluster_placement_group_capabilities_items_additional_details_ocpus,
                     },
                 }],
@@ -595,7 +595,7 @@ class ClusterPlacementGroup(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
-            opc_dry_run=cluster_placement_group_opc_dry_run == "true",
+            opc_dry_run=cluster_placement_group_opc_dry_run,
             placement_instruction={
                 "type": cluster_placement_group_placement_instruction_type,
                 "value": cluster_placement_group_placement_instruction_value,

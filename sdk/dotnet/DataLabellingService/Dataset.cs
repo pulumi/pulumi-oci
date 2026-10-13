@@ -80,7 +80,7 @@ namespace Pulumi.Oci.DataLabellingService
     ///                 SourceType = datasetInitialImportDatasetConfigurationImportMetadataPathSourceType,
     ///             },
     ///         },
-    ///         InitialRecordGenerationConfiguration = null,
+    ///         InitialRecordGenerationConfiguration = new() { },
     ///         LabelingInstructions = datasetLabelingInstructions,
     ///     });
     /// 

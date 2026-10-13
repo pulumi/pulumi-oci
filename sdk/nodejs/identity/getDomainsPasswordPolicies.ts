@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testPasswordPolicies = oci.identity.getDomainsPasswordPolicies({
  *     idcsEndpoint: testDomain.url,
- *     passwordPolicyCount: Number(passwordPolicyPasswordPolicyCount),
+ *     passwordPolicyCount: passwordPolicyPasswordPolicyCount,
  *     passwordPolicyFilter: passwordPolicyPasswordPolicyFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: passwordPolicyAuthorization,
  *     resourceTypeSchemaVersion: passwordPolicyResourceTypeSchemaVersion,
- *     startIndex: Number(passwordPolicyStartIndex),
+ *     startIndex: passwordPolicyStartIndex,
  * });
  * ```
  */
@@ -130,13 +130,13 @@ export interface GetDomainsPasswordPoliciesResult {
  *
  * const testPasswordPolicies = oci.identity.getDomainsPasswordPolicies({
  *     idcsEndpoint: testDomain.url,
- *     passwordPolicyCount: Number(passwordPolicyPasswordPolicyCount),
+ *     passwordPolicyCount: passwordPolicyPasswordPolicyCount,
  *     passwordPolicyFilter: passwordPolicyPasswordPolicyFilter,
  *     attributeSets: [],
  *     attributes: "",
  *     authorization: passwordPolicyAuthorization,
  *     resourceTypeSchemaVersion: passwordPolicyResourceTypeSchemaVersion,
- *     startIndex: Number(passwordPolicyStartIndex),
+ *     startIndex: passwordPolicyStartIndex,
  * });
  * ```
  */

@@ -30,8 +30,8 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     computeInstanceId: testInstance.id,
  *     displayName: esxiHostDisplayName,
- *     isBillingDonorsOnly: esxiHostIsBillingDonorsOnly === "true",
- *     isSwapBillingOnly: esxiHostIsSwapBillingOnly === "true",
+ *     isBillingDonorsOnly: esxiHostIsBillingDonorsOnly,
+ *     isSwapBillingOnly: esxiHostIsSwapBillingOnly,
  *     sddcId: testSddc.id,
  *     state: esxiHostState,
  * });
@@ -156,8 +156,8 @@ export interface GetExsiHostsResult {
  *     compartmentId: compartmentId,
  *     computeInstanceId: testInstance.id,
  *     displayName: esxiHostDisplayName,
- *     isBillingDonorsOnly: esxiHostIsBillingDonorsOnly === "true",
- *     isSwapBillingOnly: esxiHostIsSwapBillingOnly === "true",
+ *     isBillingDonorsOnly: esxiHostIsBillingDonorsOnly,
+ *     isSwapBillingOnly: esxiHostIsSwapBillingOnly,
  *     sddcId: testSddc.id,
  *     state: esxiHostState,
  * });

@@ -34,7 +34,7 @@ import * as utilities from "../utilities";
  *         instanceShapeConfig: {
  *             baselineOcpuUtilization: computeCapacityReportShapeAvailabilitiesInstanceShapeConfigBaselineOcpuUtilization,
  *             memoryInGbs: computeCapacityReportShapeAvailabilitiesInstanceShapeConfigMemoryInGbs,
- *             nvmes: Number(computeCapacityReportShapeAvailabilitiesInstanceShapeConfigNvmes),
+ *             nvmes: computeCapacityReportShapeAvailabilitiesInstanceShapeConfigNvmes,
  *             ocpus: computeCapacityReportShapeAvailabilitiesInstanceShapeConfigOcpus,
  *         },
  *     }],

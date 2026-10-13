@@ -231,7 +231,7 @@ class AnalyticsInstanceResourceGroup(pulumi.CustomResource):
 
         test_analytics_instance_resource_group = oci.analytics.AnalyticsInstanceResourceGroup("test_analytics_instance_resource_group",
             analytics_instance_id=test_analytics_instance["id"],
-            capacity=int(analytics_instance_resource_group_capacity),
+            capacity=analytics_instance_resource_group_capacity,
             resource_name_=test_resource["name"],
             description=analytics_instance_resource_group_description,
             display_name=analytics_instance_resource_group_display_name)
@@ -279,7 +279,7 @@ class AnalyticsInstanceResourceGroup(pulumi.CustomResource):
 
         test_analytics_instance_resource_group = oci.analytics.AnalyticsInstanceResourceGroup("test_analytics_instance_resource_group",
             analytics_instance_id=test_analytics_instance["id"],
-            capacity=int(analytics_instance_resource_group_capacity),
+            capacity=analytics_instance_resource_group_capacity,
             resource_name_=test_resource["name"],
             description=analytics_instance_resource_group_description,
             display_name=analytics_instance_resource_group_display_name)

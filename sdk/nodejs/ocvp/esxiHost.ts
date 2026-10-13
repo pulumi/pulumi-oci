@@ -42,7 +42,7 @@ import * as utilities from "../utilities";
  *     hostOcpuCount: esxiHostHostOcpuCount,
  *     hostShapeName: testShape.name,
  *     initialFaultDomainHostDistribution: esxiHostInitialFaultDomainHostDistribution,
- *     isVsanByolEnabled: esxiHostIsVsanByolEnabled === "true",
+ *     isVsanByolEnabled: esxiHostIsVsanByolEnabled,
  *     nextCommitment: esxiHostNextCommitment,
  *     vcfByolAllocationId: testByolAllocation.id,
  * });

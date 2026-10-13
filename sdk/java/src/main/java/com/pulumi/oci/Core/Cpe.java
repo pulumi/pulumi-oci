@@ -64,7 +64,7 @@ import javax.annotation.Nullable;
  *         var testCpe = new Cpe("testCpe", CpeArgs.builder()
  *             .compartmentId(compartmentId)
  *             .ipAddress(cpeIpAddress)
- *             .cpeDeviceShapeId(testCpeDeviceShapes.cpeDeviceShapes()[0].cpeDeviceShapeId())
+ *             .cpeDeviceShapeId(testCpeDeviceShapes.get("cpeDeviceShapes")[0].get("cpeDeviceShapeId"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(cpeDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))

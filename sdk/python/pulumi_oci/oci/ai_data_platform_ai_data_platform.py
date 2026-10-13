@@ -568,7 +568,7 @@ class AiDataPlatformAiDataPlatform(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_enable_ai_feature=ai_data_platform_is_enable_ai_feature == "true",
+            is_enable_ai_feature=ai_data_platform_is_enable_ai_feature,
             system_tags=ai_data_platform_system_tags,
             vector_db_admin_cred=ai_data_platform_vector_db_admin_cred,
             vector_db_admin_secret_id=test_secret["id"],
@@ -632,7 +632,7 @@ class AiDataPlatformAiDataPlatform(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            is_enable_ai_feature=ai_data_platform_is_enable_ai_feature == "true",
+            is_enable_ai_feature=ai_data_platform_is_enable_ai_feature,
             system_tags=ai_data_platform_system_tags,
             vector_db_admin_cred=ai_data_platform_vector_db_admin_cred,
             vector_db_admin_secret_id=test_secret["id"],

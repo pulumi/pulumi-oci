@@ -44,13 +44,13 @@ import * as utilities from "../utilities";
  *     schedules: [{
  *         period: filesystemSnapshotPolicySchedulesPeriod,
  *         timeZone: filesystemSnapshotPolicySchedulesTimeZone,
- *         dayOfMonth: Number(filesystemSnapshotPolicySchedulesDayOfMonth),
+ *         dayOfMonth: filesystemSnapshotPolicySchedulesDayOfMonth,
  *         dayOfWeek: filesystemSnapshotPolicySchedulesDayOfWeek,
- *         hourOfDay: Number(filesystemSnapshotPolicySchedulesHourOfDay),
+ *         hourOfDay: filesystemSnapshotPolicySchedulesHourOfDay,
  *         lockDurationDetails: {
- *             lockDuration: Number(filesystemSnapshotPolicySchedulesLockDurationDetailsLockDuration),
+ *             lockDuration: filesystemSnapshotPolicySchedulesLockDurationDetailsLockDuration,
  *             lockMode: filesystemSnapshotPolicySchedulesLockDurationDetailsLockMode,
- *             coolOffDuration: Number(filesystemSnapshotPolicySchedulesLockDurationDetailsCoolOffDuration),
+ *             coolOffDuration: filesystemSnapshotPolicySchedulesLockDurationDetailsCoolOffDuration,
  *         },
  *         month: filesystemSnapshotPolicySchedulesMonth,
  *         retentionDurationInSeconds: filesystemSnapshotPolicySchedulesRetentionDurationInSeconds,

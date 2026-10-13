@@ -29,7 +29,7 @@ import * as utilities from "../utilities";
  *     },
  *     familyMaintenancePolicy: {
  *         concurrentMaintenance: fusionEnvironmentFamilyFamilyMaintenancePolicyConcurrentMaintenance,
- *         isMonthlyPatchingEnabled: fusionEnvironmentFamilyFamilyMaintenancePolicyIsMonthlyPatchingEnabled === "true",
+ *         isMonthlyPatchingEnabled: fusionEnvironmentFamilyFamilyMaintenancePolicyIsMonthlyPatchingEnabled,
  *         quarterlyUpgradeBeginTimes: fusionEnvironmentFamilyFamilyMaintenancePolicyQuarterlyUpgradeBeginTimes,
  *     },
  *     freeformTags: {

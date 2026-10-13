@@ -148,7 +148,7 @@ def get_system_version_minor_versions(compartment_id: Optional[_builtins.str] = 
     test_system_version_minor_versions = oci.database.get_system_version_minor_versions(compartment_id=compartment_id,
         gi_version=system_version_minor_version_gi_version,
         major_version=system_version_minor_version_major_version,
-        is_latest=system_version_minor_version_is_latest == "true",
+        is_latest=system_version_minor_version_is_latest,
         resource_id=test_resource["id"],
         shape=system_version_minor_version_shape)
     ```
@@ -204,7 +204,7 @@ def get_system_version_minor_versions_output(compartment_id: pulumi.Input[Option
     test_system_version_minor_versions = oci.database.get_system_version_minor_versions(compartment_id=compartment_id,
         gi_version=system_version_minor_version_gi_version,
         major_version=system_version_minor_version_major_version,
-        is_latest=system_version_minor_version_is_latest == "true",
+        is_latest=system_version_minor_version_is_latest,
         resource_id=test_resource["id"],
         shape=system_version_minor_version_shape)
     ```

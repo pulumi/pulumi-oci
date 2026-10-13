@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testProfileLevels = oci.optimizer.getProfileLevels({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: profileLevelCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: profileLevelCompartmentIdInSubtree,
  *     name: profileLevelName,
  *     recommendationName: testRecommendation.name,
  * });
@@ -98,7 +98,7 @@ export interface GetProfileLevelsResult {
  *
  * const testProfileLevels = oci.optimizer.getProfileLevels({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: profileLevelCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: profileLevelCompartmentIdInSubtree,
  *     name: profileLevelName,
  *     recommendationName: testRecommendation.name,
  * });

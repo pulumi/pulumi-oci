@@ -60,7 +60,7 @@ import javax.annotation.Nullable;
  *                 .dbName(exadataIormConfigDbPlansDbName)
  *                 .share(exadataIormConfigDbPlansShare)
  *                 .build())
- *             .dbSystemId(testDbSystem.id())
+ *             .dbSystemId(testDbSystem.get("id"))
  *             .objective("AUTO")
  *             .build());
  * 

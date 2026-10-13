@@ -704,7 +704,7 @@ class DedicatedAiCluster(pulumi.CustomResource):
         test_dedicated_ai_cluster = oci.generativeai.DedicatedAiCluster("test_dedicated_ai_cluster",
             compartment_id=compartment_id,
             type=dedicated_ai_cluster_type,
-            unit_count=int(dedicated_ai_cluster_unit_count),
+            unit_count=dedicated_ai_cluster_unit_count,
             unit_shape=dedicated_ai_cluster_unit_shape,
             defined_tags={
                 "Operations.CostCenter": "42",
@@ -831,7 +831,7 @@ class DedicatedAiCluster(pulumi.CustomResource):
         test_dedicated_ai_cluster = oci.generativeai.DedicatedAiCluster("test_dedicated_ai_cluster",
             compartment_id=compartment_id,
             type=dedicated_ai_cluster_type,
-            unit_count=int(dedicated_ai_cluster_unit_count),
+            unit_count=dedicated_ai_cluster_unit_count,
             unit_shape=dedicated_ai_cluster_unit_shape,
             defined_tags={
                 "Operations.CostCenter": "42",

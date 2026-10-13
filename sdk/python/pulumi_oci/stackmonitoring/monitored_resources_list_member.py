@@ -186,7 +186,7 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
         test_monitored_resources_list_member = oci.stackmonitoring.MonitoredResourcesListMember("test_monitored_resources_list_member",
             monitored_resource_id=test_monitored_resource["id"],
             destination_resource_id=test_destination_resource["id"],
-            limit_level=int(monitored_resources_list_member_limit_level))
+            limit_level=monitored_resources_list_member_limit_level)
         ```
 
         ## Import
@@ -230,7 +230,7 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
         test_monitored_resources_list_member = oci.stackmonitoring.MonitoredResourcesListMember("test_monitored_resources_list_member",
             monitored_resource_id=test_monitored_resource["id"],
             destination_resource_id=test_destination_resource["id"],
-            limit_level=int(monitored_resources_list_member_limit_level))
+            limit_level=monitored_resources_list_member_limit_level)
         ```
 
         ## Import

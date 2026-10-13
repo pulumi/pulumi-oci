@@ -34,9 +34,9 @@ import * as utilities from "../utilities";
  * const testResponderRecipes = oci.cloudguard.getResponderRecipes({
  *     compartmentId: compartmentId,
  *     accessLevel: responderRecipeAccessLevel,
- *     compartmentIdInSubtree: responderRecipeCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: responderRecipeCompartmentIdInSubtree,
  *     displayName: responderRecipeDisplayName,
- *     resourceMetadataOnly: responderRecipeResourceMetadataOnly === "true",
+ *     resourceMetadataOnly: responderRecipeResourceMetadataOnly,
  *     state: responderRecipeState,
  * });
  * ```
@@ -142,9 +142,9 @@ export interface GetResponderRecipesResult {
  * const testResponderRecipes = oci.cloudguard.getResponderRecipes({
  *     compartmentId: compartmentId,
  *     accessLevel: responderRecipeAccessLevel,
- *     compartmentIdInSubtree: responderRecipeCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: responderRecipeCompartmentIdInSubtree,
  *     displayName: responderRecipeDisplayName,
- *     resourceMetadataOnly: responderRecipeResourceMetadataOnly === "true",
+ *     resourceMetadataOnly: responderRecipeResourceMetadataOnly,
  *     state: responderRecipeState,
  * });
  * ```

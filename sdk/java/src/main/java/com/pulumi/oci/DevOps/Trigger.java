@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testTrigger = new Trigger("testTrigger", TriggerArgs.builder()
  *             .actions(TriggerActionArgs.builder()
- *                 .buildPipelineId(testBuildPipeline.id())
+ *                 .buildPipelineId(testBuildPipeline.get("id"))
  *                 .type(triggerActionsType)
  *                 .filter(TriggerActionFilterArgs.builder()
  *                     .triggerSource(triggerActionsFilterTriggerSource)
@@ -61,17 +61,17 @@ import javax.annotation.Nullable;
  *                     .include(TriggerActionFilterIncludeArgs.builder()
  *                         .baseRef(triggerActionsFilterIncludeBaseRef)
  *                         .headRef(triggerActionsFilterIncludeHeadRef)
- *                         .repositoryName(testRepository.name())
+ *                         .repositoryName(testRepository.get("name"))
  *                         .build())
  *                     .build())
  *                 .build())
- *             .projectId(testProject.id())
+ *             .projectId(testProject.get("id"))
  *             .triggerSource(triggerTriggerSource)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(triggerDescription)
  *             .displayName(triggerDisplayName)
  *             .freeformTags(Map.of("bar-key", "value"))
- *             .repositoryId(testRepositoryOciArtifactsRepository.id())
+ *             .repositoryId(testRepositoryOciArtifactsRepository.get("id"))
  *             .build());
  * 
  *     }

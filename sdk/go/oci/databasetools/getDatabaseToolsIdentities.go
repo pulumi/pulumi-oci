@@ -34,7 +34,7 @@ import (
 //				DatabaseToolsConnectionId: pulumi.StringRef(testDatabaseToolsConnection.Id),
 //				DisplayName:               pulumi.StringRef(databaseToolsIdentityDisplayName),
 //				State:                     pulumi.StringRef(databaseToolsIdentityState),
-//				Types:                     pulumi.ToArray(databaseToolsIdentityType),
+//				Types:                     databaseToolsIdentityType,
 //			}, nil)
 //			if err != nil {
 //				return err

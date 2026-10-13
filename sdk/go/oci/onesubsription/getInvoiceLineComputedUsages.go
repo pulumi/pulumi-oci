@@ -32,7 +32,7 @@ import (
 //			_, err := onesubsription.GetInvoiceLineComputedUsages(ctx, &onesubsription.GetInvoiceLineComputedUsagesArgs{
 //				CompartmentId: compartmentId,
 //				InvoiceLineId: testInvoiceLine.Id,
-//				Fields:        pulumi.ToArray(invoiceLineComputedUsageFields),
+//				Fields:        invoiceLineComputedUsageFields,
 //			}, nil)
 //			if err != nil {
 //				return err

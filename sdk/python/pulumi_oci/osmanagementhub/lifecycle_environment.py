@@ -480,7 +480,7 @@ class LifecycleEnvironment(pulumi.CustomResource):
             os_family=lifecycle_environment_os_family,
             stages=[{
                 "display_name": lifecycle_environment_stages_display_name,
-                "rank": int(lifecycle_environment_stages_rank),
+                "rank": lifecycle_environment_stages_rank,
                 "defined_tags": {
                     "Operations.CostCenter": "42",
                 },
@@ -551,7 +551,7 @@ class LifecycleEnvironment(pulumi.CustomResource):
             os_family=lifecycle_environment_os_family,
             stages=[{
                 "display_name": lifecycle_environment_stages_display_name,
-                "rank": int(lifecycle_environment_stages_rank),
+                "rank": lifecycle_environment_stages_rank,
                 "defined_tags": {
                     "Operations.CostCenter": "42",
                 },

@@ -170,9 +170,9 @@ def get_guard_targets(access_level: Optional[_builtins.str] = None,
 
     test_targets = oci.cloudguard.get_guard_targets(compartment_id=compartment_id,
         access_level=target_access_level,
-        compartment_id_in_subtree=target_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=target_compartment_id_in_subtree,
         display_name=target_display_name,
-        is_non_security_zone_targets_only_query=target_is_non_security_zone_targets_only_query == "true",
+        is_non_security_zone_targets_only_query=target_is_non_security_zone_targets_only_query,
         state=target_state)
     ```
 
@@ -240,9 +240,9 @@ def get_guard_targets_output(access_level: pulumi.Input[Optional[Optional[_built
 
     test_targets = oci.cloudguard.get_guard_targets(compartment_id=compartment_id,
         access_level=target_access_level,
-        compartment_id_in_subtree=target_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=target_compartment_id_in_subtree,
         display_name=target_display_name,
-        is_non_security_zone_targets_only_query=target_is_non_security_zone_targets_only_query == "true",
+        is_non_security_zone_targets_only_query=target_is_non_security_zone_targets_only_query,
         state=target_state)
     ```
 

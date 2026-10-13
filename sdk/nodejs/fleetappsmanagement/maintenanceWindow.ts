@@ -30,8 +30,8 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     isOutage: maintenanceWindowIsOutage === "true",
- *     isRecurring: maintenanceWindowIsRecurring === "true",
+ *     isOutage: maintenanceWindowIsOutage,
+ *     isRecurring: maintenanceWindowIsRecurring,
  *     recurrences: maintenanceWindowRecurrences,
  * });
  * ```

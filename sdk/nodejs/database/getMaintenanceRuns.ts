@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testMaintenanceRuns = oci.database.getMaintenanceRuns({
  *     compartmentId: compartmentId,
  *     availabilityDomain: maintenanceRunAvailabilityDomain,
- *     isLocalAdg: maintenanceRunIsLocalAdg === "true",
+ *     isLocalAdg: maintenanceRunIsLocalAdg,
  *     maintenanceSubtype: maintenanceRunMaintenanceSubtype,
  *     maintenanceType: maintenanceRunMaintenanceType,
  *     state: maintenanceRunState,
@@ -137,7 +137,7 @@ export interface GetMaintenanceRunsResult {
  * const testMaintenanceRuns = oci.database.getMaintenanceRuns({
  *     compartmentId: compartmentId,
  *     availabilityDomain: maintenanceRunAvailabilityDomain,
- *     isLocalAdg: maintenanceRunIsLocalAdg === "true",
+ *     isLocalAdg: maintenanceRunIsLocalAdg,
  *     maintenanceSubtype: maintenanceRunMaintenanceSubtype,
  *     maintenanceType: maintenanceRunMaintenanceType,
  *     state: maintenanceRunState,

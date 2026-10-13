@@ -60,7 +60,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testCloudGate = new DomainsCloudGate("testCloudGate", DomainsCloudGateArgs.builder()
  *             .displayName(cloudGateDisplayName)
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:CloudGate")
  *             .active(cloudGateActive)
  *             .attributeSets("all")

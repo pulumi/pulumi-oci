@@ -26,7 +26,7 @@ import * as utilities from "../utilities";
  *     displayName: cloudExadataInfrastructureDisplayName,
  *     shape: cloudExadataInfrastructureShape,
  *     clusterPlacementGroupId: cloudExadataInfrastructureClusterPlacementGroupId,
- *     computeCount: Number(cloudExadataInfrastructureComputeCount),
+ *     computeCount: cloudExadataInfrastructureComputeCount,
  *     customerContacts: [{
  *         email: cloudExadataInfrastructureCustomerContactsEmail,
  *     }],
@@ -39,14 +39,14 @@ import * as utilities from "../utilities";
  *         referenceResourceIdForImageUpdates: cloudExadataInfrastructureMaintenanceVersionPreferencesReferenceResourceIdForImageUpdates,
  *     },
  *     maintenanceWindow: {
- *         customActionTimeoutInMins: Number(cloudExadataInfrastructureMaintenanceWindowCustomActionTimeoutInMins),
+ *         customActionTimeoutInMins: cloudExadataInfrastructureMaintenanceWindowCustomActionTimeoutInMins,
  *         daysOfWeeks: [{
  *             name: cloudExadataInfrastructureMaintenanceWindowDaysOfWeekName,
  *         }],
  *         hoursOfDays: cloudExadataInfrastructureMaintenanceWindowHoursOfDay,
- *         isCustomActionTimeoutEnabled: cloudExadataInfrastructureMaintenanceWindowIsCustomActionTimeoutEnabled === "true",
- *         isMonthlyPatchingEnabled: cloudExadataInfrastructureMaintenanceWindowIsMonthlyPatchingEnabled === "true",
- *         leadTimeInWeeks: Number(cloudExadataInfrastructureMaintenanceWindowLeadTimeInWeeks),
+ *         isCustomActionTimeoutEnabled: cloudExadataInfrastructureMaintenanceWindowIsCustomActionTimeoutEnabled,
+ *         isMonthlyPatchingEnabled: cloudExadataInfrastructureMaintenanceWindowIsMonthlyPatchingEnabled,
+ *         leadTimeInWeeks: cloudExadataInfrastructureMaintenanceWindowLeadTimeInWeeks,
  *         months: [{
  *             name: cloudExadataInfrastructureMaintenanceWindowMonthsName,
  *         }],
@@ -54,7 +54,7 @@ import * as utilities from "../utilities";
  *         preference: cloudExadataInfrastructureMaintenanceWindowPreference,
  *         weeksOfMonths: cloudExadataInfrastructureMaintenanceWindowWeeksOfMonth,
  *     },
- *     storageCount: Number(cloudExadataInfrastructureStorageCount),
+ *     storageCount: cloudExadataInfrastructureStorageCount,
  *     storageServerType: cloudExadataInfrastructureStorageServerType,
  *     subscriptionId: tenantSubscriptionId,
  * });

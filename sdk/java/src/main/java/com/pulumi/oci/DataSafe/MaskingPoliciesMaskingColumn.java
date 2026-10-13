@@ -71,7 +71,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testMaskingPoliciesMaskingColumn = new MaskingPoliciesMaskingColumn("testMaskingPoliciesMaskingColumn", MaskingPoliciesMaskingColumnArgs.builder()
  *             .columnName(maskingPoliciesMaskingColumnColumnName)
- *             .maskingPolicyId(testMaskingPolicy.id())
+ *             .maskingPolicyId(testMaskingPolicy.get("id"))
  *             .object(maskingPoliciesMaskingColumnObject)
  *             .schemaName(maskingPoliciesMaskingColumnSchemaName)
  *             .isMaskingEnabled(maskingPoliciesMaskingColumnIsMaskingEnabled)
@@ -88,7 +88,7 @@ import javax.annotation.Nullable;
  *                     .fixedString(maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesFixedString)
  *                     .groupingColumns(maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesGroupingColumns)
  *                     .length(maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesLength)
- *                     .libraryMaskingFormatId(testLibraryMaskingFormat.id())
+ *                     .libraryMaskingFormatId(testLibraryMaskingFormat.get("id"))
  *                     .pattern(maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesPattern)
  *                     .postProcessingFunction(maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesPostProcessingFunction)
  *                     .randomLists(maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesRandomList)
@@ -100,14 +100,14 @@ import javax.annotation.Nullable;
  *                     .startLength(maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesStartLength)
  *                     .startPosition(maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesStartPosition)
  *                     .startValue(maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesStartValue)
- *                     .tableName(testTable.name())
+ *                     .tableName(testTable.get("name"))
  *                     .userDefinedFunction(maskingPoliciesMaskingColumnMaskingFormatsFormatEntriesUserDefinedFunction)
  *                     .build())
  *                 .condition(maskingPoliciesMaskingColumnMaskingFormatsCondition)
  *                 .description(maskingPoliciesMaskingColumnMaskingFormatsDescription)
  *                 .build())
  *             .objectType(maskingPoliciesMaskingColumnObjectType)
- *             .sensitiveTypeId(testSensitiveType.id())
+ *             .sensitiveTypeId(testSensitiveType.get("id"))
  *             .build());
  * 
  *     }

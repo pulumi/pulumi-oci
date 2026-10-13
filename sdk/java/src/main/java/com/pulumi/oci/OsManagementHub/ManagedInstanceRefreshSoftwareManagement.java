@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testManagedInstanceRefreshSoftwareManagement = new ManagedInstanceRefreshSoftwareManagement("testManagedInstanceRefreshSoftwareManagement", ManagedInstanceRefreshSoftwareManagementArgs.builder()
- *             .managedInstanceId(testManagedInstance.id())
+ *             .managedInstanceId(testManagedInstance.get("id"))
  *             .build());
  * 
  *     }

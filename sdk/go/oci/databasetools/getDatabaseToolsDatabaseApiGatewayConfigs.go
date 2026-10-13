@@ -33,7 +33,7 @@ import (
 //				CompartmentId: compartmentId,
 //				DisplayName:   pulumi.StringRef(databaseToolsDatabaseApiGatewayConfigDisplayName),
 //				State:         pulumi.StringRef(databaseToolsDatabaseApiGatewayConfigState),
-//				Types:         pulumi.ToArray(databaseToolsDatabaseApiGatewayConfigType),
+//				Types:         databaseToolsDatabaseApiGatewayConfigType,
 //			}, nil)
 //			if err != nil {
 //				return err

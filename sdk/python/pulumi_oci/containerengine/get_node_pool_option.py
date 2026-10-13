@@ -175,7 +175,7 @@ def get_node_pool_option(compartment_id: Optional[_builtins.str] = None,
         node_pool_k8s_version=node_pool_option_node_pool_k8s_version,
         node_pool_os_arch=node_pool_option_node_pool_os_arch,
         node_pool_os_type=node_pool_option_node_pool_os_type,
-        should_list_all_patch_versions=node_pool_option_should_list_all_patch_versions == "true")
+        should_list_all_patch_versions=node_pool_option_should_list_all_patch_versions)
     ```
 
 
@@ -231,7 +231,7 @@ def get_node_pool_option_output(compartment_id: pulumi.Input[Optional[Optional[_
         node_pool_k8s_version=node_pool_option_node_pool_k8s_version,
         node_pool_os_arch=node_pool_option_node_pool_os_arch,
         node_pool_os_type=node_pool_option_node_pool_os_type,
-        should_list_all_patch_versions=node_pool_option_should_list_all_patch_versions == "true")
+        should_list_all_patch_versions=node_pool_option_should_list_all_patch_versions)
     ```
 
 

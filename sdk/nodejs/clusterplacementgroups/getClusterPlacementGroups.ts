@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testClusterPlacementGroups = oci.clusterplacementgroups.getClusterPlacementGroups({
  *     ad: clusterPlacementGroupAd,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: clusterPlacementGroupCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: clusterPlacementGroupCompartmentIdInSubtree,
  *     id: clusterPlacementGroupId,
  *     name: clusterPlacementGroupName,
  *     state: clusterPlacementGroupState,
@@ -114,7 +114,7 @@ export interface GetClusterPlacementGroupsResult {
  * const testClusterPlacementGroups = oci.clusterplacementgroups.getClusterPlacementGroups({
  *     ad: clusterPlacementGroupAd,
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: clusterPlacementGroupCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: clusterPlacementGroupCompartmentIdInSubtree,
  *     id: clusterPlacementGroupId,
  *     name: clusterPlacementGroupName,
  *     state: clusterPlacementGroupState,

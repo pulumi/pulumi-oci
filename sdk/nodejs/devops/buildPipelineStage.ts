@@ -30,8 +30,8 @@ import * as utilities from "../utilities";
  *     buildPipelineStageType: buildPipelineStageBuildPipelineStageType,
  *     buildRunnerShapeConfig: {
  *         buildRunnerType: buildPipelineStageBuildRunnerShapeConfigBuildRunnerType,
- *         memoryInGbs: Number(buildPipelineStageBuildRunnerShapeConfigMemoryInGbs),
- *         ocpus: Number(buildPipelineStageBuildRunnerShapeConfigOcpus),
+ *         memoryInGbs: buildPipelineStageBuildRunnerShapeConfigMemoryInGbs,
+ *         ocpus: buildPipelineStageBuildRunnerShapeConfigOcpus,
  *     },
  *     buildSourceCollection: {
  *         items: [{
@@ -60,14 +60,14 @@ import * as utilities from "../utilities";
  *         "bar-key": "value",
  *     },
  *     image: buildPipelineStageImage,
- *     isPassAllParametersEnabled: buildPipelineStageIsPassAllParametersEnabled === "true",
+ *     isPassAllParametersEnabled: buildPipelineStageIsPassAllParametersEnabled,
  *     primaryBuildSource: buildPipelineStagePrimaryBuildSource,
  *     privateAccessConfig: {
  *         networkChannelType: buildPipelineStagePrivateAccessConfigNetworkChannelType,
  *         subnetId: testSubnet.id,
  *         nsgIds: buildPipelineStagePrivateAccessConfigNsgIds,
  *     },
- *     stageExecutionTimeoutInSeconds: Number(buildPipelineStageStageExecutionTimeoutInSeconds),
+ *     stageExecutionTimeoutInSeconds: buildPipelineStageStageExecutionTimeoutInSeconds,
  *     waitCriteria: {
  *         waitDuration: buildPipelineStageWaitCriteriaWaitDuration,
  *         waitType: buildPipelineStageWaitCriteriaWaitType,

@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testMappedAttributes = oci.identity.getDomainsMappedAttributes({
  *     idcsEndpoint: testDomain.url,
- *     mappedAttributeCount: Number(mappedAttributeMappedAttributeCount),
+ *     mappedAttributeCount: mappedAttributeMappedAttributeCount,
  *     mappedAttributeFilter: mappedAttributeMappedAttributeFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: mappedAttributeAuthorization,
  *     resourceTypeSchemaVersion: mappedAttributeResourceTypeSchemaVersion,
- *     startIndex: Number(mappedAttributeStartIndex),
+ *     startIndex: mappedAttributeStartIndex,
  * });
  * ```
  */
@@ -130,13 +130,13 @@ export interface GetDomainsMappedAttributesResult {
  *
  * const testMappedAttributes = oci.identity.getDomainsMappedAttributes({
  *     idcsEndpoint: testDomain.url,
- *     mappedAttributeCount: Number(mappedAttributeMappedAttributeCount),
+ *     mappedAttributeCount: mappedAttributeMappedAttributeCount,
  *     mappedAttributeFilter: mappedAttributeMappedAttributeFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: mappedAttributeAuthorization,
  *     resourceTypeSchemaVersion: mappedAttributeResourceTypeSchemaVersion,
- *     startIndex: Number(mappedAttributeStartIndex),
+ *     startIndex: mappedAttributeStartIndex,
  * });
  * ```
  */

@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *             .compartmentId(compartmentId)
  *             .displayName(occAvailabilityCatalogDisplayName)
  *             .namespace(occAvailabilityCatalogNamespace)
- *             .occCustomerGroupId(testOccCustomerGroup.id())
+ *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(occAvailabilityCatalogDescription)
  *             .freeformTags(Map.of("bar-key", "value"))

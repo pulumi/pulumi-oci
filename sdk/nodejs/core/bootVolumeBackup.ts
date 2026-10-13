@@ -34,12 +34,12 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
- *     isIndefiniteRetentionEnabled: bootVolumeBackupIsIndefiniteRetentionEnabled === "true",
- *     isPreventDeletionEnabled: bootVolumeBackupIsPreventDeletionEnabled === "true",
- *     isRetentionLockEnabled: bootVolumeBackupIsRetentionLockEnabled === "true",
+ *     isIndefiniteRetentionEnabled: bootVolumeBackupIsIndefiniteRetentionEnabled,
+ *     isPreventDeletionEnabled: bootVolumeBackupIsPreventDeletionEnabled,
+ *     isRetentionLockEnabled: bootVolumeBackupIsRetentionLockEnabled,
  *     kmsKeyId: testKey.id,
  *     retentionPeriod: {
- *         retentionTimeAmount: Number(bootVolumeBackupRetentionPeriodRetentionTimeAmount),
+ *         retentionTimeAmount: bootVolumeBackupRetentionPeriodRetentionTimeAmount,
  *         retentionTimeUnit: bootVolumeBackupRetentionPeriodRetentionTimeUnit,
  *     },
  *     type: bootVolumeBackupType,

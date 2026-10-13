@@ -204,7 +204,7 @@ def get_container_signatures(compartment_id: Optional[_builtins.str] = None,
     import pulumi_oci as oci
 
     test_container_image_signatures = oci.artifacts.get_container_signatures(compartment_id=compartment_id,
-        compartment_id_in_subtree=container_image_signature_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=container_image_signature_compartment_id_in_subtree,
         display_name=container_image_signature_display_name,
         image_digest=container_image_signature_image_digest,
         image_id=test_image["id"],
@@ -280,7 +280,7 @@ def get_container_signatures_output(compartment_id: pulumi.Input[Optional[_built
     import pulumi_oci as oci
 
     test_container_image_signatures = oci.artifacts.get_container_signatures(compartment_id=compartment_id,
-        compartment_id_in_subtree=container_image_signature_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=container_image_signature_compartment_id_in_subtree,
         display_name=container_image_signature_display_name,
         image_digest=container_image_signature_image_digest,
         image_id=test_image["id"],

@@ -123,7 +123,7 @@ def get_management_agent_count(compartment_id: Optional[_builtins.str] = None,
 
     test_management_agent_count = oci.managementagent.get_management_agent_count(compartment_id=compartment_id,
         group_bies=management_agent_count_group_by,
-        has_plugins=management_agent_count_has_plugins == "true",
+        has_plugins=management_agent_count_has_plugins,
         install_type=management_agent_count_install_type)
     ```
 
@@ -167,7 +167,7 @@ def get_management_agent_count_output(compartment_id: pulumi.Input[Optional[_bui
 
     test_management_agent_count = oci.managementagent.get_management_agent_count(compartment_id=compartment_id,
         group_bies=management_agent_count_group_by,
-        has_plugins=management_agent_count_has_plugins == "true",
+        has_plugins=management_agent_count_has_plugins,
         install_type=management_agent_count_install_type)
     ```
 

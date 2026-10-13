@@ -80,11 +80,11 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testSubnet = new Subnet("testSubnet", SubnetArgs.builder()
  *             .compartmentId(compartmentId)
- *             .vcnId(testVcn.id())
+ *             .vcnId(testVcn.get("id"))
  *             .availabilityDomain(subnetAvailabilityDomain)
  *             .cidrBlock(subnetCidrBlock)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
- *             .dhcpOptionsId(testDhcpOptions.id())
+ *             .dhcpOptionsId(testDhcpOptions.get("id"))
  *             .displayName(subnetDisplayName)
  *             .dnsLabel(subnetDnsLabel)
  *             .freeformTags(Map.of("Department", "Finance"))
@@ -93,7 +93,7 @@ import javax.annotation.Nullable;
  *             .ipv6cidrBlocks(subnetIpv6cidrBlocks)
  *             .prohibitInternetIngress(subnetProhibitInternetIngress)
  *             .prohibitPublicIpOnVnic(subnetProhibitPublicIpOnVnic)
- *             .routeTableId(testRouteTable.id())
+ *             .routeTableId(testRouteTable.get("id"))
  *             .securityListIds(subnetSecurityListIds)
  *             .build());
  * 

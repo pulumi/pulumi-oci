@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *         var testKafkaClusterAddon = new ManagedKafkaKafkaClusterAddon("testKafkaClusterAddon", ManagedKafkaKafkaClusterAddonArgs.builder()
  *             .addonType(kafkaClusterAddonAddonType)
  *             .authenticationMechanism(kafkaClusterAddonAuthenticationMechanism)
- *             .kafkaClusterId(testKafkaCluster.id())
+ *             .kafkaClusterId(testKafkaCluster.get("id"))
  *             .name(kafkaClusterAddonName)
  *             .networkCidrs(kafkaClusterAddonNetworkCidrs)
  *             .description(kafkaClusterAddonDescription)

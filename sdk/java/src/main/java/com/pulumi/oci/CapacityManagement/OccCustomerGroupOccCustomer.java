@@ -47,8 +47,8 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testOccCustomerGroupOccCustomer = new OccCustomerGroupOccCustomer("testOccCustomerGroupOccCustomer", OccCustomerGroupOccCustomerArgs.builder()
  *             .displayName(occCustomerGroupOccCustomerDisplayName)
- *             .occCustomerGroupId(testOccCustomerGroup.id())
- *             .tenancyId(testTenancy.id())
+ *             .occCustomerGroupId(testOccCustomerGroup.get("id"))
+ *             .tenancyId(testTenancy.get("id"))
  *             .description(occCustomerGroupOccCustomerDescription)
  *             .status(occCustomerGroupOccCustomerStatus)
  *             .build());

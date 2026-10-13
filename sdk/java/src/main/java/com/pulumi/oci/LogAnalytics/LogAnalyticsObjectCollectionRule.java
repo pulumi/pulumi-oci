@@ -52,16 +52,16 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testLogAnalyticsObjectCollectionRule = new LogAnalyticsObjectCollectionRule("testLogAnalyticsObjectCollectionRule", LogAnalyticsObjectCollectionRuleArgs.builder()
  *             .compartmentId(compartmentId)
- *             .logGroupId(testLogAnalyticsLogGroup.id())
+ *             .logGroupId(testLogAnalyticsLogGroup.get("id"))
  *             .name(logAnalyticsObjectCollectionRuleName)
  *             .namespace(logAnalyticsObjectCollectionRuleNamespace)
- *             .osBucketName(testBucket.name())
+ *             .osBucketName(testBucket.get("name"))
  *             .osNamespace(logAnalyticsObjectCollectionRuleOsNamespace)
  *             .charEncoding(logAnalyticsObjectCollectionRuleCharEncoding)
  *             .collectionType(logAnalyticsObjectCollectionRuleCollectionType)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(logAnalyticsObjectCollectionRuleDescription)
- *             .entityId(testEntity.id())
+ *             .entityId(testEntity.get("id"))
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .isEnabled(logAnalyticsObjectCollectionRuleIsEnabled)
  *             .isForceHistoricCollection(logAnalyticsObjectCollectionRuleIsForceHistoricCollection)
@@ -76,7 +76,7 @@ import javax.annotation.Nullable;
  *             .pollTill(logAnalyticsObjectCollectionRulePollTill)
  *             .streamCursorTime(logAnalyticsObjectCollectionRuleStreamCursorTime)
  *             .streamCursorType(logAnalyticsObjectCollectionRuleStreamCursorType)
- *             .streamId(testStream.id())
+ *             .streamId(testStream.get("id"))
  *             .timezone(logAnalyticsObjectCollectionRuleTimezone)
  *             .build());
  * 

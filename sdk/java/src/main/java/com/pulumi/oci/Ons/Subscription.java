@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *             .compartmentId(compartmentId)
  *             .endpoint(subscriptionEndpoint)
  *             .protocol(subscriptionProtocol)
- *             .topicId(testNotificationTopic.id())
+ *             .topicId(testNotificationTopic.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .build());

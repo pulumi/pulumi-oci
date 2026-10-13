@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *                 .type(queueCapabilitiesType)
  *                 .build())
  *             .channelConsumptionLimit(queueChannelConsumptionLimit)
- *             .customEncryptionKeyId(testKey.id())
+ *             .customEncryptionKeyId(testKey.get("id"))
  *             .deadLetterQueueDeliveryCount(queueDeadLetterQueueDeliveryCount)
  *             .purgeTrigger(purgeTrigger)
  *             .purgeType(purgeType)

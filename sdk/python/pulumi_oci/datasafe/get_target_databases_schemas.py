@@ -132,7 +132,7 @@ def get_target_databases_schemas(filters: Optional[Sequence[Union['GetTargetData
     import pulumi_oci as oci
 
     test_target_databases_schemas = oci.datasafe.get_target_databases_schemas(target_database_id=test_target_database["id"],
-        is_oracle_maintained=target_databases_schema_is_oracle_maintained == "true",
+        is_oracle_maintained=target_databases_schema_is_oracle_maintained,
         schema_names=target_databases_schema_schema_name,
         schema_name_contains=target_databases_schema_schema_name_contains)
     ```
@@ -178,7 +178,7 @@ def get_target_databases_schemas_output(filters: pulumi.Input[Optional[Optional[
     import pulumi_oci as oci
 
     test_target_databases_schemas = oci.datasafe.get_target_databases_schemas(target_database_id=test_target_database["id"],
-        is_oracle_maintained=target_databases_schema_is_oracle_maintained == "true",
+        is_oracle_maintained=target_databases_schema_is_oracle_maintained,
         schema_names=target_databases_schema_schema_name,
         schema_name_contains=target_databases_schema_schema_name_contains)
     ```

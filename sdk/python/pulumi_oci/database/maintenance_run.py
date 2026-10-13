@@ -778,7 +778,7 @@ class MaintenanceRun(pulumi.CustomResource):
             time_scheduled=maintenance_run_time_scheduled,
             compartment_id=compartment_id,
             database_software_image_id=test_database_software_image["id"],
-            is_dst_file_update_enabled=maintenance_run_is_dst_file_update_enabled == "true",
+            is_dst_file_update_enabled=maintenance_run_is_dst_file_update_enabled,
             patching_mode=maintenance_run_patching_mode)
         ```
 
@@ -835,7 +835,7 @@ class MaintenanceRun(pulumi.CustomResource):
             time_scheduled=maintenance_run_time_scheduled,
             compartment_id=compartment_id,
             database_software_image_id=test_database_software_image["id"],
-            is_dst_file_update_enabled=maintenance_run_is_dst_file_update_enabled == "true",
+            is_dst_file_update_enabled=maintenance_run_is_dst_file_update_enabled,
             patching_mode=maintenance_run_patching_mode)
         ```
 

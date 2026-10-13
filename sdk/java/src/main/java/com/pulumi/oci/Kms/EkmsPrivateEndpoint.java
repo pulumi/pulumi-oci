@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *             .compartmentId(compartmentId)
  *             .displayName(ekmsPrivateEndpointDisplayName)
  *             .externalKeyManagerIp(ekmsPrivateEndpointExternalKeyManagerIp)
- *             .subnetId(testSubnet.id())
+ *             .subnetId(testSubnet.get("id"))
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .port(ekmsPrivateEndpointPort)

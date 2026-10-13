@@ -443,9 +443,9 @@ class BatchBatchTaskProfile(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            min_disk_size_in_gbs=int(batch_task_profile_min_disk_size_in_gbs),
-            min_memory_in_gbs=int(batch_task_profile_min_memory_in_gbs),
-            min_ocpus=int(batch_task_profile_min_ocpus))
+            min_disk_size_in_gbs=batch_task_profile_min_disk_size_in_gbs,
+            min_memory_in_gbs=batch_task_profile_min_memory_in_gbs,
+            min_ocpus=batch_task_profile_min_ocpus)
         ```
 
         ## Import
@@ -506,9 +506,9 @@ class BatchBatchTaskProfile(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
-            min_disk_size_in_gbs=int(batch_task_profile_min_disk_size_in_gbs),
-            min_memory_in_gbs=int(batch_task_profile_min_memory_in_gbs),
-            min_ocpus=int(batch_task_profile_min_ocpus))
+            min_disk_size_in_gbs=batch_task_profile_min_disk_size_in_gbs,
+            min_memory_in_gbs=batch_task_profile_min_memory_in_gbs,
+            min_ocpus=batch_task_profile_min_ocpus)
         ```
 
         ## Import

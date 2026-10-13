@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *             .compartmentId(compartmentId)
  *             .endDate(auditArchiveRetrievalEndDate)
  *             .startDate(auditArchiveRetrievalStartDate)
- *             .targetId(testTarget.id())
+ *             .targetId(testTarget.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(auditArchiveRetrievalDescription)
  *             .displayName(auditArchiveRetrievalDisplayName)

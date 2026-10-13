@@ -30,7 +30,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     retentionPeriodInDays: Number(ociCacheBackupRetentionPeriodInDays),
+ *     retentionPeriodInDays: ociCacheBackupRetentionPeriodInDays,
  * });
  * ```
  *

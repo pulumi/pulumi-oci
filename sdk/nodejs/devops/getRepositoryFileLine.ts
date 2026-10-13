@@ -21,7 +21,7 @@ import * as utilities from "../utilities";
  *     repositoryId: testRepository.id,
  *     revision: repositoryFileLineRevision,
  *     filePath: repositoryFileLineFilePath,
- *     startLineNumber: Number(repositoryFileLineStartLineNumber),
+ *     startLineNumber: repositoryFileLineStartLineNumber,
  * });
  * ```
  */
@@ -89,7 +89,7 @@ export interface GetRepositoryFileLineResult {
  *     repositoryId: testRepository.id,
  *     revision: repositoryFileLineRevision,
  *     filePath: repositoryFileLineFilePath,
- *     startLineNumber: Number(repositoryFileLineStartLineNumber),
+ *     startLineNumber: repositoryFileLineStartLineNumber,
  * });
  * ```
  */

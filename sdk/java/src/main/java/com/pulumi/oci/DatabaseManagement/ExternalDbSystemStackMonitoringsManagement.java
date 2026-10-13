@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testExternalDbSystemStackMonitoringsManagement = new ExternalDbSystemStackMonitoringsManagement("testExternalDbSystemStackMonitoringsManagement", ExternalDbSystemStackMonitoringsManagementArgs.builder()
- *             .externalDbSystemId(testExternalDbSystem.id())
+ *             .externalDbSystemId(testExternalDbSystem.get("id"))
  *             .enableStackMonitoring(enableStackMonitoring)
  *             .isEnabled(externalDbSystemStackMonitoringsManagementIsEnabled)
  *             .metadata(externalDbSystemStackMonitoringsManagementMetadata)

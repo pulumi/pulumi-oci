@@ -68,10 +68,10 @@ import javax.annotation.Nullable;
  *             .licenseModel(pipelineLicenseModel)
  *             .recipeType(pipelineRecipeType)
  *             .sourceConnectionDetails(PipelineSourceConnectionDetailsArgs.builder()
- *                 .connectionId(testConnection.id())
+ *                 .connectionId(testConnection.get("id"))
  *                 .build())
  *             .targetConnectionDetails(PipelineTargetConnectionDetailsArgs.builder()
- *                 .connectionId(testConnection.id())
+ *                 .connectionId(testConnection.get("id"))
  *                 .build())
  *             .cpuCoreCount(pipelineCpuCoreCount)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
@@ -81,7 +81,7 @@ import javax.annotation.Nullable;
  *             .locks(PipelineLockArgs.builder()
  *                 .type(pipelineLocksType)
  *                 .message(pipelineLocksMessage)
- *                 .relatedResourceId(testResource.id())
+ *                 .relatedResourceId(testResource.get("id"))
  *                 .timeCreated(pipelineLocksTimeCreated)
  *                 .build())
  *             .processOptions(PipelineProcessOptionsArgs.builder()
@@ -103,7 +103,7 @@ import javax.annotation.Nullable;
  *                 .shouldRestartOnFailure(pipelineProcessOptionsShouldRestartOnFailure)
  *                 .startUsingDefaultMapping(pipelineProcessOptionsStartUsingDefaultMapping)
  *                 .build())
- *             .subnetId(testSubnet.id())
+ *             .subnetId(testSubnet.get("id"))
  *             .build());
  * 
  *     }

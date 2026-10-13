@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testSubsettingPolicyHealthReports = oci.datasafe.getSubsettingPolicyHealthReports({
  *     compartmentId: compartmentId,
  *     accessLevel: subsettingPolicyHealthReportAccessLevel,
- *     compartmentIdInSubtree: subsettingPolicyHealthReportCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: subsettingPolicyHealthReportCompartmentIdInSubtree,
  *     displayName: subsettingPolicyHealthReportDisplayName,
  *     state: subsettingPolicyHealthReportState,
  *     subsettingPolicyHealthReportId: testSubsettingPolicyHealthReport.id,
@@ -134,7 +134,7 @@ export interface GetSubsettingPolicyHealthReportsResult {
  * const testSubsettingPolicyHealthReports = oci.datasafe.getSubsettingPolicyHealthReports({
  *     compartmentId: compartmentId,
  *     accessLevel: subsettingPolicyHealthReportAccessLevel,
- *     compartmentIdInSubtree: subsettingPolicyHealthReportCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: subsettingPolicyHealthReportCompartmentIdInSubtree,
  *     displayName: subsettingPolicyHealthReportDisplayName,
  *     state: subsettingPolicyHealthReportState,
  *     subsettingPolicyHealthReportId: testSubsettingPolicyHealthReport.id,

@@ -212,7 +212,7 @@ def get_database_security_configs(access_level: Optional[_builtins.str] = None,
 
     test_database_security_configs = oci.datasafe.get_database_security_configs(compartment_id=compartment_id,
         access_level=database_security_config_access_level,
-        compartment_id_in_subtree=database_security_config_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=database_security_config_compartment_id_in_subtree,
         database_security_config_id=test_database_security_config["id"],
         display_name=database_security_config_display_name,
         state=database_security_config_state,
@@ -305,7 +305,7 @@ def get_database_security_configs_output(access_level: pulumi.Input[Optional[Opt
 
     test_database_security_configs = oci.datasafe.get_database_security_configs(compartment_id=compartment_id,
         access_level=database_security_config_access_level,
-        compartment_id_in_subtree=database_security_config_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=database_security_config_compartment_id_in_subtree,
         database_security_config_id=test_database_security_config["id"],
         display_name=database_security_config_display_name,
         state=database_security_config_state,

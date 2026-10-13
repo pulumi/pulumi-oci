@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  *
  * const testCategories = oci.optimizer.getCategories({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: categoryCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: categoryCompartmentIdInSubtree,
  *     childTenancyIds: categoryChildTenancyIds,
- *     includeOrganization: categoryIncludeOrganization === "true",
+ *     includeOrganization: categoryIncludeOrganization,
  *     name: categoryName,
  *     state: categoryState,
  * });
@@ -125,9 +125,9 @@ export interface GetCategoriesResult {
  *
  * const testCategories = oci.optimizer.getCategories({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: categoryCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: categoryCompartmentIdInSubtree,
  *     childTenancyIds: categoryChildTenancyIds,
- *     includeOrganization: categoryIncludeOrganization === "true",
+ *     includeOrganization: categoryIncludeOrganization,
  *     name: categoryName,
  *     state: categoryState,
  * });

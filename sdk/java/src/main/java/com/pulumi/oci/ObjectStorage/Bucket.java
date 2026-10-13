@@ -63,7 +63,7 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .isBucketKeyEnabled(bucketIsBucketKeyEnabled)
- *             .kmsKeyId(testKey.id())
+ *             .kmsKeyId(testKey.get("id"))
  *             .metadata(bucketMetadata)
  *             .objectEventsEnabled(bucketObjectEventsEnabled)
  *             .storageTier(bucketStorageTier)

@@ -32,7 +32,7 @@ import (
 //			_, err := containerengine.GetClusters(ctx, &containerengine.GetClustersArgs{
 //				CompartmentId: compartmentId,
 //				Name:          pulumi.StringRef(clusterName),
-//				States:        pulumi.ToArray(clusterState),
+//				States:        clusterState,
 //			}, nil)
 //			if err != nil {
 //				return err

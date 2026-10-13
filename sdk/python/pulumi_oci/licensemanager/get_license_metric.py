@@ -130,7 +130,7 @@ def get_license_metric(compartment_id: Optional[_builtins.str] = None,
     import pulumi_oci as oci
 
     test_license_metric = oci.licensemanager.get_license_metric(compartment_id=compartment_id,
-        is_compartment_id_in_subtree=license_metric_is_compartment_id_in_subtree == "true")
+        is_compartment_id_in_subtree=license_metric_is_compartment_id_in_subtree)
     ```
 
 
@@ -166,7 +166,7 @@ def get_license_metric_output(compartment_id: pulumi.Input[Optional[_builtins.st
     import pulumi_oci as oci
 
     test_license_metric = oci.licensemanager.get_license_metric(compartment_id=compartment_id,
-        is_compartment_id_in_subtree=license_metric_is_compartment_id_in_subtree == "true")
+        is_compartment_id_in_subtree=license_metric_is_compartment_id_in_subtree)
     ```
 
 

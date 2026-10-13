@@ -195,11 +195,11 @@ def get_domains_my_completed_approvals(authorization: Optional[_builtins.str] = 
     import pulumi_oci as oci
 
     test_my_completed_approvals = oci.identity.get_domains_my_completed_approvals(idcs_endpoint=test_domain["url"],
-        my_completed_approval_count=int(my_completed_approval_my_completed_approval_count),
+        my_completed_approval_count=my_completed_approval_my_completed_approval_count,
         my_completed_approval_filter=my_completed_approval_my_completed_approval_filter,
         authorization=my_completed_approval_authorization,
         resource_type_schema_version=my_completed_approval_resource_type_schema_version,
-        start_index=int(my_completed_approval_start_index))
+        start_index=my_completed_approval_start_index)
     ```
 
 
@@ -260,11 +260,11 @@ def get_domains_my_completed_approvals_output(authorization: pulumi.Input[Option
     import pulumi_oci as oci
 
     test_my_completed_approvals = oci.identity.get_domains_my_completed_approvals(idcs_endpoint=test_domain["url"],
-        my_completed_approval_count=int(my_completed_approval_my_completed_approval_count),
+        my_completed_approval_count=my_completed_approval_my_completed_approval_count,
         my_completed_approval_filter=my_completed_approval_my_completed_approval_filter,
         authorization=my_completed_approval_authorization,
         resource_type_schema_version=my_completed_approval_resource_type_schema_version,
-        start_index=int(my_completed_approval_start_index))
+        start_index=my_completed_approval_start_index)
     ```
 
 

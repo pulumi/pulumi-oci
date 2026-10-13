@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *         var testMultiCloudResourceDiscovery = new DbmulticloudMultiCloudResourceDiscovery("testMultiCloudResourceDiscovery", DbmulticloudMultiCloudResourceDiscoveryArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(multiCloudResourceDiscoveryDisplayName)
- *             .oracleDbConnectorId(testOracleDbConnector.id())
+ *             .oracleDbConnectorId(testOracleDbConnector.get("id"))
  *             .resourceType(multiCloudResourceDiscoveryResourceType)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .freeformTags(Map.of("Department", "Finance"))

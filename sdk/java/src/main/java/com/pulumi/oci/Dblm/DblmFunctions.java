@@ -140,9 +140,9 @@ public final class DblmFunctions {
      *             .databaseRelease(patchManagementDatabaseDatabaseRelease)
      *             .databaseType(patchManagementDatabaseDatabaseType)
      *             .displayName(patchManagementDatabaseDisplayName)
-     *             .drifterPatchId(testPatch.id())
+     *             .drifterPatchId(testPatch.get("id"))
      *             .imageCompliance(patchManagementDatabaseImageCompliance)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .severityTypes(patchManagementDatabaseSeverityType)
      *             .state(patchManagementDatabaseState)
      *             .build());
@@ -192,9 +192,9 @@ public final class DblmFunctions {
      *             .databaseRelease(patchManagementDatabaseDatabaseRelease)
      *             .databaseType(patchManagementDatabaseDatabaseType)
      *             .displayName(patchManagementDatabaseDisplayName)
-     *             .drifterPatchId(testPatch.id())
+     *             .drifterPatchId(testPatch.get("id"))
      *             .imageCompliance(patchManagementDatabaseImageCompliance)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .severityTypes(patchManagementDatabaseSeverityType)
      *             .state(patchManagementDatabaseState)
      *             .build());
@@ -244,9 +244,9 @@ public final class DblmFunctions {
      *             .databaseRelease(patchManagementDatabaseDatabaseRelease)
      *             .databaseType(patchManagementDatabaseDatabaseType)
      *             .displayName(patchManagementDatabaseDisplayName)
-     *             .drifterPatchId(testPatch.id())
+     *             .drifterPatchId(testPatch.get("id"))
      *             .imageCompliance(patchManagementDatabaseImageCompliance)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .severityTypes(patchManagementDatabaseSeverityType)
      *             .state(patchManagementDatabaseState)
      *             .build());
@@ -296,9 +296,9 @@ public final class DblmFunctions {
      *             .databaseRelease(patchManagementDatabaseDatabaseRelease)
      *             .databaseType(patchManagementDatabaseDatabaseType)
      *             .displayName(patchManagementDatabaseDisplayName)
-     *             .drifterPatchId(testPatch.id())
+     *             .drifterPatchId(testPatch.get("id"))
      *             .imageCompliance(patchManagementDatabaseImageCompliance)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .severityTypes(patchManagementDatabaseSeverityType)
      *             .state(patchManagementDatabaseState)
      *             .build());
@@ -348,9 +348,9 @@ public final class DblmFunctions {
      *             .databaseRelease(patchManagementDatabaseDatabaseRelease)
      *             .databaseType(patchManagementDatabaseDatabaseType)
      *             .displayName(patchManagementDatabaseDisplayName)
-     *             .drifterPatchId(testPatch.id())
+     *             .drifterPatchId(testPatch.get("id"))
      *             .imageCompliance(patchManagementDatabaseImageCompliance)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .severityTypes(patchManagementDatabaseSeverityType)
      *             .state(patchManagementDatabaseState)
      *             .build());
@@ -400,9 +400,9 @@ public final class DblmFunctions {
      *             .databaseRelease(patchManagementDatabaseDatabaseRelease)
      *             .databaseType(patchManagementDatabaseDatabaseType)
      *             .displayName(patchManagementDatabaseDisplayName)
-     *             .drifterPatchId(testPatch.id())
+     *             .drifterPatchId(testPatch.get("id"))
      *             .imageCompliance(patchManagementDatabaseImageCompliance)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .severityTypes(patchManagementDatabaseSeverityType)
      *             .state(patchManagementDatabaseState)
      *             .build());
@@ -452,9 +452,9 @@ public final class DblmFunctions {
      *             .databaseRelease(patchManagementDatabaseDatabaseRelease)
      *             .databaseType(patchManagementDatabaseDatabaseType)
      *             .displayName(patchManagementDatabaseDisplayName)
-     *             .drifterPatchId(testPatch.id())
+     *             .drifterPatchId(testPatch.get("id"))
      *             .imageCompliance(patchManagementDatabaseImageCompliance)
-     *             .imageId(testImage.id())
+     *             .imageId(testImage.get("id"))
      *             .severityTypes(patchManagementDatabaseSeverityType)
      *             .state(patchManagementDatabaseState)
      *             .build());
@@ -1026,7 +1026,7 @@ public final class DblmFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityResources = DblmFunctions.getVulnerabilityResources(GetVulnerabilityResourcesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .cveId(testCve.id())
+     *             .cveId(testCve.get("id"))
      *             .databaseRelease(vulnerabilityResourceDatabaseRelease)
      *             .displayName(vulnerabilityResourceDisplayName)
      *             .patchRecommendations(vulnerabilityResourcePatchRecommendation)
@@ -1076,7 +1076,7 @@ public final class DblmFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityResources = DblmFunctions.getVulnerabilityResources(GetVulnerabilityResourcesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .cveId(testCve.id())
+     *             .cveId(testCve.get("id"))
      *             .databaseRelease(vulnerabilityResourceDatabaseRelease)
      *             .displayName(vulnerabilityResourceDisplayName)
      *             .patchRecommendations(vulnerabilityResourcePatchRecommendation)
@@ -1126,7 +1126,7 @@ public final class DblmFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityResources = DblmFunctions.getVulnerabilityResources(GetVulnerabilityResourcesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .cveId(testCve.id())
+     *             .cveId(testCve.get("id"))
      *             .databaseRelease(vulnerabilityResourceDatabaseRelease)
      *             .displayName(vulnerabilityResourceDisplayName)
      *             .patchRecommendations(vulnerabilityResourcePatchRecommendation)
@@ -1176,7 +1176,7 @@ public final class DblmFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityResources = DblmFunctions.getVulnerabilityResources(GetVulnerabilityResourcesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .cveId(testCve.id())
+     *             .cveId(testCve.get("id"))
      *             .databaseRelease(vulnerabilityResourceDatabaseRelease)
      *             .displayName(vulnerabilityResourceDisplayName)
      *             .patchRecommendations(vulnerabilityResourcePatchRecommendation)
@@ -1226,7 +1226,7 @@ public final class DblmFunctions {
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityResources = DblmFunctions.getVulnerabilityResources(GetVulnerabilityResourcesArgs.builder()
      *             .compartmentId(compartmentId)
-     *             .cveId(testCve.id())
+     *             .cveId(testCve.get("id"))
      *             .databaseRelease(vulnerabilityResourceDatabaseRelease)
      *             .displayName(vulnerabilityResourceDisplayName)
      *             .patchRecommendations(vulnerabilityResourcePatchRecommendation)
@@ -1275,7 +1275,7 @@ public final class DblmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityScan = DblmFunctions.getVulnerabilityScan(GetVulnerabilityScanArgs.builder()
-     *             .vulnerabilityScanId(testVulnerabilityScanOciDblmVulnerabilityScan.id())
+     *             .vulnerabilityScanId(testVulnerabilityScanOciDblmVulnerabilityScan.get("id"))
      *             .build());
      * 
      *     }
@@ -1319,7 +1319,7 @@ public final class DblmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityScan = DblmFunctions.getVulnerabilityScan(GetVulnerabilityScanArgs.builder()
-     *             .vulnerabilityScanId(testVulnerabilityScanOciDblmVulnerabilityScan.id())
+     *             .vulnerabilityScanId(testVulnerabilityScanOciDblmVulnerabilityScan.get("id"))
      *             .build());
      * 
      *     }
@@ -1363,7 +1363,7 @@ public final class DblmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityScan = DblmFunctions.getVulnerabilityScan(GetVulnerabilityScanArgs.builder()
-     *             .vulnerabilityScanId(testVulnerabilityScanOciDblmVulnerabilityScan.id())
+     *             .vulnerabilityScanId(testVulnerabilityScanOciDblmVulnerabilityScan.get("id"))
      *             .build());
      * 
      *     }
@@ -1407,7 +1407,7 @@ public final class DblmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityScan = DblmFunctions.getVulnerabilityScan(GetVulnerabilityScanArgs.builder()
-     *             .vulnerabilityScanId(testVulnerabilityScanOciDblmVulnerabilityScan.id())
+     *             .vulnerabilityScanId(testVulnerabilityScanOciDblmVulnerabilityScan.get("id"))
      *             .build());
      * 
      *     }
@@ -1451,7 +1451,7 @@ public final class DblmFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVulnerabilityScan = DblmFunctions.getVulnerabilityScan(GetVulnerabilityScanArgs.builder()
-     *             .vulnerabilityScanId(testVulnerabilityScanOciDblmVulnerabilityScan.id())
+     *             .vulnerabilityScanId(testVulnerabilityScanOciDblmVulnerabilityScan.get("id"))
      *             .build());
      * 
      *     }
@@ -1499,7 +1499,7 @@ public final class DblmFunctions {
      *             .displayName(vulnerabilityScanDisplayName)
      *             .timeCreatedGreaterThan(vulnerabilityScanTimeCreatedGreaterThan)
      *             .timeEndedLessThan(vulnerabilityScanTimeEndedLessThan)
-     *             .vulnerabilityScanId(testVulnerabilityScan.id())
+     *             .vulnerabilityScanId(testVulnerabilityScan.get("id"))
      *             .vulnerabilityScanStatuses(vulnerabilityScanVulnerabilityScanStatus)
      *             .vulnerabilityScanType(vulnerabilityScanVulnerabilityScanType)
      *             .build());
@@ -1549,7 +1549,7 @@ public final class DblmFunctions {
      *             .displayName(vulnerabilityScanDisplayName)
      *             .timeCreatedGreaterThan(vulnerabilityScanTimeCreatedGreaterThan)
      *             .timeEndedLessThan(vulnerabilityScanTimeEndedLessThan)
-     *             .vulnerabilityScanId(testVulnerabilityScan.id())
+     *             .vulnerabilityScanId(testVulnerabilityScan.get("id"))
      *             .vulnerabilityScanStatuses(vulnerabilityScanVulnerabilityScanStatus)
      *             .vulnerabilityScanType(vulnerabilityScanVulnerabilityScanType)
      *             .build());
@@ -1599,7 +1599,7 @@ public final class DblmFunctions {
      *             .displayName(vulnerabilityScanDisplayName)
      *             .timeCreatedGreaterThan(vulnerabilityScanTimeCreatedGreaterThan)
      *             .timeEndedLessThan(vulnerabilityScanTimeEndedLessThan)
-     *             .vulnerabilityScanId(testVulnerabilityScan.id())
+     *             .vulnerabilityScanId(testVulnerabilityScan.get("id"))
      *             .vulnerabilityScanStatuses(vulnerabilityScanVulnerabilityScanStatus)
      *             .vulnerabilityScanType(vulnerabilityScanVulnerabilityScanType)
      *             .build());
@@ -1649,7 +1649,7 @@ public final class DblmFunctions {
      *             .displayName(vulnerabilityScanDisplayName)
      *             .timeCreatedGreaterThan(vulnerabilityScanTimeCreatedGreaterThan)
      *             .timeEndedLessThan(vulnerabilityScanTimeEndedLessThan)
-     *             .vulnerabilityScanId(testVulnerabilityScan.id())
+     *             .vulnerabilityScanId(testVulnerabilityScan.get("id"))
      *             .vulnerabilityScanStatuses(vulnerabilityScanVulnerabilityScanStatus)
      *             .vulnerabilityScanType(vulnerabilityScanVulnerabilityScanType)
      *             .build());
@@ -1699,7 +1699,7 @@ public final class DblmFunctions {
      *             .displayName(vulnerabilityScanDisplayName)
      *             .timeCreatedGreaterThan(vulnerabilityScanTimeCreatedGreaterThan)
      *             .timeEndedLessThan(vulnerabilityScanTimeEndedLessThan)
-     *             .vulnerabilityScanId(testVulnerabilityScan.id())
+     *             .vulnerabilityScanId(testVulnerabilityScan.get("id"))
      *             .vulnerabilityScanStatuses(vulnerabilityScanVulnerabilityScanStatus)
      *             .vulnerabilityScanType(vulnerabilityScanVulnerabilityScanType)
      *             .build());
@@ -1749,7 +1749,7 @@ public final class DblmFunctions {
      *             .displayName(vulnerabilityScanDisplayName)
      *             .timeCreatedGreaterThan(vulnerabilityScanTimeCreatedGreaterThan)
      *             .timeEndedLessThan(vulnerabilityScanTimeEndedLessThan)
-     *             .vulnerabilityScanId(testVulnerabilityScan.id())
+     *             .vulnerabilityScanId(testVulnerabilityScan.get("id"))
      *             .vulnerabilityScanStatuses(vulnerabilityScanVulnerabilityScanStatus)
      *             .vulnerabilityScanType(vulnerabilityScanVulnerabilityScanType)
      *             .build());
@@ -1799,7 +1799,7 @@ public final class DblmFunctions {
      *             .displayName(vulnerabilityScanDisplayName)
      *             .timeCreatedGreaterThan(vulnerabilityScanTimeCreatedGreaterThan)
      *             .timeEndedLessThan(vulnerabilityScanTimeEndedLessThan)
-     *             .vulnerabilityScanId(testVulnerabilityScan.id())
+     *             .vulnerabilityScanId(testVulnerabilityScan.get("id"))
      *             .vulnerabilityScanStatuses(vulnerabilityScanVulnerabilityScanStatus)
      *             .vulnerabilityScanType(vulnerabilityScanVulnerabilityScanType)
      *             .build());
@@ -1848,7 +1848,7 @@ public final class DblmFunctions {
      *             .compartmentId(compartmentId)
      *             .databaseRelease(vulnerabilityVulnerabilityDatabaseRelease)
      *             .displayName(vulnerabilityVulnerabilityDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .searchBy(vulnerabilityVulnerabilitySearchBy)
      *             .severityTypes(vulnerabilityVulnerabilitySeverityType)
      *             .state(vulnerabilityVulnerabilityState)
@@ -1898,7 +1898,7 @@ public final class DblmFunctions {
      *             .compartmentId(compartmentId)
      *             .databaseRelease(vulnerabilityVulnerabilityDatabaseRelease)
      *             .displayName(vulnerabilityVulnerabilityDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .searchBy(vulnerabilityVulnerabilitySearchBy)
      *             .severityTypes(vulnerabilityVulnerabilitySeverityType)
      *             .state(vulnerabilityVulnerabilityState)
@@ -1948,7 +1948,7 @@ public final class DblmFunctions {
      *             .compartmentId(compartmentId)
      *             .databaseRelease(vulnerabilityVulnerabilityDatabaseRelease)
      *             .displayName(vulnerabilityVulnerabilityDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .searchBy(vulnerabilityVulnerabilitySearchBy)
      *             .severityTypes(vulnerabilityVulnerabilitySeverityType)
      *             .state(vulnerabilityVulnerabilityState)
@@ -1998,7 +1998,7 @@ public final class DblmFunctions {
      *             .compartmentId(compartmentId)
      *             .databaseRelease(vulnerabilityVulnerabilityDatabaseRelease)
      *             .displayName(vulnerabilityVulnerabilityDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .searchBy(vulnerabilityVulnerabilitySearchBy)
      *             .severityTypes(vulnerabilityVulnerabilitySeverityType)
      *             .state(vulnerabilityVulnerabilityState)
@@ -2048,7 +2048,7 @@ public final class DblmFunctions {
      *             .compartmentId(compartmentId)
      *             .databaseRelease(vulnerabilityVulnerabilityDatabaseRelease)
      *             .displayName(vulnerabilityVulnerabilityDisplayName)
-     *             .resourceId(testResource.id())
+     *             .resourceId(testResource.get("id"))
      *             .searchBy(vulnerabilityVulnerabilitySearchBy)
      *             .severityTypes(vulnerabilityVulnerabilitySeverityType)
      *             .state(vulnerabilityVulnerabilityState)

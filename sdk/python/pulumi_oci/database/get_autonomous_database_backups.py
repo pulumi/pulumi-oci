@@ -201,7 +201,7 @@ def get_autonomous_database_backups(autonomous_database_id: Optional[_builtins.s
         compartment_id=compartment_id,
         display_name=autonomous_database_backup_display_name,
         infrastructure_type=autonomous_database_backup_infrastructure_type,
-        is_pitr_eligible=autonomous_database_backup_is_pitr_eligible == "true",
+        is_pitr_eligible=autonomous_database_backup_is_pitr_eligible,
         key_store_id=test_key_store["id"],
         state=autonomous_database_backup_state,
         type=autonomous_database_backup_type)
@@ -272,7 +272,7 @@ def get_autonomous_database_backups_output(autonomous_database_id: pulumi.Input[
         compartment_id=compartment_id,
         display_name=autonomous_database_backup_display_name,
         infrastructure_type=autonomous_database_backup_infrastructure_type,
-        is_pitr_eligible=autonomous_database_backup_is_pitr_eligible == "true",
+        is_pitr_eligible=autonomous_database_backup_is_pitr_eligible,
         key_store_id=test_key_store["id"],
         state=autonomous_database_backup_state,
         type=autonomous_database_backup_type)

@@ -19,13 +19,13 @@ import * as utilities from "../utilities";
  *
  * const testIdentityProofingProviderTemplates = oci.identity.getDomainsIdentityProofingProviderTemplates({
  *     idcsEndpoint: testDomain.url,
- *     identityProofingProviderTemplateCount: Number(identityProofingProviderTemplateIdentityProofingProviderTemplateCount),
+ *     identityProofingProviderTemplateCount: identityProofingProviderTemplateIdentityProofingProviderTemplateCount,
  *     identityProofingProviderTemplateFilter: identityProofingProviderTemplateIdentityProofingProviderTemplateFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: identityProofingProviderTemplateAuthorization,
  *     resourceTypeSchemaVersion: identityProofingProviderTemplateResourceTypeSchemaVersion,
- *     startIndex: Number(identityProofingProviderTemplateStartIndex),
+ *     startIndex: identityProofingProviderTemplateStartIndex,
  * });
  * ```
  */
@@ -130,13 +130,13 @@ export interface GetDomainsIdentityProofingProviderTemplatesResult {
  *
  * const testIdentityProofingProviderTemplates = oci.identity.getDomainsIdentityProofingProviderTemplates({
  *     idcsEndpoint: testDomain.url,
- *     identityProofingProviderTemplateCount: Number(identityProofingProviderTemplateIdentityProofingProviderTemplateCount),
+ *     identityProofingProviderTemplateCount: identityProofingProviderTemplateIdentityProofingProviderTemplateCount,
  *     identityProofingProviderTemplateFilter: identityProofingProviderTemplateIdentityProofingProviderTemplateFilter,
  *     attributeSets: ["all"],
  *     attributes: "",
  *     authorization: identityProofingProviderTemplateAuthorization,
  *     resourceTypeSchemaVersion: identityProofingProviderTemplateResourceTypeSchemaVersion,
- *     startIndex: Number(identityProofingProviderTemplateStartIndex),
+ *     startIndex: identityProofingProviderTemplateStartIndex,
  * });
  * ```
  */

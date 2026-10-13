@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testNetworkPerimeter = new DomainsNetworkPerimeter("testNetworkPerimeter", DomainsNetworkPerimeterArgs.builder()
- *             .idcsEndpoint(testDomain.url())
+ *             .idcsEndpoint(testDomain.get("url"))
  *             .ipAddresses(DomainsNetworkPerimeterIpAddressArgs.builder()
  *                 .value(networkPerimeterIpAddressesValue)
  *                 .type(networkPerimeterIpAddressesType)

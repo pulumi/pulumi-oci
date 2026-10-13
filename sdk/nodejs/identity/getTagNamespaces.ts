@@ -19,7 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testTagNamespaces = oci.identity.getTagNamespaces({
  *     compartmentId: compartmentId,
- *     includeSubcompartments: tagNamespaceIncludeSubcompartments === "true",
+ *     includeSubcompartments: tagNamespaceIncludeSubcompartments,
  *     state: tagNamespaceState,
  * });
  * ```
@@ -89,7 +89,7 @@ export interface GetTagNamespacesResult {
  *
  * const testTagNamespaces = oci.identity.getTagNamespaces({
  *     compartmentId: compartmentId,
- *     includeSubcompartments: tagNamespaceIncludeSubcompartments === "true",
+ *     includeSubcompartments: tagNamespaceIncludeSubcompartments,
  *     state: tagNamespaceState,
  * });
  * ```

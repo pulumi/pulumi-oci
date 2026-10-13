@@ -215,13 +215,13 @@ def get_domains_conditions(attribute_sets: Optional[Sequence[_builtins.str]] = N
     import pulumi_oci as oci
 
     test_conditions = oci.identity.get_domains_conditions(idcs_endpoint=test_domain["url"],
-        condition_count=int(condition_condition_count),
+        condition_count=condition_condition_count,
         condition_filter=condition_condition_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=condition_authorization,
         resource_type_schema_version=condition_resource_type_schema_version,
-        start_index=int(condition_start_index))
+        start_index=condition_start_index)
     ```
 
 
@@ -290,13 +290,13 @@ def get_domains_conditions_output(attribute_sets: pulumi.Input[Optional[Optional
     import pulumi_oci as oci
 
     test_conditions = oci.identity.get_domains_conditions(idcs_endpoint=test_domain["url"],
-        condition_count=int(condition_condition_count),
+        condition_count=condition_condition_count,
         condition_filter=condition_condition_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=condition_authorization,
         resource_type_schema_version=condition_resource_type_schema_version,
-        start_index=int(condition_start_index))
+        start_index=condition_start_index)
     ```
 
 

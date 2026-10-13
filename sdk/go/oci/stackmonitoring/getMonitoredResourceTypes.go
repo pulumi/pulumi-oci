@@ -36,8 +36,8 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := stackmonitoring.GetMonitoredResourceTypes(ctx, &stackmonitoring.GetMonitoredResourceTypesArgs{
 //				CompartmentId:        compartmentId,
-//				ExcludeFields:        pulumi.ToArray(monitoredResourceTypeExcludeFields),
-//				Fields:               pulumi.ToArray(monitoredResourceTypeFields),
+//				ExcludeFields:        monitoredResourceTypeExcludeFields,
+//				Fields:               monitoredResourceTypeFields,
 //				IsExcludeSystemTypes: pulumi.BoolRef(monitoredResourceTypeIsExcludeSystemTypes),
 //				MetricNamespace:      pulumi.StringRef(monitoredResourceTypeMetricNamespace),
 //				Name:                 pulumi.StringRef(monitoredResourceTypeName),

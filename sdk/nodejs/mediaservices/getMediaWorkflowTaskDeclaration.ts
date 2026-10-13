@@ -19,9 +19,9 @@ import * as utilities from "../utilities";
  *
  * const testMediaWorkflowTaskDeclaration = oci.mediaservices.getMediaWorkflowTaskDeclaration({
  *     compartmentId: compartmentId,
- *     isCurrent: mediaWorkflowTaskDeclarationIsCurrent === "true",
+ *     isCurrent: mediaWorkflowTaskDeclarationIsCurrent,
  *     name: mediaWorkflowTaskDeclarationName,
- *     version: Number(mediaWorkflowTaskDeclarationVersion),
+ *     version: mediaWorkflowTaskDeclarationVersion,
  * });
  * ```
  */
@@ -94,9 +94,9 @@ export interface GetMediaWorkflowTaskDeclarationResult {
  *
  * const testMediaWorkflowTaskDeclaration = oci.mediaservices.getMediaWorkflowTaskDeclaration({
  *     compartmentId: compartmentId,
- *     isCurrent: mediaWorkflowTaskDeclarationIsCurrent === "true",
+ *     isCurrent: mediaWorkflowTaskDeclarationIsCurrent,
  *     name: mediaWorkflowTaskDeclarationName,
- *     version: Number(mediaWorkflowTaskDeclarationVersion),
+ *     version: mediaWorkflowTaskDeclarationVersion,
  * });
  * ```
  */

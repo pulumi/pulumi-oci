@@ -48,13 +48,13 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testDigitalTwinInstance = new IotDigitalTwinInstance("testDigitalTwinInstance", IotDigitalTwinInstanceArgs.builder()
- *             .iotDomainId(testIotDomain.id())
- *             .authId(testAuth.id())
+ *             .iotDomainId(testIotDomain.get("id"))
+ *             .authId(testAuth.get("id"))
  *             .connectivityType(digitalTwinInstanceConnectivityType)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(digitalTwinInstanceDescription)
- *             .digitalTwinAdapterId(testDigitalTwinAdapter.id())
- *             .digitalTwinModelId(testDigitalTwinModel.id())
+ *             .digitalTwinAdapterId(testDigitalTwinAdapter.get("id"))
+ *             .digitalTwinModelId(testDigitalTwinModel.get("id"))
  *             .digitalTwinModelSpecUri(digitalTwinInstanceDigitalTwinModelSpecUri)
  *             .displayName(digitalTwinInstanceDisplayName)
  *             .externalKey(digitalTwinInstanceExternalKey)

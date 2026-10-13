@@ -60,7 +60,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectHarness = StreamingFunctions.getConnectHarness(GetConnectHarnessArgs.builder()
-     *             .connectHarnessId(testConnectHarnes.id())
+     *             .connectHarnessId(testConnectHarnes.get("id"))
      *             .build());
      * 
      *     }
@@ -102,7 +102,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectHarness = StreamingFunctions.getConnectHarness(GetConnectHarnessArgs.builder()
-     *             .connectHarnessId(testConnectHarnes.id())
+     *             .connectHarnessId(testConnectHarnes.get("id"))
      *             .build());
      * 
      *     }
@@ -144,7 +144,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectHarness = StreamingFunctions.getConnectHarness(GetConnectHarnessArgs.builder()
-     *             .connectHarnessId(testConnectHarnes.id())
+     *             .connectHarnessId(testConnectHarnes.get("id"))
      *             .build());
      * 
      *     }
@@ -186,7 +186,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectHarness = StreamingFunctions.getConnectHarness(GetConnectHarnessArgs.builder()
-     *             .connectHarnessId(testConnectHarnes.id())
+     *             .connectHarnessId(testConnectHarnes.get("id"))
      *             .build());
      * 
      *     }
@@ -228,7 +228,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testConnectHarness = StreamingFunctions.getConnectHarness(GetConnectHarnessArgs.builder()
-     *             .connectHarnessId(testConnectHarnes.id())
+     *             .connectHarnessId(testConnectHarnes.get("id"))
      *             .build());
      * 
      *     }
@@ -495,7 +495,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStream = StreamingFunctions.getStream(GetStreamArgs.builder()
-     *             .streamId(testStreamOciStreamingStream.id())
+     *             .streamId(testStreamOciStreamingStream.get("id"))
      *             .build());
      * 
      *     }
@@ -537,7 +537,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStream = StreamingFunctions.getStream(GetStreamArgs.builder()
-     *             .streamId(testStreamOciStreamingStream.id())
+     *             .streamId(testStreamOciStreamingStream.get("id"))
      *             .build());
      * 
      *     }
@@ -579,7 +579,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStream = StreamingFunctions.getStream(GetStreamArgs.builder()
-     *             .streamId(testStreamOciStreamingStream.id())
+     *             .streamId(testStreamOciStreamingStream.get("id"))
      *             .build());
      * 
      *     }
@@ -621,7 +621,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStream = StreamingFunctions.getStream(GetStreamArgs.builder()
-     *             .streamId(testStreamOciStreamingStream.id())
+     *             .streamId(testStreamOciStreamingStream.get("id"))
      *             .build());
      * 
      *     }
@@ -663,7 +663,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStream = StreamingFunctions.getStream(GetStreamArgs.builder()
-     *             .streamId(testStreamOciStreamingStream.id())
+     *             .streamId(testStreamOciStreamingStream.get("id"))
      *             .build());
      * 
      *     }
@@ -705,7 +705,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamPool = StreamingFunctions.getStreamPool(GetStreamPoolArgs.builder()
-     *             .streamPoolId(testStreamPoolOciStreamingStreamPool.id())
+     *             .streamPoolId(testStreamPoolOciStreamingStreamPool.get("id"))
      *             .build());
      * 
      *     }
@@ -747,7 +747,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamPool = StreamingFunctions.getStreamPool(GetStreamPoolArgs.builder()
-     *             .streamPoolId(testStreamPoolOciStreamingStreamPool.id())
+     *             .streamPoolId(testStreamPoolOciStreamingStreamPool.get("id"))
      *             .build());
      * 
      *     }
@@ -789,7 +789,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamPool = StreamingFunctions.getStreamPool(GetStreamPoolArgs.builder()
-     *             .streamPoolId(testStreamPoolOciStreamingStreamPool.id())
+     *             .streamPoolId(testStreamPoolOciStreamingStreamPool.get("id"))
      *             .build());
      * 
      *     }
@@ -831,7 +831,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamPool = StreamingFunctions.getStreamPool(GetStreamPoolArgs.builder()
-     *             .streamPoolId(testStreamPoolOciStreamingStreamPool.id())
+     *             .streamPoolId(testStreamPoolOciStreamingStreamPool.get("id"))
      *             .build());
      * 
      *     }
@@ -873,7 +873,7 @@ public final class StreamingFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamPool = StreamingFunctions.getStreamPool(GetStreamPoolArgs.builder()
-     *             .streamPoolId(testStreamPoolOciStreamingStreamPool.id())
+     *             .streamPoolId(testStreamPoolOciStreamingStreamPool.get("id"))
      *             .build());
      * 
      *     }
@@ -1147,7 +1147,7 @@ public final class StreamingFunctions {
      *             .id(streamId)
      *             .name(streamName)
      *             .state(streamState)
-     *             .streamPoolId(testStreamPool.id())
+     *             .streamPoolId(testStreamPool.get("id"))
      *             .build());
      * 
      *     }
@@ -1196,7 +1196,7 @@ public final class StreamingFunctions {
      *             .id(streamId)
      *             .name(streamName)
      *             .state(streamState)
-     *             .streamPoolId(testStreamPool.id())
+     *             .streamPoolId(testStreamPool.get("id"))
      *             .build());
      * 
      *     }
@@ -1245,7 +1245,7 @@ public final class StreamingFunctions {
      *             .id(streamId)
      *             .name(streamName)
      *             .state(streamState)
-     *             .streamPoolId(testStreamPool.id())
+     *             .streamPoolId(testStreamPool.get("id"))
      *             .build());
      * 
      *     }
@@ -1294,7 +1294,7 @@ public final class StreamingFunctions {
      *             .id(streamId)
      *             .name(streamName)
      *             .state(streamState)
-     *             .streamPoolId(testStreamPool.id())
+     *             .streamPoolId(testStreamPool.get("id"))
      *             .build());
      * 
      *     }
@@ -1343,7 +1343,7 @@ public final class StreamingFunctions {
      *             .id(streamId)
      *             .name(streamName)
      *             .state(streamState)
-     *             .streamPoolId(testStreamPool.id())
+     *             .streamPoolId(testStreamPool.get("id"))
      *             .build());
      * 
      *     }
@@ -1392,7 +1392,7 @@ public final class StreamingFunctions {
      *             .id(streamId)
      *             .name(streamName)
      *             .state(streamState)
-     *             .streamPoolId(testStreamPool.id())
+     *             .streamPoolId(testStreamPool.get("id"))
      *             .build());
      * 
      *     }
@@ -1441,7 +1441,7 @@ public final class StreamingFunctions {
      *             .id(streamId)
      *             .name(streamName)
      *             .state(streamState)
-     *             .streamPoolId(testStreamPool.id())
+     *             .streamPoolId(testStreamPool.get("id"))
      *             .build());
      * 
      *     }

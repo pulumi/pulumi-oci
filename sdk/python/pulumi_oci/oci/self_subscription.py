@@ -619,7 +619,7 @@ class SelfSubscription(pulumi.CustomResource):
                 },
                 "amount": subscription_subscription_details_amount,
                 "currency": subscription_subscription_details_currency,
-                "is_auto_renew": subscription_subscription_details_is_auto_renew == "true",
+                "is_auto_renew": subscription_subscription_details_is_auto_renew,
             },
             tenant_id=test_tenant["id"],
             additional_details=[{
@@ -732,7 +732,7 @@ class SelfSubscription(pulumi.CustomResource):
                 },
                 "amount": subscription_subscription_details_amount,
                 "currency": subscription_subscription_details_currency,
-                "is_auto_renew": subscription_subscription_details_is_auto_renew == "true",
+                "is_auto_renew": subscription_subscription_details_is_auto_renew,
             },
             tenant_id=test_tenant["id"],
             additional_details=[{

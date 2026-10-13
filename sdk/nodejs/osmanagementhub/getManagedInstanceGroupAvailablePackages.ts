@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     displayNames: managedInstanceGroupAvailablePackageDisplayName,
  *     displayNameContains: managedInstanceGroupAvailablePackageDisplayNameContains,
- *     isLatest: managedInstanceGroupAvailablePackageIsLatest === "true",
+ *     isLatest: managedInstanceGroupAvailablePackageIsLatest,
  * });
  * ```
  */
@@ -108,7 +108,7 @@ export interface GetManagedInstanceGroupAvailablePackagesResult {
  *     compartmentId: compartmentId,
  *     displayNames: managedInstanceGroupAvailablePackageDisplayName,
  *     displayNameContains: managedInstanceGroupAvailablePackageDisplayNameContains,
- *     isLatest: managedInstanceGroupAvailablePackageIsLatest === "true",
+ *     isLatest: managedInstanceGroupAvailablePackageIsLatest,
  * });
  * ```
  */

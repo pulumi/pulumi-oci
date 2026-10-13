@@ -52,11 +52,11 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testDrPlan = new DrPlan("testDrPlan", DrPlanArgs.builder()
  *             .displayName(drPlanDisplayName)
- *             .drProtectionGroupId(testDrProtectionGroup.id())
+ *             .drProtectionGroupId(testDrProtectionGroup.get("id"))
  *             .type(drPlanType)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .freeformTags(Map.of("Department", "Finance"))
- *             .sourcePlanId(testSourcePlan.id())
+ *             .sourcePlanId(testSourcePlan.get("id"))
  *             .build());
  * 
  *     }

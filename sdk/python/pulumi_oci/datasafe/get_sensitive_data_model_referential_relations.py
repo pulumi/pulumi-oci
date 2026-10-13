@@ -162,7 +162,7 @@ def get_sensitive_data_model_referential_relations(column_names: Optional[Sequen
 
     test_sensitive_data_model_referential_relations = oci.datasafe.get_sensitive_data_model_referential_relations(sensitive_data_model_id=test_sensitive_data_model["id"],
         column_names=sensitive_data_model_referential_relation_column_name,
-        is_sensitive=sensitive_data_model_referential_relation_is_sensitive == "true",
+        is_sensitive=sensitive_data_model_referential_relation_is_sensitive,
         objects=sensitive_data_model_referential_relation_object,
         relation_types=sensitive_data_model_referential_relation_relation_type,
         schema_names=sensitive_data_model_referential_relation_schema_name)
@@ -218,7 +218,7 @@ def get_sensitive_data_model_referential_relations_output(column_names: pulumi.I
 
     test_sensitive_data_model_referential_relations = oci.datasafe.get_sensitive_data_model_referential_relations(sensitive_data_model_id=test_sensitive_data_model["id"],
         column_names=sensitive_data_model_referential_relation_column_name,
-        is_sensitive=sensitive_data_model_referential_relation_is_sensitive == "true",
+        is_sensitive=sensitive_data_model_referential_relation_is_sensitive,
         objects=sensitive_data_model_referential_relation_object,
         relation_types=sensitive_data_model_referential_relation_relation_type,
         schema_names=sensitive_data_model_referential_relation_schema_name)

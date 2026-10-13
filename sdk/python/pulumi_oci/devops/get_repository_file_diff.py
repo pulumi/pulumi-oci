@@ -212,7 +212,7 @@ def get_repository_file_diff(base_version: Optional[_builtins.str] = None,
         repository_id=test_repository["id"],
         target_version=repository_file_diff_target_version,
         file_path=repository_file_diff_file_path,
-        is_comparison_from_merge_base=repository_file_diff_is_comparison_from_merge_base == "true")
+        is_comparison_from_merge_base=repository_file_diff_is_comparison_from_merge_base)
     ```
 
 
@@ -267,7 +267,7 @@ def get_repository_file_diff_output(base_version: pulumi.Input[Optional[_builtin
         repository_id=test_repository["id"],
         target_version=repository_file_diff_target_version,
         file_path=repository_file_diff_file_path,
-        is_comparison_from_merge_base=repository_file_diff_is_comparison_from_merge_base == "true")
+        is_comparison_from_merge_base=repository_file_diff_is_comparison_from_merge_base)
     ```
 
 

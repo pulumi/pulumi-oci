@@ -51,10 +51,10 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testPathRouteSet = new PathRouteSet("testPathRouteSet", PathRouteSetArgs.builder()
- *             .loadBalancerId(testLoadBalancer.id())
+ *             .loadBalancerId(testLoadBalancer.get("id"))
  *             .name(pathRouteSetName)
  *             .pathRoutes(PathRouteSetPathRouteArgs.builder()
- *                 .backendSetName(testBackendSet.name())
+ *                 .backendSetName(testBackendSet.get("name"))
  *                 .path(pathRouteSetPathRoutesPath)
  *                 .pathMatchType(PathRouteSetPathRoutePathMatchTypeArgs.builder()
  *                     .matchType(pathRouteSetPathRoutesPathMatchTypeMatchType)

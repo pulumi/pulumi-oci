@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *     filePath: repositoryDiffFilePath,
  *     repositoryId: testRepository.id,
  *     targetVersion: repositoryDiffTargetVersion,
- *     isComparisonFromMergeBase: repositoryDiffIsComparisonFromMergeBase === "true",
+ *     isComparisonFromMergeBase: repositoryDiffIsComparisonFromMergeBase,
  * });
  * ```
  */
@@ -125,7 +125,7 @@ export interface GetRepositoryDiffResult {
  *     filePath: repositoryDiffFilePath,
  *     repositoryId: testRepository.id,
  *     targetVersion: repositoryDiffTargetVersion,
- *     isComparisonFromMergeBase: repositoryDiffIsComparisonFromMergeBase === "true",
+ *     isComparisonFromMergeBase: repositoryDiffIsComparisonFromMergeBase,
  * });
  * ```
  */

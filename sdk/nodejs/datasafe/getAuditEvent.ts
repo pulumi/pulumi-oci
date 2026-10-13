@@ -32,7 +32,7 @@ import * as utilities from "../utilities";
  * const testAuditEvent = oci.datasafe.getAuditEvent({
  *     compartmentId: compartmentId,
  *     accessLevel: auditEventAccessLevel,
- *     compartmentIdInSubtree: auditEventCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: auditEventCompartmentIdInSubtree,
  *     scimQuery: auditEventScimQuery,
  * });
  * ```
@@ -117,7 +117,7 @@ export interface GetAuditEventResult {
  * const testAuditEvent = oci.datasafe.getAuditEvent({
  *     compartmentId: compartmentId,
  *     accessLevel: auditEventAccessLevel,
- *     compartmentIdInSubtree: auditEventCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: auditEventCompartmentIdInSubtree,
  *     scimQuery: auditEventScimQuery,
  * });
  * ```

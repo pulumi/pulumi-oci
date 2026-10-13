@@ -22,7 +22,7 @@ import * as utilities from "../utilities";
  *     compartmentId: compartmentId,
  *     displayName: securityZoneDisplayName,
  *     id: securityZoneId,
- *     isRequiredSecurityZonesInSubtree: securityZoneIsRequiredSecurityZonesInSubtree === "true",
+ *     isRequiredSecurityZonesInSubtree: securityZoneIsRequiredSecurityZonesInSubtree,
  *     securityRecipeId: testSecurityRecipe.id,
  *     state: securityZoneState,
  * });
@@ -116,7 +116,7 @@ export interface GetSecurityZonesResult {
  *     compartmentId: compartmentId,
  *     displayName: securityZoneDisplayName,
  *     id: securityZoneId,
- *     isRequiredSecurityZonesInSubtree: securityZoneIsRequiredSecurityZonesInSubtree === "true",
+ *     isRequiredSecurityZonesInSubtree: securityZoneIsRequiredSecurityZonesInSubtree,
  *     securityRecipeId: testSecurityRecipe.id,
  *     state: securityZoneState,
  * });

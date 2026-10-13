@@ -195,11 +195,11 @@ def get_domains_my_oauth2client_credentials(authorization: Optional[_builtins.st
     import pulumi_oci as oci
 
     test_my_oauth2client_credentials = oci.identity.get_domains_my_oauth2client_credentials(idcs_endpoint=test_domain["url"],
-        my_oauth2client_credential_count=int(my_oauth2client_credential_my_oauth2client_credential_count),
+        my_oauth2client_credential_count=my_oauth2client_credential_my_oauth2client_credential_count,
         my_oauth2client_credential_filter=my_oauth2client_credential_my_oauth2client_credential_filter,
         authorization=my_oauth2client_credential_authorization,
         resource_type_schema_version=my_oauth2client_credential_resource_type_schema_version,
-        start_index=int(my_oauth2client_credential_start_index))
+        start_index=my_oauth2client_credential_start_index)
     ```
 
 
@@ -260,11 +260,11 @@ def get_domains_my_oauth2client_credentials_output(authorization: pulumi.Input[O
     import pulumi_oci as oci
 
     test_my_oauth2client_credentials = oci.identity.get_domains_my_oauth2client_credentials(idcs_endpoint=test_domain["url"],
-        my_oauth2client_credential_count=int(my_oauth2client_credential_my_oauth2client_credential_count),
+        my_oauth2client_credential_count=my_oauth2client_credential_my_oauth2client_credential_count,
         my_oauth2client_credential_filter=my_oauth2client_credential_my_oauth2client_credential_filter,
         authorization=my_oauth2client_credential_authorization,
         resource_type_schema_version=my_oauth2client_credential_resource_type_schema_version,
-        start_index=int(my_oauth2client_credential_start_index))
+        start_index=my_oauth2client_credential_start_index)
     ```
 
 

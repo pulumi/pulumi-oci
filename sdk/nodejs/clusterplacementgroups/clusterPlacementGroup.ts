@@ -32,9 +32,9 @@ import * as utilities from "../utilities";
  *             service: clusterPlacementGroupCapabilitiesItemsService,
  *             additionalDetails: {
  *                 serviceType: clusterPlacementGroupCapabilitiesItemsAdditionalDetailsServiceType,
- *                 clusterPlacementGroupCount: Number(clusterPlacementGroupCapabilitiesItemsAdditionalDetailsClusterPlacementGroupCount),
+ *                 clusterPlacementGroupCount: clusterPlacementGroupCapabilitiesItemsAdditionalDetailsClusterPlacementGroupCount,
  *                 memoryInGbs: clusterPlacementGroupCapabilitiesItemsAdditionalDetailsMemoryInGbs,
- *                 nvmes: Number(clusterPlacementGroupCapabilitiesItemsAdditionalDetailsNvmes),
+ *                 nvmes: clusterPlacementGroupCapabilitiesItemsAdditionalDetailsNvmes,
  *                 ocpus: clusterPlacementGroupCapabilitiesItemsAdditionalDetailsOcpus,
  *             },
  *         }],
@@ -45,7 +45,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
- *     opcDryRun: clusterPlacementGroupOpcDryRun === "true",
+ *     opcDryRun: clusterPlacementGroupOpcDryRun,
  *     placementInstruction: {
  *         type: clusterPlacementGroupPlacementInstructionType,
  *         value: clusterPlacementGroupPlacementInstructionValue,

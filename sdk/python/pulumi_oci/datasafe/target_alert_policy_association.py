@@ -442,7 +442,7 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
 
         test_target_alert_policy_association = oci.datasafe.TargetAlertPolicyAssociation("test_target_alert_policy_association",
             compartment_id=compartment_id,
-            is_enabled=target_alert_policy_association_is_enabled == "true",
+            is_enabled=target_alert_policy_association_is_enabled,
             policy_id=test_policy["id"],
             target_id=test_target["id"],
             defined_tags={
@@ -502,7 +502,7 @@ class TargetAlertPolicyAssociation(pulumi.CustomResource):
 
         test_target_alert_policy_association = oci.datasafe.TargetAlertPolicyAssociation("test_target_alert_policy_association",
             compartment_id=compartment_id,
-            is_enabled=target_alert_policy_association_is_enabled == "true",
+            is_enabled=target_alert_policy_association_is_enabled,
             policy_id=test_policy["id"],
             target_id=test_target["id"],
             defined_tags={

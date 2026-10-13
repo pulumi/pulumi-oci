@@ -18,7 +18,7 @@ import * as utilities from "../utilities";
  *
  * const testDigitalTwinInstanceContent = oci.oci.getIotDigitalTwinInstanceContent({
  *     digitalTwinInstanceId: testDigitalTwinInstance.id,
- *     shouldIncludeMetadata: digitalTwinInstanceContentShouldIncludeMetadata === "true",
+ *     shouldIncludeMetadata: digitalTwinInstanceContentShouldIncludeMetadata,
  * });
  * ```
  */
@@ -69,7 +69,7 @@ export interface GetIotDigitalTwinInstanceContentResult {
  *
  * const testDigitalTwinInstanceContent = oci.oci.getIotDigitalTwinInstanceContent({
  *     digitalTwinInstanceId: testDigitalTwinInstance.id,
- *     shouldIncludeMetadata: digitalTwinInstanceContentShouldIncludeMetadata === "true",
+ *     shouldIncludeMetadata: digitalTwinInstanceContentShouldIncludeMetadata,
  * });
  * ```
  */

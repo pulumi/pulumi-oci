@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testNetworkFirewallPolicyUrlList = new NetworkFirewallPolicyUrlList("testNetworkFirewallPolicyUrlList", NetworkFirewallPolicyUrlListArgs.builder()
  *             .name(networkFirewallPolicyUrlListName)
- *             .networkFirewallPolicyId(testNetworkFirewallPolicy.id())
+ *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
  *             .urls(NetworkFirewallPolicyUrlListUrlArgs.builder()
  *                 .pattern(networkFirewallPolicyUrlListUrlsPattern)
  *                 .type(networkFirewallPolicyUrlListUrlsType)

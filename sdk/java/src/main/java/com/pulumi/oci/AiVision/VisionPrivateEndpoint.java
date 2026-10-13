@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testVisionPrivateEndpoint = new VisionPrivateEndpoint("testVisionPrivateEndpoint", VisionPrivateEndpointArgs.builder()
  *             .compartmentId(compartmentId)
- *             .subnetId(testSubnet.id())
+ *             .subnetId(testSubnet.get("id"))
  *             .definedTags(visionPrivateEndpointDefinedTags)
  *             .description(visionPrivateEndpointDescription)
  *             .displayName(visionPrivateEndpointDisplayName)

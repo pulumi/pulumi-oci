@@ -87,12 +87,12 @@ import javax.annotation.Nullable;
  *             .locks(OutboundConnectorLockArgs.builder()
  *                 .type(outboundConnectorLocksType)
  *                 .message(outboundConnectorLocksMessage)
- *                 .relatedResourceId(testResource.id())
+ *                 .relatedResourceId(testResource.get("id"))
  *                 .timeCreated(outboundConnectorLocksTimeCreated)
  *                 .build())
- *             .passwordSecretId(testSecret.id())
+ *             .passwordSecretId(testSecret.get("id"))
  *             .passwordSecretVersion(outboundConnectorPasswordSecretVersion)
- *             .trustedCertificateSecretId(testSecret.id())
+ *             .trustedCertificateSecretId(testSecret.get("id"))
  *             .trustedCertificateSecretVersion(outboundConnectorTrustedCertificateSecretVersion)
  *             .build());
  * 

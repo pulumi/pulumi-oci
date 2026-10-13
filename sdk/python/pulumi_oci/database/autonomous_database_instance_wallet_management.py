@@ -199,8 +199,8 @@ class AutonomousDatabaseInstanceWalletManagement(pulumi.CustomResource):
 
         test_autonomous_database_instance_wallet_management = oci.database.AutonomousDatabaseInstanceWalletManagement("test_autonomous_database_instance_wallet_management",
             autonomous_database_id=test_autonomous_database["id"],
-            grace_period=int(autonomous_database_instance_wallet_management_grace_period),
-            should_rotate=autonomous_database_instance_wallet_management_should_rotate == "true")
+            grace_period=autonomous_database_instance_wallet_management_grace_period,
+            should_rotate=autonomous_database_instance_wallet_management_should_rotate)
         ```
 
         ## Import
@@ -239,8 +239,8 @@ class AutonomousDatabaseInstanceWalletManagement(pulumi.CustomResource):
 
         test_autonomous_database_instance_wallet_management = oci.database.AutonomousDatabaseInstanceWalletManagement("test_autonomous_database_instance_wallet_management",
             autonomous_database_id=test_autonomous_database["id"],
-            grace_period=int(autonomous_database_instance_wallet_management_grace_period),
-            should_rotate=autonomous_database_instance_wallet_management_should_rotate == "true")
+            grace_period=autonomous_database_instance_wallet_management_grace_period,
+            should_rotate=autonomous_database_instance_wallet_management_should_rotate)
         ```
 
         ## Import

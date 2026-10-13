@@ -54,8 +54,8 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testNamespaceAssociation = new NamespaceAssociation("testNamespaceAssociation", NamespaceAssociationArgs.builder()
  *             .compartmentId(compartmentId)
- *             .entityId(testLogAnalyticsEntity.id())
- *             .logGroupId(testLogAnalyticsLogGroup.id())
+ *             .entityId(testLogAnalyticsEntity.get("id"))
+ *             .logGroupId(testLogAnalyticsLogGroup.get("id"))
  *             .namespace(namespaceAssociationNamespace)
  *             .sourceName(namespaceAssociationSourceName)
  *             .isFromRepublish(namespaceAssociationIsFromRepublish)

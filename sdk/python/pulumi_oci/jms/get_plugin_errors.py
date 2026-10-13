@@ -162,7 +162,7 @@ def get_plugin_errors(compartment_id: Optional[_builtins.str] = None,
     import pulumi_oci as oci
 
     test_plugin_errors = oci.jms.get_plugin_errors(compartment_id=compartment_id,
-        compartment_id_in_subtree=plugin_error_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=plugin_error_compartment_id_in_subtree,
         managed_instance_id=test_managed_instance["id"],
         time_first_seen_greater_than_or_equal_to=plugin_error_time_first_seen_greater_than_or_equal_to,
         time_first_seen_less_than_or_equal_to=plugin_error_time_first_seen_less_than_or_equal_to,
@@ -223,7 +223,7 @@ def get_plugin_errors_output(compartment_id: pulumi.Input[Optional[Optional[_bui
     import pulumi_oci as oci
 
     test_plugin_errors = oci.jms.get_plugin_errors(compartment_id=compartment_id,
-        compartment_id_in_subtree=plugin_error_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=plugin_error_compartment_id_in_subtree,
         managed_instance_id=test_managed_instance["id"],
         time_first_seen_greater_than_or_equal_to=plugin_error_time_first_seen_greater_than_or_equal_to,
         time_first_seen_less_than_or_equal_to=plugin_error_time_first_seen_less_than_or_equal_to,

@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testRegistrationPolicies = oci.datasafe.getRegistrationPolicies({
  *     compartmentId: compartmentId,
  *     accessLevel: registrationPolicyAccessLevel,
- *     compartmentIdInSubtree: registrationPolicyCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: registrationPolicyCompartmentIdInSubtree,
  *     connectionId: testConnection.id,
  *     connectionType: registrationPolicyConnectionType,
  *     displayName: registrationPolicyDisplayName,
@@ -178,7 +178,7 @@ export interface GetRegistrationPoliciesResult {
  * const testRegistrationPolicies = oci.datasafe.getRegistrationPolicies({
  *     compartmentId: compartmentId,
  *     accessLevel: registrationPolicyAccessLevel,
- *     compartmentIdInSubtree: registrationPolicyCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: registrationPolicyCompartmentIdInSubtree,
  *     connectionId: testConnection.id,
  *     connectionType: registrationPolicyConnectionType,
  *     displayName: registrationPolicyDisplayName,

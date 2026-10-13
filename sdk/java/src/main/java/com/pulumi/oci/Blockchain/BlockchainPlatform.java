@@ -62,7 +62,7 @@ import javax.annotation.Nullable;
  *             .caCertArchiveText(blockchainPlatformCaCertArchiveText)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(blockchainPlatformDescription)
- *             .federatedUserId(testUser.id())
+ *             .federatedUserId(testUser.get("id"))
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .isByol(blockchainPlatformIsByol)
  *             .platformVersion(blockchainPlatformPlatformVersion)

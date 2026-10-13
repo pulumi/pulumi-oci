@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testSecurityAssessmentCheck = new SecurityAssessmentCheck("testSecurityAssessmentCheck", SecurityAssessmentCheckArgs.builder()
- *             .securityAssessmentId(testSecurityAssessment.id())
+ *             .securityAssessmentId(testSecurityAssessment.get("id"))
  *             .patchOperations(SecurityAssessmentCheckPatchOperationArgs.builder()
  *                 .operation(securityAssessmentCheckPatchOperationsOperation)
  *                 .selection(securityAssessmentCheckPatchOperationsSelection)

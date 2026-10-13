@@ -23,7 +23,7 @@ import * as utilities from "../utilities";
  * const testCompatibleFormatsForSensitiveType = oci.datasafe.getCompatibleFormatsForSensitiveType({
  *     compartmentId: compartmentId,
  *     accessLevel: compatibleFormatsForSensitiveTypeAccessLevel,
- *     compartmentIdInSubtree: compatibleFormatsForSensitiveTypeCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: compatibleFormatsForSensitiveTypeCompartmentIdInSubtree,
  * });
  * ```
  */
@@ -87,7 +87,7 @@ export interface GetCompatibleFormatsForSensitiveTypeResult {
  * const testCompatibleFormatsForSensitiveType = oci.datasafe.getCompatibleFormatsForSensitiveType({
  *     compartmentId: compartmentId,
  *     accessLevel: compatibleFormatsForSensitiveTypeAccessLevel,
- *     compartmentIdInSubtree: compatibleFormatsForSensitiveTypeCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: compatibleFormatsForSensitiveTypeCompartmentIdInSubtree,
  * });
  * ```
  */

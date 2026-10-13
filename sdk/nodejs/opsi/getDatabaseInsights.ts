@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  *
  * const testDatabaseInsights = oci.opsi.getDatabaseInsights({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: databaseInsightCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: databaseInsightCompartmentIdInSubtree,
  *     databaseIds: testDatabase.id,
  *     databaseTypes: databaseInsightDatabaseType,
  *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,
@@ -165,7 +165,7 @@ export interface GetDatabaseInsightsResult {
  *
  * const testDatabaseInsights = oci.opsi.getDatabaseInsights({
  *     compartmentId: compartmentId,
- *     compartmentIdInSubtree: databaseInsightCompartmentIdInSubtree === "true",
+ *     compartmentIdInSubtree: databaseInsightCompartmentIdInSubtree,
  *     databaseIds: testDatabase.id,
  *     databaseTypes: databaseInsightDatabaseType,
  *     enterpriseManagerBridgeId: testEnterpriseManagerBridge.id,

@@ -33,7 +33,7 @@ import (
 //				CompartmentId: compartmentId,
 //				DisplayName:   pulumi.StringRef(networkAddressListDisplayName),
 //				Id:            pulumi.StringRef(networkAddressListId),
-//				States:        pulumi.ToArray(networkAddressListState),
+//				States:        networkAddressListState,
 //			}, nil)
 //			if err != nil {
 //				return err

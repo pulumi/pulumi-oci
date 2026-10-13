@@ -170,9 +170,9 @@ def get_responder_recipes(access_level: Optional[_builtins.str] = None,
 
     test_responder_recipes = oci.cloudguard.get_responder_recipes(compartment_id=compartment_id,
         access_level=responder_recipe_access_level,
-        compartment_id_in_subtree=responder_recipe_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=responder_recipe_compartment_id_in_subtree,
         display_name=responder_recipe_display_name,
-        resource_metadata_only=responder_recipe_resource_metadata_only == "true",
+        resource_metadata_only=responder_recipe_resource_metadata_only,
         state=responder_recipe_state)
     ```
 
@@ -240,9 +240,9 @@ def get_responder_recipes_output(access_level: pulumi.Input[Optional[Optional[_b
 
     test_responder_recipes = oci.cloudguard.get_responder_recipes(compartment_id=compartment_id,
         access_level=responder_recipe_access_level,
-        compartment_id_in_subtree=responder_recipe_compartment_id_in_subtree == "true",
+        compartment_id_in_subtree=responder_recipe_compartment_id_in_subtree,
         display_name=responder_recipe_display_name,
-        resource_metadata_only=responder_recipe_resource_metadata_only == "true",
+        resource_metadata_only=responder_recipe_resource_metadata_only,
         state=responder_recipe_state)
     ```
 

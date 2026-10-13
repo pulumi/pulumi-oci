@@ -215,13 +215,13 @@ def get_domains_mapped_attributes(attribute_sets: Optional[Sequence[_builtins.st
     import pulumi_oci as oci
 
     test_mapped_attributes = oci.identity.get_domains_mapped_attributes(idcs_endpoint=test_domain["url"],
-        mapped_attribute_count=int(mapped_attribute_mapped_attribute_count),
+        mapped_attribute_count=mapped_attribute_mapped_attribute_count,
         mapped_attribute_filter=mapped_attribute_mapped_attribute_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=mapped_attribute_authorization,
         resource_type_schema_version=mapped_attribute_resource_type_schema_version,
-        start_index=int(mapped_attribute_start_index))
+        start_index=mapped_attribute_start_index)
     ```
 
 
@@ -290,13 +290,13 @@ def get_domains_mapped_attributes_output(attribute_sets: pulumi.Input[Optional[O
     import pulumi_oci as oci
 
     test_mapped_attributes = oci.identity.get_domains_mapped_attributes(idcs_endpoint=test_domain["url"],
-        mapped_attribute_count=int(mapped_attribute_mapped_attribute_count),
+        mapped_attribute_count=mapped_attribute_mapped_attribute_count,
         mapped_attribute_filter=mapped_attribute_mapped_attribute_filter,
         attribute_sets=["all"],
         attributes="",
         authorization=mapped_attribute_authorization,
         resource_type_schema_version=mapped_attribute_resource_type_schema_version,
-        start_index=int(mapped_attribute_start_index))
+        start_index=mapped_attribute_start_index)
     ```
 
 

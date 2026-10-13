@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  * 
  *     public static void stack(Context ctx) {
  *         var testFleetAgentConfiguration = new FleetAgentConfiguration("testFleetAgentConfiguration", FleetAgentConfigurationArgs.builder()
- *             .fleetId(testFleet.id())
+ *             .fleetId(testFleet.get("id"))
  *             .agentPollingIntervalInMinutes(10)
  *             .isCapturingIpAddressAndFqdnEnabled(false)
  *             .isCollectingManagedInstanceMetricsEnabled(false)

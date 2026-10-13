@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *         var testDatabaseToolsIdentity = new DatabaseToolsIdentity("testDatabaseToolsIdentity", DatabaseToolsIdentityArgs.builder()
  *             .compartmentId(compartmentId)
  *             .credentialKey(databaseToolsIdentityCredentialKey)
- *             .databaseToolsConnectionId(testDatabaseToolsConnection.id())
+ *             .databaseToolsConnectionId(testDatabaseToolsConnection.get("id"))
  *             .displayName(databaseToolsIdentityDisplayName)
  *             .type(databaseToolsIdentityType)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  *             .locks(DatabaseToolsIdentityLockArgs.builder()
  *                 .type(databaseToolsIdentityLocksType)
  *                 .message(databaseToolsIdentityLocksMessage)
- *                 .relatedResourceId(testResource.id())
+ *                 .relatedResourceId(testResource.get("id"))
  *                 .timeCreated(databaseToolsIdentityLocksTimeCreated)
  *                 .build())
  *             .build());

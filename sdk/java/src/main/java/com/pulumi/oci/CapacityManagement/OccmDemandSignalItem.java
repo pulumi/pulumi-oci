@@ -49,8 +49,8 @@ import javax.annotation.Nullable;
  *         var testOccmDemandSignalItem = new OccmDemandSignalItem("testOccmDemandSignalItem", OccmDemandSignalItemArgs.builder()
  *             .compartmentId(compartmentId)
  *             .demandQuantity(occmDemandSignalItemDemandQuantity)
- *             .demandSignalCatalogResourceId(testResource.id())
- *             .demandSignalId(testDemandSignal.id())
+ *             .demandSignalCatalogResourceId(testResource.get("id"))
+ *             .demandSignalId(testDemandSignal.get("id"))
  *             .region(occmDemandSignalItemRegion)
  *             .requestType(occmDemandSignalItemRequestType)
  *             .resourceProperties(occmDemandSignalItemResourceProperties)
@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .notes(occmDemandSignalItemNotes)
- *             .targetCompartmentId(testCompartment.id())
+ *             .targetCompartmentId(testCompartment.get("id"))
  *             .build());
  * 
  *     }

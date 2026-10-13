@@ -33,7 +33,7 @@ import (
 //				TargetDatabaseId:   testTargetDatabase.Id,
 //				AuthenticationType: pulumi.StringRef(targetDatabaseRoleAuthenticationType),
 //				IsOracleMaintained: pulumi.BoolRef(targetDatabaseRoleIsOracleMaintained),
-//				RoleNames:          pulumi.ToArray(targetDatabaseRoleRoleName),
+//				RoleNames:          targetDatabaseRoleRoleName,
 //				RoleNameContains:   pulumi.StringRef(targetDatabaseRoleRoleNameContains),
 //			}, nil)
 //			if err != nil {

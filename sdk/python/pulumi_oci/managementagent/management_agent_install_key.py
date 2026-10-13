@@ -393,8 +393,8 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
         test_management_agent_install_key = oci.managementagent.ManagementAgentInstallKey("test_management_agent_install_key",
             compartment_id=compartment_id,
             display_name=management_agent_install_key_display_name,
-            allowed_key_install_count=int(management_agent_install_key_allowed_key_install_count),
-            is_unlimited=management_agent_install_key_is_unlimited == "true",
+            allowed_key_install_count=management_agent_install_key_allowed_key_install_count,
+            is_unlimited=management_agent_install_key_is_unlimited,
             time_expires=management_agent_install_key_time_expires)
         ```
 
@@ -441,8 +441,8 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
         test_management_agent_install_key = oci.managementagent.ManagementAgentInstallKey("test_management_agent_install_key",
             compartment_id=compartment_id,
             display_name=management_agent_install_key_display_name,
-            allowed_key_install_count=int(management_agent_install_key_allowed_key_install_count),
-            is_unlimited=management_agent_install_key_is_unlimited == "true",
+            allowed_key_install_count=management_agent_install_key_allowed_key_install_count,
+            is_unlimited=management_agent_install_key_is_unlimited,
             time_expires=management_agent_install_key_time_expires)
         ```
 

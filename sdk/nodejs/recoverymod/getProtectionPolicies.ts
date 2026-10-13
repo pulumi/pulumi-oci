@@ -20,7 +20,7 @@ import * as utilities from "../utilities";
  * const testProtectionPolicies = oci.recoverymod.getProtectionPolicies({
  *     compartmentId: compartmentId,
  *     displayName: protectionPolicyDisplayName,
- *     mustEnforceCloudLocality: protectionPolicyMustEnforceCloudLocality === "true",
+ *     mustEnforceCloudLocality: protectionPolicyMustEnforceCloudLocality,
  *     owner: protectionPolicyOwner,
  *     protectionPolicyId: testProtectionPolicy.id,
  *     state: protectionPolicyState,
@@ -118,7 +118,7 @@ export interface GetProtectionPoliciesResult {
  * const testProtectionPolicies = oci.recoverymod.getProtectionPolicies({
  *     compartmentId: compartmentId,
  *     displayName: protectionPolicyDisplayName,
- *     mustEnforceCloudLocality: protectionPolicyMustEnforceCloudLocality === "true",
+ *     mustEnforceCloudLocality: protectionPolicyMustEnforceCloudLocality,
  *     owner: protectionPolicyOwner,
  *     protectionPolicyId: testProtectionPolicy.id,
  *     state: protectionPolicyState,

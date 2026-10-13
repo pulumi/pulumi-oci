@@ -78,7 +78,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = AiVisionFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(testModelOciAiVisionModel.id())
+     *             .modelId(testModelOciAiVisionModel.get("id"))
      *             .build());
      * 
      *     }
@@ -120,7 +120,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = AiVisionFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(testModelOciAiVisionModel.id())
+     *             .modelId(testModelOciAiVisionModel.get("id"))
      *             .build());
      * 
      *     }
@@ -162,7 +162,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = AiVisionFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(testModelOciAiVisionModel.id())
+     *             .modelId(testModelOciAiVisionModel.get("id"))
      *             .build());
      * 
      *     }
@@ -204,7 +204,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = AiVisionFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(testModelOciAiVisionModel.id())
+     *             .modelId(testModelOciAiVisionModel.get("id"))
      *             .build());
      * 
      *     }
@@ -246,7 +246,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testModel = AiVisionFunctions.getModel(GetModelArgs.builder()
-     *             .modelId(testModelOciAiVisionModel.id())
+     *             .modelId(testModelOciAiVisionModel.get("id"))
      *             .build());
      * 
      *     }
@@ -291,7 +291,7 @@ public final class AiVisionFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(modelDisplayName)
      *             .id(modelId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelState)
      *             .build());
      * 
@@ -337,7 +337,7 @@ public final class AiVisionFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(modelDisplayName)
      *             .id(modelId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelState)
      *             .build());
      * 
@@ -383,7 +383,7 @@ public final class AiVisionFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(modelDisplayName)
      *             .id(modelId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelState)
      *             .build());
      * 
@@ -429,7 +429,7 @@ public final class AiVisionFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(modelDisplayName)
      *             .id(modelId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelState)
      *             .build());
      * 
@@ -475,7 +475,7 @@ public final class AiVisionFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(modelDisplayName)
      *             .id(modelId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelState)
      *             .build());
      * 
@@ -521,7 +521,7 @@ public final class AiVisionFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(modelDisplayName)
      *             .id(modelId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelState)
      *             .build());
      * 
@@ -567,7 +567,7 @@ public final class AiVisionFunctions {
      *             .compartmentId(compartmentId)
      *             .displayName(modelDisplayName)
      *             .id(modelId)
-     *             .projectId(testProject.id())
+     *             .projectId(testProject.get("id"))
      *             .state(modelState)
      *             .build());
      * 
@@ -610,7 +610,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = AiVisionFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciAiVisionProject.id())
+     *             .projectId(testProjectOciAiVisionProject.get("id"))
      *             .build());
      * 
      *     }
@@ -652,7 +652,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = AiVisionFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciAiVisionProject.id())
+     *             .projectId(testProjectOciAiVisionProject.get("id"))
      *             .build());
      * 
      *     }
@@ -694,7 +694,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = AiVisionFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciAiVisionProject.id())
+     *             .projectId(testProjectOciAiVisionProject.get("id"))
      *             .build());
      * 
      *     }
@@ -736,7 +736,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = AiVisionFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciAiVisionProject.id())
+     *             .projectId(testProjectOciAiVisionProject.get("id"))
      *             .build());
      * 
      *     }
@@ -778,7 +778,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testProject = AiVisionFunctions.getProject(GetProjectArgs.builder()
-     *             .projectId(testProjectOciAiVisionProject.id())
+     *             .projectId(testProjectOciAiVisionProject.get("id"))
      *             .build());
      * 
      *     }
@@ -1135,7 +1135,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamGroup = AiVisionFunctions.getStreamGroup(GetStreamGroupArgs.builder()
-     *             .streamGroupId(testStreamGroupOciAiVisionStreamGroup.id())
+     *             .streamGroupId(testStreamGroupOciAiVisionStreamGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -1177,7 +1177,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamGroup = AiVisionFunctions.getStreamGroup(GetStreamGroupArgs.builder()
-     *             .streamGroupId(testStreamGroupOciAiVisionStreamGroup.id())
+     *             .streamGroupId(testStreamGroupOciAiVisionStreamGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -1219,7 +1219,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamGroup = AiVisionFunctions.getStreamGroup(GetStreamGroupArgs.builder()
-     *             .streamGroupId(testStreamGroupOciAiVisionStreamGroup.id())
+     *             .streamGroupId(testStreamGroupOciAiVisionStreamGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -1261,7 +1261,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamGroup = AiVisionFunctions.getStreamGroup(GetStreamGroupArgs.builder()
-     *             .streamGroupId(testStreamGroupOciAiVisionStreamGroup.id())
+     *             .streamGroupId(testStreamGroupOciAiVisionStreamGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -1303,7 +1303,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamGroup = AiVisionFunctions.getStreamGroup(GetStreamGroupArgs.builder()
-     *             .streamGroupId(testStreamGroupOciAiVisionStreamGroup.id())
+     *             .streamGroupId(testStreamGroupOciAiVisionStreamGroup.get("id"))
      *             .build());
      * 
      *     }
@@ -1653,7 +1653,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamJob = AiVisionFunctions.getStreamJob(GetStreamJobArgs.builder()
-     *             .streamJobId(testStreamJobOciAiVisionStreamJob.id())
+     *             .streamJobId(testStreamJobOciAiVisionStreamJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1695,7 +1695,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamJob = AiVisionFunctions.getStreamJob(GetStreamJobArgs.builder()
-     *             .streamJobId(testStreamJobOciAiVisionStreamJob.id())
+     *             .streamJobId(testStreamJobOciAiVisionStreamJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1737,7 +1737,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamJob = AiVisionFunctions.getStreamJob(GetStreamJobArgs.builder()
-     *             .streamJobId(testStreamJobOciAiVisionStreamJob.id())
+     *             .streamJobId(testStreamJobOciAiVisionStreamJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1779,7 +1779,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamJob = AiVisionFunctions.getStreamJob(GetStreamJobArgs.builder()
-     *             .streamJobId(testStreamJobOciAiVisionStreamJob.id())
+     *             .streamJobId(testStreamJobOciAiVisionStreamJob.get("id"))
      *             .build());
      * 
      *     }
@@ -1821,7 +1821,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamJob = AiVisionFunctions.getStreamJob(GetStreamJobArgs.builder()
-     *             .streamJobId(testStreamJobOciAiVisionStreamJob.id())
+     *             .streamJobId(testStreamJobOciAiVisionStreamJob.get("id"))
      *             .build());
      * 
      *     }
@@ -2178,7 +2178,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamSource = AiVisionFunctions.getStreamSource(GetStreamSourceArgs.builder()
-     *             .streamSourceId(testStreamSourceOciAiVisionStreamSource.id())
+     *             .streamSourceId(testStreamSourceOciAiVisionStreamSource.get("id"))
      *             .build());
      * 
      *     }
@@ -2220,7 +2220,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamSource = AiVisionFunctions.getStreamSource(GetStreamSourceArgs.builder()
-     *             .streamSourceId(testStreamSourceOciAiVisionStreamSource.id())
+     *             .streamSourceId(testStreamSourceOciAiVisionStreamSource.get("id"))
      *             .build());
      * 
      *     }
@@ -2262,7 +2262,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamSource = AiVisionFunctions.getStreamSource(GetStreamSourceArgs.builder()
-     *             .streamSourceId(testStreamSourceOciAiVisionStreamSource.id())
+     *             .streamSourceId(testStreamSourceOciAiVisionStreamSource.get("id"))
      *             .build());
      * 
      *     }
@@ -2304,7 +2304,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamSource = AiVisionFunctions.getStreamSource(GetStreamSourceArgs.builder()
-     *             .streamSourceId(testStreamSourceOciAiVisionStreamSource.id())
+     *             .streamSourceId(testStreamSourceOciAiVisionStreamSource.get("id"))
      *             .build());
      * 
      *     }
@@ -2346,7 +2346,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testStreamSource = AiVisionFunctions.getStreamSource(GetStreamSourceArgs.builder()
-     *             .streamSourceId(testStreamSourceOciAiVisionStreamSource.id())
+     *             .streamSourceId(testStreamSourceOciAiVisionStreamSource.get("id"))
      *             .build());
      * 
      *     }
@@ -2703,7 +2703,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVisionPrivateEndpoint = AiVisionFunctions.getVisionPrivateEndpoint(GetVisionPrivateEndpointArgs.builder()
-     *             .visionPrivateEndpointId(testVisionPrivateEndpointOciAiVisionVisionPrivateEndpoint.id())
+     *             .visionPrivateEndpointId(testVisionPrivateEndpointOciAiVisionVisionPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -2745,7 +2745,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVisionPrivateEndpoint = AiVisionFunctions.getVisionPrivateEndpoint(GetVisionPrivateEndpointArgs.builder()
-     *             .visionPrivateEndpointId(testVisionPrivateEndpointOciAiVisionVisionPrivateEndpoint.id())
+     *             .visionPrivateEndpointId(testVisionPrivateEndpointOciAiVisionVisionPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -2787,7 +2787,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVisionPrivateEndpoint = AiVisionFunctions.getVisionPrivateEndpoint(GetVisionPrivateEndpointArgs.builder()
-     *             .visionPrivateEndpointId(testVisionPrivateEndpointOciAiVisionVisionPrivateEndpoint.id())
+     *             .visionPrivateEndpointId(testVisionPrivateEndpointOciAiVisionVisionPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -2829,7 +2829,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVisionPrivateEndpoint = AiVisionFunctions.getVisionPrivateEndpoint(GetVisionPrivateEndpointArgs.builder()
-     *             .visionPrivateEndpointId(testVisionPrivateEndpointOciAiVisionVisionPrivateEndpoint.id())
+     *             .visionPrivateEndpointId(testVisionPrivateEndpointOciAiVisionVisionPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }
@@ -2871,7 +2871,7 @@ public final class AiVisionFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testVisionPrivateEndpoint = AiVisionFunctions.getVisionPrivateEndpoint(GetVisionPrivateEndpointArgs.builder()
-     *             .visionPrivateEndpointId(testVisionPrivateEndpointOciAiVisionVisionPrivateEndpoint.id())
+     *             .visionPrivateEndpointId(testVisionPrivateEndpointOciAiVisionVisionPrivateEndpoint.get("id"))
      *             .build());
      * 
      *     }

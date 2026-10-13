@@ -24,8 +24,8 @@ import * as utilities from "../utilities";
  *     databaseManagements: mysqlDbSystemDatabaseManagement,
  *     dbSystemId: testDbSystem.id,
  *     displayName: mysqlDbSystemDisplayName,
- *     isHeatWaveClusterAttached: mysqlDbSystemIsHeatWaveClusterAttached === "true",
- *     isUpToDate: mysqlDbSystemIsUpToDate === "true",
+ *     isHeatWaveClusterAttached: mysqlDbSystemIsHeatWaveClusterAttached,
+ *     isUpToDate: mysqlDbSystemIsUpToDate,
  *     state: mysqlDbSystemState,
  * });
  * ```
@@ -145,8 +145,8 @@ export interface GetMysqlDbSystemsResult {
  *     databaseManagements: mysqlDbSystemDatabaseManagement,
  *     dbSystemId: testDbSystem.id,
  *     displayName: mysqlDbSystemDisplayName,
- *     isHeatWaveClusterAttached: mysqlDbSystemIsHeatWaveClusterAttached === "true",
- *     isUpToDate: mysqlDbSystemIsUpToDate === "true",
+ *     isHeatWaveClusterAttached: mysqlDbSystemIsHeatWaveClusterAttached,
+ *     isUpToDate: mysqlDbSystemIsUpToDate,
  *     state: mysqlDbSystemState,
  * });
  * ```

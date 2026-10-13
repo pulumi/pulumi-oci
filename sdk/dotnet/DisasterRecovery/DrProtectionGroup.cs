@@ -52,7 +52,7 @@ namespace Pulumi.Oci.DisasterRecovery
     ///         {
     ///             { "Department", "Finance" },
     ///         },
-    ///         DisassociateTrigger = disassociateTrigger,
+    ///         DisassociateTrigger = (int)disassociateTrigger,
     ///         Members = new[]
     ///         {
     ///             new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberArgs

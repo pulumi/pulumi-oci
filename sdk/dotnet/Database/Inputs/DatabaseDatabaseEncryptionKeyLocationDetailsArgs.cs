@@ -19,6 +19,12 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? AwsEncryptionKeyId { get; set; }
 
         /// <summary>
+        /// Provide the key pool OCID of a registered AWS key.
+        /// </summary>
+        [Input("awsEncryptionKeyPoolId")]
+        public Input<string>? AwsEncryptionKeyPoolId { get; set; }
+
+        /// <summary>
         /// Provide the key OCID of a registered Azure key.
         /// </summary>
         [Input("azureEncryptionKeyId")]

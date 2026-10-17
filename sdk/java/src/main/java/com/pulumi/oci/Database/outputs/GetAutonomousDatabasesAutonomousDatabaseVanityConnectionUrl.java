@@ -21,6 +21,11 @@ public final class GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrl {
      */
     private String databaseTransformsUrl;
     /**
+     * @return Essbase URL for the Autonomous AI Database.
+     * 
+     */
+    private String essbaseUrl;
+    /**
      * @return The URL of the Graph Studio for the Autonomous Database.
      * 
      */
@@ -65,6 +70,13 @@ public final class GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrl {
      */
     public String databaseTransformsUrl() {
         return this.databaseTransformsUrl;
+    }
+    /**
+     * @return Essbase URL for the Autonomous AI Database.
+     * 
+     */
+    public String essbaseUrl() {
+        return this.essbaseUrl;
     }
     /**
      * @return The URL of the Graph Studio for the Autonomous Database.
@@ -120,6 +132,7 @@ public final class GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrl {
     public static final class Builder {
         private String apexUrl;
         private String databaseTransformsUrl;
+        private String essbaseUrl;
         private String graphStudioUrl;
         private String machineLearningNotebookUrl;
         private String machineLearningUserManagementUrl;
@@ -131,6 +144,7 @@ public final class GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrl {
     	      Objects.requireNonNull(defaults);
     	      this.apexUrl = defaults.apexUrl;
     	      this.databaseTransformsUrl = defaults.databaseTransformsUrl;
+    	      this.essbaseUrl = defaults.essbaseUrl;
     	      this.graphStudioUrl = defaults.graphStudioUrl;
     	      this.machineLearningNotebookUrl = defaults.machineLearningNotebookUrl;
     	      this.machineLearningUserManagementUrl = defaults.machineLearningUserManagementUrl;
@@ -153,6 +167,14 @@ public final class GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrl {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrl", "databaseTransformsUrl");
             }
             this.databaseTransformsUrl = databaseTransformsUrl;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder essbaseUrl(String essbaseUrl) {
+            if (essbaseUrl == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrl", "essbaseUrl");
+            }
+            this.essbaseUrl = essbaseUrl;
             return this;
         }
         @CustomType.Setter
@@ -207,6 +229,7 @@ public final class GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrl {
             final var _resultValue = new GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrl();
             _resultValue.apexUrl = apexUrl;
             _resultValue.databaseTransformsUrl = databaseTransformsUrl;
+            _resultValue.essbaseUrl = essbaseUrl;
             _resultValue.graphStudioUrl = graphStudioUrl;
             _resultValue.machineLearningNotebookUrl = machineLearningNotebookUrl;
             _resultValue.machineLearningUserManagementUrl = machineLearningUserManagementUrl;

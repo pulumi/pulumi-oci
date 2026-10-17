@@ -4957,6 +4957,8 @@ class AutonomousDatabaseConnectionUrl(dict):
             suggest = "apex_url"
         elif key == "databaseTransformsUrl":
             suggest = "database_transforms_url"
+        elif key == "essbaseUrl":
+            suggest = "essbase_url"
         elif key == "graphStudioUrl":
             suggest = "graph_studio_url"
         elif key == "machineLearningNotebookUrl":
@@ -4986,6 +4988,7 @@ class AutonomousDatabaseConnectionUrl(dict):
     def __init__(__self__, *,
                  apex_url: Optional[_builtins.str] = None,
                  database_transforms_url: Optional[_builtins.str] = None,
+                 essbase_url: Optional[_builtins.str] = None,
                  graph_studio_url: Optional[_builtins.str] = None,
                  machine_learning_notebook_url: Optional[_builtins.str] = None,
                  machine_learning_user_management_url: Optional[_builtins.str] = None,
@@ -4996,6 +4999,7 @@ class AutonomousDatabaseConnectionUrl(dict):
         """
         :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
         :param _builtins.str database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
+        :param _builtins.str essbase_url: Essbase URL for the Autonomous AI Database.
         :param _builtins.str graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
         :param _builtins.str machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
         :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
@@ -5008,6 +5012,8 @@ class AutonomousDatabaseConnectionUrl(dict):
             pulumi.set(__self__, "apex_url", apex_url)
         if database_transforms_url is not None:
             pulumi.set(__self__, "database_transforms_url", database_transforms_url)
+        if essbase_url is not None:
+            pulumi.set(__self__, "essbase_url", essbase_url)
         if graph_studio_url is not None:
             pulumi.set(__self__, "graph_studio_url", graph_studio_url)
         if machine_learning_notebook_url is not None:
@@ -5038,6 +5044,14 @@ class AutonomousDatabaseConnectionUrl(dict):
         The URL of the Database Transforms for the Autonomous Database.
         """
         return pulumi.get(self, "database_transforms_url")
+
+    @_builtins.property
+    @pulumi.getter(name="essbaseUrl")
+    def essbase_url(self) -> Optional[_builtins.str]:
+        """
+        Essbase URL for the Autonomous AI Database.
+        """
+        return pulumi.get(self, "essbase_url")
 
     @_builtins.property
     @pulumi.getter(name="graphStudioUrl")
@@ -6173,6 +6187,8 @@ class AutonomousDatabasePublicConnectionUrl(dict):
             suggest = "apex_url"
         elif key == "databaseTransformsUrl":
             suggest = "database_transforms_url"
+        elif key == "essbaseUrl":
+            suggest = "essbase_url"
         elif key == "graphStudioUrl":
             suggest = "graph_studio_url"
         elif key == "machineLearningNotebookUrl":
@@ -6202,6 +6218,7 @@ class AutonomousDatabasePublicConnectionUrl(dict):
     def __init__(__self__, *,
                  apex_url: Optional[_builtins.str] = None,
                  database_transforms_url: Optional[_builtins.str] = None,
+                 essbase_url: Optional[_builtins.str] = None,
                  graph_studio_url: Optional[_builtins.str] = None,
                  machine_learning_notebook_url: Optional[_builtins.str] = None,
                  machine_learning_user_management_url: Optional[_builtins.str] = None,
@@ -6212,6 +6229,7 @@ class AutonomousDatabasePublicConnectionUrl(dict):
         """
         :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
         :param _builtins.str database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
+        :param _builtins.str essbase_url: Essbase URL for the Autonomous AI Database.
         :param _builtins.str graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
         :param _builtins.str machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
         :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
@@ -6224,6 +6242,8 @@ class AutonomousDatabasePublicConnectionUrl(dict):
             pulumi.set(__self__, "apex_url", apex_url)
         if database_transforms_url is not None:
             pulumi.set(__self__, "database_transforms_url", database_transforms_url)
+        if essbase_url is not None:
+            pulumi.set(__self__, "essbase_url", essbase_url)
         if graph_studio_url is not None:
             pulumi.set(__self__, "graph_studio_url", graph_studio_url)
         if machine_learning_notebook_url is not None:
@@ -6254,6 +6274,14 @@ class AutonomousDatabasePublicConnectionUrl(dict):
         The URL of the Database Transforms for the Autonomous Database.
         """
         return pulumi.get(self, "database_transforms_url")
+
+    @_builtins.property
+    @pulumi.getter(name="essbaseUrl")
+    def essbase_url(self) -> Optional[_builtins.str]:
+        """
+        Essbase URL for the Autonomous AI Database.
+        """
+        return pulumi.get(self, "essbase_url")
 
     @_builtins.property
     @pulumi.getter(name="graphStudioUrl")
@@ -6892,6 +6920,8 @@ class AutonomousDatabaseVanityConnectionUrl(dict):
             suggest = "apex_url"
         elif key == "databaseTransformsUrl":
             suggest = "database_transforms_url"
+        elif key == "essbaseUrl":
+            suggest = "essbase_url"
         elif key == "graphStudioUrl":
             suggest = "graph_studio_url"
         elif key == "machineLearningNotebookUrl":
@@ -6919,6 +6949,7 @@ class AutonomousDatabaseVanityConnectionUrl(dict):
     def __init__(__self__, *,
                  apex_url: Optional[_builtins.str] = None,
                  database_transforms_url: Optional[_builtins.str] = None,
+                 essbase_url: Optional[_builtins.str] = None,
                  graph_studio_url: Optional[_builtins.str] = None,
                  machine_learning_notebook_url: Optional[_builtins.str] = None,
                  machine_learning_user_management_url: Optional[_builtins.str] = None,
@@ -6928,6 +6959,7 @@ class AutonomousDatabaseVanityConnectionUrl(dict):
         """
         :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
         :param _builtins.str database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
+        :param _builtins.str essbase_url: Essbase URL for the Autonomous AI Database.
         :param _builtins.str graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
         :param _builtins.str machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
         :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
@@ -6939,6 +6971,8 @@ class AutonomousDatabaseVanityConnectionUrl(dict):
             pulumi.set(__self__, "apex_url", apex_url)
         if database_transforms_url is not None:
             pulumi.set(__self__, "database_transforms_url", database_transforms_url)
+        if essbase_url is not None:
+            pulumi.set(__self__, "essbase_url", essbase_url)
         if graph_studio_url is not None:
             pulumi.set(__self__, "graph_studio_url", graph_studio_url)
         if machine_learning_notebook_url is not None:
@@ -6967,6 +7001,14 @@ class AutonomousDatabaseVanityConnectionUrl(dict):
         The URL of the Database Transforms for the Autonomous Database.
         """
         return pulumi.get(self, "database_transforms_url")
+
+    @_builtins.property
+    @pulumi.getter(name="essbaseUrl")
+    def essbase_url(self) -> Optional[_builtins.str]:
+        """
+        Essbase URL for the Autonomous AI Database.
+        """
+        return pulumi.get(self, "essbase_url")
 
     @_builtins.property
     @pulumi.getter(name="graphStudioUrl")
@@ -8077,6 +8119,8 @@ class BackupEncryptionKeyLocationDetail(dict):
         suggest = None
         if key == "awsEncryptionKeyId":
             suggest = "aws_encryption_key_id"
+        elif key == "awsEncryptionKeyPoolId":
+            suggest = "aws_encryption_key_pool_id"
         elif key == "azureEncryptionKeyId":
             suggest = "azure_encryption_key_id"
         elif key == "googleCloudProviderEncryptionKeyId":
@@ -8099,12 +8143,14 @@ class BackupEncryptionKeyLocationDetail(dict):
 
     def __init__(__self__, *,
                  aws_encryption_key_id: Optional[_builtins.str] = None,
+                 aws_encryption_key_pool_id: Optional[_builtins.str] = None,
                  azure_encryption_key_id: Optional[_builtins.str] = None,
                  google_cloud_provider_encryption_key_id: Optional[_builtins.str] = None,
                  hsm_password: Optional[_builtins.str] = None,
                  provider_type: Optional[_builtins.str] = None):
         """
         :param _builtins.str aws_encryption_key_id: Provide the key OCID of a registered AWS key.
+        :param _builtins.str aws_encryption_key_pool_id: Provide the key pool OCID of a registered AWS key.
         :param _builtins.str azure_encryption_key_id: Provide the key OCID of a registered Azure key.
         :param _builtins.str google_cloud_provider_encryption_key_id: Provide the key OCID of a registered GCP key.
         :param _builtins.str hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
@@ -8112,6 +8158,8 @@ class BackupEncryptionKeyLocationDetail(dict):
         """
         if aws_encryption_key_id is not None:
             pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
+        if aws_encryption_key_pool_id is not None:
+            pulumi.set(__self__, "aws_encryption_key_pool_id", aws_encryption_key_pool_id)
         if azure_encryption_key_id is not None:
             pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
         if google_cloud_provider_encryption_key_id is not None:
@@ -8128,6 +8176,14 @@ class BackupEncryptionKeyLocationDetail(dict):
         Provide the key OCID of a registered AWS key.
         """
         return pulumi.get(self, "aws_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyPoolId")
+    def aws_encryption_key_pool_id(self) -> Optional[_builtins.str]:
+        """
+        Provide the key pool OCID of a registered AWS key.
+        """
+        return pulumi.get(self, "aws_encryption_key_pool_id")
 
     @_builtins.property
     @pulumi.getter(name="azureEncryptionKeyId")
@@ -11607,6 +11663,8 @@ class DatabaseDatabaseEncryptionKeyLocationDetails(dict):
             suggest = "provider_type"
         elif key == "awsEncryptionKeyId":
             suggest = "aws_encryption_key_id"
+        elif key == "awsEncryptionKeyPoolId":
+            suggest = "aws_encryption_key_pool_id"
         elif key == "azureEncryptionKeyId":
             suggest = "azure_encryption_key_id"
         elif key == "googleCloudProviderEncryptionKeyId":
@@ -11628,12 +11686,14 @@ class DatabaseDatabaseEncryptionKeyLocationDetails(dict):
     def __init__(__self__, *,
                  provider_type: _builtins.str,
                  aws_encryption_key_id: Optional[_builtins.str] = None,
+                 aws_encryption_key_pool_id: Optional[_builtins.str] = None,
                  azure_encryption_key_id: Optional[_builtins.str] = None,
                  google_cloud_provider_encryption_key_id: Optional[_builtins.str] = None,
                  hsm_password: Optional[_builtins.str] = None):
         """
         :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         :param _builtins.str aws_encryption_key_id: Provide the key OCID of a registered AWS key.
+        :param _builtins.str aws_encryption_key_pool_id: Provide the key pool OCID of a registered AWS key.
         :param _builtins.str azure_encryption_key_id: Provide the key OCID of a registered Azure key.
         :param _builtins.str google_cloud_provider_encryption_key_id: Provide the key OCID of a registered GCP key.
         :param _builtins.str hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
@@ -11641,6 +11701,8 @@ class DatabaseDatabaseEncryptionKeyLocationDetails(dict):
         pulumi.set(__self__, "provider_type", provider_type)
         if aws_encryption_key_id is not None:
             pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
+        if aws_encryption_key_pool_id is not None:
+            pulumi.set(__self__, "aws_encryption_key_pool_id", aws_encryption_key_pool_id)
         if azure_encryption_key_id is not None:
             pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
         if google_cloud_provider_encryption_key_id is not None:
@@ -11663,6 +11725,14 @@ class DatabaseDatabaseEncryptionKeyLocationDetails(dict):
         Provide the key OCID of a registered AWS key.
         """
         return pulumi.get(self, "aws_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyPoolId")
+    def aws_encryption_key_pool_id(self) -> Optional[_builtins.str]:
+        """
+        Provide the key pool OCID of a registered AWS key.
+        """
+        return pulumi.get(self, "aws_encryption_key_pool_id")
 
     @_builtins.property
     @pulumi.getter(name="azureEncryptionKeyId")
@@ -12126,6 +12196,14 @@ class DatabaseDatabaseSourceEncryptionKeyLocationDetails(dict):
         suggest = None
         if key == "providerType":
             suggest = "provider_type"
+        elif key == "awsEncryptionKeyId":
+            suggest = "aws_encryption_key_id"
+        elif key == "awsEncryptionKeyPoolId":
+            suggest = "aws_encryption_key_pool_id"
+        elif key == "azureEncryptionKeyId":
+            suggest = "azure_encryption_key_id"
+        elif key == "googleCloudProviderEncryptionKeyId":
+            suggest = "google_cloud_provider_encryption_key_id"
         elif key == "hsmPassword":
             suggest = "hsm_password"
 
@@ -12142,12 +12220,28 @@ class DatabaseDatabaseSourceEncryptionKeyLocationDetails(dict):
 
     def __init__(__self__, *,
                  provider_type: _builtins.str,
+                 aws_encryption_key_id: Optional[_builtins.str] = None,
+                 aws_encryption_key_pool_id: Optional[_builtins.str] = None,
+                 azure_encryption_key_id: Optional[_builtins.str] = None,
+                 google_cloud_provider_encryption_key_id: Optional[_builtins.str] = None,
                  hsm_password: Optional[_builtins.str] = None):
         """
         :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
+        :param _builtins.str aws_encryption_key_id: Provide the key OCID of a registered AWS key.
+        :param _builtins.str aws_encryption_key_pool_id: Provide the key pool OCID of a registered AWS key.
+        :param _builtins.str azure_encryption_key_id: Provide the key OCID of a registered Azure key.
+        :param _builtins.str google_cloud_provider_encryption_key_id: Provide the key OCID of a registered GCP key.
         :param _builtins.str hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
         """
         pulumi.set(__self__, "provider_type", provider_type)
+        if aws_encryption_key_id is not None:
+            pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
+        if aws_encryption_key_pool_id is not None:
+            pulumi.set(__self__, "aws_encryption_key_pool_id", aws_encryption_key_pool_id)
+        if azure_encryption_key_id is not None:
+            pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
+        if google_cloud_provider_encryption_key_id is not None:
+            pulumi.set(__self__, "google_cloud_provider_encryption_key_id", google_cloud_provider_encryption_key_id)
         if hsm_password is not None:
             pulumi.set(__self__, "hsm_password", hsm_password)
 
@@ -12158,6 +12252,38 @@ class DatabaseDatabaseSourceEncryptionKeyLocationDetails(dict):
         Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         """
         return pulumi.get(self, "provider_type")
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyId")
+    def aws_encryption_key_id(self) -> Optional[_builtins.str]:
+        """
+        Provide the key OCID of a registered AWS key.
+        """
+        return pulumi.get(self, "aws_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyPoolId")
+    def aws_encryption_key_pool_id(self) -> Optional[_builtins.str]:
+        """
+        Provide the key pool OCID of a registered AWS key.
+        """
+        return pulumi.get(self, "aws_encryption_key_pool_id")
+
+    @_builtins.property
+    @pulumi.getter(name="azureEncryptionKeyId")
+    def azure_encryption_key_id(self) -> Optional[_builtins.str]:
+        """
+        Provide the key OCID of a registered Azure key.
+        """
+        return pulumi.get(self, "azure_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="googleCloudProviderEncryptionKeyId")
+    def google_cloud_provider_encryption_key_id(self) -> Optional[_builtins.str]:
+        """
+        Provide the key OCID of a registered GCP key.
+        """
+        return pulumi.get(self, "google_cloud_provider_encryption_key_id")
 
     @_builtins.property
     @pulumi.getter(name="hsmPassword")
@@ -15144,6 +15270,8 @@ class DbHomeDatabaseEncryptionKeyLocationDetails(dict):
             suggest = "provider_type"
         elif key == "awsEncryptionKeyId":
             suggest = "aws_encryption_key_id"
+        elif key == "awsEncryptionKeyPoolId":
+            suggest = "aws_encryption_key_pool_id"
         elif key == "azureEncryptionKeyId":
             suggest = "azure_encryption_key_id"
         elif key == "googleCloudProviderEncryptionKeyId":
@@ -15165,18 +15293,22 @@ class DbHomeDatabaseEncryptionKeyLocationDetails(dict):
     def __init__(__self__, *,
                  provider_type: _builtins.str,
                  aws_encryption_key_id: Optional[_builtins.str] = None,
+                 aws_encryption_key_pool_id: Optional[_builtins.str] = None,
                  azure_encryption_key_id: Optional[_builtins.str] = None,
                  google_cloud_provider_encryption_key_id: Optional[_builtins.str] = None,
                  hsm_password: Optional[_builtins.str] = None):
         """
         :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure.
         :param _builtins.str aws_encryption_key_id: Provide the key OCID of a registered AWS key.
+        :param _builtins.str aws_encryption_key_pool_id: Provide the key pool OCID of a registered AWS key.
         :param _builtins.str azure_encryption_key_id: Provide the key OCID of a registered Azure key.
         :param _builtins.str hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
         """
         pulumi.set(__self__, "provider_type", provider_type)
         if aws_encryption_key_id is not None:
             pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
+        if aws_encryption_key_pool_id is not None:
+            pulumi.set(__self__, "aws_encryption_key_pool_id", aws_encryption_key_pool_id)
         if azure_encryption_key_id is not None:
             pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
         if google_cloud_provider_encryption_key_id is not None:
@@ -15199,6 +15331,14 @@ class DbHomeDatabaseEncryptionKeyLocationDetails(dict):
         Provide the key OCID of a registered AWS key.
         """
         return pulumi.get(self, "aws_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyPoolId")
+    def aws_encryption_key_pool_id(self) -> Optional[_builtins.str]:
+        """
+        Provide the key pool OCID of a registered AWS key.
+        """
+        return pulumi.get(self, "aws_encryption_key_pool_id")
 
     @_builtins.property
     @pulumi.getter(name="azureEncryptionKeyId")
@@ -30075,6 +30215,7 @@ class GetAutonomousDatabaseConnectionUrlResult(dict):
     def __init__(__self__, *,
                  apex_url: _builtins.str,
                  database_transforms_url: _builtins.str,
+                 essbase_url: _builtins.str,
                  graph_studio_url: _builtins.str,
                  machine_learning_notebook_url: _builtins.str,
                  machine_learning_user_management_url: _builtins.str,
@@ -30085,6 +30226,7 @@ class GetAutonomousDatabaseConnectionUrlResult(dict):
         """
         :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
         :param _builtins.str database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
+        :param _builtins.str essbase_url: Essbase URL for the Autonomous AI Database.
         :param _builtins.str graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
         :param _builtins.str machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
         :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
@@ -30095,6 +30237,7 @@ class GetAutonomousDatabaseConnectionUrlResult(dict):
         """
         pulumi.set(__self__, "apex_url", apex_url)
         pulumi.set(__self__, "database_transforms_url", database_transforms_url)
+        pulumi.set(__self__, "essbase_url", essbase_url)
         pulumi.set(__self__, "graph_studio_url", graph_studio_url)
         pulumi.set(__self__, "machine_learning_notebook_url", machine_learning_notebook_url)
         pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
@@ -30118,6 +30261,14 @@ class GetAutonomousDatabaseConnectionUrlResult(dict):
         The URL of the Database Transforms for the Autonomous Database.
         """
         return pulumi.get(self, "database_transforms_url")
+
+    @_builtins.property
+    @pulumi.getter(name="essbaseUrl")
+    def essbase_url(self) -> _builtins.str:
+        """
+        Essbase URL for the Autonomous AI Database.
+        """
+        return pulumi.get(self, "essbase_url")
 
     @_builtins.property
     @pulumi.getter(name="graphStudioUrl")
@@ -31235,6 +31386,7 @@ class GetAutonomousDatabasePublicConnectionUrlResult(dict):
     def __init__(__self__, *,
                  apex_url: _builtins.str,
                  database_transforms_url: _builtins.str,
+                 essbase_url: _builtins.str,
                  graph_studio_url: _builtins.str,
                  machine_learning_notebook_url: _builtins.str,
                  machine_learning_user_management_url: _builtins.str,
@@ -31245,6 +31397,7 @@ class GetAutonomousDatabasePublicConnectionUrlResult(dict):
         """
         :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
         :param _builtins.str database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
+        :param _builtins.str essbase_url: Essbase URL for the Autonomous AI Database.
         :param _builtins.str graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
         :param _builtins.str machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
         :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
@@ -31255,6 +31408,7 @@ class GetAutonomousDatabasePublicConnectionUrlResult(dict):
         """
         pulumi.set(__self__, "apex_url", apex_url)
         pulumi.set(__self__, "database_transforms_url", database_transforms_url)
+        pulumi.set(__self__, "essbase_url", essbase_url)
         pulumi.set(__self__, "graph_studio_url", graph_studio_url)
         pulumi.set(__self__, "machine_learning_notebook_url", machine_learning_notebook_url)
         pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
@@ -31278,6 +31432,14 @@ class GetAutonomousDatabasePublicConnectionUrlResult(dict):
         The URL of the Database Transforms for the Autonomous Database.
         """
         return pulumi.get(self, "database_transforms_url")
+
+    @_builtins.property
+    @pulumi.getter(name="essbaseUrl")
+    def essbase_url(self) -> _builtins.str:
+        """
+        Essbase URL for the Autonomous AI Database.
+        """
+        return pulumi.get(self, "essbase_url")
 
     @_builtins.property
     @pulumi.getter(name="graphStudioUrl")
@@ -32059,6 +32221,7 @@ class GetAutonomousDatabaseVanityConnectionUrlResult(dict):
     def __init__(__self__, *,
                  apex_url: _builtins.str,
                  database_transforms_url: _builtins.str,
+                 essbase_url: _builtins.str,
                  graph_studio_url: _builtins.str,
                  machine_learning_notebook_url: _builtins.str,
                  machine_learning_user_management_url: _builtins.str,
@@ -32068,6 +32231,7 @@ class GetAutonomousDatabaseVanityConnectionUrlResult(dict):
         """
         :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
         :param _builtins.str database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
+        :param _builtins.str essbase_url: Essbase URL for the Autonomous AI Database.
         :param _builtins.str graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
         :param _builtins.str machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
         :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
@@ -32077,6 +32241,7 @@ class GetAutonomousDatabaseVanityConnectionUrlResult(dict):
         """
         pulumi.set(__self__, "apex_url", apex_url)
         pulumi.set(__self__, "database_transforms_url", database_transforms_url)
+        pulumi.set(__self__, "essbase_url", essbase_url)
         pulumi.set(__self__, "graph_studio_url", graph_studio_url)
         pulumi.set(__self__, "machine_learning_notebook_url", machine_learning_notebook_url)
         pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
@@ -32099,6 +32264,14 @@ class GetAutonomousDatabaseVanityConnectionUrlResult(dict):
         The URL of the Database Transforms for the Autonomous Database.
         """
         return pulumi.get(self, "database_transforms_url")
+
+    @_builtins.property
+    @pulumi.getter(name="essbaseUrl")
+    def essbase_url(self) -> _builtins.str:
+        """
+        Essbase URL for the Autonomous AI Database.
+        """
+        return pulumi.get(self, "essbase_url")
 
     @_builtins.property
     @pulumi.getter(name="graphStudioUrl")
@@ -34321,6 +34494,7 @@ class GetAutonomousDatabasesAutonomousDatabaseConnectionUrlResult(dict):
     def __init__(__self__, *,
                  apex_url: _builtins.str,
                  database_transforms_url: _builtins.str,
+                 essbase_url: _builtins.str,
                  graph_studio_url: _builtins.str,
                  machine_learning_notebook_url: _builtins.str,
                  machine_learning_user_management_url: _builtins.str,
@@ -34331,6 +34505,7 @@ class GetAutonomousDatabasesAutonomousDatabaseConnectionUrlResult(dict):
         """
         :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
         :param _builtins.str database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
+        :param _builtins.str essbase_url: Essbase URL for the Autonomous AI Database.
         :param _builtins.str graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
         :param _builtins.str machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
         :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
@@ -34341,6 +34516,7 @@ class GetAutonomousDatabasesAutonomousDatabaseConnectionUrlResult(dict):
         """
         pulumi.set(__self__, "apex_url", apex_url)
         pulumi.set(__self__, "database_transforms_url", database_transforms_url)
+        pulumi.set(__self__, "essbase_url", essbase_url)
         pulumi.set(__self__, "graph_studio_url", graph_studio_url)
         pulumi.set(__self__, "machine_learning_notebook_url", machine_learning_notebook_url)
         pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
@@ -34364,6 +34540,14 @@ class GetAutonomousDatabasesAutonomousDatabaseConnectionUrlResult(dict):
         The URL of the Database Transforms for the Autonomous Database.
         """
         return pulumi.get(self, "database_transforms_url")
+
+    @_builtins.property
+    @pulumi.getter(name="essbaseUrl")
+    def essbase_url(self) -> _builtins.str:
+        """
+        Essbase URL for the Autonomous AI Database.
+        """
+        return pulumi.get(self, "essbase_url")
 
     @_builtins.property
     @pulumi.getter(name="graphStudioUrl")
@@ -35197,6 +35381,7 @@ class GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlResult(dict):
     def __init__(__self__, *,
                  apex_url: _builtins.str,
                  database_transforms_url: _builtins.str,
+                 essbase_url: _builtins.str,
                  graph_studio_url: _builtins.str,
                  machine_learning_notebook_url: _builtins.str,
                  machine_learning_user_management_url: _builtins.str,
@@ -35207,6 +35392,7 @@ class GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlResult(dict):
         """
         :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
         :param _builtins.str database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
+        :param _builtins.str essbase_url: Essbase URL for the Autonomous AI Database.
         :param _builtins.str graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
         :param _builtins.str machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
         :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
@@ -35217,6 +35403,7 @@ class GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlResult(dict):
         """
         pulumi.set(__self__, "apex_url", apex_url)
         pulumi.set(__self__, "database_transforms_url", database_transforms_url)
+        pulumi.set(__self__, "essbase_url", essbase_url)
         pulumi.set(__self__, "graph_studio_url", graph_studio_url)
         pulumi.set(__self__, "machine_learning_notebook_url", machine_learning_notebook_url)
         pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
@@ -35240,6 +35427,14 @@ class GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlResult(dict):
         The URL of the Database Transforms for the Autonomous Database.
         """
         return pulumi.get(self, "database_transforms_url")
+
+    @_builtins.property
+    @pulumi.getter(name="essbaseUrl")
+    def essbase_url(self) -> _builtins.str:
+        """
+        Essbase URL for the Autonomous AI Database.
+        """
+        return pulumi.get(self, "essbase_url")
 
     @_builtins.property
     @pulumi.getter(name="graphStudioUrl")
@@ -35694,6 +35889,7 @@ class GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlResult(dict):
     def __init__(__self__, *,
                  apex_url: _builtins.str,
                  database_transforms_url: _builtins.str,
+                 essbase_url: _builtins.str,
                  graph_studio_url: _builtins.str,
                  machine_learning_notebook_url: _builtins.str,
                  machine_learning_user_management_url: _builtins.str,
@@ -35703,6 +35899,7 @@ class GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlResult(dict):
         """
         :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
         :param _builtins.str database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
+        :param _builtins.str essbase_url: Essbase URL for the Autonomous AI Database.
         :param _builtins.str graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
         :param _builtins.str machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
         :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
@@ -35712,6 +35909,7 @@ class GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlResult(dict):
         """
         pulumi.set(__self__, "apex_url", apex_url)
         pulumi.set(__self__, "database_transforms_url", database_transforms_url)
+        pulumi.set(__self__, "essbase_url", essbase_url)
         pulumi.set(__self__, "graph_studio_url", graph_studio_url)
         pulumi.set(__self__, "machine_learning_notebook_url", machine_learning_notebook_url)
         pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
@@ -35734,6 +35932,14 @@ class GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlResult(dict):
         The URL of the Database Transforms for the Autonomous Database.
         """
         return pulumi.get(self, "database_transforms_url")
+
+    @_builtins.property
+    @pulumi.getter(name="essbaseUrl")
+    def essbase_url(self) -> _builtins.str:
+        """
+        Essbase URL for the Autonomous AI Database.
+        """
+        return pulumi.get(self, "essbase_url")
 
     @_builtins.property
     @pulumi.getter(name="graphStudioUrl")
@@ -37736,6 +37942,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlResult(dict):
     def __init__(__self__, *,
                  apex_url: _builtins.str,
                  database_transforms_url: _builtins.str,
+                 essbase_url: _builtins.str,
                  graph_studio_url: _builtins.str,
                  machine_learning_notebook_url: _builtins.str,
                  machine_learning_user_management_url: _builtins.str,
@@ -37746,6 +37953,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlResult(dict):
         """
         :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
         :param _builtins.str database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
+        :param _builtins.str essbase_url: Essbase URL for the Autonomous AI Database.
         :param _builtins.str graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
         :param _builtins.str machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
         :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
@@ -37756,6 +37964,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlResult(dict):
         """
         pulumi.set(__self__, "apex_url", apex_url)
         pulumi.set(__self__, "database_transforms_url", database_transforms_url)
+        pulumi.set(__self__, "essbase_url", essbase_url)
         pulumi.set(__self__, "graph_studio_url", graph_studio_url)
         pulumi.set(__self__, "machine_learning_notebook_url", machine_learning_notebook_url)
         pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
@@ -37779,6 +37988,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlResult(dict):
         The URL of the Database Transforms for the Autonomous Database.
         """
         return pulumi.get(self, "database_transforms_url")
+
+    @_builtins.property
+    @pulumi.getter(name="essbaseUrl")
+    def essbase_url(self) -> _builtins.str:
+        """
+        Essbase URL for the Autonomous AI Database.
+        """
+        return pulumi.get(self, "essbase_url")
 
     @_builtins.property
     @pulumi.getter(name="graphStudioUrl")
@@ -38612,6 +38829,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlResult(di
     def __init__(__self__, *,
                  apex_url: _builtins.str,
                  database_transforms_url: _builtins.str,
+                 essbase_url: _builtins.str,
                  graph_studio_url: _builtins.str,
                  machine_learning_notebook_url: _builtins.str,
                  machine_learning_user_management_url: _builtins.str,
@@ -38622,6 +38840,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlResult(di
         """
         :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
         :param _builtins.str database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
+        :param _builtins.str essbase_url: Essbase URL for the Autonomous AI Database.
         :param _builtins.str graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
         :param _builtins.str machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
         :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
@@ -38632,6 +38851,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlResult(di
         """
         pulumi.set(__self__, "apex_url", apex_url)
         pulumi.set(__self__, "database_transforms_url", database_transforms_url)
+        pulumi.set(__self__, "essbase_url", essbase_url)
         pulumi.set(__self__, "graph_studio_url", graph_studio_url)
         pulumi.set(__self__, "machine_learning_notebook_url", machine_learning_notebook_url)
         pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
@@ -38655,6 +38875,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlResult(di
         The URL of the Database Transforms for the Autonomous Database.
         """
         return pulumi.get(self, "database_transforms_url")
+
+    @_builtins.property
+    @pulumi.getter(name="essbaseUrl")
+    def essbase_url(self) -> _builtins.str:
+        """
+        Essbase URL for the Autonomous AI Database.
+        """
+        return pulumi.get(self, "essbase_url")
 
     @_builtins.property
     @pulumi.getter(name="graphStudioUrl")
@@ -39093,6 +39321,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrlResult(di
     def __init__(__self__, *,
                  apex_url: _builtins.str,
                  database_transforms_url: _builtins.str,
+                 essbase_url: _builtins.str,
                  graph_studio_url: _builtins.str,
                  machine_learning_notebook_url: _builtins.str,
                  machine_learning_user_management_url: _builtins.str,
@@ -39102,6 +39331,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrlResult(di
         """
         :param _builtins.str apex_url: Oracle Application Express (APEX) URL.
         :param _builtins.str database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
+        :param _builtins.str essbase_url: Essbase URL for the Autonomous AI Database.
         :param _builtins.str graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
         :param _builtins.str machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
         :param _builtins.str machine_learning_user_management_url: Oracle Machine Learning user management URL.
@@ -39111,6 +39341,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrlResult(di
         """
         pulumi.set(__self__, "apex_url", apex_url)
         pulumi.set(__self__, "database_transforms_url", database_transforms_url)
+        pulumi.set(__self__, "essbase_url", essbase_url)
         pulumi.set(__self__, "graph_studio_url", graph_studio_url)
         pulumi.set(__self__, "machine_learning_notebook_url", machine_learning_notebook_url)
         pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
@@ -39133,6 +39364,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrlResult(di
         The URL of the Database Transforms for the Autonomous Database.
         """
         return pulumi.get(self, "database_transforms_url")
+
+    @_builtins.property
+    @pulumi.getter(name="essbaseUrl")
+    def essbase_url(self) -> _builtins.str:
+        """
+        Essbase URL for the Autonomous AI Database.
+        """
+        return pulumi.get(self, "essbase_url")
 
     @_builtins.property
     @pulumi.getter(name="graphStudioUrl")
@@ -43287,18 +43526,21 @@ class GetBackupsBackupResult(dict):
 class GetBackupsBackupEncryptionKeyLocationDetailResult(dict):
     def __init__(__self__, *,
                  aws_encryption_key_id: _builtins.str,
+                 aws_encryption_key_pool_id: _builtins.str,
                  azure_encryption_key_id: _builtins.str,
                  google_cloud_provider_encryption_key_id: _builtins.str,
                  hsm_password: _builtins.str,
                  provider_type: _builtins.str):
         """
         :param _builtins.str aws_encryption_key_id: Provide the key OCID of a registered AWS key.
+        :param _builtins.str aws_encryption_key_pool_id: Provide the key pool OCID of a registered AWS key.
         :param _builtins.str azure_encryption_key_id: Provide the key OCID of a registered Azure key.
         :param _builtins.str google_cloud_provider_encryption_key_id: Provide the key OCID of a registered GCP key.
         :param _builtins.str hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
         :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         """
         pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
+        pulumi.set(__self__, "aws_encryption_key_pool_id", aws_encryption_key_pool_id)
         pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
         pulumi.set(__self__, "google_cloud_provider_encryption_key_id", google_cloud_provider_encryption_key_id)
         pulumi.set(__self__, "hsm_password", hsm_password)
@@ -43311,6 +43553,14 @@ class GetBackupsBackupEncryptionKeyLocationDetailResult(dict):
         Provide the key OCID of a registered AWS key.
         """
         return pulumi.get(self, "aws_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyPoolId")
+    def aws_encryption_key_pool_id(self) -> _builtins.str:
+        """
+        Provide the key pool OCID of a registered AWS key.
+        """
+        return pulumi.get(self, "aws_encryption_key_pool_id")
 
     @_builtins.property
     @pulumi.getter(name="azureEncryptionKeyId")
@@ -49422,18 +49672,21 @@ class GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDes
 class GetDatabaseDatabaseEncryptionKeyLocationDetailResult(dict):
     def __init__(__self__, *,
                  aws_encryption_key_id: _builtins.str,
+                 aws_encryption_key_pool_id: _builtins.str,
                  azure_encryption_key_id: _builtins.str,
                  google_cloud_provider_encryption_key_id: _builtins.str,
                  hsm_password: _builtins.str,
                  provider_type: _builtins.str):
         """
         :param _builtins.str aws_encryption_key_id: Provide the key OCID of a registered AWS key.
+        :param _builtins.str aws_encryption_key_pool_id: Provide the key pool OCID of a registered AWS key.
         :param _builtins.str azure_encryption_key_id: Provide the key OCID of a registered Azure key.
         :param _builtins.str google_cloud_provider_encryption_key_id: Provide the key OCID of a registered GCP key.
         :param _builtins.str hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
         :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         """
         pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
+        pulumi.set(__self__, "aws_encryption_key_pool_id", aws_encryption_key_pool_id)
         pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
         pulumi.set(__self__, "google_cloud_provider_encryption_key_id", google_cloud_provider_encryption_key_id)
         pulumi.set(__self__, "hsm_password", hsm_password)
@@ -49446,6 +49699,14 @@ class GetDatabaseDatabaseEncryptionKeyLocationDetailResult(dict):
         Provide the key OCID of a registered AWS key.
         """
         return pulumi.get(self, "aws_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyPoolId")
+    def aws_encryption_key_pool_id(self) -> _builtins.str:
+        """
+        Provide the key pool OCID of a registered AWS key.
+        """
+        return pulumi.get(self, "aws_encryption_key_pool_id")
 
     @_builtins.property
     @pulumi.getter(name="azureEncryptionKeyId")
@@ -49756,14 +50017,58 @@ class GetDatabaseDatabasePatchOptionResult(dict):
 @pulumi.output_type
 class GetDatabaseDatabaseSourceEncryptionKeyLocationDetailResult(dict):
     def __init__(__self__, *,
+                 aws_encryption_key_id: _builtins.str,
+                 aws_encryption_key_pool_id: _builtins.str,
+                 azure_encryption_key_id: _builtins.str,
+                 google_cloud_provider_encryption_key_id: _builtins.str,
                  hsm_password: _builtins.str,
                  provider_type: _builtins.str):
         """
+        :param _builtins.str aws_encryption_key_id: Provide the key OCID of a registered AWS key.
+        :param _builtins.str aws_encryption_key_pool_id: Provide the key pool OCID of a registered AWS key.
+        :param _builtins.str azure_encryption_key_id: Provide the key OCID of a registered Azure key.
+        :param _builtins.str google_cloud_provider_encryption_key_id: Provide the key OCID of a registered GCP key.
         :param _builtins.str hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
         :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         """
+        pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
+        pulumi.set(__self__, "aws_encryption_key_pool_id", aws_encryption_key_pool_id)
+        pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
+        pulumi.set(__self__, "google_cloud_provider_encryption_key_id", google_cloud_provider_encryption_key_id)
         pulumi.set(__self__, "hsm_password", hsm_password)
         pulumi.set(__self__, "provider_type", provider_type)
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyId")
+    def aws_encryption_key_id(self) -> _builtins.str:
+        """
+        Provide the key OCID of a registered AWS key.
+        """
+        return pulumi.get(self, "aws_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyPoolId")
+    def aws_encryption_key_pool_id(self) -> _builtins.str:
+        """
+        Provide the key pool OCID of a registered AWS key.
+        """
+        return pulumi.get(self, "aws_encryption_key_pool_id")
+
+    @_builtins.property
+    @pulumi.getter(name="azureEncryptionKeyId")
+    def azure_encryption_key_id(self) -> _builtins.str:
+        """
+        Provide the key OCID of a registered Azure key.
+        """
+        return pulumi.get(self, "azure_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="googleCloudProviderEncryptionKeyId")
+    def google_cloud_provider_encryption_key_id(self) -> _builtins.str:
+        """
+        Provide the key OCID of a registered GCP key.
+        """
+        return pulumi.get(self, "google_cloud_provider_encryption_key_id")
 
     @_builtins.property
     @pulumi.getter(name="hsmPassword")
@@ -54619,18 +54924,21 @@ class GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWallet
 class GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailResult(dict):
     def __init__(__self__, *,
                  aws_encryption_key_id: _builtins.str,
+                 aws_encryption_key_pool_id: _builtins.str,
                  azure_encryption_key_id: _builtins.str,
                  google_cloud_provider_encryption_key_id: _builtins.str,
                  hsm_password: _builtins.str,
                  provider_type: _builtins.str):
         """
         :param _builtins.str aws_encryption_key_id: Provide the key OCID of a registered AWS key.
+        :param _builtins.str aws_encryption_key_pool_id: Provide the key pool OCID of a registered AWS key.
         :param _builtins.str azure_encryption_key_id: Provide the key OCID of a registered Azure key.
         :param _builtins.str google_cloud_provider_encryption_key_id: Provide the key OCID of a registered GCP key.
         :param _builtins.str hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
         :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         """
         pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
+        pulumi.set(__self__, "aws_encryption_key_pool_id", aws_encryption_key_pool_id)
         pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
         pulumi.set(__self__, "google_cloud_provider_encryption_key_id", google_cloud_provider_encryption_key_id)
         pulumi.set(__self__, "hsm_password", hsm_password)
@@ -54643,6 +54951,14 @@ class GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailResult(dict):
         Provide the key OCID of a registered AWS key.
         """
         return pulumi.get(self, "aws_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyPoolId")
+    def aws_encryption_key_pool_id(self) -> _builtins.str:
+        """
+        Provide the key pool OCID of a registered AWS key.
+        """
+        return pulumi.get(self, "aws_encryption_key_pool_id")
 
     @_builtins.property
     @pulumi.getter(name="azureEncryptionKeyId")
@@ -54943,14 +55259,58 @@ class GetDatabasesDatabaseDatabasePatchOptionResult(dict):
 @pulumi.output_type
 class GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailResult(dict):
     def __init__(__self__, *,
+                 aws_encryption_key_id: _builtins.str,
+                 aws_encryption_key_pool_id: _builtins.str,
+                 azure_encryption_key_id: _builtins.str,
+                 google_cloud_provider_encryption_key_id: _builtins.str,
                  hsm_password: _builtins.str,
                  provider_type: _builtins.str):
         """
+        :param _builtins.str aws_encryption_key_id: Provide the key OCID of a registered AWS key.
+        :param _builtins.str aws_encryption_key_pool_id: Provide the key pool OCID of a registered AWS key.
+        :param _builtins.str azure_encryption_key_id: Provide the key OCID of a registered Azure key.
+        :param _builtins.str google_cloud_provider_encryption_key_id: Provide the key OCID of a registered GCP key.
         :param _builtins.str hsm_password: Provide the HSM password as you would in RDBMS for External HSM.
         :param _builtins.str provider_type: Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
         """
+        pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
+        pulumi.set(__self__, "aws_encryption_key_pool_id", aws_encryption_key_pool_id)
+        pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
+        pulumi.set(__self__, "google_cloud_provider_encryption_key_id", google_cloud_provider_encryption_key_id)
         pulumi.set(__self__, "hsm_password", hsm_password)
         pulumi.set(__self__, "provider_type", provider_type)
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyId")
+    def aws_encryption_key_id(self) -> _builtins.str:
+        """
+        Provide the key OCID of a registered AWS key.
+        """
+        return pulumi.get(self, "aws_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyPoolId")
+    def aws_encryption_key_pool_id(self) -> _builtins.str:
+        """
+        Provide the key pool OCID of a registered AWS key.
+        """
+        return pulumi.get(self, "aws_encryption_key_pool_id")
+
+    @_builtins.property
+    @pulumi.getter(name="azureEncryptionKeyId")
+    def azure_encryption_key_id(self) -> _builtins.str:
+        """
+        Provide the key OCID of a registered Azure key.
+        """
+        return pulumi.get(self, "azure_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="googleCloudProviderEncryptionKeyId")
+    def google_cloud_provider_encryption_key_id(self) -> _builtins.str:
+        """
+        Provide the key OCID of a registered GCP key.
+        """
+        return pulumi.get(self, "google_cloud_provider_encryption_key_id")
 
     @_builtins.property
     @pulumi.getter(name="hsmPassword")
@@ -56210,11 +56570,13 @@ class GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDesti
 class GetDbHomeDatabaseEncryptionKeyLocationDetailResult(dict):
     def __init__(__self__, *,
                  aws_encryption_key_id: _builtins.str,
+                 aws_encryption_key_pool_id: _builtins.str,
                  azure_encryption_key_id: _builtins.str,
                  google_cloud_provider_encryption_key_id: _builtins.str,
                  hsm_password: _builtins.str,
                  provider_type: _builtins.str):
         pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
+        pulumi.set(__self__, "aws_encryption_key_pool_id", aws_encryption_key_pool_id)
         pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
         pulumi.set(__self__, "google_cloud_provider_encryption_key_id", google_cloud_provider_encryption_key_id)
         pulumi.set(__self__, "hsm_password", hsm_password)
@@ -56224,6 +56586,11 @@ class GetDbHomeDatabaseEncryptionKeyLocationDetailResult(dict):
     @pulumi.getter(name="awsEncryptionKeyId")
     def aws_encryption_key_id(self) -> _builtins.str:
         return pulumi.get(self, "aws_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyPoolId")
+    def aws_encryption_key_pool_id(self) -> _builtins.str:
+        return pulumi.get(self, "aws_encryption_key_pool_id")
 
     @_builtins.property
     @pulumi.getter(name="azureEncryptionKeyId")
@@ -57229,11 +57596,13 @@ class GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBack
 class GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailResult(dict):
     def __init__(__self__, *,
                  aws_encryption_key_id: _builtins.str,
+                 aws_encryption_key_pool_id: _builtins.str,
                  azure_encryption_key_id: _builtins.str,
                  google_cloud_provider_encryption_key_id: _builtins.str,
                  hsm_password: _builtins.str,
                  provider_type: _builtins.str):
         pulumi.set(__self__, "aws_encryption_key_id", aws_encryption_key_id)
+        pulumi.set(__self__, "aws_encryption_key_pool_id", aws_encryption_key_pool_id)
         pulumi.set(__self__, "azure_encryption_key_id", azure_encryption_key_id)
         pulumi.set(__self__, "google_cloud_provider_encryption_key_id", google_cloud_provider_encryption_key_id)
         pulumi.set(__self__, "hsm_password", hsm_password)
@@ -57243,6 +57612,11 @@ class GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailResult(dict):
     @pulumi.getter(name="awsEncryptionKeyId")
     def aws_encryption_key_id(self) -> _builtins.str:
         return pulumi.get(self, "aws_encryption_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="awsEncryptionKeyPoolId")
+    def aws_encryption_key_pool_id(self) -> _builtins.str:
+        return pulumi.get(self, "aws_encryption_key_pool_id")
 
     @_builtins.property
     @pulumi.getter(name="azureEncryptionKeyId")

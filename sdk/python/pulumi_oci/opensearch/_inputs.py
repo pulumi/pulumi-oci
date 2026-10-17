@@ -25,8 +25,18 @@ __all__ = [
     'ClusterOutboundClusterConfigArgsDict',
     'ClusterOutboundClusterConfigOutboundClusterArgs',
     'ClusterOutboundClusterConfigOutboundClusterArgsDict',
+    'ClusterRemoteReindexTrustConfigArgs',
+    'ClusterRemoteReindexTrustConfigArgsDict',
+    'ClusterRemoteReindexTrustConfigRemoteSourceArgs',
+    'ClusterRemoteReindexTrustConfigRemoteSourceArgsDict',
     'ClusterReverseConnectionEndpointArgs',
     'ClusterReverseConnectionEndpointArgsDict',
+    'ClusterSecurityMasterUserAuthDetailsArgs',
+    'ClusterSecurityMasterUserAuthDetailsArgsDict',
+    'ClusterSecurityMasterUserAuthDetailsUserDetailsArgs',
+    'ClusterSecurityMasterUserAuthDetailsUserDetailsArgsDict',
+    'ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgs',
+    'ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgsDict',
     'ClusterSecuritySamlConfigArgs',
     'ClusterSecuritySamlConfigArgsDict',
     'OpensearchClusterPipelineReverseConnectionEndpointArgs',
@@ -439,6 +449,101 @@ class ClusterOutboundClusterConfigOutboundClusterArgs:
         pulumi.set(self, "ping_schedule", value)
 
 
+class ClusterRemoteReindexTrustConfigArgsDict(TypedDict):
+    remote_sources: pulumi.Input[Sequence[pulumi.Input['ClusterRemoteReindexTrustConfigRemoteSourceArgsDict']]]
+    """
+    (Updatable) Remote cluster sources to trust for reindexing.
+    """
+
+@pulumi.input_type
+class ClusterRemoteReindexTrustConfigArgs:
+    def __init__(__self__, *,
+                 remote_sources: pulumi.Input[Sequence[pulumi.Input['ClusterRemoteReindexTrustConfigRemoteSourceArgs']]]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['ClusterRemoteReindexTrustConfigRemoteSourceArgs']]] remote_sources: (Updatable) Remote cluster sources to trust for reindexing.
+        """
+        pulumi.set(__self__, "remote_sources", remote_sources)
+
+    @_builtins.property
+    @pulumi.getter(name="remoteSources")
+    def remote_sources(self) -> pulumi.Input[Sequence[pulumi.Input['ClusterRemoteReindexTrustConfigRemoteSourceArgs']]]:
+        """
+        (Updatable) Remote cluster sources to trust for reindexing.
+        """
+        return pulumi.get(self, "remote_sources")
+
+    @remote_sources.setter
+    def remote_sources(self, value: pulumi.Input[Sequence[pulumi.Input['ClusterRemoteReindexTrustConfigRemoteSourceArgs']]]):
+        pulumi.set(self, "remote_sources", value)
+
+
+class ClusterRemoteReindexTrustConfigRemoteSourceArgsDict(TypedDict):
+    certificate_id: pulumi.Input[_builtins.str]
+    """
+    (Updatable) OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+    """
+    endpoint: pulumi.Input[_builtins.str]
+    """
+    (Updatable) HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
+    """
+    endpoint_resolution_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
+    """
+
+@pulumi.input_type
+class ClusterRemoteReindexTrustConfigRemoteSourceArgs:
+    def __init__(__self__, *,
+                 certificate_id: pulumi.Input[_builtins.str],
+                 endpoint: pulumi.Input[_builtins.str],
+                 endpoint_resolution_ip: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] certificate_id: (Updatable) OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+        :param pulumi.Input[_builtins.str] endpoint: (Updatable) HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
+        :param pulumi.Input[_builtins.str] endpoint_resolution_ip: (Updatable) Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
+        """
+        pulumi.set(__self__, "certificate_id", certificate_id)
+        pulumi.set(__self__, "endpoint", endpoint)
+        if endpoint_resolution_ip is not None:
+            pulumi.set(__self__, "endpoint_resolution_ip", endpoint_resolution_ip)
+
+    @_builtins.property
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+        """
+        return pulumi.get(self, "certificate_id")
+
+    @certificate_id.setter
+    def certificate_id(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "certificate_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoint(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
+        """
+        return pulumi.get(self, "endpoint")
+
+    @endpoint.setter
+    def endpoint(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "endpoint", value)
+
+    @_builtins.property
+    @pulumi.getter(name="endpointResolutionIp")
+    def endpoint_resolution_ip(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
+        """
+        return pulumi.get(self, "endpoint_resolution_ip")
+
+    @endpoint_resolution_ip.setter
+    def endpoint_resolution_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "endpoint_resolution_ip", value)
+
+
 class ClusterReverseConnectionEndpointArgsDict(TypedDict):
     customer_ip: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -486,6 +591,149 @@ class ClusterReverseConnectionEndpointArgs:
     @nat_ip.setter
     def nat_ip(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "nat_ip", value)
+
+
+class ClusterSecurityMasterUserAuthDetailsArgsDict(TypedDict):
+    user_details: pulumi.Input['ClusterSecurityMasterUserAuthDetailsUserDetailsArgsDict']
+    """
+    (Updatable) The username and password source details for the security master user.
+    """
+
+@pulumi.input_type
+class ClusterSecurityMasterUserAuthDetailsArgs:
+    def __init__(__self__, *,
+                 user_details: pulumi.Input['ClusterSecurityMasterUserAuthDetailsUserDetailsArgs']):
+        """
+        :param pulumi.Input['ClusterSecurityMasterUserAuthDetailsUserDetailsArgs'] user_details: (Updatable) The username and password source details for the security master user.
+        """
+        pulumi.set(__self__, "user_details", user_details)
+
+    @_builtins.property
+    @pulumi.getter(name="userDetails")
+    def user_details(self) -> pulumi.Input['ClusterSecurityMasterUserAuthDetailsUserDetailsArgs']:
+        """
+        (Updatable) The username and password source details for the security master user.
+        """
+        return pulumi.get(self, "user_details")
+
+    @user_details.setter
+    def user_details(self, value: pulumi.Input['ClusterSecurityMasterUserAuthDetailsUserDetailsArgs']):
+        pulumi.set(self, "user_details", value)
+
+
+class ClusterSecurityMasterUserAuthDetailsUserDetailsArgsDict(TypedDict):
+    password_details: pulumi.Input['ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgsDict']
+    """
+    (Updatable) Base password-source details for the OpenSearch security master user.
+    """
+    username: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The name of the master user that is used to manage security config.
+    """
+
+@pulumi.input_type
+class ClusterSecurityMasterUserAuthDetailsUserDetailsArgs:
+    def __init__(__self__, *,
+                 password_details: pulumi.Input['ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgs'],
+                 username: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input['ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgs'] password_details: (Updatable) Base password-source details for the OpenSearch security master user.
+        :param pulumi.Input[_builtins.str] username: (Updatable) The name of the master user that is used to manage security config.
+        """
+        pulumi.set(__self__, "password_details", password_details)
+        pulumi.set(__self__, "username", username)
+
+    @_builtins.property
+    @pulumi.getter(name="passwordDetails")
+    def password_details(self) -> pulumi.Input['ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgs']:
+        """
+        (Updatable) Base password-source details for the OpenSearch security master user.
+        """
+        return pulumi.get(self, "password_details")
+
+    @password_details.setter
+    def password_details(self, value: pulumi.Input['ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgs']):
+        pulumi.set(self, "password_details", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def username(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The name of the master user that is used to manage security config.
+        """
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "username", value)
+
+
+class ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgsDict(TypedDict):
+    source_type: pulumi.Input[_builtins.str]
+    """
+    (Updatable) The source of the master-user plaintext password.
+    """
+    plain_password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The plaintext password for the master user.
+    """
+    vault_secret_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The OCID of a Vault secret containing the plaintext master-user password.
+    """
+
+@pulumi.input_type
+class ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgs:
+    def __init__(__self__, *,
+                 source_type: pulumi.Input[_builtins.str],
+                 plain_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 vault_secret_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] source_type: (Updatable) The source of the master-user plaintext password.
+        :param pulumi.Input[_builtins.str] plain_password: (Updatable) The plaintext password for the master user.
+        :param pulumi.Input[_builtins.str] vault_secret_id: (Updatable) The OCID of a Vault secret containing the plaintext master-user password.
+        """
+        pulumi.set(__self__, "source_type", source_type)
+        if plain_password is not None:
+            pulumi.set(__self__, "plain_password", plain_password)
+        if vault_secret_id is not None:
+            pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> pulumi.Input[_builtins.str]:
+        """
+        (Updatable) The source of the master-user plaintext password.
+        """
+        return pulumi.get(self, "source_type")
+
+    @source_type.setter
+    def source_type(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "source_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="plainPassword")
+    def plain_password(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The plaintext password for the master user.
+        """
+        return pulumi.get(self, "plain_password")
+
+    @plain_password.setter
+    def plain_password(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "plain_password", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vaultSecretId")
+    def vault_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The OCID of a Vault secret containing the plaintext master-user password.
+        """
+        return pulumi.get(self, "vault_secret_id")
+
+    @vault_secret_id.setter
+    def vault_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "vault_secret_id", value)
 
 
 class ClusterSecuritySamlConfigArgsDict(TypedDict):

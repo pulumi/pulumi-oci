@@ -31977,6 +31977,10 @@ export namespace Database {
          */
         databaseTransformsUrl?: pulumi.Input<string | undefined>;
         /**
+         * Essbase URL for the Autonomous AI Database.
+         */
+        essbaseUrl?: pulumi.Input<string | undefined>;
+        /**
          * The URL of the Graph Studio for the Autonomous Database.
          */
         graphStudioUrl?: pulumi.Input<string | undefined>;
@@ -32297,6 +32301,10 @@ export namespace Database {
          */
         databaseTransformsUrl?: pulumi.Input<string | undefined>;
         /**
+         * Essbase URL for the Autonomous AI Database.
+         */
+        essbaseUrl?: pulumi.Input<string | undefined>;
+        /**
          * The URL of the Graph Studio for the Autonomous Database.
          */
         graphStudioUrl?: pulumi.Input<string | undefined>;
@@ -32483,6 +32491,10 @@ export namespace Database {
          * The URL of the Database Transforms for the Autonomous Database.
          */
         databaseTransformsUrl?: pulumi.Input<string | undefined>;
+        /**
+         * Essbase URL for the Autonomous AI Database.
+         */
+        essbaseUrl?: pulumi.Input<string | undefined>;
         /**
          * The URL of the Graph Studio for the Autonomous Database.
          */
@@ -32794,6 +32806,10 @@ export namespace Database {
          * Provide the key OCID of a registered AWS key.
          */
         awsEncryptionKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * Provide the key pool OCID of a registered AWS key.
+         */
+        awsEncryptionKeyPoolId?: pulumi.Input<string | undefined>;
         /**
          * Provide the key OCID of a registered Azure key.
          */
@@ -33723,6 +33739,10 @@ export namespace Database {
          */
         awsEncryptionKeyId?: pulumi.Input<string | undefined>;
         /**
+         * Provide the key pool OCID of a registered AWS key.
+         */
+        awsEncryptionKeyPoolId?: pulumi.Input<string | undefined>;
+        /**
          * Provide the key OCID of a registered Azure key.
          */
         azureEncryptionKeyId?: pulumi.Input<string | undefined>;
@@ -33847,6 +33867,22 @@ export namespace Database {
     }
 
     export interface DatabaseDatabaseSourceEncryptionKeyLocationDetails {
+        /**
+         * Provide the key OCID of a registered AWS key.
+         */
+        awsEncryptionKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * Provide the key pool OCID of a registered AWS key.
+         */
+        awsEncryptionKeyPoolId?: pulumi.Input<string | undefined>;
+        /**
+         * Provide the key OCID of a registered Azure key.
+         */
+        azureEncryptionKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * Provide the key OCID of a registered GCP key.
+         */
+        googleCloudProviderEncryptionKeyId?: pulumi.Input<string | undefined>;
         /**
          * Provide the HSM password as you would in RDBMS for External HSM.
          */
@@ -34627,6 +34663,10 @@ export namespace Database {
          * Provide the key OCID of a registered AWS key.
          */
         awsEncryptionKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * Provide the key pool OCID of a registered AWS key.
+         */
+        awsEncryptionKeyPoolId?: pulumi.Input<string | undefined>;
         /**
          * Provide the key OCID of a registered Azure key.
          */
@@ -42865,6 +42905,48 @@ export namespace DatabaseMigration {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetMigrationDataVerificationObjectStatusesFilter {
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMigrationDataVerificationObjectStatusesFilterArgs {
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetMigrationDataVerificationObjectTypeCountsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMigrationDataVerificationObjectTypeCountsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetMigrationDataVerificationTableRowCountsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMigrationDataVerificationTableRowCountsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetMigrationObjectTypesFilter {
         /**
          * Object type name
@@ -43054,6 +43136,7 @@ export namespace DatabaseMigration {
          * Current status of the job.
          */
         currentStatus?: pulumi.Input<string | undefined>;
+        jobProgress?: pulumi.Input<number | undefined>;
         /**
          * List of phase status for the job.
          */
@@ -83729,13 +83812,13 @@ export namespace Identity {
 
     export interface TagValidator {
         /**
-         * (Updatable) Specifies the type of validation: a static value (no validation) or a list.
+         * (Updatable) Specifies the type of validation. Use `ENUM` to restrict a tag to a list of allowed values, or `DEFAULT` for no value validation.
          */
         validatorType: pulumi.Input<string>;
         /**
-         * (Updatable) The list of allowed values for a definedTag value.
+         * (Updatable) The list of allowed values for a definedTag value. Omit this property when `validatorType` is `DEFAULT`; it is not used for default validation.
          */
-        values: pulumi.Input<pulumi.Input<string>[]>;
+        values?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     }
 
     export interface UserCapability {
@@ -94762,6 +94845,28 @@ export namespace Opensearch {
         seedClusterId: pulumi.Input<string>;
     }
 
+    export interface ClusterRemoteReindexTrustConfig {
+        /**
+         * (Updatable) Remote cluster sources to trust for reindexing.
+         */
+        remoteSources: pulumi.Input<pulumi.Input<inputs.Opensearch.ClusterRemoteReindexTrustConfigRemoteSource>[]>;
+    }
+
+    export interface ClusterRemoteReindexTrustConfigRemoteSource {
+        /**
+         * (Updatable) OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+         */
+        certificateId: pulumi.Input<string>;
+        /**
+         * (Updatable) HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
+         */
+        endpoint: pulumi.Input<string>;
+        /**
+         * (Updatable) Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
+         */
+        endpointResolutionIp?: pulumi.Input<string | undefined>;
+    }
+
     export interface ClusterReverseConnectionEndpoint {
         /**
          * The IP addresses of the endpoint in customer VCN
@@ -94771,6 +94876,39 @@ export namespace Opensearch {
          * The NAT IP addresses of the endpoint in service VCN
          */
         natIp?: pulumi.Input<string | undefined>;
+    }
+
+    export interface ClusterSecurityMasterUserAuthDetails {
+        /**
+         * (Updatable) The username and password source details for the security master user.
+         */
+        userDetails: pulumi.Input<inputs.Opensearch.ClusterSecurityMasterUserAuthDetailsUserDetails>;
+    }
+
+    export interface ClusterSecurityMasterUserAuthDetailsUserDetails {
+        /**
+         * (Updatable) Base password-source details for the OpenSearch security master user.
+         */
+        passwordDetails: pulumi.Input<inputs.Opensearch.ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails>;
+        /**
+         * (Updatable) The name of the master user that is used to manage security config.
+         */
+        username: pulumi.Input<string>;
+    }
+
+    export interface ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails {
+        /**
+         * (Updatable) The plaintext password for the master user.
+         */
+        plainPassword?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The source of the master-user plaintext password.
+         */
+        sourceType: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of a Vault secret containing the plaintext master-user password.
+         */
+        vaultSecretId?: pulumi.Input<string | undefined>;
     }
 
     export interface ClusterSecuritySamlConfig {
@@ -105304,6 +105442,32 @@ export namespace oci {
         timeLastChecked?: pulumi.Input<string | undefined>;
     }
 
+    export interface DbmulticloudOracleDbAwsKeyPoolReplicationMetadata {
+        /**
+         * List of all regions and their respective resource ID.
+         */
+        replicationDetails?: pulumi.Input<pulumi.Input<inputs.oci.DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail>[] | undefined>;
+    }
+
+    export interface DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail {
+        /**
+         * The lifecycle state of the Oracle DB Azure Vault resource.
+         */
+        replicationState?: pulumi.Input<string | undefined>;
+        /**
+         * The target region, where resource is replicated.
+         */
+        targetRegion?: pulumi.Input<string | undefined>;
+        /**
+         * Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+         */
+        timeCreated?: pulumi.Input<string | undefined>;
+        /**
+         * Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+         */
+        timeUpdated?: pulumi.Input<string | undefined>;
+    }
+
     export interface DbmulticloudOracleDbAwsKeyReplicationMetadata {
         /**
          * List of all regions and their respective resource ID.
@@ -106371,6 +106535,18 @@ export namespace oci {
     }
 
     export interface GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDbmulticloudOracleDbAwsKeyPoolsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDbmulticloudOracleDbAwsKeyPoolsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean | undefined>;
         values: pulumi.Input<pulumi.Input<string>[]>;

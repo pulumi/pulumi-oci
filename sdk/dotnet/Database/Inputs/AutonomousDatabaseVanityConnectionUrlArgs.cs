@@ -25,6 +25,12 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? DatabaseTransformsUrl { get; set; }
 
         /// <summary>
+        /// Essbase URL for the Autonomous AI Database.
+        /// </summary>
+        [Input("essbaseUrl")]
+        public Input<string>? EssbaseUrl { get; set; }
+
+        /// <summary>
         /// The URL of the Graph Studio for the Autonomous Database.
         /// </summary>
         [Input("graphStudioUrl")]

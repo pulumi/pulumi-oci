@@ -9,7 +9,9 @@ import com.pulumi.oci.Opensearch.outputs.GetOpensearchClustersOpensearchClusterC
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchClustersOpensearchClusterCollectionItemLoadBalancerConfig;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetail;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfig;
+import com.pulumi.oci.Opensearch.outputs.GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfig;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpoint;
+import com.pulumi.oci.Opensearch.outputs.GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetail;
 import com.pulumi.oci.Opensearch.outputs.GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig;
 import java.lang.Integer;
 import java.lang.String;
@@ -251,6 +253,11 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
      */
     private List<GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfig> outboundClusterConfigs;
     /**
+     * @return Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+     * 
+     */
+    private List<GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfig> remoteReindexTrustConfigs;
+    /**
      * @return The customer IP addresses of the endpoint in customer VCN
      * 
      */
@@ -295,6 +302,7 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
      * 
      */
     private Map<String,String> securityAttributes;
+    private List<GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetail> securityMasterUserAuthDetails;
     /**
      * @return The name of the master user that are used to manage security config
      * 
@@ -695,6 +703,13 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
         return this.outboundClusterConfigs;
     }
     /**
+     * @return Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+     * 
+     */
+    public List<GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfig> remoteReindexTrustConfigs() {
+        return this.remoteReindexTrustConfigs;
+    }
+    /**
      * @return The customer IP addresses of the endpoint in customer VCN
      * 
      */
@@ -756,6 +771,9 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
      */
     public Map<String,String> securityAttributes() {
         return this.securityAttributes;
+    }
+    public List<GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetail> securityMasterUserAuthDetails() {
+        return this.securityMasterUserAuthDetails;
     }
     /**
      * @return The name of the master user that are used to manage security config
@@ -918,6 +936,7 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
         private String opensearchFqdn;
         private String opensearchPrivateIp;
         private List<GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfig> outboundClusterConfigs;
+        private List<GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfig> remoteReindexTrustConfigs;
         private List<String> reverseConnectionEndpointCustomerIps;
         private List<GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpoint> reverseConnectionEndpoints;
         private Integer searchNodeCount;
@@ -927,6 +946,7 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
         private String searchNodeHostType;
         private Integer searchNodeStorageGb;
         private Map<String,String> securityAttributes;
+        private List<GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetail> securityMasterUserAuthDetails;
         private String securityMasterUserName;
         private String securityMasterUserPasswordHash;
         private String securityMode;
@@ -993,6 +1013,7 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
     	      this.opensearchFqdn = defaults.opensearchFqdn;
     	      this.opensearchPrivateIp = defaults.opensearchPrivateIp;
     	      this.outboundClusterConfigs = defaults.outboundClusterConfigs;
+    	      this.remoteReindexTrustConfigs = defaults.remoteReindexTrustConfigs;
     	      this.reverseConnectionEndpointCustomerIps = defaults.reverseConnectionEndpointCustomerIps;
     	      this.reverseConnectionEndpoints = defaults.reverseConnectionEndpoints;
     	      this.searchNodeCount = defaults.searchNodeCount;
@@ -1002,6 +1023,7 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
     	      this.searchNodeHostType = defaults.searchNodeHostType;
     	      this.searchNodeStorageGb = defaults.searchNodeStorageGb;
     	      this.securityAttributes = defaults.securityAttributes;
+    	      this.securityMasterUserAuthDetails = defaults.securityMasterUserAuthDetails;
     	      this.securityMasterUserName = defaults.securityMasterUserName;
     	      this.securityMasterUserPasswordHash = defaults.securityMasterUserPasswordHash;
     	      this.securityMode = defaults.securityMode;
@@ -1415,6 +1437,17 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
             return outboundClusterConfigs(List.of(outboundClusterConfigs));
         }
         @CustomType.Setter
+        public Builder remoteReindexTrustConfigs(List<GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfig> remoteReindexTrustConfigs) {
+            if (remoteReindexTrustConfigs == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "remoteReindexTrustConfigs");
+            }
+            this.remoteReindexTrustConfigs = remoteReindexTrustConfigs;
+            return this;
+        }
+        public Builder remoteReindexTrustConfigs(GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfig... remoteReindexTrustConfigs) {
+            return remoteReindexTrustConfigs(List.of(remoteReindexTrustConfigs));
+        }
+        @CustomType.Setter
         public Builder reverseConnectionEndpointCustomerIps(List<String> reverseConnectionEndpointCustomerIps) {
             if (reverseConnectionEndpointCustomerIps == null) {
               throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "reverseConnectionEndpointCustomerIps");
@@ -1491,6 +1524,17 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
             }
             this.securityAttributes = securityAttributes;
             return this;
+        }
+        @CustomType.Setter
+        public Builder securityMasterUserAuthDetails(List<GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetail> securityMasterUserAuthDetails) {
+            if (securityMasterUserAuthDetails == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItem", "securityMasterUserAuthDetails");
+            }
+            this.securityMasterUserAuthDetails = securityMasterUserAuthDetails;
+            return this;
+        }
+        public Builder securityMasterUserAuthDetails(GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetail... securityMasterUserAuthDetails) {
+            return securityMasterUserAuthDetails(List.of(securityMasterUserAuthDetails));
         }
         @CustomType.Setter
         public Builder securityMasterUserName(String securityMasterUserName) {
@@ -1672,6 +1716,7 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
             _resultValue.opensearchFqdn = opensearchFqdn;
             _resultValue.opensearchPrivateIp = opensearchPrivateIp;
             _resultValue.outboundClusterConfigs = outboundClusterConfigs;
+            _resultValue.remoteReindexTrustConfigs = remoteReindexTrustConfigs;
             _resultValue.reverseConnectionEndpointCustomerIps = reverseConnectionEndpointCustomerIps;
             _resultValue.reverseConnectionEndpoints = reverseConnectionEndpoints;
             _resultValue.searchNodeCount = searchNodeCount;
@@ -1681,6 +1726,7 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItem {
             _resultValue.searchNodeHostType = searchNodeHostType;
             _resultValue.searchNodeStorageGb = searchNodeStorageGb;
             _resultValue.securityAttributes = securityAttributes;
+            _resultValue.securityMasterUserAuthDetails = securityMasterUserAuthDetails;
             _resultValue.securityMasterUserName = securityMasterUserName;
             _resultValue.securityMasterUserPasswordHash = securityMasterUserPasswordHash;
             _resultValue.securityMode = securityMode;

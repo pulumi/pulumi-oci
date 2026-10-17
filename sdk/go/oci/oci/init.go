@@ -59,6 +59,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &DbmulticloudOracleDbAwsIdentityConnector{}
 	case "oci:oci/dbmulticloudOracleDbAwsKey:DbmulticloudOracleDbAwsKey":
 		r = &DbmulticloudOracleDbAwsKey{}
+	case "oci:oci/dbmulticloudOracleDbAwsKeyPool:DbmulticloudOracleDbAwsKeyPool":
+		r = &DbmulticloudOracleDbAwsKeyPool{}
 	case "oci:oci/dbmulticloudOracleDbAzureBlobContainer:DbmulticloudOracleDbAzureBlobContainer":
 		r = &DbmulticloudOracleDbAzureBlobContainer{}
 	case "oci:oci/dbmulticloudOracleDbAzureBlobMount:DbmulticloudOracleDbAzureBlobMount":
@@ -237,6 +239,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"oci/dbmulticloudOracleDbAwsKey",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/dbmulticloudOracleDbAwsKeyPool",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

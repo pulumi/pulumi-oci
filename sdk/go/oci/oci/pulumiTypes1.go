@@ -13,6 +13,1295 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetResourceAnalyticsResourceAnalyticsInstancesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetResourceAnalyticsResourceAnalyticsInstancesFilterInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs and GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesFilterInput` via:
+//
+//	GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs{...}
+type GetResourceAnalyticsResourceAnalyticsInstancesFilterInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsResourceAnalyticsInstancesFilterOutput() GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput
+	ToGetResourceAnalyticsResourceAnalyticsInstancesFilterOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesFilter)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterOutput() GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput {
+	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesFilterOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput)
+}
+
+// GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesFilterArray and GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayInput` via:
+//
+//	GetResourceAnalyticsResourceAnalyticsInstancesFilterArray{ GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs{...} }
+type GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput
+	ToGetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesFilterArray []GetResourceAnalyticsResourceAnalyticsInstancesFilterInput
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesFilter)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesFilterArray) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput {
+	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesFilterArray) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesFilter)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterOutput() GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesFilter)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsResourceAnalyticsInstancesFilter {
+		return vs[0].([]GetResourceAnalyticsResourceAnalyticsInstancesFilter)[vs[1].(int)]
+	}).(GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection struct {
+	Items []GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem `pulumi:"items"`
+}
+
+// GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs and GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionInput` via:
+//
+//	GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs{...}
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs struct {
+	Items GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput {
+	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput)
+}
+
+// GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArray and GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayInput` via:
+//
+//	GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArray{ GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs{...} }
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArray []GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionInput
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArray) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput {
+	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArray) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput) Items() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection) []GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem {
+		return v.Items
+	}).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection {
+		return vs[0].([]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection)[vs[1].(int)]
+	}).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem struct {
+	AdwAdminPasswords []GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword `pulumi:"adwAdminPasswords"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the created ADW instance.
+	AdwId string `pulumi:"adwId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	ComputeCount  int    `pulumi:"computeCount"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A description of the ResourceAnalyticsInstance instance.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+	Id                  string `pulumi:"id"`
+	IsMutualTlsRequired bool   `pulumi:"isMutualTlsRequired"`
+	LicenseModel        string `pulumi:"licenseModel"`
+	// A message that describes the current state of the ResourceAnalyticsInstance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string   `pulumi:"lifecycleDetails"`
+	NsgIds           []string `pulumi:"nsgIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OAC enabled for the ResourceAnalyticsInstance.
+	OacId string `pulumi:"oacId"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State    string `pulumi:"state"`
+	SubnetId string `pulumi:"subnetId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the ResourceAnalyticsInstance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the ResourceAnalyticsInstance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs and GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemInput` via:
+//
+//	GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs{...}
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs struct {
+	AdwAdminPasswords GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayInput `pulumi:"adwAdminPasswords"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the created ADW instance.
+	AdwId pulumi.StringInput `pulumi:"adwId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	ComputeCount  pulumi.IntInput    `pulumi:"computeCount"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A description of the ResourceAnalyticsInstance instance.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+	Id                  pulumi.StringInput `pulumi:"id"`
+	IsMutualTlsRequired pulumi.BoolInput   `pulumi:"isMutualTlsRequired"`
+	LicenseModel        pulumi.StringInput `pulumi:"licenseModel"`
+	// A message that describes the current state of the ResourceAnalyticsInstance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput      `pulumi:"lifecycleDetails"`
+	NsgIds           pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OAC enabled for the ResourceAnalyticsInstance.
+	OacId pulumi.StringInput `pulumi:"oacId"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State    pulumi.StringInput `pulumi:"state"`
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the ResourceAnalyticsInstance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the ResourceAnalyticsInstance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput {
+	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput)
+}
+
+// GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArray and GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayInput` via:
+//
+//	GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArray{ GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs{...} }
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArray []GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemInput
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArray) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput {
+	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArray) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) AdwAdminPasswords() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) []GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword {
+		return v.AdwAdminPasswords
+	}).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the created ADW instance.
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) AdwId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.AdwId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) ComputeCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) int {
+		return v.ComputeCount
+	}).(pulumi.IntOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A description of the ResourceAnalyticsInstance instance.
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.Id
+	}).(pulumi.StringOutput)
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) IsMutualTlsRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) bool {
+		return v.IsMutualTlsRequired
+	}).(pulumi.BoolOutput)
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) LicenseModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.LicenseModel
+	}).(pulumi.StringOutput)
+}
+
+// A message that describes the current state of the ResourceAnalyticsInstance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) []string {
+		return v.NsgIds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OAC enabled for the ResourceAnalyticsInstance.
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) OacId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.OacId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.State
+	}).(pulumi.StringOutput)
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.SubnetId
+	}).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The date and time the ResourceAnalyticsInstance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the ResourceAnalyticsInstance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem {
+		return vs[0].([]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem)[vs[1].(int)]
+	}).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword struct {
+	Password     string `pulumi:"password"`
+	PasswordType string `pulumi:"passwordType"`
+	SecretId     string `pulumi:"secretId"`
+}
+
+// GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs and GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordInput` via:
+//
+//	GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs{...}
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs struct {
+	Password     pulumi.StringInput `pulumi:"password"`
+	PasswordType pulumi.StringInput `pulumi:"passwordType"`
+	SecretId     pulumi.StringInput `pulumi:"secretId"`
+}
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput {
+	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput)
+}
+
+// GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArray and GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayInput` via:
+//
+//	GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArray{ GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs{...} }
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput
+	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArray []GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordInput
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArray) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput {
+	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArray) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword) string {
+		return v.Password
+	}).(pulumi.StringOutput)
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput) PasswordType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword) string {
+		return v.PasswordType
+	}).(pulumi.StringOutput)
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword) string {
+		return v.SecretId
+	}).(pulumi.StringOutput)
+}
+
+type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword {
+		return vs[0].([]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword)[vs[1].(int)]
+	}).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegion struct {
+	// Data population status for a monitored region in the tenancy.
+	DataPopulations []GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation `pulumi:"dataPopulations"`
+	// The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of the monitored region. E.g. us-ashburn-1
+	RegionId string `pulumi:"regionId"`
+}
+
+// GetResourceAnalyticsTenancyAttachmentMonitoredRegionInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs and GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentMonitoredRegionInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs{...}
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput
+	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs struct {
+	// Data population status for a monitored region in the tenancy.
+	DataPopulations GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayInput `pulumi:"dataPopulations"`
+	// The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of the monitored region. E.g. us-ashburn-1
+	RegionId pulumi.StringInput `pulumi:"regionId"`
+}
+
+func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegion)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput)
+}
+
+// GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentMonitoredRegionArray and GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentMonitoredRegionArray{ GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs{...} }
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput
+	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionArray []GetResourceAnalyticsTenancyAttachmentMonitoredRegionInput
+
+func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentMonitoredRegion)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionArray) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionArray) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegion)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput {
+	return o
+}
+
+// Data population status for a monitored region in the tenancy.
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput) DataPopulations() GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegion) []GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation {
+		return v.DataPopulations
+	}).(GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput)
+}
+
+// The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of the monitored region. E.g. us-ashburn-1
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput) RegionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegion) string { return v.RegionId }).(pulumi.StringOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentMonitoredRegion)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsTenancyAttachmentMonitoredRegion {
+		return vs[0].([]GetResourceAnalyticsTenancyAttachmentMonitoredRegion)[vs[1].(int)]
+	}).(GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation struct {
+	// The number of data population tasks currently in progress.
+	InProgressCount int `pulumi:"inProgressCount"`
+	// The overall status of the data population from the monitored region of the tenancy.
+	Status string `pulumi:"status"`
+	// The number of data population tasks that have succeeded.
+	SucceededCount int `pulumi:"succeededCount"`
+	// The date and time the data population task completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeEnded string `pulumi:"timeEnded"`
+	// The date and time the data population task was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeStarted string `pulumi:"timeStarted"`
+	// The total number of data population tasks.
+	TotalCount int `pulumi:"totalCount"`
+}
+
+// GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs and GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs{...}
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput
+	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs struct {
+	// The number of data population tasks currently in progress.
+	InProgressCount pulumi.IntInput `pulumi:"inProgressCount"`
+	// The overall status of the data population from the monitored region of the tenancy.
+	Status pulumi.StringInput `pulumi:"status"`
+	// The number of data population tasks that have succeeded.
+	SucceededCount pulumi.IntInput `pulumi:"succeededCount"`
+	// The date and time the data population task completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
+	// The date and time the data population task was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
+	// The total number of data population tasks.
+	TotalCount pulumi.IntInput `pulumi:"totalCount"`
+}
+
+func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput)
+}
+
+// GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArray and GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArray{ GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs{...} }
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput
+	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArray []GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationInput
+
+func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArray) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArray) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput {
+	return o
+}
+
+// The number of data population tasks currently in progress.
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) InProgressCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation) int {
+		return v.InProgressCount
+	}).(pulumi.IntOutput)
+}
+
+// The overall status of the data population from the monitored region of the tenancy.
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// The number of data population tasks that have succeeded.
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) SucceededCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation) int {
+		return v.SucceededCount
+	}).(pulumi.IntOutput)
+}
+
+// The date and time the data population task completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) TimeEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation) string { return v.TimeEnded }).(pulumi.StringOutput)
+}
+
+// The date and time the data population task was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) TimeStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation) string {
+		return v.TimeStarted
+	}).(pulumi.StringOutput)
+}
+
+// The total number of data population tasks.
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) TotalCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation) int { return v.TotalCount }).(pulumi.IntOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation {
+		return vs[0].([]GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation)[vs[1].(int)]
+	}).(GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetResourceAnalyticsTenancyAttachmentsFilterInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsFilterArgs and GetResourceAnalyticsTenancyAttachmentsFilterOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsFilterInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentsFilterArgs{...}
+type GetResourceAnalyticsTenancyAttachmentsFilterInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentsFilterOutput() GetResourceAnalyticsTenancyAttachmentsFilterOutput
+	ToGetResourceAnalyticsTenancyAttachmentsFilterOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsFilterOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetResourceAnalyticsTenancyAttachmentsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsFilter)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsFilterArgs) ToGetResourceAnalyticsTenancyAttachmentsFilterOutput() GetResourceAnalyticsTenancyAttachmentsFilterOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentsFilterOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsFilterArgs) ToGetResourceAnalyticsTenancyAttachmentsFilterOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsFilterOutput)
+}
+
+// GetResourceAnalyticsTenancyAttachmentsFilterArrayInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsFilterArray and GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsFilterArrayInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentsFilterArray{ GetResourceAnalyticsTenancyAttachmentsFilterArgs{...} }
+type GetResourceAnalyticsTenancyAttachmentsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentsFilterArrayOutput() GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput
+	ToGetResourceAnalyticsTenancyAttachmentsFilterArrayOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentsFilterArray []GetResourceAnalyticsTenancyAttachmentsFilterInput
+
+func (GetResourceAnalyticsTenancyAttachmentsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsFilter)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsFilterArray) ToGetResourceAnalyticsTenancyAttachmentsFilterArrayOutput() GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsFilterArray) ToGetResourceAnalyticsTenancyAttachmentsFilterArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsFilter)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsFilterOutput) ToGetResourceAnalyticsTenancyAttachmentsFilterOutput() GetResourceAnalyticsTenancyAttachmentsFilterOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsFilterOutput) ToGetResourceAnalyticsTenancyAttachmentsFilterOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsFilterOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsFilter)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsFilterArrayOutput() GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsFilterArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsTenancyAttachmentsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsTenancyAttachmentsFilter {
+		return vs[0].([]GetResourceAnalyticsTenancyAttachmentsFilter)[vs[1].(int)]
+	}).(GetResourceAnalyticsTenancyAttachmentsFilterOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection struct {
+	Items []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem `pulumi:"items"`
+}
+
+// GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs and GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs{...}
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs struct {
+	Items GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput)
+}
+
+// GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArray and GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArray{ GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs{...} }
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArray []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionInput
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArray) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArray) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput) Items() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection) []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem {
+		return v.Items
+	}).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection {
+		return vs[0].([]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection)[vs[1].(int)]
+	}).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem struct {
+	// The overall status of the data population from the tenancy.
+	DataPopulationStatus string `pulumi:"dataPopulationStatus"`
+	// A description of the tenancy.
+	Description string `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the TenancyAttachment.
+	Id string `pulumi:"id"`
+	// Whether the tenancy is the tenancy used when creating Resource Analytics Instance.
+	IsReportingTenancy bool `pulumi:"isReportingTenancy"`
+	// A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// List of monitored regions with their data population status.
+	MonitoredRegions []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion `pulumi:"monitoredRegions"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
+	ResourceAnalyticsInstanceId string `pulumi:"resourceAnalyticsInstanceId"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy associated with this TenancyAttachment.
+	TenancyId string `pulumi:"tenancyId"`
+	// The date and time the TenancyAttachment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeDataPopulationEnded string `pulumi:"timeDataPopulationEnded"`
+	// The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeDataPopulationStarted string `pulumi:"timeDataPopulationStarted"`
+	// The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs and GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs{...}
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs struct {
+	// The overall status of the data population from the tenancy.
+	DataPopulationStatus pulumi.StringInput `pulumi:"dataPopulationStatus"`
+	// A description of the tenancy.
+	Description pulumi.StringInput `pulumi:"description"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the TenancyAttachment.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Whether the tenancy is the tenancy used when creating Resource Analytics Instance.
+	IsReportingTenancy pulumi.BoolInput `pulumi:"isReportingTenancy"`
+	// A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// List of monitored regions with their data population status.
+	MonitoredRegions GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayInput `pulumi:"monitoredRegions"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
+	ResourceAnalyticsInstanceId pulumi.StringInput `pulumi:"resourceAnalyticsInstanceId"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy associated with this TenancyAttachment.
+	TenancyId pulumi.StringInput `pulumi:"tenancyId"`
+	// The date and time the TenancyAttachment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeDataPopulationEnded pulumi.StringInput `pulumi:"timeDataPopulationEnded"`
+	// The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeDataPopulationStarted pulumi.StringInput `pulumi:"timeDataPopulationStarted"`
+	// The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput)
+}
+
+// GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArray and GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayInput` via:
+//
+//	GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArray{ GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs{...} }
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput
+	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArray []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemInput
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem)(nil)).Elem()
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArray) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput {
+	return i.ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArray) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput {
+	return o
+}
+
+// The overall status of the data population from the tenancy.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) DataPopulationStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
+		return v.DataPopulationStatus
+	}).(pulumi.StringOutput)
+}
+
+// A description of the tenancy.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
+		return v.Description
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the TenancyAttachment.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Whether the tenancy is the tenancy used when creating Resource Analytics Instance.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) IsReportingTenancy() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) bool {
+		return v.IsReportingTenancy
+	}).(pulumi.BoolOutput)
+}
+
+// A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
+		return v.LifecycleDetails
+	}).(pulumi.StringOutput)
+}
+
+// List of monitored regions with their data population status.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) MonitoredRegions() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion {
+		return v.MonitoredRegions
+	}).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) ResourceAnalyticsInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
+		return v.ResourceAnalyticsInstanceId
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy associated with this TenancyAttachment.
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) TenancyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
+		return v.TenancyId
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the TenancyAttachment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) TimeDataPopulationEnded() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
+		return v.TimeDataPopulationEnded
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) TimeDataPopulationStarted() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
+		return v.TimeDataPopulationStarted
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem)(nil)).Elem()
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem {
+		return vs[0].([]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem)[vs[1].(int)]
+	}).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput)
+}
+
 type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion struct {
 	// Data population status for a monitored region in the tenancy.
 	DataPopulations []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulation `pulumi:"dataPopulations"`
@@ -4379,6 +5668,24 @@ func (o GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingP
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesFilterInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegionInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentMonitoredRegionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsFilterInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsFilterArrayInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationArgs{})
@@ -4445,6 +5752,24 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanDimensionRateArrayInput)(nil)).Elem(), GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanDimensionRateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanRateInput)(nil)).Elem(), GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanRateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanRateArrayInput)(nil)).Elem(), GetSelfSubscriptionsSubscriptionCollectionItemSubscriptionDetailPricingPlanRateArray{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsFilterOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionOutput{})
 	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput{})
 	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionDataPopulationOutput{})

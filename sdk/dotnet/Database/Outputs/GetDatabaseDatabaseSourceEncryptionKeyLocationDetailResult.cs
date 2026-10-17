@@ -14,6 +14,22 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetDatabaseDatabaseSourceEncryptionKeyLocationDetailResult
     {
         /// <summary>
+        /// Provide the key OCID of a registered AWS key.
+        /// </summary>
+        public readonly string AwsEncryptionKeyId;
+        /// <summary>
+        /// Provide the key pool OCID of a registered AWS key.
+        /// </summary>
+        public readonly string AwsEncryptionKeyPoolId;
+        /// <summary>
+        /// Provide the key OCID of a registered Azure key.
+        /// </summary>
+        public readonly string AzureEncryptionKeyId;
+        /// <summary>
+        /// Provide the key OCID of a registered GCP key.
+        /// </summary>
+        public readonly string GoogleCloudProviderEncryptionKeyId;
+        /// <summary>
         /// Provide the HSM password as you would in RDBMS for External HSM.
         /// </summary>
         public readonly string HsmPassword;
@@ -24,10 +40,22 @@ namespace Pulumi.Oci.Database.Outputs
 
         [OutputConstructor]
         private GetDatabaseDatabaseSourceEncryptionKeyLocationDetailResult(
+            string awsEncryptionKeyId,
+
+            string awsEncryptionKeyPoolId,
+
+            string azureEncryptionKeyId,
+
+            string googleCloudProviderEncryptionKeyId,
+
             string hsmPassword,
 
             string providerType)
         {
+            AwsEncryptionKeyId = awsEncryptionKeyId;
+            AwsEncryptionKeyPoolId = awsEncryptionKeyPoolId;
+            AzureEncryptionKeyId = azureEncryptionKeyId;
+            GoogleCloudProviderEncryptionKeyId = googleCloudProviderEncryptionKeyId;
             HsmPassword = hsmPassword;
             ProviderType = providerType;
         }

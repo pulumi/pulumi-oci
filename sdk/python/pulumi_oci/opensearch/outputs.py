@@ -21,7 +21,12 @@ __all__ = [
     'ClusterMaintenanceDetails',
     'ClusterOutboundClusterConfig',
     'ClusterOutboundClusterConfigOutboundCluster',
+    'ClusterRemoteReindexTrustConfig',
+    'ClusterRemoteReindexTrustConfigRemoteSource',
     'ClusterReverseConnectionEndpoint',
+    'ClusterSecurityMasterUserAuthDetails',
+    'ClusterSecurityMasterUserAuthDetailsUserDetails',
+    'ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails',
     'ClusterSecuritySamlConfig',
     'OpensearchClusterPipelineReverseConnectionEndpoint',
     'GetOpensearchClusterCertificateConfigResult',
@@ -34,7 +39,12 @@ __all__ = [
     'GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionResult',
     'GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemResult',
     'GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointResult',
+    'GetOpensearchClusterRemoteReindexTrustConfigResult',
+    'GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceResult',
     'GetOpensearchClusterReverseConnectionEndpointResult',
+    'GetOpensearchClusterSecurityMasterUserAuthDetailResult',
+    'GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailResult',
+    'GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailResult',
     'GetOpensearchClusterSecuritySamlConfigResult',
     'GetOpensearchClustersFilterResult',
     'GetOpensearchClustersOpensearchClusterCollectionResult',
@@ -44,7 +54,12 @@ __all__ = [
     'GetOpensearchClustersOpensearchClusterCollectionItemMaintenanceDetailResult',
     'GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigResult',
     'GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterResult',
+    'GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigResult',
+    'GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceResult',
     'GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointResult',
+    'GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailResult',
+    'GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailResult',
+    'GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailResult',
     'GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigResult',
     'GetOpensearchVersionItemResult',
     'GetOpensearchVersionsFilterResult',
@@ -406,6 +421,101 @@ class ClusterOutboundClusterConfigOutboundCluster(dict):
 
 
 @pulumi.output_type
+class ClusterRemoteReindexTrustConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "remoteSources":
+            suggest = "remote_sources"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ClusterRemoteReindexTrustConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ClusterRemoteReindexTrustConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ClusterRemoteReindexTrustConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 remote_sources: Sequence['outputs.ClusterRemoteReindexTrustConfigRemoteSource']):
+        """
+        :param Sequence['ClusterRemoteReindexTrustConfigRemoteSourceArgs'] remote_sources: (Updatable) Remote cluster sources to trust for reindexing.
+        """
+        pulumi.set(__self__, "remote_sources", remote_sources)
+
+    @_builtins.property
+    @pulumi.getter(name="remoteSources")
+    def remote_sources(self) -> Sequence['outputs.ClusterRemoteReindexTrustConfigRemoteSource']:
+        """
+        (Updatable) Remote cluster sources to trust for reindexing.
+        """
+        return pulumi.get(self, "remote_sources")
+
+
+@pulumi.output_type
+class ClusterRemoteReindexTrustConfigRemoteSource(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "certificateId":
+            suggest = "certificate_id"
+        elif key == "endpointResolutionIp":
+            suggest = "endpoint_resolution_ip"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ClusterRemoteReindexTrustConfigRemoteSource. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ClusterRemoteReindexTrustConfigRemoteSource.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ClusterRemoteReindexTrustConfigRemoteSource.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 certificate_id: _builtins.str,
+                 endpoint: _builtins.str,
+                 endpoint_resolution_ip: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str certificate_id: (Updatable) OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+        :param _builtins.str endpoint: (Updatable) HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
+        :param _builtins.str endpoint_resolution_ip: (Updatable) Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
+        """
+        pulumi.set(__self__, "certificate_id", certificate_id)
+        pulumi.set(__self__, "endpoint", endpoint)
+        if endpoint_resolution_ip is not None:
+            pulumi.set(__self__, "endpoint_resolution_ip", endpoint_resolution_ip)
+
+    @_builtins.property
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> _builtins.str:
+        """
+        (Updatable) OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+        """
+        return pulumi.get(self, "certificate_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoint(self) -> _builtins.str:
+        """
+        (Updatable) HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
+        """
+        return pulumi.get(self, "endpoint")
+
+    @_builtins.property
+    @pulumi.getter(name="endpointResolutionIp")
+    def endpoint_resolution_ip(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
+        """
+        return pulumi.get(self, "endpoint_resolution_ip")
+
+
+@pulumi.output_type
 class ClusterReverseConnectionEndpoint(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -453,6 +563,150 @@ class ClusterReverseConnectionEndpoint(dict):
         The NAT IP addresses of the endpoint in service VCN
         """
         return pulumi.get(self, "nat_ip")
+
+
+@pulumi.output_type
+class ClusterSecurityMasterUserAuthDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "userDetails":
+            suggest = "user_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ClusterSecurityMasterUserAuthDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ClusterSecurityMasterUserAuthDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ClusterSecurityMasterUserAuthDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 user_details: 'outputs.ClusterSecurityMasterUserAuthDetailsUserDetails'):
+        """
+        :param 'ClusterSecurityMasterUserAuthDetailsUserDetailsArgs' user_details: (Updatable) The username and password source details for the security master user.
+        """
+        pulumi.set(__self__, "user_details", user_details)
+
+    @_builtins.property
+    @pulumi.getter(name="userDetails")
+    def user_details(self) -> 'outputs.ClusterSecurityMasterUserAuthDetailsUserDetails':
+        """
+        (Updatable) The username and password source details for the security master user.
+        """
+        return pulumi.get(self, "user_details")
+
+
+@pulumi.output_type
+class ClusterSecurityMasterUserAuthDetailsUserDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "passwordDetails":
+            suggest = "password_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ClusterSecurityMasterUserAuthDetailsUserDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ClusterSecurityMasterUserAuthDetailsUserDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ClusterSecurityMasterUserAuthDetailsUserDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 password_details: 'outputs.ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails',
+                 username: _builtins.str):
+        """
+        :param 'ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgs' password_details: (Updatable) Base password-source details for the OpenSearch security master user.
+        :param _builtins.str username: (Updatable) The name of the master user that is used to manage security config.
+        """
+        pulumi.set(__self__, "password_details", password_details)
+        pulumi.set(__self__, "username", username)
+
+    @_builtins.property
+    @pulumi.getter(name="passwordDetails")
+    def password_details(self) -> 'outputs.ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails':
+        """
+        (Updatable) Base password-source details for the OpenSearch security master user.
+        """
+        return pulumi.get(self, "password_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def username(self) -> _builtins.str:
+        """
+        (Updatable) The name of the master user that is used to manage security config.
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "sourceType":
+            suggest = "source_type"
+        elif key == "plainPassword":
+            suggest = "plain_password"
+        elif key == "vaultSecretId":
+            suggest = "vault_secret_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 source_type: _builtins.str,
+                 plain_password: Optional[_builtins.str] = None,
+                 vault_secret_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str source_type: (Updatable) The source of the master-user plaintext password.
+        :param _builtins.str plain_password: (Updatable) The plaintext password for the master user.
+        :param _builtins.str vault_secret_id: (Updatable) The OCID of a Vault secret containing the plaintext master-user password.
+        """
+        pulumi.set(__self__, "source_type", source_type)
+        if plain_password is not None:
+            pulumi.set(__self__, "plain_password", plain_password)
+        if vault_secret_id is not None:
+            pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> _builtins.str:
+        """
+        (Updatable) The source of the master-user plaintext password.
+        """
+        return pulumi.get(self, "source_type")
+
+    @_builtins.property
+    @pulumi.getter(name="plainPassword")
+    def plain_password(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The plaintext password for the master user.
+        """
+        return pulumi.get(self, "plain_password")
+
+    @_builtins.property
+    @pulumi.getter(name="vaultSecretId")
+    def vault_secret_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The OCID of a Vault secret containing the plaintext master-user password.
+        """
+        return pulumi.get(self, "vault_secret_id")
 
 
 @pulumi.output_type
@@ -1229,6 +1483,64 @@ class GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemRevers
 
 
 @pulumi.output_type
+class GetOpensearchClusterRemoteReindexTrustConfigResult(dict):
+    def __init__(__self__, *,
+                 remote_sources: Sequence['outputs.GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceResult']):
+        """
+        :param Sequence['GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArgs'] remote_sources: Remote cluster sources to trust for reindexing.
+        """
+        pulumi.set(__self__, "remote_sources", remote_sources)
+
+    @_builtins.property
+    @pulumi.getter(name="remoteSources")
+    def remote_sources(self) -> Sequence['outputs.GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceResult']:
+        """
+        Remote cluster sources to trust for reindexing.
+        """
+        return pulumi.get(self, "remote_sources")
+
+
+@pulumi.output_type
+class GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceResult(dict):
+    def __init__(__self__, *,
+                 certificate_id: _builtins.str,
+                 endpoint: _builtins.str,
+                 endpoint_resolution_ip: _builtins.str):
+        """
+        :param _builtins.str certificate_id: OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+        :param _builtins.str endpoint: HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
+        :param _builtins.str endpoint_resolution_ip: Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
+        """
+        pulumi.set(__self__, "certificate_id", certificate_id)
+        pulumi.set(__self__, "endpoint", endpoint)
+        pulumi.set(__self__, "endpoint_resolution_ip", endpoint_resolution_ip)
+
+    @_builtins.property
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> _builtins.str:
+        """
+        OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+        """
+        return pulumi.get(self, "certificate_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoint(self) -> _builtins.str:
+        """
+        HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
+        """
+        return pulumi.get(self, "endpoint")
+
+    @_builtins.property
+    @pulumi.getter(name="endpointResolutionIp")
+    def endpoint_resolution_ip(self) -> _builtins.str:
+        """
+        Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
+        """
+        return pulumi.get(self, "endpoint_resolution_ip")
+
+
+@pulumi.output_type
 class GetOpensearchClusterReverseConnectionEndpointResult(dict):
     def __init__(__self__, *,
                  customer_ip: _builtins.str,
@@ -1255,6 +1567,63 @@ class GetOpensearchClusterReverseConnectionEndpointResult(dict):
         The NAT IP addresses of the endpoint in service VCN
         """
         return pulumi.get(self, "nat_ip")
+
+
+@pulumi.output_type
+class GetOpensearchClusterSecurityMasterUserAuthDetailResult(dict):
+    def __init__(__self__, *,
+                 user_details: Sequence['outputs.GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailResult']):
+        pulumi.set(__self__, "user_details", user_details)
+
+    @_builtins.property
+    @pulumi.getter(name="userDetails")
+    def user_details(self) -> Sequence['outputs.GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailResult']:
+        return pulumi.get(self, "user_details")
+
+
+@pulumi.output_type
+class GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailResult(dict):
+    def __init__(__self__, *,
+                 password_details: Sequence['outputs.GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailResult'],
+                 username: _builtins.str):
+        pulumi.set(__self__, "password_details", password_details)
+        pulumi.set(__self__, "username", username)
+
+    @_builtins.property
+    @pulumi.getter(name="passwordDetails")
+    def password_details(self) -> Sequence['outputs.GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailResult']:
+        return pulumi.get(self, "password_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def username(self) -> _builtins.str:
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailResult(dict):
+    def __init__(__self__, *,
+                 plain_password: _builtins.str,
+                 source_type: _builtins.str,
+                 vault_secret_id: _builtins.str):
+        pulumi.set(__self__, "plain_password", plain_password)
+        pulumi.set(__self__, "source_type", source_type)
+        pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+
+    @_builtins.property
+    @pulumi.getter(name="plainPassword")
+    def plain_password(self) -> _builtins.str:
+        return pulumi.get(self, "plain_password")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> _builtins.str:
+        return pulumi.get(self, "source_type")
+
+    @_builtins.property
+    @pulumi.getter(name="vaultSecretId")
+    def vault_secret_id(self) -> _builtins.str:
+        return pulumi.get(self, "vault_secret_id")
 
 
 @pulumi.output_type
@@ -1406,6 +1775,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
                  opensearch_fqdn: _builtins.str,
                  opensearch_private_ip: _builtins.str,
                  outbound_cluster_configs: Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigResult'],
+                 remote_reindex_trust_configs: Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigResult'],
                  reverse_connection_endpoint_customer_ips: Sequence[_builtins.str],
                  reverse_connection_endpoints: Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointResult'],
                  search_node_count: _builtins.int,
@@ -1415,6 +1785,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
                  search_node_host_type: _builtins.str,
                  search_node_storage_gb: _builtins.int,
                  security_attributes: Mapping[str, _builtins.str],
+                 security_master_user_auth_details: Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailResult'],
                  security_master_user_name: _builtins.str,
                  security_master_user_password_hash: _builtins.str,
                  security_mode: _builtins.str,
@@ -1478,6 +1849,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         :param _builtins.str opensearch_fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
         :param _builtins.str opensearch_private_ip: The cluster's private IP address.
         :param Sequence['GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArgs'] outbound_cluster_configs: This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+        :param Sequence['GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArgs'] remote_reindex_trust_configs: Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
         :param Sequence[_builtins.str] reverse_connection_endpoint_customer_ips: The customer IP addresses of the endpoint in customer VCN
         :param Sequence['GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArgs'] reverse_connection_endpoints: The list of reverse connection endpoints.
         :param _builtins.int search_node_count: The number of search nodes configured for the cluster.
@@ -1549,6 +1921,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         pulumi.set(__self__, "opensearch_fqdn", opensearch_fqdn)
         pulumi.set(__self__, "opensearch_private_ip", opensearch_private_ip)
         pulumi.set(__self__, "outbound_cluster_configs", outbound_cluster_configs)
+        pulumi.set(__self__, "remote_reindex_trust_configs", remote_reindex_trust_configs)
         pulumi.set(__self__, "reverse_connection_endpoint_customer_ips", reverse_connection_endpoint_customer_ips)
         pulumi.set(__self__, "reverse_connection_endpoints", reverse_connection_endpoints)
         pulumi.set(__self__, "search_node_count", search_node_count)
@@ -1558,6 +1931,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         pulumi.set(__self__, "search_node_host_type", search_node_host_type)
         pulumi.set(__self__, "search_node_storage_gb", search_node_storage_gb)
         pulumi.set(__self__, "security_attributes", security_attributes)
+        pulumi.set(__self__, "security_master_user_auth_details", security_master_user_auth_details)
         pulumi.set(__self__, "security_master_user_name", security_master_user_name)
         pulumi.set(__self__, "security_master_user_password_hash", security_master_user_password_hash)
         pulumi.set(__self__, "security_mode", security_mode)
@@ -1949,6 +2323,14 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         return pulumi.get(self, "outbound_cluster_configs")
 
     @_builtins.property
+    @pulumi.getter(name="remoteReindexTrustConfigs")
+    def remote_reindex_trust_configs(self) -> Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigResult']:
+        """
+        Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+        """
+        return pulumi.get(self, "remote_reindex_trust_configs")
+
+    @_builtins.property
     @pulumi.getter(name="reverseConnectionEndpointCustomerIps")
     def reverse_connection_endpoint_customer_ips(self) -> Sequence[_builtins.str]:
         """
@@ -2019,6 +2401,11 @@ class GetOpensearchClustersOpensearchClusterCollectionItemResult(dict):
         Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         """
         return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
+    @pulumi.getter(name="securityMasterUserAuthDetails")
+    def security_master_user_auth_details(self) -> Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailResult']:
+        return pulumi.get(self, "security_master_user_auth_details")
 
     @_builtins.property
     @pulumi.getter(name="securityMasterUserName")
@@ -2377,6 +2764,64 @@ class GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigO
 
 
 @pulumi.output_type
+class GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigResult(dict):
+    def __init__(__self__, *,
+                 remote_sources: Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceResult']):
+        """
+        :param Sequence['GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArgs'] remote_sources: Remote cluster sources to trust for reindexing.
+        """
+        pulumi.set(__self__, "remote_sources", remote_sources)
+
+    @_builtins.property
+    @pulumi.getter(name="remoteSources")
+    def remote_sources(self) -> Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceResult']:
+        """
+        Remote cluster sources to trust for reindexing.
+        """
+        return pulumi.get(self, "remote_sources")
+
+
+@pulumi.output_type
+class GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceResult(dict):
+    def __init__(__self__, *,
+                 certificate_id: _builtins.str,
+                 endpoint: _builtins.str,
+                 endpoint_resolution_ip: _builtins.str):
+        """
+        :param _builtins.str certificate_id: OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+        :param _builtins.str endpoint: HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
+        :param _builtins.str endpoint_resolution_ip: Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
+        """
+        pulumi.set(__self__, "certificate_id", certificate_id)
+        pulumi.set(__self__, "endpoint", endpoint)
+        pulumi.set(__self__, "endpoint_resolution_ip", endpoint_resolution_ip)
+
+    @_builtins.property
+    @pulumi.getter(name="certificateId")
+    def certificate_id(self) -> _builtins.str:
+        """
+        OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+        """
+        return pulumi.get(self, "certificate_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def endpoint(self) -> _builtins.str:
+        """
+        HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
+        """
+        return pulumi.get(self, "endpoint")
+
+    @_builtins.property
+    @pulumi.getter(name="endpointResolutionIp")
+    def endpoint_resolution_ip(self) -> _builtins.str:
+        """
+        Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
+        """
+        return pulumi.get(self, "endpoint_resolution_ip")
+
+
+@pulumi.output_type
 class GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointResult(dict):
     def __init__(__self__, *,
                  customer_ip: _builtins.str,
@@ -2403,6 +2848,63 @@ class GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpo
         The NAT IP addresses of the endpoint in service VCN
         """
         return pulumi.get(self, "nat_ip")
+
+
+@pulumi.output_type
+class GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailResult(dict):
+    def __init__(__self__, *,
+                 user_details: Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailResult']):
+        pulumi.set(__self__, "user_details", user_details)
+
+    @_builtins.property
+    @pulumi.getter(name="userDetails")
+    def user_details(self) -> Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailResult']:
+        return pulumi.get(self, "user_details")
+
+
+@pulumi.output_type
+class GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailResult(dict):
+    def __init__(__self__, *,
+                 password_details: Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailResult'],
+                 username: _builtins.str):
+        pulumi.set(__self__, "password_details", password_details)
+        pulumi.set(__self__, "username", username)
+
+    @_builtins.property
+    @pulumi.getter(name="passwordDetails")
+    def password_details(self) -> Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailResult']:
+        return pulumi.get(self, "password_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def username(self) -> _builtins.str:
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailResult(dict):
+    def __init__(__self__, *,
+                 plain_password: _builtins.str,
+                 source_type: _builtins.str,
+                 vault_secret_id: _builtins.str):
+        pulumi.set(__self__, "plain_password", plain_password)
+        pulumi.set(__self__, "source_type", source_type)
+        pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+
+    @_builtins.property
+    @pulumi.getter(name="plainPassword")
+    def plain_password(self) -> _builtins.str:
+        return pulumi.get(self, "plain_password")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceType")
+    def source_type(self) -> _builtins.str:
+        return pulumi.get(self, "source_type")
+
+    @_builtins.property
+    @pulumi.getter(name="vaultSecretId")
+    def vault_secret_id(self) -> _builtins.str:
+        return pulumi.get(self, "vault_secret_id")
 
 
 @pulumi.output_type

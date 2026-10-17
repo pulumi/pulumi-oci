@@ -6734,6 +6734,8 @@ type AutonomousDatabaseConnectionUrl struct {
 	ApexUrl *string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl *string `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl *string `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl *string `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -6766,6 +6768,8 @@ type AutonomousDatabaseConnectionUrlArgs struct {
 	ApexUrl pulumi.StringPtrInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl pulumi.StringPtrInput `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl pulumi.StringPtrInput `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl pulumi.StringPtrInput `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -6841,6 +6845,11 @@ func (o AutonomousDatabaseConnectionUrlOutput) ApexUrl() pulumi.StringPtrOutput 
 // The URL of the Database Transforms for the Autonomous Database.
 func (o AutonomousDatabaseConnectionUrlOutput) DatabaseTransformsUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutonomousDatabaseConnectionUrl) *string { return v.DatabaseTransformsUrl }).(pulumi.StringPtrOutput)
+}
+
+// Essbase URL for the Autonomous AI Database.
+func (o AutonomousDatabaseConnectionUrlOutput) EssbaseUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutonomousDatabaseConnectionUrl) *string { return v.EssbaseUrl }).(pulumi.StringPtrOutput)
 }
 
 // The URL of the Graph Studio for the Autonomous Database.
@@ -8490,6 +8499,8 @@ type AutonomousDatabasePublicConnectionUrl struct {
 	ApexUrl *string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl *string `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl *string `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl *string `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -8522,6 +8533,8 @@ type AutonomousDatabasePublicConnectionUrlArgs struct {
 	ApexUrl pulumi.StringPtrInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl pulumi.StringPtrInput `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl pulumi.StringPtrInput `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl pulumi.StringPtrInput `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -8597,6 +8610,11 @@ func (o AutonomousDatabasePublicConnectionUrlOutput) ApexUrl() pulumi.StringPtrO
 // The URL of the Database Transforms for the Autonomous Database.
 func (o AutonomousDatabasePublicConnectionUrlOutput) DatabaseTransformsUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutonomousDatabasePublicConnectionUrl) *string { return v.DatabaseTransformsUrl }).(pulumi.StringPtrOutput)
+}
+
+// Essbase URL for the Autonomous AI Database.
+func (o AutonomousDatabasePublicConnectionUrlOutput) EssbaseUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutonomousDatabasePublicConnectionUrl) *string { return v.EssbaseUrl }).(pulumi.StringPtrOutput)
 }
 
 // The URL of the Graph Studio for the Autonomous Database.
@@ -9902,6 +9920,8 @@ type AutonomousDatabaseVanityConnectionUrl struct {
 	ApexUrl *string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl *string `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl *string `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl *string `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -9932,6 +9952,8 @@ type AutonomousDatabaseVanityConnectionUrlArgs struct {
 	ApexUrl pulumi.StringPtrInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl pulumi.StringPtrInput `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl pulumi.StringPtrInput `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl pulumi.StringPtrInput `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -10005,6 +10027,11 @@ func (o AutonomousDatabaseVanityConnectionUrlOutput) ApexUrl() pulumi.StringPtrO
 // The URL of the Database Transforms for the Autonomous Database.
 func (o AutonomousDatabaseVanityConnectionUrlOutput) DatabaseTransformsUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AutonomousDatabaseVanityConnectionUrl) *string { return v.DatabaseTransformsUrl }).(pulumi.StringPtrOutput)
+}
+
+// Essbase URL for the Autonomous AI Database.
+func (o AutonomousDatabaseVanityConnectionUrlOutput) EssbaseUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AutonomousDatabaseVanityConnectionUrl) *string { return v.EssbaseUrl }).(pulumi.StringPtrOutput)
 }
 
 // The URL of the Graph Studio for the Autonomous Database.
@@ -12269,6 +12296,8 @@ func (o BackupDestinationMountTypeDetailsPtrOutput) NfsServers() pulumi.StringAr
 type BackupEncryptionKeyLocationDetail struct {
 	// Provide the key OCID of a registered AWS key.
 	AwsEncryptionKeyId *string `pulumi:"awsEncryptionKeyId"`
+	// Provide the key pool OCID of a registered AWS key.
+	AwsEncryptionKeyPoolId *string `pulumi:"awsEncryptionKeyPoolId"`
 	// Provide the key OCID of a registered Azure key.
 	AzureEncryptionKeyId *string `pulumi:"azureEncryptionKeyId"`
 	// Provide the key OCID of a registered GCP key.
@@ -12293,6 +12322,8 @@ type BackupEncryptionKeyLocationDetailInput interface {
 type BackupEncryptionKeyLocationDetailArgs struct {
 	// Provide the key OCID of a registered AWS key.
 	AwsEncryptionKeyId pulumi.StringPtrInput `pulumi:"awsEncryptionKeyId"`
+	// Provide the key pool OCID of a registered AWS key.
+	AwsEncryptionKeyPoolId pulumi.StringPtrInput `pulumi:"awsEncryptionKeyPoolId"`
 	// Provide the key OCID of a registered Azure key.
 	AzureEncryptionKeyId pulumi.StringPtrInput `pulumi:"azureEncryptionKeyId"`
 	// Provide the key OCID of a registered GCP key.
@@ -12357,6 +12388,11 @@ func (o BackupEncryptionKeyLocationDetailOutput) ToBackupEncryptionKeyLocationDe
 // Provide the key OCID of a registered AWS key.
 func (o BackupEncryptionKeyLocationDetailOutput) AwsEncryptionKeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BackupEncryptionKeyLocationDetail) *string { return v.AwsEncryptionKeyId }).(pulumi.StringPtrOutput)
+}
+
+// Provide the key pool OCID of a registered AWS key.
+func (o BackupEncryptionKeyLocationDetailOutput) AwsEncryptionKeyPoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BackupEncryptionKeyLocationDetail) *string { return v.AwsEncryptionKeyPoolId }).(pulumi.StringPtrOutput)
 }
 
 // Provide the key OCID of a registered Azure key.
@@ -19308,6 +19344,8 @@ func (o DatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDest
 type DatabaseDatabaseEncryptionKeyLocationDetails struct {
 	// Provide the key OCID of a registered AWS key.
 	AwsEncryptionKeyId *string `pulumi:"awsEncryptionKeyId"`
+	// Provide the key pool OCID of a registered AWS key.
+	AwsEncryptionKeyPoolId *string `pulumi:"awsEncryptionKeyPoolId"`
 	// Provide the key OCID of a registered Azure key.
 	AzureEncryptionKeyId *string `pulumi:"azureEncryptionKeyId"`
 	// Provide the key OCID of a registered GCP key.
@@ -19332,6 +19370,8 @@ type DatabaseDatabaseEncryptionKeyLocationDetailsInput interface {
 type DatabaseDatabaseEncryptionKeyLocationDetailsArgs struct {
 	// Provide the key OCID of a registered AWS key.
 	AwsEncryptionKeyId pulumi.StringPtrInput `pulumi:"awsEncryptionKeyId"`
+	// Provide the key pool OCID of a registered AWS key.
+	AwsEncryptionKeyPoolId pulumi.StringPtrInput `pulumi:"awsEncryptionKeyPoolId"`
 	// Provide the key OCID of a registered Azure key.
 	AzureEncryptionKeyId pulumi.StringPtrInput `pulumi:"azureEncryptionKeyId"`
 	// Provide the key OCID of a registered GCP key.
@@ -19424,6 +19464,11 @@ func (o DatabaseDatabaseEncryptionKeyLocationDetailsOutput) AwsEncryptionKeyId()
 	return o.ApplyT(func(v DatabaseDatabaseEncryptionKeyLocationDetails) *string { return v.AwsEncryptionKeyId }).(pulumi.StringPtrOutput)
 }
 
+// Provide the key pool OCID of a registered AWS key.
+func (o DatabaseDatabaseEncryptionKeyLocationDetailsOutput) AwsEncryptionKeyPoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseDatabaseEncryptionKeyLocationDetails) *string { return v.AwsEncryptionKeyPoolId }).(pulumi.StringPtrOutput)
+}
+
 // Provide the key OCID of a registered Azure key.
 func (o DatabaseDatabaseEncryptionKeyLocationDetailsOutput) AzureEncryptionKeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseDatabaseEncryptionKeyLocationDetails) *string { return v.AzureEncryptionKeyId }).(pulumi.StringPtrOutput)
@@ -19477,6 +19522,16 @@ func (o DatabaseDatabaseEncryptionKeyLocationDetailsPtrOutput) AwsEncryptionKeyI
 			return nil
 		}
 		return v.AwsEncryptionKeyId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Provide the key pool OCID of a registered AWS key.
+func (o DatabaseDatabaseEncryptionKeyLocationDetailsPtrOutput) AwsEncryptionKeyPoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseDatabaseEncryptionKeyLocationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AwsEncryptionKeyPoolId
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -20320,6 +20375,14 @@ func (o DatabaseDatabasePatchOptionsPtrOutput) ShouldSkipDataPatch() pulumi.Bool
 }
 
 type DatabaseDatabaseSourceEncryptionKeyLocationDetails struct {
+	// Provide the key OCID of a registered AWS key.
+	AwsEncryptionKeyId *string `pulumi:"awsEncryptionKeyId"`
+	// Provide the key pool OCID of a registered AWS key.
+	AwsEncryptionKeyPoolId *string `pulumi:"awsEncryptionKeyPoolId"`
+	// Provide the key OCID of a registered Azure key.
+	AzureEncryptionKeyId *string `pulumi:"azureEncryptionKeyId"`
+	// Provide the key OCID of a registered GCP key.
+	GoogleCloudProviderEncryptionKeyId *string `pulumi:"googleCloudProviderEncryptionKeyId"`
 	// Provide the HSM password as you would in RDBMS for External HSM.
 	HsmPassword *string `pulumi:"hsmPassword"`
 	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
@@ -20338,6 +20401,14 @@ type DatabaseDatabaseSourceEncryptionKeyLocationDetailsInput interface {
 }
 
 type DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs struct {
+	// Provide the key OCID of a registered AWS key.
+	AwsEncryptionKeyId pulumi.StringPtrInput `pulumi:"awsEncryptionKeyId"`
+	// Provide the key pool OCID of a registered AWS key.
+	AwsEncryptionKeyPoolId pulumi.StringPtrInput `pulumi:"awsEncryptionKeyPoolId"`
+	// Provide the key OCID of a registered Azure key.
+	AzureEncryptionKeyId pulumi.StringPtrInput `pulumi:"azureEncryptionKeyId"`
+	// Provide the key OCID of a registered GCP key.
+	GoogleCloudProviderEncryptionKeyId pulumi.StringPtrInput `pulumi:"googleCloudProviderEncryptionKeyId"`
 	// Provide the HSM password as you would in RDBMS for External HSM.
 	HsmPassword pulumi.StringPtrInput `pulumi:"hsmPassword"`
 	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
@@ -20421,6 +20492,28 @@ func (o DatabaseDatabaseSourceEncryptionKeyLocationDetailsOutput) ToDatabaseData
 	}).(DatabaseDatabaseSourceEncryptionKeyLocationDetailsPtrOutput)
 }
 
+// Provide the key OCID of a registered AWS key.
+func (o DatabaseDatabaseSourceEncryptionKeyLocationDetailsOutput) AwsEncryptionKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseDatabaseSourceEncryptionKeyLocationDetails) *string { return v.AwsEncryptionKeyId }).(pulumi.StringPtrOutput)
+}
+
+// Provide the key pool OCID of a registered AWS key.
+func (o DatabaseDatabaseSourceEncryptionKeyLocationDetailsOutput) AwsEncryptionKeyPoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseDatabaseSourceEncryptionKeyLocationDetails) *string { return v.AwsEncryptionKeyPoolId }).(pulumi.StringPtrOutput)
+}
+
+// Provide the key OCID of a registered Azure key.
+func (o DatabaseDatabaseSourceEncryptionKeyLocationDetailsOutput) AzureEncryptionKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseDatabaseSourceEncryptionKeyLocationDetails) *string { return v.AzureEncryptionKeyId }).(pulumi.StringPtrOutput)
+}
+
+// Provide the key OCID of a registered GCP key.
+func (o DatabaseDatabaseSourceEncryptionKeyLocationDetailsOutput) GoogleCloudProviderEncryptionKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseDatabaseSourceEncryptionKeyLocationDetails) *string {
+		return v.GoogleCloudProviderEncryptionKeyId
+	}).(pulumi.StringPtrOutput)
+}
+
 // Provide the HSM password as you would in RDBMS for External HSM.
 func (o DatabaseDatabaseSourceEncryptionKeyLocationDetailsOutput) HsmPassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseDatabaseSourceEncryptionKeyLocationDetails) *string { return v.HsmPassword }).(pulumi.StringPtrOutput)
@@ -20453,6 +20546,46 @@ func (o DatabaseDatabaseSourceEncryptionKeyLocationDetailsPtrOutput) Elem() Data
 		var ret DatabaseDatabaseSourceEncryptionKeyLocationDetails
 		return ret
 	}).(DatabaseDatabaseSourceEncryptionKeyLocationDetailsOutput)
+}
+
+// Provide the key OCID of a registered AWS key.
+func (o DatabaseDatabaseSourceEncryptionKeyLocationDetailsPtrOutput) AwsEncryptionKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseDatabaseSourceEncryptionKeyLocationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AwsEncryptionKeyId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Provide the key pool OCID of a registered AWS key.
+func (o DatabaseDatabaseSourceEncryptionKeyLocationDetailsPtrOutput) AwsEncryptionKeyPoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseDatabaseSourceEncryptionKeyLocationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AwsEncryptionKeyPoolId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Provide the key OCID of a registered Azure key.
+func (o DatabaseDatabaseSourceEncryptionKeyLocationDetailsPtrOutput) AzureEncryptionKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseDatabaseSourceEncryptionKeyLocationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AzureEncryptionKeyId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Provide the key OCID of a registered GCP key.
+func (o DatabaseDatabaseSourceEncryptionKeyLocationDetailsPtrOutput) GoogleCloudProviderEncryptionKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseDatabaseSourceEncryptionKeyLocationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GoogleCloudProviderEncryptionKeyId
+	}).(pulumi.StringPtrOutput)
 }
 
 // Provide the HSM password as you would in RDBMS for External HSM.
@@ -25054,6 +25187,8 @@ func (o DbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDestin
 type DbHomeDatabaseEncryptionKeyLocationDetails struct {
 	// Provide the key OCID of a registered AWS key.
 	AwsEncryptionKeyId *string `pulumi:"awsEncryptionKeyId"`
+	// Provide the key pool OCID of a registered AWS key.
+	AwsEncryptionKeyPoolId *string `pulumi:"awsEncryptionKeyPoolId"`
 	// Provide the key OCID of a registered Azure key.
 	AzureEncryptionKeyId               *string `pulumi:"azureEncryptionKeyId"`
 	GoogleCloudProviderEncryptionKeyId *string `pulumi:"googleCloudProviderEncryptionKeyId"`
@@ -25077,6 +25212,8 @@ type DbHomeDatabaseEncryptionKeyLocationDetailsInput interface {
 type DbHomeDatabaseEncryptionKeyLocationDetailsArgs struct {
 	// Provide the key OCID of a registered AWS key.
 	AwsEncryptionKeyId pulumi.StringPtrInput `pulumi:"awsEncryptionKeyId"`
+	// Provide the key pool OCID of a registered AWS key.
+	AwsEncryptionKeyPoolId pulumi.StringPtrInput `pulumi:"awsEncryptionKeyPoolId"`
 	// Provide the key OCID of a registered Azure key.
 	AzureEncryptionKeyId               pulumi.StringPtrInput `pulumi:"azureEncryptionKeyId"`
 	GoogleCloudProviderEncryptionKeyId pulumi.StringPtrInput `pulumi:"googleCloudProviderEncryptionKeyId"`
@@ -25168,6 +25305,11 @@ func (o DbHomeDatabaseEncryptionKeyLocationDetailsOutput) AwsEncryptionKeyId() p
 	return o.ApplyT(func(v DbHomeDatabaseEncryptionKeyLocationDetails) *string { return v.AwsEncryptionKeyId }).(pulumi.StringPtrOutput)
 }
 
+// Provide the key pool OCID of a registered AWS key.
+func (o DbHomeDatabaseEncryptionKeyLocationDetailsOutput) AwsEncryptionKeyPoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbHomeDatabaseEncryptionKeyLocationDetails) *string { return v.AwsEncryptionKeyPoolId }).(pulumi.StringPtrOutput)
+}
+
 // Provide the key OCID of a registered Azure key.
 func (o DbHomeDatabaseEncryptionKeyLocationDetailsOutput) AzureEncryptionKeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbHomeDatabaseEncryptionKeyLocationDetails) *string { return v.AzureEncryptionKeyId }).(pulumi.StringPtrOutput)
@@ -25220,6 +25362,16 @@ func (o DbHomeDatabaseEncryptionKeyLocationDetailsPtrOutput) AwsEncryptionKeyId(
 			return nil
 		}
 		return v.AwsEncryptionKeyId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Provide the key pool OCID of a registered AWS key.
+func (o DbHomeDatabaseEncryptionKeyLocationDetailsPtrOutput) AwsEncryptionKeyPoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DbHomeDatabaseEncryptionKeyLocationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AwsEncryptionKeyPoolId
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -55597,6 +55749,8 @@ type GetAutonomousDatabaseConnectionUrl struct {
 	ApexUrl string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl string `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl string `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl string `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -55629,6 +55783,8 @@ type GetAutonomousDatabaseConnectionUrlArgs struct {
 	ApexUrl pulumi.StringInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl pulumi.StringInput `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl pulumi.StringInput `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl pulumi.StringInput `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -55704,6 +55860,11 @@ func (o GetAutonomousDatabaseConnectionUrlOutput) ApexUrl() pulumi.StringOutput 
 // The URL of the Database Transforms for the Autonomous Database.
 func (o GetAutonomousDatabaseConnectionUrlOutput) DatabaseTransformsUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabaseConnectionUrl) string { return v.DatabaseTransformsUrl }).(pulumi.StringOutput)
+}
+
+// Essbase URL for the Autonomous AI Database.
+func (o GetAutonomousDatabaseConnectionUrlOutput) EssbaseUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseConnectionUrl) string { return v.EssbaseUrl }).(pulumi.StringOutput)
 }
 
 // The URL of the Graph Studio for the Autonomous Database.
@@ -57826,6 +57987,8 @@ type GetAutonomousDatabasePublicConnectionUrl struct {
 	ApexUrl string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl string `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl string `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl string `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -57858,6 +58021,8 @@ type GetAutonomousDatabasePublicConnectionUrlArgs struct {
 	ApexUrl pulumi.StringInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl pulumi.StringInput `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl pulumi.StringInput `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl pulumi.StringInput `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -57933,6 +58098,11 @@ func (o GetAutonomousDatabasePublicConnectionUrlOutput) ApexUrl() pulumi.StringO
 // The URL of the Database Transforms for the Autonomous Database.
 func (o GetAutonomousDatabasePublicConnectionUrlOutput) DatabaseTransformsUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasePublicConnectionUrl) string { return v.DatabaseTransformsUrl }).(pulumi.StringOutput)
+}
+
+// Essbase URL for the Autonomous AI Database.
+func (o GetAutonomousDatabasePublicConnectionUrlOutput) EssbaseUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasePublicConnectionUrl) string { return v.EssbaseUrl }).(pulumi.StringOutput)
 }
 
 // The URL of the Graph Studio for the Autonomous Database.
@@ -60036,6 +60206,8 @@ type GetAutonomousDatabaseVanityConnectionUrl struct {
 	ApexUrl string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl string `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl string `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl string `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -60066,6 +60238,8 @@ type GetAutonomousDatabaseVanityConnectionUrlArgs struct {
 	ApexUrl pulumi.StringInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl pulumi.StringInput `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl pulumi.StringInput `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl pulumi.StringInput `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -60139,6 +60313,11 @@ func (o GetAutonomousDatabaseVanityConnectionUrlOutput) ApexUrl() pulumi.StringO
 // The URL of the Database Transforms for the Autonomous Database.
 func (o GetAutonomousDatabaseVanityConnectionUrlOutput) DatabaseTransformsUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabaseVanityConnectionUrl) string { return v.DatabaseTransformsUrl }).(pulumi.StringOutput)
+}
+
+// Essbase URL for the Autonomous AI Database.
+func (o GetAutonomousDatabaseVanityConnectionUrlOutput) EssbaseUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabaseVanityConnectionUrl) string { return v.EssbaseUrl }).(pulumi.StringOutput)
 }
 
 // The URL of the Graph Studio for the Autonomous Database.
@@ -62705,6 +62884,8 @@ type GetAutonomousDatabasesAutonomousDatabaseConnectionUrl struct {
 	ApexUrl string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl string `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl string `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl string `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -62737,6 +62918,8 @@ type GetAutonomousDatabasesAutonomousDatabaseConnectionUrlArgs struct {
 	ApexUrl pulumi.StringInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl pulumi.StringInput `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl pulumi.StringInput `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl pulumi.StringInput `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -62812,6 +62995,11 @@ func (o GetAutonomousDatabasesAutonomousDatabaseConnectionUrlOutput) ApexUrl() p
 // The URL of the Database Transforms for the Autonomous Database.
 func (o GetAutonomousDatabasesAutonomousDatabaseConnectionUrlOutput) DatabaseTransformsUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseConnectionUrl) string { return v.DatabaseTransformsUrl }).(pulumi.StringOutput)
+}
+
+// Essbase URL for the Autonomous AI Database.
+func (o GetAutonomousDatabasesAutonomousDatabaseConnectionUrlOutput) EssbaseUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseConnectionUrl) string { return v.EssbaseUrl }).(pulumi.StringOutput)
 }
 
 // The URL of the Graph Studio for the Autonomous Database.
@@ -64309,6 +64497,8 @@ type GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrl struct {
 	ApexUrl string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl string `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl string `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl string `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -64341,6 +64531,8 @@ type GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlArgs struct {
 	ApexUrl pulumi.StringInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl pulumi.StringInput `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl pulumi.StringInput `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl pulumi.StringInput `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -64418,6 +64610,11 @@ func (o GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlOutput) Datab
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrl) string {
 		return v.DatabaseTransformsUrl
 	}).(pulumi.StringOutput)
+}
+
+// Essbase URL for the Autonomous AI Database.
+func (o GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlOutput) EssbaseUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrl) string { return v.EssbaseUrl }).(pulumi.StringOutput)
 }
 
 // The URL of the Graph Studio for the Autonomous Database.
@@ -65492,6 +65689,8 @@ type GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrl struct {
 	ApexUrl string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl string `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl string `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl string `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -65522,6 +65721,8 @@ type GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlArgs struct {
 	ApexUrl pulumi.StringInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl pulumi.StringInput `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl pulumi.StringInput `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl pulumi.StringInput `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -65597,6 +65798,11 @@ func (o GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlOutput) Datab
 	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrl) string {
 		return v.DatabaseTransformsUrl
 	}).(pulumi.StringOutput)
+}
+
+// Essbase URL for the Autonomous AI Database.
+func (o GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrlOutput) EssbaseUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesAutonomousDatabaseVanityConnectionUrl) string { return v.EssbaseUrl }).(pulumi.StringOutput)
 }
 
 // The URL of the Graph Studio for the Autonomous Database.
@@ -68018,6 +68224,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl struct {
 	ApexUrl string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl string `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl string `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl string `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -68050,6 +68258,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlArgs struct {
 	ApexUrl pulumi.StringInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl pulumi.StringInput `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl pulumi.StringInput `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl pulumi.StringInput `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -68127,6 +68337,11 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlOutput) Datab
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl) string {
 		return v.DatabaseTransformsUrl
 	}).(pulumi.StringOutput)
+}
+
+// Essbase URL for the Autonomous AI Database.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrlOutput) EssbaseUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseConnectionUrl) string { return v.EssbaseUrl }).(pulumi.StringOutput)
 }
 
 // The URL of the Graph Studio for the Autonomous Database.
@@ -69638,6 +69853,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrl struct {
 	ApexUrl string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl string `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl string `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl string `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -69670,6 +69887,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlArgs struc
 	ApexUrl pulumi.StringInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl pulumi.StringInput `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl pulumi.StringInput `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl pulumi.StringInput `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -69747,6 +69966,11 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlOutput)
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrl) string {
 		return v.DatabaseTransformsUrl
 	}).(pulumi.StringOutput)
+}
+
+// Essbase URL for the Autonomous AI Database.
+func (o GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlOutput) EssbaseUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrl) string { return v.EssbaseUrl }).(pulumi.StringOutput)
 }
 
 // The URL of the Graph Studio for the Autonomous Database.
@@ -70699,6 +70923,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrl struct {
 	ApexUrl string `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl string `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl string `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl string `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -70729,6 +70955,8 @@ type GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrlArgs struc
 	ApexUrl pulumi.StringInput `pulumi:"apexUrl"`
 	// The URL of the Database Transforms for the Autonomous Database.
 	DatabaseTransformsUrl pulumi.StringInput `pulumi:"databaseTransformsUrl"`
+	// Essbase URL for the Autonomous AI Database.
+	EssbaseUrl pulumi.StringInput `pulumi:"essbaseUrl"`
 	// The URL of the Graph Studio for the Autonomous Database.
 	GraphStudioUrl pulumi.StringInput `pulumi:"graphStudioUrl"`
 	// The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
@@ -70804,6 +71032,11 @@ func (o GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrlOutput)
 	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrl) string {
 		return v.DatabaseTransformsUrl
 	}).(pulumi.StringOutput)
+}
+
+// Essbase URL for the Autonomous AI Database.
+func (o GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrlOutput) EssbaseUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAutonomousDatabasesClonesAutonomousDatabaseVanityConnectionUrl) string { return v.EssbaseUrl }).(pulumi.StringOutput)
 }
 
 // The URL of the Graph Studio for the Autonomous Database.

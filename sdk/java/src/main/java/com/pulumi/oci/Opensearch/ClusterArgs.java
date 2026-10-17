@@ -10,6 +10,8 @@ import com.pulumi.oci.Opensearch.inputs.ClusterCertificateConfigArgs;
 import com.pulumi.oci.Opensearch.inputs.ClusterLoadBalancerConfigArgs;
 import com.pulumi.oci.Opensearch.inputs.ClusterMaintenanceDetailsArgs;
 import com.pulumi.oci.Opensearch.inputs.ClusterOutboundClusterConfigArgs;
+import com.pulumi.oci.Opensearch.inputs.ClusterRemoteReindexTrustConfigArgs;
+import com.pulumi.oci.Opensearch.inputs.ClusterSecurityMasterUserAuthDetailsArgs;
 import com.pulumi.oci.Opensearch.inputs.ClusterSecuritySamlConfigArgs;
 import java.lang.Integer;
 import java.lang.String;
@@ -610,6 +612,21 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+     * 
+     */
+    @Import(name="remoteReindexTrustConfig")
+    private @Nullable Output<ClusterRemoteReindexTrustConfigArgs> remoteReindexTrustConfig;
+
+    /**
+     * @return (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+     * 
+     */
+    public Optional<Output<ClusterRemoteReindexTrustConfigArgs>> remoteReindexTrustConfig() {
+        return Optional.ofNullable(this.remoteReindexTrustConfig);
+    }
+
+    /**
      * (Updatable) The customer IP addresses of the endpoint in customer VCN
      * 
      */
@@ -727,6 +744,21 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Map<String,String>>> securityAttributes() {
         return Optional.ofNullable(this.securityAttributes);
+    }
+
+    /**
+     * (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
+     * 
+     */
+    @Import(name="securityMasterUserAuthDetails")
+    private @Nullable Output<ClusterSecurityMasterUserAuthDetailsArgs> securityMasterUserAuthDetails;
+
+    /**
+     * @return (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
+     * 
+     */
+    public Optional<Output<ClusterSecurityMasterUserAuthDetailsArgs>> securityMasterUserAuthDetails() {
+        return Optional.ofNullable(this.securityMasterUserAuthDetails);
     }
 
     /**
@@ -942,6 +974,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         this.opendashboardNodeHostOcpuCount = $.opendashboardNodeHostOcpuCount;
         this.opendashboardNodeHostShape = $.opendashboardNodeHostShape;
         this.outboundClusterConfig = $.outboundClusterConfig;
+        this.remoteReindexTrustConfig = $.remoteReindexTrustConfig;
         this.reverseConnectionEndpointCustomerIps = $.reverseConnectionEndpointCustomerIps;
         this.searchNodeCount = $.searchNodeCount;
         this.searchNodeHostMemoryGb = $.searchNodeHostMemoryGb;
@@ -950,6 +983,7 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         this.searchNodeHostType = $.searchNodeHostType;
         this.searchNodeStorageGb = $.searchNodeStorageGb;
         this.securityAttributes = $.securityAttributes;
+        this.securityMasterUserAuthDetails = $.securityMasterUserAuthDetails;
         this.securityMasterUserName = $.securityMasterUserName;
         this.securityMasterUserPasswordHash = $.securityMasterUserPasswordHash;
         this.securityMode = $.securityMode;
@@ -1811,6 +1845,27 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param remoteReindexTrustConfig (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder remoteReindexTrustConfig(@Nullable Output<ClusterRemoteReindexTrustConfigArgs> remoteReindexTrustConfig) {
+            $.remoteReindexTrustConfig = remoteReindexTrustConfig;
+            return this;
+        }
+
+        /**
+         * @param remoteReindexTrustConfig (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder remoteReindexTrustConfig(ClusterRemoteReindexTrustConfigArgs remoteReindexTrustConfig) {
+            return remoteReindexTrustConfig(Output.of(remoteReindexTrustConfig));
+        }
+
+        /**
          * @param reverseConnectionEndpointCustomerIps (Updatable) The customer IP addresses of the endpoint in customer VCN
          * 
          * @return builder
@@ -1986,6 +2041,27 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder securityAttributes(Map<String,String> securityAttributes) {
             return securityAttributes(Output.of(securityAttributes));
+        }
+
+        /**
+         * @param securityMasterUserAuthDetails (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityMasterUserAuthDetails(@Nullable Output<ClusterSecurityMasterUserAuthDetailsArgs> securityMasterUserAuthDetails) {
+            $.securityMasterUserAuthDetails = securityMasterUserAuthDetails;
+            return this;
+        }
+
+        /**
+         * @param securityMasterUserAuthDetails (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder securityMasterUserAuthDetails(ClusterSecurityMasterUserAuthDetailsArgs securityMasterUserAuthDetails) {
+            return securityMasterUserAuthDetails(Output.of(securityMasterUserAuthDetails));
         }
 
         /**

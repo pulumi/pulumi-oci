@@ -28,7 +28,7 @@ class GetDbmulticloudOracleDbAwsKeysResult:
     """
     A collection of values returned by getDbmulticloudOracleDbAwsKeys.
     """
-    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, oracle_db_aws_connector_id=None, oracle_db_aws_key_id=None, oracle_db_aws_key_summary_collections=None, state=None):
+    def __init__(__self__, compartment_id=None, display_name=None, filters=None, id=None, oracle_db_aws_connector_id=None, oracle_db_aws_key_id=None, oracle_db_aws_key_pool_id=None, oracle_db_aws_key_summary_collections=None, state=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -47,6 +47,9 @@ class GetDbmulticloudOracleDbAwsKeysResult:
         if oracle_db_aws_key_id and not isinstance(oracle_db_aws_key_id, str):
             raise TypeError("Expected argument 'oracle_db_aws_key_id' to be a str")
         pulumi.set(__self__, "oracle_db_aws_key_id", oracle_db_aws_key_id)
+        if oracle_db_aws_key_pool_id and not isinstance(oracle_db_aws_key_pool_id, str):
+            raise TypeError("Expected argument 'oracle_db_aws_key_pool_id' to be a str")
+        pulumi.set(__self__, "oracle_db_aws_key_pool_id", oracle_db_aws_key_pool_id)
         if oracle_db_aws_key_summary_collections and not isinstance(oracle_db_aws_key_summary_collections, list):
             raise TypeError("Expected argument 'oracle_db_aws_key_summary_collections' to be a list")
         pulumi.set(__self__, "oracle_db_aws_key_summary_collections", oracle_db_aws_key_summary_collections)
@@ -94,6 +97,14 @@ class GetDbmulticloudOracleDbAwsKeysResult:
         return pulumi.get(self, "oracle_db_aws_key_id")
 
     @_builtins.property
+    @pulumi.getter(name="oracleDbAwsKeyPoolId")
+    def oracle_db_aws_key_pool_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+        """
+        return pulumi.get(self, "oracle_db_aws_key_pool_id")
+
+    @_builtins.property
     @pulumi.getter(name="oracleDbAwsKeySummaryCollections")
     def oracle_db_aws_key_summary_collections(self) -> Sequence['outputs.GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionResult']:
         """
@@ -122,6 +133,7 @@ class AwaitableGetDbmulticloudOracleDbAwsKeysResult(GetDbmulticloudOracleDbAwsKe
             id=self.id,
             oracle_db_aws_connector_id=self.oracle_db_aws_connector_id,
             oracle_db_aws_key_id=self.oracle_db_aws_key_id,
+            oracle_db_aws_key_pool_id=self.oracle_db_aws_key_pool_id,
             oracle_db_aws_key_summary_collections=self.oracle_db_aws_key_summary_collections,
             state=self.state)
 
@@ -131,6 +143,7 @@ def get_dbmulticloud_oracle_db_aws_keys(compartment_id: Optional[_builtins.str] 
                                         filters: Optional[Sequence[Union['GetDbmulticloudOracleDbAwsKeysFilterArgs', 'GetDbmulticloudOracleDbAwsKeysFilterArgsDict', 'outputs.GetDbmulticloudOracleDbAwsKeysFilterResult']]] = None,
                                         oracle_db_aws_connector_id: Optional[_builtins.str] = None,
                                         oracle_db_aws_key_id: Optional[_builtins.str] = None,
+                                        oracle_db_aws_key_pool_id: Optional[_builtins.str] = None,
                                         state: Optional[_builtins.str] = None,
                                         opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDbmulticloudOracleDbAwsKeysResult:
     """
@@ -148,6 +161,7 @@ def get_dbmulticloud_oracle_db_aws_keys(compartment_id: Optional[_builtins.str] 
         display_name=oracle_db_aws_key_display_name,
         oracle_db_aws_connector_id=test_oracle_db_aws_connector["id"],
         oracle_db_aws_key_id=test_oracle_db_aws_key["id"],
+        oracle_db_aws_key_pool_id=test_oracle_db_aws_key_pool["id"],
         state=oracle_db_aws_key_state)
     ```
 
@@ -156,6 +170,7 @@ def get_dbmulticloud_oracle_db_aws_keys(compartment_id: Optional[_builtins.str] 
     :param _builtins.str display_name: A filter to return Oracle DB AWS Key Resource that match the given display name.
     :param _builtins.str oracle_db_aws_connector_id: A filter to return Oracle DB AWS Identity Connector resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Identity Connector resource.
     :param _builtins.str oracle_db_aws_key_id: A filter to return Oracle DB AWS Identity Connector Resource that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key resource.
+    :param _builtins.str oracle_db_aws_key_pool_id: A filter to return only resources that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()
@@ -164,6 +179,7 @@ def get_dbmulticloud_oracle_db_aws_keys(compartment_id: Optional[_builtins.str] 
     __args__['filters'] = filters
     __args__['oracleDbAwsConnectorId'] = oracle_db_aws_connector_id
     __args__['oracleDbAwsKeyId'] = oracle_db_aws_key_id
+    __args__['oracleDbAwsKeyPoolId'] = oracle_db_aws_key_pool_id
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:oci/getDbmulticloudOracleDbAwsKeys:getDbmulticloudOracleDbAwsKeys', __args__, opts=opts, typ=GetDbmulticloudOracleDbAwsKeysResult).value
@@ -175,6 +191,7 @@ def get_dbmulticloud_oracle_db_aws_keys(compartment_id: Optional[_builtins.str] 
         id=pulumi.get(__ret__, 'id'),
         oracle_db_aws_connector_id=pulumi.get(__ret__, 'oracle_db_aws_connector_id'),
         oracle_db_aws_key_id=pulumi.get(__ret__, 'oracle_db_aws_key_id'),
+        oracle_db_aws_key_pool_id=pulumi.get(__ret__, 'oracle_db_aws_key_pool_id'),
         oracle_db_aws_key_summary_collections=pulumi.get(__ret__, 'oracle_db_aws_key_summary_collections'),
         state=pulumi.get(__ret__, 'state'))
 def get_dbmulticloud_oracle_db_aws_keys_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -182,6 +199,7 @@ def get_dbmulticloud_oracle_db_aws_keys_output(compartment_id: pulumi.Input[Opti
                                                filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDbmulticloudOracleDbAwsKeysFilterArgs', 'GetDbmulticloudOracleDbAwsKeysFilterArgsDict', 'outputs.GetDbmulticloudOracleDbAwsKeysFilterResult']]]]] = None,
                                                oracle_db_aws_connector_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                oracle_db_aws_key_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                               oracle_db_aws_key_pool_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                                opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbmulticloudOracleDbAwsKeysResult]:
     """
@@ -199,6 +217,7 @@ def get_dbmulticloud_oracle_db_aws_keys_output(compartment_id: pulumi.Input[Opti
         display_name=oracle_db_aws_key_display_name,
         oracle_db_aws_connector_id=test_oracle_db_aws_connector["id"],
         oracle_db_aws_key_id=test_oracle_db_aws_key["id"],
+        oracle_db_aws_key_pool_id=test_oracle_db_aws_key_pool["id"],
         state=oracle_db_aws_key_state)
     ```
 
@@ -207,6 +226,7 @@ def get_dbmulticloud_oracle_db_aws_keys_output(compartment_id: pulumi.Input[Opti
     :param _builtins.str display_name: A filter to return Oracle DB AWS Key Resource that match the given display name.
     :param _builtins.str oracle_db_aws_connector_id: A filter to return Oracle DB AWS Identity Connector resources that match the specified [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Identity Connector resource.
     :param _builtins.str oracle_db_aws_key_id: A filter to return Oracle DB AWS Identity Connector Resource that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key resource.
+    :param _builtins.str oracle_db_aws_key_pool_id: A filter to return only resources that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
     """
     __args__ = dict()
@@ -215,6 +235,7 @@ def get_dbmulticloud_oracle_db_aws_keys_output(compartment_id: pulumi.Input[Opti
     __args__['filters'] = filters
     __args__['oracleDbAwsConnectorId'] = oracle_db_aws_connector_id
     __args__['oracleDbAwsKeyId'] = oracle_db_aws_key_id
+    __args__['oracleDbAwsKeyPoolId'] = oracle_db_aws_key_pool_id
     __args__['state'] = state
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:oci/getDbmulticloudOracleDbAwsKeys:getDbmulticloudOracleDbAwsKeys', __args__, opts=opts, typ=GetDbmulticloudOracleDbAwsKeysResult)
@@ -225,5 +246,6 @@ def get_dbmulticloud_oracle_db_aws_keys_output(compartment_id: pulumi.Input[Opti
         id=pulumi.get(__response__, 'id'),
         oracle_db_aws_connector_id=pulumi.get(__response__, 'oracle_db_aws_connector_id'),
         oracle_db_aws_key_id=pulumi.get(__response__, 'oracle_db_aws_key_id'),
+        oracle_db_aws_key_pool_id=pulumi.get(__response__, 'oracle_db_aws_key_pool_id'),
         oracle_db_aws_key_summary_collections=pulumi.get(__response__, 'oracle_db_aws_key_summary_collections'),
         state=pulumi.get(__response__, 'state')))

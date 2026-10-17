@@ -17,6 +17,66 @@ public final class DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs extend
     public static final DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs Empty = new DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs();
 
     /**
+     * Provide the key OCID of a registered AWS key.
+     * 
+     */
+    @Import(name="awsEncryptionKeyId")
+    private @Nullable Output<String> awsEncryptionKeyId;
+
+    /**
+     * @return Provide the key OCID of a registered AWS key.
+     * 
+     */
+    public Optional<Output<String>> awsEncryptionKeyId() {
+        return Optional.ofNullable(this.awsEncryptionKeyId);
+    }
+
+    /**
+     * Provide the key pool OCID of a registered AWS key.
+     * 
+     */
+    @Import(name="awsEncryptionKeyPoolId")
+    private @Nullable Output<String> awsEncryptionKeyPoolId;
+
+    /**
+     * @return Provide the key pool OCID of a registered AWS key.
+     * 
+     */
+    public Optional<Output<String>> awsEncryptionKeyPoolId() {
+        return Optional.ofNullable(this.awsEncryptionKeyPoolId);
+    }
+
+    /**
+     * Provide the key OCID of a registered Azure key.
+     * 
+     */
+    @Import(name="azureEncryptionKeyId")
+    private @Nullable Output<String> azureEncryptionKeyId;
+
+    /**
+     * @return Provide the key OCID of a registered Azure key.
+     * 
+     */
+    public Optional<Output<String>> azureEncryptionKeyId() {
+        return Optional.ofNullable(this.azureEncryptionKeyId);
+    }
+
+    /**
+     * Provide the key OCID of a registered GCP key.
+     * 
+     */
+    @Import(name="googleCloudProviderEncryptionKeyId")
+    private @Nullable Output<String> googleCloudProviderEncryptionKeyId;
+
+    /**
+     * @return Provide the key OCID of a registered GCP key.
+     * 
+     */
+    public Optional<Output<String>> googleCloudProviderEncryptionKeyId() {
+        return Optional.ofNullable(this.googleCloudProviderEncryptionKeyId);
+    }
+
+    /**
      * Provide the HSM password as you would in RDBMS for External HSM.
      * 
      */
@@ -49,6 +109,10 @@ public final class DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs extend
     private DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs() {}
 
     private DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs(DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs $) {
+        this.awsEncryptionKeyId = $.awsEncryptionKeyId;
+        this.awsEncryptionKeyPoolId = $.awsEncryptionKeyPoolId;
+        this.azureEncryptionKeyId = $.azureEncryptionKeyId;
+        this.googleCloudProviderEncryptionKeyId = $.googleCloudProviderEncryptionKeyId;
         this.hsmPassword = $.hsmPassword;
         this.providerType = $.providerType;
     }
@@ -69,6 +133,90 @@ public final class DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs extend
 
         public Builder(DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs defaults) {
             $ = new DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param awsEncryptionKeyId Provide the key OCID of a registered AWS key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder awsEncryptionKeyId(@Nullable Output<String> awsEncryptionKeyId) {
+            $.awsEncryptionKeyId = awsEncryptionKeyId;
+            return this;
+        }
+
+        /**
+         * @param awsEncryptionKeyId Provide the key OCID of a registered AWS key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder awsEncryptionKeyId(String awsEncryptionKeyId) {
+            return awsEncryptionKeyId(Output.of(awsEncryptionKeyId));
+        }
+
+        /**
+         * @param awsEncryptionKeyPoolId Provide the key pool OCID of a registered AWS key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder awsEncryptionKeyPoolId(@Nullable Output<String> awsEncryptionKeyPoolId) {
+            $.awsEncryptionKeyPoolId = awsEncryptionKeyPoolId;
+            return this;
+        }
+
+        /**
+         * @param awsEncryptionKeyPoolId Provide the key pool OCID of a registered AWS key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder awsEncryptionKeyPoolId(String awsEncryptionKeyPoolId) {
+            return awsEncryptionKeyPoolId(Output.of(awsEncryptionKeyPoolId));
+        }
+
+        /**
+         * @param azureEncryptionKeyId Provide the key OCID of a registered Azure key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder azureEncryptionKeyId(@Nullable Output<String> azureEncryptionKeyId) {
+            $.azureEncryptionKeyId = azureEncryptionKeyId;
+            return this;
+        }
+
+        /**
+         * @param azureEncryptionKeyId Provide the key OCID of a registered Azure key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder azureEncryptionKeyId(String azureEncryptionKeyId) {
+            return azureEncryptionKeyId(Output.of(azureEncryptionKeyId));
+        }
+
+        /**
+         * @param googleCloudProviderEncryptionKeyId Provide the key OCID of a registered GCP key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder googleCloudProviderEncryptionKeyId(@Nullable Output<String> googleCloudProviderEncryptionKeyId) {
+            $.googleCloudProviderEncryptionKeyId = googleCloudProviderEncryptionKeyId;
+            return this;
+        }
+
+        /**
+         * @param googleCloudProviderEncryptionKeyId Provide the key OCID of a registered GCP key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder googleCloudProviderEncryptionKeyId(String googleCloudProviderEncryptionKeyId) {
+            return googleCloudProviderEncryptionKeyId(Output.of(googleCloudProviderEncryptionKeyId));
         }
 
         /**

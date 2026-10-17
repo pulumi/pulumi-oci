@@ -47,6 +47,8 @@ __all__ = [
     'DbmulticloudMultiCloudResourceDiscoveryResource',
     'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetail',
     'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode',
+    'DbmulticloudOracleDbAwsKeyPoolReplicationMetadata',
+    'DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail',
     'DbmulticloudOracleDbAwsKeyReplicationMetadata',
     'DbmulticloudOracleDbAwsKeyReplicationMetadataReplicationDetail',
     'DbmulticloudOracleDbAzureConnectorArcAgentNode',
@@ -251,6 +253,13 @@ __all__ = [
     'GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemResult',
     'GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailResult',
     'GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeResult',
+    'GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataResult',
+    'GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailResult',
+    'GetDbmulticloudOracleDbAwsKeyPoolsFilterResult',
+    'GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionResult',
+    'GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemResult',
+    'GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataResult',
+    'GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailResult',
     'GetDbmulticloudOracleDbAwsKeyReplicationMetadataResult',
     'GetDbmulticloudOracleDbAwsKeyReplicationMetadataReplicationDetailResult',
     'GetDbmulticloudOracleDbAwsKeysFilterResult',
@@ -3018,6 +3027,120 @@ class DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNode(dict):
         Time when the AWS Identity Connector's status was checked [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-22T21:10:29.600Z'.
         """
         return pulumi.get(self, "time_last_checked")
+
+
+@pulumi.output_type
+class DbmulticloudOracleDbAwsKeyPoolReplicationMetadata(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "replicationDetails":
+            suggest = "replication_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbmulticloudOracleDbAwsKeyPoolReplicationMetadata. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbmulticloudOracleDbAwsKeyPoolReplicationMetadata.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbmulticloudOracleDbAwsKeyPoolReplicationMetadata.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 replication_details: Optional[Sequence['outputs.DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail']] = None):
+        """
+        :param Sequence['DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs'] replication_details: List of all regions and their respective resource ID.
+        """
+        if replication_details is not None:
+            pulumi.set(__self__, "replication_details", replication_details)
+
+    @_builtins.property
+    @pulumi.getter(name="replicationDetails")
+    def replication_details(self) -> Optional[Sequence['outputs.DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail']]:
+        """
+        List of all regions and their respective resource ID.
+        """
+        return pulumi.get(self, "replication_details")
+
+
+@pulumi.output_type
+class DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "replicationState":
+            suggest = "replication_state"
+        elif key == "targetRegion":
+            suggest = "target_region"
+        elif key == "timeCreated":
+            suggest = "time_created"
+        elif key == "timeUpdated":
+            suggest = "time_updated"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 replication_state: Optional[_builtins.str] = None,
+                 target_region: Optional[_builtins.str] = None,
+                 time_created: Optional[_builtins.str] = None,
+                 time_updated: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str replication_state: The lifecycle state of the Oracle DB Azure Vault resource.
+        :param _builtins.str target_region: The target region, where resource is replicated.
+        :param _builtins.str time_created: Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        :param _builtins.str time_updated: Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        """
+        if replication_state is not None:
+            pulumi.set(__self__, "replication_state", replication_state)
+        if target_region is not None:
+            pulumi.set(__self__, "target_region", target_region)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="replicationState")
+    def replication_state(self) -> Optional[_builtins.str]:
+        """
+        The lifecycle state of the Oracle DB Azure Vault resource.
+        """
+        return pulumi.get(self, "replication_state")
+
+    @_builtins.property
+    @pulumi.getter(name="targetRegion")
+    def target_region(self) -> Optional[_builtins.str]:
+        """
+        The target region, where resource is replicated.
+        """
+        return pulumi.get(self, "target_region")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[_builtins.str]:
+        """
+        Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> Optional[_builtins.str]:
+        """
+        Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        """
+        return pulumi.get(self, "time_updated")
 
 
 @pulumi.output_type
@@ -17001,6 +17124,333 @@ class GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSu
 
 
 @pulumi.output_type
+class GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataResult(dict):
+    def __init__(__self__, *,
+                 replication_details: Sequence['outputs.GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailResult']):
+        """
+        :param Sequence['GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs'] replication_details: List of all regions and their respective resource ID.
+        """
+        pulumi.set(__self__, "replication_details", replication_details)
+
+    @_builtins.property
+    @pulumi.getter(name="replicationDetails")
+    def replication_details(self) -> Sequence['outputs.GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailResult']:
+        """
+        List of all regions and their respective resource ID.
+        """
+        return pulumi.get(self, "replication_details")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailResult(dict):
+    def __init__(__self__, *,
+                 replication_state: _builtins.str,
+                 target_region: _builtins.str,
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str replication_state: The lifecycle state of the Oracle DB Azure Vault resource.
+        :param _builtins.str target_region: The target region, where resource is replicated.
+        :param _builtins.str time_created: Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        :param _builtins.str time_updated: Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        """
+        pulumi.set(__self__, "replication_state", replication_state)
+        pulumi.set(__self__, "target_region", target_region)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="replicationState")
+    def replication_state(self) -> _builtins.str:
+        """
+        The lifecycle state of the Oracle DB Azure Vault resource.
+        """
+        return pulumi.get(self, "replication_state")
+
+    @_builtins.property
+    @pulumi.getter(name="targetRegion")
+    def target_region(self) -> _builtins.str:
+        """
+        The target region, where resource is replicated.
+        """
+        return pulumi.get(self, "target_region")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAwsKeyPoolsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 is_multi_region_key_pool: _builtins.bool,
+                 is_reuse_allowed: _builtins.bool,
+                 lifecycle_state_details: _builtins.str,
+                 replication_metadatas: Sequence['outputs.GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataResult'],
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str compartment_id: The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return Oracle DB AWS Key Pool Resource that match the given display name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB AWS Key Pool resource.
+        :param _builtins.bool is_multi_region_key_pool: Indicates whether this key pool accepts only multi-region AWS KMS keys. When false, the key pool accepts only single-region AWS KMS keys.
+        :param _builtins.bool is_reuse_allowed: Indicates whether AWS KMS keys in this key pool can be reused.
+        :param _builtins.str lifecycle_state_details: Description of the current lifecycle state in more detail.
+        :param Sequence['GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArgs'] replication_metadatas: Replication metadata, it has information about replication and target region.
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        :param _builtins.str time_updated: Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_multi_region_key_pool", is_multi_region_key_pool)
+        pulumi.set(__self__, "is_reuse_allowed", is_reuse_allowed)
+        pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
+        pulumi.set(__self__, "replication_metadatas", replication_metadatas)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return Oracle DB AWS Key Pool Resource that match the given display name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB AWS Key Pool resource.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="isMultiRegionKeyPool")
+    def is_multi_region_key_pool(self) -> _builtins.bool:
+        """
+        Indicates whether this key pool accepts only multi-region AWS KMS keys. When false, the key pool accepts only single-region AWS KMS keys.
+        """
+        return pulumi.get(self, "is_multi_region_key_pool")
+
+    @_builtins.property
+    @pulumi.getter(name="isReuseAllowed")
+    def is_reuse_allowed(self) -> _builtins.bool:
+        """
+        Indicates whether AWS KMS keys in this key pool can be reused.
+        """
+        return pulumi.get(self, "is_reuse_allowed")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleStateDetails")
+    def lifecycle_state_details(self) -> _builtins.str:
+        """
+        Description of the current lifecycle state in more detail.
+        """
+        return pulumi.get(self, "lifecycle_state_details")
+
+    @_builtins.property
+    @pulumi.getter(name="replicationMetadatas")
+    def replication_metadatas(self) -> Sequence['outputs.GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataResult']:
+        """
+        Replication metadata, it has information about replication and target region.
+        """
+        return pulumi.get(self, "replication_metadatas")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataResult(dict):
+    def __init__(__self__, *,
+                 replication_details: Sequence['outputs.GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailResult']):
+        """
+        :param Sequence['GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArgs'] replication_details: List of all regions and their respective resource ID.
+        """
+        pulumi.set(__self__, "replication_details", replication_details)
+
+    @_builtins.property
+    @pulumi.getter(name="replicationDetails")
+    def replication_details(self) -> Sequence['outputs.GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailResult']:
+        """
+        List of all regions and their respective resource ID.
+        """
+        return pulumi.get(self, "replication_details")
+
+
+@pulumi.output_type
+class GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailResult(dict):
+    def __init__(__self__, *,
+                 replication_state: _builtins.str,
+                 target_region: _builtins.str,
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str):
+        """
+        :param _builtins.str replication_state: The lifecycle state of the Oracle DB Azure Vault resource.
+        :param _builtins.str target_region: The target region, where resource is replicated.
+        :param _builtins.str time_created: Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        :param _builtins.str time_updated: Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        """
+        pulumi.set(__self__, "replication_state", replication_state)
+        pulumi.set(__self__, "target_region", target_region)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="replicationState")
+    def replication_state(self) -> _builtins.str:
+        """
+        The lifecycle state of the Oracle DB Azure Vault resource.
+        """
+        return pulumi.get(self, "replication_state")
+
+    @_builtins.property
+    @pulumi.getter(name="targetRegion")
+    def target_region(self) -> _builtins.str:
+        """
+        The target region, where resource is replicated.
+        """
+        return pulumi.get(self, "target_region")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        """
+        return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
 class GetDbmulticloudOracleDbAwsKeyReplicationMetadataResult(dict):
     def __init__(__self__, *,
                  replication_details: Sequence['outputs.GetDbmulticloudOracleDbAwsKeyReplicationMetadataReplicationDetailResult']):
@@ -17120,10 +17570,13 @@ class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemResult(di
                  freeform_tags: Mapping[str, _builtins.str],
                  id: _builtins.str,
                  is_aws_key_enabled: _builtins.bool,
+                 is_oracle_aws_key_used: _builtins.bool,
                  lifecycle_state_details: _builtins.str,
                  location: _builtins.str,
+                 oracle_db_aws_key_pool_id: _builtins.str,
                  oracle_db_connector_id: _builtins.str,
                  properties: Mapping[str, _builtins.str],
+                 ref_count: _builtins.int,
                  replication_metadatas: Sequence['outputs.GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemReplicationMetadataResult'],
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
@@ -17140,10 +17593,13 @@ class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemResult(di
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB AWS Key Ring resource.
         :param _builtins.bool is_aws_key_enabled: The Oracle AWS Key resource is enabled or disabled at AWS.
+        :param _builtins.bool is_oracle_aws_key_used: Indicates whether the Oracle AWS Key resource is currently in use.
         :param _builtins.str lifecycle_state_details: Description of the current lifecycle state in more detail.
         :param _builtins.str location: AWS Key resource location.
+        :param _builtins.str oracle_db_aws_key_pool_id: A filter to return only resources that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
         :param _builtins.str oracle_db_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
         :param Mapping[str, _builtins.str] properties: AWS Key resource's properties.
+        :param _builtins.int ref_count: The number of active references to the Oracle AWS Key resource.
         :param Sequence['GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemReplicationMetadataArgs'] replication_metadatas: Replication metadata, it has information about replication and target region.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
         :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -17161,10 +17617,13 @@ class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemResult(di
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_aws_key_enabled", is_aws_key_enabled)
+        pulumi.set(__self__, "is_oracle_aws_key_used", is_oracle_aws_key_used)
         pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
         pulumi.set(__self__, "location", location)
+        pulumi.set(__self__, "oracle_db_aws_key_pool_id", oracle_db_aws_key_pool_id)
         pulumi.set(__self__, "oracle_db_connector_id", oracle_db_connector_id)
         pulumi.set(__self__, "properties", properties)
+        pulumi.set(__self__, "ref_count", ref_count)
         pulumi.set(__self__, "replication_metadatas", replication_metadatas)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -17243,6 +17702,14 @@ class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemResult(di
         return pulumi.get(self, "is_aws_key_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="isOracleAwsKeyUsed")
+    def is_oracle_aws_key_used(self) -> _builtins.bool:
+        """
+        Indicates whether the Oracle AWS Key resource is currently in use.
+        """
+        return pulumi.get(self, "is_oracle_aws_key_used")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleStateDetails")
     def lifecycle_state_details(self) -> _builtins.str:
         """
@@ -17259,6 +17726,14 @@ class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemResult(di
         return pulumi.get(self, "location")
 
     @_builtins.property
+    @pulumi.getter(name="oracleDbAwsKeyPoolId")
+    def oracle_db_aws_key_pool_id(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+        """
+        return pulumi.get(self, "oracle_db_aws_key_pool_id")
+
+    @_builtins.property
     @pulumi.getter(name="oracleDbConnectorId")
     def oracle_db_connector_id(self) -> _builtins.str:
         """
@@ -17273,6 +17748,14 @@ class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemResult(di
         AWS Key resource's properties.
         """
         return pulumi.get(self, "properties")
+
+    @_builtins.property
+    @pulumi.getter(name="refCount")
+    def ref_count(self) -> _builtins.int:
+        """
+        The number of active references to the Oracle AWS Key resource.
+        """
+        return pulumi.get(self, "ref_count")
 
     @_builtins.property
     @pulumi.getter(name="replicationMetadatas")

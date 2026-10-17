@@ -77,6 +77,10 @@ export interface GetDbmulticloudOracleDbAwsKeyResult {
      */
     readonly isAwsKeyEnabled: boolean;
     /**
+     * Indicates whether the Oracle AWS Key resource is currently in use.
+     */
+    readonly isOracleAwsKeyUsed: boolean;
+    /**
      * Description of the current lifecycle state in more detail.
      */
     readonly lifecycleStateDetails: string;
@@ -86,6 +90,10 @@ export interface GetDbmulticloudOracleDbAwsKeyResult {
     readonly location: string;
     readonly oracleDbAwsKeyId: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+     */
+    readonly oracleDbAwsKeyPoolId: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      */
     readonly oracleDbConnectorId: string;
@@ -93,6 +101,10 @@ export interface GetDbmulticloudOracleDbAwsKeyResult {
      * AWS Key resource's properties.
      */
     readonly properties: {[key: string]: string};
+    /**
+     * The number of active references to the Oracle AWS Key resource.
+     */
+    readonly refCount: number;
     /**
      * Replication metadata, it has information about replication and target region.
      */

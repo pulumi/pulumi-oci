@@ -244,6 +244,10 @@ export class Cluster extends pulumi.CustomResource {
      */
     declare public readonly outboundClusterConfig: pulumi.Output<outputs.Opensearch.ClusterOutboundClusterConfig>;
     /**
+     * (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+     */
+    declare public readonly remoteReindexTrustConfig: pulumi.Output<outputs.Opensearch.ClusterRemoteReindexTrustConfig>;
+    /**
      * (Updatable) The customer IP addresses of the endpoint in customer VCN
      */
     declare public readonly reverseConnectionEndpointCustomerIps: pulumi.Output<string[]>;
@@ -279,6 +283,10 @@ export class Cluster extends pulumi.CustomResource {
      * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
      */
     declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
+    /**
+     * (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
+     */
+    declare public readonly securityMasterUserAuthDetails: pulumi.Output<outputs.Opensearch.ClusterSecurityMasterUserAuthDetails>;
     /**
      * (Updatable) The name of the master user that are used to manage security config
      */
@@ -406,6 +414,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["opensearchFqdn"] = state?.opensearchFqdn;
             resourceInputs["opensearchPrivateIp"] = state?.opensearchPrivateIp;
             resourceInputs["outboundClusterConfig"] = state?.outboundClusterConfig;
+            resourceInputs["remoteReindexTrustConfig"] = state?.remoteReindexTrustConfig;
             resourceInputs["reverseConnectionEndpointCustomerIps"] = state?.reverseConnectionEndpointCustomerIps;
             resourceInputs["reverseConnectionEndpoints"] = state?.reverseConnectionEndpoints;
             resourceInputs["searchNodeCount"] = state?.searchNodeCount;
@@ -415,6 +424,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["searchNodeHostType"] = state?.searchNodeHostType;
             resourceInputs["searchNodeStorageGb"] = state?.searchNodeStorageGb;
             resourceInputs["securityAttributes"] = state?.securityAttributes;
+            resourceInputs["securityMasterUserAuthDetails"] = state?.securityMasterUserAuthDetails;
             resourceInputs["securityMasterUserName"] = state?.securityMasterUserName;
             resourceInputs["securityMasterUserPasswordHash"] = state?.securityMasterUserPasswordHash;
             resourceInputs["securityMode"] = state?.securityMode;
@@ -529,6 +539,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["opendashboardNodeHostOcpuCount"] = args?.opendashboardNodeHostOcpuCount;
             resourceInputs["opendashboardNodeHostShape"] = args?.opendashboardNodeHostShape;
             resourceInputs["outboundClusterConfig"] = args?.outboundClusterConfig;
+            resourceInputs["remoteReindexTrustConfig"] = args?.remoteReindexTrustConfig;
             resourceInputs["reverseConnectionEndpointCustomerIps"] = args?.reverseConnectionEndpointCustomerIps;
             resourceInputs["searchNodeCount"] = args?.searchNodeCount;
             resourceInputs["searchNodeHostMemoryGb"] = args?.searchNodeHostMemoryGb;
@@ -537,6 +548,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["searchNodeHostType"] = args?.searchNodeHostType;
             resourceInputs["searchNodeStorageGb"] = args?.searchNodeStorageGb;
             resourceInputs["securityAttributes"] = args?.securityAttributes;
+            resourceInputs["securityMasterUserAuthDetails"] = args?.securityMasterUserAuthDetails;
             resourceInputs["securityMasterUserName"] = args?.securityMasterUserName;
             resourceInputs["securityMasterUserPasswordHash"] = args?.securityMasterUserPasswordHash ? pulumi.secret(args.securityMasterUserPasswordHash) : undefined;
             resourceInputs["securityMode"] = args?.securityMode;
@@ -758,6 +770,10 @@ export interface ClusterState {
      */
     outboundClusterConfig?: pulumi.Input<inputs.Opensearch.ClusterOutboundClusterConfig | undefined>;
     /**
+     * (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+     */
+    remoteReindexTrustConfig?: pulumi.Input<inputs.Opensearch.ClusterRemoteReindexTrustConfig | undefined>;
+    /**
      * (Updatable) The customer IP addresses of the endpoint in customer VCN
      */
     reverseConnectionEndpointCustomerIps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
@@ -793,6 +809,10 @@ export interface ClusterState {
      * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
      */
     securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
+     */
+    securityMasterUserAuthDetails?: pulumi.Input<inputs.Opensearch.ClusterSecurityMasterUserAuthDetails | undefined>;
     /**
      * (Updatable) The name of the master user that are used to manage security config
      */
@@ -1023,6 +1043,10 @@ export interface ClusterArgs {
      */
     outboundClusterConfig?: pulumi.Input<inputs.Opensearch.ClusterOutboundClusterConfig | undefined>;
     /**
+     * (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+     */
+    remoteReindexTrustConfig?: pulumi.Input<inputs.Opensearch.ClusterRemoteReindexTrustConfig | undefined>;
+    /**
      * (Updatable) The customer IP addresses of the endpoint in customer VCN
      */
     reverseConnectionEndpointCustomerIps?: pulumi.Input<pulumi.Input<string>[] | undefined>;
@@ -1054,6 +1078,10 @@ export interface ClusterArgs {
      * (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
      */
     securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
+     */
+    securityMasterUserAuthDetails?: pulumi.Input<inputs.Opensearch.ClusterSecurityMasterUserAuthDetails | undefined>;
     /**
      * (Updatable) The name of the master user that are used to manage security config
      */

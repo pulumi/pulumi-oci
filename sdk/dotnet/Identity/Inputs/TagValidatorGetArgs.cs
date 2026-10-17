@@ -13,16 +13,16 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class TagValidatorGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Specifies the type of validation: a static value (no validation) or a list.
+        /// (Updatable) Specifies the type of validation. Use `ENUM` to restrict a tag to a list of allowed values, or `DEFAULT` for no value validation.
         /// </summary>
         [Input("validatorType", required: true)]
         public Input<string> ValidatorType { get; set; } = null!;
 
-        [Input("values", required: true)]
+        [Input("values")]
         private InputList<string>? _values;
 
         /// <summary>
-        /// (Updatable) The list of allowed values for a definedTag value.
+        /// (Updatable) The list of allowed values for a definedTag value. Omit this property when `ValidatorType` is `DEFAULT`; it is not used for default validation.
         /// </summary>
         public InputList<string> Values
         {

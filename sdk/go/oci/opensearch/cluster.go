@@ -130,6 +130,8 @@ type Cluster struct {
 	OpensearchPrivateIp pulumi.StringOutput `pulumi:"opensearchPrivateIp"`
 	// (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
 	OutboundClusterConfig ClusterOutboundClusterConfigOutput `pulumi:"outboundClusterConfig"`
+	// (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+	RemoteReindexTrustConfig ClusterRemoteReindexTrustConfigOutput `pulumi:"remoteReindexTrustConfig"`
 	// (Updatable) The customer IP addresses of the endpoint in customer VCN
 	ReverseConnectionEndpointCustomerIps pulumi.StringArrayOutput `pulumi:"reverseConnectionEndpointCustomerIps"`
 	// The list of reverse connection endpoints.
@@ -148,6 +150,8 @@ type Cluster struct {
 	SearchNodeStorageGb pulumi.IntOutput `pulumi:"searchNodeStorageGb"`
 	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
 	SecurityAttributes pulumi.StringMapOutput `pulumi:"securityAttributes"`
+	// (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
+	SecurityMasterUserAuthDetails ClusterSecurityMasterUserAuthDetailsOutput `pulumi:"securityMasterUserAuthDetails"`
 	// (Updatable) The name of the master user that are used to manage security config
 	SecurityMasterUserName pulumi.StringOutput `pulumi:"securityMasterUserName"`
 	// (Updatable) The password hash of the master user that are used to manage security config
@@ -375,6 +379,8 @@ type clusterState struct {
 	OpensearchPrivateIp *string `pulumi:"opensearchPrivateIp"`
 	// (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
 	OutboundClusterConfig *ClusterOutboundClusterConfig `pulumi:"outboundClusterConfig"`
+	// (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+	RemoteReindexTrustConfig *ClusterRemoteReindexTrustConfig `pulumi:"remoteReindexTrustConfig"`
 	// (Updatable) The customer IP addresses of the endpoint in customer VCN
 	ReverseConnectionEndpointCustomerIps []string `pulumi:"reverseConnectionEndpointCustomerIps"`
 	// The list of reverse connection endpoints.
@@ -393,6 +399,8 @@ type clusterState struct {
 	SearchNodeStorageGb *int `pulumi:"searchNodeStorageGb"`
 	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
+	SecurityMasterUserAuthDetails *ClusterSecurityMasterUserAuthDetails `pulumi:"securityMasterUserAuthDetails"`
 	// (Updatable) The name of the master user that are used to manage security config
 	SecurityMasterUserName *string `pulumi:"securityMasterUserName"`
 	// (Updatable) The password hash of the master user that are used to manage security config
@@ -523,6 +531,8 @@ type ClusterState struct {
 	OpensearchPrivateIp pulumi.StringPtrInput
 	// (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
 	OutboundClusterConfig ClusterOutboundClusterConfigPtrInput
+	// (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+	RemoteReindexTrustConfig ClusterRemoteReindexTrustConfigPtrInput
 	// (Updatable) The customer IP addresses of the endpoint in customer VCN
 	ReverseConnectionEndpointCustomerIps pulumi.StringArrayInput
 	// The list of reverse connection endpoints.
@@ -541,6 +551,8 @@ type ClusterState struct {
 	SearchNodeStorageGb pulumi.IntPtrInput
 	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
 	SecurityAttributes pulumi.StringMapInput
+	// (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
+	SecurityMasterUserAuthDetails ClusterSecurityMasterUserAuthDetailsPtrInput
 	// (Updatable) The name of the master user that are used to manage security config
 	SecurityMasterUserName pulumi.StringPtrInput
 	// (Updatable) The password hash of the master user that are used to manage security config
@@ -661,6 +673,8 @@ type clusterArgs struct {
 	OpendashboardNodeHostShape *string `pulumi:"opendashboardNodeHostShape"`
 	// (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
 	OutboundClusterConfig *ClusterOutboundClusterConfig `pulumi:"outboundClusterConfig"`
+	// (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+	RemoteReindexTrustConfig *ClusterRemoteReindexTrustConfig `pulumi:"remoteReindexTrustConfig"`
 	// (Updatable) The customer IP addresses of the endpoint in customer VCN
 	ReverseConnectionEndpointCustomerIps []string `pulumi:"reverseConnectionEndpointCustomerIps"`
 	// (Updatable) The number of search nodes configured for the cluster.
@@ -677,6 +691,8 @@ type clusterArgs struct {
 	SearchNodeStorageGb *int `pulumi:"searchNodeStorageGb"`
 	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	// (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
+	SecurityMasterUserAuthDetails *ClusterSecurityMasterUserAuthDetails `pulumi:"securityMasterUserAuthDetails"`
 	// (Updatable) The name of the master user that are used to manage security config
 	SecurityMasterUserName *string `pulumi:"securityMasterUserName"`
 	// (Updatable) The password hash of the master user that are used to manage security config
@@ -784,6 +800,8 @@ type ClusterArgs struct {
 	OpendashboardNodeHostShape pulumi.StringPtrInput
 	// (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
 	OutboundClusterConfig ClusterOutboundClusterConfigPtrInput
+	// (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+	RemoteReindexTrustConfig ClusterRemoteReindexTrustConfigPtrInput
 	// (Updatable) The customer IP addresses of the endpoint in customer VCN
 	ReverseConnectionEndpointCustomerIps pulumi.StringArrayInput
 	// (Updatable) The number of search nodes configured for the cluster.
@@ -800,6 +818,8 @@ type ClusterArgs struct {
 	SearchNodeStorageGb pulumi.IntPtrInput
 	// (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
 	SecurityAttributes pulumi.StringMapInput
+	// (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
+	SecurityMasterUserAuthDetails ClusterSecurityMasterUserAuthDetailsPtrInput
 	// (Updatable) The name of the master user that are used to manage security config
 	SecurityMasterUserName pulumi.StringPtrInput
 	// (Updatable) The password hash of the master user that are used to manage security config
@@ -1144,6 +1164,11 @@ func (o ClusterOutput) OutboundClusterConfig() ClusterOutboundClusterConfigOutpu
 	return o.ApplyT(func(v *Cluster) ClusterOutboundClusterConfigOutput { return v.OutboundClusterConfig }).(ClusterOutboundClusterConfigOutput)
 }
 
+// (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+func (o ClusterOutput) RemoteReindexTrustConfig() ClusterRemoteReindexTrustConfigOutput {
+	return o.ApplyT(func(v *Cluster) ClusterRemoteReindexTrustConfigOutput { return v.RemoteReindexTrustConfig }).(ClusterRemoteReindexTrustConfigOutput)
+}
+
 // (Updatable) The customer IP addresses of the endpoint in customer VCN
 func (o ClusterOutput) ReverseConnectionEndpointCustomerIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringArrayOutput { return v.ReverseConnectionEndpointCustomerIps }).(pulumi.StringArrayOutput)
@@ -1187,6 +1212,11 @@ func (o ClusterOutput) SearchNodeStorageGb() pulumi.IntOutput {
 // (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
 func (o ClusterOutput) SecurityAttributes() pulumi.StringMapOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringMapOutput { return v.SecurityAttributes }).(pulumi.StringMapOutput)
+}
+
+// (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
+func (o ClusterOutput) SecurityMasterUserAuthDetails() ClusterSecurityMasterUserAuthDetailsOutput {
+	return o.ApplyT(func(v *Cluster) ClusterSecurityMasterUserAuthDetailsOutput { return v.SecurityMasterUserAuthDetails }).(ClusterSecurityMasterUserAuthDetailsOutput)
 }
 
 // (Updatable) The name of the master user that are used to manage security config

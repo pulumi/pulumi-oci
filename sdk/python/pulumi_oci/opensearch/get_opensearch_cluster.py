@@ -27,7 +27,7 @@ class GetOpensearchClusterResult:
     """
     A collection of values returned by getOpensearchCluster.
     """
-    def __init__(__self__, availability_domains=None, certificate_configs=None, compartment_id=None, configure_outbound_cluster_trigger=None, coordinator_node_count=None, coordinator_node_host_memory_gb=None, coordinator_node_host_ocpu_count=None, coordinator_node_host_shape=None, coordinator_node_host_type=None, data_node_count=None, data_node_host_bare_metal_shape=None, data_node_host_memory_gb=None, data_node_host_ocpu_count=None, data_node_host_shape=None, data_node_host_type=None, data_node_storage_gb=None, defined_tags=None, display_name=None, fqdn=None, freeform_tags=None, id=None, inbound_cluster_ids=None, lifecycle_details=None, load_balancer_configs=None, maintenance_details=None, master_node_count=None, master_node_host_bare_metal_shape=None, master_node_host_memory_gb=None, master_node_host_ocpu_count=None, master_node_host_shape=None, master_node_host_type=None, ml_node_count=None, ml_node_host_memory_gb=None, ml_node_host_ocpu_count=None, ml_node_host_shape=None, ml_node_host_type=None, ml_node_storage_gb=None, nsg_id=None, opendashboard_fqdn=None, opendashboard_node_count=None, opendashboard_node_host_memory_gb=None, opendashboard_node_host_ocpu_count=None, opendashboard_node_host_shape=None, opendashboard_private_ip=None, opensearch_cluster_id=None, opensearch_fqdn=None, opensearch_private_ip=None, outbound_cluster_configs=None, reverse_connection_endpoint_customer_ips=None, reverse_connection_endpoints=None, search_node_count=None, search_node_host_memory_gb=None, search_node_host_ocpu_count=None, search_node_host_shape=None, search_node_host_type=None, search_node_storage_gb=None, security_attributes=None, security_master_user_name=None, security_master_user_password_hash=None, security_mode=None, security_saml_configs=None, software_version=None, state=None, subnet_compartment_id=None, subnet_id=None, system_tags=None, time_created=None, time_deleted=None, time_updated=None, total_storage_gb=None, upgrade_major_version_trigger=None, vcn_compartment_id=None, vcn_id=None):
+    def __init__(__self__, availability_domains=None, certificate_configs=None, compartment_id=None, configure_outbound_cluster_trigger=None, coordinator_node_count=None, coordinator_node_host_memory_gb=None, coordinator_node_host_ocpu_count=None, coordinator_node_host_shape=None, coordinator_node_host_type=None, data_node_count=None, data_node_host_bare_metal_shape=None, data_node_host_memory_gb=None, data_node_host_ocpu_count=None, data_node_host_shape=None, data_node_host_type=None, data_node_storage_gb=None, defined_tags=None, display_name=None, fqdn=None, freeform_tags=None, id=None, inbound_cluster_ids=None, lifecycle_details=None, load_balancer_configs=None, maintenance_details=None, master_node_count=None, master_node_host_bare_metal_shape=None, master_node_host_memory_gb=None, master_node_host_ocpu_count=None, master_node_host_shape=None, master_node_host_type=None, ml_node_count=None, ml_node_host_memory_gb=None, ml_node_host_ocpu_count=None, ml_node_host_shape=None, ml_node_host_type=None, ml_node_storage_gb=None, nsg_id=None, opendashboard_fqdn=None, opendashboard_node_count=None, opendashboard_node_host_memory_gb=None, opendashboard_node_host_ocpu_count=None, opendashboard_node_host_shape=None, opendashboard_private_ip=None, opensearch_cluster_id=None, opensearch_fqdn=None, opensearch_private_ip=None, outbound_cluster_configs=None, remote_reindex_trust_configs=None, reverse_connection_endpoint_customer_ips=None, reverse_connection_endpoints=None, search_node_count=None, search_node_host_memory_gb=None, search_node_host_ocpu_count=None, search_node_host_shape=None, search_node_host_type=None, search_node_storage_gb=None, security_attributes=None, security_master_user_auth_details=None, security_master_user_name=None, security_master_user_password_hash=None, security_mode=None, security_saml_configs=None, software_version=None, state=None, subnet_compartment_id=None, subnet_id=None, system_tags=None, time_created=None, time_deleted=None, time_updated=None, total_storage_gb=None, upgrade_major_version_trigger=None, vcn_compartment_id=None, vcn_id=None):
         if availability_domains and not isinstance(availability_domains, list):
             raise TypeError("Expected argument 'availability_domains' to be a list")
         pulumi.set(__self__, "availability_domains", availability_domains)
@@ -172,6 +172,9 @@ class GetOpensearchClusterResult:
         if outbound_cluster_configs and not isinstance(outbound_cluster_configs, list):
             raise TypeError("Expected argument 'outbound_cluster_configs' to be a list")
         pulumi.set(__self__, "outbound_cluster_configs", outbound_cluster_configs)
+        if remote_reindex_trust_configs and not isinstance(remote_reindex_trust_configs, list):
+            raise TypeError("Expected argument 'remote_reindex_trust_configs' to be a list")
+        pulumi.set(__self__, "remote_reindex_trust_configs", remote_reindex_trust_configs)
         if reverse_connection_endpoint_customer_ips and not isinstance(reverse_connection_endpoint_customer_ips, list):
             raise TypeError("Expected argument 'reverse_connection_endpoint_customer_ips' to be a list")
         pulumi.set(__self__, "reverse_connection_endpoint_customer_ips", reverse_connection_endpoint_customer_ips)
@@ -199,6 +202,9 @@ class GetOpensearchClusterResult:
         if security_attributes and not isinstance(security_attributes, dict):
             raise TypeError("Expected argument 'security_attributes' to be a dict")
         pulumi.set(__self__, "security_attributes", security_attributes)
+        if security_master_user_auth_details and not isinstance(security_master_user_auth_details, list):
+            raise TypeError("Expected argument 'security_master_user_auth_details' to be a list")
+        pulumi.set(__self__, "security_master_user_auth_details", security_master_user_auth_details)
         if security_master_user_name and not isinstance(security_master_user_name, str):
             raise TypeError("Expected argument 'security_master_user_name' to be a str")
         pulumi.set(__self__, "security_master_user_name", security_master_user_name)
@@ -627,6 +633,14 @@ class GetOpensearchClusterResult:
         return pulumi.get(self, "outbound_cluster_configs")
 
     @_builtins.property
+    @pulumi.getter(name="remoteReindexTrustConfigs")
+    def remote_reindex_trust_configs(self) -> Sequence['outputs.GetOpensearchClusterRemoteReindexTrustConfigResult']:
+        """
+        Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+        """
+        return pulumi.get(self, "remote_reindex_trust_configs")
+
+    @_builtins.property
     @pulumi.getter(name="reverseConnectionEndpointCustomerIps")
     def reverse_connection_endpoint_customer_ips(self) -> Sequence[_builtins.str]:
         """
@@ -697,6 +711,11 @@ class GetOpensearchClusterResult:
         Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         """
         return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
+    @pulumi.getter(name="securityMasterUserAuthDetails")
+    def security_master_user_auth_details(self) -> Sequence['outputs.GetOpensearchClusterSecurityMasterUserAuthDetailResult']:
+        return pulumi.get(self, "security_master_user_auth_details")
 
     @_builtins.property
     @pulumi.getter(name="securityMasterUserName")
@@ -875,6 +894,7 @@ class AwaitableGetOpensearchClusterResult(GetOpensearchClusterResult):
             opensearch_fqdn=self.opensearch_fqdn,
             opensearch_private_ip=self.opensearch_private_ip,
             outbound_cluster_configs=self.outbound_cluster_configs,
+            remote_reindex_trust_configs=self.remote_reindex_trust_configs,
             reverse_connection_endpoint_customer_ips=self.reverse_connection_endpoint_customer_ips,
             reverse_connection_endpoints=self.reverse_connection_endpoints,
             search_node_count=self.search_node_count,
@@ -884,6 +904,7 @@ class AwaitableGetOpensearchClusterResult(GetOpensearchClusterResult):
             search_node_host_type=self.search_node_host_type,
             search_node_storage_gb=self.search_node_storage_gb,
             security_attributes=self.security_attributes,
+            security_master_user_auth_details=self.security_master_user_auth_details,
             security_master_user_name=self.security_master_user_name,
             security_master_user_password_hash=self.security_master_user_password_hash,
             security_mode=self.security_mode,
@@ -984,6 +1005,7 @@ def get_opensearch_cluster(opensearch_cluster_id: Optional[_builtins.str] = None
         opensearch_fqdn=pulumi.get(__ret__, 'opensearch_fqdn'),
         opensearch_private_ip=pulumi.get(__ret__, 'opensearch_private_ip'),
         outbound_cluster_configs=pulumi.get(__ret__, 'outbound_cluster_configs'),
+        remote_reindex_trust_configs=pulumi.get(__ret__, 'remote_reindex_trust_configs'),
         reverse_connection_endpoint_customer_ips=pulumi.get(__ret__, 'reverse_connection_endpoint_customer_ips'),
         reverse_connection_endpoints=pulumi.get(__ret__, 'reverse_connection_endpoints'),
         search_node_count=pulumi.get(__ret__, 'search_node_count'),
@@ -993,6 +1015,7 @@ def get_opensearch_cluster(opensearch_cluster_id: Optional[_builtins.str] = None
         search_node_host_type=pulumi.get(__ret__, 'search_node_host_type'),
         search_node_storage_gb=pulumi.get(__ret__, 'search_node_storage_gb'),
         security_attributes=pulumi.get(__ret__, 'security_attributes'),
+        security_master_user_auth_details=pulumi.get(__ret__, 'security_master_user_auth_details'),
         security_master_user_name=pulumi.get(__ret__, 'security_master_user_name'),
         security_master_user_password_hash=pulumi.get(__ret__, 'security_master_user_password_hash'),
         security_mode=pulumi.get(__ret__, 'security_mode'),
@@ -1090,6 +1113,7 @@ def get_opensearch_cluster_output(opensearch_cluster_id: pulumi.Input[Optional[_
         opensearch_fqdn=pulumi.get(__response__, 'opensearch_fqdn'),
         opensearch_private_ip=pulumi.get(__response__, 'opensearch_private_ip'),
         outbound_cluster_configs=pulumi.get(__response__, 'outbound_cluster_configs'),
+        remote_reindex_trust_configs=pulumi.get(__response__, 'remote_reindex_trust_configs'),
         reverse_connection_endpoint_customer_ips=pulumi.get(__response__, 'reverse_connection_endpoint_customer_ips'),
         reverse_connection_endpoints=pulumi.get(__response__, 'reverse_connection_endpoints'),
         search_node_count=pulumi.get(__response__, 'search_node_count'),
@@ -1099,6 +1123,7 @@ def get_opensearch_cluster_output(opensearch_cluster_id: pulumi.Input[Optional[_
         search_node_host_type=pulumi.get(__response__, 'search_node_host_type'),
         search_node_storage_gb=pulumi.get(__response__, 'search_node_storage_gb'),
         security_attributes=pulumi.get(__response__, 'security_attributes'),
+        security_master_user_auth_details=pulumi.get(__response__, 'security_master_user_auth_details'),
         security_master_user_name=pulumi.get(__response__, 'security_master_user_name'),
         security_master_user_password_hash=pulumi.get(__response__, 'security_master_user_password_hash'),
         security_mode=pulumi.get(__response__, 'security_mode'),

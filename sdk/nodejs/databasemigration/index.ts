@@ -100,6 +100,26 @@ export const getMigration: typeof import("./getMigration").getMigration = null a
 export const getMigrationOutput: typeof import("./getMigration").getMigrationOutput = null as any;
 utilities.lazyLoad(exports, ["getMigration","getMigrationOutput"], () => require("./getMigration"));
 
+export { GetMigrationDataVerificationDetailArgs, GetMigrationDataVerificationDetailResult, GetMigrationDataVerificationDetailOutputArgs } from "./getMigrationDataVerificationDetail";
+export const getMigrationDataVerificationDetail: typeof import("./getMigrationDataVerificationDetail").getMigrationDataVerificationDetail = null as any;
+export const getMigrationDataVerificationDetailOutput: typeof import("./getMigrationDataVerificationDetail").getMigrationDataVerificationDetailOutput = null as any;
+utilities.lazyLoad(exports, ["getMigrationDataVerificationDetail","getMigrationDataVerificationDetailOutput"], () => require("./getMigrationDataVerificationDetail"));
+
+export { GetMigrationDataVerificationObjectStatusesArgs, GetMigrationDataVerificationObjectStatusesResult, GetMigrationDataVerificationObjectStatusesOutputArgs } from "./getMigrationDataVerificationObjectStatuses";
+export const getMigrationDataVerificationObjectStatuses: typeof import("./getMigrationDataVerificationObjectStatuses").getMigrationDataVerificationObjectStatuses = null as any;
+export const getMigrationDataVerificationObjectStatusesOutput: typeof import("./getMigrationDataVerificationObjectStatuses").getMigrationDataVerificationObjectStatusesOutput = null as any;
+utilities.lazyLoad(exports, ["getMigrationDataVerificationObjectStatuses","getMigrationDataVerificationObjectStatusesOutput"], () => require("./getMigrationDataVerificationObjectStatuses"));
+
+export { GetMigrationDataVerificationObjectTypeCountsArgs, GetMigrationDataVerificationObjectTypeCountsResult, GetMigrationDataVerificationObjectTypeCountsOutputArgs } from "./getMigrationDataVerificationObjectTypeCounts";
+export const getMigrationDataVerificationObjectTypeCounts: typeof import("./getMigrationDataVerificationObjectTypeCounts").getMigrationDataVerificationObjectTypeCounts = null as any;
+export const getMigrationDataVerificationObjectTypeCountsOutput: typeof import("./getMigrationDataVerificationObjectTypeCounts").getMigrationDataVerificationObjectTypeCountsOutput = null as any;
+utilities.lazyLoad(exports, ["getMigrationDataVerificationObjectTypeCounts","getMigrationDataVerificationObjectTypeCountsOutput"], () => require("./getMigrationDataVerificationObjectTypeCounts"));
+
+export { GetMigrationDataVerificationTableRowCountsArgs, GetMigrationDataVerificationTableRowCountsResult, GetMigrationDataVerificationTableRowCountsOutputArgs } from "./getMigrationDataVerificationTableRowCounts";
+export const getMigrationDataVerificationTableRowCounts: typeof import("./getMigrationDataVerificationTableRowCounts").getMigrationDataVerificationTableRowCounts = null as any;
+export const getMigrationDataVerificationTableRowCountsOutput: typeof import("./getMigrationDataVerificationTableRowCounts").getMigrationDataVerificationTableRowCountsOutput = null as any;
+utilities.lazyLoad(exports, ["getMigrationDataVerificationTableRowCounts","getMigrationDataVerificationTableRowCountsOutput"], () => require("./getMigrationDataVerificationTableRowCounts"));
+
 export { GetMigrationObjectTypesArgs, GetMigrationObjectTypesResult, GetMigrationObjectTypesOutputArgs } from "./getMigrationObjectTypes";
 export const getMigrationObjectTypes: typeof import("./getMigrationObjectTypes").getMigrationObjectTypes = null as any;
 export const getMigrationObjectTypesOutput: typeof import("./getMigrationObjectTypes").getMigrationObjectTypesOutput = null as any;

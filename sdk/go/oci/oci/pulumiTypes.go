@@ -4418,6 +4418,237 @@ func (o DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOut
 	}).(DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput)
 }
 
+type DbmulticloudOracleDbAwsKeyPoolReplicationMetadata struct {
+	// List of all regions and their respective resource ID.
+	ReplicationDetails []DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail `pulumi:"replicationDetails"`
+}
+
+// DbmulticloudOracleDbAwsKeyPoolReplicationMetadataInput is an input type that accepts DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArgs and DbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput values.
+// You can construct a concrete instance of `DbmulticloudOracleDbAwsKeyPoolReplicationMetadataInput` via:
+//
+//	DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArgs{...}
+type DbmulticloudOracleDbAwsKeyPoolReplicationMetadataInput interface {
+	pulumi.Input
+
+	ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput() DbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput
+	ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutputWithContext(context.Context) DbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput
+}
+
+type DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArgs struct {
+	// List of all regions and their respective resource ID.
+	ReplicationDetails DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayInput `pulumi:"replicationDetails"`
+}
+
+func (DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbmulticloudOracleDbAwsKeyPoolReplicationMetadata)(nil)).Elem()
+}
+
+func (i DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArgs) ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput() DbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput {
+	return i.ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutputWithContext(context.Background())
+}
+
+func (i DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArgs) ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutputWithContext(ctx context.Context) DbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput)
+}
+
+// DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayInput is an input type that accepts DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArray and DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput values.
+// You can construct a concrete instance of `DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayInput` via:
+//
+//	DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArray{ DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArgs{...} }
+type DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayInput interface {
+	pulumi.Input
+
+	ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput() DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput
+	ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutputWithContext(context.Context) DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput
+}
+
+type DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArray []DbmulticloudOracleDbAwsKeyPoolReplicationMetadataInput
+
+func (DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbmulticloudOracleDbAwsKeyPoolReplicationMetadata)(nil)).Elem()
+}
+
+func (i DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArray) ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput() DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput {
+	return i.ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArray) ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutputWithContext(ctx context.Context) DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput)
+}
+
+type DbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput struct{ *pulumi.OutputState }
+
+func (DbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbmulticloudOracleDbAwsKeyPoolReplicationMetadata)(nil)).Elem()
+}
+
+func (o DbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput) ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput() DbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput {
+	return o
+}
+
+func (o DbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput) ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutputWithContext(ctx context.Context) DbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput {
+	return o
+}
+
+// List of all regions and their respective resource ID.
+func (o DbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput) ReplicationDetails() DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput {
+	return o.ApplyT(func(v DbmulticloudOracleDbAwsKeyPoolReplicationMetadata) []DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail {
+		return v.ReplicationDetails
+	}).(DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput)
+}
+
+type DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbmulticloudOracleDbAwsKeyPoolReplicationMetadata)(nil)).Elem()
+}
+
+func (o DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput) ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput() DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput {
+	return o
+}
+
+func (o DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput) ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutputWithContext(ctx context.Context) DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput {
+	return o
+}
+
+func (o DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput) Index(i pulumi.IntInput) DbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DbmulticloudOracleDbAwsKeyPoolReplicationMetadata {
+		return vs[0].([]DbmulticloudOracleDbAwsKeyPoolReplicationMetadata)[vs[1].(int)]
+	}).(DbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput)
+}
+
+type DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail struct {
+	// The lifecycle state of the Oracle DB Azure Vault resource.
+	ReplicationState *string `pulumi:"replicationState"`
+	// The target region, where resource is replicated.
+	TargetRegion *string `pulumi:"targetRegion"`
+	// Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+	TimeUpdated *string `pulumi:"timeUpdated"`
+}
+
+// DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailInput is an input type that accepts DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs and DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput values.
+// You can construct a concrete instance of `DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailInput` via:
+//
+//	DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs{...}
+type DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailInput interface {
+	pulumi.Input
+
+	ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput() DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput
+	ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutputWithContext(context.Context) DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput
+}
+
+type DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs struct {
+	// The lifecycle state of the Oracle DB Azure Vault resource.
+	ReplicationState pulumi.StringPtrInput `pulumi:"replicationState"`
+	// The target region, where resource is replicated.
+	TargetRegion pulumi.StringPtrInput `pulumi:"targetRegion"`
+	// Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
+}
+
+func (DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail)(nil)).Elem()
+}
+
+func (i DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs) ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput() DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput {
+	return i.ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutputWithContext(context.Background())
+}
+
+func (i DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs) ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutputWithContext(ctx context.Context) DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput)
+}
+
+// DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayInput is an input type that accepts DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArray and DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput values.
+// You can construct a concrete instance of `DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayInput` via:
+//
+//	DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArray{ DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs{...} }
+type DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayInput interface {
+	pulumi.Input
+
+	ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput() DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput
+	ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutputWithContext(context.Context) DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput
+}
+
+type DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArray []DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailInput
+
+func (DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail)(nil)).Elem()
+}
+
+func (i DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArray) ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput() DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput {
+	return i.ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArray) ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutputWithContext(ctx context.Context) DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput)
+}
+
+type DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput struct{ *pulumi.OutputState }
+
+func (DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail)(nil)).Elem()
+}
+
+func (o DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput) ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput() DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput {
+	return o
+}
+
+func (o DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput) ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutputWithContext(ctx context.Context) DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput {
+	return o
+}
+
+// The lifecycle state of the Oracle DB Azure Vault resource.
+func (o DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput) ReplicationState() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail) *string {
+		return v.ReplicationState
+	}).(pulumi.StringPtrOutput)
+}
+
+// The target region, where resource is replicated.
+func (o DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput) TargetRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail) *string {
+		return v.TargetRegion
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+func (o DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail) *string {
+		return v.TimeCreated
+	}).(pulumi.StringPtrOutput)
+}
+
+// Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+func (o DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput) TimeUpdated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail) *string {
+		return v.TimeUpdated
+	}).(pulumi.StringPtrOutput)
+}
+
+type DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail)(nil)).Elem()
+}
+
+func (o DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput) ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput() DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput {
+	return o
+}
+
+func (o DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput) ToDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutputWithContext(ctx context.Context) DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput {
+	return o
+}
+
+func (o DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput) Index(i pulumi.IntInput) DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail {
+		return vs[0].([]DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail)[vs[1].(int)]
+	}).(DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput)
+}
+
 type DbmulticloudOracleDbAwsKeyReplicationMetadata struct {
 	// List of all regions and their respective resource ID.
 	ReplicationDetails []DbmulticloudOracleDbAwsKeyReplicationMetadataReplicationDetail `pulumi:"replicationDetails"`
@@ -33388,6 +33619,897 @@ func (o GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnector
 	}).(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput)
 }
 
+type GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadata struct {
+	// List of all regions and their respective resource ID.
+	ReplicationDetails []GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail `pulumi:"replicationDetails"`
+}
+
+// GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataInput is an input type that accepts GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArgs and GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataInput` via:
+//
+//	GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArgs{...}
+type GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput() GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput
+	ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArgs struct {
+	// List of all regions and their respective resource ID.
+	ReplicationDetails GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayInput `pulumi:"replicationDetails"`
+}
+
+func (GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadata)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArgs) ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput() GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput {
+	return i.ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArgs) ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput)
+}
+
+// GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayInput is an input type that accepts GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArray and GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArray{ GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArgs{...} }
+type GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput() GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput
+	ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArray []GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataInput
+
+func (GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadata)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArray) ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput() GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArray) ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadata)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput) ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput() GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput) ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput {
+	return o
+}
+
+// List of all regions and their respective resource ID.
+func (o GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput) ReplicationDetails() GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadata) []GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail {
+		return v.ReplicationDetails
+	}).(GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadata)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput) ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput() GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput) ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadata {
+		return vs[0].([]GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadata)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail struct {
+	// The lifecycle state of the Oracle DB Azure Vault resource.
+	ReplicationState string `pulumi:"replicationState"`
+	// The target region, where resource is replicated.
+	TargetRegion string `pulumi:"targetRegion"`
+	// Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailInput is an input type that accepts GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs and GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailInput` via:
+//
+//	GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs{...}
+type GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput() GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput
+	ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs struct {
+	// The lifecycle state of the Oracle DB Azure Vault resource.
+	ReplicationState pulumi.StringInput `pulumi:"replicationState"`
+	// The target region, where resource is replicated.
+	TargetRegion pulumi.StringInput `pulumi:"targetRegion"`
+	// Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs) ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput() GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput {
+	return i.ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs) ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput)
+}
+
+// GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayInput is an input type that accepts GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArray and GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArray{ GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs{...} }
+type GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput() GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput
+	ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArray []GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailInput
+
+func (GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArray) ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput() GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArray) ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput) ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput() GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput) ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput {
+	return o
+}
+
+// The lifecycle state of the Oracle DB Azure Vault resource.
+func (o GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput) ReplicationState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail) string {
+		return v.ReplicationState
+	}).(pulumi.StringOutput)
+}
+
+// The target region, where resource is replicated.
+func (o GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput) TargetRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail) string {
+		return v.TargetRegion
+	}).(pulumi.StringOutput)
+}
+
+// Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+func (o GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+func (o GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput) ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput() GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput) ToGetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail {
+		return vs[0].([]GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDbmulticloudOracleDbAwsKeyPoolsFilterInput is an input type that accepts GetDbmulticloudOracleDbAwsKeyPoolsFilterArgs and GetDbmulticloudOracleDbAwsKeyPoolsFilterOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsKeyPoolsFilterInput` via:
+//
+//	GetDbmulticloudOracleDbAwsKeyPoolsFilterArgs{...}
+type GetDbmulticloudOracleDbAwsKeyPoolsFilterInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsKeyPoolsFilterOutput() GetDbmulticloudOracleDbAwsKeyPoolsFilterOutput
+	ToGetDbmulticloudOracleDbAwsKeyPoolsFilterOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsKeyPoolsFilterOutput
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDbmulticloudOracleDbAwsKeyPoolsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolsFilter)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolsFilterArgs) ToGetDbmulticloudOracleDbAwsKeyPoolsFilterOutput() GetDbmulticloudOracleDbAwsKeyPoolsFilterOutput {
+	return i.ToGetDbmulticloudOracleDbAwsKeyPoolsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolsFilterArgs) ToGetDbmulticloudOracleDbAwsKeyPoolsFilterOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsKeyPoolsFilterOutput)
+}
+
+// GetDbmulticloudOracleDbAwsKeyPoolsFilterArrayInput is an input type that accepts GetDbmulticloudOracleDbAwsKeyPoolsFilterArray and GetDbmulticloudOracleDbAwsKeyPoolsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsKeyPoolsFilterArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAwsKeyPoolsFilterArray{ GetDbmulticloudOracleDbAwsKeyPoolsFilterArgs{...} }
+type GetDbmulticloudOracleDbAwsKeyPoolsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsKeyPoolsFilterArrayOutput() GetDbmulticloudOracleDbAwsKeyPoolsFilterArrayOutput
+	ToGetDbmulticloudOracleDbAwsKeyPoolsFilterArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsKeyPoolsFilterArrayOutput
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsFilterArray []GetDbmulticloudOracleDbAwsKeyPoolsFilterInput
+
+func (GetDbmulticloudOracleDbAwsKeyPoolsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsKeyPoolsFilter)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolsFilterArray) ToGetDbmulticloudOracleDbAwsKeyPoolsFilterArrayOutput() GetDbmulticloudOracleDbAwsKeyPoolsFilterArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAwsKeyPoolsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolsFilterArray) ToGetDbmulticloudOracleDbAwsKeyPoolsFilterArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsKeyPoolsFilterArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsKeyPoolsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolsFilter)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsFilterOutput) ToGetDbmulticloudOracleDbAwsKeyPoolsFilterOutput() GetDbmulticloudOracleDbAwsKeyPoolsFilterOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsFilterOutput) ToGetDbmulticloudOracleDbAwsKeyPoolsFilterOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolsFilterOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsKeyPoolsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsKeyPoolsFilter)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsFilterArrayOutput) ToGetDbmulticloudOracleDbAwsKeyPoolsFilterArrayOutput() GetDbmulticloudOracleDbAwsKeyPoolsFilterArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsFilterArrayOutput) ToGetDbmulticloudOracleDbAwsKeyPoolsFilterArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolsFilterArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsFilterArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAwsKeyPoolsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAwsKeyPoolsFilter {
+		return vs[0].([]GetDbmulticloudOracleDbAwsKeyPoolsFilter)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAwsKeyPoolsFilterOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollection struct {
+	Items []GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem `pulumi:"items"`
+}
+
+// GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionInput is an input type that accepts GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArgs and GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionInput` via:
+//
+//	GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArgs{...}
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionOutput
+	ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionOutput
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArgs struct {
+	Items GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollection)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArgs) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionOutput {
+	return i.ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArgs) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionOutput)
+}
+
+// GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayInput is an input type that accepts GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArray and GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArray{ GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArgs{...} }
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayOutput
+	ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayOutput
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArray []GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionInput
+
+func (GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollection)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArray) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArray) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollection)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionOutput) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionOutput) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionOutput) Items() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollection) []GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem {
+		return v.Items
+	}).(GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollection)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayOutput) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayOutput) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollection {
+		return vs[0].([]GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollection)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem struct {
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return Oracle DB AWS Key Pool Resource that match the given display name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB AWS Key Pool resource.
+	Id string `pulumi:"id"`
+	// Indicates whether this key pool accepts only multi-region AWS KMS keys. When false, the key pool accepts only single-region AWS KMS keys.
+	IsMultiRegionKeyPool bool `pulumi:"isMultiRegionKeyPool"`
+	// Indicates whether AWS KMS keys in this key pool can be reused.
+	IsReuseAllowed bool `pulumi:"isReuseAllowed"`
+	// Description of the current lifecycle state in more detail.
+	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
+	// Replication metadata, it has information about replication and target region.
+	ReplicationMetadatas []GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadata `pulumi:"replicationMetadatas"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemInput is an input type that accepts GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArgs and GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemInput` via:
+//
+//	GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArgs{...}
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput
+	ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArgs struct {
+	// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return Oracle DB AWS Key Pool Resource that match the given display name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB AWS Key Pool resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates whether this key pool accepts only multi-region AWS KMS keys. When false, the key pool accepts only single-region AWS KMS keys.
+	IsMultiRegionKeyPool pulumi.BoolInput `pulumi:"isMultiRegionKeyPool"`
+	// Indicates whether AWS KMS keys in this key pool can be reused.
+	IsReuseAllowed pulumi.BoolInput `pulumi:"isReuseAllowed"`
+	// Description of the current lifecycle state in more detail.
+	LifecycleStateDetails pulumi.StringInput `pulumi:"lifecycleStateDetails"`
+	// Replication metadata, it has information about replication and target region.
+	ReplicationMetadatas GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayInput `pulumi:"replicationMetadatas"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArgs) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput {
+	return i.ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArgs) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput)
+}
+
+// GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayInput is an input type that accepts GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArray and GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArray{ GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArgs{...} }
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayOutput
+	ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayOutput
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArray []GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemInput
+
+func (GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArray) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArray) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput {
+	return o
+}
+
+// The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem) string {
+		return v.CompartmentId
+	}).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem) map[string]string {
+		return v.DefinedTags
+	}).(pulumi.StringMapOutput)
+}
+
+// A filter to return Oracle DB AWS Key Pool Resource that match the given display name.
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem) string {
+		return v.DisplayName
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem) map[string]string {
+		return v.FreeformTags
+	}).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB AWS Key Pool resource.
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates whether this key pool accepts only multi-region AWS KMS keys. When false, the key pool accepts only single-region AWS KMS keys.
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput) IsMultiRegionKeyPool() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem) bool {
+		return v.IsMultiRegionKeyPool
+	}).(pulumi.BoolOutput)
+}
+
+// Indicates whether AWS KMS keys in this key pool can be reused.
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput) IsReuseAllowed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem) bool {
+		return v.IsReuseAllowed
+	}).(pulumi.BoolOutput)
+}
+
+// Description of the current lifecycle state in more detail.
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput) LifecycleStateDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem) string {
+		return v.LifecycleStateDetails
+	}).(pulumi.StringOutput)
+}
+
+// Replication metadata, it has information about replication and target region.
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput) ReplicationMetadatas() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem) []GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadata {
+		return v.ReplicationMetadatas
+	}).(GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem) map[string]string {
+		return v.SystemTags
+	}).(pulumi.StringMapOutput)
+}
+
+// Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayOutput) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayOutput) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem {
+		return vs[0].([]GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadata struct {
+	// List of all regions and their respective resource ID.
+	ReplicationDetails []GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetail `pulumi:"replicationDetails"`
+}
+
+// GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataInput is an input type that accepts GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArgs and GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataInput` via:
+//
+//	GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArgs{...}
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataOutput
+	ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataOutput
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArgs struct {
+	// List of all regions and their respective resource ID.
+	ReplicationDetails GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayInput `pulumi:"replicationDetails"`
+}
+
+func (GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadata)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArgs) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataOutput {
+	return i.ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArgs) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataOutput)
+}
+
+// GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayInput is an input type that accepts GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArray and GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArray{ GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArgs{...} }
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayOutput
+	ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayOutput
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArray []GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataInput
+
+func (GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadata)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArray) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArray) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadata)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataOutput) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataOutput) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataOutput {
+	return o
+}
+
+// List of all regions and their respective resource ID.
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataOutput) ReplicationDetails() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadata) []GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetail {
+		return v.ReplicationDetails
+	}).(GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadata)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayOutput) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayOutput) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadata {
+		return vs[0].([]GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadata)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetail struct {
+	// The lifecycle state of the Oracle DB Azure Vault resource.
+	ReplicationState string `pulumi:"replicationState"`
+	// The target region, where resource is replicated.
+	TargetRegion string `pulumi:"targetRegion"`
+	// Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+	TimeUpdated string `pulumi:"timeUpdated"`
+}
+
+// GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailInput is an input type that accepts GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArgs and GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailInput` via:
+//
+//	GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArgs{...}
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutput
+	ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutput
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArgs struct {
+	// The lifecycle state of the Oracle DB Azure Vault resource.
+	ReplicationState pulumi.StringInput `pulumi:"replicationState"`
+	// The target region, where resource is replicated.
+	TargetRegion pulumi.StringInput `pulumi:"targetRegion"`
+	// Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+}
+
+func (GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetail)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArgs) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutput {
+	return i.ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArgs) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutput)
+}
+
+// GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayInput is an input type that accepts GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArray and GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayOutput values.
+// You can construct a concrete instance of `GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayInput` via:
+//
+//	GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArray{ GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArgs{...} }
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayOutput
+	ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayOutputWithContext(context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayOutput
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArray []GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailInput
+
+func (GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetail)(nil)).Elem()
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArray) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayOutput {
+	return i.ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArray) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetail)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutput) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutput) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutput {
+	return o
+}
+
+// The lifecycle state of the Oracle DB Azure Vault resource.
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutput) ReplicationState() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetail) string {
+		return v.ReplicationState
+	}).(pulumi.StringOutput)
+}
+
+// The target region, where resource is replicated.
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutput) TargetRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetail) string {
+		return v.TargetRegion
+	}).(pulumi.StringOutput)
+}
+
+// Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetail) string {
+		return v.TimeCreated
+	}).(pulumi.StringOutput)
+}
+
+// Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetail) string {
+		return v.TimeUpdated
+	}).(pulumi.StringOutput)
+}
+
+type GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetail)(nil)).Elem()
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayOutput) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayOutput() GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayOutput) ToGetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayOutputWithContext(ctx context.Context) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayOutput {
+	return o
+}
+
+func (o GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayOutput) Index(i pulumi.IntInput) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetail {
+		return vs[0].([]GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetail)[vs[1].(int)]
+	}).(GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutput)
+}
+
 type GetDbmulticloudOracleDbAwsKeyReplicationMetadata struct {
 	// List of all regions and their respective resource ID.
 	ReplicationDetails []GetDbmulticloudOracleDbAwsKeyReplicationMetadataReplicationDetail `pulumi:"replicationDetails"`
@@ -33835,14 +34957,20 @@ type GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem struct {
 	Id string `pulumi:"id"`
 	// The Oracle AWS Key resource is enabled or disabled at AWS.
 	IsAwsKeyEnabled bool `pulumi:"isAwsKeyEnabled"`
+	// Indicates whether the Oracle AWS Key resource is currently in use.
+	IsOracleAwsKeyUsed bool `pulumi:"isOracleAwsKeyUsed"`
 	// Description of the current lifecycle state in more detail.
 	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
 	// AWS Key resource location.
 	Location string `pulumi:"location"`
+	// A filter to return only resources that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+	OracleDbAwsKeyPoolId string `pulumi:"oracleDbAwsKeyPoolId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
 	OracleDbConnectorId string `pulumi:"oracleDbConnectorId"`
 	// AWS Key resource's properties.
 	Properties map[string]string `pulumi:"properties"`
+	// The number of active references to the Oracle AWS Key resource.
+	RefCount int `pulumi:"refCount"`
 	// Replication metadata, it has information about replication and target region.
 	ReplicationMetadatas []GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemReplicationMetadata `pulumi:"replicationMetadatas"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
@@ -33888,14 +35016,20 @@ type GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemArgs struc
 	Id pulumi.StringInput `pulumi:"id"`
 	// The Oracle AWS Key resource is enabled or disabled at AWS.
 	IsAwsKeyEnabled pulumi.BoolInput `pulumi:"isAwsKeyEnabled"`
+	// Indicates whether the Oracle AWS Key resource is currently in use.
+	IsOracleAwsKeyUsed pulumi.BoolInput `pulumi:"isOracleAwsKeyUsed"`
 	// Description of the current lifecycle state in more detail.
 	LifecycleStateDetails pulumi.StringInput `pulumi:"lifecycleStateDetails"`
 	// AWS Key resource location.
 	Location pulumi.StringInput `pulumi:"location"`
+	// A filter to return only resources that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+	OracleDbAwsKeyPoolId pulumi.StringInput `pulumi:"oracleDbAwsKeyPoolId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
 	OracleDbConnectorId pulumi.StringInput `pulumi:"oracleDbConnectorId"`
 	// AWS Key resource's properties.
 	Properties pulumi.StringMapInput `pulumi:"properties"`
+	// The number of active references to the Oracle AWS Key resource.
+	RefCount pulumi.IntInput `pulumi:"refCount"`
 	// Replication metadata, it has information about replication and target region.
 	ReplicationMetadatas GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemReplicationMetadataArrayInput `pulumi:"replicationMetadatas"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
@@ -34017,6 +35151,13 @@ func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput)
 	}).(pulumi.BoolOutput)
 }
 
+// Indicates whether the Oracle AWS Key resource is currently in use.
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) IsOracleAwsKeyUsed() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem) bool {
+		return v.IsOracleAwsKeyUsed
+	}).(pulumi.BoolOutput)
+}
+
 // Description of the current lifecycle state in more detail.
 func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) LifecycleStateDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem) string {
@@ -34027,6 +35168,13 @@ func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput)
 // AWS Key resource location.
 func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) Location() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem) string { return v.Location }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) OracleDbAwsKeyPoolId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem) string {
+		return v.OracleDbAwsKeyPoolId
+	}).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
@@ -34041,6 +35189,11 @@ func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput)
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem) map[string]string {
 		return v.Properties
 	}).(pulumi.StringMapOutput)
+}
+
+// The number of active references to the Oracle AWS Key resource.
+func (o GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemOutput) RefCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem) int { return v.RefCount }).(pulumi.IntOutput)
 }
 
 // Replication metadata, it has information about replication and target region.
@@ -67153,1295 +68306,6 @@ func (o GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput
 	}).(GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput)
 }
 
-type GetResourceAnalyticsResourceAnalyticsInstancesFilter struct {
-	Name   string   `pulumi:"name"`
-	Regex  *bool    `pulumi:"regex"`
-	Values []string `pulumi:"values"`
-}
-
-// GetResourceAnalyticsResourceAnalyticsInstancesFilterInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs and GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesFilterInput` via:
-//
-//	GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs{...}
-type GetResourceAnalyticsResourceAnalyticsInstancesFilterInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsResourceAnalyticsInstancesFilterOutput() GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput
-	ToGetResourceAnalyticsResourceAnalyticsInstancesFilterOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs struct {
-	Name   pulumi.StringInput      `pulumi:"name"`
-	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
-	Values pulumi.StringArrayInput `pulumi:"values"`
-}
-
-func (GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesFilter)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterOutput() GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput {
-	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesFilterOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput)
-}
-
-// GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesFilterArray and GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayInput` via:
-//
-//	GetResourceAnalyticsResourceAnalyticsInstancesFilterArray{ GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs{...} }
-type GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput
-	ToGetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstancesFilterArray []GetResourceAnalyticsResourceAnalyticsInstancesFilterInput
-
-func (GetResourceAnalyticsResourceAnalyticsInstancesFilterArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesFilter)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsResourceAnalyticsInstancesFilterArray) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput {
-	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsResourceAnalyticsInstancesFilterArray) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput)
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesFilter)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterOutput() GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesFilter) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput) Regex() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput) Values() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesFilter)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsResourceAnalyticsInstancesFilter {
-		return vs[0].([]GetResourceAnalyticsResourceAnalyticsInstancesFilter)[vs[1].(int)]
-	}).(GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput)
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection struct {
-	Items []GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem `pulumi:"items"`
-}
-
-// GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs and GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionInput` via:
-//
-//	GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs{...}
-type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput
-	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs struct {
-	Items GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayInput `pulumi:"items"`
-}
-
-func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput {
-	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput)
-}
-
-// GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArray and GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayInput` via:
-//
-//	GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArray{ GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs{...} }
-type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput
-	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArray []GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionInput
-
-func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArray) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput {
-	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArray) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput)
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput) Items() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection) []GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem {
-		return v.Items
-	}).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput)
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection {
-		return vs[0].([]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollection)[vs[1].(int)]
-	}).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput)
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem struct {
-	AdwAdminPasswords []GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword `pulumi:"adwAdminPasswords"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the created ADW instance.
-	AdwId string `pulumi:"adwId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
-	ComputeCount  int    `pulumi:"computeCount"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]string `pulumi:"definedTags"`
-	// A description of the ResourceAnalyticsInstance instance.
-	Description string `pulumi:"description"`
-	// A filter to return only resources that match the given display name exactly.
-	DisplayName string `pulumi:"displayName"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
-	Id                  string `pulumi:"id"`
-	IsMutualTlsRequired bool   `pulumi:"isMutualTlsRequired"`
-	LicenseModel        string `pulumi:"licenseModel"`
-	// A message that describes the current state of the ResourceAnalyticsInstance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
-	LifecycleDetails string   `pulumi:"lifecycleDetails"`
-	NsgIds           []string `pulumi:"nsgIds"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OAC enabled for the ResourceAnalyticsInstance.
-	OacId string `pulumi:"oacId"`
-	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
-	State    string `pulumi:"state"`
-	SubnetId string `pulumi:"subnetId"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]string `pulumi:"systemTags"`
-	// The date and time the ResourceAnalyticsInstance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time the ResourceAnalyticsInstance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
-}
-
-// GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs and GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemInput` via:
-//
-//	GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs{...}
-type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput
-	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs struct {
-	AdwAdminPasswords GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayInput `pulumi:"adwAdminPasswords"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the created ADW instance.
-	AdwId pulumi.StringInput `pulumi:"adwId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	ComputeCount  pulumi.IntInput    `pulumi:"computeCount"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
-	// A description of the ResourceAnalyticsInstance instance.
-	Description pulumi.StringInput `pulumi:"description"`
-	// A filter to return only resources that match the given display name exactly.
-	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
-	Id                  pulumi.StringInput `pulumi:"id"`
-	IsMutualTlsRequired pulumi.BoolInput   `pulumi:"isMutualTlsRequired"`
-	LicenseModel        pulumi.StringInput `pulumi:"licenseModel"`
-	// A message that describes the current state of the ResourceAnalyticsInstance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
-	LifecycleDetails pulumi.StringInput      `pulumi:"lifecycleDetails"`
-	NsgIds           pulumi.StringArrayInput `pulumi:"nsgIds"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OAC enabled for the ResourceAnalyticsInstance.
-	OacId pulumi.StringInput `pulumi:"oacId"`
-	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
-	State    pulumi.StringInput `pulumi:"state"`
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
-	// The date and time the ResourceAnalyticsInstance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time the ResourceAnalyticsInstance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-}
-
-func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput {
-	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput)
-}
-
-// GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArray and GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayInput` via:
-//
-//	GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArray{ GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs{...} }
-type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput
-	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArray []GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemInput
-
-func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArray) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput {
-	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArray) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput)
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) AdwAdminPasswords() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) []GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword {
-		return v.AdwAdminPasswords
-	}).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the created ADW instance.
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) AdwId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
-		return v.AdwId
-	}).(pulumi.StringOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
-		return v.CompartmentId
-	}).(pulumi.StringOutput)
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) ComputeCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) int {
-		return v.ComputeCount
-	}).(pulumi.IntOutput)
-}
-
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) map[string]string {
-		return v.DefinedTags
-	}).(pulumi.StringMapOutput)
-}
-
-// A description of the ResourceAnalyticsInstance instance.
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
-		return v.Description
-	}).(pulumi.StringOutput)
-}
-
-// A filter to return only resources that match the given display name exactly.
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) DisplayName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
-		return v.DisplayName
-	}).(pulumi.StringOutput)
-}
-
-// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) map[string]string {
-		return v.FreeformTags
-	}).(pulumi.StringMapOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ResourceAnalyticsInstance.
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
-		return v.Id
-	}).(pulumi.StringOutput)
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) IsMutualTlsRequired() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) bool {
-		return v.IsMutualTlsRequired
-	}).(pulumi.BoolOutput)
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) LicenseModel() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
-		return v.LicenseModel
-	}).(pulumi.StringOutput)
-}
-
-// A message that describes the current state of the ResourceAnalyticsInstance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
-		return v.LifecycleDetails
-	}).(pulumi.StringOutput)
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) NsgIds() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) []string {
-		return v.NsgIds
-	}).(pulumi.StringArrayOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OAC enabled for the ResourceAnalyticsInstance.
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) OacId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
-		return v.OacId
-	}).(pulumi.StringOutput)
-}
-
-// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
-		return v.State
-	}).(pulumi.StringOutput)
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
-		return v.SubnetId
-	}).(pulumi.StringOutput)
-}
-
-// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) map[string]string {
-		return v.SystemTags
-	}).(pulumi.StringMapOutput)
-}
-
-// The date and time the ResourceAnalyticsInstance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339). Example: `2016-08-25T21:10:29.600Z`
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
-		return v.TimeCreated
-	}).(pulumi.StringOutput)
-}
-
-// The date and time the ResourceAnalyticsInstance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem) string {
-		return v.TimeUpdated
-	}).(pulumi.StringOutput)
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem {
-		return vs[0].([]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItem)[vs[1].(int)]
-	}).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput)
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword struct {
-	Password     string `pulumi:"password"`
-	PasswordType string `pulumi:"passwordType"`
-	SecretId     string `pulumi:"secretId"`
-}
-
-// GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs and GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordInput` via:
-//
-//	GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs{...}
-type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput
-	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs struct {
-	Password     pulumi.StringInput `pulumi:"password"`
-	PasswordType pulumi.StringInput `pulumi:"passwordType"`
-	SecretId     pulumi.StringInput `pulumi:"secretId"`
-}
-
-func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput {
-	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput)
-}
-
-// GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArray and GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayInput` via:
-//
-//	GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArray{ GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs{...} }
-type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput
-	ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArray []GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordInput
-
-func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArray) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput {
-	return i.ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArray) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput)
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword) string {
-		return v.Password
-	}).(pulumi.StringOutput)
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput) PasswordType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword) string {
-		return v.PasswordType
-	}).(pulumi.StringOutput)
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput) SecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword) string {
-		return v.SecretId
-	}).(pulumi.StringOutput)
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput() GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword {
-		return vs[0].([]GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPassword)[vs[1].(int)]
-	}).(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput)
-}
-
-type GetResourceAnalyticsTenancyAttachmentMonitoredRegion struct {
-	// Data population status for a monitored region in the tenancy.
-	DataPopulations []GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation `pulumi:"dataPopulations"`
-	// The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of the monitored region. E.g. us-ashburn-1
-	RegionId string `pulumi:"regionId"`
-}
-
-// GetResourceAnalyticsTenancyAttachmentMonitoredRegionInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs and GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentMonitoredRegionInput` via:
-//
-//	GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs{...}
-type GetResourceAnalyticsTenancyAttachmentMonitoredRegionInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput
-	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput
-}
-
-type GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs struct {
-	// Data population status for a monitored region in the tenancy.
-	DataPopulations GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayInput `pulumi:"dataPopulations"`
-	// The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of the monitored region. E.g. us-ashburn-1
-	RegionId pulumi.StringInput `pulumi:"regionId"`
-}
-
-func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegion)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput {
-	return i.ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput)
-}
-
-// GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentMonitoredRegionArray and GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayInput` via:
-//
-//	GetResourceAnalyticsTenancyAttachmentMonitoredRegionArray{ GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs{...} }
-type GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput
-	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput
-}
-
-type GetResourceAnalyticsTenancyAttachmentMonitoredRegionArray []GetResourceAnalyticsTenancyAttachmentMonitoredRegionInput
-
-func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentMonitoredRegion)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionArray) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput {
-	return i.ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionArray) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput)
-}
-
-type GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegion)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput {
-	return o
-}
-
-// Data population status for a monitored region in the tenancy.
-func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput) DataPopulations() GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegion) []GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation {
-		return v.DataPopulations
-	}).(GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput)
-}
-
-// The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of the monitored region. E.g. us-ashburn-1
-func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput) RegionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegion) string { return v.RegionId }).(pulumi.StringOutput)
-}
-
-type GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentMonitoredRegion)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsTenancyAttachmentMonitoredRegion {
-		return vs[0].([]GetResourceAnalyticsTenancyAttachmentMonitoredRegion)[vs[1].(int)]
-	}).(GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput)
-}
-
-type GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation struct {
-	// The number of data population tasks currently in progress.
-	InProgressCount int `pulumi:"inProgressCount"`
-	// The overall status of the data population from the monitored region of the tenancy.
-	Status string `pulumi:"status"`
-	// The number of data population tasks that have succeeded.
-	SucceededCount int `pulumi:"succeededCount"`
-	// The date and time the data population task completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeEnded string `pulumi:"timeEnded"`
-	// The date and time the data population task was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeStarted string `pulumi:"timeStarted"`
-	// The total number of data population tasks.
-	TotalCount int `pulumi:"totalCount"`
-}
-
-// GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs and GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationInput` via:
-//
-//	GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs{...}
-type GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput
-	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput
-}
-
-type GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs struct {
-	// The number of data population tasks currently in progress.
-	InProgressCount pulumi.IntInput `pulumi:"inProgressCount"`
-	// The overall status of the data population from the monitored region of the tenancy.
-	Status pulumi.StringInput `pulumi:"status"`
-	// The number of data population tasks that have succeeded.
-	SucceededCount pulumi.IntInput `pulumi:"succeededCount"`
-	// The date and time the data population task completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeEnded pulumi.StringInput `pulumi:"timeEnded"`
-	// The date and time the data population task was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeStarted pulumi.StringInput `pulumi:"timeStarted"`
-	// The total number of data population tasks.
-	TotalCount pulumi.IntInput `pulumi:"totalCount"`
-}
-
-func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput {
-	return i.ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput)
-}
-
-// GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArray and GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayInput` via:
-//
-//	GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArray{ GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs{...} }
-type GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput
-	ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput
-}
-
-type GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArray []GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationInput
-
-func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArray) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput {
-	return i.ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArray) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput)
-}
-
-type GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput {
-	return o
-}
-
-// The number of data population tasks currently in progress.
-func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) InProgressCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation) int {
-		return v.InProgressCount
-	}).(pulumi.IntOutput)
-}
-
-// The overall status of the data population from the monitored region of the tenancy.
-func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) Status() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation) string { return v.Status }).(pulumi.StringOutput)
-}
-
-// The number of data population tasks that have succeeded.
-func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) SucceededCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation) int {
-		return v.SucceededCount
-	}).(pulumi.IntOutput)
-}
-
-// The date and time the data population task completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) TimeEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation) string { return v.TimeEnded }).(pulumi.StringOutput)
-}
-
-// The date and time the data population task was started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) TimeStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation) string {
-		return v.TimeStarted
-	}).(pulumi.StringOutput)
-}
-
-// The total number of data population tasks.
-func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput) TotalCount() pulumi.IntOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation) int { return v.TotalCount }).(pulumi.IntOutput)
-}
-
-type GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput() GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput) ToGetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation {
-		return vs[0].([]GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulation)[vs[1].(int)]
-	}).(GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput)
-}
-
-type GetResourceAnalyticsTenancyAttachmentsFilter struct {
-	Name   string   `pulumi:"name"`
-	Regex  *bool    `pulumi:"regex"`
-	Values []string `pulumi:"values"`
-}
-
-// GetResourceAnalyticsTenancyAttachmentsFilterInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsFilterArgs and GetResourceAnalyticsTenancyAttachmentsFilterOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsFilterInput` via:
-//
-//	GetResourceAnalyticsTenancyAttachmentsFilterArgs{...}
-type GetResourceAnalyticsTenancyAttachmentsFilterInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsTenancyAttachmentsFilterOutput() GetResourceAnalyticsTenancyAttachmentsFilterOutput
-	ToGetResourceAnalyticsTenancyAttachmentsFilterOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsFilterOutput
-}
-
-type GetResourceAnalyticsTenancyAttachmentsFilterArgs struct {
-	Name   pulumi.StringInput      `pulumi:"name"`
-	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
-	Values pulumi.StringArrayInput `pulumi:"values"`
-}
-
-func (GetResourceAnalyticsTenancyAttachmentsFilterArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsFilter)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsTenancyAttachmentsFilterArgs) ToGetResourceAnalyticsTenancyAttachmentsFilterOutput() GetResourceAnalyticsTenancyAttachmentsFilterOutput {
-	return i.ToGetResourceAnalyticsTenancyAttachmentsFilterOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsTenancyAttachmentsFilterArgs) ToGetResourceAnalyticsTenancyAttachmentsFilterOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsFilterOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsFilterOutput)
-}
-
-// GetResourceAnalyticsTenancyAttachmentsFilterArrayInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsFilterArray and GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsFilterArrayInput` via:
-//
-//	GetResourceAnalyticsTenancyAttachmentsFilterArray{ GetResourceAnalyticsTenancyAttachmentsFilterArgs{...} }
-type GetResourceAnalyticsTenancyAttachmentsFilterArrayInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsTenancyAttachmentsFilterArrayOutput() GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput
-	ToGetResourceAnalyticsTenancyAttachmentsFilterArrayOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput
-}
-
-type GetResourceAnalyticsTenancyAttachmentsFilterArray []GetResourceAnalyticsTenancyAttachmentsFilterInput
-
-func (GetResourceAnalyticsTenancyAttachmentsFilterArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsFilter)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsTenancyAttachmentsFilterArray) ToGetResourceAnalyticsTenancyAttachmentsFilterArrayOutput() GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput {
-	return i.ToGetResourceAnalyticsTenancyAttachmentsFilterArrayOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsTenancyAttachmentsFilterArray) ToGetResourceAnalyticsTenancyAttachmentsFilterArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput)
-}
-
-type GetResourceAnalyticsTenancyAttachmentsFilterOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsTenancyAttachmentsFilterOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsFilter)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentsFilterOutput) ToGetResourceAnalyticsTenancyAttachmentsFilterOutput() GetResourceAnalyticsTenancyAttachmentsFilterOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentsFilterOutput) ToGetResourceAnalyticsTenancyAttachmentsFilterOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsFilterOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentsFilterOutput) Name() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsFilter) string { return v.Name }).(pulumi.StringOutput)
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentsFilterOutput) Regex() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentsFilterOutput) Values() pulumi.StringArrayOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
-}
-
-type GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsFilter)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsFilterArrayOutput() GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsFilterArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsTenancyAttachmentsFilterOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsTenancyAttachmentsFilter {
-		return vs[0].([]GetResourceAnalyticsTenancyAttachmentsFilter)[vs[1].(int)]
-	}).(GetResourceAnalyticsTenancyAttachmentsFilterOutput)
-}
-
-type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection struct {
-	Items []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem `pulumi:"items"`
-}
-
-// GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs and GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionInput` via:
-//
-//	GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs{...}
-type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput
-	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput
-}
-
-type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs struct {
-	Items GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayInput `pulumi:"items"`
-}
-
-func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput {
-	return i.ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput)
-}
-
-// GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArray and GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayInput` via:
-//
-//	GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArray{ GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs{...} }
-type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput
-	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput
-}
-
-type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArray []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionInput
-
-func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArray) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput {
-	return i.ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArray) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput)
-}
-
-type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput) Items() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection) []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem {
-		return v.Items
-	}).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput)
-}
-
-type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection {
-		return vs[0].([]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollection)[vs[1].(int)]
-	}).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput)
-}
-
-type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem struct {
-	// The overall status of the data population from the tenancy.
-	DataPopulationStatus string `pulumi:"dataPopulationStatus"`
-	// A description of the tenancy.
-	Description string `pulumi:"description"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the TenancyAttachment.
-	Id string `pulumi:"id"`
-	// Whether the tenancy is the tenancy used when creating Resource Analytics Instance.
-	IsReportingTenancy bool `pulumi:"isReportingTenancy"`
-	// A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// List of monitored regions with their data population status.
-	MonitoredRegions []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion `pulumi:"monitoredRegions"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
-	ResourceAnalyticsInstanceId string `pulumi:"resourceAnalyticsInstanceId"`
-	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
-	State string `pulumi:"state"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]string `pulumi:"systemTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy associated with this TenancyAttachment.
-	TenancyId string `pulumi:"tenancyId"`
-	// The date and time the TenancyAttachment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeDataPopulationEnded string `pulumi:"timeDataPopulationEnded"`
-	// The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeDataPopulationStarted string `pulumi:"timeDataPopulationStarted"`
-	// The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
-}
-
-// GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs and GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemInput` via:
-//
-//	GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs{...}
-type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput
-	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput
-}
-
-type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs struct {
-	// The overall status of the data population from the tenancy.
-	DataPopulationStatus pulumi.StringInput `pulumi:"dataPopulationStatus"`
-	// A description of the tenancy.
-	Description pulumi.StringInput `pulumi:"description"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the TenancyAttachment.
-	Id pulumi.StringInput `pulumi:"id"`
-	// Whether the tenancy is the tenancy used when creating Resource Analytics Instance.
-	IsReportingTenancy pulumi.BoolInput `pulumi:"isReportingTenancy"`
-	// A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// List of monitored regions with their data population status.
-	MonitoredRegions GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayInput `pulumi:"monitoredRegions"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
-	ResourceAnalyticsInstanceId pulumi.StringInput `pulumi:"resourceAnalyticsInstanceId"`
-	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
-	State pulumi.StringInput `pulumi:"state"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy associated with this TenancyAttachment.
-	TenancyId pulumi.StringInput `pulumi:"tenancyId"`
-	// The date and time the TenancyAttachment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeDataPopulationEnded pulumi.StringInput `pulumi:"timeDataPopulationEnded"`
-	// The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeDataPopulationStarted pulumi.StringInput `pulumi:"timeDataPopulationStarted"`
-	// The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-}
-
-func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput {
-	return i.ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput)
-}
-
-// GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayInput is an input type that accepts GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArray and GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayInput` via:
-//
-//	GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArray{ GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs{...} }
-type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput
-	ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutputWithContext(context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput
-}
-
-type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArray []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemInput
-
-func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArray) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput {
-	return i.ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArray) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput)
-}
-
-type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput {
-	return o
-}
-
-// The overall status of the data population from the tenancy.
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) DataPopulationStatus() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
-		return v.DataPopulationStatus
-	}).(pulumi.StringOutput)
-}
-
-// A description of the tenancy.
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) Description() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
-		return v.Description
-	}).(pulumi.StringOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the TenancyAttachment.
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// Whether the tenancy is the tenancy used when creating Resource Analytics Instance.
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) IsReportingTenancy() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) bool {
-		return v.IsReportingTenancy
-	}).(pulumi.BoolOutput)
-}
-
-// A message that describes the current state of the TenancyAttachment in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
-		return v.LifecycleDetails
-	}).(pulumi.StringOutput)
-}
-
-// List of monitored regions with their data population status.
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) MonitoredRegions() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) []GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegion {
-		return v.MonitoredRegions
-	}).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemMonitoredRegionArrayOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) ResourceAnalyticsInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
-		return v.ResourceAnalyticsInstanceId
-	}).(pulumi.StringOutput)
-}
-
-// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string { return v.State }).(pulumi.StringOutput)
-}
-
-// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) map[string]string {
-		return v.SystemTags
-	}).(pulumi.StringMapOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy associated with this TenancyAttachment.
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) TenancyId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
-		return v.TenancyId
-	}).(pulumi.StringOutput)
-}
-
-// The date and time the TenancyAttachment was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
-		return v.TimeCreated
-	}).(pulumi.StringOutput)
-}
-
-// The date and time the data population tasks completed, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) TimeDataPopulationEnded() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
-		return v.TimeDataPopulationEnded
-	}).(pulumi.StringOutput)
-}
-
-// The date and time the data population tasks started, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) TimeDataPopulationStarted() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
-		return v.TimeDataPopulationStarted
-	}).(pulumi.StringOutput)
-}
-
-// The date and time the TenancyAttachment was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem) string {
-		return v.TimeUpdated
-	}).(pulumi.StringOutput)
-}
-
-type GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput() GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput) ToGetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem {
-		return vs[0].([]GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItem)[vs[1].(int)]
-	}).(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ApiPlatformApiPlatformInstanceIdcsAppInput)(nil)).Elem(), ApiPlatformApiPlatformInstanceIdcsAppArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ApiPlatformApiPlatformInstanceIdcsAppArrayInput)(nil)).Elem(), ApiPlatformApiPlatformInstanceIdcsAppArray{})
@@ -68504,6 +68368,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayInput)(nil)).Elem(), DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeInput)(nil)).Elem(), DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayInput)(nil)).Elem(), DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAwsKeyPoolReplicationMetadataInput)(nil)).Elem(), DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayInput)(nil)).Elem(), DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailInput)(nil)).Elem(), DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayInput)(nil)).Elem(), DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAwsKeyReplicationMetadataInput)(nil)).Elem(), DbmulticloudOracleDbAwsKeyReplicationMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAwsKeyReplicationMetadataArrayInput)(nil)).Elem(), DbmulticloudOracleDbAwsKeyReplicationMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DbmulticloudOracleDbAwsKeyReplicationMetadataReplicationDetailInput)(nil)).Elem(), DbmulticloudOracleDbAwsKeyReplicationMetadataReplicationDetailArgs{})
@@ -68912,6 +68780,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolsFilterInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsKeyPoolsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolsFilterArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsKeyPoolsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyReplicationMetadataInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsKeyReplicationMetadataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyReplicationMetadataArrayInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsKeyReplicationMetadataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDbmulticloudOracleDbAwsKeyReplicationMetadataReplicationDetailInput)(nil)).Elem(), GetDbmulticloudOracleDbAwsKeyReplicationMetadataReplicationDetailArgs{})
@@ -69424,24 +69306,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayInput)(nil)).Elem(), GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesFilterInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesFilterArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesFilterArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegionInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentMonitoredRegionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentMonitoredRegionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsFilterInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsFilterArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsFilterArrayInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsFilterArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayInput)(nil)).Elem(), GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArray{})
 	pulumi.RegisterOutputType(ApiPlatformApiPlatformInstanceIdcsAppOutput{})
 	pulumi.RegisterOutputType(ApiPlatformApiPlatformInstanceIdcsAppArrayOutput{})
 	pulumi.RegisterOutputType(ApiPlatformApiPlatformInstanceUriOutput{})
@@ -69503,6 +69367,10 @@ func init() {
 	pulumi.RegisterOutputType(DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArrayOutput{})
 	pulumi.RegisterOutputType(DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeOutput{})
 	pulumi.RegisterOutputType(DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArrayOutput{})
+	pulumi.RegisterOutputType(DbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput{})
+	pulumi.RegisterOutputType(DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput{})
+	pulumi.RegisterOutputType(DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput{})
+	pulumi.RegisterOutputType(DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput{})
 	pulumi.RegisterOutputType(DbmulticloudOracleDbAwsKeyReplicationMetadataOutput{})
 	pulumi.RegisterOutputType(DbmulticloudOracleDbAwsKeyReplicationMetadataArrayOutput{})
 	pulumi.RegisterOutputType(DbmulticloudOracleDbAwsKeyReplicationMetadataReplicationDetailOutput{})
@@ -69911,6 +69779,20 @@ func init() {
 	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeOutput{})
 	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsIdentityConnectorsOracleDbAwsIdentityConnectorSummaryCollectionItemServiceRoleDetailAwsNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsKeyPoolsFilterOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsKeyPoolsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataArrayOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailOutput{})
+	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsKeyReplicationMetadataOutput{})
 	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsKeyReplicationMetadataArrayOutput{})
 	pulumi.RegisterOutputType(GetDbmulticloudOracleDbAwsKeyReplicationMetadataReplicationDetailOutput{})
@@ -70423,22 +70305,4 @@ func init() {
 	pulumi.RegisterOutputType(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput{})
 	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesFilterOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesFilterArrayOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionArrayOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemArrayOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstancesResourceAnalyticsInstanceCollectionItemAdwAdminPasswordArrayOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentMonitoredRegionOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentMonitoredRegionArrayOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentMonitoredRegionDataPopulationArrayOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsFilterOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsFilterArrayOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionArrayOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsTenancyAttachmentsTenancyAttachmentCollectionItemArrayOutput{})
 }

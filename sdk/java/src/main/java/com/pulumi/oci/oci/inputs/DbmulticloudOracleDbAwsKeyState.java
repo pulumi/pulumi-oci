@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.oci.inputs.DbmulticloudOracleDbAwsKeyReplicationMetadataArgs;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -132,6 +133,21 @@ public final class DbmulticloudOracleDbAwsKeyState extends com.pulumi.resources.
     }
 
     /**
+     * Indicates whether the Oracle AWS Key resource is currently in use.
+     * 
+     */
+    @Import(name="isOracleAwsKeyUsed")
+    private @Nullable Output<Boolean> isOracleAwsKeyUsed;
+
+    /**
+     * @return Indicates whether the Oracle AWS Key resource is currently in use.
+     * 
+     */
+    public Optional<Output<Boolean>> isOracleAwsKeyUsed() {
+        return Optional.ofNullable(this.isOracleAwsKeyUsed);
+    }
+
+    /**
      * Description of the current lifecycle state in more detail.
      * 
      */
@@ -162,6 +178,21 @@ public final class DbmulticloudOracleDbAwsKeyState extends com.pulumi.resources.
     }
 
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+     * 
+     */
+    @Import(name="oracleDbAwsKeyPoolId")
+    private @Nullable Output<String> oracleDbAwsKeyPoolId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+     * 
+     */
+    public Optional<Output<String>> oracleDbAwsKeyPoolId() {
+        return Optional.ofNullable(this.oracleDbAwsKeyPoolId);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      * 
      */
@@ -189,6 +220,21 @@ public final class DbmulticloudOracleDbAwsKeyState extends com.pulumi.resources.
      */
     public Optional<Output<Map<String,String>>> properties() {
         return Optional.ofNullable(this.properties);
+    }
+
+    /**
+     * The number of active references to the Oracle AWS Key resource.
+     * 
+     */
+    @Import(name="refCount")
+    private @Nullable Output<Integer> refCount;
+
+    /**
+     * @return The number of active references to the Oracle AWS Key resource.
+     * 
+     */
+    public Optional<Output<Integer>> refCount() {
+        return Optional.ofNullable(this.refCount);
     }
 
     /**
@@ -313,10 +359,13 @@ public final class DbmulticloudOracleDbAwsKeyState extends com.pulumi.resources.
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.isAwsKeyEnabled = $.isAwsKeyEnabled;
+        this.isOracleAwsKeyUsed = $.isOracleAwsKeyUsed;
         this.lifecycleStateDetails = $.lifecycleStateDetails;
         this.location = $.location;
+        this.oracleDbAwsKeyPoolId = $.oracleDbAwsKeyPoolId;
         this.oracleDbConnectorId = $.oracleDbConnectorId;
         this.properties = $.properties;
+        this.refCount = $.refCount;
         this.replicationMetadatas = $.replicationMetadatas;
         this.state = $.state;
         this.systemTags = $.systemTags;
@@ -501,6 +550,27 @@ public final class DbmulticloudOracleDbAwsKeyState extends com.pulumi.resources.
         }
 
         /**
+         * @param isOracleAwsKeyUsed Indicates whether the Oracle AWS Key resource is currently in use.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOracleAwsKeyUsed(@Nullable Output<Boolean> isOracleAwsKeyUsed) {
+            $.isOracleAwsKeyUsed = isOracleAwsKeyUsed;
+            return this;
+        }
+
+        /**
+         * @param isOracleAwsKeyUsed Indicates whether the Oracle AWS Key resource is currently in use.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isOracleAwsKeyUsed(Boolean isOracleAwsKeyUsed) {
+            return isOracleAwsKeyUsed(Output.of(isOracleAwsKeyUsed));
+        }
+
+        /**
          * @param lifecycleStateDetails Description of the current lifecycle state in more detail.
          * 
          * @return builder
@@ -543,6 +613,27 @@ public final class DbmulticloudOracleDbAwsKeyState extends com.pulumi.resources.
         }
 
         /**
+         * @param oracleDbAwsKeyPoolId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder oracleDbAwsKeyPoolId(@Nullable Output<String> oracleDbAwsKeyPoolId) {
+            $.oracleDbAwsKeyPoolId = oracleDbAwsKeyPoolId;
+            return this;
+        }
+
+        /**
+         * @param oracleDbAwsKeyPoolId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder oracleDbAwsKeyPoolId(String oracleDbAwsKeyPoolId) {
+            return oracleDbAwsKeyPoolId(Output.of(oracleDbAwsKeyPoolId));
+        }
+
+        /**
          * @param oracleDbConnectorId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
          * 
          * @return builder
@@ -582,6 +673,27 @@ public final class DbmulticloudOracleDbAwsKeyState extends com.pulumi.resources.
          */
         public Builder properties(Map<String,String> properties) {
             return properties(Output.of(properties));
+        }
+
+        /**
+         * @param refCount The number of active references to the Oracle AWS Key resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder refCount(@Nullable Output<Integer> refCount) {
+            $.refCount = refCount;
+            return this;
+        }
+
+        /**
+         * @param refCount The number of active references to the Oracle AWS Key resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder refCount(Integer refCount) {
+            return refCount(Output.of(refCount));
         }
 
         /**

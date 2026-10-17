@@ -31,6 +31,21 @@ public final class BackupEncryptionKeyLocationDetailArgs extends com.pulumi.reso
     }
 
     /**
+     * Provide the key pool OCID of a registered AWS key.
+     * 
+     */
+    @Import(name="awsEncryptionKeyPoolId")
+    private @Nullable Output<String> awsEncryptionKeyPoolId;
+
+    /**
+     * @return Provide the key pool OCID of a registered AWS key.
+     * 
+     */
+    public Optional<Output<String>> awsEncryptionKeyPoolId() {
+        return Optional.ofNullable(this.awsEncryptionKeyPoolId);
+    }
+
+    /**
      * Provide the key OCID of a registered Azure key.
      * 
      */
@@ -94,6 +109,7 @@ public final class BackupEncryptionKeyLocationDetailArgs extends com.pulumi.reso
 
     private BackupEncryptionKeyLocationDetailArgs(BackupEncryptionKeyLocationDetailArgs $) {
         this.awsEncryptionKeyId = $.awsEncryptionKeyId;
+        this.awsEncryptionKeyPoolId = $.awsEncryptionKeyPoolId;
         this.azureEncryptionKeyId = $.azureEncryptionKeyId;
         this.googleCloudProviderEncryptionKeyId = $.googleCloudProviderEncryptionKeyId;
         this.hsmPassword = $.hsmPassword;
@@ -137,6 +153,27 @@ public final class BackupEncryptionKeyLocationDetailArgs extends com.pulumi.reso
          */
         public Builder awsEncryptionKeyId(String awsEncryptionKeyId) {
             return awsEncryptionKeyId(Output.of(awsEncryptionKeyId));
+        }
+
+        /**
+         * @param awsEncryptionKeyPoolId Provide the key pool OCID of a registered AWS key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder awsEncryptionKeyPoolId(@Nullable Output<String> awsEncryptionKeyPoolId) {
+            $.awsEncryptionKeyPoolId = awsEncryptionKeyPoolId;
+            return this;
+        }
+
+        /**
+         * @param awsEncryptionKeyPoolId Provide the key pool OCID of a registered AWS key.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder awsEncryptionKeyPoolId(String awsEncryptionKeyPoolId) {
+            return awsEncryptionKeyPoolId(Output.of(awsEncryptionKeyPoolId));
         }
 
         /**

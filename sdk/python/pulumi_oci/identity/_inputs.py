@@ -100280,30 +100280,31 @@ class NetworkSourceVirtualSourceListArgs:
 class TagValidatorArgsDict(TypedDict):
     validator_type: pulumi.Input[_builtins.str]
     """
-    (Updatable) Specifies the type of validation: a static value (no validation) or a list.
+    (Updatable) Specifies the type of validation. Use `ENUM` to restrict a tag to a list of allowed values, or `DEFAULT` for no value validation.
     """
-    values: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    values: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
     """
-    (Updatable) The list of allowed values for a definedTag value.
+    (Updatable) The list of allowed values for a definedTag value. Omit this property when `validator_type` is `DEFAULT`; it is not used for default validation.
     """
 
 @pulumi.input_type
 class TagValidatorArgs:
     def __init__(__self__, *,
                  validator_type: pulumi.Input[_builtins.str],
-                 values: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+                 values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
-        :param pulumi.Input[_builtins.str] validator_type: (Updatable) Specifies the type of validation: a static value (no validation) or a list.
-        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values: (Updatable) The list of allowed values for a definedTag value.
+        :param pulumi.Input[_builtins.str] validator_type: (Updatable) Specifies the type of validation. Use `ENUM` to restrict a tag to a list of allowed values, or `DEFAULT` for no value validation.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] values: (Updatable) The list of allowed values for a definedTag value. Omit this property when `validator_type` is `DEFAULT`; it is not used for default validation.
         """
         pulumi.set(__self__, "validator_type", validator_type)
-        pulumi.set(__self__, "values", values)
+        if values is not None:
+            pulumi.set(__self__, "values", values)
 
     @_builtins.property
     @pulumi.getter(name="validatorType")
     def validator_type(self) -> pulumi.Input[_builtins.str]:
         """
-        (Updatable) Specifies the type of validation: a static value (no validation) or a list.
+        (Updatable) Specifies the type of validation. Use `ENUM` to restrict a tag to a list of allowed values, or `DEFAULT` for no value validation.
         """
         return pulumi.get(self, "validator_type")
 
@@ -100313,14 +100314,14 @@ class TagValidatorArgs:
 
     @_builtins.property
     @pulumi.getter
-    def values(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
+    def values(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
-        (Updatable) The list of allowed values for a definedTag value.
+        (Updatable) The list of allowed values for a definedTag value. Omit this property when `validator_type` is `DEFAULT`; it is not used for default validation.
         """
         return pulumi.get(self, "values")
 
     @values.setter
-    def values(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+    def values(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "values", value)
 
 

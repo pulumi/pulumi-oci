@@ -146,6 +146,21 @@ public final class DbmulticloudOracleDbAwsKeyArgs extends com.pulumi.resources.R
     }
 
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+     * 
+     */
+    @Import(name="oracleDbAwsKeyPoolId")
+    private @Nullable Output<String> oracleDbAwsKeyPoolId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+     * 
+     */
+    public Optional<Output<String>> oracleDbAwsKeyPoolId() {
+        return Optional.ofNullable(this.oracleDbAwsKeyPoolId);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      * 
      */
@@ -223,6 +238,7 @@ public final class DbmulticloudOracleDbAwsKeyArgs extends com.pulumi.resources.R
         this.freeformTags = $.freeformTags;
         this.isAwsKeyEnabled = $.isAwsKeyEnabled;
         this.location = $.location;
+        this.oracleDbAwsKeyPoolId = $.oracleDbAwsKeyPoolId;
         this.oracleDbConnectorId = $.oracleDbConnectorId;
         this.properties = $.properties;
         this.targetRegion = $.targetRegion;
@@ -422,6 +438,27 @@ public final class DbmulticloudOracleDbAwsKeyArgs extends com.pulumi.resources.R
          */
         public Builder location(String location) {
             return location(Output.of(location));
+        }
+
+        /**
+         * @param oracleDbAwsKeyPoolId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder oracleDbAwsKeyPoolId(@Nullable Output<String> oracleDbAwsKeyPoolId) {
+            $.oracleDbAwsKeyPoolId = oracleDbAwsKeyPoolId;
+            return this;
+        }
+
+        /**
+         * @param oracleDbAwsKeyPoolId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder oracleDbAwsKeyPoolId(String oracleDbAwsKeyPoolId) {
+            return oracleDbAwsKeyPoolId(Output.of(oracleDbAwsKeyPoolId));
         }
 
         /**

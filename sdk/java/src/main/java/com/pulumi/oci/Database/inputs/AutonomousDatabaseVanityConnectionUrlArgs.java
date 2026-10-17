@@ -46,6 +46,21 @@ public final class AutonomousDatabaseVanityConnectionUrlArgs extends com.pulumi.
     }
 
     /**
+     * Essbase URL for the Autonomous AI Database.
+     * 
+     */
+    @Import(name="essbaseUrl")
+    private @Nullable Output<String> essbaseUrl;
+
+    /**
+     * @return Essbase URL for the Autonomous AI Database.
+     * 
+     */
+    public Optional<Output<String>> essbaseUrl() {
+        return Optional.ofNullable(this.essbaseUrl);
+    }
+
+    /**
      * The URL of the Graph Studio for the Autonomous Database.
      * 
      */
@@ -140,6 +155,7 @@ public final class AutonomousDatabaseVanityConnectionUrlArgs extends com.pulumi.
     private AutonomousDatabaseVanityConnectionUrlArgs(AutonomousDatabaseVanityConnectionUrlArgs $) {
         this.apexUrl = $.apexUrl;
         this.databaseTransformsUrl = $.databaseTransformsUrl;
+        this.essbaseUrl = $.essbaseUrl;
         this.graphStudioUrl = $.graphStudioUrl;
         this.machineLearningNotebookUrl = $.machineLearningNotebookUrl;
         this.machineLearningUserManagementUrl = $.machineLearningUserManagementUrl;
@@ -206,6 +222,27 @@ public final class AutonomousDatabaseVanityConnectionUrlArgs extends com.pulumi.
          */
         public Builder databaseTransformsUrl(String databaseTransformsUrl) {
             return databaseTransformsUrl(Output.of(databaseTransformsUrl));
+        }
+
+        /**
+         * @param essbaseUrl Essbase URL for the Autonomous AI Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder essbaseUrl(@Nullable Output<String> essbaseUrl) {
+            $.essbaseUrl = essbaseUrl;
+            return this;
+        }
+
+        /**
+         * @param essbaseUrl Essbase URL for the Autonomous AI Database.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder essbaseUrl(String essbaseUrl) {
+            return essbaseUrl(Output.of(essbaseUrl));
         }
 
         /**

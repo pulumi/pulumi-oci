@@ -12,6 +12,7 @@ import com.pulumi.oci.oci.DbmulticloudOracleDbAwsKeyArgs;
 import com.pulumi.oci.oci.inputs.DbmulticloudOracleDbAwsKeyState;
 import com.pulumi.oci.oci.outputs.DbmulticloudOracleDbAwsKeyReplicationMetadata;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -60,6 +61,7 @@ import javax.annotation.Nullable;
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .isAwsKeyEnabled(oracleDbAwsKeyIsAwsKeyEnabled)
  *             .location(oracleDbAwsKeyLocation)
+ *             .oracleDbAwsKeyPoolId(testOracleDbAwsKeyPool.get("id"))
  *             .properties(oracleDbAwsKeyProperties)
  *             .type(oracleDbAwsKeyType)
  *             .build());
@@ -185,6 +187,20 @@ public class DbmulticloudOracleDbAwsKey extends com.pulumi.resources.CustomResou
         return this.isAwsKeyEnabled;
     }
     /**
+     * Indicates whether the Oracle AWS Key resource is currently in use.
+     * 
+     */
+    @Export(name="isOracleAwsKeyUsed", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isOracleAwsKeyUsed;
+
+    /**
+     * @return Indicates whether the Oracle AWS Key resource is currently in use.
+     * 
+     */
+    public Output<Boolean> isOracleAwsKeyUsed() {
+        return this.isOracleAwsKeyUsed;
+    }
+    /**
      * Description of the current lifecycle state in more detail.
      * 
      */
@@ -213,6 +229,20 @@ public class DbmulticloudOracleDbAwsKey extends com.pulumi.resources.CustomResou
         return this.location;
     }
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+     * 
+     */
+    @Export(name="oracleDbAwsKeyPoolId", refs={String.class}, tree="[0]")
+    private Output<String> oracleDbAwsKeyPoolId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+     * 
+     */
+    public Output<String> oracleDbAwsKeyPoolId() {
+        return this.oracleDbAwsKeyPoolId;
+    }
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      * 
      */
@@ -239,6 +269,20 @@ public class DbmulticloudOracleDbAwsKey extends com.pulumi.resources.CustomResou
      */
     public Output<Map<String,String>> properties() {
         return this.properties;
+    }
+    /**
+     * The number of active references to the Oracle AWS Key resource.
+     * 
+     */
+    @Export(name="refCount", refs={Integer.class}, tree="[0]")
+    private Output<Integer> refCount;
+
+    /**
+     * @return The number of active references to the Oracle AWS Key resource.
+     * 
+     */
+    public Output<Integer> refCount() {
+        return this.refCount;
     }
     /**
      * Replication metadata, it has information about replication and target region.

@@ -22,6 +22,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string DatabaseTransformsUrl;
         /// <summary>
+        /// Essbase URL for the Autonomous AI Database.
+        /// </summary>
+        public readonly string EssbaseUrl;
+        /// <summary>
         /// The URL of the Graph Studio for the Autonomous Database.
         /// </summary>
         public readonly string GraphStudioUrl;
@@ -52,6 +56,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string databaseTransformsUrl,
 
+            string essbaseUrl,
+
             string graphStudioUrl,
 
             string machineLearningNotebookUrl,
@@ -66,6 +72,7 @@ namespace Pulumi.Oci.Database.Outputs
         {
             ApexUrl = apexUrl;
             DatabaseTransformsUrl = databaseTransformsUrl;
+            EssbaseUrl = essbaseUrl;
             GraphStudioUrl = graphStudioUrl;
             MachineLearningNotebookUrl = machineLearningNotebookUrl;
             MachineLearningUserManagementUrl = machineLearningUserManagementUrl;

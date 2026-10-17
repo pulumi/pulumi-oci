@@ -16,6 +16,11 @@ public final class GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail {
      */
     private String awsEncryptionKeyId;
     /**
+     * @return Provide the key pool OCID of a registered AWS key.
+     * 
+     */
+    private String awsEncryptionKeyPoolId;
+    /**
      * @return Provide the key OCID of a registered Azure key.
      * 
      */
@@ -43,6 +48,13 @@ public final class GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail {
      */
     public String awsEncryptionKeyId() {
         return this.awsEncryptionKeyId;
+    }
+    /**
+     * @return Provide the key pool OCID of a registered AWS key.
+     * 
+     */
+    public String awsEncryptionKeyPoolId() {
+        return this.awsEncryptionKeyPoolId;
     }
     /**
      * @return Provide the key OCID of a registered Azure key.
@@ -83,6 +95,7 @@ public final class GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail {
     @CustomType.Builder
     public static final class Builder {
         private String awsEncryptionKeyId;
+        private String awsEncryptionKeyPoolId;
         private String azureEncryptionKeyId;
         private String googleCloudProviderEncryptionKeyId;
         private String hsmPassword;
@@ -91,6 +104,7 @@ public final class GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail {
         public Builder(GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.awsEncryptionKeyId = defaults.awsEncryptionKeyId;
+    	      this.awsEncryptionKeyPoolId = defaults.awsEncryptionKeyPoolId;
     	      this.azureEncryptionKeyId = defaults.azureEncryptionKeyId;
     	      this.googleCloudProviderEncryptionKeyId = defaults.googleCloudProviderEncryptionKeyId;
     	      this.hsmPassword = defaults.hsmPassword;
@@ -103,6 +117,14 @@ public final class GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail {
               throw new MissingRequiredPropertyException("GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail", "awsEncryptionKeyId");
             }
             this.awsEncryptionKeyId = awsEncryptionKeyId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder awsEncryptionKeyPoolId(String awsEncryptionKeyPoolId) {
+            if (awsEncryptionKeyPoolId == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail", "awsEncryptionKeyPoolId");
+            }
+            this.awsEncryptionKeyPoolId = awsEncryptionKeyPoolId;
             return this;
         }
         @CustomType.Setter
@@ -140,6 +162,7 @@ public final class GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail {
         public GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail build() {
             final var _resultValue = new GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail();
             _resultValue.awsEncryptionKeyId = awsEncryptionKeyId;
+            _resultValue.awsEncryptionKeyPoolId = awsEncryptionKeyPoolId;
             _resultValue.azureEncryptionKeyId = azureEncryptionKeyId;
             _resultValue.googleCloudProviderEncryptionKeyId = googleCloudProviderEncryptionKeyId;
             _resultValue.hsmPassword = hsmPassword;

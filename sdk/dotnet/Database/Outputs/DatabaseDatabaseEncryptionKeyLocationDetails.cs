@@ -18,6 +18,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? AwsEncryptionKeyId;
         /// <summary>
+        /// Provide the key pool OCID of a registered AWS key.
+        /// </summary>
+        public readonly string? AwsEncryptionKeyPoolId;
+        /// <summary>
         /// Provide the key OCID of a registered Azure key.
         /// </summary>
         public readonly string? AzureEncryptionKeyId;
@@ -38,6 +42,8 @@ namespace Pulumi.Oci.Database.Outputs
         private DatabaseDatabaseEncryptionKeyLocationDetails(
             string? awsEncryptionKeyId,
 
+            string? awsEncryptionKeyPoolId,
+
             string? azureEncryptionKeyId,
 
             string? googleCloudProviderEncryptionKeyId,
@@ -47,6 +53,7 @@ namespace Pulumi.Oci.Database.Outputs
             string providerType)
         {
             AwsEncryptionKeyId = awsEncryptionKeyId;
+            AwsEncryptionKeyPoolId = awsEncryptionKeyPoolId;
             AzureEncryptionKeyId = azureEncryptionKeyId;
             GoogleCloudProviderEncryptionKeyId = googleCloudProviderEncryptionKeyId;
             HsmPassword = hsmPassword;

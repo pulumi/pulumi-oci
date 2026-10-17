@@ -239,6 +239,10 @@ export interface GetOpensearchClusterResult {
      */
     readonly outboundClusterConfigs: outputs.Opensearch.GetOpensearchClusterOutboundClusterConfig[];
     /**
+     * Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+     */
+    readonly remoteReindexTrustConfigs: outputs.Opensearch.GetOpensearchClusterRemoteReindexTrustConfig[];
+    /**
      * The customer IP addresses of the endpoint in customer VCN
      */
     readonly reverseConnectionEndpointCustomerIps: string[];
@@ -274,6 +278,7 @@ export interface GetOpensearchClusterResult {
      * Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
      */
     readonly securityAttributes: {[key: string]: string};
+    readonly securityMasterUserAuthDetails: outputs.Opensearch.GetOpensearchClusterSecurityMasterUserAuthDetail[];
     /**
      * The name of the master user that are used to manage security config
      */

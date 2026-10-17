@@ -44,6 +44,7 @@ namespace Pulumi.Oci.Oci
     ///         },
     ///         IsAwsKeyEnabled = oracleDbAwsKeyIsAwsKeyEnabled,
     ///         Location = oracleDbAwsKeyLocation,
+    ///         OracleDbAwsKeyPoolId = testOracleDbAwsKeyPool.Id,
     ///         Properties = oracleDbAwsKeyProperties,
     ///         Type = oracleDbAwsKeyType,
     ///     });
@@ -108,6 +109,12 @@ namespace Pulumi.Oci.Oci
         public Output<bool> IsAwsKeyEnabled { get; private set; } = null!;
 
         /// <summary>
+        /// Indicates whether the Oracle AWS Key resource is currently in use.
+        /// </summary>
+        [Output("isOracleAwsKeyUsed")]
+        public Output<bool> IsOracleAwsKeyUsed { get; private set; } = null!;
+
+        /// <summary>
         /// Description of the current lifecycle state in more detail.
         /// </summary>
         [Output("lifecycleStateDetails")]
@@ -120,6 +127,12 @@ namespace Pulumi.Oci.Oci
         public Output<string> Location { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+        /// </summary>
+        [Output("oracleDbAwsKeyPoolId")]
+        public Output<string> OracleDbAwsKeyPoolId { get; private set; } = null!;
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
         /// </summary>
         [Output("oracleDbConnectorId")]
@@ -130,6 +143,12 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Output("properties")]
         public Output<ImmutableDictionary<string, string>> Properties { get; private set; } = null!;
+
+        /// <summary>
+        /// The number of active references to the Oracle AWS Key resource.
+        /// </summary>
+        [Output("refCount")]
+        public Output<int> RefCount { get; private set; } = null!;
 
         /// <summary>
         /// Replication metadata, it has information about replication and target region.
@@ -287,6 +306,12 @@ namespace Pulumi.Oci.Oci
         public Input<string>? Location { get; set; }
 
         /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+        /// </summary>
+        [Input("oracleDbAwsKeyPoolId")]
+        public Input<string>? OracleDbAwsKeyPoolId { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
         /// </summary>
         [Input("oracleDbConnectorId", required: true)]
@@ -386,6 +411,12 @@ namespace Pulumi.Oci.Oci
         public Input<bool>? IsAwsKeyEnabled { get; set; }
 
         /// <summary>
+        /// Indicates whether the Oracle AWS Key resource is currently in use.
+        /// </summary>
+        [Input("isOracleAwsKeyUsed")]
+        public Input<bool>? IsOracleAwsKeyUsed { get; set; }
+
+        /// <summary>
         /// Description of the current lifecycle state in more detail.
         /// </summary>
         [Input("lifecycleStateDetails")]
@@ -396,6 +427,12 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Input("location")]
         public Input<string>? Location { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+        /// </summary>
+        [Input("oracleDbAwsKeyPoolId")]
+        public Input<string>? OracleDbAwsKeyPoolId { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
@@ -414,6 +451,12 @@ namespace Pulumi.Oci.Oci
             get => _properties ?? (_properties = new InputMap<string>());
             set => _properties = value;
         }
+
+        /// <summary>
+        /// The number of active references to the Oracle AWS Key resource.
+        /// </summary>
+        [Input("refCount")]
+        public Input<int>? RefCount { get; set; }
 
         [Input("replicationMetadatas")]
         private InputList<Inputs.DbmulticloudOracleDbAwsKeyReplicationMetadataGetArgs>? _replicationMetadatas;

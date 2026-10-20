@@ -25,7 +25,7 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public Input<string>? CurrentStatus { get; set; }
 
         [Input("jobProgress")]
-        public Input<int>? JobProgress { get; set; }
+        public Input<int>? Progress { get; set; }
 
         [Input("phases")]
         private InputList<Inputs.JobProgressPhaseGetArgs>? _phases;

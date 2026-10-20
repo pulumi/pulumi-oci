@@ -425,7 +425,18 @@ func Provider() tfbridge.ProviderInfo {
 				},
 			},
 
-			"oci_database_migration_job": {Tok: tfbridge.MakeResource(mainPkg, databaseMigrationMod, "Job")},
+			"oci_database_migration_job": {
+				Tok: tfbridge.MakeResource(mainPkg, databaseMigrationMod, "Job"),
+				Fields: map[string]*tfbridge.SchemaInfo{
+					"progress": {
+						Elem: &tfbridge.SchemaInfo{
+							Fields: map[string]*tfbridge.SchemaInfo{
+								"job_progress": {CSharpName: "Progress"},
+							},
+						},
+					},
+				},
+			},
 
 			"oci_database_vm_cluster_add_virtual_machine": {
 				Tok: tfbridge.MakeResource(mainPkg, databaseMod, "VmClusterAddVirtualNetwork"),

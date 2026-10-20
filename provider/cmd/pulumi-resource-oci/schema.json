@@ -259733,7 +259733,12 @@
                     "description": "Current status of the job.\n"
                 },
                 "jobProgress": {
-                    "type": "integer"
+                    "type": "integer",
+                    "language": {
+                        "csharp": {
+                            "name": "Progress"
+                        }
+                    }
                 },
                 "phases": {
                     "type": "array",

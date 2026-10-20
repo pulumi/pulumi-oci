@@ -77,6 +77,10 @@ __all__ = [
     'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailArgsDict',
     'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs',
     'DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgsDict',
+    'DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArgs',
+    'DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArgsDict',
+    'DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs',
+    'DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgsDict',
     'DbmulticloudOracleDbAwsKeyReplicationMetadataArgs',
     'DbmulticloudOracleDbAwsKeyReplicationMetadataArgsDict',
     'DbmulticloudOracleDbAwsKeyReplicationMetadataReplicationDetailArgs',
@@ -265,6 +269,8 @@ __all__ = [
     'GetDbmulticloudMultiCloudResourceDiscoveriesFilterArgsDict',
     'GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgs',
     'GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgsDict',
+    'GetDbmulticloudOracleDbAwsKeyPoolsFilterArgs',
+    'GetDbmulticloudOracleDbAwsKeyPoolsFilterArgsDict',
     'GetDbmulticloudOracleDbAwsKeysFilterArgs',
     'GetDbmulticloudOracleDbAwsKeysFilterArgsDict',
     'GetDbmulticloudOracleDbAzureBlobContainersFilterArgs',
@@ -3368,6 +3374,124 @@ class DbmulticloudOracleDbAwsIdentityConnectorServiceRoleDetailAwsNodeArgs:
     @time_last_checked.setter
     def time_last_checked(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_checked", value)
+
+
+class DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArgsDict(TypedDict):
+    replication_details: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgsDict']]]]]
+    """
+    List of all regions and their respective resource ID.
+    """
+
+@pulumi.input_type
+class DbmulticloudOracleDbAwsKeyPoolReplicationMetadataArgs:
+    def __init__(__self__, *,
+                 replication_details: pulumi.Input[Optional[Sequence[pulumi.Input['DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs']]] replication_details: List of all regions and their respective resource ID.
+        """
+        if replication_details is not None:
+            pulumi.set(__self__, "replication_details", replication_details)
+
+    @_builtins.property
+    @pulumi.getter(name="replicationDetails")
+    def replication_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs']]]]:
+        """
+        List of all regions and their respective resource ID.
+        """
+        return pulumi.get(self, "replication_details")
+
+    @replication_details.setter
+    def replication_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs']]]]):
+        pulumi.set(self, "replication_details", value)
+
+
+class DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgsDict(TypedDict):
+    replication_state: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The lifecycle state of the Oracle DB Azure Vault resource.
+    """
+    target_region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The target region, where resource is replicated.
+    """
+    time_created: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+    """
+    time_updated: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+    """
+
+@pulumi.input_type
+class DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetailArgs:
+    def __init__(__self__, *,
+                 replication_state: pulumi.Input[Optional[_builtins.str]] = None,
+                 target_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_created: pulumi.Input[Optional[_builtins.str]] = None,
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] replication_state: The lifecycle state of the Oracle DB Azure Vault resource.
+        :param pulumi.Input[_builtins.str] target_region: The target region, where resource is replicated.
+        :param pulumi.Input[_builtins.str] time_created: Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        :param pulumi.Input[_builtins.str] time_updated: Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        """
+        if replication_state is not None:
+            pulumi.set(__self__, "replication_state", replication_state)
+        if target_region is not None:
+            pulumi.set(__self__, "target_region", target_region)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+        if time_updated is not None:
+            pulumi.set(__self__, "time_updated", time_updated)
+
+    @_builtins.property
+    @pulumi.getter(name="replicationState")
+    def replication_state(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The lifecycle state of the Oracle DB Azure Vault resource.
+        """
+        return pulumi.get(self, "replication_state")
+
+    @replication_state.setter
+    def replication_state(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "replication_state", value)
+
+    @_builtins.property
+    @pulumi.getter(name="targetRegion")
+    def target_region(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The target region, where resource is replicated.
+        """
+        return pulumi.get(self, "target_region")
+
+    @target_region.setter
+    def target_region(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "target_region", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_created", value)
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+        """
+        return pulumi.get(self, "time_updated")
+
+    @time_updated.setter
+    def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "time_updated", value)
 
 
 class DbmulticloudOracleDbAwsKeyReplicationMetadataArgsDict(TypedDict):
@@ -10262,6 +10386,50 @@ class GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgsDict(TypedDict):
 
 @pulumi.input_type
 class GetDbmulticloudOracleDbAwsIdentityConnectorsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetDbmulticloudOracleDbAwsKeyPoolsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetDbmulticloudOracleDbAwsKeyPoolsFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

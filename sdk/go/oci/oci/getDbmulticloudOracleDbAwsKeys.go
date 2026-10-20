@@ -34,6 +34,7 @@ import (
 //				DisplayName:            pulumi.StringRef(oracleDbAwsKeyDisplayName),
 //				OracleDbAwsConnectorId: pulumi.StringRef(testOracleDbAwsConnector.Id),
 //				OracleDbAwsKeyId:       pulumi.StringRef(testOracleDbAwsKey.Id),
+//				OracleDbAwsKeyPoolId:   pulumi.StringRef(testOracleDbAwsKeyPool.Id),
 //				State:                  pulumi.StringRef(oracleDbAwsKeyState),
 //			}, nil)
 //			if err != nil {
@@ -65,6 +66,8 @@ type GetDbmulticloudOracleDbAwsKeysArgs struct {
 	OracleDbAwsConnectorId *string `pulumi:"oracleDbAwsConnectorId"`
 	// A filter to return Oracle DB AWS Identity Connector Resource that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key resource.
 	OracleDbAwsKeyId *string `pulumi:"oracleDbAwsKeyId"`
+	// A filter to return only resources that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+	OracleDbAwsKeyPoolId *string `pulumi:"oracleDbAwsKeyPoolId"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 	State *string `pulumi:"state"`
 }
@@ -80,6 +83,8 @@ type GetDbmulticloudOracleDbAwsKeysResult struct {
 	Id                     string  `pulumi:"id"`
 	OracleDbAwsConnectorId *string `pulumi:"oracleDbAwsConnectorId"`
 	OracleDbAwsKeyId       *string `pulumi:"oracleDbAwsKeyId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+	OracleDbAwsKeyPoolId *string `pulumi:"oracleDbAwsKeyPoolId"`
 	// The list of oracle_db_aws_key_summary_collection.
 	OracleDbAwsKeySummaryCollections []GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection `pulumi:"oracleDbAwsKeySummaryCollections"`
 	// The lifecycle state of the Oracle DB AWS Key resource.
@@ -102,6 +107,8 @@ type GetDbmulticloudOracleDbAwsKeysOutputArgs struct {
 	OracleDbAwsConnectorId pulumi.StringPtrInput `pulumi:"oracleDbAwsConnectorId"`
 	// A filter to return Oracle DB AWS Identity Connector Resource that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key resource.
 	OracleDbAwsKeyId pulumi.StringPtrInput `pulumi:"oracleDbAwsKeyId"`
+	// A filter to return only resources that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+	OracleDbAwsKeyPoolId pulumi.StringPtrInput `pulumi:"oracleDbAwsKeyPoolId"`
 	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
@@ -150,6 +157,11 @@ func (o GetDbmulticloudOracleDbAwsKeysResultOutput) OracleDbAwsConnectorId() pul
 
 func (o GetDbmulticloudOracleDbAwsKeysResultOutput) OracleDbAwsKeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysResult) *string { return v.OracleDbAwsKeyId }).(pulumi.StringPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+func (o GetDbmulticloudOracleDbAwsKeysResultOutput) OracleDbAwsKeyPoolId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDbmulticloudOracleDbAwsKeysResult) *string { return v.OracleDbAwsKeyPoolId }).(pulumi.StringPtrOutput)
 }
 
 // The list of oracle_db_aws_key_summary_collection.

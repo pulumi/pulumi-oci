@@ -867,6 +867,260 @@ func (o ClusterOutboundClusterConfigOutboundClusterArrayOutput) Index(i pulumi.I
 	}).(ClusterOutboundClusterConfigOutboundClusterOutput)
 }
 
+type ClusterRemoteReindexTrustConfig struct {
+	// (Updatable) Remote cluster sources to trust for reindexing.
+	RemoteSources []ClusterRemoteReindexTrustConfigRemoteSource `pulumi:"remoteSources"`
+}
+
+// ClusterRemoteReindexTrustConfigInput is an input type that accepts ClusterRemoteReindexTrustConfigArgs and ClusterRemoteReindexTrustConfigOutput values.
+// You can construct a concrete instance of `ClusterRemoteReindexTrustConfigInput` via:
+//
+//	ClusterRemoteReindexTrustConfigArgs{...}
+type ClusterRemoteReindexTrustConfigInput interface {
+	pulumi.Input
+
+	ToClusterRemoteReindexTrustConfigOutput() ClusterRemoteReindexTrustConfigOutput
+	ToClusterRemoteReindexTrustConfigOutputWithContext(context.Context) ClusterRemoteReindexTrustConfigOutput
+}
+
+type ClusterRemoteReindexTrustConfigArgs struct {
+	// (Updatable) Remote cluster sources to trust for reindexing.
+	RemoteSources ClusterRemoteReindexTrustConfigRemoteSourceArrayInput `pulumi:"remoteSources"`
+}
+
+func (ClusterRemoteReindexTrustConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterRemoteReindexTrustConfig)(nil)).Elem()
+}
+
+func (i ClusterRemoteReindexTrustConfigArgs) ToClusterRemoteReindexTrustConfigOutput() ClusterRemoteReindexTrustConfigOutput {
+	return i.ToClusterRemoteReindexTrustConfigOutputWithContext(context.Background())
+}
+
+func (i ClusterRemoteReindexTrustConfigArgs) ToClusterRemoteReindexTrustConfigOutputWithContext(ctx context.Context) ClusterRemoteReindexTrustConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterRemoteReindexTrustConfigOutput)
+}
+
+func (i ClusterRemoteReindexTrustConfigArgs) ToClusterRemoteReindexTrustConfigPtrOutput() ClusterRemoteReindexTrustConfigPtrOutput {
+	return i.ToClusterRemoteReindexTrustConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ClusterRemoteReindexTrustConfigArgs) ToClusterRemoteReindexTrustConfigPtrOutputWithContext(ctx context.Context) ClusterRemoteReindexTrustConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterRemoteReindexTrustConfigOutput).ToClusterRemoteReindexTrustConfigPtrOutputWithContext(ctx)
+}
+
+// ClusterRemoteReindexTrustConfigPtrInput is an input type that accepts ClusterRemoteReindexTrustConfigArgs, ClusterRemoteReindexTrustConfigPtr and ClusterRemoteReindexTrustConfigPtrOutput values.
+// You can construct a concrete instance of `ClusterRemoteReindexTrustConfigPtrInput` via:
+//
+//	        ClusterRemoteReindexTrustConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type ClusterRemoteReindexTrustConfigPtrInput interface {
+	pulumi.Input
+
+	ToClusterRemoteReindexTrustConfigPtrOutput() ClusterRemoteReindexTrustConfigPtrOutput
+	ToClusterRemoteReindexTrustConfigPtrOutputWithContext(context.Context) ClusterRemoteReindexTrustConfigPtrOutput
+}
+
+type clusterRemoteReindexTrustConfigPtrType ClusterRemoteReindexTrustConfigArgs
+
+func ClusterRemoteReindexTrustConfigPtr(v *ClusterRemoteReindexTrustConfigArgs) ClusterRemoteReindexTrustConfigPtrInput {
+	return (*clusterRemoteReindexTrustConfigPtrType)(v)
+}
+
+func (*clusterRemoteReindexTrustConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterRemoteReindexTrustConfig)(nil)).Elem()
+}
+
+func (i *clusterRemoteReindexTrustConfigPtrType) ToClusterRemoteReindexTrustConfigPtrOutput() ClusterRemoteReindexTrustConfigPtrOutput {
+	return i.ToClusterRemoteReindexTrustConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *clusterRemoteReindexTrustConfigPtrType) ToClusterRemoteReindexTrustConfigPtrOutputWithContext(ctx context.Context) ClusterRemoteReindexTrustConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterRemoteReindexTrustConfigPtrOutput)
+}
+
+type ClusterRemoteReindexTrustConfigOutput struct{ *pulumi.OutputState }
+
+func (ClusterRemoteReindexTrustConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterRemoteReindexTrustConfig)(nil)).Elem()
+}
+
+func (o ClusterRemoteReindexTrustConfigOutput) ToClusterRemoteReindexTrustConfigOutput() ClusterRemoteReindexTrustConfigOutput {
+	return o
+}
+
+func (o ClusterRemoteReindexTrustConfigOutput) ToClusterRemoteReindexTrustConfigOutputWithContext(ctx context.Context) ClusterRemoteReindexTrustConfigOutput {
+	return o
+}
+
+func (o ClusterRemoteReindexTrustConfigOutput) ToClusterRemoteReindexTrustConfigPtrOutput() ClusterRemoteReindexTrustConfigPtrOutput {
+	return o.ToClusterRemoteReindexTrustConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ClusterRemoteReindexTrustConfigOutput) ToClusterRemoteReindexTrustConfigPtrOutputWithContext(ctx context.Context) ClusterRemoteReindexTrustConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClusterRemoteReindexTrustConfig) *ClusterRemoteReindexTrustConfig {
+		return &v
+	}).(ClusterRemoteReindexTrustConfigPtrOutput)
+}
+
+// (Updatable) Remote cluster sources to trust for reindexing.
+func (o ClusterRemoteReindexTrustConfigOutput) RemoteSources() ClusterRemoteReindexTrustConfigRemoteSourceArrayOutput {
+	return o.ApplyT(func(v ClusterRemoteReindexTrustConfig) []ClusterRemoteReindexTrustConfigRemoteSource {
+		return v.RemoteSources
+	}).(ClusterRemoteReindexTrustConfigRemoteSourceArrayOutput)
+}
+
+type ClusterRemoteReindexTrustConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ClusterRemoteReindexTrustConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterRemoteReindexTrustConfig)(nil)).Elem()
+}
+
+func (o ClusterRemoteReindexTrustConfigPtrOutput) ToClusterRemoteReindexTrustConfigPtrOutput() ClusterRemoteReindexTrustConfigPtrOutput {
+	return o
+}
+
+func (o ClusterRemoteReindexTrustConfigPtrOutput) ToClusterRemoteReindexTrustConfigPtrOutputWithContext(ctx context.Context) ClusterRemoteReindexTrustConfigPtrOutput {
+	return o
+}
+
+func (o ClusterRemoteReindexTrustConfigPtrOutput) Elem() ClusterRemoteReindexTrustConfigOutput {
+	return o.ApplyT(func(v *ClusterRemoteReindexTrustConfig) ClusterRemoteReindexTrustConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ClusterRemoteReindexTrustConfig
+		return ret
+	}).(ClusterRemoteReindexTrustConfigOutput)
+}
+
+// (Updatable) Remote cluster sources to trust for reindexing.
+func (o ClusterRemoteReindexTrustConfigPtrOutput) RemoteSources() ClusterRemoteReindexTrustConfigRemoteSourceArrayOutput {
+	return o.ApplyT(func(v *ClusterRemoteReindexTrustConfig) []ClusterRemoteReindexTrustConfigRemoteSource {
+		if v == nil {
+			return nil
+		}
+		return v.RemoteSources
+	}).(ClusterRemoteReindexTrustConfigRemoteSourceArrayOutput)
+}
+
+type ClusterRemoteReindexTrustConfigRemoteSource struct {
+	// (Updatable) OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+	CertificateId string `pulumi:"certificateId"`
+	// (Updatable) HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
+	Endpoint string `pulumi:"endpoint"`
+	// (Updatable) Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
+	EndpointResolutionIp *string `pulumi:"endpointResolutionIp"`
+}
+
+// ClusterRemoteReindexTrustConfigRemoteSourceInput is an input type that accepts ClusterRemoteReindexTrustConfigRemoteSourceArgs and ClusterRemoteReindexTrustConfigRemoteSourceOutput values.
+// You can construct a concrete instance of `ClusterRemoteReindexTrustConfigRemoteSourceInput` via:
+//
+//	ClusterRemoteReindexTrustConfigRemoteSourceArgs{...}
+type ClusterRemoteReindexTrustConfigRemoteSourceInput interface {
+	pulumi.Input
+
+	ToClusterRemoteReindexTrustConfigRemoteSourceOutput() ClusterRemoteReindexTrustConfigRemoteSourceOutput
+	ToClusterRemoteReindexTrustConfigRemoteSourceOutputWithContext(context.Context) ClusterRemoteReindexTrustConfigRemoteSourceOutput
+}
+
+type ClusterRemoteReindexTrustConfigRemoteSourceArgs struct {
+	// (Updatable) OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+	CertificateId pulumi.StringInput `pulumi:"certificateId"`
+	// (Updatable) HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
+	Endpoint pulumi.StringInput `pulumi:"endpoint"`
+	// (Updatable) Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
+	EndpointResolutionIp pulumi.StringPtrInput `pulumi:"endpointResolutionIp"`
+}
+
+func (ClusterRemoteReindexTrustConfigRemoteSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterRemoteReindexTrustConfigRemoteSource)(nil)).Elem()
+}
+
+func (i ClusterRemoteReindexTrustConfigRemoteSourceArgs) ToClusterRemoteReindexTrustConfigRemoteSourceOutput() ClusterRemoteReindexTrustConfigRemoteSourceOutput {
+	return i.ToClusterRemoteReindexTrustConfigRemoteSourceOutputWithContext(context.Background())
+}
+
+func (i ClusterRemoteReindexTrustConfigRemoteSourceArgs) ToClusterRemoteReindexTrustConfigRemoteSourceOutputWithContext(ctx context.Context) ClusterRemoteReindexTrustConfigRemoteSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterRemoteReindexTrustConfigRemoteSourceOutput)
+}
+
+// ClusterRemoteReindexTrustConfigRemoteSourceArrayInput is an input type that accepts ClusterRemoteReindexTrustConfigRemoteSourceArray and ClusterRemoteReindexTrustConfigRemoteSourceArrayOutput values.
+// You can construct a concrete instance of `ClusterRemoteReindexTrustConfigRemoteSourceArrayInput` via:
+//
+//	ClusterRemoteReindexTrustConfigRemoteSourceArray{ ClusterRemoteReindexTrustConfigRemoteSourceArgs{...} }
+type ClusterRemoteReindexTrustConfigRemoteSourceArrayInput interface {
+	pulumi.Input
+
+	ToClusterRemoteReindexTrustConfigRemoteSourceArrayOutput() ClusterRemoteReindexTrustConfigRemoteSourceArrayOutput
+	ToClusterRemoteReindexTrustConfigRemoteSourceArrayOutputWithContext(context.Context) ClusterRemoteReindexTrustConfigRemoteSourceArrayOutput
+}
+
+type ClusterRemoteReindexTrustConfigRemoteSourceArray []ClusterRemoteReindexTrustConfigRemoteSourceInput
+
+func (ClusterRemoteReindexTrustConfigRemoteSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterRemoteReindexTrustConfigRemoteSource)(nil)).Elem()
+}
+
+func (i ClusterRemoteReindexTrustConfigRemoteSourceArray) ToClusterRemoteReindexTrustConfigRemoteSourceArrayOutput() ClusterRemoteReindexTrustConfigRemoteSourceArrayOutput {
+	return i.ToClusterRemoteReindexTrustConfigRemoteSourceArrayOutputWithContext(context.Background())
+}
+
+func (i ClusterRemoteReindexTrustConfigRemoteSourceArray) ToClusterRemoteReindexTrustConfigRemoteSourceArrayOutputWithContext(ctx context.Context) ClusterRemoteReindexTrustConfigRemoteSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterRemoteReindexTrustConfigRemoteSourceArrayOutput)
+}
+
+type ClusterRemoteReindexTrustConfigRemoteSourceOutput struct{ *pulumi.OutputState }
+
+func (ClusterRemoteReindexTrustConfigRemoteSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterRemoteReindexTrustConfigRemoteSource)(nil)).Elem()
+}
+
+func (o ClusterRemoteReindexTrustConfigRemoteSourceOutput) ToClusterRemoteReindexTrustConfigRemoteSourceOutput() ClusterRemoteReindexTrustConfigRemoteSourceOutput {
+	return o
+}
+
+func (o ClusterRemoteReindexTrustConfigRemoteSourceOutput) ToClusterRemoteReindexTrustConfigRemoteSourceOutputWithContext(ctx context.Context) ClusterRemoteReindexTrustConfigRemoteSourceOutput {
+	return o
+}
+
+// (Updatable) OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+func (o ClusterRemoteReindexTrustConfigRemoteSourceOutput) CertificateId() pulumi.StringOutput {
+	return o.ApplyT(func(v ClusterRemoteReindexTrustConfigRemoteSource) string { return v.CertificateId }).(pulumi.StringOutput)
+}
+
+// (Updatable) HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
+func (o ClusterRemoteReindexTrustConfigRemoteSourceOutput) Endpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v ClusterRemoteReindexTrustConfigRemoteSource) string { return v.Endpoint }).(pulumi.StringOutput)
+}
+
+// (Updatable) Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
+func (o ClusterRemoteReindexTrustConfigRemoteSourceOutput) EndpointResolutionIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterRemoteReindexTrustConfigRemoteSource) *string { return v.EndpointResolutionIp }).(pulumi.StringPtrOutput)
+}
+
+type ClusterRemoteReindexTrustConfigRemoteSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (ClusterRemoteReindexTrustConfigRemoteSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ClusterRemoteReindexTrustConfigRemoteSource)(nil)).Elem()
+}
+
+func (o ClusterRemoteReindexTrustConfigRemoteSourceArrayOutput) ToClusterRemoteReindexTrustConfigRemoteSourceArrayOutput() ClusterRemoteReindexTrustConfigRemoteSourceArrayOutput {
+	return o
+}
+
+func (o ClusterRemoteReindexTrustConfigRemoteSourceArrayOutput) ToClusterRemoteReindexTrustConfigRemoteSourceArrayOutputWithContext(ctx context.Context) ClusterRemoteReindexTrustConfigRemoteSourceArrayOutput {
+	return o
+}
+
+func (o ClusterRemoteReindexTrustConfigRemoteSourceArrayOutput) Index(i pulumi.IntInput) ClusterRemoteReindexTrustConfigRemoteSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ClusterRemoteReindexTrustConfigRemoteSource {
+		return vs[0].([]ClusterRemoteReindexTrustConfigRemoteSource)[vs[1].(int)]
+	}).(ClusterRemoteReindexTrustConfigRemoteSourceOutput)
+}
+
 type ClusterReverseConnectionEndpoint struct {
 	// The IP addresses of the endpoint in customer VCN
 	CustomerIp *string `pulumi:"customerIp"`
@@ -971,6 +1225,478 @@ func (o ClusterReverseConnectionEndpointArrayOutput) Index(i pulumi.IntInput) Cl
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ClusterReverseConnectionEndpoint {
 		return vs[0].([]ClusterReverseConnectionEndpoint)[vs[1].(int)]
 	}).(ClusterReverseConnectionEndpointOutput)
+}
+
+type ClusterSecurityMasterUserAuthDetails struct {
+	// (Updatable) The username and password source details for the security master user.
+	UserDetails ClusterSecurityMasterUserAuthDetailsUserDetails `pulumi:"userDetails"`
+}
+
+// ClusterSecurityMasterUserAuthDetailsInput is an input type that accepts ClusterSecurityMasterUserAuthDetailsArgs and ClusterSecurityMasterUserAuthDetailsOutput values.
+// You can construct a concrete instance of `ClusterSecurityMasterUserAuthDetailsInput` via:
+//
+//	ClusterSecurityMasterUserAuthDetailsArgs{...}
+type ClusterSecurityMasterUserAuthDetailsInput interface {
+	pulumi.Input
+
+	ToClusterSecurityMasterUserAuthDetailsOutput() ClusterSecurityMasterUserAuthDetailsOutput
+	ToClusterSecurityMasterUserAuthDetailsOutputWithContext(context.Context) ClusterSecurityMasterUserAuthDetailsOutput
+}
+
+type ClusterSecurityMasterUserAuthDetailsArgs struct {
+	// (Updatable) The username and password source details for the security master user.
+	UserDetails ClusterSecurityMasterUserAuthDetailsUserDetailsInput `pulumi:"userDetails"`
+}
+
+func (ClusterSecurityMasterUserAuthDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterSecurityMasterUserAuthDetails)(nil)).Elem()
+}
+
+func (i ClusterSecurityMasterUserAuthDetailsArgs) ToClusterSecurityMasterUserAuthDetailsOutput() ClusterSecurityMasterUserAuthDetailsOutput {
+	return i.ToClusterSecurityMasterUserAuthDetailsOutputWithContext(context.Background())
+}
+
+func (i ClusterSecurityMasterUserAuthDetailsArgs) ToClusterSecurityMasterUserAuthDetailsOutputWithContext(ctx context.Context) ClusterSecurityMasterUserAuthDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterSecurityMasterUserAuthDetailsOutput)
+}
+
+func (i ClusterSecurityMasterUserAuthDetailsArgs) ToClusterSecurityMasterUserAuthDetailsPtrOutput() ClusterSecurityMasterUserAuthDetailsPtrOutput {
+	return i.ToClusterSecurityMasterUserAuthDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ClusterSecurityMasterUserAuthDetailsArgs) ToClusterSecurityMasterUserAuthDetailsPtrOutputWithContext(ctx context.Context) ClusterSecurityMasterUserAuthDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterSecurityMasterUserAuthDetailsOutput).ToClusterSecurityMasterUserAuthDetailsPtrOutputWithContext(ctx)
+}
+
+// ClusterSecurityMasterUserAuthDetailsPtrInput is an input type that accepts ClusterSecurityMasterUserAuthDetailsArgs, ClusterSecurityMasterUserAuthDetailsPtr and ClusterSecurityMasterUserAuthDetailsPtrOutput values.
+// You can construct a concrete instance of `ClusterSecurityMasterUserAuthDetailsPtrInput` via:
+//
+//	        ClusterSecurityMasterUserAuthDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ClusterSecurityMasterUserAuthDetailsPtrInput interface {
+	pulumi.Input
+
+	ToClusterSecurityMasterUserAuthDetailsPtrOutput() ClusterSecurityMasterUserAuthDetailsPtrOutput
+	ToClusterSecurityMasterUserAuthDetailsPtrOutputWithContext(context.Context) ClusterSecurityMasterUserAuthDetailsPtrOutput
+}
+
+type clusterSecurityMasterUserAuthDetailsPtrType ClusterSecurityMasterUserAuthDetailsArgs
+
+func ClusterSecurityMasterUserAuthDetailsPtr(v *ClusterSecurityMasterUserAuthDetailsArgs) ClusterSecurityMasterUserAuthDetailsPtrInput {
+	return (*clusterSecurityMasterUserAuthDetailsPtrType)(v)
+}
+
+func (*clusterSecurityMasterUserAuthDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterSecurityMasterUserAuthDetails)(nil)).Elem()
+}
+
+func (i *clusterSecurityMasterUserAuthDetailsPtrType) ToClusterSecurityMasterUserAuthDetailsPtrOutput() ClusterSecurityMasterUserAuthDetailsPtrOutput {
+	return i.ToClusterSecurityMasterUserAuthDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *clusterSecurityMasterUserAuthDetailsPtrType) ToClusterSecurityMasterUserAuthDetailsPtrOutputWithContext(ctx context.Context) ClusterSecurityMasterUserAuthDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterSecurityMasterUserAuthDetailsPtrOutput)
+}
+
+type ClusterSecurityMasterUserAuthDetailsOutput struct{ *pulumi.OutputState }
+
+func (ClusterSecurityMasterUserAuthDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterSecurityMasterUserAuthDetails)(nil)).Elem()
+}
+
+func (o ClusterSecurityMasterUserAuthDetailsOutput) ToClusterSecurityMasterUserAuthDetailsOutput() ClusterSecurityMasterUserAuthDetailsOutput {
+	return o
+}
+
+func (o ClusterSecurityMasterUserAuthDetailsOutput) ToClusterSecurityMasterUserAuthDetailsOutputWithContext(ctx context.Context) ClusterSecurityMasterUserAuthDetailsOutput {
+	return o
+}
+
+func (o ClusterSecurityMasterUserAuthDetailsOutput) ToClusterSecurityMasterUserAuthDetailsPtrOutput() ClusterSecurityMasterUserAuthDetailsPtrOutput {
+	return o.ToClusterSecurityMasterUserAuthDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ClusterSecurityMasterUserAuthDetailsOutput) ToClusterSecurityMasterUserAuthDetailsPtrOutputWithContext(ctx context.Context) ClusterSecurityMasterUserAuthDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClusterSecurityMasterUserAuthDetails) *ClusterSecurityMasterUserAuthDetails {
+		return &v
+	}).(ClusterSecurityMasterUserAuthDetailsPtrOutput)
+}
+
+// (Updatable) The username and password source details for the security master user.
+func (o ClusterSecurityMasterUserAuthDetailsOutput) UserDetails() ClusterSecurityMasterUserAuthDetailsUserDetailsOutput {
+	return o.ApplyT(func(v ClusterSecurityMasterUserAuthDetails) ClusterSecurityMasterUserAuthDetailsUserDetails {
+		return v.UserDetails
+	}).(ClusterSecurityMasterUserAuthDetailsUserDetailsOutput)
+}
+
+type ClusterSecurityMasterUserAuthDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ClusterSecurityMasterUserAuthDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterSecurityMasterUserAuthDetails)(nil)).Elem()
+}
+
+func (o ClusterSecurityMasterUserAuthDetailsPtrOutput) ToClusterSecurityMasterUserAuthDetailsPtrOutput() ClusterSecurityMasterUserAuthDetailsPtrOutput {
+	return o
+}
+
+func (o ClusterSecurityMasterUserAuthDetailsPtrOutput) ToClusterSecurityMasterUserAuthDetailsPtrOutputWithContext(ctx context.Context) ClusterSecurityMasterUserAuthDetailsPtrOutput {
+	return o
+}
+
+func (o ClusterSecurityMasterUserAuthDetailsPtrOutput) Elem() ClusterSecurityMasterUserAuthDetailsOutput {
+	return o.ApplyT(func(v *ClusterSecurityMasterUserAuthDetails) ClusterSecurityMasterUserAuthDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ClusterSecurityMasterUserAuthDetails
+		return ret
+	}).(ClusterSecurityMasterUserAuthDetailsOutput)
+}
+
+// (Updatable) The username and password source details for the security master user.
+func (o ClusterSecurityMasterUserAuthDetailsPtrOutput) UserDetails() ClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput {
+	return o.ApplyT(func(v *ClusterSecurityMasterUserAuthDetails) *ClusterSecurityMasterUserAuthDetailsUserDetails {
+		if v == nil {
+			return nil
+		}
+		return &v.UserDetails
+	}).(ClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput)
+}
+
+type ClusterSecurityMasterUserAuthDetailsUserDetails struct {
+	// (Updatable) Base password-source details for the OpenSearch security master user.
+	PasswordDetails ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails `pulumi:"passwordDetails"`
+	// (Updatable) The name of the master user that is used to manage security config.
+	Username string `pulumi:"username"`
+}
+
+// ClusterSecurityMasterUserAuthDetailsUserDetailsInput is an input type that accepts ClusterSecurityMasterUserAuthDetailsUserDetailsArgs and ClusterSecurityMasterUserAuthDetailsUserDetailsOutput values.
+// You can construct a concrete instance of `ClusterSecurityMasterUserAuthDetailsUserDetailsInput` via:
+//
+//	ClusterSecurityMasterUserAuthDetailsUserDetailsArgs{...}
+type ClusterSecurityMasterUserAuthDetailsUserDetailsInput interface {
+	pulumi.Input
+
+	ToClusterSecurityMasterUserAuthDetailsUserDetailsOutput() ClusterSecurityMasterUserAuthDetailsUserDetailsOutput
+	ToClusterSecurityMasterUserAuthDetailsUserDetailsOutputWithContext(context.Context) ClusterSecurityMasterUserAuthDetailsUserDetailsOutput
+}
+
+type ClusterSecurityMasterUserAuthDetailsUserDetailsArgs struct {
+	// (Updatable) Base password-source details for the OpenSearch security master user.
+	PasswordDetails ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsInput `pulumi:"passwordDetails"`
+	// (Updatable) The name of the master user that is used to manage security config.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (ClusterSecurityMasterUserAuthDetailsUserDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterSecurityMasterUserAuthDetailsUserDetails)(nil)).Elem()
+}
+
+func (i ClusterSecurityMasterUserAuthDetailsUserDetailsArgs) ToClusterSecurityMasterUserAuthDetailsUserDetailsOutput() ClusterSecurityMasterUserAuthDetailsUserDetailsOutput {
+	return i.ToClusterSecurityMasterUserAuthDetailsUserDetailsOutputWithContext(context.Background())
+}
+
+func (i ClusterSecurityMasterUserAuthDetailsUserDetailsArgs) ToClusterSecurityMasterUserAuthDetailsUserDetailsOutputWithContext(ctx context.Context) ClusterSecurityMasterUserAuthDetailsUserDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterSecurityMasterUserAuthDetailsUserDetailsOutput)
+}
+
+func (i ClusterSecurityMasterUserAuthDetailsUserDetailsArgs) ToClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput() ClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput {
+	return i.ToClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ClusterSecurityMasterUserAuthDetailsUserDetailsArgs) ToClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutputWithContext(ctx context.Context) ClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterSecurityMasterUserAuthDetailsUserDetailsOutput).ToClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutputWithContext(ctx)
+}
+
+// ClusterSecurityMasterUserAuthDetailsUserDetailsPtrInput is an input type that accepts ClusterSecurityMasterUserAuthDetailsUserDetailsArgs, ClusterSecurityMasterUserAuthDetailsUserDetailsPtr and ClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput values.
+// You can construct a concrete instance of `ClusterSecurityMasterUserAuthDetailsUserDetailsPtrInput` via:
+//
+//	        ClusterSecurityMasterUserAuthDetailsUserDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ClusterSecurityMasterUserAuthDetailsUserDetailsPtrInput interface {
+	pulumi.Input
+
+	ToClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput() ClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput
+	ToClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutputWithContext(context.Context) ClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput
+}
+
+type clusterSecurityMasterUserAuthDetailsUserDetailsPtrType ClusterSecurityMasterUserAuthDetailsUserDetailsArgs
+
+func ClusterSecurityMasterUserAuthDetailsUserDetailsPtr(v *ClusterSecurityMasterUserAuthDetailsUserDetailsArgs) ClusterSecurityMasterUserAuthDetailsUserDetailsPtrInput {
+	return (*clusterSecurityMasterUserAuthDetailsUserDetailsPtrType)(v)
+}
+
+func (*clusterSecurityMasterUserAuthDetailsUserDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterSecurityMasterUserAuthDetailsUserDetails)(nil)).Elem()
+}
+
+func (i *clusterSecurityMasterUserAuthDetailsUserDetailsPtrType) ToClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput() ClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput {
+	return i.ToClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *clusterSecurityMasterUserAuthDetailsUserDetailsPtrType) ToClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutputWithContext(ctx context.Context) ClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput)
+}
+
+type ClusterSecurityMasterUserAuthDetailsUserDetailsOutput struct{ *pulumi.OutputState }
+
+func (ClusterSecurityMasterUserAuthDetailsUserDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterSecurityMasterUserAuthDetailsUserDetails)(nil)).Elem()
+}
+
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsOutput) ToClusterSecurityMasterUserAuthDetailsUserDetailsOutput() ClusterSecurityMasterUserAuthDetailsUserDetailsOutput {
+	return o
+}
+
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsOutput) ToClusterSecurityMasterUserAuthDetailsUserDetailsOutputWithContext(ctx context.Context) ClusterSecurityMasterUserAuthDetailsUserDetailsOutput {
+	return o
+}
+
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsOutput) ToClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput() ClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput {
+	return o.ToClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsOutput) ToClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutputWithContext(ctx context.Context) ClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClusterSecurityMasterUserAuthDetailsUserDetails) *ClusterSecurityMasterUserAuthDetailsUserDetails {
+		return &v
+	}).(ClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput)
+}
+
+// (Updatable) Base password-source details for the OpenSearch security master user.
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsOutput) PasswordDetails() ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput {
+	return o.ApplyT(func(v ClusterSecurityMasterUserAuthDetailsUserDetails) ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails {
+		return v.PasswordDetails
+	}).(ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput)
+}
+
+// (Updatable) The name of the master user that is used to manage security config.
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v ClusterSecurityMasterUserAuthDetailsUserDetails) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type ClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterSecurityMasterUserAuthDetailsUserDetails)(nil)).Elem()
+}
+
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput) ToClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput() ClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput {
+	return o
+}
+
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput) ToClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutputWithContext(ctx context.Context) ClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput {
+	return o
+}
+
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput) Elem() ClusterSecurityMasterUserAuthDetailsUserDetailsOutput {
+	return o.ApplyT(func(v *ClusterSecurityMasterUserAuthDetailsUserDetails) ClusterSecurityMasterUserAuthDetailsUserDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ClusterSecurityMasterUserAuthDetailsUserDetails
+		return ret
+	}).(ClusterSecurityMasterUserAuthDetailsUserDetailsOutput)
+}
+
+// (Updatable) Base password-source details for the OpenSearch security master user.
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput) PasswordDetails() ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput {
+	return o.ApplyT(func(v *ClusterSecurityMasterUserAuthDetailsUserDetails) *ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails {
+		if v == nil {
+			return nil
+		}
+		return &v.PasswordDetails
+	}).(ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput)
+}
+
+// (Updatable) The name of the master user that is used to manage security config.
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterSecurityMasterUserAuthDetailsUserDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Username
+	}).(pulumi.StringPtrOutput)
+}
+
+type ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails struct {
+	// (Updatable) The plaintext password for the master user.
+	PlainPassword *string `pulumi:"plainPassword"`
+	// (Updatable) The source of the master-user plaintext password.
+	SourceType string `pulumi:"sourceType"`
+	// (Updatable) The OCID of a Vault secret containing the plaintext master-user password.
+	VaultSecretId *string `pulumi:"vaultSecretId"`
+}
+
+// ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsInput is an input type that accepts ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgs and ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput values.
+// You can construct a concrete instance of `ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsInput` via:
+//
+//	ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgs{...}
+type ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsInput interface {
+	pulumi.Input
+
+	ToClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput() ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput
+	ToClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutputWithContext(context.Context) ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput
+}
+
+type ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgs struct {
+	// (Updatable) The plaintext password for the master user.
+	PlainPassword pulumi.StringPtrInput `pulumi:"plainPassword"`
+	// (Updatable) The source of the master-user plaintext password.
+	SourceType pulumi.StringInput `pulumi:"sourceType"`
+	// (Updatable) The OCID of a Vault secret containing the plaintext master-user password.
+	VaultSecretId pulumi.StringPtrInput `pulumi:"vaultSecretId"`
+}
+
+func (ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails)(nil)).Elem()
+}
+
+func (i ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgs) ToClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput() ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput {
+	return i.ToClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutputWithContext(context.Background())
+}
+
+func (i ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgs) ToClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutputWithContext(ctx context.Context) ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput)
+}
+
+func (i ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgs) ToClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput() ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput {
+	return i.ToClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgs) ToClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutputWithContext(ctx context.Context) ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput).ToClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutputWithContext(ctx)
+}
+
+// ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrInput is an input type that accepts ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgs, ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtr and ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput values.
+// You can construct a concrete instance of `ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrInput` via:
+//
+//	        ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrInput interface {
+	pulumi.Input
+
+	ToClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput() ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput
+	ToClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutputWithContext(context.Context) ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput
+}
+
+type clusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrType ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgs
+
+func ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtr(v *ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgs) ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrInput {
+	return (*clusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrType)(v)
+}
+
+func (*clusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails)(nil)).Elem()
+}
+
+func (i *clusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrType) ToClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput() ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput {
+	return i.ToClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *clusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrType) ToClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutputWithContext(ctx context.Context) ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput)
+}
+
+type ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput struct{ *pulumi.OutputState }
+
+func (ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails)(nil)).Elem()
+}
+
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput) ToClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput() ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput {
+	return o
+}
+
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput) ToClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutputWithContext(ctx context.Context) ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput {
+	return o
+}
+
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput) ToClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput() ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput {
+	return o.ToClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput) ToClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutputWithContext(ctx context.Context) ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails) *ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails {
+		return &v
+	}).(ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput)
+}
+
+// (Updatable) The plaintext password for the master user.
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput) PlainPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails) *string { return v.PlainPassword }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The source of the master-user plaintext password.
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails) string { return v.SourceType }).(pulumi.StringOutput)
+}
+
+// (Updatable) The OCID of a Vault secret containing the plaintext master-user password.
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput) VaultSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails) *string { return v.VaultSecretId }).(pulumi.StringPtrOutput)
+}
+
+type ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails)(nil)).Elem()
+}
+
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput) ToClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput() ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput {
+	return o
+}
+
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput) ToClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutputWithContext(ctx context.Context) ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput {
+	return o
+}
+
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput) Elem() ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput {
+	return o.ApplyT(func(v *ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails) ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails
+		return ret
+	}).(ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput)
+}
+
+// (Updatable) The plaintext password for the master user.
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput) PlainPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PlainPassword
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The source of the master-user plaintext password.
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput) SourceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.SourceType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of a Vault secret containing the plaintext master-user password.
+func (o ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput) VaultSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VaultSecretId
+	}).(pulumi.StringPtrOutput)
 }
 
 type ClusterSecuritySamlConfig struct {
@@ -2694,6 +3420,220 @@ func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReve
 	}).(GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutput)
 }
 
+type GetOpensearchClusterRemoteReindexTrustConfig struct {
+	// Remote cluster sources to trust for reindexing.
+	RemoteSources []GetOpensearchClusterRemoteReindexTrustConfigRemoteSource `pulumi:"remoteSources"`
+}
+
+// GetOpensearchClusterRemoteReindexTrustConfigInput is an input type that accepts GetOpensearchClusterRemoteReindexTrustConfigArgs and GetOpensearchClusterRemoteReindexTrustConfigOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterRemoteReindexTrustConfigInput` via:
+//
+//	GetOpensearchClusterRemoteReindexTrustConfigArgs{...}
+type GetOpensearchClusterRemoteReindexTrustConfigInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterRemoteReindexTrustConfigOutput() GetOpensearchClusterRemoteReindexTrustConfigOutput
+	ToGetOpensearchClusterRemoteReindexTrustConfigOutputWithContext(context.Context) GetOpensearchClusterRemoteReindexTrustConfigOutput
+}
+
+type GetOpensearchClusterRemoteReindexTrustConfigArgs struct {
+	// Remote cluster sources to trust for reindexing.
+	RemoteSources GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayInput `pulumi:"remoteSources"`
+}
+
+func (GetOpensearchClusterRemoteReindexTrustConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterRemoteReindexTrustConfig)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterRemoteReindexTrustConfigArgs) ToGetOpensearchClusterRemoteReindexTrustConfigOutput() GetOpensearchClusterRemoteReindexTrustConfigOutput {
+	return i.ToGetOpensearchClusterRemoteReindexTrustConfigOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterRemoteReindexTrustConfigArgs) ToGetOpensearchClusterRemoteReindexTrustConfigOutputWithContext(ctx context.Context) GetOpensearchClusterRemoteReindexTrustConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterRemoteReindexTrustConfigOutput)
+}
+
+// GetOpensearchClusterRemoteReindexTrustConfigArrayInput is an input type that accepts GetOpensearchClusterRemoteReindexTrustConfigArray and GetOpensearchClusterRemoteReindexTrustConfigArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterRemoteReindexTrustConfigArrayInput` via:
+//
+//	GetOpensearchClusterRemoteReindexTrustConfigArray{ GetOpensearchClusterRemoteReindexTrustConfigArgs{...} }
+type GetOpensearchClusterRemoteReindexTrustConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterRemoteReindexTrustConfigArrayOutput() GetOpensearchClusterRemoteReindexTrustConfigArrayOutput
+	ToGetOpensearchClusterRemoteReindexTrustConfigArrayOutputWithContext(context.Context) GetOpensearchClusterRemoteReindexTrustConfigArrayOutput
+}
+
+type GetOpensearchClusterRemoteReindexTrustConfigArray []GetOpensearchClusterRemoteReindexTrustConfigInput
+
+func (GetOpensearchClusterRemoteReindexTrustConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterRemoteReindexTrustConfig)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterRemoteReindexTrustConfigArray) ToGetOpensearchClusterRemoteReindexTrustConfigArrayOutput() GetOpensearchClusterRemoteReindexTrustConfigArrayOutput {
+	return i.ToGetOpensearchClusterRemoteReindexTrustConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterRemoteReindexTrustConfigArray) ToGetOpensearchClusterRemoteReindexTrustConfigArrayOutputWithContext(ctx context.Context) GetOpensearchClusterRemoteReindexTrustConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterRemoteReindexTrustConfigArrayOutput)
+}
+
+type GetOpensearchClusterRemoteReindexTrustConfigOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterRemoteReindexTrustConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterRemoteReindexTrustConfig)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterRemoteReindexTrustConfigOutput) ToGetOpensearchClusterRemoteReindexTrustConfigOutput() GetOpensearchClusterRemoteReindexTrustConfigOutput {
+	return o
+}
+
+func (o GetOpensearchClusterRemoteReindexTrustConfigOutput) ToGetOpensearchClusterRemoteReindexTrustConfigOutputWithContext(ctx context.Context) GetOpensearchClusterRemoteReindexTrustConfigOutput {
+	return o
+}
+
+// Remote cluster sources to trust for reindexing.
+func (o GetOpensearchClusterRemoteReindexTrustConfigOutput) RemoteSources() GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClusterRemoteReindexTrustConfig) []GetOpensearchClusterRemoteReindexTrustConfigRemoteSource {
+		return v.RemoteSources
+	}).(GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutput)
+}
+
+type GetOpensearchClusterRemoteReindexTrustConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterRemoteReindexTrustConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterRemoteReindexTrustConfig)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterRemoteReindexTrustConfigArrayOutput) ToGetOpensearchClusterRemoteReindexTrustConfigArrayOutput() GetOpensearchClusterRemoteReindexTrustConfigArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterRemoteReindexTrustConfigArrayOutput) ToGetOpensearchClusterRemoteReindexTrustConfigArrayOutputWithContext(ctx context.Context) GetOpensearchClusterRemoteReindexTrustConfigArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterRemoteReindexTrustConfigArrayOutput) Index(i pulumi.IntInput) GetOpensearchClusterRemoteReindexTrustConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClusterRemoteReindexTrustConfig {
+		return vs[0].([]GetOpensearchClusterRemoteReindexTrustConfig)[vs[1].(int)]
+	}).(GetOpensearchClusterRemoteReindexTrustConfigOutput)
+}
+
+type GetOpensearchClusterRemoteReindexTrustConfigRemoteSource struct {
+	// OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+	CertificateId string `pulumi:"certificateId"`
+	// HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
+	Endpoint string `pulumi:"endpoint"`
+	// Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
+	EndpointResolutionIp string `pulumi:"endpointResolutionIp"`
+}
+
+// GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceInput is an input type that accepts GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArgs and GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceInput` via:
+//
+//	GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArgs{...}
+type GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput() GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput
+	ToGetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutputWithContext(context.Context) GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput
+}
+
+type GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArgs struct {
+	// OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+	CertificateId pulumi.StringInput `pulumi:"certificateId"`
+	// HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
+	Endpoint pulumi.StringInput `pulumi:"endpoint"`
+	// Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
+	EndpointResolutionIp pulumi.StringInput `pulumi:"endpointResolutionIp"`
+}
+
+func (GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterRemoteReindexTrustConfigRemoteSource)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArgs) ToGetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput() GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput {
+	return i.ToGetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArgs) ToGetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutputWithContext(ctx context.Context) GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput)
+}
+
+// GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayInput is an input type that accepts GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArray and GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayInput` via:
+//
+//	GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArray{ GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArgs{...} }
+type GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutput() GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutput
+	ToGetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutputWithContext(context.Context) GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutput
+}
+
+type GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArray []GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceInput
+
+func (GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterRemoteReindexTrustConfigRemoteSource)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArray) ToGetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutput() GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutput {
+	return i.ToGetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArray) ToGetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutputWithContext(ctx context.Context) GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutput)
+}
+
+type GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterRemoteReindexTrustConfigRemoteSource)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput) ToGetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput() GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput {
+	return o
+}
+
+func (o GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput) ToGetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutputWithContext(ctx context.Context) GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput {
+	return o
+}
+
+// OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+func (o GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput) CertificateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterRemoteReindexTrustConfigRemoteSource) string { return v.CertificateId }).(pulumi.StringOutput)
+}
+
+// HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
+func (o GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput) Endpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterRemoteReindexTrustConfigRemoteSource) string { return v.Endpoint }).(pulumi.StringOutput)
+}
+
+// Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
+func (o GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput) EndpointResolutionIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterRemoteReindexTrustConfigRemoteSource) string { return v.EndpointResolutionIp }).(pulumi.StringOutput)
+}
+
+type GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterRemoteReindexTrustConfigRemoteSource)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutput) ToGetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutput() GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutput) ToGetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutputWithContext(ctx context.Context) GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutput) Index(i pulumi.IntInput) GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClusterRemoteReindexTrustConfigRemoteSource {
+		return vs[0].([]GetOpensearchClusterRemoteReindexTrustConfigRemoteSource)[vs[1].(int)]
+	}).(GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput)
+}
+
 type GetOpensearchClusterReverseConnectionEndpoint struct {
 	// The IP addresses of the endpoint in customer VCN
 	CustomerIp string `pulumi:"customerIp"`
@@ -2798,6 +3738,316 @@ func (o GetOpensearchClusterReverseConnectionEndpointArrayOutput) Index(i pulumi
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClusterReverseConnectionEndpoint {
 		return vs[0].([]GetOpensearchClusterReverseConnectionEndpoint)[vs[1].(int)]
 	}).(GetOpensearchClusterReverseConnectionEndpointOutput)
+}
+
+type GetOpensearchClusterSecurityMasterUserAuthDetail struct {
+	UserDetails []GetOpensearchClusterSecurityMasterUserAuthDetailUserDetail `pulumi:"userDetails"`
+}
+
+// GetOpensearchClusterSecurityMasterUserAuthDetailInput is an input type that accepts GetOpensearchClusterSecurityMasterUserAuthDetailArgs and GetOpensearchClusterSecurityMasterUserAuthDetailOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterSecurityMasterUserAuthDetailInput` via:
+//
+//	GetOpensearchClusterSecurityMasterUserAuthDetailArgs{...}
+type GetOpensearchClusterSecurityMasterUserAuthDetailInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterSecurityMasterUserAuthDetailOutput() GetOpensearchClusterSecurityMasterUserAuthDetailOutput
+	ToGetOpensearchClusterSecurityMasterUserAuthDetailOutputWithContext(context.Context) GetOpensearchClusterSecurityMasterUserAuthDetailOutput
+}
+
+type GetOpensearchClusterSecurityMasterUserAuthDetailArgs struct {
+	UserDetails GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayInput `pulumi:"userDetails"`
+}
+
+func (GetOpensearchClusterSecurityMasterUserAuthDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterSecurityMasterUserAuthDetail)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterSecurityMasterUserAuthDetailArgs) ToGetOpensearchClusterSecurityMasterUserAuthDetailOutput() GetOpensearchClusterSecurityMasterUserAuthDetailOutput {
+	return i.ToGetOpensearchClusterSecurityMasterUserAuthDetailOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterSecurityMasterUserAuthDetailArgs) ToGetOpensearchClusterSecurityMasterUserAuthDetailOutputWithContext(ctx context.Context) GetOpensearchClusterSecurityMasterUserAuthDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterSecurityMasterUserAuthDetailOutput)
+}
+
+// GetOpensearchClusterSecurityMasterUserAuthDetailArrayInput is an input type that accepts GetOpensearchClusterSecurityMasterUserAuthDetailArray and GetOpensearchClusterSecurityMasterUserAuthDetailArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterSecurityMasterUserAuthDetailArrayInput` via:
+//
+//	GetOpensearchClusterSecurityMasterUserAuthDetailArray{ GetOpensearchClusterSecurityMasterUserAuthDetailArgs{...} }
+type GetOpensearchClusterSecurityMasterUserAuthDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterSecurityMasterUserAuthDetailArrayOutput() GetOpensearchClusterSecurityMasterUserAuthDetailArrayOutput
+	ToGetOpensearchClusterSecurityMasterUserAuthDetailArrayOutputWithContext(context.Context) GetOpensearchClusterSecurityMasterUserAuthDetailArrayOutput
+}
+
+type GetOpensearchClusterSecurityMasterUserAuthDetailArray []GetOpensearchClusterSecurityMasterUserAuthDetailInput
+
+func (GetOpensearchClusterSecurityMasterUserAuthDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterSecurityMasterUserAuthDetail)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterSecurityMasterUserAuthDetailArray) ToGetOpensearchClusterSecurityMasterUserAuthDetailArrayOutput() GetOpensearchClusterSecurityMasterUserAuthDetailArrayOutput {
+	return i.ToGetOpensearchClusterSecurityMasterUserAuthDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterSecurityMasterUserAuthDetailArray) ToGetOpensearchClusterSecurityMasterUserAuthDetailArrayOutputWithContext(ctx context.Context) GetOpensearchClusterSecurityMasterUserAuthDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterSecurityMasterUserAuthDetailArrayOutput)
+}
+
+type GetOpensearchClusterSecurityMasterUserAuthDetailOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterSecurityMasterUserAuthDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterSecurityMasterUserAuthDetail)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterSecurityMasterUserAuthDetailOutput) ToGetOpensearchClusterSecurityMasterUserAuthDetailOutput() GetOpensearchClusterSecurityMasterUserAuthDetailOutput {
+	return o
+}
+
+func (o GetOpensearchClusterSecurityMasterUserAuthDetailOutput) ToGetOpensearchClusterSecurityMasterUserAuthDetailOutputWithContext(ctx context.Context) GetOpensearchClusterSecurityMasterUserAuthDetailOutput {
+	return o
+}
+
+func (o GetOpensearchClusterSecurityMasterUserAuthDetailOutput) UserDetails() GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClusterSecurityMasterUserAuthDetail) []GetOpensearchClusterSecurityMasterUserAuthDetailUserDetail {
+		return v.UserDetails
+	}).(GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayOutput)
+}
+
+type GetOpensearchClusterSecurityMasterUserAuthDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterSecurityMasterUserAuthDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterSecurityMasterUserAuthDetail)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterSecurityMasterUserAuthDetailArrayOutput) ToGetOpensearchClusterSecurityMasterUserAuthDetailArrayOutput() GetOpensearchClusterSecurityMasterUserAuthDetailArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterSecurityMasterUserAuthDetailArrayOutput) ToGetOpensearchClusterSecurityMasterUserAuthDetailArrayOutputWithContext(ctx context.Context) GetOpensearchClusterSecurityMasterUserAuthDetailArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterSecurityMasterUserAuthDetailArrayOutput) Index(i pulumi.IntInput) GetOpensearchClusterSecurityMasterUserAuthDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClusterSecurityMasterUserAuthDetail {
+		return vs[0].([]GetOpensearchClusterSecurityMasterUserAuthDetail)[vs[1].(int)]
+	}).(GetOpensearchClusterSecurityMasterUserAuthDetailOutput)
+}
+
+type GetOpensearchClusterSecurityMasterUserAuthDetailUserDetail struct {
+	PasswordDetails []GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetail `pulumi:"passwordDetails"`
+	Username        string                                                                     `pulumi:"username"`
+}
+
+// GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailInput is an input type that accepts GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArgs and GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailInput` via:
+//
+//	GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArgs{...}
+type GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutput() GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutput
+	ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutputWithContext(context.Context) GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutput
+}
+
+type GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArgs struct {
+	PasswordDetails GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayInput `pulumi:"passwordDetails"`
+	Username        pulumi.StringInput                                                                 `pulumi:"username"`
+}
+
+func (GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterSecurityMasterUserAuthDetailUserDetail)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArgs) ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutput() GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutput {
+	return i.ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArgs) ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutputWithContext(ctx context.Context) GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutput)
+}
+
+// GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayInput is an input type that accepts GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArray and GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayInput` via:
+//
+//	GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArray{ GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArgs{...} }
+type GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayOutput() GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayOutput
+	ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayOutputWithContext(context.Context) GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayOutput
+}
+
+type GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArray []GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailInput
+
+func (GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterSecurityMasterUserAuthDetailUserDetail)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArray) ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayOutput() GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayOutput {
+	return i.ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArray) ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayOutputWithContext(ctx context.Context) GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayOutput)
+}
+
+type GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterSecurityMasterUserAuthDetailUserDetail)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutput) ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutput() GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutput {
+	return o
+}
+
+func (o GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutput) ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutputWithContext(ctx context.Context) GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutput {
+	return o
+}
+
+func (o GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutput) PasswordDetails() GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClusterSecurityMasterUserAuthDetailUserDetail) []GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetail {
+		return v.PasswordDetails
+	}).(GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput)
+}
+
+func (o GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterSecurityMasterUserAuthDetailUserDetail) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterSecurityMasterUserAuthDetailUserDetail)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayOutput) ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayOutput() GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayOutput) ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayOutputWithContext(ctx context.Context) GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayOutput) Index(i pulumi.IntInput) GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClusterSecurityMasterUserAuthDetailUserDetail {
+		return vs[0].([]GetOpensearchClusterSecurityMasterUserAuthDetailUserDetail)[vs[1].(int)]
+	}).(GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutput)
+}
+
+type GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetail struct {
+	PlainPassword string `pulumi:"plainPassword"`
+	SourceType    string `pulumi:"sourceType"`
+	VaultSecretId string `pulumi:"vaultSecretId"`
+}
+
+// GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailInput is an input type that accepts GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArgs and GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailInput` via:
+//
+//	GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArgs{...}
+type GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput() GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput
+	ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutputWithContext(context.Context) GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput
+}
+
+type GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArgs struct {
+	PlainPassword pulumi.StringInput `pulumi:"plainPassword"`
+	SourceType    pulumi.StringInput `pulumi:"sourceType"`
+	VaultSecretId pulumi.StringInput `pulumi:"vaultSecretId"`
+}
+
+func (GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetail)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArgs) ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput() GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput {
+	return i.ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArgs) ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutputWithContext(ctx context.Context) GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput)
+}
+
+// GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayInput is an input type that accepts GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArray and GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayInput` via:
+//
+//	GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArray{ GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArgs{...} }
+type GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput() GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput
+	ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutputWithContext(context.Context) GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput
+}
+
+type GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArray []GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailInput
+
+func (GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetail)(nil)).Elem()
+}
+
+func (i GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArray) ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput() GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput {
+	return i.ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArray) ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutputWithContext(ctx context.Context) GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput)
+}
+
+type GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetail)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput) ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput() GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput {
+	return o
+}
+
+func (o GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput) ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutputWithContext(ctx context.Context) GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput {
+	return o
+}
+
+func (o GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput) PlainPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetail) string {
+		return v.PlainPassword
+	}).(pulumi.StringOutput)
+}
+
+func (o GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetail) string {
+		return v.SourceType
+	}).(pulumi.StringOutput)
+}
+
+func (o GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput) VaultSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetail) string {
+		return v.VaultSecretId
+	}).(pulumi.StringOutput)
+}
+
+type GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetail)(nil)).Elem()
+}
+
+func (o GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput) ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput() GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput) ToGetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutputWithContext(ctx context.Context) GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput) Index(i pulumi.IntInput) GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetail {
+		return vs[0].([]GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetail)[vs[1].(int)]
+	}).(GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput)
 }
 
 type GetOpensearchClusterSecuritySamlConfig struct {
@@ -3229,6 +4479,8 @@ type GetOpensearchClustersOpensearchClusterCollectionItem struct {
 	OpensearchPrivateIp string `pulumi:"opensearchPrivateIp"`
 	// This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
 	OutboundClusterConfigs []GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfig `pulumi:"outboundClusterConfigs"`
+	// Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+	RemoteReindexTrustConfigs []GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfig `pulumi:"remoteReindexTrustConfigs"`
 	// The customer IP addresses of the endpoint in customer VCN
 	ReverseConnectionEndpointCustomerIps []string `pulumi:"reverseConnectionEndpointCustomerIps"`
 	// The list of reverse connection endpoints.
@@ -3246,7 +4498,8 @@ type GetOpensearchClustersOpensearchClusterCollectionItem struct {
 	// The amount of storage in GB, to configure per node for the cluster's search nodes.
 	SearchNodeStorageGb int `pulumi:"searchNodeStorageGb"`
 	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
-	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
+	SecurityAttributes            map[string]string                                                                  `pulumi:"securityAttributes"`
+	SecurityMasterUserAuthDetails []GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetail `pulumi:"securityMasterUserAuthDetails"`
 	// The name of the master user that are used to manage security config
 	SecurityMasterUserName string `pulumi:"securityMasterUserName"`
 	// The password hash of the master user that are used to manage security config
@@ -3384,6 +4637,8 @@ type GetOpensearchClustersOpensearchClusterCollectionItemArgs struct {
 	OpensearchPrivateIp pulumi.StringInput `pulumi:"opensearchPrivateIp"`
 	// This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
 	OutboundClusterConfigs GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayInput `pulumi:"outboundClusterConfigs"`
+	// Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+	RemoteReindexTrustConfigs GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayInput `pulumi:"remoteReindexTrustConfigs"`
 	// The customer IP addresses of the endpoint in customer VCN
 	ReverseConnectionEndpointCustomerIps pulumi.StringArrayInput `pulumi:"reverseConnectionEndpointCustomerIps"`
 	// The list of reverse connection endpoints.
@@ -3401,7 +4656,8 @@ type GetOpensearchClustersOpensearchClusterCollectionItemArgs struct {
 	// The amount of storage in GB, to configure per node for the cluster's search nodes.
 	SearchNodeStorageGb pulumi.IntInput `pulumi:"searchNodeStorageGb"`
 	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
-	SecurityAttributes pulumi.StringMapInput `pulumi:"securityAttributes"`
+	SecurityAttributes            pulumi.StringMapInput                                                                      `pulumi:"securityAttributes"`
+	SecurityMasterUserAuthDetails GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayInput `pulumi:"securityMasterUserAuthDetails"`
 	// The name of the master user that are used to manage security config
 	SecurityMasterUserName pulumi.StringInput `pulumi:"securityMasterUserName"`
 	// The password hash of the master user that are used to manage security config
@@ -3741,6 +4997,13 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) OutboundClus
 	}).(GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutput)
 }
 
+// Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) RemoteReindexTrustConfigs() GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) []GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfig {
+		return v.RemoteReindexTrustConfigs
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayOutput)
+}
+
 // The customer IP addresses of the endpoint in customer VCN
 func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) ReverseConnectionEndpointCustomerIps() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) []string {
@@ -3790,6 +5053,12 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SecurityAttr
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) map[string]string {
 		return v.SecurityAttributes
 	}).(pulumi.StringMapOutput)
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemOutput) SecurityMasterUserAuthDetails() GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItem) []GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetail {
+		return v.SecurityMasterUserAuthDetails
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayOutput)
 }
 
 // The name of the master user that are used to manage security config
@@ -4528,6 +5797,226 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfi
 	}).(GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput)
 }
 
+type GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfig struct {
+	// Remote cluster sources to trust for reindexing.
+	RemoteSources []GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource `pulumi:"remoteSources"`
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArgs and GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArgs{...}
+type GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutput() GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArgs struct {
+	// Remote cluster sources to trust for reindexing.
+	RemoteSources GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayInput `pulumi:"remoteSources"`
+}
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfig)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutput() GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutput)
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArray and GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArray{ GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArgs{...} }
+type GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArray []GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigInput
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfig)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArray) ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArray) ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfig)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutput() GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutput {
+	return o
+}
+
+// Remote cluster sources to trust for reindexing.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutput) RemoteSources() GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfig) []GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource {
+		return v.RemoteSources
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfig)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayOutput) Index(i pulumi.IntInput) GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfig {
+		return vs[0].([]GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfig)[vs[1].(int)]
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource struct {
+	// OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+	CertificateId string `pulumi:"certificateId"`
+	// HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
+	Endpoint string `pulumi:"endpoint"`
+	// Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
+	EndpointResolutionIp string `pulumi:"endpointResolutionIp"`
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArgs and GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArgs{...}
+type GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutput() GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArgs struct {
+	// OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+	CertificateId pulumi.StringInput `pulumi:"certificateId"`
+	// HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
+	Endpoint pulumi.StringInput `pulumi:"endpoint"`
+	// Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
+	EndpointResolutionIp pulumi.StringInput `pulumi:"endpointResolutionIp"`
+}
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutput() GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutput)
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArray and GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArray{ GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArgs{...} }
+type GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArray []GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceInput
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArray) ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArray) ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutput() GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutput {
+	return o
+}
+
+// OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutput) CertificateId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource) string {
+		return v.CertificateId
+	}).(pulumi.StringOutput)
+}
+
+// HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutput) Endpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource) string {
+		return v.Endpoint
+	}).(pulumi.StringOutput)
+}
+
+// Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutput) EndpointResolutionIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource) string {
+		return v.EndpointResolutionIp
+	}).(pulumi.StringOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutput) Index(i pulumi.IntInput) GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource {
+		return vs[0].([]GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource)[vs[1].(int)]
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutput)
+}
+
 type GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpoint struct {
 	// The IP addresses of the endpoint in customer VCN
 	CustomerIp string `pulumi:"customerIp"`
@@ -4636,6 +6125,318 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEnd
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpoint {
 		return vs[0].([]GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpoint)[vs[1].(int)]
 	}).(GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetail struct {
+	UserDetails []GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetail `pulumi:"userDetails"`
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArgs and GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArgs{...}
+type GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArgs struct {
+	UserDetails GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayInput `pulumi:"userDetails"`
+}
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetail)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailOutput)
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArray and GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArray{ GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArgs{...} }
+type GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArray []GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailInput
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetail)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArray) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArray) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetail)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailOutput) UserDetails() GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetail) []GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetail {
+		return v.UserDetails
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetail)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayOutput) Index(i pulumi.IntInput) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetail {
+		return vs[0].([]GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetail)[vs[1].(int)]
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetail struct {
+	PasswordDetails []GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetail `pulumi:"passwordDetails"`
+	Username        string                                                                                                     `pulumi:"username"`
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArgs and GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArgs{...}
+type GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArgs struct {
+	PasswordDetails GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayInput `pulumi:"passwordDetails"`
+	Username        pulumi.StringInput                                                                                                 `pulumi:"username"`
+}
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetail)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutput)
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArray and GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArray{ GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArgs{...} }
+type GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArray []GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailInput
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetail)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArray) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArray) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetail)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutput) PasswordDetails() GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetail) []GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetail {
+		return v.PasswordDetails
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput)
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetail) string {
+		return v.Username
+	}).(pulumi.StringOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetail)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayOutput) Index(i pulumi.IntInput) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetail {
+		return vs[0].([]GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetail)[vs[1].(int)]
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetail struct {
+	PlainPassword string `pulumi:"plainPassword"`
+	SourceType    string `pulumi:"sourceType"`
+	VaultSecretId string `pulumi:"vaultSecretId"`
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArgs and GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArgs{...}
+type GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArgs struct {
+	PlainPassword pulumi.StringInput `pulumi:"plainPassword"`
+	SourceType    pulumi.StringInput `pulumi:"sourceType"`
+	VaultSecretId pulumi.StringInput `pulumi:"vaultSecretId"`
+}
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetail)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArgs) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput)
+}
+
+// GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayInput is an input type that accepts GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArray and GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput values.
+// You can construct a concrete instance of `GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayInput` via:
+//
+//	GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArray{ GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArgs{...} }
+type GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput
+	ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutputWithContext(context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArray []GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailInput
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetail)(nil)).Elem()
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArray) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput {
+	return i.ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArray) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetail)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput) PlainPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetail) string {
+		return v.PlainPassword
+	}).(pulumi.StringOutput)
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput) SourceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetail) string {
+		return v.SourceType
+	}).(pulumi.StringOutput)
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput) VaultSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetail) string {
+		return v.VaultSecretId
+	}).(pulumi.StringOutput)
+}
+
+type GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetail)(nil)).Elem()
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput() GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput) ToGetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutputWithContext(ctx context.Context) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput {
+	return o
+}
+
+func (o GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput) Index(i pulumi.IntInput) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetail {
+		return vs[0].([]GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetail)[vs[1].(int)]
+	}).(GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput)
 }
 
 type GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig struct {
@@ -5195,8 +6996,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOutboundClusterConfigPtrInput)(nil)).Elem(), ClusterOutboundClusterConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOutboundClusterConfigOutboundClusterInput)(nil)).Elem(), ClusterOutboundClusterConfigOutboundClusterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterOutboundClusterConfigOutboundClusterArrayInput)(nil)).Elem(), ClusterOutboundClusterConfigOutboundClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterRemoteReindexTrustConfigInput)(nil)).Elem(), ClusterRemoteReindexTrustConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterRemoteReindexTrustConfigPtrInput)(nil)).Elem(), ClusterRemoteReindexTrustConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterRemoteReindexTrustConfigRemoteSourceInput)(nil)).Elem(), ClusterRemoteReindexTrustConfigRemoteSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterRemoteReindexTrustConfigRemoteSourceArrayInput)(nil)).Elem(), ClusterRemoteReindexTrustConfigRemoteSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterReverseConnectionEndpointInput)(nil)).Elem(), ClusterReverseConnectionEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterReverseConnectionEndpointArrayInput)(nil)).Elem(), ClusterReverseConnectionEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterSecurityMasterUserAuthDetailsInput)(nil)).Elem(), ClusterSecurityMasterUserAuthDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterSecurityMasterUserAuthDetailsPtrInput)(nil)).Elem(), ClusterSecurityMasterUserAuthDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterSecurityMasterUserAuthDetailsUserDetailsInput)(nil)).Elem(), ClusterSecurityMasterUserAuthDetailsUserDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterSecurityMasterUserAuthDetailsUserDetailsPtrInput)(nil)).Elem(), ClusterSecurityMasterUserAuthDetailsUserDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsInput)(nil)).Elem(), ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrInput)(nil)).Elem(), ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterSecuritySamlConfigInput)(nil)).Elem(), ClusterSecuritySamlConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ClusterSecuritySamlConfigPtrInput)(nil)).Elem(), ClusterSecuritySamlConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*OpensearchClusterPipelineReverseConnectionEndpointInput)(nil)).Elem(), OpensearchClusterPipelineReverseConnectionEndpointArgs{})
@@ -5221,8 +7032,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayInput)(nil)).Elem(), GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointInput)(nil)).Elem(), GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayInput)(nil)).Elem(), GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterRemoteReindexTrustConfigInput)(nil)).Elem(), GetOpensearchClusterRemoteReindexTrustConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterRemoteReindexTrustConfigArrayInput)(nil)).Elem(), GetOpensearchClusterRemoteReindexTrustConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceInput)(nil)).Elem(), GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayInput)(nil)).Elem(), GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterReverseConnectionEndpointInput)(nil)).Elem(), GetOpensearchClusterReverseConnectionEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterReverseConnectionEndpointArrayInput)(nil)).Elem(), GetOpensearchClusterReverseConnectionEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterSecurityMasterUserAuthDetailInput)(nil)).Elem(), GetOpensearchClusterSecurityMasterUserAuthDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterSecurityMasterUserAuthDetailArrayInput)(nil)).Elem(), GetOpensearchClusterSecurityMasterUserAuthDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailInput)(nil)).Elem(), GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayInput)(nil)).Elem(), GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailInput)(nil)).Elem(), GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayInput)(nil)).Elem(), GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterSecuritySamlConfigInput)(nil)).Elem(), GetOpensearchClusterSecuritySamlConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClusterSecuritySamlConfigArrayInput)(nil)).Elem(), GetOpensearchClusterSecuritySamlConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersFilterInput)(nil)).Elem(), GetOpensearchClustersFilterArgs{})
@@ -5241,8 +7062,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayInput)(nil)).Elem(), GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetOpensearchVersionItemInput)(nil)).Elem(), GetOpensearchVersionItemArgs{})
@@ -5263,8 +7094,18 @@ func init() {
 	pulumi.RegisterOutputType(ClusterOutboundClusterConfigPtrOutput{})
 	pulumi.RegisterOutputType(ClusterOutboundClusterConfigOutboundClusterOutput{})
 	pulumi.RegisterOutputType(ClusterOutboundClusterConfigOutboundClusterArrayOutput{})
+	pulumi.RegisterOutputType(ClusterRemoteReindexTrustConfigOutput{})
+	pulumi.RegisterOutputType(ClusterRemoteReindexTrustConfigPtrOutput{})
+	pulumi.RegisterOutputType(ClusterRemoteReindexTrustConfigRemoteSourceOutput{})
+	pulumi.RegisterOutputType(ClusterRemoteReindexTrustConfigRemoteSourceArrayOutput{})
 	pulumi.RegisterOutputType(ClusterReverseConnectionEndpointOutput{})
 	pulumi.RegisterOutputType(ClusterReverseConnectionEndpointArrayOutput{})
+	pulumi.RegisterOutputType(ClusterSecurityMasterUserAuthDetailsOutput{})
+	pulumi.RegisterOutputType(ClusterSecurityMasterUserAuthDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ClusterSecurityMasterUserAuthDetailsUserDetailsOutput{})
+	pulumi.RegisterOutputType(ClusterSecurityMasterUserAuthDetailsUserDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsOutput{})
+	pulumi.RegisterOutputType(ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ClusterSecuritySamlConfigOutput{})
 	pulumi.RegisterOutputType(ClusterSecuritySamlConfigPtrOutput{})
 	pulumi.RegisterOutputType(OpensearchClusterPipelineReverseConnectionEndpointOutput{})
@@ -5289,8 +7130,18 @@ func init() {
 	pulumi.RegisterOutputType(GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReverseConnectionEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterRemoteReindexTrustConfigOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterRemoteReindexTrustConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterReverseConnectionEndpointOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterReverseConnectionEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterSecurityMasterUserAuthDetailOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterSecurityMasterUserAuthDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterSecuritySamlConfigOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClusterSecuritySamlConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersFilterOutput{})
@@ -5309,8 +7160,18 @@ func init() {
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfigOutboundClusterArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpointArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailOutput{})
+	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigOutput{})
 	pulumi.RegisterOutputType(GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfigArrayOutput{})
 	pulumi.RegisterOutputType(GetOpensearchVersionItemOutput{})

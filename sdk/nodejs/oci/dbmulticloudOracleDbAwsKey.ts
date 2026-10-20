@@ -34,6 +34,7 @@ import * as utilities from "../utilities";
  *     },
  *     isAwsKeyEnabled: oracleDbAwsKeyIsAwsKeyEnabled,
  *     location: oracleDbAwsKeyLocation,
+ *     oracleDbAwsKeyPoolId: testOracleDbAwsKeyPool.id,
  *     properties: oracleDbAwsKeyProperties,
  *     type: oracleDbAwsKeyType,
  * });
@@ -105,6 +106,10 @@ export class DbmulticloudOracleDbAwsKey extends pulumi.CustomResource {
      */
     declare public readonly isAwsKeyEnabled: pulumi.Output<boolean>;
     /**
+     * Indicates whether the Oracle AWS Key resource is currently in use.
+     */
+    declare public /*out*/ readonly isOracleAwsKeyUsed: pulumi.Output<boolean>;
+    /**
      * Description of the current lifecycle state in more detail.
      */
     declare public /*out*/ readonly lifecycleStateDetails: pulumi.Output<string>;
@@ -113,6 +118,10 @@ export class DbmulticloudOracleDbAwsKey extends pulumi.CustomResource {
      */
     declare public readonly location: pulumi.Output<string>;
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+     */
+    declare public readonly oracleDbAwsKeyPoolId: pulumi.Output<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      */
     declare public readonly oracleDbConnectorId: pulumi.Output<string>;
@@ -120,6 +129,10 @@ export class DbmulticloudOracleDbAwsKey extends pulumi.CustomResource {
      * AWS Key resource's properties.
      */
     declare public readonly properties: pulumi.Output<{[key: string]: string}>;
+    /**
+     * The number of active references to the Oracle AWS Key resource.
+     */
+    declare public /*out*/ readonly refCount: pulumi.Output<number>;
     /**
      * Replication metadata, it has information about replication and target region.
      */
@@ -173,10 +186,13 @@ export class DbmulticloudOracleDbAwsKey extends pulumi.CustomResource {
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["freeformTags"] = state?.freeformTags;
             resourceInputs["isAwsKeyEnabled"] = state?.isAwsKeyEnabled;
+            resourceInputs["isOracleAwsKeyUsed"] = state?.isOracleAwsKeyUsed;
             resourceInputs["lifecycleStateDetails"] = state?.lifecycleStateDetails;
             resourceInputs["location"] = state?.location;
+            resourceInputs["oracleDbAwsKeyPoolId"] = state?.oracleDbAwsKeyPoolId;
             resourceInputs["oracleDbConnectorId"] = state?.oracleDbConnectorId;
             resourceInputs["properties"] = state?.properties;
+            resourceInputs["refCount"] = state?.refCount;
             resourceInputs["replicationMetadatas"] = state?.replicationMetadatas;
             resourceInputs["state"] = state?.state;
             resourceInputs["systemTags"] = state?.systemTags;
@@ -204,11 +220,14 @@ export class DbmulticloudOracleDbAwsKey extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = args?.freeformTags;
             resourceInputs["isAwsKeyEnabled"] = args?.isAwsKeyEnabled;
             resourceInputs["location"] = args?.location;
+            resourceInputs["oracleDbAwsKeyPoolId"] = args?.oracleDbAwsKeyPoolId;
             resourceInputs["oracleDbConnectorId"] = args?.oracleDbConnectorId;
             resourceInputs["properties"] = args?.properties;
             resourceInputs["targetRegion"] = args?.targetRegion;
             resourceInputs["type"] = args?.type;
+            resourceInputs["isOracleAwsKeyUsed"] = undefined /*out*/;
             resourceInputs["lifecycleStateDetails"] = undefined /*out*/;
+            resourceInputs["refCount"] = undefined /*out*/;
             resourceInputs["replicationMetadatas"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
@@ -254,6 +273,10 @@ export interface DbmulticloudOracleDbAwsKeyState {
      */
     isAwsKeyEnabled?: pulumi.Input<boolean | undefined>;
     /**
+     * Indicates whether the Oracle AWS Key resource is currently in use.
+     */
+    isOracleAwsKeyUsed?: pulumi.Input<boolean | undefined>;
+    /**
      * Description of the current lifecycle state in more detail.
      */
     lifecycleStateDetails?: pulumi.Input<string | undefined>;
@@ -262,6 +285,10 @@ export interface DbmulticloudOracleDbAwsKeyState {
      */
     location?: pulumi.Input<string | undefined>;
     /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+     */
+    oracleDbAwsKeyPoolId?: pulumi.Input<string | undefined>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      */
     oracleDbConnectorId?: pulumi.Input<string | undefined>;
@@ -269,6 +296,10 @@ export interface DbmulticloudOracleDbAwsKeyState {
      * AWS Key resource's properties.
      */
     properties?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
+    /**
+     * The number of active references to the Oracle AWS Key resource.
+     */
+    refCount?: pulumi.Input<number | undefined>;
     /**
      * Replication metadata, it has information about replication and target region.
      */
@@ -339,6 +370,10 @@ export interface DbmulticloudOracleDbAwsKeyArgs {
      * AWS Key resource Location.
      */
     location?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+     */
+    oracleDbAwsKeyPoolId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      */

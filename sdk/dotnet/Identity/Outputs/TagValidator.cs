@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class TagValidator
     {
         /// <summary>
-        /// (Updatable) Specifies the type of validation: a static value (no validation) or a list.
+        /// (Updatable) Specifies the type of validation. Use `ENUM` to restrict a tag to a list of allowed values, or `DEFAULT` for no value validation.
         /// </summary>
         public readonly string ValidatorType;
         /// <summary>
-        /// (Updatable) The list of allowed values for a definedTag value.
+        /// (Updatable) The list of allowed values for a definedTag value. Omit this property when `ValidatorType` is `DEFAULT`; it is not used for default validation.
         /// </summary>
         public readonly ImmutableArray<string> Values;
 

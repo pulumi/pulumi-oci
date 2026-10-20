@@ -25,6 +25,10 @@ from .get_job_advisor_report_check_objects import *
 from .get_job_advisor_report_checks import *
 from .get_job_output import *
 from .get_migration import *
+from .get_migration_data_verification_detail import *
+from .get_migration_data_verification_object_statuses import *
+from .get_migration_data_verification_object_type_counts import *
+from .get_migration_data_verification_table_row_counts import *
 from .get_migration_object_types import *
 from .get_migrations import *
 from .get_script import *

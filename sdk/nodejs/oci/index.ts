@@ -100,6 +100,11 @@ export type DbmulticloudOracleDbAwsKey = import("./dbmulticloudOracleDbAwsKey").
 export const DbmulticloudOracleDbAwsKey: typeof import("./dbmulticloudOracleDbAwsKey").DbmulticloudOracleDbAwsKey = null as any;
 utilities.lazyLoad(exports, ["DbmulticloudOracleDbAwsKey"], () => require("./dbmulticloudOracleDbAwsKey"));
 
+export { DbmulticloudOracleDbAwsKeyPoolArgs, DbmulticloudOracleDbAwsKeyPoolState } from "./dbmulticloudOracleDbAwsKeyPool";
+export type DbmulticloudOracleDbAwsKeyPool = import("./dbmulticloudOracleDbAwsKeyPool").DbmulticloudOracleDbAwsKeyPool;
+export const DbmulticloudOracleDbAwsKeyPool: typeof import("./dbmulticloudOracleDbAwsKeyPool").DbmulticloudOracleDbAwsKeyPool = null as any;
+utilities.lazyLoad(exports, ["DbmulticloudOracleDbAwsKeyPool"], () => require("./dbmulticloudOracleDbAwsKeyPool"));
+
 export { DbmulticloudOracleDbAzureBlobContainerArgs, DbmulticloudOracleDbAzureBlobContainerState } from "./dbmulticloudOracleDbAzureBlobContainer";
 export type DbmulticloudOracleDbAzureBlobContainer = import("./dbmulticloudOracleDbAzureBlobContainer").DbmulticloudOracleDbAzureBlobContainer;
 export const DbmulticloudOracleDbAzureBlobContainer: typeof import("./dbmulticloudOracleDbAzureBlobContainer").DbmulticloudOracleDbAzureBlobContainer = null as any;
@@ -364,6 +369,16 @@ export { GetDbmulticloudOracleDbAwsKeyArgs, GetDbmulticloudOracleDbAwsKeyResult,
 export const getDbmulticloudOracleDbAwsKey: typeof import("./getDbmulticloudOracleDbAwsKey").getDbmulticloudOracleDbAwsKey = null as any;
 export const getDbmulticloudOracleDbAwsKeyOutput: typeof import("./getDbmulticloudOracleDbAwsKey").getDbmulticloudOracleDbAwsKeyOutput = null as any;
 utilities.lazyLoad(exports, ["getDbmulticloudOracleDbAwsKey","getDbmulticloudOracleDbAwsKeyOutput"], () => require("./getDbmulticloudOracleDbAwsKey"));
+
+export { GetDbmulticloudOracleDbAwsKeyPoolArgs, GetDbmulticloudOracleDbAwsKeyPoolResult, GetDbmulticloudOracleDbAwsKeyPoolOutputArgs } from "./getDbmulticloudOracleDbAwsKeyPool";
+export const getDbmulticloudOracleDbAwsKeyPool: typeof import("./getDbmulticloudOracleDbAwsKeyPool").getDbmulticloudOracleDbAwsKeyPool = null as any;
+export const getDbmulticloudOracleDbAwsKeyPoolOutput: typeof import("./getDbmulticloudOracleDbAwsKeyPool").getDbmulticloudOracleDbAwsKeyPoolOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbAwsKeyPool","getDbmulticloudOracleDbAwsKeyPoolOutput"], () => require("./getDbmulticloudOracleDbAwsKeyPool"));
+
+export { GetDbmulticloudOracleDbAwsKeyPoolsArgs, GetDbmulticloudOracleDbAwsKeyPoolsResult, GetDbmulticloudOracleDbAwsKeyPoolsOutputArgs } from "./getDbmulticloudOracleDbAwsKeyPools";
+export const getDbmulticloudOracleDbAwsKeyPools: typeof import("./getDbmulticloudOracleDbAwsKeyPools").getDbmulticloudOracleDbAwsKeyPools = null as any;
+export const getDbmulticloudOracleDbAwsKeyPoolsOutput: typeof import("./getDbmulticloudOracleDbAwsKeyPools").getDbmulticloudOracleDbAwsKeyPoolsOutput = null as any;
+utilities.lazyLoad(exports, ["getDbmulticloudOracleDbAwsKeyPools","getDbmulticloudOracleDbAwsKeyPoolsOutput"], () => require("./getDbmulticloudOracleDbAwsKeyPools"));
 
 export { GetDbmulticloudOracleDbAwsKeysArgs, GetDbmulticloudOracleDbAwsKeysResult, GetDbmulticloudOracleDbAwsKeysOutputArgs } from "./getDbmulticloudOracleDbAwsKeys";
 export const getDbmulticloudOracleDbAwsKeys: typeof import("./getDbmulticloudOracleDbAwsKeys").getDbmulticloudOracleDbAwsKeys = null as any;
@@ -993,6 +1008,8 @@ const _module = {
                 return new DbmulticloudOracleDbAwsIdentityConnector(name, <any>undefined, { urn })
             case "oci:oci/dbmulticloudOracleDbAwsKey:DbmulticloudOracleDbAwsKey":
                 return new DbmulticloudOracleDbAwsKey(name, <any>undefined, { urn })
+            case "oci:oci/dbmulticloudOracleDbAwsKeyPool:DbmulticloudOracleDbAwsKeyPool":
+                return new DbmulticloudOracleDbAwsKeyPool(name, <any>undefined, { urn })
             case "oci:oci/dbmulticloudOracleDbAzureBlobContainer:DbmulticloudOracleDbAzureBlobContainer":
                 return new DbmulticloudOracleDbAzureBlobContainer(name, <any>undefined, { urn })
             case "oci:oci/dbmulticloudOracleDbAzureBlobMount:DbmulticloudOracleDbAzureBlobMount":
@@ -1089,6 +1106,7 @@ pulumi.runtime.registerResourceModule("oci", "oci/dataccVmInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudMultiCloudResourceDiscovery", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAwsIdentityConnector", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAwsKey", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAwsKeyPool", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureBlobContainer", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureBlobMount", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/dbmulticloudOracleDbAzureConnector", _module)

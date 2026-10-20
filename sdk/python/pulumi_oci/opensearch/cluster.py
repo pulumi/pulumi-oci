@@ -65,6 +65,7 @@ class ClusterArgs:
                  nsg_id: pulumi.Input[Optional[_builtins.str]] = None,
                  opendashboard_node_host_shape: pulumi.Input[Optional[_builtins.str]] = None,
                  outbound_cluster_config: pulumi.Input[Optional['ClusterOutboundClusterConfigArgs']] = None,
+                 remote_reindex_trust_config: pulumi.Input[Optional['ClusterRemoteReindexTrustConfigArgs']] = None,
                  reverse_connection_endpoint_customer_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  search_node_count: pulumi.Input[Optional[_builtins.int]] = None,
                  search_node_host_memory_gb: pulumi.Input[Optional[_builtins.int]] = None,
@@ -73,6 +74,7 @@ class ClusterArgs:
                  search_node_host_type: pulumi.Input[Optional[_builtins.str]] = None,
                  search_node_storage_gb: pulumi.Input[Optional[_builtins.int]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 security_master_user_auth_details: pulumi.Input[Optional['ClusterSecurityMasterUserAuthDetailsArgs']] = None,
                  security_master_user_name: pulumi.Input[Optional[_builtins.str]] = None,
                  security_master_user_password_hash: pulumi.Input[Optional[_builtins.str]] = None,
                  security_mode: pulumi.Input[Optional[_builtins.str]] = None,
@@ -126,6 +128,7 @@ class ClusterArgs:
         :param pulumi.Input[_builtins.str] nsg_id: (Updatable) The OCID of the NSG where the private endpoint vnic will be attached. Set this value to an empty string to detach the cluster from the NSG. Set this value to `null` to leave the existing NSG unchanged.
         :param pulumi.Input[_builtins.str] opendashboard_node_host_shape: (Updatable) The node shape for the cluster's OpenSearch Dashboard nodes.
         :param pulumi.Input['ClusterOutboundClusterConfigArgs'] outbound_cluster_config: (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+        :param pulumi.Input['ClusterRemoteReindexTrustConfigArgs'] remote_reindex_trust_config: (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] reverse_connection_endpoint_customer_ips: (Updatable) The customer IP addresses of the endpoint in customer VCN
         :param pulumi.Input[_builtins.int] search_node_count: (Updatable) The number of search nodes configured for the cluster.
         :param pulumi.Input[_builtins.int] search_node_host_memory_gb: (Updatable) The amount of memory in GB, for the cluster's search nodes.
@@ -134,6 +137,7 @@ class ClusterArgs:
         :param pulumi.Input[_builtins.str] search_node_host_type: The instance type for the cluster's search nodes.
         :param pulumi.Input[_builtins.int] search_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        :param pulumi.Input['ClusterSecurityMasterUserAuthDetailsArgs'] security_master_user_auth_details: (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
         :param pulumi.Input[_builtins.str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
         :param pulumi.Input[_builtins.str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
         :param pulumi.Input[_builtins.str] security_mode: (Updatable) The security mode of the cluster.
@@ -213,6 +217,8 @@ class ClusterArgs:
             pulumi.set(__self__, "opendashboard_node_host_shape", opendashboard_node_host_shape)
         if outbound_cluster_config is not None:
             pulumi.set(__self__, "outbound_cluster_config", outbound_cluster_config)
+        if remote_reindex_trust_config is not None:
+            pulumi.set(__self__, "remote_reindex_trust_config", remote_reindex_trust_config)
         if reverse_connection_endpoint_customer_ips is not None:
             pulumi.set(__self__, "reverse_connection_endpoint_customer_ips", reverse_connection_endpoint_customer_ips)
         if search_node_count is not None:
@@ -229,6 +235,8 @@ class ClusterArgs:
             pulumi.set(__self__, "search_node_storage_gb", search_node_storage_gb)
         if security_attributes is not None:
             pulumi.set(__self__, "security_attributes", security_attributes)
+        if security_master_user_auth_details is not None:
+            pulumi.set(__self__, "security_master_user_auth_details", security_master_user_auth_details)
         if security_master_user_name is not None:
             pulumi.set(__self__, "security_master_user_name", security_master_user_name)
         if security_master_user_password_hash is not None:
@@ -771,6 +779,18 @@ class ClusterArgs:
         pulumi.set(self, "outbound_cluster_config", value)
 
     @_builtins.property
+    @pulumi.getter(name="remoteReindexTrustConfig")
+    def remote_reindex_trust_config(self) -> pulumi.Input[Optional['ClusterRemoteReindexTrustConfigArgs']]:
+        """
+        (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+        """
+        return pulumi.get(self, "remote_reindex_trust_config")
+
+    @remote_reindex_trust_config.setter
+    def remote_reindex_trust_config(self, value: pulumi.Input[Optional['ClusterRemoteReindexTrustConfigArgs']]):
+        pulumi.set(self, "remote_reindex_trust_config", value)
+
+    @_builtins.property
     @pulumi.getter(name="reverseConnectionEndpointCustomerIps")
     def reverse_connection_endpoint_customer_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
@@ -865,6 +885,18 @@ class ClusterArgs:
     @security_attributes.setter
     def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
+    @pulumi.getter(name="securityMasterUserAuthDetails")
+    def security_master_user_auth_details(self) -> pulumi.Input[Optional['ClusterSecurityMasterUserAuthDetailsArgs']]:
+        """
+        (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
+        """
+        return pulumi.get(self, "security_master_user_auth_details")
+
+    @security_master_user_auth_details.setter
+    def security_master_user_auth_details(self, value: pulumi.Input[Optional['ClusterSecurityMasterUserAuthDetailsArgs']]):
+        pulumi.set(self, "security_master_user_auth_details", value)
 
     @_builtins.property
     @pulumi.getter(name="securityMasterUserName")
@@ -991,6 +1023,7 @@ class _ClusterState:
                  opensearch_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
                  opensearch_private_ip: pulumi.Input[Optional[_builtins.str]] = None,
                  outbound_cluster_config: pulumi.Input[Optional['ClusterOutboundClusterConfigArgs']] = None,
+                 remote_reindex_trust_config: pulumi.Input[Optional['ClusterRemoteReindexTrustConfigArgs']] = None,
                  reverse_connection_endpoint_customer_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  reverse_connection_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input['ClusterReverseConnectionEndpointArgs']]]] = None,
                  search_node_count: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1000,6 +1033,7 @@ class _ClusterState:
                  search_node_host_type: pulumi.Input[Optional[_builtins.str]] = None,
                  search_node_storage_gb: pulumi.Input[Optional[_builtins.int]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 security_master_user_auth_details: pulumi.Input[Optional['ClusterSecurityMasterUserAuthDetailsArgs']] = None,
                  security_master_user_name: pulumi.Input[Optional[_builtins.str]] = None,
                  security_master_user_password_hash: pulumi.Input[Optional[_builtins.str]] = None,
                  security_mode: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1065,6 +1099,7 @@ class _ClusterState:
         :param pulumi.Input[_builtins.str] opensearch_fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
         :param pulumi.Input[_builtins.str] opensearch_private_ip: The cluster's private IP address.
         :param pulumi.Input['ClusterOutboundClusterConfigArgs'] outbound_cluster_config: (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+        :param pulumi.Input['ClusterRemoteReindexTrustConfigArgs'] remote_reindex_trust_config: (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] reverse_connection_endpoint_customer_ips: (Updatable) The customer IP addresses of the endpoint in customer VCN
         :param pulumi.Input[Sequence[pulumi.Input['ClusterReverseConnectionEndpointArgs']]] reverse_connection_endpoints: The list of reverse connection endpoints.
         :param pulumi.Input[_builtins.int] search_node_count: (Updatable) The number of search nodes configured for the cluster.
@@ -1074,6 +1109,7 @@ class _ClusterState:
         :param pulumi.Input[_builtins.str] search_node_host_type: The instance type for the cluster's search nodes.
         :param pulumi.Input[_builtins.int] search_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        :param pulumi.Input['ClusterSecurityMasterUserAuthDetailsArgs'] security_master_user_auth_details: (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
         :param pulumi.Input[_builtins.str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
         :param pulumi.Input[_builtins.str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
         :param pulumi.Input[_builtins.str] security_mode: (Updatable) The security mode of the cluster.
@@ -1186,6 +1222,8 @@ class _ClusterState:
             pulumi.set(__self__, "opensearch_private_ip", opensearch_private_ip)
         if outbound_cluster_config is not None:
             pulumi.set(__self__, "outbound_cluster_config", outbound_cluster_config)
+        if remote_reindex_trust_config is not None:
+            pulumi.set(__self__, "remote_reindex_trust_config", remote_reindex_trust_config)
         if reverse_connection_endpoint_customer_ips is not None:
             pulumi.set(__self__, "reverse_connection_endpoint_customer_ips", reverse_connection_endpoint_customer_ips)
         if reverse_connection_endpoints is not None:
@@ -1204,6 +1242,8 @@ class _ClusterState:
             pulumi.set(__self__, "search_node_storage_gb", search_node_storage_gb)
         if security_attributes is not None:
             pulumi.set(__self__, "security_attributes", security_attributes)
+        if security_master_user_auth_details is not None:
+            pulumi.set(__self__, "security_master_user_auth_details", security_master_user_auth_details)
         if security_master_user_name is not None:
             pulumi.set(__self__, "security_master_user_name", security_master_user_name)
         if security_master_user_password_hash is not None:
@@ -1790,6 +1830,18 @@ class _ClusterState:
         pulumi.set(self, "outbound_cluster_config", value)
 
     @_builtins.property
+    @pulumi.getter(name="remoteReindexTrustConfig")
+    def remote_reindex_trust_config(self) -> pulumi.Input[Optional['ClusterRemoteReindexTrustConfigArgs']]:
+        """
+        (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+        """
+        return pulumi.get(self, "remote_reindex_trust_config")
+
+    @remote_reindex_trust_config.setter
+    def remote_reindex_trust_config(self, value: pulumi.Input[Optional['ClusterRemoteReindexTrustConfigArgs']]):
+        pulumi.set(self, "remote_reindex_trust_config", value)
+
+    @_builtins.property
     @pulumi.getter(name="reverseConnectionEndpointCustomerIps")
     def reverse_connection_endpoint_customer_ips(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
@@ -1896,6 +1948,18 @@ class _ClusterState:
     @security_attributes.setter
     def security_attributes(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "security_attributes", value)
+
+    @_builtins.property
+    @pulumi.getter(name="securityMasterUserAuthDetails")
+    def security_master_user_auth_details(self) -> pulumi.Input[Optional['ClusterSecurityMasterUserAuthDetailsArgs']]:
+        """
+        (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
+        """
+        return pulumi.get(self, "security_master_user_auth_details")
+
+    @security_master_user_auth_details.setter
+    def security_master_user_auth_details(self, value: pulumi.Input[Optional['ClusterSecurityMasterUserAuthDetailsArgs']]):
+        pulumi.set(self, "security_master_user_auth_details", value)
 
     @_builtins.property
     @pulumi.getter(name="securityMasterUserName")
@@ -2138,6 +2202,7 @@ class Cluster(pulumi.CustomResource):
                  opendashboard_node_host_ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
                  opendashboard_node_host_shape: pulumi.Input[Optional[_builtins.str]] = None,
                  outbound_cluster_config: pulumi.Input[Optional[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict', 'outputs.ClusterOutboundClusterConfig']]] = None,
+                 remote_reindex_trust_config: pulumi.Input[Optional[Union['ClusterRemoteReindexTrustConfigArgs', 'ClusterRemoteReindexTrustConfigArgsDict', 'outputs.ClusterRemoteReindexTrustConfig']]] = None,
                  reverse_connection_endpoint_customer_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  search_node_count: pulumi.Input[Optional[_builtins.int]] = None,
                  search_node_host_memory_gb: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2146,6 +2211,7 @@ class Cluster(pulumi.CustomResource):
                  search_node_host_type: pulumi.Input[Optional[_builtins.str]] = None,
                  search_node_storage_gb: pulumi.Input[Optional[_builtins.int]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 security_master_user_auth_details: pulumi.Input[Optional[Union['ClusterSecurityMasterUserAuthDetailsArgs', 'ClusterSecurityMasterUserAuthDetailsArgsDict', 'outputs.ClusterSecurityMasterUserAuthDetails']]] = None,
                  security_master_user_name: pulumi.Input[Optional[_builtins.str]] = None,
                  security_master_user_password_hash: pulumi.Input[Optional[_builtins.str]] = None,
                  security_mode: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2225,6 +2291,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] opendashboard_node_host_ocpu_count: (Updatable) The number of OCPUs to configure for the cluster's OpenSearch Dashboard nodes.
         :param pulumi.Input[_builtins.str] opendashboard_node_host_shape: (Updatable) The node shape for the cluster's OpenSearch Dashboard nodes.
         :param pulumi.Input[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict', 'outputs.ClusterOutboundClusterConfig']] outbound_cluster_config: (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+        :param pulumi.Input[Union['ClusterRemoteReindexTrustConfigArgs', 'ClusterRemoteReindexTrustConfigArgsDict', 'outputs.ClusterRemoteReindexTrustConfig']] remote_reindex_trust_config: (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] reverse_connection_endpoint_customer_ips: (Updatable) The customer IP addresses of the endpoint in customer VCN
         :param pulumi.Input[_builtins.int] search_node_count: (Updatable) The number of search nodes configured for the cluster.
         :param pulumi.Input[_builtins.int] search_node_host_memory_gb: (Updatable) The amount of memory in GB, for the cluster's search nodes.
@@ -2233,6 +2300,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] search_node_host_type: The instance type for the cluster's search nodes.
         :param pulumi.Input[_builtins.int] search_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        :param pulumi.Input[Union['ClusterSecurityMasterUserAuthDetailsArgs', 'ClusterSecurityMasterUserAuthDetailsArgsDict', 'outputs.ClusterSecurityMasterUserAuthDetails']] security_master_user_auth_details: (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
         :param pulumi.Input[_builtins.str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
         :param pulumi.Input[_builtins.str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
         :param pulumi.Input[_builtins.str] security_mode: (Updatable) The security mode of the cluster.
@@ -2334,6 +2402,7 @@ class Cluster(pulumi.CustomResource):
                  opendashboard_node_host_ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
                  opendashboard_node_host_shape: pulumi.Input[Optional[_builtins.str]] = None,
                  outbound_cluster_config: pulumi.Input[Optional[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict', 'outputs.ClusterOutboundClusterConfig']]] = None,
+                 remote_reindex_trust_config: pulumi.Input[Optional[Union['ClusterRemoteReindexTrustConfigArgs', 'ClusterRemoteReindexTrustConfigArgsDict', 'outputs.ClusterRemoteReindexTrustConfig']]] = None,
                  reverse_connection_endpoint_customer_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  search_node_count: pulumi.Input[Optional[_builtins.int]] = None,
                  search_node_host_memory_gb: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2342,6 +2411,7 @@ class Cluster(pulumi.CustomResource):
                  search_node_host_type: pulumi.Input[Optional[_builtins.str]] = None,
                  search_node_storage_gb: pulumi.Input[Optional[_builtins.int]] = None,
                  security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 security_master_user_auth_details: pulumi.Input[Optional[Union['ClusterSecurityMasterUserAuthDetailsArgs', 'ClusterSecurityMasterUserAuthDetailsArgsDict', 'outputs.ClusterSecurityMasterUserAuthDetails']]] = None,
                  security_master_user_name: pulumi.Input[Optional[_builtins.str]] = None,
                  security_master_user_password_hash: pulumi.Input[Optional[_builtins.str]] = None,
                  security_mode: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2429,6 +2499,7 @@ class Cluster(pulumi.CustomResource):
             __props__.__dict__["opendashboard_node_host_ocpu_count"] = opendashboard_node_host_ocpu_count
             __props__.__dict__["opendashboard_node_host_shape"] = opendashboard_node_host_shape
             __props__.__dict__["outbound_cluster_config"] = outbound_cluster_config
+            __props__.__dict__["remote_reindex_trust_config"] = remote_reindex_trust_config
             __props__.__dict__["reverse_connection_endpoint_customer_ips"] = reverse_connection_endpoint_customer_ips
             __props__.__dict__["search_node_count"] = search_node_count
             __props__.__dict__["search_node_host_memory_gb"] = search_node_host_memory_gb
@@ -2437,6 +2508,7 @@ class Cluster(pulumi.CustomResource):
             __props__.__dict__["search_node_host_type"] = search_node_host_type
             __props__.__dict__["search_node_storage_gb"] = search_node_storage_gb
             __props__.__dict__["security_attributes"] = security_attributes
+            __props__.__dict__["security_master_user_auth_details"] = security_master_user_auth_details
             __props__.__dict__["security_master_user_name"] = security_master_user_name
             __props__.__dict__["security_master_user_password_hash"] = None if security_master_user_password_hash is None else pulumi.Output.secret(security_master_user_password_hash)
             __props__.__dict__["security_mode"] = security_mode
@@ -2529,6 +2601,7 @@ class Cluster(pulumi.CustomResource):
             opensearch_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
             opensearch_private_ip: pulumi.Input[Optional[_builtins.str]] = None,
             outbound_cluster_config: pulumi.Input[Optional[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict', 'outputs.ClusterOutboundClusterConfig']]] = None,
+            remote_reindex_trust_config: pulumi.Input[Optional[Union['ClusterRemoteReindexTrustConfigArgs', 'ClusterRemoteReindexTrustConfigArgsDict', 'outputs.ClusterRemoteReindexTrustConfig']]] = None,
             reverse_connection_endpoint_customer_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             reverse_connection_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterReverseConnectionEndpointArgs', 'ClusterReverseConnectionEndpointArgsDict', 'outputs.ClusterReverseConnectionEndpoint']]]]] = None,
             search_node_count: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2538,6 +2611,7 @@ class Cluster(pulumi.CustomResource):
             search_node_host_type: pulumi.Input[Optional[_builtins.str]] = None,
             search_node_storage_gb: pulumi.Input[Optional[_builtins.int]] = None,
             security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            security_master_user_auth_details: pulumi.Input[Optional[Union['ClusterSecurityMasterUserAuthDetailsArgs', 'ClusterSecurityMasterUserAuthDetailsArgsDict', 'outputs.ClusterSecurityMasterUserAuthDetails']]] = None,
             security_master_user_name: pulumi.Input[Optional[_builtins.str]] = None,
             security_master_user_password_hash: pulumi.Input[Optional[_builtins.str]] = None,
             security_mode: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2607,6 +2681,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] opensearch_fqdn: The fully qualified domain name (FQDN) for the cluster's API endpoint.
         :param pulumi.Input[_builtins.str] opensearch_private_ip: The cluster's private IP address.
         :param pulumi.Input[Union['ClusterOutboundClusterConfigArgs', 'ClusterOutboundClusterConfigArgsDict', 'outputs.ClusterOutboundClusterConfig']] outbound_cluster_config: (Updatable) This configuration is used for passing request details to connect outbound cluster(s) to the inbound cluster (coordinating cluster)
+        :param pulumi.Input[Union['ClusterRemoteReindexTrustConfigArgs', 'ClusterRemoteReindexTrustConfigArgsDict', 'outputs.ClusterRemoteReindexTrustConfig']] remote_reindex_trust_config: (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] reverse_connection_endpoint_customer_ips: (Updatable) The customer IP addresses of the endpoint in customer VCN
         :param pulumi.Input[Sequence[pulumi.Input[Union['ClusterReverseConnectionEndpointArgs', 'ClusterReverseConnectionEndpointArgsDict', 'outputs.ClusterReverseConnectionEndpoint']]]] reverse_connection_endpoints: The list of reverse connection endpoints.
         :param pulumi.Input[_builtins.int] search_node_count: (Updatable) The number of search nodes configured for the cluster.
@@ -2616,6 +2691,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] search_node_host_type: The instance type for the cluster's search nodes.
         :param pulumi.Input[_builtins.int] search_node_storage_gb: (Updatable) The amount of storage in GB, to configure per node for the cluster's search nodes.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
+        :param pulumi.Input[Union['ClusterSecurityMasterUserAuthDetailsArgs', 'ClusterSecurityMasterUserAuthDetailsArgsDict', 'outputs.ClusterSecurityMasterUserAuthDetails']] security_master_user_auth_details: (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
         :param pulumi.Input[_builtins.str] security_master_user_name: (Updatable) The name of the master user that are used to manage security config
         :param pulumi.Input[_builtins.str] security_master_user_password_hash: (Updatable) The password hash of the master user that are used to manage security config
         :param pulumi.Input[_builtins.str] security_mode: (Updatable) The security mode of the cluster.
@@ -2686,6 +2762,7 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["opensearch_fqdn"] = opensearch_fqdn
         __props__.__dict__["opensearch_private_ip"] = opensearch_private_ip
         __props__.__dict__["outbound_cluster_config"] = outbound_cluster_config
+        __props__.__dict__["remote_reindex_trust_config"] = remote_reindex_trust_config
         __props__.__dict__["reverse_connection_endpoint_customer_ips"] = reverse_connection_endpoint_customer_ips
         __props__.__dict__["reverse_connection_endpoints"] = reverse_connection_endpoints
         __props__.__dict__["search_node_count"] = search_node_count
@@ -2695,6 +2772,7 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["search_node_host_type"] = search_node_host_type
         __props__.__dict__["search_node_storage_gb"] = search_node_storage_gb
         __props__.__dict__["security_attributes"] = security_attributes
+        __props__.__dict__["security_master_user_auth_details"] = security_master_user_auth_details
         __props__.__dict__["security_master_user_name"] = security_master_user_name
         __props__.__dict__["security_master_user_password_hash"] = security_master_user_password_hash
         __props__.__dict__["security_mode"] = security_mode
@@ -3082,6 +3160,14 @@ class Cluster(pulumi.CustomResource):
         return pulumi.get(self, "outbound_cluster_config")
 
     @_builtins.property
+    @pulumi.getter(name="remoteReindexTrustConfig")
+    def remote_reindex_trust_config(self) -> pulumi.Output['outputs.ClusterRemoteReindexTrustConfig']:
+        """
+        (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+        """
+        return pulumi.get(self, "remote_reindex_trust_config")
+
+    @_builtins.property
     @pulumi.getter(name="reverseConnectionEndpointCustomerIps")
     def reverse_connection_endpoint_customer_ips(self) -> pulumi.Output[Sequence[_builtins.str]]:
         """
@@ -3152,6 +3238,14 @@ class Cluster(pulumi.CustomResource):
         (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         """
         return pulumi.get(self, "security_attributes")
+
+    @_builtins.property
+    @pulumi.getter(name="securityMasterUserAuthDetails")
+    def security_master_user_auth_details(self) -> pulumi.Output['outputs.ClusterSecurityMasterUserAuthDetails']:
+        """
+        (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
+        """
+        return pulumi.get(self, "security_master_user_auth_details")
 
     @_builtins.property
     @pulumi.getter(name="securityMasterUserName")

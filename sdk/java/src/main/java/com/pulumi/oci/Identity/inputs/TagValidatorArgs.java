@@ -9,6 +9,8 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class TagValidatorArgs extends com.pulumi.resources.ResourceArgs {
@@ -16,14 +18,14 @@ public final class TagValidatorArgs extends com.pulumi.resources.ResourceArgs {
     public static final TagValidatorArgs Empty = new TagValidatorArgs();
 
     /**
-     * (Updatable) Specifies the type of validation: a static value (no validation) or a list.
+     * (Updatable) Specifies the type of validation. Use `ENUM` to restrict a tag to a list of allowed values, or `DEFAULT` for no value validation.
      * 
      */
     @Import(name="validatorType", required=true)
     private Output<String> validatorType;
 
     /**
-     * @return (Updatable) Specifies the type of validation: a static value (no validation) or a list.
+     * @return (Updatable) Specifies the type of validation. Use `ENUM` to restrict a tag to a list of allowed values, or `DEFAULT` for no value validation.
      * 
      */
     public Output<String> validatorType() {
@@ -31,18 +33,18 @@ public final class TagValidatorArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The list of allowed values for a definedTag value.
+     * (Updatable) The list of allowed values for a definedTag value. Omit this property when `validatorType` is `DEFAULT`; it is not used for default validation.
      * 
      */
-    @Import(name="values", required=true)
-    private Output<List<String>> values;
+    @Import(name="values")
+    private @Nullable Output<List<String>> values;
 
     /**
-     * @return (Updatable) The list of allowed values for a definedTag value.
+     * @return (Updatable) The list of allowed values for a definedTag value. Omit this property when `validatorType` is `DEFAULT`; it is not used for default validation.
      * 
      */
-    public Output<List<String>> values() {
-        return this.values;
+    public Optional<Output<List<String>>> values() {
+        return Optional.ofNullable(this.values);
     }
 
     private TagValidatorArgs() {}
@@ -71,7 +73,7 @@ public final class TagValidatorArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param validatorType (Updatable) Specifies the type of validation: a static value (no validation) or a list.
+         * @param validatorType (Updatable) Specifies the type of validation. Use `ENUM` to restrict a tag to a list of allowed values, or `DEFAULT` for no value validation.
          * 
          * @return builder
          * 
@@ -82,7 +84,7 @@ public final class TagValidatorArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param validatorType (Updatable) Specifies the type of validation: a static value (no validation) or a list.
+         * @param validatorType (Updatable) Specifies the type of validation. Use `ENUM` to restrict a tag to a list of allowed values, or `DEFAULT` for no value validation.
          * 
          * @return builder
          * 
@@ -92,18 +94,18 @@ public final class TagValidatorArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param values (Updatable) The list of allowed values for a definedTag value.
+         * @param values (Updatable) The list of allowed values for a definedTag value. Omit this property when `validatorType` is `DEFAULT`; it is not used for default validation.
          * 
          * @return builder
          * 
          */
-        public Builder values(Output<List<String>> values) {
+        public Builder values(@Nullable Output<List<String>> values) {
             $.values = values;
             return this;
         }
 
         /**
-         * @param values (Updatable) The list of allowed values for a definedTag value.
+         * @param values (Updatable) The list of allowed values for a definedTag value. Omit this property when `validatorType` is `DEFAULT`; it is not used for default validation.
          * 
          * @return builder
          * 
@@ -113,7 +115,7 @@ public final class TagValidatorArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param values (Updatable) The list of allowed values for a definedTag value.
+         * @param values (Updatable) The list of allowed values for a definedTag value. Omit this property when `validatorType` is `DEFAULT`; it is not used for default validation.
          * 
          * @return builder
          * 
@@ -125,9 +127,6 @@ public final class TagValidatorArgs extends com.pulumi.resources.ResourceArgs {
         public TagValidatorArgs build() {
             if ($.validatorType == null) {
                 throw new MissingRequiredPropertyException("TagValidatorArgs", "validatorType");
-            }
-            if ($.values == null) {
-                throw new MissingRequiredPropertyException("TagValidatorArgs", "values");
             }
             return $;
         }

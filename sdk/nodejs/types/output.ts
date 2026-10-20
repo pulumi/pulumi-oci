@@ -105955,6 +105955,10 @@ export namespace Database {
          */
         databaseTransformsUrl: string;
         /**
+         * Essbase URL for the Autonomous AI Database.
+         */
+        essbaseUrl: string;
+        /**
          * The URL of the Graph Studio for the Autonomous Database.
          */
         graphStudioUrl: string;
@@ -106275,6 +106279,10 @@ export namespace Database {
          */
         databaseTransformsUrl: string;
         /**
+         * Essbase URL for the Autonomous AI Database.
+         */
+        essbaseUrl: string;
+        /**
          * The URL of the Graph Studio for the Autonomous Database.
          */
         graphStudioUrl: string;
@@ -106461,6 +106469,10 @@ export namespace Database {
          * The URL of the Database Transforms for the Autonomous Database.
          */
         databaseTransformsUrl: string;
+        /**
+         * Essbase URL for the Autonomous AI Database.
+         */
+        essbaseUrl: string;
         /**
          * The URL of the Graph Studio for the Autonomous Database.
          */
@@ -106772,6 +106784,10 @@ export namespace Database {
          * Provide the key OCID of a registered AWS key.
          */
         awsEncryptionKeyId: string;
+        /**
+         * Provide the key pool OCID of a registered AWS key.
+         */
+        awsEncryptionKeyPoolId: string;
         /**
          * Provide the key OCID of a registered Azure key.
          */
@@ -107701,6 +107717,10 @@ export namespace Database {
          */
         awsEncryptionKeyId: string;
         /**
+         * Provide the key pool OCID of a registered AWS key.
+         */
+        awsEncryptionKeyPoolId: string;
+        /**
          * Provide the key OCID of a registered Azure key.
          */
         azureEncryptionKeyId: string;
@@ -107825,6 +107845,22 @@ export namespace Database {
     }
 
     export interface DatabaseDatabaseSourceEncryptionKeyLocationDetails {
+        /**
+         * Provide the key OCID of a registered AWS key.
+         */
+        awsEncryptionKeyId: string;
+        /**
+         * Provide the key pool OCID of a registered AWS key.
+         */
+        awsEncryptionKeyPoolId: string;
+        /**
+         * Provide the key OCID of a registered Azure key.
+         */
+        azureEncryptionKeyId: string;
+        /**
+         * Provide the key OCID of a registered GCP key.
+         */
+        googleCloudProviderEncryptionKeyId: string;
         /**
          * Provide the HSM password as you would in RDBMS for External HSM.
          */
@@ -108605,6 +108641,10 @@ export namespace Database {
          * Provide the key OCID of a registered AWS key.
          */
         awsEncryptionKeyId: string;
+        /**
+         * Provide the key pool OCID of a registered AWS key.
+         */
+        awsEncryptionKeyPoolId: string;
         /**
          * Provide the key OCID of a registered Azure key.
          */
@@ -112339,6 +112379,10 @@ export namespace Database {
          */
         databaseTransformsUrl: string;
         /**
+         * Essbase URL for the Autonomous AI Database.
+         */
+        essbaseUrl: string;
+        /**
          * The URL of the Graph Studio for the Autonomous Database.
          */
         graphStudioUrl: string;
@@ -112756,6 +112800,10 @@ export namespace Database {
          */
         databaseTransformsUrl: string;
         /**
+         * Essbase URL for the Autonomous AI Database.
+         */
+        essbaseUrl: string;
+        /**
          * The URL of the Graph Studio for the Autonomous Database.
          */
         graphStudioUrl: string;
@@ -113046,6 +113094,10 @@ export namespace Database {
          * The URL of the Database Transforms for the Autonomous Database.
          */
         databaseTransformsUrl: string;
+        /**
+         * Essbase URL for the Autonomous AI Database.
+         */
+        essbaseUrl: string;
         /**
          * The URL of the Graph Studio for the Autonomous Database.
          */
@@ -113841,6 +113893,10 @@ export namespace Database {
          */
         databaseTransformsUrl: string;
         /**
+         * Essbase URL for the Autonomous AI Database.
+         */
+        essbaseUrl: string;
+        /**
          * The URL of the Graph Studio for the Autonomous Database.
          */
         graphStudioUrl: string;
@@ -114161,6 +114217,10 @@ export namespace Database {
          */
         databaseTransformsUrl: string;
         /**
+         * Essbase URL for the Autonomous AI Database.
+         */
+        essbaseUrl: string;
+        /**
          * The URL of the Graph Studio for the Autonomous Database.
          */
         graphStudioUrl: string;
@@ -114344,6 +114404,10 @@ export namespace Database {
          * The URL of the Database Transforms for the Autonomous Database.
          */
         databaseTransformsUrl: string;
+        /**
+         * Essbase URL for the Autonomous AI Database.
+         */
+        essbaseUrl: string;
         /**
          * The URL of the Graph Studio for the Autonomous Database.
          */
@@ -115091,6 +115155,10 @@ export namespace Database {
          */
         databaseTransformsUrl: string;
         /**
+         * Essbase URL for the Autonomous AI Database.
+         */
+        essbaseUrl: string;
+        /**
          * The URL of the Graph Studio for the Autonomous Database.
          */
         graphStudioUrl: string;
@@ -115411,6 +115479,10 @@ export namespace Database {
          */
         databaseTransformsUrl: string;
         /**
+         * Essbase URL for the Autonomous AI Database.
+         */
+        essbaseUrl: string;
+        /**
          * The URL of the Graph Studio for the Autonomous Database.
          */
         graphStudioUrl: string;
@@ -115587,6 +115659,10 @@ export namespace Database {
          * The URL of the Database Transforms for the Autonomous Database.
          */
         databaseTransformsUrl: string;
+        /**
+         * Essbase URL for the Autonomous AI Database.
+         */
+        essbaseUrl: string;
         /**
          * The URL of the Graph Studio for the Autonomous Database.
          */
@@ -117047,6 +117123,10 @@ export namespace Database {
          * Provide the key OCID of a registered AWS key.
          */
         awsEncryptionKeyId: string;
+        /**
+         * Provide the key pool OCID of a registered AWS key.
+         */
+        awsEncryptionKeyPoolId: string;
         /**
          * Provide the key OCID of a registered Azure key.
          */
@@ -119184,6 +119264,10 @@ export namespace Database {
          */
         awsEncryptionKeyId: string;
         /**
+         * Provide the key pool OCID of a registered AWS key.
+         */
+        awsEncryptionKeyPoolId: string;
+        /**
          * Provide the key OCID of a registered Azure key.
          */
         azureEncryptionKeyId: string;
@@ -119304,6 +119388,22 @@ export namespace Database {
     }
 
     export interface GetDatabaseDatabaseSourceEncryptionKeyLocationDetail {
+        /**
+         * Provide the key OCID of a registered AWS key.
+         */
+        awsEncryptionKeyId: string;
+        /**
+         * Provide the key pool OCID of a registered AWS key.
+         */
+        awsEncryptionKeyPoolId: string;
+        /**
+         * Provide the key OCID of a registered Azure key.
+         */
+        azureEncryptionKeyId: string;
+        /**
+         * Provide the key OCID of a registered GCP key.
+         */
+        googleCloudProviderEncryptionKeyId: string;
         /**
          * Provide the HSM password as you would in RDBMS for External HSM.
          */
@@ -121054,6 +121154,10 @@ export namespace Database {
          */
         awsEncryptionKeyId: string;
         /**
+         * Provide the key pool OCID of a registered AWS key.
+         */
+        awsEncryptionKeyPoolId: string;
+        /**
          * Provide the key OCID of a registered Azure key.
          */
         azureEncryptionKeyId: string;
@@ -121168,6 +121272,22 @@ export namespace Database {
     }
 
     export interface GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail {
+        /**
+         * Provide the key OCID of a registered AWS key.
+         */
+        awsEncryptionKeyId: string;
+        /**
+         * Provide the key pool OCID of a registered AWS key.
+         */
+        awsEncryptionKeyPoolId: string;
+        /**
+         * Provide the key OCID of a registered Azure key.
+         */
+        azureEncryptionKeyId: string;
+        /**
+         * Provide the key OCID of a registered GCP key.
+         */
+        googleCloudProviderEncryptionKeyId: string;
         /**
          * Provide the HSM password as you would in RDBMS for External HSM.
          */
@@ -121561,6 +121681,7 @@ export namespace Database {
 
     export interface GetDbHomeDatabaseEncryptionKeyLocationDetail {
         awsEncryptionKeyId: string;
+        awsEncryptionKeyPoolId: string;
         azureEncryptionKeyId: string;
         googleCloudProviderEncryptionKeyId: string;
         hsmPassword: string;
@@ -121844,6 +121965,7 @@ export namespace Database {
 
     export interface GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail {
         awsEncryptionKeyId: string;
+        awsEncryptionKeyPoolId: string;
         azureEncryptionKeyId: string;
         googleCloudProviderEncryptionKeyId: string;
         hsmPassword: string;
@@ -147029,6 +147151,165 @@ export namespace DatabaseMigration {
         walletLocation: string;
     }
 
+    export interface GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollection {
+        /**
+         * Items in collection.
+         */
+        items: outputs.DatabaseMigration.GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItem[];
+        /**
+         * Total number of items matching the request.
+         */
+        totalItems: number;
+    }
+
+    export interface GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItem {
+        /**
+         * The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+         */
+        databaseCombination: string;
+        /**
+         * Database object name.
+         */
+        object: string;
+        /**
+         * A filter to return only results for a specific object type.
+         *
+         * The allowed values depend on the migration's `databaseCombination`:
+         * * Oracle migrations: `OracleDatabaseObjectTypes`
+         * * MySQL migrations: `MySqlDatabaseObjectTypes`
+         */
+        objectType: string;
+        /**
+         * A filter to return only results for a specific owner.
+         */
+        owner: string;
+        /**
+         * Object status in source.
+         */
+        statusInSource: string;
+        /**
+         * Object status in target.
+         */
+        statusInTarget: string;
+    }
+
+    export interface GetMigrationDataVerificationObjectStatusesFilter {
+        /**
+         * A filter to return only resources that match the entire name given.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollection {
+        /**
+         * Items in collection.
+         */
+        items: outputs.DatabaseMigration.GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItem[];
+        /**
+         * Total number of items matching the request.
+         */
+        totalItems: number;
+    }
+
+    export interface GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItem {
+        /**
+         * The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+         */
+        databaseCombination: string;
+        /**
+         * Percentage delta between source and target counts. This value is expected to be non-negative.
+         */
+        deltaPercent: number;
+        /**
+         * A filter to return only results for a specific object type.
+         *
+         * The allowed values depend on the migration's `databaseCombination`:
+         * * Oracle migrations: `OracleDatabaseObjectTypes`
+         * * MySQL migrations: `MySqlDatabaseObjectTypes`
+         */
+        objectType: string;
+        /**
+         * A filter to return only results for a specific schema/owner.
+         */
+        schemaName: string;
+        /**
+         * Number of invalid objects in source.
+         */
+        sourceInvalidCount: number;
+        /**
+         * Number of objects in source.
+         */
+        sourceObjectCount: number;
+        /**
+         * Number of invalid objects in target.
+         */
+        targetInvalidCount: number;
+        /**
+         * Number of objects in target.
+         */
+        targetObjectCount: number;
+    }
+
+    export interface GetMigrationDataVerificationObjectTypeCountsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollection {
+        /**
+         * Items in collection.
+         */
+        items: outputs.DatabaseMigration.GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItem[];
+        /**
+         * Total number of items matching the request.
+         */
+        totalItems: number;
+    }
+
+    export interface GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItem {
+        /**
+         * The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+         */
+        databaseCombination: string;
+        /**
+         * A filter to return only results for a specific owner.
+         */
+        owner: string;
+        /**
+         * Row count in source.
+         */
+        sourceRowCount: number;
+        /**
+         * A filter to return only results for a specific table.
+         */
+        tableName: string;
+        /**
+         * Row count in target.
+         */
+        targetRowCount: number;
+        /**
+         * Time of last statistics collection in the source used for the dictionary-based row count estimate. This value is reported per row because statistics can be collected at different times per object. This timestamp is stored in UTC.
+         */
+        timeLastSourceStatisticsCollection: string;
+        /**
+         * Time of last statistics collection in the target used for the dictionary-based row count estimate. This value is reported per row because statistics can be collected at different times per object. This timestamp is stored in UTC.
+         */
+        timeLastTargetStatisticsCollection: string;
+        /**
+         * Percentage variance between source and target row counts. This value is expected to be non-negative.
+         */
+        variancePercent: number;
+    }
+
+    export interface GetMigrationDataVerificationTableRowCountsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
     export interface GetMigrationExcludeObject {
         isOmitExcludedTableFromReplication: boolean;
         object: string;
@@ -147875,6 +148156,7 @@ export namespace DatabaseMigration {
          * Current status of the job.
          */
         currentStatus: string;
+        jobProgress: number;
         /**
          * List of phase status for the job.
          */
@@ -247669,13 +247951,13 @@ export namespace Identity {
 
     export interface TagValidator {
         /**
-         * (Updatable) Specifies the type of validation: a static value (no validation) or a list.
+         * (Updatable) Specifies the type of validation. Use `ENUM` to restrict a tag to a list of allowed values, or `DEFAULT` for no value validation.
          */
         validatorType: string;
         /**
-         * (Updatable) The list of allowed values for a definedTag value.
+         * (Updatable) The list of allowed values for a definedTag value. Omit this property when `validatorType` is `DEFAULT`; it is not used for default validation.
          */
-        values: string[];
+        values?: string[];
     }
 
     export interface UserCapability {
@@ -283602,6 +283884,28 @@ export namespace Opensearch {
         seedClusterId: string;
     }
 
+    export interface ClusterRemoteReindexTrustConfig {
+        /**
+         * (Updatable) Remote cluster sources to trust for reindexing.
+         */
+        remoteSources: outputs.Opensearch.ClusterRemoteReindexTrustConfigRemoteSource[];
+    }
+
+    export interface ClusterRemoteReindexTrustConfigRemoteSource {
+        /**
+         * (Updatable) OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+         */
+        certificateId: string;
+        /**
+         * (Updatable) HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
+         */
+        endpoint: string;
+        /**
+         * (Updatable) Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
+         */
+        endpointResolutionIp: string;
+    }
+
     export interface ClusterReverseConnectionEndpoint {
         /**
          * The IP addresses of the endpoint in customer VCN
@@ -283611,6 +283915,39 @@ export namespace Opensearch {
          * The NAT IP addresses of the endpoint in service VCN
          */
         natIp: string;
+    }
+
+    export interface ClusterSecurityMasterUserAuthDetails {
+        /**
+         * (Updatable) The username and password source details for the security master user.
+         */
+        userDetails: outputs.Opensearch.ClusterSecurityMasterUserAuthDetailsUserDetails;
+    }
+
+    export interface ClusterSecurityMasterUserAuthDetailsUserDetails {
+        /**
+         * (Updatable) Base password-source details for the OpenSearch security master user.
+         */
+        passwordDetails: outputs.Opensearch.ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails;
+        /**
+         * (Updatable) The name of the master user that is used to manage security config.
+         */
+        username: string;
+    }
+
+    export interface ClusterSecurityMasterUserAuthDetailsUserDetailsPasswordDetails {
+        /**
+         * (Updatable) The plaintext password for the master user.
+         */
+        plainPassword: string;
+        /**
+         * (Updatable) The source of the master-user plaintext password.
+         */
+        sourceType: string;
+        /**
+         * (Updatable) The OCID of a Vault secret containing the plaintext master-user password.
+         */
+        vaultSecretId: string;
     }
 
     export interface ClusterSecuritySamlConfig {
@@ -283863,6 +284200,28 @@ export namespace Opensearch {
         customerIp: string;
     }
 
+    export interface GetOpensearchClusterRemoteReindexTrustConfig {
+        /**
+         * Remote cluster sources to trust for reindexing.
+         */
+        remoteSources: outputs.Opensearch.GetOpensearchClusterRemoteReindexTrustConfigRemoteSource[];
+    }
+
+    export interface GetOpensearchClusterRemoteReindexTrustConfigRemoteSource {
+        /**
+         * OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+         */
+        certificateId: string;
+        /**
+         * HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
+         */
+        endpoint: string;
+        /**
+         * Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
+         */
+        endpointResolutionIp: string;
+    }
+
     export interface GetOpensearchClusterReverseConnectionEndpoint {
         /**
          * The IP addresses of the endpoint in customer VCN
@@ -283872,6 +284231,21 @@ export namespace Opensearch {
          * The NAT IP addresses of the endpoint in service VCN
          */
         natIp: string;
+    }
+
+    export interface GetOpensearchClusterSecurityMasterUserAuthDetail {
+        userDetails: outputs.Opensearch.GetOpensearchClusterSecurityMasterUserAuthDetailUserDetail[];
+    }
+
+    export interface GetOpensearchClusterSecurityMasterUserAuthDetailUserDetail {
+        passwordDetails: outputs.Opensearch.GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetail[];
+        username: string;
+    }
+
+    export interface GetOpensearchClusterSecurityMasterUserAuthDetailUserDetailPasswordDetail {
+        plainPassword: string;
+        sourceType: string;
+        vaultSecretId: string;
     }
 
     export interface GetOpensearchClusterSecuritySamlConfig {
@@ -284084,6 +284458,10 @@ export namespace Opensearch {
          */
         outboundClusterConfigs: outputs.Opensearch.GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfig[];
         /**
+         * Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+         */
+        remoteReindexTrustConfigs: outputs.Opensearch.GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfig[];
+        /**
          * The customer IP addresses of the endpoint in customer VCN
          */
         reverseConnectionEndpointCustomerIps: string[];
@@ -284119,6 +284497,7 @@ export namespace Opensearch {
          * Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
          */
         securityAttributes: {[key: string]: string};
+        securityMasterUserAuthDetails: outputs.Opensearch.GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetail[];
         /**
          * The name of the master user that are used to manage security config
          */
@@ -284266,6 +284645,28 @@ export namespace Opensearch {
         seedClusterId: string;
     }
 
+    export interface GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfig {
+        /**
+         * Remote cluster sources to trust for reindexing.
+         */
+        remoteSources: outputs.Opensearch.GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource[];
+    }
+
+    export interface GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource {
+        /**
+         * OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+         */
+        certificateId: string;
+        /**
+         * HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
+         */
+        endpoint: string;
+        /**
+         * Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
+         */
+        endpointResolutionIp: string;
+    }
+
     export interface GetOpensearchClustersOpensearchClusterCollectionItemReverseConnectionEndpoint {
         /**
          * The IP addresses of the endpoint in customer VCN
@@ -284275,6 +284676,21 @@ export namespace Opensearch {
          * The NAT IP addresses of the endpoint in service VCN
          */
         natIp: string;
+    }
+
+    export interface GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetail {
+        userDetails: outputs.Opensearch.GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetail[];
+    }
+
+    export interface GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetail {
+        passwordDetails: outputs.Opensearch.GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetail[];
+        username: string;
+    }
+
+    export interface GetOpensearchClustersOpensearchClusterCollectionItemSecurityMasterUserAuthDetailUserDetailPasswordDetail {
+        plainPassword: string;
+        sourceType: string;
+        vaultSecretId: string;
     }
 
     export interface GetOpensearchClustersOpensearchClusterCollectionItemSecuritySamlConfig {
@@ -318284,6 +318700,32 @@ export namespace oci {
         timeLastChecked: string;
     }
 
+    export interface DbmulticloudOracleDbAwsKeyPoolReplicationMetadata {
+        /**
+         * List of all regions and their respective resource ID.
+         */
+        replicationDetails: outputs.oci.DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail[];
+    }
+
+    export interface DbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail {
+        /**
+         * The lifecycle state of the Oracle DB Azure Vault resource.
+         */
+        replicationState: string;
+        /**
+         * The target region, where resource is replicated.
+         */
+        targetRegion: string;
+        /**
+         * Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+         */
+        timeCreated: string;
+        /**
+         * Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+         */
+        timeUpdated: string;
+    }
+
     export interface DbmulticloudOracleDbAwsKeyReplicationMetadata {
         /**
          * List of all regions and their respective resource ID.
@@ -322253,6 +322695,123 @@ export namespace oci {
         timeLastChecked: string;
     }
 
+    export interface GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadata {
+        /**
+         * List of all regions and their respective resource ID.
+         */
+        replicationDetails: outputs.oci.GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail[];
+    }
+
+    export interface GetDbmulticloudOracleDbAwsKeyPoolReplicationMetadataReplicationDetail {
+        /**
+         * The lifecycle state of the Oracle DB Azure Vault resource.
+         */
+        replicationState: string;
+        /**
+         * The target region, where resource is replicated.
+         */
+        targetRegion: string;
+        /**
+         * Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+         */
+        timeCreated: string;
+        /**
+         * Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetDbmulticloudOracleDbAwsKeyPoolsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollection {
+        items: outputs.oci.GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem[];
+    }
+
+    export interface GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItem {
+        /**
+         * The [ID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * A filter to return Oracle DB AWS Key Pool Resource that match the given display name.
+         */
+        displayName: string;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB AWS Key Pool resource.
+         */
+        id: string;
+        /**
+         * Indicates whether this key pool accepts only multi-region AWS KMS keys. When false, the key pool accepts only single-region AWS KMS keys.
+         */
+        isMultiRegionKeyPool: boolean;
+        /**
+         * Indicates whether AWS KMS keys in this key pool can be reused.
+         */
+        isReuseAllowed: boolean;
+        /**
+         * Description of the current lifecycle state in more detail.
+         */
+        lifecycleStateDetails: string;
+        /**
+         * Replication metadata, it has information about replication and target region.
+         */
+        replicationMetadatas: outputs.oci.GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadata[];
+        /**
+         * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+         */
+        timeCreated: string;
+        /**
+         * Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+         */
+        timeUpdated: string;
+    }
+
+    export interface GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadata {
+        /**
+         * List of all regions and their respective resource ID.
+         */
+        replicationDetails: outputs.oci.GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetail[];
+    }
+
+    export interface GetDbmulticloudOracleDbAwsKeyPoolsOracleDbAwsKeyPoolCollectionItemReplicationMetadataReplicationDetail {
+        /**
+         * The lifecycle state of the Oracle DB Azure Vault resource.
+         */
+        replicationState: string;
+        /**
+         * The target region, where resource is replicated.
+         */
+        targetRegion: string;
+        /**
+         * Time when the DB AWS Key Pool resource was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+         */
+        timeCreated: string;
+        /**
+         * Time when the DB AWS Key Pool resource was last modified, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format, e.g. '2020-05-23T21:10:29.600Z'.
+         */
+        timeUpdated: string;
+    }
+
     export interface GetDbmulticloudOracleDbAwsKeyReplicationMetadata {
         /**
          * List of all regions and their respective resource ID.
@@ -322324,6 +322883,10 @@ export namespace oci {
          */
         isAwsKeyEnabled: boolean;
         /**
+         * Indicates whether the Oracle AWS Key resource is currently in use.
+         */
+        isOracleAwsKeyUsed: boolean;
+        /**
          * Description of the current lifecycle state in more detail.
          */
         lifecycleStateDetails: string;
@@ -322332,6 +322895,10 @@ export namespace oci {
          */
         location: string;
         /**
+         * A filter to return only resources that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+         */
+        oracleDbAwsKeyPoolId: string;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
          */
         oracleDbConnectorId: string;
@@ -322339,6 +322906,10 @@ export namespace oci {
          * AWS Key resource's properties.
          */
         properties: {[key: string]: string};
+        /**
+         * The number of active references to the Oracle AWS Key resource.
+         */
+        refCount: number;
         /**
          * Replication metadata, it has information about replication and target region.
          */

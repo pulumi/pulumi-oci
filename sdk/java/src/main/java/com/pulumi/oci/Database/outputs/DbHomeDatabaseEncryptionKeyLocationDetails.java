@@ -18,6 +18,11 @@ public final class DbHomeDatabaseEncryptionKeyLocationDetails {
      */
     private @Nullable String awsEncryptionKeyId;
     /**
+     * @return Provide the key pool OCID of a registered AWS key.
+     * 
+     */
+    private @Nullable String awsEncryptionKeyPoolId;
+    /**
      * @return Provide the key OCID of a registered Azure key.
      * 
      */
@@ -41,6 +46,13 @@ public final class DbHomeDatabaseEncryptionKeyLocationDetails {
      */
     public Optional<String> awsEncryptionKeyId() {
         return Optional.ofNullable(this.awsEncryptionKeyId);
+    }
+    /**
+     * @return Provide the key pool OCID of a registered AWS key.
+     * 
+     */
+    public Optional<String> awsEncryptionKeyPoolId() {
+        return Optional.ofNullable(this.awsEncryptionKeyPoolId);
     }
     /**
      * @return Provide the key OCID of a registered Azure key.
@@ -77,6 +89,7 @@ public final class DbHomeDatabaseEncryptionKeyLocationDetails {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String awsEncryptionKeyId;
+        private @Nullable String awsEncryptionKeyPoolId;
         private @Nullable String azureEncryptionKeyId;
         private @Nullable String googleCloudProviderEncryptionKeyId;
         private @Nullable String hsmPassword;
@@ -85,6 +98,7 @@ public final class DbHomeDatabaseEncryptionKeyLocationDetails {
         public Builder(DbHomeDatabaseEncryptionKeyLocationDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.awsEncryptionKeyId = defaults.awsEncryptionKeyId;
+    	      this.awsEncryptionKeyPoolId = defaults.awsEncryptionKeyPoolId;
     	      this.azureEncryptionKeyId = defaults.azureEncryptionKeyId;
     	      this.googleCloudProviderEncryptionKeyId = defaults.googleCloudProviderEncryptionKeyId;
     	      this.hsmPassword = defaults.hsmPassword;
@@ -95,6 +109,12 @@ public final class DbHomeDatabaseEncryptionKeyLocationDetails {
         public Builder awsEncryptionKeyId(@Nullable String awsEncryptionKeyId) {
 
             this.awsEncryptionKeyId = awsEncryptionKeyId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder awsEncryptionKeyPoolId(@Nullable String awsEncryptionKeyPoolId) {
+
+            this.awsEncryptionKeyPoolId = awsEncryptionKeyPoolId;
             return this;
         }
         @CustomType.Setter
@@ -126,6 +146,7 @@ public final class DbHomeDatabaseEncryptionKeyLocationDetails {
         public DbHomeDatabaseEncryptionKeyLocationDetails build() {
             final var _resultValue = new DbHomeDatabaseEncryptionKeyLocationDetails();
             _resultValue.awsEncryptionKeyId = awsEncryptionKeyId;
+            _resultValue.awsEncryptionKeyPoolId = awsEncryptionKeyPoolId;
             _resultValue.azureEncryptionKeyId = azureEncryptionKeyId;
             _resultValue.googleCloudProviderEncryptionKeyId = googleCloudProviderEncryptionKeyId;
             _resultValue.hsmPassword = hsmPassword;

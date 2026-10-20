@@ -33,6 +33,7 @@ namespace Pulumi.Oci.Oci
         ///         DisplayName = oracleDbAwsKeyDisplayName,
         ///         OracleDbAwsConnectorId = testOracleDbAwsConnector.Id,
         ///         OracleDbAwsKeyId = testOracleDbAwsKey.Id,
+        ///         OracleDbAwsKeyPoolId = testOracleDbAwsKeyPool.Id,
         ///         State = oracleDbAwsKeyState,
         ///     });
         /// 
@@ -64,6 +65,7 @@ namespace Pulumi.Oci.Oci
         ///         DisplayName = oracleDbAwsKeyDisplayName,
         ///         OracleDbAwsConnectorId = testOracleDbAwsConnector.Id,
         ///         OracleDbAwsKeyId = testOracleDbAwsKey.Id,
+        ///         OracleDbAwsKeyPoolId = testOracleDbAwsKeyPool.Id,
         ///         State = oracleDbAwsKeyState,
         ///     });
         /// 
@@ -95,6 +97,7 @@ namespace Pulumi.Oci.Oci
         ///         DisplayName = oracleDbAwsKeyDisplayName,
         ///         OracleDbAwsConnectorId = testOracleDbAwsConnector.Id,
         ///         OracleDbAwsKeyId = testOracleDbAwsKey.Id,
+        ///         OracleDbAwsKeyPoolId = testOracleDbAwsKeyPool.Id,
         ///         State = oracleDbAwsKeyState,
         ///     });
         /// 
@@ -139,6 +142,12 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         [Input("oracleDbAwsKeyId")]
         public string? OracleDbAwsKeyId { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+        /// </summary>
+        [Input("oracleDbAwsKeyPoolId")]
+        public string? OracleDbAwsKeyPoolId { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
@@ -187,6 +196,12 @@ namespace Pulumi.Oci.Oci
         public Input<string>? OracleDbAwsKeyId { get; set; }
 
         /// <summary>
+        /// A filter to return only resources that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+        /// </summary>
+        [Input("oracleDbAwsKeyPoolId")]
+        public Input<string>? OracleDbAwsKeyPoolId { get; set; }
+
+        /// <summary>
         /// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
         /// </summary>
         [Input("state")]
@@ -218,6 +233,10 @@ namespace Pulumi.Oci.Oci
         public readonly string? OracleDbAwsConnectorId;
         public readonly string? OracleDbAwsKeyId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+        /// </summary>
+        public readonly string? OracleDbAwsKeyPoolId;
+        /// <summary>
         /// The list of oracle_db_aws_key_summary_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionResult> OracleDbAwsKeySummaryCollections;
@@ -240,6 +259,8 @@ namespace Pulumi.Oci.Oci
 
             string? oracleDbAwsKeyId,
 
+            string? oracleDbAwsKeyPoolId,
+
             ImmutableArray<Outputs.GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionResult> oracleDbAwsKeySummaryCollections,
 
             string? state)
@@ -250,6 +271,7 @@ namespace Pulumi.Oci.Oci
             Id = id;
             OracleDbAwsConnectorId = oracleDbAwsConnectorId;
             OracleDbAwsKeyId = oracleDbAwsKeyId;
+            OracleDbAwsKeyPoolId = oracleDbAwsKeyPoolId;
             OracleDbAwsKeySummaryCollections = oracleDbAwsKeySummaryCollections;
             State = state;
         }

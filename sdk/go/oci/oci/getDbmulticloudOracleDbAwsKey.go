@@ -75,15 +75,21 @@ type LookupDbmulticloudOracleDbAwsKeyResult struct {
 	Id string `pulumi:"id"`
 	// The Oracle AWS Key resource is enabled or disabled at AWS.
 	IsAwsKeyEnabled bool `pulumi:"isAwsKeyEnabled"`
+	// Indicates whether the Oracle AWS Key resource is currently in use.
+	IsOracleAwsKeyUsed bool `pulumi:"isOracleAwsKeyUsed"`
 	// Description of the current lifecycle state in more detail.
 	LifecycleStateDetails string `pulumi:"lifecycleStateDetails"`
 	// AWS Key resource location.
 	Location         string `pulumi:"location"`
 	OracleDbAwsKeyId string `pulumi:"oracleDbAwsKeyId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+	OracleDbAwsKeyPoolId string `pulumi:"oracleDbAwsKeyPoolId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
 	OracleDbConnectorId string `pulumi:"oracleDbConnectorId"`
 	// AWS Key resource's properties.
 	Properties map[string]string `pulumi:"properties"`
+	// The number of active references to the Oracle AWS Key resource.
+	RefCount int `pulumi:"refCount"`
 	// Replication metadata, it has information about replication and target region.
 	ReplicationMetadatas []GetDbmulticloudOracleDbAwsKeyReplicationMetadata `pulumi:"replicationMetadatas"`
 	// The lifecycle state of the Oracle DB AWS Key resource.
@@ -174,6 +180,11 @@ func (o LookupDbmulticloudOracleDbAwsKeyResultOutput) IsAwsKeyEnabled() pulumi.B
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAwsKeyResult) bool { return v.IsAwsKeyEnabled }).(pulumi.BoolOutput)
 }
 
+// Indicates whether the Oracle AWS Key resource is currently in use.
+func (o LookupDbmulticloudOracleDbAwsKeyResultOutput) IsOracleAwsKeyUsed() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDbmulticloudOracleDbAwsKeyResult) bool { return v.IsOracleAwsKeyUsed }).(pulumi.BoolOutput)
+}
+
 // Description of the current lifecycle state in more detail.
 func (o LookupDbmulticloudOracleDbAwsKeyResultOutput) LifecycleStateDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAwsKeyResult) string { return v.LifecycleStateDetails }).(pulumi.StringOutput)
@@ -188,6 +199,11 @@ func (o LookupDbmulticloudOracleDbAwsKeyResultOutput) OracleDbAwsKeyId() pulumi.
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAwsKeyResult) string { return v.OracleDbAwsKeyId }).(pulumi.StringOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+func (o LookupDbmulticloudOracleDbAwsKeyResultOutput) OracleDbAwsKeyPoolId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDbmulticloudOracleDbAwsKeyResult) string { return v.OracleDbAwsKeyPoolId }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
 func (o LookupDbmulticloudOracleDbAwsKeyResultOutput) OracleDbConnectorId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAwsKeyResult) string { return v.OracleDbConnectorId }).(pulumi.StringOutput)
@@ -196,6 +212,11 @@ func (o LookupDbmulticloudOracleDbAwsKeyResultOutput) OracleDbConnectorId() pulu
 // AWS Key resource's properties.
 func (o LookupDbmulticloudOracleDbAwsKeyResultOutput) Properties() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupDbmulticloudOracleDbAwsKeyResult) map[string]string { return v.Properties }).(pulumi.StringMapOutput)
+}
+
+// The number of active references to the Oracle AWS Key resource.
+func (o LookupDbmulticloudOracleDbAwsKeyResultOutput) RefCount() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDbmulticloudOracleDbAwsKeyResult) int { return v.RefCount }).(pulumi.IntOutput)
 }
 
 // Replication metadata, it has information about replication and target region.

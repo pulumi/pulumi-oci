@@ -31,6 +31,7 @@ class DbmulticloudOracleDbAwsKeyArgs:
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_aws_key_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  location: pulumi.Input[Optional[_builtins.str]] = None,
+                 oracle_db_aws_key_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
                  properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  target_region: pulumi.Input[Optional[_builtins.str]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None):
@@ -46,6 +47,7 @@ class DbmulticloudOracleDbAwsKeyArgs:
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_aws_key_enabled: The Oracle AWS Key resource is enabled or disabled at AWS.
         :param pulumi.Input[_builtins.str] location: AWS Key resource Location.
+        :param pulumi.Input[_builtins.str] oracle_db_aws_key_pool_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: AWS Key resource's properties.
         :param pulumi.Input[_builtins.str] target_region: The target region, where resource is replicated.
         :param pulumi.Input[_builtins.str] type: AWS Key resource type.
@@ -70,6 +72,8 @@ class DbmulticloudOracleDbAwsKeyArgs:
             pulumi.set(__self__, "is_aws_key_enabled", is_aws_key_enabled)
         if location is not None:
             pulumi.set(__self__, "location", location)
+        if oracle_db_aws_key_pool_id is not None:
+            pulumi.set(__self__, "oracle_db_aws_key_pool_id", oracle_db_aws_key_pool_id)
         if properties is not None:
             pulumi.set(__self__, "properties", properties)
         if target_region is not None:
@@ -195,6 +199,18 @@ class DbmulticloudOracleDbAwsKeyArgs:
         pulumi.set(self, "location", value)
 
     @_builtins.property
+    @pulumi.getter(name="oracleDbAwsKeyPoolId")
+    def oracle_db_aws_key_pool_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+        """
+        return pulumi.get(self, "oracle_db_aws_key_pool_id")
+
+    @oracle_db_aws_key_pool_id.setter
+    def oracle_db_aws_key_pool_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "oracle_db_aws_key_pool_id", value)
+
+    @_builtins.property
     @pulumi.getter
     def properties(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -245,10 +261,13 @@ class _DbmulticloudOracleDbAwsKeyState:
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_aws_key_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_oracle_aws_key_used: pulumi.Input[Optional[_builtins.bool]] = None,
                  lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
                  location: pulumi.Input[Optional[_builtins.str]] = None,
+                 oracle_db_aws_key_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
                  oracle_db_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
                  properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+                 ref_count: pulumi.Input[Optional[_builtins.int]] = None,
                  replication_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input['DbmulticloudOracleDbAwsKeyReplicationMetadataArgs']]]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -266,10 +285,13 @@ class _DbmulticloudOracleDbAwsKeyState:
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB AWS Key resource name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_aws_key_enabled: The Oracle AWS Key resource is enabled or disabled at AWS.
+        :param pulumi.Input[_builtins.bool] is_oracle_aws_key_used: Indicates whether the Oracle AWS Key resource is currently in use.
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Description of the current lifecycle state in more detail.
         :param pulumi.Input[_builtins.str] location: AWS Key resource Location.
+        :param pulumi.Input[_builtins.str] oracle_db_aws_key_pool_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
         :param pulumi.Input[_builtins.str] oracle_db_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: AWS Key resource's properties.
+        :param pulumi.Input[_builtins.int] ref_count: The number of active references to the Oracle AWS Key resource.
         :param pulumi.Input[Sequence[pulumi.Input['DbmulticloudOracleDbAwsKeyReplicationMetadataArgs']]] replication_metadatas: Replication metadata, it has information about replication and target region.
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the Oracle DB AWS Key resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -297,14 +319,20 @@ class _DbmulticloudOracleDbAwsKeyState:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_aws_key_enabled is not None:
             pulumi.set(__self__, "is_aws_key_enabled", is_aws_key_enabled)
+        if is_oracle_aws_key_used is not None:
+            pulumi.set(__self__, "is_oracle_aws_key_used", is_oracle_aws_key_used)
         if lifecycle_state_details is not None:
             pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
         if location is not None:
             pulumi.set(__self__, "location", location)
+        if oracle_db_aws_key_pool_id is not None:
+            pulumi.set(__self__, "oracle_db_aws_key_pool_id", oracle_db_aws_key_pool_id)
         if oracle_db_connector_id is not None:
             pulumi.set(__self__, "oracle_db_connector_id", oracle_db_connector_id)
         if properties is not None:
             pulumi.set(__self__, "properties", properties)
+        if ref_count is not None:
+            pulumi.set(__self__, "ref_count", ref_count)
         if replication_metadatas is not None:
             pulumi.set(__self__, "replication_metadatas", replication_metadatas)
         if state is not None:
@@ -414,6 +442,18 @@ class _DbmulticloudOracleDbAwsKeyState:
         pulumi.set(self, "is_aws_key_enabled", value)
 
     @_builtins.property
+    @pulumi.getter(name="isOracleAwsKeyUsed")
+    def is_oracle_aws_key_used(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether the Oracle AWS Key resource is currently in use.
+        """
+        return pulumi.get(self, "is_oracle_aws_key_used")
+
+    @is_oracle_aws_key_used.setter
+    def is_oracle_aws_key_used(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_oracle_aws_key_used", value)
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleStateDetails")
     def lifecycle_state_details(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -438,6 +478,18 @@ class _DbmulticloudOracleDbAwsKeyState:
         pulumi.set(self, "location", value)
 
     @_builtins.property
+    @pulumi.getter(name="oracleDbAwsKeyPoolId")
+    def oracle_db_aws_key_pool_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+        """
+        return pulumi.get(self, "oracle_db_aws_key_pool_id")
+
+    @oracle_db_aws_key_pool_id.setter
+    def oracle_db_aws_key_pool_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "oracle_db_aws_key_pool_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="oracleDbConnectorId")
     def oracle_db_connector_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -460,6 +512,18 @@ class _DbmulticloudOracleDbAwsKeyState:
     @properties.setter
     def properties(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "properties", value)
+
+    @_builtins.property
+    @pulumi.getter(name="refCount")
+    def ref_count(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The number of active references to the Oracle AWS Key resource.
+        """
+        return pulumi.get(self, "ref_count")
+
+    @ref_count.setter
+    def ref_count(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "ref_count", value)
 
     @_builtins.property
     @pulumi.getter(name="replicationMetadatas")
@@ -564,6 +628,7 @@ class DbmulticloudOracleDbAwsKey(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_aws_key_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  location: pulumi.Input[Optional[_builtins.str]] = None,
+                 oracle_db_aws_key_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
                  oracle_db_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
                  properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  target_region: pulumi.Input[Optional[_builtins.str]] = None,
@@ -597,6 +662,7 @@ class DbmulticloudOracleDbAwsKey(pulumi.CustomResource):
             },
             is_aws_key_enabled=oracle_db_aws_key_is_aws_key_enabled,
             location=oracle_db_aws_key_location,
+            oracle_db_aws_key_pool_id=test_oracle_db_aws_key_pool["id"],
             properties=oracle_db_aws_key_properties,
             type=oracle_db_aws_key_type)
         ```
@@ -620,6 +686,7 @@ class DbmulticloudOracleDbAwsKey(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_aws_key_enabled: The Oracle AWS Key resource is enabled or disabled at AWS.
         :param pulumi.Input[_builtins.str] location: AWS Key resource Location.
+        :param pulumi.Input[_builtins.str] oracle_db_aws_key_pool_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
         :param pulumi.Input[_builtins.str] oracle_db_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: AWS Key resource's properties.
         :param pulumi.Input[_builtins.str] target_region: The target region, where resource is replicated.
@@ -662,6 +729,7 @@ class DbmulticloudOracleDbAwsKey(pulumi.CustomResource):
             },
             is_aws_key_enabled=oracle_db_aws_key_is_aws_key_enabled,
             location=oracle_db_aws_key_location,
+            oracle_db_aws_key_pool_id=test_oracle_db_aws_key_pool["id"],
             properties=oracle_db_aws_key_properties,
             type=oracle_db_aws_key_type)
         ```
@@ -699,6 +767,7 @@ class DbmulticloudOracleDbAwsKey(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_aws_key_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
                  location: pulumi.Input[Optional[_builtins.str]] = None,
+                 oracle_db_aws_key_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
                  oracle_db_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
                  properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  target_region: pulumi.Input[Optional[_builtins.str]] = None,
@@ -725,13 +794,16 @@ class DbmulticloudOracleDbAwsKey(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_aws_key_enabled"] = is_aws_key_enabled
             __props__.__dict__["location"] = location
+            __props__.__dict__["oracle_db_aws_key_pool_id"] = oracle_db_aws_key_pool_id
             if oracle_db_connector_id is None and not opts.urn:
                 raise TypeError("Missing required property 'oracle_db_connector_id'")
             __props__.__dict__["oracle_db_connector_id"] = oracle_db_connector_id
             __props__.__dict__["properties"] = properties
             __props__.__dict__["target_region"] = target_region
             __props__.__dict__["type"] = type
+            __props__.__dict__["is_oracle_aws_key_used"] = None
             __props__.__dict__["lifecycle_state_details"] = None
+            __props__.__dict__["ref_count"] = None
             __props__.__dict__["replication_metadatas"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
@@ -755,10 +827,13 @@ class DbmulticloudOracleDbAwsKey(pulumi.CustomResource):
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             is_aws_key_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_oracle_aws_key_used: pulumi.Input[Optional[_builtins.bool]] = None,
             lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
             location: pulumi.Input[Optional[_builtins.str]] = None,
+            oracle_db_aws_key_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
             oracle_db_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
             properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ref_count: pulumi.Input[Optional[_builtins.int]] = None,
             replication_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAwsKeyReplicationMetadataArgs', 'DbmulticloudOracleDbAwsKeyReplicationMetadataArgsDict', 'outputs.DbmulticloudOracleDbAwsKeyReplicationMetadata']]]]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
@@ -780,10 +855,13 @@ class DbmulticloudOracleDbAwsKey(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: (Updatable) Oracle DB AWS Key resource name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.bool] is_aws_key_enabled: The Oracle AWS Key resource is enabled or disabled at AWS.
+        :param pulumi.Input[_builtins.bool] is_oracle_aws_key_used: Indicates whether the Oracle AWS Key resource is currently in use.
         :param pulumi.Input[_builtins.str] lifecycle_state_details: Description of the current lifecycle state in more detail.
         :param pulumi.Input[_builtins.str] location: AWS Key resource Location.
+        :param pulumi.Input[_builtins.str] oracle_db_aws_key_pool_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
         :param pulumi.Input[_builtins.str] oracle_db_connector_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] properties: AWS Key resource's properties.
+        :param pulumi.Input[_builtins.int] ref_count: The number of active references to the Oracle AWS Key resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAwsKeyReplicationMetadataArgs', 'DbmulticloudOracleDbAwsKeyReplicationMetadataArgsDict', 'outputs.DbmulticloudOracleDbAwsKeyReplicationMetadata']]]] replication_metadatas: Replication metadata, it has information about replication and target region.
         :param pulumi.Input[_builtins.str] state: The lifecycle state of the Oracle DB AWS Key resource.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -807,10 +885,13 @@ class DbmulticloudOracleDbAwsKey(pulumi.CustomResource):
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_aws_key_enabled"] = is_aws_key_enabled
+        __props__.__dict__["is_oracle_aws_key_used"] = is_oracle_aws_key_used
         __props__.__dict__["lifecycle_state_details"] = lifecycle_state_details
         __props__.__dict__["location"] = location
+        __props__.__dict__["oracle_db_aws_key_pool_id"] = oracle_db_aws_key_pool_id
         __props__.__dict__["oracle_db_connector_id"] = oracle_db_connector_id
         __props__.__dict__["properties"] = properties
+        __props__.__dict__["ref_count"] = ref_count
         __props__.__dict__["replication_metadatas"] = replication_metadatas
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
@@ -882,6 +963,14 @@ class DbmulticloudOracleDbAwsKey(pulumi.CustomResource):
         return pulumi.get(self, "is_aws_key_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="isOracleAwsKeyUsed")
+    def is_oracle_aws_key_used(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Indicates whether the Oracle AWS Key resource is currently in use.
+        """
+        return pulumi.get(self, "is_oracle_aws_key_used")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleStateDetails")
     def lifecycle_state_details(self) -> pulumi.Output[_builtins.str]:
         """
@@ -898,6 +987,14 @@ class DbmulticloudOracleDbAwsKey(pulumi.CustomResource):
         return pulumi.get(self, "location")
 
     @_builtins.property
+    @pulumi.getter(name="oracleDbAwsKeyPoolId")
+    def oracle_db_aws_key_pool_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+        """
+        return pulumi.get(self, "oracle_db_aws_key_pool_id")
+
+    @_builtins.property
     @pulumi.getter(name="oracleDbConnectorId")
     def oracle_db_connector_id(self) -> pulumi.Output[_builtins.str]:
         """
@@ -912,6 +1009,14 @@ class DbmulticloudOracleDbAwsKey(pulumi.CustomResource):
         AWS Key resource's properties.
         """
         return pulumi.get(self, "properties")
+
+    @_builtins.property
+    @pulumi.getter(name="refCount")
+    def ref_count(self) -> pulumi.Output[_builtins.int]:
+        """
+        The number of active references to the Oracle AWS Key resource.
+        """
+        return pulumi.get(self, "ref_count")
 
     @_builtins.property
     @pulumi.getter(name="replicationMetadatas")

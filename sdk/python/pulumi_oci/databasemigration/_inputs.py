@@ -113,6 +113,12 @@ __all__ = [
     'GetJobAdvisorReportCheckObjectsFilterArgsDict',
     'GetJobAdvisorReportChecksFilterArgs',
     'GetJobAdvisorReportChecksFilterArgsDict',
+    'GetMigrationDataVerificationObjectStatusesFilterArgs',
+    'GetMigrationDataVerificationObjectStatusesFilterArgsDict',
+    'GetMigrationDataVerificationObjectTypeCountsFilterArgs',
+    'GetMigrationDataVerificationObjectTypeCountsFilterArgsDict',
+    'GetMigrationDataVerificationTableRowCountsFilterArgs',
+    'GetMigrationDataVerificationTableRowCountsFilterArgsDict',
     'GetMigrationObjectTypesFilterArgs',
     'GetMigrationObjectTypesFilterArgsDict',
 ]
@@ -1396,6 +1402,7 @@ class JobProgressArgsDict(TypedDict):
     """
     Current status of the job.
     """
+    job_progress: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     phases: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['JobProgressPhaseArgsDict']]]]]
     """
     List of phase status for the job.
@@ -1406,6 +1413,7 @@ class JobProgressArgs:
     def __init__(__self__, *,
                  current_phase: pulumi.Input[Optional[_builtins.str]] = None,
                  current_status: pulumi.Input[Optional[_builtins.str]] = None,
+                 job_progress: pulumi.Input[Optional[_builtins.int]] = None,
                  phases: pulumi.Input[Optional[Sequence[pulumi.Input['JobProgressPhaseArgs']]]] = None):
         """
         :param pulumi.Input[_builtins.str] current_phase: Current phase of the job.
@@ -1416,6 +1424,8 @@ class JobProgressArgs:
             pulumi.set(__self__, "current_phase", current_phase)
         if current_status is not None:
             pulumi.set(__self__, "current_status", current_status)
+        if job_progress is not None:
+            pulumi.set(__self__, "job_progress", job_progress)
         if phases is not None:
             pulumi.set(__self__, "phases", phases)
 
@@ -1442,6 +1452,15 @@ class JobProgressArgs:
     @current_status.setter
     def current_status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "current_status", value)
+
+    @_builtins.property
+    @pulumi.getter(name="jobProgress")
+    def job_progress(self) -> pulumi.Input[Optional[_builtins.int]]:
+        return pulumi.get(self, "job_progress")
+
+    @job_progress.setter
+    def job_progress(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "job_progress", value)
 
     @_builtins.property
     @pulumi.getter
@@ -4173,6 +4192,147 @@ class GetJobAdvisorReportChecksFilterArgsDict(TypedDict):
 
 @pulumi.input_type
 class GetJobAdvisorReportChecksFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetMigrationDataVerificationObjectStatusesFilterArgsDict(TypedDict):
+    name: _builtins.str
+    """
+    A filter to return only resources that match the entire name given.
+    """
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetMigrationDataVerificationObjectStatusesFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: A filter to return only resources that match the entire name given.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetMigrationDataVerificationObjectTypeCountsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetMigrationDataVerificationObjectTypeCountsFilterArgs:
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: _builtins.str):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[_builtins.str]):
+        pulumi.set(self, "values", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[_builtins.bool]):
+        pulumi.set(self, "regex", value)
+
+
+class GetMigrationDataVerificationTableRowCountsFilterArgsDict(TypedDict):
+    name: _builtins.str
+    values: Sequence[_builtins.str]
+    regex: NotRequired[_builtins.bool]
+
+@pulumi.input_type
+class GetMigrationDataVerificationTableRowCountsFilterArgs:
     def __init__(__self__, *,
                  name: _builtins.str,
                  values: Sequence[_builtins.str],

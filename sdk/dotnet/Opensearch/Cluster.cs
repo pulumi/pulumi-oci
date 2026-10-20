@@ -314,6 +314,12 @@ namespace Pulumi.Oci.Opensearch
         public Output<Outputs.ClusterOutboundClusterConfig> OutboundClusterConfig { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+        /// </summary>
+        [Output("remoteReindexTrustConfig")]
+        public Output<Outputs.ClusterRemoteReindexTrustConfig> RemoteReindexTrustConfig { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The customer IP addresses of the endpoint in customer VCN
         /// </summary>
         [Output("reverseConnectionEndpointCustomerIps")]
@@ -366,6 +372,12 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         [Output("securityAttributes")]
         public Output<ImmutableDictionary<string, string>> SecurityAttributes { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
+        /// </summary>
+        [Output("securityMasterUserAuthDetails")]
+        public Output<Outputs.ClusterSecurityMasterUserAuthDetails> SecurityMasterUserAuthDetails { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The name of the master user that are used to manage security config
@@ -770,6 +782,12 @@ namespace Pulumi.Oci.Opensearch
         [Input("outboundClusterConfig")]
         public Input<Inputs.ClusterOutboundClusterConfigArgs>? OutboundClusterConfig { get; set; }
 
+        /// <summary>
+        /// (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+        /// </summary>
+        [Input("remoteReindexTrustConfig")]
+        public Input<Inputs.ClusterRemoteReindexTrustConfigArgs>? RemoteReindexTrustConfig { get; set; }
+
         [Input("reverseConnectionEndpointCustomerIps")]
         private InputList<string>? _reverseConnectionEndpointCustomerIps;
 
@@ -829,6 +847,12 @@ namespace Pulumi.Oci.Opensearch
             get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
             set => _securityAttributes = value;
         }
+
+        /// <summary>
+        /// (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
+        /// </summary>
+        [Input("securityMasterUserAuthDetails")]
+        public Input<Inputs.ClusterSecurityMasterUserAuthDetailsArgs>? SecurityMasterUserAuthDetails { get; set; }
 
         /// <summary>
         /// (Updatable) The name of the master user that are used to manage security config
@@ -1234,6 +1258,12 @@ namespace Pulumi.Oci.Opensearch
         [Input("outboundClusterConfig")]
         public Input<Inputs.ClusterOutboundClusterConfigGetArgs>? OutboundClusterConfig { get; set; }
 
+        /// <summary>
+        /// (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+        /// </summary>
+        [Input("remoteReindexTrustConfig")]
+        public Input<Inputs.ClusterRemoteReindexTrustConfigGetArgs>? RemoteReindexTrustConfig { get; set; }
+
         [Input("reverseConnectionEndpointCustomerIps")]
         private InputList<string>? _reverseConnectionEndpointCustomerIps;
 
@@ -1305,6 +1335,12 @@ namespace Pulumi.Oci.Opensearch
             get => _securityAttributes ?? (_securityAttributes = new InputMap<string>());
             set => _securityAttributes = value;
         }
+
+        /// <summary>
+        /// (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
+        /// </summary>
+        [Input("securityMasterUserAuthDetails")]
+        public Input<Inputs.ClusterSecurityMasterUserAuthDetailsGetArgs>? SecurityMasterUserAuthDetails { get; set; }
 
         /// <summary>
         /// (Updatable) The name of the master user that are used to manage security config

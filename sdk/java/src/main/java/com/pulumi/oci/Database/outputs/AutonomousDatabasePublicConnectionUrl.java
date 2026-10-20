@@ -22,6 +22,11 @@ public final class AutonomousDatabasePublicConnectionUrl {
      */
     private @Nullable String databaseTransformsUrl;
     /**
+     * @return Essbase URL for the Autonomous AI Database.
+     * 
+     */
+    private @Nullable String essbaseUrl;
+    /**
      * @return The URL of the Graph Studio for the Autonomous Database.
      * 
      */
@@ -71,6 +76,13 @@ public final class AutonomousDatabasePublicConnectionUrl {
      */
     public Optional<String> databaseTransformsUrl() {
         return Optional.ofNullable(this.databaseTransformsUrl);
+    }
+    /**
+     * @return Essbase URL for the Autonomous AI Database.
+     * 
+     */
+    public Optional<String> essbaseUrl() {
+        return Optional.ofNullable(this.essbaseUrl);
     }
     /**
      * @return The URL of the Graph Studio for the Autonomous Database.
@@ -133,6 +145,7 @@ public final class AutonomousDatabasePublicConnectionUrl {
     public static final class Builder {
         private @Nullable String apexUrl;
         private @Nullable String databaseTransformsUrl;
+        private @Nullable String essbaseUrl;
         private @Nullable String graphStudioUrl;
         private @Nullable String machineLearningNotebookUrl;
         private @Nullable String machineLearningUserManagementUrl;
@@ -145,6 +158,7 @@ public final class AutonomousDatabasePublicConnectionUrl {
     	      Objects.requireNonNull(defaults);
     	      this.apexUrl = defaults.apexUrl;
     	      this.databaseTransformsUrl = defaults.databaseTransformsUrl;
+    	      this.essbaseUrl = defaults.essbaseUrl;
     	      this.graphStudioUrl = defaults.graphStudioUrl;
     	      this.machineLearningNotebookUrl = defaults.machineLearningNotebookUrl;
     	      this.machineLearningUserManagementUrl = defaults.machineLearningUserManagementUrl;
@@ -164,6 +178,12 @@ public final class AutonomousDatabasePublicConnectionUrl {
         public Builder databaseTransformsUrl(@Nullable String databaseTransformsUrl) {
 
             this.databaseTransformsUrl = databaseTransformsUrl;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder essbaseUrl(@Nullable String essbaseUrl) {
+
+            this.essbaseUrl = essbaseUrl;
             return this;
         }
         @CustomType.Setter
@@ -212,6 +232,7 @@ public final class AutonomousDatabasePublicConnectionUrl {
             final var _resultValue = new AutonomousDatabasePublicConnectionUrl();
             _resultValue.apexUrl = apexUrl;
             _resultValue.databaseTransformsUrl = databaseTransformsUrl;
+            _resultValue.essbaseUrl = essbaseUrl;
             _resultValue.graphStudioUrl = graphStudioUrl;
             _resultValue.machineLearningNotebookUrl = machineLearningNotebookUrl;
             _resultValue.machineLearningUserManagementUrl = machineLearningUserManagementUrl;

@@ -13,7 +13,9 @@ import com.pulumi.oci.Opensearch.outputs.ClusterCertificateConfig;
 import com.pulumi.oci.Opensearch.outputs.ClusterLoadBalancerConfig;
 import com.pulumi.oci.Opensearch.outputs.ClusterMaintenanceDetails;
 import com.pulumi.oci.Opensearch.outputs.ClusterOutboundClusterConfig;
+import com.pulumi.oci.Opensearch.outputs.ClusterRemoteReindexTrustConfig;
 import com.pulumi.oci.Opensearch.outputs.ClusterReverseConnectionEndpoint;
+import com.pulumi.oci.Opensearch.outputs.ClusterSecurityMasterUserAuthDetails;
 import com.pulumi.oci.Opensearch.outputs.ClusterSecuritySamlConfig;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
@@ -696,6 +698,20 @@ public class Cluster extends com.pulumi.resources.CustomResource {
         return this.outboundClusterConfig;
     }
     /**
+     * (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+     * 
+     */
+    @Export(name="remoteReindexTrustConfig", refs={ClusterRemoteReindexTrustConfig.class}, tree="[0]")
+    private Output<ClusterRemoteReindexTrustConfig> remoteReindexTrustConfig;
+
+    /**
+     * @return (Updatable) Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+     * 
+     */
+    public Output<ClusterRemoteReindexTrustConfig> remoteReindexTrustConfig() {
+        return this.remoteReindexTrustConfig;
+    }
+    /**
      * (Updatable) The customer IP addresses of the endpoint in customer VCN
      * 
      */
@@ -820,6 +836,20 @@ public class Cluster extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,String>> securityAttributes() {
         return this.securityAttributes;
+    }
+    /**
+     * (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
+     * 
+     */
+    @Export(name="securityMasterUserAuthDetails", refs={ClusterSecurityMasterUserAuthDetails.class}, tree="[0]")
+    private Output<ClusterSecurityMasterUserAuthDetails> securityMasterUserAuthDetails;
+
+    /**
+     * @return (Updatable) Details for authenticating the OpenSearch security master user. This object cannot be used with securityMasterUserName or securityMasterUserPasswordHash.
+     * 
+     */
+    public Output<ClusterSecurityMasterUserAuthDetails> securityMasterUserAuthDetails() {
+        return this.securityMasterUserAuthDetails;
     }
     /**
      * (Updatable) The name of the master user that are used to manage security config

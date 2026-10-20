@@ -1204,6 +1204,8 @@ func (o GetBackupsBackupArrayOutput) Index(i pulumi.IntInput) GetBackupsBackupOu
 type GetBackupsBackupEncryptionKeyLocationDetail struct {
 	// Provide the key OCID of a registered AWS key.
 	AwsEncryptionKeyId string `pulumi:"awsEncryptionKeyId"`
+	// Provide the key pool OCID of a registered AWS key.
+	AwsEncryptionKeyPoolId string `pulumi:"awsEncryptionKeyPoolId"`
 	// Provide the key OCID of a registered Azure key.
 	AzureEncryptionKeyId string `pulumi:"azureEncryptionKeyId"`
 	// Provide the key OCID of a registered GCP key.
@@ -1228,6 +1230,8 @@ type GetBackupsBackupEncryptionKeyLocationDetailInput interface {
 type GetBackupsBackupEncryptionKeyLocationDetailArgs struct {
 	// Provide the key OCID of a registered AWS key.
 	AwsEncryptionKeyId pulumi.StringInput `pulumi:"awsEncryptionKeyId"`
+	// Provide the key pool OCID of a registered AWS key.
+	AwsEncryptionKeyPoolId pulumi.StringInput `pulumi:"awsEncryptionKeyPoolId"`
 	// Provide the key OCID of a registered Azure key.
 	AzureEncryptionKeyId pulumi.StringInput `pulumi:"azureEncryptionKeyId"`
 	// Provide the key OCID of a registered GCP key.
@@ -1292,6 +1296,11 @@ func (o GetBackupsBackupEncryptionKeyLocationDetailOutput) ToGetBackupsBackupEnc
 // Provide the key OCID of a registered AWS key.
 func (o GetBackupsBackupEncryptionKeyLocationDetailOutput) AwsEncryptionKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackupsBackupEncryptionKeyLocationDetail) string { return v.AwsEncryptionKeyId }).(pulumi.StringOutput)
+}
+
+// Provide the key pool OCID of a registered AWS key.
+func (o GetBackupsBackupEncryptionKeyLocationDetailOutput) AwsEncryptionKeyPoolId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBackupsBackupEncryptionKeyLocationDetail) string { return v.AwsEncryptionKeyPoolId }).(pulumi.StringOutput)
 }
 
 // Provide the key OCID of a registered Azure key.
@@ -12757,6 +12766,8 @@ func (o GetDatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupD
 type GetDatabaseDatabaseEncryptionKeyLocationDetail struct {
 	// Provide the key OCID of a registered AWS key.
 	AwsEncryptionKeyId string `pulumi:"awsEncryptionKeyId"`
+	// Provide the key pool OCID of a registered AWS key.
+	AwsEncryptionKeyPoolId string `pulumi:"awsEncryptionKeyPoolId"`
 	// Provide the key OCID of a registered Azure key.
 	AzureEncryptionKeyId string `pulumi:"azureEncryptionKeyId"`
 	// Provide the key OCID of a registered GCP key.
@@ -12781,6 +12792,8 @@ type GetDatabaseDatabaseEncryptionKeyLocationDetailInput interface {
 type GetDatabaseDatabaseEncryptionKeyLocationDetailArgs struct {
 	// Provide the key OCID of a registered AWS key.
 	AwsEncryptionKeyId pulumi.StringInput `pulumi:"awsEncryptionKeyId"`
+	// Provide the key pool OCID of a registered AWS key.
+	AwsEncryptionKeyPoolId pulumi.StringInput `pulumi:"awsEncryptionKeyPoolId"`
 	// Provide the key OCID of a registered Azure key.
 	AzureEncryptionKeyId pulumi.StringInput `pulumi:"azureEncryptionKeyId"`
 	// Provide the key OCID of a registered GCP key.
@@ -12845,6 +12858,11 @@ func (o GetDatabaseDatabaseEncryptionKeyLocationDetailOutput) ToGetDatabaseDatab
 // Provide the key OCID of a registered AWS key.
 func (o GetDatabaseDatabaseEncryptionKeyLocationDetailOutput) AwsEncryptionKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseDatabaseEncryptionKeyLocationDetail) string { return v.AwsEncryptionKeyId }).(pulumi.StringOutput)
+}
+
+// Provide the key pool OCID of a registered AWS key.
+func (o GetDatabaseDatabaseEncryptionKeyLocationDetailOutput) AwsEncryptionKeyPoolId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseEncryptionKeyLocationDetail) string { return v.AwsEncryptionKeyPoolId }).(pulumi.StringOutput)
 }
 
 // Provide the key OCID of a registered Azure key.
@@ -13627,6 +13645,14 @@ func (o GetDatabaseDatabasePatchOptionArrayOutput) Index(i pulumi.IntInput) GetD
 }
 
 type GetDatabaseDatabaseSourceEncryptionKeyLocationDetail struct {
+	// Provide the key OCID of a registered AWS key.
+	AwsEncryptionKeyId string `pulumi:"awsEncryptionKeyId"`
+	// Provide the key pool OCID of a registered AWS key.
+	AwsEncryptionKeyPoolId string `pulumi:"awsEncryptionKeyPoolId"`
+	// Provide the key OCID of a registered Azure key.
+	AzureEncryptionKeyId string `pulumi:"azureEncryptionKeyId"`
+	// Provide the key OCID of a registered GCP key.
+	GoogleCloudProviderEncryptionKeyId string `pulumi:"googleCloudProviderEncryptionKeyId"`
 	// Provide the HSM password as you would in RDBMS for External HSM.
 	HsmPassword string `pulumi:"hsmPassword"`
 	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
@@ -13645,6 +13671,14 @@ type GetDatabaseDatabaseSourceEncryptionKeyLocationDetailInput interface {
 }
 
 type GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArgs struct {
+	// Provide the key OCID of a registered AWS key.
+	AwsEncryptionKeyId pulumi.StringInput `pulumi:"awsEncryptionKeyId"`
+	// Provide the key pool OCID of a registered AWS key.
+	AwsEncryptionKeyPoolId pulumi.StringInput `pulumi:"awsEncryptionKeyPoolId"`
+	// Provide the key OCID of a registered Azure key.
+	AzureEncryptionKeyId pulumi.StringInput `pulumi:"azureEncryptionKeyId"`
+	// Provide the key OCID of a registered GCP key.
+	GoogleCloudProviderEncryptionKeyId pulumi.StringInput `pulumi:"googleCloudProviderEncryptionKeyId"`
 	// Provide the HSM password as you would in RDBMS for External HSM.
 	HsmPassword pulumi.StringInput `pulumi:"hsmPassword"`
 	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
@@ -13700,6 +13734,28 @@ func (o GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) ToGetDatabas
 
 func (o GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) ToGetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutputWithContext(ctx context.Context) GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput {
 	return o
+}
+
+// Provide the key OCID of a registered AWS key.
+func (o GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) AwsEncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseSourceEncryptionKeyLocationDetail) string { return v.AwsEncryptionKeyId }).(pulumi.StringOutput)
+}
+
+// Provide the key pool OCID of a registered AWS key.
+func (o GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) AwsEncryptionKeyPoolId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseSourceEncryptionKeyLocationDetail) string { return v.AwsEncryptionKeyPoolId }).(pulumi.StringOutput)
+}
+
+// Provide the key OCID of a registered Azure key.
+func (o GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) AzureEncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseSourceEncryptionKeyLocationDetail) string { return v.AzureEncryptionKeyId }).(pulumi.StringOutput)
+}
+
+// Provide the key OCID of a registered GCP key.
+func (o GetDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) GoogleCloudProviderEncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabaseSourceEncryptionKeyLocationDetail) string {
+		return v.GoogleCloudProviderEncryptionKeyId
+	}).(pulumi.StringOutput)
 }
 
 // Provide the HSM password as you would in RDBMS for External HSM.
@@ -21762,6 +21818,8 @@ func (o GetDatabasesDatabaseDatabaseDbBackupConfigBackupDestinationDetailTdeWall
 type GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail struct {
 	// Provide the key OCID of a registered AWS key.
 	AwsEncryptionKeyId string `pulumi:"awsEncryptionKeyId"`
+	// Provide the key pool OCID of a registered AWS key.
+	AwsEncryptionKeyPoolId string `pulumi:"awsEncryptionKeyPoolId"`
 	// Provide the key OCID of a registered Azure key.
 	AzureEncryptionKeyId string `pulumi:"azureEncryptionKeyId"`
 	// Provide the key OCID of a registered GCP key.
@@ -21786,6 +21844,8 @@ type GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailInput interface {
 type GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailArgs struct {
 	// Provide the key OCID of a registered AWS key.
 	AwsEncryptionKeyId pulumi.StringInput `pulumi:"awsEncryptionKeyId"`
+	// Provide the key pool OCID of a registered AWS key.
+	AwsEncryptionKeyPoolId pulumi.StringInput `pulumi:"awsEncryptionKeyPoolId"`
 	// Provide the key OCID of a registered Azure key.
 	AzureEncryptionKeyId pulumi.StringInput `pulumi:"azureEncryptionKeyId"`
 	// Provide the key OCID of a registered GCP key.
@@ -21850,6 +21910,13 @@ func (o GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailOutput) ToGetData
 // Provide the key OCID of a registered AWS key.
 func (o GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailOutput) AwsEncryptionKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail) string { return v.AwsEncryptionKeyId }).(pulumi.StringOutput)
+}
+
+// Provide the key pool OCID of a registered AWS key.
+func (o GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailOutput) AwsEncryptionKeyPoolId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail) string {
+		return v.AwsEncryptionKeyPoolId
+	}).(pulumi.StringOutput)
 }
 
 // Provide the key OCID of a registered Azure key.
@@ -22638,6 +22705,14 @@ func (o GetDatabasesDatabaseDatabasePatchOptionArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail struct {
+	// Provide the key OCID of a registered AWS key.
+	AwsEncryptionKeyId string `pulumi:"awsEncryptionKeyId"`
+	// Provide the key pool OCID of a registered AWS key.
+	AwsEncryptionKeyPoolId string `pulumi:"awsEncryptionKeyPoolId"`
+	// Provide the key OCID of a registered Azure key.
+	AzureEncryptionKeyId string `pulumi:"azureEncryptionKeyId"`
+	// Provide the key OCID of a registered GCP key.
+	GoogleCloudProviderEncryptionKeyId string `pulumi:"googleCloudProviderEncryptionKeyId"`
 	// Provide the HSM password as you would in RDBMS for External HSM.
 	HsmPassword string `pulumi:"hsmPassword"`
 	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
@@ -22656,6 +22731,14 @@ type GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailInput interfac
 }
 
 type GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArgs struct {
+	// Provide the key OCID of a registered AWS key.
+	AwsEncryptionKeyId pulumi.StringInput `pulumi:"awsEncryptionKeyId"`
+	// Provide the key pool OCID of a registered AWS key.
+	AwsEncryptionKeyPoolId pulumi.StringInput `pulumi:"awsEncryptionKeyPoolId"`
+	// Provide the key OCID of a registered Azure key.
+	AzureEncryptionKeyId pulumi.StringInput `pulumi:"azureEncryptionKeyId"`
+	// Provide the key OCID of a registered GCP key.
+	GoogleCloudProviderEncryptionKeyId pulumi.StringInput `pulumi:"googleCloudProviderEncryptionKeyId"`
 	// Provide the HSM password as you would in RDBMS for External HSM.
 	HsmPassword pulumi.StringInput `pulumi:"hsmPassword"`
 	// Use 'EXTERNAL' for creating a new database or migrating a database key to an External HSM. Use 'AZURE' for creating a new database or migrating a database key to Azure. Use 'AWS' for creating a new database or migrating a database key to Aws. Use 'GCP' for creating a new database or migrating a database key to Gcp.
@@ -22711,6 +22794,34 @@ func (o GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) ToG
 
 func (o GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) ToGetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutputWithContext(ctx context.Context) GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput {
 	return o
+}
+
+// Provide the key OCID of a registered AWS key.
+func (o GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) AwsEncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail) string {
+		return v.AwsEncryptionKeyId
+	}).(pulumi.StringOutput)
+}
+
+// Provide the key pool OCID of a registered AWS key.
+func (o GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) AwsEncryptionKeyPoolId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail) string {
+		return v.AwsEncryptionKeyPoolId
+	}).(pulumi.StringOutput)
+}
+
+// Provide the key OCID of a registered Azure key.
+func (o GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) AzureEncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail) string {
+		return v.AzureEncryptionKeyId
+	}).(pulumi.StringOutput)
+}
+
+// Provide the key OCID of a registered GCP key.
+func (o GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailOutput) GoogleCloudProviderEncryptionKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail) string {
+		return v.GoogleCloudProviderEncryptionKeyId
+	}).(pulumi.StringOutput)
 }
 
 // Provide the HSM password as you would in RDBMS for External HSM.
@@ -25391,6 +25502,7 @@ func (o GetDbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBackupDes
 
 type GetDbHomeDatabaseEncryptionKeyLocationDetail struct {
 	AwsEncryptionKeyId                 string `pulumi:"awsEncryptionKeyId"`
+	AwsEncryptionKeyPoolId             string `pulumi:"awsEncryptionKeyPoolId"`
 	AzureEncryptionKeyId               string `pulumi:"azureEncryptionKeyId"`
 	GoogleCloudProviderEncryptionKeyId string `pulumi:"googleCloudProviderEncryptionKeyId"`
 	HsmPassword                        string `pulumi:"hsmPassword"`
@@ -25410,6 +25522,7 @@ type GetDbHomeDatabaseEncryptionKeyLocationDetailInput interface {
 
 type GetDbHomeDatabaseEncryptionKeyLocationDetailArgs struct {
 	AwsEncryptionKeyId                 pulumi.StringInput `pulumi:"awsEncryptionKeyId"`
+	AwsEncryptionKeyPoolId             pulumi.StringInput `pulumi:"awsEncryptionKeyPoolId"`
 	AzureEncryptionKeyId               pulumi.StringInput `pulumi:"azureEncryptionKeyId"`
 	GoogleCloudProviderEncryptionKeyId pulumi.StringInput `pulumi:"googleCloudProviderEncryptionKeyId"`
 	HsmPassword                        pulumi.StringInput `pulumi:"hsmPassword"`
@@ -25469,6 +25582,10 @@ func (o GetDbHomeDatabaseEncryptionKeyLocationDetailOutput) ToGetDbHomeDatabaseE
 
 func (o GetDbHomeDatabaseEncryptionKeyLocationDetailOutput) AwsEncryptionKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbHomeDatabaseEncryptionKeyLocationDetail) string { return v.AwsEncryptionKeyId }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomeDatabaseEncryptionKeyLocationDetailOutput) AwsEncryptionKeyPoolId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomeDatabaseEncryptionKeyLocationDetail) string { return v.AwsEncryptionKeyPoolId }).(pulumi.StringOutput)
 }
 
 func (o GetDbHomeDatabaseEncryptionKeyLocationDetailOutput) AzureEncryptionKeyId() pulumi.StringOutput {
@@ -27259,6 +27376,7 @@ func (o GetDbHomesDbHomeDatabaseDbBackupConfigBackupDestinationDetailTdeWalletBa
 
 type GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail struct {
 	AwsEncryptionKeyId                 string `pulumi:"awsEncryptionKeyId"`
+	AwsEncryptionKeyPoolId             string `pulumi:"awsEncryptionKeyPoolId"`
 	AzureEncryptionKeyId               string `pulumi:"azureEncryptionKeyId"`
 	GoogleCloudProviderEncryptionKeyId string `pulumi:"googleCloudProviderEncryptionKeyId"`
 	HsmPassword                        string `pulumi:"hsmPassword"`
@@ -27278,6 +27396,7 @@ type GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailInput interface {
 
 type GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailArgs struct {
 	AwsEncryptionKeyId                 pulumi.StringInput `pulumi:"awsEncryptionKeyId"`
+	AwsEncryptionKeyPoolId             pulumi.StringInput `pulumi:"awsEncryptionKeyPoolId"`
 	AzureEncryptionKeyId               pulumi.StringInput `pulumi:"azureEncryptionKeyId"`
 	GoogleCloudProviderEncryptionKeyId pulumi.StringInput `pulumi:"googleCloudProviderEncryptionKeyId"`
 	HsmPassword                        pulumi.StringInput `pulumi:"hsmPassword"`
@@ -27337,6 +27456,10 @@ func (o GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput) ToGetDbHomesD
 
 func (o GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput) AwsEncryptionKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail) string { return v.AwsEncryptionKeyId }).(pulumi.StringOutput)
+}
+
+func (o GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput) AwsEncryptionKeyPoolId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetail) string { return v.AwsEncryptionKeyPoolId }).(pulumi.StringOutput)
 }
 
 func (o GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailOutput) AzureEncryptionKeyId() pulumi.StringOutput {

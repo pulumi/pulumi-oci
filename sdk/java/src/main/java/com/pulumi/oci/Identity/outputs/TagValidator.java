@@ -8,34 +8,35 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class TagValidator {
     /**
-     * @return (Updatable) Specifies the type of validation: a static value (no validation) or a list.
+     * @return (Updatable) Specifies the type of validation. Use `ENUM` to restrict a tag to a list of allowed values, or `DEFAULT` for no value validation.
      * 
      */
     private String validatorType;
     /**
-     * @return (Updatable) The list of allowed values for a definedTag value.
+     * @return (Updatable) The list of allowed values for a definedTag value. Omit this property when `validatorType` is `DEFAULT`; it is not used for default validation.
      * 
      */
-    private List<String> values;
+    private @Nullable List<String> values;
 
     private TagValidator() {}
     /**
-     * @return (Updatable) Specifies the type of validation: a static value (no validation) or a list.
+     * @return (Updatable) Specifies the type of validation. Use `ENUM` to restrict a tag to a list of allowed values, or `DEFAULT` for no value validation.
      * 
      */
     public String validatorType() {
         return this.validatorType;
     }
     /**
-     * @return (Updatable) The list of allowed values for a definedTag value.
+     * @return (Updatable) The list of allowed values for a definedTag value. Omit this property when `validatorType` is `DEFAULT`; it is not used for default validation.
      * 
      */
     public List<String> values() {
-        return this.values;
+        return this.values == null ? List.of() : this.values;
     }
 
     public static Builder builder() {
@@ -48,7 +49,7 @@ public final class TagValidator {
     @CustomType.Builder
     public static final class Builder {
         private String validatorType;
-        private List<String> values;
+        private @Nullable List<String> values;
         public Builder() {}
         public Builder(TagValidator defaults) {
     	      Objects.requireNonNull(defaults);
@@ -65,10 +66,8 @@ public final class TagValidator {
             return this;
         }
         @CustomType.Setter
-        public Builder values(List<String> values) {
-            if (values == null) {
-              throw new MissingRequiredPropertyException("TagValidator", "values");
-            }
+        public Builder values(@Nullable List<String> values) {
+
             this.values = values;
             return this;
         }

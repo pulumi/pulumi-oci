@@ -12091,6 +12091,22 @@
                     }
                 }
             },
+            "oci_dbmulticloud_oracle_db_aws_key_pool": {
+                "current": "oci:oci/dbmulticloudOracleDbAwsKeyPool:DbmulticloudOracleDbAwsKeyPool",
+                "majorVersion": 5,
+                "fields": {
+                    "replication_metadata": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "replication_details": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "oci_dbmulticloud_oracle_db_azure_blob_container": {
                 "current": "oci:oci/dbmulticloudOracleDbAzureBlobContainer:DbmulticloudOracleDbAzureBlobContainer",
                 "majorVersion": 5
@@ -20925,11 +20941,38 @@
                             }
                         }
                     },
+                    "remote_reindex_trust_config": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "remote_sources": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
                     "reverse_connection_endpoint_customer_ips": {
                         "maxItemsOne": false
                     },
                     "reverse_connection_endpoints": {
                         "maxItemsOne": false
+                    },
+                    "security_master_user_auth_details": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "user_details": {
+                                    "maxItemsOne": true,
+                                    "elem": {
+                                        "fields": {
+                                            "password_details": {
+                                                "maxItemsOne": true
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     },
                     "security_saml_config": {
                         "maxItemsOne": true
@@ -56572,6 +56615,88 @@
                     }
                 }
             },
+            "oci_database_migration_migration_data_verification_detail": {
+                "current": "oci:DatabaseMigration/getMigrationDataVerificationDetail:getMigrationDataVerificationDetail",
+                "majorVersion": 5
+            },
+            "oci_database_migration_migration_data_verification_object_statuses": {
+                "current": "oci:DatabaseMigration/getMigrationDataVerificationObjectStatuses:getMigrationDataVerificationObjectStatuses",
+                "majorVersion": 5,
+                "fields": {
+                    "data_verification_object_status_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_database_migration_migration_data_verification_object_type_counts": {
+                "current": "oci:DatabaseMigration/getMigrationDataVerificationObjectTypeCounts:getMigrationDataVerificationObjectTypeCounts",
+                "majorVersion": 5,
+                "fields": {
+                    "data_verification_object_type_count_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_database_migration_migration_data_verification_table_row_counts": {
+                "current": "oci:DatabaseMigration/getMigrationDataVerificationTableRowCounts:getMigrationDataVerificationTableRowCounts",
+                "majorVersion": 5,
+                "fields": {
+                    "data_verification_table_row_count_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "oci_database_migration_migration_object_types": {
                 "current": "oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes",
                 "majorVersion": 5,
@@ -64333,6 +64458,62 @@
                             "fields": {
                                 "replication_details": {
                                     "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_dbmulticloud_oracle_db_aws_key_pool": {
+                "current": "oci:oci/getDbmulticloudOracleDbAwsKeyPool:getDbmulticloudOracleDbAwsKeyPool",
+                "majorVersion": 5,
+                "fields": {
+                    "replication_metadata": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "replication_details": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_dbmulticloud_oracle_db_aws_key_pools": {
+                "current": "oci:oci/getDbmulticloudOracleDbAwsKeyPools:getDbmulticloudOracleDbAwsKeyPools",
+                "majorVersion": 5,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "oracle_db_aws_key_pool_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "replication_metadata": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "replication_details": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
@@ -93645,11 +93826,38 @@
                             }
                         }
                     },
+                    "remote_reindex_trust_config": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "remote_sources": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
                     "reverse_connection_endpoint_customer_ips": {
                         "maxItemsOne": false
                     },
                     "reverse_connection_endpoints": {
                         "maxItemsOne": false
+                    },
+                    "security_master_user_auth_details": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "user_details": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "password_details": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
                     },
                     "security_saml_config": {
                         "maxItemsOne": false
@@ -93752,11 +93960,38 @@
                                                     }
                                                 }
                                             },
+                                            "remote_reindex_trust_config": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "remote_sources": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            },
                                             "reverse_connection_endpoint_customer_ips": {
                                                 "maxItemsOne": false
                                             },
                                             "reverse_connection_endpoints": {
                                                 "maxItemsOne": false
+                                            },
+                                            "security_master_user_auth_details": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "user_details": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "password_details": {
+                                                                        "maxItemsOne": false
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
                                             },
                                             "security_saml_config": {
                                                 "maxItemsOne": false

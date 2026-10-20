@@ -160,6 +160,10 @@ namespace Pulumi.Oci.Oci
         /// </summary>
         public readonly bool IsAwsKeyEnabled;
         /// <summary>
+        /// Indicates whether the Oracle AWS Key resource is currently in use.
+        /// </summary>
+        public readonly bool IsOracleAwsKeyUsed;
+        /// <summary>
         /// Description of the current lifecycle state in more detail.
         /// </summary>
         public readonly string LifecycleStateDetails;
@@ -169,6 +173,10 @@ namespace Pulumi.Oci.Oci
         public readonly string Location;
         public readonly string OracleDbAwsKeyId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+        /// </summary>
+        public readonly string OracleDbAwsKeyPoolId;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
         /// </summary>
         public readonly string OracleDbConnectorId;
@@ -176,6 +184,10 @@ namespace Pulumi.Oci.Oci
         /// AWS Key resource's properties.
         /// </summary>
         public readonly ImmutableDictionary<string, string> Properties;
+        /// <summary>
+        /// The number of active references to the Oracle AWS Key resource.
+        /// </summary>
+        public readonly int RefCount;
         /// <summary>
         /// Replication metadata, it has information about replication and target region.
         /// </summary>
@@ -225,15 +237,21 @@ namespace Pulumi.Oci.Oci
 
             bool isAwsKeyEnabled,
 
+            bool isOracleAwsKeyUsed,
+
             string lifecycleStateDetails,
 
             string location,
 
             string oracleDbAwsKeyId,
 
+            string oracleDbAwsKeyPoolId,
+
             string oracleDbConnectorId,
 
             ImmutableDictionary<string, string> properties,
+
+            int refCount,
 
             ImmutableArray<Outputs.GetDbmulticloudOracleDbAwsKeyReplicationMetadataResult> replicationMetadatas,
 
@@ -258,11 +276,14 @@ namespace Pulumi.Oci.Oci
             FreeformTags = freeformTags;
             Id = id;
             IsAwsKeyEnabled = isAwsKeyEnabled;
+            IsOracleAwsKeyUsed = isOracleAwsKeyUsed;
             LifecycleStateDetails = lifecycleStateDetails;
             Location = location;
             OracleDbAwsKeyId = oracleDbAwsKeyId;
+            OracleDbAwsKeyPoolId = oracleDbAwsKeyPoolId;
             OracleDbConnectorId = oracleDbConnectorId;
             Properties = properties;
+            RefCount = refCount;
             ReplicationMetadatas = replicationMetadatas;
             State = state;
             SystemTags = systemTags;

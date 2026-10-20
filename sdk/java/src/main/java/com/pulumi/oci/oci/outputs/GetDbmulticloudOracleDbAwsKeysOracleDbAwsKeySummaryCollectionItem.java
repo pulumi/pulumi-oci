@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemReplicationMetadata;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
@@ -56,6 +57,11 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
      */
     private Boolean isAwsKeyEnabled;
     /**
+     * @return Indicates whether the Oracle AWS Key resource is currently in use.
+     * 
+     */
+    private Boolean isOracleAwsKeyUsed;
+    /**
      * @return Description of the current lifecycle state in more detail.
      * 
      */
@@ -66,6 +72,11 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
      */
     private String location;
     /**
+     * @return A filter to return only resources that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+     * 
+     */
+    private String oracleDbAwsKeyPoolId;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      * 
      */
@@ -75,6 +86,11 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
      * 
      */
     private Map<String,String> properties;
+    /**
+     * @return The number of active references to the Oracle AWS Key resource.
+     * 
+     */
+    private Integer refCount;
     /**
      * @return Replication metadata, it has information about replication and target region.
      * 
@@ -172,6 +188,13 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
         return this.isAwsKeyEnabled;
     }
     /**
+     * @return Indicates whether the Oracle AWS Key resource is currently in use.
+     * 
+     */
+    public Boolean isOracleAwsKeyUsed() {
+        return this.isOracleAwsKeyUsed;
+    }
+    /**
      * @return Description of the current lifecycle state in more detail.
      * 
      */
@@ -186,6 +209,13 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
         return this.location;
     }
     /**
+     * @return A filter to return only resources that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+     * 
+     */
+    public String oracleDbAwsKeyPoolId() {
+        return this.oracleDbAwsKeyPoolId;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB Connector resource.
      * 
      */
@@ -198,6 +228,13 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
      */
     public Map<String,String> properties() {
         return this.properties;
+    }
+    /**
+     * @return The number of active references to the Oracle AWS Key resource.
+     * 
+     */
+    public Integer refCount() {
+        return this.refCount;
     }
     /**
      * @return Replication metadata, it has information about replication and target region.
@@ -267,10 +304,13 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
         private Map<String,String> freeformTags;
         private String id;
         private Boolean isAwsKeyEnabled;
+        private Boolean isOracleAwsKeyUsed;
         private String lifecycleStateDetails;
         private String location;
+        private String oracleDbAwsKeyPoolId;
         private String oracleDbConnectorId;
         private Map<String,String> properties;
+        private Integer refCount;
         private List<GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItemReplicationMetadata> replicationMetadatas;
         private String state;
         private Map<String,String> systemTags;
@@ -290,10 +330,13 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isAwsKeyEnabled = defaults.isAwsKeyEnabled;
+    	      this.isOracleAwsKeyUsed = defaults.isOracleAwsKeyUsed;
     	      this.lifecycleStateDetails = defaults.lifecycleStateDetails;
     	      this.location = defaults.location;
+    	      this.oracleDbAwsKeyPoolId = defaults.oracleDbAwsKeyPoolId;
     	      this.oracleDbConnectorId = defaults.oracleDbConnectorId;
     	      this.properties = defaults.properties;
+    	      this.refCount = defaults.refCount;
     	      this.replicationMetadatas = defaults.replicationMetadatas;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
@@ -376,6 +419,14 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
             return this;
         }
         @CustomType.Setter
+        public Builder isOracleAwsKeyUsed(Boolean isOracleAwsKeyUsed) {
+            if (isOracleAwsKeyUsed == null) {
+              throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem", "isOracleAwsKeyUsed");
+            }
+            this.isOracleAwsKeyUsed = isOracleAwsKeyUsed;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleStateDetails(String lifecycleStateDetails) {
             if (lifecycleStateDetails == null) {
               throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem", "lifecycleStateDetails");
@@ -392,6 +443,14 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
             return this;
         }
         @CustomType.Setter
+        public Builder oracleDbAwsKeyPoolId(String oracleDbAwsKeyPoolId) {
+            if (oracleDbAwsKeyPoolId == null) {
+              throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem", "oracleDbAwsKeyPoolId");
+            }
+            this.oracleDbAwsKeyPoolId = oracleDbAwsKeyPoolId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder oracleDbConnectorId(String oracleDbConnectorId) {
             if (oracleDbConnectorId == null) {
               throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem", "oracleDbConnectorId");
@@ -405,6 +464,14 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
               throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem", "properties");
             }
             this.properties = properties;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder refCount(Integer refCount) {
+            if (refCount == null) {
+              throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollectionItem", "refCount");
+            }
+            this.refCount = refCount;
             return this;
         }
         @CustomType.Setter
@@ -477,10 +544,13 @@ public final class GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isAwsKeyEnabled = isAwsKeyEnabled;
+            _resultValue.isOracleAwsKeyUsed = isOracleAwsKeyUsed;
             _resultValue.lifecycleStateDetails = lifecycleStateDetails;
             _resultValue.location = location;
+            _resultValue.oracleDbAwsKeyPoolId = oracleDbAwsKeyPoolId;
             _resultValue.oracleDbConnectorId = oracleDbConnectorId;
             _resultValue.properties = properties;
+            _resultValue.refCount = refCount;
             _resultValue.replicationMetadatas = replicationMetadatas;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;

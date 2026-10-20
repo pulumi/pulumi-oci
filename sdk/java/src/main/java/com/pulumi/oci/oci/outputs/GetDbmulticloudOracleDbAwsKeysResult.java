@@ -34,6 +34,11 @@ public final class GetDbmulticloudOracleDbAwsKeysResult {
     private @Nullable String oracleDbAwsConnectorId;
     private @Nullable String oracleDbAwsKeyId;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+     * 
+     */
+    private @Nullable String oracleDbAwsKeyPoolId;
+    /**
      * @return The list of oracle_db_aws_key_summary_collection.
      * 
      */
@@ -76,6 +81,13 @@ public final class GetDbmulticloudOracleDbAwsKeysResult {
         return Optional.ofNullable(this.oracleDbAwsKeyId);
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+     * 
+     */
+    public Optional<String> oracleDbAwsKeyPoolId() {
+        return Optional.ofNullable(this.oracleDbAwsKeyPoolId);
+    }
+    /**
      * @return The list of oracle_db_aws_key_summary_collection.
      * 
      */
@@ -105,6 +117,7 @@ public final class GetDbmulticloudOracleDbAwsKeysResult {
         private String id;
         private @Nullable String oracleDbAwsConnectorId;
         private @Nullable String oracleDbAwsKeyId;
+        private @Nullable String oracleDbAwsKeyPoolId;
         private List<GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection> oracleDbAwsKeySummaryCollections;
         private @Nullable String state;
         public Builder() {}
@@ -116,6 +129,7 @@ public final class GetDbmulticloudOracleDbAwsKeysResult {
     	      this.id = defaults.id;
     	      this.oracleDbAwsConnectorId = defaults.oracleDbAwsConnectorId;
     	      this.oracleDbAwsKeyId = defaults.oracleDbAwsKeyId;
+    	      this.oracleDbAwsKeyPoolId = defaults.oracleDbAwsKeyPoolId;
     	      this.oracleDbAwsKeySummaryCollections = defaults.oracleDbAwsKeySummaryCollections;
     	      this.state = defaults.state;
         }
@@ -164,6 +178,12 @@ public final class GetDbmulticloudOracleDbAwsKeysResult {
             return this;
         }
         @CustomType.Setter
+        public Builder oracleDbAwsKeyPoolId(@Nullable String oracleDbAwsKeyPoolId) {
+
+            this.oracleDbAwsKeyPoolId = oracleDbAwsKeyPoolId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder oracleDbAwsKeySummaryCollections(List<GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection> oracleDbAwsKeySummaryCollections) {
             if (oracleDbAwsKeySummaryCollections == null) {
               throw new MissingRequiredPropertyException("GetDbmulticloudOracleDbAwsKeysResult", "oracleDbAwsKeySummaryCollections");
@@ -188,6 +208,7 @@ public final class GetDbmulticloudOracleDbAwsKeysResult {
             _resultValue.id = id;
             _resultValue.oracleDbAwsConnectorId = oracleDbAwsConnectorId;
             _resultValue.oracleDbAwsKeyId = oracleDbAwsKeyId;
+            _resultValue.oracleDbAwsKeyPoolId = oracleDbAwsKeyPoolId;
             _resultValue.oracleDbAwsKeySummaryCollections = oracleDbAwsKeySummaryCollections;
             _resultValue.state = state;
             return _resultValue;

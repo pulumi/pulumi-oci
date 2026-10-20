@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DatabaseMigration.outputs.JobProgressPhase;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -23,6 +24,7 @@ public final class JobProgress {
      * 
      */
     private @Nullable String currentStatus;
+    private @Nullable Integer jobProgress;
     /**
      * @return List of phase status for the job.
      * 
@@ -44,6 +46,9 @@ public final class JobProgress {
     public Optional<String> currentStatus() {
         return Optional.ofNullable(this.currentStatus);
     }
+    public Optional<Integer> jobProgress() {
+        return Optional.ofNullable(this.jobProgress);
+    }
     /**
      * @return List of phase status for the job.
      * 
@@ -63,12 +68,14 @@ public final class JobProgress {
     public static final class Builder {
         private @Nullable String currentPhase;
         private @Nullable String currentStatus;
+        private @Nullable Integer jobProgress;
         private @Nullable List<JobProgressPhase> phases;
         public Builder() {}
         public Builder(JobProgress defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.currentPhase = defaults.currentPhase;
     	      this.currentStatus = defaults.currentStatus;
+    	      this.jobProgress = defaults.jobProgress;
     	      this.phases = defaults.phases;
         }
 
@@ -85,6 +92,12 @@ public final class JobProgress {
             return this;
         }
         @CustomType.Setter
+        public Builder jobProgress(@Nullable Integer jobProgress) {
+
+            this.jobProgress = jobProgress;
+            return this;
+        }
+        @CustomType.Setter
         public Builder phases(@Nullable List<JobProgressPhase> phases) {
 
             this.phases = phases;
@@ -97,6 +110,7 @@ public final class JobProgress {
             final var _resultValue = new JobProgress();
             _resultValue.currentPhase = currentPhase;
             _resultValue.currentStatus = currentStatus;
+            _resultValue.jobProgress = jobProgress;
             _resultValue.phases = phases;
             return _resultValue;
         }

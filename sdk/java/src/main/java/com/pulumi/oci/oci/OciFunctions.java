@@ -95,6 +95,10 @@ import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorsArg
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsIdentityConnectorsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyPoolArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyPoolPlainArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyPoolsArgs;
+import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyPoolsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeysArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeysPlainArgs;
 import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAzureBlobContainerArgs;
@@ -319,6 +323,8 @@ import com.pulumi.oci.oci.outputs.GetDbmulticloudMultiCloudResourceDiscoveriesRe
 import com.pulumi.oci.oci.outputs.GetDbmulticloudMultiCloudResourceDiscoveryResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAwsIdentityConnectorResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAwsIdentityConnectorsResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAwsKeyPoolResult;
+import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAwsKeyPoolsResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAwsKeyResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAwsKeysResult;
 import com.pulumi.oci.oci.outputs.GetDbmulticloudOracleDbAzureBlobContainerResult;
@@ -10932,6 +10938,441 @@ public final class OciFunctions {
         return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbAwsKey:getDbmulticloudOracleDbAwsKey", TypeShape.of(GetDbmulticloudOracleDbAwsKeyResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Oracle Db Aws Key Pool resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves detailed information about a Oracle AWS Key Pool resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyPoolArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsKeyPool = OciFunctions.getDbmulticloudOracleDbAwsKeyPool(GetDbmulticloudOracleDbAwsKeyPoolArgs.builder()
+     *             .oracleDbAwsKeyPoolId(testOracleDbAwsKeyPoolOciDbmulticloudOracleDbAwsKeyPool.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAwsKeyPoolResult> getDbmulticloudOracleDbAwsKeyPool(GetDbmulticloudOracleDbAwsKeyPoolArgs args) {
+        return getDbmulticloudOracleDbAwsKeyPool(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Aws Key Pool resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves detailed information about a Oracle AWS Key Pool resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyPoolArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsKeyPool = OciFunctions.getDbmulticloudOracleDbAwsKeyPool(GetDbmulticloudOracleDbAwsKeyPoolArgs.builder()
+     *             .oracleDbAwsKeyPoolId(testOracleDbAwsKeyPoolOciDbmulticloudOracleDbAwsKeyPool.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAwsKeyPoolResult> getDbmulticloudOracleDbAwsKeyPoolPlain(GetDbmulticloudOracleDbAwsKeyPoolPlainArgs args) {
+        return getDbmulticloudOracleDbAwsKeyPoolPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Aws Key Pool resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves detailed information about a Oracle AWS Key Pool resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyPoolArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsKeyPool = OciFunctions.getDbmulticloudOracleDbAwsKeyPool(GetDbmulticloudOracleDbAwsKeyPoolArgs.builder()
+     *             .oracleDbAwsKeyPoolId(testOracleDbAwsKeyPoolOciDbmulticloudOracleDbAwsKeyPool.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAwsKeyPoolResult> getDbmulticloudOracleDbAwsKeyPool(GetDbmulticloudOracleDbAwsKeyPoolArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAwsKeyPool:getDbmulticloudOracleDbAwsKeyPool", TypeShape.of(GetDbmulticloudOracleDbAwsKeyPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Aws Key Pool resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves detailed information about a Oracle AWS Key Pool resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyPoolArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsKeyPool = OciFunctions.getDbmulticloudOracleDbAwsKeyPool(GetDbmulticloudOracleDbAwsKeyPoolArgs.builder()
+     *             .oracleDbAwsKeyPoolId(testOracleDbAwsKeyPoolOciDbmulticloudOracleDbAwsKeyPool.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAwsKeyPoolResult> getDbmulticloudOracleDbAwsKeyPool(GetDbmulticloudOracleDbAwsKeyPoolArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAwsKeyPool:getDbmulticloudOracleDbAwsKeyPool", TypeShape.of(GetDbmulticloudOracleDbAwsKeyPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Oracle Db Aws Key Pool resource in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Retrieves detailed information about a Oracle AWS Key Pool resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyPoolArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsKeyPool = OciFunctions.getDbmulticloudOracleDbAwsKeyPool(GetDbmulticloudOracleDbAwsKeyPoolArgs.builder()
+     *             .oracleDbAwsKeyPoolId(testOracleDbAwsKeyPoolOciDbmulticloudOracleDbAwsKeyPool.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAwsKeyPoolResult> getDbmulticloudOracleDbAwsKeyPoolPlain(GetDbmulticloudOracleDbAwsKeyPoolPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbAwsKeyPool:getDbmulticloudOracleDbAwsKeyPool", TypeShape.of(GetDbmulticloudOracleDbAwsKeyPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Aws Key Pools in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all DB AWS Key Pools based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyPoolsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsKeyPools = OciFunctions.getDbmulticloudOracleDbAwsKeyPools(GetDbmulticloudOracleDbAwsKeyPoolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAwsKeyPoolDisplayName)
+     *             .oracleDbAwsKeyPoolId(testOracleDbAwsKeyPool.get("id"))
+     *             .state(oracleDbAwsKeyPoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAwsKeyPoolsResult> getDbmulticloudOracleDbAwsKeyPools(GetDbmulticloudOracleDbAwsKeyPoolsArgs args) {
+        return getDbmulticloudOracleDbAwsKeyPools(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Aws Key Pools in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all DB AWS Key Pools based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyPoolsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsKeyPools = OciFunctions.getDbmulticloudOracleDbAwsKeyPools(GetDbmulticloudOracleDbAwsKeyPoolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAwsKeyPoolDisplayName)
+     *             .oracleDbAwsKeyPoolId(testOracleDbAwsKeyPool.get("id"))
+     *             .state(oracleDbAwsKeyPoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAwsKeyPoolsResult> getDbmulticloudOracleDbAwsKeyPoolsPlain(GetDbmulticloudOracleDbAwsKeyPoolsPlainArgs args) {
+        return getDbmulticloudOracleDbAwsKeyPoolsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Oracle Db Aws Key Pools in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all DB AWS Key Pools based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyPoolsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsKeyPools = OciFunctions.getDbmulticloudOracleDbAwsKeyPools(GetDbmulticloudOracleDbAwsKeyPoolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAwsKeyPoolDisplayName)
+     *             .oracleDbAwsKeyPoolId(testOracleDbAwsKeyPool.get("id"))
+     *             .state(oracleDbAwsKeyPoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAwsKeyPoolsResult> getDbmulticloudOracleDbAwsKeyPools(GetDbmulticloudOracleDbAwsKeyPoolsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAwsKeyPools:getDbmulticloudOracleDbAwsKeyPools", TypeShape.of(GetDbmulticloudOracleDbAwsKeyPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Aws Key Pools in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all DB AWS Key Pools based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyPoolsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsKeyPools = OciFunctions.getDbmulticloudOracleDbAwsKeyPools(GetDbmulticloudOracleDbAwsKeyPoolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAwsKeyPoolDisplayName)
+     *             .oracleDbAwsKeyPoolId(testOracleDbAwsKeyPool.get("id"))
+     *             .state(oracleDbAwsKeyPoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDbmulticloudOracleDbAwsKeyPoolsResult> getDbmulticloudOracleDbAwsKeyPools(GetDbmulticloudOracleDbAwsKeyPoolsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getDbmulticloudOracleDbAwsKeyPools:getDbmulticloudOracleDbAwsKeyPools", TypeShape.of(GetDbmulticloudOracleDbAwsKeyPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Oracle Db Aws Key Pools in Oracle Cloud Infrastructure Dbmulticloud service.
+     * 
+     * Lists all DB AWS Key Pools based on the specified filters.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetDbmulticloudOracleDbAwsKeyPoolsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testOracleDbAwsKeyPools = OciFunctions.getDbmulticloudOracleDbAwsKeyPools(GetDbmulticloudOracleDbAwsKeyPoolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(oracleDbAwsKeyPoolDisplayName)
+     *             .oracleDbAwsKeyPoolId(testOracleDbAwsKeyPool.get("id"))
+     *             .state(oracleDbAwsKeyPoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDbmulticloudOracleDbAwsKeyPoolsResult> getDbmulticloudOracleDbAwsKeyPoolsPlain(GetDbmulticloudOracleDbAwsKeyPoolsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getDbmulticloudOracleDbAwsKeyPools:getDbmulticloudOracleDbAwsKeyPools", TypeShape.of(GetDbmulticloudOracleDbAwsKeyPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Oracle Db Aws Keys in Oracle Cloud Infrastructure Dbmulticloud service.
      * 
      * Lists all DB AWS Keys based on the specified filters.
@@ -10965,6 +11406,7 @@ public final class OciFunctions {
      *             .displayName(oracleDbAwsKeyDisplayName)
      *             .oracleDbAwsConnectorId(testOracleDbAwsConnector.get("id"))
      *             .oracleDbAwsKeyId(testOracleDbAwsKey.get("id"))
+     *             .oracleDbAwsKeyPoolId(testOracleDbAwsKeyPool.get("id"))
      *             .state(oracleDbAwsKeyState)
      *             .build());
      * 
@@ -11011,6 +11453,7 @@ public final class OciFunctions {
      *             .displayName(oracleDbAwsKeyDisplayName)
      *             .oracleDbAwsConnectorId(testOracleDbAwsConnector.get("id"))
      *             .oracleDbAwsKeyId(testOracleDbAwsKey.get("id"))
+     *             .oracleDbAwsKeyPoolId(testOracleDbAwsKeyPool.get("id"))
      *             .state(oracleDbAwsKeyState)
      *             .build());
      * 
@@ -11057,6 +11500,7 @@ public final class OciFunctions {
      *             .displayName(oracleDbAwsKeyDisplayName)
      *             .oracleDbAwsConnectorId(testOracleDbAwsConnector.get("id"))
      *             .oracleDbAwsKeyId(testOracleDbAwsKey.get("id"))
+     *             .oracleDbAwsKeyPoolId(testOracleDbAwsKeyPool.get("id"))
      *             .state(oracleDbAwsKeyState)
      *             .build());
      * 
@@ -11103,6 +11547,7 @@ public final class OciFunctions {
      *             .displayName(oracleDbAwsKeyDisplayName)
      *             .oracleDbAwsConnectorId(testOracleDbAwsConnector.get("id"))
      *             .oracleDbAwsKeyId(testOracleDbAwsKey.get("id"))
+     *             .oracleDbAwsKeyPoolId(testOracleDbAwsKeyPool.get("id"))
      *             .state(oracleDbAwsKeyState)
      *             .build());
      * 
@@ -11149,6 +11594,7 @@ public final class OciFunctions {
      *             .displayName(oracleDbAwsKeyDisplayName)
      *             .oracleDbAwsConnectorId(testOracleDbAwsConnector.get("id"))
      *             .oracleDbAwsKeyId(testOracleDbAwsKey.get("id"))
+     *             .oracleDbAwsKeyPoolId(testOracleDbAwsKeyPool.get("id"))
      *             .state(oracleDbAwsKeyState)
      *             .build());
      * 

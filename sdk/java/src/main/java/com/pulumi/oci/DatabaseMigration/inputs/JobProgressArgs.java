@@ -6,6 +6,7 @@ package com.pulumi.oci.DatabaseMigration.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DatabaseMigration.inputs.JobProgressPhaseArgs;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -47,6 +48,13 @@ public final class JobProgressArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.currentStatus);
     }
 
+    @Import(name="jobProgress")
+    private @Nullable Output<Integer> jobProgress;
+
+    public Optional<Output<Integer>> jobProgress() {
+        return Optional.ofNullable(this.jobProgress);
+    }
+
     /**
      * List of phase status for the job.
      * 
@@ -67,6 +75,7 @@ public final class JobProgressArgs extends com.pulumi.resources.ResourceArgs {
     private JobProgressArgs(JobProgressArgs $) {
         this.currentPhase = $.currentPhase;
         this.currentStatus = $.currentStatus;
+        this.jobProgress = $.jobProgress;
         this.phases = $.phases;
     }
 
@@ -128,6 +137,15 @@ public final class JobProgressArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder currentStatus(String currentStatus) {
             return currentStatus(Output.of(currentStatus));
+        }
+
+        public Builder jobProgress(@Nullable Output<Integer> jobProgress) {
+            $.jobProgress = jobProgress;
+            return this;
+        }
+
+        public Builder jobProgress(Integer jobProgress) {
+            return jobProgress(Output.of(jobProgress));
         }
 
         /**

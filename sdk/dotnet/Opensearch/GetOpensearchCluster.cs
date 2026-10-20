@@ -355,6 +355,10 @@ namespace Pulumi.Oci.Opensearch
         /// </summary>
         public readonly ImmutableArray<Outputs.GetOpensearchClusterOutboundClusterConfigResult> OutboundClusterConfigs;
         /// <summary>
+        /// Configuration that allows this OpenSearch cluster to trust a remote cluster for reindexing.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetOpensearchClusterRemoteReindexTrustConfigResult> RemoteReindexTrustConfigs;
+        /// <summary>
         /// The customer IP addresses of the endpoint in customer VCN
         /// </summary>
         public readonly ImmutableArray<string> ReverseConnectionEndpointCustomerIps;
@@ -390,6 +394,7 @@ namespace Pulumi.Oci.Opensearch
         /// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         /// </summary>
         public readonly ImmutableDictionary<string, string> SecurityAttributes;
+        public readonly ImmutableArray<Outputs.GetOpensearchClusterSecurityMasterUserAuthDetailResult> SecurityMasterUserAuthDetails;
         /// <summary>
         /// The name of the master user that are used to manage security config
         /// </summary>
@@ -547,6 +552,8 @@ namespace Pulumi.Oci.Opensearch
 
             ImmutableArray<Outputs.GetOpensearchClusterOutboundClusterConfigResult> outboundClusterConfigs,
 
+            ImmutableArray<Outputs.GetOpensearchClusterRemoteReindexTrustConfigResult> remoteReindexTrustConfigs,
+
             ImmutableArray<string> reverseConnectionEndpointCustomerIps,
 
             ImmutableArray<Outputs.GetOpensearchClusterReverseConnectionEndpointResult> reverseConnectionEndpoints,
@@ -564,6 +571,8 @@ namespace Pulumi.Oci.Opensearch
             int searchNodeStorageGb,
 
             ImmutableDictionary<string, string> securityAttributes,
+
+            ImmutableArray<Outputs.GetOpensearchClusterSecurityMasterUserAuthDetailResult> securityMasterUserAuthDetails,
 
             string securityMasterUserName,
 
@@ -645,6 +654,7 @@ namespace Pulumi.Oci.Opensearch
             OpensearchFqdn = opensearchFqdn;
             OpensearchPrivateIp = opensearchPrivateIp;
             OutboundClusterConfigs = outboundClusterConfigs;
+            RemoteReindexTrustConfigs = remoteReindexTrustConfigs;
             ReverseConnectionEndpointCustomerIps = reverseConnectionEndpointCustomerIps;
             ReverseConnectionEndpoints = reverseConnectionEndpoints;
             SearchNodeCount = searchNodeCount;
@@ -654,6 +664,7 @@ namespace Pulumi.Oci.Opensearch
             SearchNodeHostType = searchNodeHostType;
             SearchNodeStorageGb = searchNodeStorageGb;
             SecurityAttributes = securityAttributes;
+            SecurityMasterUserAuthDetails = securityMasterUserAuthDetails;
             SecurityMasterUserName = securityMasterUserName;
             SecurityMasterUserPasswordHash = securityMasterUserPasswordHash;
             SecurityMode = securityMode;

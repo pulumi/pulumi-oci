@@ -27,7 +27,7 @@ class GetDbmulticloudOracleDbAwsKeyResult:
     """
     A collection of values returned by getDbmulticloudOracleDbAwsKey.
     """
-    def __init__(__self__, action=None, aws_account_id=None, aws_key_arn=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_aws_key_enabled=None, lifecycle_state_details=None, location=None, oracle_db_aws_key_id=None, oracle_db_connector_id=None, properties=None, replication_metadatas=None, state=None, system_tags=None, target_region=None, time_created=None, time_updated=None, type=None):
+    def __init__(__self__, action=None, aws_account_id=None, aws_key_arn=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_aws_key_enabled=None, is_oracle_aws_key_used=None, lifecycle_state_details=None, location=None, oracle_db_aws_key_id=None, oracle_db_aws_key_pool_id=None, oracle_db_connector_id=None, properties=None, ref_count=None, replication_metadatas=None, state=None, system_tags=None, target_region=None, time_created=None, time_updated=None, type=None):
         if action and not isinstance(action, str):
             raise TypeError("Expected argument 'action' to be a str")
         pulumi.set(__self__, "action", action)
@@ -55,6 +55,9 @@ class GetDbmulticloudOracleDbAwsKeyResult:
         if is_aws_key_enabled and not isinstance(is_aws_key_enabled, bool):
             raise TypeError("Expected argument 'is_aws_key_enabled' to be a bool")
         pulumi.set(__self__, "is_aws_key_enabled", is_aws_key_enabled)
+        if is_oracle_aws_key_used and not isinstance(is_oracle_aws_key_used, bool):
+            raise TypeError("Expected argument 'is_oracle_aws_key_used' to be a bool")
+        pulumi.set(__self__, "is_oracle_aws_key_used", is_oracle_aws_key_used)
         if lifecycle_state_details and not isinstance(lifecycle_state_details, str):
             raise TypeError("Expected argument 'lifecycle_state_details' to be a str")
         pulumi.set(__self__, "lifecycle_state_details", lifecycle_state_details)
@@ -64,12 +67,18 @@ class GetDbmulticloudOracleDbAwsKeyResult:
         if oracle_db_aws_key_id and not isinstance(oracle_db_aws_key_id, str):
             raise TypeError("Expected argument 'oracle_db_aws_key_id' to be a str")
         pulumi.set(__self__, "oracle_db_aws_key_id", oracle_db_aws_key_id)
+        if oracle_db_aws_key_pool_id and not isinstance(oracle_db_aws_key_pool_id, str):
+            raise TypeError("Expected argument 'oracle_db_aws_key_pool_id' to be a str")
+        pulumi.set(__self__, "oracle_db_aws_key_pool_id", oracle_db_aws_key_pool_id)
         if oracle_db_connector_id and not isinstance(oracle_db_connector_id, str):
             raise TypeError("Expected argument 'oracle_db_connector_id' to be a str")
         pulumi.set(__self__, "oracle_db_connector_id", oracle_db_connector_id)
         if properties and not isinstance(properties, dict):
             raise TypeError("Expected argument 'properties' to be a dict")
         pulumi.set(__self__, "properties", properties)
+        if ref_count and not isinstance(ref_count, int):
+            raise TypeError("Expected argument 'ref_count' to be a int")
+        pulumi.set(__self__, "ref_count", ref_count)
         if replication_metadatas and not isinstance(replication_metadatas, list):
             raise TypeError("Expected argument 'replication_metadatas' to be a list")
         pulumi.set(__self__, "replication_metadatas", replication_metadatas)
@@ -162,6 +171,14 @@ class GetDbmulticloudOracleDbAwsKeyResult:
         return pulumi.get(self, "is_aws_key_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="isOracleAwsKeyUsed")
+    def is_oracle_aws_key_used(self) -> _builtins.bool:
+        """
+        Indicates whether the Oracle AWS Key resource is currently in use.
+        """
+        return pulumi.get(self, "is_oracle_aws_key_used")
+
+    @_builtins.property
     @pulumi.getter(name="lifecycleStateDetails")
     def lifecycle_state_details(self) -> _builtins.str:
         """
@@ -183,6 +200,14 @@ class GetDbmulticloudOracleDbAwsKeyResult:
         return pulumi.get(self, "oracle_db_aws_key_id")
 
     @_builtins.property
+    @pulumi.getter(name="oracleDbAwsKeyPoolId")
+    def oracle_db_aws_key_pool_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+        """
+        return pulumi.get(self, "oracle_db_aws_key_pool_id")
+
+    @_builtins.property
     @pulumi.getter(name="oracleDbConnectorId")
     def oracle_db_connector_id(self) -> _builtins.str:
         """
@@ -197,6 +222,14 @@ class GetDbmulticloudOracleDbAwsKeyResult:
         AWS Key resource's properties.
         """
         return pulumi.get(self, "properties")
+
+    @_builtins.property
+    @pulumi.getter(name="refCount")
+    def ref_count(self) -> _builtins.int:
+        """
+        The number of active references to the Oracle AWS Key resource.
+        """
+        return pulumi.get(self, "ref_count")
 
     @_builtins.property
     @pulumi.getter(name="replicationMetadatas")
@@ -270,11 +303,14 @@ class AwaitableGetDbmulticloudOracleDbAwsKeyResult(GetDbmulticloudOracleDbAwsKey
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_aws_key_enabled=self.is_aws_key_enabled,
+            is_oracle_aws_key_used=self.is_oracle_aws_key_used,
             lifecycle_state_details=self.lifecycle_state_details,
             location=self.location,
             oracle_db_aws_key_id=self.oracle_db_aws_key_id,
+            oracle_db_aws_key_pool_id=self.oracle_db_aws_key_pool_id,
             oracle_db_connector_id=self.oracle_db_connector_id,
             properties=self.properties,
+            ref_count=self.ref_count,
             replication_metadatas=self.replication_metadatas,
             state=self.state,
             system_tags=self.system_tags,
@@ -318,11 +354,14 @@ def get_dbmulticloud_oracle_db_aws_key(oracle_db_aws_key_id: Optional[_builtins.
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_aws_key_enabled=pulumi.get(__ret__, 'is_aws_key_enabled'),
+        is_oracle_aws_key_used=pulumi.get(__ret__, 'is_oracle_aws_key_used'),
         lifecycle_state_details=pulumi.get(__ret__, 'lifecycle_state_details'),
         location=pulumi.get(__ret__, 'location'),
         oracle_db_aws_key_id=pulumi.get(__ret__, 'oracle_db_aws_key_id'),
+        oracle_db_aws_key_pool_id=pulumi.get(__ret__, 'oracle_db_aws_key_pool_id'),
         oracle_db_connector_id=pulumi.get(__ret__, 'oracle_db_connector_id'),
         properties=pulumi.get(__ret__, 'properties'),
+        ref_count=pulumi.get(__ret__, 'ref_count'),
         replication_metadatas=pulumi.get(__ret__, 'replication_metadatas'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
@@ -363,11 +402,14 @@ def get_dbmulticloud_oracle_db_aws_key_output(oracle_db_aws_key_id: pulumi.Input
         freeform_tags=pulumi.get(__response__, 'freeform_tags'),
         id=pulumi.get(__response__, 'id'),
         is_aws_key_enabled=pulumi.get(__response__, 'is_aws_key_enabled'),
+        is_oracle_aws_key_used=pulumi.get(__response__, 'is_oracle_aws_key_used'),
         lifecycle_state_details=pulumi.get(__response__, 'lifecycle_state_details'),
         location=pulumi.get(__response__, 'location'),
         oracle_db_aws_key_id=pulumi.get(__response__, 'oracle_db_aws_key_id'),
+        oracle_db_aws_key_pool_id=pulumi.get(__response__, 'oracle_db_aws_key_pool_id'),
         oracle_db_connector_id=pulumi.get(__response__, 'oracle_db_connector_id'),
         properties=pulumi.get(__response__, 'properties'),
+        ref_count=pulumi.get(__response__, 'ref_count'),
         replication_metadatas=pulumi.get(__response__, 'replication_metadatas'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),

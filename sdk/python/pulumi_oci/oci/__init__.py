@@ -25,6 +25,7 @@ from .datacc_vm_instance import *
 from .dbmulticloud_multi_cloud_resource_discovery import *
 from .dbmulticloud_oracle_db_aws_identity_connector import *
 from .dbmulticloud_oracle_db_aws_key import *
+from .dbmulticloud_oracle_db_aws_key_pool import *
 from .dbmulticloud_oracle_db_azure_blob_container import *
 from .dbmulticloud_oracle_db_azure_blob_mount import *
 from .dbmulticloud_oracle_db_azure_connector import *
@@ -78,6 +79,8 @@ from .get_dbmulticloud_multi_cloud_resource_discovery import *
 from .get_dbmulticloud_oracle_db_aws_identity_connector import *
 from .get_dbmulticloud_oracle_db_aws_identity_connectors import *
 from .get_dbmulticloud_oracle_db_aws_key import *
+from .get_dbmulticloud_oracle_db_aws_key_pool import *
+from .get_dbmulticloud_oracle_db_aws_key_pools import *
 from .get_dbmulticloud_oracle_db_aws_keys import *
 from .get_dbmulticloud_oracle_db_azure_blob_container import *
 from .get_dbmulticloud_oracle_db_azure_blob_containers import *

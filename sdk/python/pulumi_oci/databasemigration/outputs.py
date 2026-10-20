@@ -145,6 +145,15 @@ __all__ = [
     'GetMigrationDataTransferMediumDetailObjectStorageBucketResult',
     'GetMigrationDataTransferMediumDetailSourceResult',
     'GetMigrationDataTransferMediumDetailTargetResult',
+    'GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionResult',
+    'GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemResult',
+    'GetMigrationDataVerificationObjectStatusesFilterResult',
+    'GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionResult',
+    'GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemResult',
+    'GetMigrationDataVerificationObjectTypeCountsFilterResult',
+    'GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionResult',
+    'GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemResult',
+    'GetMigrationDataVerificationTableRowCountsFilterResult',
     'GetMigrationExcludeObjectResult',
     'GetMigrationGgsDetailResult',
     'GetMigrationGgsDetailExtractResult',
@@ -1189,6 +1198,8 @@ class JobProgress(dict):
             suggest = "current_phase"
         elif key == "currentStatus":
             suggest = "current_status"
+        elif key == "jobProgress":
+            suggest = "job_progress"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in JobProgress. Access the value via the '{suggest}' property getter instead.")
@@ -1204,6 +1215,7 @@ class JobProgress(dict):
     def __init__(__self__, *,
                  current_phase: Optional[_builtins.str] = None,
                  current_status: Optional[_builtins.str] = None,
+                 job_progress: Optional[_builtins.int] = None,
                  phases: Optional[Sequence['outputs.JobProgressPhase']] = None):
         """
         :param _builtins.str current_phase: Current phase of the job.
@@ -1214,6 +1226,8 @@ class JobProgress(dict):
             pulumi.set(__self__, "current_phase", current_phase)
         if current_status is not None:
             pulumi.set(__self__, "current_status", current_status)
+        if job_progress is not None:
+            pulumi.set(__self__, "job_progress", job_progress)
         if phases is not None:
             pulumi.set(__self__, "phases", phases)
 
@@ -1232,6 +1246,11 @@ class JobProgress(dict):
         Current status of the job.
         """
         return pulumi.get(self, "current_status")
+
+    @_builtins.property
+    @pulumi.getter(name="jobProgress")
+    def job_progress(self) -> Optional[_builtins.int]:
+        return pulumi.get(self, "job_progress")
 
     @_builtins.property
     @pulumi.getter
@@ -8208,6 +8227,459 @@ class GetMigrationDataTransferMediumDetailTargetResult(dict):
         Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
         """
         return pulumi.get(self, "wallet_location")
+
+
+@pulumi.output_type
+class GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemResult'],
+                 total_items: _builtins.int):
+        """
+        :param Sequence['GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArgs'] items: Items in collection.
+        :param _builtins.int total_items: Total number of items matching the request.
+        """
+        pulumi.set(__self__, "items", items)
+        pulumi.set(__self__, "total_items", total_items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemResult']:
+        """
+        Items in collection.
+        """
+        return pulumi.get(self, "items")
+
+    @_builtins.property
+    @pulumi.getter(name="totalItems")
+    def total_items(self) -> _builtins.int:
+        """
+        Total number of items matching the request.
+        """
+        return pulumi.get(self, "total_items")
+
+
+@pulumi.output_type
+class GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 database_combination: _builtins.str,
+                 object: _builtins.str,
+                 object_type: _builtins.str,
+                 owner: _builtins.str,
+                 status_in_source: _builtins.str,
+                 status_in_target: _builtins.str):
+        """
+        :param _builtins.str database_combination: The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+        :param _builtins.str object: Database object name.
+        :param _builtins.str object_type: A filter to return only results for a specific object type.
+               
+               The allowed values depend on the migration's `databaseCombination`:
+               * Oracle migrations: `OracleDatabaseObjectTypes`
+               * MySQL migrations: `MySqlDatabaseObjectTypes`
+        :param _builtins.str owner: A filter to return only results for a specific owner.
+        :param _builtins.str status_in_source: Object status in source.
+        :param _builtins.str status_in_target: Object status in target.
+        """
+        pulumi.set(__self__, "database_combination", database_combination)
+        pulumi.set(__self__, "object", object)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "status_in_source", status_in_source)
+        pulumi.set(__self__, "status_in_target", status_in_target)
+
+    @_builtins.property
+    @pulumi.getter(name="databaseCombination")
+    def database_combination(self) -> _builtins.str:
+        """
+        The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+        """
+        return pulumi.get(self, "database_combination")
+
+    @_builtins.property
+    @pulumi.getter
+    def object(self) -> _builtins.str:
+        """
+        Database object name.
+        """
+        return pulumi.get(self, "object")
+
+    @_builtins.property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> _builtins.str:
+        """
+        A filter to return only results for a specific object type.
+
+        The allowed values depend on the migration's `databaseCombination`:
+        * Oracle migrations: `OracleDatabaseObjectTypes`
+        * MySQL migrations: `MySqlDatabaseObjectTypes`
+        """
+        return pulumi.get(self, "object_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def owner(self) -> _builtins.str:
+        """
+        A filter to return only results for a specific owner.
+        """
+        return pulumi.get(self, "owner")
+
+    @_builtins.property
+    @pulumi.getter(name="statusInSource")
+    def status_in_source(self) -> _builtins.str:
+        """
+        Object status in source.
+        """
+        return pulumi.get(self, "status_in_source")
+
+    @_builtins.property
+    @pulumi.getter(name="statusInTarget")
+    def status_in_target(self) -> _builtins.str:
+        """
+        Object status in target.
+        """
+        return pulumi.get(self, "status_in_target")
+
+
+@pulumi.output_type
+class GetMigrationDataVerificationObjectStatusesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: A filter to return only resources that match the entire name given.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire name given.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemResult'],
+                 total_items: _builtins.int):
+        """
+        :param Sequence['GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArgs'] items: Items in collection.
+        :param _builtins.int total_items: Total number of items matching the request.
+        """
+        pulumi.set(__self__, "items", items)
+        pulumi.set(__self__, "total_items", total_items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemResult']:
+        """
+        Items in collection.
+        """
+        return pulumi.get(self, "items")
+
+    @_builtins.property
+    @pulumi.getter(name="totalItems")
+    def total_items(self) -> _builtins.int:
+        """
+        Total number of items matching the request.
+        """
+        return pulumi.get(self, "total_items")
+
+
+@pulumi.output_type
+class GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 database_combination: _builtins.str,
+                 delta_percent: _builtins.float,
+                 object_type: _builtins.str,
+                 schema_name: _builtins.str,
+                 source_invalid_count: _builtins.int,
+                 source_object_count: _builtins.int,
+                 target_invalid_count: _builtins.int,
+                 target_object_count: _builtins.int):
+        """
+        :param _builtins.str database_combination: The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+        :param _builtins.float delta_percent: Percentage delta between source and target counts. This value is expected to be non-negative.
+        :param _builtins.str object_type: A filter to return only results for a specific object type.
+               
+               The allowed values depend on the migration's `databaseCombination`:
+               * Oracle migrations: `OracleDatabaseObjectTypes`
+               * MySQL migrations: `MySqlDatabaseObjectTypes`
+        :param _builtins.str schema_name: A filter to return only results for a specific schema/owner.
+        :param _builtins.int source_invalid_count: Number of invalid objects in source.
+        :param _builtins.int source_object_count: Number of objects in source.
+        :param _builtins.int target_invalid_count: Number of invalid objects in target.
+        :param _builtins.int target_object_count: Number of objects in target.
+        """
+        pulumi.set(__self__, "database_combination", database_combination)
+        pulumi.set(__self__, "delta_percent", delta_percent)
+        pulumi.set(__self__, "object_type", object_type)
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "source_invalid_count", source_invalid_count)
+        pulumi.set(__self__, "source_object_count", source_object_count)
+        pulumi.set(__self__, "target_invalid_count", target_invalid_count)
+        pulumi.set(__self__, "target_object_count", target_object_count)
+
+    @_builtins.property
+    @pulumi.getter(name="databaseCombination")
+    def database_combination(self) -> _builtins.str:
+        """
+        The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+        """
+        return pulumi.get(self, "database_combination")
+
+    @_builtins.property
+    @pulumi.getter(name="deltaPercent")
+    def delta_percent(self) -> _builtins.float:
+        """
+        Percentage delta between source and target counts. This value is expected to be non-negative.
+        """
+        return pulumi.get(self, "delta_percent")
+
+    @_builtins.property
+    @pulumi.getter(name="objectType")
+    def object_type(self) -> _builtins.str:
+        """
+        A filter to return only results for a specific object type.
+
+        The allowed values depend on the migration's `databaseCombination`:
+        * Oracle migrations: `OracleDatabaseObjectTypes`
+        * MySQL migrations: `MySqlDatabaseObjectTypes`
+        """
+        return pulumi.get(self, "object_type")
+
+    @_builtins.property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> _builtins.str:
+        """
+        A filter to return only results for a specific schema/owner.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceInvalidCount")
+    def source_invalid_count(self) -> _builtins.int:
+        """
+        Number of invalid objects in source.
+        """
+        return pulumi.get(self, "source_invalid_count")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceObjectCount")
+    def source_object_count(self) -> _builtins.int:
+        """
+        Number of objects in source.
+        """
+        return pulumi.get(self, "source_object_count")
+
+    @_builtins.property
+    @pulumi.getter(name="targetInvalidCount")
+    def target_invalid_count(self) -> _builtins.int:
+        """
+        Number of invalid objects in target.
+        """
+        return pulumi.get(self, "target_invalid_count")
+
+    @_builtins.property
+    @pulumi.getter(name="targetObjectCount")
+    def target_object_count(self) -> _builtins.int:
+        """
+        Number of objects in target.
+        """
+        return pulumi.get(self, "target_object_count")
+
+
+@pulumi.output_type
+class GetMigrationDataVerificationObjectTypeCountsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemResult'],
+                 total_items: _builtins.int):
+        """
+        :param Sequence['GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArgs'] items: Items in collection.
+        :param _builtins.int total_items: Total number of items matching the request.
+        """
+        pulumi.set(__self__, "items", items)
+        pulumi.set(__self__, "total_items", total_items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemResult']:
+        """
+        Items in collection.
+        """
+        return pulumi.get(self, "items")
+
+    @_builtins.property
+    @pulumi.getter(name="totalItems")
+    def total_items(self) -> _builtins.int:
+        """
+        Total number of items matching the request.
+        """
+        return pulumi.get(self, "total_items")
+
+
+@pulumi.output_type
+class GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 database_combination: _builtins.str,
+                 owner: _builtins.str,
+                 source_row_count: _builtins.int,
+                 table_name: _builtins.str,
+                 target_row_count: _builtins.int,
+                 time_last_source_statistics_collection: _builtins.str,
+                 time_last_target_statistics_collection: _builtins.str,
+                 variance_percent: _builtins.float):
+        """
+        :param _builtins.str database_combination: The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+        :param _builtins.str owner: A filter to return only results for a specific owner.
+        :param _builtins.int source_row_count: Row count in source.
+        :param _builtins.str table_name: A filter to return only results for a specific table.
+        :param _builtins.int target_row_count: Row count in target.
+        :param _builtins.str time_last_source_statistics_collection: Time of last statistics collection in the source used for the dictionary-based row count estimate. This value is reported per row because statistics can be collected at different times per object. This timestamp is stored in UTC.
+        :param _builtins.str time_last_target_statistics_collection: Time of last statistics collection in the target used for the dictionary-based row count estimate. This value is reported per row because statistics can be collected at different times per object. This timestamp is stored in UTC.
+        :param _builtins.float variance_percent: Percentage variance between source and target row counts. This value is expected to be non-negative.
+        """
+        pulumi.set(__self__, "database_combination", database_combination)
+        pulumi.set(__self__, "owner", owner)
+        pulumi.set(__self__, "source_row_count", source_row_count)
+        pulumi.set(__self__, "table_name", table_name)
+        pulumi.set(__self__, "target_row_count", target_row_count)
+        pulumi.set(__self__, "time_last_source_statistics_collection", time_last_source_statistics_collection)
+        pulumi.set(__self__, "time_last_target_statistics_collection", time_last_target_statistics_collection)
+        pulumi.set(__self__, "variance_percent", variance_percent)
+
+    @_builtins.property
+    @pulumi.getter(name="databaseCombination")
+    def database_combination(self) -> _builtins.str:
+        """
+        The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+        """
+        return pulumi.get(self, "database_combination")
+
+    @_builtins.property
+    @pulumi.getter
+    def owner(self) -> _builtins.str:
+        """
+        A filter to return only results for a specific owner.
+        """
+        return pulumi.get(self, "owner")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceRowCount")
+    def source_row_count(self) -> _builtins.int:
+        """
+        Row count in source.
+        """
+        return pulumi.get(self, "source_row_count")
+
+    @_builtins.property
+    @pulumi.getter(name="tableName")
+    def table_name(self) -> _builtins.str:
+        """
+        A filter to return only results for a specific table.
+        """
+        return pulumi.get(self, "table_name")
+
+    @_builtins.property
+    @pulumi.getter(name="targetRowCount")
+    def target_row_count(self) -> _builtins.int:
+        """
+        Row count in target.
+        """
+        return pulumi.get(self, "target_row_count")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastSourceStatisticsCollection")
+    def time_last_source_statistics_collection(self) -> _builtins.str:
+        """
+        Time of last statistics collection in the source used for the dictionary-based row count estimate. This value is reported per row because statistics can be collected at different times per object. This timestamp is stored in UTC.
+        """
+        return pulumi.get(self, "time_last_source_statistics_collection")
+
+    @_builtins.property
+    @pulumi.getter(name="timeLastTargetStatisticsCollection")
+    def time_last_target_statistics_collection(self) -> _builtins.str:
+        """
+        Time of last statistics collection in the target used for the dictionary-based row count estimate. This value is reported per row because statistics can be collected at different times per object. This timestamp is stored in UTC.
+        """
+        return pulumi.get(self, "time_last_target_statistics_collection")
+
+    @_builtins.property
+    @pulumi.getter(name="variancePercent")
+    def variance_percent(self) -> _builtins.float:
+        """
+        Percentage variance between source and target row counts. This value is expected to be non-negative.
+        """
+        return pulumi.get(self, "variance_percent")
+
+
+@pulumi.output_type
+class GetMigrationDataVerificationTableRowCountsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
 
 
 @pulumi.output_type

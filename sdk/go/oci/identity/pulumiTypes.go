@@ -130491,9 +130491,9 @@ func (o NetworkSourceVirtualSourceListArrayOutput) Index(i pulumi.IntInput) Netw
 }
 
 type TagValidator struct {
-	// (Updatable) Specifies the type of validation: a static value (no validation) or a list.
+	// (Updatable) Specifies the type of validation. Use `ENUM` to restrict a tag to a list of allowed values, or `DEFAULT` for no value validation.
 	ValidatorType string `pulumi:"validatorType"`
-	// (Updatable) The list of allowed values for a definedTag value.
+	// (Updatable) The list of allowed values for a definedTag value. Omit this property when `validatorType` is `DEFAULT`; it is not used for default validation.
 	Values []string `pulumi:"values"`
 }
 
@@ -130509,9 +130509,9 @@ type TagValidatorInput interface {
 }
 
 type TagValidatorArgs struct {
-	// (Updatable) Specifies the type of validation: a static value (no validation) or a list.
+	// (Updatable) Specifies the type of validation. Use `ENUM` to restrict a tag to a list of allowed values, or `DEFAULT` for no value validation.
 	ValidatorType pulumi.StringInput `pulumi:"validatorType"`
-	// (Updatable) The list of allowed values for a definedTag value.
+	// (Updatable) The list of allowed values for a definedTag value. Omit this property when `validatorType` is `DEFAULT`; it is not used for default validation.
 	Values pulumi.StringArrayInput `pulumi:"values"`
 }
 
@@ -130592,12 +130592,12 @@ func (o TagValidatorOutput) ToTagValidatorPtrOutputWithContext(ctx context.Conte
 	}).(TagValidatorPtrOutput)
 }
 
-// (Updatable) Specifies the type of validation: a static value (no validation) or a list.
+// (Updatable) Specifies the type of validation. Use `ENUM` to restrict a tag to a list of allowed values, or `DEFAULT` for no value validation.
 func (o TagValidatorOutput) ValidatorType() pulumi.StringOutput {
 	return o.ApplyT(func(v TagValidator) string { return v.ValidatorType }).(pulumi.StringOutput)
 }
 
-// (Updatable) The list of allowed values for a definedTag value.
+// (Updatable) The list of allowed values for a definedTag value. Omit this property when `validatorType` is `DEFAULT`; it is not used for default validation.
 func (o TagValidatorOutput) Values() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v TagValidator) []string { return v.Values }).(pulumi.StringArrayOutput)
 }
@@ -130626,7 +130626,7 @@ func (o TagValidatorPtrOutput) Elem() TagValidatorOutput {
 	}).(TagValidatorOutput)
 }
 
-// (Updatable) Specifies the type of validation: a static value (no validation) or a list.
+// (Updatable) Specifies the type of validation. Use `ENUM` to restrict a tag to a list of allowed values, or `DEFAULT` for no value validation.
 func (o TagValidatorPtrOutput) ValidatorType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TagValidator) *string {
 		if v == nil {
@@ -130636,7 +130636,7 @@ func (o TagValidatorPtrOutput) ValidatorType() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The list of allowed values for a definedTag value.
+// (Updatable) The list of allowed values for a definedTag value. Omit this property when `validatorType` is `DEFAULT`; it is not used for default validation.
 func (o TagValidatorPtrOutput) Values() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *TagValidator) []string {
 		if v == nil {

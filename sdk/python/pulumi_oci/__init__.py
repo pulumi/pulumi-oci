@@ -8247,6 +8247,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "oci/dbmulticloudOracleDbAwsKeyPool",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/dbmulticloudOracleDbAwsKeyPool:DbmulticloudOracleDbAwsKeyPool": "DbmulticloudOracleDbAwsKeyPool"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "oci/dbmulticloudOracleDbAzureBlobContainer",
   "fqn": "pulumi_oci.oci",
   "classes": {

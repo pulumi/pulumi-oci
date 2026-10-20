@@ -1816,6 +1816,7 @@ type JobProgress struct {
 	CurrentPhase *string `pulumi:"currentPhase"`
 	// Current status of the job.
 	CurrentStatus *string `pulumi:"currentStatus"`
+	JobProgress   *int    `pulumi:"jobProgress"`
 	// List of phase status for the job.
 	Phases []JobProgressPhase `pulumi:"phases"`
 }
@@ -1836,6 +1837,7 @@ type JobProgressArgs struct {
 	CurrentPhase pulumi.StringPtrInput `pulumi:"currentPhase"`
 	// Current status of the job.
 	CurrentStatus pulumi.StringPtrInput `pulumi:"currentStatus"`
+	JobProgress   pulumi.IntPtrInput    `pulumi:"jobProgress"`
 	// List of phase status for the job.
 	Phases JobProgressPhaseArrayInput `pulumi:"phases"`
 }
@@ -1899,6 +1901,10 @@ func (o JobProgressOutput) CurrentPhase() pulumi.StringPtrOutput {
 // Current status of the job.
 func (o JobProgressOutput) CurrentStatus() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v JobProgress) *string { return v.CurrentStatus }).(pulumi.StringPtrOutput)
+}
+
+func (o JobProgressOutput) JobProgress() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v JobProgress) *int { return v.JobProgress }).(pulumi.IntPtrOutput)
 }
 
 // List of phase status for the job.
@@ -18240,6 +18246,1187 @@ func (o GetMigrationDataTransferMediumDetailTargetArrayOutput) Index(i pulumi.In
 	}).(GetMigrationDataTransferMediumDetailTargetOutput)
 }
 
+type GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollection struct {
+	// Items in collection.
+	Items []GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItem `pulumi:"items"`
+	// Total number of items matching the request.
+	TotalItems int `pulumi:"totalItems"`
+}
+
+// GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionInput is an input type that accepts GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArgs and GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutput values.
+// You can construct a concrete instance of `GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionInput` via:
+//
+//	GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArgs{...}
+type GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutput() GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutput
+	ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutputWithContext(context.Context) GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutput
+}
+
+type GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArgs struct {
+	// Items in collection.
+	Items GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayInput `pulumi:"items"`
+	// Total number of items matching the request.
+	TotalItems pulumi.IntInput `pulumi:"totalItems"`
+}
+
+func (GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollection)(nil)).Elem()
+}
+
+func (i GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArgs) ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutput() GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutput {
+	return i.ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArgs) ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutput)
+}
+
+// GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayInput is an input type that accepts GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArray and GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayInput` via:
+//
+//	GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArray{ GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArgs{...} }
+type GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayOutput() GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayOutput
+	ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayOutputWithContext(context.Context) GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayOutput
+}
+
+type GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArray []GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionInput
+
+func (GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollection)(nil)).Elem()
+}
+
+func (i GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArray) ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayOutput() GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayOutput {
+	return i.ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArray) ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayOutput)
+}
+
+type GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollection)(nil)).Elem()
+}
+
+func (o GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutput) ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutput() GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutput) ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutput {
+	return o
+}
+
+// Items in collection.
+func (o GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutput) Items() GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollection) []GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItem {
+		return v.Items
+	}).(GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayOutput)
+}
+
+// Total number of items matching the request.
+func (o GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutput) TotalItems() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollection) int {
+		return v.TotalItems
+	}).(pulumi.IntOutput)
+}
+
+type GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollection)(nil)).Elem()
+}
+
+func (o GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayOutput) ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayOutput() GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayOutput) ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayOutput) Index(i pulumi.IntInput) GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollection {
+		return vs[0].([]GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollection)[vs[1].(int)]
+	}).(GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutput)
+}
+
+type GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItem struct {
+	// The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+	DatabaseCombination string `pulumi:"databaseCombination"`
+	// Database object name.
+	Object string `pulumi:"object"`
+	// A filter to return only results for a specific object type.
+	//
+	// The allowed values depend on the migration's `databaseCombination`:
+	// * Oracle migrations: `OracleDatabaseObjectTypes`
+	// * MySQL migrations: `MySqlDatabaseObjectTypes`
+	ObjectType string `pulumi:"objectType"`
+	// A filter to return only results for a specific owner.
+	Owner string `pulumi:"owner"`
+	// Object status in source.
+	StatusInSource string `pulumi:"statusInSource"`
+	// Object status in target.
+	StatusInTarget string `pulumi:"statusInTarget"`
+}
+
+// GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemInput is an input type that accepts GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArgs and GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput values.
+// You can construct a concrete instance of `GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemInput` via:
+//
+//	GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArgs{...}
+type GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput() GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput
+	ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutputWithContext(context.Context) GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput
+}
+
+type GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArgs struct {
+	// The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+	DatabaseCombination pulumi.StringInput `pulumi:"databaseCombination"`
+	// Database object name.
+	Object pulumi.StringInput `pulumi:"object"`
+	// A filter to return only results for a specific object type.
+	//
+	// The allowed values depend on the migration's `databaseCombination`:
+	// * Oracle migrations: `OracleDatabaseObjectTypes`
+	// * MySQL migrations: `MySqlDatabaseObjectTypes`
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	// A filter to return only results for a specific owner.
+	Owner pulumi.StringInput `pulumi:"owner"`
+	// Object status in source.
+	StatusInSource pulumi.StringInput `pulumi:"statusInSource"`
+	// Object status in target.
+	StatusInTarget pulumi.StringInput `pulumi:"statusInTarget"`
+}
+
+func (GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItem)(nil)).Elem()
+}
+
+func (i GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArgs) ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput() GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput {
+	return i.ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArgs) ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput)
+}
+
+// GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayInput is an input type that accepts GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArray and GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayInput` via:
+//
+//	GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArray{ GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArgs{...} }
+type GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayOutput() GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayOutput
+	ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayOutputWithContext(context.Context) GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayOutput
+}
+
+type GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArray []GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemInput
+
+func (GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItem)(nil)).Elem()
+}
+
+func (i GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArray) ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayOutput() GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayOutput {
+	return i.ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArray) ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayOutput)
+}
+
+type GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItem)(nil)).Elem()
+}
+
+func (o GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput) ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput() GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput) ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput {
+	return o
+}
+
+// The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+func (o GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput) DatabaseCombination() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItem) string {
+		return v.DatabaseCombination
+	}).(pulumi.StringOutput)
+}
+
+// Database object name.
+func (o GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItem) string {
+		return v.Object
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only results for a specific object type.
+//
+// The allowed values depend on the migration's `databaseCombination`:
+// * Oracle migrations: `OracleDatabaseObjectTypes`
+// * MySQL migrations: `MySqlDatabaseObjectTypes`
+func (o GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItem) string {
+		return v.ObjectType
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only results for a specific owner.
+func (o GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput) Owner() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItem) string {
+		return v.Owner
+	}).(pulumi.StringOutput)
+}
+
+// Object status in source.
+func (o GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput) StatusInSource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItem) string {
+		return v.StatusInSource
+	}).(pulumi.StringOutput)
+}
+
+// Object status in target.
+func (o GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput) StatusInTarget() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItem) string {
+		return v.StatusInTarget
+	}).(pulumi.StringOutput)
+}
+
+type GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItem)(nil)).Elem()
+}
+
+func (o GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayOutput) ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayOutput() GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayOutput) ToGetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItem {
+		return vs[0].([]GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItem)[vs[1].(int)]
+	}).(GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput)
+}
+
+type GetMigrationDataVerificationObjectStatusesFilter struct {
+	// A filter to return only resources that match the entire name given.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMigrationDataVerificationObjectStatusesFilterInput is an input type that accepts GetMigrationDataVerificationObjectStatusesFilterArgs and GetMigrationDataVerificationObjectStatusesFilterOutput values.
+// You can construct a concrete instance of `GetMigrationDataVerificationObjectStatusesFilterInput` via:
+//
+//	GetMigrationDataVerificationObjectStatusesFilterArgs{...}
+type GetMigrationDataVerificationObjectStatusesFilterInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataVerificationObjectStatusesFilterOutput() GetMigrationDataVerificationObjectStatusesFilterOutput
+	ToGetMigrationDataVerificationObjectStatusesFilterOutputWithContext(context.Context) GetMigrationDataVerificationObjectStatusesFilterOutput
+}
+
+type GetMigrationDataVerificationObjectStatusesFilterArgs struct {
+	// A filter to return only resources that match the entire name given.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMigrationDataVerificationObjectStatusesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataVerificationObjectStatusesFilter)(nil)).Elem()
+}
+
+func (i GetMigrationDataVerificationObjectStatusesFilterArgs) ToGetMigrationDataVerificationObjectStatusesFilterOutput() GetMigrationDataVerificationObjectStatusesFilterOutput {
+	return i.ToGetMigrationDataVerificationObjectStatusesFilterOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataVerificationObjectStatusesFilterArgs) ToGetMigrationDataVerificationObjectStatusesFilterOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectStatusesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataVerificationObjectStatusesFilterOutput)
+}
+
+// GetMigrationDataVerificationObjectStatusesFilterArrayInput is an input type that accepts GetMigrationDataVerificationObjectStatusesFilterArray and GetMigrationDataVerificationObjectStatusesFilterArrayOutput values.
+// You can construct a concrete instance of `GetMigrationDataVerificationObjectStatusesFilterArrayInput` via:
+//
+//	GetMigrationDataVerificationObjectStatusesFilterArray{ GetMigrationDataVerificationObjectStatusesFilterArgs{...} }
+type GetMigrationDataVerificationObjectStatusesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataVerificationObjectStatusesFilterArrayOutput() GetMigrationDataVerificationObjectStatusesFilterArrayOutput
+	ToGetMigrationDataVerificationObjectStatusesFilterArrayOutputWithContext(context.Context) GetMigrationDataVerificationObjectStatusesFilterArrayOutput
+}
+
+type GetMigrationDataVerificationObjectStatusesFilterArray []GetMigrationDataVerificationObjectStatusesFilterInput
+
+func (GetMigrationDataVerificationObjectStatusesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataVerificationObjectStatusesFilter)(nil)).Elem()
+}
+
+func (i GetMigrationDataVerificationObjectStatusesFilterArray) ToGetMigrationDataVerificationObjectStatusesFilterArrayOutput() GetMigrationDataVerificationObjectStatusesFilterArrayOutput {
+	return i.ToGetMigrationDataVerificationObjectStatusesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataVerificationObjectStatusesFilterArray) ToGetMigrationDataVerificationObjectStatusesFilterArrayOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectStatusesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataVerificationObjectStatusesFilterArrayOutput)
+}
+
+type GetMigrationDataVerificationObjectStatusesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataVerificationObjectStatusesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataVerificationObjectStatusesFilter)(nil)).Elem()
+}
+
+func (o GetMigrationDataVerificationObjectStatusesFilterOutput) ToGetMigrationDataVerificationObjectStatusesFilterOutput() GetMigrationDataVerificationObjectStatusesFilterOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationObjectStatusesFilterOutput) ToGetMigrationDataVerificationObjectStatusesFilterOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectStatusesFilterOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire name given.
+func (o GetMigrationDataVerificationObjectStatusesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectStatusesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMigrationDataVerificationObjectStatusesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectStatusesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMigrationDataVerificationObjectStatusesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectStatusesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMigrationDataVerificationObjectStatusesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataVerificationObjectStatusesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataVerificationObjectStatusesFilter)(nil)).Elem()
+}
+
+func (o GetMigrationDataVerificationObjectStatusesFilterArrayOutput) ToGetMigrationDataVerificationObjectStatusesFilterArrayOutput() GetMigrationDataVerificationObjectStatusesFilterArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationObjectStatusesFilterArrayOutput) ToGetMigrationDataVerificationObjectStatusesFilterArrayOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectStatusesFilterArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationObjectStatusesFilterArrayOutput) Index(i pulumi.IntInput) GetMigrationDataVerificationObjectStatusesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationDataVerificationObjectStatusesFilter {
+		return vs[0].([]GetMigrationDataVerificationObjectStatusesFilter)[vs[1].(int)]
+	}).(GetMigrationDataVerificationObjectStatusesFilterOutput)
+}
+
+type GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollection struct {
+	// Items in collection.
+	Items []GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItem `pulumi:"items"`
+	// Total number of items matching the request.
+	TotalItems int `pulumi:"totalItems"`
+}
+
+// GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionInput is an input type that accepts GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArgs and GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutput values.
+// You can construct a concrete instance of `GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionInput` via:
+//
+//	GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArgs{...}
+type GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutput() GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutput
+	ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutputWithContext(context.Context) GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutput
+}
+
+type GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArgs struct {
+	// Items in collection.
+	Items GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayInput `pulumi:"items"`
+	// Total number of items matching the request.
+	TotalItems pulumi.IntInput `pulumi:"totalItems"`
+}
+
+func (GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollection)(nil)).Elem()
+}
+
+func (i GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArgs) ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutput() GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutput {
+	return i.ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArgs) ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutput)
+}
+
+// GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayInput is an input type that accepts GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArray and GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayInput` via:
+//
+//	GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArray{ GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArgs{...} }
+type GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayOutput() GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayOutput
+	ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayOutputWithContext(context.Context) GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayOutput
+}
+
+type GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArray []GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionInput
+
+func (GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollection)(nil)).Elem()
+}
+
+func (i GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArray) ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayOutput() GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayOutput {
+	return i.ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArray) ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayOutput)
+}
+
+type GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollection)(nil)).Elem()
+}
+
+func (o GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutput) ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutput() GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutput) ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutput {
+	return o
+}
+
+// Items in collection.
+func (o GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutput) Items() GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollection) []GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItem {
+		return v.Items
+	}).(GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayOutput)
+}
+
+// Total number of items matching the request.
+func (o GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutput) TotalItems() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollection) int {
+		return v.TotalItems
+	}).(pulumi.IntOutput)
+}
+
+type GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollection)(nil)).Elem()
+}
+
+func (o GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayOutput) ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayOutput() GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayOutput) ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayOutput) Index(i pulumi.IntInput) GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollection {
+		return vs[0].([]GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollection)[vs[1].(int)]
+	}).(GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutput)
+}
+
+type GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItem struct {
+	// The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+	DatabaseCombination string `pulumi:"databaseCombination"`
+	// Percentage delta between source and target counts. This value is expected to be non-negative.
+	DeltaPercent float64 `pulumi:"deltaPercent"`
+	// A filter to return only results for a specific object type.
+	//
+	// The allowed values depend on the migration's `databaseCombination`:
+	// * Oracle migrations: `OracleDatabaseObjectTypes`
+	// * MySQL migrations: `MySqlDatabaseObjectTypes`
+	ObjectType string `pulumi:"objectType"`
+	// A filter to return only results for a specific schema/owner.
+	SchemaName string `pulumi:"schemaName"`
+	// Number of invalid objects in source.
+	SourceInvalidCount int `pulumi:"sourceInvalidCount"`
+	// Number of objects in source.
+	SourceObjectCount int `pulumi:"sourceObjectCount"`
+	// Number of invalid objects in target.
+	TargetInvalidCount int `pulumi:"targetInvalidCount"`
+	// Number of objects in target.
+	TargetObjectCount int `pulumi:"targetObjectCount"`
+}
+
+// GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemInput is an input type that accepts GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArgs and GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput values.
+// You can construct a concrete instance of `GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemInput` via:
+//
+//	GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArgs{...}
+type GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput() GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput
+	ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutputWithContext(context.Context) GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput
+}
+
+type GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArgs struct {
+	// The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+	DatabaseCombination pulumi.StringInput `pulumi:"databaseCombination"`
+	// Percentage delta between source and target counts. This value is expected to be non-negative.
+	DeltaPercent pulumi.Float64Input `pulumi:"deltaPercent"`
+	// A filter to return only results for a specific object type.
+	//
+	// The allowed values depend on the migration's `databaseCombination`:
+	// * Oracle migrations: `OracleDatabaseObjectTypes`
+	// * MySQL migrations: `MySqlDatabaseObjectTypes`
+	ObjectType pulumi.StringInput `pulumi:"objectType"`
+	// A filter to return only results for a specific schema/owner.
+	SchemaName pulumi.StringInput `pulumi:"schemaName"`
+	// Number of invalid objects in source.
+	SourceInvalidCount pulumi.IntInput `pulumi:"sourceInvalidCount"`
+	// Number of objects in source.
+	SourceObjectCount pulumi.IntInput `pulumi:"sourceObjectCount"`
+	// Number of invalid objects in target.
+	TargetInvalidCount pulumi.IntInput `pulumi:"targetInvalidCount"`
+	// Number of objects in target.
+	TargetObjectCount pulumi.IntInput `pulumi:"targetObjectCount"`
+}
+
+func (GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItem)(nil)).Elem()
+}
+
+func (i GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArgs) ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput() GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput {
+	return i.ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArgs) ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput)
+}
+
+// GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayInput is an input type that accepts GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArray and GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayInput` via:
+//
+//	GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArray{ GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArgs{...} }
+type GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayOutput() GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayOutput
+	ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayOutputWithContext(context.Context) GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayOutput
+}
+
+type GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArray []GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemInput
+
+func (GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItem)(nil)).Elem()
+}
+
+func (i GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArray) ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayOutput() GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayOutput {
+	return i.ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArray) ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayOutput)
+}
+
+type GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItem)(nil)).Elem()
+}
+
+func (o GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput) ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput() GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput) ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput {
+	return o
+}
+
+// The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+func (o GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput) DatabaseCombination() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItem) string {
+		return v.DatabaseCombination
+	}).(pulumi.StringOutput)
+}
+
+// Percentage delta between source and target counts. This value is expected to be non-negative.
+func (o GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput) DeltaPercent() pulumi.Float64Output {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItem) float64 {
+		return v.DeltaPercent
+	}).(pulumi.Float64Output)
+}
+
+// A filter to return only results for a specific object type.
+//
+// The allowed values depend on the migration's `databaseCombination`:
+// * Oracle migrations: `OracleDatabaseObjectTypes`
+// * MySQL migrations: `MySqlDatabaseObjectTypes`
+func (o GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput) ObjectType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItem) string {
+		return v.ObjectType
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only results for a specific schema/owner.
+func (o GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput) SchemaName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItem) string {
+		return v.SchemaName
+	}).(pulumi.StringOutput)
+}
+
+// Number of invalid objects in source.
+func (o GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput) SourceInvalidCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItem) int {
+		return v.SourceInvalidCount
+	}).(pulumi.IntOutput)
+}
+
+// Number of objects in source.
+func (o GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput) SourceObjectCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItem) int {
+		return v.SourceObjectCount
+	}).(pulumi.IntOutput)
+}
+
+// Number of invalid objects in target.
+func (o GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput) TargetInvalidCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItem) int {
+		return v.TargetInvalidCount
+	}).(pulumi.IntOutput)
+}
+
+// Number of objects in target.
+func (o GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput) TargetObjectCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItem) int {
+		return v.TargetObjectCount
+	}).(pulumi.IntOutput)
+}
+
+type GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItem)(nil)).Elem()
+}
+
+func (o GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayOutput) ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayOutput() GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayOutput) ToGetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItem {
+		return vs[0].([]GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItem)[vs[1].(int)]
+	}).(GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput)
+}
+
+type GetMigrationDataVerificationObjectTypeCountsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMigrationDataVerificationObjectTypeCountsFilterInput is an input type that accepts GetMigrationDataVerificationObjectTypeCountsFilterArgs and GetMigrationDataVerificationObjectTypeCountsFilterOutput values.
+// You can construct a concrete instance of `GetMigrationDataVerificationObjectTypeCountsFilterInput` via:
+//
+//	GetMigrationDataVerificationObjectTypeCountsFilterArgs{...}
+type GetMigrationDataVerificationObjectTypeCountsFilterInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataVerificationObjectTypeCountsFilterOutput() GetMigrationDataVerificationObjectTypeCountsFilterOutput
+	ToGetMigrationDataVerificationObjectTypeCountsFilterOutputWithContext(context.Context) GetMigrationDataVerificationObjectTypeCountsFilterOutput
+}
+
+type GetMigrationDataVerificationObjectTypeCountsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMigrationDataVerificationObjectTypeCountsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataVerificationObjectTypeCountsFilter)(nil)).Elem()
+}
+
+func (i GetMigrationDataVerificationObjectTypeCountsFilterArgs) ToGetMigrationDataVerificationObjectTypeCountsFilterOutput() GetMigrationDataVerificationObjectTypeCountsFilterOutput {
+	return i.ToGetMigrationDataVerificationObjectTypeCountsFilterOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataVerificationObjectTypeCountsFilterArgs) ToGetMigrationDataVerificationObjectTypeCountsFilterOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectTypeCountsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataVerificationObjectTypeCountsFilterOutput)
+}
+
+// GetMigrationDataVerificationObjectTypeCountsFilterArrayInput is an input type that accepts GetMigrationDataVerificationObjectTypeCountsFilterArray and GetMigrationDataVerificationObjectTypeCountsFilterArrayOutput values.
+// You can construct a concrete instance of `GetMigrationDataVerificationObjectTypeCountsFilterArrayInput` via:
+//
+//	GetMigrationDataVerificationObjectTypeCountsFilterArray{ GetMigrationDataVerificationObjectTypeCountsFilterArgs{...} }
+type GetMigrationDataVerificationObjectTypeCountsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataVerificationObjectTypeCountsFilterArrayOutput() GetMigrationDataVerificationObjectTypeCountsFilterArrayOutput
+	ToGetMigrationDataVerificationObjectTypeCountsFilterArrayOutputWithContext(context.Context) GetMigrationDataVerificationObjectTypeCountsFilterArrayOutput
+}
+
+type GetMigrationDataVerificationObjectTypeCountsFilterArray []GetMigrationDataVerificationObjectTypeCountsFilterInput
+
+func (GetMigrationDataVerificationObjectTypeCountsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataVerificationObjectTypeCountsFilter)(nil)).Elem()
+}
+
+func (i GetMigrationDataVerificationObjectTypeCountsFilterArray) ToGetMigrationDataVerificationObjectTypeCountsFilterArrayOutput() GetMigrationDataVerificationObjectTypeCountsFilterArrayOutput {
+	return i.ToGetMigrationDataVerificationObjectTypeCountsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataVerificationObjectTypeCountsFilterArray) ToGetMigrationDataVerificationObjectTypeCountsFilterArrayOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectTypeCountsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataVerificationObjectTypeCountsFilterArrayOutput)
+}
+
+type GetMigrationDataVerificationObjectTypeCountsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataVerificationObjectTypeCountsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataVerificationObjectTypeCountsFilter)(nil)).Elem()
+}
+
+func (o GetMigrationDataVerificationObjectTypeCountsFilterOutput) ToGetMigrationDataVerificationObjectTypeCountsFilterOutput() GetMigrationDataVerificationObjectTypeCountsFilterOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationObjectTypeCountsFilterOutput) ToGetMigrationDataVerificationObjectTypeCountsFilterOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectTypeCountsFilterOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationObjectTypeCountsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectTypeCountsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMigrationDataVerificationObjectTypeCountsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectTypeCountsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMigrationDataVerificationObjectTypeCountsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationObjectTypeCountsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMigrationDataVerificationObjectTypeCountsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataVerificationObjectTypeCountsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataVerificationObjectTypeCountsFilter)(nil)).Elem()
+}
+
+func (o GetMigrationDataVerificationObjectTypeCountsFilterArrayOutput) ToGetMigrationDataVerificationObjectTypeCountsFilterArrayOutput() GetMigrationDataVerificationObjectTypeCountsFilterArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationObjectTypeCountsFilterArrayOutput) ToGetMigrationDataVerificationObjectTypeCountsFilterArrayOutputWithContext(ctx context.Context) GetMigrationDataVerificationObjectTypeCountsFilterArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationObjectTypeCountsFilterArrayOutput) Index(i pulumi.IntInput) GetMigrationDataVerificationObjectTypeCountsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationDataVerificationObjectTypeCountsFilter {
+		return vs[0].([]GetMigrationDataVerificationObjectTypeCountsFilter)[vs[1].(int)]
+	}).(GetMigrationDataVerificationObjectTypeCountsFilterOutput)
+}
+
+type GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollection struct {
+	// Items in collection.
+	Items []GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItem `pulumi:"items"`
+	// Total number of items matching the request.
+	TotalItems int `pulumi:"totalItems"`
+}
+
+// GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionInput is an input type that accepts GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArgs and GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutput values.
+// You can construct a concrete instance of `GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionInput` via:
+//
+//	GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArgs{...}
+type GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutput() GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutput
+	ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutputWithContext(context.Context) GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutput
+}
+
+type GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArgs struct {
+	// Items in collection.
+	Items GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayInput `pulumi:"items"`
+	// Total number of items matching the request.
+	TotalItems pulumi.IntInput `pulumi:"totalItems"`
+}
+
+func (GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollection)(nil)).Elem()
+}
+
+func (i GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArgs) ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutput() GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutput {
+	return i.ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArgs) ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutputWithContext(ctx context.Context) GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutput)
+}
+
+// GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayInput is an input type that accepts GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArray and GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayOutput values.
+// You can construct a concrete instance of `GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayInput` via:
+//
+//	GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArray{ GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArgs{...} }
+type GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayOutput() GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayOutput
+	ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayOutputWithContext(context.Context) GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayOutput
+}
+
+type GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArray []GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionInput
+
+func (GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollection)(nil)).Elem()
+}
+
+func (i GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArray) ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayOutput() GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayOutput {
+	return i.ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArray) ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayOutputWithContext(ctx context.Context) GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayOutput)
+}
+
+type GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollection)(nil)).Elem()
+}
+
+func (o GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutput) ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutput() GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutput) ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutputWithContext(ctx context.Context) GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutput {
+	return o
+}
+
+// Items in collection.
+func (o GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutput) Items() GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollection) []GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItem {
+		return v.Items
+	}).(GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayOutput)
+}
+
+// Total number of items matching the request.
+func (o GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutput) TotalItems() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollection) int {
+		return v.TotalItems
+	}).(pulumi.IntOutput)
+}
+
+type GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollection)(nil)).Elem()
+}
+
+func (o GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayOutput) ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayOutput() GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayOutput) ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayOutputWithContext(ctx context.Context) GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayOutput) Index(i pulumi.IntInput) GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollection {
+		return vs[0].([]GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollection)[vs[1].(int)]
+	}).(GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutput)
+}
+
+type GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItem struct {
+	// The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+	DatabaseCombination string `pulumi:"databaseCombination"`
+	// A filter to return only results for a specific owner.
+	Owner string `pulumi:"owner"`
+	// Row count in source.
+	SourceRowCount int `pulumi:"sourceRowCount"`
+	// A filter to return only results for a specific table.
+	TableName string `pulumi:"tableName"`
+	// Row count in target.
+	TargetRowCount int `pulumi:"targetRowCount"`
+	// Time of last statistics collection in the source used for the dictionary-based row count estimate. This value is reported per row because statistics can be collected at different times per object. This timestamp is stored in UTC.
+	TimeLastSourceStatisticsCollection string `pulumi:"timeLastSourceStatisticsCollection"`
+	// Time of last statistics collection in the target used for the dictionary-based row count estimate. This value is reported per row because statistics can be collected at different times per object. This timestamp is stored in UTC.
+	TimeLastTargetStatisticsCollection string `pulumi:"timeLastTargetStatisticsCollection"`
+	// Percentage variance between source and target row counts. This value is expected to be non-negative.
+	VariancePercent float64 `pulumi:"variancePercent"`
+}
+
+// GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemInput is an input type that accepts GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArgs and GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput values.
+// You can construct a concrete instance of `GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemInput` via:
+//
+//	GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArgs{...}
+type GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput() GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput
+	ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutputWithContext(context.Context) GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput
+}
+
+type GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArgs struct {
+	// The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+	DatabaseCombination pulumi.StringInput `pulumi:"databaseCombination"`
+	// A filter to return only results for a specific owner.
+	Owner pulumi.StringInput `pulumi:"owner"`
+	// Row count in source.
+	SourceRowCount pulumi.IntInput `pulumi:"sourceRowCount"`
+	// A filter to return only results for a specific table.
+	TableName pulumi.StringInput `pulumi:"tableName"`
+	// Row count in target.
+	TargetRowCount pulumi.IntInput `pulumi:"targetRowCount"`
+	// Time of last statistics collection in the source used for the dictionary-based row count estimate. This value is reported per row because statistics can be collected at different times per object. This timestamp is stored in UTC.
+	TimeLastSourceStatisticsCollection pulumi.StringInput `pulumi:"timeLastSourceStatisticsCollection"`
+	// Time of last statistics collection in the target used for the dictionary-based row count estimate. This value is reported per row because statistics can be collected at different times per object. This timestamp is stored in UTC.
+	TimeLastTargetStatisticsCollection pulumi.StringInput `pulumi:"timeLastTargetStatisticsCollection"`
+	// Percentage variance between source and target row counts. This value is expected to be non-negative.
+	VariancePercent pulumi.Float64Input `pulumi:"variancePercent"`
+}
+
+func (GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItem)(nil)).Elem()
+}
+
+func (i GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArgs) ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput() GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput {
+	return i.ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArgs) ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutputWithContext(ctx context.Context) GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput)
+}
+
+// GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayInput is an input type that accepts GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArray and GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayInput` via:
+//
+//	GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArray{ GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArgs{...} }
+type GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayOutput() GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayOutput
+	ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayOutputWithContext(context.Context) GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayOutput
+}
+
+type GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArray []GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemInput
+
+func (GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItem)(nil)).Elem()
+}
+
+func (i GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArray) ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayOutput() GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayOutput {
+	return i.ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArray) ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayOutputWithContext(ctx context.Context) GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayOutput)
+}
+
+type GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItem)(nil)).Elem()
+}
+
+func (o GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput) ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput() GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput) ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutputWithContext(ctx context.Context) GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput {
+	return o
+}
+
+// The combination of source and target databases participating in a migration. Example: ORACLE means the migration is meant for migrating Oracle source and target databases.
+func (o GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput) DatabaseCombination() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItem) string {
+		return v.DatabaseCombination
+	}).(pulumi.StringOutput)
+}
+
+// A filter to return only results for a specific owner.
+func (o GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput) Owner() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItem) string {
+		return v.Owner
+	}).(pulumi.StringOutput)
+}
+
+// Row count in source.
+func (o GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput) SourceRowCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItem) int {
+		return v.SourceRowCount
+	}).(pulumi.IntOutput)
+}
+
+// A filter to return only results for a specific table.
+func (o GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput) TableName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItem) string {
+		return v.TableName
+	}).(pulumi.StringOutput)
+}
+
+// Row count in target.
+func (o GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput) TargetRowCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItem) int {
+		return v.TargetRowCount
+	}).(pulumi.IntOutput)
+}
+
+// Time of last statistics collection in the source used for the dictionary-based row count estimate. This value is reported per row because statistics can be collected at different times per object. This timestamp is stored in UTC.
+func (o GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput) TimeLastSourceStatisticsCollection() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItem) string {
+		return v.TimeLastSourceStatisticsCollection
+	}).(pulumi.StringOutput)
+}
+
+// Time of last statistics collection in the target used for the dictionary-based row count estimate. This value is reported per row because statistics can be collected at different times per object. This timestamp is stored in UTC.
+func (o GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput) TimeLastTargetStatisticsCollection() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItem) string {
+		return v.TimeLastTargetStatisticsCollection
+	}).(pulumi.StringOutput)
+}
+
+// Percentage variance between source and target row counts. This value is expected to be non-negative.
+func (o GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput) VariancePercent() pulumi.Float64Output {
+	return o.ApplyT(func(v GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItem) float64 {
+		return v.VariancePercent
+	}).(pulumi.Float64Output)
+}
+
+type GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItem)(nil)).Elem()
+}
+
+func (o GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayOutput) ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayOutput() GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayOutput) ToGetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayOutputWithContext(ctx context.Context) GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayOutput) Index(i pulumi.IntInput) GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItem {
+		return vs[0].([]GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItem)[vs[1].(int)]
+	}).(GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput)
+}
+
+type GetMigrationDataVerificationTableRowCountsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetMigrationDataVerificationTableRowCountsFilterInput is an input type that accepts GetMigrationDataVerificationTableRowCountsFilterArgs and GetMigrationDataVerificationTableRowCountsFilterOutput values.
+// You can construct a concrete instance of `GetMigrationDataVerificationTableRowCountsFilterInput` via:
+//
+//	GetMigrationDataVerificationTableRowCountsFilterArgs{...}
+type GetMigrationDataVerificationTableRowCountsFilterInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataVerificationTableRowCountsFilterOutput() GetMigrationDataVerificationTableRowCountsFilterOutput
+	ToGetMigrationDataVerificationTableRowCountsFilterOutputWithContext(context.Context) GetMigrationDataVerificationTableRowCountsFilterOutput
+}
+
+type GetMigrationDataVerificationTableRowCountsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetMigrationDataVerificationTableRowCountsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataVerificationTableRowCountsFilter)(nil)).Elem()
+}
+
+func (i GetMigrationDataVerificationTableRowCountsFilterArgs) ToGetMigrationDataVerificationTableRowCountsFilterOutput() GetMigrationDataVerificationTableRowCountsFilterOutput {
+	return i.ToGetMigrationDataVerificationTableRowCountsFilterOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataVerificationTableRowCountsFilterArgs) ToGetMigrationDataVerificationTableRowCountsFilterOutputWithContext(ctx context.Context) GetMigrationDataVerificationTableRowCountsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataVerificationTableRowCountsFilterOutput)
+}
+
+// GetMigrationDataVerificationTableRowCountsFilterArrayInput is an input type that accepts GetMigrationDataVerificationTableRowCountsFilterArray and GetMigrationDataVerificationTableRowCountsFilterArrayOutput values.
+// You can construct a concrete instance of `GetMigrationDataVerificationTableRowCountsFilterArrayInput` via:
+//
+//	GetMigrationDataVerificationTableRowCountsFilterArray{ GetMigrationDataVerificationTableRowCountsFilterArgs{...} }
+type GetMigrationDataVerificationTableRowCountsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataVerificationTableRowCountsFilterArrayOutput() GetMigrationDataVerificationTableRowCountsFilterArrayOutput
+	ToGetMigrationDataVerificationTableRowCountsFilterArrayOutputWithContext(context.Context) GetMigrationDataVerificationTableRowCountsFilterArrayOutput
+}
+
+type GetMigrationDataVerificationTableRowCountsFilterArray []GetMigrationDataVerificationTableRowCountsFilterInput
+
+func (GetMigrationDataVerificationTableRowCountsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataVerificationTableRowCountsFilter)(nil)).Elem()
+}
+
+func (i GetMigrationDataVerificationTableRowCountsFilterArray) ToGetMigrationDataVerificationTableRowCountsFilterArrayOutput() GetMigrationDataVerificationTableRowCountsFilterArrayOutput {
+	return i.ToGetMigrationDataVerificationTableRowCountsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataVerificationTableRowCountsFilterArray) ToGetMigrationDataVerificationTableRowCountsFilterArrayOutputWithContext(ctx context.Context) GetMigrationDataVerificationTableRowCountsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataVerificationTableRowCountsFilterArrayOutput)
+}
+
+type GetMigrationDataVerificationTableRowCountsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataVerificationTableRowCountsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataVerificationTableRowCountsFilter)(nil)).Elem()
+}
+
+func (o GetMigrationDataVerificationTableRowCountsFilterOutput) ToGetMigrationDataVerificationTableRowCountsFilterOutput() GetMigrationDataVerificationTableRowCountsFilterOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationTableRowCountsFilterOutput) ToGetMigrationDataVerificationTableRowCountsFilterOutputWithContext(ctx context.Context) GetMigrationDataVerificationTableRowCountsFilterOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationTableRowCountsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationTableRowCountsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetMigrationDataVerificationTableRowCountsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationTableRowCountsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetMigrationDataVerificationTableRowCountsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMigrationDataVerificationTableRowCountsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetMigrationDataVerificationTableRowCountsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataVerificationTableRowCountsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataVerificationTableRowCountsFilter)(nil)).Elem()
+}
+
+func (o GetMigrationDataVerificationTableRowCountsFilterArrayOutput) ToGetMigrationDataVerificationTableRowCountsFilterArrayOutput() GetMigrationDataVerificationTableRowCountsFilterArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationTableRowCountsFilterArrayOutput) ToGetMigrationDataVerificationTableRowCountsFilterArrayOutputWithContext(ctx context.Context) GetMigrationDataVerificationTableRowCountsFilterArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataVerificationTableRowCountsFilterArrayOutput) Index(i pulumi.IntInput) GetMigrationDataVerificationTableRowCountsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationDataVerificationTableRowCountsFilter {
+		return vs[0].([]GetMigrationDataVerificationTableRowCountsFilter)[vs[1].(int)]
+	}).(GetMigrationDataVerificationTableRowCountsFilterOutput)
+}
+
 type GetMigrationExcludeObject struct {
 	IsOmitExcludedTableFromReplication bool   `pulumi:"isOmitExcludedTableFromReplication"`
 	Object                             string `pulumi:"object"`
@@ -23456,6 +24643,24 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataTransferMediumDetailSourceArrayInput)(nil)).Elem(), GetMigrationDataTransferMediumDetailSourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataTransferMediumDetailTargetInput)(nil)).Elem(), GetMigrationDataTransferMediumDetailTargetArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataTransferMediumDetailTargetArrayInput)(nil)).Elem(), GetMigrationDataTransferMediumDetailTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionInput)(nil)).Elem(), GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayInput)(nil)).Elem(), GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemInput)(nil)).Elem(), GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayInput)(nil)).Elem(), GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataVerificationObjectStatusesFilterInput)(nil)).Elem(), GetMigrationDataVerificationObjectStatusesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataVerificationObjectStatusesFilterArrayInput)(nil)).Elem(), GetMigrationDataVerificationObjectStatusesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionInput)(nil)).Elem(), GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayInput)(nil)).Elem(), GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemInput)(nil)).Elem(), GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayInput)(nil)).Elem(), GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataVerificationObjectTypeCountsFilterInput)(nil)).Elem(), GetMigrationDataVerificationObjectTypeCountsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataVerificationObjectTypeCountsFilterArrayInput)(nil)).Elem(), GetMigrationDataVerificationObjectTypeCountsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionInput)(nil)).Elem(), GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayInput)(nil)).Elem(), GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemInput)(nil)).Elem(), GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayInput)(nil)).Elem(), GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataVerificationTableRowCountsFilterInput)(nil)).Elem(), GetMigrationDataVerificationTableRowCountsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataVerificationTableRowCountsFilterArrayInput)(nil)).Elem(), GetMigrationDataVerificationTableRowCountsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationExcludeObjectInput)(nil)).Elem(), GetMigrationExcludeObjectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationExcludeObjectArrayInput)(nil)).Elem(), GetMigrationExcludeObjectArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGgsDetailInput)(nil)).Elem(), GetMigrationGgsDetailArgs{})
@@ -23796,6 +25001,24 @@ func init() {
 	pulumi.RegisterOutputType(GetMigrationDataTransferMediumDetailSourceArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationDataTransferMediumDetailTargetOutput{})
 	pulumi.RegisterOutputType(GetMigrationDataTransferMediumDetailTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataVerificationObjectStatusesDataVerificationObjectStatusCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataVerificationObjectStatusesFilterOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataVerificationObjectStatusesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataVerificationObjectTypeCountsDataVerificationObjectTypeCountCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataVerificationObjectTypeCountsFilterOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataVerificationObjectTypeCountsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataVerificationTableRowCountsDataVerificationTableRowCountCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataVerificationTableRowCountsFilterOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataVerificationTableRowCountsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationExcludeObjectOutput{})
 	pulumi.RegisterOutputType(GetMigrationExcludeObjectArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationGgsDetailOutput{})

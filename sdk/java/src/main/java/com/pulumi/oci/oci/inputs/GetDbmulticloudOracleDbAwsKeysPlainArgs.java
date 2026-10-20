@@ -85,6 +85,21 @@ public final class GetDbmulticloudOracleDbAwsKeysPlainArgs extends com.pulumi.re
     }
 
     /**
+     * A filter to return only resources that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+     * 
+     */
+    @Import(name="oracleDbAwsKeyPoolId")
+    private @Nullable String oracleDbAwsKeyPoolId;
+
+    /**
+     * @return A filter to return only resources that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+     * 
+     */
+    public Optional<String> oracleDbAwsKeyPoolId() {
+        return Optional.ofNullable(this.oracleDbAwsKeyPoolId);
+    }
+
+    /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      * 
      */
@@ -107,6 +122,7 @@ public final class GetDbmulticloudOracleDbAwsKeysPlainArgs extends com.pulumi.re
         this.filters = $.filters;
         this.oracleDbAwsConnectorId = $.oracleDbAwsConnectorId;
         this.oracleDbAwsKeyId = $.oracleDbAwsKeyId;
+        this.oracleDbAwsKeyPoolId = $.oracleDbAwsKeyPoolId;
         this.state = $.state;
     }
 
@@ -178,6 +194,17 @@ public final class GetDbmulticloudOracleDbAwsKeysPlainArgs extends com.pulumi.re
          */
         public Builder oracleDbAwsKeyId(@Nullable String oracleDbAwsKeyId) {
             $.oracleDbAwsKeyId = oracleDbAwsKeyId;
+            return this;
+        }
+
+        /**
+         * @param oracleDbAwsKeyPoolId A filter to return only resources that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder oracleDbAwsKeyPoolId(@Nullable String oracleDbAwsKeyPoolId) {
+            $.oracleDbAwsKeyPoolId = oracleDbAwsKeyPoolId;
             return this;
         }
 

@@ -14,6 +14,7 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailResult
     {
         public readonly string AwsEncryptionKeyId;
+        public readonly string AwsEncryptionKeyPoolId;
         public readonly string AzureEncryptionKeyId;
         public readonly string GoogleCloudProviderEncryptionKeyId;
         public readonly string HsmPassword;
@@ -22,6 +23,8 @@ namespace Pulumi.Oci.Database.Outputs
         [OutputConstructor]
         private GetDbHomesDbHomeDatabaseEncryptionKeyLocationDetailResult(
             string awsEncryptionKeyId,
+
+            string awsEncryptionKeyPoolId,
 
             string azureEncryptionKeyId,
 
@@ -32,6 +35,7 @@ namespace Pulumi.Oci.Database.Outputs
             string providerType)
         {
             AwsEncryptionKeyId = awsEncryptionKeyId;
+            AwsEncryptionKeyPoolId = awsEncryptionKeyPoolId;
             AzureEncryptionKeyId = azureEncryptionKeyId;
             GoogleCloudProviderEncryptionKeyId = googleCloudProviderEncryptionKeyId;
             HsmPassword = hsmPassword;

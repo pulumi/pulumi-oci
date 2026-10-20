@@ -21,6 +21,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// Current status of the job.
         /// </summary>
         public readonly string? CurrentStatus;
+        public readonly int? Progress;
         /// <summary>
         /// List of phase status for the job.
         /// </summary>
@@ -32,10 +33,13 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
 
             string? currentStatus,
 
+            int? jobProgress,
+
             ImmutableArray<Outputs.JobProgressPhase> phases)
         {
             CurrentPhase = currentPhase;
             CurrentStatus = currentStatus;
+            Progress = jobProgress;
             Phases = phases;
         }
     }

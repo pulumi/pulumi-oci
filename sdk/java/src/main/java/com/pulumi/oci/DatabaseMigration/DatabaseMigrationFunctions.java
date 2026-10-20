@@ -39,6 +39,14 @@ import com.pulumi.oci.DatabaseMigration.inputs.GetJobAdvisorReportPlainArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.GetJobOutputArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.GetJobOutputPlainArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationDetailArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationDetailPlainArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationObjectStatusesArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationObjectStatusesPlainArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationObjectTypeCountsArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationObjectTypeCountsPlainArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationTableRowCountsArgs;
+import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationTableRowCountsPlainArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationObjectTypesArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationObjectTypesPlainArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationPlainArgs;
@@ -61,6 +69,10 @@ import com.pulumi.oci.DatabaseMigration.outputs.GetJobAdvisorReportCheckObjectsR
 import com.pulumi.oci.DatabaseMigration.outputs.GetJobAdvisorReportChecksResult;
 import com.pulumi.oci.DatabaseMigration.outputs.GetJobAdvisorReportResult;
 import com.pulumi.oci.DatabaseMigration.outputs.GetJobOutputResult;
+import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationDataVerificationDetailResult;
+import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationDataVerificationObjectStatusesResult;
+import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationDataVerificationObjectTypeCountsResult;
+import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationDataVerificationTableRowCountsResult;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationObjectTypesResult;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationResult;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationsResult;
@@ -3418,6 +3430,986 @@ public final class DatabaseMigrationFunctions {
      */
     public static CompletableFuture<GetMigrationResult> getMigrationPlain(GetMigrationPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getMigration:getMigration", TypeShape.of(GetMigrationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Migration Data Verification Detail resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Returns availability and report status information used by the Data Verification UI.
+     * 
+     * The migration must already have Data Verification results.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationDetailArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationDataVerificationDetail = DatabaseMigrationFunctions.getMigrationDataVerificationDetail(GetMigrationDataVerificationDetailArgs.builder()
+     *             .migrationId(migrationId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMigrationDataVerificationDetailResult> getMigrationDataVerificationDetail(GetMigrationDataVerificationDetailArgs args) {
+        return getMigrationDataVerificationDetail(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Migration Data Verification Detail resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Returns availability and report status information used by the Data Verification UI.
+     * 
+     * The migration must already have Data Verification results.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationDetailArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationDataVerificationDetail = DatabaseMigrationFunctions.getMigrationDataVerificationDetail(GetMigrationDataVerificationDetailArgs.builder()
+     *             .migrationId(migrationId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMigrationDataVerificationDetailResult> getMigrationDataVerificationDetailPlain(GetMigrationDataVerificationDetailPlainArgs args) {
+        return getMigrationDataVerificationDetailPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Migration Data Verification Detail resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Returns availability and report status information used by the Data Verification UI.
+     * 
+     * The migration must already have Data Verification results.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationDetailArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationDataVerificationDetail = DatabaseMigrationFunctions.getMigrationDataVerificationDetail(GetMigrationDataVerificationDetailArgs.builder()
+     *             .migrationId(migrationId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMigrationDataVerificationDetailResult> getMigrationDataVerificationDetail(GetMigrationDataVerificationDetailArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getMigrationDataVerificationDetail:getMigrationDataVerificationDetail", TypeShape.of(GetMigrationDataVerificationDetailResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Migration Data Verification Detail resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Returns availability and report status information used by the Data Verification UI.
+     * 
+     * The migration must already have Data Verification results.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationDetailArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationDataVerificationDetail = DatabaseMigrationFunctions.getMigrationDataVerificationDetail(GetMigrationDataVerificationDetailArgs.builder()
+     *             .migrationId(migrationId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMigrationDataVerificationDetailResult> getMigrationDataVerificationDetail(GetMigrationDataVerificationDetailArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getMigrationDataVerificationDetail:getMigrationDataVerificationDetail", TypeShape.of(GetMigrationDataVerificationDetailResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Migration Data Verification Detail resource in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Returns availability and report status information used by the Data Verification UI.
+     * 
+     * The migration must already have Data Verification results.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationDetailArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationDataVerificationDetail = DatabaseMigrationFunctions.getMigrationDataVerificationDetail(GetMigrationDataVerificationDetailArgs.builder()
+     *             .migrationId(migrationId)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMigrationDataVerificationDetailResult> getMigrationDataVerificationDetailPlain(GetMigrationDataVerificationDetailPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getMigrationDataVerificationDetail:getMigrationDataVerificationDetail", TypeShape.of(GetMigrationDataVerificationDetailResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Migration Data Verification Object Statuses in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Lists per-object status comparison results for a migration.
+     * 
+     * The migration must already have Data Verification results.
+     * 
+     * The `objectType` filter is a database-specific string and is validated by the backend.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationObjectStatusesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationDataVerificationObjectStatuses = DatabaseMigrationFunctions.getMigrationDataVerificationObjectStatuses(GetMigrationDataVerificationObjectStatusesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .migrationId(migrationId)
+     *             .isMatch(null)
+     *             .migrationDataVerificationObjectStatusFilter(null)
+     *             .name(null)
+     *             .objectType(null)
+     *             .owner(null)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMigrationDataVerificationObjectStatusesResult> getMigrationDataVerificationObjectStatuses(GetMigrationDataVerificationObjectStatusesArgs args) {
+        return getMigrationDataVerificationObjectStatuses(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Migration Data Verification Object Statuses in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Lists per-object status comparison results for a migration.
+     * 
+     * The migration must already have Data Verification results.
+     * 
+     * The `objectType` filter is a database-specific string and is validated by the backend.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationObjectStatusesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationDataVerificationObjectStatuses = DatabaseMigrationFunctions.getMigrationDataVerificationObjectStatuses(GetMigrationDataVerificationObjectStatusesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .migrationId(migrationId)
+     *             .isMatch(null)
+     *             .migrationDataVerificationObjectStatusFilter(null)
+     *             .name(null)
+     *             .objectType(null)
+     *             .owner(null)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMigrationDataVerificationObjectStatusesResult> getMigrationDataVerificationObjectStatusesPlain(GetMigrationDataVerificationObjectStatusesPlainArgs args) {
+        return getMigrationDataVerificationObjectStatusesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Migration Data Verification Object Statuses in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Lists per-object status comparison results for a migration.
+     * 
+     * The migration must already have Data Verification results.
+     * 
+     * The `objectType` filter is a database-specific string and is validated by the backend.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationObjectStatusesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationDataVerificationObjectStatuses = DatabaseMigrationFunctions.getMigrationDataVerificationObjectStatuses(GetMigrationDataVerificationObjectStatusesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .migrationId(migrationId)
+     *             .isMatch(null)
+     *             .migrationDataVerificationObjectStatusFilter(null)
+     *             .name(null)
+     *             .objectType(null)
+     *             .owner(null)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMigrationDataVerificationObjectStatusesResult> getMigrationDataVerificationObjectStatuses(GetMigrationDataVerificationObjectStatusesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getMigrationDataVerificationObjectStatuses:getMigrationDataVerificationObjectStatuses", TypeShape.of(GetMigrationDataVerificationObjectStatusesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Migration Data Verification Object Statuses in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Lists per-object status comparison results for a migration.
+     * 
+     * The migration must already have Data Verification results.
+     * 
+     * The `objectType` filter is a database-specific string and is validated by the backend.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationObjectStatusesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationDataVerificationObjectStatuses = DatabaseMigrationFunctions.getMigrationDataVerificationObjectStatuses(GetMigrationDataVerificationObjectStatusesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .migrationId(migrationId)
+     *             .isMatch(null)
+     *             .migrationDataVerificationObjectStatusFilter(null)
+     *             .name(null)
+     *             .objectType(null)
+     *             .owner(null)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMigrationDataVerificationObjectStatusesResult> getMigrationDataVerificationObjectStatuses(GetMigrationDataVerificationObjectStatusesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getMigrationDataVerificationObjectStatuses:getMigrationDataVerificationObjectStatuses", TypeShape.of(GetMigrationDataVerificationObjectStatusesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Migration Data Verification Object Statuses in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Lists per-object status comparison results for a migration.
+     * 
+     * The migration must already have Data Verification results.
+     * 
+     * The `objectType` filter is a database-specific string and is validated by the backend.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationObjectStatusesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationDataVerificationObjectStatuses = DatabaseMigrationFunctions.getMigrationDataVerificationObjectStatuses(GetMigrationDataVerificationObjectStatusesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .migrationId(migrationId)
+     *             .isMatch(null)
+     *             .migrationDataVerificationObjectStatusFilter(null)
+     *             .name(null)
+     *             .objectType(null)
+     *             .owner(null)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMigrationDataVerificationObjectStatusesResult> getMigrationDataVerificationObjectStatusesPlain(GetMigrationDataVerificationObjectStatusesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getMigrationDataVerificationObjectStatuses:getMigrationDataVerificationObjectStatuses", TypeShape.of(GetMigrationDataVerificationObjectStatusesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Migration Data Verification Object Type Counts in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Lists object type count comparison results for a migration.
+     * 
+     * The migration must already have Data Verification results.
+     * 
+     * The `objectType` filter is a database-specific string and is validated by the backend.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationObjectTypeCountsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationDataVerificationObjectTypeCounts = DatabaseMigrationFunctions.getMigrationDataVerificationObjectTypeCounts(GetMigrationDataVerificationObjectTypeCountsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .migrationId(migrationId)
+     *             .migrationDataVerificationObjectTypeCountFilter(null)
+     *             .minAbsDeltaPercent(null)
+     *             .objectType(null)
+     *             .schemaName(null)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMigrationDataVerificationObjectTypeCountsResult> getMigrationDataVerificationObjectTypeCounts(GetMigrationDataVerificationObjectTypeCountsArgs args) {
+        return getMigrationDataVerificationObjectTypeCounts(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Migration Data Verification Object Type Counts in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Lists object type count comparison results for a migration.
+     * 
+     * The migration must already have Data Verification results.
+     * 
+     * The `objectType` filter is a database-specific string and is validated by the backend.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationObjectTypeCountsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationDataVerificationObjectTypeCounts = DatabaseMigrationFunctions.getMigrationDataVerificationObjectTypeCounts(GetMigrationDataVerificationObjectTypeCountsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .migrationId(migrationId)
+     *             .migrationDataVerificationObjectTypeCountFilter(null)
+     *             .minAbsDeltaPercent(null)
+     *             .objectType(null)
+     *             .schemaName(null)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMigrationDataVerificationObjectTypeCountsResult> getMigrationDataVerificationObjectTypeCountsPlain(GetMigrationDataVerificationObjectTypeCountsPlainArgs args) {
+        return getMigrationDataVerificationObjectTypeCountsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Migration Data Verification Object Type Counts in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Lists object type count comparison results for a migration.
+     * 
+     * The migration must already have Data Verification results.
+     * 
+     * The `objectType` filter is a database-specific string and is validated by the backend.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationObjectTypeCountsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationDataVerificationObjectTypeCounts = DatabaseMigrationFunctions.getMigrationDataVerificationObjectTypeCounts(GetMigrationDataVerificationObjectTypeCountsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .migrationId(migrationId)
+     *             .migrationDataVerificationObjectTypeCountFilter(null)
+     *             .minAbsDeltaPercent(null)
+     *             .objectType(null)
+     *             .schemaName(null)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMigrationDataVerificationObjectTypeCountsResult> getMigrationDataVerificationObjectTypeCounts(GetMigrationDataVerificationObjectTypeCountsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getMigrationDataVerificationObjectTypeCounts:getMigrationDataVerificationObjectTypeCounts", TypeShape.of(GetMigrationDataVerificationObjectTypeCountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Migration Data Verification Object Type Counts in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Lists object type count comparison results for a migration.
+     * 
+     * The migration must already have Data Verification results.
+     * 
+     * The `objectType` filter is a database-specific string and is validated by the backend.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationObjectTypeCountsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationDataVerificationObjectTypeCounts = DatabaseMigrationFunctions.getMigrationDataVerificationObjectTypeCounts(GetMigrationDataVerificationObjectTypeCountsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .migrationId(migrationId)
+     *             .migrationDataVerificationObjectTypeCountFilter(null)
+     *             .minAbsDeltaPercent(null)
+     *             .objectType(null)
+     *             .schemaName(null)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMigrationDataVerificationObjectTypeCountsResult> getMigrationDataVerificationObjectTypeCounts(GetMigrationDataVerificationObjectTypeCountsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getMigrationDataVerificationObjectTypeCounts:getMigrationDataVerificationObjectTypeCounts", TypeShape.of(GetMigrationDataVerificationObjectTypeCountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Migration Data Verification Object Type Counts in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Lists object type count comparison results for a migration.
+     * 
+     * The migration must already have Data Verification results.
+     * 
+     * The `objectType` filter is a database-specific string and is validated by the backend.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationObjectTypeCountsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationDataVerificationObjectTypeCounts = DatabaseMigrationFunctions.getMigrationDataVerificationObjectTypeCounts(GetMigrationDataVerificationObjectTypeCountsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .migrationId(migrationId)
+     *             .migrationDataVerificationObjectTypeCountFilter(null)
+     *             .minAbsDeltaPercent(null)
+     *             .objectType(null)
+     *             .schemaName(null)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMigrationDataVerificationObjectTypeCountsResult> getMigrationDataVerificationObjectTypeCountsPlain(GetMigrationDataVerificationObjectTypeCountsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getMigrationDataVerificationObjectTypeCounts:getMigrationDataVerificationObjectTypeCounts", TypeShape.of(GetMigrationDataVerificationObjectTypeCountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Migration Data Verification Table Row Counts in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Lists table row count comparison results for a migration.
+     * 
+     * The migration must already have Data Verification results.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationTableRowCountsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationDataVerificationTableRowCounts = DatabaseMigrationFunctions.getMigrationDataVerificationTableRowCounts(GetMigrationDataVerificationTableRowCountsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .migrationId(migrationId)
+     *             .migrationDataVerificationTableRowCountFilter(null)
+     *             .minAbsDeltaPercent(null)
+     *             .owner(null)
+     *             .tableName(null)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMigrationDataVerificationTableRowCountsResult> getMigrationDataVerificationTableRowCounts(GetMigrationDataVerificationTableRowCountsArgs args) {
+        return getMigrationDataVerificationTableRowCounts(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Migration Data Verification Table Row Counts in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Lists table row count comparison results for a migration.
+     * 
+     * The migration must already have Data Verification results.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationTableRowCountsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationDataVerificationTableRowCounts = DatabaseMigrationFunctions.getMigrationDataVerificationTableRowCounts(GetMigrationDataVerificationTableRowCountsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .migrationId(migrationId)
+     *             .migrationDataVerificationTableRowCountFilter(null)
+     *             .minAbsDeltaPercent(null)
+     *             .owner(null)
+     *             .tableName(null)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMigrationDataVerificationTableRowCountsResult> getMigrationDataVerificationTableRowCountsPlain(GetMigrationDataVerificationTableRowCountsPlainArgs args) {
+        return getMigrationDataVerificationTableRowCountsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Migration Data Verification Table Row Counts in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Lists table row count comparison results for a migration.
+     * 
+     * The migration must already have Data Verification results.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationTableRowCountsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationDataVerificationTableRowCounts = DatabaseMigrationFunctions.getMigrationDataVerificationTableRowCounts(GetMigrationDataVerificationTableRowCountsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .migrationId(migrationId)
+     *             .migrationDataVerificationTableRowCountFilter(null)
+     *             .minAbsDeltaPercent(null)
+     *             .owner(null)
+     *             .tableName(null)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMigrationDataVerificationTableRowCountsResult> getMigrationDataVerificationTableRowCounts(GetMigrationDataVerificationTableRowCountsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getMigrationDataVerificationTableRowCounts:getMigrationDataVerificationTableRowCounts", TypeShape.of(GetMigrationDataVerificationTableRowCountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Migration Data Verification Table Row Counts in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Lists table row count comparison results for a migration.
+     * 
+     * The migration must already have Data Verification results.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationTableRowCountsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationDataVerificationTableRowCounts = DatabaseMigrationFunctions.getMigrationDataVerificationTableRowCounts(GetMigrationDataVerificationTableRowCountsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .migrationId(migrationId)
+     *             .migrationDataVerificationTableRowCountFilter(null)
+     *             .minAbsDeltaPercent(null)
+     *             .owner(null)
+     *             .tableName(null)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetMigrationDataVerificationTableRowCountsResult> getMigrationDataVerificationTableRowCounts(GetMigrationDataVerificationTableRowCountsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DatabaseMigration/getMigrationDataVerificationTableRowCounts:getMigrationDataVerificationTableRowCounts", TypeShape.of(GetMigrationDataVerificationTableRowCountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Migration Data Verification Table Row Counts in Oracle Cloud Infrastructure Database Migration service.
+     * 
+     * Lists table row count comparison results for a migration.
+     * 
+     * The migration must already have Data Verification results.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationDataVerificationTableRowCountsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrationDataVerificationTableRowCounts = DatabaseMigrationFunctions.getMigrationDataVerificationTableRowCounts(GetMigrationDataVerificationTableRowCountsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .migrationId(migrationId)
+     *             .migrationDataVerificationTableRowCountFilter(null)
+     *             .minAbsDeltaPercent(null)
+     *             .owner(null)
+     *             .tableName(null)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetMigrationDataVerificationTableRowCountsResult> getMigrationDataVerificationTableRowCountsPlain(GetMigrationDataVerificationTableRowCountsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DatabaseMigration/getMigrationDataVerificationTableRowCounts:getMigrationDataVerificationTableRowCounts", TypeShape.of(GetMigrationDataVerificationTableRowCountsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Migration Object Types in Oracle Cloud Infrastructure Database Migration service.

@@ -22,6 +22,7 @@ import * as utilities from "../utilities";
  *     displayName: oracleDbAwsKeyDisplayName,
  *     oracleDbAwsConnectorId: testOracleDbAwsConnector.id,
  *     oracleDbAwsKeyId: testOracleDbAwsKey.id,
+ *     oracleDbAwsKeyPoolId: testOracleDbAwsKeyPool.id,
  *     state: oracleDbAwsKeyState,
  * });
  * ```
@@ -34,6 +35,7 @@ export function getDbmulticloudOracleDbAwsKeys(args: GetDbmulticloudOracleDbAwsK
         "filters": args.filters,
         "oracleDbAwsConnectorId": args.oracleDbAwsConnectorId,
         "oracleDbAwsKeyId": args.oracleDbAwsKeyId,
+        "oracleDbAwsKeyPoolId": args.oracleDbAwsKeyPoolId,
         "state": args.state,
     }, opts);
 }
@@ -60,6 +62,10 @@ export interface GetDbmulticloudOracleDbAwsKeysArgs {
      */
     oracleDbAwsKeyId?: string;
     /**
+     * A filter to return only resources that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+     */
+    oracleDbAwsKeyPoolId?: string;
+    /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */
     state?: string;
@@ -85,6 +91,10 @@ export interface GetDbmulticloudOracleDbAwsKeysResult {
     readonly oracleDbAwsConnectorId?: string;
     readonly oracleDbAwsKeyId?: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+     */
+    readonly oracleDbAwsKeyPoolId?: string;
+    /**
      * The list of oracle_db_aws_key_summary_collection.
      */
     readonly oracleDbAwsKeySummaryCollections: outputs.oci.GetDbmulticloudOracleDbAwsKeysOracleDbAwsKeySummaryCollection[];
@@ -109,6 +119,7 @@ export interface GetDbmulticloudOracleDbAwsKeysResult {
  *     displayName: oracleDbAwsKeyDisplayName,
  *     oracleDbAwsConnectorId: testOracleDbAwsConnector.id,
  *     oracleDbAwsKeyId: testOracleDbAwsKey.id,
+ *     oracleDbAwsKeyPoolId: testOracleDbAwsKeyPool.id,
  *     state: oracleDbAwsKeyState,
  * });
  * ```
@@ -121,6 +132,7 @@ export function getDbmulticloudOracleDbAwsKeysOutput(args: GetDbmulticloudOracle
         "filters": args.filters,
         "oracleDbAwsConnectorId": args.oracleDbAwsConnectorId,
         "oracleDbAwsKeyId": args.oracleDbAwsKeyId,
+        "oracleDbAwsKeyPoolId": args.oracleDbAwsKeyPoolId,
         "state": args.state,
     }, opts);
 }
@@ -146,6 +158,10 @@ export interface GetDbmulticloudOracleDbAwsKeysOutputArgs {
      * A filter to return Oracle DB AWS Identity Connector Resource that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key resource.
      */
     oracleDbAwsKeyId?: pulumi.Input<string | undefined>;
+    /**
+     * A filter to return only resources that match the given OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle DB AWS Key Pool resource.
+     */
+    oracleDbAwsKeyPoolId?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
      */

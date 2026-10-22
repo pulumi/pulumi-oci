@@ -224,7 +224,7 @@ public final class GetDeploymentResult {
      */
     private List<String> nsgIds;
     /**
-     * @return Deployment Data for an OggDeployment
+     * @return Deployment Data for an OggDeployment.
      * 
      */
     private List<GetDeploymentOggData> oggDatas;
@@ -599,7 +599,7 @@ public final class GetDeploymentResult {
         return this.nsgIds;
     }
     /**
-     * @return Deployment Data for an OggDeployment
+     * @return Deployment Data for an OggDeployment.
      * 
      */
     public List<GetDeploymentOggData> oggDatas() {

@@ -27,6 +27,7 @@ class DbSystemArgs:
                  network_details: pulumi.Input['DbSystemNetworkDetailsArgs'],
                  shape: pulumi.Input[_builtins.str],
                  storage_details: pulumi.Input['DbSystemStorageDetailsArgs'],
+                 allow_major_version_upgrade: pulumi.Input[Optional[_builtins.bool]] = None,
                  apply_change_mode_to_stand_alone: pulumi.Input[Optional[_builtins.str]] = None,
                  apply_config: pulumi.Input[Optional[_builtins.str]] = None,
                  config_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -45,19 +46,33 @@ class DbSystemArgs:
                  replication_config: pulumi.Input[Optional['DbSystemReplicationConfigArgs']] = None,
                  source: pulumi.Input[Optional['DbSystemSourceArgs']] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
-                 system_type: pulumi.Input[Optional[_builtins.str]] = None):
+                 system_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 upgrade_options: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         The set of arguments for constructing a DbSystem resource.
 
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
-        :param pulumi.Input[_builtins.str] db_version: Version of database system software.
+        :param pulumi.Input[_builtins.str] db_version: (Conditionally updatable) The major version of the database system software, for example `"17"`. To upgrade an existing database system in place, set a higher major version with `allow_major_version_upgrade = true`. A downgrade with the flag set to `true` is rejected. If the flag is omitted, `false`, or unknown at plan time, changing `db_version` forces replacement. On creation, the database system is provisioned directly at this version.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
         :param pulumi.Input['DbSystemNetworkDetailsArgs'] network_details: (Updatable) Network details for the database system.
         :param pulumi.Input[_builtins.str] shape: (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+               
+               **Note:** The provider returns the `shape` attribute with the `PostgreSQL.` prefix after reading the DB system, even when an unprefixed shape such as `VM.Standard.E5.Flex` is used in the configuration and plan. Use `trimprefix` if you need the unprefixed shape. For example, to normalize the output in the same module that declares the `Psql.DbSystem` resource:
+               
+               ```python
+               import pulumi
+               import pulumi_std as std
+               
+               pulumi.export("shape", std.trimprefix(input=this["shape"],
+                   prefix="PostgreSQL.").result)
+               ```
+               
+               `trimprefix` removes the prefix when it is present and leaves an already unprefixed value unchanged, so this module output remains in the unprefixed form.
         :param pulumi.Input['DbSystemStorageDetailsArgs'] storage_details: (Updatable) Storage details of the database system.
+        :param pulumi.Input[_builtins.bool] allow_major_version_upgrade: (Updatable) Whether to allow in-place major version upgrades. Defaults to `false`. When this flag is known to be `true` at plan time, changing `db_version` to a higher major version upgrades the existing database system; a downgrade is rejected. If the flag is omitted, `false`, or unknown, a `db_version` change forces replacement. The flag can remain `true` for subsequent upgrades. Changing the flag alone does not upgrade the database system, and setting it on creation does not run a separate upgrade operation.
         :param pulumi.Input[_builtins.str] apply_change_mode_to_stand_alone: Specify change mode to apply when converting from warm standby to standalone. It can be set to 'IMMEDIATELY' or 'REPLAY_PENDING_UPDATES'. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
         :param pulumi.Input[_builtins.str] apply_config: Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
-        :param pulumi.Input[_builtins.str] config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
+        :param pulumi.Input[_builtins.str] config_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system. For an in-place major version upgrade (`allow_major_version_upgrade = true`), **you must specify this field if the database system currently uses a custom configuration**. It may be omitted if the database system currently uses a default configuration. Any configuration specified for an upgrade must be compatible with the target major version and is applied as part of the upgrade.
         :param pulumi.Input['DbSystemCredentialsArgs'] credentials: Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-provided description of a database system.
@@ -79,6 +94,7 @@ class DbSystemArgs:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[_builtins.str] system_type: Type of the database system.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] upgrade_options: (Updatable) List of post-upgrade operations to run when `db_version` changes with `allow_major_version_upgrade = true`. Accepted values are `RUN_POST_UPGRADE_VERIFICATION` and `RUN_POST_UPGRADE_VACUUM`. Verification and vacuum are each skipped unless their option is included. If omitted or empty, both are skipped. Changing this list alone does not trigger an upgrade. These options are not used when creating or replacing a database system.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "db_version", db_version)
@@ -86,6 +102,8 @@ class DbSystemArgs:
         pulumi.set(__self__, "network_details", network_details)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "storage_details", storage_details)
+        if allow_major_version_upgrade is not None:
+            pulumi.set(__self__, "allow_major_version_upgrade", allow_major_version_upgrade)
         if apply_change_mode_to_stand_alone is not None:
             pulumi.set(__self__, "apply_change_mode_to_stand_alone", apply_change_mode_to_stand_alone)
         if apply_config is not None:
@@ -124,6 +142,8 @@ class DbSystemArgs:
             pulumi.set(__self__, "state", state)
         if system_type is not None:
             pulumi.set(__self__, "system_type", system_type)
+        if upgrade_options is not None:
+            pulumi.set(__self__, "upgrade_options", upgrade_options)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -141,7 +161,7 @@ class DbSystemArgs:
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> pulumi.Input[_builtins.str]:
         """
-        Version of database system software.
+        (Conditionally updatable) The major version of the database system software, for example `"17"`. To upgrade an existing database system in place, set a higher major version with `allow_major_version_upgrade = true`. A downgrade with the flag set to `true` is rejected. If the flag is omitted, `false`, or unknown at plan time, changing `db_version` forces replacement. On creation, the database system is provisioned directly at this version.
         """
         return pulumi.get(self, "db_version")
 
@@ -178,6 +198,18 @@ class DbSystemArgs:
     def shape(self) -> pulumi.Input[_builtins.str]:
         """
         (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+
+        **Note:** The provider returns the `shape` attribute with the `PostgreSQL.` prefix after reading the DB system, even when an unprefixed shape such as `VM.Standard.E5.Flex` is used in the configuration and plan. Use `trimprefix` if you need the unprefixed shape. For example, to normalize the output in the same module that declares the `Psql.DbSystem` resource:
+
+        ```python
+        import pulumi
+        import pulumi_std as std
+
+        pulumi.export("shape", std.trimprefix(input=this["shape"],
+            prefix="PostgreSQL.").result)
+        ```
+
+        `trimprefix` removes the prefix when it is present and leaves an already unprefixed value unchanged, so this module output remains in the unprefixed form.
         """
         return pulumi.get(self, "shape")
 
@@ -196,6 +228,18 @@ class DbSystemArgs:
     @storage_details.setter
     def storage_details(self, value: pulumi.Input['DbSystemStorageDetailsArgs']):
         pulumi.set(self, "storage_details", value)
+
+    @_builtins.property
+    @pulumi.getter(name="allowMajorVersionUpgrade")
+    def allow_major_version_upgrade(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) Whether to allow in-place major version upgrades. Defaults to `false`. When this flag is known to be `true` at plan time, changing `db_version` to a higher major version upgrades the existing database system; a downgrade is rejected. If the flag is omitted, `false`, or unknown, a `db_version` change forces replacement. The flag can remain `true` for subsequent upgrades. Changing the flag alone does not upgrade the database system, and setting it on creation does not run a separate upgrade operation.
+        """
+        return pulumi.get(self, "allow_major_version_upgrade")
+
+    @allow_major_version_upgrade.setter
+    def allow_major_version_upgrade(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "allow_major_version_upgrade", value)
 
     @_builtins.property
     @pulumi.getter(name="applyChangeModeToStandAlone")
@@ -225,7 +269,7 @@ class DbSystemArgs:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system. For an in-place major version upgrade (`allow_major_version_upgrade = true`), **you must specify this field if the database system currently uses a custom configuration**. It may be omitted if the database system currently uses a default configuration. Any configuration specified for an upgrade must be compatible with the target major version and is applied as part of the upgrade.
         """
         return pulumi.get(self, "config_id")
 
@@ -430,11 +474,24 @@ class DbSystemArgs:
     def system_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "system_type", value)
 
+    @_builtins.property
+    @pulumi.getter(name="upgradeOptions")
+    def upgrade_options(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) List of post-upgrade operations to run when `db_version` changes with `allow_major_version_upgrade = true`. Accepted values are `RUN_POST_UPGRADE_VERIFICATION` and `RUN_POST_UPGRADE_VACUUM`. Verification and vacuum are each skipped unless their option is included. If omitted or empty, both are skipped. Changing this list alone does not trigger an upgrade. These options are not used when creating or replacing a database system.
+        """
+        return pulumi.get(self, "upgrade_options")
+
+    @upgrade_options.setter
+    def upgrade_options(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "upgrade_options", value)
+
 
 @pulumi.input_type
 class _DbSystemState:
     def __init__(__self__, *,
                  admin_username: pulumi.Input[Optional[_builtins.str]] = None,
+                 allow_major_version_upgrade: pulumi.Input[Optional[_builtins.bool]] = None,
                  apply_change_mode_to_stand_alone: pulumi.Input[Optional[_builtins.str]] = None,
                  apply_config: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -465,17 +522,19 @@ class _DbSystemState:
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  system_type: pulumi.Input[Optional[_builtins.str]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
-                 time_updated: pulumi.Input[Optional[_builtins.str]] = None):
+                 time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+                 upgrade_options: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering DbSystem resources.
 
         :param pulumi.Input[_builtins.str] admin_username: The database system administrator username.
+        :param pulumi.Input[_builtins.bool] allow_major_version_upgrade: (Updatable) Whether to allow in-place major version upgrades. Defaults to `false`. When this flag is known to be `true` at plan time, changing `db_version` to a higher major version upgrades the existing database system; a downgrade is rejected. If the flag is omitted, `false`, or unknown, a `db_version` change forces replacement. The flag can remain `true` for subsequent upgrades. Changing the flag alone does not upgrade the database system, and setting it on creation does not run a separate upgrade operation.
         :param pulumi.Input[_builtins.str] apply_change_mode_to_stand_alone: Specify change mode to apply when converting from warm standby to standalone. It can be set to 'IMMEDIATELY' or 'REPLAY_PENDING_UPDATES'. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
         :param pulumi.Input[_builtins.str] apply_config: Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
-        :param pulumi.Input[_builtins.str] config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
+        :param pulumi.Input[_builtins.str] config_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system. For an in-place major version upgrade (`allow_major_version_upgrade = true`), **you must specify this field if the database system currently uses a custom configuration**. It may be omitted if the database system currently uses a default configuration. Any configuration specified for an upgrade must be compatible with the target major version and is applied as part of the upgrade.
         :param pulumi.Input['DbSystemCredentialsArgs'] credentials: Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
-        :param pulumi.Input[_builtins.str] db_version: Version of database system software.
+        :param pulumi.Input[_builtins.str] db_version: (Conditionally updatable) The major version of the database system software, for example `"17"`. To upgrade an existing database system in place, set a higher major version with `allow_major_version_upgrade = true`. A downgrade with the flag set to `true` is rejected. If the flag is omitted, `false`, or unknown at plan time, changing `db_version` forces replacement. On creation, the database system is provisioned directly at this version.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-provided description of a database system.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
@@ -495,6 +554,18 @@ class _DbSystemState:
                
                This configuration does not have any effect on database systems with other roles.
         :param pulumi.Input[_builtins.str] shape: (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+               
+               **Note:** The provider returns the `shape` attribute with the `PostgreSQL.` prefix after reading the DB system, even when an unprefixed shape such as `VM.Standard.E5.Flex` is used in the configuration and plan. Use `trimprefix` if you need the unprefixed shape. For example, to normalize the output in the same module that declares the `Psql.DbSystem` resource:
+               
+               ```python
+               import pulumi
+               import pulumi_std as std
+               
+               pulumi.export("shape", std.trimprefix(input=this["shape"],
+                   prefix="PostgreSQL.").result)
+               ```
+               
+               `trimprefix` removes the prefix when it is present and leaves an already unprefixed value unchanged, so this module output remains in the unprefixed form.
         :param pulumi.Input['DbSystemSourceArgs'] source: The source of the database system.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
                
@@ -506,9 +577,12 @@ class _DbSystemState:
         :param pulumi.Input[_builtins.str] system_type: Type of the database system.
         :param pulumi.Input[_builtins.str] time_created: The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_updated: The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] upgrade_options: (Updatable) List of post-upgrade operations to run when `db_version` changes with `allow_major_version_upgrade = true`. Accepted values are `RUN_POST_UPGRADE_VERIFICATION` and `RUN_POST_UPGRADE_VACUUM`. Verification and vacuum are each skipped unless their option is included. If omitted or empty, both are skipped. Changing this list alone does not trigger an upgrade. These options are not used when creating or replacing a database system.
         """
         if admin_username is not None:
             pulumi.set(__self__, "admin_username", admin_username)
+        if allow_major_version_upgrade is not None:
+            pulumi.set(__self__, "allow_major_version_upgrade", allow_major_version_upgrade)
         if apply_change_mode_to_stand_alone is not None:
             pulumi.set(__self__, "apply_change_mode_to_stand_alone", apply_change_mode_to_stand_alone)
         if apply_config is not None:
@@ -571,6 +645,8 @@ class _DbSystemState:
             pulumi.set(__self__, "time_created", time_created)
         if time_updated is not None:
             pulumi.set(__self__, "time_updated", time_updated)
+        if upgrade_options is not None:
+            pulumi.set(__self__, "upgrade_options", upgrade_options)
 
     @_builtins.property
     @pulumi.getter(name="adminUsername")
@@ -583,6 +659,18 @@ class _DbSystemState:
     @admin_username.setter
     def admin_username(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "admin_username", value)
+
+    @_builtins.property
+    @pulumi.getter(name="allowMajorVersionUpgrade")
+    def allow_major_version_upgrade(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        (Updatable) Whether to allow in-place major version upgrades. Defaults to `false`. When this flag is known to be `true` at plan time, changing `db_version` to a higher major version upgrades the existing database system; a downgrade is rejected. If the flag is omitted, `false`, or unknown, a `db_version` change forces replacement. The flag can remain `true` for subsequent upgrades. Changing the flag alone does not upgrade the database system, and setting it on creation does not run a separate upgrade operation.
+        """
+        return pulumi.get(self, "allow_major_version_upgrade")
+
+    @allow_major_version_upgrade.setter
+    def allow_major_version_upgrade(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "allow_major_version_upgrade", value)
 
     @_builtins.property
     @pulumi.getter(name="applyChangeModeToStandAlone")
@@ -624,7 +712,7 @@ class _DbSystemState:
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system. For an in-place major version upgrade (`allow_major_version_upgrade = true`), **you must specify this field if the database system currently uses a custom configuration**. It may be omitted if the database system currently uses a default configuration. Any configuration specified for an upgrade must be compatible with the target major version and is applied as part of the upgrade.
         """
         return pulumi.get(self, "config_id")
 
@@ -648,7 +736,7 @@ class _DbSystemState:
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Version of database system software.
+        (Conditionally updatable) The major version of the database system software, for example `"17"`. To upgrade an existing database system in place, set a higher major version with `allow_major_version_upgrade = true`. A downgrade with the flag set to `true` is rejected. If the flag is omitted, `false`, or unknown at plan time, changing `db_version` forces replacement. On creation, the database system is provisioned directly at this version.
         """
         return pulumi.get(self, "db_version")
 
@@ -855,6 +943,18 @@ class _DbSystemState:
     def shape(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+
+        **Note:** The provider returns the `shape` attribute with the `PostgreSQL.` prefix after reading the DB system, even when an unprefixed shape such as `VM.Standard.E5.Flex` is used in the configuration and plan. Use `trimprefix` if you need the unprefixed shape. For example, to normalize the output in the same module that declares the `Psql.DbSystem` resource:
+
+        ```python
+        import pulumi
+        import pulumi_std as std
+
+        pulumi.export("shape", std.trimprefix(input=this["shape"],
+            prefix="PostgreSQL.").result)
+        ```
+
+        `trimprefix` removes the prefix when it is present and leaves an already unprefixed value unchanged, so this module output remains in the unprefixed form.
         """
         return pulumi.get(self, "shape")
 
@@ -961,6 +1061,18 @@ class _DbSystemState:
     def time_updated(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_updated", value)
 
+    @_builtins.property
+    @pulumi.getter(name="upgradeOptions")
+    def upgrade_options(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) List of post-upgrade operations to run when `db_version` changes with `allow_major_version_upgrade = true`. Accepted values are `RUN_POST_UPGRADE_VERIFICATION` and `RUN_POST_UPGRADE_VACUUM`. Verification and vacuum are each skipped unless their option is included. If omitted or empty, both are skipped. Changing this list alone does not trigger an upgrade. These options are not used when creating or replacing a database system.
+        """
+        return pulumi.get(self, "upgrade_options")
+
+    @upgrade_options.setter
+    def upgrade_options(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "upgrade_options", value)
+
 
 @pulumi.type_token("oci:Psql/dbSystem:DbSystem")
 class DbSystem(pulumi.CustomResource):
@@ -968,6 +1080,7 @@ class DbSystem(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 allow_major_version_upgrade: pulumi.Input[Optional[_builtins.bool]] = None,
                  apply_change_mode_to_stand_alone: pulumi.Input[Optional[_builtins.str]] = None,
                  apply_config: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -993,6 +1106,7 @@ class DbSystem(pulumi.CustomResource):
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_details: pulumi.Input[Optional[Union['DbSystemStorageDetailsArgs', 'DbSystemStorageDetailsArgsDict', 'outputs.DbSystemStorageDetails']]] = None,
                  system_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 upgrade_options: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         """
         This resource provides the Db System resource in Oracle Cloud Infrastructure Psql service.
@@ -1013,12 +1127,13 @@ class DbSystem(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.bool] allow_major_version_upgrade: (Updatable) Whether to allow in-place major version upgrades. Defaults to `false`. When this flag is known to be `true` at plan time, changing `db_version` to a higher major version upgrades the existing database system; a downgrade is rejected. If the flag is omitted, `false`, or unknown, a `db_version` change forces replacement. The flag can remain `true` for subsequent upgrades. Changing the flag alone does not upgrade the database system, and setting it on creation does not run a separate upgrade operation.
         :param pulumi.Input[_builtins.str] apply_change_mode_to_stand_alone: Specify change mode to apply when converting from warm standby to standalone. It can be set to 'IMMEDIATELY' or 'REPLAY_PENDING_UPDATES'. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
         :param pulumi.Input[_builtins.str] apply_config: Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
-        :param pulumi.Input[_builtins.str] config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
+        :param pulumi.Input[_builtins.str] config_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system. For an in-place major version upgrade (`allow_major_version_upgrade = true`), **you must specify this field if the database system currently uses a custom configuration**. It may be omitted if the database system currently uses a default configuration. Any configuration specified for an upgrade must be compatible with the target major version and is applied as part of the upgrade.
         :param pulumi.Input[Union['DbSystemCredentialsArgs', 'DbSystemCredentialsArgsDict', 'outputs.DbSystemCredentials']] credentials: Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
-        :param pulumi.Input[_builtins.str] db_version: Version of database system software.
+        :param pulumi.Input[_builtins.str] db_version: (Conditionally updatable) The major version of the database system software, for example `"17"`. To upgrade an existing database system in place, set a higher major version with `allow_major_version_upgrade = true`. A downgrade with the flag set to `true` is rejected. If the flag is omitted, `false`, or unknown at plan time, changing `db_version` forces replacement. On creation, the database system is provisioned directly at this version.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-provided description of a database system.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
@@ -1036,6 +1151,18 @@ class DbSystem(pulumi.CustomResource):
                
                This configuration does not have any effect on database systems with other roles.
         :param pulumi.Input[_builtins.str] shape: (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+               
+               **Note:** The provider returns the `shape` attribute with the `PostgreSQL.` prefix after reading the DB system, even when an unprefixed shape such as `VM.Standard.E5.Flex` is used in the configuration and plan. Use `trimprefix` if you need the unprefixed shape. For example, to normalize the output in the same module that declares the `Psql.DbSystem` resource:
+               
+               ```python
+               import pulumi
+               import pulumi_std as std
+               
+               pulumi.export("shape", std.trimprefix(input=this["shape"],
+                   prefix="PostgreSQL.").result)
+               ```
+               
+               `trimprefix` removes the prefix when it is present and leaves an already unprefixed value unchanged, so this module output remains in the unprefixed form.
         :param pulumi.Input[Union['DbSystemSourceArgs', 'DbSystemSourceArgsDict', 'outputs.DbSystemSource']] source: The source of the database system.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
                
@@ -1043,6 +1170,7 @@ class DbSystem(pulumi.CustomResource):
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Union['DbSystemStorageDetailsArgs', 'DbSystemStorageDetailsArgsDict', 'outputs.DbSystemStorageDetails']] storage_details: (Updatable) Storage details of the database system.
         :param pulumi.Input[_builtins.str] system_type: Type of the database system.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] upgrade_options: (Updatable) List of post-upgrade operations to run when `db_version` changes with `allow_major_version_upgrade = true`. Accepted values are `RUN_POST_UPGRADE_VERIFICATION` and `RUN_POST_UPGRADE_VACUUM`. Verification and vacuum are each skipped unless their option is included. If omitted or empty, both are skipped. Changing this list alone does not trigger an upgrade. These options are not used when creating or replacing a database system.
         """
         ...
     @overload
@@ -1082,6 +1210,7 @@ class DbSystem(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 allow_major_version_upgrade: pulumi.Input[Optional[_builtins.bool]] = None,
                  apply_change_mode_to_stand_alone: pulumi.Input[Optional[_builtins.str]] = None,
                  apply_config: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1107,6 +1236,7 @@ class DbSystem(pulumi.CustomResource):
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_details: pulumi.Input[Optional[Union['DbSystemStorageDetailsArgs', 'DbSystemStorageDetailsArgsDict', 'outputs.DbSystemStorageDetails']]] = None,
                  system_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 upgrade_options: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -1116,6 +1246,7 @@ class DbSystem(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DbSystemArgs.__new__(DbSystemArgs)
 
+            __props__.__dict__["allow_major_version_upgrade"] = allow_major_version_upgrade
             __props__.__dict__["apply_change_mode_to_stand_alone"] = apply_change_mode_to_stand_alone
             __props__.__dict__["apply_config"] = apply_config
             if compartment_id is None and not opts.urn:
@@ -1153,6 +1284,7 @@ class DbSystem(pulumi.CustomResource):
                 raise TypeError("Missing required property 'storage_details'")
             __props__.__dict__["storage_details"] = storage_details
             __props__.__dict__["system_type"] = system_type
+            __props__.__dict__["upgrade_options"] = upgrade_options
             __props__.__dict__["admin_username"] = None
             __props__.__dict__["instances"] = None
             __props__.__dict__["lifecycle_details"] = None
@@ -1171,6 +1303,7 @@ class DbSystem(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             admin_username: pulumi.Input[Optional[_builtins.str]] = None,
+            allow_major_version_upgrade: pulumi.Input[Optional[_builtins.bool]] = None,
             apply_change_mode_to_stand_alone: pulumi.Input[Optional[_builtins.str]] = None,
             apply_config: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1201,7 +1334,8 @@ class DbSystem(pulumi.CustomResource):
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             system_type: pulumi.Input[Optional[_builtins.str]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
-            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> 'DbSystem':
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            upgrade_options: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'DbSystem':
         """
         Get an existing DbSystem resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1210,12 +1344,13 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.str] admin_username: The database system administrator username.
+        :param pulumi.Input[_builtins.bool] allow_major_version_upgrade: (Updatable) Whether to allow in-place major version upgrades. Defaults to `false`. When this flag is known to be `true` at plan time, changing `db_version` to a higher major version upgrades the existing database system; a downgrade is rejected. If the flag is omitted, `false`, or unknown, a `db_version` change forces replacement. The flag can remain `true` for subsequent upgrades. Changing the flag alone does not upgrade the database system, and setting it on creation does not run a separate upgrade operation.
         :param pulumi.Input[_builtins.str] apply_change_mode_to_stand_alone: Specify change mode to apply when converting from warm standby to standalone. It can be set to 'IMMEDIATELY' or 'REPLAY_PENDING_UPDATES'. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
         :param pulumi.Input[_builtins.str] apply_config: Whether a configuration update requires a restart of the database instance or a reload of the configuration. Some configuration changes require a restart of database instances to be applied. Apply config can be passed as `RESTART` or `RELOAD`
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the database system.
-        :param pulumi.Input[_builtins.str] config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
+        :param pulumi.Input[_builtins.str] config_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system. For an in-place major version upgrade (`allow_major_version_upgrade = true`), **you must specify this field if the database system currently uses a custom configuration**. It may be omitted if the database system currently uses a default configuration. Any configuration specified for an upgrade must be compatible with the target major version and is applied as part of the upgrade.
         :param pulumi.Input[Union['DbSystemCredentialsArgs', 'DbSystemCredentialsArgsDict', 'outputs.DbSystemCredentials']] credentials: Initial database system credentials that the database system will be provisioned with. The password details are not visible on any subsequent operation, such as GET /dbSystems/{dbSystemId}.
-        :param pulumi.Input[_builtins.str] db_version: Version of database system software.
+        :param pulumi.Input[_builtins.str] db_version: (Conditionally updatable) The major version of the database system software, for example `"17"`. To upgrade an existing database system in place, set a higher major version with `allow_major_version_upgrade = true`. A downgrade with the flag set to `true` is rejected. If the flag is omitted, `false`, or unknown at plan time, changing `db_version` forces replacement. On creation, the database system is provisioned directly at this version.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) A user-provided description of a database system.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
@@ -1235,6 +1370,18 @@ class DbSystem(pulumi.CustomResource):
                
                This configuration does not have any effect on database systems with other roles.
         :param pulumi.Input[_builtins.str] shape: (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+               
+               **Note:** The provider returns the `shape` attribute with the `PostgreSQL.` prefix after reading the DB system, even when an unprefixed shape such as `VM.Standard.E5.Flex` is used in the configuration and plan. Use `trimprefix` if you need the unprefixed shape. For example, to normalize the output in the same module that declares the `Psql.DbSystem` resource:
+               
+               ```python
+               import pulumi
+               import pulumi_std as std
+               
+               pulumi.export("shape", std.trimprefix(input=this["shape"],
+                   prefix="PostgreSQL.").result)
+               ```
+               
+               `trimprefix` removes the prefix when it is present and leaves an already unprefixed value unchanged, so this module output remains in the unprefixed form.
         :param pulumi.Input[Union['DbSystemSourceArgs', 'DbSystemSourceArgsDict', 'outputs.DbSystemSource']] source: The source of the database system.
         :param pulumi.Input[_builtins.str] state: (Updatable) The target state for the Db System. Could be set to `ACTIVE` or `INACTIVE`.
                
@@ -1246,12 +1393,14 @@ class DbSystem(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] system_type: Type of the database system.
         :param pulumi.Input[_builtins.str] time_created: The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         :param pulumi.Input[_builtins.str] time_updated: The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] upgrade_options: (Updatable) List of post-upgrade operations to run when `db_version` changes with `allow_major_version_upgrade = true`. Accepted values are `RUN_POST_UPGRADE_VERIFICATION` and `RUN_POST_UPGRADE_VACUUM`. Verification and vacuum are each skipped unless their option is included. If omitted or empty, both are skipped. Changing this list alone does not trigger an upgrade. These options are not used when creating or replacing a database system.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
         __props__ = _DbSystemState.__new__(_DbSystemState)
 
         __props__.__dict__["admin_username"] = admin_username
+        __props__.__dict__["allow_major_version_upgrade"] = allow_major_version_upgrade
         __props__.__dict__["apply_change_mode_to_stand_alone"] = apply_change_mode_to_stand_alone
         __props__.__dict__["apply_config"] = apply_config
         __props__.__dict__["compartment_id"] = compartment_id
@@ -1283,6 +1432,7 @@ class DbSystem(pulumi.CustomResource):
         __props__.__dict__["system_type"] = system_type
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
+        __props__.__dict__["upgrade_options"] = upgrade_options
         return DbSystem(resource_name, opts=opts, __props__=__props__)
 
     @_builtins.property
@@ -1292,6 +1442,14 @@ class DbSystem(pulumi.CustomResource):
         The database system administrator username.
         """
         return pulumi.get(self, "admin_username")
+
+    @_builtins.property
+    @pulumi.getter(name="allowMajorVersionUpgrade")
+    def allow_major_version_upgrade(self) -> pulumi.Output[Optional[_builtins.bool]]:
+        """
+        (Updatable) Whether to allow in-place major version upgrades. Defaults to `false`. When this flag is known to be `true` at plan time, changing `db_version` to a higher major version upgrades the existing database system; a downgrade is rejected. If the flag is omitted, `false`, or unknown, a `db_version` change forces replacement. The flag can remain `true` for subsequent upgrades. Changing the flag alone does not upgrade the database system, and setting it on creation does not run a separate upgrade operation.
+        """
+        return pulumi.get(self, "allow_major_version_upgrade")
 
     @_builtins.property
     @pulumi.getter(name="applyChangeModeToStandAlone")
@@ -1321,7 +1479,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="configId")
     def config_id(self) -> pulumi.Output[_builtins.str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system. For an in-place major version upgrade (`allow_major_version_upgrade = true`), **you must specify this field if the database system currently uses a custom configuration**. It may be omitted if the database system currently uses a default configuration. Any configuration specified for an upgrade must be compatible with the target major version and is applied as part of the upgrade.
         """
         return pulumi.get(self, "config_id")
 
@@ -1337,7 +1495,7 @@ class DbSystem(pulumi.CustomResource):
     @pulumi.getter(name="dbVersion")
     def db_version(self) -> pulumi.Output[_builtins.str]:
         """
-        Version of database system software.
+        (Conditionally updatable) The major version of the database system software, for example `"17"`. To upgrade an existing database system in place, set a higher major version with `allow_major_version_upgrade = true`. A downgrade with the flag set to `true` is rejected. If the flag is omitted, `false`, or unknown at plan time, changing `db_version` forces replacement. On creation, the database system is provisioned directly at this version.
         """
         return pulumi.get(self, "db_version")
 
@@ -1476,6 +1634,18 @@ class DbSystem(pulumi.CustomResource):
     def shape(self) -> pulumi.Output[_builtins.str]:
         """
         (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+
+        **Note:** The provider returns the `shape` attribute with the `PostgreSQL.` prefix after reading the DB system, even when an unprefixed shape such as `VM.Standard.E5.Flex` is used in the configuration and plan. Use `trimprefix` if you need the unprefixed shape. For example, to normalize the output in the same module that declares the `Psql.DbSystem` resource:
+
+        ```python
+        import pulumi
+        import pulumi_std as std
+
+        pulumi.export("shape", std.trimprefix(input=this["shape"],
+            prefix="PostgreSQL.").result)
+        ```
+
+        `trimprefix` removes the prefix when it is present and leaves an already unprefixed value unchanged, so this module output remains in the unprefixed form.
         """
         return pulumi.get(self, "shape")
 
@@ -1545,4 +1715,12 @@ class DbSystem(pulumi.CustomResource):
         The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="upgradeOptions")
+    def upgrade_options(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:
+        """
+        (Updatable) List of post-upgrade operations to run when `db_version` changes with `allow_major_version_upgrade = true`. Accepted values are `RUN_POST_UPGRADE_VERIFICATION` and `RUN_POST_UPGRADE_VACUUM`. Verification and vacuum are each skipped unless their option is included. If omitted or empty, both are skipped. Changing this list alone does not trigger an upgrade. These options are not used when creating or replacing a database system.
+        """
+        return pulumi.get(self, "upgrade_options")
 

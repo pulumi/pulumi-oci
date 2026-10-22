@@ -17,6 +17,8 @@ from . import outputs
 
 __all__ = [
     'ConnectionAdditionalAttribute',
+    'ConnectionArtifactLocation',
+    'ConnectionArtifactLocationConfiguration',
     'ConnectionAuthDetails',
     'ConnectionBootstrapServer',
     'ConnectionCatalog',
@@ -50,6 +52,8 @@ __all__ = [
     'GetAiProvidersAiProviderCollectionItemModelResult',
     'GetAiProvidersFilterResult',
     'GetConnectionAdditionalAttributeResult',
+    'GetConnectionArtifactLocationResult',
+    'GetConnectionArtifactLocationConfigurationResult',
     'GetConnectionAssignmentsConnectionAssignmentCollectionResult',
     'GetConnectionAssignmentsConnectionAssignmentCollectionItemResult',
     'GetConnectionAssignmentsFilterResult',
@@ -62,6 +66,8 @@ __all__ = [
     'GetConnectionsConnectionCollectionResult',
     'GetConnectionsConnectionCollectionItemResult',
     'GetConnectionsConnectionCollectionItemAdditionalAttributeResult',
+    'GetConnectionsConnectionCollectionItemArtifactLocationResult',
+    'GetConnectionsConnectionCollectionItemArtifactLocationConfigurationResult',
     'GetConnectionsConnectionCollectionItemAuthDetailResult',
     'GetConnectionsConnectionCollectionItemBootstrapServerResult',
     'GetConnectionsConnectionCollectionItemCatalogResult',
@@ -194,6 +200,426 @@ class ConnectionAdditionalAttribute(dict):
         (Updatable) The value of the property entry.
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class ConnectionArtifactLocation(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "locationType":
+            suggest = "location_type"
+        elif key == "accountKey":
+            suggest = "account_key"
+        elif key == "accountKeySecretId":
+            suggest = "account_key_secret_id"
+        elif key == "endpointSuffix":
+            suggest = "endpoint_suffix"
+        elif key == "shouldOverwriteExisting":
+            suggest = "should_overwrite_existing"
+        elif key == "storageAccount":
+            suggest = "storage_account"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConnectionArtifactLocation. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConnectionArtifactLocation.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConnectionArtifactLocation.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 location_type: _builtins.str,
+                 account_key: Optional[_builtins.str] = None,
+                 account_key_secret_id: Optional[_builtins.str] = None,
+                 configuration: Optional['outputs.ConnectionArtifactLocationConfiguration'] = None,
+                 endpoint_suffix: Optional[_builtins.str] = None,
+                 filesystem: Optional[_builtins.str] = None,
+                 path: Optional[_builtins.str] = None,
+                 should_overwrite_existing: Optional[_builtins.bool] = None,
+                 storage_account: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str location_type: (Updatable) The type of location used to share Databricks application artifacts.
+        :param _builtins.str account_key: (Updatable) Storage account access key. Deprecated: This field is deprecated and replaced by "accountKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        :param _builtins.str account_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the storage account access key. Note: When provided, 'accountKey' field must not be provided.
+        :param 'ConnectionArtifactLocationConfigurationArgs' configuration: (Updatable) Oracle Cloud Infrastructure Object Storage configuration for the artifact location.
+        :param _builtins.str endpoint_suffix: (Updatable) Endpoint suffix. Defaults to dfs.core.windows.net.
+        :param _builtins.str filesystem: (Updatable) Azure Data Lake Storage Gen2 filesystem containing the application artifacts. Example: "ggs-artifacts"
+        :param _builtins.str path: (Updatable)
+               * AZURE_DATE_LAKE_STORAGE: Artifact path within the Azure Data Lake Storage filesystem.
+               * UC_VOLUME: Unity Catalog volume artifact path.
+        :param _builtins.bool should_overwrite_existing: (Updatable) Controls whether a staged Spark application artifact replaces an existing file or object with the same name at the configured destination. The artifact is typically a GGFAB pipeline package or one of its dependency files.
+               
+               When set to `true`, the existing file or object is replaced with the newly staged version. When set to `false`, staging fails or skips the upload rather than replacing it. This setting does not replace the entire target directory or prefix. It allows an updated pipeline or dependency to be deployed when artifact names remain the same across versions.
+        :param _builtins.str storage_account: (Updatable) Azure Data Lake Storage Gen2 storage-account name.
+        """
+        pulumi.set(__self__, "location_type", location_type)
+        if account_key is not None:
+            pulumi.set(__self__, "account_key", account_key)
+        if account_key_secret_id is not None:
+            pulumi.set(__self__, "account_key_secret_id", account_key_secret_id)
+        if configuration is not None:
+            pulumi.set(__self__, "configuration", configuration)
+        if endpoint_suffix is not None:
+            pulumi.set(__self__, "endpoint_suffix", endpoint_suffix)
+        if filesystem is not None:
+            pulumi.set(__self__, "filesystem", filesystem)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if should_overwrite_existing is not None:
+            pulumi.set(__self__, "should_overwrite_existing", should_overwrite_existing)
+        if storage_account is not None:
+            pulumi.set(__self__, "storage_account", storage_account)
+
+    @_builtins.property
+    @pulumi.getter(name="locationType")
+    def location_type(self) -> _builtins.str:
+        """
+        (Updatable) The type of location used to share Databricks application artifacts.
+        """
+        return pulumi.get(self, "location_type")
+
+    @_builtins.property
+    @pulumi.getter(name="accountKey")
+    def account_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Storage account access key. Deprecated: This field is deprecated and replaced by "accountKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        """
+        return pulumi.get(self, "account_key")
+
+    @_builtins.property
+    @pulumi.getter(name="accountKeySecretId")
+    def account_key_secret_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the storage account access key. Note: When provided, 'accountKey' field must not be provided.
+        """
+        return pulumi.get(self, "account_key_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def configuration(self) -> Optional['outputs.ConnectionArtifactLocationConfiguration']:
+        """
+        (Updatable) Oracle Cloud Infrastructure Object Storage configuration for the artifact location.
+        """
+        return pulumi.get(self, "configuration")
+
+    @_builtins.property
+    @pulumi.getter(name="endpointSuffix")
+    def endpoint_suffix(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Endpoint suffix. Defaults to dfs.core.windows.net.
+        """
+        return pulumi.get(self, "endpoint_suffix")
+
+    @_builtins.property
+    @pulumi.getter
+    def filesystem(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Azure Data Lake Storage Gen2 filesystem containing the application artifacts. Example: "ggs-artifacts"
+        """
+        return pulumi.get(self, "filesystem")
+
+    @_builtins.property
+    @pulumi.getter
+    def path(self) -> Optional[_builtins.str]:
+        """
+        (Updatable)
+        * AZURE_DATE_LAKE_STORAGE: Artifact path within the Azure Data Lake Storage filesystem.
+        * UC_VOLUME: Unity Catalog volume artifact path.
+        """
+        return pulumi.get(self, "path")
+
+    @_builtins.property
+    @pulumi.getter(name="shouldOverwriteExisting")
+    def should_overwrite_existing(self) -> Optional[_builtins.bool]:
+        """
+        (Updatable) Controls whether a staged Spark application artifact replaces an existing file or object with the same name at the configured destination. The artifact is typically a GGFAB pipeline package or one of its dependency files.
+
+        When set to `true`, the existing file or object is replaced with the newly staged version. When set to `false`, staging fails or skips the upload rather than replacing it. This setting does not replace the entire target directory or prefix. It allows an updated pipeline or dependency to be deployed when artifact names remain the same across versions.
+        """
+        return pulumi.get(self, "should_overwrite_existing")
+
+    @_builtins.property
+    @pulumi.getter(name="storageAccount")
+    def storage_account(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Azure Data Lake Storage Gen2 storage-account name.
+        """
+        return pulumi.get(self, "storage_account")
+
+
+@pulumi.output_type
+class ConnectionArtifactLocationConfiguration(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "authenticationType":
+            suggest = "authentication_type"
+        elif key == "accessKeyId":
+            suggest = "access_key_id"
+        elif key == "parUrl":
+            suggest = "par_url"
+        elif key == "parUrlSecretId":
+            suggest = "par_url_secret_id"
+        elif key == "privateKeyFile":
+            suggest = "private_key_file"
+        elif key == "privateKeyFileSecretId":
+            suggest = "private_key_file_secret_id"
+        elif key == "privateKeyPassphrase":
+            suggest = "private_key_passphrase"
+        elif key == "privateKeyPassphraseSecretId":
+            suggest = "private_key_passphrase_secret_id"
+        elif key == "publicKeyFingerprint":
+            suggest = "public_key_fingerprint"
+        elif key == "secretAccessKey":
+            suggest = "secret_access_key"
+        elif key == "secretAccessKeySecretId":
+            suggest = "secret_access_key_secret_id"
+        elif key == "tenancyId":
+            suggest = "tenancy_id"
+        elif key == "userId":
+            suggest = "user_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConnectionArtifactLocationConfiguration. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConnectionArtifactLocationConfiguration.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConnectionArtifactLocationConfiguration.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 authentication_type: _builtins.str,
+                 access_key_id: Optional[_builtins.str] = None,
+                 bucket: Optional[_builtins.str] = None,
+                 namespace: Optional[_builtins.str] = None,
+                 par_url: Optional[_builtins.str] = None,
+                 par_url_secret_id: Optional[_builtins.str] = None,
+                 path: Optional[_builtins.str] = None,
+                 private_key_file: Optional[_builtins.str] = None,
+                 private_key_file_secret_id: Optional[_builtins.str] = None,
+                 private_key_passphrase: Optional[_builtins.str] = None,
+                 private_key_passphrase_secret_id: Optional[_builtins.str] = None,
+                 public_key_fingerprint: Optional[_builtins.str] = None,
+                 region: Optional[_builtins.str] = None,
+                 secret_access_key: Optional[_builtins.str] = None,
+                 secret_access_key_secret_id: Optional[_builtins.str] = None,
+                 tenancy_id: Optional[_builtins.str] = None,
+                 user_id: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str authentication_type: (Updatable) Authentication method used to access Oracle Cloud Infrastructure Object Storage.
+               
+               When `authenticationType` is `USER_PRINCIPAL`, `region`, `namespace`, `bucket`, `path`, `userId`, and `publicKeyFingerprint` are required. Provide exactly one of `privateKeyFile` or `privateKeyFileSecretId` as the private-key credential. `tenancyId` and the private-key passphrase are optional. When a passphrase is used, provide at most one of `privateKeyPassphrase` or `privateKeyPassphraseSecretId`.
+               
+               When `authenticationType` is `RESOURCE_PRINCIPAL`, `region`, `namespace`, `bucket`, and `path` are required.
+               
+               When `authenticationType` is `CUSTOMER_SECRET_KEY`, `region`, `namespace`, `bucket`, `path`, and `accessKeyId` are required. Provide exactly one of `secretAccessKey` or `secretAccessKeySecretId` as the secret-key credential. The S3 Compatibility API endpoint is inferred from `region` and `namespace`.
+               
+               When `authenticationType` is `PRE_AUTHENTICATED_REQUEST`, provide exactly one of `parUrl` or `parUrlSecretId`.
+        :param _builtins.str access_key_id: (Updatable) Access key identifier used for Oracle Cloud Infrastructure Object Storage secret-key authentication. Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+        :param _builtins.str bucket: (Updatable) Oracle Cloud Infrastructure Object Storage bucket containing application artifacts.
+        :param _builtins.str namespace: (Updatable) The Oracle Cloud Infrastructure Object Storage namespace containing the bucket. Example: "mynamespace"
+        :param _builtins.str par_url: (Updatable) A pre-authenticated request (PAR) URL that provides access to the artifact location. Deprecated: This field is deprecated and replaced by "parUrlSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        :param _builtins.str par_url_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the pre-authenticated request (PAR) URL. Note: When provided, `parUrl` must not be provided.
+        :param _builtins.str path: (Updatable) Object path used for application artifacts.
+        :param _builtins.str private_key_file: (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        :param _builtins.str private_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
+        :param _builtins.str private_key_passphrase: (Updatable) The passphrase of the private key. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        :param _builtins.str private_key_passphrase_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the passphrase of the private key. Note: When provided, 'privateKeyPassphrase' field must not be provided.
+        :param _builtins.str public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        :param _builtins.str region: (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+        :param _builtins.str secret_access_key: (Updatable) Secret access key used for Oracle Cloud Infrastructure Object Storage secret-key authentication. Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        :param _builtins.str secret_access_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the secret access key. Note: When provided, `secretAccessKey` must not be provided.
+        :param _builtins.str tenancy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+        :param _builtins.str user_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user whose API key is used to access the artifact location. If not provided it will default to the current user.
+        """
+        pulumi.set(__self__, "authentication_type", authentication_type)
+        if access_key_id is not None:
+            pulumi.set(__self__, "access_key_id", access_key_id)
+        if bucket is not None:
+            pulumi.set(__self__, "bucket", bucket)
+        if namespace is not None:
+            pulumi.set(__self__, "namespace", namespace)
+        if par_url is not None:
+            pulumi.set(__self__, "par_url", par_url)
+        if par_url_secret_id is not None:
+            pulumi.set(__self__, "par_url_secret_id", par_url_secret_id)
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if private_key_file is not None:
+            pulumi.set(__self__, "private_key_file", private_key_file)
+        if private_key_file_secret_id is not None:
+            pulumi.set(__self__, "private_key_file_secret_id", private_key_file_secret_id)
+        if private_key_passphrase is not None:
+            pulumi.set(__self__, "private_key_passphrase", private_key_passphrase)
+        if private_key_passphrase_secret_id is not None:
+            pulumi.set(__self__, "private_key_passphrase_secret_id", private_key_passphrase_secret_id)
+        if public_key_fingerprint is not None:
+            pulumi.set(__self__, "public_key_fingerprint", public_key_fingerprint)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+        if secret_access_key is not None:
+            pulumi.set(__self__, "secret_access_key", secret_access_key)
+        if secret_access_key_secret_id is not None:
+            pulumi.set(__self__, "secret_access_key_secret_id", secret_access_key_secret_id)
+        if tenancy_id is not None:
+            pulumi.set(__self__, "tenancy_id", tenancy_id)
+        if user_id is not None:
+            pulumi.set(__self__, "user_id", user_id)
+
+    @_builtins.property
+    @pulumi.getter(name="authenticationType")
+    def authentication_type(self) -> _builtins.str:
+        """
+        (Updatable) Authentication method used to access Oracle Cloud Infrastructure Object Storage.
+
+        When `authenticationType` is `USER_PRINCIPAL`, `region`, `namespace`, `bucket`, `path`, `userId`, and `publicKeyFingerprint` are required. Provide exactly one of `privateKeyFile` or `privateKeyFileSecretId` as the private-key credential. `tenancyId` and the private-key passphrase are optional. When a passphrase is used, provide at most one of `privateKeyPassphrase` or `privateKeyPassphraseSecretId`.
+
+        When `authenticationType` is `RESOURCE_PRINCIPAL`, `region`, `namespace`, `bucket`, and `path` are required.
+
+        When `authenticationType` is `CUSTOMER_SECRET_KEY`, `region`, `namespace`, `bucket`, `path`, and `accessKeyId` are required. Provide exactly one of `secretAccessKey` or `secretAccessKeySecretId` as the secret-key credential. The S3 Compatibility API endpoint is inferred from `region` and `namespace`.
+
+        When `authenticationType` is `PRE_AUTHENTICATED_REQUEST`, provide exactly one of `parUrl` or `parUrlSecretId`.
+        """
+        return pulumi.get(self, "authentication_type")
+
+    @_builtins.property
+    @pulumi.getter(name="accessKeyId")
+    def access_key_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Access key identifier used for Oracle Cloud Infrastructure Object Storage secret-key authentication. Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+        """
+        return pulumi.get(self, "access_key_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Oracle Cloud Infrastructure Object Storage bucket containing application artifacts.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The Oracle Cloud Infrastructure Object Storage namespace containing the bucket. Example: "mynamespace"
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="parUrl")
+    @_utilities.deprecated("""The 'par_url' field has been deprecated. Please use 'par_url_secret_id' instead.""")
+    def par_url(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) A pre-authenticated request (PAR) URL that provides access to the artifact location. Deprecated: This field is deprecated and replaced by "parUrlSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        """
+        return pulumi.get(self, "par_url")
+
+    @_builtins.property
+    @pulumi.getter(name="parUrlSecretId")
+    def par_url_secret_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the pre-authenticated request (PAR) URL. Note: When provided, `parUrl` must not be provided.
+        """
+        return pulumi.get(self, "par_url_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def path(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Object path used for application artifacts.
+        """
+        return pulumi.get(self, "path")
+
+    @_builtins.property
+    @pulumi.getter(name="privateKeyFile")
+    @_utilities.deprecated("""The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead.""")
+    def private_key_file(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        """
+        return pulumi.get(self, "private_key_file")
+
+    @_builtins.property
+    @pulumi.getter(name="privateKeyFileSecretId")
+    def private_key_file_secret_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
+        """
+        return pulumi.get(self, "private_key_file_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="privateKeyPassphrase")
+    @_utilities.deprecated("""The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead.""")
+    def private_key_passphrase(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The passphrase of the private key. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        """
+        return pulumi.get(self, "private_key_passphrase")
+
+    @_builtins.property
+    @pulumi.getter(name="privateKeyPassphraseSecretId")
+    def private_key_passphrase_secret_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the passphrase of the private key. Note: When provided, 'privateKeyPassphrase' field must not be provided.
+        """
+        return pulumi.get(self, "private_key_passphrase_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="publicKeyFingerprint")
+    def public_key_fingerprint(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        """
+        return pulumi.get(self, "public_key_fingerprint")
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+        """
+        return pulumi.get(self, "region")
+
+    @_builtins.property
+    @pulumi.getter(name="secretAccessKey")
+    @_utilities.deprecated("""The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.""")
+    def secret_access_key(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) Secret access key used for Oracle Cloud Infrastructure Object Storage secret-key authentication. Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        """
+        return pulumi.get(self, "secret_access_key")
+
+    @_builtins.property
+    @pulumi.getter(name="secretAccessKeySecretId")
+    def secret_access_key_secret_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the secret access key. Note: When provided, `secretAccessKey` must not be provided.
+        """
+        return pulumi.get(self, "secret_access_key_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="tenancyId")
+    def tenancy_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+        """
+        return pulumi.get(self, "tenancy_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userId")
+    def user_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user whose API key is used to access the artifact location. If not provided it will default to the current user.
+        """
+        return pulumi.get(self, "user_id")
 
 
 @pulumi.output_type
@@ -441,10 +867,7 @@ class ConnectionCatalog(dict):
         :param _builtins.str principal_role: (Updatable) The Snowflake role used to access Polaris.
         :param _builtins.str properties: (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
         :param _builtins.str properties_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
-        :param _builtins.str uri: (Updatable)
-               * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
-               * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
-               * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
+        :param _builtins.str uri: (Updatable) The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
         """
         pulumi.set(__self__, "catalog_type", catalog_type)
         if branch is not None:
@@ -554,10 +977,7 @@ class ConnectionCatalog(dict):
     @pulumi.getter
     def uri(self) -> Optional[_builtins.str]:
         """
-        (Updatable)
-        * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
-        * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
-        * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
+        (Updatable) The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
         """
         return pulumi.get(self, "uri")
 
@@ -727,34 +1147,26 @@ class ConnectionStorage(dict):
                  service_account_key_file: Optional[_builtins.str] = None,
                  service_account_key_file_secret_id: Optional[_builtins.str] = None):
         """
-        :param _builtins.str storage_type: (Updatable) The storage type used in the Iceberg connection.
-        :param _builtins.str access_key_id: (Updatable)
-               * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-               * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-                 Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+        :param _builtins.str storage_type: (Updatable) The storage type used in the Iceberg connection. Supported storage types by catalog type:
+               * GLUE: AMAZON_S3.
+               * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
+               * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+               * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+               * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
+        :param _builtins.str access_key_id: (Updatable) Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+               
+               Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
         :param _builtins.str account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by "accountKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         :param _builtins.str account_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
         :param _builtins.str account_name: (Updatable) Sets the Azure storage account name.
-        :param _builtins.str bucket: (Updatable)
-               * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
-               * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
-               * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
+        :param _builtins.str bucket: (Updatable) Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
         :param _builtins.str container: (Updatable) The Azure Blob Storage container where Iceberg tables are stored.
-        :param _builtins.str endpoint: (Updatable)
-               * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
-               * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
-               * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
-               * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
+        :param _builtins.str endpoint: (Updatable) Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
         :param _builtins.str project_id: (Updatable) The Google Cloud Project where the bucket exists.
         :param _builtins.str region: (Updatable) The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
         :param _builtins.str scheme_type: (Updatable) The scheme of the storage.
-        :param _builtins.str secret_access_key: (Updatable)
-               * AMAZON_S3: Secret access key to access the Amazon S3 bucket.
-               * OCI_OBJECT_STORAGE_S3_API: Secret Access Key from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-                 Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
-        :param _builtins.str secret_access_key_secret_id: (Updatable)
-               * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-               * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
+        :param _builtins.str secret_access_key: (Updatable) Secret Access Key from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API. Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        :param _builtins.str secret_access_key_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
         :param _builtins.str service_account_key_file: (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         :param _builtins.str service_account_key_file_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
         """
@@ -792,7 +1204,12 @@ class ConnectionStorage(dict):
     @pulumi.getter(name="storageType")
     def storage_type(self) -> _builtins.str:
         """
-        (Updatable) The storage type used in the Iceberg connection.
+        (Updatable) The storage type used in the Iceberg connection. Supported storage types by catalog type:
+        * GLUE: AMAZON_S3.
+        * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
+        * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+        * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+        * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
         """
         return pulumi.get(self, "storage_type")
 
@@ -800,10 +1217,9 @@ class ConnectionStorage(dict):
     @pulumi.getter(name="accessKeyId")
     def access_key_id(self) -> Optional[_builtins.str]:
         """
-        (Updatable)
-        * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-        * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-          Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+        (Updatable) Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+
+        Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
         """
         return pulumi.get(self, "access_key_id")
 
@@ -836,10 +1252,7 @@ class ConnectionStorage(dict):
     @pulumi.getter
     def bucket(self) -> Optional[_builtins.str]:
         """
-        (Updatable)
-        * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
-        * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
-        * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
+        (Updatable) Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
         """
         return pulumi.get(self, "bucket")
 
@@ -855,11 +1268,7 @@ class ConnectionStorage(dict):
     @pulumi.getter
     def endpoint(self) -> Optional[_builtins.str]:
         """
-        (Updatable)
-        * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
-        * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
-        * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
-        * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
+        (Updatable) Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
         """
         return pulumi.get(self, "endpoint")
 
@@ -892,10 +1301,7 @@ class ConnectionStorage(dict):
     @_utilities.deprecated("""The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.""")
     def secret_access_key(self) -> Optional[_builtins.str]:
         """
-        (Updatable)
-        * AMAZON_S3: Secret access key to access the Amazon S3 bucket.
-        * OCI_OBJECT_STORAGE_S3_API: Secret Access Key from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-          Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        (Updatable) Secret Access Key from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API. Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         """
         return pulumi.get(self, "secret_access_key")
 
@@ -903,9 +1309,7 @@ class ConnectionStorage(dict):
     @pulumi.getter(name="secretAccessKeySecretId")
     def secret_access_key_secret_id(self) -> Optional[_builtins.str]:
         """
-        (Updatable)
-        * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-        * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
         """
         return pulumi.get(self, "secret_access_key_secret_id")
 
@@ -1495,7 +1899,7 @@ class DeploymentOggData(dict):
         :param _builtins.str admin_username: (Updatable) The GoldenGate deployment console username.
         :param _builtins.str certificate: (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
         :param _builtins.str credential_store: (Updatable) The type of credential store for OGG.
-        :param _builtins.str deployment_name: The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. For standby deployment the deployment name is inherited from primary.
+        :param _builtins.str deployment_name: The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. If not provided, the service derives this value from the deployment display name. For standby deployment the deployment name is inherited from primary. Deprecated: This field is deprecated and will be removed after the date provided in the announcement: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         :param 'DeploymentOggDataGroupToRolesMappingArgs' group_to_roles_mapping: (Updatable) Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
         :param _builtins.str identity_domain_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
         :param _builtins.str key: (Updatable) The base64 encoded content of the PEM file containing the private key.
@@ -1563,7 +1967,7 @@ class DeploymentOggData(dict):
     @pulumi.getter(name="deploymentName")
     def deployment_name(self) -> Optional[_builtins.str]:
         """
-        The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. For standby deployment the deployment name is inherited from primary.
+        The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. If not provided, the service derives this value from the deployment display name. For standby deployment the deployment name is inherited from primary. Deprecated: This field is deprecated and will be removed after the date provided in the announcement: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         """
         return pulumi.get(self, "deployment_name")
 
@@ -2636,6 +3040,306 @@ class GetConnectionAdditionalAttributeResult(dict):
 
 
 @pulumi.output_type
+class GetConnectionArtifactLocationResult(dict):
+    def __init__(__self__, *,
+                 account_key: _builtins.str,
+                 account_key_secret_id: _builtins.str,
+                 configurations: Sequence['outputs.GetConnectionArtifactLocationConfigurationResult'],
+                 endpoint_suffix: _builtins.str,
+                 filesystem: _builtins.str,
+                 location_type: _builtins.str,
+                 path: _builtins.str,
+                 should_overwrite_existing: _builtins.bool,
+                 storage_account: _builtins.str):
+        """
+        :param _builtins.str account_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+        :param Sequence['GetConnectionArtifactLocationConfigurationArgs'] configurations: Oracle Cloud Infrastructure Object Storage configuration for the artifact location.
+        :param _builtins.str endpoint_suffix: Endpoint suffix. Defaults to dfs.core.windows.net.
+        :param _builtins.str filesystem: Azure Data Lake Storage Gen2 filesystem containing the application artifacts. Example: "ggs-artifacts"
+        :param _builtins.str location_type: The type of location used to share Databricks application artifacts.
+        :param _builtins.str path: * AZURE_DATE_LAKE_STORAGE: Artifact path within the Azure Data Lake Storage filesystem.
+               * UC_VOLUME: Unity Catalog volume artifact path.
+        :param _builtins.bool should_overwrite_existing: Controls whether a staged Spark application artifact replaces an existing file or object with the same name at the configured destination. The artifact is typically a GGFAB pipeline package or one of its dependency files.
+        :param _builtins.str storage_account: Azure Data Lake Storage Gen2 storage-account name.
+        """
+        pulumi.set(__self__, "account_key", account_key)
+        pulumi.set(__self__, "account_key_secret_id", account_key_secret_id)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "endpoint_suffix", endpoint_suffix)
+        pulumi.set(__self__, "filesystem", filesystem)
+        pulumi.set(__self__, "location_type", location_type)
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "should_overwrite_existing", should_overwrite_existing)
+        pulumi.set(__self__, "storage_account", storage_account)
+
+    @_builtins.property
+    @pulumi.getter(name="accountKey")
+    def account_key(self) -> _builtins.str:
+        return pulumi.get(self, "account_key")
+
+    @_builtins.property
+    @pulumi.getter(name="accountKeySecretId")
+    def account_key_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+        """
+        return pulumi.get(self, "account_key_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def configurations(self) -> Sequence['outputs.GetConnectionArtifactLocationConfigurationResult']:
+        """
+        Oracle Cloud Infrastructure Object Storage configuration for the artifact location.
+        """
+        return pulumi.get(self, "configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="endpointSuffix")
+    def endpoint_suffix(self) -> _builtins.str:
+        """
+        Endpoint suffix. Defaults to dfs.core.windows.net.
+        """
+        return pulumi.get(self, "endpoint_suffix")
+
+    @_builtins.property
+    @pulumi.getter
+    def filesystem(self) -> _builtins.str:
+        """
+        Azure Data Lake Storage Gen2 filesystem containing the application artifacts. Example: "ggs-artifacts"
+        """
+        return pulumi.get(self, "filesystem")
+
+    @_builtins.property
+    @pulumi.getter(name="locationType")
+    def location_type(self) -> _builtins.str:
+        """
+        The type of location used to share Databricks application artifacts.
+        """
+        return pulumi.get(self, "location_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def path(self) -> _builtins.str:
+        """
+        * AZURE_DATE_LAKE_STORAGE: Artifact path within the Azure Data Lake Storage filesystem.
+        * UC_VOLUME: Unity Catalog volume artifact path.
+        """
+        return pulumi.get(self, "path")
+
+    @_builtins.property
+    @pulumi.getter(name="shouldOverwriteExisting")
+    def should_overwrite_existing(self) -> _builtins.bool:
+        """
+        Controls whether a staged Spark application artifact replaces an existing file or object with the same name at the configured destination. The artifact is typically a GGFAB pipeline package or one of its dependency files.
+        """
+        return pulumi.get(self, "should_overwrite_existing")
+
+    @_builtins.property
+    @pulumi.getter(name="storageAccount")
+    def storage_account(self) -> _builtins.str:
+        """
+        Azure Data Lake Storage Gen2 storage-account name.
+        """
+        return pulumi.get(self, "storage_account")
+
+
+@pulumi.output_type
+class GetConnectionArtifactLocationConfigurationResult(dict):
+    def __init__(__self__, *,
+                 access_key_id: _builtins.str,
+                 authentication_type: _builtins.str,
+                 bucket: _builtins.str,
+                 namespace: _builtins.str,
+                 par_url: _builtins.str,
+                 par_url_secret_id: _builtins.str,
+                 path: _builtins.str,
+                 private_key_file: _builtins.str,
+                 private_key_file_secret_id: _builtins.str,
+                 private_key_passphrase: _builtins.str,
+                 private_key_passphrase_secret_id: _builtins.str,
+                 public_key_fingerprint: _builtins.str,
+                 region: _builtins.str,
+                 secret_access_key: _builtins.str,
+                 secret_access_key_secret_id: _builtins.str,
+                 tenancy_id: _builtins.str,
+                 user_id: _builtins.str):
+        """
+        :param _builtins.str access_key_id: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+        :param _builtins.str authentication_type: Authentication mechanism; supported values depend on `connection_type`.
+               * DATABRICKS: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M.
+               * DATABRICKS_ENGINE: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M for the Databricks Engine REST API.
+               * JAVA_MESSAGE_SERVICE: Authentication type for Java Message Service. The default is NONE.
+               * SPARK: Use SHARED_SECRET only when the target cluster has `spark.authenticate=true`. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET.
+               * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE: Authentication type supported by the target service.
+        :param _builtins.str bucket: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
+        :param _builtins.str namespace: The Oracle Cloud Infrastructure Object Storage namespace containing the bucket. Example: "mynamespace"
+        :param _builtins.str par_url_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the pre-authenticated request (PAR) URL. Note: When provided, `parUrl` must not be provided.
+        :param _builtins.str path: * AZURE_DATE_LAKE_STORAGE: Artifact path within the Azure Data Lake Storage filesystem.
+               * UC_VOLUME: Unity Catalog volume artifact path.
+        :param _builtins.str private_key_file_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
+        :param _builtins.str private_key_passphrase_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
+        :param _builtins.str public_key_fingerprint: The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        :param _builtins.str region: The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+        :param _builtins.str secret_access_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
+        :param _builtins.str tenancy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+        :param _builtins.str user_id: * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses Object Storage. The user must have write access to the bucket. If omitted, the service defaults to the user calling the API.
+               * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses the Oracle NoSQL database. The user must have write access to the table. If omitted, the service defaults to the user calling the API.
+        """
+        pulumi.set(__self__, "access_key_id", access_key_id)
+        pulumi.set(__self__, "authentication_type", authentication_type)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "par_url", par_url)
+        pulumi.set(__self__, "par_url_secret_id", par_url_secret_id)
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "private_key_file", private_key_file)
+        pulumi.set(__self__, "private_key_file_secret_id", private_key_file_secret_id)
+        pulumi.set(__self__, "private_key_passphrase", private_key_passphrase)
+        pulumi.set(__self__, "private_key_passphrase_secret_id", private_key_passphrase_secret_id)
+        pulumi.set(__self__, "public_key_fingerprint", public_key_fingerprint)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "secret_access_key", secret_access_key)
+        pulumi.set(__self__, "secret_access_key_secret_id", secret_access_key_secret_id)
+        pulumi.set(__self__, "tenancy_id", tenancy_id)
+        pulumi.set(__self__, "user_id", user_id)
+
+    @_builtins.property
+    @pulumi.getter(name="accessKeyId")
+    def access_key_id(self) -> _builtins.str:
+        """
+        Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+        """
+        return pulumi.get(self, "access_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="authenticationType")
+    def authentication_type(self) -> _builtins.str:
+        """
+        Authentication mechanism; supported values depend on `connection_type`.
+        * DATABRICKS: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M.
+        * DATABRICKS_ENGINE: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M for the Databricks Engine REST API.
+        * JAVA_MESSAGE_SERVICE: Authentication type for Java Message Service. The default is NONE.
+        * SPARK: Use SHARED_SECRET only when the target cluster has `spark.authenticate=true`. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET.
+        * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE: Authentication type supported by the target service.
+        """
+        return pulumi.get(self, "authentication_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        The Oracle Cloud Infrastructure Object Storage namespace containing the bucket. Example: "mynamespace"
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="parUrl")
+    @_utilities.deprecated("""The 'par_url' field has been deprecated. Please use 'par_url_secret_id' instead.""")
+    def par_url(self) -> _builtins.str:
+        return pulumi.get(self, "par_url")
+
+    @_builtins.property
+    @pulumi.getter(name="parUrlSecretId")
+    def par_url_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the pre-authenticated request (PAR) URL. Note: When provided, `parUrl` must not be provided.
+        """
+        return pulumi.get(self, "par_url_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def path(self) -> _builtins.str:
+        """
+        * AZURE_DATE_LAKE_STORAGE: Artifact path within the Azure Data Lake Storage filesystem.
+        * UC_VOLUME: Unity Catalog volume artifact path.
+        """
+        return pulumi.get(self, "path")
+
+    @_builtins.property
+    @pulumi.getter(name="privateKeyFile")
+    @_utilities.deprecated("""The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead.""")
+    def private_key_file(self) -> _builtins.str:
+        return pulumi.get(self, "private_key_file")
+
+    @_builtins.property
+    @pulumi.getter(name="privateKeyFileSecretId")
+    def private_key_file_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
+        """
+        return pulumi.get(self, "private_key_file_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="privateKeyPassphrase")
+    @_utilities.deprecated("""The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead.""")
+    def private_key_passphrase(self) -> _builtins.str:
+        return pulumi.get(self, "private_key_passphrase")
+
+    @_builtins.property
+    @pulumi.getter(name="privateKeyPassphraseSecretId")
+    def private_key_passphrase_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
+        """
+        return pulumi.get(self, "private_key_passphrase_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="publicKeyFingerprint")
+    def public_key_fingerprint(self) -> _builtins.str:
+        """
+        The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        """
+        return pulumi.get(self, "public_key_fingerprint")
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> _builtins.str:
+        """
+        The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+        """
+        return pulumi.get(self, "region")
+
+    @_builtins.property
+    @pulumi.getter(name="secretAccessKey")
+    @_utilities.deprecated("""The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.""")
+    def secret_access_key(self) -> _builtins.str:
+        return pulumi.get(self, "secret_access_key")
+
+    @_builtins.property
+    @pulumi.getter(name="secretAccessKeySecretId")
+    def secret_access_key_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
+        """
+        return pulumi.get(self, "secret_access_key_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="tenancyId")
+    def tenancy_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+        """
+        return pulumi.get(self, "tenancy_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userId")
+    def user_id(self) -> _builtins.str:
+        """
+        * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses Object Storage. The user must have write access to the bucket. If omitted, the service defaults to the user calling the API.
+        * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses the Oracle NoSQL database. The user must have write access to the table. If omitted, the service defaults to the user calling the API.
+        """
+        return pulumi.get(self, "user_id")
+
+
+@pulumi.output_type
 class GetConnectionAssignmentsConnectionAssignmentCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetConnectionAssignmentsConnectionAssignmentCollectionItemResult']):
@@ -2812,8 +3516,8 @@ class GetConnectionAuthDetailResult(dict):
         :param _builtins.str key_fingerprint: Oracle Cloud Infrastructure Generative AI key fingerprint.
         :param _builtins.str region: The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
         :param _builtins.str tenancy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
-        :param _builtins.str user_id: * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
-               * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+        :param _builtins.str user_id: * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses Object Storage. The user must have write access to the bucket. If omitted, the service defaults to the user calling the API.
+               * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses the Oracle NoSQL database. The user must have write access to the table. If omitted, the service defaults to the user calling the API.
         """
         pulumi.set(__self__, "api_key", api_key)
         pulumi.set(__self__, "api_key_secret_id", api_key_secret_id)
@@ -2884,8 +3588,8 @@ class GetConnectionAuthDetailResult(dict):
     @pulumi.getter(name="userId")
     def user_id(self) -> _builtins.str:
         """
-        * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
-        * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+        * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses Object Storage. The user must have write access to the bucket. If omitted, the service defaults to the user calling the API.
+        * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses the Oracle NoSQL database. The user must have write access to the table. If omitted, the service defaults to the user calling the API.
         """
         return pulumi.get(self, "user_id")
 
@@ -2952,10 +3656,10 @@ class GetConnectionCatalogResult(dict):
         :param _builtins.str branch: The active branch of the Nessie catalog from which Iceberg reads and writes table metadata.
         :param _builtins.str catalog_type: The catalog type.
         :param _builtins.str client_id: * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-               * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+               * DATABRICKS, DATABRICKS_ENGINE: OAuth client ID, applicable to OAUTH_M2M authentication.
                * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
         :param _builtins.str client_secret_secret_id: * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-               * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+               * DATABRICKS, DATABRICKS_ENGINE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Applicable to OAUTH_M2M authentication.
                * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
                  Note: When provided, 'clientSecret' field must not be provided.
         :param _builtins.str glue_id: The AWS Glue Catalog ID where Iceberg tables are registered.
@@ -2999,7 +3703,7 @@ class GetConnectionCatalogResult(dict):
     def client_id(self) -> _builtins.str:
         """
         * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-        * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+        * DATABRICKS, DATABRICKS_ENGINE: OAuth client ID, applicable to OAUTH_M2M authentication.
         * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
         """
         return pulumi.get(self, "client_id")
@@ -3015,7 +3719,7 @@ class GetConnectionCatalogResult(dict):
     def client_secret_secret_id(self) -> _builtins.str:
         """
         * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-        * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+        * DATABRICKS, DATABRICKS_ENGINE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Applicable to OAUTH_M2M authentication.
         * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
           Note: When provided, 'clientSecret' field must not be provided.
         """
@@ -3158,26 +3862,23 @@ class GetConnectionStorageResult(dict):
                  service_account_key_file_secret_id: _builtins.str,
                  storage_type: _builtins.str):
         """
-        :param _builtins.str access_key_id: * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-               * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-                 Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+        :param _builtins.str access_key_id: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
         :param _builtins.str account_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
         :param _builtins.str account_name: Sets the Azure storage account name.
-        :param _builtins.str bucket: * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
-               * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
-               * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
+        :param _builtins.str bucket: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
         :param _builtins.str container: The Azure Blob Storage container where Iceberg tables are stored.
-        :param _builtins.str endpoint: * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
-               * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
-               * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
-               * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
+        :param _builtins.str endpoint: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
         :param _builtins.str project_id: The Google Cloud Project where the bucket exists.
         :param _builtins.str region: The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
         :param _builtins.str scheme_type: The scheme of the storage.
-        :param _builtins.str secret_access_key_secret_id: * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-               * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
+        :param _builtins.str secret_access_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
         :param _builtins.str service_account_key_file_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
-        :param _builtins.str storage_type: The storage type used in the Iceberg connection.
+        :param _builtins.str storage_type: The storage type used in the Iceberg connection. Supported storage types by catalog type:
+               * GLUE: AMAZON_S3.
+               * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
+               * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+               * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+               * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
         """
         pulumi.set(__self__, "access_key_id", access_key_id)
         pulumi.set(__self__, "account_key", account_key)
@@ -3199,9 +3900,7 @@ class GetConnectionStorageResult(dict):
     @pulumi.getter(name="accessKeyId")
     def access_key_id(self) -> _builtins.str:
         """
-        * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-        * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-          Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+        Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
         """
         return pulumi.get(self, "access_key_id")
 
@@ -3231,9 +3930,7 @@ class GetConnectionStorageResult(dict):
     @pulumi.getter
     def bucket(self) -> _builtins.str:
         """
-        * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
-        * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
-        * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
+        Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
         """
         return pulumi.get(self, "bucket")
 
@@ -3249,10 +3946,7 @@ class GetConnectionStorageResult(dict):
     @pulumi.getter
     def endpoint(self) -> _builtins.str:
         """
-        * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
-        * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
-        * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
-        * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
+        Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
         """
         return pulumi.get(self, "endpoint")
 
@@ -3290,8 +3984,7 @@ class GetConnectionStorageResult(dict):
     @pulumi.getter(name="secretAccessKeySecretId")
     def secret_access_key_secret_id(self) -> _builtins.str:
         """
-        * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-        * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
         """
         return pulumi.get(self, "secret_access_key_secret_id")
 
@@ -3313,7 +4006,12 @@ class GetConnectionStorageResult(dict):
     @pulumi.getter(name="storageType")
     def storage_type(self) -> _builtins.str:
         """
-        The storage type used in the Iceberg connection.
+        The storage type used in the Iceberg connection. Supported storage types by catalog type:
+        * GLUE: AMAZON_S3.
+        * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
+        * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+        * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+        * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
         """
         return pulumi.get(self, "storage_type")
 
@@ -3338,7 +4036,12 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  account_key_secret_id: _builtins.str,
                  account_name: _builtins.str,
                  additional_attributes: Sequence['outputs.GetConnectionsConnectionCollectionItemAdditionalAttributeResult'],
+                 artifact_locations: Sequence['outputs.GetConnectionsConnectionCollectionItemArtifactLocationResult'],
                  auth_details: Sequence['outputs.GetConnectionsConnectionCollectionItemAuthDetailResult'],
+                 auth_secret: _builtins.str,
+                 auth_secret_secret_id: _builtins.str,
+                 auth_token: _builtins.str,
+                 auth_token_secret_id: _builtins.str,
                  authentication_mode: _builtins.str,
                  authentication_type: _builtins.str,
                  azure_authority_host: _builtins.str,
@@ -3348,6 +4051,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  client_id: _builtins.str,
                  client_secret: _builtins.str,
                  client_secret_secret_id: _builtins.str,
+                 cluster_endpoint: _builtins.str,
                  cluster_id: _builtins.str,
                  cluster_placement_group_id: _builtins.str,
                  compartment_id: _builtins.str,
@@ -3383,6 +4087,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  key_store_password: _builtins.str,
                  key_store_password_secret_id: _builtins.str,
                  key_store_secret_id: _builtins.str,
+                 key_store_type: _builtins.str,
                  lifecycle_details: _builtins.str,
                  locks: Sequence['outputs.GetConnectionsConnectionCollectionItemLockResult'],
                  max_input_chars: _builtins.int,
@@ -3397,11 +4102,16 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  private_key_passphrase: _builtins.str,
                  private_key_passphrase_secret_id: _builtins.str,
                  producer_properties: _builtins.str,
+                 provider_id: _builtins.str,
                  provider_type: _builtins.str,
                  public_key_fingerprint: _builtins.str,
                  redis_cluster_id: _builtins.str,
                  region: _builtins.str,
+                 rest_auth_secret_key: _builtins.str,
+                 rest_auth_secret_key_secret_id: _builtins.str,
+                 rest_endpoint: _builtins.str,
                  routing_method: _builtins.str,
+                 rpc_cipher: _builtins.str,
                  sas_token: _builtins.str,
                  sas_token_secret_id: _builtins.str,
                  secret_access_key: _builtins.str,
@@ -3432,6 +4142,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  storage_credential_name: _builtins.str,
                  storages: Sequence['outputs.GetConnectionsConnectionCollectionItemStorageResult'],
                  stream_pool_id: _builtins.str,
+                 submit_mode: _builtins.str,
                  subnet_id: _builtins.str,
                  subscription_id: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
@@ -3445,58 +4156,60 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  tls_certificate_key_file_password: _builtins.str,
                  tls_certificate_key_file_password_secret_id: _builtins.str,
                  tls_certificate_key_file_secret_id: _builtins.str,
+                 tls_protocol: _builtins.str,
                  trigger_refresh: _builtins.bool,
                  trust_store: _builtins.str,
                  trust_store_password: _builtins.str,
                  trust_store_password_secret_id: _builtins.str,
                  trust_store_secret_id: _builtins.str,
+                 trust_store_type: _builtins.str,
                  url: _builtins.str,
                  user_id: _builtins.str,
                  username: _builtins.str,
                  vault_id: _builtins.str,
                  wallet: _builtins.str,
-                 wallet_secret_id: _builtins.str):
+                 wallet_secret_id: _builtins.str,
+                 workspace_url: _builtins.str):
         """
-        :param _builtins.str access_key_id: * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-               * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-                 Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+        :param _builtins.str access_key_id: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
         :param _builtins.str account_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
         :param _builtins.str account_name: Sets the Azure storage account name.
         :param Sequence['GetConnectionsConnectionCollectionItemAdditionalAttributeArgs'] additional_attributes: An array of name-value pair attribute entries. Used as additional parameters in connection string.
-        :param Sequence['GetConnectionsConnectionCollectionItemAuthDetailArgs'] auth_details: Represents authentication details for an AI Model connection.
+        :param Sequence['GetConnectionsConnectionCollectionItemArtifactLocationArgs'] artifact_locations: Location used to share engine application artifacts.
+               * DATABRICKS_ENGINE: Location used to share Databricks application artifacts.
+               * SPARK: Location used to share Spark application artifacts with a remote cluster.
+        :param Sequence['GetConnectionsConnectionCollectionItemAuthDetailArgs'] auth_details: Authentication details for an AI Model or AI Provider connection.
+        :param _builtins.str auth_secret_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Spark authentication shared secret. Applicable when authenticationType is SHARED_SECRET. Note: When provided, 'authSecret' field must not be provided.
+        :param _builtins.str auth_token_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the personal access token is stored. Only applicable for authenticationType == PERSONAL_ACCESS_TOKEN. Note: When provided, 'authToken' field must not be provided.
         :param _builtins.str authentication_mode: Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
-        :param _builtins.str authentication_type: Used authentication mechanism to be provided for the following connection types:
-               * SNOWFLAKE, AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS
-               * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
-               * DATABRICKS - Required fields by authentication types:
-               * PERSONAL_ACCESS_TOKEN: username is always 'token', user must enter password
-               * OAUTH_M2M: user must enter clientId and clientSecret
+        :param _builtins.str authentication_type: Authentication mechanism; supported values depend on `connection_type`.
+               * DATABRICKS: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M.
+               * DATABRICKS_ENGINE: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M for the Databricks Engine REST API.
+               * JAVA_MESSAGE_SERVICE: Authentication type for Java Message Service. The default is NONE.
+               * SPARK: Use SHARED_SECRET only when the target cluster has `spark.authenticate=true`. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET.
+               * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE: Authentication type supported by the target service.
         :param _builtins.str azure_authority_host: The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
                * Azure China: https://login.chinacloudapi.cn/
                * Azure US Government: https://login.microsoftonline.us/
         :param _builtins.str azure_tenant_id: Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param Sequence['GetConnectionsConnectionCollectionItemBootstrapServerArgs'] bootstrap_servers: Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
         :param Sequence['GetConnectionsConnectionCollectionItemCatalogArgs'] catalogs: Represents the catalog of given type used in an Iceberg connection.
-        :param _builtins.str client_id: * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-               * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
-               * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-        :param _builtins.str client_secret_secret_id: * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-               * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
-               * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-                 Note: When provided, 'clientSecret' field must not be provided.
+        :param _builtins.str client_id: * AZURE_DATA_LAKE_STORAGE: Azure application client ID, required for AZURE_ACTIVE_DIRECTORY authentication.
+               * DATABRICKS, DATABRICKS_ENGINE: OAuth client ID, applicable to OAUTH_M2M authentication.
+               * MICROSOFT_FABRIC: Azure application client ID.
+        :param _builtins.str client_secret_secret_id: Secret OCID containing the client secret. For DATABRICKS and DATABRICKS_ENGINE it applies to OAUTH_M2M authentication. When provided, `client_secret` must not be provided.
+        :param _builtins.str cluster_endpoint: Spark master URL used for job submission. Required for both submitMode SUBMIT and REST. e.g.: 'spark://spark-master.example.com:7077' High availability can be configured with a comma-separated list, for example: 'spark://h1.example.com:7077,h2.example.com:7077'
         :param _builtins.str cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
-        :param _builtins.str cluster_placement_group_id: The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud  must not be provided.
+        :param _builtins.str cluster_placement_group_id: The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
         :param _builtins.str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         :param _builtins.str connection_factory: The of Java class implementing javax.jms.ConnectionFactory interface supplied by the Java Message Service provider. e.g.: 'com.stc.jmsjca.core.JConnectionFactoryXA'
-        :param _builtins.str connection_string: * ORACLE: Connect descriptor or Easy Connect Naming method used to connect to a database.
-               * MONGODB: MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
-               * AZURE_SYNAPSE_ANALYTICS: JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+        :param _builtins.str connection_string: JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
         :param _builtins.str connection_type: The array of connection types.
-        :param _builtins.str connection_url: * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
-               * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
-               * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
-               * DATABRICKS: Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
-               * ORACLE_AI_DATA_PLATFORM: Connection URL. It must start with 'jdbc:spark://'
+        :param _builtins.str connection_url: * AMAZON_REDSHIFT: JDBC connection URL. e.g.: `jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb`
+               * DATABRICKS: JDBC connection URL. e.g.: `jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb`
+               * JAVA_MESSAGE_SERVICE: Connection URL specifying the protocol, host, and port. e.g.: `mq://myjms.host.domain:7676`
+               * ORACLE_AI_DATA_PLATFORM: Connection URL beginning with `jdbc:spark://`.
+               * SNOWFLAKE: JDBC connection URL. e.g.: `jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>`
         :param _builtins.str consumer_properties: The base64 encoded content of the consumer.properties file.
         :param _builtins.str core_site_xml: The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         :param _builtins.str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
@@ -3507,10 +4220,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param _builtins.str description: Metadata about this specific object.
         :param _builtins.str display_name: A filter to return only the resources that match the entire 'displayName' given.
         :param _builtins.bool does_use_secret_ids: Indicates that sensitive attributes are provided via Secrets.
-        :param _builtins.str endpoint: * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
-               * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
-               * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
-               * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
+        :param _builtins.str endpoint: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
         :param _builtins.str fingerprint: Fingerprint required by TLS security protocol. E.g.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
         :param Mapping[str, _builtins.str] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param _builtins.str host: The name or address of a host.
@@ -3524,12 +4234,13 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param _builtins.str jndi_security_credentials_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, 'jndiSecurityCredentials' field must not be provided.
         :param _builtins.str jndi_security_principal: Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
         :param _builtins.str key_id: References the Oracle Cloud Infrastructure Vault key in the Oracle Cloud Infrastructure Vault identified by `vaultId`.
-        :param _builtins.str key_store_password_secret_id: * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
-               * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
-               * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
-               * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
-                 Note: When provided, 'keyStorePassword' field must not be provided.
-        :param _builtins.str key_store_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
+        :param _builtins.str key_store_password_secret_id: Secret OCID containing the key store password.
+               * SPARK: Applicable when `security_protocol` is TLS and a client key store is provided. Required when `key_store_secret_id` is provided.
+               * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Password for the target connection's key store.
+        :param _builtins.str key_store_secret_id: Secret OCID containing the key store content.
+               * SPARK: Applicable when `security_protocol` is TLS.
+               * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Key store file used by the target connection.
+        :param _builtins.str key_store_type: Client key store format used for mutual TLS.
         :param _builtins.str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         :param Sequence['GetConnectionsConnectionCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param _builtins.int max_input_chars: Maximum number of input characters supported by this AI model connection.
@@ -3541,54 +4252,45 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param _builtins.str private_key_file_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
         :param _builtins.str private_key_passphrase_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
         :param _builtins.str producer_properties: The base64 encoded content of the producer.properties file.
+        :param _builtins.str provider_id: Optional identifier of the AI Provider Connection backing this AI Model Connection. When provided, it must reference an existing Active connection of type `AI_PROVIDER`. When `providerId` is set, `providerType` and `authDetails` must not be provided on the AI Model Connection, because provider metadata is resolved from the referenced AI Provider Connection. When `providerId` is not set, the AI Model Connection must provide inline provider metadata using `providerType` and `authDetails`.
         :param _builtins.str provider_type: AI Provider type used by the AI Model Connection.
         :param _builtins.str public_key_fingerprint: The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         :param _builtins.str redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
         :param _builtins.str region: The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+        :param _builtins.str rest_auth_secret_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the REST submission signing key. Applicable only when submitMode is REST and the cluster enforces REST request signing. This setting is independent of authenticationType. Note: When provided, 'restAuthSecretKey' field must not be provided.
+        :param _builtins.str rest_endpoint: Spark standalone REST submission base URL. e.g.: 'https://spark-master.example.com:6066' Applicable only and required when submitMode is REST.
         :param _builtins.str routing_method: Controls the network traffic direction to the target: SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected. SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
+        :param _builtins.str rpc_cipher: Cipher transform used for Spark RPC encryption. Applicable when securityProtocol is AES_RPC.
         :param _builtins.str sas_token_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
-        :param _builtins.str secret_access_key_secret_id: * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-               * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
+        :param _builtins.str secret_access_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
         :param Mapping[str, _builtins.str] security_attributes: Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
-        :param _builtins.str security_protocol: * DB2: Security protocol for the DB2 database.
-               * ELASTICSEARCH: Security protocol for Elasticsearch.
-               * JAVA_MESSAGE_SERVICE: Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
-               * KAFKA: Security Type for Kafka.
-               * MICROSOFT_SQLSERVER: Security Type for Microsoft SQL Server.
-               * MONGODB: Security Type for MongoDB.
-               * MYSQL: Security Type for MySQL.
-               * POSTGRESQL: Security protocol for PostgreSQL.
-               * REDIS: Security protocol for Redis.
-        :param _builtins.str servers: * ELASTICSEARCH: Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
-               * REDIS: Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 6379. Used for establishing the initial connection to the Redis cluster. Example: `"server1.example.com:6379,server2.example.com:6379"`
+        :param _builtins.str security_protocol: Security protocol; supported values depend on `connection_type`.
+               * SPARK: PLAINTEXT, TLS, AES_RPC, or SASL_ENCRYPTED. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET authentication.
+               * Other connection types: Use the protocol supported by the target service.
+        :param _builtins.str servers: Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
         :param _builtins.str service_account_key_file_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
         :param _builtins.str session_mode: Specifies the session mode for the database connection. Use REDIRECT only for RAC databases with SCAN listeners that return IP addresses. For RAC databases with SCAN listeners that return FQDNs, and for all other Oracle database technologies, use DIRECT. In RAC deployments, SCAN listeners redirects a connection to a specific database node, identified by either IP address or FQDN. It is recommended to configure RAC with FQDN-based SCAN listeners.
         :param _builtins.bool should_use_jndi: If set to true, Java Naming and Directory Interface (JNDI) properties should be provided.
-        :param _builtins.bool should_use_resource_principal: * KAFKA: Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
-               * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM, ORACLE_NOSQL: Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+        :param _builtins.bool should_use_resource_principal: * KAFKA: Specifies resource-principal authentication for Oracle Cloud Infrastructure Streaming connections. Available from GoldenGate 23.9.0.0.0. When set, `username`, `password`, and `password_secret_id` must not be provided. Default: false.
+               * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM, ORACLE_NOSQL: Specifies resource-principal authentication. Default: false.
         :param _builtins.bool should_validate_server_certificate: If set to true, the driver validates the certificate that is sent by the database server.
-        :param _builtins.str ssl_ca: * MICROSOFT_SQLSERVER: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1-way SSL).
-               * MYSQL: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-               * POSTGRESQL: The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-        :param _builtins.str ssl_cert: * MYSQL: Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-               * POSTGRESQL: The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-        :param _builtins.str ssl_client_keystash_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
-        :param _builtins.str ssl_client_keystoredb_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
-        :param _builtins.str ssl_crl: * MYSQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-               * POSTGRESQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-        :param _builtins.str ssl_key_password_secret_id: * JAVA_MESSAGE_SERVICE, KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided.
-               * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
-                 Note: When provided, 'sslKeyPassword' field must not be provided.
-        :param _builtins.str ssl_key_secret_id: * MYSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
-               * POSTGRESQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
-                 Note: When provided, 'sslKey' field must not be provided.
-        :param _builtins.str ssl_mode: * MYSQL: SSL modes for MySQL.
-               * POSTGRESQL: SSL modes for PostgreSQL.
+        :param _builtins.str ssl_ca: The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        :param _builtins.str ssl_cert: Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        :param _builtins.str ssl_client_keystash_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+        :param _builtins.str ssl_client_keystoredb_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
+        :param _builtins.str ssl_crl: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        :param _builtins.str ssl_key_password_secret_id: Secret OCID containing the certificate private-key password inside the client key store.
+               * SPARK: Applicable when `security_protocol` is TLS and a client key store is provided.
+               * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY: Provide it when the private-key password differs from the key store password.
+        :param _builtins.str ssl_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+               * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
+        :param _builtins.str ssl_mode: SSL mode for PostgreSQL.
         :param _builtins.str ssl_server_certificate: The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         :param _builtins.str state: A filter to return only connections having the 'lifecycleState' given.
         :param _builtins.str storage_credential_name: Optional. External storage credential name to access files on object storage such as ADLS Gen2, S3 or GCS.
         :param Sequence['GetConnectionsConnectionCollectionItemStorageArgs'] storages: Represents the storage of given type used in an Iceberg connection.
         :param _builtins.str stream_pool_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
+        :param _builtins.str submit_mode: Submission channel used to connect to Spark.
         :param _builtins.str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
         :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param Mapping[str, _builtins.str] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
@@ -3601,25 +4303,34 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param _builtins.str tls_certificate_key_file_password_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, 'tlsCertificateKeyFilePassword' field must not be provided.
         :param _builtins.str tls_certificate_key_file_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
                * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
-        :param _builtins.str trust_store_password_secret_id: * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
-               * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
-               * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
-               * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
-                 Note: When provided, 'trustStorePassword' field must not be provided.
-        :param _builtins.str trust_store_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
+        :param _builtins.str tls_protocol: TLS protocol negotiated by the Spark client.
+        :param _builtins.str trust_store_password_secret_id: Secret OCID containing the trust store password.
+               * SPARK: Applicable when `security_protocol` is TLS and a trust store is provided. Required when `trust_store_secret_id` is provided.
+               * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Password for the target connection's trust store.
+        :param _builtins.str trust_store_secret_id: Secret OCID containing the trust store content.
+               * SPARK: Applicable when `security_protocol` is TLS. Provide it when the server certificate is not already trusted by the JVM.
+               * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Trust store file used by the target connection.
+        :param _builtins.str trust_store_type: Trust store format used by the Spark client.
         :param _builtins.str url: Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
-        :param _builtins.str user_id: * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
-               * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+        :param _builtins.str user_id: * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses Object Storage. The user must have write access to the bucket. If omitted, the service defaults to the user calling the API.
+               * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses the Oracle NoSQL database. The user must have write access to the table. If omitted, the service defaults to the user calling the API.
         :param _builtins.str username: The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
         :param _builtins.str vault_id: References the Oracle Cloud Infrastructure Vault that contains the customer-managed encryption key identified by `keyId`.
         :param _builtins.str wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+        :param _builtins.str workspace_url: * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://<workspace>.cloud.databricks.com/api/2.0/`.
+               * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
         """
         pulumi.set(__self__, "access_key_id", access_key_id)
         pulumi.set(__self__, "account_key", account_key)
         pulumi.set(__self__, "account_key_secret_id", account_key_secret_id)
         pulumi.set(__self__, "account_name", account_name)
         pulumi.set(__self__, "additional_attributes", additional_attributes)
+        pulumi.set(__self__, "artifact_locations", artifact_locations)
         pulumi.set(__self__, "auth_details", auth_details)
+        pulumi.set(__self__, "auth_secret", auth_secret)
+        pulumi.set(__self__, "auth_secret_secret_id", auth_secret_secret_id)
+        pulumi.set(__self__, "auth_token", auth_token)
+        pulumi.set(__self__, "auth_token_secret_id", auth_token_secret_id)
         pulumi.set(__self__, "authentication_mode", authentication_mode)
         pulumi.set(__self__, "authentication_type", authentication_type)
         pulumi.set(__self__, "azure_authority_host", azure_authority_host)
@@ -3629,6 +4340,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "client_id", client_id)
         pulumi.set(__self__, "client_secret", client_secret)
         pulumi.set(__self__, "client_secret_secret_id", client_secret_secret_id)
+        pulumi.set(__self__, "cluster_endpoint", cluster_endpoint)
         pulumi.set(__self__, "cluster_id", cluster_id)
         pulumi.set(__self__, "cluster_placement_group_id", cluster_placement_group_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -3664,6 +4376,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "key_store_password", key_store_password)
         pulumi.set(__self__, "key_store_password_secret_id", key_store_password_secret_id)
         pulumi.set(__self__, "key_store_secret_id", key_store_secret_id)
+        pulumi.set(__self__, "key_store_type", key_store_type)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "max_input_chars", max_input_chars)
@@ -3678,11 +4391,16 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "private_key_passphrase", private_key_passphrase)
         pulumi.set(__self__, "private_key_passphrase_secret_id", private_key_passphrase_secret_id)
         pulumi.set(__self__, "producer_properties", producer_properties)
+        pulumi.set(__self__, "provider_id", provider_id)
         pulumi.set(__self__, "provider_type", provider_type)
         pulumi.set(__self__, "public_key_fingerprint", public_key_fingerprint)
         pulumi.set(__self__, "redis_cluster_id", redis_cluster_id)
         pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "rest_auth_secret_key", rest_auth_secret_key)
+        pulumi.set(__self__, "rest_auth_secret_key_secret_id", rest_auth_secret_key_secret_id)
+        pulumi.set(__self__, "rest_endpoint", rest_endpoint)
         pulumi.set(__self__, "routing_method", routing_method)
+        pulumi.set(__self__, "rpc_cipher", rpc_cipher)
         pulumi.set(__self__, "sas_token", sas_token)
         pulumi.set(__self__, "sas_token_secret_id", sas_token_secret_id)
         pulumi.set(__self__, "secret_access_key", secret_access_key)
@@ -3713,6 +4431,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "storage_credential_name", storage_credential_name)
         pulumi.set(__self__, "storages", storages)
         pulumi.set(__self__, "stream_pool_id", stream_pool_id)
+        pulumi.set(__self__, "submit_mode", submit_mode)
         pulumi.set(__self__, "subnet_id", subnet_id)
         pulumi.set(__self__, "subscription_id", subscription_id)
         pulumi.set(__self__, "system_tags", system_tags)
@@ -3726,25 +4445,26 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "tls_certificate_key_file_password", tls_certificate_key_file_password)
         pulumi.set(__self__, "tls_certificate_key_file_password_secret_id", tls_certificate_key_file_password_secret_id)
         pulumi.set(__self__, "tls_certificate_key_file_secret_id", tls_certificate_key_file_secret_id)
+        pulumi.set(__self__, "tls_protocol", tls_protocol)
         pulumi.set(__self__, "trigger_refresh", trigger_refresh)
         pulumi.set(__self__, "trust_store", trust_store)
         pulumi.set(__self__, "trust_store_password", trust_store_password)
         pulumi.set(__self__, "trust_store_password_secret_id", trust_store_password_secret_id)
         pulumi.set(__self__, "trust_store_secret_id", trust_store_secret_id)
+        pulumi.set(__self__, "trust_store_type", trust_store_type)
         pulumi.set(__self__, "url", url)
         pulumi.set(__self__, "user_id", user_id)
         pulumi.set(__self__, "username", username)
         pulumi.set(__self__, "vault_id", vault_id)
         pulumi.set(__self__, "wallet", wallet)
         pulumi.set(__self__, "wallet_secret_id", wallet_secret_id)
+        pulumi.set(__self__, "workspace_url", workspace_url)
 
     @_builtins.property
     @pulumi.getter(name="accessKeyId")
     def access_key_id(self) -> _builtins.str:
         """
-        * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-        * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-          Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+        Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
         """
         return pulumi.get(self, "access_key_id")
 
@@ -3779,12 +4499,50 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         return pulumi.get(self, "additional_attributes")
 
     @_builtins.property
+    @pulumi.getter(name="artifactLocations")
+    def artifact_locations(self) -> Sequence['outputs.GetConnectionsConnectionCollectionItemArtifactLocationResult']:
+        """
+        Location used to share engine application artifacts.
+        * DATABRICKS_ENGINE: Location used to share Databricks application artifacts.
+        * SPARK: Location used to share Spark application artifacts with a remote cluster.
+        """
+        return pulumi.get(self, "artifact_locations")
+
+    @_builtins.property
     @pulumi.getter(name="authDetails")
     def auth_details(self) -> Sequence['outputs.GetConnectionsConnectionCollectionItemAuthDetailResult']:
         """
-        Represents authentication details for an AI Model connection.
+        Authentication details for an AI Model or AI Provider connection.
         """
         return pulumi.get(self, "auth_details")
+
+    @_builtins.property
+    @pulumi.getter(name="authSecret")
+    @_utilities.deprecated("""The 'auth_secret' field has been deprecated. Please use 'auth_secret_secret_id' instead.""")
+    def auth_secret(self) -> _builtins.str:
+        return pulumi.get(self, "auth_secret")
+
+    @_builtins.property
+    @pulumi.getter(name="authSecretSecretId")
+    def auth_secret_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Spark authentication shared secret. Applicable when authenticationType is SHARED_SECRET. Note: When provided, 'authSecret' field must not be provided.
+        """
+        return pulumi.get(self, "auth_secret_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="authToken")
+    @_utilities.deprecated("""The 'auth_token' field has been deprecated. Please use 'auth_token_secret_id' instead.""")
+    def auth_token(self) -> _builtins.str:
+        return pulumi.get(self, "auth_token")
+
+    @_builtins.property
+    @pulumi.getter(name="authTokenSecretId")
+    def auth_token_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the personal access token is stored. Only applicable for authenticationType == PERSONAL_ACCESS_TOKEN. Note: When provided, 'authToken' field must not be provided.
+        """
+        return pulumi.get(self, "auth_token_secret_id")
 
     @_builtins.property
     @pulumi.getter(name="authenticationMode")
@@ -3798,12 +4556,12 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="authenticationType")
     def authentication_type(self) -> _builtins.str:
         """
-        Used authentication mechanism to be provided for the following connection types:
-        * SNOWFLAKE, AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS
-        * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
-        * DATABRICKS - Required fields by authentication types:
-        * PERSONAL_ACCESS_TOKEN: username is always 'token', user must enter password
-        * OAUTH_M2M: user must enter clientId and clientSecret
+        Authentication mechanism; supported values depend on `connection_type`.
+        * DATABRICKS: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M.
+        * DATABRICKS_ENGINE: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M for the Databricks Engine REST API.
+        * JAVA_MESSAGE_SERVICE: Authentication type for Java Message Service. The default is NONE.
+        * SPARK: Use SHARED_SECRET only when the target cluster has `spark.authenticate=true`. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET.
+        * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE: Authentication type supported by the target service.
         """
         return pulumi.get(self, "authentication_type")
 
@@ -3845,9 +4603,9 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="clientId")
     def client_id(self) -> _builtins.str:
         """
-        * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-        * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
-        * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+        * AZURE_DATA_LAKE_STORAGE: Azure application client ID, required for AZURE_ACTIVE_DIRECTORY authentication.
+        * DATABRICKS, DATABRICKS_ENGINE: OAuth client ID, applicable to OAUTH_M2M authentication.
+        * MICROSOFT_FABRIC: Azure application client ID.
         """
         return pulumi.get(self, "client_id")
 
@@ -3861,12 +4619,17 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="clientSecretSecretId")
     def client_secret_secret_id(self) -> _builtins.str:
         """
-        * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-        * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
-        * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-          Note: When provided, 'clientSecret' field must not be provided.
+        Secret OCID containing the client secret. For DATABRICKS and DATABRICKS_ENGINE it applies to OAUTH_M2M authentication. When provided, `client_secret` must not be provided.
         """
         return pulumi.get(self, "client_secret_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="clusterEndpoint")
+    def cluster_endpoint(self) -> _builtins.str:
+        """
+        Spark master URL used for job submission. Required for both submitMode SUBMIT and REST. e.g.: 'spark://spark-master.example.com:7077' High availability can be configured with a comma-separated list, for example: 'spark://h1.example.com:7077,h2.example.com:7077'
+        """
+        return pulumi.get(self, "cluster_endpoint")
 
     @_builtins.property
     @pulumi.getter(name="clusterId")
@@ -3880,7 +4643,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="clusterPlacementGroupId")
     def cluster_placement_group_id(self) -> _builtins.str:
         """
-        The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud  must not be provided.
+        The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
         """
         return pulumi.get(self, "cluster_placement_group_id")
 
@@ -3904,9 +4667,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="connectionString")
     def connection_string(self) -> _builtins.str:
         """
-        * ORACLE: Connect descriptor or Easy Connect Naming method used to connect to a database.
-        * MONGODB: MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
-        * AZURE_SYNAPSE_ANALYTICS: JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+        JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
         """
         return pulumi.get(self, "connection_string")
 
@@ -3922,11 +4683,11 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="connectionUrl")
     def connection_url(self) -> _builtins.str:
         """
-        * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
-        * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
-        * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
-        * DATABRICKS: Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
-        * ORACLE_AI_DATA_PLATFORM: Connection URL. It must start with 'jdbc:spark://'
+        * AMAZON_REDSHIFT: JDBC connection URL. e.g.: `jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb`
+        * DATABRICKS: JDBC connection URL. e.g.: `jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb`
+        * JAVA_MESSAGE_SERVICE: Connection URL specifying the protocol, host, and port. e.g.: `mq://myjms.host.domain:7676`
+        * ORACLE_AI_DATA_PLATFORM: Connection URL beginning with `jdbc:spark://`.
+        * SNOWFLAKE: JDBC connection URL. e.g.: `jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>`
         """
         return pulumi.get(self, "connection_url")
 
@@ -4014,10 +4775,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter
     def endpoint(self) -> _builtins.str:
         """
-        * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
-        * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
-        * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
-        * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
+        Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
         """
         return pulumi.get(self, "endpoint")
 
@@ -4138,11 +4896,9 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="keyStorePasswordSecretId")
     def key_store_password_secret_id(self) -> _builtins.str:
         """
-        * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
-        * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
-        * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
-        * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
-          Note: When provided, 'keyStorePassword' field must not be provided.
+        Secret OCID containing the key store password.
+        * SPARK: Applicable when `security_protocol` is TLS and a client key store is provided. Required when `key_store_secret_id` is provided.
+        * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Password for the target connection's key store.
         """
         return pulumi.get(self, "key_store_password_secret_id")
 
@@ -4150,9 +4906,19 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="keyStoreSecretId")
     def key_store_secret_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
+        Secret OCID containing the key store content.
+        * SPARK: Applicable when `security_protocol` is TLS.
+        * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Key store file used by the target connection.
         """
         return pulumi.get(self, "key_store_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="keyStoreType")
+    def key_store_type(self) -> _builtins.str:
+        """
+        Client key store format used for mutual TLS.
+        """
+        return pulumi.get(self, "key_store_type")
 
     @_builtins.property
     @pulumi.getter(name="lifecycleDetails")
@@ -4261,6 +5027,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         return pulumi.get(self, "producer_properties")
 
     @_builtins.property
+    @pulumi.getter(name="providerId")
+    def provider_id(self) -> _builtins.str:
+        """
+        Optional identifier of the AI Provider Connection backing this AI Model Connection. When provided, it must reference an existing Active connection of type `AI_PROVIDER`. When `providerId` is set, `providerType` and `authDetails` must not be provided on the AI Model Connection, because provider metadata is resolved from the referenced AI Provider Connection. When `providerId` is not set, the AI Model Connection must provide inline provider metadata using `providerType` and `authDetails`.
+        """
+        return pulumi.get(self, "provider_id")
+
+    @_builtins.property
     @pulumi.getter(name="providerType")
     def provider_type(self) -> _builtins.str:
         """
@@ -4293,12 +5067,42 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         return pulumi.get(self, "region")
 
     @_builtins.property
+    @pulumi.getter(name="restAuthSecretKey")
+    @_utilities.deprecated("""The 'rest_auth_secret_key' field has been deprecated. Please use 'rest_auth_secret_key_secret_id' instead.""")
+    def rest_auth_secret_key(self) -> _builtins.str:
+        return pulumi.get(self, "rest_auth_secret_key")
+
+    @_builtins.property
+    @pulumi.getter(name="restAuthSecretKeySecretId")
+    def rest_auth_secret_key_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the REST submission signing key. Applicable only when submitMode is REST and the cluster enforces REST request signing. This setting is independent of authenticationType. Note: When provided, 'restAuthSecretKey' field must not be provided.
+        """
+        return pulumi.get(self, "rest_auth_secret_key_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="restEndpoint")
+    def rest_endpoint(self) -> _builtins.str:
+        """
+        Spark standalone REST submission base URL. e.g.: 'https://spark-master.example.com:6066' Applicable only and required when submitMode is REST.
+        """
+        return pulumi.get(self, "rest_endpoint")
+
+    @_builtins.property
     @pulumi.getter(name="routingMethod")
     def routing_method(self) -> _builtins.str:
         """
         Controls the network traffic direction to the target: SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected. SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
         """
         return pulumi.get(self, "routing_method")
+
+    @_builtins.property
+    @pulumi.getter(name="rpcCipher")
+    def rpc_cipher(self) -> _builtins.str:
+        """
+        Cipher transform used for Spark RPC encryption. Applicable when securityProtocol is AES_RPC.
+        """
+        return pulumi.get(self, "rpc_cipher")
 
     @_builtins.property
     @pulumi.getter(name="sasToken")
@@ -4324,8 +5128,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="secretAccessKeySecretId")
     def secret_access_key_secret_id(self) -> _builtins.str:
         """
-        * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-        * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
         """
         return pulumi.get(self, "secret_access_key_secret_id")
 
@@ -4341,15 +5144,9 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="securityProtocol")
     def security_protocol(self) -> _builtins.str:
         """
-        * DB2: Security protocol for the DB2 database.
-        * ELASTICSEARCH: Security protocol for Elasticsearch.
-        * JAVA_MESSAGE_SERVICE: Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
-        * KAFKA: Security Type for Kafka.
-        * MICROSOFT_SQLSERVER: Security Type for Microsoft SQL Server.
-        * MONGODB: Security Type for MongoDB.
-        * MYSQL: Security Type for MySQL.
-        * POSTGRESQL: Security protocol for PostgreSQL.
-        * REDIS: Security protocol for Redis.
+        Security protocol; supported values depend on `connection_type`.
+        * SPARK: PLAINTEXT, TLS, AES_RPC, or SASL_ENCRYPTED. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET authentication.
+        * Other connection types: Use the protocol supported by the target service.
         """
         return pulumi.get(self, "security_protocol")
 
@@ -4357,8 +5154,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter
     def servers(self) -> _builtins.str:
         """
-        * ELASTICSEARCH: Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
-        * REDIS: Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 6379. Used for establishing the initial connection to the Redis cluster. Example: `"server1.example.com:6379,server2.example.com:6379"`
+        Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
         """
         return pulumi.get(self, "servers")
 
@@ -4396,8 +5192,8 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="shouldUseResourcePrincipal")
     def should_use_resource_principal(self) -> _builtins.bool:
         """
-        * KAFKA: Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
-        * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM, ORACLE_NOSQL: Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+        * KAFKA: Specifies resource-principal authentication for Oracle Cloud Infrastructure Streaming connections. Available from GoldenGate 23.9.0.0.0. When set, `username`, `password`, and `password_secret_id` must not be provided. Default: false.
+        * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM, ORACLE_NOSQL: Specifies resource-principal authentication. Default: false.
         """
         return pulumi.get(self, "should_use_resource_principal")
 
@@ -4413,9 +5209,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="sslCa")
     def ssl_ca(self) -> _builtins.str:
         """
-        * MICROSOFT_SQLSERVER: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1-way SSL).
-        * MYSQL: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-        * POSTGRESQL: The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         """
         return pulumi.get(self, "ssl_ca")
 
@@ -4423,8 +5217,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="sslCert")
     def ssl_cert(self) -> _builtins.str:
         """
-        * MYSQL: Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-        * POSTGRESQL: The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         """
         return pulumi.get(self, "ssl_cert")
 
@@ -4438,7 +5231,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="sslClientKeystashSecretId")
     def ssl_client_keystash_secret_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
         """
         return pulumi.get(self, "ssl_client_keystash_secret_id")
 
@@ -4452,7 +5245,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="sslClientKeystoredbSecretId")
     def ssl_client_keystoredb_secret_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
         """
         return pulumi.get(self, "ssl_client_keystoredb_secret_id")
 
@@ -4460,8 +5253,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="sslCrl")
     def ssl_crl(self) -> _builtins.str:
         """
-        * MYSQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-        * POSTGRESQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+        The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
         """
         return pulumi.get(self, "ssl_crl")
 
@@ -4481,9 +5273,9 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="sslKeyPasswordSecretId")
     def ssl_key_password_secret_id(self) -> _builtins.str:
         """
-        * JAVA_MESSAGE_SERVICE, KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided.
-        * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
-          Note: When provided, 'sslKeyPassword' field must not be provided.
+        Secret OCID containing the certificate private-key password inside the client key store.
+        * SPARK: Applicable when `security_protocol` is TLS and a client key store is provided.
+        * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY: Provide it when the private-key password differs from the key store password.
         """
         return pulumi.get(self, "ssl_key_password_secret_id")
 
@@ -4491,9 +5283,8 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="sslKeySecretId")
     def ssl_key_secret_id(self) -> _builtins.str:
         """
-        * MYSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
-        * POSTGRESQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
-          Note: When provided, 'sslKey' field must not be provided.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+        * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
         """
         return pulumi.get(self, "ssl_key_secret_id")
 
@@ -4501,8 +5292,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="sslMode")
     def ssl_mode(self) -> _builtins.str:
         """
-        * MYSQL: SSL modes for MySQL.
-        * POSTGRESQL: SSL modes for PostgreSQL.
+        SSL mode for PostgreSQL.
         """
         return pulumi.get(self, "ssl_mode")
 
@@ -4545,6 +5335,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         """
         return pulumi.get(self, "stream_pool_id")
+
+    @_builtins.property
+    @pulumi.getter(name="submitMode")
+    def submit_mode(self) -> _builtins.str:
+        """
+        Submission channel used to connect to Spark.
+        """
+        return pulumi.get(self, "submit_mode")
 
     @_builtins.property
     @pulumi.getter(name="subnetId")
@@ -4648,6 +5446,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         return pulumi.get(self, "tls_certificate_key_file_secret_id")
 
     @_builtins.property
+    @pulumi.getter(name="tlsProtocol")
+    def tls_protocol(self) -> _builtins.str:
+        """
+        TLS protocol negotiated by the Spark client.
+        """
+        return pulumi.get(self, "tls_protocol")
+
+    @_builtins.property
     @pulumi.getter(name="triggerRefresh")
     def trigger_refresh(self) -> _builtins.bool:
         return pulumi.get(self, "trigger_refresh")
@@ -4668,11 +5474,9 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="trustStorePasswordSecretId")
     def trust_store_password_secret_id(self) -> _builtins.str:
         """
-        * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
-        * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
-        * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
-        * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
-          Note: When provided, 'trustStorePassword' field must not be provided.
+        Secret OCID containing the trust store password.
+        * SPARK: Applicable when `security_protocol` is TLS and a trust store is provided. Required when `trust_store_secret_id` is provided.
+        * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Password for the target connection's trust store.
         """
         return pulumi.get(self, "trust_store_password_secret_id")
 
@@ -4680,9 +5484,19 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="trustStoreSecretId")
     def trust_store_secret_id(self) -> _builtins.str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
+        Secret OCID containing the trust store content.
+        * SPARK: Applicable when `security_protocol` is TLS. Provide it when the server certificate is not already trusted by the JVM.
+        * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Trust store file used by the target connection.
         """
         return pulumi.get(self, "trust_store_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="trustStoreType")
+    def trust_store_type(self) -> _builtins.str:
+        """
+        Trust store format used by the Spark client.
+        """
+        return pulumi.get(self, "trust_store_type")
 
     @_builtins.property
     @pulumi.getter
@@ -4696,8 +5510,8 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="userId")
     def user_id(self) -> _builtins.str:
         """
-        * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
-        * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+        * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses Object Storage. The user must have write access to the bucket. If omitted, the service defaults to the user calling the API.
+        * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses the Oracle NoSQL database. The user must have write access to the table. If omitted, the service defaults to the user calling the API.
         """
         return pulumi.get(self, "user_id")
 
@@ -4731,6 +5545,15 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         """
         return pulumi.get(self, "wallet_secret_id")
 
+    @_builtins.property
+    @pulumi.getter(name="workspaceUrl")
+    def workspace_url(self) -> _builtins.str:
+        """
+        * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://<workspace>.cloud.databricks.com/api/2.0/`.
+        * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
+        """
+        return pulumi.get(self, "workspace_url")
+
 
 @pulumi.output_type
 class GetConnectionsConnectionCollectionItemAdditionalAttributeResult(dict):
@@ -4762,6 +5585,306 @@ class GetConnectionsConnectionCollectionItemAdditionalAttributeResult(dict):
 
 
 @pulumi.output_type
+class GetConnectionsConnectionCollectionItemArtifactLocationResult(dict):
+    def __init__(__self__, *,
+                 account_key: _builtins.str,
+                 account_key_secret_id: _builtins.str,
+                 configurations: Sequence['outputs.GetConnectionsConnectionCollectionItemArtifactLocationConfigurationResult'],
+                 endpoint_suffix: _builtins.str,
+                 filesystem: _builtins.str,
+                 location_type: _builtins.str,
+                 path: _builtins.str,
+                 should_overwrite_existing: _builtins.bool,
+                 storage_account: _builtins.str):
+        """
+        :param _builtins.str account_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+        :param Sequence['GetConnectionsConnectionCollectionItemArtifactLocationConfigurationArgs'] configurations: Oracle Cloud Infrastructure Object Storage configuration for the artifact location.
+        :param _builtins.str endpoint_suffix: Endpoint suffix. Defaults to dfs.core.windows.net.
+        :param _builtins.str filesystem: Azure Data Lake Storage Gen2 filesystem containing the application artifacts. Example: "ggs-artifacts"
+        :param _builtins.str location_type: The type of location used to share Databricks application artifacts.
+        :param _builtins.str path: * AZURE_DATE_LAKE_STORAGE: Artifact path within the Azure Data Lake Storage filesystem.
+               * UC_VOLUME: Unity Catalog volume artifact path.
+        :param _builtins.bool should_overwrite_existing: Controls whether a staged Spark application artifact replaces an existing file or object with the same name at the configured destination. The artifact is typically a GGFAB pipeline package or one of its dependency files.
+        :param _builtins.str storage_account: Azure Data Lake Storage Gen2 storage-account name.
+        """
+        pulumi.set(__self__, "account_key", account_key)
+        pulumi.set(__self__, "account_key_secret_id", account_key_secret_id)
+        pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "endpoint_suffix", endpoint_suffix)
+        pulumi.set(__self__, "filesystem", filesystem)
+        pulumi.set(__self__, "location_type", location_type)
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "should_overwrite_existing", should_overwrite_existing)
+        pulumi.set(__self__, "storage_account", storage_account)
+
+    @_builtins.property
+    @pulumi.getter(name="accountKey")
+    def account_key(self) -> _builtins.str:
+        return pulumi.get(self, "account_key")
+
+    @_builtins.property
+    @pulumi.getter(name="accountKeySecretId")
+    def account_key_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+        """
+        return pulumi.get(self, "account_key_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def configurations(self) -> Sequence['outputs.GetConnectionsConnectionCollectionItemArtifactLocationConfigurationResult']:
+        """
+        Oracle Cloud Infrastructure Object Storage configuration for the artifact location.
+        """
+        return pulumi.get(self, "configurations")
+
+    @_builtins.property
+    @pulumi.getter(name="endpointSuffix")
+    def endpoint_suffix(self) -> _builtins.str:
+        """
+        Endpoint suffix. Defaults to dfs.core.windows.net.
+        """
+        return pulumi.get(self, "endpoint_suffix")
+
+    @_builtins.property
+    @pulumi.getter
+    def filesystem(self) -> _builtins.str:
+        """
+        Azure Data Lake Storage Gen2 filesystem containing the application artifacts. Example: "ggs-artifacts"
+        """
+        return pulumi.get(self, "filesystem")
+
+    @_builtins.property
+    @pulumi.getter(name="locationType")
+    def location_type(self) -> _builtins.str:
+        """
+        The type of location used to share Databricks application artifacts.
+        """
+        return pulumi.get(self, "location_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def path(self) -> _builtins.str:
+        """
+        * AZURE_DATE_LAKE_STORAGE: Artifact path within the Azure Data Lake Storage filesystem.
+        * UC_VOLUME: Unity Catalog volume artifact path.
+        """
+        return pulumi.get(self, "path")
+
+    @_builtins.property
+    @pulumi.getter(name="shouldOverwriteExisting")
+    def should_overwrite_existing(self) -> _builtins.bool:
+        """
+        Controls whether a staged Spark application artifact replaces an existing file or object with the same name at the configured destination. The artifact is typically a GGFAB pipeline package or one of its dependency files.
+        """
+        return pulumi.get(self, "should_overwrite_existing")
+
+    @_builtins.property
+    @pulumi.getter(name="storageAccount")
+    def storage_account(self) -> _builtins.str:
+        """
+        Azure Data Lake Storage Gen2 storage-account name.
+        """
+        return pulumi.get(self, "storage_account")
+
+
+@pulumi.output_type
+class GetConnectionsConnectionCollectionItemArtifactLocationConfigurationResult(dict):
+    def __init__(__self__, *,
+                 access_key_id: _builtins.str,
+                 authentication_type: _builtins.str,
+                 bucket: _builtins.str,
+                 namespace: _builtins.str,
+                 par_url: _builtins.str,
+                 par_url_secret_id: _builtins.str,
+                 path: _builtins.str,
+                 private_key_file: _builtins.str,
+                 private_key_file_secret_id: _builtins.str,
+                 private_key_passphrase: _builtins.str,
+                 private_key_passphrase_secret_id: _builtins.str,
+                 public_key_fingerprint: _builtins.str,
+                 region: _builtins.str,
+                 secret_access_key: _builtins.str,
+                 secret_access_key_secret_id: _builtins.str,
+                 tenancy_id: _builtins.str,
+                 user_id: _builtins.str):
+        """
+        :param _builtins.str access_key_id: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+        :param _builtins.str authentication_type: Authentication mechanism; supported values depend on `connection_type`.
+               * DATABRICKS: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M.
+               * DATABRICKS_ENGINE: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M for the Databricks Engine REST API.
+               * JAVA_MESSAGE_SERVICE: Authentication type for Java Message Service. The default is NONE.
+               * SPARK: Use SHARED_SECRET only when the target cluster has `spark.authenticate=true`. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET.
+               * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE: Authentication type supported by the target service.
+        :param _builtins.str bucket: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
+        :param _builtins.str namespace: The Oracle Cloud Infrastructure Object Storage namespace containing the bucket. Example: "mynamespace"
+        :param _builtins.str par_url_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the pre-authenticated request (PAR) URL. Note: When provided, `parUrl` must not be provided.
+        :param _builtins.str path: * AZURE_DATE_LAKE_STORAGE: Artifact path within the Azure Data Lake Storage filesystem.
+               * UC_VOLUME: Unity Catalog volume artifact path.
+        :param _builtins.str private_key_file_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
+        :param _builtins.str private_key_passphrase_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
+        :param _builtins.str public_key_fingerprint: The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        :param _builtins.str region: The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+        :param _builtins.str secret_access_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
+        :param _builtins.str tenancy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+        :param _builtins.str user_id: * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses Object Storage. The user must have write access to the bucket. If omitted, the service defaults to the user calling the API.
+               * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses the Oracle NoSQL database. The user must have write access to the table. If omitted, the service defaults to the user calling the API.
+        """
+        pulumi.set(__self__, "access_key_id", access_key_id)
+        pulumi.set(__self__, "authentication_type", authentication_type)
+        pulumi.set(__self__, "bucket", bucket)
+        pulumi.set(__self__, "namespace", namespace)
+        pulumi.set(__self__, "par_url", par_url)
+        pulumi.set(__self__, "par_url_secret_id", par_url_secret_id)
+        pulumi.set(__self__, "path", path)
+        pulumi.set(__self__, "private_key_file", private_key_file)
+        pulumi.set(__self__, "private_key_file_secret_id", private_key_file_secret_id)
+        pulumi.set(__self__, "private_key_passphrase", private_key_passphrase)
+        pulumi.set(__self__, "private_key_passphrase_secret_id", private_key_passphrase_secret_id)
+        pulumi.set(__self__, "public_key_fingerprint", public_key_fingerprint)
+        pulumi.set(__self__, "region", region)
+        pulumi.set(__self__, "secret_access_key", secret_access_key)
+        pulumi.set(__self__, "secret_access_key_secret_id", secret_access_key_secret_id)
+        pulumi.set(__self__, "tenancy_id", tenancy_id)
+        pulumi.set(__self__, "user_id", user_id)
+
+    @_builtins.property
+    @pulumi.getter(name="accessKeyId")
+    def access_key_id(self) -> _builtins.str:
+        """
+        Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+        """
+        return pulumi.get(self, "access_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="authenticationType")
+    def authentication_type(self) -> _builtins.str:
+        """
+        Authentication mechanism; supported values depend on `connection_type`.
+        * DATABRICKS: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M.
+        * DATABRICKS_ENGINE: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M for the Databricks Engine REST API.
+        * JAVA_MESSAGE_SERVICE: Authentication type for Java Message Service. The default is NONE.
+        * SPARK: Use SHARED_SECRET only when the target cluster has `spark.authenticate=true`. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET.
+        * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE: Authentication type supported by the target service.
+        """
+        return pulumi.get(self, "authentication_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def bucket(self) -> _builtins.str:
+        """
+        Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
+        """
+        return pulumi.get(self, "bucket")
+
+    @_builtins.property
+    @pulumi.getter
+    def namespace(self) -> _builtins.str:
+        """
+        The Oracle Cloud Infrastructure Object Storage namespace containing the bucket. Example: "mynamespace"
+        """
+        return pulumi.get(self, "namespace")
+
+    @_builtins.property
+    @pulumi.getter(name="parUrl")
+    @_utilities.deprecated("""The 'par_url' field has been deprecated. Please use 'par_url_secret_id' instead.""")
+    def par_url(self) -> _builtins.str:
+        return pulumi.get(self, "par_url")
+
+    @_builtins.property
+    @pulumi.getter(name="parUrlSecretId")
+    def par_url_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the pre-authenticated request (PAR) URL. Note: When provided, `parUrl` must not be provided.
+        """
+        return pulumi.get(self, "par_url_secret_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def path(self) -> _builtins.str:
+        """
+        * AZURE_DATE_LAKE_STORAGE: Artifact path within the Azure Data Lake Storage filesystem.
+        * UC_VOLUME: Unity Catalog volume artifact path.
+        """
+        return pulumi.get(self, "path")
+
+    @_builtins.property
+    @pulumi.getter(name="privateKeyFile")
+    @_utilities.deprecated("""The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead.""")
+    def private_key_file(self) -> _builtins.str:
+        return pulumi.get(self, "private_key_file")
+
+    @_builtins.property
+    @pulumi.getter(name="privateKeyFileSecretId")
+    def private_key_file_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
+        """
+        return pulumi.get(self, "private_key_file_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="privateKeyPassphrase")
+    @_utilities.deprecated("""The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead.""")
+    def private_key_passphrase(self) -> _builtins.str:
+        return pulumi.get(self, "private_key_passphrase")
+
+    @_builtins.property
+    @pulumi.getter(name="privateKeyPassphraseSecretId")
+    def private_key_passphrase_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
+        """
+        return pulumi.get(self, "private_key_passphrase_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="publicKeyFingerprint")
+    def public_key_fingerprint(self) -> _builtins.str:
+        """
+        The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        """
+        return pulumi.get(self, "public_key_fingerprint")
+
+    @_builtins.property
+    @pulumi.getter
+    def region(self) -> _builtins.str:
+        """
+        The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+        """
+        return pulumi.get(self, "region")
+
+    @_builtins.property
+    @pulumi.getter(name="secretAccessKey")
+    @_utilities.deprecated("""The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.""")
+    def secret_access_key(self) -> _builtins.str:
+        return pulumi.get(self, "secret_access_key")
+
+    @_builtins.property
+    @pulumi.getter(name="secretAccessKeySecretId")
+    def secret_access_key_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
+        """
+        return pulumi.get(self, "secret_access_key_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="tenancyId")
+    def tenancy_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+        """
+        return pulumi.get(self, "tenancy_id")
+
+    @_builtins.property
+    @pulumi.getter(name="userId")
+    def user_id(self) -> _builtins.str:
+        """
+        * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses Object Storage. The user must have write access to the bucket. If omitted, the service defaults to the user calling the API.
+        * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses the Oracle NoSQL database. The user must have write access to the table. If omitted, the service defaults to the user calling the API.
+        """
+        return pulumi.get(self, "user_id")
+
+
+@pulumi.output_type
 class GetConnectionsConnectionCollectionItemAuthDetailResult(dict):
     def __init__(__self__, *,
                  api_key: _builtins.str,
@@ -4780,8 +5903,8 @@ class GetConnectionsConnectionCollectionItemAuthDetailResult(dict):
         :param _builtins.str key_fingerprint: Oracle Cloud Infrastructure Generative AI key fingerprint.
         :param _builtins.str region: The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
         :param _builtins.str tenancy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
-        :param _builtins.str user_id: * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
-               * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+        :param _builtins.str user_id: * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses Object Storage. The user must have write access to the bucket. If omitted, the service defaults to the user calling the API.
+               * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses the Oracle NoSQL database. The user must have write access to the table. If omitted, the service defaults to the user calling the API.
         """
         pulumi.set(__self__, "api_key", api_key)
         pulumi.set(__self__, "api_key_secret_id", api_key_secret_id)
@@ -4852,8 +5975,8 @@ class GetConnectionsConnectionCollectionItemAuthDetailResult(dict):
     @pulumi.getter(name="userId")
     def user_id(self) -> _builtins.str:
         """
-        * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
-        * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+        * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses Object Storage. The user must have write access to the bucket. If omitted, the service defaults to the user calling the API.
+        * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses the Oracle NoSQL database. The user must have write access to the table. If omitted, the service defaults to the user calling the API.
         """
         return pulumi.get(self, "user_id")
 
@@ -4919,20 +6042,15 @@ class GetConnectionsConnectionCollectionItemCatalogResult(dict):
         """
         :param _builtins.str branch: The active branch of the Nessie catalog from which Iceberg reads and writes table metadata.
         :param _builtins.str catalog_type: The catalog type.
-        :param _builtins.str client_id: * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-               * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
-               * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-        :param _builtins.str client_secret_secret_id: * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-               * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
-               * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-                 Note: When provided, 'clientSecret' field must not be provided.
+        :param _builtins.str client_id: * AZURE_DATA_LAKE_STORAGE: Azure application client ID, required for AZURE_ACTIVE_DIRECTORY authentication.
+               * DATABRICKS, DATABRICKS_ENGINE: OAuth client ID, applicable to OAUTH_M2M authentication.
+               * MICROSOFT_FABRIC: Azure application client ID.
+        :param _builtins.str client_secret_secret_id: Secret OCID containing the client secret. For DATABRICKS and DATABRICKS_ENGINE it applies to OAUTH_M2M authentication. When provided, `client_secret` must not be provided.
         :param _builtins.str glue_id: The AWS Glue Catalog ID where Iceberg tables are registered.
         :param _builtins.str name: The catalog name within Polaris where Iceberg tables are registered.
         :param _builtins.str principal_role: The Snowflake role used to access Polaris.
         :param _builtins.str properties_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
-        :param _builtins.str uri: * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
-               * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
-               * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
+        :param _builtins.str uri: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
         """
         pulumi.set(__self__, "branch", branch)
         pulumi.set(__self__, "catalog_type", catalog_type)
@@ -4966,9 +6084,9 @@ class GetConnectionsConnectionCollectionItemCatalogResult(dict):
     @pulumi.getter(name="clientId")
     def client_id(self) -> _builtins.str:
         """
-        * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-        * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
-        * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+        * AZURE_DATA_LAKE_STORAGE: Azure application client ID, required for AZURE_ACTIVE_DIRECTORY authentication.
+        * DATABRICKS, DATABRICKS_ENGINE: OAuth client ID, applicable to OAUTH_M2M authentication.
+        * MICROSOFT_FABRIC: Azure application client ID.
         """
         return pulumi.get(self, "client_id")
 
@@ -4982,10 +6100,7 @@ class GetConnectionsConnectionCollectionItemCatalogResult(dict):
     @pulumi.getter(name="clientSecretSecretId")
     def client_secret_secret_id(self) -> _builtins.str:
         """
-        * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-        * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
-        * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-          Note: When provided, 'clientSecret' field must not be provided.
+        Secret OCID containing the client secret. For DATABRICKS and DATABRICKS_ENGINE it applies to OAUTH_M2M authentication. When provided, `client_secret` must not be provided.
         """
         return pulumi.get(self, "client_secret_secret_id")
 
@@ -5031,9 +6146,7 @@ class GetConnectionsConnectionCollectionItemCatalogResult(dict):
     @pulumi.getter
     def uri(self) -> _builtins.str:
         """
-        * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
-        * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
-        * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
+        The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
         """
         return pulumi.get(self, "uri")
 
@@ -5126,26 +6239,23 @@ class GetConnectionsConnectionCollectionItemStorageResult(dict):
                  service_account_key_file_secret_id: _builtins.str,
                  storage_type: _builtins.str):
         """
-        :param _builtins.str access_key_id: * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-               * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-                 Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+        :param _builtins.str access_key_id: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
         :param _builtins.str account_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
         :param _builtins.str account_name: Sets the Azure storage account name.
-        :param _builtins.str bucket: * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
-               * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
-               * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
+        :param _builtins.str bucket: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
         :param _builtins.str container: The Azure Blob Storage container where Iceberg tables are stored.
-        :param _builtins.str endpoint: * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
-               * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
-               * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
-               * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
+        :param _builtins.str endpoint: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
         :param _builtins.str project_id: The Google Cloud Project where the bucket exists.
         :param _builtins.str region: The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
         :param _builtins.str scheme_type: The scheme of the storage.
-        :param _builtins.str secret_access_key_secret_id: * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-               * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
+        :param _builtins.str secret_access_key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
         :param _builtins.str service_account_key_file_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
-        :param _builtins.str storage_type: The storage type used in the Iceberg connection.
+        :param _builtins.str storage_type: The storage type used in the Iceberg connection. Supported storage types by catalog type:
+               * GLUE: AMAZON_S3.
+               * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
+               * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+               * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+               * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
         """
         pulumi.set(__self__, "access_key_id", access_key_id)
         pulumi.set(__self__, "account_key", account_key)
@@ -5167,9 +6277,7 @@ class GetConnectionsConnectionCollectionItemStorageResult(dict):
     @pulumi.getter(name="accessKeyId")
     def access_key_id(self) -> _builtins.str:
         """
-        * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-        * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-          Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+        Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
         """
         return pulumi.get(self, "access_key_id")
 
@@ -5199,9 +6307,7 @@ class GetConnectionsConnectionCollectionItemStorageResult(dict):
     @pulumi.getter
     def bucket(self) -> _builtins.str:
         """
-        * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
-        * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
-        * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
+        Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
         """
         return pulumi.get(self, "bucket")
 
@@ -5217,10 +6323,7 @@ class GetConnectionsConnectionCollectionItemStorageResult(dict):
     @pulumi.getter
     def endpoint(self) -> _builtins.str:
         """
-        * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
-        * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
-        * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
-        * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
+        Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
         """
         return pulumi.get(self, "endpoint")
 
@@ -5258,8 +6361,7 @@ class GetConnectionsConnectionCollectionItemStorageResult(dict):
     @pulumi.getter(name="secretAccessKeySecretId")
     def secret_access_key_secret_id(self) -> _builtins.str:
         """
-        * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-        * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
         """
         return pulumi.get(self, "secret_access_key_secret_id")
 
@@ -5281,7 +6383,12 @@ class GetConnectionsConnectionCollectionItemStorageResult(dict):
     @pulumi.getter(name="storageType")
     def storage_type(self) -> _builtins.str:
         """
-        The storage type used in the Iceberg connection.
+        The storage type used in the Iceberg connection. Supported storage types by catalog type:
+        * GLUE: AMAZON_S3.
+        * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
+        * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+        * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+        * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
         """
         return pulumi.get(self, "storage_type")
 
@@ -6927,7 +8034,7 @@ class GetDeploymentOggDataResult(dict):
         :param _builtins.str admin_username: The GoldenGate deployment console username.
         :param _builtins.str certificate: The base64 encoded content of the PEM file containing the SSL certificate.
         :param _builtins.str credential_store: The type of credential store for OGG.
-        :param _builtins.str deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+        :param _builtins.str deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. For non-data-replication deployment types that do not use a GoldenGate deployment name, this property is `NONE`. Deprecated: This field is deprecated and will be removed after the date provided in the announcement: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         :param Sequence['GetDeploymentOggDataGroupToRolesMappingArgs'] group_to_roles_mappings: Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
         :param _builtins.str identity_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
         :param _builtins.str key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
@@ -6980,7 +8087,7 @@ class GetDeploymentOggDataResult(dict):
     @pulumi.getter(name="deploymentName")
     def deployment_name(self) -> _builtins.str:
         """
-        The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+        The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. For non-data-replication deployment types that do not use a GoldenGate deployment name, this property is `NONE`. Deprecated: This field is deprecated and will be removed after the date provided in the announcement: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         """
         return pulumi.get(self, "deployment_name")
 
@@ -7127,7 +8234,7 @@ class GetDeploymentPeersDeploymentPeerCollectionItemResult(dict):
         :param _builtins.str peer_role: The type of the deployment role.
         :param _builtins.str peer_type: The type of the deployment peer.
         :param _builtins.str precheck_status: Status of the DR precheck result.
-        :param _builtins.str region: The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+        :param _builtins.str region: The name of the region. e.g.: us-ashburn-1
         :param _builtins.str state: A filter to return only the deployment peers having the 'lifecycleState' given.
         :param _builtins.str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param _builtins.str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -7221,7 +8328,7 @@ class GetDeploymentPeersDeploymentPeerCollectionItemResult(dict):
     @pulumi.getter
     def region(self) -> _builtins.str:
         """
-        The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+        The name of the region. e.g.: us-ashburn-1
         """
         return pulumi.get(self, "region")
 
@@ -8184,7 +9291,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param _builtins.str next_maintenance_action_type: Type of the next maintenance.
         :param _builtins.str next_maintenance_description: Description of the next maintenance.
         :param Sequence[_builtins.str] nsg_ids: An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        :param Sequence['GetDeploymentsDeploymentCollectionItemOggDataArgs'] ogg_datas: Deployment Data for an OggDeployment
+        :param Sequence['GetDeploymentsDeploymentCollectionItemOggDataArgs'] ogg_datas: Deployment Data for an OggDeployment.
         :param Sequence['GetDeploymentsDeploymentCollectionItemPlacementArgs'] placements: An array of local peers of deployment
         :param _builtins.str private_ip_address: The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
         :param _builtins.str public_ip_address: The public IP address representing the access point for the Deployment.
@@ -8584,7 +9691,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
     @pulumi.getter(name="oggDatas")
     def ogg_datas(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionItemOggDataResult']:
         """
-        Deployment Data for an OggDeployment
+        Deployment Data for an OggDeployment.
         """
         return pulumi.get(self, "ogg_datas")
 
@@ -9049,7 +10156,7 @@ class GetDeploymentsDeploymentCollectionItemOggDataResult(dict):
         :param _builtins.str admin_username: The GoldenGate deployment console username.
         :param _builtins.str certificate: The base64 encoded content of the PEM file containing the SSL certificate.
         :param _builtins.str credential_store: The type of credential store for OGG.
-        :param _builtins.str deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+        :param _builtins.str deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. For non-data-replication deployment types that do not use a GoldenGate deployment name, this property is `NONE`. Deprecated: This field is deprecated and will be removed after the date provided in the announcement: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         :param Sequence['GetDeploymentsDeploymentCollectionItemOggDataGroupToRolesMappingArgs'] group_to_roles_mappings: Defines the IDP Groups to GoldenGate roles mapping. This field is used only for IAM deployment and does not have any impact on non-IAM deployments. For IAM deployment, when user does not specify this mapping, then it has null value and default mapping is used. User belonging to each group can only perform the actions according to the role the respective group is mapped to.
         :param _builtins.str identity_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
         :param _builtins.str key_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment ssl private key is stored in PEM format.
@@ -9102,7 +10209,7 @@ class GetDeploymentsDeploymentCollectionItemOggDataResult(dict):
     @pulumi.getter(name="deploymentName")
     def deployment_name(self) -> _builtins.str:
         """
-        The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+        The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. For non-data-replication deployment types that do not use a GoldenGate deployment name, this property is `NONE`. Deprecated: This field is deprecated and will be removed after the date provided in the announcement: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         """
         return pulumi.get(self, "deployment_name")
 

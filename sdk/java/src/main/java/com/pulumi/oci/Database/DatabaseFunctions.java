@@ -136,6 +136,10 @@ import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntriesPlai
 import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntryArgs;
 import com.pulumi.oci.Database.inputs.GetDatabasePdbConversionHistoryEntryPlainArgs;
 import com.pulumi.oci.Database.inputs.GetDatabasePlainArgs;
+import com.pulumi.oci.Database.inputs.GetDatabaseSnapshotArgs;
+import com.pulumi.oci.Database.inputs.GetDatabaseSnapshotPlainArgs;
+import com.pulumi.oci.Database.inputs.GetDatabaseSnapshotsArgs;
+import com.pulumi.oci.Database.inputs.GetDatabaseSnapshotsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetDatabaseSoftwareImageArgs;
 import com.pulumi.oci.Database.inputs.GetDatabaseSoftwareImagePlainArgs;
 import com.pulumi.oci.Database.inputs.GetDatabaseSoftwareImagesArgs;
@@ -401,6 +405,8 @@ import com.pulumi.oci.Database.outputs.GetDatabaseMaintenanceRunHistoryResult;
 import com.pulumi.oci.Database.outputs.GetDatabasePdbConversionHistoryEntriesResult;
 import com.pulumi.oci.Database.outputs.GetDatabasePdbConversionHistoryEntryResult;
 import com.pulumi.oci.Database.outputs.GetDatabaseResult;
+import com.pulumi.oci.Database.outputs.GetDatabaseSnapshotResult;
+import com.pulumi.oci.Database.outputs.GetDatabaseSnapshotsResult;
 import com.pulumi.oci.Database.outputs.GetDatabaseSoftwareImageResult;
 import com.pulumi.oci.Database.outputs.GetDatabaseSoftwareImagesResult;
 import com.pulumi.oci.Database.outputs.GetDatabaseUpgradeHistoryEntriesResult;
@@ -14970,6 +14976,538 @@ public final class DatabaseFunctions {
      */
     public static CompletableFuture<GetDatabasePdbConversionHistoryEntryResult> getDatabasePdbConversionHistoryEntryPlain(GetDatabasePdbConversionHistoryEntryPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getDatabasePdbConversionHistoryEntry:getDatabasePdbConversionHistoryEntry", TypeShape.of(GetDatabasePdbConversionHistoryEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Snapshot resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Exadata Database Snapshot.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseSnapshotArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSnapshot = DatabaseFunctions.getDatabaseSnapshot(GetDatabaseSnapshotArgs.builder()
+     *             .databaseSnapshotId(testDatabaseSnapshotOciDatabaseDatabaseSnapshot.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseSnapshotResult> getDatabaseSnapshot(GetDatabaseSnapshotArgs args) {
+        return getDatabaseSnapshot(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Snapshot resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Exadata Database Snapshot.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseSnapshotArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSnapshot = DatabaseFunctions.getDatabaseSnapshot(GetDatabaseSnapshotArgs.builder()
+     *             .databaseSnapshotId(testDatabaseSnapshotOciDatabaseDatabaseSnapshot.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseSnapshotResult> getDatabaseSnapshotPlain(GetDatabaseSnapshotPlainArgs args) {
+        return getDatabaseSnapshotPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Database Snapshot resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Exadata Database Snapshot.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseSnapshotArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSnapshot = DatabaseFunctions.getDatabaseSnapshot(GetDatabaseSnapshotArgs.builder()
+     *             .databaseSnapshotId(testDatabaseSnapshotOciDatabaseDatabaseSnapshot.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseSnapshotResult> getDatabaseSnapshot(GetDatabaseSnapshotArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDatabaseSnapshot:getDatabaseSnapshot", TypeShape.of(GetDatabaseSnapshotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Snapshot resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Exadata Database Snapshot.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseSnapshotArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSnapshot = DatabaseFunctions.getDatabaseSnapshot(GetDatabaseSnapshotArgs.builder()
+     *             .databaseSnapshotId(testDatabaseSnapshotOciDatabaseDatabaseSnapshot.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseSnapshotResult> getDatabaseSnapshot(GetDatabaseSnapshotArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDatabaseSnapshot:getDatabaseSnapshot", TypeShape.of(GetDatabaseSnapshotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Database Snapshot resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Exadata Database Snapshot.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseSnapshotArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSnapshot = DatabaseFunctions.getDatabaseSnapshot(GetDatabaseSnapshotArgs.builder()
+     *             .databaseSnapshotId(testDatabaseSnapshotOciDatabaseDatabaseSnapshot.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseSnapshotResult> getDatabaseSnapshotPlain(GetDatabaseSnapshotPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getDatabaseSnapshot:getDatabaseSnapshot", TypeShape.of(GetDatabaseSnapshotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Snapshots in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata Database Snapshots in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseSnapshotsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSnapshots = DatabaseFunctions.getDatabaseSnapshots(GetDatabaseSnapshotsArgs.builder()
+     *             .clusterId(testCluster.get("id"))
+     *             .compartmentId(compartmentId)
+     *             .databaseId(testDatabase.get("id"))
+     *             .name(databaseSnapshotName)
+     *             .state(databaseSnapshotState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseSnapshotsResult> getDatabaseSnapshots() {
+        return getDatabaseSnapshots(GetDatabaseSnapshotsArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Snapshots in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata Database Snapshots in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseSnapshotsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSnapshots = DatabaseFunctions.getDatabaseSnapshots(GetDatabaseSnapshotsArgs.builder()
+     *             .clusterId(testCluster.get("id"))
+     *             .compartmentId(compartmentId)
+     *             .databaseId(testDatabase.get("id"))
+     *             .name(databaseSnapshotName)
+     *             .state(databaseSnapshotState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseSnapshotsResult> getDatabaseSnapshotsPlain() {
+        return getDatabaseSnapshotsPlain(GetDatabaseSnapshotsPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Snapshots in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata Database Snapshots in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseSnapshotsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSnapshots = DatabaseFunctions.getDatabaseSnapshots(GetDatabaseSnapshotsArgs.builder()
+     *             .clusterId(testCluster.get("id"))
+     *             .compartmentId(compartmentId)
+     *             .databaseId(testDatabase.get("id"))
+     *             .name(databaseSnapshotName)
+     *             .state(databaseSnapshotState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseSnapshotsResult> getDatabaseSnapshots(GetDatabaseSnapshotsArgs args) {
+        return getDatabaseSnapshots(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Snapshots in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata Database Snapshots in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseSnapshotsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSnapshots = DatabaseFunctions.getDatabaseSnapshots(GetDatabaseSnapshotsArgs.builder()
+     *             .clusterId(testCluster.get("id"))
+     *             .compartmentId(compartmentId)
+     *             .databaseId(testDatabase.get("id"))
+     *             .name(databaseSnapshotName)
+     *             .state(databaseSnapshotState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseSnapshotsResult> getDatabaseSnapshotsPlain(GetDatabaseSnapshotsPlainArgs args) {
+        return getDatabaseSnapshotsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Database Snapshots in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata Database Snapshots in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseSnapshotsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSnapshots = DatabaseFunctions.getDatabaseSnapshots(GetDatabaseSnapshotsArgs.builder()
+     *             .clusterId(testCluster.get("id"))
+     *             .compartmentId(compartmentId)
+     *             .databaseId(testDatabase.get("id"))
+     *             .name(databaseSnapshotName)
+     *             .state(databaseSnapshotState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseSnapshotsResult> getDatabaseSnapshots(GetDatabaseSnapshotsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDatabaseSnapshots:getDatabaseSnapshots", TypeShape.of(GetDatabaseSnapshotsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Snapshots in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata Database Snapshots in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseSnapshotsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSnapshots = DatabaseFunctions.getDatabaseSnapshots(GetDatabaseSnapshotsArgs.builder()
+     *             .clusterId(testCluster.get("id"))
+     *             .compartmentId(compartmentId)
+     *             .databaseId(testDatabase.get("id"))
+     *             .name(databaseSnapshotName)
+     *             .state(databaseSnapshotState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDatabaseSnapshotsResult> getDatabaseSnapshots(GetDatabaseSnapshotsArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getDatabaseSnapshots:getDatabaseSnapshots", TypeShape.of(GetDatabaseSnapshotsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Database Snapshots in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata Database Snapshots in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetDatabaseSnapshotsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDatabaseSnapshots = DatabaseFunctions.getDatabaseSnapshots(GetDatabaseSnapshotsArgs.builder()
+     *             .clusterId(testCluster.get("id"))
+     *             .compartmentId(compartmentId)
+     *             .databaseId(testDatabase.get("id"))
+     *             .name(databaseSnapshotName)
+     *             .state(databaseSnapshotState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDatabaseSnapshotsResult> getDatabaseSnapshotsPlain(GetDatabaseSnapshotsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getDatabaseSnapshots:getDatabaseSnapshots", TypeShape.of(GetDatabaseSnapshotsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Database Software Image resource in Oracle Cloud Infrastructure Database service.

@@ -142,6 +142,7 @@ namespace Pulumi.Oci.Psql
         /// The database system administrator username.
         /// </summary>
         public readonly string AdminUsername;
+        public readonly bool AllowMajorVersionUpgrade;
         public readonly string ApplyChangeModeToStandAlone;
         public readonly string ApplyConfig;
         /// <summary>
@@ -263,10 +264,13 @@ namespace Pulumi.Oci.Psql
         /// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeUpdated;
+        public readonly ImmutableArray<string> UpgradeOptions;
 
         [OutputConstructor]
         private GetDbSystemResult(
             string adminUsername,
+
+            bool allowMajorVersionUpgrade,
 
             string applyChangeModeToStandAlone,
 
@@ -334,9 +338,12 @@ namespace Pulumi.Oci.Psql
 
             string timeCreated,
 
-            string timeUpdated)
+            string timeUpdated,
+
+            ImmutableArray<string> upgradeOptions)
         {
             AdminUsername = adminUsername;
+            AllowMajorVersionUpgrade = allowMajorVersionUpgrade;
             ApplyChangeModeToStandAlone = applyChangeModeToStandAlone;
             ApplyConfig = applyConfig;
             CompartmentId = compartmentId;
@@ -371,6 +378,7 @@ namespace Pulumi.Oci.Psql
             SystemType = systemType;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            UpgradeOptions = upgradeOptions;
         }
     }
 }

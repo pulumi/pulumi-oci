@@ -2091,13 +2091,13 @@ type DrPlanPlanGroupStepUserDefinedStep struct {
 	ObjectStorageScriptLocations []DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation `pulumi:"objectStorageScriptLocations"`
 	// The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
 	RequestBody *string `pulumi:"requestBody"`
-	// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
+	// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'.  Example: `opc`
 	RunAsUser *string `pulumi:"runAsUser"`
 	// The OCID of the instance on which this script or command should be executed.
 	RunOnInstanceId *string `pulumi:"runOnInstanceId"`
 	// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
 	RunOnInstanceRegion *string `pulumi:"runOnInstanceRegion"`
-	// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
+	// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.  Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
 	ScriptCommand *string `pulumi:"scriptCommand"`
 	// The type of the user-defined step.
 	StepType *string `pulumi:"stepType"`
@@ -2123,13 +2123,13 @@ type DrPlanPlanGroupStepUserDefinedStepArgs struct {
 	ObjectStorageScriptLocations DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayInput `pulumi:"objectStorageScriptLocations"`
 	// The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
 	RequestBody pulumi.StringPtrInput `pulumi:"requestBody"`
-	// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
+	// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'.  Example: `opc`
 	RunAsUser pulumi.StringPtrInput `pulumi:"runAsUser"`
 	// The OCID of the instance on which this script or command should be executed.
 	RunOnInstanceId pulumi.StringPtrInput `pulumi:"runOnInstanceId"`
 	// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
 	RunOnInstanceRegion pulumi.StringPtrInput `pulumi:"runOnInstanceRegion"`
-	// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
+	// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.  Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
 	ScriptCommand pulumi.StringPtrInput `pulumi:"scriptCommand"`
 	// The type of the user-defined step.
 	StepType pulumi.StringPtrInput `pulumi:"stepType"`
@@ -2208,7 +2208,7 @@ func (o DrPlanPlanGroupStepUserDefinedStepOutput) RequestBody() pulumi.StringPtr
 	return o.ApplyT(func(v DrPlanPlanGroupStepUserDefinedStep) *string { return v.RequestBody }).(pulumi.StringPtrOutput)
 }
 
-// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
+// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'.  Example: `opc`
 func (o DrPlanPlanGroupStepUserDefinedStepOutput) RunAsUser() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStepUserDefinedStep) *string { return v.RunAsUser }).(pulumi.StringPtrOutput)
 }
@@ -2223,7 +2223,7 @@ func (o DrPlanPlanGroupStepUserDefinedStepOutput) RunOnInstanceRegion() pulumi.S
 	return o.ApplyT(func(v DrPlanPlanGroupStepUserDefinedStep) *string { return v.RunOnInstanceRegion }).(pulumi.StringPtrOutput)
 }
 
-// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
+// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.  Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
 func (o DrPlanPlanGroupStepUserDefinedStepOutput) ScriptCommand() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrPlanPlanGroupStepUserDefinedStep) *string { return v.ScriptCommand }).(pulumi.StringPtrOutput)
 }
@@ -2759,6 +2759,8 @@ type DrProtectionGroupMember struct {
 	DestinationNetworkLoadBalancerId *string `pulumi:"destinationNetworkLoadBalancerId"`
 	// (Updatable) The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
 	DestinationSnapshotPolicyId *string `pulumi:"destinationSnapshotPolicyId"`
+	// (Updatable) Create properties for DR drill-specific settings. Use these when the properties for DR drills differ from the properties used for DR operations such as switchover and failover.
+	DrDrillProperties *DrProtectionGroupMemberDrDrillProperties `pulumi:"drDrillProperties"`
 	// (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
 	ExportMappings []DrProtectionGroupMemberExportMapping `pulumi:"exportMappings"`
 	// (Updatable) A list of operations performed on file systems used by the compute instance.
@@ -2791,7 +2793,7 @@ type DrProtectionGroupMember struct {
 	PasswordVaultSecretId *string `pulumi:"passwordVaultSecretId"`
 	// (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
 	PeerClusterId *string `pulumi:"peerClusterId"`
-	// (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+	// (Updatable) The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
 	PeerDbSystemId *string `pulumi:"peerDbSystemId"`
 	// (Updatable) The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
 	ResourceModifierMappings []DrProtectionGroupMemberResourceModifierMapping `pulumi:"resourceModifierMappings"`
@@ -2863,6 +2865,8 @@ type DrProtectionGroupMemberArgs struct {
 	DestinationNetworkLoadBalancerId pulumi.StringPtrInput `pulumi:"destinationNetworkLoadBalancerId"`
 	// (Updatable) The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
 	DestinationSnapshotPolicyId pulumi.StringPtrInput `pulumi:"destinationSnapshotPolicyId"`
+	// (Updatable) Create properties for DR drill-specific settings. Use these when the properties for DR drills differ from the properties used for DR operations such as switchover and failover.
+	DrDrillProperties DrProtectionGroupMemberDrDrillPropertiesPtrInput `pulumi:"drDrillProperties"`
 	// (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
 	ExportMappings DrProtectionGroupMemberExportMappingArrayInput `pulumi:"exportMappings"`
 	// (Updatable) A list of operations performed on file systems used by the compute instance.
@@ -2895,7 +2899,7 @@ type DrProtectionGroupMemberArgs struct {
 	PasswordVaultSecretId pulumi.StringPtrInput `pulumi:"passwordVaultSecretId"`
 	// (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
 	PeerClusterId pulumi.StringPtrInput `pulumi:"peerClusterId"`
-	// (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+	// (Updatable) The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
 	PeerDbSystemId pulumi.StringPtrInput `pulumi:"peerDbSystemId"`
 	// (Updatable) The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
 	ResourceModifierMappings DrProtectionGroupMemberResourceModifierMappingArrayInput `pulumi:"resourceModifierMappings"`
@@ -3080,6 +3084,11 @@ func (o DrProtectionGroupMemberOutput) DestinationSnapshotPolicyId() pulumi.Stri
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.DestinationSnapshotPolicyId }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Create properties for DR drill-specific settings. Use these when the properties for DR drills differ from the properties used for DR operations such as switchover and failover.
+func (o DrProtectionGroupMemberOutput) DrDrillProperties() DrProtectionGroupMemberDrDrillPropertiesPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMember) *DrProtectionGroupMemberDrDrillProperties { return v.DrDrillProperties }).(DrProtectionGroupMemberDrDrillPropertiesPtrOutput)
+}
+
 // (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
 func (o DrProtectionGroupMemberOutput) ExportMappings() DrProtectionGroupMemberExportMappingArrayOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) []DrProtectionGroupMemberExportMapping { return v.ExportMappings }).(DrProtectionGroupMemberExportMappingArrayOutput)
@@ -3168,7 +3177,7 @@ func (o DrProtectionGroupMemberOutput) PeerClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.PeerClusterId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+// (Updatable) The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
 func (o DrProtectionGroupMemberOutput) PeerDbSystemId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMember) *string { return v.PeerDbSystemId }).(pulumi.StringPtrOutput)
 }
@@ -3373,7 +3382,7 @@ type DrProtectionGroupMemberBackupConfig struct {
 	MaxNumberOfBackupsRetained *int `pulumi:"maxNumberOfBackupsRetained"`
 	// (Updatable) A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
 	Namespaces []string `pulumi:"namespaces"`
-	// (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
+	// (Updatable) Controls the behavior of image replication across regions.  Image replication is enabled by default for DR Protection Groups.  This setting applies to the OKE cluster member in the primary region, and to the standby region  only if the image replication secret is stored in a vault instead of using the default secret.
 	ReplicateImages *string `pulumi:"replicateImages"`
 }
 
@@ -3413,7 +3422,7 @@ type DrProtectionGroupMemberBackupConfigArgs struct {
 	MaxNumberOfBackupsRetained pulumi.IntPtrInput `pulumi:"maxNumberOfBackupsRetained"`
 	// (Updatable) A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
 	Namespaces pulumi.StringArrayInput `pulumi:"namespaces"`
-	// (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
+	// (Updatable) Controls the behavior of image replication across regions.  Image replication is enabled by default for DR Protection Groups.  This setting applies to the OKE cluster member in the primary region, and to the standby region  only if the image replication secret is stored in a vault instead of using the default secret.
 	ReplicateImages pulumi.StringPtrInput `pulumi:"replicateImages"`
 }
 
@@ -3533,7 +3542,7 @@ func (o DrProtectionGroupMemberBackupConfigOutput) Namespaces() pulumi.StringArr
 	return o.ApplyT(func(v DrProtectionGroupMemberBackupConfig) []string { return v.Namespaces }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
+// (Updatable) Controls the behavior of image replication across regions.  Image replication is enabled by default for DR Protection Groups.  This setting applies to the OKE cluster member in the primary region, and to the standby region  only if the image replication secret is stored in a vault instead of using the default secret.
 func (o DrProtectionGroupMemberBackupConfigOutput) ReplicateImages() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberBackupConfig) *string { return v.ReplicateImages }).(pulumi.StringPtrOutput)
 }
@@ -3626,7 +3635,7 @@ func (o DrProtectionGroupMemberBackupConfigPtrOutput) Namespaces() pulumi.String
 	}).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
+// (Updatable) Controls the behavior of image replication across regions.  Image replication is enabled by default for DR Protection Groups.  This setting applies to the OKE cluster member in the primary region, and to the standby region  only if the image replication secret is stored in a vault instead of using the default secret.
 func (o DrProtectionGroupMemberBackupConfigPtrOutput) ReplicateImages() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DrProtectionGroupMemberBackupConfig) *string {
 		if v == nil {
@@ -5197,6 +5206,316 @@ func (o DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput) VaultId() pulu
 	}).(pulumi.StringPtrOutput)
 }
 
+type DrProtectionGroupMemberDrDrillProperties struct {
+	// (Updatable) A list of compute instance VNIC mappings to use for DR drills.
+	VnicMappings []DrProtectionGroupMemberDrDrillPropertiesVnicMapping `pulumi:"vnicMappings"`
+}
+
+// DrProtectionGroupMemberDrDrillPropertiesInput is an input type that accepts DrProtectionGroupMemberDrDrillPropertiesArgs and DrProtectionGroupMemberDrDrillPropertiesOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberDrDrillPropertiesInput` via:
+//
+//	DrProtectionGroupMemberDrDrillPropertiesArgs{...}
+type DrProtectionGroupMemberDrDrillPropertiesInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberDrDrillPropertiesOutput() DrProtectionGroupMemberDrDrillPropertiesOutput
+	ToDrProtectionGroupMemberDrDrillPropertiesOutputWithContext(context.Context) DrProtectionGroupMemberDrDrillPropertiesOutput
+}
+
+type DrProtectionGroupMemberDrDrillPropertiesArgs struct {
+	// (Updatable) A list of compute instance VNIC mappings to use for DR drills.
+	VnicMappings DrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayInput `pulumi:"vnicMappings"`
+}
+
+func (DrProtectionGroupMemberDrDrillPropertiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberDrDrillProperties)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberDrDrillPropertiesArgs) ToDrProtectionGroupMemberDrDrillPropertiesOutput() DrProtectionGroupMemberDrDrillPropertiesOutput {
+	return i.ToDrProtectionGroupMemberDrDrillPropertiesOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberDrDrillPropertiesArgs) ToDrProtectionGroupMemberDrDrillPropertiesOutputWithContext(ctx context.Context) DrProtectionGroupMemberDrDrillPropertiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberDrDrillPropertiesOutput)
+}
+
+func (i DrProtectionGroupMemberDrDrillPropertiesArgs) ToDrProtectionGroupMemberDrDrillPropertiesPtrOutput() DrProtectionGroupMemberDrDrillPropertiesPtrOutput {
+	return i.ToDrProtectionGroupMemberDrDrillPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberDrDrillPropertiesArgs) ToDrProtectionGroupMemberDrDrillPropertiesPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberDrDrillPropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberDrDrillPropertiesOutput).ToDrProtectionGroupMemberDrDrillPropertiesPtrOutputWithContext(ctx)
+}
+
+// DrProtectionGroupMemberDrDrillPropertiesPtrInput is an input type that accepts DrProtectionGroupMemberDrDrillPropertiesArgs, DrProtectionGroupMemberDrDrillPropertiesPtr and DrProtectionGroupMemberDrDrillPropertiesPtrOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberDrDrillPropertiesPtrInput` via:
+//
+//	        DrProtectionGroupMemberDrDrillPropertiesArgs{...}
+//
+//	or:
+//
+//	        nil
+type DrProtectionGroupMemberDrDrillPropertiesPtrInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberDrDrillPropertiesPtrOutput() DrProtectionGroupMemberDrDrillPropertiesPtrOutput
+	ToDrProtectionGroupMemberDrDrillPropertiesPtrOutputWithContext(context.Context) DrProtectionGroupMemberDrDrillPropertiesPtrOutput
+}
+
+type drProtectionGroupMemberDrDrillPropertiesPtrType DrProtectionGroupMemberDrDrillPropertiesArgs
+
+func DrProtectionGroupMemberDrDrillPropertiesPtr(v *DrProtectionGroupMemberDrDrillPropertiesArgs) DrProtectionGroupMemberDrDrillPropertiesPtrInput {
+	return (*drProtectionGroupMemberDrDrillPropertiesPtrType)(v)
+}
+
+func (*drProtectionGroupMemberDrDrillPropertiesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberDrDrillProperties)(nil)).Elem()
+}
+
+func (i *drProtectionGroupMemberDrDrillPropertiesPtrType) ToDrProtectionGroupMemberDrDrillPropertiesPtrOutput() DrProtectionGroupMemberDrDrillPropertiesPtrOutput {
+	return i.ToDrProtectionGroupMemberDrDrillPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (i *drProtectionGroupMemberDrDrillPropertiesPtrType) ToDrProtectionGroupMemberDrDrillPropertiesPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberDrDrillPropertiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberDrDrillPropertiesPtrOutput)
+}
+
+type DrProtectionGroupMemberDrDrillPropertiesOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberDrDrillPropertiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberDrDrillProperties)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberDrDrillPropertiesOutput) ToDrProtectionGroupMemberDrDrillPropertiesOutput() DrProtectionGroupMemberDrDrillPropertiesOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberDrDrillPropertiesOutput) ToDrProtectionGroupMemberDrDrillPropertiesOutputWithContext(ctx context.Context) DrProtectionGroupMemberDrDrillPropertiesOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberDrDrillPropertiesOutput) ToDrProtectionGroupMemberDrDrillPropertiesPtrOutput() DrProtectionGroupMemberDrDrillPropertiesPtrOutput {
+	return o.ToDrProtectionGroupMemberDrDrillPropertiesPtrOutputWithContext(context.Background())
+}
+
+func (o DrProtectionGroupMemberDrDrillPropertiesOutput) ToDrProtectionGroupMemberDrDrillPropertiesPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberDrDrillPropertiesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DrProtectionGroupMemberDrDrillProperties) *DrProtectionGroupMemberDrDrillProperties {
+		return &v
+	}).(DrProtectionGroupMemberDrDrillPropertiesPtrOutput)
+}
+
+// (Updatable) A list of compute instance VNIC mappings to use for DR drills.
+func (o DrProtectionGroupMemberDrDrillPropertiesOutput) VnicMappings() DrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberDrDrillProperties) []DrProtectionGroupMemberDrDrillPropertiesVnicMapping {
+		return v.VnicMappings
+	}).(DrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutput)
+}
+
+type DrProtectionGroupMemberDrDrillPropertiesPtrOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberDrDrillPropertiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DrProtectionGroupMemberDrDrillProperties)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberDrDrillPropertiesPtrOutput) ToDrProtectionGroupMemberDrDrillPropertiesPtrOutput() DrProtectionGroupMemberDrDrillPropertiesPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberDrDrillPropertiesPtrOutput) ToDrProtectionGroupMemberDrDrillPropertiesPtrOutputWithContext(ctx context.Context) DrProtectionGroupMemberDrDrillPropertiesPtrOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberDrDrillPropertiesPtrOutput) Elem() DrProtectionGroupMemberDrDrillPropertiesOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberDrDrillProperties) DrProtectionGroupMemberDrDrillProperties {
+		if v != nil {
+			return *v
+		}
+		var ret DrProtectionGroupMemberDrDrillProperties
+		return ret
+	}).(DrProtectionGroupMemberDrDrillPropertiesOutput)
+}
+
+// (Updatable) A list of compute instance VNIC mappings to use for DR drills.
+func (o DrProtectionGroupMemberDrDrillPropertiesPtrOutput) VnicMappings() DrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutput {
+	return o.ApplyT(func(v *DrProtectionGroupMemberDrDrillProperties) []DrProtectionGroupMemberDrDrillPropertiesVnicMapping {
+		if v == nil {
+			return nil
+		}
+		return v.VnicMappings
+	}).(DrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutput)
+}
+
+type DrProtectionGroupMemberDrDrillPropertiesVnicMapping struct {
+	// (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
+	DestinationNsgIdLists []string `pulumi:"destinationNsgIdLists"`
+	// (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+	DestinationPrimaryPrivateIpAddress *string `pulumi:"destinationPrimaryPrivateIpAddress"`
+	// (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+	DestinationPrimaryPrivateIpHostnameLabel *string `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// (Updatable) The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+	//
+	// For legacy compatibility, omit this attribute and use either the legacy explicit private-IP fields or the freeform tag, but not both configuration mechanisms for the same source VNIC.
+	//
+	// Example: `ocid1.privateip.oc1..uniqueID`
+	DestinationReservedPrimaryPrivateIpId *string `pulumi:"destinationReservedPrimaryPrivateIpId"`
+	// (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+	DestinationReservedPublicIpId *string `pulumi:"destinationReservedPublicIpId"`
+	// (Updatable) The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
+	DestinationSubnetId *string `pulumi:"destinationSubnetId"`
+	// (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
+	SourceVnicId *string `pulumi:"sourceVnicId"`
+}
+
+// DrProtectionGroupMemberDrDrillPropertiesVnicMappingInput is an input type that accepts DrProtectionGroupMemberDrDrillPropertiesVnicMappingArgs and DrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberDrDrillPropertiesVnicMappingInput` via:
+//
+//	DrProtectionGroupMemberDrDrillPropertiesVnicMappingArgs{...}
+type DrProtectionGroupMemberDrDrillPropertiesVnicMappingInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput() DrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput
+	ToDrProtectionGroupMemberDrDrillPropertiesVnicMappingOutputWithContext(context.Context) DrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput
+}
+
+type DrProtectionGroupMemberDrDrillPropertiesVnicMappingArgs struct {
+	// (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
+	DestinationNsgIdLists pulumi.StringArrayInput `pulumi:"destinationNsgIdLists"`
+	// (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+	DestinationPrimaryPrivateIpAddress pulumi.StringPtrInput `pulumi:"destinationPrimaryPrivateIpAddress"`
+	// (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+	DestinationPrimaryPrivateIpHostnameLabel pulumi.StringPtrInput `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// (Updatable) The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+	//
+	// For legacy compatibility, omit this attribute and use either the legacy explicit private-IP fields or the freeform tag, but not both configuration mechanisms for the same source VNIC.
+	//
+	// Example: `ocid1.privateip.oc1..uniqueID`
+	DestinationReservedPrimaryPrivateIpId pulumi.StringPtrInput `pulumi:"destinationReservedPrimaryPrivateIpId"`
+	// (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+	DestinationReservedPublicIpId pulumi.StringPtrInput `pulumi:"destinationReservedPublicIpId"`
+	// (Updatable) The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
+	DestinationSubnetId pulumi.StringPtrInput `pulumi:"destinationSubnetId"`
+	// (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
+	SourceVnicId pulumi.StringPtrInput `pulumi:"sourceVnicId"`
+}
+
+func (DrProtectionGroupMemberDrDrillPropertiesVnicMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberDrDrillPropertiesVnicMapping)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberDrDrillPropertiesVnicMappingArgs) ToDrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput() DrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput {
+	return i.ToDrProtectionGroupMemberDrDrillPropertiesVnicMappingOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberDrDrillPropertiesVnicMappingArgs) ToDrProtectionGroupMemberDrDrillPropertiesVnicMappingOutputWithContext(ctx context.Context) DrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput)
+}
+
+// DrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayInput is an input type that accepts DrProtectionGroupMemberDrDrillPropertiesVnicMappingArray and DrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutput values.
+// You can construct a concrete instance of `DrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayInput` via:
+//
+//	DrProtectionGroupMemberDrDrillPropertiesVnicMappingArray{ DrProtectionGroupMemberDrDrillPropertiesVnicMappingArgs{...} }
+type DrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayInput interface {
+	pulumi.Input
+
+	ToDrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutput() DrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutput
+	ToDrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutputWithContext(context.Context) DrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutput
+}
+
+type DrProtectionGroupMemberDrDrillPropertiesVnicMappingArray []DrProtectionGroupMemberDrDrillPropertiesVnicMappingInput
+
+func (DrProtectionGroupMemberDrDrillPropertiesVnicMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberDrDrillPropertiesVnicMapping)(nil)).Elem()
+}
+
+func (i DrProtectionGroupMemberDrDrillPropertiesVnicMappingArray) ToDrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutput() DrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutput {
+	return i.ToDrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutputWithContext(context.Background())
+}
+
+func (i DrProtectionGroupMemberDrDrillPropertiesVnicMappingArray) ToDrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutput)
+}
+
+type DrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DrProtectionGroupMemberDrDrillPropertiesVnicMapping)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput) ToDrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput() DrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput) ToDrProtectionGroupMemberDrDrillPropertiesVnicMappingOutputWithContext(ctx context.Context) DrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput {
+	return o
+}
+
+// (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
+func (o DrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput) DestinationNsgIdLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberDrDrillPropertiesVnicMapping) []string { return v.DestinationNsgIdLists }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+func (o DrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput) DestinationPrimaryPrivateIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberDrDrillPropertiesVnicMapping) *string {
+		return v.DestinationPrimaryPrivateIpAddress
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+func (o DrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput) DestinationPrimaryPrivateIpHostnameLabel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberDrDrillPropertiesVnicMapping) *string {
+		return v.DestinationPrimaryPrivateIpHostnameLabel
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+//
+// For legacy compatibility, omit this attribute and use either the legacy explicit private-IP fields or the freeform tag, but not both configuration mechanisms for the same source VNIC.
+//
+// Example: `ocid1.privateip.oc1..uniqueID`
+func (o DrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput) DestinationReservedPrimaryPrivateIpId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberDrDrillPropertiesVnicMapping) *string {
+		return v.DestinationReservedPrimaryPrivateIpId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+func (o DrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput) DestinationReservedPublicIpId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberDrDrillPropertiesVnicMapping) *string {
+		return v.DestinationReservedPublicIpId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
+func (o DrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput) DestinationSubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberDrDrillPropertiesVnicMapping) *string { return v.DestinationSubnetId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
+func (o DrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput) SourceVnicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberDrDrillPropertiesVnicMapping) *string { return v.SourceVnicId }).(pulumi.StringPtrOutput)
+}
+
+type DrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (DrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DrProtectionGroupMemberDrDrillPropertiesVnicMapping)(nil)).Elem()
+}
+
+func (o DrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutput) ToDrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutput() DrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutput) ToDrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutputWithContext(ctx context.Context) DrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutput {
+	return o
+}
+
+func (o DrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutput) Index(i pulumi.IntInput) DrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DrProtectionGroupMemberDrDrillPropertiesVnicMapping {
+		return vs[0].([]DrProtectionGroupMemberDrDrillPropertiesVnicMapping)[vs[1].(int)]
+	}).(DrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput)
+}
+
 type DrProtectionGroupMemberExportMapping struct {
 	// (Updatable) The OCID of the destination mount target in the destination region which is used to export the file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
 	DestinationMountTargetId *string `pulumi:"destinationMountTargetId"`
@@ -6046,9 +6365,9 @@ func (o DrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput) Index(i pu
 }
 
 type DrProtectionGroupMemberResourceModifierMapping struct {
-	// (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
+	// (Updatable) The name of the config map containing resource modification details.  Example: `resource-modifier`
 	ConfigMap *string `pulumi:"configMap"`
-	// (Updatable) The OKE namespace where the config map resides. Example: `namespaceString5`
+	// (Updatable) The OKE namespace where the config map resides.  Example: `namespaceString5`
 	Namespace *string `pulumi:"namespace"`
 }
 
@@ -6064,9 +6383,9 @@ type DrProtectionGroupMemberResourceModifierMappingInput interface {
 }
 
 type DrProtectionGroupMemberResourceModifierMappingArgs struct {
-	// (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
+	// (Updatable) The name of the config map containing resource modification details.  Example: `resource-modifier`
 	ConfigMap pulumi.StringPtrInput `pulumi:"configMap"`
-	// (Updatable) The OKE namespace where the config map resides. Example: `namespaceString5`
+	// (Updatable) The OKE namespace where the config map resides.  Example: `namespaceString5`
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 }
 
@@ -6121,12 +6440,12 @@ func (o DrProtectionGroupMemberResourceModifierMappingOutput) ToDrProtectionGrou
 	return o
 }
 
-// (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
+// (Updatable) The name of the config map containing resource modification details.  Example: `resource-modifier`
 func (o DrProtectionGroupMemberResourceModifierMappingOutput) ConfigMap() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberResourceModifierMapping) *string { return v.ConfigMap }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The OKE namespace where the config map resides. Example: `namespaceString5`
+// (Updatable) The OKE namespace where the config map resides.  Example: `namespaceString5`
 func (o DrProtectionGroupMemberResourceModifierMappingOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberResourceModifierMapping) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
@@ -6645,10 +6964,16 @@ func (o DrProtectionGroupMemberVirtualNodePoolConfigArrayOutput) Index(i pulumi.
 type DrProtectionGroupMemberVnicMapping struct {
 	// (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
 	DestinationNsgIdLists []string `pulumi:"destinationNsgIdLists"`
-	// (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
+	// (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
 	DestinationPrimaryPrivateIpAddress *string `pulumi:"destinationPrimaryPrivateIpAddress"`
-	// (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+	// (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 	DestinationPrimaryPrivateIpHostnameLabel *string `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// (Updatable) The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+	//
+	// For legacy compatibility, omit this attribute and use either the legacy explicit private-IP fields or the freeform tag, but not both configuration mechanisms for the same source VNIC.
+	//
+	// Example: `ocid1.privateip.oc1..uniqueID`
+	DestinationReservedPrimaryPrivateIpId *string `pulumi:"destinationReservedPrimaryPrivateIpId"`
 	// (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
 	DestinationReservedPublicIpId *string `pulumi:"destinationReservedPublicIpId"`
 	// (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
@@ -6671,10 +6996,16 @@ type DrProtectionGroupMemberVnicMappingInput interface {
 type DrProtectionGroupMemberVnicMappingArgs struct {
 	// (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
 	DestinationNsgIdLists pulumi.StringArrayInput `pulumi:"destinationNsgIdLists"`
-	// (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
+	// (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
 	DestinationPrimaryPrivateIpAddress pulumi.StringPtrInput `pulumi:"destinationPrimaryPrivateIpAddress"`
-	// (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+	// (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 	DestinationPrimaryPrivateIpHostnameLabel pulumi.StringPtrInput `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// (Updatable) The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+	//
+	// For legacy compatibility, omit this attribute and use either the legacy explicit private-IP fields or the freeform tag, but not both configuration mechanisms for the same source VNIC.
+	//
+	// Example: `ocid1.privateip.oc1..uniqueID`
+	DestinationReservedPrimaryPrivateIpId pulumi.StringPtrInput `pulumi:"destinationReservedPrimaryPrivateIpId"`
 	// (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
 	DestinationReservedPublicIpId pulumi.StringPtrInput `pulumi:"destinationReservedPublicIpId"`
 	// (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
@@ -6739,14 +7070,23 @@ func (o DrProtectionGroupMemberVnicMappingOutput) DestinationNsgIdLists() pulumi
 	return o.ApplyT(func(v DrProtectionGroupMemberVnicMapping) []string { return v.DestinationNsgIdLists }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
+// (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
 func (o DrProtectionGroupMemberVnicMappingOutput) DestinationPrimaryPrivateIpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberVnicMapping) *string { return v.DestinationPrimaryPrivateIpAddress }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+// (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 func (o DrProtectionGroupMemberVnicMappingOutput) DestinationPrimaryPrivateIpHostnameLabel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DrProtectionGroupMemberVnicMapping) *string { return v.DestinationPrimaryPrivateIpHostnameLabel }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+//
+// For legacy compatibility, omit this attribute and use either the legacy explicit private-IP fields or the freeform tag, but not both configuration mechanisms for the same source VNIC.
+//
+// Example: `ocid1.privateip.oc1..uniqueID`
+func (o DrProtectionGroupMemberVnicMappingOutput) DestinationReservedPrimaryPrivateIpId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DrProtectionGroupMemberVnicMapping) *string { return v.DestinationReservedPrimaryPrivateIpId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
@@ -11529,13 +11869,13 @@ type GetDrPlanPlanGroupStepUserDefinedStep struct {
 	ObjectStorageScriptLocations []GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocation `pulumi:"objectStorageScriptLocations"`
 	// The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
 	RequestBody string `pulumi:"requestBody"`
-	// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
+	// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'.  Example: `opc`
 	RunAsUser string `pulumi:"runAsUser"`
 	// The OCID of the instance on which this script or command should be executed.
 	RunOnInstanceId string `pulumi:"runOnInstanceId"`
 	// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
 	RunOnInstanceRegion string `pulumi:"runOnInstanceRegion"`
-	// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
+	// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.  Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
 	ScriptCommand string `pulumi:"scriptCommand"`
 	// The type of the user-defined step.
 	StepType string `pulumi:"stepType"`
@@ -11561,13 +11901,13 @@ type GetDrPlanPlanGroupStepUserDefinedStepArgs struct {
 	ObjectStorageScriptLocations GetDrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayInput `pulumi:"objectStorageScriptLocations"`
 	// The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
 	RequestBody pulumi.StringInput `pulumi:"requestBody"`
-	// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
+	// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'.  Example: `opc`
 	RunAsUser pulumi.StringInput `pulumi:"runAsUser"`
 	// The OCID of the instance on which this script or command should be executed.
 	RunOnInstanceId pulumi.StringInput `pulumi:"runOnInstanceId"`
 	// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
 	RunOnInstanceRegion pulumi.StringInput `pulumi:"runOnInstanceRegion"`
-	// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
+	// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.  Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
 	ScriptCommand pulumi.StringInput `pulumi:"scriptCommand"`
 	// The type of the user-defined step.
 	StepType pulumi.StringInput `pulumi:"stepType"`
@@ -11646,7 +11986,7 @@ func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) RequestBody() pulumi.String
 	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.RequestBody }).(pulumi.StringOutput)
 }
 
-// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
+// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'.  Example: `opc`
 func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) RunAsUser() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.RunAsUser }).(pulumi.StringOutput)
 }
@@ -11661,7 +12001,7 @@ func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) RunOnInstanceRegion() pulum
 	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.RunOnInstanceRegion }).(pulumi.StringOutput)
 }
 
-// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
+// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.  Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
 func (o GetDrPlanPlanGroupStepUserDefinedStepOutput) ScriptCommand() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlanPlanGroupStepUserDefinedStep) string { return v.ScriptCommand }).(pulumi.StringOutput)
 }
@@ -12495,13 +12835,13 @@ type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep struct {
 	ObjectStorageScriptLocations []GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocation `pulumi:"objectStorageScriptLocations"`
 	// The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
 	RequestBody string `pulumi:"requestBody"`
-	// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
+	// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'.  Example: `opc`
 	RunAsUser string `pulumi:"runAsUser"`
 	// The OCID of the instance on which this script or command should be executed.
 	RunOnInstanceId string `pulumi:"runOnInstanceId"`
 	// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
 	RunOnInstanceRegion string `pulumi:"runOnInstanceRegion"`
-	// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
+	// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.  Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
 	ScriptCommand string `pulumi:"scriptCommand"`
 	// The type of the user-defined step.
 	StepType string `pulumi:"stepType"`
@@ -12527,13 +12867,13 @@ type GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepArgs struct {
 	ObjectStorageScriptLocations GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepObjectStorageScriptLocationArrayInput `pulumi:"objectStorageScriptLocations"`
 	// The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
 	RequestBody pulumi.StringInput `pulumi:"requestBody"`
-	// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
+	// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'.  Example: `opc`
 	RunAsUser pulumi.StringInput `pulumi:"runAsUser"`
 	// The OCID of the instance on which this script or command should be executed.
 	RunOnInstanceId pulumi.StringInput `pulumi:"runOnInstanceId"`
 	// The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
 	RunOnInstanceRegion pulumi.StringInput `pulumi:"runOnInstanceRegion"`
-	// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
+	// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.  Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
 	ScriptCommand pulumi.StringInput `pulumi:"scriptCommand"`
 	// The type of the user-defined step.
 	StepType pulumi.StringInput `pulumi:"stepType"`
@@ -12612,7 +12952,7 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) Reques
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string { return v.RequestBody }).(pulumi.StringOutput)
 }
 
-// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
+// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'.  Example: `opc`
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) RunAsUser() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string { return v.RunAsUser }).(pulumi.StringOutput)
 }
@@ -12629,7 +12969,7 @@ func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) RunOnI
 	}).(pulumi.StringOutput)
 }
 
-// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
+// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.  Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
 func (o GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStepOutput) ScriptCommand() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep) string { return v.ScriptCommand }).(pulumi.StringOutput)
 }
@@ -13004,7 +13344,7 @@ func (o GetDrProtectionGroupAssociationArrayOutput) Index(i pulumi.IntInput) Get
 type GetDrProtectionGroupLogLocation struct {
 	// The bucket name inside the object storage namespace.  Example: `bucketName`
 	Bucket string `pulumi:"bucket"`
-	// The OKE namespace where the config map resides. Example: `namespaceString5`
+	// The OKE namespace where the config map resides.  Example: `namespaceString5`
 	Namespace string `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object string `pulumi:"object"`
@@ -13024,7 +13364,7 @@ type GetDrProtectionGroupLogLocationInput interface {
 type GetDrProtectionGroupLogLocationArgs struct {
 	// The bucket name inside the object storage namespace.  Example: `bucketName`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The OKE namespace where the config map resides. Example: `namespaceString5`
+	// The OKE namespace where the config map resides.  Example: `namespaceString5`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object pulumi.StringInput `pulumi:"object"`
@@ -13086,7 +13426,7 @@ func (o GetDrProtectionGroupLogLocationOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupLogLocation) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// The OKE namespace where the config map resides. Example: `namespaceString5`
+// The OKE namespace where the config map resides.  Example: `namespaceString5`
 func (o GetDrProtectionGroupLogLocationOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupLogLocation) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -13157,6 +13497,8 @@ type GetDrProtectionGroupMember struct {
 	DestinationNetworkLoadBalancerId string `pulumi:"destinationNetworkLoadBalancerId"`
 	// The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
 	DestinationSnapshotPolicyId string `pulumi:"destinationSnapshotPolicyId"`
+	// DR drill-specific properties for a movable compute instance member.
+	DrDrillProperties []GetDrProtectionGroupMemberDrDrillProperty `pulumi:"drDrillProperties"`
 	// A list of mappings between the primary region file system export and destination region mount target.
 	ExportMappings []GetDrProtectionGroupMemberExportMapping `pulumi:"exportMappings"`
 	// Operations performed on a list of file systems used on the non-movable compute instance.
@@ -13181,7 +13523,7 @@ type GetDrProtectionGroupMember struct {
 	MemberId string `pulumi:"memberId"`
 	// The type of the member.
 	MemberType string `pulumi:"memberType"`
-	// The OKE namespace where the config map resides. Example: `namespaceString5`
+	// The OKE namespace where the config map resides.  Example: `namespaceString5`
 	Namespace string `pulumi:"namespace"`
 	// The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
 	NetworkLoadBalancerMappings []GetDrProtectionGroupMemberNetworkLoadBalancerMapping `pulumi:"networkLoadBalancerMappings"`
@@ -13189,7 +13531,7 @@ type GetDrProtectionGroupMember struct {
 	PasswordVaultSecretId string `pulumi:"passwordVaultSecretId"`
 	// The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
 	PeerClusterId string `pulumi:"peerClusterId"`
-	// The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+	// The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
 	PeerDbSystemId string `pulumi:"peerDbSystemId"`
 	// The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
 	ResourceModifierMappings []GetDrProtectionGroupMemberResourceModifierMapping `pulumi:"resourceModifierMappings"`
@@ -13257,6 +13599,8 @@ type GetDrProtectionGroupMemberArgs struct {
 	DestinationNetworkLoadBalancerId pulumi.StringInput `pulumi:"destinationNetworkLoadBalancerId"`
 	// The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
 	DestinationSnapshotPolicyId pulumi.StringInput `pulumi:"destinationSnapshotPolicyId"`
+	// DR drill-specific properties for a movable compute instance member.
+	DrDrillProperties GetDrProtectionGroupMemberDrDrillPropertyArrayInput `pulumi:"drDrillProperties"`
 	// A list of mappings between the primary region file system export and destination region mount target.
 	ExportMappings GetDrProtectionGroupMemberExportMappingArrayInput `pulumi:"exportMappings"`
 	// Operations performed on a list of file systems used on the non-movable compute instance.
@@ -13281,7 +13625,7 @@ type GetDrProtectionGroupMemberArgs struct {
 	MemberId pulumi.StringInput `pulumi:"memberId"`
 	// The type of the member.
 	MemberType pulumi.StringInput `pulumi:"memberType"`
-	// The OKE namespace where the config map resides. Example: `namespaceString5`
+	// The OKE namespace where the config map resides.  Example: `namespaceString5`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
 	NetworkLoadBalancerMappings GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayInput `pulumi:"networkLoadBalancerMappings"`
@@ -13289,7 +13633,7 @@ type GetDrProtectionGroupMemberArgs struct {
 	PasswordVaultSecretId pulumi.StringInput `pulumi:"passwordVaultSecretId"`
 	// The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
 	PeerClusterId pulumi.StringInput `pulumi:"peerClusterId"`
-	// The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+	// The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
 	PeerDbSystemId pulumi.StringInput `pulumi:"peerDbSystemId"`
 	// The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
 	ResourceModifierMappings GetDrProtectionGroupMemberResourceModifierMappingArrayInput `pulumi:"resourceModifierMappings"`
@@ -13472,6 +13816,13 @@ func (o GetDrProtectionGroupMemberOutput) DestinationSnapshotPolicyId() pulumi.S
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.DestinationSnapshotPolicyId }).(pulumi.StringOutput)
 }
 
+// DR drill-specific properties for a movable compute instance member.
+func (o GetDrProtectionGroupMemberOutput) DrDrillProperties() GetDrProtectionGroupMemberDrDrillPropertyArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberDrDrillProperty {
+		return v.DrDrillProperties
+	}).(GetDrProtectionGroupMemberDrDrillPropertyArrayOutput)
+}
+
 // A list of mappings between the primary region file system export and destination region mount target.
 func (o GetDrProtectionGroupMemberOutput) ExportMappings() GetDrProtectionGroupMemberExportMappingArrayOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) []GetDrProtectionGroupMemberExportMapping { return v.ExportMappings }).(GetDrProtectionGroupMemberExportMappingArrayOutput)
@@ -13538,7 +13889,7 @@ func (o GetDrProtectionGroupMemberOutput) MemberType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.MemberType }).(pulumi.StringOutput)
 }
 
-// The OKE namespace where the config map resides. Example: `namespaceString5`
+// The OKE namespace where the config map resides.  Example: `namespaceString5`
 func (o GetDrProtectionGroupMemberOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -13560,7 +13911,7 @@ func (o GetDrProtectionGroupMemberOutput) PeerClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.PeerClusterId }).(pulumi.StringOutput)
 }
 
-// The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+// The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
 func (o GetDrProtectionGroupMemberOutput) PeerDbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMember) string { return v.PeerDbSystemId }).(pulumi.StringOutput)
 }
@@ -13881,7 +14232,7 @@ func (o GetDrProtectionGroupMemberBackupConfigArrayOutput) Index(i pulumi.IntInp
 type GetDrProtectionGroupMemberBackupLocation struct {
 	// The bucket name inside the object storage namespace.  Example: `bucketName`
 	Bucket string `pulumi:"bucket"`
-	// The OKE namespace where the config map resides. Example: `namespaceString5`
+	// The OKE namespace where the config map resides.  Example: `namespaceString5`
 	Namespace string `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object string `pulumi:"object"`
@@ -13901,7 +14252,7 @@ type GetDrProtectionGroupMemberBackupLocationInput interface {
 type GetDrProtectionGroupMemberBackupLocationArgs struct {
 	// The bucket name inside the object storage namespace.  Example: `bucketName`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The OKE namespace where the config map resides. Example: `namespaceString5`
+	// The OKE namespace where the config map resides.  Example: `namespaceString5`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object pulumi.StringInput `pulumi:"object"`
@@ -13963,7 +14314,7 @@ func (o GetDrProtectionGroupMemberBackupLocationOutput) Bucket() pulumi.StringOu
 	return o.ApplyT(func(v GetDrProtectionGroupMemberBackupLocation) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// The OKE namespace where the config map resides. Example: `namespaceString5`
+// The OKE namespace where the config map resides.  Example: `namespaceString5`
 func (o GetDrProtectionGroupMemberBackupLocationOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMemberBackupLocation) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -15049,6 +15400,264 @@ func (o GetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutput) Index(i p
 	}).(GetDrProtectionGroupMemberDestinationEncryptionKeyOutput)
 }
 
+type GetDrProtectionGroupMemberDrDrillProperty struct {
+	// A list of compute instance VNIC mappings.
+	VnicMappings []GetDrProtectionGroupMemberDrDrillPropertyVnicMapping `pulumi:"vnicMappings"`
+}
+
+// GetDrProtectionGroupMemberDrDrillPropertyInput is an input type that accepts GetDrProtectionGroupMemberDrDrillPropertyArgs and GetDrProtectionGroupMemberDrDrillPropertyOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberDrDrillPropertyInput` via:
+//
+//	GetDrProtectionGroupMemberDrDrillPropertyArgs{...}
+type GetDrProtectionGroupMemberDrDrillPropertyInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberDrDrillPropertyOutput() GetDrProtectionGroupMemberDrDrillPropertyOutput
+	ToGetDrProtectionGroupMemberDrDrillPropertyOutputWithContext(context.Context) GetDrProtectionGroupMemberDrDrillPropertyOutput
+}
+
+type GetDrProtectionGroupMemberDrDrillPropertyArgs struct {
+	// A list of compute instance VNIC mappings.
+	VnicMappings GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayInput `pulumi:"vnicMappings"`
+}
+
+func (GetDrProtectionGroupMemberDrDrillPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberDrDrillProperty)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberDrDrillPropertyArgs) ToGetDrProtectionGroupMemberDrDrillPropertyOutput() GetDrProtectionGroupMemberDrDrillPropertyOutput {
+	return i.ToGetDrProtectionGroupMemberDrDrillPropertyOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberDrDrillPropertyArgs) ToGetDrProtectionGroupMemberDrDrillPropertyOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberDrDrillPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberDrDrillPropertyOutput)
+}
+
+// GetDrProtectionGroupMemberDrDrillPropertyArrayInput is an input type that accepts GetDrProtectionGroupMemberDrDrillPropertyArray and GetDrProtectionGroupMemberDrDrillPropertyArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberDrDrillPropertyArrayInput` via:
+//
+//	GetDrProtectionGroupMemberDrDrillPropertyArray{ GetDrProtectionGroupMemberDrDrillPropertyArgs{...} }
+type GetDrProtectionGroupMemberDrDrillPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberDrDrillPropertyArrayOutput() GetDrProtectionGroupMemberDrDrillPropertyArrayOutput
+	ToGetDrProtectionGroupMemberDrDrillPropertyArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberDrDrillPropertyArrayOutput
+}
+
+type GetDrProtectionGroupMemberDrDrillPropertyArray []GetDrProtectionGroupMemberDrDrillPropertyInput
+
+func (GetDrProtectionGroupMemberDrDrillPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberDrDrillProperty)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberDrDrillPropertyArray) ToGetDrProtectionGroupMemberDrDrillPropertyArrayOutput() GetDrProtectionGroupMemberDrDrillPropertyArrayOutput {
+	return i.ToGetDrProtectionGroupMemberDrDrillPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberDrDrillPropertyArray) ToGetDrProtectionGroupMemberDrDrillPropertyArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberDrDrillPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberDrDrillPropertyArrayOutput)
+}
+
+type GetDrProtectionGroupMemberDrDrillPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberDrDrillPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberDrDrillProperty)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberDrDrillPropertyOutput) ToGetDrProtectionGroupMemberDrDrillPropertyOutput() GetDrProtectionGroupMemberDrDrillPropertyOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberDrDrillPropertyOutput) ToGetDrProtectionGroupMemberDrDrillPropertyOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberDrDrillPropertyOutput {
+	return o
+}
+
+// A list of compute instance VNIC mappings.
+func (o GetDrProtectionGroupMemberDrDrillPropertyOutput) VnicMappings() GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberDrDrillProperty) []GetDrProtectionGroupMemberDrDrillPropertyVnicMapping {
+		return v.VnicMappings
+	}).(GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayOutput)
+}
+
+type GetDrProtectionGroupMemberDrDrillPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberDrDrillPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberDrDrillProperty)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberDrDrillPropertyArrayOutput) ToGetDrProtectionGroupMemberDrDrillPropertyArrayOutput() GetDrProtectionGroupMemberDrDrillPropertyArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberDrDrillPropertyArrayOutput) ToGetDrProtectionGroupMemberDrDrillPropertyArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberDrDrillPropertyArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberDrDrillPropertyArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberDrDrillPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberDrDrillProperty {
+		return vs[0].([]GetDrProtectionGroupMemberDrDrillProperty)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberDrDrillPropertyOutput)
+}
+
+type GetDrProtectionGroupMemberDrDrillPropertyVnicMapping struct {
+	// A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
+	DestinationNsgIdLists []string `pulumi:"destinationNsgIdLists"`
+	// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+	DestinationPrimaryPrivateIpAddress string `pulumi:"destinationPrimaryPrivateIpAddress"`
+	// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+	DestinationPrimaryPrivateIpHostnameLabel string `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+	DestinationReservedPrimaryPrivateIpId string `pulumi:"destinationReservedPrimaryPrivateIpId"`
+	// The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+	DestinationReservedPublicIpId string `pulumi:"destinationReservedPublicIpId"`
+	// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
+	DestinationSubnetId string `pulumi:"destinationSubnetId"`
+	// The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
+	SourceVnicId string `pulumi:"sourceVnicId"`
+}
+
+// GetDrProtectionGroupMemberDrDrillPropertyVnicMappingInput is an input type that accepts GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArgs and GetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberDrDrillPropertyVnicMappingInput` via:
+//
+//	GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArgs{...}
+type GetDrProtectionGroupMemberDrDrillPropertyVnicMappingInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput() GetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput
+	ToGetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutputWithContext(context.Context) GetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput
+}
+
+type GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArgs struct {
+	// A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
+	DestinationNsgIdLists pulumi.StringArrayInput `pulumi:"destinationNsgIdLists"`
+	// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+	DestinationPrimaryPrivateIpAddress pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpAddress"`
+	// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+	DestinationPrimaryPrivateIpHostnameLabel pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+	DestinationReservedPrimaryPrivateIpId pulumi.StringInput `pulumi:"destinationReservedPrimaryPrivateIpId"`
+	// The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+	DestinationReservedPublicIpId pulumi.StringInput `pulumi:"destinationReservedPublicIpId"`
+	// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
+	DestinationSubnetId pulumi.StringInput `pulumi:"destinationSubnetId"`
+	// The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
+	SourceVnicId pulumi.StringInput `pulumi:"sourceVnicId"`
+}
+
+func (GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberDrDrillPropertyVnicMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArgs) ToGetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput() GetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput {
+	return i.ToGetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArgs) ToGetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput)
+}
+
+// GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayInput is an input type that accepts GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArray and GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayInput` via:
+//
+//	GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArray{ GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArgs{...} }
+type GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayOutput() GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayOutput
+	ToGetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayOutputWithContext(context.Context) GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayOutput
+}
+
+type GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArray []GetDrProtectionGroupMemberDrDrillPropertyVnicMappingInput
+
+func (GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberDrDrillPropertyVnicMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArray) ToGetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayOutput() GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayOutput {
+	return i.ToGetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArray) ToGetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayOutput)
+}
+
+type GetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupMemberDrDrillPropertyVnicMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput) ToGetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput() GetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput) ToGetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput {
+	return o
+}
+
+// A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
+func (o GetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput) DestinationNsgIdLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberDrDrillPropertyVnicMapping) []string { return v.DestinationNsgIdLists }).(pulumi.StringArrayOutput)
+}
+
+// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+func (o GetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput) DestinationPrimaryPrivateIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberDrDrillPropertyVnicMapping) string {
+		return v.DestinationPrimaryPrivateIpAddress
+	}).(pulumi.StringOutput)
+}
+
+// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+func (o GetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput) DestinationPrimaryPrivateIpHostnameLabel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberDrDrillPropertyVnicMapping) string {
+		return v.DestinationPrimaryPrivateIpHostnameLabel
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+func (o GetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput) DestinationReservedPrimaryPrivateIpId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberDrDrillPropertyVnicMapping) string {
+		return v.DestinationReservedPrimaryPrivateIpId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput) DestinationReservedPublicIpId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberDrDrillPropertyVnicMapping) string {
+		return v.DestinationReservedPublicIpId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput) DestinationSubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberDrDrillPropertyVnicMapping) string { return v.DestinationSubnetId }).(pulumi.StringOutput)
+}
+
+// The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
+func (o GetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput) SourceVnicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberDrDrillPropertyVnicMapping) string { return v.SourceVnicId }).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupMemberDrDrillPropertyVnicMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayOutput) ToGetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayOutput() GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayOutput) ToGetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupMemberDrDrillPropertyVnicMapping {
+		return vs[0].([]GetDrProtectionGroupMemberDrDrillPropertyVnicMapping)[vs[1].(int)]
+	}).(GetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput)
+}
+
 type GetDrProtectionGroupMemberExportMapping struct {
 	// The OCID of the destination mount target on which this file system export should be created.  Example: `ocid1.mounttarget.oc1..uniqueID`
 	DestinationMountTargetId string `pulumi:"destinationMountTargetId"`
@@ -15818,9 +16427,9 @@ func (o GetDrProtectionGroupMemberNetworkLoadBalancerMappingArrayOutput) Index(i
 }
 
 type GetDrProtectionGroupMemberResourceModifierMapping struct {
-	// The name of the config map containing resource modification details. Example: `resource-modifier`
+	// The name of the config map containing resource modification details.  Example: `resource-modifier`
 	ConfigMap string `pulumi:"configMap"`
-	// The OKE namespace where the config map resides. Example: `namespaceString5`
+	// The OKE namespace where the config map resides.  Example: `namespaceString5`
 	Namespace string `pulumi:"namespace"`
 }
 
@@ -15836,9 +16445,9 @@ type GetDrProtectionGroupMemberResourceModifierMappingInput interface {
 }
 
 type GetDrProtectionGroupMemberResourceModifierMappingArgs struct {
-	// The name of the config map containing resource modification details. Example: `resource-modifier`
+	// The name of the config map containing resource modification details.  Example: `resource-modifier`
 	ConfigMap pulumi.StringInput `pulumi:"configMap"`
-	// The OKE namespace where the config map resides. Example: `namespaceString5`
+	// The OKE namespace where the config map resides.  Example: `namespaceString5`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 }
 
@@ -15893,12 +16502,12 @@ func (o GetDrProtectionGroupMemberResourceModifierMappingOutput) ToGetDrProtecti
 	return o
 }
 
-// The name of the config map containing resource modification details. Example: `resource-modifier`
+// The name of the config map containing resource modification details.  Example: `resource-modifier`
 func (o GetDrProtectionGroupMemberResourceModifierMappingOutput) ConfigMap() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMemberResourceModifierMapping) string { return v.ConfigMap }).(pulumi.StringOutput)
 }
 
-// The OKE namespace where the config map resides. Example: `namespaceString5`
+// The OKE namespace where the config map resides.  Example: `namespaceString5`
 func (o GetDrProtectionGroupMemberResourceModifierMappingOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMemberResourceModifierMapping) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -16367,10 +16976,12 @@ func (o GetDrProtectionGroupMemberVirtualNodePoolConfigArrayOutput) Index(i pulu
 type GetDrProtectionGroupMemberVnicMapping struct {
 	// A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
 	DestinationNsgIdLists []string `pulumi:"destinationNsgIdLists"`
-	// The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+	// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
 	DestinationPrimaryPrivateIpAddress string `pulumi:"destinationPrimaryPrivateIpAddress"`
-	// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+	// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 	DestinationPrimaryPrivateIpHostnameLabel string `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+	DestinationReservedPrimaryPrivateIpId string `pulumi:"destinationReservedPrimaryPrivateIpId"`
 	// The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
 	DestinationReservedPublicIpId string `pulumi:"destinationReservedPublicIpId"`
 	// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
@@ -16393,10 +17004,12 @@ type GetDrProtectionGroupMemberVnicMappingInput interface {
 type GetDrProtectionGroupMemberVnicMappingArgs struct {
 	// A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
 	DestinationNsgIdLists pulumi.StringArrayInput `pulumi:"destinationNsgIdLists"`
-	// The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+	// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
 	DestinationPrimaryPrivateIpAddress pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpAddress"`
-	// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+	// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 	DestinationPrimaryPrivateIpHostnameLabel pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+	DestinationReservedPrimaryPrivateIpId pulumi.StringInput `pulumi:"destinationReservedPrimaryPrivateIpId"`
 	// The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
 	DestinationReservedPublicIpId pulumi.StringInput `pulumi:"destinationReservedPublicIpId"`
 	// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
@@ -16461,16 +17074,21 @@ func (o GetDrProtectionGroupMemberVnicMappingOutput) DestinationNsgIdLists() pul
 	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) []string { return v.DestinationNsgIdLists }).(pulumi.StringArrayOutput)
 }
 
-// The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
 func (o GetDrProtectionGroupMemberVnicMappingOutput) DestinationPrimaryPrivateIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) string { return v.DestinationPrimaryPrivateIpAddress }).(pulumi.StringOutput)
 }
 
-// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 func (o GetDrProtectionGroupMemberVnicMappingOutput) DestinationPrimaryPrivateIpHostnameLabel() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) string {
 		return v.DestinationPrimaryPrivateIpHostnameLabel
 	}).(pulumi.StringOutput)
+}
+
+// The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+func (o GetDrProtectionGroupMemberVnicMappingOutput) DestinationReservedPrimaryPrivateIpId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupMemberVnicMapping) string { return v.DestinationReservedPrimaryPrivateIpId }).(pulumi.StringOutput)
 }
 
 // The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
@@ -16972,7 +17590,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemAssociationArrayOutp
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation struct {
 	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket string `pulumi:"bucket"`
-	// The OKE namespace where the config map resides. Example: `namespaceString5`
+	// The OKE namespace where the config map resides.  Example: `namespaceString5`
 	Namespace string `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object string `pulumi:"object"`
@@ -16992,7 +17610,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationInput interf
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationArgs struct {
 	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The OKE namespace where the config map resides. Example: `namespaceString5`
+	// The OKE namespace where the config map resides.  Example: `namespaceString5`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object pulumi.StringInput `pulumi:"object"`
@@ -17054,7 +17672,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) B
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation) string { return v.Bucket }).(pulumi.StringOutput)
 }
 
-// The OKE namespace where the config map resides. Example: `namespaceString5`
+// The OKE namespace where the config map resides.  Example: `namespaceString5`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocationOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemLogLocation) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -17124,6 +17742,8 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMember struct {
 	DestinationNetworkLoadBalancerId string `pulumi:"destinationNetworkLoadBalancerId"`
 	// The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
 	DestinationSnapshotPolicyId string `pulumi:"destinationSnapshotPolicyId"`
+	// DR drill-specific properties for a movable compute instance member.
+	DrDrillProperties []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillProperty `pulumi:"drDrillProperties"`
 	// A list of mappings between the primary region file system export and destination region mount target.
 	ExportMappings []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping `pulumi:"exportMappings"`
 	// Operations performed on a list of file systems used on the non-movable compute instance.
@@ -17148,7 +17768,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMember struct {
 	MemberId string `pulumi:"memberId"`
 	// The type of the member.
 	MemberType string `pulumi:"memberType"`
-	// The OKE namespace where the config map resides. Example: `namespaceString5`
+	// The OKE namespace where the config map resides.  Example: `namespaceString5`
 	Namespace string `pulumi:"namespace"`
 	// The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
 	NetworkLoadBalancerMappings []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMapping `pulumi:"networkLoadBalancerMappings"`
@@ -17156,7 +17776,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMember struct {
 	PasswordVaultSecretId string `pulumi:"passwordVaultSecretId"`
 	// The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
 	PeerClusterId string `pulumi:"peerClusterId"`
-	// The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+	// The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
 	PeerDbSystemId string `pulumi:"peerDbSystemId"`
 	// The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
 	ResourceModifierMappings []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMapping `pulumi:"resourceModifierMappings"`
@@ -17223,6 +17843,8 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs struct {
 	DestinationNetworkLoadBalancerId pulumi.StringInput `pulumi:"destinationNetworkLoadBalancerId"`
 	// The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
 	DestinationSnapshotPolicyId pulumi.StringInput `pulumi:"destinationSnapshotPolicyId"`
+	// DR drill-specific properties for a movable compute instance member.
+	DrDrillProperties GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayInput `pulumi:"drDrillProperties"`
 	// A list of mappings between the primary region file system export and destination region mount target.
 	ExportMappings GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayInput `pulumi:"exportMappings"`
 	// Operations performed on a list of file systems used on the non-movable compute instance.
@@ -17247,7 +17869,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs struct {
 	MemberId pulumi.StringInput `pulumi:"memberId"`
 	// The type of the member.
 	MemberType pulumi.StringInput `pulumi:"memberType"`
-	// The OKE namespace where the config map resides. Example: `namespaceString5`
+	// The OKE namespace where the config map resides.  Example: `namespaceString5`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
 	NetworkLoadBalancerMappings GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBalancerMappingArrayInput `pulumi:"networkLoadBalancerMappings"`
@@ -17255,7 +17877,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberArgs struct {
 	PasswordVaultSecretId pulumi.StringInput `pulumi:"passwordVaultSecretId"`
 	// The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.  Example: `ocid1.cluster.oc1.uniqueID`
 	PeerClusterId pulumi.StringInput `pulumi:"peerClusterId"`
-	// The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+	// The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
 	PeerDbSystemId pulumi.StringInput `pulumi:"peerDbSystemId"`
 	// The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
 	ResourceModifierMappings GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArrayInput `pulumi:"resourceModifierMappings"`
@@ -17459,6 +18081,13 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) Destin
 	}).(pulumi.StringOutput)
 }
 
+// DR drill-specific properties for a movable compute instance member.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) DrDrillProperties() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillProperty {
+		return v.DrDrillProperties
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayOutput)
+}
+
 // A list of mappings between the primary region file system export and destination region mount target.
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) ExportMappings() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping {
@@ -17531,7 +18160,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) Member
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.MemberType }).(pulumi.StringOutput)
 }
 
-// The OKE namespace where the config map resides. Example: `namespaceString5`
+// The OKE namespace where the config map resides.  Example: `namespaceString5`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -17555,7 +18184,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) PeerCl
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.PeerClusterId }).(pulumi.StringOutput)
 }
 
-// The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+// The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberOutput) PeerDbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMember) string { return v.PeerDbSystemId }).(pulumi.StringOutput)
 }
@@ -17900,7 +18529,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupConfigAr
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocation struct {
 	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket string `pulumi:"bucket"`
-	// The OKE namespace where the config map resides. Example: `namespaceString5`
+	// The OKE namespace where the config map resides.  Example: `namespaceString5`
 	Namespace string `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object string `pulumi:"object"`
@@ -17920,7 +18549,7 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationInp
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationArgs struct {
 	// The bucket name inside the object storage namespace.  Example: `operationLogs`
 	Bucket pulumi.StringInput `pulumi:"bucket"`
-	// The OKE namespace where the config map resides. Example: `namespaceString5`
+	// The OKE namespace where the config map resides.  Example: `namespaceString5`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The object name inside the object storage bucket.  Example: `switchoverPlanExecutions`
 	Object pulumi.StringInput `pulumi:"object"`
@@ -17984,7 +18613,7 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocation
 	}).(pulumi.StringOutput)
 }
 
-// The OKE namespace where the config map resides. Example: `namespaceString5`
+// The OKE namespace where the config map resides.  Example: `namespaceString5`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocationOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberBackupLocation) string {
 		return v.Namespace
@@ -19096,6 +19725,270 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEnc
 	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutput)
 }
 
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillProperty struct {
+	// A list of compute instance VNIC mappings.
+	VnicMappings []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMapping `pulumi:"vnicMappings"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArgs struct {
+	// A list of compute instance VNIC mappings.
+	VnicMappings GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayInput `pulumi:"vnicMappings"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillProperty)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyOutput)
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillProperty)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillProperty)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyOutput {
+	return o
+}
+
+// A list of compute instance VNIC mappings.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyOutput) VnicMappings() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillProperty) []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMapping {
+		return v.VnicMappings
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillProperty)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillProperty {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillProperty)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMapping struct {
+	// A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
+	DestinationNsgIdLists []string `pulumi:"destinationNsgIdLists"`
+	// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+	DestinationPrimaryPrivateIpAddress string `pulumi:"destinationPrimaryPrivateIpAddress"`
+	// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+	DestinationPrimaryPrivateIpHostnameLabel string `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+	DestinationReservedPrimaryPrivateIpId string `pulumi:"destinationReservedPrimaryPrivateIpId"`
+	// The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+	DestinationReservedPublicIpId string `pulumi:"destinationReservedPublicIpId"`
+	// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
+	DestinationSubnetId string `pulumi:"destinationSubnetId"`
+	// The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
+	SourceVnicId string `pulumi:"sourceVnicId"`
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArgs and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArgs{...}
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArgs struct {
+	// A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
+	DestinationNsgIdLists pulumi.StringArrayInput `pulumi:"destinationNsgIdLists"`
+	// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+	DestinationPrimaryPrivateIpAddress pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpAddress"`
+	// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+	DestinationPrimaryPrivateIpHostnameLabel pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+	DestinationReservedPrimaryPrivateIpId pulumi.StringInput `pulumi:"destinationReservedPrimaryPrivateIpId"`
+	// The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+	DestinationReservedPublicIpId pulumi.StringInput `pulumi:"destinationReservedPublicIpId"`
+	// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
+	DestinationSubnetId pulumi.StringInput `pulumi:"destinationSubnetId"`
+	// The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
+	SourceVnicId pulumi.StringInput `pulumi:"sourceVnicId"`
+}
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArgs) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput)
+}
+
+// GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayInput is an input type that accepts GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArray and GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayOutput values.
+// You can construct a concrete instance of `GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayInput` via:
+//
+//	GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArray{ GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArgs{...} }
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayInput interface {
+	pulumi.Input
+
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayOutput
+	ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayOutputWithContext(context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayOutput
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArray []GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingInput
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMapping)(nil)).Elem()
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayOutput {
+	return i.ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayOutputWithContext(context.Background())
+}
+
+func (i GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArray) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput {
+	return o
+}
+
+// A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput) DestinationNsgIdLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMapping) []string {
+		return v.DestinationNsgIdLists
+	}).(pulumi.StringArrayOutput)
+}
+
+// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput) DestinationPrimaryPrivateIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMapping) string {
+		return v.DestinationPrimaryPrivateIpAddress
+	}).(pulumi.StringOutput)
+}
+
+// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput) DestinationPrimaryPrivateIpHostnameLabel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMapping) string {
+		return v.DestinationPrimaryPrivateIpHostnameLabel
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput) DestinationReservedPrimaryPrivateIpId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMapping) string {
+		return v.DestinationReservedPrimaryPrivateIpId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput) DestinationReservedPublicIpId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMapping) string {
+		return v.DestinationReservedPublicIpId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput) DestinationSubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMapping) string {
+		return v.DestinationSubnetId
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput) SourceVnicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMapping) string {
+		return v.SourceVnicId
+	}).(pulumi.StringOutput)
+}
+
+type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMapping)(nil)).Elem()
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayOutput() GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayOutput) ToGetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayOutputWithContext(ctx context.Context) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayOutput {
+	return o
+}
+
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayOutput) Index(i pulumi.IntInput) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMapping {
+		return vs[0].([]GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMapping)[vs[1].(int)]
+	}).(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput)
+}
+
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping struct {
 	// The OCID of the destination mount target on which this file system export should be created.  Example: `ocid1.mounttarget.oc1..uniqueID`
 	DestinationMountTargetId string `pulumi:"destinationMountTargetId"`
@@ -19889,9 +20782,9 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberNetworkLoadBal
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMapping struct {
-	// The name of the config map containing resource modification details. Example: `resource-modifier`
+	// The name of the config map containing resource modification details.  Example: `resource-modifier`
 	ConfigMap string `pulumi:"configMap"`
-	// The OKE namespace where the config map resides. Example: `namespaceString5`
+	// The OKE namespace where the config map resides.  Example: `namespaceString5`
 	Namespace string `pulumi:"namespace"`
 }
 
@@ -19907,9 +20800,9 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierM
 }
 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingArgs struct {
-	// The name of the config map containing resource modification details. Example: `resource-modifier`
+	// The name of the config map containing resource modification details.  Example: `resource-modifier`
 	ConfigMap pulumi.StringInput `pulumi:"configMap"`
-	// The OKE namespace where the config map resides. Example: `namespaceString5`
+	// The OKE namespace where the config map resides.  Example: `namespaceString5`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 }
 
@@ -19964,14 +20857,14 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifi
 	return o
 }
 
-// The name of the config map containing resource modification details. Example: `resource-modifier`
+// The name of the config map containing resource modification details.  Example: `resource-modifier`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutput) ConfigMap() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMapping) string {
 		return v.ConfigMap
 	}).(pulumi.StringOutput)
 }
 
-// The OKE namespace where the config map resides. Example: `namespaceString5`
+// The OKE namespace where the config map resides.  Example: `namespaceString5`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMappingOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMapping) string {
 		return v.Namespace
@@ -20452,10 +21345,12 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVirtualNodePoo
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping struct {
 	// A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
 	DestinationNsgIdLists []string `pulumi:"destinationNsgIdLists"`
-	// The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+	// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
 	DestinationPrimaryPrivateIpAddress string `pulumi:"destinationPrimaryPrivateIpAddress"`
-	// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+	// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 	DestinationPrimaryPrivateIpHostnameLabel string `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+	DestinationReservedPrimaryPrivateIpId string `pulumi:"destinationReservedPrimaryPrivateIpId"`
 	// The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
 	DestinationReservedPublicIpId string `pulumi:"destinationReservedPublicIpId"`
 	// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
@@ -20478,10 +21373,12 @@ type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingInput 
 type GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingArgs struct {
 	// A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
 	DestinationNsgIdLists pulumi.StringArrayInput `pulumi:"destinationNsgIdLists"`
-	// The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+	// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
 	DestinationPrimaryPrivateIpAddress pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpAddress"`
-	// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+	// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 	DestinationPrimaryPrivateIpHostnameLabel pulumi.StringInput `pulumi:"destinationPrimaryPrivateIpHostnameLabel"`
+	// The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+	DestinationReservedPrimaryPrivateIpId pulumi.StringInput `pulumi:"destinationReservedPrimaryPrivateIpId"`
 	// The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
 	DestinationReservedPublicIpId pulumi.StringInput `pulumi:"destinationReservedPublicIpId"`
 	// The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
@@ -20548,17 +21445,24 @@ func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOut
 	}).(pulumi.StringArrayOutput)
 }
 
-// The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) DestinationPrimaryPrivateIpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) string {
 		return v.DestinationPrimaryPrivateIpAddress
 	}).(pulumi.StringOutput)
 }
 
-// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
 func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) DestinationPrimaryPrivateIpHostnameLabel() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) string {
 		return v.DestinationPrimaryPrivateIpHostnameLabel
+	}).(pulumi.StringOutput)
+}
+
+// The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+func (o GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMappingOutput) DestinationReservedPrimaryPrivateIpId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberVnicMapping) string {
+		return v.DestinationReservedPrimaryPrivateIpId
 	}).(pulumi.StringOutput)
 }
 
@@ -20776,6 +21680,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrInput)(nil)).Elem(), DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberDestinationEncryptionKeyInput)(nil)).Elem(), DrProtectionGroupMemberDestinationEncryptionKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberDestinationEncryptionKeyPtrInput)(nil)).Elem(), DrProtectionGroupMemberDestinationEncryptionKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberDrDrillPropertiesInput)(nil)).Elem(), DrProtectionGroupMemberDrDrillPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberDrDrillPropertiesPtrInput)(nil)).Elem(), DrProtectionGroupMemberDrDrillPropertiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberDrDrillPropertiesVnicMappingInput)(nil)).Elem(), DrProtectionGroupMemberDrDrillPropertiesVnicMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayInput)(nil)).Elem(), DrProtectionGroupMemberDrDrillPropertiesVnicMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberExportMappingInput)(nil)).Elem(), DrProtectionGroupMemberExportMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberExportMappingArrayInput)(nil)).Elem(), DrProtectionGroupMemberExportMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DrProtectionGroupMemberFileSystemOperationInput)(nil)).Elem(), DrProtectionGroupMemberFileSystemOperationArgs{})
@@ -20920,6 +21828,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberDbSystemReplicationUserDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberDestinationEncryptionKeyInput)(nil)).Elem(), GetDrProtectionGroupMemberDestinationEncryptionKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberDestinationEncryptionKeyArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberDestinationEncryptionKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberDrDrillPropertyInput)(nil)).Elem(), GetDrProtectionGroupMemberDrDrillPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberDrDrillPropertyArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberDrDrillPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberDrDrillPropertyVnicMappingInput)(nil)).Elem(), GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberExportMappingInput)(nil)).Elem(), GetDrProtectionGroupMemberExportMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberExportMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupMemberExportMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupMemberFileSystemOperationInput)(nil)).Elem(), GetDrProtectionGroupMemberFileSystemOperationArgs{})
@@ -20982,6 +21894,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationInput)(nil)).Elem(), GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationArgs{})
@@ -21076,6 +21992,10 @@ func init() {
 	pulumi.RegisterOutputType(DrProtectionGroupMemberDbSystemReplicationUserDetailsPtrOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberDestinationEncryptionKeyOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberDestinationEncryptionKeyPtrOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberDrDrillPropertiesOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberDrDrillPropertiesPtrOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberDrDrillPropertiesVnicMappingOutput{})
+	pulumi.RegisterOutputType(DrProtectionGroupMemberDrDrillPropertiesVnicMappingArrayOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberExportMappingOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberExportMappingArrayOutput{})
 	pulumi.RegisterOutputType(DrProtectionGroupMemberFileSystemOperationOutput{})
@@ -21220,6 +22140,10 @@ func init() {
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberDbSystemReplicationUserDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberDestinationEncryptionKeyOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberDestinationEncryptionKeyArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberDrDrillPropertyOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberDrDrillPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberDrDrillPropertyVnicMappingOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupMemberDrDrillPropertyVnicMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberExportMappingOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberExportMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupMemberFileSystemOperationOutput{})
@@ -21282,6 +22206,10 @@ func init() {
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKeyArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyArrayOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingOutput{})
+	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingArrayOutput{})
 	pulumi.RegisterOutputType(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationOutput{})

@@ -14,19 +14,15 @@ public final class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVe
     /**
      * @return The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
      * 
-     * The list of supported versions can be obtained using the API for the provided shape /20160918/dbVersions?compartmentId=&lt;compartmentId&gt;&amp;dbSystemShape=ExaDbXS
-     * 
      */
     private @Nullable String majorVersion;
     /**
-     * @return The update should be applied on the database for the selected version scheme.
+     * @return The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
      * 
      */
     private @Nullable String source;
     /**
      * @return The update should be applied on the database for the selected version preference. *_N represents the LATEST version
-     * 
-     * For Ex: The current latest version is 23.7.0.0.0, If versionPreference selects option as ORACLE_DB_N then oracle applies the db update with LATEST version (i.e. 23.7.0.0.0) If versionPreference selects option as ORACLE_DB_N_1 then oracle applies the db update with LATEST-1 version (i.e. 23.6.0.0.0) If versionPreference selects option as ORACLE_DB_N_2 then oracle applies the db update with LATEST-2 version (i.e. 23.5.0.0.0)
      * 
      */
     private @Nullable String versionPreference;
@@ -35,14 +31,12 @@ public final class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVe
     /**
      * @return The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
      * 
-     * The list of supported versions can be obtained using the API for the provided shape /20160918/dbVersions?compartmentId=&lt;compartmentId&gt;&amp;dbSystemShape=ExaDbXS
-     * 
      */
     public Optional<String> majorVersion() {
         return Optional.ofNullable(this.majorVersion);
     }
     /**
-     * @return The update should be applied on the database for the selected version scheme.
+     * @return The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
      * 
      */
     public Optional<String> source() {
@@ -50,8 +44,6 @@ public final class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVe
     }
     /**
      * @return The update should be applied on the database for the selected version preference. *_N represents the LATEST version
-     * 
-     * For Ex: The current latest version is 23.7.0.0.0, If versionPreference selects option as ORACLE_DB_N then oracle applies the db update with LATEST version (i.e. 23.7.0.0.0) If versionPreference selects option as ORACLE_DB_N_1 then oracle applies the db update with LATEST-1 version (i.e. 23.6.0.0.0) If versionPreference selects option as ORACLE_DB_N_2 then oracle applies the db update with LATEST-2 version (i.e. 23.5.0.0.0)
      * 
      */
     public Optional<String> versionPreference() {

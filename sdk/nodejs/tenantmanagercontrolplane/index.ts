@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { ChildTenancyArgs, ChildTenancyState } from "./childTenancy";
+export type ChildTenancy = import("./childTenancy").ChildTenancy;
+export const ChildTenancy: typeof import("./childTenancy").ChildTenancy = null as any;
+utilities.lazyLoad(exports, ["ChildTenancy"], () => require("./childTenancy"));
+
 export { GetAssignedSubscriptionArgs, GetAssignedSubscriptionResult, GetAssignedSubscriptionOutputArgs } from "./getAssignedSubscription";
 export const getAssignedSubscription: typeof import("./getAssignedSubscription").getAssignedSubscription = null as any;
 export const getAssignedSubscriptionOutput: typeof import("./getAssignedSubscription").getAssignedSubscriptionOutput = null as any;
@@ -140,6 +145,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "oci:Tenantmanagercontrolplane/childTenancy:ChildTenancy":
+                return new ChildTenancy(name, <any>undefined, { urn })
             case "oci:Tenantmanagercontrolplane/subscriptionMapping:SubscriptionMapping":
                 return new SubscriptionMapping(name, <any>undefined, { urn })
             default:
@@ -147,4 +154,5 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("oci", "Tenantmanagercontrolplane/childTenancy", _module)
 pulumi.runtime.registerResourceModule("oci", "Tenantmanagercontrolplane/subscriptionMapping", _module)

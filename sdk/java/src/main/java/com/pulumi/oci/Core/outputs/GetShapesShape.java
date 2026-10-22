@@ -181,6 +181,11 @@ public final class GetShapesShape {
      * 
      */
     private List<String> resizeCompatibleShapes;
+    /**
+     * @return The resource management modes supported by this shape.
+     * 
+     */
+    private List<String> supportedResourceManagements;
 
     private GetShapesShape() {}
     /**
@@ -407,6 +412,13 @@ public final class GetShapesShape {
     public List<String> resizeCompatibleShapes() {
         return this.resizeCompatibleShapes;
     }
+    /**
+     * @return The resource management modes supported by this shape.
+     * 
+     */
+    public List<String> supportedResourceManagements() {
+        return this.supportedResourceManagements;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -449,6 +461,7 @@ public final class GetShapesShape {
         private Integer rdmaPorts;
         private List<GetShapesShapeRecommendedAlternative> recommendedAlternatives;
         private List<String> resizeCompatibleShapes;
+        private List<String> supportedResourceManagements;
         public Builder() {}
         public Builder(GetShapesShape defaults) {
     	      Objects.requireNonNull(defaults);
@@ -484,6 +497,7 @@ public final class GetShapesShape {
     	      this.rdmaPorts = defaults.rdmaPorts;
     	      this.recommendedAlternatives = defaults.recommendedAlternatives;
     	      this.resizeCompatibleShapes = defaults.resizeCompatibleShapes;
+    	      this.supportedResourceManagements = defaults.supportedResourceManagements;
         }
 
         @CustomType.Setter
@@ -775,6 +789,17 @@ public final class GetShapesShape {
         public Builder resizeCompatibleShapes(String... resizeCompatibleShapes) {
             return resizeCompatibleShapes(List.of(resizeCompatibleShapes));
         }
+        @CustomType.Setter
+        public Builder supportedResourceManagements(List<String> supportedResourceManagements) {
+            if (supportedResourceManagements == null) {
+              throw new MissingRequiredPropertyException("GetShapesShape", "supportedResourceManagements");
+            }
+            this.supportedResourceManagements = supportedResourceManagements;
+            return this;
+        }
+        public Builder supportedResourceManagements(String... supportedResourceManagements) {
+            return supportedResourceManagements(List.of(supportedResourceManagements));
+        }
         public GetShapesShape build() {
             final var _resultValue = new GetShapesShape();
             _resultValue.baselineOcpuUtilizations = baselineOcpuUtilizations;
@@ -809,6 +834,7 @@ public final class GetShapesShape {
             _resultValue.rdmaPorts = rdmaPorts;
             _resultValue.recommendedAlternatives = recommendedAlternatives;
             _resultValue.resizeCompatibleShapes = resizeCompatibleShapes;
+            _resultValue.supportedResourceManagements = supportedResourceManagements;
             return _resultValue;
         }
     }

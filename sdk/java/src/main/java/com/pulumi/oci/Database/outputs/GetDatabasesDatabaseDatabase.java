@@ -80,6 +80,12 @@ public final class GetDatabasesDatabaseDatabase {
      * 
      */
     private Boolean isActiveDataGuardEnabled;
+    private Boolean isThinClone;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+     * 
+     */
+    private String keyStoreId;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
@@ -118,8 +124,11 @@ public final class GetDatabasesDatabaseDatabase {
      * 
      */
     private String sidPrefix;
+    private String sourceAdminPassword;
     private String sourceDatabaseId;
     private List<GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail> sourceEncryptionKeyLocationDetails;
+    private String sourceSnapshotId;
+    private String sourceTdePassword;
     private String sourceTdeWalletPassword;
     /**
      * @return The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
@@ -240,6 +249,16 @@ public final class GetDatabasesDatabaseDatabase {
     public Boolean isActiveDataGuardEnabled() {
         return this.isActiveDataGuardEnabled;
     }
+    public Boolean isThinClone() {
+        return this.isThinClone;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+     * 
+     */
+    public String keyStoreId() {
+        return this.keyStoreId;
+    }
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
@@ -298,11 +317,20 @@ public final class GetDatabasesDatabaseDatabase {
     public String sidPrefix() {
         return this.sidPrefix;
     }
+    public String sourceAdminPassword() {
+        return this.sourceAdminPassword;
+    }
     public String sourceDatabaseId() {
         return this.sourceDatabaseId;
     }
     public List<GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail> sourceEncryptionKeyLocationDetails() {
         return this.sourceEncryptionKeyLocationDetails;
+    }
+    public String sourceSnapshotId() {
+        return this.sourceSnapshotId;
+    }
+    public String sourceTdePassword() {
+        return this.sourceTdePassword;
     }
     public String sourceTdeWalletPassword() {
         return this.sourceTdeWalletPassword;
@@ -370,6 +398,8 @@ public final class GetDatabasesDatabaseDatabase {
         private List<GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetail> encryptionKeyLocationDetails;
         private Map<String,String> freeformTags;
         private Boolean isActiveDataGuardEnabled;
+        private Boolean isThinClone;
+        private String keyStoreId;
         private String kmsKeyId;
         private String kmsKeyVersionId;
         private List<GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetail> managedSoftwareUpdateDetails;
@@ -380,8 +410,11 @@ public final class GetDatabasesDatabaseDatabase {
         private String protectionMode;
         private String recoveryApplianceVpcPassword;
         private String sidPrefix;
+        private String sourceAdminPassword;
         private String sourceDatabaseId;
         private List<GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail> sourceEncryptionKeyLocationDetails;
+        private String sourceSnapshotId;
+        private String sourceTdePassword;
         private String sourceTdeWalletPassword;
         private List<GetDatabasesDatabaseDatabaseStorageSizeDetail> storageSizeDetails;
         private String tdeWalletPassword;
@@ -408,6 +441,8 @@ public final class GetDatabasesDatabaseDatabase {
     	      this.encryptionKeyLocationDetails = defaults.encryptionKeyLocationDetails;
     	      this.freeformTags = defaults.freeformTags;
     	      this.isActiveDataGuardEnabled = defaults.isActiveDataGuardEnabled;
+    	      this.isThinClone = defaults.isThinClone;
+    	      this.keyStoreId = defaults.keyStoreId;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.managedSoftwareUpdateDetails = defaults.managedSoftwareUpdateDetails;
@@ -418,8 +453,11 @@ public final class GetDatabasesDatabaseDatabase {
     	      this.protectionMode = defaults.protectionMode;
     	      this.recoveryApplianceVpcPassword = defaults.recoveryApplianceVpcPassword;
     	      this.sidPrefix = defaults.sidPrefix;
+    	      this.sourceAdminPassword = defaults.sourceAdminPassword;
     	      this.sourceDatabaseId = defaults.sourceDatabaseId;
     	      this.sourceEncryptionKeyLocationDetails = defaults.sourceEncryptionKeyLocationDetails;
+    	      this.sourceSnapshotId = defaults.sourceSnapshotId;
+    	      this.sourceTdePassword = defaults.sourceTdePassword;
     	      this.sourceTdeWalletPassword = defaults.sourceTdeWalletPassword;
     	      this.storageSizeDetails = defaults.storageSizeDetails;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
@@ -567,6 +605,22 @@ public final class GetDatabasesDatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder isThinClone(Boolean isThinClone) {
+            if (isThinClone == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDatabase", "isThinClone");
+            }
+            this.isThinClone = isThinClone;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder keyStoreId(String keyStoreId) {
+            if (keyStoreId == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDatabase", "keyStoreId");
+            }
+            this.keyStoreId = keyStoreId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             if (kmsKeyId == null) {
               throw new MissingRequiredPropertyException("GetDatabasesDatabaseDatabase", "kmsKeyId");
@@ -656,6 +710,14 @@ public final class GetDatabasesDatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder sourceAdminPassword(String sourceAdminPassword) {
+            if (sourceAdminPassword == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDatabase", "sourceAdminPassword");
+            }
+            this.sourceAdminPassword = sourceAdminPassword;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sourceDatabaseId(String sourceDatabaseId) {
             if (sourceDatabaseId == null) {
               throw new MissingRequiredPropertyException("GetDatabasesDatabaseDatabase", "sourceDatabaseId");
@@ -673,6 +735,22 @@ public final class GetDatabasesDatabaseDatabase {
         }
         public Builder sourceEncryptionKeyLocationDetails(GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail... sourceEncryptionKeyLocationDetails) {
             return sourceEncryptionKeyLocationDetails(List.of(sourceEncryptionKeyLocationDetails));
+        }
+        @CustomType.Setter
+        public Builder sourceSnapshotId(String sourceSnapshotId) {
+            if (sourceSnapshotId == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDatabase", "sourceSnapshotId");
+            }
+            this.sourceSnapshotId = sourceSnapshotId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sourceTdePassword(String sourceTdePassword) {
+            if (sourceTdePassword == null) {
+              throw new MissingRequiredPropertyException("GetDatabasesDatabaseDatabase", "sourceTdePassword");
+            }
+            this.sourceTdePassword = sourceTdePassword;
+            return this;
         }
         @CustomType.Setter
         public Builder sourceTdeWalletPassword(String sourceTdeWalletPassword) {
@@ -751,6 +829,8 @@ public final class GetDatabasesDatabaseDatabase {
             _resultValue.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
             _resultValue.freeformTags = freeformTags;
             _resultValue.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            _resultValue.isThinClone = isThinClone;
+            _resultValue.keyStoreId = keyStoreId;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
@@ -761,8 +841,11 @@ public final class GetDatabasesDatabaseDatabase {
             _resultValue.protectionMode = protectionMode;
             _resultValue.recoveryApplianceVpcPassword = recoveryApplianceVpcPassword;
             _resultValue.sidPrefix = sidPrefix;
+            _resultValue.sourceAdminPassword = sourceAdminPassword;
             _resultValue.sourceDatabaseId = sourceDatabaseId;
             _resultValue.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
+            _resultValue.sourceSnapshotId = sourceSnapshotId;
+            _resultValue.sourceTdePassword = sourceTdePassword;
             _resultValue.sourceTdeWalletPassword = sourceTdeWalletPassword;
             _resultValue.storageSizeDetails = storageSizeDetails;
             _resultValue.tdeWalletPassword = tdeWalletPassword;

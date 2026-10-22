@@ -27,10 +27,13 @@ class GetDbSystemResult:
     """
     A collection of values returned by getDbSystem.
     """
-    def __init__(__self__, admin_username=None, apply_change_mode_to_stand_alone=None, apply_config=None, compartment_id=None, config_id=None, credentials=None, db_system_id=None, db_version=None, defined_tags=None, description=None, display_name=None, excluded_fields=None, freeform_tags=None, id=None, instance_count=None, instance_memory_size_in_gbs=None, instance_ocpu_count=None, instances=None, instances_details=None, kerberos_auth_details=None, lifecycle_details=None, management_policies=None, network_details=None, odsp_insight_details=None, patch_operations=None, replication_configs=None, shape=None, sources=None, state=None, storage_details=None, system_role=None, system_tags=None, system_type=None, time_created=None, time_updated=None):
+    def __init__(__self__, admin_username=None, allow_major_version_upgrade=None, apply_change_mode_to_stand_alone=None, apply_config=None, compartment_id=None, config_id=None, credentials=None, db_system_id=None, db_version=None, defined_tags=None, description=None, display_name=None, excluded_fields=None, freeform_tags=None, id=None, instance_count=None, instance_memory_size_in_gbs=None, instance_ocpu_count=None, instances=None, instances_details=None, kerberos_auth_details=None, lifecycle_details=None, management_policies=None, network_details=None, odsp_insight_details=None, patch_operations=None, replication_configs=None, shape=None, sources=None, state=None, storage_details=None, system_role=None, system_tags=None, system_type=None, time_created=None, time_updated=None, upgrade_options=None):
         if admin_username and not isinstance(admin_username, str):
             raise TypeError("Expected argument 'admin_username' to be a str")
         pulumi.set(__self__, "admin_username", admin_username)
+        if allow_major_version_upgrade and not isinstance(allow_major_version_upgrade, bool):
+            raise TypeError("Expected argument 'allow_major_version_upgrade' to be a bool")
+        pulumi.set(__self__, "allow_major_version_upgrade", allow_major_version_upgrade)
         if apply_change_mode_to_stand_alone and not isinstance(apply_change_mode_to_stand_alone, str):
             raise TypeError("Expected argument 'apply_change_mode_to_stand_alone' to be a str")
         pulumi.set(__self__, "apply_change_mode_to_stand_alone", apply_change_mode_to_stand_alone)
@@ -133,6 +136,9 @@ class GetDbSystemResult:
         if time_updated and not isinstance(time_updated, str):
             raise TypeError("Expected argument 'time_updated' to be a str")
         pulumi.set(__self__, "time_updated", time_updated)
+        if upgrade_options and not isinstance(upgrade_options, list):
+            raise TypeError("Expected argument 'upgrade_options' to be a list")
+        pulumi.set(__self__, "upgrade_options", upgrade_options)
 
     @_builtins.property
     @pulumi.getter(name="adminUsername")
@@ -141,6 +147,11 @@ class GetDbSystemResult:
         The database system administrator username.
         """
         return pulumi.get(self, "admin_username")
+
+    @_builtins.property
+    @pulumi.getter(name="allowMajorVersionUpgrade")
+    def allow_major_version_upgrade(self) -> _builtins.bool:
+        return pulumi.get(self, "allow_major_version_upgrade")
 
     @_builtins.property
     @pulumi.getter(name="applyChangeModeToStandAlone")
@@ -399,6 +410,11 @@ class GetDbSystemResult:
         """
         return pulumi.get(self, "time_updated")
 
+    @_builtins.property
+    @pulumi.getter(name="upgradeOptions")
+    def upgrade_options(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "upgrade_options")
+
 
 class AwaitableGetDbSystemResult(GetDbSystemResult):
     # pylint: disable=using-constant-test
@@ -407,6 +423,7 @@ class AwaitableGetDbSystemResult(GetDbSystemResult):
             yield self
         return GetDbSystemResult(
             admin_username=self.admin_username,
+            allow_major_version_upgrade=self.allow_major_version_upgrade,
             apply_change_mode_to_stand_alone=self.apply_change_mode_to_stand_alone,
             apply_config=self.apply_config,
             compartment_id=self.compartment_id,
@@ -440,7 +457,8 @@ class AwaitableGetDbSystemResult(GetDbSystemResult):
             system_tags=self.system_tags,
             system_type=self.system_type,
             time_created=self.time_created,
-            time_updated=self.time_updated)
+            time_updated=self.time_updated,
+            upgrade_options=self.upgrade_options)
 
 
 def get_db_system(db_system_id: Optional[_builtins.str] = None,
@@ -473,6 +491,7 @@ def get_db_system(db_system_id: Optional[_builtins.str] = None,
 
     return AwaitableGetDbSystemResult(
         admin_username=pulumi.get(__ret__, 'admin_username'),
+        allow_major_version_upgrade=pulumi.get(__ret__, 'allow_major_version_upgrade'),
         apply_change_mode_to_stand_alone=pulumi.get(__ret__, 'apply_change_mode_to_stand_alone'),
         apply_config=pulumi.get(__ret__, 'apply_config'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
@@ -506,7 +525,8 @@ def get_db_system(db_system_id: Optional[_builtins.str] = None,
         system_tags=pulumi.get(__ret__, 'system_tags'),
         system_type=pulumi.get(__ret__, 'system_type'),
         time_created=pulumi.get(__ret__, 'time_created'),
-        time_updated=pulumi.get(__ret__, 'time_updated'))
+        time_updated=pulumi.get(__ret__, 'time_updated'),
+        upgrade_options=pulumi.get(__ret__, 'upgrade_options'))
 def get_db_system_output(db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
                          excluded_fields: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetDbSystemResult]:
@@ -536,6 +556,7 @@ def get_db_system_output(db_system_id: pulumi.Input[Optional[_builtins.str]] = N
     __ret__ = pulumi.runtime.invoke_output('oci:Psql/getDbSystem:getDbSystem', __args__, opts=opts, typ=GetDbSystemResult)
     return __ret__.apply(lambda __response__: GetDbSystemResult(
         admin_username=pulumi.get(__response__, 'admin_username'),
+        allow_major_version_upgrade=pulumi.get(__response__, 'allow_major_version_upgrade'),
         apply_change_mode_to_stand_alone=pulumi.get(__response__, 'apply_change_mode_to_stand_alone'),
         apply_config=pulumi.get(__response__, 'apply_config'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
@@ -569,4 +590,5 @@ def get_db_system_output(db_system_id: pulumi.Input[Optional[_builtins.str]] = N
         system_tags=pulumi.get(__response__, 'system_tags'),
         system_type=pulumi.get(__response__, 'system_type'),
         time_created=pulumi.get(__response__, 'time_created'),
-        time_updated=pulumi.get(__response__, 'time_updated')))
+        time_updated=pulumi.get(__response__, 'time_updated'),
+        upgrade_options=pulumi.get(__response__, 'upgrade_options')))

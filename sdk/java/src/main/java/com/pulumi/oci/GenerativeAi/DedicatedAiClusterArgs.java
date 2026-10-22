@@ -19,6 +19,21 @@ public final class DedicatedAiClusterArgs extends com.pulumi.resources.ResourceA
     public static final DedicatedAiClusterArgs Empty = new DedicatedAiClusterArgs();
 
     /**
+     * The OCID of the capacity reservation.
+     * 
+     */
+    @Import(name="capacityReservationId")
+    private @Nullable Output<String> capacityReservationId;
+
+    /**
+     * @return The OCID of the capacity reservation.
+     * 
+     */
+    public Optional<Output<String>> capacityReservationId() {
+        return Optional.ofNullable(this.capacityReservationId);
+    }
+
+    /**
      * (Updatable) The compartment OCID to create the dedicated AI cluster in.
      * 
      */
@@ -285,6 +300,7 @@ public final class DedicatedAiClusterArgs extends com.pulumi.resources.ResourceA
     private DedicatedAiClusterArgs() {}
 
     private DedicatedAiClusterArgs(DedicatedAiClusterArgs $) {
+        this.capacityReservationId = $.capacityReservationId;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.description = $.description;
@@ -311,6 +327,27 @@ public final class DedicatedAiClusterArgs extends com.pulumi.resources.ResourceA
 
         public Builder(DedicatedAiClusterArgs defaults) {
             $ = new DedicatedAiClusterArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param capacityReservationId The OCID of the capacity reservation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capacityReservationId(@Nullable Output<String> capacityReservationId) {
+            $.capacityReservationId = capacityReservationId;
+            return this;
+        }
+
+        /**
+         * @param capacityReservationId The OCID of the capacity reservation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capacityReservationId(String capacityReservationId) {
+            return capacityReservationId(Output.of(capacityReservationId));
         }
 
         /**

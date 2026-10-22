@@ -119,7 +119,7 @@ type Deployment struct {
 	NextMaintenanceDescription pulumi.StringOutput `pulumi:"nextMaintenanceDescription"`
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
-	// (Updatable) Deployment Data for creating an OggDeployment
+	// (Updatable) Deployment Data for creating an OggDeployment.
 	OggData DeploymentOggDataOutput `pulumi:"oggData"`
 	// (Updatable) An array of local peers of deployment
 	Placements DeploymentPlacementArrayOutput `pulumi:"placements"`
@@ -289,7 +289,7 @@ type deploymentState struct {
 	NextMaintenanceDescription *string `pulumi:"nextMaintenanceDescription"`
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds []string `pulumi:"nsgIds"`
-	// (Updatable) Deployment Data for creating an OggDeployment
+	// (Updatable) Deployment Data for creating an OggDeployment.
 	OggData *DeploymentOggData `pulumi:"oggData"`
 	// (Updatable) An array of local peers of deployment
 	Placements []DeploymentPlacement `pulumi:"placements"`
@@ -421,7 +421,7 @@ type DeploymentState struct {
 	NextMaintenanceDescription pulumi.StringPtrInput
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds pulumi.StringArrayInput
-	// (Updatable) Deployment Data for creating an OggDeployment
+	// (Updatable) Deployment Data for creating an OggDeployment.
 	OggData DeploymentOggDataPtrInput
 	// (Updatable) An array of local peers of deployment
 	Placements DeploymentPlacementArrayInput
@@ -529,7 +529,7 @@ type deploymentArgs struct {
 	MaintenanceWindow *DeploymentMaintenanceWindow `pulumi:"maintenanceWindow"`
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds []string `pulumi:"nsgIds"`
-	// (Updatable) Deployment Data for creating an OggDeployment
+	// (Updatable) Deployment Data for creating an OggDeployment.
 	OggData *DeploymentOggData `pulumi:"oggData"`
 	// (Updatable) An array of local peers of deployment
 	Placements []DeploymentPlacement `pulumi:"placements"`
@@ -612,7 +612,7 @@ type DeploymentArgs struct {
 	MaintenanceWindow DeploymentMaintenanceWindowPtrInput
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds pulumi.StringArrayInput
-	// (Updatable) Deployment Data for creating an OggDeployment
+	// (Updatable) Deployment Data for creating an OggDeployment.
 	OggData DeploymentOggDataPtrInput
 	// (Updatable) An array of local peers of deployment
 	Placements DeploymentPlacementArrayInput
@@ -925,7 +925,7 @@ func (o DeploymentOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) Deployment Data for creating an OggDeployment
+// (Updatable) Deployment Data for creating an OggDeployment.
 func (o DeploymentOutput) OggData() DeploymentOggDataOutput {
 	return o.ApplyT(func(v *Deployment) DeploymentOggDataOutput { return v.OggData }).(DeploymentOggDataOutput)
 }

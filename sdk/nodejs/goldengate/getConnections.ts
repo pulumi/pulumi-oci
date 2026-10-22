@@ -109,6 +109,9 @@ export interface GetConnectionsResult {
      * The connection type.
      */
     readonly connectionTypes?: string[];
+    /**
+     * An object's Display Name.
+     */
     readonly displayName?: string;
     readonly filters?: outputs.GoldenGate.GetConnectionsFilter[];
     /**
@@ -120,7 +123,14 @@ export interface GetConnectionsResult {
      */
     readonly state?: string;
     /**
-     * The technology type.
+     * Technology type selected for the connection.
+     * * AI_MODEL: AI Model technology type.
+     * * AI_PROVIDER: AI Provider technology type.
+     * * DATABRICKS_ENGINE: Databricks Engine technology type.
+     * * ICEBERG: Iceberg technology type. APACHE_ICEBERG supports all catalog types; AMAZON_S3_TABLES supports only REST catalog and S3 storage.
+     * * KAFKA_SCHEMA_REGISTRY: Kafka Schema Registry technology type.
+     * * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform Engine technology type.
+     * * SPARK: Spark technology type.
      */
     readonly technologyTypes?: string[];
 }

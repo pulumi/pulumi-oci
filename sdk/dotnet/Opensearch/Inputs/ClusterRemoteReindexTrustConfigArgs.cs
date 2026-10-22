@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Opensearch.Inputs
         private InputList<Inputs.ClusterRemoteReindexTrustConfigRemoteSourceArgs>? _remoteSources;
 
         /// <summary>
-        /// (Updatable) Remote cluster sources to trust for reindexing.
+        /// (Updatable) Remote sources trusted for reindexing. When creating a cluster with this configuration, provide at least one source. When updating a cluster, this list replaces the existing sources. Specify an empty list to remove all remote-reindex trust configuration. Each source must specify exactly one non-empty `CaBundleId` or `CertificateId`, not both.
         /// </summary>
         public InputList<Inputs.ClusterRemoteReindexTrustConfigRemoteSourceArgs> RemoteSources
         {

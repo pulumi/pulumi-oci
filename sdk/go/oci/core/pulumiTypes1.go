@@ -33917,6 +33917,7 @@ type GetShapeShape struct {
 	RdmaPorts                     int                                      `pulumi:"rdmaPorts"`
 	RecommendedAlternatives       []GetShapeShapeRecommendedAlternative    `pulumi:"recommendedAlternatives"`
 	ResizeCompatibleShapes        []string                                 `pulumi:"resizeCompatibleShapes"`
+	SupportedResourceManagements  []string                                 `pulumi:"supportedResourceManagements"`
 }
 
 // GetShapeShapeInput is an input type that accepts GetShapeShapeArgs and GetShapeShapeOutput values.
@@ -33963,6 +33964,7 @@ type GetShapeShapeArgs struct {
 	RdmaPorts                     pulumi.IntInput                                  `pulumi:"rdmaPorts"`
 	RecommendedAlternatives       GetShapeShapeRecommendedAlternativeArrayInput    `pulumi:"recommendedAlternatives"`
 	ResizeCompatibleShapes        pulumi.StringArrayInput                          `pulumi:"resizeCompatibleShapes"`
+	SupportedResourceManagements  pulumi.StringArrayInput                          `pulumi:"supportedResourceManagements"`
 }
 
 func (GetShapeShapeArgs) ElementType() reflect.Type {
@@ -34142,6 +34144,10 @@ func (o GetShapeShapeOutput) RecommendedAlternatives() GetShapeShapeRecommendedA
 
 func (o GetShapeShapeOutput) ResizeCompatibleShapes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetShapeShape) []string { return v.ResizeCompatibleShapes }).(pulumi.StringArrayOutput)
+}
+
+func (o GetShapeShapeOutput) SupportedResourceManagements() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetShapeShape) []string { return v.SupportedResourceManagements }).(pulumi.StringArrayOutput)
 }
 
 type GetShapeShapeArrayOutput struct{ *pulumi.OutputState }
@@ -36174,6 +36180,8 @@ type GetShapesShape struct {
 	RecommendedAlternatives []GetShapesShapeRecommendedAlternative `pulumi:"recommendedAlternatives"`
 	// The list of compatible shapes that this shape can be changed to. For more information, see [Changing the Shape of an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
 	ResizeCompatibleShapes []string `pulumi:"resizeCompatibleShapes"`
+	// The resource management modes supported by this shape.
+	SupportedResourceManagements []string `pulumi:"supportedResourceManagements"`
 }
 
 // GetShapesShapeInput is an input type that accepts GetShapesShapeArgs and GetShapesShapeOutput values.
@@ -36252,6 +36260,8 @@ type GetShapesShapeArgs struct {
 	RecommendedAlternatives GetShapesShapeRecommendedAlternativeArrayInput `pulumi:"recommendedAlternatives"`
 	// The list of compatible shapes that this shape can be changed to. For more information, see [Changing the Shape of an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
 	ResizeCompatibleShapes pulumi.StringArrayInput `pulumi:"resizeCompatibleShapes"`
+	// The resource management modes supported by this shape.
+	SupportedResourceManagements pulumi.StringArrayInput `pulumi:"supportedResourceManagements"`
 }
 
 func (GetShapesShapeArgs) ElementType() reflect.Type {
@@ -36463,6 +36473,11 @@ func (o GetShapesShapeOutput) RecommendedAlternatives() GetShapesShapeRecommende
 // The list of compatible shapes that this shape can be changed to. For more information, see [Changing the Shape of an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
 func (o GetShapesShapeOutput) ResizeCompatibleShapes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetShapesShape) []string { return v.ResizeCompatibleShapes }).(pulumi.StringArrayOutput)
+}
+
+// The resource management modes supported by this shape.
+func (o GetShapesShapeOutput) SupportedResourceManagements() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetShapesShape) []string { return v.SupportedResourceManagements }).(pulumi.StringArrayOutput)
 }
 
 type GetShapesShapeArrayOutput struct{ *pulumi.OutputState }

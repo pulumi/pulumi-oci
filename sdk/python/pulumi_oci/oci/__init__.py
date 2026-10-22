@@ -159,6 +159,8 @@ from .get_psa_psa_work_request import *
 from .get_psa_psa_work_request_errors import *
 from .get_psa_psa_work_request_logs import *
 from .get_psa_psa_work_requests import *
+from .get_pss_instance import *
+from .get_pss_instances import *
 from .get_resource_analytics_monitored_region import *
 from .get_resource_analytics_monitored_regions import *
 from .get_resource_analytics_resource_analytics_instance import *
@@ -193,6 +195,7 @@ from .managed_kafka_kafka_cluster_superusers_management import *
 from .product_catalog_internal_admin_product import *
 from .product_catalog_internal_product import *
 from .psa_private_service_access import *
+from .pss_instance import *
 from .resource_analytics_monitored_region import *
 from .resource_analytics_resource_analytics_instance import *
 from .resource_analytics_resource_analytics_instance_oac_management import *

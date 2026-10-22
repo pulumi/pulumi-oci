@@ -13,7 +13,14 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
     [OutputType]
     public sealed class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult
     {
+        /// <summary>
+        /// The total capacity for a dedicated AI cluster.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityResult> Capacities;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
+        /// </summary>
+        public readonly string CapacityReservationId;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
@@ -75,6 +82,8 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         private GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(
             ImmutableArray<Outputs.GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityResult> capacities,
 
+            string capacityReservationId,
+
             string compartmentId,
 
             ImmutableDictionary<string, string> definedTags,
@@ -104,6 +113,7 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
             string unitShape)
         {
             Capacities = capacities;
+            CapacityReservationId = capacityReservationId;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             Description = description;

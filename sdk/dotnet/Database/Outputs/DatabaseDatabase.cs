@@ -54,7 +54,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly Outputs.DatabaseDatabaseDbBackupConfig? DbBackupConfig;
         /// <summary>
-        /// The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+        /// The display name of the database to be created from the snapshot/database. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
         /// </summary>
         public readonly string? DbName;
         /// <summary>
@@ -84,11 +84,19 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly bool? IsActiveDataGuardEnabled;
         /// <summary>
+        /// Specifies whether thick or thin database cloning is to be performed.
+        /// </summary>
+        public readonly bool? IsThinClone;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        /// </summary>
+        public readonly string? KeyStoreId;
+        /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         public readonly string? KmsKeyId;
         /// <summary>
-        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         /// </summary>
         public readonly string? KmsKeyVersionId;
         /// <summary>
@@ -124,6 +132,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? SidPrefix;
         /// <summary>
+        /// The source database's password for SYS, SYSTEM.
+        /// </summary>
+        public readonly string? SourceAdminPassword;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
         /// </summary>
         public readonly string? SourceDatabaseId;
@@ -131,6 +143,14 @@ namespace Pulumi.Oci.Database.Outputs
         /// Types of providers supported for managing database encryption keys
         /// </summary>
         public readonly Outputs.DatabaseDatabaseSourceEncryptionKeyLocationDetails? SourceEncryptionKeyLocationDetails;
+        /// <summary>
+        /// The snapshot [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        public readonly string? SourceSnapshotId;
+        /// <summary>
+        /// The password to open the TDE wallet.
+        /// </summary>
+        public readonly string? SourceTdePassword;
         /// <summary>
         /// The TDE wallet password of the source database specified by 'sourceDatabaseId'.
         /// </summary>
@@ -198,6 +218,10 @@ namespace Pulumi.Oci.Database.Outputs
 
             bool? isActiveDataGuardEnabled,
 
+            bool? isThinClone,
+
+            string? keyStoreId,
+
             string? kmsKeyId,
 
             string? kmsKeyVersionId,
@@ -218,9 +242,15 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? sidPrefix,
 
+            string? sourceAdminPassword,
+
             string? sourceDatabaseId,
 
             Outputs.DatabaseDatabaseSourceEncryptionKeyLocationDetails? sourceEncryptionKeyLocationDetails,
+
+            string? sourceSnapshotId,
+
+            string? sourceTdePassword,
 
             string? sourceTdeWalletPassword,
 
@@ -252,6 +282,8 @@ namespace Pulumi.Oci.Database.Outputs
             EncryptionKeyLocationDetails = encryptionKeyLocationDetails;
             FreeformTags = freeformTags;
             IsActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            IsThinClone = isThinClone;
+            KeyStoreId = keyStoreId;
             KmsKeyId = kmsKeyId;
             KmsKeyVersionId = kmsKeyVersionId;
             ManagedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
@@ -262,8 +294,11 @@ namespace Pulumi.Oci.Database.Outputs
             ProtectionMode = protectionMode;
             RecoveryApplianceVpcPassword = recoveryApplianceVpcPassword;
             SidPrefix = sidPrefix;
+            SourceAdminPassword = sourceAdminPassword;
             SourceDatabaseId = sourceDatabaseId;
             SourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
+            SourceSnapshotId = sourceSnapshotId;
+            SourceTdePassword = sourceTdePassword;
             SourceTdeWalletPassword = sourceTdeWalletPassword;
             StorageSizeDetails = storageSizeDetails;
             TdeWalletPassword = tdeWalletPassword;

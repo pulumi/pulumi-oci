@@ -81,6 +81,10 @@ __all__ = [
     'DrProtectionGroupMemberDbSystemReplicationUserDetailsArgsDict',
     'DrProtectionGroupMemberDestinationEncryptionKeyArgs',
     'DrProtectionGroupMemberDestinationEncryptionKeyArgsDict',
+    'DrProtectionGroupMemberDrDrillPropertiesArgs',
+    'DrProtectionGroupMemberDrDrillPropertiesArgsDict',
+    'DrProtectionGroupMemberDrDrillPropertiesVnicMappingArgs',
+    'DrProtectionGroupMemberDrDrillPropertiesVnicMappingArgsDict',
     'DrProtectionGroupMemberExportMappingArgs',
     'DrProtectionGroupMemberExportMappingArgsDict',
     'DrProtectionGroupMemberFileSystemOperationArgs',
@@ -1757,7 +1761,7 @@ class DrPlanPlanGroupStepUserDefinedStepArgsDict(TypedDict):
     """
     run_as_user: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
+    The user ID on the instance that will be used to execute the script specified in 'scriptCommand'.  Example: `opc`
     """
     run_on_instance_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -1769,7 +1773,7 @@ class DrPlanPlanGroupStepUserDefinedStepArgsDict(TypedDict):
     """
     script_command: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
+    The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.  Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
     """
     step_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -1793,10 +1797,10 @@ class DrPlanPlanGroupStepUserDefinedStepArgs:
         :param pulumi.Input[_builtins.str] function_region: The region in which the function is deployed.  Example: `us-ashburn-1`
         :param pulumi.Input[Sequence[pulumi.Input['DrPlanPlanGroupStepUserDefinedStepObjectStorageScriptLocationArgs']]] object_storage_script_locations: The details of an object storage script location for a user-defined step in a DR plan.
         :param pulumi.Input[_builtins.str] request_body: The request body for the function.  Example: `{ "FnParam1", "FnParam2" }`
-        :param pulumi.Input[_builtins.str] run_as_user: The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
+        :param pulumi.Input[_builtins.str] run_as_user: The user ID on the instance that will be used to execute the script specified in 'scriptCommand'.  Example: `opc`
         :param pulumi.Input[_builtins.str] run_on_instance_id: The OCID of the instance on which this script or command should be executed.
         :param pulumi.Input[_builtins.str] run_on_instance_region: The region of the instance where this script or command should be executed.  Example: `us-ashburn-1`
-        :param pulumi.Input[_builtins.str] script_command: The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
+        :param pulumi.Input[_builtins.str] script_command: The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.  Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
         :param pulumi.Input[_builtins.str] step_type: The type of the user-defined step.
         """
         if function_id is not None:
@@ -1870,7 +1874,7 @@ class DrPlanPlanGroupStepUserDefinedStepArgs:
     @pulumi.getter(name="runAsUser")
     def run_as_user(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
+        The user ID on the instance that will be used to execute the script specified in 'scriptCommand'.  Example: `opc`
         """
         return pulumi.get(self, "run_as_user")
 
@@ -1906,7 +1910,7 @@ class DrPlanPlanGroupStepUserDefinedStepArgs:
     @pulumi.getter(name="scriptCommand")
     def script_command(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
+        The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.  Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
         """
         return pulumi.get(self, "script_command")
 
@@ -2220,6 +2224,10 @@ class DrProtectionGroupMemberArgsDict(TypedDict):
     """
     (Updatable) The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
     """
+    dr_drill_properties: NotRequired[pulumi.Input[Optional['DrProtectionGroupMemberDrDrillPropertiesArgsDict']]]
+    """
+    (Updatable) Create properties for DR drill-specific settings. Use these when the properties for DR drills differ from the properties used for DR operations such as switchover and failover.
+    """
     export_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberExportMappingArgsDict']]]]]
     """
     (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
@@ -2278,7 +2286,7 @@ class DrProtectionGroupMemberArgsDict(TypedDict):
     """
     peer_db_system_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+    (Updatable) The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
     """
     resource_modifier_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberResourceModifierMappingArgsDict']]]]]
     """
@@ -2334,6 +2342,7 @@ class DrProtectionGroupMemberArgs:
                  destination_load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                  destination_network_load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
                  destination_snapshot_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 dr_drill_properties: pulumi.Input[Optional['DrProtectionGroupMemberDrDrillPropertiesArgs']] = None,
                  export_mappings: pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberExportMappingArgs']]]] = None,
                  file_system_operations: pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberFileSystemOperationArgs']]]] = None,
                  gtid_reconciliation_timeout: pulumi.Input[Optional[_builtins.int]] = None,
@@ -2378,6 +2387,7 @@ class DrProtectionGroupMemberArgs:
         :param pulumi.Input[_builtins.str] destination_load_balancer_id: (Updatable) The OCID of the destination load balancer.  Example: `ocid1.loadbalancer.oc1..uniqueID`
         :param pulumi.Input[_builtins.str] destination_network_load_balancer_id: (Updatable) The OCID of the destination network load balancer.  Example: `ocid1.networkloadbalancer.oc1..uniqueID`
         :param pulumi.Input[_builtins.str] destination_snapshot_policy_id: (Updatable) The OCID of the snapshot policy to use in the destination region. This policy will be attached to the file system after it moves to the destination region.  Example: `ocid1.filesystemsnapshotpolicy.oc1..uniqueID`
+        :param pulumi.Input['DrProtectionGroupMemberDrDrillPropertiesArgs'] dr_drill_properties: (Updatable) Create properties for DR drill-specific settings. Use these when the properties for DR drills differ from the properties used for DR operations such as switchover and failover.
         :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberExportMappingArgs']]] export_mappings: (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
         :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberFileSystemOperationArgs']]] file_system_operations: (Updatable) A list of operations performed on file systems used by the compute instance.
         :param pulumi.Input[_builtins.int] gtid_reconciliation_timeout: (Updatable) The maximum time (in seconds) to wait for the Global Transaction Identifier (GTID) synchronization process to complete before timing out.  Example: `600`
@@ -2392,7 +2402,7 @@ class DrProtectionGroupMemberArgs:
         :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberNetworkLoadBalancerMappingArgs']]] network_load_balancer_mappings: (Updatable) The list of source-to-destination network load balancer mappings required for DR operations. This property applies to the OKE cluster member in primary region.
         :param pulumi.Input[_builtins.str] password_vault_secret_id: (Updatable) The OCID of the vault secret where the database SYSDBA password is stored. This password is required and used for performing database DR Drill operations when using full clone.  Example: `ocid1.vaultsecret.oc1..uniqueID`
         :param pulumi.Input[_builtins.str] peer_cluster_id: (Updatable) The OCID of the peer OKE cluster. This property applies to the OKE cluster member in both the primary and standby region.   Example: `ocid1.cluster.oc1..uniqueID`
-        :param pulumi.Input[_builtins.str] peer_db_system_id: (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+        :param pulumi.Input[_builtins.str] peer_db_system_id: (Updatable) The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
         :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberResourceModifierMappingArgs']]] resource_modifier_mappings: (Updatable) The list of config maps along with their corresponding namespaces. This property applies to the OKE cluster member in primary region.
         :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberSourceVolumeToDestinationEncryptionKeyMappingArgs']]] source_volume_to_destination_encryption_key_mappings: (Updatable) A list of mappings between source volume IDs in the volume group and customer-managed encryption keys in the  destination region which will be used to encrypt the volume after it moves to the destination region.
                
@@ -2446,6 +2456,8 @@ class DrProtectionGroupMemberArgs:
             pulumi.set(__self__, "destination_network_load_balancer_id", destination_network_load_balancer_id)
         if destination_snapshot_policy_id is not None:
             pulumi.set(__self__, "destination_snapshot_policy_id", destination_snapshot_policy_id)
+        if dr_drill_properties is not None:
+            pulumi.set(__self__, "dr_drill_properties", dr_drill_properties)
         if export_mappings is not None:
             pulumi.set(__self__, "export_mappings", export_mappings)
         if file_system_operations is not None:
@@ -2754,6 +2766,18 @@ class DrProtectionGroupMemberArgs:
         pulumi.set(self, "destination_snapshot_policy_id", value)
 
     @_builtins.property
+    @pulumi.getter(name="drDrillProperties")
+    def dr_drill_properties(self) -> pulumi.Input[Optional['DrProtectionGroupMemberDrDrillPropertiesArgs']]:
+        """
+        (Updatable) Create properties for DR drill-specific settings. Use these when the properties for DR drills differ from the properties used for DR operations such as switchover and failover.
+        """
+        return pulumi.get(self, "dr_drill_properties")
+
+    @dr_drill_properties.setter
+    def dr_drill_properties(self, value: pulumi.Input[Optional['DrProtectionGroupMemberDrDrillPropertiesArgs']]):
+        pulumi.set(self, "dr_drill_properties", value)
+
+    @_builtins.property
     @pulumi.getter(name="exportMappings")
     def export_mappings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberExportMappingArgs']]]]:
         """
@@ -2925,7 +2949,7 @@ class DrProtectionGroupMemberArgs:
     @pulumi.getter(name="peerDbSystemId")
     def peer_db_system_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+        (Updatable) The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
         """
         return pulumi.get(self, "peer_db_system_id")
 
@@ -3116,7 +3140,7 @@ class DrProtectionGroupMemberBackupConfigArgsDict(TypedDict):
     """
     replicate_images: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
+    (Updatable) Controls the behavior of image replication across regions.  Image replication is enabled by default for DR Protection Groups.  This setting applies to the OKE cluster member in the primary region, and to the standby region  only if the image replication secret is stored in a vault instead of using the default secret.
     """
 
 @pulumi.input_type
@@ -3148,7 +3172,7 @@ class DrProtectionGroupMemberBackupConfigArgs:
         :param pulumi.Input[_builtins.str] image_replication_vault_secret_id: (Updatable) The OCID of the vault secret that stores the image credential. This property applies to the OKE cluster member in both the primary and standby region.
         :param pulumi.Input[_builtins.int] max_number_of_backups_retained: (Updatable) The maximum number of backups that should be retained. This property applies to the OKE cluster member in primary region.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] namespaces: (Updatable) A list of namespaces to be included in the backup.  The default value is null. If a list of namespaces to include is not provided, all namespaces will be backed up. Specify either the `namespaces` or the `excludeNamespaces` parameter, but not both. This property applies to the OKE cluster member in primary region.  Example: ["default", "pv-nginx"]
-        :param pulumi.Input[_builtins.str] replicate_images: (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
+        :param pulumi.Input[_builtins.str] replicate_images: (Updatable) Controls the behavior of image replication across regions.  Image replication is enabled by default for DR Protection Groups.  This setting applies to the OKE cluster member in the primary region, and to the standby region  only if the image replication secret is stored in a vault instead of using the default secret.
         """
         if backup_schedule is not None:
             pulumi.set(__self__, "backup_schedule", backup_schedule)
@@ -3241,7 +3265,7 @@ class DrProtectionGroupMemberBackupConfigArgs:
     @pulumi.getter(name="replicateImages")
     def replicate_images(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
+        (Updatable) Controls the behavior of image replication across regions.  Image replication is enabled by default for DR Protection Groups.  This setting applies to the OKE cluster member in the primary region, and to the standby region  only if the image replication secret is stored in a vault instead of using the default secret.
         """
         return pulumi.get(self, "replicate_images")
 
@@ -3769,6 +3793,196 @@ class DrProtectionGroupMemberDestinationEncryptionKeyArgs:
         pulumi.set(self, "vault_id", value)
 
 
+class DrProtectionGroupMemberDrDrillPropertiesArgsDict(TypedDict):
+    vnic_mappings: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberDrDrillPropertiesVnicMappingArgsDict']]]]]
+    """
+    (Updatable) A list of compute instance VNIC mappings to use for DR drills.
+    """
+
+@pulumi.input_type
+class DrProtectionGroupMemberDrDrillPropertiesArgs:
+    def __init__(__self__, *,
+                 vnic_mappings: pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberDrDrillPropertiesVnicMappingArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DrProtectionGroupMemberDrDrillPropertiesVnicMappingArgs']]] vnic_mappings: (Updatable) A list of compute instance VNIC mappings to use for DR drills.
+        """
+        if vnic_mappings is not None:
+            pulumi.set(__self__, "vnic_mappings", vnic_mappings)
+
+    @_builtins.property
+    @pulumi.getter(name="vnicMappings")
+    def vnic_mappings(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberDrDrillPropertiesVnicMappingArgs']]]]:
+        """
+        (Updatable) A list of compute instance VNIC mappings to use for DR drills.
+        """
+        return pulumi.get(self, "vnic_mappings")
+
+    @vnic_mappings.setter
+    def vnic_mappings(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DrProtectionGroupMemberDrDrillPropertiesVnicMappingArgs']]]]):
+        pulumi.set(self, "vnic_mappings", value)
+
+
+class DrProtectionGroupMemberDrDrillPropertiesVnicMappingArgsDict(TypedDict):
+    destination_nsg_id_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
+    """
+    destination_primary_private_ip_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+    """
+    destination_primary_private_ip_hostname_label: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+    """
+    destination_reserved_primary_private_ip_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+
+    For legacy compatibility, omit this attribute and use either the legacy explicit private-IP fields or the freeform tag, but not both configuration mechanisms for the same source VNIC.
+
+    Example: `ocid1.privateip.oc1..uniqueID`
+    """
+    destination_reserved_public_ip_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+    """
+    destination_subnet_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
+    """
+    source_vnic_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
+    """
+
+@pulumi.input_type
+class DrProtectionGroupMemberDrDrillPropertiesVnicMappingArgs:
+    def __init__(__self__, *,
+                 destination_nsg_id_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 destination_primary_private_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_primary_private_ip_hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_reserved_primary_private_ip_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_reserved_public_ip_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 source_vnic_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] destination_nsg_id_lists: (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
+        :param pulumi.Input[_builtins.str] destination_primary_private_ip_address: (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+        :param pulumi.Input[_builtins.str] destination_primary_private_ip_hostname_label: (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+        :param pulumi.Input[_builtins.str] destination_reserved_primary_private_ip_id: (Updatable) The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+               
+               For legacy compatibility, omit this attribute and use either the legacy explicit private-IP fields or the freeform tag, but not both configuration mechanisms for the same source VNIC.
+               
+               Example: `ocid1.privateip.oc1..uniqueID`
+        :param pulumi.Input[_builtins.str] destination_reserved_public_ip_id: (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+        :param pulumi.Input[_builtins.str] destination_subnet_id: (Updatable) The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
+        :param pulumi.Input[_builtins.str] source_vnic_id: (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
+        """
+        if destination_nsg_id_lists is not None:
+            pulumi.set(__self__, "destination_nsg_id_lists", destination_nsg_id_lists)
+        if destination_primary_private_ip_address is not None:
+            pulumi.set(__self__, "destination_primary_private_ip_address", destination_primary_private_ip_address)
+        if destination_primary_private_ip_hostname_label is not None:
+            pulumi.set(__self__, "destination_primary_private_ip_hostname_label", destination_primary_private_ip_hostname_label)
+        if destination_reserved_primary_private_ip_id is not None:
+            pulumi.set(__self__, "destination_reserved_primary_private_ip_id", destination_reserved_primary_private_ip_id)
+        if destination_reserved_public_ip_id is not None:
+            pulumi.set(__self__, "destination_reserved_public_ip_id", destination_reserved_public_ip_id)
+        if destination_subnet_id is not None:
+            pulumi.set(__self__, "destination_subnet_id", destination_subnet_id)
+        if source_vnic_id is not None:
+            pulumi.set(__self__, "source_vnic_id", source_vnic_id)
+
+    @_builtins.property
+    @pulumi.getter(name="destinationNsgIdLists")
+    def destination_nsg_id_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
+        """
+        return pulumi.get(self, "destination_nsg_id_lists")
+
+    @destination_nsg_id_lists.setter
+    def destination_nsg_id_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "destination_nsg_id_lists", value)
+
+    @_builtins.property
+    @pulumi.getter(name="destinationPrimaryPrivateIpAddress")
+    def destination_primary_private_ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+        """
+        return pulumi.get(self, "destination_primary_private_ip_address")
+
+    @destination_primary_private_ip_address.setter
+    def destination_primary_private_ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "destination_primary_private_ip_address", value)
+
+    @_builtins.property
+    @pulumi.getter(name="destinationPrimaryPrivateIpHostnameLabel")
+    def destination_primary_private_ip_hostname_label(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+        """
+        return pulumi.get(self, "destination_primary_private_ip_hostname_label")
+
+    @destination_primary_private_ip_hostname_label.setter
+    def destination_primary_private_ip_hostname_label(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "destination_primary_private_ip_hostname_label", value)
+
+    @_builtins.property
+    @pulumi.getter(name="destinationReservedPrimaryPrivateIpId")
+    def destination_reserved_primary_private_ip_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+
+        For legacy compatibility, omit this attribute and use either the legacy explicit private-IP fields or the freeform tag, but not both configuration mechanisms for the same source VNIC.
+
+        Example: `ocid1.privateip.oc1..uniqueID`
+        """
+        return pulumi.get(self, "destination_reserved_primary_private_ip_id")
+
+    @destination_reserved_primary_private_ip_id.setter
+    def destination_reserved_primary_private_ip_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "destination_reserved_primary_private_ip_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="destinationReservedPublicIpId")
+    def destination_reserved_public_ip_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+        """
+        return pulumi.get(self, "destination_reserved_public_ip_id")
+
+    @destination_reserved_public_ip_id.setter
+    def destination_reserved_public_ip_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "destination_reserved_public_ip_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="destinationSubnetId")
+    def destination_subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
+        """
+        return pulumi.get(self, "destination_subnet_id")
+
+    @destination_subnet_id.setter
+    def destination_subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "destination_subnet_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="sourceVnicId")
+    def source_vnic_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
+        """
+        return pulumi.get(self, "source_vnic_id")
+
+    @source_vnic_id.setter
+    def source_vnic_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "source_vnic_id", value)
+
+
 class DrProtectionGroupMemberExportMappingArgsDict(TypedDict):
     destination_mount_target_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -4155,11 +4369,11 @@ class DrProtectionGroupMemberNetworkLoadBalancerMappingArgs:
 class DrProtectionGroupMemberResourceModifierMappingArgsDict(TypedDict):
     config_map: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
+    (Updatable) The name of the config map containing resource modification details.  Example: `resource-modifier`
     """
     namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) The OKE namespace where the config map resides. Example: `namespace_string_5`
+    (Updatable) The OKE namespace where the config map resides.  Example: `namespace_string_5`
     """
 
 @pulumi.input_type
@@ -4168,8 +4382,8 @@ class DrProtectionGroupMemberResourceModifierMappingArgs:
                  config_map: pulumi.Input[Optional[_builtins.str]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None):
         """
-        :param pulumi.Input[_builtins.str] config_map: (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
-        :param pulumi.Input[_builtins.str] namespace: (Updatable) The OKE namespace where the config map resides. Example: `namespace_string_5`
+        :param pulumi.Input[_builtins.str] config_map: (Updatable) The name of the config map containing resource modification details.  Example: `resource-modifier`
+        :param pulumi.Input[_builtins.str] namespace: (Updatable) The OKE namespace where the config map resides.  Example: `namespace_string_5`
         """
         if config_map is not None:
             pulumi.set(__self__, "config_map", config_map)
@@ -4180,7 +4394,7 @@ class DrProtectionGroupMemberResourceModifierMappingArgs:
     @pulumi.getter(name="configMap")
     def config_map(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
+        (Updatable) The name of the config map containing resource modification details.  Example: `resource-modifier`
         """
         return pulumi.get(self, "config_map")
 
@@ -4192,7 +4406,7 @@ class DrProtectionGroupMemberResourceModifierMappingArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The OKE namespace where the config map resides. Example: `namespace_string_5`
+        (Updatable) The OKE namespace where the config map resides.  Example: `namespace_string_5`
         """
         return pulumi.get(self, "namespace")
 
@@ -4424,11 +4638,19 @@ class DrProtectionGroupMemberVnicMappingArgsDict(TypedDict):
     """
     destination_primary_private_ip_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
+    (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
     """
     destination_primary_private_ip_hostname_label: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
-    (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+    (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+    """
+    destination_reserved_primary_private_ip_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    (Updatable) The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+
+    For legacy compatibility, omit this attribute and use either the legacy explicit private-IP fields or the freeform tag, but not both configuration mechanisms for the same source VNIC.
+
+    Example: `ocid1.privateip.oc1..uniqueID`
     """
     destination_reserved_public_ip_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -4449,13 +4671,19 @@ class DrProtectionGroupMemberVnicMappingArgs:
                  destination_nsg_id_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  destination_primary_private_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
                  destination_primary_private_ip_hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+                 destination_reserved_primary_private_ip_id: pulumi.Input[Optional[_builtins.str]] = None,
                  destination_reserved_public_ip_id: pulumi.Input[Optional[_builtins.str]] = None,
                  destination_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  source_vnic_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] destination_nsg_id_lists: (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
-        :param pulumi.Input[_builtins.str] destination_primary_private_ip_address: (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
-        :param pulumi.Input[_builtins.str] destination_primary_private_ip_hostname_label: (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+        :param pulumi.Input[_builtins.str] destination_primary_private_ip_address: (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
+        :param pulumi.Input[_builtins.str] destination_primary_private_ip_hostname_label: (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+        :param pulumi.Input[_builtins.str] destination_reserved_primary_private_ip_id: (Updatable) The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+               
+               For legacy compatibility, omit this attribute and use either the legacy explicit private-IP fields or the freeform tag, but not both configuration mechanisms for the same source VNIC.
+               
+               Example: `ocid1.privateip.oc1..uniqueID`
         :param pulumi.Input[_builtins.str] destination_reserved_public_ip_id: (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
         :param pulumi.Input[_builtins.str] destination_subnet_id: (Updatable) The OCID of the destination subnet to which the source VNIC should connect.          Example: `ocid1.subnet.oc1..uniqueID`
         :param pulumi.Input[_builtins.str] source_vnic_id: (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
@@ -4466,6 +4694,8 @@ class DrProtectionGroupMemberVnicMappingArgs:
             pulumi.set(__self__, "destination_primary_private_ip_address", destination_primary_private_ip_address)
         if destination_primary_private_ip_hostname_label is not None:
             pulumi.set(__self__, "destination_primary_private_ip_hostname_label", destination_primary_private_ip_hostname_label)
+        if destination_reserved_primary_private_ip_id is not None:
+            pulumi.set(__self__, "destination_reserved_primary_private_ip_id", destination_reserved_primary_private_ip_id)
         if destination_reserved_public_ip_id is not None:
             pulumi.set(__self__, "destination_reserved_public_ip_id", destination_reserved_public_ip_id)
         if destination_subnet_id is not None:
@@ -4489,7 +4719,7 @@ class DrProtectionGroupMemberVnicMappingArgs:
     @pulumi.getter(name="destinationPrimaryPrivateIpAddress")
     def destination_primary_private_ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
+        (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
         """
         return pulumi.get(self, "destination_primary_private_ip_address")
 
@@ -4501,13 +4731,29 @@ class DrProtectionGroupMemberVnicMappingArgs:
     @pulumi.getter(name="destinationPrimaryPrivateIpHostnameLabel")
     def destination_primary_private_ip_hostname_label(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+        (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
         """
         return pulumi.get(self, "destination_primary_private_ip_hostname_label")
 
     @destination_primary_private_ip_hostname_label.setter
     def destination_primary_private_ip_hostname_label(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "destination_primary_private_ip_hostname_label", value)
+
+    @_builtins.property
+    @pulumi.getter(name="destinationReservedPrimaryPrivateIpId")
+    def destination_reserved_primary_private_ip_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+
+        For legacy compatibility, omit this attribute and use either the legacy explicit private-IP fields or the freeform tag, but not both configuration mechanisms for the same source VNIC.
+
+        Example: `ocid1.privateip.oc1..uniqueID`
+        """
+        return pulumi.get(self, "destination_reserved_primary_private_ip_id")
+
+    @destination_reserved_primary_private_ip_id.setter
+    def destination_reserved_primary_private_ip_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "destination_reserved_primary_private_ip_id", value)
 
     @_builtins.property
     @pulumi.getter(name="destinationReservedPublicIpId")

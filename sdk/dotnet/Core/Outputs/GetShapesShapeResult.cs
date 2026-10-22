@@ -141,6 +141,10 @@ namespace Pulumi.Oci.Core.Outputs
         /// The list of compatible shapes that this shape can be changed to. For more information, see [Changing the Shape of an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
         /// </summary>
         public readonly ImmutableArray<string> ResizeCompatibleShapes;
+        /// <summary>
+        /// The resource management modes supported by this shape.
+        /// </summary>
+        public readonly ImmutableArray<string> SupportedResourceManagements;
 
         [OutputConstructor]
         private GetShapesShapeResult(
@@ -206,7 +210,9 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<Outputs.GetShapesShapeRecommendedAlternativeResult> recommendedAlternatives,
 
-            ImmutableArray<string> resizeCompatibleShapes)
+            ImmutableArray<string> resizeCompatibleShapes,
+
+            ImmutableArray<string> supportedResourceManagements)
         {
             BaselineOcpuUtilizations = baselineOcpuUtilizations;
             BillingType = billingType;
@@ -240,6 +246,7 @@ namespace Pulumi.Oci.Core.Outputs
             RdmaPorts = rdmaPorts;
             RecommendedAlternatives = recommendedAlternatives;
             ResizeCompatibleShapes = resizeCompatibleShapes;
+            SupportedResourceManagements = supportedResourceManagements;
         }
     }
 }

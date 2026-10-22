@@ -9645,7 +9645,9 @@ func (o GetDbSystemsDbSystemCollectionArrayOutput) Index(i pulumi.IntInput) GetD
 
 type GetDbSystemsDbSystemCollectionItem struct {
 	// The database system administrator username.
-	AdminUsername               string `pulumi:"adminUsername"`
+	AdminUsername string `pulumi:"adminUsername"`
+	// Allow in-place upgrades when dbVersion changes to a higher major version. When false, changing dbVersion replaces the database system. This setting has no effect during creation.
+	AllowMajorVersionUpgrade    bool   `pulumi:"allowMajorVersionUpgrade"`
 	ApplyChangeModeToStandAlone string `pulumi:"applyChangeModeToStandAlone"`
 	ApplyConfig                 string `pulumi:"applyConfig"`
 	// The ID of the compartment in which to list resources.
@@ -9706,6 +9708,8 @@ type GetDbSystemsDbSystemCollectionItem struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated string `pulumi:"timeUpdated"`
+	// Optional post-upgrade operations, applied only when dbVersion changes and allowMajorVersionUpgrade is true. If omitted or empty, verification and vacuum are skipped.
+	UpgradeOptions []string `pulumi:"upgradeOptions"`
 }
 
 // GetDbSystemsDbSystemCollectionItemInput is an input type that accepts GetDbSystemsDbSystemCollectionItemArgs and GetDbSystemsDbSystemCollectionItemOutput values.
@@ -9721,7 +9725,9 @@ type GetDbSystemsDbSystemCollectionItemInput interface {
 
 type GetDbSystemsDbSystemCollectionItemArgs struct {
 	// The database system administrator username.
-	AdminUsername               pulumi.StringInput `pulumi:"adminUsername"`
+	AdminUsername pulumi.StringInput `pulumi:"adminUsername"`
+	// Allow in-place upgrades when dbVersion changes to a higher major version. When false, changing dbVersion replaces the database system. This setting has no effect during creation.
+	AllowMajorVersionUpgrade    pulumi.BoolInput   `pulumi:"allowMajorVersionUpgrade"`
 	ApplyChangeModeToStandAlone pulumi.StringInput `pulumi:"applyChangeModeToStandAlone"`
 	ApplyConfig                 pulumi.StringInput `pulumi:"applyConfig"`
 	// The ID of the compartment in which to list resources.
@@ -9782,6 +9788,8 @@ type GetDbSystemsDbSystemCollectionItemArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// Optional post-upgrade operations, applied only when dbVersion changes and allowMajorVersionUpgrade is true. If omitted or empty, verification and vacuum are skipped.
+	UpgradeOptions pulumi.StringArrayInput `pulumi:"upgradeOptions"`
 }
 
 func (GetDbSystemsDbSystemCollectionItemArgs) ElementType() reflect.Type {
@@ -9838,6 +9846,11 @@ func (o GetDbSystemsDbSystemCollectionItemOutput) ToGetDbSystemsDbSystemCollecti
 // The database system administrator username.
 func (o GetDbSystemsDbSystemCollectionItemOutput) AdminUsername() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) string { return v.AdminUsername }).(pulumi.StringOutput)
+}
+
+// Allow in-place upgrades when dbVersion changes to a higher major version. When false, changing dbVersion replaces the database system. This setting has no effect during creation.
+func (o GetDbSystemsDbSystemCollectionItemOutput) AllowMajorVersionUpgrade() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) bool { return v.AllowMajorVersionUpgrade }).(pulumi.BoolOutput)
 }
 
 func (o GetDbSystemsDbSystemCollectionItemOutput) ApplyChangeModeToStandAlone() pulumi.StringOutput {
@@ -10016,6 +10029,11 @@ func (o GetDbSystemsDbSystemCollectionItemOutput) TimeCreated() pulumi.StringOut
 // The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o GetDbSystemsDbSystemCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// Optional post-upgrade operations, applied only when dbVersion changes and allowMajorVersionUpgrade is true. If omitted or empty, verification and vacuum are skipped.
+func (o GetDbSystemsDbSystemCollectionItemOutput) UpgradeOptions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDbSystemsDbSystemCollectionItem) []string { return v.UpgradeOptions }).(pulumi.StringArrayOutput)
 }
 
 type GetDbSystemsDbSystemCollectionItemArrayOutput struct{ *pulumi.OutputState }

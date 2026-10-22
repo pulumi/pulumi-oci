@@ -6,6 +6,7 @@ import builtins as _builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .child_tenancy import *
 from .get_assigned_subscription import *
 from .get_assigned_subscription_line_items import *
 from .get_assigned_subscriptions import *

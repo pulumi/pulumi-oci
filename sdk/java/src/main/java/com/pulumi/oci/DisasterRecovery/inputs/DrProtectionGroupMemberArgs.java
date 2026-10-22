@@ -15,6 +15,7 @@ import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberCommonDesti
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberDbSystemAdminUserDetailsArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberDestinationEncryptionKeyArgs;
+import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberDrDrillPropertiesArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberExportMappingArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberFileSystemOperationArgs;
 import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberLoadBalancerMappingArgs;
@@ -339,6 +340,21 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     }
 
     /**
+     * (Updatable) Create properties for DR drill-specific settings. Use these when the properties for DR drills differ from the properties used for DR operations such as switchover and failover.
+     * 
+     */
+    @Import(name="drDrillProperties")
+    private @Nullable Output<DrProtectionGroupMemberDrDrillPropertiesArgs> drDrillProperties;
+
+    /**
+     * @return (Updatable) Create properties for DR drill-specific settings. Use these when the properties for DR drills differ from the properties used for DR operations such as switchover and failover.
+     * 
+     */
+    public Optional<Output<DrProtectionGroupMemberDrDrillPropertiesArgs>> drDrillProperties() {
+        return Optional.ofNullable(this.drDrillProperties);
+    }
+
+    /**
      * (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
      * 
      */
@@ -579,14 +595,14 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+     * (Updatable) The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
      * 
      */
     @Import(name="peerDbSystemId")
     private @Nullable Output<String> peerDbSystemId;
 
     /**
-     * @return (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+     * @return (Updatable) The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
      * 
      */
     public Optional<Output<String>> peerDbSystemId() {
@@ -714,6 +730,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         this.destinationLoadBalancerId = $.destinationLoadBalancerId;
         this.destinationNetworkLoadBalancerId = $.destinationNetworkLoadBalancerId;
         this.destinationSnapshotPolicyId = $.destinationSnapshotPolicyId;
+        this.drDrillProperties = $.drDrillProperties;
         this.exportMappings = $.exportMappings;
         this.fileSystemOperations = $.fileSystemOperations;
         this.gtidReconciliationTimeout = $.gtidReconciliationTimeout;
@@ -1198,6 +1215,27 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
+         * @param drDrillProperties (Updatable) Create properties for DR drill-specific settings. Use these when the properties for DR drills differ from the properties used for DR operations such as switchover and failover.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder drDrillProperties(@Nullable Output<DrProtectionGroupMemberDrDrillPropertiesArgs> drDrillProperties) {
+            $.drDrillProperties = drDrillProperties;
+            return this;
+        }
+
+        /**
+         * @param drDrillProperties (Updatable) Create properties for DR drill-specific settings. Use these when the properties for DR drills differ from the properties used for DR operations such as switchover and failover.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder drDrillProperties(DrProtectionGroupMemberDrDrillPropertiesArgs drDrillProperties) {
+            return drDrillProperties(Output.of(drDrillProperties));
+        }
+
+        /**
          * @param exportMappings (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
          * 
          * @return builder
@@ -1584,7 +1622,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param peerDbSystemId (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+         * @param peerDbSystemId (Updatable) The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -1595,7 +1633,7 @@ public final class DrProtectionGroupMemberArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param peerDbSystemId (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+         * @param peerDbSystemId (Updatable) The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
          * 
          * @return builder
          * 

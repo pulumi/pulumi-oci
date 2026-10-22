@@ -34,6 +34,10 @@ public final class GetConnectionsResult {
      * 
      */
     private @Nullable List<String> connectionTypes;
+    /**
+     * @return An object&#39;s Display Name.
+     * 
+     */
     private @Nullable String displayName;
     private @Nullable List<GetConnectionsFilter> filters;
     /**
@@ -47,7 +51,14 @@ public final class GetConnectionsResult {
      */
     private @Nullable String state;
     /**
-     * @return The technology type.
+     * @return Technology type selected for the connection.
+     * * AI_MODEL: AI Model technology type.
+     * * AI_PROVIDER: AI Provider technology type.
+     * * DATABRICKS_ENGINE: Databricks Engine technology type.
+     * * ICEBERG: Iceberg technology type. APACHE_ICEBERG supports all catalog types; AMAZON_S3_TABLES supports only REST catalog and S3 storage.
+     * * KAFKA_SCHEMA_REGISTRY: Kafka Schema Registry technology type.
+     * * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform Engine technology type.
+     * * SPARK: Spark technology type.
      * 
      */
     private @Nullable List<String> technologyTypes;
@@ -86,6 +97,10 @@ public final class GetConnectionsResult {
     public List<String> connectionTypes() {
         return this.connectionTypes == null ? List.of() : this.connectionTypes;
     }
+    /**
+     * @return An object&#39;s Display Name.
+     * 
+     */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
@@ -107,7 +122,14 @@ public final class GetConnectionsResult {
         return Optional.ofNullable(this.state);
     }
     /**
-     * @return The technology type.
+     * @return Technology type selected for the connection.
+     * * AI_MODEL: AI Model technology type.
+     * * AI_PROVIDER: AI Provider technology type.
+     * * DATABRICKS_ENGINE: Databricks Engine technology type.
+     * * ICEBERG: Iceberg technology type. APACHE_ICEBERG supports all catalog types; AMAZON_S3_TABLES supports only REST catalog and S3 storage.
+     * * KAFKA_SCHEMA_REGISTRY: Kafka Schema Registry technology type.
+     * * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform Engine technology type.
+     * * SPARK: Spark technology type.
      * 
      */
     public List<String> technologyTypes() {

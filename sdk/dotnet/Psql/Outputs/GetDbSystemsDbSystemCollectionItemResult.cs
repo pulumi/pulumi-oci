@@ -17,6 +17,10 @@ namespace Pulumi.Oci.Psql.Outputs
         /// The database system administrator username.
         /// </summary>
         public readonly string AdminUsername;
+        /// <summary>
+        /// Allow in-place upgrades when DbVersion changes to a higher major version. When false, changing DbVersion replaces the database system. This setting has no effect during creation.
+        /// </summary>
+        public readonly bool AllowMajorVersionUpgrade;
         public readonly string ApplyChangeModeToStandAlone;
         public readonly string ApplyConfig;
         /// <summary>
@@ -133,10 +137,16 @@ namespace Pulumi.Oci.Psql.Outputs
         /// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         /// </summary>
         public readonly string TimeUpdated;
+        /// <summary>
+        /// Optional post-upgrade operations, applied only when DbVersion changes and AllowMajorVersionUpgrade is true. If omitted or empty, verification and vacuum are skipped.
+        /// </summary>
+        public readonly ImmutableArray<string> UpgradeOptions;
 
         [OutputConstructor]
         private GetDbSystemsDbSystemCollectionItemResult(
             string adminUsername,
+
+            bool allowMajorVersionUpgrade,
 
             string applyChangeModeToStandAlone,
 
@@ -200,9 +210,12 @@ namespace Pulumi.Oci.Psql.Outputs
 
             string timeCreated,
 
-            string timeUpdated)
+            string timeUpdated,
+
+            ImmutableArray<string> upgradeOptions)
         {
             AdminUsername = adminUsername;
+            AllowMajorVersionUpgrade = allowMajorVersionUpgrade;
             ApplyChangeModeToStandAlone = applyChangeModeToStandAlone;
             ApplyConfig = applyConfig;
             CompartmentId = compartmentId;
@@ -235,6 +248,7 @@ namespace Pulumi.Oci.Psql.Outputs
             SystemType = systemType;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
+            UpgradeOptions = upgradeOptions;
         }
     }
 }

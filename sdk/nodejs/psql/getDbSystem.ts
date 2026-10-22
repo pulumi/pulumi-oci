@@ -53,6 +53,7 @@ export interface GetDbSystemResult {
      * The database system administrator username.
      */
     readonly adminUsername: string;
+    readonly allowMajorVersionUpgrade: boolean;
     readonly applyChangeModeToStandAlone: string;
     readonly applyConfig: string;
     /**
@@ -174,6 +175,7 @@ export interface GetDbSystemResult {
      * The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
      */
     readonly timeUpdated: string;
+    readonly upgradeOptions: string[];
 }
 /**
  * This data source provides details about a specific Db System resource in Oracle Cloud Infrastructure Psql service.

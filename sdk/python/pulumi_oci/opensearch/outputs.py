@@ -442,7 +442,7 @@ class ClusterRemoteReindexTrustConfig(dict):
     def __init__(__self__, *,
                  remote_sources: Sequence['outputs.ClusterRemoteReindexTrustConfigRemoteSource']):
         """
-        :param Sequence['ClusterRemoteReindexTrustConfigRemoteSourceArgs'] remote_sources: (Updatable) Remote cluster sources to trust for reindexing.
+        :param Sequence['ClusterRemoteReindexTrustConfigRemoteSourceArgs'] remote_sources: (Updatable) Remote sources trusted for reindexing. When creating a cluster with this configuration, provide at least one source. When updating a cluster, this list replaces the existing sources. Specify an empty list to remove all remote-reindex trust configuration. Each source must specify exactly one non-empty `ca_bundle_id` or `certificate_id`, not both.
         """
         pulumi.set(__self__, "remote_sources", remote_sources)
 
@@ -450,7 +450,7 @@ class ClusterRemoteReindexTrustConfig(dict):
     @pulumi.getter(name="remoteSources")
     def remote_sources(self) -> Sequence['outputs.ClusterRemoteReindexTrustConfigRemoteSource']:
         """
-        (Updatable) Remote cluster sources to trust for reindexing.
+        (Updatable) Remote sources trusted for reindexing. When creating a cluster with this configuration, provide at least one source. When updating a cluster, this list replaces the existing sources. Specify an empty list to remove all remote-reindex trust configuration. Each source must specify exactly one non-empty `ca_bundle_id` or `certificate_id`, not both.
         """
         return pulumi.get(self, "remote_sources")
 
@@ -460,7 +460,9 @@ class ClusterRemoteReindexTrustConfigRemoteSource(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "certificateId":
+        if key == "caBundleId":
+            suggest = "ca_bundle_id"
+        elif key == "certificateId":
             suggest = "certificate_id"
         elif key == "endpointResolutionIp":
             suggest = "endpoint_resolution_ip"
@@ -477,26 +479,23 @@ class ClusterRemoteReindexTrustConfigRemoteSource(dict):
         return super().get(key, default)
 
     def __init__(__self__, *,
-                 certificate_id: _builtins.str,
                  endpoint: _builtins.str,
+                 ca_bundle_id: Optional[_builtins.str] = None,
+                 certificate_id: Optional[_builtins.str] = None,
                  endpoint_resolution_ip: Optional[_builtins.str] = None):
         """
-        :param _builtins.str certificate_id: (Updatable) OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
         :param _builtins.str endpoint: (Updatable) HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
+        :param _builtins.str ca_bundle_id: (Updatable) OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster's HTTPS certificate. Required when `certificate_id` is not specified.
+        :param _builtins.str certificate_id: (Updatable) **Deprecated** Alias for `ca_bundle_id`; use `ca_bundle_id` instead. The value must be an OCI Certificates service CA bundle OCID, not a certificate OCID. Existing configurations remain supported during the deprecation period; removal requires a major provider release.
         :param _builtins.str endpoint_resolution_ip: (Updatable) Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
         """
-        pulumi.set(__self__, "certificate_id", certificate_id)
         pulumi.set(__self__, "endpoint", endpoint)
+        if ca_bundle_id is not None:
+            pulumi.set(__self__, "ca_bundle_id", ca_bundle_id)
+        if certificate_id is not None:
+            pulumi.set(__self__, "certificate_id", certificate_id)
         if endpoint_resolution_ip is not None:
             pulumi.set(__self__, "endpoint_resolution_ip", endpoint_resolution_ip)
-
-    @_builtins.property
-    @pulumi.getter(name="certificateId")
-    def certificate_id(self) -> _builtins.str:
-        """
-        (Updatable) OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
-        """
-        return pulumi.get(self, "certificate_id")
 
     @_builtins.property
     @pulumi.getter
@@ -505,6 +504,23 @@ class ClusterRemoteReindexTrustConfigRemoteSource(dict):
         (Updatable) HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
         """
         return pulumi.get(self, "endpoint")
+
+    @_builtins.property
+    @pulumi.getter(name="caBundleId")
+    def ca_bundle_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster's HTTPS certificate. Required when `certificate_id` is not specified.
+        """
+        return pulumi.get(self, "ca_bundle_id")
+
+    @_builtins.property
+    @pulumi.getter(name="certificateId")
+    @_utilities.deprecated("""Use ca_bundle_id instead. The value must be an OCI Certificates service CA bundle OCID.""")
+    def certificate_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) **Deprecated** Alias for `ca_bundle_id`; use `ca_bundle_id` instead. The value must be an OCI Certificates service CA bundle OCID, not a certificate OCID. Existing configurations remain supported during the deprecation period; removal requires a major provider release.
+        """
+        return pulumi.get(self, "certificate_id")
 
     @_builtins.property
     @pulumi.getter(name="endpointResolutionIp")
@@ -1487,7 +1503,7 @@ class GetOpensearchClusterRemoteReindexTrustConfigResult(dict):
     def __init__(__self__, *,
                  remote_sources: Sequence['outputs.GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceResult']):
         """
-        :param Sequence['GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArgs'] remote_sources: Remote cluster sources to trust for reindexing.
+        :param Sequence['GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArgs'] remote_sources: Remote sources trusted for reindexing.
         """
         pulumi.set(__self__, "remote_sources", remote_sources)
 
@@ -1495,7 +1511,7 @@ class GetOpensearchClusterRemoteReindexTrustConfigResult(dict):
     @pulumi.getter(name="remoteSources")
     def remote_sources(self) -> Sequence['outputs.GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceResult']:
         """
-        Remote cluster sources to trust for reindexing.
+        Remote sources trusted for reindexing.
         """
         return pulumi.get(self, "remote_sources")
 
@@ -1503,23 +1519,35 @@ class GetOpensearchClusterRemoteReindexTrustConfigResult(dict):
 @pulumi.output_type
 class GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceResult(dict):
     def __init__(__self__, *,
+                 ca_bundle_id: _builtins.str,
                  certificate_id: _builtins.str,
                  endpoint: _builtins.str,
                  endpoint_resolution_ip: _builtins.str):
         """
-        :param _builtins.str certificate_id: OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+        :param _builtins.str ca_bundle_id: OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster's HTTPS certificate.
+        :param _builtins.str certificate_id: **Deprecated** Alias of `ca_bundle_id`. Both computed fields contain the same CA bundle OCID during the deprecation period; removal requires a major provider release.
         :param _builtins.str endpoint: HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
         :param _builtins.str endpoint_resolution_ip: Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
         """
+        pulumi.set(__self__, "ca_bundle_id", ca_bundle_id)
         pulumi.set(__self__, "certificate_id", certificate_id)
         pulumi.set(__self__, "endpoint", endpoint)
         pulumi.set(__self__, "endpoint_resolution_ip", endpoint_resolution_ip)
 
     @_builtins.property
+    @pulumi.getter(name="caBundleId")
+    def ca_bundle_id(self) -> _builtins.str:
+        """
+        OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster's HTTPS certificate.
+        """
+        return pulumi.get(self, "ca_bundle_id")
+
+    @_builtins.property
     @pulumi.getter(name="certificateId")
+    @_utilities.deprecated("""Use ca_bundle_id instead. The value must be an OCI Certificates service CA bundle OCID.""")
     def certificate_id(self) -> _builtins.str:
         """
-        OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+        **Deprecated** Alias of `ca_bundle_id`. Both computed fields contain the same CA bundle OCID during the deprecation period; removal requires a major provider release.
         """
         return pulumi.get(self, "certificate_id")
 
@@ -2768,7 +2796,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConf
     def __init__(__self__, *,
                  remote_sources: Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceResult']):
         """
-        :param Sequence['GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArgs'] remote_sources: Remote cluster sources to trust for reindexing.
+        :param Sequence['GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArgs'] remote_sources: Remote sources trusted for reindexing.
         """
         pulumi.set(__self__, "remote_sources", remote_sources)
 
@@ -2776,7 +2804,7 @@ class GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConf
     @pulumi.getter(name="remoteSources")
     def remote_sources(self) -> Sequence['outputs.GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceResult']:
         """
-        Remote cluster sources to trust for reindexing.
+        Remote sources trusted for reindexing.
         """
         return pulumi.get(self, "remote_sources")
 
@@ -2784,23 +2812,35 @@ class GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConf
 @pulumi.output_type
 class GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceResult(dict):
     def __init__(__self__, *,
+                 ca_bundle_id: _builtins.str,
                  certificate_id: _builtins.str,
                  endpoint: _builtins.str,
                  endpoint_resolution_ip: _builtins.str):
         """
-        :param _builtins.str certificate_id: OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+        :param _builtins.str ca_bundle_id: OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster's HTTPS certificate.
+        :param _builtins.str certificate_id: **Deprecated** Alias of `ca_bundle_id`. Both computed fields contain the same CA bundle OCID during the deprecation period; removal requires a major provider release.
         :param _builtins.str endpoint: HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
         :param _builtins.str endpoint_resolution_ip: Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
         """
+        pulumi.set(__self__, "ca_bundle_id", ca_bundle_id)
         pulumi.set(__self__, "certificate_id", certificate_id)
         pulumi.set(__self__, "endpoint", endpoint)
         pulumi.set(__self__, "endpoint_resolution_ip", endpoint_resolution_ip)
 
     @_builtins.property
+    @pulumi.getter(name="caBundleId")
+    def ca_bundle_id(self) -> _builtins.str:
+        """
+        OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster's HTTPS certificate.
+        """
+        return pulumi.get(self, "ca_bundle_id")
+
+    @_builtins.property
     @pulumi.getter(name="certificateId")
+    @_utilities.deprecated("""Use ca_bundle_id instead. The value must be an OCI Certificates service CA bundle OCID.""")
     def certificate_id(self) -> _builtins.str:
         """
-        OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+        **Deprecated** Alias of `ca_bundle_id`. Both computed fields contain the same CA bundle OCID during the deprecation period; removal requires a major provider release.
         """
         return pulumi.get(self, "certificate_id")
 

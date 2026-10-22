@@ -17,15 +17,20 @@ public final class GetDrProtectionGroupMemberVnicMapping {
      */
     private List<String> destinationNsgIdLists;
     /**
-     * @return The private IP address to be assigned as the VNIC&#39;s primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+     * @return Deprecated. Use the &#39;destinationReservedPrimaryPrivateIpId&#39; attribute instead of this. The private IP address to be assigned as the VNIC&#39;s primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
      * 
      */
     private String destinationPrimaryPrivateIpAddress;
     /**
-     * @return The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, &#39;myhost1&#39; in the FQDN &#39;myhost1.subnet123.vcn1.oraclevcn.com&#39;).  Example: `myhost1`
+     * @return Deprecated. Use the &#39;destinationReservedPrimaryPrivateIpId&#39; attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, &#39;myhost1&#39; in the FQDN &#39;myhost1.subnet123.vcn1.oraclevcn.com&#39;).  Example: `myhost1`
      * 
      */
     private String destinationPrimaryPrivateIpHostnameLabel;
+    /**
+     * @return The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+     * 
+     */
+    private String destinationReservedPrimaryPrivateIpId;
     /**
      * @return The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
      * 
@@ -51,18 +56,25 @@ public final class GetDrProtectionGroupMemberVnicMapping {
         return this.destinationNsgIdLists;
     }
     /**
-     * @return The private IP address to be assigned as the VNIC&#39;s primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+     * @return Deprecated. Use the &#39;destinationReservedPrimaryPrivateIpId&#39; attribute instead of this. The private IP address to be assigned as the VNIC&#39;s primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
      * 
      */
     public String destinationPrimaryPrivateIpAddress() {
         return this.destinationPrimaryPrivateIpAddress;
     }
     /**
-     * @return The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, &#39;myhost1&#39; in the FQDN &#39;myhost1.subnet123.vcn1.oraclevcn.com&#39;).  Example: `myhost1`
+     * @return Deprecated. Use the &#39;destinationReservedPrimaryPrivateIpId&#39; attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, &#39;myhost1&#39; in the FQDN &#39;myhost1.subnet123.vcn1.oraclevcn.com&#39;).  Example: `myhost1`
      * 
      */
     public String destinationPrimaryPrivateIpHostnameLabel() {
         return this.destinationPrimaryPrivateIpHostnameLabel;
+    }
+    /**
+     * @return The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+     * 
+     */
+    public String destinationReservedPrimaryPrivateIpId() {
+        return this.destinationReservedPrimaryPrivateIpId;
     }
     /**
      * @return The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
@@ -98,6 +110,7 @@ public final class GetDrProtectionGroupMemberVnicMapping {
         private List<String> destinationNsgIdLists;
         private String destinationPrimaryPrivateIpAddress;
         private String destinationPrimaryPrivateIpHostnameLabel;
+        private String destinationReservedPrimaryPrivateIpId;
         private String destinationReservedPublicIpId;
         private String destinationSubnetId;
         private String sourceVnicId;
@@ -107,6 +120,7 @@ public final class GetDrProtectionGroupMemberVnicMapping {
     	      this.destinationNsgIdLists = defaults.destinationNsgIdLists;
     	      this.destinationPrimaryPrivateIpAddress = defaults.destinationPrimaryPrivateIpAddress;
     	      this.destinationPrimaryPrivateIpHostnameLabel = defaults.destinationPrimaryPrivateIpHostnameLabel;
+    	      this.destinationReservedPrimaryPrivateIpId = defaults.destinationReservedPrimaryPrivateIpId;
     	      this.destinationReservedPublicIpId = defaults.destinationReservedPublicIpId;
     	      this.destinationSubnetId = defaults.destinationSubnetId;
     	      this.sourceVnicId = defaults.sourceVnicId;
@@ -140,6 +154,14 @@ public final class GetDrProtectionGroupMemberVnicMapping {
             return this;
         }
         @CustomType.Setter
+        public Builder destinationReservedPrimaryPrivateIpId(String destinationReservedPrimaryPrivateIpId) {
+            if (destinationReservedPrimaryPrivateIpId == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMemberVnicMapping", "destinationReservedPrimaryPrivateIpId");
+            }
+            this.destinationReservedPrimaryPrivateIpId = destinationReservedPrimaryPrivateIpId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder destinationReservedPublicIpId(String destinationReservedPublicIpId) {
             if (destinationReservedPublicIpId == null) {
               throw new MissingRequiredPropertyException("GetDrProtectionGroupMemberVnicMapping", "destinationReservedPublicIpId");
@@ -168,6 +190,7 @@ public final class GetDrProtectionGroupMemberVnicMapping {
             _resultValue.destinationNsgIdLists = destinationNsgIdLists;
             _resultValue.destinationPrimaryPrivateIpAddress = destinationPrimaryPrivateIpAddress;
             _resultValue.destinationPrimaryPrivateIpHostnameLabel = destinationPrimaryPrivateIpHostnameLabel;
+            _resultValue.destinationReservedPrimaryPrivateIpId = destinationReservedPrimaryPrivateIpId;
             _resultValue.destinationReservedPublicIpId = destinationReservedPublicIpId;
             _resultValue.destinationSubnetId = destinationSubnetId;
             _resultValue.sourceVnicId = sourceVnicId;

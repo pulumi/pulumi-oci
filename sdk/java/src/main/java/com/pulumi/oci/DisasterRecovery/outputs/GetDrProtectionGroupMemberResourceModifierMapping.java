@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDrProtectionGroupMemberResourceModifierMapping {
     /**
-     * @return The name of the config map containing resource modification details. Example: `resource-modifier`
+     * @return The name of the config map containing resource modification details.  Example: `resource-modifier`
      * 
      */
     private String configMap;
     /**
-     * @return The OKE namespace where the config map resides. Example: `namespaceString5`
+     * @return The OKE namespace where the config map resides.  Example: `namespaceString5`
      * 
      */
     private String namespace;
 
     private GetDrProtectionGroupMemberResourceModifierMapping() {}
     /**
-     * @return The name of the config map containing resource modification details. Example: `resource-modifier`
+     * @return The name of the config map containing resource modification details.  Example: `resource-modifier`
      * 
      */
     public String configMap() {
         return this.configMap;
     }
     /**
-     * @return The OKE namespace where the config map resides. Example: `namespaceString5`
+     * @return The OKE namespace where the config map resides.  Example: `namespaceString5`
      * 
      */
     public String namespace() {

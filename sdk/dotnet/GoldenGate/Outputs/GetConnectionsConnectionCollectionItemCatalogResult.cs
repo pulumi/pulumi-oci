@@ -22,17 +22,14 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string CatalogType;
         /// <summary>
-        /// * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-        /// * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
-        /// * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+        /// * AZURE_DATA_LAKE_STORAGE: Azure application client ID, required for AZURE_ACTIVE_DIRECTORY authentication.
+        /// * DATABRICKS, DATABRICKS_ENGINE: OAuth client ID, applicable to OAUTH_M2M authentication.
+        /// * MICROSOFT_FABRIC: Azure application client ID.
         /// </summary>
         public readonly string ClientId;
         public readonly string ClientSecret;
         /// <summary>
-        /// * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-        /// * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
-        /// * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-        /// Note: When provided, 'clientSecret' field must not be provided.
+        /// Secret OCID containing the client secret. For DATABRICKS and DATABRICKS_ENGINE it applies to OAUTH_M2M authentication. When provided, `ClientSecret` must not be provided.
         /// </summary>
         public readonly string ClientSecretSecretId;
         /// <summary>
@@ -53,9 +50,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string PropertiesSecretId;
         /// <summary>
-        /// * NESSIE: Nessie URI. e.g.: 'http://&lt;nessie-server&gt;.com:10001/api/v2'
-        /// * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://&lt;your-snowflake-account&gt;.snowflakecomputing.com/polaris/api/catalog'
-        /// * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
+        /// The URL endpoint for the Polaris API. e.g.: 'https://&lt;your-snowflake-account&gt;.snowflakecomputing.com/polaris/api/catalog'
         /// </summary>
         public readonly string Uri;
 

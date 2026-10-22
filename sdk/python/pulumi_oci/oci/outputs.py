@@ -512,6 +512,9 @@ __all__ = [
     'GetPsaPsaWorkRequestsWorkRequestSummaryCollectionResult',
     'GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResult',
     'GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceResult',
+    'GetPssInstancesFilterResult',
+    'GetPssInstancesInstanceCollectionResult',
+    'GetPssInstancesInstanceCollectionItemResult',
     'GetResourceAnalyticsMonitoredRegionsFilterResult',
     'GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionResult',
     'GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemResult',
@@ -31421,6 +31424,239 @@ class GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceResult(dict):
         Additional information that helps to explain the resource.
         """
         return pulumi.get(self, "metadata")
+
+
+@pulumi.output_type
+class GetPssInstancesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetPssInstancesInstanceCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetPssInstancesInstanceCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetPssInstancesInstanceCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetPssInstancesInstanceCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 admin_identity_domain_user_id: _builtins.str,
+                 compartment_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 identity_domain_url: _builtins.str,
+                 identity_domain_web_auth_client_id: _builtins.str,
+                 identity_domain_web_auth_client_secret_vault_id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 public_ip: _builtins.str,
+                 service_endpoint: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 ui_endpoint: _builtins.str):
+        """
+        :param _builtins.str admin_identity_domain_user_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the identity-domain user that initially administers the PSS instance.
+        :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Instance.
+        :param _builtins.str identity_domain_url: The URL of the identity domain associated with the instance.  Example: `https://idcs-1234567890.identity.oraclecloud.com`
+        :param _builtins.str identity_domain_web_auth_client_id: The client ID of the identity-domain confidential application used for browser authentication.
+        :param _builtins.str identity_domain_web_auth_client_secret_vault_id: The OCID of the Vault secret containing the identity-domain confidential application's client secret.
+        :param _builtins.str lifecycle_details: A message that describes the current state of the Instance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        :param _builtins.str public_ip: The public IP address for the instance's API gateway.
+        :param _builtins.str service_endpoint: The HTTPS endpoint for the instance's PSS API.  Example: `https://example.pss.oraclecloud.com/api/`
+        :param _builtins.str state: A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.example-key": "example-value"}`
+        :param _builtins.str time_created: The date and time the Instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str time_updated: The date and time the Instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        :param _builtins.str ui_endpoint: The HTTPS endpoint for the instance's PSS user interface.  Example: `https://example.pss.oraclecloud.com/ui/`
+        """
+        pulumi.set(__self__, "admin_identity_domain_user_id", admin_identity_domain_user_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "identity_domain_url", identity_domain_url)
+        pulumi.set(__self__, "identity_domain_web_auth_client_id", identity_domain_web_auth_client_id)
+        pulumi.set(__self__, "identity_domain_web_auth_client_secret_vault_id", identity_domain_web_auth_client_secret_vault_id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "public_ip", public_ip)
+        pulumi.set(__self__, "service_endpoint", service_endpoint)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "ui_endpoint", ui_endpoint)
+
+    @_builtins.property
+    @pulumi.getter(name="adminIdentityDomainUserId")
+    def admin_identity_domain_user_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the identity-domain user that initially administers the PSS instance.
+        """
+        return pulumi.get(self, "admin_identity_domain_user_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Instance.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="identityDomainUrl")
+    def identity_domain_url(self) -> _builtins.str:
+        """
+        The URL of the identity domain associated with the instance.  Example: `https://idcs-1234567890.identity.oraclecloud.com`
+        """
+        return pulumi.get(self, "identity_domain_url")
+
+    @_builtins.property
+    @pulumi.getter(name="identityDomainWebAuthClientId")
+    def identity_domain_web_auth_client_id(self) -> _builtins.str:
+        """
+        The client ID of the identity-domain confidential application used for browser authentication.
+        """
+        return pulumi.get(self, "identity_domain_web_auth_client_id")
+
+    @_builtins.property
+    @pulumi.getter(name="identityDomainWebAuthClientSecretVaultId")
+    def identity_domain_web_auth_client_secret_vault_id(self) -> _builtins.str:
+        """
+        The OCID of the Vault secret containing the identity-domain confidential application's client secret.
+        """
+        return pulumi.get(self, "identity_domain_web_auth_client_secret_vault_id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        A message that describes the current state of the Instance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter(name="publicIp")
+    def public_ip(self) -> _builtins.str:
+        """
+        The public IP address for the instance's API gateway.
+        """
+        return pulumi.get(self, "public_ip")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceEndpoint")
+    def service_endpoint(self) -> _builtins.str:
+        """
+        The HTTPS endpoint for the instance's PSS API.  Example: `https://example.pss.oraclecloud.com/api/`
+        """
+        return pulumi.get(self, "service_endpoint")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.example-key": "example-value"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the Instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the Instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="uiEndpoint")
+    def ui_endpoint(self) -> _builtins.str:
+        """
+        The HTTPS endpoint for the instance's PSS user interface.  Example: `https://example.pss.oraclecloud.com/ui/`
+        """
+        return pulumi.get(self, "ui_endpoint")
 
 
 @pulumi.output_type

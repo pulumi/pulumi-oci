@@ -113,6 +113,9 @@ class GetConnectionsResult:
     @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[_builtins.str]:
+        """
+        An object's Display Name.
+        """
         return pulumi.get(self, "display_name")
 
     @_builtins.property
@@ -140,7 +143,14 @@ class GetConnectionsResult:
     @pulumi.getter(name="technologyTypes")
     def technology_types(self) -> Optional[Sequence[_builtins.str]]:
         """
-        The technology type.
+        Technology type selected for the connection.
+        * AI_MODEL: AI Model technology type.
+        * AI_PROVIDER: AI Provider technology type.
+        * DATABRICKS_ENGINE: Databricks Engine technology type.
+        * ICEBERG: Iceberg technology type. APACHE_ICEBERG supports all catalog types; AMAZON_S3_TABLES supports only REST catalog and S3 storage.
+        * KAFKA_SCHEMA_REGISTRY: Kafka Schema Registry technology type.
+        * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform Engine technology type.
+        * SPARK: Spark technology type.
         """
         return pulumi.get(self, "technology_types")
 

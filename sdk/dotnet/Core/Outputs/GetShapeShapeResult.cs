@@ -45,6 +45,7 @@ namespace Pulumi.Oci.Core.Outputs
         public readonly int RdmaPorts;
         public readonly ImmutableArray<Outputs.GetShapeShapeRecommendedAlternativeResult> RecommendedAlternatives;
         public readonly ImmutableArray<string> ResizeCompatibleShapes;
+        public readonly ImmutableArray<string> SupportedResourceManagements;
 
         [OutputConstructor]
         private GetShapeShapeResult(
@@ -110,7 +111,9 @@ namespace Pulumi.Oci.Core.Outputs
 
             ImmutableArray<Outputs.GetShapeShapeRecommendedAlternativeResult> recommendedAlternatives,
 
-            ImmutableArray<string> resizeCompatibleShapes)
+            ImmutableArray<string> resizeCompatibleShapes,
+
+            ImmutableArray<string> supportedResourceManagements)
         {
             BaselineOcpuUtilizations = baselineOcpuUtilizations;
             BillingType = billingType;
@@ -144,6 +147,7 @@ namespace Pulumi.Oci.Core.Outputs
             RdmaPorts = rdmaPorts;
             RecommendedAlternatives = recommendedAlternatives;
             ResizeCompatibleShapes = resizeCompatibleShapes;
+            SupportedResourceManagements = supportedResourceManagements;
         }
     }
 }

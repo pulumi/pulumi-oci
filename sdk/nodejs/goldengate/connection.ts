@@ -33,6 +33,35 @@ import * as utilities from "../utilities";
  *         name: connectionAdditionalAttributesName,
  *         value: connectionAdditionalAttributesValue,
  *     }],
+ *     artifactLocation: {
+ *         configuration: {
+ *             authenticationType: connectionArtifactLocationConfigurationAuthenticationType,
+ *             accessKeyId: testKey.id,
+ *             bucket: connectionArtifactLocationConfigurationBucket,
+ *             namespace: connectionArtifactLocationConfigurationNamespace,
+ *             parUrl: connectionArtifactLocationConfigurationParUrl,
+ *             parUrlSecretId: testSecret.id,
+ *             path: connectionArtifactLocationConfigurationPath,
+ *             privateKeyFile: connectionArtifactLocationConfigurationPrivateKeyFile,
+ *             privateKeyFileSecretId: testSecret.id,
+ *             privateKeyPassphrase: connectionArtifactLocationConfigurationPrivateKeyPassphrase,
+ *             privateKeyPassphraseSecretId: testSecret.id,
+ *             publicKeyFingerprint: connectionArtifactLocationConfigurationPublicKeyFingerprint,
+ *             region: connectionArtifactLocationConfigurationRegion,
+ *             secretAccessKey: connectionArtifactLocationConfigurationSecretAccessKey,
+ *             secretAccessKeySecretId: testSecret.id,
+ *             tenancyId: testTenancy.id,
+ *             userId: testUser.id,
+ *         },
+ *         locationType: connectionArtifactLocationLocationType,
+ *         accountKey: connectionArtifactLocationAccountKey,
+ *         accountKeySecretId: testSecret.id,
+ *         endpointSuffix: connectionArtifactLocationEndpointSuffix,
+ *         filesystem: connectionArtifactLocationFilesystem,
+ *         path: connectionArtifactLocationPath,
+ *         shouldOverwriteExisting: connectionArtifactLocationShouldOverwriteExisting,
+ *         storageAccount: connectionArtifactLocationStorageAccount,
+ *     },
  *     authDetails: {
  *         authType: connectionAuthDetailsAuthType,
  *         apiKey: connectionAuthDetailsApiKey,
@@ -43,6 +72,10 @@ import * as utilities from "../utilities";
  *         tenancyId: testTenancy.id,
  *         userId: testUser.id,
  *     },
+ *     authSecret: connectionAuthSecret,
+ *     authSecretSecretId: testSecret.id,
+ *     authToken: connectionAuthToken,
+ *     authTokenSecretId: testSecret.id,
  *     authenticationMode: connectionAuthenticationMode,
  *     authenticationType: connectionAuthenticationType,
  *     azureAuthorityHost: connectionAzureAuthorityHost,
@@ -67,6 +100,7 @@ import * as utilities from "../utilities";
  *     clientId: testClient.id,
  *     clientSecret: connectionClientSecret,
  *     clientSecretSecretId: testSecret.id,
+ *     clusterEndpoint: connectionClusterEndpoint,
  *     clusterId: testCluster.id,
  *     clusterPlacementGroupId: testClusterPlacementGroup.id,
  *     connectionFactory: connectionConnectionFactory,
@@ -100,6 +134,7 @@ import * as utilities from "../utilities";
  *     keyStorePassword: connectionKeyStorePassword,
  *     keyStorePasswordSecretId: testSecret.id,
  *     keyStoreSecretId: testSecret.id,
+ *     keyStoreType: connectionKeyStoreType,
  *     locks: [{
  *         type: connectionLocksType,
  *         message: connectionLocksMessage,
@@ -115,11 +150,16 @@ import * as utilities from "../utilities";
  *     privateKeyPassphrase: connectionPrivateKeyPassphrase,
  *     privateKeyPassphraseSecretId: testSecret.id,
  *     producerProperties: connectionProducerProperties,
+ *     providerId: testProvider.id,
  *     providerType: connectionProviderType,
  *     publicKeyFingerprint: connectionPublicKeyFingerprint,
  *     redisClusterId: testRedisCluster.id,
  *     region: connectionRegion,
+ *     restAuthSecretKey: connectionRestAuthSecretKey,
+ *     restAuthSecretKeySecretId: testSecret.id,
+ *     restEndpoint: connectionRestEndpoint,
  *     routingMethod: connectionRoutingMethod,
+ *     rpcCipher: connectionRpcCipher,
  *     sasToken: connectionSasToken,
  *     sasTokenSecretId: testSecret.id,
  *     secretAccessKey: connectionSecretAccessKey,
@@ -165,6 +205,7 @@ import * as utilities from "../utilities";
  *     },
  *     storageCredentialName: connectionStorageCredentialName,
  *     streamPoolId: testStreamPool.id,
+ *     submitMode: connectionSubmitMode,
  *     subnetId: testSubnet.id,
  *     subscriptionId: testSubscription.id,
  *     tenancyId: testTenancy.id,
@@ -174,16 +215,19 @@ import * as utilities from "../utilities";
  *     tlsCertificateKeyFilePassword: connectionTlsCertificateKeyFilePassword,
  *     tlsCertificateKeyFilePasswordSecretId: testSecret.id,
  *     tlsCertificateKeyFileSecretId: testSecret.id,
+ *     tlsProtocol: connectionTlsProtocol,
  *     trustStore: connectionTrustStore,
  *     trustStorePassword: connectionTrustStorePassword,
  *     trustStorePasswordSecretId: testSecret.id,
  *     trustStoreSecretId: testSecret.id,
+ *     trustStoreType: connectionTrustStoreType,
  *     url: connectionUrl,
  *     userId: testUser.id,
  *     username: connectionUsername,
  *     vaultId: testVault.id,
  *     wallet: connectionWallet,
  *     walletSecretId: testSecret.id,
+ *     workspaceUrl: connectionWorkspaceUrl,
  * });
  * ```
  *
@@ -224,10 +268,11 @@ export class Connection extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) Access key ID for Amazon connection types.
-     * * AMAZON_KINESIS: Access key ID to access Amazon Kinesis.
-     * * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-     *   Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+     * (Updatable)
+     * * AMAZON_KINESIS: Access key ID used to access Amazon Kinesis.
+     * * AMAZON_S3: Access key ID used to access the Amazon S3 bucket.
+     *
+     * Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
      */
     declare public readonly accessKeyId: pulumi.Output<string>;
     /**
@@ -249,20 +294,48 @@ export class Connection extends pulumi.CustomResource {
      */
     declare public readonly additionalAttributes: pulumi.Output<outputs.GoldenGate.ConnectionAdditionalAttribute[]>;
     /**
-     * (Updatable) The information about new authentication details for an AI Model connection.
+     * (Updatable) Location used to share engine application artifacts.
+     * * DATABRICKS_ENGINE: Location used to share Databricks application artifacts.
+     * * SPARK: Location used to share Spark application artifacts with a remote cluster.
+     */
+    declare public readonly artifactLocation: pulumi.Output<outputs.GoldenGate.ConnectionArtifactLocation>;
+    /**
+     * (Updatable) Authentication details for an AI Model or AI Provider connection.
      */
     declare public readonly authDetails: pulumi.Output<outputs.GoldenGate.ConnectionAuthDetails>;
+    /**
+     * (Updatable) The shared secret used for Spark authentication. Applicable when authenticationType is SHARED_SECRET.
+     *
+     * Deprecated: This field is deprecated and replaced by "authSecretSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * @deprecated The 'auth_secret' field has been deprecated. Please use 'auth_secret_secret_id' instead.
+     */
+    declare public readonly authSecret: pulumi.Output<string | undefined>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Spark authentication shared secret. Applicable when authenticationType is SHARED_SECRET. Note: When provided, 'authSecret' field must not be provided.
+     */
+    declare public readonly authSecretSecretId: pulumi.Output<string>;
+    /**
+     * (Updatable) Personal access token used to connect to the Databricks Engine REST API. Only applicable for authenticationType == PERSONAL_ACCESS_TOKEN. Deprecated: This field is deprecated and replaced by "authTokenSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * @deprecated The 'auth_token' field has been deprecated. Please use 'auth_token_secret_id' instead.
+     */
+    declare public readonly authToken: pulumi.Output<string | undefined>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the personal access token is stored. Only applicable for authenticationType == PERSONAL_ACCESS_TOKEN. Note: When provided, 'authToken' field must not be provided.
+     */
+    declare public readonly authTokenSecretId: pulumi.Output<string>;
     /**
      * (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
      */
     declare public readonly authenticationMode: pulumi.Output<string>;
     /**
-     * (Updatable) Used authentication mechanism to be provided for the following connection types:
-     * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
-     * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
-     * * DATABRICKS - Required fields by authentication types:
-     * * PERSONAL_ACCESS_TOKEN: username is always 'token', user must enter password
-     * * OAUTH_M2M: user must enter clientId and clientSecret
+     * (Updatable) Authentication mechanism; supported values depend on `connectionType`.
+     * * DATABRICKS: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M.
+     * * DATABRICKS_ENGINE: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M for the Databricks Engine REST API.
+     * * JAVA_MESSAGE_SERVICE: Authentication type for Java Message Service. The default is NONE.
+     * * SPARK: Use SHARED_SECRET only when the target cluster has `spark.authenticate=true`. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET.
+     * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE: Use the authentication type supported by the target service.
      */
     declare public readonly authenticationType: pulumi.Output<string>;
     /**
@@ -285,29 +358,25 @@ export class Connection extends pulumi.CustomResource {
     declare public readonly catalog: pulumi.Output<outputs.GoldenGate.ConnectionCatalog>;
     /**
      * (Updatable)
-     * * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-     * * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
-     * * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+     * * AZURE_DATA_LAKE_STORAGE: Azure application client ID, required for AZURE_ACTIVE_DIRECTORY authentication.
+     * * DATABRICKS, DATABRICKS_ENGINE: OAuth client ID, applicable to OAUTH_M2M authentication.
+     * * MICROSOFT_FABRIC: Azure application client ID.
      */
     declare public readonly clientId: pulumi.Output<string>;
     /**
-     * (Updatable)
-     * * AZURE_DATA_LAKE_STORAGE: Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
-     * * DATABRICKS: OAuth client secret, only applicable for authenticationType == OAUTH_M2M.
-     * * MICROSOFT_FABRIC: Client secret associated with the client id.
-     *   Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Plaintext client secret for the selected connection type. For DATABRICKS and DATABRICKS_ENGINE it applies to OAUTH_M2M authentication. Deprecated: use `clientSecretSecretId`.
      *
      * @deprecated The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.
      */
     declare public readonly clientSecret: pulumi.Output<string | undefined>;
     /**
-     * (Updatable)
-     * * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-     * * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
-     * * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-     *   Note: When provided, 'clientSecret' field must not be provided.
+     * (Updatable) Secret OCID containing the client secret. For DATABRICKS and DATABRICKS_ENGINE it applies to OAUTH_M2M authentication. When provided, `clientSecret` must not be provided.
      */
     declare public readonly clientSecretSecretId: pulumi.Output<string | undefined>;
+    /**
+     * (Updatable) Spark master URL used for job submission. Required for both submitMode SUBMIT and REST. e.g.: 'spark://spark-master.example.com:7077' High availability can be configured with a comma-separated list, for example: 'spark://h1.example.com:7077,h2.example.com:7077'
+     */
+    declare public readonly clusterEndpoint: pulumi.Output<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
      */
@@ -325,10 +394,7 @@ export class Connection extends pulumi.CustomResource {
      */
     declare public readonly connectionFactory: pulumi.Output<string>;
     /**
-     * (Updatable)
-     * * ORACLE: Connect descriptor or Easy Connect Naming method used to connect to a database.
-     * * MONGODB: MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
-     * * AZURE_SYNAPSE_ANALYTICS: JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+     * (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
      */
     declare public readonly connectionString: pulumi.Output<string>;
     /**
@@ -337,11 +403,11 @@ export class Connection extends pulumi.CustomResource {
     declare public readonly connectionType: pulumi.Output<string>;
     /**
      * (Updatable)
-     * * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
-     * * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
-     * * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
-     * * DATABRICKS: Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
-     * * ORACLE_AI_DATA_PLATFORM: Connection URL. It must start with 'jdbc:spark://'
+     * * AMAZON_REDSHIFT: JDBC connection URL. e.g.: `jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb`
+     * * DATABRICKS: JDBC connection URL. e.g.: `jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb`
+     * * JAVA_MESSAGE_SERVICE: Connection URL specifying the protocol, host, and port. e.g.: `mq://myjms.host.domain:7676`
+     * * ORACLE_AI_DATA_PLATFORM: Connection URL beginning with `jdbc:spark://`.
+     * * SNOWFLAKE: JDBC connection URL. e.g.: `jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>`
      */
     declare public readonly connectionUrl: pulumi.Output<string>;
     /**
@@ -456,30 +522,35 @@ export class Connection extends pulumi.CustomResource {
      */
     declare public readonly keyId: pulumi.Output<string>;
     /**
-     * (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Base64-encoded key store content.
+     * * SPARK: Client key store used for mutual TLS when `securityProtocol` is TLS.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: KeyStore file used by the target connection.
+     *
+     * Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'key_store' field has been deprecated. Please use 'key_store_secret_id' instead.
      */
     declare public readonly keyStore: pulumi.Output<string | undefined>;
     /**
-     * (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Password for `keyStore`. For SPARK, it is required when a client key store is supplied.
+     *
+     * Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead.
      */
     declare public readonly keyStorePassword: pulumi.Output<string | undefined>;
     /**
-     * (Updatable)
-     * * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
-     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
-     * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
-     * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
-     *   Note: When provided, 'keyStorePassword' field must not be provided.
+     * (Updatable) Secret OCID containing the key store password. For SPARK, it is required when `keyStoreSecretId` is supplied. When provided, `keyStorePassword` must not be provided.
      */
     declare public readonly keyStorePasswordSecretId: pulumi.Output<string | undefined>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
+     * (Updatable) Secret OCID containing the key store content. For SPARK, it applies when `securityProtocol` is TLS. When provided, `keyStore` must not be provided.
      */
     declare public readonly keyStoreSecretId: pulumi.Output<string | undefined>;
+    /**
+     * (Updatable) Client key store format used for mutual TLS. Applicable when securityProtocol is TLS and a client key store is provided. Defaults to JKS when not provided. Provide this only when a client key store is provided.
+     */
+    declare public readonly keyStoreType: pulumi.Output<string>;
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
@@ -501,7 +572,7 @@ export class Connection extends pulumi.CustomResource {
      */
     declare public readonly nsgIds: pulumi.Output<string[]>;
     /**
-     * (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) The password Oracle GoldenGate uses to connect to Snowflake platform. Deprecated: This field is deprecated and replaced by "passwordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate Snowflake is phasing out password authentication for legacy service users. Oracle GoldenGate Snowflake connections will support only key-pair authentication. See the Snowflake documentation for details: https://docs.snowflake.com/en/user-guide/security-mfa-rollout
      *
      * @deprecated The 'password' field has been deprecated. Please use 'password_secret_id' instead.
      */
@@ -543,6 +614,10 @@ export class Connection extends pulumi.CustomResource {
      */
     declare public readonly producerProperties: pulumi.Output<string>;
     /**
+     * Optional identifier of the AI Provider Connection backing this AI Model Connection. When provided, it must reference an existing Active connection of type `AI_PROVIDER`. When `providerId` is set, `providerType` and `authDetails` must not be provided on the AI Model Connection, because provider metadata is resolved from the referenced AI Provider Connection. When `providerId` is not set, the AI Model Connection must provide inline provider metadata using `providerType` and `authDetails`.
+     */
+    declare public readonly providerId: pulumi.Output<string>;
+    /**
      * AI Provider type used by the AI Model Connection.
      */
     declare public readonly providerType: pulumi.Output<string>;
@@ -555,18 +630,35 @@ export class Connection extends pulumi.CustomResource {
      */
     declare public readonly redisClusterId: pulumi.Output<string>;
     /**
-     * (Updatable) The name of the region:
-     * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM, ORACLE_NOSQL - OCI region, e.g.: 'us-ashburn-1'. If not provided, backend will default to the default region.
-     * * AMAZON_KINESIS - AWS region, e.g.: 'us-west-1'. If not provided, GoldenGate will default to 'us-west-1'. Note: this property will become mandatory after July 30, 2026.
-     * * AMAZON_S3 - AWS region where the bucket is created, e.g.: 'us-west-2'. If not provided, GoldenGate will default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
+     * (Updatable) The name of the AWS region where the bucket is created. If not provided, GoldenGate will default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
      */
     declare public readonly region: pulumi.Output<string>;
+    /**
+     * (Updatable) The BASE64URL-encoded HMAC secret key used to sign REST submission requests when the Spark master's REST endpoint is protected by the JWS filter. Applicable only when submitMode is REST and the cluster enforces REST request signing. This setting is independent of authenticationType.
+     *
+     * Deprecated: This field is deprecated and replaced by "restAuthSecretKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * @deprecated The 'rest_auth_secret_key' field has been deprecated. Please use 'rest_auth_secret_key_secret_id' instead.
+     */
+    declare public readonly restAuthSecretKey: pulumi.Output<string | undefined>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the REST submission signing key. Applicable only when submitMode is REST and the cluster enforces REST request signing. This setting is independent of authenticationType. Note: When provided, 'restAuthSecretKey' field must not be provided.
+     */
+    declare public readonly restAuthSecretKeySecretId: pulumi.Output<string>;
+    /**
+     * (Updatable) Spark standalone REST submission base URL. e.g.: 'https://spark-master.example.com:6066' Applicable only and required when submitMode is REST.
+     */
+    declare public readonly restEndpoint: pulumi.Output<string>;
     /**
      * (Updatable) Controls the network traffic direction to the target: SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected. SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
      *
      * Deprecated: SHARED_SERVICE_ENDPOINT is deprecated. Use another supported routingMethod value, or update existing connections to use a supported routing method. This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     declare public readonly routingMethod: pulumi.Output<string>;
+    /**
+     * (Updatable) Cipher transform used for Spark RPC encryption. Applicable when securityProtocol is AES_RPC. Defaults to AES_CTR_NOPADDING when not provided.
+     */
+    declare public readonly rpcCipher: pulumi.Output<string>;
     /**
      * (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
@@ -578,19 +670,15 @@ export class Connection extends pulumi.CustomResource {
      */
     declare public readonly sasTokenSecretId: pulumi.Output<string | undefined>;
     /**
-     * (Updatable)
-     * * AMAZON_KINESIS: Secret access key to access the Amazon Kinesis.
-     * * AMAZON_S3: Secret access key to access the Amazon S3 bucket.
-     *   Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Secret access key to access the Amazon S3 bucket.
+     *
+     * Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
      */
     declare public readonly secretAccessKey: pulumi.Output<string | undefined>;
     /**
-     * (Updatable)
-     * * AMAZON_KINESIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored.
-     * * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-     *   Note: When provided, 'secretAccessKey' field must not be provided.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
      */
     declare public readonly secretAccessKeySecretId: pulumi.Output<string | undefined>;
     /**
@@ -598,40 +686,23 @@ export class Connection extends pulumi.CustomResource {
      */
     declare public readonly securityAttributes: pulumi.Output<{[key: string]: string}>;
     /**
-     * (Updatable)
-     * * DB2: Security protocol for the DB2 database.
-     * * ELASTICSEARCH: Security protocol for Elasticsearch.
-     * * JAVA_MESSAGE_SERVICE: Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
-     * * KAFKA: Security Type for Kafka.
-     * * MICROSOFT_SQLSERVER: Security Type for Microsoft SQL Server.
-     * * MONGODB: Security Type for MongoDB.
-     * * MYSQL: Security Type for MySQL.
-     * * POSTGRESQL: Security protocol for PostgreSQL.
-     * * REDIS: Security protocol for Redis.
+     * (Updatable) Security protocol; supported values depend on `connectionType`.
+     * * SPARK: PLAINTEXT, TLS, AES_RPC, or SASL_ENCRYPTED. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET authentication.
+     * * DB2, ELASTICSEARCH, JAVA_MESSAGE_SERVICE, KAFKA, MICROSOFT_SQLSERVER, MONGODB, MYSQL, POSTGRESQL, REDIS: Use the protocol supported by the target service.
      */
     declare public readonly securityProtocol: pulumi.Output<string>;
     /**
-     * (Updatable)
-     * * ELASTICSEARCH: Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
-     * * REDIS: Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 6379. Used for establishing the initial connection to the Redis cluster. Example: `"server1.example.com:6379,server2.example.com:6379"`
+     * (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
      */
     declare public readonly servers: pulumi.Output<string>;
     /**
-     * (Updatable)
-     * * GOOGLE_BIGQUERY: The base64 encoded content of the service account key file containing the credentials required to use Google BigQuery.
-     * * GOOGLE_CLOUD_STORAGE: The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
-     * * GOOGLE_PUBSUB: The base64 encoded content of the service account key file containing the credentials required to use Google PubSub.
-     *   Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.
      */
     declare public readonly serviceAccountKeyFile: pulumi.Output<string | undefined>;
     /**
-     * (Updatable)
-     * * GOOGLE_BIGQUERY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google BigQuery.
-     * * GOOGLE_CLOUD_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
-     * * GOOGLE_PUBSUB: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google PubSub.
-     *   Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
      */
     declare public readonly serviceAccountKeyFileSecretId: pulumi.Output<string | undefined>;
     /**
@@ -698,44 +769,40 @@ export class Connection extends pulumi.CustomResource {
      */
     declare public readonly sslClientKeystoredbSecretId: pulumi.Output<string | undefined>;
     /**
-     * (Updatable)
-     * * MYSQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-     * * POSTGRESQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      */
     declare public readonly sslCrl: pulumi.Output<string>;
     /**
-     * (Updatable)
-     * * MYSQL: Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
-     * * POSTGRESQL: The base64 encoded private key of the PostgreSQL server. The supported file formats are .pem and .crt.
-     *   Deprecated: This field is deprecated and replaced by "sslKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead.
      */
     declare public readonly sslKey: pulumi.Output<string | undefined>;
     /**
-     * (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Password for the certificate private key inside the client key store.
+     * * SPARK: Applicable when `securityProtocol` is TLS and a client key store is provided.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY: Provide it when the private-key password differs from the key store password.
+     *
+     * Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead.
      */
     declare public readonly sslKeyPassword: pulumi.Output<string | undefined>;
     /**
-     * (Updatable)
-     * * JAVA_MESSAGE_SERVICE, KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided.
-     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
-     *   Note: When provided, 'sslKeyPassword' field must not be provided.
+     * (Updatable) Secret OCID containing the certificate private-key password inside the client key store.
+     * * SPARK: Applicable when `securityProtocol` is TLS and a client key store is provided.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY: Provide it when the private-key password differs from the key store password.
+     *
+     * When provided, `sslKeyPassword` must not be provided.
      */
     declare public readonly sslKeyPasswordSecretId: pulumi.Output<string | undefined>;
     /**
-     * (Updatable)
-     * * MYSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
-     * * POSTGRESQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
-     *   Note: When provided, 'sslKey' field must not be provided.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+     * * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
      */
     declare public readonly sslKeySecretId: pulumi.Output<string | undefined>;
     /**
-     * (Updatable)
-     * * MYSQL: SSL modes for MySQL.
-     * * POSTGRESQL: SSL modes for PostgreSQL.
+     * (Updatable) SSL modes for PostgreSQL.
      */
     declare public readonly sslMode: pulumi.Output<string>;
     /**
@@ -759,6 +826,10 @@ export class Connection extends pulumi.CustomResource {
      */
     declare public readonly streamPoolId: pulumi.Output<string>;
     /**
+     * (Updatable) Selects the submission channel. SUBMIT uses the Spark master RPC endpoint. REST uses the Spark standalone REST submission gateway.
+     */
+    declare public readonly submitMode: pulumi.Output<string>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
      */
     declare public readonly subnetId: pulumi.Output<string>;
@@ -771,7 +842,14 @@ export class Connection extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
     /**
-     * The technology type.
+     * Technology type selected for the connection.
+     * * AI_MODEL: AI Model technology type.
+     * * AI_PROVIDER: AI Provider technology type.
+     * * DATABRICKS_ENGINE: Databricks Engine technology type.
+     * * ICEBERG: Iceberg technology type. APACHE_ICEBERG supports all catalog types; AMAZON_S3_TABLES supports only REST catalog and S3 storage.
+     * * KAFKA_SCHEMA_REGISTRY: Kafka Schema Registry technology type.
+     * * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform Engine technology type.
+     * * SPARK: Spark technology type.
      */
     declare public readonly technologyType: pulumi.Output<string>;
     /**
@@ -815,40 +893,49 @@ export class Connection extends pulumi.CustomResource {
      * * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
      */
     declare public readonly tlsCertificateKeyFileSecretId: pulumi.Output<string>;
+    /**
+     * (Updatable) TLS protocol negotiated by the Spark client. Applicable when securityProtocol is TLS. Defaults to TLS_V1_3 when not provided. Must be supported by the target cluster.
+     */
+    declare public readonly tlsProtocol: pulumi.Output<string>;
     declare public readonly triggerRefresh: pulumi.Output<boolean | undefined>;
     /**
-     * (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Base64-encoded trust store content.
+     * * SPARK: Trust store used to validate the Spark server certificate when `securityProtocol` is TLS.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: TrustStore file used by the target connection.
+     *
+     * Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.
      */
     declare public readonly trustStore: pulumi.Output<string | undefined>;
     /**
-     * (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Password for `trustStore`. For SPARK, it is required when a trust store is supplied.
+     *
+     * Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead.
      */
     declare public readonly trustStorePassword: pulumi.Output<string | undefined>;
     /**
-     * (Updatable)
-     * * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
-     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
-     * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
-     * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
-     *   Note: When provided, 'trustStorePassword' field must not be provided.
+     * (Updatable) Secret OCID containing the trust store password. For SPARK, it is required when `trustStoreSecretId` is supplied. When provided, `trustStorePassword` must not be provided.
      */
     declare public readonly trustStorePasswordSecretId: pulumi.Output<string | undefined>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
+     * (Updatable) Secret OCID containing the trust store content. For SPARK, it applies when `securityProtocol` is TLS. When provided, `trustStore` must not be provided.
      */
     declare public readonly trustStoreSecretId: pulumi.Output<string | undefined>;
+    /**
+     * (Updatable) Trust store format used by the Spark client. Applicable when securityProtocol is TLS and a trust store is provided. Defaults to JKS when not provided. Provide this only when a trust store is provided.
+     */
+    declare public readonly trustStoreType: pulumi.Output<string>;
     /**
      * (Updatable) Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
      */
     declare public readonly url: pulumi.Output<string>;
     /**
      * (Updatable)
-     * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
-     * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+     * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses Object Storage. The user must have write access to the bucket. If omitted, the service defaults to the user calling the API.
+     * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses the Oracle NoSQL database. The user must have write access to the table. If omitted, the service defaults to the user calling the API.
      */
     declare public readonly userId: pulumi.Output<string>;
     /**
@@ -871,11 +958,17 @@ export class Connection extends pulumi.CustomResource {
     declare public readonly wallet: pulumi.Output<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+     */
+    declare public readonly walletSecretId: pulumi.Output<string | undefined>;
+    /**
+     * (Updatable)
+     * * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://<workspace>.cloud.databricks.com/api/2.0/`.
+     * * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    declare public readonly walletSecretId: pulumi.Output<string | undefined>;
+    declare public readonly workspaceUrl: pulumi.Output<string>;
 
     /**
      * Create a Connection resource with the given unique name, arguments, and options.
@@ -895,7 +988,12 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["accountKeySecretId"] = state?.accountKeySecretId;
             resourceInputs["accountName"] = state?.accountName;
             resourceInputs["additionalAttributes"] = state?.additionalAttributes;
+            resourceInputs["artifactLocation"] = state?.artifactLocation;
             resourceInputs["authDetails"] = state?.authDetails;
+            resourceInputs["authSecret"] = state?.authSecret;
+            resourceInputs["authSecretSecretId"] = state?.authSecretSecretId;
+            resourceInputs["authToken"] = state?.authToken;
+            resourceInputs["authTokenSecretId"] = state?.authTokenSecretId;
             resourceInputs["authenticationMode"] = state?.authenticationMode;
             resourceInputs["authenticationType"] = state?.authenticationType;
             resourceInputs["azureAuthorityHost"] = state?.azureAuthorityHost;
@@ -905,6 +1003,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["clientId"] = state?.clientId;
             resourceInputs["clientSecret"] = state?.clientSecret;
             resourceInputs["clientSecretSecretId"] = state?.clientSecretSecretId;
+            resourceInputs["clusterEndpoint"] = state?.clusterEndpoint;
             resourceInputs["clusterId"] = state?.clusterId;
             resourceInputs["clusterPlacementGroupId"] = state?.clusterPlacementGroupId;
             resourceInputs["compartmentId"] = state?.compartmentId;
@@ -939,6 +1038,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["keyStorePassword"] = state?.keyStorePassword;
             resourceInputs["keyStorePasswordSecretId"] = state?.keyStorePasswordSecretId;
             resourceInputs["keyStoreSecretId"] = state?.keyStoreSecretId;
+            resourceInputs["keyStoreType"] = state?.keyStoreType;
             resourceInputs["lifecycleDetails"] = state?.lifecycleDetails;
             resourceInputs["locks"] = state?.locks;
             resourceInputs["maxInputChars"] = state?.maxInputChars;
@@ -953,11 +1053,16 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["privateKeyPassphrase"] = state?.privateKeyPassphrase;
             resourceInputs["privateKeyPassphraseSecretId"] = state?.privateKeyPassphraseSecretId;
             resourceInputs["producerProperties"] = state?.producerProperties;
+            resourceInputs["providerId"] = state?.providerId;
             resourceInputs["providerType"] = state?.providerType;
             resourceInputs["publicKeyFingerprint"] = state?.publicKeyFingerprint;
             resourceInputs["redisClusterId"] = state?.redisClusterId;
             resourceInputs["region"] = state?.region;
+            resourceInputs["restAuthSecretKey"] = state?.restAuthSecretKey;
+            resourceInputs["restAuthSecretKeySecretId"] = state?.restAuthSecretKeySecretId;
+            resourceInputs["restEndpoint"] = state?.restEndpoint;
             resourceInputs["routingMethod"] = state?.routingMethod;
+            resourceInputs["rpcCipher"] = state?.rpcCipher;
             resourceInputs["sasToken"] = state?.sasToken;
             resourceInputs["sasTokenSecretId"] = state?.sasTokenSecretId;
             resourceInputs["secretAccessKey"] = state?.secretAccessKey;
@@ -988,6 +1093,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["storage"] = state?.storage;
             resourceInputs["storageCredentialName"] = state?.storageCredentialName;
             resourceInputs["streamPoolId"] = state?.streamPoolId;
+            resourceInputs["submitMode"] = state?.submitMode;
             resourceInputs["subnetId"] = state?.subnetId;
             resourceInputs["subscriptionId"] = state?.subscriptionId;
             resourceInputs["systemTags"] = state?.systemTags;
@@ -1001,17 +1107,20 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["tlsCertificateKeyFilePassword"] = state?.tlsCertificateKeyFilePassword;
             resourceInputs["tlsCertificateKeyFilePasswordSecretId"] = state?.tlsCertificateKeyFilePasswordSecretId;
             resourceInputs["tlsCertificateKeyFileSecretId"] = state?.tlsCertificateKeyFileSecretId;
+            resourceInputs["tlsProtocol"] = state?.tlsProtocol;
             resourceInputs["triggerRefresh"] = state?.triggerRefresh;
             resourceInputs["trustStore"] = state?.trustStore;
             resourceInputs["trustStorePassword"] = state?.trustStorePassword;
             resourceInputs["trustStorePasswordSecretId"] = state?.trustStorePasswordSecretId;
             resourceInputs["trustStoreSecretId"] = state?.trustStoreSecretId;
+            resourceInputs["trustStoreType"] = state?.trustStoreType;
             resourceInputs["url"] = state?.url;
             resourceInputs["userId"] = state?.userId;
             resourceInputs["username"] = state?.username;
             resourceInputs["vaultId"] = state?.vaultId;
             resourceInputs["wallet"] = state?.wallet;
             resourceInputs["walletSecretId"] = state?.walletSecretId;
+            resourceInputs["workspaceUrl"] = state?.workspaceUrl;
         } else {
             const args = argsOrState as ConnectionArgs | undefined;
             if (args?.compartmentId === undefined && !opts.urn) {
@@ -1031,7 +1140,12 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["accountKeySecretId"] = args?.accountKeySecretId;
             resourceInputs["accountName"] = args?.accountName;
             resourceInputs["additionalAttributes"] = args?.additionalAttributes;
+            resourceInputs["artifactLocation"] = args?.artifactLocation;
             resourceInputs["authDetails"] = args?.authDetails;
+            resourceInputs["authSecret"] = args?.authSecret ? pulumi.secret(args.authSecret) : undefined;
+            resourceInputs["authSecretSecretId"] = args?.authSecretSecretId;
+            resourceInputs["authToken"] = args?.authToken ? pulumi.secret(args.authToken) : undefined;
+            resourceInputs["authTokenSecretId"] = args?.authTokenSecretId;
             resourceInputs["authenticationMode"] = args?.authenticationMode;
             resourceInputs["authenticationType"] = args?.authenticationType;
             resourceInputs["azureAuthorityHost"] = args?.azureAuthorityHost;
@@ -1041,6 +1155,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["clientId"] = args?.clientId;
             resourceInputs["clientSecret"] = args?.clientSecret ? pulumi.secret(args.clientSecret) : undefined;
             resourceInputs["clientSecretSecretId"] = args?.clientSecretSecretId;
+            resourceInputs["clusterEndpoint"] = args?.clusterEndpoint;
             resourceInputs["clusterId"] = args?.clusterId;
             resourceInputs["clusterPlacementGroupId"] = args?.clusterPlacementGroupId;
             resourceInputs["compartmentId"] = args?.compartmentId;
@@ -1074,6 +1189,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["keyStorePassword"] = args?.keyStorePassword ? pulumi.secret(args.keyStorePassword) : undefined;
             resourceInputs["keyStorePasswordSecretId"] = args?.keyStorePasswordSecretId;
             resourceInputs["keyStoreSecretId"] = args?.keyStoreSecretId;
+            resourceInputs["keyStoreType"] = args?.keyStoreType;
             resourceInputs["locks"] = args?.locks;
             resourceInputs["maxInputChars"] = args?.maxInputChars;
             resourceInputs["modelKey"] = args?.modelKey;
@@ -1086,11 +1202,16 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["privateKeyPassphrase"] = args?.privateKeyPassphrase ? pulumi.secret(args.privateKeyPassphrase) : undefined;
             resourceInputs["privateKeyPassphraseSecretId"] = args?.privateKeyPassphraseSecretId;
             resourceInputs["producerProperties"] = args?.producerProperties;
+            resourceInputs["providerId"] = args?.providerId;
             resourceInputs["providerType"] = args?.providerType;
             resourceInputs["publicKeyFingerprint"] = args?.publicKeyFingerprint;
             resourceInputs["redisClusterId"] = args?.redisClusterId;
             resourceInputs["region"] = args?.region;
+            resourceInputs["restAuthSecretKey"] = args?.restAuthSecretKey ? pulumi.secret(args.restAuthSecretKey) : undefined;
+            resourceInputs["restAuthSecretKeySecretId"] = args?.restAuthSecretKeySecretId;
+            resourceInputs["restEndpoint"] = args?.restEndpoint;
             resourceInputs["routingMethod"] = args?.routingMethod;
+            resourceInputs["rpcCipher"] = args?.rpcCipher;
             resourceInputs["sasToken"] = args?.sasToken ? pulumi.secret(args.sasToken) : undefined;
             resourceInputs["sasTokenSecretId"] = args?.sasTokenSecretId;
             resourceInputs["secretAccessKey"] = args?.secretAccessKey ? pulumi.secret(args.secretAccessKey) : undefined;
@@ -1120,6 +1241,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["storage"] = args?.storage;
             resourceInputs["storageCredentialName"] = args?.storageCredentialName;
             resourceInputs["streamPoolId"] = args?.streamPoolId;
+            resourceInputs["submitMode"] = args?.submitMode;
             resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["subscriptionId"] = args?.subscriptionId;
             resourceInputs["technologyType"] = args?.technologyType;
@@ -1130,17 +1252,20 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["tlsCertificateKeyFilePassword"] = args?.tlsCertificateKeyFilePassword ? pulumi.secret(args.tlsCertificateKeyFilePassword) : undefined;
             resourceInputs["tlsCertificateKeyFilePasswordSecretId"] = args?.tlsCertificateKeyFilePasswordSecretId ? pulumi.secret(args.tlsCertificateKeyFilePasswordSecretId) : undefined;
             resourceInputs["tlsCertificateKeyFileSecretId"] = args?.tlsCertificateKeyFileSecretId;
+            resourceInputs["tlsProtocol"] = args?.tlsProtocol;
             resourceInputs["triggerRefresh"] = args?.triggerRefresh;
             resourceInputs["trustStore"] = args?.trustStore ? pulumi.secret(args.trustStore) : undefined;
             resourceInputs["trustStorePassword"] = args?.trustStorePassword ? pulumi.secret(args.trustStorePassword) : undefined;
             resourceInputs["trustStorePasswordSecretId"] = args?.trustStorePasswordSecretId;
             resourceInputs["trustStoreSecretId"] = args?.trustStoreSecretId;
+            resourceInputs["trustStoreType"] = args?.trustStoreType;
             resourceInputs["url"] = args?.url;
             resourceInputs["userId"] = args?.userId;
             resourceInputs["username"] = args?.username;
             resourceInputs["vaultId"] = args?.vaultId;
             resourceInputs["wallet"] = args?.wallet ? pulumi.secret(args.wallet) : undefined;
             resourceInputs["walletSecretId"] = args?.walletSecretId;
+            resourceInputs["workspaceUrl"] = args?.workspaceUrl;
             resourceInputs["ingressIps"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["privateIp"] = undefined /*out*/;
@@ -1150,7 +1275,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
-        const secretOpts = { additionalSecretOutputs: ["accountKey", "clientSecret", "jndiSecurityCredentials", "keyStore", "keyStorePassword", "password", "privateKeyFile", "privateKeyPassphrase", "sasToken", "secretAccessKey", "serviceAccountKeyFile", "sslClientKeystash", "sslClientKeystoredb", "sslKey", "sslKeyPassword", "tlsCertificateKeyFilePassword", "tlsCertificateKeyFilePasswordSecretId", "trustStore", "trustStorePassword", "wallet"] };
+        const secretOpts = { additionalSecretOutputs: ["accountKey", "authSecret", "authToken", "clientSecret", "jndiSecurityCredentials", "keyStore", "keyStorePassword", "password", "privateKeyFile", "privateKeyPassphrase", "restAuthSecretKey", "sasToken", "secretAccessKey", "serviceAccountKeyFile", "sslClientKeystash", "sslClientKeystoredb", "sslKey", "sslKeyPassword", "tlsCertificateKeyFilePassword", "tlsCertificateKeyFilePasswordSecretId", "trustStore", "trustStorePassword", "wallet"] };
         opts = pulumi.mergeOptions(opts, secretOpts);
         super(Connection.__pulumiType, name, resourceInputs, opts);
     }
@@ -1161,10 +1286,11 @@ export class Connection extends pulumi.CustomResource {
  */
 export interface ConnectionState {
     /**
-     * (Updatable) Access key ID for Amazon connection types.
-     * * AMAZON_KINESIS: Access key ID to access Amazon Kinesis.
-     * * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-     *   Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+     * (Updatable)
+     * * AMAZON_KINESIS: Access key ID used to access Amazon Kinesis.
+     * * AMAZON_S3: Access key ID used to access the Amazon S3 bucket.
+     *
+     * Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
      */
     accessKeyId?: pulumi.Input<string | undefined>;
     /**
@@ -1186,20 +1312,48 @@ export interface ConnectionState {
      */
     additionalAttributes?: pulumi.Input<pulumi.Input<inputs.GoldenGate.ConnectionAdditionalAttribute>[] | undefined>;
     /**
-     * (Updatable) The information about new authentication details for an AI Model connection.
+     * (Updatable) Location used to share engine application artifacts.
+     * * DATABRICKS_ENGINE: Location used to share Databricks application artifacts.
+     * * SPARK: Location used to share Spark application artifacts with a remote cluster.
+     */
+    artifactLocation?: pulumi.Input<inputs.GoldenGate.ConnectionArtifactLocation | undefined>;
+    /**
+     * (Updatable) Authentication details for an AI Model or AI Provider connection.
      */
     authDetails?: pulumi.Input<inputs.GoldenGate.ConnectionAuthDetails | undefined>;
+    /**
+     * (Updatable) The shared secret used for Spark authentication. Applicable when authenticationType is SHARED_SECRET.
+     *
+     * Deprecated: This field is deprecated and replaced by "authSecretSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * @deprecated The 'auth_secret' field has been deprecated. Please use 'auth_secret_secret_id' instead.
+     */
+    authSecret?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Spark authentication shared secret. Applicable when authenticationType is SHARED_SECRET. Note: When provided, 'authSecret' field must not be provided.
+     */
+    authSecretSecretId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Personal access token used to connect to the Databricks Engine REST API. Only applicable for authenticationType == PERSONAL_ACCESS_TOKEN. Deprecated: This field is deprecated and replaced by "authTokenSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * @deprecated The 'auth_token' field has been deprecated. Please use 'auth_token_secret_id' instead.
+     */
+    authToken?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the personal access token is stored. Only applicable for authenticationType == PERSONAL_ACCESS_TOKEN. Note: When provided, 'authToken' field must not be provided.
+     */
+    authTokenSecretId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
      */
     authenticationMode?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) Used authentication mechanism to be provided for the following connection types:
-     * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
-     * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
-     * * DATABRICKS - Required fields by authentication types:
-     * * PERSONAL_ACCESS_TOKEN: username is always 'token', user must enter password
-     * * OAUTH_M2M: user must enter clientId and clientSecret
+     * (Updatable) Authentication mechanism; supported values depend on `connectionType`.
+     * * DATABRICKS: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M.
+     * * DATABRICKS_ENGINE: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M for the Databricks Engine REST API.
+     * * JAVA_MESSAGE_SERVICE: Authentication type for Java Message Service. The default is NONE.
+     * * SPARK: Use SHARED_SECRET only when the target cluster has `spark.authenticate=true`. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET.
+     * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE: Use the authentication type supported by the target service.
      */
     authenticationType?: pulumi.Input<string | undefined>;
     /**
@@ -1222,29 +1376,25 @@ export interface ConnectionState {
     catalog?: pulumi.Input<inputs.GoldenGate.ConnectionCatalog | undefined>;
     /**
      * (Updatable)
-     * * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-     * * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
-     * * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+     * * AZURE_DATA_LAKE_STORAGE: Azure application client ID, required for AZURE_ACTIVE_DIRECTORY authentication.
+     * * DATABRICKS, DATABRICKS_ENGINE: OAuth client ID, applicable to OAUTH_M2M authentication.
+     * * MICROSOFT_FABRIC: Azure application client ID.
      */
     clientId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * AZURE_DATA_LAKE_STORAGE: Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
-     * * DATABRICKS: OAuth client secret, only applicable for authenticationType == OAUTH_M2M.
-     * * MICROSOFT_FABRIC: Client secret associated with the client id.
-     *   Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Plaintext client secret for the selected connection type. For DATABRICKS and DATABRICKS_ENGINE it applies to OAUTH_M2M authentication. Deprecated: use `clientSecretSecretId`.
      *
      * @deprecated The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.
      */
     clientSecret?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-     * * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
-     * * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-     *   Note: When provided, 'clientSecret' field must not be provided.
+     * (Updatable) Secret OCID containing the client secret. For DATABRICKS and DATABRICKS_ENGINE it applies to OAUTH_M2M authentication. When provided, `clientSecret` must not be provided.
      */
     clientSecretSecretId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Spark master URL used for job submission. Required for both submitMode SUBMIT and REST. e.g.: 'spark://spark-master.example.com:7077' High availability can be configured with a comma-separated list, for example: 'spark://h1.example.com:7077,h2.example.com:7077'
+     */
+    clusterEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
      */
@@ -1262,10 +1412,7 @@ export interface ConnectionState {
      */
     connectionFactory?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * ORACLE: Connect descriptor or Easy Connect Naming method used to connect to a database.
-     * * MONGODB: MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
-     * * AZURE_SYNAPSE_ANALYTICS: JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+     * (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
      */
     connectionString?: pulumi.Input<string | undefined>;
     /**
@@ -1274,11 +1421,11 @@ export interface ConnectionState {
     connectionType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable)
-     * * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
-     * * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
-     * * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
-     * * DATABRICKS: Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
-     * * ORACLE_AI_DATA_PLATFORM: Connection URL. It must start with 'jdbc:spark://'
+     * * AMAZON_REDSHIFT: JDBC connection URL. e.g.: `jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb`
+     * * DATABRICKS: JDBC connection URL. e.g.: `jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb`
+     * * JAVA_MESSAGE_SERVICE: Connection URL specifying the protocol, host, and port. e.g.: `mq://myjms.host.domain:7676`
+     * * ORACLE_AI_DATA_PLATFORM: Connection URL beginning with `jdbc:spark://`.
+     * * SNOWFLAKE: JDBC connection URL. e.g.: `jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>`
      */
     connectionUrl?: pulumi.Input<string | undefined>;
     /**
@@ -1393,30 +1540,35 @@ export interface ConnectionState {
      */
     keyId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Base64-encoded key store content.
+     * * SPARK: Client key store used for mutual TLS when `securityProtocol` is TLS.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: KeyStore file used by the target connection.
+     *
+     * Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'key_store' field has been deprecated. Please use 'key_store_secret_id' instead.
      */
     keyStore?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Password for `keyStore`. For SPARK, it is required when a client key store is supplied.
+     *
+     * Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead.
      */
     keyStorePassword?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
-     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
-     * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
-     * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
-     *   Note: When provided, 'keyStorePassword' field must not be provided.
+     * (Updatable) Secret OCID containing the key store password. For SPARK, it is required when `keyStoreSecretId` is supplied. When provided, `keyStorePassword` must not be provided.
      */
     keyStorePasswordSecretId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
+     * (Updatable) Secret OCID containing the key store content. For SPARK, it applies when `securityProtocol` is TLS. When provided, `keyStore` must not be provided.
      */
     keyStoreSecretId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Client key store format used for mutual TLS. Applicable when securityProtocol is TLS and a client key store is provided. Defaults to JKS when not provided. Provide this only when a client key store is provided.
+     */
+    keyStoreType?: pulumi.Input<string | undefined>;
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
@@ -1438,7 +1590,7 @@ export interface ConnectionState {
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) The password Oracle GoldenGate uses to connect to Snowflake platform. Deprecated: This field is deprecated and replaced by "passwordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate Snowflake is phasing out password authentication for legacy service users. Oracle GoldenGate Snowflake connections will support only key-pair authentication. See the Snowflake documentation for details: https://docs.snowflake.com/en/user-guide/security-mfa-rollout
      *
      * @deprecated The 'password' field has been deprecated. Please use 'password_secret_id' instead.
      */
@@ -1480,6 +1632,10 @@ export interface ConnectionState {
      */
     producerProperties?: pulumi.Input<string | undefined>;
     /**
+     * Optional identifier of the AI Provider Connection backing this AI Model Connection. When provided, it must reference an existing Active connection of type `AI_PROVIDER`. When `providerId` is set, `providerType` and `authDetails` must not be provided on the AI Model Connection, because provider metadata is resolved from the referenced AI Provider Connection. When `providerId` is not set, the AI Model Connection must provide inline provider metadata using `providerType` and `authDetails`.
+     */
+    providerId?: pulumi.Input<string | undefined>;
+    /**
      * AI Provider type used by the AI Model Connection.
      */
     providerType?: pulumi.Input<string | undefined>;
@@ -1492,18 +1648,35 @@ export interface ConnectionState {
      */
     redisClusterId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The name of the region:
-     * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM, ORACLE_NOSQL - OCI region, e.g.: 'us-ashburn-1'. If not provided, backend will default to the default region.
-     * * AMAZON_KINESIS - AWS region, e.g.: 'us-west-1'. If not provided, GoldenGate will default to 'us-west-1'. Note: this property will become mandatory after July 30, 2026.
-     * * AMAZON_S3 - AWS region where the bucket is created, e.g.: 'us-west-2'. If not provided, GoldenGate will default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
+     * (Updatable) The name of the AWS region where the bucket is created. If not provided, GoldenGate will default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
      */
     region?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The BASE64URL-encoded HMAC secret key used to sign REST submission requests when the Spark master's REST endpoint is protected by the JWS filter. Applicable only when submitMode is REST and the cluster enforces REST request signing. This setting is independent of authenticationType.
+     *
+     * Deprecated: This field is deprecated and replaced by "restAuthSecretKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * @deprecated The 'rest_auth_secret_key' field has been deprecated. Please use 'rest_auth_secret_key_secret_id' instead.
+     */
+    restAuthSecretKey?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the REST submission signing key. Applicable only when submitMode is REST and the cluster enforces REST request signing. This setting is independent of authenticationType. Note: When provided, 'restAuthSecretKey' field must not be provided.
+     */
+    restAuthSecretKeySecretId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Spark standalone REST submission base URL. e.g.: 'https://spark-master.example.com:6066' Applicable only and required when submitMode is REST.
+     */
+    restEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Controls the network traffic direction to the target: SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected. SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
      *
      * Deprecated: SHARED_SERVICE_ENDPOINT is deprecated. Use another supported routingMethod value, or update existing connections to use a supported routing method. This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     routingMethod?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Cipher transform used for Spark RPC encryption. Applicable when securityProtocol is AES_RPC. Defaults to AES_CTR_NOPADDING when not provided.
+     */
+    rpcCipher?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
@@ -1515,19 +1688,15 @@ export interface ConnectionState {
      */
     sasTokenSecretId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * AMAZON_KINESIS: Secret access key to access the Amazon Kinesis.
-     * * AMAZON_S3: Secret access key to access the Amazon S3 bucket.
-     *   Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Secret access key to access the Amazon S3 bucket.
+     *
+     * Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
      */
     secretAccessKey?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * AMAZON_KINESIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored.
-     * * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-     *   Note: When provided, 'secretAccessKey' field must not be provided.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
      */
     secretAccessKeySecretId?: pulumi.Input<string | undefined>;
     /**
@@ -1535,40 +1704,23 @@ export interface ConnectionState {
      */
     securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * (Updatable)
-     * * DB2: Security protocol for the DB2 database.
-     * * ELASTICSEARCH: Security protocol for Elasticsearch.
-     * * JAVA_MESSAGE_SERVICE: Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
-     * * KAFKA: Security Type for Kafka.
-     * * MICROSOFT_SQLSERVER: Security Type for Microsoft SQL Server.
-     * * MONGODB: Security Type for MongoDB.
-     * * MYSQL: Security Type for MySQL.
-     * * POSTGRESQL: Security protocol for PostgreSQL.
-     * * REDIS: Security protocol for Redis.
+     * (Updatable) Security protocol; supported values depend on `connectionType`.
+     * * SPARK: PLAINTEXT, TLS, AES_RPC, or SASL_ENCRYPTED. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET authentication.
+     * * DB2, ELASTICSEARCH, JAVA_MESSAGE_SERVICE, KAFKA, MICROSOFT_SQLSERVER, MONGODB, MYSQL, POSTGRESQL, REDIS: Use the protocol supported by the target service.
      */
     securityProtocol?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * ELASTICSEARCH: Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
-     * * REDIS: Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 6379. Used for establishing the initial connection to the Redis cluster. Example: `"server1.example.com:6379,server2.example.com:6379"`
+     * (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
      */
     servers?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * GOOGLE_BIGQUERY: The base64 encoded content of the service account key file containing the credentials required to use Google BigQuery.
-     * * GOOGLE_CLOUD_STORAGE: The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
-     * * GOOGLE_PUBSUB: The base64 encoded content of the service account key file containing the credentials required to use Google PubSub.
-     *   Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.
      */
     serviceAccountKeyFile?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * GOOGLE_BIGQUERY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google BigQuery.
-     * * GOOGLE_CLOUD_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
-     * * GOOGLE_PUBSUB: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google PubSub.
-     *   Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
      */
     serviceAccountKeyFileSecretId?: pulumi.Input<string | undefined>;
     /**
@@ -1635,44 +1787,40 @@ export interface ConnectionState {
      */
     sslClientKeystoredbSecretId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * MYSQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-     * * POSTGRESQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      */
     sslCrl?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * MYSQL: Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
-     * * POSTGRESQL: The base64 encoded private key of the PostgreSQL server. The supported file formats are .pem and .crt.
-     *   Deprecated: This field is deprecated and replaced by "sslKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead.
      */
     sslKey?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Password for the certificate private key inside the client key store.
+     * * SPARK: Applicable when `securityProtocol` is TLS and a client key store is provided.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY: Provide it when the private-key password differs from the key store password.
+     *
+     * Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead.
      */
     sslKeyPassword?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * JAVA_MESSAGE_SERVICE, KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided.
-     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
-     *   Note: When provided, 'sslKeyPassword' field must not be provided.
+     * (Updatable) Secret OCID containing the certificate private-key password inside the client key store.
+     * * SPARK: Applicable when `securityProtocol` is TLS and a client key store is provided.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY: Provide it when the private-key password differs from the key store password.
+     *
+     * When provided, `sslKeyPassword` must not be provided.
      */
     sslKeyPasswordSecretId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * MYSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
-     * * POSTGRESQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
-     *   Note: When provided, 'sslKey' field must not be provided.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+     * * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
      */
     sslKeySecretId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * MYSQL: SSL modes for MySQL.
-     * * POSTGRESQL: SSL modes for PostgreSQL.
+     * (Updatable) SSL modes for PostgreSQL.
      */
     sslMode?: pulumi.Input<string | undefined>;
     /**
@@ -1696,6 +1844,10 @@ export interface ConnectionState {
      */
     streamPoolId?: pulumi.Input<string | undefined>;
     /**
+     * (Updatable) Selects the submission channel. SUBMIT uses the Spark master RPC endpoint. REST uses the Spark standalone REST submission gateway.
+     */
+    submitMode?: pulumi.Input<string | undefined>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
      */
     subnetId?: pulumi.Input<string | undefined>;
@@ -1708,7 +1860,14 @@ export interface ConnectionState {
      */
     systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * The technology type.
+     * Technology type selected for the connection.
+     * * AI_MODEL: AI Model technology type.
+     * * AI_PROVIDER: AI Provider technology type.
+     * * DATABRICKS_ENGINE: Databricks Engine technology type.
+     * * ICEBERG: Iceberg technology type. APACHE_ICEBERG supports all catalog types; AMAZON_S3_TABLES supports only REST catalog and S3 storage.
+     * * KAFKA_SCHEMA_REGISTRY: Kafka Schema Registry technology type.
+     * * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform Engine technology type.
+     * * SPARK: Spark technology type.
      */
     technologyType?: pulumi.Input<string | undefined>;
     /**
@@ -1752,40 +1911,49 @@ export interface ConnectionState {
      * * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
      */
     tlsCertificateKeyFileSecretId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) TLS protocol negotiated by the Spark client. Applicable when securityProtocol is TLS. Defaults to TLS_V1_3 when not provided. Must be supported by the target cluster.
+     */
+    tlsProtocol?: pulumi.Input<string | undefined>;
     triggerRefresh?: pulumi.Input<boolean | undefined>;
     /**
-     * (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Base64-encoded trust store content.
+     * * SPARK: Trust store used to validate the Spark server certificate when `securityProtocol` is TLS.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: TrustStore file used by the target connection.
+     *
+     * Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.
      */
     trustStore?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Password for `trustStore`. For SPARK, it is required when a trust store is supplied.
+     *
+     * Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead.
      */
     trustStorePassword?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
-     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
-     * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
-     * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
-     *   Note: When provided, 'trustStorePassword' field must not be provided.
+     * (Updatable) Secret OCID containing the trust store password. For SPARK, it is required when `trustStoreSecretId` is supplied. When provided, `trustStorePassword` must not be provided.
      */
     trustStorePasswordSecretId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
+     * (Updatable) Secret OCID containing the trust store content. For SPARK, it applies when `securityProtocol` is TLS. When provided, `trustStore` must not be provided.
      */
     trustStoreSecretId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Trust store format used by the Spark client. Applicable when securityProtocol is TLS and a trust store is provided. Defaults to JKS when not provided. Provide this only when a trust store is provided.
+     */
+    trustStoreType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
      */
     url?: pulumi.Input<string | undefined>;
     /**
      * (Updatable)
-     * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
-     * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+     * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses Object Storage. The user must have write access to the bucket. If omitted, the service defaults to the user calling the API.
+     * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses the Oracle NoSQL database. The user must have write access to the table. If omitted, the service defaults to the user calling the API.
      */
     userId?: pulumi.Input<string | undefined>;
     /**
@@ -1808,11 +1976,17 @@ export interface ConnectionState {
     wallet?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+     */
+    walletSecretId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable)
+     * * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://<workspace>.cloud.databricks.com/api/2.0/`.
+     * * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    walletSecretId?: pulumi.Input<string | undefined>;
+    workspaceUrl?: pulumi.Input<string | undefined>;
 }
 
 /**
@@ -1820,10 +1994,11 @@ export interface ConnectionState {
  */
 export interface ConnectionArgs {
     /**
-     * (Updatable) Access key ID for Amazon connection types.
-     * * AMAZON_KINESIS: Access key ID to access Amazon Kinesis.
-     * * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-     *   Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+     * (Updatable)
+     * * AMAZON_KINESIS: Access key ID used to access Amazon Kinesis.
+     * * AMAZON_S3: Access key ID used to access the Amazon S3 bucket.
+     *
+     * Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
      */
     accessKeyId?: pulumi.Input<string | undefined>;
     /**
@@ -1845,20 +2020,48 @@ export interface ConnectionArgs {
      */
     additionalAttributes?: pulumi.Input<pulumi.Input<inputs.GoldenGate.ConnectionAdditionalAttribute>[] | undefined>;
     /**
-     * (Updatable) The information about new authentication details for an AI Model connection.
+     * (Updatable) Location used to share engine application artifacts.
+     * * DATABRICKS_ENGINE: Location used to share Databricks application artifacts.
+     * * SPARK: Location used to share Spark application artifacts with a remote cluster.
+     */
+    artifactLocation?: pulumi.Input<inputs.GoldenGate.ConnectionArtifactLocation | undefined>;
+    /**
+     * (Updatable) Authentication details for an AI Model or AI Provider connection.
      */
     authDetails?: pulumi.Input<inputs.GoldenGate.ConnectionAuthDetails | undefined>;
+    /**
+     * (Updatable) The shared secret used for Spark authentication. Applicable when authenticationType is SHARED_SECRET.
+     *
+     * Deprecated: This field is deprecated and replaced by "authSecretSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * @deprecated The 'auth_secret' field has been deprecated. Please use 'auth_secret_secret_id' instead.
+     */
+    authSecret?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Spark authentication shared secret. Applicable when authenticationType is SHARED_SECRET. Note: When provided, 'authSecret' field must not be provided.
+     */
+    authSecretSecretId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Personal access token used to connect to the Databricks Engine REST API. Only applicable for authenticationType == PERSONAL_ACCESS_TOKEN. Deprecated: This field is deprecated and replaced by "authTokenSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * @deprecated The 'auth_token' field has been deprecated. Please use 'auth_token_secret_id' instead.
+     */
+    authToken?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the personal access token is stored. Only applicable for authenticationType == PERSONAL_ACCESS_TOKEN. Note: When provided, 'authToken' field must not be provided.
+     */
+    authTokenSecretId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
      */
     authenticationMode?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) Used authentication mechanism to be provided for the following connection types:
-     * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
-     * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
-     * * DATABRICKS - Required fields by authentication types:
-     * * PERSONAL_ACCESS_TOKEN: username is always 'token', user must enter password
-     * * OAUTH_M2M: user must enter clientId and clientSecret
+     * (Updatable) Authentication mechanism; supported values depend on `connectionType`.
+     * * DATABRICKS: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M.
+     * * DATABRICKS_ENGINE: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M for the Databricks Engine REST API.
+     * * JAVA_MESSAGE_SERVICE: Authentication type for Java Message Service. The default is NONE.
+     * * SPARK: Use SHARED_SECRET only when the target cluster has `spark.authenticate=true`. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET.
+     * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE: Use the authentication type supported by the target service.
      */
     authenticationType?: pulumi.Input<string | undefined>;
     /**
@@ -1881,29 +2084,25 @@ export interface ConnectionArgs {
     catalog?: pulumi.Input<inputs.GoldenGate.ConnectionCatalog | undefined>;
     /**
      * (Updatable)
-     * * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-     * * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
-     * * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+     * * AZURE_DATA_LAKE_STORAGE: Azure application client ID, required for AZURE_ACTIVE_DIRECTORY authentication.
+     * * DATABRICKS, DATABRICKS_ENGINE: OAuth client ID, applicable to OAUTH_M2M authentication.
+     * * MICROSOFT_FABRIC: Azure application client ID.
      */
     clientId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * AZURE_DATA_LAKE_STORAGE: Azure client secret (aka application password) for authentication. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
-     * * DATABRICKS: OAuth client secret, only applicable for authenticationType == OAUTH_M2M.
-     * * MICROSOFT_FABRIC: Client secret associated with the client id.
-     *   Deprecated: This field is deprecated and replaced by "clientSecretSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Plaintext client secret for the selected connection type. For DATABRICKS and DATABRICKS_ENGINE it applies to OAUTH_M2M authentication. Deprecated: use `clientSecretSecretId`.
      *
      * @deprecated The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.
      */
     clientSecret?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-     * * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
-     * * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-     *   Note: When provided, 'clientSecret' field must not be provided.
+     * (Updatable) Secret OCID containing the client secret. For DATABRICKS and DATABRICKS_ENGINE it applies to OAUTH_M2M authentication. When provided, `clientSecret` must not be provided.
      */
     clientSecretSecretId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Spark master URL used for job submission. Required for both submitMode SUBMIT and REST. e.g.: 'spark://spark-master.example.com:7077' High availability can be configured with a comma-separated list, for example: 'spark://h1.example.com:7077,h2.example.com:7077'
+     */
+    clusterEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
      */
@@ -1921,10 +2120,7 @@ export interface ConnectionArgs {
      */
     connectionFactory?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * ORACLE: Connect descriptor or Easy Connect Naming method used to connect to a database.
-     * * MONGODB: MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
-     * * AZURE_SYNAPSE_ANALYTICS: JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+     * (Updatable) JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
      */
     connectionString?: pulumi.Input<string | undefined>;
     /**
@@ -1933,11 +2129,11 @@ export interface ConnectionArgs {
     connectionType: pulumi.Input<string>;
     /**
      * (Updatable)
-     * * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
-     * * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
-     * * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
-     * * DATABRICKS: Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
-     * * ORACLE_AI_DATA_PLATFORM: Connection URL. It must start with 'jdbc:spark://'
+     * * AMAZON_REDSHIFT: JDBC connection URL. e.g.: `jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb`
+     * * DATABRICKS: JDBC connection URL. e.g.: `jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb`
+     * * JAVA_MESSAGE_SERVICE: Connection URL specifying the protocol, host, and port. e.g.: `mq://myjms.host.domain:7676`
+     * * ORACLE_AI_DATA_PLATFORM: Connection URL beginning with `jdbc:spark://`.
+     * * SNOWFLAKE: JDBC connection URL. e.g.: `jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>`
      */
     connectionUrl?: pulumi.Input<string | undefined>;
     /**
@@ -2048,30 +2244,35 @@ export interface ConnectionArgs {
      */
     keyId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Base64-encoded key store content.
+     * * SPARK: Client key store used for mutual TLS when `securityProtocol` is TLS.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: KeyStore file used by the target connection.
+     *
+     * Deprecated: This field is deprecated and replaced by "keyStoreSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'key_store' field has been deprecated. Please use 'key_store_secret_id' instead.
      */
     keyStore?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The KeyStore password. Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Password for `keyStore`. For SPARK, it is required when a client key store is supplied.
+     *
+     * Deprecated: This field is deprecated and replaced by "keyStorePasswordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead.
      */
     keyStorePassword?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
-     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
-     * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
-     * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
-     *   Note: When provided, 'keyStorePassword' field must not be provided.
+     * (Updatable) Secret OCID containing the key store password. For SPARK, it is required when `keyStoreSecretId` is supplied. When provided, `keyStorePassword` must not be provided.
      */
     keyStorePasswordSecretId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
+     * (Updatable) Secret OCID containing the key store content. For SPARK, it applies when `securityProtocol` is TLS. When provided, `keyStore` must not be provided.
      */
     keyStoreSecretId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Client key store format used for mutual TLS. Applicable when securityProtocol is TLS and a client key store is provided. Defaults to JKS when not provided. Provide this only when a client key store is provided.
+     */
+    keyStoreType?: pulumi.Input<string | undefined>;
     /**
      * Locks associated with this resource.
      */
@@ -2089,7 +2290,7 @@ export interface ConnectionArgs {
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) The password Oracle GoldenGate uses to connect to Snowflake platform. Deprecated: This field is deprecated and replaced by "passwordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate Snowflake is phasing out password authentication for legacy service users. Oracle GoldenGate Snowflake connections will support only key-pair authentication. See the Snowflake documentation for details: https://docs.snowflake.com/en/user-guide/security-mfa-rollout
      *
      * @deprecated The 'password' field has been deprecated. Please use 'password_secret_id' instead.
      */
@@ -2127,6 +2328,10 @@ export interface ConnectionArgs {
      */
     producerProperties?: pulumi.Input<string | undefined>;
     /**
+     * Optional identifier of the AI Provider Connection backing this AI Model Connection. When provided, it must reference an existing Active connection of type `AI_PROVIDER`. When `providerId` is set, `providerType` and `authDetails` must not be provided on the AI Model Connection, because provider metadata is resolved from the referenced AI Provider Connection. When `providerId` is not set, the AI Model Connection must provide inline provider metadata using `providerType` and `authDetails`.
+     */
+    providerId?: pulumi.Input<string | undefined>;
+    /**
      * AI Provider type used by the AI Model Connection.
      */
     providerType?: pulumi.Input<string | undefined>;
@@ -2139,18 +2344,35 @@ export interface ConnectionArgs {
      */
     redisClusterId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The name of the region:
-     * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM, ORACLE_NOSQL - OCI region, e.g.: 'us-ashburn-1'. If not provided, backend will default to the default region.
-     * * AMAZON_KINESIS - AWS region, e.g.: 'us-west-1'. If not provided, GoldenGate will default to 'us-west-1'. Note: this property will become mandatory after July 30, 2026.
-     * * AMAZON_S3 - AWS region where the bucket is created, e.g.: 'us-west-2'. If not provided, GoldenGate will default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
+     * (Updatable) The name of the AWS region where the bucket is created. If not provided, GoldenGate will default to 'us-west-2'. Note: this property will become mandatory after May 20, 2026.
      */
     region?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The BASE64URL-encoded HMAC secret key used to sign REST submission requests when the Spark master's REST endpoint is protected by the JWS filter. Applicable only when submitMode is REST and the cluster enforces REST request signing. This setting is independent of authenticationType.
+     *
+     * Deprecated: This field is deprecated and replaced by "restAuthSecretKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     *
+     * @deprecated The 'rest_auth_secret_key' field has been deprecated. Please use 'rest_auth_secret_key_secret_id' instead.
+     */
+    restAuthSecretKey?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the REST submission signing key. Applicable only when submitMode is REST and the cluster enforces REST request signing. This setting is independent of authenticationType. Note: When provided, 'restAuthSecretKey' field must not be provided.
+     */
+    restAuthSecretKeySecretId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Spark standalone REST submission base URL. e.g.: 'https://spark-master.example.com:6066' Applicable only and required when submitMode is REST.
+     */
+    restEndpoint?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Controls the network traffic direction to the target: SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected. SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
      *
      * Deprecated: SHARED_SERVICE_ENDPOINT is deprecated. Use another supported routingMethod value, or update existing connections to use a supported routing method. This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      */
     routingMethod?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Cipher transform used for Spark RPC encryption. Applicable when securityProtocol is AES_RPC. Defaults to AES_CTR_NOPADDING when not provided.
+     */
+    rpcCipher?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
@@ -2162,19 +2384,15 @@ export interface ConnectionArgs {
      */
     sasTokenSecretId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * AMAZON_KINESIS: Secret access key to access the Amazon Kinesis.
-     * * AMAZON_S3: Secret access key to access the Amazon S3 bucket.
-     *   Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Secret access key to access the Amazon S3 bucket.
+     *
+     * Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
      */
     secretAccessKey?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * AMAZON_KINESIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored.
-     * * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-     *   Note: When provided, 'secretAccessKey' field must not be provided.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored. Note: When provided, 'secretAccessKey' field must not be provided.
      */
     secretAccessKeySecretId?: pulumi.Input<string | undefined>;
     /**
@@ -2182,40 +2400,23 @@ export interface ConnectionArgs {
      */
     securityAttributes?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
-     * (Updatable)
-     * * DB2: Security protocol for the DB2 database.
-     * * ELASTICSEARCH: Security protocol for Elasticsearch.
-     * * JAVA_MESSAGE_SERVICE: Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
-     * * KAFKA: Security Type for Kafka.
-     * * MICROSOFT_SQLSERVER: Security Type for Microsoft SQL Server.
-     * * MONGODB: Security Type for MongoDB.
-     * * MYSQL: Security Type for MySQL.
-     * * POSTGRESQL: Security protocol for PostgreSQL.
-     * * REDIS: Security protocol for Redis.
+     * (Updatable) Security protocol; supported values depend on `connectionType`.
+     * * SPARK: PLAINTEXT, TLS, AES_RPC, or SASL_ENCRYPTED. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET authentication.
+     * * DB2, ELASTICSEARCH, JAVA_MESSAGE_SERVICE, KAFKA, MICROSOFT_SQLSERVER, MONGODB, MYSQL, POSTGRESQL, REDIS: Use the protocol supported by the target service.
      */
     securityProtocol?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * ELASTICSEARCH: Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
-     * * REDIS: Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 6379. Used for establishing the initial connection to the Redis cluster. Example: `"server1.example.com:6379,server2.example.com:6379"`
+     * (Updatable) Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
      */
     servers?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * GOOGLE_BIGQUERY: The base64 encoded content of the service account key file containing the credentials required to use Google BigQuery.
-     * * GOOGLE_CLOUD_STORAGE: The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage.
-     * * GOOGLE_PUBSUB: The base64 encoded content of the service account key file containing the credentials required to use Google PubSub.
-     *   Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by "serviceAccountKeyFileSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.
      */
     serviceAccountKeyFile?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * GOOGLE_BIGQUERY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google BigQuery.
-     * * GOOGLE_CLOUD_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
-     * * GOOGLE_PUBSUB: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google PubSub.
-     *   Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage. Note: When provided, 'serviceAccountKeyFile' field must not be provided.
      */
     serviceAccountKeyFileSecretId?: pulumi.Input<string | undefined>;
     /**
@@ -2282,44 +2483,40 @@ export interface ConnectionArgs {
      */
     sslClientKeystoredbSecretId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * MYSQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-     * * POSTGRESQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * (Updatable) The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      */
     sslCrl?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * MYSQL: Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL).
-     * * POSTGRESQL: The base64 encoded private key of the PostgreSQL server. The supported file formats are .pem and .crt.
-     *   Deprecated: This field is deprecated and replaced by "sslKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by "sslKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead.
      */
     sslKey?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided. Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Password for the certificate private key inside the client key store.
+     * * SPARK: Applicable when `securityProtocol` is TLS and a client key store is provided.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY: Provide it when the private-key password differs from the key store password.
+     *
+     * Deprecated: This field is deprecated and replaced by "sslKeyPasswordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead.
      */
     sslKeyPassword?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * JAVA_MESSAGE_SERVICE, KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided.
-     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
-     *   Note: When provided, 'sslKeyPassword' field must not be provided.
+     * (Updatable) Secret OCID containing the certificate private-key password inside the client key store.
+     * * SPARK: Applicable when `securityProtocol` is TLS and a client key store is provided.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY: Provide it when the private-key password differs from the key store password.
+     *
+     * When provided, `sslKeyPassword` must not be provided.
      */
     sslKeyPasswordSecretId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * MYSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
-     * * POSTGRESQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
-     *   Note: When provided, 'sslKey' field must not be provided.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+     * * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
      */
     sslKeySecretId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * MYSQL: SSL modes for MySQL.
-     * * POSTGRESQL: SSL modes for PostgreSQL.
+     * (Updatable) SSL modes for PostgreSQL.
      */
     sslMode?: pulumi.Input<string | undefined>;
     /**
@@ -2339,6 +2536,10 @@ export interface ConnectionArgs {
      */
     streamPoolId?: pulumi.Input<string | undefined>;
     /**
+     * (Updatable) Selects the submission channel. SUBMIT uses the Spark master RPC endpoint. REST uses the Spark standalone REST submission gateway.
+     */
+    submitMode?: pulumi.Input<string | undefined>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
      */
     subnetId?: pulumi.Input<string | undefined>;
@@ -2347,7 +2548,14 @@ export interface ConnectionArgs {
      */
     subscriptionId?: pulumi.Input<string | undefined>;
     /**
-     * The technology type.
+     * Technology type selected for the connection.
+     * * AI_MODEL: AI Model technology type.
+     * * AI_PROVIDER: AI Provider technology type.
+     * * DATABRICKS_ENGINE: Databricks Engine technology type.
+     * * ICEBERG: Iceberg technology type. APACHE_ICEBERG supports all catalog types; AMAZON_S3_TABLES supports only REST catalog and S3 storage.
+     * * KAFKA_SCHEMA_REGISTRY: Kafka Schema Registry technology type.
+     * * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform Engine technology type.
+     * * SPARK: Spark technology type.
      */
     technologyType: pulumi.Input<string>;
     /**
@@ -2383,40 +2591,49 @@ export interface ConnectionArgs {
      * * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
      */
     tlsCertificateKeyFileSecretId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) TLS protocol negotiated by the Spark client. Applicable when securityProtocol is TLS. Defaults to TLS_V1_3 when not provided. Must be supported by the target cluster.
+     */
+    tlsProtocol?: pulumi.Input<string | undefined>;
     triggerRefresh?: pulumi.Input<boolean | undefined>;
     /**
-     * (Updatable) The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Base64-encoded trust store content.
+     * * SPARK: Trust store used to validate the Spark server certificate when `securityProtocol` is TLS.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: TrustStore file used by the target connection.
+     *
+     * Deprecated: This field is deprecated and replaced by "trustStoreSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.
      */
     trustStore?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The TrustStore password. Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * (Updatable) Password for `trustStore`. For SPARK, it is required when a trust store is supplied.
+     *
+     * Deprecated: This field is deprecated and replaced by "trustStorePasswordSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      *
      * @deprecated The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead.
      */
     trustStorePassword?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable)
-     * * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
-     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
-     * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
-     * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
-     *   Note: When provided, 'trustStorePassword' field must not be provided.
+     * (Updatable) Secret OCID containing the trust store password. For SPARK, it is required when `trustStoreSecretId` is supplied. When provided, `trustStorePassword` must not be provided.
      */
     trustStorePasswordSecretId?: pulumi.Input<string | undefined>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
+     * (Updatable) Secret OCID containing the trust store content. For SPARK, it applies when `securityProtocol` is TLS. When provided, `trustStore` must not be provided.
      */
     trustStoreSecretId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable) Trust store format used by the Spark client. Applicable when securityProtocol is TLS and a trust store is provided. Defaults to JKS when not provided. Provide this only when a trust store is provided.
+     */
+    trustStoreType?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
      */
     url?: pulumi.Input<string | undefined>;
     /**
      * (Updatable)
-     * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
-     * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+     * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses Object Storage. The user must have write access to the bucket. If omitted, the service defaults to the user calling the API.
+     * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses the Oracle NoSQL database. The user must have write access to the table. If omitted, the service defaults to the user calling the API.
      */
     userId?: pulumi.Input<string | undefined>;
     /**
@@ -2439,9 +2656,15 @@ export interface ConnectionArgs {
     wallet?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
+     */
+    walletSecretId?: pulumi.Input<string | undefined>;
+    /**
+     * (Updatable)
+     * * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://<workspace>.cloud.databricks.com/api/2.0/`.
+     * * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    walletSecretId?: pulumi.Input<string | undefined>;
+    workspaceUrl?: pulumi.Input<string | undefined>;
 }

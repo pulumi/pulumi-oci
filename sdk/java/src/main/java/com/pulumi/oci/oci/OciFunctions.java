@@ -255,6 +255,10 @@ import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestLogsPlainArgs;
 import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestPlainArgs;
 import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestsArgs;
 import com.pulumi.oci.oci.inputs.GetPsaPsaWorkRequestsPlainArgs;
+import com.pulumi.oci.oci.inputs.GetPssInstanceArgs;
+import com.pulumi.oci.oci.inputs.GetPssInstancePlainArgs;
+import com.pulumi.oci.oci.inputs.GetPssInstancesArgs;
+import com.pulumi.oci.oci.inputs.GetPssInstancesPlainArgs;
 import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionArgs;
 import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionPlainArgs;
 import com.pulumi.oci.oci.inputs.GetResourceAnalyticsMonitoredRegionsArgs;
@@ -404,6 +408,8 @@ import com.pulumi.oci.oci.outputs.GetPsaPsaWorkRequestErrorsResult;
 import com.pulumi.oci.oci.outputs.GetPsaPsaWorkRequestLogsResult;
 import com.pulumi.oci.oci.outputs.GetPsaPsaWorkRequestResult;
 import com.pulumi.oci.oci.outputs.GetPsaPsaWorkRequestsResult;
+import com.pulumi.oci.oci.outputs.GetPssInstanceResult;
+import com.pulumi.oci.oci.outputs.GetPssInstancesResult;
 import com.pulumi.oci.oci.outputs.GetResourceAnalyticsMonitoredRegionResult;
 import com.pulumi.oci.oci.outputs.GetResourceAnalyticsMonitoredRegionsResult;
 import com.pulumi.oci.oci.outputs.GetResourceAnalyticsResourceAnalyticsInstanceResult;
@@ -28506,6 +28512,531 @@ public final class OciFunctions {
      */
     public static CompletableFuture<GetPsaPsaWorkRequestsResult> getPsaPsaWorkRequestsPlain(GetPsaPsaWorkRequestsPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:oci/getPsaPsaWorkRequests:getPsaPsaWorkRequests", TypeShape.of(GetPsaPsaWorkRequestsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Instance resource in Oracle Cloud Infrastructure Pss service.
+     * 
+     * Gets information about an Instance.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPssInstanceArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstance = OciFunctions.getPssInstance(GetPssInstanceArgs.builder()
+     *             .instanceId(testInstanceOciPssInstance.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetPssInstanceResult> getPssInstance(GetPssInstanceArgs args) {
+        return getPssInstance(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Instance resource in Oracle Cloud Infrastructure Pss service.
+     * 
+     * Gets information about an Instance.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPssInstanceArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstance = OciFunctions.getPssInstance(GetPssInstanceArgs.builder()
+     *             .instanceId(testInstanceOciPssInstance.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetPssInstanceResult> getPssInstancePlain(GetPssInstancePlainArgs args) {
+        return getPssInstancePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Instance resource in Oracle Cloud Infrastructure Pss service.
+     * 
+     * Gets information about an Instance.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPssInstanceArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstance = OciFunctions.getPssInstance(GetPssInstanceArgs.builder()
+     *             .instanceId(testInstanceOciPssInstance.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetPssInstanceResult> getPssInstance(GetPssInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getPssInstance:getPssInstance", TypeShape.of(GetPssInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Instance resource in Oracle Cloud Infrastructure Pss service.
+     * 
+     * Gets information about an Instance.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPssInstanceArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstance = OciFunctions.getPssInstance(GetPssInstanceArgs.builder()
+     *             .instanceId(testInstanceOciPssInstance.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetPssInstanceResult> getPssInstance(GetPssInstanceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getPssInstance:getPssInstance", TypeShape.of(GetPssInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Instance resource in Oracle Cloud Infrastructure Pss service.
+     * 
+     * Gets information about an Instance.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPssInstanceArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstance = OciFunctions.getPssInstance(GetPssInstanceArgs.builder()
+     *             .instanceId(testInstanceOciPssInstance.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetPssInstanceResult> getPssInstancePlain(GetPssInstancePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getPssInstance:getPssInstance", TypeShape.of(GetPssInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Instances in Oracle Cloud Infrastructure Pss service.
+     * 
+     * Gets a list of Instances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPssInstancesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstances = OciFunctions.getPssInstances(GetPssInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(instanceDisplayName)
+     *             .id(instanceId)
+     *             .state(instanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetPssInstancesResult> getPssInstances() {
+        return getPssInstances(GetPssInstancesArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Instances in Oracle Cloud Infrastructure Pss service.
+     * 
+     * Gets a list of Instances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPssInstancesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstances = OciFunctions.getPssInstances(GetPssInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(instanceDisplayName)
+     *             .id(instanceId)
+     *             .state(instanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetPssInstancesResult> getPssInstancesPlain() {
+        return getPssInstancesPlain(GetPssInstancesPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Instances in Oracle Cloud Infrastructure Pss service.
+     * 
+     * Gets a list of Instances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPssInstancesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstances = OciFunctions.getPssInstances(GetPssInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(instanceDisplayName)
+     *             .id(instanceId)
+     *             .state(instanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetPssInstancesResult> getPssInstances(GetPssInstancesArgs args) {
+        return getPssInstances(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Instances in Oracle Cloud Infrastructure Pss service.
+     * 
+     * Gets a list of Instances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPssInstancesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstances = OciFunctions.getPssInstances(GetPssInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(instanceDisplayName)
+     *             .id(instanceId)
+     *             .state(instanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetPssInstancesResult> getPssInstancesPlain(GetPssInstancesPlainArgs args) {
+        return getPssInstancesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Instances in Oracle Cloud Infrastructure Pss service.
+     * 
+     * Gets a list of Instances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPssInstancesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstances = OciFunctions.getPssInstances(GetPssInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(instanceDisplayName)
+     *             .id(instanceId)
+     *             .state(instanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetPssInstancesResult> getPssInstances(GetPssInstancesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getPssInstances:getPssInstances", TypeShape.of(GetPssInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Instances in Oracle Cloud Infrastructure Pss service.
+     * 
+     * Gets a list of Instances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPssInstancesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstances = OciFunctions.getPssInstances(GetPssInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(instanceDisplayName)
+     *             .id(instanceId)
+     *             .state(instanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetPssInstancesResult> getPssInstances(GetPssInstancesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:oci/getPssInstances:getPssInstances", TypeShape.of(GetPssInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Instances in Oracle Cloud Infrastructure Pss service.
+     * 
+     * Gets a list of Instances.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetPssInstancesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testInstances = OciFunctions.getPssInstances(GetPssInstancesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(instanceDisplayName)
+     *             .id(instanceId)
+     *             .state(instanceState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetPssInstancesResult> getPssInstancesPlain(GetPssInstancesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:oci/getPssInstances:getPssInstances", TypeShape.of(GetPssInstancesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Monitored Region resource in Oracle Cloud Infrastructure Resource Analytics service.

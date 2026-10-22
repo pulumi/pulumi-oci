@@ -34,10 +34,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := generativeai.NewDedicatedAiCluster(ctx, "test_dedicated_ai_cluster", &generativeai.DedicatedAiClusterArgs{
-//				CompartmentId: pulumi.Any(compartmentId),
-//				Type:          pulumi.Any(dedicatedAiClusterType),
-//				UnitCount:     pulumi.Any(dedicatedAiClusterUnitCount),
-//				UnitShape:     pulumi.Any(dedicatedAiClusterUnitShape),
+//				CompartmentId:         pulumi.Any(compartmentId),
+//				Type:                  pulumi.Any(dedicatedAiClusterType),
+//				UnitCount:             pulumi.Any(dedicatedAiClusterUnitCount),
+//				UnitShape:             pulumi.Any(dedicatedAiClusterUnitShape),
+//				CapacityReservationId: pulumi.Any(testCapacityReservation.Id),
 //				DefinedTags: pulumi.StringMap{
 //					"Operations.CostCenter": pulumi.String("42"),
 //				},
@@ -68,6 +69,8 @@ type DedicatedAiCluster struct {
 
 	// The total capacity for a dedicated AI cluster.
 	Capacities DedicatedAiClusterCapacityArrayOutput `pulumi:"capacities"`
+	// The OCID of the capacity reservation.
+	CapacityReservationId pulumi.StringOutput `pulumi:"capacityReservationId"`
 	// (Updatable) The compartment OCID to create the dedicated AI cluster in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -212,6 +215,8 @@ func GetDedicatedAiCluster(ctx *pulumi.Context,
 type dedicatedAiClusterState struct {
 	// The total capacity for a dedicated AI cluster.
 	Capacities []DedicatedAiClusterCapacity `pulumi:"capacities"`
+	// The OCID of the capacity reservation.
+	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// (Updatable) The compartment OCID to create the dedicated AI cluster in.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -315,6 +320,8 @@ type dedicatedAiClusterState struct {
 type DedicatedAiClusterState struct {
 	// The total capacity for a dedicated AI cluster.
 	Capacities DedicatedAiClusterCapacityArrayInput
+	// The OCID of the capacity reservation.
+	CapacityReservationId pulumi.StringPtrInput
 	// (Updatable) The compartment OCID to create the dedicated AI cluster in.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -420,6 +427,8 @@ func (DedicatedAiClusterState) ElementType() reflect.Type {
 }
 
 type dedicatedAiClusterArgs struct {
+	// The OCID of the capacity reservation.
+	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// (Updatable) The compartment OCID to create the dedicated AI cluster in.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -512,6 +521,8 @@ type dedicatedAiClusterArgs struct {
 
 // The set of arguments for constructing a DedicatedAiCluster resource.
 type DedicatedAiClusterArgs struct {
+	// The OCID of the capacity reservation.
+	CapacityReservationId pulumi.StringPtrInput
 	// (Updatable) The compartment OCID to create the dedicated AI cluster in.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -692,6 +703,11 @@ func (o DedicatedAiClusterOutput) ToDedicatedAiClusterOutputWithContext(ctx cont
 // The total capacity for a dedicated AI cluster.
 func (o DedicatedAiClusterOutput) Capacities() DedicatedAiClusterCapacityArrayOutput {
 	return o.ApplyT(func(v *DedicatedAiCluster) DedicatedAiClusterCapacityArrayOutput { return v.Capacities }).(DedicatedAiClusterCapacityArrayOutput)
+}
+
+// The OCID of the capacity reservation.
+func (o DedicatedAiClusterOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v *DedicatedAiCluster) pulumi.StringOutput { return v.CapacityReservationId }).(pulumi.StringOutput)
 }
 
 // (Updatable) The compartment OCID to create the dedicated AI cluster in.

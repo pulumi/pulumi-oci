@@ -285,7 +285,7 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
         /// <summary>
-        /// Deployment Data for an OggDeployment
+        /// Deployment Data for an OggDeployment.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDeploymentOggDataResult> OggDatas;
         /// <summary>

@@ -868,7 +868,7 @@ func (o ClusterOutboundClusterConfigOutboundClusterArrayOutput) Index(i pulumi.I
 }
 
 type ClusterRemoteReindexTrustConfig struct {
-	// (Updatable) Remote cluster sources to trust for reindexing.
+	// (Updatable) Remote sources trusted for reindexing. When creating a cluster with this configuration, provide at least one source. When updating a cluster, this list replaces the existing sources. Specify an empty list to remove all remote-reindex trust configuration. Each source must specify exactly one non-empty `caBundleId` or `certificateId`, not both.
 	RemoteSources []ClusterRemoteReindexTrustConfigRemoteSource `pulumi:"remoteSources"`
 }
 
@@ -884,7 +884,7 @@ type ClusterRemoteReindexTrustConfigInput interface {
 }
 
 type ClusterRemoteReindexTrustConfigArgs struct {
-	// (Updatable) Remote cluster sources to trust for reindexing.
+	// (Updatable) Remote sources trusted for reindexing. When creating a cluster with this configuration, provide at least one source. When updating a cluster, this list replaces the existing sources. Specify an empty list to remove all remote-reindex trust configuration. Each source must specify exactly one non-empty `caBundleId` or `certificateId`, not both.
 	RemoteSources ClusterRemoteReindexTrustConfigRemoteSourceArrayInput `pulumi:"remoteSources"`
 }
 
@@ -965,7 +965,7 @@ func (o ClusterRemoteReindexTrustConfigOutput) ToClusterRemoteReindexTrustConfig
 	}).(ClusterRemoteReindexTrustConfigPtrOutput)
 }
 
-// (Updatable) Remote cluster sources to trust for reindexing.
+// (Updatable) Remote sources trusted for reindexing. When creating a cluster with this configuration, provide at least one source. When updating a cluster, this list replaces the existing sources. Specify an empty list to remove all remote-reindex trust configuration. Each source must specify exactly one non-empty `caBundleId` or `certificateId`, not both.
 func (o ClusterRemoteReindexTrustConfigOutput) RemoteSources() ClusterRemoteReindexTrustConfigRemoteSourceArrayOutput {
 	return o.ApplyT(func(v ClusterRemoteReindexTrustConfig) []ClusterRemoteReindexTrustConfigRemoteSource {
 		return v.RemoteSources
@@ -996,7 +996,7 @@ func (o ClusterRemoteReindexTrustConfigPtrOutput) Elem() ClusterRemoteReindexTru
 	}).(ClusterRemoteReindexTrustConfigOutput)
 }
 
-// (Updatable) Remote cluster sources to trust for reindexing.
+// (Updatable) Remote sources trusted for reindexing. When creating a cluster with this configuration, provide at least one source. When updating a cluster, this list replaces the existing sources. Specify an empty list to remove all remote-reindex trust configuration. Each source must specify exactly one non-empty `caBundleId` or `certificateId`, not both.
 func (o ClusterRemoteReindexTrustConfigPtrOutput) RemoteSources() ClusterRemoteReindexTrustConfigRemoteSourceArrayOutput {
 	return o.ApplyT(func(v *ClusterRemoteReindexTrustConfig) []ClusterRemoteReindexTrustConfigRemoteSource {
 		if v == nil {
@@ -1007,8 +1007,12 @@ func (o ClusterRemoteReindexTrustConfigPtrOutput) RemoteSources() ClusterRemoteR
 }
 
 type ClusterRemoteReindexTrustConfigRemoteSource struct {
-	// (Updatable) OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
-	CertificateId string `pulumi:"certificateId"`
+	// (Updatable) OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster's HTTPS certificate. Required when `certificateId` is not specified.
+	CaBundleId *string `pulumi:"caBundleId"`
+	// (Updatable) **Deprecated** Alias for `caBundleId`; use `caBundleId` instead. The value must be an OCI Certificates service CA bundle OCID, not a certificate OCID. Existing configurations remain supported during the deprecation period; removal requires a major provider release.
+	//
+	// Deprecated: Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
+	CertificateId *string `pulumi:"certificateId"`
 	// (Updatable) HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
 	Endpoint string `pulumi:"endpoint"`
 	// (Updatable) Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
@@ -1027,8 +1031,12 @@ type ClusterRemoteReindexTrustConfigRemoteSourceInput interface {
 }
 
 type ClusterRemoteReindexTrustConfigRemoteSourceArgs struct {
-	// (Updatable) OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
-	CertificateId pulumi.StringInput `pulumi:"certificateId"`
+	// (Updatable) OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster's HTTPS certificate. Required when `certificateId` is not specified.
+	CaBundleId pulumi.StringPtrInput `pulumi:"caBundleId"`
+	// (Updatable) **Deprecated** Alias for `caBundleId`; use `caBundleId` instead. The value must be an OCI Certificates service CA bundle OCID, not a certificate OCID. Existing configurations remain supported during the deprecation period; removal requires a major provider release.
+	//
+	// Deprecated: Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
+	CertificateId pulumi.StringPtrInput `pulumi:"certificateId"`
 	// (Updatable) HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
 	Endpoint pulumi.StringInput `pulumi:"endpoint"`
 	// (Updatable) Optional IP address to which the endpoint hostname is resolved from within the OpenSearch cluster. The original hostname remains in the connection URL and is used for TLS verification.
@@ -1086,9 +1094,16 @@ func (o ClusterRemoteReindexTrustConfigRemoteSourceOutput) ToClusterRemoteReinde
 	return o
 }
 
-// (Updatable) OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
-func (o ClusterRemoteReindexTrustConfigRemoteSourceOutput) CertificateId() pulumi.StringOutput {
-	return o.ApplyT(func(v ClusterRemoteReindexTrustConfigRemoteSource) string { return v.CertificateId }).(pulumi.StringOutput)
+// (Updatable) OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster's HTTPS certificate. Required when `certificateId` is not specified.
+func (o ClusterRemoteReindexTrustConfigRemoteSourceOutput) CaBundleId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterRemoteReindexTrustConfigRemoteSource) *string { return v.CaBundleId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) **Deprecated** Alias for `caBundleId`; use `caBundleId` instead. The value must be an OCI Certificates service CA bundle OCID, not a certificate OCID. Existing configurations remain supported during the deprecation period; removal requires a major provider release.
+//
+// Deprecated: Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
+func (o ClusterRemoteReindexTrustConfigRemoteSourceOutput) CertificateId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ClusterRemoteReindexTrustConfigRemoteSource) *string { return v.CertificateId }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
@@ -3421,7 +3436,7 @@ func (o GetOpensearchClusterPipelinesOpensearchClusterPipelineCollectionItemReve
 }
 
 type GetOpensearchClusterRemoteReindexTrustConfig struct {
-	// Remote cluster sources to trust for reindexing.
+	// Remote sources trusted for reindexing.
 	RemoteSources []GetOpensearchClusterRemoteReindexTrustConfigRemoteSource `pulumi:"remoteSources"`
 }
 
@@ -3437,7 +3452,7 @@ type GetOpensearchClusterRemoteReindexTrustConfigInput interface {
 }
 
 type GetOpensearchClusterRemoteReindexTrustConfigArgs struct {
-	// Remote cluster sources to trust for reindexing.
+	// Remote sources trusted for reindexing.
 	RemoteSources GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayInput `pulumi:"remoteSources"`
 }
 
@@ -3492,7 +3507,7 @@ func (o GetOpensearchClusterRemoteReindexTrustConfigOutput) ToGetOpensearchClust
 	return o
 }
 
-// Remote cluster sources to trust for reindexing.
+// Remote sources trusted for reindexing.
 func (o GetOpensearchClusterRemoteReindexTrustConfigOutput) RemoteSources() GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArrayOutput {
 	return o.ApplyT(func(v GetOpensearchClusterRemoteReindexTrustConfig) []GetOpensearchClusterRemoteReindexTrustConfigRemoteSource {
 		return v.RemoteSources
@@ -3520,7 +3535,11 @@ func (o GetOpensearchClusterRemoteReindexTrustConfigArrayOutput) Index(i pulumi.
 }
 
 type GetOpensearchClusterRemoteReindexTrustConfigRemoteSource struct {
-	// OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+	// OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster's HTTPS certificate.
+	CaBundleId string `pulumi:"caBundleId"`
+	// **Deprecated** Alias of `caBundleId`. Both computed fields contain the same CA bundle OCID during the deprecation period; removal requires a major provider release.
+	//
+	// Deprecated: Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
 	CertificateId string `pulumi:"certificateId"`
 	// HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
 	Endpoint string `pulumi:"endpoint"`
@@ -3540,7 +3559,11 @@ type GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceInput interface {
 }
 
 type GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceArgs struct {
-	// OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+	// OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster's HTTPS certificate.
+	CaBundleId pulumi.StringInput `pulumi:"caBundleId"`
+	// **Deprecated** Alias of `caBundleId`. Both computed fields contain the same CA bundle OCID during the deprecation period; removal requires a major provider release.
+	//
+	// Deprecated: Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
 	CertificateId pulumi.StringInput `pulumi:"certificateId"`
 	// HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
 	Endpoint pulumi.StringInput `pulumi:"endpoint"`
@@ -3599,7 +3622,14 @@ func (o GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput) ToGetOpe
 	return o
 }
 
-// OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+// OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster's HTTPS certificate.
+func (o GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput) CaBundleId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClusterRemoteReindexTrustConfigRemoteSource) string { return v.CaBundleId }).(pulumi.StringOutput)
+}
+
+// **Deprecated** Alias of `caBundleId`. Both computed fields contain the same CA bundle OCID during the deprecation period; removal requires a major provider release.
+//
+// Deprecated: Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
 func (o GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceOutput) CertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchClusterRemoteReindexTrustConfigRemoteSource) string { return v.CertificateId }).(pulumi.StringOutput)
 }
@@ -5798,7 +5828,7 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemOutboundClusterConfi
 }
 
 type GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfig struct {
-	// Remote cluster sources to trust for reindexing.
+	// Remote sources trusted for reindexing.
 	RemoteSources []GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource `pulumi:"remoteSources"`
 }
 
@@ -5814,7 +5844,7 @@ type GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfi
 }
 
 type GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigArgs struct {
-	// Remote cluster sources to trust for reindexing.
+	// Remote sources trusted for reindexing.
 	RemoteSources GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayInput `pulumi:"remoteSources"`
 }
 
@@ -5869,7 +5899,7 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustCo
 	return o
 }
 
-// Remote cluster sources to trust for reindexing.
+// Remote sources trusted for reindexing.
 func (o GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigOutput) RemoteSources() GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArrayOutput {
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfig) []GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource {
 		return v.RemoteSources
@@ -5897,7 +5927,11 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustCo
 }
 
 type GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource struct {
-	// OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+	// OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster's HTTPS certificate.
+	CaBundleId string `pulumi:"caBundleId"`
+	// **Deprecated** Alias of `caBundleId`. Both computed fields contain the same CA bundle OCID during the deprecation period; removal requires a major provider release.
+	//
+	// Deprecated: Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
 	CertificateId string `pulumi:"certificateId"`
 	// HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
 	Endpoint string `pulumi:"endpoint"`
@@ -5917,7 +5951,11 @@ type GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfi
 }
 
 type GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceArgs struct {
-	// OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+	// OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster's HTTPS certificate.
+	CaBundleId pulumi.StringInput `pulumi:"caBundleId"`
+	// **Deprecated** Alias of `caBundleId`. Both computed fields contain the same CA bundle OCID during the deprecation period; removal requires a major provider release.
+	//
+	// Deprecated: Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
 	CertificateId pulumi.StringInput `pulumi:"certificateId"`
 	// HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
 	Endpoint pulumi.StringInput `pulumi:"endpoint"`
@@ -5976,7 +6014,16 @@ func (o GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustCo
 	return o
 }
 
-// OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+// OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster's HTTPS certificate.
+func (o GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutput) CaBundleId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource) string {
+		return v.CaBundleId
+	}).(pulumi.StringOutput)
+}
+
+// **Deprecated** Alias of `caBundleId`. Both computed fields contain the same CA bundle OCID during the deprecation period; removal requires a major provider release.
+//
+// Deprecated: Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
 func (o GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceOutput) CertificateId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource) string {
 		return v.CertificateId

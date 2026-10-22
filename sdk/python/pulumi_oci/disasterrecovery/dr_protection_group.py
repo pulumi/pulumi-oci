@@ -562,6 +562,17 @@ class DrProtectionGroup(pulumi.CustomResource):
                 "destination_load_balancer_id": test_load_balancer["id"],
                 "destination_network_load_balancer_id": test_network_load_balancer["id"],
                 "destination_snapshot_policy_id": test_policy["id"],
+                "dr_drill_properties": {
+                    "vnic_mappings": [{
+                        "destination_nsg_id_lists": dr_protection_group_members_dr_drill_properties_vnic_mappings_destination_nsg_id_list,
+                        "destination_primary_private_ip_address": dr_protection_group_members_dr_drill_properties_vnic_mappings_destination_primary_private_ip_address,
+                        "destination_primary_private_ip_hostname_label": dr_protection_group_members_dr_drill_properties_vnic_mappings_destination_primary_private_ip_hostname_label,
+                        "destination_reserved_primary_private_ip_id": test_private_ip["id"],
+                        "destination_reserved_public_ip_id": test_public_ip["id"],
+                        "destination_subnet_id": test_subnet["id"],
+                        "source_vnic_id": test_vnic["id"],
+                    }],
+                },
                 "export_mappings": [{
                     "destination_mount_target_id": test_mount_target["id"],
                     "export_id": test_export["id"],
@@ -632,6 +643,7 @@ class DrProtectionGroup(pulumi.CustomResource):
                         "destination_nsg_id_lists": dr_protection_group_members_vnic_mappings_destination_nsg_id_list,
                         "destination_primary_private_ip_address": dr_protection_group_members_vnic_mappings_destination_primary_private_ip_address,
                         "destination_primary_private_ip_hostname_label": dr_protection_group_members_vnic_mappings_destination_primary_private_ip_hostname_label,
+                        "destination_reserved_primary_private_ip_id": test_private_ip["id"],
                         "destination_reserved_public_ip_id": test_public_ip["id"],
                         "destination_subnet_id": test_subnet["id"],
                         "source_vnic_id": test_vnic["id"],
@@ -779,6 +791,17 @@ class DrProtectionGroup(pulumi.CustomResource):
                 "destination_load_balancer_id": test_load_balancer["id"],
                 "destination_network_load_balancer_id": test_network_load_balancer["id"],
                 "destination_snapshot_policy_id": test_policy["id"],
+                "dr_drill_properties": {
+                    "vnic_mappings": [{
+                        "destination_nsg_id_lists": dr_protection_group_members_dr_drill_properties_vnic_mappings_destination_nsg_id_list,
+                        "destination_primary_private_ip_address": dr_protection_group_members_dr_drill_properties_vnic_mappings_destination_primary_private_ip_address,
+                        "destination_primary_private_ip_hostname_label": dr_protection_group_members_dr_drill_properties_vnic_mappings_destination_primary_private_ip_hostname_label,
+                        "destination_reserved_primary_private_ip_id": test_private_ip["id"],
+                        "destination_reserved_public_ip_id": test_public_ip["id"],
+                        "destination_subnet_id": test_subnet["id"],
+                        "source_vnic_id": test_vnic["id"],
+                    }],
+                },
                 "export_mappings": [{
                     "destination_mount_target_id": test_mount_target["id"],
                     "export_id": test_export["id"],
@@ -849,6 +872,7 @@ class DrProtectionGroup(pulumi.CustomResource):
                         "destination_nsg_id_lists": dr_protection_group_members_vnic_mappings_destination_nsg_id_list,
                         "destination_primary_private_ip_address": dr_protection_group_members_vnic_mappings_destination_primary_private_ip_address,
                         "destination_primary_private_ip_hostname_label": dr_protection_group_members_vnic_mappings_destination_primary_private_ip_hostname_label,
+                        "destination_reserved_primary_private_ip_id": test_private_ip["id"],
                         "destination_reserved_public_ip_id": test_public_ip["id"],
                         "destination_subnet_id": test_subnet["id"],
                         "source_vnic_id": test_vnic["id"],

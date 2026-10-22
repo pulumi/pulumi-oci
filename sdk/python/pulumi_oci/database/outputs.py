@@ -636,6 +636,9 @@ __all__ = [
     'GetDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailResult',
     'GetDatabasePdbConversionHistoryEntriesFilterResult',
     'GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryResult',
+    'GetDatabaseSnapshotsDatabaseSnapshotCollectionResult',
+    'GetDatabaseSnapshotsDatabaseSnapshotCollectionItemResult',
+    'GetDatabaseSnapshotsFilterResult',
     'GetDatabaseSoftwareImagesDatabaseSoftwareImageResult',
     'GetDatabaseSoftwareImagesFilterResult',
     'GetDatabaseStorageSizeDetailResult',
@@ -10759,6 +10762,10 @@ class DatabaseDatabase(dict):
             suggest = "freeform_tags"
         elif key == "isActiveDataGuardEnabled":
             suggest = "is_active_data_guard_enabled"
+        elif key == "isThinClone":
+            suggest = "is_thin_clone"
+        elif key == "keyStoreId":
+            suggest = "key_store_id"
         elif key == "kmsKeyId":
             suggest = "kms_key_id"
         elif key == "kmsKeyVersionId":
@@ -10779,10 +10786,16 @@ class DatabaseDatabase(dict):
             suggest = "recovery_appliance_vpc_password"
         elif key == "sidPrefix":
             suggest = "sid_prefix"
+        elif key == "sourceAdminPassword":
+            suggest = "source_admin_password"
         elif key == "sourceDatabaseId":
             suggest = "source_database_id"
         elif key == "sourceEncryptionKeyLocationDetails":
             suggest = "source_encryption_key_location_details"
+        elif key == "sourceSnapshotId":
+            suggest = "source_snapshot_id"
+        elif key == "sourceTdePassword":
+            suggest = "source_tde_password"
         elif key == "sourceTdeWalletPassword":
             suggest = "source_tde_wallet_password"
         elif key == "storageSizeDetails":
@@ -10826,6 +10839,8 @@ class DatabaseDatabase(dict):
                  encryption_key_location_details: Optional['outputs.DatabaseDatabaseEncryptionKeyLocationDetails'] = None,
                  freeform_tags: Optional[Mapping[str, _builtins.str]] = None,
                  is_active_data_guard_enabled: Optional[_builtins.bool] = None,
+                 is_thin_clone: Optional[_builtins.bool] = None,
+                 key_store_id: Optional[_builtins.str] = None,
                  kms_key_id: Optional[_builtins.str] = None,
                  kms_key_version_id: Optional[_builtins.str] = None,
                  managed_software_update_details: Optional[Sequence['outputs.DatabaseDatabaseManagedSoftwareUpdateDetail']] = None,
@@ -10836,8 +10851,11 @@ class DatabaseDatabase(dict):
                  protection_mode: Optional[_builtins.str] = None,
                  recovery_appliance_vpc_password: Optional[_builtins.str] = None,
                  sid_prefix: Optional[_builtins.str] = None,
+                 source_admin_password: Optional[_builtins.str] = None,
                  source_database_id: Optional[_builtins.str] = None,
                  source_encryption_key_location_details: Optional['outputs.DatabaseDatabaseSourceEncryptionKeyLocationDetails'] = None,
+                 source_snapshot_id: Optional[_builtins.str] = None,
+                 source_tde_password: Optional[_builtins.str] = None,
                  source_tde_wallet_password: Optional[_builtins.str] = None,
                  storage_size_details: Optional['outputs.DatabaseDatabaseStorageSizeDetails'] = None,
                  tde_wallet_password: Optional[_builtins.str] = None,
@@ -10859,7 +10877,7 @@ class DatabaseDatabase(dict):
         :param _builtins.str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.
         :param _builtins.str database_software_image_id: The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
         :param 'DatabaseDatabaseDbBackupConfigArgs' db_backup_config: (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-        :param _builtins.str db_name: The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+        :param _builtins.str db_name: The display name of the database to be created from the snapshot/database. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
         :param _builtins.str db_unique_name: Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
         :param _builtins.str db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
                
@@ -10868,8 +10886,10 @@ class DatabaseDatabase(dict):
         :param 'DatabaseDatabaseEncryptionKeyLocationDetailsArgs' encryption_key_location_details: Types of providers supported for managing database encryption keys
         :param Mapping[str, _builtins.str] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.bool is_active_data_guard_enabled: True if active Data Guard is enabled.
+        :param _builtins.bool is_thin_clone: Specifies whether thick or thin database cloning is to be performed.
+        :param _builtins.str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
-        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param Sequence['DatabaseDatabaseManagedSoftwareUpdateDetailArgs'] managed_software_update_details: The database registered for Oracle Managed Database Software Updates.
         :param _builtins.str ncharacter_set: The national character set for the database.  The default is AL16UTF16. Allowed values are: AL16UTF16 or UTF8.
         :param 'DatabaseDatabasePatchOptionsArgs' patch_options: (Updatable) Options for DB Home and Database patching
@@ -10878,8 +10898,11 @@ class DatabaseDatabase(dict):
         :param _builtins.str protection_mode: The protection mode of this Data Guard. For more information, see [Oracle Data Guard Protection Modes](http://docs.oracle.com/database/122/SBYDB/oracle-data-guard-protection-modes.htm#SBYDB02000) in the Oracle Data Guard documentation.
         :param _builtins.str recovery_appliance_vpc_password: The password for the VPC user that is used to access the Recovery Appliance, if the given backup is from a backup destination of type RECOVERY_APPLIANCE.
         :param _builtins.str sid_prefix: Specifies a prefix for the `Oracle SID` of the database to be created.
+        :param _builtins.str source_admin_password: The source database's password for SYS, SYSTEM.
         :param _builtins.str source_database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
         :param 'DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs' source_encryption_key_location_details: Types of providers supported for managing database encryption keys
+        :param _builtins.str source_snapshot_id: The snapshot [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param _builtins.str source_tde_password: The password to open the TDE wallet.
         :param _builtins.str source_tde_wallet_password: The TDE wallet password of the source database specified by 'sourceDatabaseId'.
         :param 'DatabaseDatabaseStorageSizeDetailsArgs' storage_size_details: The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
         :param _builtins.str tde_wallet_password: The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \\#, or -.
@@ -10926,6 +10949,10 @@ class DatabaseDatabase(dict):
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_active_data_guard_enabled is not None:
             pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        if is_thin_clone is not None:
+            pulumi.set(__self__, "is_thin_clone", is_thin_clone)
+        if key_store_id is not None:
+            pulumi.set(__self__, "key_store_id", key_store_id)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if kms_key_version_id is not None:
@@ -10946,10 +10973,16 @@ class DatabaseDatabase(dict):
             pulumi.set(__self__, "recovery_appliance_vpc_password", recovery_appliance_vpc_password)
         if sid_prefix is not None:
             pulumi.set(__self__, "sid_prefix", sid_prefix)
+        if source_admin_password is not None:
+            pulumi.set(__self__, "source_admin_password", source_admin_password)
         if source_database_id is not None:
             pulumi.set(__self__, "source_database_id", source_database_id)
         if source_encryption_key_location_details is not None:
             pulumi.set(__self__, "source_encryption_key_location_details", source_encryption_key_location_details)
+        if source_snapshot_id is not None:
+            pulumi.set(__self__, "source_snapshot_id", source_snapshot_id)
+        if source_tde_password is not None:
+            pulumi.set(__self__, "source_tde_password", source_tde_password)
         if source_tde_wallet_password is not None:
             pulumi.set(__self__, "source_tde_wallet_password", source_tde_wallet_password)
         if storage_size_details is not None:
@@ -11045,7 +11078,7 @@ class DatabaseDatabase(dict):
     @pulumi.getter(name="dbName")
     def db_name(self) -> Optional[_builtins.str]:
         """
-        The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+        The display name of the database to be created from the snapshot/database. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
         """
         return pulumi.get(self, "db_name")
 
@@ -11100,6 +11133,22 @@ class DatabaseDatabase(dict):
         return pulumi.get(self, "is_active_data_guard_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="isThinClone")
+    def is_thin_clone(self) -> Optional[_builtins.bool]:
+        """
+        Specifies whether thick or thin database cloning is to be performed.
+        """
+        return pulumi.get(self, "is_thin_clone")
+
+    @_builtins.property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> Optional[_builtins.str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        """
+        return pulumi.get(self, "key_store_id")
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> Optional[_builtins.str]:
         """
@@ -11111,7 +11160,7 @@ class DatabaseDatabase(dict):
     @pulumi.getter(name="kmsKeyVersionId")
     def kms_key_version_id(self) -> Optional[_builtins.str]:
         """
-        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         """
         return pulumi.get(self, "kms_key_version_id")
 
@@ -11180,6 +11229,14 @@ class DatabaseDatabase(dict):
         return pulumi.get(self, "sid_prefix")
 
     @_builtins.property
+    @pulumi.getter(name="sourceAdminPassword")
+    def source_admin_password(self) -> Optional[_builtins.str]:
+        """
+        The source database's password for SYS, SYSTEM.
+        """
+        return pulumi.get(self, "source_admin_password")
+
+    @_builtins.property
     @pulumi.getter(name="sourceDatabaseId")
     def source_database_id(self) -> Optional[_builtins.str]:
         """
@@ -11194,6 +11251,22 @@ class DatabaseDatabase(dict):
         Types of providers supported for managing database encryption keys
         """
         return pulumi.get(self, "source_encryption_key_location_details")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceSnapshotId")
+    def source_snapshot_id(self) -> Optional[_builtins.str]:
+        """
+        The snapshot [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "source_snapshot_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceTdePassword")
+    def source_tde_password(self) -> Optional[_builtins.str]:
+        """
+        The password to open the TDE wallet.
+        """
+        return pulumi.get(self, "source_tde_password")
 
     @_builtins.property
     @pulumi.getter(name="sourceTdeWalletPassword")
@@ -11488,7 +11561,7 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetail(dict):
                  vpc_password: Optional[_builtins.str] = None,
                  vpc_user: Optional[_builtins.str] = None):
         """
-        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        :param _builtins.str backup_retention_policy_on_terminate: Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         :param _builtins.str dbrs_policy_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
         :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         :param _builtins.bool is_remote: Indicates whether the backup destination is cross-region or local.
@@ -11525,7 +11598,7 @@ class DatabaseDatabaseDbBackupConfigBackupDestinationDetail(dict):
     @pulumi.getter(name="backupRetentionPolicyOnTerminate")
     def backup_retention_policy_on_terminate(self) -> Optional[_builtins.str]:
         """
-        Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+        Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
         """
         return pulumi.get(self, "backup_retention_policy_on_terminate")
 
@@ -12046,12 +12119,8 @@ class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDe
                  version_preference: Optional[_builtins.str] = None):
         """
         :param _builtins.str major_version: The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
-               
-               The list of supported versions can be obtained using the API for the provided shape /20160918/dbVersions?compartmentId=<compartmentId>&dbSystemShape=ExaDbXS
-        :param _builtins.str source: The update should be applied on the database for the selected version scheme.
+        :param _builtins.str source: The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
         :param _builtins.str version_preference: The update should be applied on the database for the selected version preference. *_N represents the LATEST version
-               
-               For Ex: The current latest version is 23.7.0.0.0, If versionPreference selects option as ORACLE_DB_N then oracle applies the db update with LATEST version (i.e. 23.7.0.0.0) If versionPreference selects option as ORACLE_DB_N_1 then oracle applies the db update with LATEST-1 version (i.e. 23.6.0.0.0) If versionPreference selects option as ORACLE_DB_N_2 then oracle applies the db update with LATEST-2 version (i.e. 23.5.0.0.0)
         """
         if major_version is not None:
             pulumi.set(__self__, "major_version", major_version)
@@ -12065,8 +12134,6 @@ class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDe
     def major_version(self) -> Optional[_builtins.str]:
         """
         The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
-
-        The list of supported versions can be obtained using the API for the provided shape /20160918/dbVersions?compartmentId=<compartmentId>&dbSystemShape=ExaDbXS
         """
         return pulumi.get(self, "major_version")
 
@@ -12074,7 +12141,7 @@ class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDe
     @pulumi.getter
     def source(self) -> Optional[_builtins.str]:
         """
-        The update should be applied on the database for the selected version scheme.
+        The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
         """
         return pulumi.get(self, "source")
 
@@ -12083,8 +12150,6 @@ class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDe
     def version_preference(self) -> Optional[_builtins.str]:
         """
         The update should be applied on the database for the selected version preference. *_N represents the LATEST version
-
-        For Ex: The current latest version is 23.7.0.0.0, If versionPreference selects option as ORACLE_DB_N then oracle applies the db update with LATEST version (i.e. 23.7.0.0.0) If versionPreference selects option as ORACLE_DB_N_1 then oracle applies the db update with LATEST-1 version (i.e. 23.6.0.0.0) If versionPreference selects option as ORACLE_DB_N_2 then oracle applies the db update with LATEST-2 version (i.e. 23.5.0.0.0)
         """
         return pulumi.get(self, "version_preference")
 
@@ -49056,6 +49121,8 @@ class GetDatabaseDatabaseResult(dict):
                  encryption_key_location_details: Sequence['outputs.GetDatabaseDatabaseEncryptionKeyLocationDetailResult'],
                  freeform_tags: Mapping[str, _builtins.str],
                  is_active_data_guard_enabled: _builtins.bool,
+                 is_thin_clone: _builtins.bool,
+                 key_store_id: _builtins.str,
                  kms_key_id: _builtins.str,
                  kms_key_version_id: _builtins.str,
                  managed_software_update_details: Sequence['outputs.GetDatabaseDatabaseManagedSoftwareUpdateDetailResult'],
@@ -49066,8 +49133,11 @@ class GetDatabaseDatabaseResult(dict):
                  protection_mode: _builtins.str,
                  recovery_appliance_vpc_password: _builtins.str,
                  sid_prefix: _builtins.str,
+                 source_admin_password: _builtins.str,
                  source_database_id: _builtins.str,
                  source_encryption_key_location_details: Sequence['outputs.GetDatabaseDatabaseSourceEncryptionKeyLocationDetailResult'],
+                 source_snapshot_id: _builtins.str,
+                 source_tde_password: _builtins.str,
                  source_tde_wallet_password: _builtins.str,
                  storage_size_details: Sequence['outputs.GetDatabaseDatabaseStorageSizeDetailResult'],
                  tde_wallet_password: _builtins.str,
@@ -49087,6 +49157,7 @@ class GetDatabaseDatabaseResult(dict):
         :param Sequence['GetDatabaseDatabaseEncryptionKeyLocationDetailArgs'] encryption_key_location_details: Types of providers supported for managing database encryption keys
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.bool is_active_data_guard_enabled: True if active Data Guard is enabled.
+        :param _builtins.str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param Sequence['GetDatabaseDatabaseManagedSoftwareUpdateDetailArgs'] managed_software_update_details: The database registered for Oracle Managed Database Software Updates.
@@ -49119,6 +49190,8 @@ class GetDatabaseDatabaseResult(dict):
         pulumi.set(__self__, "encryption_key_location_details", encryption_key_location_details)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        pulumi.set(__self__, "is_thin_clone", is_thin_clone)
+        pulumi.set(__self__, "key_store_id", key_store_id)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         pulumi.set(__self__, "managed_software_update_details", managed_software_update_details)
@@ -49129,8 +49202,11 @@ class GetDatabaseDatabaseResult(dict):
         pulumi.set(__self__, "protection_mode", protection_mode)
         pulumi.set(__self__, "recovery_appliance_vpc_password", recovery_appliance_vpc_password)
         pulumi.set(__self__, "sid_prefix", sid_prefix)
+        pulumi.set(__self__, "source_admin_password", source_admin_password)
         pulumi.set(__self__, "source_database_id", source_database_id)
         pulumi.set(__self__, "source_encryption_key_location_details", source_encryption_key_location_details)
+        pulumi.set(__self__, "source_snapshot_id", source_snapshot_id)
+        pulumi.set(__self__, "source_tde_password", source_tde_password)
         pulumi.set(__self__, "source_tde_wallet_password", source_tde_wallet_password)
         pulumi.set(__self__, "storage_size_details", storage_size_details)
         pulumi.set(__self__, "tde_wallet_password", tde_wallet_password)
@@ -49253,6 +49329,19 @@ class GetDatabaseDatabaseResult(dict):
         return pulumi.get(self, "is_active_data_guard_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="isThinClone")
+    def is_thin_clone(self) -> _builtins.bool:
+        return pulumi.get(self, "is_thin_clone")
+
+    @_builtins.property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        """
+        return pulumi.get(self, "key_store_id")
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> _builtins.str:
         """
@@ -49327,6 +49416,11 @@ class GetDatabaseDatabaseResult(dict):
         return pulumi.get(self, "sid_prefix")
 
     @_builtins.property
+    @pulumi.getter(name="sourceAdminPassword")
+    def source_admin_password(self) -> _builtins.str:
+        return pulumi.get(self, "source_admin_password")
+
+    @_builtins.property
     @pulumi.getter(name="sourceDatabaseId")
     def source_database_id(self) -> _builtins.str:
         return pulumi.get(self, "source_database_id")
@@ -49335,6 +49429,16 @@ class GetDatabaseDatabaseResult(dict):
     @pulumi.getter(name="sourceEncryptionKeyLocationDetails")
     def source_encryption_key_location_details(self) -> Sequence['outputs.GetDatabaseDatabaseSourceEncryptionKeyLocationDetailResult']:
         return pulumi.get(self, "source_encryption_key_location_details")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceSnapshotId")
+    def source_snapshot_id(self) -> _builtins.str:
+        return pulumi.get(self, "source_snapshot_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceTdePassword")
+    def source_tde_password(self) -> _builtins.str:
+        return pulumi.get(self, "source_tde_password")
 
     @_builtins.property
     @pulumi.getter(name="sourceTdeWalletPassword")
@@ -53115,6 +53219,179 @@ class GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryResult(dict
 
 
 @pulumi.output_type
+class GetDatabaseSnapshotsDatabaseSnapshotCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDatabaseSnapshotsDatabaseSnapshotCollectionItemResult']):
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDatabaseSnapshotsDatabaseSnapshotCollectionItemResult']:
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDatabaseSnapshotsDatabaseSnapshotCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 cluster_id: _builtins.str,
+                 compartment_id: _builtins.str,
+                 database_id: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 lifecycle_details: _builtins.str,
+                 name: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str):
+        """
+        :param _builtins.str cluster_id: A filter to return only Exadata Database Snapshots that match the given VM cluster.
+        :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param _builtins.str database_id: A filter to return only Exadata Database Snapshots that match the given Database Id.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Snapshot.
+        :param _builtins.str lifecycle_details: Additional information about the current lifecycle state of the Exadata Database Snapshot.
+        :param _builtins.str name: A filter to return only resources that match the entire name given. The match is not case sensitive.
+        :param _builtins.str state: A filter to return only Exadata Database Snapshots that match the given lifecycle state exactly.
+        :param Mapping[str, _builtins.str] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param _builtins.str time_created: The date and time that the Exadata Database Snapshot was created, as expressed in RFC 3339 format. For example: 2023-06-27T21:10:29Z
+        """
+        pulumi.set(__self__, "cluster_id", cluster_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "database_id", database_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+
+    @_builtins.property
+    @pulumi.getter(name="clusterId")
+    def cluster_id(self) -> _builtins.str:
+        """
+        A filter to return only Exadata Database Snapshots that match the given VM cluster.
+        """
+        return pulumi.get(self, "cluster_id")
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="databaseId")
+    def database_id(self) -> _builtins.str:
+        """
+        A filter to return only Exadata Database Snapshots that match the given Database Id.
+        """
+        return pulumi.get(self, "database_id")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Snapshot.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> _builtins.str:
+        """
+        Additional information about the current lifecycle state of the Exadata Database Snapshot.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire name given. The match is not case sensitive.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        A filter to return only Exadata Database Snapshots that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time that the Exadata Database Snapshot was created, as expressed in RFC 3339 format. For example: 2023-06-27T21:10:29Z
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class GetDatabaseSnapshotsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        """
+        :param _builtins.str name: A filter to return only resources that match the entire name given. The match is not case sensitive.
+        """
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the entire name given. The match is not case sensitive.
+        """
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetDatabaseSoftwareImagesDatabaseSoftwareImageResult(dict):
     def __init__(__self__, *,
                  compartment_id: _builtins.str,
@@ -54320,6 +54597,8 @@ class GetDatabasesDatabaseDatabaseResult(dict):
                  encryption_key_location_details: Sequence['outputs.GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailResult'],
                  freeform_tags: Mapping[str, _builtins.str],
                  is_active_data_guard_enabled: _builtins.bool,
+                 is_thin_clone: _builtins.bool,
+                 key_store_id: _builtins.str,
                  kms_key_id: _builtins.str,
                  kms_key_version_id: _builtins.str,
                  managed_software_update_details: Sequence['outputs.GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailResult'],
@@ -54330,8 +54609,11 @@ class GetDatabasesDatabaseDatabaseResult(dict):
                  protection_mode: _builtins.str,
                  recovery_appliance_vpc_password: _builtins.str,
                  sid_prefix: _builtins.str,
+                 source_admin_password: _builtins.str,
                  source_database_id: _builtins.str,
                  source_encryption_key_location_details: Sequence['outputs.GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailResult'],
+                 source_snapshot_id: _builtins.str,
+                 source_tde_password: _builtins.str,
                  source_tde_wallet_password: _builtins.str,
                  storage_size_details: Sequence['outputs.GetDatabasesDatabaseDatabaseStorageSizeDetailResult'],
                  tde_wallet_password: _builtins.str,
@@ -54351,6 +54633,7 @@ class GetDatabasesDatabaseDatabaseResult(dict):
         :param Sequence['GetDatabasesDatabaseDatabaseEncryptionKeyLocationDetailArgs'] encryption_key_location_details: Types of providers supported for managing database encryption keys
         :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param _builtins.bool is_active_data_guard_enabled: True if active Data Guard is enabled.
+        :param _builtins.str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param _builtins.str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param _builtins.str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         :param Sequence['GetDatabasesDatabaseDatabaseManagedSoftwareUpdateDetailArgs'] managed_software_update_details: The database registered for Oracle Managed Database Software Updates.
@@ -54382,6 +54665,8 @@ class GetDatabasesDatabaseDatabaseResult(dict):
         pulumi.set(__self__, "encryption_key_location_details", encryption_key_location_details)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "is_active_data_guard_enabled", is_active_data_guard_enabled)
+        pulumi.set(__self__, "is_thin_clone", is_thin_clone)
+        pulumi.set(__self__, "key_store_id", key_store_id)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         pulumi.set(__self__, "managed_software_update_details", managed_software_update_details)
@@ -54392,8 +54677,11 @@ class GetDatabasesDatabaseDatabaseResult(dict):
         pulumi.set(__self__, "protection_mode", protection_mode)
         pulumi.set(__self__, "recovery_appliance_vpc_password", recovery_appliance_vpc_password)
         pulumi.set(__self__, "sid_prefix", sid_prefix)
+        pulumi.set(__self__, "source_admin_password", source_admin_password)
         pulumi.set(__self__, "source_database_id", source_database_id)
         pulumi.set(__self__, "source_encryption_key_location_details", source_encryption_key_location_details)
+        pulumi.set(__self__, "source_snapshot_id", source_snapshot_id)
+        pulumi.set(__self__, "source_tde_password", source_tde_password)
         pulumi.set(__self__, "source_tde_wallet_password", source_tde_wallet_password)
         pulumi.set(__self__, "storage_size_details", storage_size_details)
         pulumi.set(__self__, "tde_wallet_password", tde_wallet_password)
@@ -54516,6 +54804,19 @@ class GetDatabasesDatabaseDatabaseResult(dict):
         return pulumi.get(self, "is_active_data_guard_enabled")
 
     @_builtins.property
+    @pulumi.getter(name="isThinClone")
+    def is_thin_clone(self) -> _builtins.bool:
+        return pulumi.get(self, "is_thin_clone")
+
+    @_builtins.property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        """
+        return pulumi.get(self, "key_store_id")
+
+    @_builtins.property
     @pulumi.getter(name="kmsKeyId")
     def kms_key_id(self) -> _builtins.str:
         """
@@ -54587,6 +54888,11 @@ class GetDatabasesDatabaseDatabaseResult(dict):
         return pulumi.get(self, "sid_prefix")
 
     @_builtins.property
+    @pulumi.getter(name="sourceAdminPassword")
+    def source_admin_password(self) -> _builtins.str:
+        return pulumi.get(self, "source_admin_password")
+
+    @_builtins.property
     @pulumi.getter(name="sourceDatabaseId")
     def source_database_id(self) -> _builtins.str:
         return pulumi.get(self, "source_database_id")
@@ -54595,6 +54901,16 @@ class GetDatabasesDatabaseDatabaseResult(dict):
     @pulumi.getter(name="sourceEncryptionKeyLocationDetails")
     def source_encryption_key_location_details(self) -> Sequence['outputs.GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailResult']:
         return pulumi.get(self, "source_encryption_key_location_details")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceSnapshotId")
+    def source_snapshot_id(self) -> _builtins.str:
+        return pulumi.get(self, "source_snapshot_id")
+
+    @_builtins.property
+    @pulumi.getter(name="sourceTdePassword")
+    def source_tde_password(self) -> _builtins.str:
+        return pulumi.get(self, "source_tde_password")
 
     @_builtins.property
     @pulumi.getter(name="sourceTdeWalletPassword")

@@ -33,6 +33,7 @@ namespace Pulumi.Oci.GenerativeAi
     ///         Type = dedicatedAiClusterType,
     ///         UnitCount = dedicatedAiClusterUnitCount,
     ///         UnitShape = dedicatedAiClusterUnitShape,
+    ///         CapacityReservationId = testCapacityReservation.Id,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -64,6 +65,12 @@ namespace Pulumi.Oci.GenerativeAi
         /// </summary>
         [Output("capacities")]
         public Output<ImmutableArray<Outputs.DedicatedAiClusterCapacity>> Capacities { get; private set; } = null!;
+
+        /// <summary>
+        /// The OCID of the capacity reservation.
+        /// </summary>
+        [Output("capacityReservationId")]
+        public Output<string> CapacityReservationId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The compartment OCID to create the dedicated AI cluster in.
@@ -263,6 +270,12 @@ namespace Pulumi.Oci.GenerativeAi
     public sealed class DedicatedAiClusterArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// The OCID of the capacity reservation.
+        /// </summary>
+        [Input("capacityReservationId")]
+        public Input<string>? CapacityReservationId { get; set; }
+
+        /// <summary>
         /// (Updatable) The compartment OCID to create the dedicated AI cluster in.
         /// </summary>
         [Input("compartmentId", required: true)]
@@ -414,6 +427,12 @@ namespace Pulumi.Oci.GenerativeAi
             get => _capacities ?? (_capacities = new InputList<Inputs.DedicatedAiClusterCapacityGetArgs>());
             set => _capacities = value;
         }
+
+        /// <summary>
+        /// The OCID of the capacity reservation.
+        /// </summary>
+        [Input("capacityReservationId")]
+        public Input<string>? CapacityReservationId { get; set; }
 
         /// <summary>
         /// (Updatable) The compartment OCID to create the dedicated AI cluster in.

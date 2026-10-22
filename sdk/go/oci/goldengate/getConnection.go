@@ -34,9 +34,7 @@ type LookupConnectionArgs struct {
 
 // A collection of values returned by getConnection.
 type LookupConnectionResult struct {
-	// * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-	// * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-	//   Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+	// Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
 	AccessKeyId string `pulumi:"accessKeyId"`
 	// Deprecated: The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead.
 	AccountKey string `pulumi:"accountKey"`
@@ -46,16 +44,28 @@ type LookupConnectionResult struct {
 	AccountName string `pulumi:"accountName"`
 	// An array of name-value pair attribute entries. Used as additional parameters in connection string.
 	AdditionalAttributes []GetConnectionAdditionalAttribute `pulumi:"additionalAttributes"`
-	// Represents authentication details for an AI Model connection.
+	// Location used to share engine application artifacts.
+	// * DATABRICKS_ENGINE: Location used to share Databricks application artifacts.
+	// * SPARK: Location used to share Spark application artifacts with a remote cluster.
+	ArtifactLocations []GetConnectionArtifactLocation `pulumi:"artifactLocations"`
+	// Authentication details for an AI Model or AI Provider connection.
 	AuthDetails []GetConnectionAuthDetail `pulumi:"authDetails"`
+	// Deprecated: The 'auth_secret' field has been deprecated. Please use 'auth_secret_secret_id' instead.
+	AuthSecret string `pulumi:"authSecret"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Spark authentication shared secret. Applicable when authenticationType is SHARED_SECRET. Note: When provided, 'authSecret' field must not be provided.
+	AuthSecretSecretId string `pulumi:"authSecretSecretId"`
+	// Deprecated: The 'auth_token' field has been deprecated. Please use 'auth_token_secret_id' instead.
+	AuthToken string `pulumi:"authToken"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the personal access token is stored. Only applicable for authenticationType == PERSONAL_ACCESS_TOKEN. Note: When provided, 'authToken' field must not be provided.
+	AuthTokenSecretId string `pulumi:"authTokenSecretId"`
 	// Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
 	AuthenticationMode string `pulumi:"authenticationMode"`
-	// Used authentication mechanism to be provided for the following connection types:
-	// * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
-	// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
-	// * DATABRICKS - Required fields by authentication types:
-	// * PERSONAL_ACCESS_TOKEN: username is always 'token', user must enter password
-	// * OAUTH_M2M: user must enter clientId and clientSecret
+	// Authentication mechanism; supported values depend on `connectionType`.
+	// * DATABRICKS: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M.
+	// * DATABRICKS_ENGINE: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M for the Databricks Engine REST API.
+	// * JAVA_MESSAGE_SERVICE: Authentication type for Java Message Service. The default is NONE.
+	// * SPARK: Use SHARED_SECRET only when the target cluster has `spark.authenticate=true`. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET.
+	// * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE: Authentication type supported by the target service.
 	AuthenticationType string `pulumi:"authenticationType"`
 	// The endpoint used for authentication with Microsoft Entra ID (formerly Azure Active Directory). Default value: https://login.microsoftonline.com When connecting to a non-public Azure Cloud, the endpoint must be provided, eg:
 	// * Azure China: https://login.chinacloudapi.cn/
@@ -68,16 +78,18 @@ type LookupConnectionResult struct {
 	// Represents the catalog of given type used in an Iceberg connection.
 	Catalogs []GetConnectionCatalog `pulumi:"catalogs"`
 	// * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-	// * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+	// * DATABRICKS, DATABRICKS_ENGINE: OAuth client ID, applicable to OAUTH_M2M authentication.
 	// * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
 	ClientId string `pulumi:"clientId"`
 	// Deprecated: The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead.
 	ClientSecret string `pulumi:"clientSecret"`
 	// * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-	// * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+	// * DATABRICKS, DATABRICKS_ENGINE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Applicable to OAUTH_M2M authentication.
 	// * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
 	//   Note: When provided, 'clientSecret' field must not be provided.
 	ClientSecretSecretId string `pulumi:"clientSecretSecretId"`
+	// Spark master URL used for job submission. Required for both SUBMIT and REST submit modes. e.g.: `spark://spark-master.example.com:7077`. High availability can be configured with a comma-separated list, for example `spark://h1.example.com:7077,h2.example.com:7077`.
+	ClusterEndpoint string `pulumi:"clusterEndpoint"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
 	ClusterId string `pulumi:"clusterId"`
 	// The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
@@ -119,10 +131,7 @@ type LookupConnectionResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Indicates that sensitive attributes are provided via Secrets.
 	DoesUseSecretIds bool `pulumi:"doesUseSecretIds"`
-	// * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
-	// * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
-	// * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
-	// * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
+	// Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
 	Endpoint string `pulumi:"endpoint"`
 	// Fingerprint required by TLS security protocol. Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
 	Fingerprint string `pulumi:"fingerprint"`
@@ -155,14 +164,16 @@ type LookupConnectionResult struct {
 	KeyStore string `pulumi:"keyStore"`
 	// Deprecated: The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead.
 	KeyStorePassword string `pulumi:"keyStorePassword"`
-	// * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
-	// * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
-	// * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
-	// * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
-	//   Note: When provided, 'keyStorePassword' field must not be provided.
+	// Secret OCID containing the key store password.
+	// * SPARK: Applicable when `securityProtocol` is TLS and a client key store is provided. Required when `keyStoreSecretId` is provided.
+	// * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Password for the target connection's key store.
 	KeyStorePasswordSecretId string `pulumi:"keyStorePasswordSecretId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
+	// Secret OCID containing the key store content.
+	// * SPARK: Applicable when `securityProtocol` is TLS.
+	// * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Key store file used by the target connection.
 	KeyStoreSecretId string `pulumi:"keyStoreSecretId"`
+	// Client key store format used for mutual TLS.
+	KeyStoreType string `pulumi:"keyStoreType"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Locks associated with this resource.
@@ -191,6 +202,8 @@ type LookupConnectionResult struct {
 	PrivateKeyPassphraseSecretId string `pulumi:"privateKeyPassphraseSecretId"`
 	// The base64 encoded content of the producer.properties file.
 	ProducerProperties string `pulumi:"producerProperties"`
+	// Optional identifier of the AI Provider Connection backing this AI Model Connection. When provided, it must reference an existing Active connection of type `AI_PROVIDER`. When `providerId` is set, `providerType` and `authDetails` must not be provided on the AI Model Connection, because provider metadata is resolved from the referenced AI Provider Connection. When `providerId` is not set, the AI Model Connection must provide inline provider metadata using `providerType` and `authDetails`.
+	ProviderId string `pulumi:"providerId"`
 	// AI Provider type used by the AI Model Connection.
 	ProviderType string `pulumi:"providerType"`
 	// The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
@@ -199,31 +212,31 @@ type LookupConnectionResult struct {
 	RedisClusterId string `pulumi:"redisClusterId"`
 	// The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
 	Region string `pulumi:"region"`
+	// Deprecated: The 'rest_auth_secret_key' field has been deprecated. Please use 'rest_auth_secret_key_secret_id' instead.
+	RestAuthSecretKey string `pulumi:"restAuthSecretKey"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the REST submission signing key. Applicable only when submitMode is REST and the cluster enforces REST request signing. This setting is independent of authenticationType. Note: When provided, 'restAuthSecretKey' field must not be provided.
+	RestAuthSecretKeySecretId string `pulumi:"restAuthSecretKeySecretId"`
+	// Spark standalone REST submission base URL. e.g.: 'https://spark-master.example.com:6066' Applicable only and required when submitMode is REST.
+	RestEndpoint string `pulumi:"restEndpoint"`
 	// Controls the network traffic direction to the target: SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected. SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
 	RoutingMethod string `pulumi:"routingMethod"`
+	// Cipher transform used for Spark RPC encryption. Applicable when securityProtocol is AES_RPC.
+	RpcCipher string `pulumi:"rpcCipher"`
 	// Deprecated: The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead.
 	SasToken string `pulumi:"sasToken"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be provided.
 	SasTokenSecretId string `pulumi:"sasTokenSecretId"`
 	// Deprecated: The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
 	SecretAccessKey string `pulumi:"secretAccessKey"`
-	// * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-	// * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
 	SecretAccessKeySecretId string `pulumi:"secretAccessKeySecretId"`
 	// Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
 	SecurityAttributes map[string]string `pulumi:"securityAttributes"`
-	// * DB2: Security protocol for the DB2 database.
-	// * ELASTICSEARCH: Security protocol for Elasticsearch.
-	// * JAVA_MESSAGE_SERVICE: Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
-	// * KAFKA: Security Type for Kafka.
-	// * MICROSOFT_SQLSERVER: Security Type for Microsoft SQL Server.
-	// * MONGODB: Security Type for MongoDB.
-	// * MYSQL: Security Type for MySQL.
-	// * POSTGRESQL: Security protocol for PostgreSQL.
-	// * REDIS: Security protocol for Redis.
+	// Security protocol; supported values depend on `connectionType`.
+	// * SPARK: PLAINTEXT, TLS, AES_RPC, or SASL_ENCRYPTED. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET authentication.
+	// * Other connection types: Use the protocol supported by the target service.
 	SecurityProtocol string `pulumi:"securityProtocol"`
-	// * ELASTICSEARCH: Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
-	// * REDIS: Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 6379. Used for establishing the initial connection to the Redis cluster. Example: `"server1.example.com:6379,server2.example.com:6379"`
+	// Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
 	Servers string `pulumi:"servers"`
 	// Deprecated: The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead.
 	ServiceAccountKeyFile string `pulumi:"serviceAccountKeyFile"`
@@ -253,23 +266,20 @@ type LookupConnectionResult struct {
 	SslClientKeystoredb string `pulumi:"sslClientKeystoredb"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
 	SslClientKeystoredbSecretId string `pulumi:"sslClientKeystoredbSecretId"`
-	// * MYSQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-	// * POSTGRESQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+	// The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslCrl string `pulumi:"sslCrl"`
 	// Deprecated: The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead.
 	SslKey string `pulumi:"sslKey"`
 	// Deprecated: The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead.
 	SslKeyPassword string `pulumi:"sslKeyPassword"`
-	// * JAVA_MESSAGE_SERVICE, KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided.
-	// * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
-	//   Note: When provided, 'sslKeyPassword' field must not be provided.
+	// Secret OCID containing the certificate private-key password inside the client key store.
+	// * SPARK: Applicable when `securityProtocol` is TLS and a client key store is provided.
+	// * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY: Provide it when the private-key password differs from the key store password.
 	SslKeyPasswordSecretId string `pulumi:"sslKeyPasswordSecretId"`
-	// * MYSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
-	// * POSTGRESQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
-	//   Note: When provided, 'sslKey' field must not be provided.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+	// * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
 	SslKeySecretId string `pulumi:"sslKeySecretId"`
-	// * MYSQL: SSL modes for MySQL.
-	// * POSTGRESQL: SSL modes for PostgreSQL.
+	// SSL mode for PostgreSQL.
 	SslMode string `pulumi:"sslMode"`
 	// The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 	SslServerCertificate string `pulumi:"sslServerCertificate"`
@@ -281,13 +291,22 @@ type LookupConnectionResult struct {
 	Storages []GetConnectionStorage `pulumi:"storages"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
 	StreamPoolId string `pulumi:"streamPoolId"`
+	// Submission channel used to connect to Spark.
+	SubmitMode string `pulumi:"submitMode"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
 	SubnetId string `pulumi:"subnetId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
 	SubscriptionId string `pulumi:"subscriptionId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]string `pulumi:"systemTags"`
-	// The technology type.
+	// Technology type selected for the connection.
+	// * AI_MODEL: AI Model technology type.
+	// * AI_PROVIDER: AI Provider technology type.
+	// * DATABRICKS_ENGINE: Databricks Engine technology type.
+	// * ICEBERG: Iceberg technology type. APACHE_ICEBERG supports all catalog types; AMAZON_S3_TABLES supports only REST catalog and S3 storage.
+	// * KAFKA_SCHEMA_REGISTRY: Kafka Schema Registry technology type.
+	// * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform Engine technology type.
+	// * SPARK: Spark technology type.
 	TechnologyType string `pulumi:"technologyType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
 	TenancyId string `pulumi:"tenancyId"`
@@ -308,23 +327,27 @@ type LookupConnectionResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the certificate key file of the mtls connection.
 	// * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
 	TlsCertificateKeyFileSecretId string `pulumi:"tlsCertificateKeyFileSecretId"`
-	TriggerRefresh                bool   `pulumi:"triggerRefresh"`
+	// TLS protocol negotiated by the Spark client.
+	TlsProtocol    string `pulumi:"tlsProtocol"`
+	TriggerRefresh bool   `pulumi:"triggerRefresh"`
 	// Deprecated: The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.
 	TrustStore string `pulumi:"trustStore"`
 	// Deprecated: The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead.
 	TrustStorePassword string `pulumi:"trustStorePassword"`
-	// * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
-	// * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
-	// * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
-	// * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
-	//   Note: When provided, 'trustStorePassword' field must not be provided.
+	// Secret OCID containing the trust store password.
+	// * SPARK: Applicable when `securityProtocol` is TLS and a trust store is provided. Required when `trustStoreSecretId` is provided.
+	// * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Password for the target connection's trust store.
 	TrustStorePasswordSecretId string `pulumi:"trustStorePasswordSecretId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
+	// Secret OCID containing the trust store content.
+	// * SPARK: Applicable when `securityProtocol` is TLS. Provide it when the server certificate is not already trusted by the JVM.
+	// * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Trust store file used by the target connection.
 	TrustStoreSecretId string `pulumi:"trustStoreSecretId"`
+	// Trust store format used by the Spark client.
+	TrustStoreType string `pulumi:"trustStoreType"`
 	// Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
 	Url string `pulumi:"url"`
-	// * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
-	// * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+	// * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses Object Storage. The user must have write access to the bucket. If omitted, the service defaults to the user calling the API.
+	// * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses the Oracle NoSQL database. The user must have write access to the table. If omitted, the service defaults to the user calling the API.
 	UserId string `pulumi:"userId"`
 	// The username Oracle GoldenGate uses to connect the associated system of the given technology. This username must already exist and be available by the system/application to be connected to and must conform to the case sensitivty requirments defined in it.
 	Username string `pulumi:"username"`
@@ -334,6 +357,9 @@ type LookupConnectionResult struct {
 	Wallet string `pulumi:"wallet"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
 	WalletSecretId string `pulumi:"walletSecretId"`
+	// * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://<workspace>.cloud.databricks.com/api/2.0/`.
+	// * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
+	WorkspaceUrl string `pulumi:"workspaceUrl"`
 }
 
 func LookupConnectionOutput(ctx *pulumi.Context, args LookupConnectionOutputArgs, opts ...pulumi.InvokeOption) LookupConnectionResultOutput {
@@ -366,9 +392,7 @@ func (o LookupConnectionResultOutput) ToLookupConnectionResultOutputWithContext(
 	return o
 }
 
-//   - AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-//   - OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-//     Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+// Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
 func (o LookupConnectionResultOutput) AccessKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.AccessKeyId }).(pulumi.StringOutput)
 }
@@ -393,9 +417,36 @@ func (o LookupConnectionResultOutput) AdditionalAttributes() GetConnectionAdditi
 	return o.ApplyT(func(v LookupConnectionResult) []GetConnectionAdditionalAttribute { return v.AdditionalAttributes }).(GetConnectionAdditionalAttributeArrayOutput)
 }
 
-// Represents authentication details for an AI Model connection.
+// Location used to share engine application artifacts.
+// * DATABRICKS_ENGINE: Location used to share Databricks application artifacts.
+// * SPARK: Location used to share Spark application artifacts with a remote cluster.
+func (o LookupConnectionResultOutput) ArtifactLocations() GetConnectionArtifactLocationArrayOutput {
+	return o.ApplyT(func(v LookupConnectionResult) []GetConnectionArtifactLocation { return v.ArtifactLocations }).(GetConnectionArtifactLocationArrayOutput)
+}
+
+// Authentication details for an AI Model or AI Provider connection.
 func (o LookupConnectionResultOutput) AuthDetails() GetConnectionAuthDetailArrayOutput {
 	return o.ApplyT(func(v LookupConnectionResult) []GetConnectionAuthDetail { return v.AuthDetails }).(GetConnectionAuthDetailArrayOutput)
+}
+
+// Deprecated: The 'auth_secret' field has been deprecated. Please use 'auth_secret_secret_id' instead.
+func (o LookupConnectionResultOutput) AuthSecret() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.AuthSecret }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Spark authentication shared secret. Applicable when authenticationType is SHARED_SECRET. Note: When provided, 'authSecret' field must not be provided.
+func (o LookupConnectionResultOutput) AuthSecretSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.AuthSecretSecretId }).(pulumi.StringOutput)
+}
+
+// Deprecated: The 'auth_token' field has been deprecated. Please use 'auth_token_secret_id' instead.
+func (o LookupConnectionResultOutput) AuthToken() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.AuthToken }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the personal access token is stored. Only applicable for authenticationType == PERSONAL_ACCESS_TOKEN. Note: When provided, 'authToken' field must not be provided.
+func (o LookupConnectionResultOutput) AuthTokenSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.AuthTokenSecretId }).(pulumi.StringOutput)
 }
 
 // Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
@@ -403,12 +454,12 @@ func (o LookupConnectionResultOutput) AuthenticationMode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.AuthenticationMode }).(pulumi.StringOutput)
 }
 
-// Used authentication mechanism to be provided for the following connection types:
-// * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
-// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
-// * DATABRICKS - Required fields by authentication types:
-// * PERSONAL_ACCESS_TOKEN: username is always 'token', user must enter password
-// * OAUTH_M2M: user must enter clientId and clientSecret
+// Authentication mechanism; supported values depend on `connectionType`.
+// * DATABRICKS: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M.
+// * DATABRICKS_ENGINE: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M for the Databricks Engine REST API.
+// * JAVA_MESSAGE_SERVICE: Authentication type for Java Message Service. The default is NONE.
+// * SPARK: Use SHARED_SECRET only when the target cluster has `spark.authenticate=true`. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET.
+// * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE: Authentication type supported by the target service.
 func (o LookupConnectionResultOutput) AuthenticationType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.AuthenticationType }).(pulumi.StringOutput)
 }
@@ -436,7 +487,7 @@ func (o LookupConnectionResultOutput) Catalogs() GetConnectionCatalogArrayOutput
 }
 
 // * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-// * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+// * DATABRICKS, DATABRICKS_ENGINE: OAuth client ID, applicable to OAUTH_M2M authentication.
 // * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
 func (o LookupConnectionResultOutput) ClientId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.ClientId }).(pulumi.StringOutput)
@@ -448,11 +499,16 @@ func (o LookupConnectionResultOutput) ClientSecret() pulumi.StringOutput {
 }
 
 //   - AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-//   - DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+//   - DATABRICKS, DATABRICKS_ENGINE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Applicable to OAUTH_M2M authentication.
 //   - MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
 //     Note: When provided, 'clientSecret' field must not be provided.
 func (o LookupConnectionResultOutput) ClientSecretSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.ClientSecretSecretId }).(pulumi.StringOutput)
+}
+
+// Spark master URL used for job submission. Required for both SUBMIT and REST submit modes. e.g.: `spark://spark-master.example.com:7077`. High availability can be configured with a comma-separated list, for example `spark://h1.example.com:7077,h2.example.com:7077`.
+func (o LookupConnectionResultOutput) ClusterEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.ClusterEndpoint }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
@@ -550,10 +606,7 @@ func (o LookupConnectionResultOutput) DoesUseSecretIds() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupConnectionResult) bool { return v.DoesUseSecretIds }).(pulumi.BoolOutput)
 }
 
-// * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
-// * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
-// * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
-// * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
+// Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
 func (o LookupConnectionResultOutput) Endpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.Endpoint }).(pulumi.StringOutput)
 }
@@ -634,18 +687,23 @@ func (o LookupConnectionResultOutput) KeyStorePassword() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.KeyStorePassword }).(pulumi.StringOutput)
 }
 
-//   - JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
-//   - KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
-//   - KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
-//   - REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
-//     Note: When provided, 'keyStorePassword' field must not be provided.
+// Secret OCID containing the key store password.
+// * SPARK: Applicable when `securityProtocol` is TLS and a client key store is provided. Required when `keyStoreSecretId` is provided.
+// * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Password for the target connection's key store.
 func (o LookupConnectionResultOutput) KeyStorePasswordSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.KeyStorePasswordSecretId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
+// Secret OCID containing the key store content.
+// * SPARK: Applicable when `securityProtocol` is TLS.
+// * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Key store file used by the target connection.
 func (o LookupConnectionResultOutput) KeyStoreSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.KeyStoreSecretId }).(pulumi.StringOutput)
+}
+
+// Client key store format used for mutual TLS.
+func (o LookupConnectionResultOutput) KeyStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.KeyStoreType }).(pulumi.StringOutput)
 }
 
 // Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
@@ -718,6 +776,11 @@ func (o LookupConnectionResultOutput) ProducerProperties() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.ProducerProperties }).(pulumi.StringOutput)
 }
 
+// Optional identifier of the AI Provider Connection backing this AI Model Connection. When provided, it must reference an existing Active connection of type `AI_PROVIDER`. When `providerId` is set, `providerType` and `authDetails` must not be provided on the AI Model Connection, because provider metadata is resolved from the referenced AI Provider Connection. When `providerId` is not set, the AI Model Connection must provide inline provider metadata using `providerType` and `authDetails`.
+func (o LookupConnectionResultOutput) ProviderId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.ProviderId }).(pulumi.StringOutput)
+}
+
 // AI Provider type used by the AI Model Connection.
 func (o LookupConnectionResultOutput) ProviderType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.ProviderType }).(pulumi.StringOutput)
@@ -738,9 +801,29 @@ func (o LookupConnectionResultOutput) Region() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.Region }).(pulumi.StringOutput)
 }
 
+// Deprecated: The 'rest_auth_secret_key' field has been deprecated. Please use 'rest_auth_secret_key_secret_id' instead.
+func (o LookupConnectionResultOutput) RestAuthSecretKey() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.RestAuthSecretKey }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the REST submission signing key. Applicable only when submitMode is REST and the cluster enforces REST request signing. This setting is independent of authenticationType. Note: When provided, 'restAuthSecretKey' field must not be provided.
+func (o LookupConnectionResultOutput) RestAuthSecretKeySecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.RestAuthSecretKeySecretId }).(pulumi.StringOutput)
+}
+
+// Spark standalone REST submission base URL. e.g.: 'https://spark-master.example.com:6066' Applicable only and required when submitMode is REST.
+func (o LookupConnectionResultOutput) RestEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.RestEndpoint }).(pulumi.StringOutput)
+}
+
 // Controls the network traffic direction to the target: SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected. SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
 func (o LookupConnectionResultOutput) RoutingMethod() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.RoutingMethod }).(pulumi.StringOutput)
+}
+
+// Cipher transform used for Spark RPC encryption. Applicable when securityProtocol is AES_RPC.
+func (o LookupConnectionResultOutput) RpcCipher() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.RpcCipher }).(pulumi.StringOutput)
 }
 
 // Deprecated: The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead.
@@ -758,8 +841,7 @@ func (o LookupConnectionResultOutput) SecretAccessKey() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SecretAccessKey }).(pulumi.StringOutput)
 }
 
-// * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-// * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
 func (o LookupConnectionResultOutput) SecretAccessKeySecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SecretAccessKeySecretId }).(pulumi.StringOutput)
 }
@@ -769,21 +851,14 @@ func (o LookupConnectionResultOutput) SecurityAttributes() pulumi.StringMapOutpu
 	return o.ApplyT(func(v LookupConnectionResult) map[string]string { return v.SecurityAttributes }).(pulumi.StringMapOutput)
 }
 
-// * DB2: Security protocol for the DB2 database.
-// * ELASTICSEARCH: Security protocol for Elasticsearch.
-// * JAVA_MESSAGE_SERVICE: Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
-// * KAFKA: Security Type for Kafka.
-// * MICROSOFT_SQLSERVER: Security Type for Microsoft SQL Server.
-// * MONGODB: Security Type for MongoDB.
-// * MYSQL: Security Type for MySQL.
-// * POSTGRESQL: Security protocol for PostgreSQL.
-// * REDIS: Security protocol for Redis.
+// Security protocol; supported values depend on `connectionType`.
+// * SPARK: PLAINTEXT, TLS, AES_RPC, or SASL_ENCRYPTED. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET authentication.
+// * Other connection types: Use the protocol supported by the target service.
 func (o LookupConnectionResultOutput) SecurityProtocol() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SecurityProtocol }).(pulumi.StringOutput)
 }
 
-// * ELASTICSEARCH: Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
-// * REDIS: Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 6379. Used for establishing the initial connection to the Redis cluster. Example: `"server1.example.com:6379,server2.example.com:6379"`
+// Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
 func (o LookupConnectionResultOutput) Servers() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.Servers }).(pulumi.StringOutput)
 }
@@ -852,8 +927,7 @@ func (o LookupConnectionResultOutput) SslClientKeystoredbSecretId() pulumi.Strin
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslClientKeystoredbSecretId }).(pulumi.StringOutput)
 }
 
-// * MYSQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-// * POSTGRESQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+// The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
 func (o LookupConnectionResultOutput) SslCrl() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslCrl }).(pulumi.StringOutput)
 }
@@ -868,22 +942,20 @@ func (o LookupConnectionResultOutput) SslKeyPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslKeyPassword }).(pulumi.StringOutput)
 }
 
-//   - JAVA_MESSAGE_SERVICE, KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided.
-//   - KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
-//     Note: When provided, 'sslKeyPassword' field must not be provided.
+// Secret OCID containing the certificate private-key password inside the client key store.
+// * SPARK: Applicable when `securityProtocol` is TLS and a client key store is provided.
+// * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY: Provide it when the private-key password differs from the key store password.
 func (o LookupConnectionResultOutput) SslKeyPasswordSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslKeyPasswordSecretId }).(pulumi.StringOutput)
 }
 
-//   - MYSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
-//   - POSTGRESQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
-//     Note: When provided, 'sslKey' field must not be provided.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+// * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
 func (o LookupConnectionResultOutput) SslKeySecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslKeySecretId }).(pulumi.StringOutput)
 }
 
-// * MYSQL: SSL modes for MySQL.
-// * POSTGRESQL: SSL modes for PostgreSQL.
+// SSL mode for PostgreSQL.
 func (o LookupConnectionResultOutput) SslMode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslMode }).(pulumi.StringOutput)
 }
@@ -913,6 +985,11 @@ func (o LookupConnectionResultOutput) StreamPoolId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.StreamPoolId }).(pulumi.StringOutput)
 }
 
+// Submission channel used to connect to Spark.
+func (o LookupConnectionResultOutput) SubmitMode() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.SubmitMode }).(pulumi.StringOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
 func (o LookupConnectionResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SubnetId }).(pulumi.StringOutput)
@@ -928,7 +1005,14 @@ func (o LookupConnectionResultOutput) SystemTags() pulumi.StringMapOutput {
 	return o.ApplyT(func(v LookupConnectionResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
-// The technology type.
+// Technology type selected for the connection.
+// * AI_MODEL: AI Model technology type.
+// * AI_PROVIDER: AI Provider technology type.
+// * DATABRICKS_ENGINE: Databricks Engine technology type.
+// * ICEBERG: Iceberg technology type. APACHE_ICEBERG supports all catalog types; AMAZON_S3_TABLES supports only REST catalog and S3 storage.
+// * KAFKA_SCHEMA_REGISTRY: Kafka Schema Registry technology type.
+// * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform Engine technology type.
+// * SPARK: Spark technology type.
 func (o LookupConnectionResultOutput) TechnologyType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.TechnologyType }).(pulumi.StringOutput)
 }
@@ -979,6 +1063,11 @@ func (o LookupConnectionResultOutput) TlsCertificateKeyFileSecretId() pulumi.Str
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.TlsCertificateKeyFileSecretId }).(pulumi.StringOutput)
 }
 
+// TLS protocol negotiated by the Spark client.
+func (o LookupConnectionResultOutput) TlsProtocol() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.TlsProtocol }).(pulumi.StringOutput)
+}
+
 func (o LookupConnectionResultOutput) TriggerRefresh() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupConnectionResult) bool { return v.TriggerRefresh }).(pulumi.BoolOutput)
 }
@@ -993,18 +1082,23 @@ func (o LookupConnectionResultOutput) TrustStorePassword() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.TrustStorePassword }).(pulumi.StringOutput)
 }
 
-//   - JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
-//   - KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
-//   - KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
-//   - REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
-//     Note: When provided, 'trustStorePassword' field must not be provided.
+// Secret OCID containing the trust store password.
+// * SPARK: Applicable when `securityProtocol` is TLS and a trust store is provided. Required when `trustStoreSecretId` is provided.
+// * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Password for the target connection's trust store.
 func (o LookupConnectionResultOutput) TrustStorePasswordSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.TrustStorePasswordSecretId }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
+// Secret OCID containing the trust store content.
+// * SPARK: Applicable when `securityProtocol` is TLS. Provide it when the server certificate is not already trusted by the JVM.
+// * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Trust store file used by the target connection.
 func (o LookupConnectionResultOutput) TrustStoreSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.TrustStoreSecretId }).(pulumi.StringOutput)
+}
+
+// Trust store format used by the Spark client.
+func (o LookupConnectionResultOutput) TrustStoreType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.TrustStoreType }).(pulumi.StringOutput)
 }
 
 // Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
@@ -1012,8 +1106,8 @@ func (o LookupConnectionResultOutput) Url() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.Url }).(pulumi.StringOutput)
 }
 
-// * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
-// * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+// * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses Object Storage. The user must have write access to the bucket. If omitted, the service defaults to the user calling the API.
+// * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses the Oracle NoSQL database. The user must have write access to the table. If omitted, the service defaults to the user calling the API.
 func (o LookupConnectionResultOutput) UserId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.UserId }).(pulumi.StringOutput)
 }
@@ -1036,6 +1130,12 @@ func (o LookupConnectionResultOutput) Wallet() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
 func (o LookupConnectionResultOutput) WalletSecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.WalletSecretId }).(pulumi.StringOutput)
+}
+
+// * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://<workspace>.cloud.databricks.com/api/2.0/`.
+// * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
+func (o LookupConnectionResultOutput) WorkspaceUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.WorkspaceUrl }).(pulumi.StringOutput)
 }
 
 func init() {

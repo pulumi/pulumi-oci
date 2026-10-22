@@ -137,7 +137,7 @@ def get_links(child_tenancy_id: Optional[_builtins.str] = None,
     import pulumi
     import pulumi_oci as oci
 
-    test_links = oci.tenantmanagercontrolplane.get_links(child_tenancy_id=test_tenancy["id"],
+    test_links = oci.tenantmanagercontrolplane.get_links(child_tenancy_id=test_child_tenancy["id"],
         feature=link_feature,
         parent_tenancy_id=test_tenancy["id"],
         state=link_state)
@@ -183,7 +183,7 @@ def get_links_output(child_tenancy_id: pulumi.Input[Optional[Optional[_builtins.
     import pulumi
     import pulumi_oci as oci
 
-    test_links = oci.tenantmanagercontrolplane.get_links(child_tenancy_id=test_tenancy["id"],
+    test_links = oci.tenantmanagercontrolplane.get_links(child_tenancy_id=test_child_tenancy["id"],
         feature=link_feature,
         parent_tenancy_id=test_tenancy["id"],
         state=link_state)

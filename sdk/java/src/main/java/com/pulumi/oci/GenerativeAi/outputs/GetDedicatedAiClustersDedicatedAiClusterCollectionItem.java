@@ -14,7 +14,16 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
+    /**
+     * @return The total capacity for a dedicated AI cluster.
+     * 
+     */
     private List<GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity> capacities;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
+     * 
+     */
+    private String capacityReservationId;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
@@ -87,8 +96,19 @@ public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
     private String unitShape;
 
     private GetDedicatedAiClustersDedicatedAiClusterCollectionItem() {}
+    /**
+     * @return The total capacity for a dedicated AI cluster.
+     * 
+     */
     public List<GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity> capacities() {
         return this.capacities;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
+     * 
+     */
+    public String capacityReservationId() {
+        return this.capacityReservationId;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -199,6 +219,7 @@ public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private List<GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity> capacities;
+        private String capacityReservationId;
         private String compartmentId;
         private Map<String,String> definedTags;
         private String description;
@@ -217,6 +238,7 @@ public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
         public Builder(GetDedicatedAiClustersDedicatedAiClusterCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.capacities = defaults.capacities;
+    	      this.capacityReservationId = defaults.capacityReservationId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
@@ -243,6 +265,14 @@ public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
         }
         public Builder capacities(GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity... capacities) {
             return capacities(List.of(capacities));
+        }
+        @CustomType.Setter
+        public Builder capacityReservationId(String capacityReservationId) {
+            if (capacityReservationId == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedAiClustersDedicatedAiClusterCollectionItem", "capacityReservationId");
+            }
+            this.capacityReservationId = capacityReservationId;
+            return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -359,6 +389,7 @@ public final class GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
         public GetDedicatedAiClustersDedicatedAiClusterCollectionItem build() {
             final var _resultValue = new GetDedicatedAiClustersDedicatedAiClusterCollectionItem();
             _resultValue.capacities = capacities;
+            _resultValue.capacityReservationId = capacityReservationId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;

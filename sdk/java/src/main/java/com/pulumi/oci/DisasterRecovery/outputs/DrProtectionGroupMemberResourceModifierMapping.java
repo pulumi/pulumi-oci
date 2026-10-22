@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DrProtectionGroupMemberResourceModifierMapping {
     /**
-     * @return (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
+     * @return (Updatable) The name of the config map containing resource modification details.  Example: `resource-modifier`
      * 
      */
     private @Nullable String configMap;
     /**
-     * @return (Updatable) The OKE namespace where the config map resides. Example: `namespaceString5`
+     * @return (Updatable) The OKE namespace where the config map resides.  Example: `namespaceString5`
      * 
      */
     private @Nullable String namespace;
 
     private DrProtectionGroupMemberResourceModifierMapping() {}
     /**
-     * @return (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
+     * @return (Updatable) The name of the config map containing resource modification details.  Example: `resource-modifier`
      * 
      */
     public Optional<String> configMap() {
         return Optional.ofNullable(this.configMap);
     }
     /**
-     * @return (Updatable) The OKE namespace where the config map resides. Example: `namespaceString5`
+     * @return (Updatable) The OKE namespace where the config map resides.  Example: `namespaceString5`
      * 
      */
     public Optional<String> namespace() {

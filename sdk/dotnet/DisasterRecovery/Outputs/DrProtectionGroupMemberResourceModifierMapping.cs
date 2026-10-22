@@ -14,11 +14,11 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
     public sealed class DrProtectionGroupMemberResourceModifierMapping
     {
         /// <summary>
-        /// (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
+        /// (Updatable) The name of the config map containing resource modification details.  Example: `resource-modifier`
         /// </summary>
         public readonly string? ConfigMap;
         /// <summary>
-        /// (Updatable) The OKE namespace where the config map resides. Example: `NamespaceString5`
+        /// (Updatable) The OKE namespace where the config map resides.  Example: `NamespaceString5`
         /// </summary>
         public readonly string? Namespace;
 

@@ -58,7 +58,10 @@ type LookupDedicatedAiClusterArgs struct {
 
 // A collection of values returned by getDedicatedAiCluster.
 type LookupDedicatedAiClusterResult struct {
+	// The total capacity for a dedicated AI cluster.
 	Capacities []GetDedicatedAiClusterCapacity `pulumi:"capacities"`
+	// The OCID of the capacity reservation.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// The compartment OCID to create the dedicated AI cluster in.
 	CompartmentId        string `pulumi:"compartmentId"`
 	DedicatedAiClusterId string `pulumi:"dedicatedAiClusterId"`
@@ -120,8 +123,14 @@ func (o LookupDedicatedAiClusterResultOutput) ToLookupDedicatedAiClusterResultOu
 	return o
 }
 
+// The total capacity for a dedicated AI cluster.
 func (o LookupDedicatedAiClusterResultOutput) Capacities() GetDedicatedAiClusterCapacityArrayOutput {
 	return o.ApplyT(func(v LookupDedicatedAiClusterResult) []GetDedicatedAiClusterCapacity { return v.Capacities }).(GetDedicatedAiClusterCapacityArrayOutput)
+}
+
+// The OCID of the capacity reservation.
+func (o LookupDedicatedAiClusterResultOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDedicatedAiClusterResult) string { return v.CapacityReservationId }).(pulumi.StringOutput)
 }
 
 // The compartment OCID to create the dedicated AI cluster in.

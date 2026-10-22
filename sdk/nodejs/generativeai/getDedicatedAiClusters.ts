@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testDedicatedAiClusters = oci.generativeai.getDedicatedAiClusters({
  *     compartmentId: compartmentId,
+ *     capacityReservationId: testCapacityReservation.id,
  *     displayName: dedicatedAiClusterDisplayName,
  *     id: dedicatedAiClusterId,
  *     state: dedicatedAiClusterState,
@@ -28,6 +29,7 @@ import * as utilities from "../utilities";
 export function getDedicatedAiClusters(args: GetDedicatedAiClustersArgs, opts?: pulumi.InvokeOptions): Promise<GetDedicatedAiClustersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:GenerativeAi/getDedicatedAiClusters:getDedicatedAiClusters", {
+        "capacityReservationId": args.capacityReservationId,
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "filters": args.filters,
@@ -40,6 +42,10 @@ export function getDedicatedAiClusters(args: GetDedicatedAiClustersArgs, opts?: 
  * A collection of arguments for invoking getDedicatedAiClusters.
  */
 export interface GetDedicatedAiClustersArgs {
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
+     */
+    capacityReservationId?: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
@@ -63,6 +69,10 @@ export interface GetDedicatedAiClustersArgs {
  * A collection of values returned by getDedicatedAiClusters.
  */
 export interface GetDedicatedAiClustersResult {
+    /**
+     * The OCID of the capacity reservation.
+     */
+    readonly capacityReservationId?: string;
     /**
      * The compartment OCID to create the dedicated AI cluster in.
      */
@@ -98,6 +108,7 @@ export interface GetDedicatedAiClustersResult {
  *
  * const testDedicatedAiClusters = oci.generativeai.getDedicatedAiClusters({
  *     compartmentId: compartmentId,
+ *     capacityReservationId: testCapacityReservation.id,
  *     displayName: dedicatedAiClusterDisplayName,
  *     id: dedicatedAiClusterId,
  *     state: dedicatedAiClusterState,
@@ -107,6 +118,7 @@ export interface GetDedicatedAiClustersResult {
 export function getDedicatedAiClustersOutput(args: GetDedicatedAiClustersOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDedicatedAiClustersResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:GenerativeAi/getDedicatedAiClusters:getDedicatedAiClusters", {
+        "capacityReservationId": args.capacityReservationId,
         "compartmentId": args.compartmentId,
         "displayName": args.displayName,
         "filters": args.filters,
@@ -119,6 +131,10 @@ export function getDedicatedAiClustersOutput(args: GetDedicatedAiClustersOutputA
  * A collection of arguments for invoking getDedicatedAiClusters.
  */
 export interface GetDedicatedAiClustersOutputArgs {
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
+     */
+    capacityReservationId?: pulumi.Input<string | undefined>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */

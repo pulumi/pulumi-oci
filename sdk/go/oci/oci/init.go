@@ -123,6 +123,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ProductCatalogInternalProduct{}
 	case "oci:oci/psaPrivateServiceAccess:PsaPrivateServiceAccess":
 		r = &PsaPrivateServiceAccess{}
+	case "oci:oci/pssInstance:PssInstance":
+		r = &PssInstance{}
 	case "oci:oci/resourceAnalyticsMonitoredRegion:ResourceAnalyticsMonitoredRegion":
 		r = &ResourceAnalyticsMonitoredRegion{}
 	case "oci:oci/resourceAnalyticsResourceAnalyticsInstance:ResourceAnalyticsResourceAnalyticsInstance":
@@ -399,6 +401,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"oci/psaPrivateServiceAccess",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"oci/pssInstance",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

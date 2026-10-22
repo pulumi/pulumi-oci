@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Opensearch.Outputs
     public sealed class GetOpensearchClusterRemoteReindexTrustConfigResult
     {
         /// <summary>
-        /// Remote cluster sources to trust for reindexing.
+        /// Remote sources trusted for reindexing.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetOpensearchClusterRemoteReindexTrustConfigRemoteSourceResult> RemoteSources;
 

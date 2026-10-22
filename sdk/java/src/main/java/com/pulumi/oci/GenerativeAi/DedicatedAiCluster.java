@@ -54,6 +54,7 @@ import javax.annotation.Nullable;
  *             .type(dedicatedAiClusterType)
  *             .unitCount(dedicatedAiClusterUnitCount)
  *             .unitShape(dedicatedAiClusterUnitShape)
+ *             .capacityReservationId(testCapacityReservation.get("id"))
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .description(dedicatedAiClusterDescription)
  *             .displayName(dedicatedAiClusterDisplayName)
@@ -89,6 +90,20 @@ public class DedicatedAiCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<List<DedicatedAiClusterCapacity>> capacities() {
         return this.capacities;
+    }
+    /**
+     * The OCID of the capacity reservation.
+     * 
+     */
+    @Export(name="capacityReservationId", refs={String.class}, tree="[0]")
+    private Output<String> capacityReservationId;
+
+    /**
+     * @return The OCID of the capacity reservation.
+     * 
+     */
+    public Output<String> capacityReservationId() {
+        return this.capacityReservationId;
     }
     /**
      * (Updatable) The compartment OCID to create the dedicated AI cluster in.

@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
         /// {
         ///     var testLinks = Oci.Tenantmanagercontrolplane.GetLinks.Invoke(new()
         ///     {
-        ///         ChildTenancyId = testTenancy.Id,
+        ///         ChildTenancyId = testChildTenancy.Id,
         ///         Feature = linkFeature,
         ///         ParentTenancyId = testTenancy.Id,
         ///         State = linkState,
@@ -57,7 +57,7 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
         /// {
         ///     var testLinks = Oci.Tenantmanagercontrolplane.GetLinks.Invoke(new()
         ///     {
-        ///         ChildTenancyId = testTenancy.Id,
+        ///         ChildTenancyId = testChildTenancy.Id,
         ///         Feature = linkFeature,
         ///         ParentTenancyId = testTenancy.Id,
         ///         State = linkState,
@@ -86,7 +86,7 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
         /// {
         ///     var testLinks = Oci.Tenantmanagercontrolplane.GetLinks.Invoke(new()
         ///     {
-        ///         ChildTenancyId = testTenancy.Id,
+        ///         ChildTenancyId = testChildTenancy.Id,
         ///         Feature = linkFeature,
         ///         ParentTenancyId = testTenancy.Id,
         ///         State = linkState,

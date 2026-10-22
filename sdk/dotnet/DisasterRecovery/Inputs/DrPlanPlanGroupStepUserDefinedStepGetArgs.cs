@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<string>? RequestBody { get; set; }
 
         /// <summary>
-        /// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `Opc`
+        /// The user ID on the instance that will be used to execute the script specified in 'scriptCommand'.  Example: `Opc`
         /// </summary>
         [Input("runAsUser")]
         public Input<string>? RunAsUser { get; set; }
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<string>? RunOnInstanceRegion { get; set; }
 
         /// <summary>
-        /// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
+        /// The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.  Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
         /// </summary>
         [Input("scriptCommand")]
         public Input<string>? ScriptCommand { get; set; }

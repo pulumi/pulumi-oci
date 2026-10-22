@@ -18,8 +18,6 @@ public final class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVe
     /**
      * The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
      * 
-     * The list of supported versions can be obtained using the API for the provided shape /20160918/dbVersions?compartmentId=&lt;compartmentId&gt;&amp;dbSystemShape=ExaDbXS
-     * 
      */
     @Import(name="majorVersion")
     private @Nullable Output<String> majorVersion;
@@ -27,22 +25,20 @@ public final class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVe
     /**
      * @return The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
      * 
-     * The list of supported versions can be obtained using the API for the provided shape /20160918/dbVersions?compartmentId=&lt;compartmentId&gt;&amp;dbSystemShape=ExaDbXS
-     * 
      */
     public Optional<Output<String>> majorVersion() {
         return Optional.ofNullable(this.majorVersion);
     }
 
     /**
-     * The update should be applied on the database for the selected version scheme.
+     * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
      * 
      */
     @Import(name="source")
     private @Nullable Output<String> source;
 
     /**
-     * @return The update should be applied on the database for the selected version scheme.
+     * @return The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
      * 
      */
     public Optional<Output<String>> source() {
@@ -52,16 +48,12 @@ public final class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVe
     /**
      * The update should be applied on the database for the selected version preference. *_N represents the LATEST version
      * 
-     * For Ex: The current latest version is 23.7.0.0.0, If versionPreference selects option as ORACLE_DB_N then oracle applies the db update with LATEST version (i.e. 23.7.0.0.0) If versionPreference selects option as ORACLE_DB_N_1 then oracle applies the db update with LATEST-1 version (i.e. 23.6.0.0.0) If versionPreference selects option as ORACLE_DB_N_2 then oracle applies the db update with LATEST-2 version (i.e. 23.5.0.0.0)
-     * 
      */
     @Import(name="versionPreference")
     private @Nullable Output<String> versionPreference;
 
     /**
      * @return The update should be applied on the database for the selected version preference. *_N represents the LATEST version
-     * 
-     * For Ex: The current latest version is 23.7.0.0.0, If versionPreference selects option as ORACLE_DB_N then oracle applies the db update with LATEST version (i.e. 23.7.0.0.0) If versionPreference selects option as ORACLE_DB_N_1 then oracle applies the db update with LATEST-1 version (i.e. 23.6.0.0.0) If versionPreference selects option as ORACLE_DB_N_2 then oracle applies the db update with LATEST-2 version (i.e. 23.5.0.0.0)
      * 
      */
     public Optional<Output<String>> versionPreference() {
@@ -97,8 +89,6 @@ public final class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVe
         /**
          * @param majorVersion The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
          * 
-         * The list of supported versions can be obtained using the API for the provided shape /20160918/dbVersions?compartmentId=&lt;compartmentId&gt;&amp;dbSystemShape=ExaDbXS
-         * 
          * @return builder
          * 
          */
@@ -110,8 +100,6 @@ public final class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVe
         /**
          * @param majorVersion The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
          * 
-         * The list of supported versions can be obtained using the API for the provided shape /20160918/dbVersions?compartmentId=&lt;compartmentId&gt;&amp;dbSystemShape=ExaDbXS
-         * 
          * @return builder
          * 
          */
@@ -120,7 +108,7 @@ public final class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVe
         }
 
         /**
-         * @param source The update should be applied on the database for the selected version scheme.
+         * @param source The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
          * 
          * @return builder
          * 
@@ -131,7 +119,7 @@ public final class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVe
         }
 
         /**
-         * @param source The update should be applied on the database for the selected version scheme.
+         * @param source The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
          * 
          * @return builder
          * 
@@ -143,8 +131,6 @@ public final class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVe
         /**
          * @param versionPreference The update should be applied on the database for the selected version preference. *_N represents the LATEST version
          * 
-         * For Ex: The current latest version is 23.7.0.0.0, If versionPreference selects option as ORACLE_DB_N then oracle applies the db update with LATEST version (i.e. 23.7.0.0.0) If versionPreference selects option as ORACLE_DB_N_1 then oracle applies the db update with LATEST-1 version (i.e. 23.6.0.0.0) If versionPreference selects option as ORACLE_DB_N_2 then oracle applies the db update with LATEST-2 version (i.e. 23.5.0.0.0)
-         * 
          * @return builder
          * 
          */
@@ -155,8 +141,6 @@ public final class DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVe
 
         /**
          * @param versionPreference The update should be applied on the database for the selected version preference. *_N represents the LATEST version
-         * 
-         * For Ex: The current latest version is 23.7.0.0.0, If versionPreference selects option as ORACLE_DB_N then oracle applies the db update with LATEST version (i.e. 23.7.0.0.0) If versionPreference selects option as ORACLE_DB_N_1 then oracle applies the db update with LATEST-1 version (i.e. 23.6.0.0.0) If versionPreference selects option as ORACLE_DB_N_2 then oracle applies the db update with LATEST-2 version (i.e. 23.5.0.0.0)
          * 
          * @return builder
          * 

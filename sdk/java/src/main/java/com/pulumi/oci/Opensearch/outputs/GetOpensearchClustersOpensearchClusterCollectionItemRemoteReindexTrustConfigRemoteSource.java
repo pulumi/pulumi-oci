@@ -11,9 +11,18 @@ import java.util.Objects;
 @CustomType
 public final class GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource {
     /**
-     * @return OCID of the certificate or CA chain used to verify the remote cluster&#39;s HTTPS certificate.
+     * @return OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster&#39;s HTTPS certificate.
      * 
      */
+    private String caBundleId;
+    /**
+     * @return **Deprecated** Alias of `caBundleId`. Both computed fields contain the same CA bundle OCID during the deprecation period; removal requires a major provider release.
+     * 
+     * @deprecated
+     * Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
+     * 
+     */
+    @Deprecated /* Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID. */
     private String certificateId;
     /**
      * @return HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
@@ -28,9 +37,20 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItemRemoteRei
 
     private GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource() {}
     /**
-     * @return OCID of the certificate or CA chain used to verify the remote cluster&#39;s HTTPS certificate.
+     * @return OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster&#39;s HTTPS certificate.
      * 
      */
+    public String caBundleId() {
+        return this.caBundleId;
+    }
+    /**
+     * @return **Deprecated** Alias of `caBundleId`. Both computed fields contain the same CA bundle OCID during the deprecation period; removal requires a major provider release.
+     * 
+     * @deprecated
+     * Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
+     * 
+     */
+    @Deprecated /* Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID. */
     public String certificateId() {
         return this.certificateId;
     }
@@ -58,17 +78,27 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItemRemoteRei
     }
     @CustomType.Builder
     public static final class Builder {
+        private String caBundleId;
         private String certificateId;
         private String endpoint;
         private String endpointResolutionIp;
         public Builder() {}
         public Builder(GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.caBundleId = defaults.caBundleId;
     	      this.certificateId = defaults.certificateId;
     	      this.endpoint = defaults.endpoint;
     	      this.endpointResolutionIp = defaults.endpointResolutionIp;
         }
 
+        @CustomType.Setter
+        public Builder caBundleId(String caBundleId) {
+            if (caBundleId == null) {
+              throw new MissingRequiredPropertyException("GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource", "caBundleId");
+            }
+            this.caBundleId = caBundleId;
+            return this;
+        }
         @CustomType.Setter
         public Builder certificateId(String certificateId) {
             if (certificateId == null) {
@@ -95,6 +125,7 @@ public final class GetOpensearchClustersOpensearchClusterCollectionItemRemoteRei
         }
         public GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource build() {
             final var _resultValue = new GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource();
+            _resultValue.caBundleId = caBundleId;
             _resultValue.certificateId = certificateId;
             _resultValue.endpoint = endpoint;
             _resultValue.endpointResolutionIp = endpointResolutionIp;

@@ -16,6 +16,7 @@ import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemPatchOperat
 import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemReplicationConfig;
 import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemSource;
 import com.pulumi.oci.Psql.outputs.GetDbSystemsDbSystemCollectionItemStorageDetail;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -29,6 +30,11 @@ public final class GetDbSystemsDbSystemCollectionItem {
      * 
      */
     private String adminUsername;
+    /**
+     * @return Allow in-place upgrades when dbVersion changes to a higher major version. When false, changing dbVersion replaces the database system. This setting has no effect during creation.
+     * 
+     */
+    private Boolean allowMajorVersionUpgrade;
     private String applyChangeModeToStandAlone;
     private String applyConfig;
     /**
@@ -173,6 +179,11 @@ public final class GetDbSystemsDbSystemCollectionItem {
      * 
      */
     private String timeUpdated;
+    /**
+     * @return Optional post-upgrade operations, applied only when dbVersion changes and allowMajorVersionUpgrade is true. If omitted or empty, verification and vacuum are skipped.
+     * 
+     */
+    private List<String> upgradeOptions;
 
     private GetDbSystemsDbSystemCollectionItem() {}
     /**
@@ -181,6 +192,13 @@ public final class GetDbSystemsDbSystemCollectionItem {
      */
     public String adminUsername() {
         return this.adminUsername;
+    }
+    /**
+     * @return Allow in-place upgrades when dbVersion changes to a higher major version. When false, changing dbVersion replaces the database system. This setting has no effect during creation.
+     * 
+     */
+    public Boolean allowMajorVersionUpgrade() {
+        return this.allowMajorVersionUpgrade;
     }
     public String applyChangeModeToStandAlone() {
         return this.applyChangeModeToStandAlone;
@@ -390,6 +408,13 @@ public final class GetDbSystemsDbSystemCollectionItem {
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    /**
+     * @return Optional post-upgrade operations, applied only when dbVersion changes and allowMajorVersionUpgrade is true. If omitted or empty, verification and vacuum are skipped.
+     * 
+     */
+    public List<String> upgradeOptions() {
+        return this.upgradeOptions;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -401,6 +426,7 @@ public final class GetDbSystemsDbSystemCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private String adminUsername;
+        private Boolean allowMajorVersionUpgrade;
         private String applyChangeModeToStandAlone;
         private String applyConfig;
         private String compartmentId;
@@ -433,10 +459,12 @@ public final class GetDbSystemsDbSystemCollectionItem {
         private String systemType;
         private String timeCreated;
         private String timeUpdated;
+        private List<String> upgradeOptions;
         public Builder() {}
         public Builder(GetDbSystemsDbSystemCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminUsername = defaults.adminUsername;
+    	      this.allowMajorVersionUpgrade = defaults.allowMajorVersionUpgrade;
     	      this.applyChangeModeToStandAlone = defaults.applyChangeModeToStandAlone;
     	      this.applyConfig = defaults.applyConfig;
     	      this.compartmentId = defaults.compartmentId;
@@ -469,6 +497,7 @@ public final class GetDbSystemsDbSystemCollectionItem {
     	      this.systemType = defaults.systemType;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.upgradeOptions = defaults.upgradeOptions;
         }
 
         @CustomType.Setter
@@ -477,6 +506,14 @@ public final class GetDbSystemsDbSystemCollectionItem {
               throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItem", "adminUsername");
             }
             this.adminUsername = adminUsername;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder allowMajorVersionUpgrade(Boolean allowMajorVersionUpgrade) {
+            if (allowMajorVersionUpgrade == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItem", "allowMajorVersionUpgrade");
+            }
+            this.allowMajorVersionUpgrade = allowMajorVersionUpgrade;
             return this;
         }
         @CustomType.Setter
@@ -768,9 +805,21 @@ public final class GetDbSystemsDbSystemCollectionItem {
             this.timeUpdated = timeUpdated;
             return this;
         }
+        @CustomType.Setter
+        public Builder upgradeOptions(List<String> upgradeOptions) {
+            if (upgradeOptions == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemsDbSystemCollectionItem", "upgradeOptions");
+            }
+            this.upgradeOptions = upgradeOptions;
+            return this;
+        }
+        public Builder upgradeOptions(String... upgradeOptions) {
+            return upgradeOptions(List.of(upgradeOptions));
+        }
         public GetDbSystemsDbSystemCollectionItem build() {
             final var _resultValue = new GetDbSystemsDbSystemCollectionItem();
             _resultValue.adminUsername = adminUsername;
+            _resultValue.allowMajorVersionUpgrade = allowMajorVersionUpgrade;
             _resultValue.applyChangeModeToStandAlone = applyChangeModeToStandAlone;
             _resultValue.applyConfig = applyConfig;
             _resultValue.compartmentId = compartmentId;
@@ -803,6 +852,7 @@ public final class GetDbSystemsDbSystemCollectionItem {
             _resultValue.systemType = systemType;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
+            _resultValue.upgradeOptions = upgradeOptions;
             return _resultValue;
         }
     }

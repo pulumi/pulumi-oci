@@ -223,7 +223,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     private List<String> nsgIds;
     /**
-     * @return Deployment Data for an OggDeployment
+     * @return Deployment Data for an OggDeployment.
      * 
      */
     private List<GetDeploymentsDeploymentCollectionItemOggData> oggDatas;
@@ -595,7 +595,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
         return this.nsgIds;
     }
     /**
-     * @return Deployment Data for an OggDeployment
+     * @return Deployment Data for an OggDeployment.
      * 
      */
     public List<GetDeploymentsDeploymentCollectionItemOggData> oggDatas() {

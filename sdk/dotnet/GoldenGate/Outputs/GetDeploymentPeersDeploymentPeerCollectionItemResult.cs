@@ -46,7 +46,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string PrecheckStatus;
         /// <summary>
-        /// The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+        /// The name of the region. e.g.: us-ashburn-1
         /// </summary>
         public readonly string Region;
         /// <summary>

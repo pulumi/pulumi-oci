@@ -2267,7 +2267,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLinks = TenantmanagercontrolplaneFunctions.getLinks(GetLinksArgs.builder()
-     *             .childTenancyId(testTenancy.get("id"))
+     *             .childTenancyId(testChildTenancy.get("id"))
      *             .feature(linkFeature)
      *             .parentTenancyId(testTenancy.get("id"))
      *             .state(linkState)
@@ -2312,7 +2312,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLinks = TenantmanagercontrolplaneFunctions.getLinks(GetLinksArgs.builder()
-     *             .childTenancyId(testTenancy.get("id"))
+     *             .childTenancyId(testChildTenancy.get("id"))
      *             .feature(linkFeature)
      *             .parentTenancyId(testTenancy.get("id"))
      *             .state(linkState)
@@ -2357,7 +2357,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLinks = TenantmanagercontrolplaneFunctions.getLinks(GetLinksArgs.builder()
-     *             .childTenancyId(testTenancy.get("id"))
+     *             .childTenancyId(testChildTenancy.get("id"))
      *             .feature(linkFeature)
      *             .parentTenancyId(testTenancy.get("id"))
      *             .state(linkState)
@@ -2402,7 +2402,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLinks = TenantmanagercontrolplaneFunctions.getLinks(GetLinksArgs.builder()
-     *             .childTenancyId(testTenancy.get("id"))
+     *             .childTenancyId(testChildTenancy.get("id"))
      *             .feature(linkFeature)
      *             .parentTenancyId(testTenancy.get("id"))
      *             .state(linkState)
@@ -2447,7 +2447,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLinks = TenantmanagercontrolplaneFunctions.getLinks(GetLinksArgs.builder()
-     *             .childTenancyId(testTenancy.get("id"))
+     *             .childTenancyId(testChildTenancy.get("id"))
      *             .feature(linkFeature)
      *             .parentTenancyId(testTenancy.get("id"))
      *             .state(linkState)
@@ -2492,7 +2492,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLinks = TenantmanagercontrolplaneFunctions.getLinks(GetLinksArgs.builder()
-     *             .childTenancyId(testTenancy.get("id"))
+     *             .childTenancyId(testChildTenancy.get("id"))
      *             .feature(linkFeature)
      *             .parentTenancyId(testTenancy.get("id"))
      *             .state(linkState)
@@ -2537,7 +2537,7 @@ public final class TenantmanagercontrolplaneFunctions {
      * 
      *     public static void stack(Context ctx) {
      *         final var testLinks = TenantmanagercontrolplaneFunctions.getLinks(GetLinksArgs.builder()
-     *             .childTenancyId(testTenancy.get("id"))
+     *             .childTenancyId(testChildTenancy.get("id"))
      *             .feature(linkFeature)
      *             .parentTenancyId(testTenancy.get("id"))
      *             .state(linkState)

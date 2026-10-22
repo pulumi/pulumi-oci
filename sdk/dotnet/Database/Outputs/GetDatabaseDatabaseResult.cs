@@ -62,6 +62,11 @@ namespace Pulumi.Oci.Database.Outputs
         /// True if active Data Guard is enabled.
         /// </summary>
         public readonly bool IsActiveDataGuardEnabled;
+        public readonly bool IsThinClone;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        /// </summary>
+        public readonly string KeyStoreId;
         /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
@@ -96,8 +101,11 @@ namespace Pulumi.Oci.Database.Outputs
         /// Specifies a prefix for the `Oracle SID` of the database to be created.
         /// </summary>
         public readonly string SidPrefix;
+        public readonly string SourceAdminPassword;
         public readonly string SourceDatabaseId;
         public readonly ImmutableArray<Outputs.GetDatabaseDatabaseSourceEncryptionKeyLocationDetailResult> SourceEncryptionKeyLocationDetails;
+        public readonly string SourceSnapshotId;
+        public readonly string SourceTdePassword;
         public readonly string SourceTdeWalletPassword;
         /// <summary>
         /// The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
@@ -155,6 +163,10 @@ namespace Pulumi.Oci.Database.Outputs
 
             bool isActiveDataGuardEnabled,
 
+            bool isThinClone,
+
+            string keyStoreId,
+
             string kmsKeyId,
 
             string kmsKeyVersionId,
@@ -175,9 +187,15 @@ namespace Pulumi.Oci.Database.Outputs
 
             string sidPrefix,
 
+            string sourceAdminPassword,
+
             string sourceDatabaseId,
 
             ImmutableArray<Outputs.GetDatabaseDatabaseSourceEncryptionKeyLocationDetailResult> sourceEncryptionKeyLocationDetails,
+
+            string sourceSnapshotId,
+
+            string sourceTdePassword,
 
             string sourceTdeWalletPassword,
 
@@ -209,6 +227,8 @@ namespace Pulumi.Oci.Database.Outputs
             EncryptionKeyLocationDetails = encryptionKeyLocationDetails;
             FreeformTags = freeformTags;
             IsActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            IsThinClone = isThinClone;
+            KeyStoreId = keyStoreId;
             KmsKeyId = kmsKeyId;
             KmsKeyVersionId = kmsKeyVersionId;
             ManagedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
@@ -219,8 +239,11 @@ namespace Pulumi.Oci.Database.Outputs
             ProtectionMode = protectionMode;
             RecoveryApplianceVpcPassword = recoveryApplianceVpcPassword;
             SidPrefix = sidPrefix;
+            SourceAdminPassword = sourceAdminPassword;
             SourceDatabaseId = sourceDatabaseId;
             SourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
+            SourceSnapshotId = sourceSnapshotId;
+            SourceTdePassword = sourceTdePassword;
             SourceTdeWalletPassword = sourceTdeWalletPassword;
             StorageSizeDetails = storageSizeDetails;
             TdeWalletPassword = tdeWalletPassword;

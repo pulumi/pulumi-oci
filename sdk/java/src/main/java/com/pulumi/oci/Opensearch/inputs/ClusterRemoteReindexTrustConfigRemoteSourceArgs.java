@@ -17,18 +17,41 @@ public final class ClusterRemoteReindexTrustConfigRemoteSourceArgs extends com.p
     public static final ClusterRemoteReindexTrustConfigRemoteSourceArgs Empty = new ClusterRemoteReindexTrustConfigRemoteSourceArgs();
 
     /**
-     * (Updatable) OCID of the certificate or CA chain used to verify the remote cluster&#39;s HTTPS certificate.
+     * (Updatable) OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster&#39;s HTTPS certificate. Required when `certificateId` is not specified.
      * 
      */
-    @Import(name="certificateId", required=true)
-    private Output<String> certificateId;
+    @Import(name="caBundleId")
+    private @Nullable Output<String> caBundleId;
 
     /**
-     * @return (Updatable) OCID of the certificate or CA chain used to verify the remote cluster&#39;s HTTPS certificate.
+     * @return (Updatable) OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster&#39;s HTTPS certificate. Required when `certificateId` is not specified.
      * 
      */
-    public Output<String> certificateId() {
-        return this.certificateId;
+    public Optional<Output<String>> caBundleId() {
+        return Optional.ofNullable(this.caBundleId);
+    }
+
+    /**
+     * (Updatable) **Deprecated** Alias for `caBundleId`; use `caBundleId` instead. The value must be an OCI Certificates service CA bundle OCID, not a certificate OCID. Existing configurations remain supported during the deprecation period; removal requires a major provider release.
+     * 
+     * @deprecated
+     * Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
+     * 
+     */
+    @Deprecated /* Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID. */
+    @Import(name="certificateId")
+    private @Nullable Output<String> certificateId;
+
+    /**
+     * @return (Updatable) **Deprecated** Alias for `caBundleId`; use `caBundleId` instead. The value must be an OCI Certificates service CA bundle OCID, not a certificate OCID. Existing configurations remain supported during the deprecation period; removal requires a major provider release.
+     * 
+     * @deprecated
+     * Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
+     * 
+     */
+    @Deprecated /* Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID. */
+    public Optional<Output<String>> certificateId() {
+        return Optional.ofNullable(this.certificateId);
     }
 
     /**
@@ -64,6 +87,7 @@ public final class ClusterRemoteReindexTrustConfigRemoteSourceArgs extends com.p
     private ClusterRemoteReindexTrustConfigRemoteSourceArgs() {}
 
     private ClusterRemoteReindexTrustConfigRemoteSourceArgs(ClusterRemoteReindexTrustConfigRemoteSourceArgs $) {
+        this.caBundleId = $.caBundleId;
         this.certificateId = $.certificateId;
         this.endpoint = $.endpoint;
         this.endpointResolutionIp = $.endpointResolutionIp;
@@ -88,22 +112,51 @@ public final class ClusterRemoteReindexTrustConfigRemoteSourceArgs extends com.p
         }
 
         /**
-         * @param certificateId (Updatable) OCID of the certificate or CA chain used to verify the remote cluster&#39;s HTTPS certificate.
+         * @param caBundleId (Updatable) OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster&#39;s HTTPS certificate. Required when `certificateId` is not specified.
          * 
          * @return builder
          * 
          */
-        public Builder certificateId(Output<String> certificateId) {
+        public Builder caBundleId(@Nullable Output<String> caBundleId) {
+            $.caBundleId = caBundleId;
+            return this;
+        }
+
+        /**
+         * @param caBundleId (Updatable) OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster&#39;s HTTPS certificate. Required when `certificateId` is not specified.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder caBundleId(String caBundleId) {
+            return caBundleId(Output.of(caBundleId));
+        }
+
+        /**
+         * @param certificateId (Updatable) **Deprecated** Alias for `caBundleId`; use `caBundleId` instead. The value must be an OCI Certificates service CA bundle OCID, not a certificate OCID. Existing configurations remain supported during the deprecation period; removal requires a major provider release.
+         * 
+         * @return builder
+         * 
+         * @deprecated
+         * Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
+         * 
+         */
+        @Deprecated /* Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID. */
+        public Builder certificateId(@Nullable Output<String> certificateId) {
             $.certificateId = certificateId;
             return this;
         }
 
         /**
-         * @param certificateId (Updatable) OCID of the certificate or CA chain used to verify the remote cluster&#39;s HTTPS certificate.
+         * @param certificateId (Updatable) **Deprecated** Alias for `caBundleId`; use `caBundleId` instead. The value must be an OCI Certificates service CA bundle OCID, not a certificate OCID. Existing configurations remain supported during the deprecation period; removal requires a major provider release.
          * 
          * @return builder
          * 
+         * @deprecated
+         * Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
+         * 
          */
+        @Deprecated /* Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID. */
         public Builder certificateId(String certificateId) {
             return certificateId(Output.of(certificateId));
         }
@@ -151,9 +204,6 @@ public final class ClusterRemoteReindexTrustConfigRemoteSourceArgs extends com.p
         }
 
         public ClusterRemoteReindexTrustConfigRemoteSourceArgs build() {
-            if ($.certificateId == null) {
-                throw new MissingRequiredPropertyException("ClusterRemoteReindexTrustConfigRemoteSourceArgs", "certificateId");
-            }
             if ($.endpoint == null) {
                 throw new MissingRequiredPropertyException("ClusterRemoteReindexTrustConfigRemoteSourceArgs", "endpoint");
             }

@@ -13,9 +13,8 @@ namespace Pulumi.Oci.GoldenGate.Inputs
     public sealed class ConnectionStorageGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable)
-        /// * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-        /// * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+        /// (Updatable) Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+        /// 
         /// Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
         /// </summary>
         [Input("accessKeyId")]
@@ -40,10 +39,7 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         public Input<string>? AccountName { get; set; }
 
         /// <summary>
-        /// (Updatable)
-        /// * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
-        /// * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
-        /// * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
+        /// (Updatable) Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
         /// </summary>
         [Input("bucket")]
         public Input<string>? Bucket { get; set; }
@@ -55,11 +51,7 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         public Input<string>? Container { get; set; }
 
         /// <summary>
-        /// (Updatable)
-        /// * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
-        /// * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
-        /// * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
-        /// * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://&lt;namespace&gt;.compat.objectstorage.&lt;region&gt;.&lt;domain&gt;" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
+        /// (Updatable) Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://&lt;namespace&gt;.compat.objectstorage.&lt;region&gt;.&lt;domain&gt;" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
         /// </summary>
         [Input("endpoint")]
         public Input<string>? Endpoint { get; set; }
@@ -83,18 +75,13 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         public Input<string>? SchemeType { get; set; }
 
         /// <summary>
-        /// (Updatable)
-        /// * AMAZON_S3: Secret access key to access the Amazon S3 bucket.
-        /// * OCI_OBJECT_STORAGE_S3_API: Secret Access Key from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-        /// Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+        /// (Updatable) Secret Access Key from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API. Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         /// </summary>
         [Input("secretAccessKey")]
         public Input<string>? SecretAccessKey { get; set; }
 
         /// <summary>
-        /// (Updatable)
-        /// * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-        /// * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
         /// </summary>
         [Input("secretAccessKeySecretId")]
         public Input<string>? SecretAccessKeySecretId { get; set; }
@@ -112,7 +99,12 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         public Input<string>? ServiceAccountKeyFileSecretId { get; set; }
 
         /// <summary>
-        /// (Updatable) The storage type used in the Iceberg connection.
+        /// (Updatable) The storage type used in the Iceberg connection. Supported storage types by catalog type:
+        /// * GLUE: AMAZON_S3.
+        /// * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
+        /// * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+        /// * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+        /// * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
         /// </summary>
         [Input("storageType", required: true)]
         public Input<string> StorageType { get; set; } = null!;

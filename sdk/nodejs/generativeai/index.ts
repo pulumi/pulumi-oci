@@ -145,6 +145,11 @@ export const getDedicatedAiCluster: typeof import("./getDedicatedAiCluster").get
 export const getDedicatedAiClusterOutput: typeof import("./getDedicatedAiCluster").getDedicatedAiClusterOutput = null as any;
 utilities.lazyLoad(exports, ["getDedicatedAiCluster","getDedicatedAiClusterOutput"], () => require("./getDedicatedAiCluster"));
 
+export { GetDedicatedAiClusterAllocatableGpusArgs, GetDedicatedAiClusterAllocatableGpusResult, GetDedicatedAiClusterAllocatableGpusOutputArgs } from "./getDedicatedAiClusterAllocatableGpus";
+export const getDedicatedAiClusterAllocatableGpus: typeof import("./getDedicatedAiClusterAllocatableGpus").getDedicatedAiClusterAllocatableGpus = null as any;
+export const getDedicatedAiClusterAllocatableGpusOutput: typeof import("./getDedicatedAiClusterAllocatableGpus").getDedicatedAiClusterAllocatableGpusOutput = null as any;
+utilities.lazyLoad(exports, ["getDedicatedAiClusterAllocatableGpus","getDedicatedAiClusterAllocatableGpusOutput"], () => require("./getDedicatedAiClusterAllocatableGpus"));
+
 export { GetDedicatedAiClustersArgs, GetDedicatedAiClustersResult, GetDedicatedAiClustersOutputArgs } from "./getDedicatedAiClusters";
 export const getDedicatedAiClusters: typeof import("./getDedicatedAiClusters").getDedicatedAiClusters = null as any;
 export const getDedicatedAiClustersOutput: typeof import("./getDedicatedAiClusters").getDedicatedAiClustersOutput = null as any;

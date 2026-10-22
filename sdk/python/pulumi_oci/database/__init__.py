@@ -39,6 +39,7 @@ from .cloud_vm_cluster_iorm_config import *
 from .data_guard_association import *
 from .data_patch import *
 from .database import *
+from .database_snapshot import *
 from .database_snapshot_standby import *
 from .database_software_image import *
 from .database_software_schedule_management import *
@@ -137,6 +138,8 @@ from .get_database_maintenance_run_histories import *
 from .get_database_maintenance_run_history import *
 from .get_database_pdb_conversion_history_entries import *
 from .get_database_pdb_conversion_history_entry import *
+from .get_database_snapshot import *
+from .get_database_snapshots import *
 from .get_database_software_image import *
 from .get_database_software_images import *
 from .get_database_upgrade_history_entries import *

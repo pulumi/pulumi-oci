@@ -34,6 +34,7 @@ from .get_agent_tools import *
 from .get_apikey import *
 from .get_apikeys import *
 from .get_dedicated_ai_cluster import *
+from .get_dedicated_ai_cluster_allocatable_gpus import *
 from .get_dedicated_ai_clusters import *
 from .get_endpoint import *
 from .get_endpoints import *

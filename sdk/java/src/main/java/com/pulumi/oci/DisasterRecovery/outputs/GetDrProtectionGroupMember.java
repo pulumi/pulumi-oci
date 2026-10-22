@@ -14,6 +14,7 @@ import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberCommonD
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberDbSystemAdminUserDetail;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberDbSystemReplicationUserDetail;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberDestinationEncryptionKey;
+import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberDrDrillProperty;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberExportMapping;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberFileSystemOperation;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupMemberLoadBalancerMapping;
@@ -133,6 +134,11 @@ public final class GetDrProtectionGroupMember {
      */
     private String destinationSnapshotPolicyId;
     /**
+     * @return DR drill-specific properties for a movable compute instance member.
+     * 
+     */
+    private List<GetDrProtectionGroupMemberDrDrillProperty> drDrillProperties;
+    /**
      * @return A list of mappings between the primary region file system export and destination region mount target.
      * 
      */
@@ -193,7 +199,7 @@ public final class GetDrProtectionGroupMember {
      */
     private String memberType;
     /**
-     * @return The OKE namespace where the config map resides. Example: `namespaceString5`
+     * @return The OKE namespace where the config map resides.  Example: `namespaceString5`
      * 
      */
     private String namespace;
@@ -213,7 +219,7 @@ public final class GetDrProtectionGroupMember {
      */
     private String peerClusterId;
     /**
-     * @return The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+     * @return The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
      * 
      */
     private String peerDbSystemId;
@@ -390,6 +396,13 @@ public final class GetDrProtectionGroupMember {
         return this.destinationSnapshotPolicyId;
     }
     /**
+     * @return DR drill-specific properties for a movable compute instance member.
+     * 
+     */
+    public List<GetDrProtectionGroupMemberDrDrillProperty> drDrillProperties() {
+        return this.drDrillProperties;
+    }
+    /**
      * @return A list of mappings between the primary region file system export and destination region mount target.
      * 
      */
@@ -474,7 +487,7 @@ public final class GetDrProtectionGroupMember {
         return this.memberType;
     }
     /**
-     * @return The OKE namespace where the config map resides. Example: `namespaceString5`
+     * @return The OKE namespace where the config map resides.  Example: `namespaceString5`
      * 
      */
     public String namespace() {
@@ -502,7 +515,7 @@ public final class GetDrProtectionGroupMember {
         return this.peerClusterId;
     }
     /**
-     * @return The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+     * @return The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
      * 
      */
     public String peerDbSystemId() {
@@ -580,6 +593,7 @@ public final class GetDrProtectionGroupMember {
         private String destinationLoadBalancerId;
         private String destinationNetworkLoadBalancerId;
         private String destinationSnapshotPolicyId;
+        private List<GetDrProtectionGroupMemberDrDrillProperty> drDrillProperties;
         private List<GetDrProtectionGroupMemberExportMapping> exportMappings;
         private List<GetDrProtectionGroupMemberFileSystemOperation> fileSystemOperations;
         private Integer gtidReconciliationTimeout;
@@ -626,6 +640,7 @@ public final class GetDrProtectionGroupMember {
     	      this.destinationLoadBalancerId = defaults.destinationLoadBalancerId;
     	      this.destinationNetworkLoadBalancerId = defaults.destinationNetworkLoadBalancerId;
     	      this.destinationSnapshotPolicyId = defaults.destinationSnapshotPolicyId;
+    	      this.drDrillProperties = defaults.drDrillProperties;
     	      this.exportMappings = defaults.exportMappings;
     	      this.fileSystemOperations = defaults.fileSystemOperations;
     	      this.gtidReconciliationTimeout = defaults.gtidReconciliationTimeout;
@@ -837,6 +852,17 @@ public final class GetDrProtectionGroupMember {
             }
             this.destinationSnapshotPolicyId = destinationSnapshotPolicyId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder drDrillProperties(List<GetDrProtectionGroupMemberDrDrillProperty> drDrillProperties) {
+            if (drDrillProperties == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupMember", "drDrillProperties");
+            }
+            this.drDrillProperties = drDrillProperties;
+            return this;
+        }
+        public Builder drDrillProperties(GetDrProtectionGroupMemberDrDrillProperty... drDrillProperties) {
+            return drDrillProperties(List.of(drDrillProperties));
         }
         @CustomType.Setter
         public Builder exportMappings(List<GetDrProtectionGroupMemberExportMapping> exportMappings) {
@@ -1077,6 +1103,7 @@ public final class GetDrProtectionGroupMember {
             _resultValue.destinationLoadBalancerId = destinationLoadBalancerId;
             _resultValue.destinationNetworkLoadBalancerId = destinationNetworkLoadBalancerId;
             _resultValue.destinationSnapshotPolicyId = destinationSnapshotPolicyId;
+            _resultValue.drDrillProperties = drDrillProperties;
             _resultValue.exportMappings = exportMappings;
             _resultValue.fileSystemOperations = fileSystemOperations;
             _resultValue.gtidReconciliationTimeout = gtidReconciliationTimeout;

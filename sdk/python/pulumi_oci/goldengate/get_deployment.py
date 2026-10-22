@@ -533,7 +533,7 @@ class GetDeploymentResult:
     @pulumi.getter(name="oggDatas")
     def ogg_datas(self) -> Sequence['outputs.GetDeploymentOggDataResult']:
         """
-        Deployment Data for an OggDeployment
+        Deployment Data for an OggDeployment.
         """
         return pulumi.get(self, "ogg_datas")
 

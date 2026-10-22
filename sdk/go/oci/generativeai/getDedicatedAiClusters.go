@@ -30,10 +30,11 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := generativeai.GetDedicatedAiClusters(ctx, &generativeai.GetDedicatedAiClustersArgs{
-//				CompartmentId: compartmentId,
-//				DisplayName:   pulumi.StringRef(dedicatedAiClusterDisplayName),
-//				Id:            pulumi.StringRef(dedicatedAiClusterId),
-//				State:         pulumi.StringRef(dedicatedAiClusterState),
+//				CompartmentId:         compartmentId,
+//				CapacityReservationId: pulumi.StringRef(testCapacityReservation.Id),
+//				DisplayName:           pulumi.StringRef(dedicatedAiClusterDisplayName),
+//				Id:                    pulumi.StringRef(dedicatedAiClusterId),
+//				State:                 pulumi.StringRef(dedicatedAiClusterState),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -55,6 +56,8 @@ func GetDedicatedAiClusters(ctx *pulumi.Context, args *GetDedicatedAiClustersArg
 
 // A collection of arguments for invoking getDedicatedAiClusters.
 type GetDedicatedAiClustersArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
+	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// A filter to return only resources that match the given display name exactly.
@@ -68,6 +71,8 @@ type GetDedicatedAiClustersArgs struct {
 
 // A collection of values returned by getDedicatedAiClusters.
 type GetDedicatedAiClustersResult struct {
+	// The OCID of the capacity reservation.
+	CapacityReservationId *string `pulumi:"capacityReservationId"`
 	// The compartment OCID to create the dedicated AI cluster in.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The list of dedicated_ai_cluster_collection.
@@ -88,6 +93,8 @@ func GetDedicatedAiClustersOutput(ctx *pulumi.Context, args GetDedicatedAiCluste
 
 // A collection of arguments for invoking getDedicatedAiClusters.
 type GetDedicatedAiClustersOutputArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
+	CapacityReservationId pulumi.StringPtrInput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// A filter to return only resources that match the given display name exactly.
@@ -116,6 +123,11 @@ func (o GetDedicatedAiClustersResultOutput) ToGetDedicatedAiClustersResultOutput
 
 func (o GetDedicatedAiClustersResultOutput) ToGetDedicatedAiClustersResultOutputWithContext(ctx context.Context) GetDedicatedAiClustersResultOutput {
 	return o
+}
+
+// The OCID of the capacity reservation.
+func (o GetDedicatedAiClustersResultOutput) CapacityReservationId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetDedicatedAiClustersResult) *string { return v.CapacityReservationId }).(pulumi.StringPtrOutput)
 }
 
 // The compartment OCID to create the dedicated AI cluster in.

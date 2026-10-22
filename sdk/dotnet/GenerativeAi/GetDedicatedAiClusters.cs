@@ -29,6 +29,7 @@ namespace Pulumi.Oci.GenerativeAi
         ///     var testDedicatedAiClusters = Oci.GenerativeAi.GetDedicatedAiClusters.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         CapacityReservationId = testCapacityReservation.Id,
         ///         DisplayName = dedicatedAiClusterDisplayName,
         ///         Id = dedicatedAiClusterId,
         ///         State = dedicatedAiClusterState,
@@ -58,6 +59,7 @@ namespace Pulumi.Oci.GenerativeAi
         ///     var testDedicatedAiClusters = Oci.GenerativeAi.GetDedicatedAiClusters.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         CapacityReservationId = testCapacityReservation.Id,
         ///         DisplayName = dedicatedAiClusterDisplayName,
         ///         Id = dedicatedAiClusterId,
         ///         State = dedicatedAiClusterState,
@@ -87,6 +89,7 @@ namespace Pulumi.Oci.GenerativeAi
         ///     var testDedicatedAiClusters = Oci.GenerativeAi.GetDedicatedAiClusters.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         CapacityReservationId = testCapacityReservation.Id,
         ///         DisplayName = dedicatedAiClusterDisplayName,
         ///         Id = dedicatedAiClusterId,
         ///         State = dedicatedAiClusterState,
@@ -102,6 +105,12 @@ namespace Pulumi.Oci.GenerativeAi
 
     public sealed class GetDedicatedAiClustersArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
+        /// </summary>
+        [Input("capacityReservationId")]
+        public string? CapacityReservationId { get; set; }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
@@ -142,6 +151,12 @@ namespace Pulumi.Oci.GenerativeAi
 
     public sealed class GetDedicatedAiClustersInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
+        /// </summary>
+        [Input("capacityReservationId")]
+        public Input<string>? CapacityReservationId { get; set; }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
@@ -185,6 +200,10 @@ namespace Pulumi.Oci.GenerativeAi
     public sealed class GetDedicatedAiClustersResult
     {
         /// <summary>
+        /// The OCID of the capacity reservation.
+        /// </summary>
+        public readonly string? CapacityReservationId;
+        /// <summary>
         /// The compartment OCID to create the dedicated AI cluster in.
         /// </summary>
         public readonly string CompartmentId;
@@ -208,6 +227,8 @@ namespace Pulumi.Oci.GenerativeAi
 
         [OutputConstructor]
         private GetDedicatedAiClustersResult(
+            string? capacityReservationId,
+
             string compartmentId,
 
             ImmutableArray<Outputs.GetDedicatedAiClustersDedicatedAiClusterCollectionResult> dedicatedAiClusterCollections,
@@ -220,6 +241,7 @@ namespace Pulumi.Oci.GenerativeAi
 
             string? state)
         {
+            CapacityReservationId = capacityReservationId;
             CompartmentId = compartmentId;
             DedicatedAiClusterCollections = dedicatedAiClusterCollections;
             DisplayName = displayName;

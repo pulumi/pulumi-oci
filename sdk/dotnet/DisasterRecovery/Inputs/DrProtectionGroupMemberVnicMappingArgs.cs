@@ -25,16 +25,26 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
+        /// (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
         /// </summary>
         [Input("destinationPrimaryPrivateIpAddress")]
         public Input<string>? DestinationPrimaryPrivateIpAddress { get; set; }
 
         /// <summary>
-        /// (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `Myhost1`
+        /// (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `Myhost1`
         /// </summary>
         [Input("destinationPrimaryPrivateIpHostnameLabel")]
         public Input<string>? DestinationPrimaryPrivateIpHostnameLabel { get; set; }
+
+        /// <summary>
+        /// (Updatable) The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+        /// 
+        /// For legacy compatibility, omit this attribute and use either the legacy explicit private-IP fields or the freeform tag, but not both configuration mechanisms for the same source VNIC.
+        /// 
+        /// Example: `ocid1.privateip.oc1..uniqueID`
+        /// </summary>
+        [Input("destinationReservedPrimaryPrivateIpId")]
+        public Input<string>? DestinationReservedPrimaryPrivateIpId { get; set; }
 
         /// <summary>
         /// (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`

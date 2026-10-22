@@ -30,7 +30,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string? CredentialStore;
         /// <summary>
-        /// The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. For standby deployment the deployment name is inherited from primary.
+        /// The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. If not provided, the service derives this value from the deployment display name. For standby deployment the deployment name is inherited from primary. Deprecated: This field is deprecated and will be removed after the date provided in the announcement: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
         /// </summary>
         public readonly string? DeploymentName;
         /// <summary>

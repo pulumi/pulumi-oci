@@ -67832,6 +67832,449 @@ func (o GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutput
 	}).(GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput)
 }
 
+type GetPssInstancesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetPssInstancesFilterInput is an input type that accepts GetPssInstancesFilterArgs and GetPssInstancesFilterOutput values.
+// You can construct a concrete instance of `GetPssInstancesFilterInput` via:
+//
+//	GetPssInstancesFilterArgs{...}
+type GetPssInstancesFilterInput interface {
+	pulumi.Input
+
+	ToGetPssInstancesFilterOutput() GetPssInstancesFilterOutput
+	ToGetPssInstancesFilterOutputWithContext(context.Context) GetPssInstancesFilterOutput
+}
+
+type GetPssInstancesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetPssInstancesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPssInstancesFilter)(nil)).Elem()
+}
+
+func (i GetPssInstancesFilterArgs) ToGetPssInstancesFilterOutput() GetPssInstancesFilterOutput {
+	return i.ToGetPssInstancesFilterOutputWithContext(context.Background())
+}
+
+func (i GetPssInstancesFilterArgs) ToGetPssInstancesFilterOutputWithContext(ctx context.Context) GetPssInstancesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPssInstancesFilterOutput)
+}
+
+// GetPssInstancesFilterArrayInput is an input type that accepts GetPssInstancesFilterArray and GetPssInstancesFilterArrayOutput values.
+// You can construct a concrete instance of `GetPssInstancesFilterArrayInput` via:
+//
+//	GetPssInstancesFilterArray{ GetPssInstancesFilterArgs{...} }
+type GetPssInstancesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetPssInstancesFilterArrayOutput() GetPssInstancesFilterArrayOutput
+	ToGetPssInstancesFilterArrayOutputWithContext(context.Context) GetPssInstancesFilterArrayOutput
+}
+
+type GetPssInstancesFilterArray []GetPssInstancesFilterInput
+
+func (GetPssInstancesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPssInstancesFilter)(nil)).Elem()
+}
+
+func (i GetPssInstancesFilterArray) ToGetPssInstancesFilterArrayOutput() GetPssInstancesFilterArrayOutput {
+	return i.ToGetPssInstancesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetPssInstancesFilterArray) ToGetPssInstancesFilterArrayOutputWithContext(ctx context.Context) GetPssInstancesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPssInstancesFilterArrayOutput)
+}
+
+type GetPssInstancesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetPssInstancesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPssInstancesFilter)(nil)).Elem()
+}
+
+func (o GetPssInstancesFilterOutput) ToGetPssInstancesFilterOutput() GetPssInstancesFilterOutput {
+	return o
+}
+
+func (o GetPssInstancesFilterOutput) ToGetPssInstancesFilterOutputWithContext(ctx context.Context) GetPssInstancesFilterOutput {
+	return o
+}
+
+func (o GetPssInstancesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPssInstancesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetPssInstancesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetPssInstancesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetPssInstancesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPssInstancesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetPssInstancesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPssInstancesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPssInstancesFilter)(nil)).Elem()
+}
+
+func (o GetPssInstancesFilterArrayOutput) ToGetPssInstancesFilterArrayOutput() GetPssInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetPssInstancesFilterArrayOutput) ToGetPssInstancesFilterArrayOutputWithContext(ctx context.Context) GetPssInstancesFilterArrayOutput {
+	return o
+}
+
+func (o GetPssInstancesFilterArrayOutput) Index(i pulumi.IntInput) GetPssInstancesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPssInstancesFilter {
+		return vs[0].([]GetPssInstancesFilter)[vs[1].(int)]
+	}).(GetPssInstancesFilterOutput)
+}
+
+type GetPssInstancesInstanceCollection struct {
+	Items []GetPssInstancesInstanceCollectionItem `pulumi:"items"`
+}
+
+// GetPssInstancesInstanceCollectionInput is an input type that accepts GetPssInstancesInstanceCollectionArgs and GetPssInstancesInstanceCollectionOutput values.
+// You can construct a concrete instance of `GetPssInstancesInstanceCollectionInput` via:
+//
+//	GetPssInstancesInstanceCollectionArgs{...}
+type GetPssInstancesInstanceCollectionInput interface {
+	pulumi.Input
+
+	ToGetPssInstancesInstanceCollectionOutput() GetPssInstancesInstanceCollectionOutput
+	ToGetPssInstancesInstanceCollectionOutputWithContext(context.Context) GetPssInstancesInstanceCollectionOutput
+}
+
+type GetPssInstancesInstanceCollectionArgs struct {
+	Items GetPssInstancesInstanceCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetPssInstancesInstanceCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPssInstancesInstanceCollection)(nil)).Elem()
+}
+
+func (i GetPssInstancesInstanceCollectionArgs) ToGetPssInstancesInstanceCollectionOutput() GetPssInstancesInstanceCollectionOutput {
+	return i.ToGetPssInstancesInstanceCollectionOutputWithContext(context.Background())
+}
+
+func (i GetPssInstancesInstanceCollectionArgs) ToGetPssInstancesInstanceCollectionOutputWithContext(ctx context.Context) GetPssInstancesInstanceCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPssInstancesInstanceCollectionOutput)
+}
+
+// GetPssInstancesInstanceCollectionArrayInput is an input type that accepts GetPssInstancesInstanceCollectionArray and GetPssInstancesInstanceCollectionArrayOutput values.
+// You can construct a concrete instance of `GetPssInstancesInstanceCollectionArrayInput` via:
+//
+//	GetPssInstancesInstanceCollectionArray{ GetPssInstancesInstanceCollectionArgs{...} }
+type GetPssInstancesInstanceCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetPssInstancesInstanceCollectionArrayOutput() GetPssInstancesInstanceCollectionArrayOutput
+	ToGetPssInstancesInstanceCollectionArrayOutputWithContext(context.Context) GetPssInstancesInstanceCollectionArrayOutput
+}
+
+type GetPssInstancesInstanceCollectionArray []GetPssInstancesInstanceCollectionInput
+
+func (GetPssInstancesInstanceCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPssInstancesInstanceCollection)(nil)).Elem()
+}
+
+func (i GetPssInstancesInstanceCollectionArray) ToGetPssInstancesInstanceCollectionArrayOutput() GetPssInstancesInstanceCollectionArrayOutput {
+	return i.ToGetPssInstancesInstanceCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetPssInstancesInstanceCollectionArray) ToGetPssInstancesInstanceCollectionArrayOutputWithContext(ctx context.Context) GetPssInstancesInstanceCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPssInstancesInstanceCollectionArrayOutput)
+}
+
+type GetPssInstancesInstanceCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetPssInstancesInstanceCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPssInstancesInstanceCollection)(nil)).Elem()
+}
+
+func (o GetPssInstancesInstanceCollectionOutput) ToGetPssInstancesInstanceCollectionOutput() GetPssInstancesInstanceCollectionOutput {
+	return o
+}
+
+func (o GetPssInstancesInstanceCollectionOutput) ToGetPssInstancesInstanceCollectionOutputWithContext(ctx context.Context) GetPssInstancesInstanceCollectionOutput {
+	return o
+}
+
+func (o GetPssInstancesInstanceCollectionOutput) Items() GetPssInstancesInstanceCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetPssInstancesInstanceCollection) []GetPssInstancesInstanceCollectionItem { return v.Items }).(GetPssInstancesInstanceCollectionItemArrayOutput)
+}
+
+type GetPssInstancesInstanceCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPssInstancesInstanceCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPssInstancesInstanceCollection)(nil)).Elem()
+}
+
+func (o GetPssInstancesInstanceCollectionArrayOutput) ToGetPssInstancesInstanceCollectionArrayOutput() GetPssInstancesInstanceCollectionArrayOutput {
+	return o
+}
+
+func (o GetPssInstancesInstanceCollectionArrayOutput) ToGetPssInstancesInstanceCollectionArrayOutputWithContext(ctx context.Context) GetPssInstancesInstanceCollectionArrayOutput {
+	return o
+}
+
+func (o GetPssInstancesInstanceCollectionArrayOutput) Index(i pulumi.IntInput) GetPssInstancesInstanceCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPssInstancesInstanceCollection {
+		return vs[0].([]GetPssInstancesInstanceCollection)[vs[1].(int)]
+	}).(GetPssInstancesInstanceCollectionOutput)
+}
+
+type GetPssInstancesInstanceCollectionItem struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the identity-domain user that initially administers the PSS instance.
+	AdminIdentityDomainUserId string `pulumi:"adminIdentityDomainUserId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Instance.
+	Id string `pulumi:"id"`
+	// The URL of the identity domain associated with the instance.  Example: `https://idcs-1234567890.identity.oraclecloud.com`
+	IdentityDomainUrl string `pulumi:"identityDomainUrl"`
+	// The client ID of the identity-domain confidential application used for browser authentication.
+	IdentityDomainWebAuthClientId string `pulumi:"identityDomainWebAuthClientId"`
+	// The OCID of the Vault secret containing the identity-domain confidential application's client secret.
+	IdentityDomainWebAuthClientSecretVaultId string `pulumi:"identityDomainWebAuthClientSecretVaultId"`
+	// A message that describes the current state of the Instance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The public IP address for the instance's API gateway.
+	PublicIp string `pulumi:"publicIp"`
+	// The HTTPS endpoint for the instance's PSS API.  Example: `https://example.pss.oraclecloud.com/api/`
+	ServiceEndpoint string `pulumi:"serviceEndpoint"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.example-key": "example-value"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the Instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the Instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The HTTPS endpoint for the instance's PSS user interface.  Example: `https://example.pss.oraclecloud.com/ui/`
+	UiEndpoint string `pulumi:"uiEndpoint"`
+}
+
+// GetPssInstancesInstanceCollectionItemInput is an input type that accepts GetPssInstancesInstanceCollectionItemArgs and GetPssInstancesInstanceCollectionItemOutput values.
+// You can construct a concrete instance of `GetPssInstancesInstanceCollectionItemInput` via:
+//
+//	GetPssInstancesInstanceCollectionItemArgs{...}
+type GetPssInstancesInstanceCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetPssInstancesInstanceCollectionItemOutput() GetPssInstancesInstanceCollectionItemOutput
+	ToGetPssInstancesInstanceCollectionItemOutputWithContext(context.Context) GetPssInstancesInstanceCollectionItemOutput
+}
+
+type GetPssInstancesInstanceCollectionItemArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the identity-domain user that initially administers the PSS instance.
+	AdminIdentityDomainUserId pulumi.StringInput `pulumi:"adminIdentityDomainUserId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the given display name exactly.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Instance.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The URL of the identity domain associated with the instance.  Example: `https://idcs-1234567890.identity.oraclecloud.com`
+	IdentityDomainUrl pulumi.StringInput `pulumi:"identityDomainUrl"`
+	// The client ID of the identity-domain confidential application used for browser authentication.
+	IdentityDomainWebAuthClientId pulumi.StringInput `pulumi:"identityDomainWebAuthClientId"`
+	// The OCID of the Vault secret containing the identity-domain confidential application's client secret.
+	IdentityDomainWebAuthClientSecretVaultId pulumi.StringInput `pulumi:"identityDomainWebAuthClientSecretVaultId"`
+	// A message that describes the current state of the Instance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The public IP address for the instance's API gateway.
+	PublicIp pulumi.StringInput `pulumi:"publicIp"`
+	// The HTTPS endpoint for the instance's PSS API.  Example: `https://example.pss.oraclecloud.com/api/`
+	ServiceEndpoint pulumi.StringInput `pulumi:"serviceEndpoint"`
+	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.example-key": "example-value"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the Instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the Instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The HTTPS endpoint for the instance's PSS user interface.  Example: `https://example.pss.oraclecloud.com/ui/`
+	UiEndpoint pulumi.StringInput `pulumi:"uiEndpoint"`
+}
+
+func (GetPssInstancesInstanceCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPssInstancesInstanceCollectionItem)(nil)).Elem()
+}
+
+func (i GetPssInstancesInstanceCollectionItemArgs) ToGetPssInstancesInstanceCollectionItemOutput() GetPssInstancesInstanceCollectionItemOutput {
+	return i.ToGetPssInstancesInstanceCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetPssInstancesInstanceCollectionItemArgs) ToGetPssInstancesInstanceCollectionItemOutputWithContext(ctx context.Context) GetPssInstancesInstanceCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPssInstancesInstanceCollectionItemOutput)
+}
+
+// GetPssInstancesInstanceCollectionItemArrayInput is an input type that accepts GetPssInstancesInstanceCollectionItemArray and GetPssInstancesInstanceCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetPssInstancesInstanceCollectionItemArrayInput` via:
+//
+//	GetPssInstancesInstanceCollectionItemArray{ GetPssInstancesInstanceCollectionItemArgs{...} }
+type GetPssInstancesInstanceCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetPssInstancesInstanceCollectionItemArrayOutput() GetPssInstancesInstanceCollectionItemArrayOutput
+	ToGetPssInstancesInstanceCollectionItemArrayOutputWithContext(context.Context) GetPssInstancesInstanceCollectionItemArrayOutput
+}
+
+type GetPssInstancesInstanceCollectionItemArray []GetPssInstancesInstanceCollectionItemInput
+
+func (GetPssInstancesInstanceCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPssInstancesInstanceCollectionItem)(nil)).Elem()
+}
+
+func (i GetPssInstancesInstanceCollectionItemArray) ToGetPssInstancesInstanceCollectionItemArrayOutput() GetPssInstancesInstanceCollectionItemArrayOutput {
+	return i.ToGetPssInstancesInstanceCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetPssInstancesInstanceCollectionItemArray) ToGetPssInstancesInstanceCollectionItemArrayOutputWithContext(ctx context.Context) GetPssInstancesInstanceCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPssInstancesInstanceCollectionItemArrayOutput)
+}
+
+type GetPssInstancesInstanceCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetPssInstancesInstanceCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPssInstancesInstanceCollectionItem)(nil)).Elem()
+}
+
+func (o GetPssInstancesInstanceCollectionItemOutput) ToGetPssInstancesInstanceCollectionItemOutput() GetPssInstancesInstanceCollectionItemOutput {
+	return o
+}
+
+func (o GetPssInstancesInstanceCollectionItemOutput) ToGetPssInstancesInstanceCollectionItemOutputWithContext(ctx context.Context) GetPssInstancesInstanceCollectionItemOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the identity-domain user that initially administers the PSS instance.
+func (o GetPssInstancesInstanceCollectionItemOutput) AdminIdentityDomainUserId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPssInstancesInstanceCollectionItem) string { return v.AdminIdentityDomainUserId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+func (o GetPssInstancesInstanceCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPssInstancesInstanceCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+func (o GetPssInstancesInstanceCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPssInstancesInstanceCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// A filter to return only resources that match the given display name exactly.
+func (o GetPssInstancesInstanceCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPssInstancesInstanceCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetPssInstancesInstanceCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPssInstancesInstanceCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Instance.
+func (o GetPssInstancesInstanceCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPssInstancesInstanceCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The URL of the identity domain associated with the instance.  Example: `https://idcs-1234567890.identity.oraclecloud.com`
+func (o GetPssInstancesInstanceCollectionItemOutput) IdentityDomainUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPssInstancesInstanceCollectionItem) string { return v.IdentityDomainUrl }).(pulumi.StringOutput)
+}
+
+// The client ID of the identity-domain confidential application used for browser authentication.
+func (o GetPssInstancesInstanceCollectionItemOutput) IdentityDomainWebAuthClientId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPssInstancesInstanceCollectionItem) string { return v.IdentityDomainWebAuthClientId }).(pulumi.StringOutput)
+}
+
+// The OCID of the Vault secret containing the identity-domain confidential application's client secret.
+func (o GetPssInstancesInstanceCollectionItemOutput) IdentityDomainWebAuthClientSecretVaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPssInstancesInstanceCollectionItem) string {
+		return v.IdentityDomainWebAuthClientSecretVaultId
+	}).(pulumi.StringOutput)
+}
+
+// A message that describes the current state of the Instance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+func (o GetPssInstancesInstanceCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPssInstancesInstanceCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The public IP address for the instance's API gateway.
+func (o GetPssInstancesInstanceCollectionItemOutput) PublicIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPssInstancesInstanceCollectionItem) string { return v.PublicIp }).(pulumi.StringOutput)
+}
+
+// The HTTPS endpoint for the instance's PSS API.  Example: `https://example.pss.oraclecloud.com/api/`
+func (o GetPssInstancesInstanceCollectionItemOutput) ServiceEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPssInstancesInstanceCollectionItem) string { return v.ServiceEndpoint }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+func (o GetPssInstancesInstanceCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPssInstancesInstanceCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.example-key": "example-value"}`
+func (o GetPssInstancesInstanceCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetPssInstancesInstanceCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the Instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetPssInstancesInstanceCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPssInstancesInstanceCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the Instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+func (o GetPssInstancesInstanceCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPssInstancesInstanceCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The HTTPS endpoint for the instance's PSS user interface.  Example: `https://example.pss.oraclecloud.com/ui/`
+func (o GetPssInstancesInstanceCollectionItemOutput) UiEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPssInstancesInstanceCollectionItem) string { return v.UiEndpoint }).(pulumi.StringOutput)
+}
+
+type GetPssInstancesInstanceCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPssInstancesInstanceCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPssInstancesInstanceCollectionItem)(nil)).Elem()
+}
+
+func (o GetPssInstancesInstanceCollectionItemArrayOutput) ToGetPssInstancesInstanceCollectionItemArrayOutput() GetPssInstancesInstanceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPssInstancesInstanceCollectionItemArrayOutput) ToGetPssInstancesInstanceCollectionItemArrayOutputWithContext(ctx context.Context) GetPssInstancesInstanceCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetPssInstancesInstanceCollectionItemArrayOutput) Index(i pulumi.IntInput) GetPssInstancesInstanceCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPssInstancesInstanceCollectionItem {
+		return vs[0].([]GetPssInstancesInstanceCollectionItem)[vs[1].(int)]
+	}).(GetPssInstancesInstanceCollectionItemOutput)
+}
+
 type GetResourceAnalyticsMonitoredRegionsFilter struct {
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
@@ -67936,374 +68379,6 @@ func (o GetResourceAnalyticsMonitoredRegionsFilterArrayOutput) Index(i pulumi.In
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsMonitoredRegionsFilter {
 		return vs[0].([]GetResourceAnalyticsMonitoredRegionsFilter)[vs[1].(int)]
 	}).(GetResourceAnalyticsMonitoredRegionsFilterOutput)
-}
-
-type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollection struct {
-	Items []GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem `pulumi:"items"`
-}
-
-// GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionInput is an input type that accepts GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArgs and GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionInput` via:
-//
-//	GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArgs{...}
-type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput
-	ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutputWithContext(context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput
-}
-
-type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArgs struct {
-	Items GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayInput `pulumi:"items"`
-}
-
-func (GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollection)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArgs) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput {
-	return i.ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArgs) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutputWithContext(ctx context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput)
-}
-
-// GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayInput is an input type that accepts GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArray and GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayInput` via:
-//
-//	GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArray{ GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArgs{...} }
-type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput
-	ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutputWithContext(context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput
-}
-
-type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArray []GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionInput
-
-func (GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollection)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArray) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput {
-	return i.ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArray) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput)
-}
-
-type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollection)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutputWithContext(ctx context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput) Items() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollection) []GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem {
-		return v.Items
-	}).(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput)
-}
-
-type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollection)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollection {
-		return vs[0].([]GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollection)[vs[1].(int)]
-	}).(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput)
-}
-
-type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the MonitoredRegion.
-	Id string `pulumi:"id"`
-	// A message that describes the current state of the MonitoredRegion in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
-	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of this MonitoredRegion.
-	RegionId string `pulumi:"regionId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
-	ResourceAnalyticsInstanceId string `pulumi:"resourceAnalyticsInstanceId"`
-	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
-	State string `pulumi:"state"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags map[string]string `pulumi:"systemTags"`
-	// The date and time the MonitoredRegion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated string `pulumi:"timeCreated"`
-	// The date and time the MonitoredRegion was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
-}
-
-// GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemInput is an input type that accepts GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArgs and GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemInput` via:
-//
-//	GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArgs{...}
-type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput
-	ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutputWithContext(context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput
-}
-
-type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the MonitoredRegion.
-	Id pulumi.StringInput `pulumi:"id"`
-	// A message that describes the current state of the MonitoredRegion in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
-	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of this MonitoredRegion.
-	RegionId pulumi.StringInput `pulumi:"regionId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
-	ResourceAnalyticsInstanceId pulumi.StringInput `pulumi:"resourceAnalyticsInstanceId"`
-	// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
-	State pulumi.StringInput `pulumi:"state"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
-	// The date and time the MonitoredRegion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The date and time the MonitoredRegion was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
-}
-
-func (GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArgs) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput {
-	return i.ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArgs) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutputWithContext(ctx context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput)
-}
-
-// GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayInput is an input type that accepts GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArray and GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayInput` via:
-//
-//	GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArray{ GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArgs{...} }
-type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput
-	ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutputWithContext(context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput
-}
-
-type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArray []GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemInput
-
-func (GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArray) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput {
-	return i.ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArray) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput)
-}
-
-type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutputWithContext(ctx context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput {
-	return o
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the MonitoredRegion.
-func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
-}
-
-// A message that describes the current state of the MonitoredRegion in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
-func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem) string {
-		return v.LifecycleDetails
-	}).(pulumi.StringOutput)
-}
-
-// The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of this MonitoredRegion.
-func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput) RegionId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem) string { return v.RegionId }).(pulumi.StringOutput)
-}
-
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a ResourceAnalyticsInstance.
-func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput) ResourceAnalyticsInstanceId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem) string {
-		return v.ResourceAnalyticsInstanceId
-	}).(pulumi.StringOutput)
-}
-
-// A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
-func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput) State() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem) string { return v.State }).(pulumi.StringOutput)
-}
-
-// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem) map[string]string {
-		return v.SystemTags
-	}).(pulumi.StringMapOutput)
-}
-
-// The date and time the MonitoredRegion was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
-}
-
-// The date and time the MonitoredRegion was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
-func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
-}
-
-type GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput() GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput) ToGetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem {
-		return vs[0].([]GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItem)[vs[1].(int)]
-	}).(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput)
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword struct {
-	Password     string `pulumi:"password"`
-	PasswordType string `pulumi:"passwordType"`
-	SecretId     string `pulumi:"secretId"`
-}
-
-// GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs and GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordInput` via:
-//
-//	GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs{...}
-type GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput() GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput
-	ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs struct {
-	Password     pulumi.StringInput `pulumi:"password"`
-	PasswordType pulumi.StringInput `pulumi:"passwordType"`
-	SecretId     pulumi.StringInput `pulumi:"secretId"`
-}
-
-func (GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs) ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput() GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput {
-	return i.ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs) ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput)
-}
-
-// GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayInput is an input type that accepts GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArray and GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput values.
-// You can construct a concrete instance of `GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayInput` via:
-//
-//	GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArray{ GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs{...} }
-type GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayInput interface {
-	pulumi.Input
-
-	ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput() GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput
-	ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutputWithContext(context.Context) GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArray []GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordInput
-
-func (GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword)(nil)).Elem()
-}
-
-func (i GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArray) ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput() GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput {
-	return i.ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutputWithContext(context.Background())
-}
-
-func (i GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArray) ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput)
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput) ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput() GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput) ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput) Password() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword) string { return v.Password }).(pulumi.StringOutput)
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput) PasswordType() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword) string { return v.PasswordType }).(pulumi.StringOutput)
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput) SecretId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword) string { return v.SecretId }).(pulumi.StringOutput)
-}
-
-type GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput struct{ *pulumi.OutputState }
-
-func (GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword)(nil)).Elem()
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput() GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput) ToGetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutputWithContext(ctx context.Context) GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput {
-	return o
-}
-
-func (o GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput) Index(i pulumi.IntInput) GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword {
-		return vs[0].([]GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword)[vs[1].(int)]
-	}).(GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput)
 }
 
 func init() {
@@ -69298,14 +69373,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayInput)(nil)).Elem(), GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceInput)(nil)).Elem(), GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayInput)(nil)).Elem(), GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPssInstancesFilterInput)(nil)).Elem(), GetPssInstancesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPssInstancesFilterArrayInput)(nil)).Elem(), GetPssInstancesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPssInstancesInstanceCollectionInput)(nil)).Elem(), GetPssInstancesInstanceCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPssInstancesInstanceCollectionArrayInput)(nil)).Elem(), GetPssInstancesInstanceCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPssInstancesInstanceCollectionItemInput)(nil)).Elem(), GetPssInstancesInstanceCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPssInstancesInstanceCollectionItemArrayInput)(nil)).Elem(), GetPssInstancesInstanceCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsFilterInput)(nil)).Elem(), GetResourceAnalyticsMonitoredRegionsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsFilterArrayInput)(nil)).Elem(), GetResourceAnalyticsMonitoredRegionsFilterArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionInput)(nil)).Elem(), GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayInput)(nil)).Elem(), GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemInput)(nil)).Elem(), GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayInput)(nil)).Elem(), GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayInput)(nil)).Elem(), GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArray{})
 	pulumi.RegisterOutputType(ApiPlatformApiPlatformInstanceIdcsAppOutput{})
 	pulumi.RegisterOutputType(ApiPlatformApiPlatformInstanceIdcsAppArrayOutput{})
 	pulumi.RegisterOutputType(ApiPlatformApiPlatformInstanceUriOutput{})
@@ -70297,12 +70372,12 @@ func init() {
 	pulumi.RegisterOutputType(GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceOutput{})
 	pulumi.RegisterOutputType(GetPsaPsaWorkRequestsWorkRequestSummaryCollectionItemResourceArrayOutput{})
+	pulumi.RegisterOutputType(GetPssInstancesFilterOutput{})
+	pulumi.RegisterOutputType(GetPssInstancesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetPssInstancesInstanceCollectionOutput{})
+	pulumi.RegisterOutputType(GetPssInstancesInstanceCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetPssInstancesInstanceCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetPssInstancesInstanceCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetResourceAnalyticsMonitoredRegionsFilterOutput{})
 	pulumi.RegisterOutputType(GetResourceAnalyticsMonitoredRegionsFilterArrayOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionArrayOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsMonitoredRegionsMonitoredRegionCollectionItemArrayOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordOutput{})
-	pulumi.RegisterOutputType(GetResourceAnalyticsResourceAnalyticsInstanceAdwAdminPasswordArrayOutput{})
 }

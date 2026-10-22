@@ -14,6 +14,7 @@ import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupsDrProtection
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemAdminUserDetail;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDbSystemReplicationUserDetail;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDestinationEncryptionKey;
+import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillProperty;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation;
 import com.pulumi.oci.DisasterRecovery.outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberLoadBalancerMapping;
@@ -129,6 +130,11 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMember {
      */
     private String destinationSnapshotPolicyId;
     /**
+     * @return DR drill-specific properties for a movable compute instance member.
+     * 
+     */
+    private List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillProperty> drDrillProperties;
+    /**
      * @return A list of mappings between the primary region file system export and destination region mount target.
      * 
      */
@@ -189,7 +195,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMember {
      */
     private String memberType;
     /**
-     * @return The OKE namespace where the config map resides. Example: `namespaceString5`
+     * @return The OKE namespace where the config map resides.  Example: `namespaceString5`
      * 
      */
     private String namespace;
@@ -209,7 +215,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMember {
      */
     private String peerClusterId;
     /**
-     * @return The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+     * @return The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
      * 
      */
     private String peerDbSystemId;
@@ -382,6 +388,13 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMember {
         return this.destinationSnapshotPolicyId;
     }
     /**
+     * @return DR drill-specific properties for a movable compute instance member.
+     * 
+     */
+    public List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillProperty> drDrillProperties() {
+        return this.drDrillProperties;
+    }
+    /**
      * @return A list of mappings between the primary region file system export and destination region mount target.
      * 
      */
@@ -466,7 +479,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMember {
         return this.memberType;
     }
     /**
-     * @return The OKE namespace where the config map resides. Example: `namespaceString5`
+     * @return The OKE namespace where the config map resides.  Example: `namespaceString5`
      * 
      */
     public String namespace() {
@@ -494,7 +507,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMember {
         return this.peerClusterId;
     }
     /**
-     * @return The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+     * @return The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
      * 
      */
     public String peerDbSystemId() {
@@ -572,6 +585,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMember {
         private String destinationLoadBalancerId;
         private String destinationNetworkLoadBalancerId;
         private String destinationSnapshotPolicyId;
+        private List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillProperty> drDrillProperties;
         private List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping> exportMappings;
         private List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperation> fileSystemOperations;
         private Integer gtidReconciliationTimeout;
@@ -618,6 +632,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMember {
     	      this.destinationLoadBalancerId = defaults.destinationLoadBalancerId;
     	      this.destinationNetworkLoadBalancerId = defaults.destinationNetworkLoadBalancerId;
     	      this.destinationSnapshotPolicyId = defaults.destinationSnapshotPolicyId;
+    	      this.drDrillProperties = defaults.drDrillProperties;
     	      this.exportMappings = defaults.exportMappings;
     	      this.fileSystemOperations = defaults.fileSystemOperations;
     	      this.gtidReconciliationTimeout = defaults.gtidReconciliationTimeout;
@@ -829,6 +844,17 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMember {
             }
             this.destinationSnapshotPolicyId = destinationSnapshotPolicyId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder drDrillProperties(List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillProperty> drDrillProperties) {
+            if (drDrillProperties == null) {
+              throw new MissingRequiredPropertyException("GetDrProtectionGroupsDrProtectionGroupCollectionItemMember", "drDrillProperties");
+            }
+            this.drDrillProperties = drDrillProperties;
+            return this;
+        }
+        public Builder drDrillProperties(GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillProperty... drDrillProperties) {
+            return drDrillProperties(List.of(drDrillProperties));
         }
         @CustomType.Setter
         public Builder exportMappings(List<GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping> exportMappings) {
@@ -1069,6 +1095,7 @@ public final class GetDrProtectionGroupsDrProtectionGroupCollectionItemMember {
             _resultValue.destinationLoadBalancerId = destinationLoadBalancerId;
             _resultValue.destinationNetworkLoadBalancerId = destinationNetworkLoadBalancerId;
             _resultValue.destinationSnapshotPolicyId = destinationSnapshotPolicyId;
+            _resultValue.drDrillProperties = drDrillProperties;
             _resultValue.exportMappings = exportMappings;
             _resultValue.fileSystemOperations = fileSystemOperations;
             _resultValue.gtidReconciliationTimeout = gtidReconciliationTimeout;

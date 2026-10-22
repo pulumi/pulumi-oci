@@ -14,9 +14,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
     public sealed class GetConnectionStorageResult
     {
         /// <summary>
-        /// * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-        /// * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-        /// Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+        /// Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
         /// </summary>
         public readonly string AccessKeyId;
         public readonly string AccountKey;
@@ -29,9 +27,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string AccountName;
         /// <summary>
-        /// * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
-        /// * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
-        /// * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
+        /// Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
         /// </summary>
         public readonly string Bucket;
         /// <summary>
@@ -39,10 +35,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string Container;
         /// <summary>
-        /// * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
-        /// * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
-        /// * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
-        /// * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://&lt;namespace&gt;.compat.objectstorage.&lt;region&gt;.&lt;domain&gt;" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
+        /// Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://&lt;namespace&gt;.compat.objectstorage.&lt;region&gt;.&lt;domain&gt;" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
         /// </summary>
         public readonly string Endpoint;
         /// <summary>
@@ -59,8 +52,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         public readonly string SchemeType;
         public readonly string SecretAccessKey;
         /// <summary>
-        /// * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-        /// * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
         /// </summary>
         public readonly string SecretAccessKeySecretId;
         public readonly string ServiceAccountKeyFile;
@@ -69,7 +61,12 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string ServiceAccountKeyFileSecretId;
         /// <summary>
-        /// The storage type used in the Iceberg connection.
+        /// The storage type used in the Iceberg connection. Supported storage types by catalog type:
+        /// * GLUE: AMAZON_S3.
+        /// * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
+        /// * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+        /// * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+        /// * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
         /// </summary>
         public readonly string StorageType;
 

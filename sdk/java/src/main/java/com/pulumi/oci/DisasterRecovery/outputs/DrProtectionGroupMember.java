@@ -14,6 +14,7 @@ import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberCommonDest
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberDbSystemAdminUserDetails;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberDbSystemReplicationUserDetails;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberDestinationEncryptionKey;
+import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberDrDrillProperties;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberExportMapping;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberFileSystemOperation;
 import com.pulumi.oci.DisasterRecovery.outputs.DrProtectionGroupMemberLoadBalancerMapping;
@@ -135,6 +136,11 @@ public final class DrProtectionGroupMember {
      */
     private @Nullable String destinationSnapshotPolicyId;
     /**
+     * @return (Updatable) Create properties for DR drill-specific settings. Use these when the properties for DR drills differ from the properties used for DR operations such as switchover and failover.
+     * 
+     */
+    private @Nullable DrProtectionGroupMemberDrDrillProperties drDrillProperties;
+    /**
      * @return (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
      * 
      */
@@ -215,7 +221,7 @@ public final class DrProtectionGroupMember {
      */
     private @Nullable String peerClusterId;
     /**
-     * @return (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+     * @return (Updatable) The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
      * 
      */
     private @Nullable String peerDbSystemId;
@@ -396,6 +402,13 @@ public final class DrProtectionGroupMember {
         return Optional.ofNullable(this.destinationSnapshotPolicyId);
     }
     /**
+     * @return (Updatable) Create properties for DR drill-specific settings. Use these when the properties for DR drills differ from the properties used for DR operations such as switchover and failover.
+     * 
+     */
+    public Optional<DrProtectionGroupMemberDrDrillProperties> drDrillProperties() {
+        return Optional.ofNullable(this.drDrillProperties);
+    }
+    /**
      * @return (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
      * 
      */
@@ -508,7 +521,7 @@ public final class DrProtectionGroupMember {
         return Optional.ofNullable(this.peerClusterId);
     }
     /**
-     * @return (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+     * @return (Updatable) The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
      * 
      */
     public Optional<String> peerDbSystemId() {
@@ -590,6 +603,7 @@ public final class DrProtectionGroupMember {
         private @Nullable String destinationLoadBalancerId;
         private @Nullable String destinationNetworkLoadBalancerId;
         private @Nullable String destinationSnapshotPolicyId;
+        private @Nullable DrProtectionGroupMemberDrDrillProperties drDrillProperties;
         private @Nullable List<DrProtectionGroupMemberExportMapping> exportMappings;
         private @Nullable List<DrProtectionGroupMemberFileSystemOperation> fileSystemOperations;
         private @Nullable Integer gtidReconciliationTimeout;
@@ -636,6 +650,7 @@ public final class DrProtectionGroupMember {
     	      this.destinationLoadBalancerId = defaults.destinationLoadBalancerId;
     	      this.destinationNetworkLoadBalancerId = defaults.destinationNetworkLoadBalancerId;
     	      this.destinationSnapshotPolicyId = defaults.destinationSnapshotPolicyId;
+    	      this.drDrillProperties = defaults.drDrillProperties;
     	      this.exportMappings = defaults.exportMappings;
     	      this.fileSystemOperations = defaults.fileSystemOperations;
     	      this.gtidReconciliationTimeout = defaults.gtidReconciliationTimeout;
@@ -785,6 +800,12 @@ public final class DrProtectionGroupMember {
         public Builder destinationSnapshotPolicyId(@Nullable String destinationSnapshotPolicyId) {
 
             this.destinationSnapshotPolicyId = destinationSnapshotPolicyId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder drDrillProperties(@Nullable DrProtectionGroupMemberDrDrillProperties drDrillProperties) {
+
+            this.drDrillProperties = drDrillProperties;
             return this;
         }
         @CustomType.Setter
@@ -984,6 +1005,7 @@ public final class DrProtectionGroupMember {
             _resultValue.destinationLoadBalancerId = destinationLoadBalancerId;
             _resultValue.destinationNetworkLoadBalancerId = destinationNetworkLoadBalancerId;
             _resultValue.destinationSnapshotPolicyId = destinationSnapshotPolicyId;
+            _resultValue.drDrillProperties = drDrillProperties;
             _resultValue.exportMappings = exportMappings;
             _resultValue.fileSystemOperations = fileSystemOperations;
             _resultValue.gtidReconciliationTimeout = gtidReconciliationTimeout;

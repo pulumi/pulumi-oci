@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DatabaseDatabaseDbBackupConfigBackupDestinationDetail {
     /**
-     * @return Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
+     * @return Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
      * 
      */
     private @Nullable String backupRetentionPolicyOnTerminate;
@@ -63,7 +63,7 @@ public final class DatabaseDatabaseDbBackupConfigBackupDestinationDetail {
 
     private DatabaseDatabaseDbBackupConfigBackupDestinationDetail() {}
     /**
-     * @return Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
+     * @return Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are &#39;RETAIN_PER_RETENTION_WINDOW&#39; or &#39;RETAIN_FOR_72_HOURS&#39;.The default value is &#39;RETAIN_FOR_72_HOURS&#39;.
      * 
      */
     public Optional<String> backupRetentionPolicyOnTerminate() {

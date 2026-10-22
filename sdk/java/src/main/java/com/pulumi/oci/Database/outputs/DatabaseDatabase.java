@@ -71,7 +71,7 @@ public final class DatabaseDatabase {
      */
     private @Nullable DatabaseDatabaseDbBackupConfig dbBackupConfig;
     /**
-     * @return The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+     * @return The display name of the database to be created from the snapshot/database. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
      * 
      */
     private @Nullable String dbName;
@@ -108,12 +108,22 @@ public final class DatabaseDatabase {
      */
     private @Nullable Boolean isActiveDataGuardEnabled;
     /**
+     * @return Specifies whether thick or thin database cloning is to be performed.
+     * 
+     */
+    private @Nullable Boolean isThinClone;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+     * 
+     */
+    private @Nullable String keyStoreId;
+    /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
     private @Nullable String kmsKeyId;
     /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     private @Nullable String kmsKeyVersionId;
@@ -158,6 +168,11 @@ public final class DatabaseDatabase {
      */
     private @Nullable String sidPrefix;
     /**
+     * @return The source database&#39;s password for SYS, SYSTEM.
+     * 
+     */
+    private @Nullable String sourceAdminPassword;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
      * 
      */
@@ -167,6 +182,16 @@ public final class DatabaseDatabase {
      * 
      */
     private @Nullable DatabaseDatabaseSourceEncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails;
+    /**
+     * @return The snapshot [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    private @Nullable String sourceSnapshotId;
+    /**
+     * @return The password to open the TDE wallet.
+     * 
+     */
+    private @Nullable String sourceTdePassword;
     /**
      * @return The TDE wallet password of the source database specified by &#39;sourceDatabaseId&#39;.
      * 
@@ -275,7 +300,7 @@ public final class DatabaseDatabase {
         return Optional.ofNullable(this.dbBackupConfig);
     }
     /**
-     * @return The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+     * @return The display name of the database to be created from the snapshot/database. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
      * 
      */
     public Optional<String> dbName() {
@@ -326,6 +351,20 @@ public final class DatabaseDatabase {
         return Optional.ofNullable(this.isActiveDataGuardEnabled);
     }
     /**
+     * @return Specifies whether thick or thin database cloning is to be performed.
+     * 
+     */
+    public Optional<Boolean> isThinClone() {
+        return Optional.ofNullable(this.isThinClone);
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+     * 
+     */
+    public Optional<String> keyStoreId() {
+        return Optional.ofNullable(this.keyStoreId);
+    }
+    /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -333,7 +372,7 @@ public final class DatabaseDatabase {
         return Optional.ofNullable(this.kmsKeyId);
     }
     /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     public Optional<String> kmsKeyVersionId() {
@@ -396,6 +435,13 @@ public final class DatabaseDatabase {
         return Optional.ofNullable(this.sidPrefix);
     }
     /**
+     * @return The source database&#39;s password for SYS, SYSTEM.
+     * 
+     */
+    public Optional<String> sourceAdminPassword() {
+        return Optional.ofNullable(this.sourceAdminPassword);
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
      * 
      */
@@ -408,6 +454,20 @@ public final class DatabaseDatabase {
      */
     public Optional<DatabaseDatabaseSourceEncryptionKeyLocationDetails> sourceEncryptionKeyLocationDetails() {
         return Optional.ofNullable(this.sourceEncryptionKeyLocationDetails);
+    }
+    /**
+     * @return The snapshot [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public Optional<String> sourceSnapshotId() {
+        return Optional.ofNullable(this.sourceSnapshotId);
+    }
+    /**
+     * @return The password to open the TDE wallet.
+     * 
+     */
+    public Optional<String> sourceTdePassword() {
+        return Optional.ofNullable(this.sourceTdePassword);
     }
     /**
      * @return The TDE wallet password of the source database specified by &#39;sourceDatabaseId&#39;.
@@ -487,6 +547,8 @@ public final class DatabaseDatabase {
         private @Nullable DatabaseDatabaseEncryptionKeyLocationDetails encryptionKeyLocationDetails;
         private @Nullable Map<String,String> freeformTags;
         private @Nullable Boolean isActiveDataGuardEnabled;
+        private @Nullable Boolean isThinClone;
+        private @Nullable String keyStoreId;
         private @Nullable String kmsKeyId;
         private @Nullable String kmsKeyVersionId;
         private @Nullable List<DatabaseDatabaseManagedSoftwareUpdateDetail> managedSoftwareUpdateDetails;
@@ -497,8 +559,11 @@ public final class DatabaseDatabase {
         private @Nullable String protectionMode;
         private @Nullable String recoveryApplianceVpcPassword;
         private @Nullable String sidPrefix;
+        private @Nullable String sourceAdminPassword;
         private @Nullable String sourceDatabaseId;
         private @Nullable DatabaseDatabaseSourceEncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails;
+        private @Nullable String sourceSnapshotId;
+        private @Nullable String sourceTdePassword;
         private @Nullable String sourceTdeWalletPassword;
         private @Nullable DatabaseDatabaseStorageSizeDetails storageSizeDetails;
         private @Nullable String tdeWalletPassword;
@@ -525,6 +590,8 @@ public final class DatabaseDatabase {
     	      this.encryptionKeyLocationDetails = defaults.encryptionKeyLocationDetails;
     	      this.freeformTags = defaults.freeformTags;
     	      this.isActiveDataGuardEnabled = defaults.isActiveDataGuardEnabled;
+    	      this.isThinClone = defaults.isThinClone;
+    	      this.keyStoreId = defaults.keyStoreId;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.managedSoftwareUpdateDetails = defaults.managedSoftwareUpdateDetails;
@@ -535,8 +602,11 @@ public final class DatabaseDatabase {
     	      this.protectionMode = defaults.protectionMode;
     	      this.recoveryApplianceVpcPassword = defaults.recoveryApplianceVpcPassword;
     	      this.sidPrefix = defaults.sidPrefix;
+    	      this.sourceAdminPassword = defaults.sourceAdminPassword;
     	      this.sourceDatabaseId = defaults.sourceDatabaseId;
     	      this.sourceEncryptionKeyLocationDetails = defaults.sourceEncryptionKeyLocationDetails;
+    	      this.sourceSnapshotId = defaults.sourceSnapshotId;
+    	      this.sourceTdePassword = defaults.sourceTdePassword;
     	      this.sourceTdeWalletPassword = defaults.sourceTdeWalletPassword;
     	      this.storageSizeDetails = defaults.storageSizeDetails;
     	      this.tdeWalletPassword = defaults.tdeWalletPassword;
@@ -643,6 +713,18 @@ public final class DatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder isThinClone(@Nullable Boolean isThinClone) {
+
+            this.isThinClone = isThinClone;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder keyStoreId(@Nullable String keyStoreId) {
+
+            this.keyStoreId = keyStoreId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder kmsKeyId(@Nullable String kmsKeyId) {
 
             this.kmsKeyId = kmsKeyId;
@@ -709,6 +791,12 @@ public final class DatabaseDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder sourceAdminPassword(@Nullable String sourceAdminPassword) {
+
+            this.sourceAdminPassword = sourceAdminPassword;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sourceDatabaseId(@Nullable String sourceDatabaseId) {
 
             this.sourceDatabaseId = sourceDatabaseId;
@@ -718,6 +806,18 @@ public final class DatabaseDatabase {
         public Builder sourceEncryptionKeyLocationDetails(@Nullable DatabaseDatabaseSourceEncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails) {
 
             this.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sourceSnapshotId(@Nullable String sourceSnapshotId) {
+
+            this.sourceSnapshotId = sourceSnapshotId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sourceTdePassword(@Nullable String sourceTdePassword) {
+
+            this.sourceTdePassword = sourceTdePassword;
             return this;
         }
         @CustomType.Setter
@@ -780,6 +880,8 @@ public final class DatabaseDatabase {
             _resultValue.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
             _resultValue.freeformTags = freeformTags;
             _resultValue.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
+            _resultValue.isThinClone = isThinClone;
+            _resultValue.keyStoreId = keyStoreId;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.managedSoftwareUpdateDetails = managedSoftwareUpdateDetails;
@@ -790,8 +892,11 @@ public final class DatabaseDatabase {
             _resultValue.protectionMode = protectionMode;
             _resultValue.recoveryApplianceVpcPassword = recoveryApplianceVpcPassword;
             _resultValue.sidPrefix = sidPrefix;
+            _resultValue.sourceAdminPassword = sourceAdminPassword;
             _resultValue.sourceDatabaseId = sourceDatabaseId;
             _resultValue.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
+            _resultValue.sourceSnapshotId = sourceSnapshotId;
+            _resultValue.sourceTdePassword = sourceTdePassword;
             _resultValue.sourceTdeWalletPassword = sourceTdeWalletPassword;
             _resultValue.storageSizeDetails = storageSizeDetails;
             _resultValue.tdeWalletPassword = tdeWalletPassword;

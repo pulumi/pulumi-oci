@@ -92,14 +92,22 @@ type GetConnectionsResult struct {
 	ConnectionCollections     []GetConnectionsConnectionCollection `pulumi:"connectionCollections"`
 	ConnectionTypeNotEqualTos []string                             `pulumi:"connectionTypeNotEqualTos"`
 	// The connection type.
-	ConnectionTypes []string               `pulumi:"connectionTypes"`
-	DisplayName     *string                `pulumi:"displayName"`
-	Filters         []GetConnectionsFilter `pulumi:"filters"`
+	ConnectionTypes []string `pulumi:"connectionTypes"`
+	// An object's Display Name.
+	DisplayName *string                `pulumi:"displayName"`
+	Filters     []GetConnectionsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// Possible lifecycle states for connection.
 	State *string `pulumi:"state"`
-	// The technology type.
+	// Technology type selected for the connection.
+	// * AI_MODEL: AI Model technology type.
+	// * AI_PROVIDER: AI Provider technology type.
+	// * DATABRICKS_ENGINE: Databricks Engine technology type.
+	// * ICEBERG: Iceberg technology type. APACHE_ICEBERG supports all catalog types; AMAZON_S3_TABLES supports only REST catalog and S3 storage.
+	// * KAFKA_SCHEMA_REGISTRY: Kafka Schema Registry technology type.
+	// * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform Engine technology type.
+	// * SPARK: Spark technology type.
 	TechnologyTypes []string `pulumi:"technologyTypes"`
 }
 
@@ -181,6 +189,7 @@ func (o GetConnectionsResultOutput) ConnectionTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetConnectionsResult) []string { return v.ConnectionTypes }).(pulumi.StringArrayOutput)
 }
 
+// An object's Display Name.
 func (o GetConnectionsResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetConnectionsResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -199,7 +208,14 @@ func (o GetConnectionsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetConnectionsResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
-// The technology type.
+// Technology type selected for the connection.
+// * AI_MODEL: AI Model technology type.
+// * AI_PROVIDER: AI Provider technology type.
+// * DATABRICKS_ENGINE: Databricks Engine technology type.
+// * ICEBERG: Iceberg technology type. APACHE_ICEBERG supports all catalog types; AMAZON_S3_TABLES supports only REST catalog and S3 storage.
+// * KAFKA_SCHEMA_REGISTRY: Kafka Schema Registry technology type.
+// * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform Engine technology type.
+// * SPARK: Spark technology type.
 func (o GetConnectionsResultOutput) TechnologyTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetConnectionsResult) []string { return v.TechnologyTypes }).(pulumi.StringArrayOutput)
 }

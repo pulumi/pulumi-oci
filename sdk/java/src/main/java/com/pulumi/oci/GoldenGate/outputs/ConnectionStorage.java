@@ -13,10 +13,9 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ConnectionStorage {
     /**
-     * @return (Updatable)
-     * * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-     * * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-     *   Note: Despite the &#34;Id&#34; suffix, this value is not an Oracle Cloud Infrastructure OCID.
+     * @return (Updatable) Access Key ID from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+     * 
+     * Note: Despite the &#34;Id&#34; suffix, this value is not an Oracle Cloud Infrastructure OCID.
      * 
      */
     private @Nullable String accessKeyId;
@@ -40,10 +39,7 @@ public final class ConnectionStorage {
      */
     private @Nullable String accountName;
     /**
-     * @return (Updatable)
-     * * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
-     * * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
-     * * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
+     * @return (Updatable) Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
      * 
      */
     private @Nullable String bucket;
@@ -53,11 +49,7 @@ public final class ConnectionStorage {
      */
     private @Nullable String container;
     /**
-     * @return (Updatable)
-     * * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: &#39;https://s3.amazonaws.com&#39;
-     * * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: &#39;https://my-azure-storage-account.blob.core.windows.net&#39;
-     * * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
-     * * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: &#34;https://&lt;namespace&gt;.compat.objectstorage.&lt;region&gt;.&lt;domain&gt;&#34; Example: &#34;https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com&#34;
+     * @return (Updatable) Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: &#34;https://&lt;namespace&gt;.compat.objectstorage.&lt;region&gt;.&lt;domain&gt;&#34; Example: &#34;https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com&#34;
      * 
      */
     private @Nullable String endpoint;
@@ -77,10 +69,7 @@ public final class ConnectionStorage {
      */
     private @Nullable String schemeType;
     /**
-     * @return (Updatable)
-     * * AMAZON_S3: Secret access key to access the Amazon S3 bucket.
-     * * OCI_OBJECT_STORAGE_S3_API: Secret Access Key from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-     *   Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * @return (Updatable) Secret Access Key from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API. Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
@@ -89,9 +78,7 @@ public final class ConnectionStorage {
     @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
     private @Nullable String secretAccessKey;
     /**
-     * @return (Updatable)
-     * * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-     * * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
      * 
      */
     private @Nullable String secretAccessKeySecretId;
@@ -110,17 +97,21 @@ public final class ConnectionStorage {
      */
     private @Nullable String serviceAccountKeyFileSecretId;
     /**
-     * @return (Updatable) The storage type used in the Iceberg connection.
+     * @return (Updatable) The storage type used in the Iceberg connection. Supported storage types by catalog type:
+     * * GLUE: AMAZON_S3.
+     * * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
+     * * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+     * * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+     * * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
      * 
      */
     private String storageType;
 
     private ConnectionStorage() {}
     /**
-     * @return (Updatable)
-     * * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-     * * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-     *   Note: Despite the &#34;Id&#34; suffix, this value is not an Oracle Cloud Infrastructure OCID.
+     * @return (Updatable) Access Key ID from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+     * 
+     * Note: Despite the &#34;Id&#34; suffix, this value is not an Oracle Cloud Infrastructure OCID.
      * 
      */
     public Optional<String> accessKeyId() {
@@ -152,10 +143,7 @@ public final class ConnectionStorage {
         return Optional.ofNullable(this.accountName);
     }
     /**
-     * @return (Updatable)
-     * * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
-     * * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
-     * * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
+     * @return (Updatable) Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
      * 
      */
     public Optional<String> bucket() {
@@ -169,11 +157,7 @@ public final class ConnectionStorage {
         return Optional.ofNullable(this.container);
     }
     /**
-     * @return (Updatable)
-     * * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: &#39;https://s3.amazonaws.com&#39;
-     * * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: &#39;https://my-azure-storage-account.blob.core.windows.net&#39;
-     * * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
-     * * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: &#34;https://&lt;namespace&gt;.compat.objectstorage.&lt;region&gt;.&lt;domain&gt;&#34; Example: &#34;https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com&#34;
+     * @return (Updatable) Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: &#34;https://&lt;namespace&gt;.compat.objectstorage.&lt;region&gt;.&lt;domain&gt;&#34; Example: &#34;https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com&#34;
      * 
      */
     public Optional<String> endpoint() {
@@ -201,10 +185,7 @@ public final class ConnectionStorage {
         return Optional.ofNullable(this.schemeType);
     }
     /**
-     * @return (Updatable)
-     * * AMAZON_S3: Secret access key to access the Amazon S3 bucket.
-     * * OCI_OBJECT_STORAGE_S3_API: Secret Access Key from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-     *   Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+     * @return (Updatable) Secret Access Key from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API. Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
      * @deprecated
      * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
@@ -215,9 +196,7 @@ public final class ConnectionStorage {
         return Optional.ofNullable(this.secretAccessKey);
     }
     /**
-     * @return (Updatable)
-     * * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-     * * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
      * 
      */
     public Optional<String> secretAccessKeySecretId() {
@@ -242,7 +221,12 @@ public final class ConnectionStorage {
         return Optional.ofNullable(this.serviceAccountKeyFileSecretId);
     }
     /**
-     * @return (Updatable) The storage type used in the Iceberg connection.
+     * @return (Updatable) The storage type used in the Iceberg connection. Supported storage types by catalog type:
+     * * GLUE: AMAZON_S3.
+     * * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
+     * * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+     * * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+     * * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
      * 
      */
     public String storageType() {

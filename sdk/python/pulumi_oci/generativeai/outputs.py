@@ -219,6 +219,10 @@ __all__ = [
     'GetApikeysApiKeyCollectionItemResult',
     'GetApikeysApiKeyCollectionItemKeyResult',
     'GetApikeysFilterResult',
+    'GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionResult',
+    'GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemResult',
+    'GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationResult',
+    'GetDedicatedAiClusterAllocatableGpusFilterResult',
     'GetDedicatedAiClusterCapacityResult',
     'GetDedicatedAiClustersDedicatedAiClusterCollectionResult',
     'GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult',
@@ -11732,11 +11736,152 @@ class GetApikeysFilterResult(dict):
 
 
 @pulumi.output_type
+class GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemResult']):
+        """
+        :param Sequence['GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArgs'] items: List of allocatable GPU summaries.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @_builtins.property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemResult']:
+        """
+        List of allocatable GPU summaries.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 compute_shape: _builtins.str,
+                 gpu_allocations: Sequence['outputs.GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationResult'],
+                 max_allocatable_gpu_units: _builtins.int,
+                 total_available_gpu_units: _builtins.int,
+                 total_used_gpu_units: _builtins.int):
+        """
+        :param _builtins.str compute_shape: The compute shape to use to filter allocatable GPUs. For example, `BM.GPU.A10.4`.
+        :param Sequence['GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArgs'] gpu_allocations: The GPU allocation details for the compute shape. Each item represents one underlying capacity allocation.
+        :param _builtins.int max_allocatable_gpu_units: The maximum number of GPU units that can be allocated to a single dedicated AI cluster for the compute shape without requiring additional provisioning.
+        :param _builtins.int total_available_gpu_units: The total number of available GPU units for the compute shape.
+        :param _builtins.int total_used_gpu_units: The total number of used GPU units for the compute shape.
+        """
+        pulumi.set(__self__, "compute_shape", compute_shape)
+        pulumi.set(__self__, "gpu_allocations", gpu_allocations)
+        pulumi.set(__self__, "max_allocatable_gpu_units", max_allocatable_gpu_units)
+        pulumi.set(__self__, "total_available_gpu_units", total_available_gpu_units)
+        pulumi.set(__self__, "total_used_gpu_units", total_used_gpu_units)
+
+    @_builtins.property
+    @pulumi.getter(name="computeShape")
+    def compute_shape(self) -> _builtins.str:
+        """
+        The compute shape to use to filter allocatable GPUs. For example, `BM.GPU.A10.4`.
+        """
+        return pulumi.get(self, "compute_shape")
+
+    @_builtins.property
+    @pulumi.getter(name="gpuAllocations")
+    def gpu_allocations(self) -> Sequence['outputs.GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationResult']:
+        """
+        The GPU allocation details for the compute shape. Each item represents one underlying capacity allocation.
+        """
+        return pulumi.get(self, "gpu_allocations")
+
+    @_builtins.property
+    @pulumi.getter(name="maxAllocatableGpuUnits")
+    def max_allocatable_gpu_units(self) -> _builtins.int:
+        """
+        The maximum number of GPU units that can be allocated to a single dedicated AI cluster for the compute shape without requiring additional provisioning.
+        """
+        return pulumi.get(self, "max_allocatable_gpu_units")
+
+    @_builtins.property
+    @pulumi.getter(name="totalAvailableGpuUnits")
+    def total_available_gpu_units(self) -> _builtins.int:
+        """
+        The total number of available GPU units for the compute shape.
+        """
+        return pulumi.get(self, "total_available_gpu_units")
+
+    @_builtins.property
+    @pulumi.getter(name="totalUsedGpuUnits")
+    def total_used_gpu_units(self) -> _builtins.int:
+        """
+        The total number of used GPU units for the compute shape.
+        """
+        return pulumi.get(self, "total_used_gpu_units")
+
+
+@pulumi.output_type
+class GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationResult(dict):
+    def __init__(__self__, *,
+                 available_gpus: _builtins.int,
+                 used_gpus: _builtins.int):
+        """
+        :param _builtins.int available_gpus: The number of available GPUs in this allocation.
+        :param _builtins.int used_gpus: The number of used GPUs in this allocation.
+        """
+        pulumi.set(__self__, "available_gpus", available_gpus)
+        pulumi.set(__self__, "used_gpus", used_gpus)
+
+    @_builtins.property
+    @pulumi.getter(name="availableGpus")
+    def available_gpus(self) -> _builtins.int:
+        """
+        The number of available GPUs in this allocation.
+        """
+        return pulumi.get(self, "available_gpus")
+
+    @_builtins.property
+    @pulumi.getter(name="usedGpus")
+    def used_gpus(self) -> _builtins.int:
+        """
+        The number of used GPUs in this allocation.
+        """
+        return pulumi.get(self, "used_gpus")
+
+
+@pulumi.output_type
+class GetDedicatedAiClusterAllocatableGpusFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetDedicatedAiClusterCapacityResult(dict):
     def __init__(__self__, *,
                  capacity_type: _builtins.str,
                  total_endpoint_capacity: _builtins.int,
                  used_endpoint_capacity: _builtins.int):
+        """
+        :param _builtins.str capacity_type: The type of the dedicated AI cluster capacity.
+        :param _builtins.int total_endpoint_capacity: The total number of endpoints that can be hosted on this dedicated AI cluster.
+        :param _builtins.int used_endpoint_capacity: The number of endpoints hosted on this dedicated AI cluster.
+        """
         pulumi.set(__self__, "capacity_type", capacity_type)
         pulumi.set(__self__, "total_endpoint_capacity", total_endpoint_capacity)
         pulumi.set(__self__, "used_endpoint_capacity", used_endpoint_capacity)
@@ -11744,16 +11889,25 @@ class GetDedicatedAiClusterCapacityResult(dict):
     @_builtins.property
     @pulumi.getter(name="capacityType")
     def capacity_type(self) -> _builtins.str:
+        """
+        The type of the dedicated AI cluster capacity.
+        """
         return pulumi.get(self, "capacity_type")
 
     @_builtins.property
     @pulumi.getter(name="totalEndpointCapacity")
     def total_endpoint_capacity(self) -> _builtins.int:
+        """
+        The total number of endpoints that can be hosted on this dedicated AI cluster.
+        """
         return pulumi.get(self, "total_endpoint_capacity")
 
     @_builtins.property
     @pulumi.getter(name="usedEndpointCapacity")
     def used_endpoint_capacity(self) -> _builtins.int:
+        """
+        The number of endpoints hosted on this dedicated AI cluster.
+        """
         return pulumi.get(self, "used_endpoint_capacity")
 
 
@@ -11773,6 +11927,7 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionResult(dict):
 class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
     def __init__(__self__, *,
                  capacities: Sequence['outputs.GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityResult'],
+                 capacity_reservation_id: _builtins.str,
                  compartment_id: _builtins.str,
                  defined_tags: Mapping[str, _builtins.str],
                  description: _builtins.str,
@@ -11788,6 +11943,8 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
                  unit_count: _builtins.int,
                  unit_shape: _builtins.str):
         """
+        :param Sequence['GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityArgs'] capacities: The total capacity for a dedicated AI cluster.
+        :param _builtins.str capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param _builtins.str description: An optional description of the dedicated AI cluster.
@@ -11804,6 +11961,7 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
         :param _builtins.str unit_shape: The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
         """
         pulumi.set(__self__, "capacities", capacities)
+        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
@@ -11822,7 +11980,18 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemResult(dict):
     @_builtins.property
     @pulumi.getter
     def capacities(self) -> Sequence['outputs.GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityResult']:
+        """
+        The total capacity for a dedicated AI cluster.
+        """
         return pulumi.get(self, "capacities")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -11943,6 +12112,11 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityResult(dict)
                  capacity_type: _builtins.str,
                  total_endpoint_capacity: _builtins.int,
                  used_endpoint_capacity: _builtins.int):
+        """
+        :param _builtins.str capacity_type: The type of the dedicated AI cluster capacity.
+        :param _builtins.int total_endpoint_capacity: The total number of endpoints that can be hosted on this dedicated AI cluster.
+        :param _builtins.int used_endpoint_capacity: The number of endpoints hosted on this dedicated AI cluster.
+        """
         pulumi.set(__self__, "capacity_type", capacity_type)
         pulumi.set(__self__, "total_endpoint_capacity", total_endpoint_capacity)
         pulumi.set(__self__, "used_endpoint_capacity", used_endpoint_capacity)
@@ -11950,16 +12124,25 @@ class GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityResult(dict)
     @_builtins.property
     @pulumi.getter(name="capacityType")
     def capacity_type(self) -> _builtins.str:
+        """
+        The type of the dedicated AI cluster capacity.
+        """
         return pulumi.get(self, "capacity_type")
 
     @_builtins.property
     @pulumi.getter(name="totalEndpointCapacity")
     def total_endpoint_capacity(self) -> _builtins.int:
+        """
+        The total number of endpoints that can be hosted on this dedicated AI cluster.
+        """
         return pulumi.get(self, "total_endpoint_capacity")
 
     @_builtins.property
     @pulumi.getter(name="usedEndpointCapacity")
     def used_endpoint_capacity(self) -> _builtins.int:
+        """
+        The number of endpoints hosted on this dedicated AI cluster.
+        """
         return pulumi.get(self, "used_endpoint_capacity")
 
 

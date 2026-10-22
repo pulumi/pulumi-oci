@@ -271,7 +271,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<ImmutableArray<string>> NsgIds { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Deployment Data for creating an OggDeployment
+        /// (Updatable) Deployment Data for creating an OggDeployment.
         /// </summary>
         [Output("oggData")]
         public Output<Outputs.DeploymentOggData> OggData { get; private set; } = null!;
@@ -617,7 +617,7 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
-        /// (Updatable) Deployment Data for creating an OggDeployment
+        /// (Updatable) Deployment Data for creating an OggDeployment.
         /// </summary>
         [Input("oggData")]
         public Input<Inputs.DeploymentOggDataArgs>? OggData { get; set; }
@@ -961,7 +961,7 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
-        /// (Updatable) Deployment Data for creating an OggDeployment
+        /// (Updatable) Deployment Data for creating an OggDeployment.
         /// </summary>
         [Input("oggData")]
         public Input<Inputs.DeploymentOggDataGetArgs>? OggData { get; set; }

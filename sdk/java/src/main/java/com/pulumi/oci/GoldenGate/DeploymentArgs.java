@@ -431,14 +431,14 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Deployment Data for creating an OggDeployment
+     * (Updatable) Deployment Data for creating an OggDeployment.
      * 
      */
     @Import(name="oggData")
     private @Nullable Output<DeploymentOggDataArgs> oggData;
 
     /**
-     * @return (Updatable) Deployment Data for creating an OggDeployment
+     * @return (Updatable) Deployment Data for creating an OggDeployment.
      * 
      */
     public Optional<Output<DeploymentOggDataArgs>> oggData() {
@@ -1174,7 +1174,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param oggData (Updatable) Deployment Data for creating an OggDeployment
+         * @param oggData (Updatable) Deployment Data for creating an OggDeployment.
          * 
          * @return builder
          * 
@@ -1185,7 +1185,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param oggData (Updatable) Deployment Data for creating an OggDeployment
+         * @param oggData (Updatable) Deployment Data for creating an OggDeployment.
          * 
          * @return builder
          * 

@@ -25,6 +25,7 @@ class DedicatedAiClusterArgs:
                  type: pulumi.Input[_builtins.str],
                  unit_count: pulumi.Input[_builtins.int],
                  unit_shape: pulumi.Input[_builtins.str],
+                 capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -108,6 +109,7 @@ class DedicatedAiClusterArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[_builtins.str] capacity_reservation_id: The OCID of the capacity reservation.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the dedicated AI cluster.
         :param pulumi.Input[_builtins.str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable.
@@ -117,6 +119,8 @@ class DedicatedAiClusterArgs:
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "unit_count", unit_count)
         pulumi.set(__self__, "unit_shape", unit_shape)
+        if capacity_reservation_id is not None:
+            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if description is not None:
@@ -247,6 +251,18 @@ class DedicatedAiClusterArgs:
         pulumi.set(self, "unit_shape", value)
 
     @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The OCID of the capacity reservation.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
+
+    @capacity_reservation_id.setter
+    def capacity_reservation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "capacity_reservation_id", value)
+
+    @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
         """
@@ -299,6 +315,7 @@ class DedicatedAiClusterArgs:
 class _DedicatedAiClusterState:
     def __init__(__self__, *,
                  capacities: pulumi.Input[Optional[Sequence[pulumi.Input['DedicatedAiClusterCapacityArgs']]]] = None,
+                 capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -316,6 +333,7 @@ class _DedicatedAiClusterState:
         Input properties used for looking up and filtering DedicatedAiCluster resources.
 
         :param pulumi.Input[Sequence[pulumi.Input['DedicatedAiClusterCapacityArgs']]] capacities: The total capacity for a dedicated AI cluster.
+        :param pulumi.Input[_builtins.str] capacity_reservation_id: The OCID of the capacity reservation.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID to create the dedicated AI cluster in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the dedicated AI cluster.
@@ -404,6 +422,8 @@ class _DedicatedAiClusterState:
         """
         if capacities is not None:
             pulumi.set(__self__, "capacities", capacities)
+        if capacity_reservation_id is not None:
+            pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if defined_tags is not None:
@@ -442,6 +462,18 @@ class _DedicatedAiClusterState:
     @capacities.setter
     def capacities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DedicatedAiClusterCapacityArgs']]]]):
         pulumi.set(self, "capacities", value)
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The OCID of the capacity reservation.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
+
+    @capacity_reservation_id.setter
+    def capacity_reservation_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "capacity_reservation_id", value)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -678,6 +710,7 @@ class DedicatedAiCluster(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -706,6 +739,7 @@ class DedicatedAiCluster(pulumi.CustomResource):
             type=dedicated_ai_cluster_type,
             unit_count=dedicated_ai_cluster_unit_count,
             unit_shape=dedicated_ai_cluster_unit_shape,
+            capacity_reservation_id=test_capacity_reservation["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -727,6 +761,7 @@ class DedicatedAiCluster(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[_builtins.str] capacity_reservation_id: The OCID of the capacity reservation.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID to create the dedicated AI cluster in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the dedicated AI cluster.
@@ -833,6 +868,7 @@ class DedicatedAiCluster(pulumi.CustomResource):
             type=dedicated_ai_cluster_type,
             unit_count=dedicated_ai_cluster_unit_count,
             unit_shape=dedicated_ai_cluster_unit_shape,
+            capacity_reservation_id=test_capacity_reservation["id"],
             defined_tags={
                 "Operations.CostCenter": "42",
             },
@@ -867,6 +903,7 @@ class DedicatedAiCluster(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
                  compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                  defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -884,6 +921,7 @@ class DedicatedAiCluster(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = DedicatedAiClusterArgs.__new__(DedicatedAiClusterArgs)
 
+            __props__.__dict__["capacity_reservation_id"] = capacity_reservation_id
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
@@ -917,6 +955,7 @@ class DedicatedAiCluster(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             capacities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DedicatedAiClusterCapacityArgs', 'DedicatedAiClusterCapacityArgsDict', 'outputs.DedicatedAiClusterCapacity']]]]] = None,
+            capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
             compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
             defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
@@ -938,6 +977,7 @@ class DedicatedAiCluster(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DedicatedAiClusterCapacityArgs', 'DedicatedAiClusterCapacityArgsDict', 'outputs.DedicatedAiClusterCapacity']]]] capacities: The total capacity for a dedicated AI cluster.
+        :param pulumi.Input[_builtins.str] capacity_reservation_id: The OCID of the capacity reservation.
         :param pulumi.Input[_builtins.str] compartment_id: (Updatable) The compartment OCID to create the dedicated AI cluster in.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] description: (Updatable) An optional description of the dedicated AI cluster.
@@ -1029,6 +1069,7 @@ class DedicatedAiCluster(pulumi.CustomResource):
         __props__ = _DedicatedAiClusterState.__new__(_DedicatedAiClusterState)
 
         __props__.__dict__["capacities"] = capacities
+        __props__.__dict__["capacity_reservation_id"] = capacity_reservation_id
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["description"] = description
@@ -1051,6 +1092,14 @@ class DedicatedAiCluster(pulumi.CustomResource):
         The total capacity for a dedicated AI cluster.
         """
         return pulumi.get(self, "capacities")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        The OCID of the capacity reservation.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")

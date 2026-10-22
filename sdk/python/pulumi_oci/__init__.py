@@ -3255,6 +3255,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Database/databaseSnapshot",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/databaseSnapshot:DatabaseSnapshot": "DatabaseSnapshot"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Database/databaseSnapshotStandby",
   "fqn": "pulumi_oci.database",
   "classes": {
@@ -7895,6 +7903,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Tenantmanagercontrolplane/childTenancy",
+  "fqn": "pulumi_oci.tenantmanagercontrolplane",
+  "classes": {
+   "oci:Tenantmanagercontrolplane/childTenancy:ChildTenancy": "ChildTenancy"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Tenantmanagercontrolplane/subscriptionMapping",
   "fqn": "pulumi_oci.tenantmanagercontrolplane",
   "classes": {
@@ -8499,6 +8515,14 @@ _utilities.register(
   "fqn": "pulumi_oci.oci",
   "classes": {
    "oci:oci/psaPrivateServiceAccess:PsaPrivateServiceAccess": "PsaPrivateServiceAccess"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "oci/pssInstance",
+  "fqn": "pulumi_oci.oci",
+  "classes": {
+   "oci:oci/pssInstance:PssInstance": "PssInstance"
   }
  },
  {

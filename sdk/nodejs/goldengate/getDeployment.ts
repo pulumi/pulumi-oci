@@ -204,7 +204,7 @@ export interface GetDeploymentResult {
      */
     readonly nsgIds: string[];
     /**
-     * Deployment Data for an OggDeployment
+     * Deployment Data for an OggDeployment.
      */
     readonly oggDatas: outputs.GoldenGate.GetDeploymentOggData[];
     /**

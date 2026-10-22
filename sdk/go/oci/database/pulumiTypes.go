@@ -17752,7 +17752,7 @@ type DatabaseDatabase struct {
 	DatabaseSoftwareImageId *string `pulumi:"databaseSoftwareImageId"`
 	// (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
 	DbBackupConfig *DatabaseDatabaseDbBackupConfig `pulumi:"dbBackupConfig"`
-	// The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+	// The display name of the database to be created from the snapshot/database. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
 	DbName *string `pulumi:"dbName"`
 	// Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
 	DbUniqueName *string `pulumi:"dbUniqueName"`
@@ -17768,9 +17768,13 @@ type DatabaseDatabase struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled *bool `pulumi:"isActiveDataGuardEnabled"`
+	// Specifies whether thick or thin database cloning is to be performed.
+	IsThinClone *bool `pulumi:"isThinClone"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+	KeyStoreId *string `pulumi:"keyStoreId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId *string `pulumi:"kmsKeyVersionId"`
 	// The database registered for Oracle Managed Database Software Updates.
 	ManagedSoftwareUpdateDetails []DatabaseDatabaseManagedSoftwareUpdateDetail `pulumi:"managedSoftwareUpdateDetails"`
@@ -17788,10 +17792,16 @@ type DatabaseDatabase struct {
 	RecoveryApplianceVpcPassword *string `pulumi:"recoveryApplianceVpcPassword"`
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
 	SidPrefix *string `pulumi:"sidPrefix"`
+	// The source database's password for SYS, SYSTEM.
+	SourceAdminPassword *string `pulumi:"sourceAdminPassword"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
 	SourceDatabaseId *string `pulumi:"sourceDatabaseId"`
 	// Types of providers supported for managing database encryption keys
 	SourceEncryptionKeyLocationDetails *DatabaseDatabaseSourceEncryptionKeyLocationDetails `pulumi:"sourceEncryptionKeyLocationDetails"`
+	// The snapshot [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	SourceSnapshotId *string `pulumi:"sourceSnapshotId"`
+	// The password to open the TDE wallet.
+	SourceTdePassword *string `pulumi:"sourceTdePassword"`
 	// The TDE wallet password of the source database specified by 'sourceDatabaseId'.
 	SourceTdeWalletPassword *string `pulumi:"sourceTdeWalletPassword"`
 	// The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
@@ -17848,7 +17858,7 @@ type DatabaseDatabaseArgs struct {
 	DatabaseSoftwareImageId pulumi.StringPtrInput `pulumi:"databaseSoftwareImageId"`
 	// (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
 	DbBackupConfig DatabaseDatabaseDbBackupConfigPtrInput `pulumi:"dbBackupConfig"`
-	// The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+	// The display name of the database to be created from the snapshot/database. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
 	DbName pulumi.StringPtrInput `pulumi:"dbName"`
 	// Specifies the `DB_UNIQUE_NAME` of the peer database to be created.
 	DbUniqueName pulumi.StringPtrInput `pulumi:"dbUniqueName"`
@@ -17864,9 +17874,13 @@ type DatabaseDatabaseArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled pulumi.BoolPtrInput `pulumi:"isActiveDataGuardEnabled"`
+	// Specifies whether thick or thin database cloning is to be performed.
+	IsThinClone pulumi.BoolPtrInput `pulumi:"isThinClone"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+	KeyStoreId pulumi.StringPtrInput `pulumi:"keyStoreId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringPtrInput `pulumi:"kmsKeyId"`
-	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 	KmsKeyVersionId pulumi.StringPtrInput `pulumi:"kmsKeyVersionId"`
 	// The database registered for Oracle Managed Database Software Updates.
 	ManagedSoftwareUpdateDetails DatabaseDatabaseManagedSoftwareUpdateDetailArrayInput `pulumi:"managedSoftwareUpdateDetails"`
@@ -17884,10 +17898,16 @@ type DatabaseDatabaseArgs struct {
 	RecoveryApplianceVpcPassword pulumi.StringPtrInput `pulumi:"recoveryApplianceVpcPassword"`
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
 	SidPrefix pulumi.StringPtrInput `pulumi:"sidPrefix"`
+	// The source database's password for SYS, SYSTEM.
+	SourceAdminPassword pulumi.StringPtrInput `pulumi:"sourceAdminPassword"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
 	SourceDatabaseId pulumi.StringPtrInput `pulumi:"sourceDatabaseId"`
 	// Types of providers supported for managing database encryption keys
 	SourceEncryptionKeyLocationDetails DatabaseDatabaseSourceEncryptionKeyLocationDetailsPtrInput `pulumi:"sourceEncryptionKeyLocationDetails"`
+	// The snapshot [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	SourceSnapshotId pulumi.StringPtrInput `pulumi:"sourceSnapshotId"`
+	// The password to open the TDE wallet.
+	SourceTdePassword pulumi.StringPtrInput `pulumi:"sourceTdePassword"`
 	// The TDE wallet password of the source database specified by 'sourceDatabaseId'.
 	SourceTdeWalletPassword pulumi.StringPtrInput `pulumi:"sourceTdeWalletPassword"`
 	// The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
@@ -18038,7 +18058,7 @@ func (o DatabaseDatabaseOutput) DbBackupConfig() DatabaseDatabaseDbBackupConfigP
 	return o.ApplyT(func(v DatabaseDatabase) *DatabaseDatabaseDbBackupConfig { return v.DbBackupConfig }).(DatabaseDatabaseDbBackupConfigPtrOutput)
 }
 
-// The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+// The display name of the database to be created from the snapshot/database. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
 func (o DatabaseDatabaseOutput) DbName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseDatabase) *string { return v.DbName }).(pulumi.StringPtrOutput)
 }
@@ -18077,12 +18097,22 @@ func (o DatabaseDatabaseOutput) IsActiveDataGuardEnabled() pulumi.BoolPtrOutput 
 	return o.ApplyT(func(v DatabaseDatabase) *bool { return v.IsActiveDataGuardEnabled }).(pulumi.BoolPtrOutput)
 }
 
+// Specifies whether thick or thin database cloning is to be performed.
+func (o DatabaseDatabaseOutput) IsThinClone() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DatabaseDatabase) *bool { return v.IsThinClone }).(pulumi.BoolPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+func (o DatabaseDatabaseOutput) KeyStoreId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseDatabase) *string { return v.KeyStoreId }).(pulumi.StringPtrOutput)
+}
+
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 func (o DatabaseDatabaseOutput) KmsKeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseDatabase) *string { return v.KmsKeyId }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 func (o DatabaseDatabaseOutput) KmsKeyVersionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseDatabase) *string { return v.KmsKeyVersionId }).(pulumi.StringPtrOutput)
 }
@@ -18129,6 +18159,11 @@ func (o DatabaseDatabaseOutput) SidPrefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseDatabase) *string { return v.SidPrefix }).(pulumi.StringPtrOutput)
 }
 
+// The source database's password for SYS, SYSTEM.
+func (o DatabaseDatabaseOutput) SourceAdminPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseDatabase) *string { return v.SourceAdminPassword }).(pulumi.StringPtrOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
 func (o DatabaseDatabaseOutput) SourceDatabaseId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseDatabase) *string { return v.SourceDatabaseId }).(pulumi.StringPtrOutput)
@@ -18139,6 +18174,16 @@ func (o DatabaseDatabaseOutput) SourceEncryptionKeyLocationDetails() DatabaseDat
 	return o.ApplyT(func(v DatabaseDatabase) *DatabaseDatabaseSourceEncryptionKeyLocationDetails {
 		return v.SourceEncryptionKeyLocationDetails
 	}).(DatabaseDatabaseSourceEncryptionKeyLocationDetailsPtrOutput)
+}
+
+// The snapshot [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o DatabaseDatabaseOutput) SourceSnapshotId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseDatabase) *string { return v.SourceSnapshotId }).(pulumi.StringPtrOutput)
+}
+
+// The password to open the TDE wallet.
+func (o DatabaseDatabaseOutput) SourceTdePassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DatabaseDatabase) *string { return v.SourceTdePassword }).(pulumi.StringPtrOutput)
 }
 
 // The TDE wallet password of the source database specified by 'sourceDatabaseId'.
@@ -18300,7 +18345,7 @@ func (o DatabaseDatabasePtrOutput) DbBackupConfig() DatabaseDatabaseDbBackupConf
 	}).(DatabaseDatabaseDbBackupConfigPtrOutput)
 }
 
-// The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+// The display name of the database to be created from the snapshot/database. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
 func (o DatabaseDatabasePtrOutput) DbName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatabaseDatabase) *string {
 		if v == nil {
@@ -18372,6 +18417,26 @@ func (o DatabaseDatabasePtrOutput) IsActiveDataGuardEnabled() pulumi.BoolPtrOutp
 	}).(pulumi.BoolPtrOutput)
 }
 
+// Specifies whether thick or thin database cloning is to be performed.
+func (o DatabaseDatabasePtrOutput) IsThinClone() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DatabaseDatabase) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsThinClone
+	}).(pulumi.BoolPtrOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+func (o DatabaseDatabasePtrOutput) KeyStoreId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseDatabase) *string {
+		if v == nil {
+			return nil
+		}
+		return v.KeyStoreId
+	}).(pulumi.StringPtrOutput)
+}
+
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 func (o DatabaseDatabasePtrOutput) KmsKeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatabaseDatabase) *string {
@@ -18382,7 +18447,7 @@ func (o DatabaseDatabasePtrOutput) KmsKeyId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
 func (o DatabaseDatabasePtrOutput) KmsKeyVersionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatabaseDatabase) *string {
 		if v == nil {
@@ -18472,6 +18537,16 @@ func (o DatabaseDatabasePtrOutput) SidPrefix() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// The source database's password for SYS, SYSTEM.
+func (o DatabaseDatabasePtrOutput) SourceAdminPassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseDatabase) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SourceAdminPassword
+	}).(pulumi.StringPtrOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
 func (o DatabaseDatabasePtrOutput) SourceDatabaseId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatabaseDatabase) *string {
@@ -18490,6 +18565,26 @@ func (o DatabaseDatabasePtrOutput) SourceEncryptionKeyLocationDetails() Database
 		}
 		return v.SourceEncryptionKeyLocationDetails
 	}).(DatabaseDatabaseSourceEncryptionKeyLocationDetailsPtrOutput)
+}
+
+// The snapshot [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o DatabaseDatabasePtrOutput) SourceSnapshotId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseDatabase) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SourceSnapshotId
+	}).(pulumi.StringPtrOutput)
+}
+
+// The password to open the TDE wallet.
+func (o DatabaseDatabasePtrOutput) SourceTdePassword() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DatabaseDatabase) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SourceTdePassword
+	}).(pulumi.StringPtrOutput)
 }
 
 // The TDE wallet password of the source database specified by 'sourceDatabaseId'.
@@ -18997,7 +19092,7 @@ func (o DatabaseDatabaseDbBackupConfigPtrOutput) RunImmediateFullBackup() pulumi
 }
 
 type DatabaseDatabaseDbBackupConfigBackupDestinationDetail struct {
-	// Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+	// Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
 	BackupRetentionPolicyOnTerminate *string `pulumi:"backupRetentionPolicyOnTerminate"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
 	DbrsPolicyId *string `pulumi:"dbrsPolicyId"`
@@ -19031,7 +19126,7 @@ type DatabaseDatabaseDbBackupConfigBackupDestinationDetailInput interface {
 }
 
 type DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs struct {
-	// Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+	// Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
 	BackupRetentionPolicyOnTerminate pulumi.StringPtrInput `pulumi:"backupRetentionPolicyOnTerminate"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DBRS policy used for backup.
 	DbrsPolicyId pulumi.StringPtrInput `pulumi:"dbrsPolicyId"`
@@ -19104,7 +19199,7 @@ func (o DatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput) ToDatabaseD
 	return o
 }
 
-// Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+// Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
 func (o DatabaseDatabaseDbBackupConfigBackupDestinationDetailOutput) BackupRetentionPolicyOnTerminate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseDatabaseDbBackupConfigBackupDestinationDetail) *string {
 		return v.BackupRetentionPolicyOnTerminate
@@ -19981,14 +20076,10 @@ func (o DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailArrayOutput) 
 
 type DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail struct {
 	// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
-	//
-	// The list of supported versions can be obtained using the API for the provided shape /20160918/dbVersions?compartmentId=<compartmentId>&dbSystemShape=ExaDbXS
 	MajorVersion *string `pulumi:"majorVersion"`
-	// The update should be applied on the database for the selected version scheme.
+	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
 	Source *string `pulumi:"source"`
 	// The update should be applied on the database for the selected version preference. *_N represents the LATEST version
-	//
-	// For Ex: The current latest version is 23.7.0.0.0, If versionPreference selects option as ORACLE_DB_N then oracle applies the db update with LATEST version (i.e. 23.7.0.0.0) If versionPreference selects option as ORACLE_DB_N_1 then oracle applies the db update with LATEST-1 version (i.e. 23.6.0.0.0) If versionPreference selects option as ORACLE_DB_N_2 then oracle applies the db update with LATEST-2 version (i.e. 23.5.0.0.0)
 	VersionPreference *string `pulumi:"versionPreference"`
 }
 
@@ -20005,14 +20096,10 @@ type DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDet
 
 type DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailArgs struct {
 	// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
-	//
-	// The list of supported versions can be obtained using the API for the provided shape /20160918/dbVersions?compartmentId=<compartmentId>&dbSystemShape=ExaDbXS
 	MajorVersion pulumi.StringPtrInput `pulumi:"majorVersion"`
-	// The update should be applied on the database for the selected version scheme.
+	// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
 	Source pulumi.StringPtrInput `pulumi:"source"`
 	// The update should be applied on the database for the selected version preference. *_N represents the LATEST version
-	//
-	// For Ex: The current latest version is 23.7.0.0.0, If versionPreference selects option as ORACLE_DB_N then oracle applies the db update with LATEST version (i.e. 23.7.0.0.0) If versionPreference selects option as ORACLE_DB_N_1 then oracle applies the db update with LATEST-1 version (i.e. 23.6.0.0.0) If versionPreference selects option as ORACLE_DB_N_2 then oracle applies the db update with LATEST-2 version (i.e. 23.5.0.0.0)
 	VersionPreference pulumi.StringPtrInput `pulumi:"versionPreference"`
 }
 
@@ -20068,15 +20155,13 @@ func (o DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionScheme
 }
 
 // The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
-//
-// The list of supported versions can be obtained using the API for the provided shape /20160918/dbVersions?compartmentId=<compartmentId>&dbSystemShape=ExaDbXS
 func (o DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) MajorVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail) *string {
 		return v.MajorVersion
 	}).(pulumi.StringPtrOutput)
 }
 
-// The update should be applied on the database for the selected version scheme.
+// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
 func (o DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) Source() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail) *string {
 		return v.Source
@@ -20084,8 +20169,6 @@ func (o DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionScheme
 }
 
 // The update should be applied on the database for the selected version preference. *_N represents the LATEST version
-//
-// For Ex: The current latest version is 23.7.0.0.0, If versionPreference selects option as ORACLE_DB_N then oracle applies the db update with LATEST version (i.e. 23.7.0.0.0) If versionPreference selects option as ORACLE_DB_N_1 then oracle applies the db update with LATEST-1 version (i.e. 23.6.0.0.0) If versionPreference selects option as ORACLE_DB_N_2 then oracle applies the db update with LATEST-2 version (i.e. 23.5.0.0.0)
 func (o DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetailOutput) VersionPreference() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail) *string {
 		return v.VersionPreference

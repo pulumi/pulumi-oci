@@ -94,6 +94,10 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string? DestinationSnapshotPolicyId;
         /// <summary>
+        /// (Updatable) Create properties for DR drill-specific settings. Use these when the properties for DR drills differ from the properties used for DR operations such as switchover and failover.
+        /// </summary>
+        public readonly Outputs.DrProtectionGroupMemberDrDrillProperties? DrDrillProperties;
+        /// <summary>
         /// (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
         /// </summary>
         public readonly ImmutableArray<Outputs.DrProtectionGroupMemberExportMapping> ExportMappings;
@@ -158,7 +162,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string? PeerClusterId;
         /// <summary>
-        /// (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+        /// (Updatable) The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
         /// </summary>
         public readonly string? PeerDbSystemId;
         /// <summary>
@@ -232,6 +236,8 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             string? destinationSnapshotPolicyId,
 
+            Outputs.DrProtectionGroupMemberDrDrillProperties? drDrillProperties,
+
             ImmutableArray<Outputs.DrProtectionGroupMemberExportMapping> exportMappings,
 
             ImmutableArray<Outputs.DrProtectionGroupMemberFileSystemOperation> fileSystemOperations,
@@ -298,6 +304,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
             DestinationLoadBalancerId = destinationLoadBalancerId;
             DestinationNetworkLoadBalancerId = destinationNetworkLoadBalancerId;
             DestinationSnapshotPolicyId = destinationSnapshotPolicyId;
+            DrDrillProperties = drDrillProperties;
             ExportMappings = exportMappings;
             FileSystemOperations = fileSystemOperations;
             GtidReconciliationTimeout = gtidReconciliationTimeout;

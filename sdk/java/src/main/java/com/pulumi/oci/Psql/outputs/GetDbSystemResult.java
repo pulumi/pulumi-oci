@@ -16,6 +16,7 @@ import com.pulumi.oci.Psql.outputs.GetDbSystemPatchOperation;
 import com.pulumi.oci.Psql.outputs.GetDbSystemReplicationConfig;
 import com.pulumi.oci.Psql.outputs.GetDbSystemSource;
 import com.pulumi.oci.Psql.outputs.GetDbSystemStorageDetail;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -31,6 +32,7 @@ public final class GetDbSystemResult {
      * 
      */
     private String adminUsername;
+    private Boolean allowMajorVersionUpgrade;
     private String applyChangeModeToStandAlone;
     private String applyConfig;
     /**
@@ -181,6 +183,7 @@ public final class GetDbSystemResult {
      * 
      */
     private String timeUpdated;
+    private List<String> upgradeOptions;
 
     private GetDbSystemResult() {}
     /**
@@ -189,6 +192,9 @@ public final class GetDbSystemResult {
      */
     public String adminUsername() {
         return this.adminUsername;
+    }
+    public Boolean allowMajorVersionUpgrade() {
+        return this.allowMajorVersionUpgrade;
     }
     public String applyChangeModeToStandAlone() {
         return this.applyChangeModeToStandAlone;
@@ -408,6 +414,9 @@ public final class GetDbSystemResult {
     public String timeUpdated() {
         return this.timeUpdated;
     }
+    public List<String> upgradeOptions() {
+        return this.upgradeOptions;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -419,6 +428,7 @@ public final class GetDbSystemResult {
     @CustomType.Builder
     public static final class Builder {
         private String adminUsername;
+        private Boolean allowMajorVersionUpgrade;
         private String applyChangeModeToStandAlone;
         private String applyConfig;
         private String compartmentId;
@@ -453,10 +463,12 @@ public final class GetDbSystemResult {
         private String systemType;
         private String timeCreated;
         private String timeUpdated;
+        private List<String> upgradeOptions;
         public Builder() {}
         public Builder(GetDbSystemResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.adminUsername = defaults.adminUsername;
+    	      this.allowMajorVersionUpgrade = defaults.allowMajorVersionUpgrade;
     	      this.applyChangeModeToStandAlone = defaults.applyChangeModeToStandAlone;
     	      this.applyConfig = defaults.applyConfig;
     	      this.compartmentId = defaults.compartmentId;
@@ -491,6 +503,7 @@ public final class GetDbSystemResult {
     	      this.systemType = defaults.systemType;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
+    	      this.upgradeOptions = defaults.upgradeOptions;
         }
 
         @CustomType.Setter
@@ -499,6 +512,14 @@ public final class GetDbSystemResult {
               throw new MissingRequiredPropertyException("GetDbSystemResult", "adminUsername");
             }
             this.adminUsername = adminUsername;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder allowMajorVersionUpgrade(Boolean allowMajorVersionUpgrade) {
+            if (allowMajorVersionUpgrade == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemResult", "allowMajorVersionUpgrade");
+            }
+            this.allowMajorVersionUpgrade = allowMajorVersionUpgrade;
             return this;
         }
         @CustomType.Setter
@@ -804,9 +825,21 @@ public final class GetDbSystemResult {
             this.timeUpdated = timeUpdated;
             return this;
         }
+        @CustomType.Setter
+        public Builder upgradeOptions(List<String> upgradeOptions) {
+            if (upgradeOptions == null) {
+              throw new MissingRequiredPropertyException("GetDbSystemResult", "upgradeOptions");
+            }
+            this.upgradeOptions = upgradeOptions;
+            return this;
+        }
+        public Builder upgradeOptions(String... upgradeOptions) {
+            return upgradeOptions(List.of(upgradeOptions));
+        }
         public GetDbSystemResult build() {
             final var _resultValue = new GetDbSystemResult();
             _resultValue.adminUsername = adminUsername;
+            _resultValue.allowMajorVersionUpgrade = allowMajorVersionUpgrade;
             _resultValue.applyChangeModeToStandAlone = applyChangeModeToStandAlone;
             _resultValue.applyConfig = applyConfig;
             _resultValue.compartmentId = compartmentId;
@@ -841,6 +874,7 @@ public final class GetDbSystemResult {
             _resultValue.systemType = systemType;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
+            _resultValue.upgradeOptions = upgradeOptions;
             return _resultValue;
         }
     }

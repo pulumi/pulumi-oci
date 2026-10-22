@@ -18,13 +18,17 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly ImmutableArray<string> DestinationNsgIdLists;
         /// <summary>
-        /// The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+        /// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
         /// </summary>
         public readonly string DestinationPrimaryPrivateIpAddress;
         /// <summary>
-        /// The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `Myhost1`
+        /// Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `Myhost1`
         /// </summary>
         public readonly string DestinationPrimaryPrivateIpHostnameLabel;
+        /// <summary>
+        /// The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+        /// </summary>
+        public readonly string DestinationReservedPrimaryPrivateIpId;
         /// <summary>
         /// The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
         /// </summary>
@@ -46,6 +50,8 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             string destinationPrimaryPrivateIpHostnameLabel,
 
+            string destinationReservedPrimaryPrivateIpId,
+
             string destinationReservedPublicIpId,
 
             string destinationSubnetId,
@@ -55,6 +61,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
             DestinationNsgIdLists = destinationNsgIdLists;
             DestinationPrimaryPrivateIpAddress = destinationPrimaryPrivateIpAddress;
             DestinationPrimaryPrivateIpHostnameLabel = destinationPrimaryPrivateIpHostnameLabel;
+            DestinationReservedPrimaryPrivateIpId = destinationReservedPrimaryPrivateIpId;
             DestinationReservedPublicIpId = destinationReservedPublicIpId;
             DestinationSubnetId = destinationSubnetId;
             SourceVnicId = sourceVnicId;

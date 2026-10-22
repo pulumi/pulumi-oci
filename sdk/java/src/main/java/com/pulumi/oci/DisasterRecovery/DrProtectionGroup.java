@@ -55,6 +55,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberDbSystemAdminUserDetailsArgs;
  * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberDbSystemReplicationUserDetailsArgs;
  * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberDestinationEncryptionKeyArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberDrDrillPropertiesArgs;
+ * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberDrDrillPropertiesVnicMappingArgs;
  * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberExportMappingArgs;
  * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberFileSystemOperationArgs;
  * import com.pulumi.oci.DisasterRecovery.inputs.DrProtectionGroupMemberFileSystemOperationMountDetailsArgs;
@@ -163,6 +165,17 @@ import javax.annotation.Nullable;
  *                 .destinationLoadBalancerId(testLoadBalancer.get("id"))
  *                 .destinationNetworkLoadBalancerId(testNetworkLoadBalancer.get("id"))
  *                 .destinationSnapshotPolicyId(testPolicy.get("id"))
+ *                 .drDrillProperties(DrProtectionGroupMemberDrDrillPropertiesArgs.builder()
+ *                     .vnicMappings(DrProtectionGroupMemberDrDrillPropertiesVnicMappingArgs.builder()
+ *                         .destinationNsgIdLists(drProtectionGroupMembersDrDrillPropertiesVnicMappingsDestinationNsgIdList)
+ *                         .destinationPrimaryPrivateIpAddress(drProtectionGroupMembersDrDrillPropertiesVnicMappingsDestinationPrimaryPrivateIpAddress)
+ *                         .destinationPrimaryPrivateIpHostnameLabel(drProtectionGroupMembersDrDrillPropertiesVnicMappingsDestinationPrimaryPrivateIpHostnameLabel)
+ *                         .destinationReservedPrimaryPrivateIpId(testPrivateIp.get("id"))
+ *                         .destinationReservedPublicIpId(testPublicIp.get("id"))
+ *                         .destinationSubnetId(testSubnet.get("id"))
+ *                         .sourceVnicId(testVnic.get("id"))
+ *                         .build())
+ *                     .build())
  *                 .exportMappings(DrProtectionGroupMemberExportMappingArgs.builder()
  *                     .destinationMountTargetId(testMountTarget.get("id"))
  *                     .exportId(testExport.get("id"))
@@ -233,6 +246,7 @@ import javax.annotation.Nullable;
  *                         .destinationNsgIdLists(drProtectionGroupMembersVnicMappingsDestinationNsgIdList)
  *                         .destinationPrimaryPrivateIpAddress(drProtectionGroupMembersVnicMappingsDestinationPrimaryPrivateIpAddress)
  *                         .destinationPrimaryPrivateIpHostnameLabel(drProtectionGroupMembersVnicMappingsDestinationPrimaryPrivateIpHostnameLabel)
+ *                         .destinationReservedPrimaryPrivateIpId(testPrivateIp.get("id"))
  *                         .destinationReservedPublicIpId(testPublicIp.get("id"))
  *                         .destinationSubnetId(testSubnet.get("id"))
  *                         .sourceVnicId(testVnic.get("id"))

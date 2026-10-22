@@ -140,7 +140,7 @@ type LookupDeploymentResult struct {
 	NextMaintenanceDescription string `pulumi:"nextMaintenanceDescription"`
 	// An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds []string `pulumi:"nsgIds"`
-	// Deployment Data for an OggDeployment
+	// Deployment Data for an OggDeployment.
 	OggDatas []GetDeploymentOggData `pulumi:"oggDatas"`
 	// An array of local peers of deployment
 	Placements []GetDeploymentPlacement `pulumi:"placements"`
@@ -417,7 +417,7 @@ func (o LookupDeploymentResultOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
 }
 
-// Deployment Data for an OggDeployment
+// Deployment Data for an OggDeployment.
 func (o LookupDeploymentResultOutput) OggDatas() GetDeploymentOggDataArrayOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) []GetDeploymentOggData { return v.OggDatas }).(GetDeploymentOggDataArrayOutput)
 }

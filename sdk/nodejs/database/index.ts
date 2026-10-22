@@ -170,6 +170,11 @@ export type Database = import("./database").Database;
 export const Database: typeof import("./database").Database = null as any;
 utilities.lazyLoad(exports, ["Database"], () => require("./database"));
 
+export { DatabaseSnapshotArgs, DatabaseSnapshotState } from "./databaseSnapshot";
+export type DatabaseSnapshot = import("./databaseSnapshot").DatabaseSnapshot;
+export const DatabaseSnapshot: typeof import("./databaseSnapshot").DatabaseSnapshot = null as any;
+utilities.lazyLoad(exports, ["DatabaseSnapshot"], () => require("./databaseSnapshot"));
+
 export { DatabaseSnapshotStandbyArgs, DatabaseSnapshotStandbyState } from "./databaseSnapshotStandby";
 export type DatabaseSnapshotStandby = import("./databaseSnapshotStandby").DatabaseSnapshotStandby;
 export const DatabaseSnapshotStandby: typeof import("./databaseSnapshotStandby").DatabaseSnapshotStandby = null as any;
@@ -659,6 +664,16 @@ export { GetDatabasePdbConversionHistoryEntryArgs, GetDatabasePdbConversionHisto
 export const getDatabasePdbConversionHistoryEntry: typeof import("./getDatabasePdbConversionHistoryEntry").getDatabasePdbConversionHistoryEntry = null as any;
 export const getDatabasePdbConversionHistoryEntryOutput: typeof import("./getDatabasePdbConversionHistoryEntry").getDatabasePdbConversionHistoryEntryOutput = null as any;
 utilities.lazyLoad(exports, ["getDatabasePdbConversionHistoryEntry","getDatabasePdbConversionHistoryEntryOutput"], () => require("./getDatabasePdbConversionHistoryEntry"));
+
+export { GetDatabaseSnapshotArgs, GetDatabaseSnapshotResult, GetDatabaseSnapshotOutputArgs } from "./getDatabaseSnapshot";
+export const getDatabaseSnapshot: typeof import("./getDatabaseSnapshot").getDatabaseSnapshot = null as any;
+export const getDatabaseSnapshotOutput: typeof import("./getDatabaseSnapshot").getDatabaseSnapshotOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseSnapshot","getDatabaseSnapshotOutput"], () => require("./getDatabaseSnapshot"));
+
+export { GetDatabaseSnapshotsArgs, GetDatabaseSnapshotsResult, GetDatabaseSnapshotsOutputArgs } from "./getDatabaseSnapshots";
+export const getDatabaseSnapshots: typeof import("./getDatabaseSnapshots").getDatabaseSnapshots = null as any;
+export const getDatabaseSnapshotsOutput: typeof import("./getDatabaseSnapshots").getDatabaseSnapshotsOutput = null as any;
+utilities.lazyLoad(exports, ["getDatabaseSnapshots","getDatabaseSnapshotsOutput"], () => require("./getDatabaseSnapshots"));
 
 export { GetDatabaseSoftwareImageArgs, GetDatabaseSoftwareImageResult, GetDatabaseSoftwareImageOutputArgs } from "./getDatabaseSoftwareImage";
 export const getDatabaseSoftwareImage: typeof import("./getDatabaseSoftwareImage").getDatabaseSoftwareImage = null as any;
@@ -1311,6 +1326,8 @@ const _module = {
                 return new DataPatch(name, <any>undefined, { urn })
             case "oci:Database/database:Database":
                 return new Database(name, <any>undefined, { urn })
+            case "oci:Database/databaseSnapshot:DatabaseSnapshot":
+                return new DatabaseSnapshot(name, <any>undefined, { urn })
             case "oci:Database/databaseSnapshotStandby:DatabaseSnapshotStandby":
                 return new DatabaseSnapshotStandby(name, <any>undefined, { urn })
             case "oci:Database/databaseSoftwareImage:DatabaseSoftwareImage":
@@ -1447,6 +1464,7 @@ pulumi.runtime.registerResourceModule("oci", "Database/cloudVmClusterIormConfig"
 pulumi.runtime.registerResourceModule("oci", "Database/dataGuardAssociation", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/dataPatch", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/database", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/databaseSnapshot", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/databaseSnapshotStandby", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/databaseSoftwareImage", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/databaseSoftwareScheduleManagement", _module)

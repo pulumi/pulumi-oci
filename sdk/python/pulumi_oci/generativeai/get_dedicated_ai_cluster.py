@@ -27,10 +27,13 @@ class GetDedicatedAiClusterResult:
     """
     A collection of values returned by getDedicatedAiCluster.
     """
-    def __init__(__self__, capacities=None, compartment_id=None, dedicated_ai_cluster_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, state=None, system_tags=None, time_created=None, time_updated=None, type=None, unit_count=None, unit_shape=None):
+    def __init__(__self__, capacities=None, capacity_reservation_id=None, compartment_id=None, dedicated_ai_cluster_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, state=None, system_tags=None, time_created=None, time_updated=None, type=None, unit_count=None, unit_shape=None):
         if capacities and not isinstance(capacities, list):
             raise TypeError("Expected argument 'capacities' to be a list")
         pulumi.set(__self__, "capacities", capacities)
+        if capacity_reservation_id and not isinstance(capacity_reservation_id, str):
+            raise TypeError("Expected argument 'capacity_reservation_id' to be a str")
+        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -80,7 +83,18 @@ class GetDedicatedAiClusterResult:
     @_builtins.property
     @pulumi.getter
     def capacities(self) -> Sequence['outputs.GetDedicatedAiClusterCapacityResult']:
+        """
+        The total capacity for a dedicated AI cluster.
+        """
         return pulumi.get(self, "capacities")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> _builtins.str:
+        """
+        The OCID of the capacity reservation.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -207,6 +221,7 @@ class AwaitableGetDedicatedAiClusterResult(GetDedicatedAiClusterResult):
             yield self
         return GetDedicatedAiClusterResult(
             capacities=self.capacities,
+            capacity_reservation_id=self.capacity_reservation_id,
             compartment_id=self.compartment_id,
             dedicated_ai_cluster_id=self.dedicated_ai_cluster_id,
             defined_tags=self.defined_tags,
@@ -250,6 +265,7 @@ def get_dedicated_ai_cluster(dedicated_ai_cluster_id: Optional[_builtins.str] = 
 
     return AwaitableGetDedicatedAiClusterResult(
         capacities=pulumi.get(__ret__, 'capacities'),
+        capacity_reservation_id=pulumi.get(__ret__, 'capacity_reservation_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         dedicated_ai_cluster_id=pulumi.get(__ret__, 'dedicated_ai_cluster_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
@@ -290,6 +306,7 @@ def get_dedicated_ai_cluster_output(dedicated_ai_cluster_id: pulumi.Input[Option
     __ret__ = pulumi.runtime.invoke_output('oci:GenerativeAi/getDedicatedAiCluster:getDedicatedAiCluster', __args__, opts=opts, typ=GetDedicatedAiClusterResult)
     return __ret__.apply(lambda __response__: GetDedicatedAiClusterResult(
         capacities=pulumi.get(__response__, 'capacities'),
+        capacity_reservation_id=pulumi.get(__response__, 'capacity_reservation_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         dedicated_ai_cluster_id=pulumi.get(__response__, 'dedicated_ai_cluster_id'),
         defined_tags=pulumi.get(__response__, 'defined_tags'),

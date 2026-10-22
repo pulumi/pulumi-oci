@@ -6,6 +6,7 @@ package com.pulumi.oci.GoldenGate.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionAdditionalAttribute;
+import com.pulumi.oci.GoldenGate.outputs.GetConnectionArtifactLocation;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionAuthDetail;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionBootstrapServer;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionCatalog;
@@ -22,9 +23,7 @@ import java.util.Objects;
 @CustomType
 public final class GetConnectionResult {
     /**
-     * @return * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-     * * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-     *   Note: Despite the &#34;Id&#34; suffix, this value is not an Oracle Cloud Infrastructure OCID.
+     * @return Access Key ID from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
      * 
      */
     private String accessKeyId;
@@ -51,22 +50,53 @@ public final class GetConnectionResult {
      */
     private List<GetConnectionAdditionalAttribute> additionalAttributes;
     /**
-     * @return Represents authentication details for an AI Model connection.
+     * @return Location used to share engine application artifacts.
+     * * DATABRICKS_ENGINE: Location used to share Databricks application artifacts.
+     * * SPARK: Location used to share Spark application artifacts with a remote cluster.
+     * 
+     */
+    private List<GetConnectionArtifactLocation> artifactLocations;
+    /**
+     * @return Authentication details for an AI Model or AI Provider connection.
      * 
      */
     private List<GetConnectionAuthDetail> authDetails;
+    /**
+     * @deprecated
+     * The &#39;auth_secret&#39; field has been deprecated. Please use &#39;auth_secret_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'auth_secret' field has been deprecated. Please use 'auth_secret_secret_id' instead. */
+    private String authSecret;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Spark authentication shared secret. Applicable when authenticationType is SHARED_SECRET. Note: When provided, &#39;authSecret&#39; field must not be provided.
+     * 
+     */
+    private String authSecretSecretId;
+    /**
+     * @deprecated
+     * The &#39;auth_token&#39; field has been deprecated. Please use &#39;auth_token_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'auth_token' field has been deprecated. Please use 'auth_token_secret_id' instead. */
+    private String authToken;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the personal access token is stored. Only applicable for authenticationType == PERSONAL_ACCESS_TOKEN. Note: When provided, &#39;authToken&#39; field must not be provided.
+     * 
+     */
+    private String authTokenSecretId;
     /**
      * @return Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
      * 
      */
     private String authenticationMode;
     /**
-     * @return Used authentication mechanism to be provided for the following connection types:
-     * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
-     * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
-     * * DATABRICKS - Required fields by authentication types:
-     * * PERSONAL_ACCESS_TOKEN: username is always &#39;token&#39;, user must enter password
-     * * OAUTH_M2M: user must enter clientId and clientSecret
+     * @return Authentication mechanism; supported values depend on `connectionType`.
+     * * DATABRICKS: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M.
+     * * DATABRICKS_ENGINE: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M for the Databricks Engine REST API.
+     * * JAVA_MESSAGE_SERVICE: Authentication type for Java Message Service. The default is NONE.
+     * * SPARK: Use SHARED_SECRET only when the target cluster has `spark.authenticate=true`. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET.
+     * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE: Authentication type supported by the target service.
      * 
      */
     private String authenticationType;
@@ -94,7 +124,7 @@ public final class GetConnectionResult {
     private List<GetConnectionCatalog> catalogs;
     /**
      * @return * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-     * * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+     * * DATABRICKS, DATABRICKS_ENGINE: OAuth client ID, applicable to OAUTH_M2M authentication.
      * * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      * 
      */
@@ -108,12 +138,17 @@ public final class GetConnectionResult {
     private String clientSecret;
     /**
      * @return * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-     * * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+     * * DATABRICKS, DATABRICKS_ENGINE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Applicable to OAUTH_M2M authentication.
      * * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
      *   Note: When provided, &#39;clientSecret&#39; field must not be provided.
      * 
      */
     private String clientSecretSecretId;
+    /**
+     * @return Spark master URL used for job submission. Required for both SUBMIT and REST submit modes. e.g.: `spark://spark-master.example.com:7077`. High availability can be configured with a comma-separated list, for example `spark://h1.example.com:7077,h2.example.com:7077`.
+     * 
+     */
+    private String clusterEndpoint;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
      * 
@@ -207,10 +242,7 @@ public final class GetConnectionResult {
      */
     private Boolean doesUseSecretIds;
     /**
-     * @return * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: &#39;https://s3.amazonaws.com&#39;
-     * * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: &#39;https://my-azure-storage-account.blob.core.windows.net&#39;
-     * * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
-     * * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: &#34;https://&lt;namespace&gt;.compat.objectstorage.&lt;region&gt;.&lt;domain&gt;&#34; Example: &#34;https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com&#34;
+     * @return Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: &#34;https://&lt;namespace&gt;.compat.objectstorage.&lt;region&gt;.&lt;domain&gt;&#34; Example: &#34;https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com&#34;
      * 
      */
     private String endpoint;
@@ -294,19 +326,24 @@ public final class GetConnectionResult {
     @Deprecated /* The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead. */
     private String keyStorePassword;
     /**
-     * @return * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
-     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
-     * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
-     * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
-     *   Note: When provided, &#39;keyStorePassword&#39; field must not be provided.
+     * @return Secret OCID containing the key store password.
+     * * SPARK: Applicable when `securityProtocol` is TLS and a client key store is provided. Required when `keyStoreSecretId` is provided.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Password for the target connection&#39;s key store.
      * 
      */
     private String keyStorePasswordSecretId;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, &#39;keyStore&#39; field must not be provided.
+     * @return Secret OCID containing the key store content.
+     * * SPARK: Applicable when `securityProtocol` is TLS.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Key store file used by the target connection.
      * 
      */
     private String keyStoreSecretId;
+    /**
+     * @return Client key store format used for mutual TLS.
+     * 
+     */
+    private String keyStoreType;
     /**
      * @return Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
@@ -384,6 +421,11 @@ public final class GetConnectionResult {
      */
     private String producerProperties;
     /**
+     * @return Optional identifier of the AI Provider Connection backing this AI Model Connection. When provided, it must reference an existing Active connection of type `AI_PROVIDER`. When `providerId` is set, `providerType` and `authDetails` must not be provided on the AI Model Connection, because provider metadata is resolved from the referenced AI Provider Connection. When `providerId` is not set, the AI Model Connection must provide inline provider metadata using `providerType` and `authDetails`.
+     * 
+     */
+    private String providerId;
+    /**
      * @return AI Provider type used by the AI Model Connection.
      * 
      */
@@ -404,10 +446,32 @@ public final class GetConnectionResult {
      */
     private String region;
     /**
+     * @deprecated
+     * The &#39;rest_auth_secret_key&#39; field has been deprecated. Please use &#39;rest_auth_secret_key_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'rest_auth_secret_key' field has been deprecated. Please use 'rest_auth_secret_key_secret_id' instead. */
+    private String restAuthSecretKey;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the REST submission signing key. Applicable only when submitMode is REST and the cluster enforces REST request signing. This setting is independent of authenticationType. Note: When provided, &#39;restAuthSecretKey&#39; field must not be provided.
+     * 
+     */
+    private String restAuthSecretKeySecretId;
+    /**
+     * @return Spark standalone REST submission base URL. e.g.: &#39;https://spark-master.example.com:6066&#39; Applicable only and required when submitMode is REST.
+     * 
+     */
+    private String restEndpoint;
+    /**
      * @return Controls the network traffic direction to the target: SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment&#39;s private endpoint through the deployment&#39;s subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected. SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service&#39;s network to public hosts. Cannot be used for private targets.
      * 
      */
     private String routingMethod;
+    /**
+     * @return Cipher transform used for Spark RPC encryption. Applicable when securityProtocol is AES_RPC.
+     * 
+     */
+    private String rpcCipher;
     /**
      * @deprecated
      * The &#39;sas_token&#39; field has been deprecated. Please use &#39;sas_token_secret_id&#39; instead.
@@ -428,8 +492,7 @@ public final class GetConnectionResult {
     @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
     private String secretAccessKey;
     /**
-     * @return * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-     * * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
      * 
      */
     private String secretAccessKeySecretId;
@@ -439,21 +502,14 @@ public final class GetConnectionResult {
      */
     private Map<String,String> securityAttributes;
     /**
-     * @return * DB2: Security protocol for the DB2 database.
-     * * ELASTICSEARCH: Security protocol for Elasticsearch.
-     * * JAVA_MESSAGE_SERVICE: Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
-     * * KAFKA: Security Type for Kafka.
-     * * MICROSOFT_SQLSERVER: Security Type for Microsoft SQL Server.
-     * * MONGODB: Security Type for MongoDB.
-     * * MYSQL: Security Type for MySQL.
-     * * POSTGRESQL: Security protocol for PostgreSQL.
-     * * REDIS: Security protocol for Redis.
+     * @return Security protocol; supported values depend on `connectionType`.
+     * * SPARK: PLAINTEXT, TLS, AES_RPC, or SASL_ENCRYPTED. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET authentication.
+     * * Other connection types: Use the protocol supported by the target service.
      * 
      */
     private String securityProtocol;
     /**
-     * @return * ELASTICSEARCH: Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `&#34;server1.example.com:4000,server2.example.com:4000&#34;`
-     * * REDIS: Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 6379. Used for establishing the initial connection to the Redis cluster. Example: `&#34;server1.example.com:6379,server2.example.com:6379&#34;`
+     * @return Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `&#34;server1.example.com:4000,server2.example.com:4000&#34;`
      * 
      */
     private String servers;
@@ -528,8 +584,7 @@ public final class GetConnectionResult {
      */
     private String sslClientKeystoredbSecretId;
     /**
-     * @return * MYSQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-     * * POSTGRESQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * @return The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     private String sslCrl;
@@ -548,22 +603,20 @@ public final class GetConnectionResult {
     @Deprecated /* The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead. */
     private String sslKeyPassword;
     /**
-     * @return * JAVA_MESSAGE_SERVICE, KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided.
-     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
-     *   Note: When provided, &#39;sslKeyPassword&#39; field must not be provided.
+     * @return Secret OCID containing the certificate private-key password inside the client key store.
+     * * SPARK: Applicable when `securityProtocol` is TLS and a client key store is provided.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY: Provide it when the private-key password differs from the key store password.
      * 
      */
     private String sslKeyPasswordSecretId;
     /**
-     * @return * MYSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
-     * * POSTGRESQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
-     *   Note: When provided, &#39;sslKey&#39; field must not be provided.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+     * * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, &#39;sslKey&#39; field must not be provided.
      * 
      */
     private String sslKeySecretId;
     /**
-     * @return * MYSQL: SSL modes for MySQL.
-     * * POSTGRESQL: SSL modes for PostgreSQL.
+     * @return SSL mode for PostgreSQL.
      * 
      */
     private String sslMode;
@@ -593,6 +646,11 @@ public final class GetConnectionResult {
      */
     private String streamPoolId;
     /**
+     * @return Submission channel used to connect to Spark.
+     * 
+     */
+    private String submitMode;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
      * 
      */
@@ -608,7 +666,14 @@ public final class GetConnectionResult {
      */
     private Map<String,String> systemTags;
     /**
-     * @return The technology type.
+     * @return Technology type selected for the connection.
+     * * AI_MODEL: AI Model technology type.
+     * * AI_PROVIDER: AI Provider technology type.
+     * * DATABRICKS_ENGINE: Databricks Engine technology type.
+     * * ICEBERG: Iceberg technology type. APACHE_ICEBERG supports all catalog types; AMAZON_S3_TABLES supports only REST catalog and S3 storage.
+     * * KAFKA_SCHEMA_REGISTRY: Kafka Schema Registry technology type.
+     * * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform Engine technology type.
+     * * SPARK: Spark technology type.
      * 
      */
     private String technologyType;
@@ -662,6 +727,11 @@ public final class GetConnectionResult {
      * 
      */
     private String tlsCertificateKeyFileSecretId;
+    /**
+     * @return TLS protocol negotiated by the Spark client.
+     * 
+     */
+    private String tlsProtocol;
     private Boolean triggerRefresh;
     /**
      * @deprecated
@@ -678,27 +748,32 @@ public final class GetConnectionResult {
     @Deprecated /* The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead. */
     private String trustStorePassword;
     /**
-     * @return * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
-     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
-     * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
-     * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
-     *   Note: When provided, &#39;trustStorePassword&#39; field must not be provided.
+     * @return Secret OCID containing the trust store password.
+     * * SPARK: Applicable when `securityProtocol` is TLS and a trust store is provided. Required when `trustStoreSecretId` is provided.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Password for the target connection&#39;s trust store.
      * 
      */
     private String trustStorePasswordSecretId;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, &#39;trustStore&#39; field must not be provided.
+     * @return Secret OCID containing the trust store content.
+     * * SPARK: Applicable when `securityProtocol` is TLS. Provide it when the server certificate is not already trusted by the JVM.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Trust store file used by the target connection.
      * 
      */
     private String trustStoreSecretId;
+    /**
+     * @return Trust store format used by the Spark client.
+     * 
+     */
+    private String trustStoreType;
     /**
      * @return Kafka Schema Registry URL. e.g.: &#39;https://server1.us.oracle.com:8081&#39;
      * 
      */
     private String url;
     /**
-     * @return * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
-     * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+     * @return * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses Object Storage. The user must have write access to the bucket. If omitted, the service defaults to the user calling the API.
+     * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses the Oracle NoSQL database. The user must have write access to the table. If omitted, the service defaults to the user calling the API.
      * 
      */
     private String userId;
@@ -724,12 +799,16 @@ public final class GetConnectionResult {
      * 
      */
     private String walletSecretId;
+    /**
+     * @return * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://&lt;workspace&gt;.cloud.databricks.com/api/2.0/`.
+     * * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
+     * 
+     */
+    private String workspaceUrl;
 
     private GetConnectionResult() {}
     /**
-     * @return * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-     * * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-     *   Note: Despite the &#34;Id&#34; suffix, this value is not an Oracle Cloud Infrastructure OCID.
+     * @return Access Key ID from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
      * 
      */
     public String accessKeyId() {
@@ -766,11 +845,52 @@ public final class GetConnectionResult {
         return this.additionalAttributes;
     }
     /**
-     * @return Represents authentication details for an AI Model connection.
+     * @return Location used to share engine application artifacts.
+     * * DATABRICKS_ENGINE: Location used to share Databricks application artifacts.
+     * * SPARK: Location used to share Spark application artifacts with a remote cluster.
+     * 
+     */
+    public List<GetConnectionArtifactLocation> artifactLocations() {
+        return this.artifactLocations;
+    }
+    /**
+     * @return Authentication details for an AI Model or AI Provider connection.
      * 
      */
     public List<GetConnectionAuthDetail> authDetails() {
         return this.authDetails;
+    }
+    /**
+     * @deprecated
+     * The &#39;auth_secret&#39; field has been deprecated. Please use &#39;auth_secret_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'auth_secret' field has been deprecated. Please use 'auth_secret_secret_id' instead. */
+    public String authSecret() {
+        return this.authSecret;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Spark authentication shared secret. Applicable when authenticationType is SHARED_SECRET. Note: When provided, &#39;authSecret&#39; field must not be provided.
+     * 
+     */
+    public String authSecretSecretId() {
+        return this.authSecretSecretId;
+    }
+    /**
+     * @deprecated
+     * The &#39;auth_token&#39; field has been deprecated. Please use &#39;auth_token_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'auth_token' field has been deprecated. Please use 'auth_token_secret_id' instead. */
+    public String authToken() {
+        return this.authToken;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the personal access token is stored. Only applicable for authenticationType == PERSONAL_ACCESS_TOKEN. Note: When provided, &#39;authToken&#39; field must not be provided.
+     * 
+     */
+    public String authTokenSecretId() {
+        return this.authTokenSecretId;
     }
     /**
      * @return Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
@@ -780,12 +900,12 @@ public final class GetConnectionResult {
         return this.authenticationMode;
     }
     /**
-     * @return Used authentication mechanism to be provided for the following connection types:
-     * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
-     * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
-     * * DATABRICKS - Required fields by authentication types:
-     * * PERSONAL_ACCESS_TOKEN: username is always &#39;token&#39;, user must enter password
-     * * OAUTH_M2M: user must enter clientId and clientSecret
+     * @return Authentication mechanism; supported values depend on `connectionType`.
+     * * DATABRICKS: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M.
+     * * DATABRICKS_ENGINE: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M for the Databricks Engine REST API.
+     * * JAVA_MESSAGE_SERVICE: Authentication type for Java Message Service. The default is NONE.
+     * * SPARK: Use SHARED_SECRET only when the target cluster has `spark.authenticate=true`. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET.
+     * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE: Authentication type supported by the target service.
      * 
      */
     public String authenticationType() {
@@ -823,7 +943,7 @@ public final class GetConnectionResult {
     }
     /**
      * @return * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when &#39;authenticationType&#39; is set to &#39;AZURE_ACTIVE_DIRECTORY&#39;. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-     * * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+     * * DATABRICKS, DATABRICKS_ENGINE: OAuth client ID, applicable to OAUTH_M2M authentication.
      * * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      * 
      */
@@ -841,13 +961,20 @@ public final class GetConnectionResult {
     }
     /**
      * @return * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-     * * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+     * * DATABRICKS, DATABRICKS_ENGINE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Applicable to OAUTH_M2M authentication.
      * * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
      *   Note: When provided, &#39;clientSecret&#39; field must not be provided.
      * 
      */
     public String clientSecretSecretId() {
         return this.clientSecretSecretId;
+    }
+    /**
+     * @return Spark master URL used for job submission. Required for both SUBMIT and REST submit modes. e.g.: `spark://spark-master.example.com:7077`. High availability can be configured with a comma-separated list, for example `spark://h1.example.com:7077,h2.example.com:7077`.
+     * 
+     */
+    public String clusterEndpoint() {
+        return this.clusterEndpoint;
     }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
@@ -978,10 +1105,7 @@ public final class GetConnectionResult {
         return this.doesUseSecretIds;
     }
     /**
-     * @return * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: &#39;https://s3.amazonaws.com&#39;
-     * * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: &#39;https://my-azure-storage-account.blob.core.windows.net&#39;
-     * * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
-     * * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: &#34;https://&lt;namespace&gt;.compat.objectstorage.&lt;region&gt;.&lt;domain&gt;&#34; Example: &#34;https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com&#34;
+     * @return Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: &#34;https://&lt;namespace&gt;.compat.objectstorage.&lt;region&gt;.&lt;domain&gt;&#34; Example: &#34;https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com&#34;
      * 
      */
     public String endpoint() {
@@ -1097,22 +1221,29 @@ public final class GetConnectionResult {
         return this.keyStorePassword;
     }
     /**
-     * @return * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
-     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
-     * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
-     * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
-     *   Note: When provided, &#39;keyStorePassword&#39; field must not be provided.
+     * @return Secret OCID containing the key store password.
+     * * SPARK: Applicable when `securityProtocol` is TLS and a client key store is provided. Required when `keyStoreSecretId` is provided.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Password for the target connection&#39;s key store.
      * 
      */
     public String keyStorePasswordSecretId() {
         return this.keyStorePasswordSecretId;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, &#39;keyStore&#39; field must not be provided.
+     * @return Secret OCID containing the key store content.
+     * * SPARK: Applicable when `securityProtocol` is TLS.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Key store file used by the target connection.
      * 
      */
     public String keyStoreSecretId() {
         return this.keyStoreSecretId;
+    }
+    /**
+     * @return Client key store format used for mutual TLS.
+     * 
+     */
+    public String keyStoreType() {
+        return this.keyStoreType;
     }
     /**
      * @return Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
@@ -1219,6 +1350,13 @@ public final class GetConnectionResult {
         return this.producerProperties;
     }
     /**
+     * @return Optional identifier of the AI Provider Connection backing this AI Model Connection. When provided, it must reference an existing Active connection of type `AI_PROVIDER`. When `providerId` is set, `providerType` and `authDetails` must not be provided on the AI Model Connection, because provider metadata is resolved from the referenced AI Provider Connection. When `providerId` is not set, the AI Model Connection must provide inline provider metadata using `providerType` and `authDetails`.
+     * 
+     */
+    public String providerId() {
+        return this.providerId;
+    }
+    /**
      * @return AI Provider type used by the AI Model Connection.
      * 
      */
@@ -1247,11 +1385,41 @@ public final class GetConnectionResult {
         return this.region;
     }
     /**
+     * @deprecated
+     * The &#39;rest_auth_secret_key&#39; field has been deprecated. Please use &#39;rest_auth_secret_key_secret_id&#39; instead.
+     * 
+     */
+    @Deprecated /* The 'rest_auth_secret_key' field has been deprecated. Please use 'rest_auth_secret_key_secret_id' instead. */
+    public String restAuthSecretKey() {
+        return this.restAuthSecretKey;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the REST submission signing key. Applicable only when submitMode is REST and the cluster enforces REST request signing. This setting is independent of authenticationType. Note: When provided, &#39;restAuthSecretKey&#39; field must not be provided.
+     * 
+     */
+    public String restAuthSecretKeySecretId() {
+        return this.restAuthSecretKeySecretId;
+    }
+    /**
+     * @return Spark standalone REST submission base URL. e.g.: &#39;https://spark-master.example.com:6066&#39; Applicable only and required when submitMode is REST.
+     * 
+     */
+    public String restEndpoint() {
+        return this.restEndpoint;
+    }
+    /**
      * @return Controls the network traffic direction to the target: SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment&#39;s private endpoint through the deployment&#39;s subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected. SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service&#39;s network to public hosts. Cannot be used for private targets.
      * 
      */
     public String routingMethod() {
         return this.routingMethod;
+    }
+    /**
+     * @return Cipher transform used for Spark RPC encryption. Applicable when securityProtocol is AES_RPC.
+     * 
+     */
+    public String rpcCipher() {
+        return this.rpcCipher;
     }
     /**
      * @deprecated
@@ -1279,8 +1447,7 @@ public final class GetConnectionResult {
         return this.secretAccessKey;
     }
     /**
-     * @return * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-     * * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
      * 
      */
     public String secretAccessKeySecretId() {
@@ -1294,23 +1461,16 @@ public final class GetConnectionResult {
         return this.securityAttributes;
     }
     /**
-     * @return * DB2: Security protocol for the DB2 database.
-     * * ELASTICSEARCH: Security protocol for Elasticsearch.
-     * * JAVA_MESSAGE_SERVICE: Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
-     * * KAFKA: Security Type for Kafka.
-     * * MICROSOFT_SQLSERVER: Security Type for Microsoft SQL Server.
-     * * MONGODB: Security Type for MongoDB.
-     * * MYSQL: Security Type for MySQL.
-     * * POSTGRESQL: Security protocol for PostgreSQL.
-     * * REDIS: Security protocol for Redis.
+     * @return Security protocol; supported values depend on `connectionType`.
+     * * SPARK: PLAINTEXT, TLS, AES_RPC, or SASL_ENCRYPTED. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET authentication.
+     * * Other connection types: Use the protocol supported by the target service.
      * 
      */
     public String securityProtocol() {
         return this.securityProtocol;
     }
     /**
-     * @return * ELASTICSEARCH: Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `&#34;server1.example.com:4000,server2.example.com:4000&#34;`
-     * * REDIS: Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 6379. Used for establishing the initial connection to the Redis cluster. Example: `&#34;server1.example.com:6379,server2.example.com:6379&#34;`
+     * @return Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `&#34;server1.example.com:4000,server2.example.com:4000&#34;`
      * 
      */
     public String servers() {
@@ -1411,8 +1571,7 @@ public final class GetConnectionResult {
         return this.sslClientKeystoredbSecretId;
     }
     /**
-     * @return * MYSQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-     * * POSTGRESQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * @return The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      * 
      */
     public String sslCrl() {
@@ -1437,26 +1596,24 @@ public final class GetConnectionResult {
         return this.sslKeyPassword;
     }
     /**
-     * @return * JAVA_MESSAGE_SERVICE, KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided.
-     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
-     *   Note: When provided, &#39;sslKeyPassword&#39; field must not be provided.
+     * @return Secret OCID containing the certificate private-key password inside the client key store.
+     * * SPARK: Applicable when `securityProtocol` is TLS and a client key store is provided.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY: Provide it when the private-key password differs from the key store password.
      * 
      */
     public String sslKeyPasswordSecretId() {
         return this.sslKeyPasswordSecretId;
     }
     /**
-     * @return * MYSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
-     * * POSTGRESQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
-     *   Note: When provided, &#39;sslKey&#39; field must not be provided.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+     * * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, &#39;sslKey&#39; field must not be provided.
      * 
      */
     public String sslKeySecretId() {
         return this.sslKeySecretId;
     }
     /**
-     * @return * MYSQL: SSL modes for MySQL.
-     * * POSTGRESQL: SSL modes for PostgreSQL.
+     * @return SSL mode for PostgreSQL.
      * 
      */
     public String sslMode() {
@@ -1498,6 +1655,13 @@ public final class GetConnectionResult {
         return this.streamPoolId;
     }
     /**
+     * @return Submission channel used to connect to Spark.
+     * 
+     */
+    public String submitMode() {
+        return this.submitMode;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
      * 
      */
@@ -1519,7 +1683,14 @@ public final class GetConnectionResult {
         return this.systemTags;
     }
     /**
-     * @return The technology type.
+     * @return Technology type selected for the connection.
+     * * AI_MODEL: AI Model technology type.
+     * * AI_PROVIDER: AI Provider technology type.
+     * * DATABRICKS_ENGINE: Databricks Engine technology type.
+     * * ICEBERG: Iceberg technology type. APACHE_ICEBERG supports all catalog types; AMAZON_S3_TABLES supports only REST catalog and S3 storage.
+     * * KAFKA_SCHEMA_REGISTRY: Kafka Schema Registry technology type.
+     * * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform Engine technology type.
+     * * SPARK: Spark technology type.
      * 
      */
     public String technologyType() {
@@ -1593,6 +1764,13 @@ public final class GetConnectionResult {
     public String tlsCertificateKeyFileSecretId() {
         return this.tlsCertificateKeyFileSecretId;
     }
+    /**
+     * @return TLS protocol negotiated by the Spark client.
+     * 
+     */
+    public String tlsProtocol() {
+        return this.tlsProtocol;
+    }
     public Boolean triggerRefresh() {
         return this.triggerRefresh;
     }
@@ -1615,22 +1793,29 @@ public final class GetConnectionResult {
         return this.trustStorePassword;
     }
     /**
-     * @return * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
-     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
-     * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
-     * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
-     *   Note: When provided, &#39;trustStorePassword&#39; field must not be provided.
+     * @return Secret OCID containing the trust store password.
+     * * SPARK: Applicable when `securityProtocol` is TLS and a trust store is provided. Required when `trustStoreSecretId` is provided.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Password for the target connection&#39;s trust store.
      * 
      */
     public String trustStorePasswordSecretId() {
         return this.trustStorePasswordSecretId;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, &#39;trustStore&#39; field must not be provided.
+     * @return Secret OCID containing the trust store content.
+     * * SPARK: Applicable when `securityProtocol` is TLS. Provide it when the server certificate is not already trusted by the JVM.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Trust store file used by the target connection.
      * 
      */
     public String trustStoreSecretId() {
         return this.trustStoreSecretId;
+    }
+    /**
+     * @return Trust store format used by the Spark client.
+     * 
+     */
+    public String trustStoreType() {
+        return this.trustStoreType;
     }
     /**
      * @return Kafka Schema Registry URL. e.g.: &#39;https://server1.us.oracle.com:8081&#39;
@@ -1640,8 +1825,8 @@ public final class GetConnectionResult {
         return this.url;
     }
     /**
-     * @return * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
-     * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+     * @return * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses Object Storage. The user must have write access to the bucket. If omitted, the service defaults to the user calling the API.
+     * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses the Oracle NoSQL database. The user must have write access to the table. If omitted, the service defaults to the user calling the API.
      * 
      */
     public String userId() {
@@ -1677,6 +1862,14 @@ public final class GetConnectionResult {
     public String walletSecretId() {
         return this.walletSecretId;
     }
+    /**
+     * @return * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://&lt;workspace&gt;.cloud.databricks.com/api/2.0/`.
+     * * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
+     * 
+     */
+    public String workspaceUrl() {
+        return this.workspaceUrl;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -1692,7 +1885,12 @@ public final class GetConnectionResult {
         private String accountKeySecretId;
         private String accountName;
         private List<GetConnectionAdditionalAttribute> additionalAttributes;
+        private List<GetConnectionArtifactLocation> artifactLocations;
         private List<GetConnectionAuthDetail> authDetails;
+        private String authSecret;
+        private String authSecretSecretId;
+        private String authToken;
+        private String authTokenSecretId;
         private String authenticationMode;
         private String authenticationType;
         private String azureAuthorityHost;
@@ -1702,6 +1900,7 @@ public final class GetConnectionResult {
         private String clientId;
         private String clientSecret;
         private String clientSecretSecretId;
+        private String clusterEndpoint;
         private String clusterId;
         private String clusterPlacementGroupId;
         private String compartmentId;
@@ -1738,6 +1937,7 @@ public final class GetConnectionResult {
         private String keyStorePassword;
         private String keyStorePasswordSecretId;
         private String keyStoreSecretId;
+        private String keyStoreType;
         private String lifecycleDetails;
         private List<GetConnectionLock> locks;
         private Integer maxInputChars;
@@ -1752,11 +1952,16 @@ public final class GetConnectionResult {
         private String privateKeyPassphrase;
         private String privateKeyPassphraseSecretId;
         private String producerProperties;
+        private String providerId;
         private String providerType;
         private String publicKeyFingerprint;
         private String redisClusterId;
         private String region;
+        private String restAuthSecretKey;
+        private String restAuthSecretKeySecretId;
+        private String restEndpoint;
         private String routingMethod;
+        private String rpcCipher;
         private String sasToken;
         private String sasTokenSecretId;
         private String secretAccessKey;
@@ -1787,6 +1992,7 @@ public final class GetConnectionResult {
         private String storageCredentialName;
         private List<GetConnectionStorage> storages;
         private String streamPoolId;
+        private String submitMode;
         private String subnetId;
         private String subscriptionId;
         private Map<String,String> systemTags;
@@ -1800,17 +2006,20 @@ public final class GetConnectionResult {
         private String tlsCertificateKeyFilePassword;
         private String tlsCertificateKeyFilePasswordSecretId;
         private String tlsCertificateKeyFileSecretId;
+        private String tlsProtocol;
         private Boolean triggerRefresh;
         private String trustStore;
         private String trustStorePassword;
         private String trustStorePasswordSecretId;
         private String trustStoreSecretId;
+        private String trustStoreType;
         private String url;
         private String userId;
         private String username;
         private String vaultId;
         private String wallet;
         private String walletSecretId;
+        private String workspaceUrl;
         public Builder() {}
         public Builder(GetConnectionResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -1819,7 +2028,12 @@ public final class GetConnectionResult {
     	      this.accountKeySecretId = defaults.accountKeySecretId;
     	      this.accountName = defaults.accountName;
     	      this.additionalAttributes = defaults.additionalAttributes;
+    	      this.artifactLocations = defaults.artifactLocations;
     	      this.authDetails = defaults.authDetails;
+    	      this.authSecret = defaults.authSecret;
+    	      this.authSecretSecretId = defaults.authSecretSecretId;
+    	      this.authToken = defaults.authToken;
+    	      this.authTokenSecretId = defaults.authTokenSecretId;
     	      this.authenticationMode = defaults.authenticationMode;
     	      this.authenticationType = defaults.authenticationType;
     	      this.azureAuthorityHost = defaults.azureAuthorityHost;
@@ -1829,6 +2043,7 @@ public final class GetConnectionResult {
     	      this.clientId = defaults.clientId;
     	      this.clientSecret = defaults.clientSecret;
     	      this.clientSecretSecretId = defaults.clientSecretSecretId;
+    	      this.clusterEndpoint = defaults.clusterEndpoint;
     	      this.clusterId = defaults.clusterId;
     	      this.clusterPlacementGroupId = defaults.clusterPlacementGroupId;
     	      this.compartmentId = defaults.compartmentId;
@@ -1865,6 +2080,7 @@ public final class GetConnectionResult {
     	      this.keyStorePassword = defaults.keyStorePassword;
     	      this.keyStorePasswordSecretId = defaults.keyStorePasswordSecretId;
     	      this.keyStoreSecretId = defaults.keyStoreSecretId;
+    	      this.keyStoreType = defaults.keyStoreType;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.locks = defaults.locks;
     	      this.maxInputChars = defaults.maxInputChars;
@@ -1879,11 +2095,16 @@ public final class GetConnectionResult {
     	      this.privateKeyPassphrase = defaults.privateKeyPassphrase;
     	      this.privateKeyPassphraseSecretId = defaults.privateKeyPassphraseSecretId;
     	      this.producerProperties = defaults.producerProperties;
+    	      this.providerId = defaults.providerId;
     	      this.providerType = defaults.providerType;
     	      this.publicKeyFingerprint = defaults.publicKeyFingerprint;
     	      this.redisClusterId = defaults.redisClusterId;
     	      this.region = defaults.region;
+    	      this.restAuthSecretKey = defaults.restAuthSecretKey;
+    	      this.restAuthSecretKeySecretId = defaults.restAuthSecretKeySecretId;
+    	      this.restEndpoint = defaults.restEndpoint;
     	      this.routingMethod = defaults.routingMethod;
+    	      this.rpcCipher = defaults.rpcCipher;
     	      this.sasToken = defaults.sasToken;
     	      this.sasTokenSecretId = defaults.sasTokenSecretId;
     	      this.secretAccessKey = defaults.secretAccessKey;
@@ -1914,6 +2135,7 @@ public final class GetConnectionResult {
     	      this.storageCredentialName = defaults.storageCredentialName;
     	      this.storages = defaults.storages;
     	      this.streamPoolId = defaults.streamPoolId;
+    	      this.submitMode = defaults.submitMode;
     	      this.subnetId = defaults.subnetId;
     	      this.subscriptionId = defaults.subscriptionId;
     	      this.systemTags = defaults.systemTags;
@@ -1927,17 +2149,20 @@ public final class GetConnectionResult {
     	      this.tlsCertificateKeyFilePassword = defaults.tlsCertificateKeyFilePassword;
     	      this.tlsCertificateKeyFilePasswordSecretId = defaults.tlsCertificateKeyFilePasswordSecretId;
     	      this.tlsCertificateKeyFileSecretId = defaults.tlsCertificateKeyFileSecretId;
+    	      this.tlsProtocol = defaults.tlsProtocol;
     	      this.triggerRefresh = defaults.triggerRefresh;
     	      this.trustStore = defaults.trustStore;
     	      this.trustStorePassword = defaults.trustStorePassword;
     	      this.trustStorePasswordSecretId = defaults.trustStorePasswordSecretId;
     	      this.trustStoreSecretId = defaults.trustStoreSecretId;
+    	      this.trustStoreType = defaults.trustStoreType;
     	      this.url = defaults.url;
     	      this.userId = defaults.userId;
     	      this.username = defaults.username;
     	      this.vaultId = defaults.vaultId;
     	      this.wallet = defaults.wallet;
     	      this.walletSecretId = defaults.walletSecretId;
+    	      this.workspaceUrl = defaults.workspaceUrl;
         }
 
         @CustomType.Setter
@@ -1984,6 +2209,17 @@ public final class GetConnectionResult {
             return additionalAttributes(List.of(additionalAttributes));
         }
         @CustomType.Setter
+        public Builder artifactLocations(List<GetConnectionArtifactLocation> artifactLocations) {
+            if (artifactLocations == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "artifactLocations");
+            }
+            this.artifactLocations = artifactLocations;
+            return this;
+        }
+        public Builder artifactLocations(GetConnectionArtifactLocation... artifactLocations) {
+            return artifactLocations(List.of(artifactLocations));
+        }
+        @CustomType.Setter
         public Builder authDetails(List<GetConnectionAuthDetail> authDetails) {
             if (authDetails == null) {
               throw new MissingRequiredPropertyException("GetConnectionResult", "authDetails");
@@ -1993,6 +2229,38 @@ public final class GetConnectionResult {
         }
         public Builder authDetails(GetConnectionAuthDetail... authDetails) {
             return authDetails(List.of(authDetails));
+        }
+        @CustomType.Setter
+        public Builder authSecret(String authSecret) {
+            if (authSecret == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "authSecret");
+            }
+            this.authSecret = authSecret;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder authSecretSecretId(String authSecretSecretId) {
+            if (authSecretSecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "authSecretSecretId");
+            }
+            this.authSecretSecretId = authSecretSecretId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder authToken(String authToken) {
+            if (authToken == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "authToken");
+            }
+            this.authToken = authToken;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder authTokenSecretId(String authTokenSecretId) {
+            if (authTokenSecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "authTokenSecretId");
+            }
+            this.authTokenSecretId = authTokenSecretId;
+            return this;
         }
         @CustomType.Setter
         public Builder authenticationMode(String authenticationMode) {
@@ -2070,6 +2338,14 @@ public final class GetConnectionResult {
               throw new MissingRequiredPropertyException("GetConnectionResult", "clientSecretSecretId");
             }
             this.clientSecretSecretId = clientSecretSecretId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder clusterEndpoint(String clusterEndpoint) {
+            if (clusterEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "clusterEndpoint");
+            }
+            this.clusterEndpoint = clusterEndpoint;
             return this;
         }
         @CustomType.Setter
@@ -2364,6 +2640,14 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder keyStoreType(String keyStoreType) {
+            if (keyStoreType == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "keyStoreType");
+            }
+            this.keyStoreType = keyStoreType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetConnectionResult", "lifecycleDetails");
@@ -2482,6 +2766,14 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder providerId(String providerId) {
+            if (providerId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "providerId");
+            }
+            this.providerId = providerId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder providerType(String providerType) {
             if (providerType == null) {
               throw new MissingRequiredPropertyException("GetConnectionResult", "providerType");
@@ -2514,11 +2806,43 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder restAuthSecretKey(String restAuthSecretKey) {
+            if (restAuthSecretKey == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "restAuthSecretKey");
+            }
+            this.restAuthSecretKey = restAuthSecretKey;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder restAuthSecretKeySecretId(String restAuthSecretKeySecretId) {
+            if (restAuthSecretKeySecretId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "restAuthSecretKeySecretId");
+            }
+            this.restAuthSecretKeySecretId = restAuthSecretKeySecretId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder restEndpoint(String restEndpoint) {
+            if (restEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "restEndpoint");
+            }
+            this.restEndpoint = restEndpoint;
+            return this;
+        }
+        @CustomType.Setter
         public Builder routingMethod(String routingMethod) {
             if (routingMethod == null) {
               throw new MissingRequiredPropertyException("GetConnectionResult", "routingMethod");
             }
             this.routingMethod = routingMethod;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder rpcCipher(String rpcCipher) {
+            if (rpcCipher == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "rpcCipher");
+            }
+            this.rpcCipher = rpcCipher;
             return this;
         }
         @CustomType.Setter
@@ -2765,6 +3089,14 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder submitMode(String submitMode) {
+            if (submitMode == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "submitMode");
+            }
+            this.submitMode = submitMode;
+            return this;
+        }
+        @CustomType.Setter
         public Builder subnetId(String subnetId) {
             if (subnetId == null) {
               throw new MissingRequiredPropertyException("GetConnectionResult", "subnetId");
@@ -2869,6 +3201,14 @@ public final class GetConnectionResult {
             return this;
         }
         @CustomType.Setter
+        public Builder tlsProtocol(String tlsProtocol) {
+            if (tlsProtocol == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "tlsProtocol");
+            }
+            this.tlsProtocol = tlsProtocol;
+            return this;
+        }
+        @CustomType.Setter
         public Builder triggerRefresh(Boolean triggerRefresh) {
             if (triggerRefresh == null) {
               throw new MissingRequiredPropertyException("GetConnectionResult", "triggerRefresh");
@@ -2906,6 +3246,14 @@ public final class GetConnectionResult {
               throw new MissingRequiredPropertyException("GetConnectionResult", "trustStoreSecretId");
             }
             this.trustStoreSecretId = trustStoreSecretId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder trustStoreType(String trustStoreType) {
+            if (trustStoreType == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "trustStoreType");
+            }
+            this.trustStoreType = trustStoreType;
             return this;
         }
         @CustomType.Setter
@@ -2956,6 +3304,14 @@ public final class GetConnectionResult {
             this.walletSecretId = walletSecretId;
             return this;
         }
+        @CustomType.Setter
+        public Builder workspaceUrl(String workspaceUrl) {
+            if (workspaceUrl == null) {
+              throw new MissingRequiredPropertyException("GetConnectionResult", "workspaceUrl");
+            }
+            this.workspaceUrl = workspaceUrl;
+            return this;
+        }
         public GetConnectionResult build() {
             final var _resultValue = new GetConnectionResult();
             _resultValue.accessKeyId = accessKeyId;
@@ -2963,7 +3319,12 @@ public final class GetConnectionResult {
             _resultValue.accountKeySecretId = accountKeySecretId;
             _resultValue.accountName = accountName;
             _resultValue.additionalAttributes = additionalAttributes;
+            _resultValue.artifactLocations = artifactLocations;
             _resultValue.authDetails = authDetails;
+            _resultValue.authSecret = authSecret;
+            _resultValue.authSecretSecretId = authSecretSecretId;
+            _resultValue.authToken = authToken;
+            _resultValue.authTokenSecretId = authTokenSecretId;
             _resultValue.authenticationMode = authenticationMode;
             _resultValue.authenticationType = authenticationType;
             _resultValue.azureAuthorityHost = azureAuthorityHost;
@@ -2973,6 +3334,7 @@ public final class GetConnectionResult {
             _resultValue.clientId = clientId;
             _resultValue.clientSecret = clientSecret;
             _resultValue.clientSecretSecretId = clientSecretSecretId;
+            _resultValue.clusterEndpoint = clusterEndpoint;
             _resultValue.clusterId = clusterId;
             _resultValue.clusterPlacementGroupId = clusterPlacementGroupId;
             _resultValue.compartmentId = compartmentId;
@@ -3009,6 +3371,7 @@ public final class GetConnectionResult {
             _resultValue.keyStorePassword = keyStorePassword;
             _resultValue.keyStorePasswordSecretId = keyStorePasswordSecretId;
             _resultValue.keyStoreSecretId = keyStoreSecretId;
+            _resultValue.keyStoreType = keyStoreType;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.locks = locks;
             _resultValue.maxInputChars = maxInputChars;
@@ -3023,11 +3386,16 @@ public final class GetConnectionResult {
             _resultValue.privateKeyPassphrase = privateKeyPassphrase;
             _resultValue.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
             _resultValue.producerProperties = producerProperties;
+            _resultValue.providerId = providerId;
             _resultValue.providerType = providerType;
             _resultValue.publicKeyFingerprint = publicKeyFingerprint;
             _resultValue.redisClusterId = redisClusterId;
             _resultValue.region = region;
+            _resultValue.restAuthSecretKey = restAuthSecretKey;
+            _resultValue.restAuthSecretKeySecretId = restAuthSecretKeySecretId;
+            _resultValue.restEndpoint = restEndpoint;
             _resultValue.routingMethod = routingMethod;
+            _resultValue.rpcCipher = rpcCipher;
             _resultValue.sasToken = sasToken;
             _resultValue.sasTokenSecretId = sasTokenSecretId;
             _resultValue.secretAccessKey = secretAccessKey;
@@ -3058,6 +3426,7 @@ public final class GetConnectionResult {
             _resultValue.storageCredentialName = storageCredentialName;
             _resultValue.storages = storages;
             _resultValue.streamPoolId = streamPoolId;
+            _resultValue.submitMode = submitMode;
             _resultValue.subnetId = subnetId;
             _resultValue.subscriptionId = subscriptionId;
             _resultValue.systemTags = systemTags;
@@ -3071,17 +3440,20 @@ public final class GetConnectionResult {
             _resultValue.tlsCertificateKeyFilePassword = tlsCertificateKeyFilePassword;
             _resultValue.tlsCertificateKeyFilePasswordSecretId = tlsCertificateKeyFilePasswordSecretId;
             _resultValue.tlsCertificateKeyFileSecretId = tlsCertificateKeyFileSecretId;
+            _resultValue.tlsProtocol = tlsProtocol;
             _resultValue.triggerRefresh = triggerRefresh;
             _resultValue.trustStore = trustStore;
             _resultValue.trustStorePassword = trustStorePassword;
             _resultValue.trustStorePasswordSecretId = trustStorePasswordSecretId;
             _resultValue.trustStoreSecretId = trustStoreSecretId;
+            _resultValue.trustStoreType = trustStoreType;
             _resultValue.url = url;
             _resultValue.userId = userId;
             _resultValue.username = username;
             _resultValue.vaultId = vaultId;
             _resultValue.wallet = wallet;
             _resultValue.walletSecretId = walletSecretId;
+            _resultValue.workspaceUrl = workspaceUrl;
             return _resultValue;
         }
     }

@@ -51,7 +51,7 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
      */
     private String precheckStatus;
     /**
-     * @return The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+     * @return The name of the region. e.g.: us-ashburn-1
      * 
      */
     private String region;
@@ -149,7 +149,7 @@ public final class GetDeploymentPeersDeploymentPeerCollectionItem {
         return this.precheckStatus;
     }
     /**
-     * @return The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+     * @return The name of the region. e.g.: us-ashburn-1
      * 
      */
     public String region() {

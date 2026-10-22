@@ -14,7 +14,16 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDedicatedAiClusterResult {
+    /**
+     * @return The total capacity for a dedicated AI cluster.
+     * 
+     */
     private List<GetDedicatedAiClusterCapacity> capacities;
+    /**
+     * @return The OCID of the capacity reservation.
+     * 
+     */
+    private String capacityReservationId;
     /**
      * @return The compartment OCID to create the dedicated AI cluster in.
      * 
@@ -88,8 +97,19 @@ public final class GetDedicatedAiClusterResult {
     private String unitShape;
 
     private GetDedicatedAiClusterResult() {}
+    /**
+     * @return The total capacity for a dedicated AI cluster.
+     * 
+     */
     public List<GetDedicatedAiClusterCapacity> capacities() {
         return this.capacities;
+    }
+    /**
+     * @return The OCID of the capacity reservation.
+     * 
+     */
+    public String capacityReservationId() {
+        return this.capacityReservationId;
     }
     /**
      * @return The compartment OCID to create the dedicated AI cluster in.
@@ -203,6 +223,7 @@ public final class GetDedicatedAiClusterResult {
     @CustomType.Builder
     public static final class Builder {
         private List<GetDedicatedAiClusterCapacity> capacities;
+        private String capacityReservationId;
         private String compartmentId;
         private String dedicatedAiClusterId;
         private Map<String,String> definedTags;
@@ -222,6 +243,7 @@ public final class GetDedicatedAiClusterResult {
         public Builder(GetDedicatedAiClusterResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.capacities = defaults.capacities;
+    	      this.capacityReservationId = defaults.capacityReservationId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.dedicatedAiClusterId = defaults.dedicatedAiClusterId;
     	      this.definedTags = defaults.definedTags;
@@ -249,6 +271,14 @@ public final class GetDedicatedAiClusterResult {
         }
         public Builder capacities(GetDedicatedAiClusterCapacity... capacities) {
             return capacities(List.of(capacities));
+        }
+        @CustomType.Setter
+        public Builder capacityReservationId(String capacityReservationId) {
+            if (capacityReservationId == null) {
+              throw new MissingRequiredPropertyException("GetDedicatedAiClusterResult", "capacityReservationId");
+            }
+            this.capacityReservationId = capacityReservationId;
+            return this;
         }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
@@ -373,6 +403,7 @@ public final class GetDedicatedAiClusterResult {
         public GetDedicatedAiClusterResult build() {
             final var _resultValue = new GetDedicatedAiClusterResult();
             _resultValue.capacities = capacities;
+            _resultValue.capacityReservationId = capacityReservationId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.dedicatedAiClusterId = dedicatedAiClusterId;
             _resultValue.definedTags = definedTags;

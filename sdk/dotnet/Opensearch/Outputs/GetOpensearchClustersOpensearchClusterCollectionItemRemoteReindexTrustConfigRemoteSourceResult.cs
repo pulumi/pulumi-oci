@@ -14,7 +14,11 @@ namespace Pulumi.Oci.Opensearch.Outputs
     public sealed class GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceResult
     {
         /// <summary>
-        /// OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+        /// OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster's HTTPS certificate.
+        /// </summary>
+        public readonly string CaBundleId;
+        /// <summary>
+        /// **Deprecated** Alias of `CaBundleId`. Both computed fields contain the same CA bundle OCID during the deprecation period; removal requires a major provider release.
         /// </summary>
         public readonly string CertificateId;
         /// <summary>
@@ -28,12 +32,15 @@ namespace Pulumi.Oci.Opensearch.Outputs
 
         [OutputConstructor]
         private GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSourceResult(
+            string caBundleId,
+
             string certificateId,
 
             string endpoint,
 
             string endpointResolutionIp)
         {
+            CaBundleId = caBundleId;
             CertificateId = certificateId;
             Endpoint = endpoint;
             EndpointResolutionIp = endpointResolutionIp;

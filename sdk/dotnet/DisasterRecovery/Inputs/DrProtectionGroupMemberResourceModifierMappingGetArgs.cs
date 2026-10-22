@@ -13,13 +13,13 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
     public sealed class DrProtectionGroupMemberResourceModifierMappingGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
+        /// (Updatable) The name of the config map containing resource modification details.  Example: `resource-modifier`
         /// </summary>
         [Input("configMap")]
         public Input<string>? ConfigMap { get; set; }
 
         /// <summary>
-        /// (Updatable) The OKE namespace where the config map resides. Example: `NamespaceString5`
+        /// (Updatable) The OKE namespace where the config map resides.  Example: `NamespaceString5`
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }

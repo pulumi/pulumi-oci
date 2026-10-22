@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfig {
     /**
-     * @return Remote cluster sources to trust for reindexing.
+     * @return Remote sources trusted for reindexing.
      * 
      */
     private List<GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource> remoteSources;
 
     private GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfig() {}
     /**
-     * @return Remote cluster sources to trust for reindexing.
+     * @return Remote sources trusted for reindexing.
      * 
      */
     public List<GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource> remoteSources() {

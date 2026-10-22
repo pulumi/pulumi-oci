@@ -16,14 +16,14 @@ public final class DrProtectionGroupMemberResourceModifierMappingArgs extends co
     public static final DrProtectionGroupMemberResourceModifierMappingArgs Empty = new DrProtectionGroupMemberResourceModifierMappingArgs();
 
     /**
-     * (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
+     * (Updatable) The name of the config map containing resource modification details.  Example: `resource-modifier`
      * 
      */
     @Import(name="configMap")
     private @Nullable Output<String> configMap;
 
     /**
-     * @return (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
+     * @return (Updatable) The name of the config map containing resource modification details.  Example: `resource-modifier`
      * 
      */
     public Optional<Output<String>> configMap() {
@@ -31,14 +31,14 @@ public final class DrProtectionGroupMemberResourceModifierMappingArgs extends co
     }
 
     /**
-     * (Updatable) The OKE namespace where the config map resides. Example: `namespaceString5`
+     * (Updatable) The OKE namespace where the config map resides.  Example: `namespaceString5`
      * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
-     * @return (Updatable) The OKE namespace where the config map resides. Example: `namespaceString5`
+     * @return (Updatable) The OKE namespace where the config map resides.  Example: `namespaceString5`
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -71,7 +71,7 @@ public final class DrProtectionGroupMemberResourceModifierMappingArgs extends co
         }
 
         /**
-         * @param configMap (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
+         * @param configMap (Updatable) The name of the config map containing resource modification details.  Example: `resource-modifier`
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class DrProtectionGroupMemberResourceModifierMappingArgs extends co
         }
 
         /**
-         * @param configMap (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
+         * @param configMap (Updatable) The name of the config map containing resource modification details.  Example: `resource-modifier`
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class DrProtectionGroupMemberResourceModifierMappingArgs extends co
         }
 
         /**
-         * @param namespace (Updatable) The OKE namespace where the config map resides. Example: `namespaceString5`
+         * @param namespace (Updatable) The OKE namespace where the config map resides.  Example: `namespaceString5`
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class DrProtectionGroupMemberResourceModifierMappingArgs extends co
         }
 
         /**
-         * @param namespace (Updatable) The OKE namespace where the config map resides. Example: `namespaceString5`
+         * @param namespace (Updatable) The OKE namespace where the config map resides.  Example: `namespaceString5`
          * 
          * @return builder
          * 

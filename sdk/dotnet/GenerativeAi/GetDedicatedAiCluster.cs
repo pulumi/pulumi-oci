@@ -123,7 +123,14 @@ namespace Pulumi.Oci.GenerativeAi
     [OutputType]
     public sealed class GetDedicatedAiClusterResult
     {
+        /// <summary>
+        /// The total capacity for a dedicated AI cluster.
+        /// </summary>
         public readonly ImmutableArray<Outputs.GetDedicatedAiClusterCapacityResult> Capacities;
+        /// <summary>
+        /// The OCID of the capacity reservation.
+        /// </summary>
+        public readonly string CapacityReservationId;
         /// <summary>
         /// The compartment OCID to create the dedicated AI cluster in.
         /// </summary>
@@ -186,6 +193,8 @@ namespace Pulumi.Oci.GenerativeAi
         private GetDedicatedAiClusterResult(
             ImmutableArray<Outputs.GetDedicatedAiClusterCapacityResult> capacities,
 
+            string capacityReservationId,
+
             string compartmentId,
 
             string dedicatedAiClusterId,
@@ -217,6 +226,7 @@ namespace Pulumi.Oci.GenerativeAi
             string unitShape)
         {
             Capacities = capacities;
+            CapacityReservationId = capacityReservationId;
             CompartmentId = compartmentId;
             DedicatedAiClusterId = dedicatedAiClusterId;
             DefinedTags = definedTags;

@@ -217,7 +217,7 @@ export class Deployment extends pulumi.CustomResource {
      */
     declare public readonly nsgIds: pulumi.Output<string[]>;
     /**
-     * (Updatable) Deployment Data for creating an OggDeployment
+     * (Updatable) Deployment Data for creating an OggDeployment.
      */
     declare public readonly oggData: pulumi.Output<outputs.GoldenGate.DeploymentOggData>;
     /**
@@ -607,7 +607,7 @@ export interface DeploymentState {
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * (Updatable) Deployment Data for creating an OggDeployment
+     * (Updatable) Deployment Data for creating an OggDeployment.
      */
     oggData?: pulumi.Input<inputs.GoldenGate.DeploymentOggData | undefined>;
     /**
@@ -800,7 +800,7 @@ export interface DeploymentArgs {
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * (Updatable) Deployment Data for creating an OggDeployment
+     * (Updatable) Deployment Data for creating an OggDeployment.
      */
     oggData?: pulumi.Input<inputs.GoldenGate.DeploymentOggData | undefined>;
     /**

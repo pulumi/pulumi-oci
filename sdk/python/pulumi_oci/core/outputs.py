@@ -51131,7 +51131,8 @@ class GetShapeShapeResult(dict):
                  rdma_bandwidth_in_gbps: _builtins.int,
                  rdma_ports: _builtins.int,
                  recommended_alternatives: Sequence['outputs.GetShapeShapeRecommendedAlternativeResult'],
-                 resize_compatible_shapes: Sequence[_builtins.str]):
+                 resize_compatible_shapes: Sequence[_builtins.str],
+                 supported_resource_managements: Sequence[_builtins.str]):
         pulumi.set(__self__, "baseline_ocpu_utilizations", baseline_ocpu_utilizations)
         pulumi.set(__self__, "billing_type", billing_type)
         pulumi.set(__self__, "bs_nvme_attachments_configs", bs_nvme_attachments_configs)
@@ -51164,6 +51165,7 @@ class GetShapeShapeResult(dict):
         pulumi.set(__self__, "rdma_ports", rdma_ports)
         pulumi.set(__self__, "recommended_alternatives", recommended_alternatives)
         pulumi.set(__self__, "resize_compatible_shapes", resize_compatible_shapes)
+        pulumi.set(__self__, "supported_resource_managements", supported_resource_managements)
 
     @_builtins.property
     @pulumi.getter(name="baselineOcpuUtilizations")
@@ -51324,6 +51326,11 @@ class GetShapeShapeResult(dict):
     @pulumi.getter(name="resizeCompatibleShapes")
     def resize_compatible_shapes(self) -> Sequence[_builtins.str]:
         return pulumi.get(self, "resize_compatible_shapes")
+
+    @_builtins.property
+    @pulumi.getter(name="supportedResourceManagements")
+    def supported_resource_managements(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "supported_resource_managements")
 
 
 @pulumi.output_type
@@ -51842,7 +51849,8 @@ class GetShapesShapeResult(dict):
                  rdma_bandwidth_in_gbps: _builtins.int,
                  rdma_ports: _builtins.int,
                  recommended_alternatives: Sequence['outputs.GetShapesShapeRecommendedAlternativeResult'],
-                 resize_compatible_shapes: Sequence[_builtins.str]):
+                 resize_compatible_shapes: Sequence[_builtins.str],
+                 supported_resource_managements: Sequence[_builtins.str]):
         """
         :param Sequence[_builtins.str] baseline_ocpu_utilizations: For a subcore burstable VM, the supported baseline OCPU utilization for instances that use this shape.
         :param _builtins.str billing_type: How instances that use this shape are charged.
@@ -51876,6 +51884,7 @@ class GetShapesShapeResult(dict):
         :param _builtins.int rdma_ports: The number of networking ports available for the remote direct memory access (RDMA) network between nodes in a high performance computing (HPC) cluster network. If the shape does not support cluster networks, this value is `0`.
         :param Sequence['GetShapesShapeRecommendedAlternativeArgs'] recommended_alternatives: The list of shapes and shape details (if applicable) that Oracle recommends that you use as an alternative to the current shape.
         :param Sequence[_builtins.str] resize_compatible_shapes: The list of compatible shapes that this shape can be changed to. For more information, see [Changing the Shape of an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
+        :param Sequence[_builtins.str] supported_resource_managements: The resource management modes supported by this shape.
         """
         pulumi.set(__self__, "baseline_ocpu_utilizations", baseline_ocpu_utilizations)
         pulumi.set(__self__, "billing_type", billing_type)
@@ -51909,6 +51918,7 @@ class GetShapesShapeResult(dict):
         pulumi.set(__self__, "rdma_ports", rdma_ports)
         pulumi.set(__self__, "recommended_alternatives", recommended_alternatives)
         pulumi.set(__self__, "resize_compatible_shapes", resize_compatible_shapes)
+        pulumi.set(__self__, "supported_resource_managements", supported_resource_managements)
 
     @_builtins.property
     @pulumi.getter(name="baselineOcpuUtilizations")
@@ -52165,6 +52175,14 @@ class GetShapesShapeResult(dict):
         The list of compatible shapes that this shape can be changed to. For more information, see [Changing the Shape of an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
         """
         return pulumi.get(self, "resize_compatible_shapes")
+
+    @_builtins.property
+    @pulumi.getter(name="supportedResourceManagements")
+    def supported_resource_managements(self) -> Sequence[_builtins.str]:
+        """
+        The resource management modes supported by this shape.
+        """
+        return pulumi.get(self, "supported_resource_managements")
 
 
 @pulumi.output_type

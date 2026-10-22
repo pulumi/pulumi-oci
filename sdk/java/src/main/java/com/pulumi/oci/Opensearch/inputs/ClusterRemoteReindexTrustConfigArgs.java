@@ -16,14 +16,14 @@ public final class ClusterRemoteReindexTrustConfigArgs extends com.pulumi.resour
     public static final ClusterRemoteReindexTrustConfigArgs Empty = new ClusterRemoteReindexTrustConfigArgs();
 
     /**
-     * (Updatable) Remote cluster sources to trust for reindexing.
+     * (Updatable) Remote sources trusted for reindexing. When creating a cluster with this configuration, provide at least one source. When updating a cluster, this list replaces the existing sources. Specify an empty list to remove all remote-reindex trust configuration. Each source must specify exactly one non-empty `caBundleId` or `certificateId`, not both.
      * 
      */
     @Import(name="remoteSources", required=true)
     private Output<List<ClusterRemoteReindexTrustConfigRemoteSourceArgs>> remoteSources;
 
     /**
-     * @return (Updatable) Remote cluster sources to trust for reindexing.
+     * @return (Updatable) Remote sources trusted for reindexing. When creating a cluster with this configuration, provide at least one source. When updating a cluster, this list replaces the existing sources. Specify an empty list to remove all remote-reindex trust configuration. Each source must specify exactly one non-empty `caBundleId` or `certificateId`, not both.
      * 
      */
     public Output<List<ClusterRemoteReindexTrustConfigRemoteSourceArgs>> remoteSources() {
@@ -55,7 +55,7 @@ public final class ClusterRemoteReindexTrustConfigArgs extends com.pulumi.resour
         }
 
         /**
-         * @param remoteSources (Updatable) Remote cluster sources to trust for reindexing.
+         * @param remoteSources (Updatable) Remote sources trusted for reindexing. When creating a cluster with this configuration, provide at least one source. When updating a cluster, this list replaces the existing sources. Specify an empty list to remove all remote-reindex trust configuration. Each source must specify exactly one non-empty `caBundleId` or `certificateId`, not both.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class ClusterRemoteReindexTrustConfigArgs extends com.pulumi.resour
         }
 
         /**
-         * @param remoteSources (Updatable) Remote cluster sources to trust for reindexing.
+         * @param remoteSources (Updatable) Remote sources trusted for reindexing. When creating a cluster with this configuration, provide at least one source. When updating a cluster, this list replaces the existing sources. Specify an empty list to remove all remote-reindex trust configuration. Each source must specify exactly one non-empty `caBundleId` or `certificateId`, not both.
          * 
          * @return builder
          * 
@@ -76,7 +76,7 @@ public final class ClusterRemoteReindexTrustConfigArgs extends com.pulumi.resour
         }
 
         /**
-         * @param remoteSources (Updatable) Remote cluster sources to trust for reindexing.
+         * @param remoteSources (Updatable) Remote sources trusted for reindexing. When creating a cluster with this configuration, provide at least one source. When updating a cluster, this list replaces the existing sources. Specify an empty list to remove all remote-reindex trust configuration. Each source must specify exactly one non-empty `caBundleId` or `certificateId`, not both.
          * 
          * @return builder
          * 

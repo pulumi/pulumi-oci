@@ -146,6 +146,22 @@ namespace Pulumi.Oci.DisasterRecovery
     ///                 DestinationLoadBalancerId = testLoadBalancer.Id,
     ///                 DestinationNetworkLoadBalancerId = testNetworkLoadBalancer.Id,
     ///                 DestinationSnapshotPolicyId = testPolicy.Id,
+    ///                 DrDrillProperties = new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberDrDrillPropertiesArgs
+    ///                 {
+    ///                     VnicMappings = new[]
+    ///                     {
+    ///                         new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberDrDrillPropertiesVnicMappingArgs
+    ///                         {
+    ///                             DestinationNsgIdLists = drProtectionGroupMembersDrDrillPropertiesVnicMappingsDestinationNsgIdList,
+    ///                             DestinationPrimaryPrivateIpAddress = drProtectionGroupMembersDrDrillPropertiesVnicMappingsDestinationPrimaryPrivateIpAddress,
+    ///                             DestinationPrimaryPrivateIpHostnameLabel = drProtectionGroupMembersDrDrillPropertiesVnicMappingsDestinationPrimaryPrivateIpHostnameLabel,
+    ///                             DestinationReservedPrimaryPrivateIpId = testPrivateIp.Id,
+    ///                             DestinationReservedPublicIpId = testPublicIp.Id,
+    ///                             DestinationSubnetId = testSubnet.Id,
+    ///                             SourceVnicId = testVnic.Id,
+    ///                         },
+    ///                     },
+    ///                 },
     ///                 ExportMappings = new[]
     ///                 {
     ///                     new Oci.DisasterRecovery.Inputs.DrProtectionGroupMemberExportMappingArgs
@@ -258,6 +274,7 @@ namespace Pulumi.Oci.DisasterRecovery
     ///                         DestinationNsgIdLists = drProtectionGroupMembersVnicMappingsDestinationNsgIdList,
     ///                         DestinationPrimaryPrivateIpAddress = drProtectionGroupMembersVnicMappingsDestinationPrimaryPrivateIpAddress,
     ///                         DestinationPrimaryPrivateIpHostnameLabel = drProtectionGroupMembersVnicMappingsDestinationPrimaryPrivateIpHostnameLabel,
+    ///                         DestinationReservedPrimaryPrivateIpId = testPrivateIp.Id,
     ///                         DestinationReservedPublicIpId = testPublicIp.Id,
     ///                         DestinationSubnetId = testSubnet.Id,
     ///                         SourceVnicId = testVnic.Id,

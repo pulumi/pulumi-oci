@@ -33,7 +33,7 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep {
      */
     private String requestBody;
     /**
-     * @return The user ID on the instance that will be used to execute the script specified in &#39;scriptCommand&#39;. Example: `opc`
+     * @return The user ID on the instance that will be used to execute the script specified in &#39;scriptCommand&#39;.  Example: `opc`
      * 
      */
     private String runAsUser;
@@ -48,7 +48,7 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep {
      */
     private String runOnInstanceRegion;
     /**
-     * @return The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env &#34;production&#34; --max-connections 200 --log-level &#34;INFO&#34;`
+     * @return The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.  Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env &#34;production&#34; --max-connections 200 --log-level &#34;INFO&#34;`
      * 
      */
     private String scriptCommand;
@@ -88,7 +88,7 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep {
         return this.requestBody;
     }
     /**
-     * @return The user ID on the instance that will be used to execute the script specified in &#39;scriptCommand&#39;. Example: `opc`
+     * @return The user ID on the instance that will be used to execute the script specified in &#39;scriptCommand&#39;.  Example: `opc`
      * 
      */
     public String runAsUser() {
@@ -109,7 +109,7 @@ public final class GetDrPlansDrPlanCollectionItemPlanGroupStepUserDefinedStep {
         return this.runOnInstanceRegion;
     }
     /**
-     * @return The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env &#34;production&#34; --max-connections 200 --log-level &#34;INFO&#34;`
+     * @return The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.  Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env &#34;production&#34; --max-connections 200 --log-level &#34;INFO&#34;`
      * 
      */
     public String scriptCommand() {

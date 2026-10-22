@@ -609,14 +609,14 @@ public class Deployment extends com.pulumi.resources.CustomResource {
         return this.nsgIds;
     }
     /**
-     * (Updatable) Deployment Data for creating an OggDeployment
+     * (Updatable) Deployment Data for creating an OggDeployment.
      * 
      */
     @Export(name="oggData", refs={DeploymentOggData.class}, tree="[0]")
     private Output<DeploymentOggData> oggData;
 
     /**
-     * @return (Updatable) Deployment Data for creating an OggDeployment
+     * @return (Updatable) Deployment Data for creating an OggDeployment.
      * 
      */
     public Output<DeploymentOggData> oggData() {

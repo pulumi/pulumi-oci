@@ -25,6 +25,7 @@ import * as utilities from "../utilities";
  *     type: dedicatedAiClusterType,
  *     unitCount: dedicatedAiClusterUnitCount,
  *     unitShape: dedicatedAiClusterUnitShape,
+ *     capacityReservationId: testCapacityReservation.id,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -76,6 +77,10 @@ export class DedicatedAiCluster extends pulumi.CustomResource {
      * The total capacity for a dedicated AI cluster.
      */
     declare public /*out*/ readonly capacities: pulumi.Output<outputs.GenerativeAi.DedicatedAiClusterCapacity[]>;
+    /**
+     * The OCID of the capacity reservation.
+     */
+    declare public readonly capacityReservationId: pulumi.Output<string>;
     /**
      * (Updatable) The compartment OCID to create the dedicated AI cluster in.
      */
@@ -215,6 +220,7 @@ export class DedicatedAiCluster extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as DedicatedAiClusterState | undefined;
             resourceInputs["capacities"] = state?.capacities;
+            resourceInputs["capacityReservationId"] = state?.capacityReservationId;
             resourceInputs["compartmentId"] = state?.compartmentId;
             resourceInputs["definedTags"] = state?.definedTags;
             resourceInputs["description"] = state?.description;
@@ -242,6 +248,7 @@ export class DedicatedAiCluster extends pulumi.CustomResource {
             if (args?.unitShape === undefined && !opts.urn) {
                 throw new Error("Missing required property 'unitShape'");
             }
+            resourceInputs["capacityReservationId"] = args?.capacityReservationId;
             resourceInputs["compartmentId"] = args?.compartmentId;
             resourceInputs["definedTags"] = args?.definedTags;
             resourceInputs["description"] = args?.description;
@@ -270,6 +277,10 @@ export interface DedicatedAiClusterState {
      * The total capacity for a dedicated AI cluster.
      */
     capacities?: pulumi.Input<pulumi.Input<inputs.GenerativeAi.DedicatedAiClusterCapacity>[] | undefined>;
+    /**
+     * The OCID of the capacity reservation.
+     */
+    capacityReservationId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The compartment OCID to create the dedicated AI cluster in.
      */
@@ -400,6 +411,10 @@ export interface DedicatedAiClusterState {
  * The set of arguments for constructing a DedicatedAiCluster resource.
  */
 export interface DedicatedAiClusterArgs {
+    /**
+     * The OCID of the capacity reservation.
+     */
+    capacityReservationId?: pulumi.Input<string | undefined>;
     /**
      * (Updatable) The compartment OCID to create the dedicated AI cluster in.
      */

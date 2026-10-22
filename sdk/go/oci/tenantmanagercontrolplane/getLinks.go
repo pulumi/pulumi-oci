@@ -30,7 +30,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := tenantmanagercontrolplane.GetLinks(ctx, &tenantmanagercontrolplane.GetLinksArgs{
-//				ChildTenancyId:  pulumi.StringRef(testTenancy.Id),
+//				ChildTenancyId:  pulumi.StringRef(testChildTenancy.Id),
 //				Feature:         pulumi.StringRef(linkFeature),
 //				ParentTenancyId: pulumi.StringRef(testTenancy.Id),
 //				State:           pulumi.StringRef(linkState),

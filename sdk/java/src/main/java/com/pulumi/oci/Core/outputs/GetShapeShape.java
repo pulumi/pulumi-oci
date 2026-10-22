@@ -53,6 +53,7 @@ public final class GetShapeShape {
     private Integer rdmaPorts;
     private List<GetShapeShapeRecommendedAlternative> recommendedAlternatives;
     private List<String> resizeCompatibleShapes;
+    private List<String> supportedResourceManagements;
 
     private GetShapeShape() {}
     public List<String> baselineOcpuUtilizations() {
@@ -151,6 +152,9 @@ public final class GetShapeShape {
     public List<String> resizeCompatibleShapes() {
         return this.resizeCompatibleShapes;
     }
+    public List<String> supportedResourceManagements() {
+        return this.supportedResourceManagements;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -193,6 +197,7 @@ public final class GetShapeShape {
         private Integer rdmaPorts;
         private List<GetShapeShapeRecommendedAlternative> recommendedAlternatives;
         private List<String> resizeCompatibleShapes;
+        private List<String> supportedResourceManagements;
         public Builder() {}
         public Builder(GetShapeShape defaults) {
     	      Objects.requireNonNull(defaults);
@@ -228,6 +233,7 @@ public final class GetShapeShape {
     	      this.rdmaPorts = defaults.rdmaPorts;
     	      this.recommendedAlternatives = defaults.recommendedAlternatives;
     	      this.resizeCompatibleShapes = defaults.resizeCompatibleShapes;
+    	      this.supportedResourceManagements = defaults.supportedResourceManagements;
         }
 
         @CustomType.Setter
@@ -519,6 +525,17 @@ public final class GetShapeShape {
         public Builder resizeCompatibleShapes(String... resizeCompatibleShapes) {
             return resizeCompatibleShapes(List.of(resizeCompatibleShapes));
         }
+        @CustomType.Setter
+        public Builder supportedResourceManagements(List<String> supportedResourceManagements) {
+            if (supportedResourceManagements == null) {
+              throw new MissingRequiredPropertyException("GetShapeShape", "supportedResourceManagements");
+            }
+            this.supportedResourceManagements = supportedResourceManagements;
+            return this;
+        }
+        public Builder supportedResourceManagements(String... supportedResourceManagements) {
+            return supportedResourceManagements(List.of(supportedResourceManagements));
+        }
         public GetShapeShape build() {
             final var _resultValue = new GetShapeShape();
             _resultValue.baselineOcpuUtilizations = baselineOcpuUtilizations;
@@ -553,6 +570,7 @@ public final class GetShapeShape {
             _resultValue.rdmaPorts = rdmaPorts;
             _resultValue.recommendedAlternatives = recommendedAlternatives;
             _resultValue.resizeCompatibleShapes = resizeCompatibleShapes;
+            _resultValue.supportedResourceManagements = supportedResourceManagements;
             return _resultValue;
         }
     }

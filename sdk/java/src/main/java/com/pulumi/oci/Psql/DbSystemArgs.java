@@ -16,6 +16,7 @@ import com.pulumi.oci.Psql.inputs.DbSystemPatchOperationArgs;
 import com.pulumi.oci.Psql.inputs.DbSystemReplicationConfigArgs;
 import com.pulumi.oci.Psql.inputs.DbSystemSourceArgs;
 import com.pulumi.oci.Psql.inputs.DbSystemStorageDetailsArgs;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -28,6 +29,21 @@ import javax.annotation.Nullable;
 public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final DbSystemArgs Empty = new DbSystemArgs();
+
+    /**
+     * (Updatable) Whether to allow in-place major version upgrades. Defaults to `false`. When this flag is known to be `true` at plan time, changing `dbVersion` to a higher major version upgrades the existing database system; a downgrade is rejected. If the flag is omitted, `false`, or unknown, a `dbVersion` change forces replacement. The flag can remain `true` for subsequent upgrades. Changing the flag alone does not upgrade the database system, and setting it on creation does not run a separate upgrade operation.
+     * 
+     */
+    @Import(name="allowMajorVersionUpgrade")
+    private @Nullable Output<Boolean> allowMajorVersionUpgrade;
+
+    /**
+     * @return (Updatable) Whether to allow in-place major version upgrades. Defaults to `false`. When this flag is known to be `true` at plan time, changing `dbVersion` to a higher major version upgrades the existing database system; a downgrade is rejected. If the flag is omitted, `false`, or unknown, a `dbVersion` change forces replacement. The flag can remain `true` for subsequent upgrades. Changing the flag alone does not upgrade the database system, and setting it on creation does not run a separate upgrade operation.
+     * 
+     */
+    public Optional<Output<Boolean>> allowMajorVersionUpgrade() {
+        return Optional.ofNullable(this.allowMajorVersionUpgrade);
+    }
 
     /**
      * Specify change mode to apply when converting from warm standby to standalone. It can be set to &#39;IMMEDIATELY&#39; or &#39;REPLAY_PENDING_UPDATES&#39;. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
@@ -75,14 +91,14 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system. For an in-place major version upgrade (`allowMajorVersionUpgrade = true`), **you must specify this field if the database system currently uses a custom configuration**. It may be omitted if the database system currently uses a default configuration. Any configuration specified for an upgrade must be compatible with the target major version and is applied as part of the upgrade.
      * 
      */
     @Import(name="configId")
     private @Nullable Output<String> configId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system. For an in-place major version upgrade (`allowMajorVersionUpgrade = true`), **you must specify this field if the database system currently uses a custom configuration**. It may be omitted if the database system currently uses a default configuration. Any configuration specified for an upgrade must be compatible with the target major version and is applied as part of the upgrade.
      * 
      */
     public Optional<Output<String>> configId() {
@@ -105,14 +121,14 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Version of database system software.
+     * (Conditionally updatable) The major version of the database system software, for example `&#34;17&#34;`. To upgrade an existing database system in place, set a higher major version with `allowMajorVersionUpgrade = true`. A downgrade with the flag set to `true` is rejected. If the flag is omitted, `false`, or unknown at plan time, changing `dbVersion` forces replacement. On creation, the database system is provisioned directly at this version.
      * 
      */
     @Import(name="dbVersion", required=true)
     private Output<String> dbVersion;
 
     /**
-     * @return Version of database system software.
+     * @return (Conditionally updatable) The major version of the database system software, for example `&#34;17&#34;`. To upgrade an existing database system in place, set a higher major version with `allowMajorVersionUpgrade = true`. A downgrade with the flag set to `true` is rejected. If the flag is omitted, `false`, or unknown at plan time, changing `dbVersion` forces replacement. On creation, the database system is provisioned directly at this version.
      * 
      */
     public Output<String> dbVersion() {
@@ -336,12 +352,82 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
      * 
+     * **Note:** The provider returns the `shape` attribute with the `PostgreSQL.` prefix after reading the DB system, even when an unprefixed shape such as `VM.Standard.E5.Flex` is used in the configuration and plan. Use `trimprefix` if you need the unprefixed shape. For example, to normalize the output in the same module that declares the `oci.Psql.DbSystem` resource:
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.std.StdFunctions;
+     * import com.pulumi.std.inputs.TrimprefixArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         ctx.export("shape", StdFunctions.trimprefix(TrimprefixArgs.builder()
+     *             .input(this_.get("shape"))
+     *             .prefix("PostgreSQL.")
+     *             .build()).result());
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     * `trimprefix` removes the prefix when it is present and leaves an already unprefixed value unchanged, so this module output remains in the unprefixed form.
+     * 
      */
     @Import(name="shape", required=true)
     private Output<String> shape;
 
     /**
      * @return (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+     * 
+     * **Note:** The provider returns the `shape` attribute with the `PostgreSQL.` prefix after reading the DB system, even when an unprefixed shape such as `VM.Standard.E5.Flex` is used in the configuration and plan. Use `trimprefix` if you need the unprefixed shape. For example, to normalize the output in the same module that declares the `oci.Psql.DbSystem` resource:
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.std.StdFunctions;
+     * import com.pulumi.std.inputs.TrimprefixArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         ctx.export("shape", StdFunctions.trimprefix(TrimprefixArgs.builder()
+     *             .input(this_.get("shape"))
+     *             .prefix("PostgreSQL.")
+     *             .build()).result());
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     * `trimprefix` removes the prefix when it is present and leaves an already unprefixed value unchanged, so this module output remains in the unprefixed form.
      * 
      */
     public Output<String> shape() {
@@ -414,9 +500,25 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.systemType);
     }
 
+    /**
+     * (Updatable) List of post-upgrade operations to run when `dbVersion` changes with `allowMajorVersionUpgrade = true`. Accepted values are `RUN_POST_UPGRADE_VERIFICATION` and `RUN_POST_UPGRADE_VACUUM`. Verification and vacuum are each skipped unless their option is included. If omitted or empty, both are skipped. Changing this list alone does not trigger an upgrade. These options are not used when creating or replacing a database system.
+     * 
+     */
+    @Import(name="upgradeOptions")
+    private @Nullable Output<List<String>> upgradeOptions;
+
+    /**
+     * @return (Updatable) List of post-upgrade operations to run when `dbVersion` changes with `allowMajorVersionUpgrade = true`. Accepted values are `RUN_POST_UPGRADE_VERIFICATION` and `RUN_POST_UPGRADE_VACUUM`. Verification and vacuum are each skipped unless their option is included. If omitted or empty, both are skipped. Changing this list alone does not trigger an upgrade. These options are not used when creating or replacing a database system.
+     * 
+     */
+    public Optional<Output<List<String>>> upgradeOptions() {
+        return Optional.ofNullable(this.upgradeOptions);
+    }
+
     private DbSystemArgs() {}
 
     private DbSystemArgs(DbSystemArgs $) {
+        this.allowMajorVersionUpgrade = $.allowMajorVersionUpgrade;
         this.applyChangeModeToStandAlone = $.applyChangeModeToStandAlone;
         this.applyConfig = $.applyConfig;
         this.compartmentId = $.compartmentId;
@@ -442,6 +544,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         this.state = $.state;
         this.storageDetails = $.storageDetails;
         this.systemType = $.systemType;
+        this.upgradeOptions = $.upgradeOptions;
     }
 
     public static Builder builder() {
@@ -460,6 +563,27 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(DbSystemArgs defaults) {
             $ = new DbSystemArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param allowMajorVersionUpgrade (Updatable) Whether to allow in-place major version upgrades. Defaults to `false`. When this flag is known to be `true` at plan time, changing `dbVersion` to a higher major version upgrades the existing database system; a downgrade is rejected. If the flag is omitted, `false`, or unknown, a `dbVersion` change forces replacement. The flag can remain `true` for subsequent upgrades. Changing the flag alone does not upgrade the database system, and setting it on creation does not run a separate upgrade operation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder allowMajorVersionUpgrade(@Nullable Output<Boolean> allowMajorVersionUpgrade) {
+            $.allowMajorVersionUpgrade = allowMajorVersionUpgrade;
+            return this;
+        }
+
+        /**
+         * @param allowMajorVersionUpgrade (Updatable) Whether to allow in-place major version upgrades. Defaults to `false`. When this flag is known to be `true` at plan time, changing `dbVersion` to a higher major version upgrades the existing database system; a downgrade is rejected. If the flag is omitted, `false`, or unknown, a `dbVersion` change forces replacement. The flag can remain `true` for subsequent upgrades. Changing the flag alone does not upgrade the database system, and setting it on creation does not run a separate upgrade operation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder allowMajorVersionUpgrade(Boolean allowMajorVersionUpgrade) {
+            return allowMajorVersionUpgrade(Output.of(allowMajorVersionUpgrade));
         }
 
         /**
@@ -526,7 +650,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
+         * @param configId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system. For an in-place major version upgrade (`allowMajorVersionUpgrade = true`), **you must specify this field if the database system currently uses a custom configuration**. It may be omitted if the database system currently uses a default configuration. Any configuration specified for an upgrade must be compatible with the target major version and is applied as part of the upgrade.
          * 
          * @return builder
          * 
@@ -537,7 +661,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param configId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
+         * @param configId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system. For an in-place major version upgrade (`allowMajorVersionUpgrade = true`), **you must specify this field if the database system currently uses a custom configuration**. It may be omitted if the database system currently uses a default configuration. Any configuration specified for an upgrade must be compatible with the target major version and is applied as part of the upgrade.
          * 
          * @return builder
          * 
@@ -568,7 +692,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbVersion Version of database system software.
+         * @param dbVersion (Conditionally updatable) The major version of the database system software, for example `&#34;17&#34;`. To upgrade an existing database system in place, set a higher major version with `allowMajorVersionUpgrade = true`. A downgrade with the flag set to `true` is rejected. If the flag is omitted, `false`, or unknown at plan time, changing `dbVersion` forces replacement. On creation, the database system is provisioned directly at this version.
          * 
          * @return builder
          * 
@@ -579,7 +703,7 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbVersion Version of database system software.
+         * @param dbVersion (Conditionally updatable) The major version of the database system software, for example `&#34;17&#34;`. To upgrade an existing database system in place, set a higher major version with `allowMajorVersionUpgrade = true`. A downgrade with the flag set to `true` is rejected. If the flag is omitted, `false`, or unknown at plan time, changing `dbVersion` forces replacement. On creation, the database system is provisioned directly at this version.
          * 
          * @return builder
          * 
@@ -909,6 +1033,41 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param shape (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
          * 
+         * **Note:** The provider returns the `shape` attribute with the `PostgreSQL.` prefix after reading the DB system, even when an unprefixed shape such as `VM.Standard.E5.Flex` is used in the configuration and plan. Use `trimprefix` if you need the unprefixed shape. For example, to normalize the output in the same module that declares the `oci.Psql.DbSystem` resource:
+         * 
+         * <pre>
+         * {@code
+         * package generated_program;
+         * 
+         * import com.pulumi.Context;
+         * import com.pulumi.Pulumi;
+         * import com.pulumi.core.Output;
+         * import com.pulumi.std.StdFunctions;
+         * import com.pulumi.std.inputs.TrimprefixArgs;
+         * import java.util.ArrayList;
+         * import java.util.Arrays;
+         * import java.util.Map;
+         * import java.io.File;
+         * import java.nio.file.Files;
+         * import java.nio.file.Paths;
+         * 
+         * public class App {
+         *     public static void main(String[] args) {
+         *         Pulumi.run(App::stack);
+         *     }
+         * 
+         *     public static void stack(Context ctx) {
+         *         ctx.export("shape", StdFunctions.trimprefix(TrimprefixArgs.builder()
+         *             .input(this_.get("shape"))
+         *             .prefix("PostgreSQL.")
+         *             .build()).result());
+         *     }
+         * }
+         * }
+         * </pre>
+         * 
+         * `trimprefix` removes the prefix when it is present and leaves an already unprefixed value unchanged, so this module output remains in the unprefixed form.
+         * 
          * @return builder
          * 
          */
@@ -919,6 +1078,41 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param shape (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+         * 
+         * **Note:** The provider returns the `shape` attribute with the `PostgreSQL.` prefix after reading the DB system, even when an unprefixed shape such as `VM.Standard.E5.Flex` is used in the configuration and plan. Use `trimprefix` if you need the unprefixed shape. For example, to normalize the output in the same module that declares the `oci.Psql.DbSystem` resource:
+         * 
+         * <pre>
+         * {@code
+         * package generated_program;
+         * 
+         * import com.pulumi.Context;
+         * import com.pulumi.Pulumi;
+         * import com.pulumi.core.Output;
+         * import com.pulumi.std.StdFunctions;
+         * import com.pulumi.std.inputs.TrimprefixArgs;
+         * import java.util.ArrayList;
+         * import java.util.Arrays;
+         * import java.util.Map;
+         * import java.io.File;
+         * import java.nio.file.Files;
+         * import java.nio.file.Paths;
+         * 
+         * public class App {
+         *     public static void main(String[] args) {
+         *         Pulumi.run(App::stack);
+         *     }
+         * 
+         *     public static void stack(Context ctx) {
+         *         ctx.export("shape", StdFunctions.trimprefix(TrimprefixArgs.builder()
+         *             .input(this_.get("shape"))
+         *             .prefix("PostgreSQL.")
+         *             .build()).result());
+         *     }
+         * }
+         * }
+         * </pre>
+         * 
+         * `trimprefix` removes the prefix when it is present and leaves an already unprefixed value unchanged, so this module output remains in the unprefixed form.
          * 
          * @return builder
          * 
@@ -1015,6 +1209,37 @@ public final class DbSystemArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder systemType(String systemType) {
             return systemType(Output.of(systemType));
+        }
+
+        /**
+         * @param upgradeOptions (Updatable) List of post-upgrade operations to run when `dbVersion` changes with `allowMajorVersionUpgrade = true`. Accepted values are `RUN_POST_UPGRADE_VERIFICATION` and `RUN_POST_UPGRADE_VACUUM`. Verification and vacuum are each skipped unless their option is included. If omitted or empty, both are skipped. Changing this list alone does not trigger an upgrade. These options are not used when creating or replacing a database system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder upgradeOptions(@Nullable Output<List<String>> upgradeOptions) {
+            $.upgradeOptions = upgradeOptions;
+            return this;
+        }
+
+        /**
+         * @param upgradeOptions (Updatable) List of post-upgrade operations to run when `dbVersion` changes with `allowMajorVersionUpgrade = true`. Accepted values are `RUN_POST_UPGRADE_VERIFICATION` and `RUN_POST_UPGRADE_VACUUM`. Verification and vacuum are each skipped unless their option is included. If omitted or empty, both are skipped. Changing this list alone does not trigger an upgrade. These options are not used when creating or replacing a database system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder upgradeOptions(List<String> upgradeOptions) {
+            return upgradeOptions(Output.of(upgradeOptions));
+        }
+
+        /**
+         * @param upgradeOptions (Updatable) List of post-upgrade operations to run when `dbVersion` changes with `allowMajorVersionUpgrade = true`. Accepted values are `RUN_POST_UPGRADE_VERIFICATION` and `RUN_POST_UPGRADE_VACUUM`. Verification and vacuum are each skipped unless their option is included. If omitted or empty, both are skipped. Changing this list alone does not trigger an upgrade. These options are not used when creating or replacing a database system.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder upgradeOptions(String... upgradeOptions) {
+            return upgradeOptions(List.of(upgradeOptions));
         }
 
         public DbSystemArgs build() {

@@ -19,6 +19,21 @@ public final class GetDedicatedAiClustersArgs extends com.pulumi.resources.Invok
     public static final GetDedicatedAiClustersArgs Empty = new GetDedicatedAiClustersArgs();
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
+     * 
+     */
+    @Import(name="capacityReservationId")
+    private @Nullable Output<String> capacityReservationId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
+     * 
+     */
+    public Optional<Output<String>> capacityReservationId() {
+        return Optional.ofNullable(this.capacityReservationId);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
@@ -88,6 +103,7 @@ public final class GetDedicatedAiClustersArgs extends com.pulumi.resources.Invok
     private GetDedicatedAiClustersArgs() {}
 
     private GetDedicatedAiClustersArgs(GetDedicatedAiClustersArgs $) {
+        this.capacityReservationId = $.capacityReservationId;
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.filters = $.filters;
@@ -111,6 +127,27 @@ public final class GetDedicatedAiClustersArgs extends com.pulumi.resources.Invok
 
         public Builder(GetDedicatedAiClustersArgs defaults) {
             $ = new GetDedicatedAiClustersArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param capacityReservationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capacityReservationId(@Nullable Output<String> capacityReservationId) {
+            $.capacityReservationId = capacityReservationId;
+            return this;
+        }
+
+        /**
+         * @param capacityReservationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capacityReservationId(String capacityReservationId) {
+            return capacityReservationId(Output.of(capacityReservationId));
         }
 
         /**

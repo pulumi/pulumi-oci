@@ -33524,7 +33524,7 @@ export namespace Database {
          */
         dbBackupConfig?: pulumi.Input<inputs.Database.DatabaseDatabaseDbBackupConfig | undefined>;
         /**
-         * The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+         * The display name of the database to be created from the snapshot/database. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
          */
         dbName?: pulumi.Input<string | undefined>;
         /**
@@ -33554,11 +33554,19 @@ export namespace Database {
          */
         isActiveDataGuardEnabled?: pulumi.Input<boolean | undefined>;
         /**
+         * Specifies whether thick or thin database cloning is to be performed.
+         */
+        isThinClone?: pulumi.Input<boolean | undefined>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+         */
+        keyStoreId?: pulumi.Input<string | undefined>;
+        /**
          * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
          */
         kmsKeyId?: pulumi.Input<string | undefined>;
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          */
         kmsKeyVersionId?: pulumi.Input<string | undefined>;
         /**
@@ -33594,6 +33602,10 @@ export namespace Database {
          */
         sidPrefix?: pulumi.Input<string | undefined>;
         /**
+         * The source database's password for SYS, SYSTEM.
+         */
+        sourceAdminPassword?: pulumi.Input<string | undefined>;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
          */
         sourceDatabaseId?: pulumi.Input<string | undefined>;
@@ -33601,6 +33613,14 @@ export namespace Database {
          * Types of providers supported for managing database encryption keys
          */
         sourceEncryptionKeyLocationDetails?: pulumi.Input<inputs.Database.DatabaseDatabaseSourceEncryptionKeyLocationDetails | undefined>;
+        /**
+         * The snapshot [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        sourceSnapshotId?: pulumi.Input<string | undefined>;
+        /**
+         * The password to open the TDE wallet.
+         */
+        sourceTdePassword?: pulumi.Input<string | undefined>;
         /**
          * The TDE wallet password of the source database specified by 'sourceDatabaseId'.
          */
@@ -33683,7 +33703,7 @@ export namespace Database {
 
     export interface DatabaseDatabaseDbBackupConfigBackupDestinationDetail {
         /**
-         * Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+         * Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
          */
         backupRetentionPolicyOnTerminate?: pulumi.Input<string | undefined>;
         /**
@@ -33828,18 +33848,14 @@ export namespace Database {
     export interface DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail {
         /**
          * The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
-         *
-         * The list of supported versions can be obtained using the API for the provided shape /20160918/dbVersions?compartmentId=<compartmentId>&dbSystemShape=ExaDbXS
          */
         majorVersion?: pulumi.Input<string | undefined>;
         /**
-         * The update should be applied on the database for the selected version scheme.
+         * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
          */
         source?: pulumi.Input<string | undefined>;
         /**
          * The update should be applied on the database for the selected version preference. *_N represents the LATEST version
-         *
-         * For Ex: The current latest version is 23.7.0.0.0, If versionPreference selects option as ORACLE_DB_N then oracle applies the db update with LATEST version (i.e. 23.7.0.0.0) If versionPreference selects option as ORACLE_DB_N_1 then oracle applies the db update with LATEST-1 version (i.e. 23.6.0.0.0) If versionPreference selects option as ORACLE_DB_N_2 then oracle applies the db update with LATEST-2 version (i.e. 23.5.0.0.0)
          */
         versionPreference?: pulumi.Input<string | undefined>;
     }
@@ -36507,6 +36523,24 @@ export namespace Database {
     }
 
     export interface GetDatabasePdbConversionHistoryEntriesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetDatabaseSnapshotsFilter {
+        /**
+         * A filter to return only resources that match the entire name given. The match is not case sensitive.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDatabaseSnapshotsFilterArgs {
+        /**
+         * A filter to return only resources that match the entire name given. The match is not case sensitive.
+         */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean | undefined>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -46836,7 +46870,7 @@ export namespace DisasterRecovery {
          */
         requestBody?: pulumi.Input<string | undefined>;
         /**
-         * The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
+         * The user ID on the instance that will be used to execute the script specified in 'scriptCommand'.  Example: `opc`
          */
         runAsUser?: pulumi.Input<string | undefined>;
         /**
@@ -46848,7 +46882,7 @@ export namespace DisasterRecovery {
          */
         runOnInstanceRegion?: pulumi.Input<string | undefined>;
         /**
-         * The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
+         * The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.  Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
          */
         scriptCommand?: pulumi.Input<string | undefined>;
         /**
@@ -46984,6 +47018,10 @@ export namespace DisasterRecovery {
          */
         destinationSnapshotPolicyId?: pulumi.Input<string | undefined>;
         /**
+         * (Updatable) Create properties for DR drill-specific settings. Use these when the properties for DR drills differ from the properties used for DR operations such as switchover and failover.
+         */
+        drDrillProperties?: pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberDrDrillProperties | undefined>;
+        /**
          * (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
          */
         exportMappings?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberExportMapping>[] | undefined>;
@@ -47048,7 +47086,7 @@ export namespace DisasterRecovery {
          */
         peerClusterId?: pulumi.Input<string | undefined>;
         /**
-         * (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+         * (Updatable) The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
          */
         peerDbSystemId?: pulumi.Input<string | undefined>;
         /**
@@ -47132,7 +47170,7 @@ export namespace DisasterRecovery {
          */
         namespaces?: pulumi.Input<pulumi.Input<string>[] | undefined>;
         /**
-         * (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
+         * (Updatable) Controls the behavior of image replication across regions.  Image replication is enabled by default for DR Protection Groups.  This setting applies to the OKE cluster member in the primary region, and to the standby region  only if the image replication secret is stored in a vault instead of using the default secret.
          */
         replicateImages?: pulumi.Input<string | undefined>;
     }
@@ -47254,6 +47292,48 @@ export namespace DisasterRecovery {
         vaultId?: pulumi.Input<string | undefined>;
     }
 
+    export interface DrProtectionGroupMemberDrDrillProperties {
+        /**
+         * (Updatable) A list of compute instance VNIC mappings to use for DR drills.
+         */
+        vnicMappings?: pulumi.Input<pulumi.Input<inputs.DisasterRecovery.DrProtectionGroupMemberDrDrillPropertiesVnicMapping>[] | undefined>;
+    }
+
+    export interface DrProtectionGroupMemberDrDrillPropertiesVnicMapping {
+        /**
+         * (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
+         */
+        destinationNsgIdLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+         */
+        destinationPrimaryPrivateIpAddress?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+         */
+        destinationPrimaryPrivateIpHostnameLabel?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+         *
+         * For legacy compatibility, omit this attribute and use either the legacy explicit private-IP fields or the freeform tag, but not both configuration mechanisms for the same source VNIC.
+         *
+         * Example: `ocid1.privateip.oc1..uniqueID`
+         */
+        destinationReservedPrimaryPrivateIpId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+         */
+        destinationReservedPublicIpId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
+         */
+        destinationSubnetId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
+         */
+        sourceVnicId?: pulumi.Input<string | undefined>;
+    }
+
     export interface DrProtectionGroupMemberExportMapping {
         /**
          * (Updatable) The OCID of the destination mount target in the destination region which is used to export the file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
@@ -47341,11 +47421,11 @@ export namespace DisasterRecovery {
 
     export interface DrProtectionGroupMemberResourceModifierMapping {
         /**
-         * (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
+         * (Updatable) The name of the config map containing resource modification details.  Example: `resource-modifier`
          */
         configMap?: pulumi.Input<string | undefined>;
         /**
-         * (Updatable) The OKE namespace where the config map resides. Example: `namespaceString5`
+         * (Updatable) The OKE namespace where the config map resides.  Example: `namespaceString5`
          */
         namespace?: pulumi.Input<string | undefined>;
     }
@@ -47404,13 +47484,21 @@ export namespace DisasterRecovery {
          */
         destinationNsgIdLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
         /**
-         * (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
+         * (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
          */
         destinationPrimaryPrivateIpAddress?: pulumi.Input<string | undefined>;
         /**
-         * (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+         * (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
          */
         destinationPrimaryPrivateIpHostnameLabel?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+         *
+         * For legacy compatibility, omit this attribute and use either the legacy explicit private-IP fields or the freeform tag, but not both configuration mechanisms for the same source VNIC.
+         *
+         * Example: `ocid1.privateip.oc1..uniqueID`
+         */
+        destinationReservedPrimaryPrivateIpId?: pulumi.Input<string | undefined>;
         /**
          * (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
          */
@@ -53364,6 +53452,18 @@ export namespace GenerativeAi {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetDedicatedAiClusterAllocatableGpusFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetDedicatedAiClusterAllocatableGpusFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetDedicatedAiClustersFilter {
         name: string;
         regex?: boolean;
@@ -54225,6 +54325,136 @@ export namespace GoldenGate {
         value?: pulumi.Input<string | undefined>;
     }
 
+    export interface ConnectionArtifactLocation {
+        /**
+         * (Updatable) Storage account access key. Deprecated: This field is deprecated and replaced by "accountKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         */
+        accountKey?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the storage account access key. Note: When provided, 'accountKey' field must not be provided.
+         */
+        accountKeySecretId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Object Storage configuration for the artifact location.
+         */
+        configuration?: pulumi.Input<inputs.GoldenGate.ConnectionArtifactLocationConfiguration | undefined>;
+        /**
+         * (Updatable) Endpoint suffix. Defaults to dfs.core.windows.net.
+         */
+        endpointSuffix?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Azure Data Lake Storage Gen2 filesystem containing the application artifacts. Example: "ggs-artifacts"
+         */
+        filesystem?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The type of location used to share Databricks application artifacts.
+         */
+        locationType: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         * * AZURE_DATE_LAKE_STORAGE: Artifact path within the Azure Data Lake Storage filesystem.
+         * * UC_VOLUME: Unity Catalog volume artifact path.
+         */
+        path?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Controls whether a staged Spark application artifact replaces an existing file or object with the same name at the configured destination. The artifact is typically a GGFAB pipeline package or one of its dependency files.
+         *
+         * When set to `true`, the existing file or object is replaced with the newly staged version. When set to `false`, staging fails or skips the upload rather than replacing it. This setting does not replace the entire target directory or prefix. It allows an updated pipeline or dependency to be deployed when artifact names remain the same across versions.
+         */
+        shouldOverwriteExisting?: pulumi.Input<boolean | undefined>;
+        /**
+         * (Updatable) Azure Data Lake Storage Gen2 storage-account name.
+         */
+        storageAccount?: pulumi.Input<string | undefined>;
+    }
+
+    export interface ConnectionArtifactLocationConfiguration {
+        /**
+         * (Updatable) Access key identifier used for Oracle Cloud Infrastructure Object Storage secret-key authentication. Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+         */
+        accessKeyId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Authentication method used to access Oracle Cloud Infrastructure Object Storage.
+         *
+         * When `authenticationType` is `USER_PRINCIPAL`, `region`, `namespace`, `bucket`, `path`, `userId`, and `publicKeyFingerprint` are required. Provide exactly one of `privateKeyFile` or `privateKeyFileSecretId` as the private-key credential. `tenancyId` and the private-key passphrase are optional. When a passphrase is used, provide at most one of `privateKeyPassphrase` or `privateKeyPassphraseSecretId`.
+         *
+         * When `authenticationType` is `RESOURCE_PRINCIPAL`, `region`, `namespace`, `bucket`, and `path` are required.
+         *
+         * When `authenticationType` is `CUSTOMER_SECRET_KEY`, `region`, `namespace`, `bucket`, `path`, and `accessKeyId` are required. Provide exactly one of `secretAccessKey` or `secretAccessKeySecretId` as the secret-key credential. The S3 Compatibility API endpoint is inferred from `region` and `namespace`.
+         *
+         * When `authenticationType` is `PRE_AUTHENTICATED_REQUEST`, provide exactly one of `parUrl` or `parUrlSecretId`.
+         */
+        authenticationType: pulumi.Input<string>;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Object Storage bucket containing application artifacts.
+         */
+        bucket?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The Oracle Cloud Infrastructure Object Storage namespace containing the bucket. Example: "mynamespace"
+         */
+        namespace?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) A pre-authenticated request (PAR) URL that provides access to the artifact location. Deprecated: This field is deprecated and replaced by "parUrlSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         *
+         * @deprecated The 'par_url' field has been deprecated. Please use 'par_url_secret_id' instead.
+         */
+        parUrl?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the pre-authenticated request (PAR) URL. Note: When provided, `parUrl` must not be provided.
+         */
+        parUrlSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Object path used for application artifacts.
+         */
+        path?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         *
+         * @deprecated The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead.
+         */
+        privateKeyFile?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
+         */
+        privateKeyFileSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The passphrase of the private key. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         *
+         * @deprecated The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead.
+         */
+        privateKeyPassphrase?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the passphrase of the private key. Note: When provided, 'privateKeyPassphrase' field must not be provided.
+         */
+        privateKeyPassphraseSecretId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         */
+        publicKeyFingerprint?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+         */
+        region?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) Secret access key used for Oracle Cloud Infrastructure Object Storage secret-key authentication. Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         *
+         * @deprecated The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
+         */
+        secretAccessKey?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the secret access key. Note: When provided, `secretAccessKey` must not be provided.
+         */
+        secretAccessKeySecretId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+         */
+        tenancyId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user whose API key is used to access the artifact location. If not provided it will default to the current user.
+         */
+        userId?: pulumi.Input<string | undefined>;
+    }
+
     export interface ConnectionAuthDetails {
         /**
          * (Updatable) API key for the AI model connection. Deprecated: This field is deprecated and replaced by "apiKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
@@ -54321,10 +54551,7 @@ export namespace GoldenGate {
          */
         propertiesSecretId?: pulumi.Input<string | undefined>;
         /**
-         * (Updatable)
-         * * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
-         * * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
-         * * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
+         * (Updatable) The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
          */
         uri?: pulumi.Input<string | undefined>;
     }
@@ -54357,10 +54584,9 @@ export namespace GoldenGate {
 
     export interface ConnectionStorage {
         /**
-         * (Updatable)
-         * * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-         * * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-         *   Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+         * (Updatable) Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+         *
+         * Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
          */
         accessKeyId?: pulumi.Input<string | undefined>;
         /**
@@ -54378,10 +54604,7 @@ export namespace GoldenGate {
          */
         accountName?: pulumi.Input<string | undefined>;
         /**
-         * (Updatable)
-         * * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
-         * * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
-         * * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
+         * (Updatable) Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
          */
         bucket?: pulumi.Input<string | undefined>;
         /**
@@ -54389,11 +54612,7 @@ export namespace GoldenGate {
          */
         container?: pulumi.Input<string | undefined>;
         /**
-         * (Updatable)
-         * * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
-         * * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
-         * * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
-         * * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
+         * (Updatable) Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
          */
         endpoint?: pulumi.Input<string | undefined>;
         /**
@@ -54409,18 +54628,13 @@ export namespace GoldenGate {
          */
         schemeType?: pulumi.Input<string | undefined>;
         /**
-         * (Updatable)
-         * * AMAZON_S3: Secret access key to access the Amazon S3 bucket.
-         * * OCI_OBJECT_STORAGE_S3_API: Secret Access Key from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-         *   Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         * (Updatable) Secret Access Key from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API. Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @deprecated The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
          */
         secretAccessKey?: pulumi.Input<string | undefined>;
         /**
-         * (Updatable)
-         * * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-         * * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
          */
         secretAccessKeySecretId?: pulumi.Input<string | undefined>;
         /**
@@ -54434,7 +54648,12 @@ export namespace GoldenGate {
          */
         serviceAccountKeyFileSecretId?: pulumi.Input<string | undefined>;
         /**
-         * (Updatable) The storage type used in the Iceberg connection.
+         * (Updatable) The storage type used in the Iceberg connection. Supported storage types by catalog type:
+         * * GLUE: AMAZON_S3.
+         * * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
+         * * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+         * * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+         * * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
          */
         storageType: pulumi.Input<string>;
     }
@@ -54592,7 +54811,7 @@ export namespace GoldenGate {
          */
         credentialStore?: pulumi.Input<string | undefined>;
         /**
-         * The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. For standby deployment the deployment name is inherited from primary.
+         * The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. If not provided, the service derives this value from the deployment display name. For standby deployment the deployment name is inherited from primary. Deprecated: This field is deprecated and will be removed after the date provided in the announcement: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         deploymentName?: pulumi.Input<string | undefined>;
         /**
@@ -94847,16 +95066,22 @@ export namespace Opensearch {
 
     export interface ClusterRemoteReindexTrustConfig {
         /**
-         * (Updatable) Remote cluster sources to trust for reindexing.
+         * (Updatable) Remote sources trusted for reindexing. When creating a cluster with this configuration, provide at least one source. When updating a cluster, this list replaces the existing sources. Specify an empty list to remove all remote-reindex trust configuration. Each source must specify exactly one non-empty `caBundleId` or `certificateId`, not both.
          */
         remoteSources: pulumi.Input<pulumi.Input<inputs.Opensearch.ClusterRemoteReindexTrustConfigRemoteSource>[]>;
     }
 
     export interface ClusterRemoteReindexTrustConfigRemoteSource {
         /**
-         * (Updatable) OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+         * (Updatable) OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster's HTTPS certificate. Required when `certificateId` is not specified.
          */
-        certificateId: pulumi.Input<string>;
+        caBundleId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) **Deprecated** Alias for `caBundleId`; use `caBundleId` instead. The value must be an OCI Certificates service CA bundle OCID, not a certificate OCID. Existing configurations remain supported during the deprecation period; removal requires a major provider release.
+         *
+         * @deprecated Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
+         */
+        certificateId?: pulumi.Input<string | undefined>;
         /**
          * (Updatable) HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
          */
@@ -107069,6 +107294,18 @@ export namespace oci {
     }
 
     export interface GetPsaPsaWorkRequestsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetPssInstancesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPssInstancesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean | undefined>;
         values: pulumi.Input<pulumi.Input<string>[]>;

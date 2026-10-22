@@ -29426,10 +29426,469 @@ func (o GetApikeysFilterArrayOutput) Index(i pulumi.IntInput) GetApikeysFilterOu
 	}).(GetApikeysFilterOutput)
 }
 
+type GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollection struct {
+	// List of allocatable GPU summaries.
+	Items []GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItem `pulumi:"items"`
+}
+
+// GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionInput is an input type that accepts GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArgs and GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionOutput values.
+// You can construct a concrete instance of `GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionInput` via:
+//
+//	GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArgs{...}
+type GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionInput interface {
+	pulumi.Input
+
+	ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionOutput() GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionOutput
+	ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionOutputWithContext(context.Context) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionOutput
+}
+
+type GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArgs struct {
+	// List of allocatable GPU summaries.
+	Items GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollection)(nil)).Elem()
+}
+
+func (i GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArgs) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionOutput() GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionOutput {
+	return i.ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArgs) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionOutputWithContext(ctx context.Context) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionOutput)
+}
+
+// GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayInput is an input type that accepts GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArray and GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayInput` via:
+//
+//	GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArray{ GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArgs{...} }
+type GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayOutput() GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayOutput
+	ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayOutputWithContext(context.Context) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayOutput
+}
+
+type GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArray []GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionInput
+
+func (GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollection)(nil)).Elem()
+}
+
+func (i GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArray) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayOutput() GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayOutput {
+	return i.ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArray) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayOutputWithContext(ctx context.Context) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayOutput)
+}
+
+type GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollection)(nil)).Elem()
+}
+
+func (o GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionOutput) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionOutput() GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionOutput {
+	return o
+}
+
+func (o GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionOutput) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionOutputWithContext(ctx context.Context) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionOutput {
+	return o
+}
+
+// List of allocatable GPU summaries.
+func (o GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionOutput) Items() GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollection) []GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItem {
+		return v.Items
+	}).(GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayOutput)
+}
+
+type GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollection)(nil)).Elem()
+}
+
+func (o GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayOutput) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayOutput() GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayOutput {
+	return o
+}
+
+func (o GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayOutput) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayOutputWithContext(ctx context.Context) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayOutput {
+	return o
+}
+
+func (o GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayOutput) Index(i pulumi.IntInput) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollection {
+		return vs[0].([]GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollection)[vs[1].(int)]
+	}).(GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionOutput)
+}
+
+type GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItem struct {
+	// The compute shape to use to filter allocatable GPUs. For example, `BM.GPU.A10.4`.
+	ComputeShape string `pulumi:"computeShape"`
+	// The GPU allocation details for the compute shape. Each item represents one underlying capacity allocation.
+	GpuAllocations []GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocation `pulumi:"gpuAllocations"`
+	// The maximum number of GPU units that can be allocated to a single dedicated AI cluster for the compute shape without requiring additional provisioning.
+	MaxAllocatableGpuUnits int `pulumi:"maxAllocatableGpuUnits"`
+	// The total number of available GPU units for the compute shape.
+	TotalAvailableGpuUnits int `pulumi:"totalAvailableGpuUnits"`
+	// The total number of used GPU units for the compute shape.
+	TotalUsedGpuUnits int `pulumi:"totalUsedGpuUnits"`
+}
+
+// GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemInput is an input type that accepts GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArgs and GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutput values.
+// You can construct a concrete instance of `GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemInput` via:
+//
+//	GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArgs{...}
+type GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutput() GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutput
+	ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutputWithContext(context.Context) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutput
+}
+
+type GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArgs struct {
+	// The compute shape to use to filter allocatable GPUs. For example, `BM.GPU.A10.4`.
+	ComputeShape pulumi.StringInput `pulumi:"computeShape"`
+	// The GPU allocation details for the compute shape. Each item represents one underlying capacity allocation.
+	GpuAllocations GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayInput `pulumi:"gpuAllocations"`
+	// The maximum number of GPU units that can be allocated to a single dedicated AI cluster for the compute shape without requiring additional provisioning.
+	MaxAllocatableGpuUnits pulumi.IntInput `pulumi:"maxAllocatableGpuUnits"`
+	// The total number of available GPU units for the compute shape.
+	TotalAvailableGpuUnits pulumi.IntInput `pulumi:"totalAvailableGpuUnits"`
+	// The total number of used GPU units for the compute shape.
+	TotalUsedGpuUnits pulumi.IntInput `pulumi:"totalUsedGpuUnits"`
+}
+
+func (GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItem)(nil)).Elem()
+}
+
+func (i GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArgs) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutput() GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutput {
+	return i.ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArgs) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutputWithContext(ctx context.Context) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutput)
+}
+
+// GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayInput is an input type that accepts GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArray and GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayInput` via:
+//
+//	GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArray{ GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArgs{...} }
+type GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayOutput() GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayOutput
+	ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayOutputWithContext(context.Context) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayOutput
+}
+
+type GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArray []GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemInput
+
+func (GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItem)(nil)).Elem()
+}
+
+func (i GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArray) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayOutput() GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayOutput {
+	return i.ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArray) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayOutputWithContext(ctx context.Context) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayOutput)
+}
+
+type GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItem)(nil)).Elem()
+}
+
+func (o GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutput) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutput() GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutput {
+	return o
+}
+
+func (o GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutput) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutputWithContext(ctx context.Context) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutput {
+	return o
+}
+
+// The compute shape to use to filter allocatable GPUs. For example, `BM.GPU.A10.4`.
+func (o GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutput) ComputeShape() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItem) string { return v.ComputeShape }).(pulumi.StringOutput)
+}
+
+// The GPU allocation details for the compute shape. Each item represents one underlying capacity allocation.
+func (o GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutput) GpuAllocations() GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayOutput {
+	return o.ApplyT(func(v GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItem) []GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocation {
+		return v.GpuAllocations
+	}).(GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayOutput)
+}
+
+// The maximum number of GPU units that can be allocated to a single dedicated AI cluster for the compute shape without requiring additional provisioning.
+func (o GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutput) MaxAllocatableGpuUnits() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItem) int {
+		return v.MaxAllocatableGpuUnits
+	}).(pulumi.IntOutput)
+}
+
+// The total number of available GPU units for the compute shape.
+func (o GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutput) TotalAvailableGpuUnits() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItem) int {
+		return v.TotalAvailableGpuUnits
+	}).(pulumi.IntOutput)
+}
+
+// The total number of used GPU units for the compute shape.
+func (o GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutput) TotalUsedGpuUnits() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItem) int {
+		return v.TotalUsedGpuUnits
+	}).(pulumi.IntOutput)
+}
+
+type GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItem)(nil)).Elem()
+}
+
+func (o GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayOutput) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayOutput() GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayOutput) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayOutputWithContext(ctx context.Context) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItem {
+		return vs[0].([]GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItem)[vs[1].(int)]
+	}).(GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutput)
+}
+
+type GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocation struct {
+	// The number of available GPUs in this allocation.
+	AvailableGpus int `pulumi:"availableGpus"`
+	// The number of used GPUs in this allocation.
+	UsedGpus int `pulumi:"usedGpus"`
+}
+
+// GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationInput is an input type that accepts GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArgs and GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutput values.
+// You can construct a concrete instance of `GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationInput` via:
+//
+//	GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArgs{...}
+type GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationInput interface {
+	pulumi.Input
+
+	ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutput() GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutput
+	ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutputWithContext(context.Context) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutput
+}
+
+type GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArgs struct {
+	// The number of available GPUs in this allocation.
+	AvailableGpus pulumi.IntInput `pulumi:"availableGpus"`
+	// The number of used GPUs in this allocation.
+	UsedGpus pulumi.IntInput `pulumi:"usedGpus"`
+}
+
+func (GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocation)(nil)).Elem()
+}
+
+func (i GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArgs) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutput() GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutput {
+	return i.ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArgs) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutputWithContext(ctx context.Context) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutput)
+}
+
+// GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayInput is an input type that accepts GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArray and GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayOutput values.
+// You can construct a concrete instance of `GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayInput` via:
+//
+//	GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArray{ GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArgs{...} }
+type GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayInput interface {
+	pulumi.Input
+
+	ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayOutput() GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayOutput
+	ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayOutputWithContext(context.Context) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayOutput
+}
+
+type GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArray []GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationInput
+
+func (GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocation)(nil)).Elem()
+}
+
+func (i GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArray) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayOutput() GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayOutput {
+	return i.ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArray) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayOutputWithContext(ctx context.Context) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayOutput)
+}
+
+type GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocation)(nil)).Elem()
+}
+
+func (o GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutput) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutput() GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutput {
+	return o
+}
+
+func (o GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutput) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutputWithContext(ctx context.Context) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutput {
+	return o
+}
+
+// The number of available GPUs in this allocation.
+func (o GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutput) AvailableGpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocation) int {
+		return v.AvailableGpus
+	}).(pulumi.IntOutput)
+}
+
+// The number of used GPUs in this allocation.
+func (o GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutput) UsedGpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocation) int {
+		return v.UsedGpus
+	}).(pulumi.IntOutput)
+}
+
+type GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocation)(nil)).Elem()
+}
+
+func (o GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayOutput) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayOutput() GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayOutput {
+	return o
+}
+
+func (o GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayOutput) ToGetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayOutputWithContext(ctx context.Context) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayOutput {
+	return o
+}
+
+func (o GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayOutput) Index(i pulumi.IntInput) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocation {
+		return vs[0].([]GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocation)[vs[1].(int)]
+	}).(GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutput)
+}
+
+type GetDedicatedAiClusterAllocatableGpusFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDedicatedAiClusterAllocatableGpusFilterInput is an input type that accepts GetDedicatedAiClusterAllocatableGpusFilterArgs and GetDedicatedAiClusterAllocatableGpusFilterOutput values.
+// You can construct a concrete instance of `GetDedicatedAiClusterAllocatableGpusFilterInput` via:
+//
+//	GetDedicatedAiClusterAllocatableGpusFilterArgs{...}
+type GetDedicatedAiClusterAllocatableGpusFilterInput interface {
+	pulumi.Input
+
+	ToGetDedicatedAiClusterAllocatableGpusFilterOutput() GetDedicatedAiClusterAllocatableGpusFilterOutput
+	ToGetDedicatedAiClusterAllocatableGpusFilterOutputWithContext(context.Context) GetDedicatedAiClusterAllocatableGpusFilterOutput
+}
+
+type GetDedicatedAiClusterAllocatableGpusFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDedicatedAiClusterAllocatableGpusFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedAiClusterAllocatableGpusFilter)(nil)).Elem()
+}
+
+func (i GetDedicatedAiClusterAllocatableGpusFilterArgs) ToGetDedicatedAiClusterAllocatableGpusFilterOutput() GetDedicatedAiClusterAllocatableGpusFilterOutput {
+	return i.ToGetDedicatedAiClusterAllocatableGpusFilterOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedAiClusterAllocatableGpusFilterArgs) ToGetDedicatedAiClusterAllocatableGpusFilterOutputWithContext(ctx context.Context) GetDedicatedAiClusterAllocatableGpusFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedAiClusterAllocatableGpusFilterOutput)
+}
+
+// GetDedicatedAiClusterAllocatableGpusFilterArrayInput is an input type that accepts GetDedicatedAiClusterAllocatableGpusFilterArray and GetDedicatedAiClusterAllocatableGpusFilterArrayOutput values.
+// You can construct a concrete instance of `GetDedicatedAiClusterAllocatableGpusFilterArrayInput` via:
+//
+//	GetDedicatedAiClusterAllocatableGpusFilterArray{ GetDedicatedAiClusterAllocatableGpusFilterArgs{...} }
+type GetDedicatedAiClusterAllocatableGpusFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDedicatedAiClusterAllocatableGpusFilterArrayOutput() GetDedicatedAiClusterAllocatableGpusFilterArrayOutput
+	ToGetDedicatedAiClusterAllocatableGpusFilterArrayOutputWithContext(context.Context) GetDedicatedAiClusterAllocatableGpusFilterArrayOutput
+}
+
+type GetDedicatedAiClusterAllocatableGpusFilterArray []GetDedicatedAiClusterAllocatableGpusFilterInput
+
+func (GetDedicatedAiClusterAllocatableGpusFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedAiClusterAllocatableGpusFilter)(nil)).Elem()
+}
+
+func (i GetDedicatedAiClusterAllocatableGpusFilterArray) ToGetDedicatedAiClusterAllocatableGpusFilterArrayOutput() GetDedicatedAiClusterAllocatableGpusFilterArrayOutput {
+	return i.ToGetDedicatedAiClusterAllocatableGpusFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedAiClusterAllocatableGpusFilterArray) ToGetDedicatedAiClusterAllocatableGpusFilterArrayOutputWithContext(ctx context.Context) GetDedicatedAiClusterAllocatableGpusFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedAiClusterAllocatableGpusFilterArrayOutput)
+}
+
+type GetDedicatedAiClusterAllocatableGpusFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedAiClusterAllocatableGpusFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedAiClusterAllocatableGpusFilter)(nil)).Elem()
+}
+
+func (o GetDedicatedAiClusterAllocatableGpusFilterOutput) ToGetDedicatedAiClusterAllocatableGpusFilterOutput() GetDedicatedAiClusterAllocatableGpusFilterOutput {
+	return o
+}
+
+func (o GetDedicatedAiClusterAllocatableGpusFilterOutput) ToGetDedicatedAiClusterAllocatableGpusFilterOutputWithContext(ctx context.Context) GetDedicatedAiClusterAllocatableGpusFilterOutput {
+	return o
+}
+
+func (o GetDedicatedAiClusterAllocatableGpusFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDedicatedAiClusterAllocatableGpusFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDedicatedAiClusterAllocatableGpusFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDedicatedAiClusterAllocatableGpusFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDedicatedAiClusterAllocatableGpusFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDedicatedAiClusterAllocatableGpusFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDedicatedAiClusterAllocatableGpusFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedAiClusterAllocatableGpusFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedAiClusterAllocatableGpusFilter)(nil)).Elem()
+}
+
+func (o GetDedicatedAiClusterAllocatableGpusFilterArrayOutput) ToGetDedicatedAiClusterAllocatableGpusFilterArrayOutput() GetDedicatedAiClusterAllocatableGpusFilterArrayOutput {
+	return o
+}
+
+func (o GetDedicatedAiClusterAllocatableGpusFilterArrayOutput) ToGetDedicatedAiClusterAllocatableGpusFilterArrayOutputWithContext(ctx context.Context) GetDedicatedAiClusterAllocatableGpusFilterArrayOutput {
+	return o
+}
+
+func (o GetDedicatedAiClusterAllocatableGpusFilterArrayOutput) Index(i pulumi.IntInput) GetDedicatedAiClusterAllocatableGpusFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDedicatedAiClusterAllocatableGpusFilter {
+		return vs[0].([]GetDedicatedAiClusterAllocatableGpusFilter)[vs[1].(int)]
+	}).(GetDedicatedAiClusterAllocatableGpusFilterOutput)
+}
+
 type GetDedicatedAiClusterCapacity struct {
-	CapacityType          string `pulumi:"capacityType"`
-	TotalEndpointCapacity int    `pulumi:"totalEndpointCapacity"`
-	UsedEndpointCapacity  int    `pulumi:"usedEndpointCapacity"`
+	// The type of the dedicated AI cluster capacity.
+	CapacityType string `pulumi:"capacityType"`
+	// The total number of endpoints that can be hosted on this dedicated AI cluster.
+	TotalEndpointCapacity int `pulumi:"totalEndpointCapacity"`
+	// The number of endpoints hosted on this dedicated AI cluster.
+	UsedEndpointCapacity int `pulumi:"usedEndpointCapacity"`
 }
 
 // GetDedicatedAiClusterCapacityInput is an input type that accepts GetDedicatedAiClusterCapacityArgs and GetDedicatedAiClusterCapacityOutput values.
@@ -29444,9 +29903,12 @@ type GetDedicatedAiClusterCapacityInput interface {
 }
 
 type GetDedicatedAiClusterCapacityArgs struct {
-	CapacityType          pulumi.StringInput `pulumi:"capacityType"`
-	TotalEndpointCapacity pulumi.IntInput    `pulumi:"totalEndpointCapacity"`
-	UsedEndpointCapacity  pulumi.IntInput    `pulumi:"usedEndpointCapacity"`
+	// The type of the dedicated AI cluster capacity.
+	CapacityType pulumi.StringInput `pulumi:"capacityType"`
+	// The total number of endpoints that can be hosted on this dedicated AI cluster.
+	TotalEndpointCapacity pulumi.IntInput `pulumi:"totalEndpointCapacity"`
+	// The number of endpoints hosted on this dedicated AI cluster.
+	UsedEndpointCapacity pulumi.IntInput `pulumi:"usedEndpointCapacity"`
 }
 
 func (GetDedicatedAiClusterCapacityArgs) ElementType() reflect.Type {
@@ -29500,14 +29962,17 @@ func (o GetDedicatedAiClusterCapacityOutput) ToGetDedicatedAiClusterCapacityOutp
 	return o
 }
 
+// The type of the dedicated AI cluster capacity.
 func (o GetDedicatedAiClusterCapacityOutput) CapacityType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDedicatedAiClusterCapacity) string { return v.CapacityType }).(pulumi.StringOutput)
 }
 
+// The total number of endpoints that can be hosted on this dedicated AI cluster.
 func (o GetDedicatedAiClusterCapacityOutput) TotalEndpointCapacity() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDedicatedAiClusterCapacity) int { return v.TotalEndpointCapacity }).(pulumi.IntOutput)
 }
 
+// The number of endpoints hosted on this dedicated AI cluster.
 func (o GetDedicatedAiClusterCapacityOutput) UsedEndpointCapacity() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDedicatedAiClusterCapacity) int { return v.UsedEndpointCapacity }).(pulumi.IntOutput)
 }
@@ -29629,7 +30094,10 @@ func (o GetDedicatedAiClustersDedicatedAiClusterCollectionArrayOutput) Index(i p
 }
 
 type GetDedicatedAiClustersDedicatedAiClusterCollectionItem struct {
+	// The total capacity for a dedicated AI cluster.
 	Capacities []GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity `pulumi:"capacities"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
+	CapacityReservationId string `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -29672,7 +30140,10 @@ type GetDedicatedAiClustersDedicatedAiClusterCollectionItemInput interface {
 }
 
 type GetDedicatedAiClustersDedicatedAiClusterCollectionItemArgs struct {
+	// The total capacity for a dedicated AI cluster.
 	Capacities GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityArrayInput `pulumi:"capacities"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
+	CapacityReservationId pulumi.StringInput `pulumi:"capacityReservationId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
@@ -29754,10 +30225,16 @@ func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) ToGetDedic
 	return o
 }
 
+// The total capacity for a dedicated AI cluster.
 func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) Capacities() GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityArrayOutput {
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) []GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity {
 		return v.Capacities
 	}).(GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
+func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemOutput) CapacityReservationId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItem) string { return v.CapacityReservationId }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
@@ -29853,9 +30330,12 @@ func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemArrayOutput) Index
 }
 
 type GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity struct {
-	CapacityType          string `pulumi:"capacityType"`
-	TotalEndpointCapacity int    `pulumi:"totalEndpointCapacity"`
-	UsedEndpointCapacity  int    `pulumi:"usedEndpointCapacity"`
+	// The type of the dedicated AI cluster capacity.
+	CapacityType string `pulumi:"capacityType"`
+	// The total number of endpoints that can be hosted on this dedicated AI cluster.
+	TotalEndpointCapacity int `pulumi:"totalEndpointCapacity"`
+	// The number of endpoints hosted on this dedicated AI cluster.
+	UsedEndpointCapacity int `pulumi:"usedEndpointCapacity"`
 }
 
 // GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityInput is an input type that accepts GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityArgs and GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityOutput values.
@@ -29870,9 +30350,12 @@ type GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityInput interfa
 }
 
 type GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityArgs struct {
-	CapacityType          pulumi.StringInput `pulumi:"capacityType"`
-	TotalEndpointCapacity pulumi.IntInput    `pulumi:"totalEndpointCapacity"`
-	UsedEndpointCapacity  pulumi.IntInput    `pulumi:"usedEndpointCapacity"`
+	// The type of the dedicated AI cluster capacity.
+	CapacityType pulumi.StringInput `pulumi:"capacityType"`
+	// The total number of endpoints that can be hosted on this dedicated AI cluster.
+	TotalEndpointCapacity pulumi.IntInput `pulumi:"totalEndpointCapacity"`
+	// The number of endpoints hosted on this dedicated AI cluster.
+	UsedEndpointCapacity pulumi.IntInput `pulumi:"usedEndpointCapacity"`
 }
 
 func (GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityArgs) ElementType() reflect.Type {
@@ -29926,16 +30409,19 @@ func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityOutput) To
 	return o
 }
 
+// The type of the dedicated AI cluster capacity.
 func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityOutput) CapacityType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity) string { return v.CapacityType }).(pulumi.StringOutput)
 }
 
+// The total number of endpoints that can be hosted on this dedicated AI cluster.
 func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityOutput) TotalEndpointCapacity() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity) int {
 		return v.TotalEndpointCapacity
 	}).(pulumi.IntOutput)
 }
 
+// The number of endpoints hosted on this dedicated AI cluster.
 func (o GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacityOutput) UsedEndpointCapacity() pulumi.IntOutput {
 	return o.ApplyT(func(v GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity) int {
 		return v.UsedEndpointCapacity
@@ -45606,6 +46092,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApikeysApiKeyCollectionItemKeyArrayInput)(nil)).Elem(), GetApikeysApiKeyCollectionItemKeyArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApikeysFilterInput)(nil)).Elem(), GetApikeysFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetApikeysFilterArrayInput)(nil)).Elem(), GetApikeysFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionInput)(nil)).Elem(), GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayInput)(nil)).Elem(), GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemInput)(nil)).Elem(), GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayInput)(nil)).Elem(), GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationInput)(nil)).Elem(), GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayInput)(nil)).Elem(), GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedAiClusterAllocatableGpusFilterInput)(nil)).Elem(), GetDedicatedAiClusterAllocatableGpusFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedAiClusterAllocatableGpusFilterArrayInput)(nil)).Elem(), GetDedicatedAiClusterAllocatableGpusFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedAiClusterCapacityInput)(nil)).Elem(), GetDedicatedAiClusterCapacityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedAiClusterCapacityArrayInput)(nil)).Elem(), GetDedicatedAiClusterCapacityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedAiClustersDedicatedAiClusterCollectionInput)(nil)).Elem(), GetDedicatedAiClustersDedicatedAiClusterCollectionArgs{})
@@ -46264,6 +46758,14 @@ func init() {
 	pulumi.RegisterOutputType(GetApikeysApiKeyCollectionItemKeyArrayOutput{})
 	pulumi.RegisterOutputType(GetApikeysFilterOutput{})
 	pulumi.RegisterOutputType(GetApikeysFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionOutput{})
+	pulumi.RegisterOutputType(GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationOutput{})
+	pulumi.RegisterOutputType(GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocationArrayOutput{})
+	pulumi.RegisterOutputType(GetDedicatedAiClusterAllocatableGpusFilterOutput{})
+	pulumi.RegisterOutputType(GetDedicatedAiClusterAllocatableGpusFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDedicatedAiClusterCapacityOutput{})
 	pulumi.RegisterOutputType(GetDedicatedAiClusterCapacityArrayOutput{})
 	pulumi.RegisterOutputType(GetDedicatedAiClustersDedicatedAiClusterCollectionOutput{})

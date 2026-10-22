@@ -35,6 +35,12 @@ namespace Pulumi.Oci.Psql
         public Output<string> AdminUsername { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Whether to allow in-place major version upgrades. Defaults to `False`. When this flag is known to be `True` at plan time, changing `DbVersion` to a higher major version upgrades the existing database system; a downgrade is rejected. If the flag is omitted, `False`, or unknown, a `DbVersion` change forces replacement. The flag can remain `True` for subsequent upgrades. Changing the flag alone does not upgrade the database system, and setting it on creation does not run a separate upgrade operation.
+        /// </summary>
+        [Output("allowMajorVersionUpgrade")]
+        public Output<bool?> AllowMajorVersionUpgrade { get; private set; } = null!;
+
+        /// <summary>
         /// Specify change mode to apply when converting from warm standby to standalone. It can be set to 'IMMEDIATELY' or 'REPLAY_PENDING_UPDATES'. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
         /// </summary>
         [Output("applyChangeModeToStandAlone")]
@@ -53,7 +59,7 @@ namespace Pulumi.Oci.Psql
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system. For an in-place major version upgrade (`AllowMajorVersionUpgrade = true`), **you must specify this field if the database system currently uses a custom configuration**. It may be omitted if the database system currently uses a default configuration. Any configuration specified for an upgrade must be compatible with the target major version and is applied as part of the upgrade.
         /// </summary>
         [Output("configId")]
         public Output<string> ConfigId { get; private set; } = null!;
@@ -65,7 +71,7 @@ namespace Pulumi.Oci.Psql
         public Output<Outputs.DbSystemCredentials> Credentials { get; private set; } = null!;
 
         /// <summary>
-        /// Version of database system software.
+        /// (Conditionally updatable) The major version of the database system software, for example `"17"`. To upgrade an existing database system in place, set a higher major version with `AllowMajorVersionUpgrade = true`. A downgrade with the flag set to `True` is rejected. If the flag is omitted, `False`, or unknown at plan time, changing `DbVersion` forces replacement. On creation, the database system is provisioned directly at this version.
         /// </summary>
         [Output("dbVersion")]
         public Output<string> DbVersion { get; private set; } = null!;
@@ -170,6 +176,29 @@ namespace Pulumi.Oci.Psql
 
         /// <summary>
         /// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+        /// 
+        /// **Note:** The provider returns the `Shape` attribute with the `PostgreSQL.` prefix after reading the DB system, even when an unprefixed shape such as `VM.Standard.E5.Flex` is used in the configuration and plan. Use `Trimprefix` if you need the unprefixed shape. For example, to normalize the output in the same module that declares the `oci.Psql.DbSystem` resource:
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Std = Pulumi.Std;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["shape"] = Std.Trimprefix.Invoke(new()
+        ///         {
+        ///             Input = @this.Shape,
+        ///             Prefix = "PostgreSQL.",
+        ///         }).Apply(invoke =&gt; invoke.Result),
+        ///     };
+        /// });
+        /// ```
+        /// 
+        /// `Trimprefix` removes the prefix when it is present and leaves an already unprefixed value unchanged, so this module output remains in the unprefixed form.
         /// </summary>
         [Output("shape")]
         public Output<string> Shape { get; private set; } = null!;
@@ -226,6 +255,12 @@ namespace Pulumi.Oci.Psql
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) List of post-upgrade operations to run when `DbVersion` changes with `AllowMajorVersionUpgrade = true`. Accepted values are `RUN_POST_UPGRADE_VERIFICATION` and `RUN_POST_UPGRADE_VACUUM`. Verification and vacuum are each skipped unless their option is included. If omitted or empty, both are skipped. Changing this list alone does not trigger an upgrade. These options are not used when creating or replacing a database system.
+        /// </summary>
+        [Output("upgradeOptions")]
+        public Output<ImmutableArray<string>> UpgradeOptions { get; private set; } = null!;
+
 
         /// <summary>
         /// Create a DbSystem resource with the given unique name, arguments, and options.
@@ -273,6 +308,12 @@ namespace Pulumi.Oci.Psql
     public sealed class DbSystemArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
+        /// (Updatable) Whether to allow in-place major version upgrades. Defaults to `False`. When this flag is known to be `True` at plan time, changing `DbVersion` to a higher major version upgrades the existing database system; a downgrade is rejected. If the flag is omitted, `False`, or unknown, a `DbVersion` change forces replacement. The flag can remain `True` for subsequent upgrades. Changing the flag alone does not upgrade the database system, and setting it on creation does not run a separate upgrade operation.
+        /// </summary>
+        [Input("allowMajorVersionUpgrade")]
+        public Input<bool>? AllowMajorVersionUpgrade { get; set; }
+
+        /// <summary>
         /// Specify change mode to apply when converting from warm standby to standalone. It can be set to 'IMMEDIATELY' or 'REPLAY_PENDING_UPDATES'. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
         /// </summary>
         [Input("applyChangeModeToStandAlone")]
@@ -291,7 +332,7 @@ namespace Pulumi.Oci.Psql
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system. For an in-place major version upgrade (`AllowMajorVersionUpgrade = true`), **you must specify this field if the database system currently uses a custom configuration**. It may be omitted if the database system currently uses a default configuration. Any configuration specified for an upgrade must be compatible with the target major version and is applied as part of the upgrade.
         /// </summary>
         [Input("configId")]
         public Input<string>? ConfigId { get; set; }
@@ -303,7 +344,7 @@ namespace Pulumi.Oci.Psql
         public Input<Inputs.DbSystemCredentialsArgs>? Credentials { get; set; }
 
         /// <summary>
-        /// Version of database system software.
+        /// (Conditionally updatable) The major version of the database system software, for example `"17"`. To upgrade an existing database system in place, set a higher major version with `AllowMajorVersionUpgrade = true`. A downgrade with the flag set to `True` is rejected. If the flag is omitted, `False`, or unknown at plan time, changing `DbVersion` forces replacement. On creation, the database system is provisioned directly at this version.
         /// </summary>
         [Input("dbVersion", required: true)]
         public Input<string> DbVersion { get; set; } = null!;
@@ -420,6 +461,29 @@ namespace Pulumi.Oci.Psql
 
         /// <summary>
         /// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+        /// 
+        /// **Note:** The provider returns the `Shape` attribute with the `PostgreSQL.` prefix after reading the DB system, even when an unprefixed shape such as `VM.Standard.E5.Flex` is used in the configuration and plan. Use `Trimprefix` if you need the unprefixed shape. For example, to normalize the output in the same module that declares the `oci.Psql.DbSystem` resource:
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Std = Pulumi.Std;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["shape"] = Std.Trimprefix.Invoke(new()
+        ///         {
+        ///             Input = @this.Shape,
+        ///             Prefix = "PostgreSQL.",
+        ///         }).Apply(invoke =&gt; invoke.Result),
+        ///     };
+        /// });
+        /// ```
+        /// 
+        /// `Trimprefix` removes the prefix when it is present and leaves an already unprefixed value unchanged, so this module output remains in the unprefixed form.
         /// </summary>
         [Input("shape", required: true)]
         public Input<string> Shape { get; set; } = null!;
@@ -452,6 +516,18 @@ namespace Pulumi.Oci.Psql
         [Input("systemType")]
         public Input<string>? SystemType { get; set; }
 
+        [Input("upgradeOptions")]
+        private InputList<string>? _upgradeOptions;
+
+        /// <summary>
+        /// (Updatable) List of post-upgrade operations to run when `DbVersion` changes with `AllowMajorVersionUpgrade = true`. Accepted values are `RUN_POST_UPGRADE_VERIFICATION` and `RUN_POST_UPGRADE_VACUUM`. Verification and vacuum are each skipped unless their option is included. If omitted or empty, both are skipped. Changing this list alone does not trigger an upgrade. These options are not used when creating or replacing a database system.
+        /// </summary>
+        public InputList<string> UpgradeOptions
+        {
+            get => _upgradeOptions ?? (_upgradeOptions = new InputList<string>());
+            set => _upgradeOptions = value;
+        }
+
         public DbSystemArgs()
         {
         }
@@ -465,6 +541,12 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         [Input("adminUsername")]
         public Input<string>? AdminUsername { get; set; }
+
+        /// <summary>
+        /// (Updatable) Whether to allow in-place major version upgrades. Defaults to `False`. When this flag is known to be `True` at plan time, changing `DbVersion` to a higher major version upgrades the existing database system; a downgrade is rejected. If the flag is omitted, `False`, or unknown, a `DbVersion` change forces replacement. The flag can remain `True` for subsequent upgrades. Changing the flag alone does not upgrade the database system, and setting it on creation does not run a separate upgrade operation.
+        /// </summary>
+        [Input("allowMajorVersionUpgrade")]
+        public Input<bool>? AllowMajorVersionUpgrade { get; set; }
 
         /// <summary>
         /// Specify change mode to apply when converting from warm standby to standalone. It can be set to 'IMMEDIATELY' or 'REPLAY_PENDING_UPDATES'. If source.primary_db_system_id is disabled, `REPLAY_PENDING_UPDATES` is used by default.
@@ -485,7 +567,7 @@ namespace Pulumi.Oci.Psql
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system. For an in-place major version upgrade (`AllowMajorVersionUpgrade = true`), **you must specify this field if the database system currently uses a custom configuration**. It may be omitted if the database system currently uses a default configuration. Any configuration specified for an upgrade must be compatible with the target major version and is applied as part of the upgrade.
         /// </summary>
         [Input("configId")]
         public Input<string>? ConfigId { get; set; }
@@ -497,7 +579,7 @@ namespace Pulumi.Oci.Psql
         public Input<Inputs.DbSystemCredentialsGetArgs>? Credentials { get; set; }
 
         /// <summary>
-        /// Version of database system software.
+        /// (Conditionally updatable) The major version of the database system software, for example `"17"`. To upgrade an existing database system in place, set a higher major version with `AllowMajorVersionUpgrade = true`. A downgrade with the flag set to `True` is rejected. If the flag is omitted, `False`, or unknown at plan time, changing `DbVersion` forces replacement. On creation, the database system is provisioned directly at this version.
         /// </summary>
         [Input("dbVersion")]
         public Input<string>? DbVersion { get; set; }
@@ -632,6 +714,29 @@ namespace Pulumi.Oci.Psql
 
         /// <summary>
         /// (Updatable) The name of the shape for the database instance node. Use the /shapes API for accepted shapes. Example: `VM.Standard.E4.Flex`
+        /// 
+        /// **Note:** The provider returns the `Shape` attribute with the `PostgreSQL.` prefix after reading the DB system, even when an unprefixed shape such as `VM.Standard.E5.Flex` is used in the configuration and plan. Use `Trimprefix` if you need the unprefixed shape. For example, to normalize the output in the same module that declares the `oci.Psql.DbSystem` resource:
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Std = Pulumi.Std;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     return new Dictionary&lt;string, object?&gt;
+        ///     {
+        ///         ["shape"] = Std.Trimprefix.Invoke(new()
+        ///         {
+        ///             Input = @this.Shape,
+        ///             Prefix = "PostgreSQL.",
+        ///         }).Apply(invoke =&gt; invoke.Result),
+        ///     };
+        /// });
+        /// ```
+        /// 
+        /// `Trimprefix` removes the prefix when it is present and leaves an already unprefixed value unchanged, so this module output remains in the unprefixed form.
         /// </summary>
         [Input("shape")]
         public Input<string>? Shape { get; set; }
@@ -693,6 +798,18 @@ namespace Pulumi.Oci.Psql
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
+
+        [Input("upgradeOptions")]
+        private InputList<string>? _upgradeOptions;
+
+        /// <summary>
+        /// (Updatable) List of post-upgrade operations to run when `DbVersion` changes with `AllowMajorVersionUpgrade = true`. Accepted values are `RUN_POST_UPGRADE_VERIFICATION` and `RUN_POST_UPGRADE_VACUUM`. Verification and vacuum are each skipped unless their option is included. If omitted or empty, both are skipped. Changing this list alone does not trigger an upgrade. These options are not used when creating or replacing a database system.
+        /// </summary>
+        public InputList<string> UpgradeOptions
+        {
+            get => _upgradeOptions ?? (_upgradeOptions = new InputList<string>());
+            set => _upgradeOptions = value;
+        }
 
         public DbSystemState()
         {

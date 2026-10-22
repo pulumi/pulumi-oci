@@ -91,6 +91,10 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string DestinationSnapshotPolicyId;
         /// <summary>
+        /// DR drill-specific properties for a movable compute instance member.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyResult> DrDrillProperties;
+        /// <summary>
         /// A list of mappings between the primary region file system export and destination region mount target.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingResult> ExportMappings;
@@ -139,7 +143,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string MemberType;
         /// <summary>
-        /// The OKE namespace where the config map resides. Example: `NamespaceString5`
+        /// The OKE namespace where the config map resides.  Example: `NamespaceString5`
         /// </summary>
         public readonly string Namespace;
         /// <summary>
@@ -155,7 +159,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string PeerClusterId;
         /// <summary>
-        /// The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+        /// The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
         /// </summary>
         public readonly string PeerDbSystemId;
         /// <summary>
@@ -225,6 +229,8 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
 
             string destinationSnapshotPolicyId,
 
+            ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyResult> drDrillProperties,
+
             ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMappingResult> exportMappings,
 
             ImmutableArray<Outputs.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberFileSystemOperationResult> fileSystemOperations,
@@ -291,6 +297,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
             DestinationLoadBalancerId = destinationLoadBalancerId;
             DestinationNetworkLoadBalancerId = destinationNetworkLoadBalancerId;
             DestinationSnapshotPolicyId = destinationSnapshotPolicyId;
+            DrDrillProperties = drDrillProperties;
             ExportMappings = exportMappings;
             FileSystemOperations = fileSystemOperations;
             GtidReconciliationTimeout = gtidReconciliationTimeout;

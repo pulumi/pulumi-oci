@@ -18,6 +18,21 @@ public final class GetDedicatedAiClustersPlainArgs extends com.pulumi.resources.
     public static final GetDedicatedAiClustersPlainArgs Empty = new GetDedicatedAiClustersPlainArgs();
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
+     * 
+     */
+    @Import(name="capacityReservationId")
+    private @Nullable String capacityReservationId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
+     * 
+     */
+    public Optional<String> capacityReservationId() {
+        return Optional.ofNullable(this.capacityReservationId);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
@@ -87,6 +102,7 @@ public final class GetDedicatedAiClustersPlainArgs extends com.pulumi.resources.
     private GetDedicatedAiClustersPlainArgs() {}
 
     private GetDedicatedAiClustersPlainArgs(GetDedicatedAiClustersPlainArgs $) {
+        this.capacityReservationId = $.capacityReservationId;
         this.compartmentId = $.compartmentId;
         this.displayName = $.displayName;
         this.filters = $.filters;
@@ -110,6 +126,17 @@ public final class GetDedicatedAiClustersPlainArgs extends com.pulumi.resources.
 
         public Builder(GetDedicatedAiClustersPlainArgs defaults) {
             $ = new GetDedicatedAiClustersPlainArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param capacityReservationId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder capacityReservationId(@Nullable String capacityReservationId) {
+            $.capacityReservationId = capacityReservationId;
+            return this;
         }
 
         /**

@@ -13,10 +13,19 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClusterRemoteReindexTrustConfigRemoteSource {
     /**
-     * @return (Updatable) OCID of the certificate or CA chain used to verify the remote cluster&#39;s HTTPS certificate.
+     * @return (Updatable) OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster&#39;s HTTPS certificate. Required when `certificateId` is not specified.
      * 
      */
-    private String certificateId;
+    private @Nullable String caBundleId;
+    /**
+     * @return (Updatable) **Deprecated** Alias for `caBundleId`; use `caBundleId` instead. The value must be an OCI Certificates service CA bundle OCID, not a certificate OCID. Existing configurations remain supported during the deprecation period; removal requires a major provider release.
+     * 
+     * @deprecated
+     * Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
+     * 
+     */
+    @Deprecated /* Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID. */
+    private @Nullable String certificateId;
     /**
      * @return (Updatable) HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
      * 
@@ -30,11 +39,22 @@ public final class ClusterRemoteReindexTrustConfigRemoteSource {
 
     private ClusterRemoteReindexTrustConfigRemoteSource() {}
     /**
-     * @return (Updatable) OCID of the certificate or CA chain used to verify the remote cluster&#39;s HTTPS certificate.
+     * @return (Updatable) OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster&#39;s HTTPS certificate. Required when `certificateId` is not specified.
      * 
      */
-    public String certificateId() {
-        return this.certificateId;
+    public Optional<String> caBundleId() {
+        return Optional.ofNullable(this.caBundleId);
+    }
+    /**
+     * @return (Updatable) **Deprecated** Alias for `caBundleId`; use `caBundleId` instead. The value must be an OCI Certificates service CA bundle OCID, not a certificate OCID. Existing configurations remain supported during the deprecation period; removal requires a major provider release.
+     * 
+     * @deprecated
+     * Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
+     * 
+     */
+    @Deprecated /* Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID. */
+    public Optional<String> certificateId() {
+        return Optional.ofNullable(this.certificateId);
     }
     /**
      * @return (Updatable) HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
@@ -60,22 +80,28 @@ public final class ClusterRemoteReindexTrustConfigRemoteSource {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String certificateId;
+        private @Nullable String caBundleId;
+        private @Nullable String certificateId;
         private String endpoint;
         private @Nullable String endpointResolutionIp;
         public Builder() {}
         public Builder(ClusterRemoteReindexTrustConfigRemoteSource defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.caBundleId = defaults.caBundleId;
     	      this.certificateId = defaults.certificateId;
     	      this.endpoint = defaults.endpoint;
     	      this.endpointResolutionIp = defaults.endpointResolutionIp;
         }
 
         @CustomType.Setter
-        public Builder certificateId(String certificateId) {
-            if (certificateId == null) {
-              throw new MissingRequiredPropertyException("ClusterRemoteReindexTrustConfigRemoteSource", "certificateId");
-            }
+        public Builder caBundleId(@Nullable String caBundleId) {
+
+            this.caBundleId = caBundleId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder certificateId(@Nullable String certificateId) {
+
             this.certificateId = certificateId;
             return this;
         }
@@ -95,6 +121,7 @@ public final class ClusterRemoteReindexTrustConfigRemoteSource {
         }
         public ClusterRemoteReindexTrustConfigRemoteSource build() {
             final var _resultValue = new ClusterRemoteReindexTrustConfigRemoteSource();
+            _resultValue.caBundleId = caBundleId;
             _resultValue.certificateId = certificateId;
             _resultValue.endpoint = endpoint;
             _resultValue.endpointResolutionIp = endpointResolutionIp;

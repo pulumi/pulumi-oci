@@ -59413,6 +59413,7 @@ export namespace Core {
         rdmaPorts: number;
         recommendedAlternatives: outputs.Core.GetShapeShapeRecommendedAlternative[];
         resizeCompatibleShapes: string[];
+        supportedResourceManagements: string[];
     }
 
     export interface GetShapeShapeBsNvmeAttachmentsConfig {
@@ -59656,6 +59657,10 @@ export namespace Core {
          * The list of compatible shapes that this shape can be changed to. For more information, see [Changing the Shape of an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/resizinginstances.htm).
          */
         resizeCompatibleShapes: string[];
+        /**
+         * The resource management modes supported by this shape.
+         */
+        supportedResourceManagements: string[];
     }
 
     export interface GetShapesShapeBsNvmeAttachmentsConfig {
@@ -107502,7 +107507,7 @@ export namespace Database {
          */
         dbBackupConfig: outputs.Database.DatabaseDatabaseDbBackupConfig;
         /**
-         * The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+         * The display name of the database to be created from the snapshot/database. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
          */
         dbName: string;
         /**
@@ -107530,13 +107535,21 @@ export namespace Database {
         /**
          * True if active Data Guard is enabled.
          */
-        isActiveDataGuardEnabled?: boolean;
+        isActiveDataGuardEnabled: boolean;
+        /**
+         * Specifies whether thick or thin database cloning is to be performed.
+         */
+        isThinClone: boolean;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+         */
+        keyStoreId: string;
         /**
          * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
          */
         kmsKeyId: string;
         /**
-         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          */
         kmsKeyVersionId: string;
         /**
@@ -107572,13 +107585,25 @@ export namespace Database {
          */
         sidPrefix: string;
         /**
+         * The source database's password for SYS, SYSTEM.
+         */
+        sourceAdminPassword: string;
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
          */
-        sourceDatabaseId?: string;
+        sourceDatabaseId: string;
         /**
          * Types of providers supported for managing database encryption keys
          */
         sourceEncryptionKeyLocationDetails: outputs.Database.DatabaseDatabaseSourceEncryptionKeyLocationDetails;
+        /**
+         * The snapshot [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        sourceSnapshotId: string;
+        /**
+         * The password to open the TDE wallet.
+         */
+        sourceTdePassword: string;
         /**
          * The TDE wallet password of the source database specified by 'sourceDatabaseId'.
          */
@@ -107661,7 +107686,7 @@ export namespace Database {
 
     export interface DatabaseDatabaseDbBackupConfigBackupDestinationDetail {
         /**
-         * Defines the automatic and manual backup retention policy for the Autonomous Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
+         * Defines the automatic and manual backup retention policy for the Autonomous AI Database termination.  The retention policy set on the Autonomous Container Database is not applicable for cross region remote backups and backups hosted on recovery Appliance backup destination. Options are 'RETAIN_PER_RETENTION_WINDOW' or 'RETAIN_FOR_72_HOURS'.The default value is 'RETAIN_FOR_72_HOURS'.
          */
         backupRetentionPolicyOnTerminate: string;
         /**
@@ -107806,18 +107831,14 @@ export namespace Database {
     export interface DatabaseDatabaseManagedSoftwareUpdateDetailPreferenceDetailVersionSchemeDetail {
         /**
          * The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
-         *
-         * The list of supported versions can be obtained using the API for the provided shape /20160918/dbVersions?compartmentId=<compartmentId>&dbSystemShape=ExaDbXS
          */
         majorVersion: string;
         /**
-         * The update should be applied on the database for the selected version scheme.
+         * The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
          */
         source: string;
         /**
          * The update should be applied on the database for the selected version preference. *_N represents the LATEST version
-         *
-         * For Ex: The current latest version is 23.7.0.0.0, If versionPreference selects option as ORACLE_DB_N then oracle applies the db update with LATEST version (i.e. 23.7.0.0.0) If versionPreference selects option as ORACLE_DB_N_1 then oracle applies the db update with LATEST-1 version (i.e. 23.6.0.0.0) If versionPreference selects option as ORACLE_DB_N_2 then oracle applies the db update with LATEST-2 version (i.e. 23.5.0.0.0)
          */
         versionPreference: string;
     }
@@ -119094,6 +119115,11 @@ export namespace Database {
          * True if active Data Guard is enabled.
          */
         isActiveDataGuardEnabled: boolean;
+        isThinClone: boolean;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+         */
+        keyStoreId: string;
         /**
          * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
          */
@@ -119128,8 +119154,11 @@ export namespace Database {
          * Specifies a prefix for the `Oracle SID` of the database to be created.
          */
         sidPrefix: string;
+        sourceAdminPassword: string;
         sourceDatabaseId: string;
         sourceEncryptionKeyLocationDetails: outputs.Database.GetDatabaseDatabaseSourceEncryptionKeyLocationDetail[];
+        sourceSnapshotId: string;
+        sourceTdePassword: string;
         sourceTdeWalletPassword: string;
         /**
          * The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
@@ -120525,6 +120554,66 @@ export namespace Database {
         timeStarted: string;
     }
 
+    export interface GetDatabaseSnapshotsDatabaseSnapshotCollection {
+        items: outputs.Database.GetDatabaseSnapshotsDatabaseSnapshotCollectionItem[];
+    }
+
+    export interface GetDatabaseSnapshotsDatabaseSnapshotCollectionItem {
+        /**
+         * A filter to return only Exadata Database Snapshots that match the given VM cluster.
+         */
+        clusterId: string;
+        /**
+         * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        compartmentId: string;
+        /**
+         * A filter to return only Exadata Database Snapshots that match the given Database Id.
+         */
+        databaseId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Snapshot.
+         */
+        id: string;
+        /**
+         * Additional information about the current lifecycle state of the Exadata Database Snapshot.
+         */
+        lifecycleDetails: string;
+        /**
+         * A filter to return only resources that match the entire name given. The match is not case sensitive.
+         */
+        name: string;
+        /**
+         * A filter to return only Exadata Database Snapshots that match the given lifecycle state exactly.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The date and time that the Exadata Database Snapshot was created, as expressed in RFC 3339 format. For example: 2023-06-27T21:10:29Z
+         */
+        timeCreated: string;
+    }
+
+    export interface GetDatabaseSnapshotsFilter {
+        /**
+         * A filter to return only resources that match the entire name given. The match is not case sensitive.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
     export interface GetDatabaseSoftwareImagesDatabaseSoftwareImage {
         /**
          * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -120993,6 +121082,11 @@ export namespace Database {
          * True if active Data Guard is enabled.
          */
         isActiveDataGuardEnabled: boolean;
+        isThinClone: boolean;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+         */
+        keyStoreId: string;
         /**
          * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
          */
@@ -121024,8 +121118,11 @@ export namespace Database {
          * Specifies a prefix for the `Oracle SID` of the database to be created.
          */
         sidPrefix: string;
+        sourceAdminPassword: string;
         sourceDatabaseId: string;
         sourceEncryptionKeyLocationDetails: outputs.Database.GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail[];
+        sourceSnapshotId: string;
+        sourceTdePassword: string;
         sourceTdeWalletPassword: string;
         /**
          * The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
@@ -159775,7 +159872,7 @@ export namespace DisasterRecovery {
          */
         requestBody: string;
         /**
-         * The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
+         * The user ID on the instance that will be used to execute the script specified in 'scriptCommand'.  Example: `opc`
          */
         runAsUser: string;
         /**
@@ -159787,7 +159884,7 @@ export namespace DisasterRecovery {
          */
         runOnInstanceRegion: string;
         /**
-         * The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
+         * The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.  Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
          */
         scriptCommand: string;
         /**
@@ -159923,6 +160020,10 @@ export namespace DisasterRecovery {
          */
         destinationSnapshotPolicyId: string;
         /**
+         * (Updatable) Create properties for DR drill-specific settings. Use these when the properties for DR drills differ from the properties used for DR operations such as switchover and failover.
+         */
+        drDrillProperties: outputs.DisasterRecovery.DrProtectionGroupMemberDrDrillProperties;
+        /**
          * (Updatable) A list of mappings between file system exports in the primary region and mount targets in the standby region.
          */
         exportMappings: outputs.DisasterRecovery.DrProtectionGroupMemberExportMapping[];
@@ -159987,7 +160088,7 @@ export namespace DisasterRecovery {
          */
         peerClusterId: string;
         /**
-         * (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+         * (Updatable) The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
          */
         peerDbSystemId: string;
         /**
@@ -160071,7 +160172,7 @@ export namespace DisasterRecovery {
          */
         namespaces: string[];
         /**
-         * (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
+         * (Updatable) Controls the behavior of image replication across regions.  Image replication is enabled by default for DR Protection Groups.  This setting applies to the OKE cluster member in the primary region, and to the standby region  only if the image replication secret is stored in a vault instead of using the default secret.
          */
         replicateImages: string;
     }
@@ -160193,6 +160294,48 @@ export namespace DisasterRecovery {
         vaultId: string;
     }
 
+    export interface DrProtectionGroupMemberDrDrillProperties {
+        /**
+         * (Updatable) A list of compute instance VNIC mappings to use for DR drills.
+         */
+        vnicMappings: outputs.DisasterRecovery.DrProtectionGroupMemberDrDrillPropertiesVnicMapping[];
+    }
+
+    export interface DrProtectionGroupMemberDrDrillPropertiesVnicMapping {
+        /**
+         * (Updatable) A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
+         */
+        destinationNsgIdLists: string[];
+        /**
+         * (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+         */
+        destinationPrimaryPrivateIpAddress: string;
+        /**
+         * (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+         */
+        destinationPrimaryPrivateIpHostnameLabel: string;
+        /**
+         * (Updatable) The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+         *
+         * For legacy compatibility, omit this attribute and use either the legacy explicit private-IP fields or the freeform tag, but not both configuration mechanisms for the same source VNIC.
+         *
+         * Example: `ocid1.privateip.oc1..uniqueID`
+         */
+        destinationReservedPrimaryPrivateIpId: string;
+        /**
+         * (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+         */
+        destinationReservedPublicIpId: string;
+        /**
+         * (Updatable) The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
+         */
+        destinationSubnetId: string;
+        /**
+         * (Updatable) The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
+         */
+        sourceVnicId: string;
+    }
+
     export interface DrProtectionGroupMemberExportMapping {
         /**
          * (Updatable) The OCID of the destination mount target in the destination region which is used to export the file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
@@ -160280,11 +160423,11 @@ export namespace DisasterRecovery {
 
     export interface DrProtectionGroupMemberResourceModifierMapping {
         /**
-         * (Updatable) The name of the config map containing resource modification details. Example: `resource-modifier`
+         * (Updatable) The name of the config map containing resource modification details.  Example: `resource-modifier`
          */
         configMap: string;
         /**
-         * (Updatable) The OKE namespace where the config map resides. Example: `namespaceString5`
+         * (Updatable) The OKE namespace where the config map resides.  Example: `namespaceString5`
          */
         namespace: string;
     }
@@ -160343,13 +160486,21 @@ export namespace DisasterRecovery {
          */
         destinationNsgIdLists: string[];
         /**
-         * (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
+         * (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
          */
         destinationPrimaryPrivateIpAddress: string;
         /**
-         * (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+         * (Updatable) Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
          */
         destinationPrimaryPrivateIpHostnameLabel: string;
+        /**
+         * (Updatable) The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+         *
+         * For legacy compatibility, omit this attribute and use either the legacy explicit private-IP fields or the freeform tag, but not both configuration mechanisms for the same source VNIC.
+         *
+         * Example: `ocid1.privateip.oc1..uniqueID`
+         */
+        destinationReservedPrimaryPrivateIpId: string;
         /**
          * (Updatable) The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
          */
@@ -161180,7 +161331,7 @@ export namespace DisasterRecovery {
          */
         requestBody: string;
         /**
-         * The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
+         * The user ID on the instance that will be used to execute the script specified in 'scriptCommand'.  Example: `opc`
          */
         runAsUser: string;
         /**
@@ -161192,7 +161343,7 @@ export namespace DisasterRecovery {
          */
         runOnInstanceRegion: string;
         /**
-         * The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
+         * The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.  Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
          */
         scriptCommand: string;
         /**
@@ -161385,7 +161536,7 @@ export namespace DisasterRecovery {
          */
         requestBody: string;
         /**
-         * The user ID on the instance that will be used to execute the script specified in 'scriptCommand'. Example: `opc`
+         * The user ID on the instance that will be used to execute the script specified in 'scriptCommand'.  Example: `opc`
          */
         runAsUser: string;
         /**
@@ -161397,7 +161548,7 @@ export namespace DisasterRecovery {
          */
         runOnInstanceRegion: string;
         /**
-         * The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store. Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
+         * The entire path and arguments for the script that is stored in object store, or inside a compressed archive in object store.  Example: `/usr/bin/python3.7 scripts/start_server.py --port 8080 --env "production" --max-connections 200 --log-level "INFO"`
          */
         scriptCommand: string;
         /**
@@ -161448,7 +161599,7 @@ export namespace DisasterRecovery {
          */
         bucket: string;
         /**
-         * The OKE namespace where the config map resides. Example: `namespaceString5`
+         * The OKE namespace where the config map resides.  Example: `namespaceString5`
          */
         namespace: string;
         /**
@@ -161539,6 +161690,10 @@ export namespace DisasterRecovery {
          */
         destinationSnapshotPolicyId: string;
         /**
+         * DR drill-specific properties for a movable compute instance member.
+         */
+        drDrillProperties: outputs.DisasterRecovery.GetDrProtectionGroupMemberDrDrillProperty[];
+        /**
          * A list of mappings between the primary region file system export and destination region mount target.
          */
         exportMappings: outputs.DisasterRecovery.GetDrProtectionGroupMemberExportMapping[];
@@ -161587,7 +161742,7 @@ export namespace DisasterRecovery {
          */
         memberType: string;
         /**
-         * The OKE namespace where the config map resides. Example: `namespaceString5`
+         * The OKE namespace where the config map resides.  Example: `namespaceString5`
          */
         namespace: string;
         /**
@@ -161603,7 +161758,7 @@ export namespace DisasterRecovery {
          */
         peerClusterId: string;
         /**
-         * The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+         * The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
          */
         peerDbSystemId: string;
         /**
@@ -161680,7 +161835,7 @@ export namespace DisasterRecovery {
          */
         bucket: string;
         /**
-         * The OKE namespace where the config map resides. Example: `namespaceString5`
+         * The OKE namespace where the config map resides.  Example: `namespaceString5`
          */
         namespace: string;
         /**
@@ -161791,6 +161946,44 @@ export namespace DisasterRecovery {
         vaultId: string;
     }
 
+    export interface GetDrProtectionGroupMemberDrDrillProperty {
+        /**
+         * A list of compute instance VNIC mappings.
+         */
+        vnicMappings: outputs.DisasterRecovery.GetDrProtectionGroupMemberDrDrillPropertyVnicMapping[];
+    }
+
+    export interface GetDrProtectionGroupMemberDrDrillPropertyVnicMapping {
+        /**
+         * A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
+         */
+        destinationNsgIdLists: string[];
+        /**
+         * Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+         */
+        destinationPrimaryPrivateIpAddress: string;
+        /**
+         * Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+         */
+        destinationPrimaryPrivateIpHostnameLabel: string;
+        /**
+         * The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+         */
+        destinationReservedPrimaryPrivateIpId: string;
+        /**
+         * The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+         */
+        destinationReservedPublicIpId: string;
+        /**
+         * The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
+         */
+        destinationSubnetId: string;
+        /**
+         * The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
+         */
+        sourceVnicId: string;
+    }
+
     export interface GetDrProtectionGroupMemberExportMapping {
         /**
          * The OCID of the destination mount target on which this file system export should be created.  Example: `ocid1.mounttarget.oc1..uniqueID`
@@ -161878,11 +162071,11 @@ export namespace DisasterRecovery {
 
     export interface GetDrProtectionGroupMemberResourceModifierMapping {
         /**
-         * The name of the config map containing resource modification details. Example: `resource-modifier`
+         * The name of the config map containing resource modification details.  Example: `resource-modifier`
          */
         configMap: string;
         /**
-         * The OKE namespace where the config map resides. Example: `namespaceString5`
+         * The OKE namespace where the config map resides.  Example: `namespaceString5`
          */
         namespace: string;
     }
@@ -161941,13 +162134,17 @@ export namespace DisasterRecovery {
          */
         destinationNsgIdLists: string[];
         /**
-         * The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+         * Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
          */
         destinationPrimaryPrivateIpAddress: string;
         /**
-         * The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+         * Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
          */
         destinationPrimaryPrivateIpHostnameLabel: string;
+        /**
+         * The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+         */
+        destinationReservedPrimaryPrivateIpId: string;
         /**
          * The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
          */
@@ -162056,7 +162253,7 @@ export namespace DisasterRecovery {
          */
         bucket: string;
         /**
-         * The OKE namespace where the config map resides. Example: `namespaceString5`
+         * The OKE namespace where the config map resides.  Example: `namespaceString5`
          */
         namespace: string;
         /**
@@ -162144,6 +162341,10 @@ export namespace DisasterRecovery {
          */
         destinationSnapshotPolicyId: string;
         /**
+         * DR drill-specific properties for a movable compute instance member.
+         */
+        drDrillProperties: outputs.DisasterRecovery.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillProperty[];
+        /**
          * A list of mappings between the primary region file system export and destination region mount target.
          */
         exportMappings: outputs.DisasterRecovery.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping[];
@@ -162192,7 +162393,7 @@ export namespace DisasterRecovery {
          */
         memberType: string;
         /**
-         * The OKE namespace where the config map resides. Example: `namespaceString5`
+         * The OKE namespace where the config map resides.  Example: `namespaceString5`
          */
         namespace: string;
         /**
@@ -162208,7 +162409,7 @@ export namespace DisasterRecovery {
          */
         peerClusterId: string;
         /**
-         * The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+         * The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
          */
         peerDbSystemId: string;
         /**
@@ -162285,7 +162486,7 @@ export namespace DisasterRecovery {
          */
         bucket: string;
         /**
-         * The OKE namespace where the config map resides. Example: `namespaceString5`
+         * The OKE namespace where the config map resides.  Example: `namespaceString5`
          */
         namespace: string;
         /**
@@ -162396,6 +162597,44 @@ export namespace DisasterRecovery {
         vaultId: string;
     }
 
+    export interface GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillProperty {
+        /**
+         * A list of compute instance VNIC mappings.
+         */
+        vnicMappings: outputs.DisasterRecovery.GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMapping[];
+    }
+
+    export interface GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberDrDrillPropertyVnicMapping {
+        /**
+         * A list of OCIDs of network security groups (NSG) in the destination region which should be assigned to the source VNIC.  Example: `[ ocid1.networksecuritygroup.oc1..uniqueID, ocid1.networksecuritygroup.oc1..uniqueID ]`
+         */
+        destinationNsgIdLists: string[];
+        /**
+         * Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+         */
+        destinationPrimaryPrivateIpAddress: string;
+        /**
+         * Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+         */
+        destinationPrimaryPrivateIpHostnameLabel: string;
+        /**
+         * The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+         */
+        destinationReservedPrimaryPrivateIpId: string;
+        /**
+         * The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
+         */
+        destinationReservedPublicIpId: string;
+        /**
+         * The OCID of the destination subnet to which the source VNIC should connect.  Example: `ocid1.subnet.oc1..uniqueID`
+         */
+        destinationSubnetId: string;
+        /**
+         * The OCID of the source VNIC.  Example: `ocid1.vnic.oc1..uniqueID`
+         */
+        sourceVnicId: string;
+    }
+
     export interface GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberExportMapping {
         /**
          * The OCID of the destination mount target on which this file system export should be created.  Example: `ocid1.mounttarget.oc1..uniqueID`
@@ -162483,11 +162722,11 @@ export namespace DisasterRecovery {
 
     export interface GetDrProtectionGroupsDrProtectionGroupCollectionItemMemberResourceModifierMapping {
         /**
-         * The name of the config map containing resource modification details. Example: `resource-modifier`
+         * The name of the config map containing resource modification details.  Example: `resource-modifier`
          */
         configMap: string;
         /**
-         * The OKE namespace where the config map resides. Example: `namespaceString5`
+         * The OKE namespace where the config map resides.  Example: `namespaceString5`
          */
         namespace: string;
     }
@@ -162546,13 +162785,17 @@ export namespace DisasterRecovery {
          */
         destinationNsgIdLists: string[];
         /**
-         * The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
+         * Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The private IP address to be assigned as the VNIC's primary IP address in the destination subnet. This must be a valid IP address in the destination subnet and the IP address must be available.  Example: `10.0.3.3`
          */
         destinationPrimaryPrivateIpAddress: string;
         /**
-         * The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
+         * Deprecated. Use the 'destinationReservedPrimaryPrivateIpId' attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP's fully qualified domain name (FQDN)  (for example, 'myhost1' in the FQDN 'myhost1.subnet123.vcn1.oraclevcn.com').  Example: `myhost1`
          */
         destinationPrimaryPrivateIpHostnameLabel: string;
+        /**
+         * The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+         */
+        destinationReservedPrimaryPrivateIpId: string;
         /**
          * The OCID of the reserved public IP address to be assigned to the compute instance in the destination region.  Example: `ocid1.publicip.oc1..uniqueID`
          */
@@ -182951,9 +183194,65 @@ export namespace GenerativeAi {
         values: string[];
     }
 
+    export interface GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollection {
+        /**
+         * List of allocatable GPU summaries.
+         */
+        items: outputs.GenerativeAi.GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItem[];
+    }
+
+    export interface GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItem {
+        /**
+         * The compute shape to use to filter allocatable GPUs. For example, `BM.GPU.A10.4`.
+         */
+        computeShape: string;
+        /**
+         * The GPU allocation details for the compute shape. Each item represents one underlying capacity allocation.
+         */
+        gpuAllocations: outputs.GenerativeAi.GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocation[];
+        /**
+         * The maximum number of GPU units that can be allocated to a single dedicated AI cluster for the compute shape without requiring additional provisioning.
+         */
+        maxAllocatableGpuUnits: number;
+        /**
+         * The total number of available GPU units for the compute shape.
+         */
+        totalAvailableGpuUnits: number;
+        /**
+         * The total number of used GPU units for the compute shape.
+         */
+        totalUsedGpuUnits: number;
+    }
+
+    export interface GetDedicatedAiClusterAllocatableGpusAllocatableGpuCollectionItemGpuAllocation {
+        /**
+         * The number of available GPUs in this allocation.
+         */
+        availableGpus: number;
+        /**
+         * The number of used GPUs in this allocation.
+         */
+        usedGpus: number;
+    }
+
+    export interface GetDedicatedAiClusterAllocatableGpusFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
     export interface GetDedicatedAiClusterCapacity {
+        /**
+         * The type of the dedicated AI cluster capacity.
+         */
         capacityType: string;
+        /**
+         * The total number of endpoints that can be hosted on this dedicated AI cluster.
+         */
         totalEndpointCapacity: number;
+        /**
+         * The number of endpoints hosted on this dedicated AI cluster.
+         */
         usedEndpointCapacity: number;
     }
 
@@ -182962,7 +183261,14 @@ export namespace GenerativeAi {
     }
 
     export interface GetDedicatedAiClustersDedicatedAiClusterCollectionItem {
+        /**
+         * The total capacity for a dedicated AI cluster.
+         */
         capacities: outputs.GenerativeAi.GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity[];
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
+         */
+        capacityReservationId: string;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
          */
@@ -183022,8 +183328,17 @@ export namespace GenerativeAi {
     }
 
     export interface GetDedicatedAiClustersDedicatedAiClusterCollectionItemCapacity {
+        /**
+         * The type of the dedicated AI cluster capacity.
+         */
         capacityType: string;
+        /**
+         * The total number of endpoints that can be hosted on this dedicated AI cluster.
+         */
         totalEndpointCapacity: number;
+        /**
+         * The number of endpoints hosted on this dedicated AI cluster.
+         */
         usedEndpointCapacity: number;
     }
 
@@ -185721,6 +186036,136 @@ export namespace GoldenGate {
         value: string;
     }
 
+    export interface ConnectionArtifactLocation {
+        /**
+         * (Updatable) Storage account access key. Deprecated: This field is deprecated and replaced by "accountKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         */
+        accountKey: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the storage account access key. Note: When provided, 'accountKey' field must not be provided.
+         */
+        accountKeySecretId: string;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Object Storage configuration for the artifact location.
+         */
+        configuration: outputs.GoldenGate.ConnectionArtifactLocationConfiguration;
+        /**
+         * (Updatable) Endpoint suffix. Defaults to dfs.core.windows.net.
+         */
+        endpointSuffix: string;
+        /**
+         * (Updatable) Azure Data Lake Storage Gen2 filesystem containing the application artifacts. Example: "ggs-artifacts"
+         */
+        filesystem: string;
+        /**
+         * (Updatable) The type of location used to share Databricks application artifacts.
+         */
+        locationType: string;
+        /**
+         * (Updatable)
+         * * AZURE_DATE_LAKE_STORAGE: Artifact path within the Azure Data Lake Storage filesystem.
+         * * UC_VOLUME: Unity Catalog volume artifact path.
+         */
+        path: string;
+        /**
+         * (Updatable) Controls whether a staged Spark application artifact replaces an existing file or object with the same name at the configured destination. The artifact is typically a GGFAB pipeline package or one of its dependency files.
+         *
+         * When set to `true`, the existing file or object is replaced with the newly staged version. When set to `false`, staging fails or skips the upload rather than replacing it. This setting does not replace the entire target directory or prefix. It allows an updated pipeline or dependency to be deployed when artifact names remain the same across versions.
+         */
+        shouldOverwriteExisting: boolean;
+        /**
+         * (Updatable) Azure Data Lake Storage Gen2 storage-account name.
+         */
+        storageAccount: string;
+    }
+
+    export interface ConnectionArtifactLocationConfiguration {
+        /**
+         * (Updatable) Access key identifier used for Oracle Cloud Infrastructure Object Storage secret-key authentication. Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+         */
+        accessKeyId: string;
+        /**
+         * (Updatable) Authentication method used to access Oracle Cloud Infrastructure Object Storage.
+         *
+         * When `authenticationType` is `USER_PRINCIPAL`, `region`, `namespace`, `bucket`, `path`, `userId`, and `publicKeyFingerprint` are required. Provide exactly one of `privateKeyFile` or `privateKeyFileSecretId` as the private-key credential. `tenancyId` and the private-key passphrase are optional. When a passphrase is used, provide at most one of `privateKeyPassphrase` or `privateKeyPassphraseSecretId`.
+         *
+         * When `authenticationType` is `RESOURCE_PRINCIPAL`, `region`, `namespace`, `bucket`, and `path` are required.
+         *
+         * When `authenticationType` is `CUSTOMER_SECRET_KEY`, `region`, `namespace`, `bucket`, `path`, and `accessKeyId` are required. Provide exactly one of `secretAccessKey` or `secretAccessKeySecretId` as the secret-key credential. The S3 Compatibility API endpoint is inferred from `region` and `namespace`.
+         *
+         * When `authenticationType` is `PRE_AUTHENTICATED_REQUEST`, provide exactly one of `parUrl` or `parUrlSecretId`.
+         */
+        authenticationType: string;
+        /**
+         * (Updatable) Oracle Cloud Infrastructure Object Storage bucket containing application artifacts.
+         */
+        bucket: string;
+        /**
+         * (Updatable) The Oracle Cloud Infrastructure Object Storage namespace containing the bucket. Example: "mynamespace"
+         */
+        namespace: string;
+        /**
+         * (Updatable) A pre-authenticated request (PAR) URL that provides access to the artifact location. Deprecated: This field is deprecated and replaced by "parUrlSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         *
+         * @deprecated The 'par_url' field has been deprecated. Please use 'par_url_secret_id' instead.
+         */
+        parUrl?: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the pre-authenticated request (PAR) URL. Note: When provided, `parUrl` must not be provided.
+         */
+        parUrlSecretId: string;
+        /**
+         * (Updatable) Object path used for application artifacts.
+         */
+        path: string;
+        /**
+         * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         *
+         * @deprecated The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead.
+         */
+        privateKeyFile?: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
+         */
+        privateKeyFileSecretId: string;
+        /**
+         * (Updatable) The passphrase of the private key. Deprecated: This field is deprecated and replaced by "privateKeyPassphraseSecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         *
+         * @deprecated The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead.
+         */
+        privateKeyPassphrase?: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the passphrase of the private key. Note: When provided, 'privateKeyPassphrase' field must not be provided.
+         */
+        privateKeyPassphraseSecretId: string;
+        /**
+         * (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         */
+        publicKeyFingerprint: string;
+        /**
+         * (Updatable) The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+         */
+        region: string;
+        /**
+         * (Updatable) Secret access key used for Oracle Cloud Infrastructure Object Storage secret-key authentication. Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         *
+         * @deprecated The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
+         */
+        secretAccessKey?: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the secret access key. Note: When provided, `secretAccessKey` must not be provided.
+         */
+        secretAccessKeySecretId: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+         */
+        tenancyId: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user whose API key is used to access the artifact location. If not provided it will default to the current user.
+         */
+        userId: string;
+    }
+
     export interface ConnectionAuthDetails {
         /**
          * (Updatable) API key for the AI model connection. Deprecated: This field is deprecated and replaced by "apiKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
@@ -185817,10 +186262,7 @@ export namespace GoldenGate {
          */
         propertiesSecretId: string;
         /**
-         * (Updatable)
-         * * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
-         * * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
-         * * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
+         * (Updatable) The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
          */
         uri: string;
     }
@@ -185853,10 +186295,9 @@ export namespace GoldenGate {
 
     export interface ConnectionStorage {
         /**
-         * (Updatable)
-         * * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-         * * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-         *   Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+         * (Updatable) Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+         *
+         * Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
          */
         accessKeyId: string;
         /**
@@ -185874,10 +186315,7 @@ export namespace GoldenGate {
          */
         accountName: string;
         /**
-         * (Updatable)
-         * * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
-         * * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
-         * * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
+         * (Updatable) Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
          */
         bucket: string;
         /**
@@ -185885,11 +186323,7 @@ export namespace GoldenGate {
          */
         container: string;
         /**
-         * (Updatable)
-         * * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
-         * * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
-         * * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
-         * * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
+         * (Updatable) Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
          */
         endpoint: string;
         /**
@@ -185905,18 +186339,13 @@ export namespace GoldenGate {
          */
         schemeType: string;
         /**
-         * (Updatable)
-         * * AMAZON_S3: Secret access key to access the Amazon S3 bucket.
-         * * OCI_OBJECT_STORAGE_S3_API: Secret Access Key from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-         *   Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
+         * (Updatable) Secret Access Key from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API. Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This change follows the GoldenGate "Plain Text Fields in Connections" deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          *
          * @deprecated The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
          */
         secretAccessKey: string;
         /**
-         * (Updatable)
-         * * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-         * * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
          */
         secretAccessKeySecretId: string;
         /**
@@ -185930,7 +186359,12 @@ export namespace GoldenGate {
          */
         serviceAccountKeyFileSecretId: string;
         /**
-         * (Updatable) The storage type used in the Iceberg connection.
+         * (Updatable) The storage type used in the Iceberg connection. Supported storage types by catalog type:
+         * * GLUE: AMAZON_S3.
+         * * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
+         * * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+         * * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+         * * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
          */
         storageType: string;
     }
@@ -186088,7 +186522,7 @@ export namespace GoldenGate {
          */
         credentialStore: string;
         /**
-         * The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. For standby deployment the deployment name is inherited from primary.
+         * The name given to the GoldenGate service deployment. The name must contain only alphanumeric characters and must start with a letter. If not provided, the service derives this value from the deployment display name. For standby deployment the deployment name is inherited from primary. Deprecated: This field is deprecated and will be removed after the date provided in the announcement: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         deploymentName: string;
         /**
@@ -186249,6 +186683,121 @@ export namespace GoldenGate {
         value: string;
     }
 
+    export interface GetConnectionArtifactLocation {
+        accountKey: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+         */
+        accountKeySecretId: string;
+        /**
+         * Oracle Cloud Infrastructure Object Storage configuration for the artifact location.
+         */
+        configurations: outputs.GoldenGate.GetConnectionArtifactLocationConfiguration[];
+        /**
+         * Endpoint suffix. Defaults to dfs.core.windows.net.
+         */
+        endpointSuffix: string;
+        /**
+         * Azure Data Lake Storage Gen2 filesystem containing the application artifacts. Example: "ggs-artifacts"
+         */
+        filesystem: string;
+        /**
+         * The type of location used to share Databricks application artifacts.
+         */
+        locationType: string;
+        /**
+         * * AZURE_DATE_LAKE_STORAGE: Artifact path within the Azure Data Lake Storage filesystem.
+         * * UC_VOLUME: Unity Catalog volume artifact path.
+         */
+        path: string;
+        /**
+         * Controls whether a staged Spark application artifact replaces an existing file or object with the same name at the configured destination. The artifact is typically a GGFAB pipeline package or one of its dependency files.
+         */
+        shouldOverwriteExisting: boolean;
+        /**
+         * Azure Data Lake Storage Gen2 storage-account name.
+         */
+        storageAccount: string;
+    }
+
+    export interface GetConnectionArtifactLocationConfiguration {
+        /**
+         * Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+         */
+        accessKeyId: string;
+        /**
+         * Authentication mechanism; supported values depend on `connectionType`.
+         * * DATABRICKS: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M.
+         * * DATABRICKS_ENGINE: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M for the Databricks Engine REST API.
+         * * JAVA_MESSAGE_SERVICE: Authentication type for Java Message Service. The default is NONE.
+         * * SPARK: Use SHARED_SECRET only when the target cluster has `spark.authenticate=true`. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET.
+         * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE: Authentication type supported by the target service.
+         */
+        authenticationType: string;
+        /**
+         * Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
+         */
+        bucket: string;
+        /**
+         * The Oracle Cloud Infrastructure Object Storage namespace containing the bucket. Example: "mynamespace"
+         */
+        namespace: string;
+        /**
+         * @deprecated The 'par_url' field has been deprecated. Please use 'par_url_secret_id' instead.
+         */
+        parUrl: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the pre-authenticated request (PAR) URL. Note: When provided, `parUrl` must not be provided.
+         */
+        parUrlSecretId: string;
+        /**
+         * * AZURE_DATE_LAKE_STORAGE: Artifact path within the Azure Data Lake Storage filesystem.
+         * * UC_VOLUME: Unity Catalog volume artifact path.
+         */
+        path: string;
+        /**
+         * @deprecated The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead.
+         */
+        privateKeyFile: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
+         */
+        privateKeyFileSecretId: string;
+        /**
+         * @deprecated The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead.
+         */
+        privateKeyPassphrase: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
+         */
+        privateKeyPassphraseSecretId: string;
+        /**
+         * The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         */
+        publicKeyFingerprint: string;
+        /**
+         * The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+         */
+        region: string;
+        /**
+         * @deprecated The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
+         */
+        secretAccessKey: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
+         */
+        secretAccessKeySecretId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+         */
+        tenancyId: string;
+        /**
+         * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses Object Storage. The user must have write access to the bucket. If omitted, the service defaults to the user calling the API.
+         * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses the Oracle NoSQL database. The user must have write access to the table. If omitted, the service defaults to the user calling the API.
+         */
+        userId: string;
+    }
+
     export interface GetConnectionAssignmentsConnectionAssignmentCollection {
         items: outputs.GoldenGate.GetConnectionAssignmentsConnectionAssignmentCollectionItem[];
     }
@@ -186332,8 +186881,8 @@ export namespace GoldenGate {
          */
         tenancyId: string;
         /**
-         * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
-         * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+         * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses Object Storage. The user must have write access to the bucket. If omitted, the service defaults to the user calling the API.
+         * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses the Oracle NoSQL database. The user must have write access to the table. If omitted, the service defaults to the user calling the API.
          */
         userId: string;
     }
@@ -186366,7 +186915,7 @@ export namespace GoldenGate {
         catalogType: string;
         /**
          * * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-         * * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+         * * DATABRICKS, DATABRICKS_ENGINE: OAuth client ID, applicable to OAUTH_M2M authentication.
          * * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
          */
         clientId: string;
@@ -186376,7 +186925,7 @@ export namespace GoldenGate {
         clientSecret: string;
         /**
          * * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-         * * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+         * * DATABRICKS, DATABRICKS_ENGINE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Applicable to OAUTH_M2M authentication.
          * * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
          *   Note: When provided, 'clientSecret' field must not be provided.
          */
@@ -186437,9 +186986,7 @@ export namespace GoldenGate {
 
     export interface GetConnectionStorage {
         /**
-         * * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-         * * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-         *   Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+         * Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
          */
         accessKeyId: string;
         /**
@@ -186455,9 +187002,7 @@ export namespace GoldenGate {
          */
         accountName: string;
         /**
-         * * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
-         * * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
-         * * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
+         * Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
          */
         bucket: string;
         /**
@@ -186465,10 +187010,7 @@ export namespace GoldenGate {
          */
         container: string;
         /**
-         * * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
-         * * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
-         * * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
-         * * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
+         * Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
          */
         endpoint: string;
         /**
@@ -186488,8 +187030,7 @@ export namespace GoldenGate {
          */
         secretAccessKey: string;
         /**
-         * * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-         * * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
          */
         secretAccessKeySecretId: string;
         /**
@@ -186501,7 +187042,12 @@ export namespace GoldenGate {
          */
         serviceAccountKeyFileSecretId: string;
         /**
-         * The storage type used in the Iceberg connection.
+         * The storage type used in the Iceberg connection. Supported storage types by catalog type:
+         * * GLUE: AMAZON_S3.
+         * * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
+         * * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+         * * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+         * * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
          */
         storageType: string;
     }
@@ -186512,9 +187058,7 @@ export namespace GoldenGate {
 
     export interface GetConnectionsConnectionCollectionItem {
         /**
-         * * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-         * * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-         *   Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+         * Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
          */
         accessKeyId: string;
         /**
@@ -186534,20 +187078,42 @@ export namespace GoldenGate {
          */
         additionalAttributes: outputs.GoldenGate.GetConnectionsConnectionCollectionItemAdditionalAttribute[];
         /**
-         * Represents authentication details for an AI Model connection.
+         * Location used to share engine application artifacts.
+         * * DATABRICKS_ENGINE: Location used to share Databricks application artifacts.
+         * * SPARK: Location used to share Spark application artifacts with a remote cluster.
+         */
+        artifactLocations: outputs.GoldenGate.GetConnectionsConnectionCollectionItemArtifactLocation[];
+        /**
+         * Authentication details for an AI Model or AI Provider connection.
          */
         authDetails: outputs.GoldenGate.GetConnectionsConnectionCollectionItemAuthDetail[];
+        /**
+         * @deprecated The 'auth_secret' field has been deprecated. Please use 'auth_secret_secret_id' instead.
+         */
+        authSecret: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Spark authentication shared secret. Applicable when authenticationType is SHARED_SECRET. Note: When provided, 'authSecret' field must not be provided.
+         */
+        authSecretSecretId: string;
+        /**
+         * @deprecated The 'auth_token' field has been deprecated. Please use 'auth_token_secret_id' instead.
+         */
+        authToken: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the personal access token is stored. Only applicable for authenticationType == PERSONAL_ACCESS_TOKEN. Note: When provided, 'authToken' field must not be provided.
+         */
+        authTokenSecretId: string;
         /**
          * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
          */
         authenticationMode: string;
         /**
-         * Used authentication mechanism to be provided for the following connection types:
-         * * SNOWFLAKE, AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS
-         * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
-         * * DATABRICKS - Required fields by authentication types:
-         * * PERSONAL_ACCESS_TOKEN: username is always 'token', user must enter password
-         * * OAUTH_M2M: user must enter clientId and clientSecret
+         * Authentication mechanism; supported values depend on `connectionType`.
+         * * DATABRICKS: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M.
+         * * DATABRICKS_ENGINE: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M for the Databricks Engine REST API.
+         * * JAVA_MESSAGE_SERVICE: Authentication type for Java Message Service. The default is NONE.
+         * * SPARK: Use SHARED_SECRET only when the target cluster has `spark.authenticate=true`. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET.
+         * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE: Authentication type supported by the target service.
          */
         authenticationType: string;
         /**
@@ -186569,9 +187135,9 @@ export namespace GoldenGate {
          */
         catalogs: outputs.GoldenGate.GetConnectionsConnectionCollectionItemCatalog[];
         /**
-         * * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-         * * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
-         * * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+         * * AZURE_DATA_LAKE_STORAGE: Azure application client ID, required for AZURE_ACTIVE_DIRECTORY authentication.
+         * * DATABRICKS, DATABRICKS_ENGINE: OAuth client ID, applicable to OAUTH_M2M authentication.
+         * * MICROSOFT_FABRIC: Azure application client ID.
          */
         clientId: string;
         /**
@@ -186579,18 +187145,19 @@ export namespace GoldenGate {
          */
         clientSecret: string;
         /**
-         * * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-         * * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
-         * * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-         *   Note: When provided, 'clientSecret' field must not be provided.
+         * Secret OCID containing the client secret. For DATABRICKS and DATABRICKS_ENGINE it applies to OAUTH_M2M authentication. When provided, `clientSecret` must not be provided.
          */
         clientSecretSecretId: string;
+        /**
+         * Spark master URL used for job submission. Required for both submitMode SUBMIT and REST. e.g.: 'spark://spark-master.example.com:7077' High availability can be configured with a comma-separated list, for example: 'spark://h1.example.com:7077,h2.example.com:7077'
+         */
+        clusterEndpoint: string;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
          */
         clusterId: string;
         /**
-         * The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud  must not be provided.
+         * The OCID(https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cluster placement group for the resource. Only applicable for multicloud subscriptions. The cluster placement group id must be provided when a multicloud subscription id is provided. Otherwise the cluster placement group must not be provided.
          */
         clusterPlacementGroupId: string;
         /**
@@ -186602,9 +187169,7 @@ export namespace GoldenGate {
          */
         connectionFactory: string;
         /**
-         * * ORACLE: Connect descriptor or Easy Connect Naming method used to connect to a database.
-         * * MONGODB: MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords'
-         * * AZURE_SYNAPSE_ANALYTICS: JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
+         * JDBC connection string. e.g.: 'jdbc:sqlserver://<synapse-workspace>.sql.azuresynapse.net:1433;database=<db-name>;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.sql.azuresynapse.net;loginTimeout=300;'
          */
         connectionString: string;
         /**
@@ -186612,11 +187177,11 @@ export namespace GoldenGate {
          */
         connectionType: string;
         /**
-         * * JAVA_MESSAGE_SERVICE: Connection URL of the Java Message Service, specifying the protocol, host, and port. e.g.: 'mq://myjms.host.domain:7676'
-         * * SNOWFLAKE: JDBC connection URL. e.g.: 'jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>'
-         * * AMAZON_REDSHIFT: Connection URL. e.g.: 'jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb'
-         * * DATABRICKS: Connection URL. e.g.: 'jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb'
-         * * ORACLE_AI_DATA_PLATFORM: Connection URL. It must start with 'jdbc:spark://'
+         * * AMAZON_REDSHIFT: JDBC connection URL. e.g.: `jdbc:redshift://aws-redshift-instance.aaaaaaaaaaaa.us-east-2.redshift.amazonaws.com:5439/mydb`
+         * * DATABRICKS: JDBC connection URL. e.g.: `jdbc:databricks://adb-33934.4.azuredatabricks.net:443/default;transportMode=http;ssl=1;httpPath=sql/protocolv1/o/3393########44/0##3-7-hlrb`
+         * * JAVA_MESSAGE_SERVICE: Connection URL specifying the protocol, host, and port. e.g.: `mq://myjms.host.domain:7676`
+         * * ORACLE_AI_DATA_PLATFORM: Connection URL beginning with `jdbc:spark://`.
+         * * SNOWFLAKE: JDBC connection URL. e.g.: `jdbc:snowflake://<account_name>.snowflakecomputing.com/?warehouse=<warehouse-name>&db=<db-name>`
          */
         connectionUrl: string;
         /**
@@ -186660,10 +187225,7 @@ export namespace GoldenGate {
          */
         doesUseSecretIds: boolean;
         /**
-         * * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
-         * * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
-         * * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
-         * * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
+         * Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
          */
         endpoint: string;
         /**
@@ -186726,17 +187288,21 @@ export namespace GoldenGate {
          */
         keyStorePassword: string;
         /**
-         * * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
-         * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
-         * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
-         * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
-         *   Note: When provided, 'keyStorePassword' field must not be provided.
+         * Secret OCID containing the key store password.
+         * * SPARK: Applicable when `securityProtocol` is TLS and a client key store is provided. Required when `keyStoreSecretId` is provided.
+         * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Password for the target connection's key store.
          */
         keyStorePasswordSecretId: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
+         * Secret OCID containing the key store content.
+         * * SPARK: Applicable when `securityProtocol` is TLS.
+         * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Key store file used by the target connection.
          */
         keyStoreSecretId: string;
+        /**
+         * Client key store format used for mutual TLS.
+         */
+        keyStoreType: string;
         /**
          * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
          */
@@ -186794,6 +187360,10 @@ export namespace GoldenGate {
          */
         producerProperties: string;
         /**
+         * Optional identifier of the AI Provider Connection backing this AI Model Connection. When provided, it must reference an existing Active connection of type `AI_PROVIDER`. When `providerId` is set, `providerType` and `authDetails` must not be provided on the AI Model Connection, because provider metadata is resolved from the referenced AI Provider Connection. When `providerId` is not set, the AI Model Connection must provide inline provider metadata using `providerType` and `authDetails`.
+         */
+        providerId: string;
+        /**
          * AI Provider type used by the AI Model Connection.
          */
         providerType: string;
@@ -186810,9 +187380,25 @@ export namespace GoldenGate {
          */
         region: string;
         /**
+         * @deprecated The 'rest_auth_secret_key' field has been deprecated. Please use 'rest_auth_secret_key_secret_id' instead.
+         */
+        restAuthSecretKey: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the REST submission signing key. Applicable only when submitMode is REST and the cluster enforces REST request signing. This setting is independent of authenticationType. Note: When provided, 'restAuthSecretKey' field must not be provided.
+         */
+        restAuthSecretKeySecretId: string;
+        /**
+         * Spark standalone REST submission base URL. e.g.: 'https://spark-master.example.com:6066' Applicable only and required when submitMode is REST.
+         */
+        restEndpoint: string;
+        /**
          * Controls the network traffic direction to the target: SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected. SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
          */
         routingMethod: string;
+        /**
+         * Cipher transform used for Spark RPC encryption. Applicable when securityProtocol is AES_RPC.
+         */
+        rpcCipher: string;
         /**
          * @deprecated The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead.
          */
@@ -186826,8 +187412,7 @@ export namespace GoldenGate {
          */
         secretAccessKey: string;
         /**
-         * * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-         * * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
          */
         secretAccessKeySecretId: string;
         /**
@@ -186835,20 +187420,13 @@ export namespace GoldenGate {
          */
         securityAttributes: {[key: string]: string};
         /**
-         * * DB2: Security protocol for the DB2 database.
-         * * ELASTICSEARCH: Security protocol for Elasticsearch.
-         * * JAVA_MESSAGE_SERVICE: Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
-         * * KAFKA: Security Type for Kafka.
-         * * MICROSOFT_SQLSERVER: Security Type for Microsoft SQL Server.
-         * * MONGODB: Security Type for MongoDB.
-         * * MYSQL: Security Type for MySQL.
-         * * POSTGRESQL: Security protocol for PostgreSQL.
-         * * REDIS: Security protocol for Redis.
+         * Security protocol; supported values depend on `connectionType`.
+         * * SPARK: PLAINTEXT, TLS, AES_RPC, or SASL_ENCRYPTED. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET authentication.
+         * * Other connection types: Use the protocol supported by the target service.
          */
         securityProtocol: string;
         /**
-         * * ELASTICSEARCH: Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
-         * * REDIS: Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 6379. Used for establishing the initial connection to the Redis cluster. Example: `"server1.example.com:6379,server2.example.com:6379"`
+         * Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
          */
         servers: string;
         /**
@@ -186868,8 +187446,8 @@ export namespace GoldenGate {
          */
         shouldUseJndi: boolean;
         /**
-         * * KAFKA: Specifies that the user intends to authenticate to the instance using a resource principal. Applicable only for Oracle Cloud Infrastructure Streaming connections. Only available from 23.9.0.0.0 GoldenGate versions. Note: When specified, 'username'/'password'/'passwordSecretId' fields must not be provided. Default: false
-         * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM, ORACLE_NOSQL: Specifies that the user intends to authenticate to the instance using a resource principal. Default: false
+         * * KAFKA: Specifies resource-principal authentication for Oracle Cloud Infrastructure Streaming connections. Available from GoldenGate 23.9.0.0.0. When set, `username`, `password`, and `passwordSecretId` must not be provided. Default: false.
+         * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM, ORACLE_NOSQL: Specifies resource-principal authentication. Default: false.
          */
         shouldUseResourcePrincipal: boolean;
         /**
@@ -186877,14 +187455,11 @@ export namespace GoldenGate {
          */
         shouldValidateServerCertificate: boolean;
         /**
-         * * MICROSOFT_SQLSERVER: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1-way SSL).
-         * * MYSQL: Database Certificate - The base64 encoded content of a .pem or .crt file containing the server public key (for 1 and 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-         * * POSTGRESQL: The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+         * The base64 encoded certificate of the trusted certificate authorities (Trusted CA) for PostgreSQL.  The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
          */
         sslCa: string;
         /**
-         * * MYSQL: Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-         * * POSTGRESQL: The base64 encoded certificate of the PostgreSQL server. The supported file formats are .pem and .crt. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+         * Client Certificate - The base64 encoded content of a .pem or .crt file containing the client public key (for 2-way SSL). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
          */
         sslCert: string;
         /**
@@ -186892,7 +187467,7 @@ export namespace GoldenGate {
          */
         sslClientKeystash: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
          */
         sslClientKeystashSecretId: string;
         /**
@@ -186900,12 +187475,11 @@ export namespace GoldenGate {
          */
         sslClientKeystoredb: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not be provided.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
          */
         sslClientKeystoredbSecretId: string;
         /**
-         * * MYSQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-         * * POSTGRESQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+         * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
          */
         sslCrl: string;
         /**
@@ -186917,20 +187491,18 @@ export namespace GoldenGate {
          */
         sslKeyPassword: string;
         /**
-         * * JAVA_MESSAGE_SERVICE, KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided.
-         * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
-         *   Note: When provided, 'sslKeyPassword' field must not be provided.
+         * Secret OCID containing the certificate private-key password inside the client key store.
+         * * SPARK: Applicable when `securityProtocol` is TLS and a client key store is provided.
+         * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY: Provide it when the private-key password differs from the key store password.
          */
         sslKeyPasswordSecretId: string;
         /**
-         * * MYSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
-         * * POSTGRESQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
-         *   Note: When provided, 'sslKey' field must not be provided.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+         * * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
          */
         sslKeySecretId: string;
         /**
-         * * MYSQL: SSL modes for MySQL.
-         * * POSTGRESQL: SSL modes for PostgreSQL.
+         * SSL mode for PostgreSQL.
          */
         sslMode: string;
         /**
@@ -186953,6 +187525,10 @@ export namespace GoldenGate {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
          */
         streamPoolId: string;
+        /**
+         * Submission channel used to connect to Spark.
+         */
+        submitMode: string;
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
          */
@@ -187006,6 +187582,10 @@ export namespace GoldenGate {
          * * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
          */
         tlsCertificateKeyFileSecretId: string;
+        /**
+         * TLS protocol negotiated by the Spark client.
+         */
+        tlsProtocol: string;
         triggerRefresh: boolean;
         /**
          * @deprecated The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.
@@ -187016,24 +187596,28 @@ export namespace GoldenGate {
          */
         trustStorePassword: string;
         /**
-         * * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
-         * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
-         * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
-         * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
-         *   Note: When provided, 'trustStorePassword' field must not be provided.
+         * Secret OCID containing the trust store password.
+         * * SPARK: Applicable when `securityProtocol` is TLS and a trust store is provided. Required when `trustStoreSecretId` is provided.
+         * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Password for the target connection's trust store.
          */
         trustStorePasswordSecretId: string;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
+         * Secret OCID containing the trust store content.
+         * * SPARK: Applicable when `securityProtocol` is TLS. Provide it when the server certificate is not already trusted by the JVM.
+         * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Trust store file used by the target connection.
          */
         trustStoreSecretId: string;
+        /**
+         * Trust store format used by the Spark client.
+         */
+        trustStoreType: string;
         /**
          * Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
          */
         url: string;
         /**
-         * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
-         * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+         * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses Object Storage. The user must have write access to the bucket. If omitted, the service defaults to the user calling the API.
+         * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses the Oracle NoSQL database. The user must have write access to the table. If omitted, the service defaults to the user calling the API.
          */
         userId: string;
         /**
@@ -187052,6 +187636,11 @@ export namespace GoldenGate {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
          */
         walletSecretId: string;
+        /**
+         * * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://<workspace>.cloud.databricks.com/api/2.0/`.
+         * * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
+         */
+        workspaceUrl: string;
     }
 
     export interface GetConnectionsConnectionCollectionItemAdditionalAttribute {
@@ -187063,6 +187652,121 @@ export namespace GoldenGate {
          * The value of the property entry.
          */
         value: string;
+    }
+
+    export interface GetConnectionsConnectionCollectionItemArtifactLocation {
+        accountKey: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+         */
+        accountKeySecretId: string;
+        /**
+         * Oracle Cloud Infrastructure Object Storage configuration for the artifact location.
+         */
+        configurations: outputs.GoldenGate.GetConnectionsConnectionCollectionItemArtifactLocationConfiguration[];
+        /**
+         * Endpoint suffix. Defaults to dfs.core.windows.net.
+         */
+        endpointSuffix: string;
+        /**
+         * Azure Data Lake Storage Gen2 filesystem containing the application artifacts. Example: "ggs-artifacts"
+         */
+        filesystem: string;
+        /**
+         * The type of location used to share Databricks application artifacts.
+         */
+        locationType: string;
+        /**
+         * * AZURE_DATE_LAKE_STORAGE: Artifact path within the Azure Data Lake Storage filesystem.
+         * * UC_VOLUME: Unity Catalog volume artifact path.
+         */
+        path: string;
+        /**
+         * Controls whether a staged Spark application artifact replaces an existing file or object with the same name at the configured destination. The artifact is typically a GGFAB pipeline package or one of its dependency files.
+         */
+        shouldOverwriteExisting: boolean;
+        /**
+         * Azure Data Lake Storage Gen2 storage-account name.
+         */
+        storageAccount: string;
+    }
+
+    export interface GetConnectionsConnectionCollectionItemArtifactLocationConfiguration {
+        /**
+         * Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
+         */
+        accessKeyId: string;
+        /**
+         * Authentication mechanism; supported values depend on `connectionType`.
+         * * DATABRICKS: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M.
+         * * DATABRICKS_ENGINE: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M for the Databricks Engine REST API.
+         * * JAVA_MESSAGE_SERVICE: Authentication type for Java Message Service. The default is NONE.
+         * * SPARK: Use SHARED_SECRET only when the target cluster has `spark.authenticate=true`. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET.
+         * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE: Authentication type supported by the target service.
+         */
+        authenticationType: string;
+        /**
+         * Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
+         */
+        bucket: string;
+        /**
+         * The Oracle Cloud Infrastructure Object Storage namespace containing the bucket. Example: "mynamespace"
+         */
+        namespace: string;
+        /**
+         * @deprecated The 'par_url' field has been deprecated. Please use 'par_url_secret_id' instead.
+         */
+        parUrl: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the pre-authenticated request (PAR) URL. Note: When provided, `parUrl` must not be provided.
+         */
+        parUrlSecretId: string;
+        /**
+         * * AZURE_DATE_LAKE_STORAGE: Artifact path within the Azure Data Lake Storage filesystem.
+         * * UC_VOLUME: Unity Catalog volume artifact path.
+         */
+        path: string;
+        /**
+         * @deprecated The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead.
+         */
+        privateKeyFile: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, 'privateKeyFile' field must not be provided.
+         */
+        privateKeyFileSecretId: string;
+        /**
+         * @deprecated The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead.
+         */
+        privateKeyPassphrase: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, 'privateKeyPassphrase' field must not be provided.
+         */
+        privateKeyPassphraseSecretId: string;
+        /**
+         * The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         */
+        publicKeyFingerprint: string;
+        /**
+         * The AMAZON region where the S3 bucket is hosted. e.g.: 'us-east-2'
+         */
+        region: string;
+        /**
+         * @deprecated The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead.
+         */
+        secretAccessKey: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
+         */
+        secretAccessKeySecretId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
+         */
+        tenancyId: string;
+        /**
+         * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses Object Storage. The user must have write access to the bucket. If omitted, the service defaults to the user calling the API.
+         * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses the Oracle NoSQL database. The user must have write access to the table. If omitted, the service defaults to the user calling the API.
+         */
+        userId: string;
     }
 
     export interface GetConnectionsConnectionCollectionItemAuthDetail {
@@ -187095,8 +187799,8 @@ export namespace GoldenGate {
          */
         tenancyId: string;
         /**
-         * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
-         * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+         * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses Object Storage. The user must have write access to the bucket. If omitted, the service defaults to the user calling the API.
+         * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses the Oracle NoSQL database. The user must have write access to the table. If omitted, the service defaults to the user calling the API.
          */
         userId: string;
     }
@@ -187128,9 +187832,9 @@ export namespace GoldenGate {
          */
         catalogType: string;
         /**
-         * * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-         * * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
-         * * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
+         * * AZURE_DATA_LAKE_STORAGE: Azure application client ID, required for AZURE_ACTIVE_DIRECTORY authentication.
+         * * DATABRICKS, DATABRICKS_ENGINE: OAuth client ID, applicable to OAUTH_M2M authentication.
+         * * MICROSOFT_FABRIC: Azure application client ID.
          */
         clientId: string;
         /**
@@ -187138,10 +187842,7 @@ export namespace GoldenGate {
          */
         clientSecret: string;
         /**
-         * * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-         * * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
-         * * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-         *   Note: When provided, 'clientSecret' field must not be provided.
+         * Secret OCID containing the client secret. For DATABRICKS and DATABRICKS_ENGINE it applies to OAUTH_M2M authentication. When provided, `clientSecret` must not be provided.
          */
         clientSecretSecretId: string;
         /**
@@ -187165,9 +187866,7 @@ export namespace GoldenGate {
          */
         propertiesSecretId: string;
         /**
-         * * NESSIE: Nessie URI. e.g.: 'http://<nessie-server>.com:10001/api/v2'
-         * * POLARIS: The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
-         * * REST: The base URL for the REST Catalog API. e.g.: 'https://my-rest-catalog.example.com/api/v1'
+         * The URL endpoint for the Polaris API. e.g.: 'https://<your-snowflake-account>.snowflakecomputing.com/polaris/api/catalog'
          */
         uri: string;
     }
@@ -187200,9 +187899,7 @@ export namespace GoldenGate {
 
     export interface GetConnectionsConnectionCollectionItemStorage {
         /**
-         * * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-         * * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-         *   Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+         * Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
          */
         accessKeyId: string;
         /**
@@ -187218,9 +187915,7 @@ export namespace GoldenGate {
          */
         accountName: string;
         /**
-         * * AMAZON_S3: S3 bucket where Iceberg stores metadata and data files.
-         * * GOOGLE_CLOUD_STORAGE: Google Cloud Storage bucket where Iceberg stores metadata and data files.
-         * * OCI_OBJECT_STORAGE_S3_API: Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
+         * Target Oracle Cloud Infrastructure Object Storage bucket name where Iceberg stores table metadata and data files.
          */
         bucket: string;
         /**
@@ -187228,10 +187923,7 @@ export namespace GoldenGate {
          */
         container: string;
         /**
-         * * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
-         * * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
-         * * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
-         * * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
+         * Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
          */
         endpoint: string;
         /**
@@ -187251,8 +187943,7 @@ export namespace GoldenGate {
          */
         secretAccessKey: string;
         /**
-         * * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-         * * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
          */
         secretAccessKeySecretId: string;
         /**
@@ -187264,7 +187955,12 @@ export namespace GoldenGate {
          */
         serviceAccountKeyFileSecretId: string;
         /**
-         * The storage type used in the Iceberg connection.
+         * The storage type used in the Iceberg connection. Supported storage types by catalog type:
+         * * GLUE: AMAZON_S3.
+         * * HADOOP: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or OCI_OBJECT_STORAGE_S3_API.
+         * * NESSIE: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+         * * POLARIS: AMAZON_S3, GOOGLE_CLOUD_STORAGE, or AZURE_DATA_LAKE_STORAGE.
+         * * REST: AMAZON_S3, GOOGLE_CLOUD_STORAGE, AZURE_DATA_LAKE_STORAGE, or NONE.
          */
         storageType: string;
     }
@@ -187858,7 +188554,7 @@ export namespace GoldenGate {
          */
         credentialStore: string;
         /**
-         * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+         * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. For non-data-replication deployment types that do not use a GoldenGate deployment name, this property is `NONE`. Deprecated: This field is deprecated and will be removed after the date provided in the announcement: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         deploymentName: string;
         /**
@@ -187944,7 +188640,7 @@ export namespace GoldenGate {
          */
         precheckStatus: string;
         /**
-         * The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will default to the default region.
+         * The name of the region. e.g.: us-ashburn-1
          */
         region: string;
         /**
@@ -188417,7 +189113,7 @@ export namespace GoldenGate {
          */
         nsgIds: string[];
         /**
-         * Deployment Data for an OggDeployment
+         * Deployment Data for an OggDeployment.
          */
         oggDatas: outputs.GoldenGate.GetDeploymentsDeploymentCollectionItemOggData[];
         /**
@@ -188622,7 +189318,7 @@ export namespace GoldenGate {
          */
         credentialStore: string;
         /**
-         * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+         * The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. For non-data-replication deployment types that do not use a GoldenGate deployment name, this property is `NONE`. Deprecated: This field is deprecated and will be removed after the date provided in the announcement: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
          */
         deploymentName: string;
         /**
@@ -283886,16 +284582,22 @@ export namespace Opensearch {
 
     export interface ClusterRemoteReindexTrustConfig {
         /**
-         * (Updatable) Remote cluster sources to trust for reindexing.
+         * (Updatable) Remote sources trusted for reindexing. When creating a cluster with this configuration, provide at least one source. When updating a cluster, this list replaces the existing sources. Specify an empty list to remove all remote-reindex trust configuration. Each source must specify exactly one non-empty `caBundleId` or `certificateId`, not both.
          */
         remoteSources: outputs.Opensearch.ClusterRemoteReindexTrustConfigRemoteSource[];
     }
 
     export interface ClusterRemoteReindexTrustConfigRemoteSource {
         /**
-         * (Updatable) OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+         * (Updatable) OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster's HTTPS certificate. Required when `certificateId` is not specified.
          */
-        certificateId: string;
+        caBundleId?: string;
+        /**
+         * (Updatable) **Deprecated** Alias for `caBundleId`; use `caBundleId` instead. The value must be an OCI Certificates service CA bundle OCID, not a certificate OCID. Existing configurations remain supported during the deprecation period; removal requires a major provider release.
+         *
+         * @deprecated Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
+         */
+        certificateId?: string;
         /**
          * (Updatable) HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
          */
@@ -284202,14 +284904,20 @@ export namespace Opensearch {
 
     export interface GetOpensearchClusterRemoteReindexTrustConfig {
         /**
-         * Remote cluster sources to trust for reindexing.
+         * Remote sources trusted for reindexing.
          */
         remoteSources: outputs.Opensearch.GetOpensearchClusterRemoteReindexTrustConfigRemoteSource[];
     }
 
     export interface GetOpensearchClusterRemoteReindexTrustConfigRemoteSource {
         /**
-         * OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+         * OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster's HTTPS certificate.
+         */
+        caBundleId: string;
+        /**
+         * **Deprecated** Alias of `caBundleId`. Both computed fields contain the same CA bundle OCID during the deprecation period; removal requires a major provider release.
+         *
+         * @deprecated Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
          */
         certificateId: string;
         /**
@@ -284647,14 +285355,20 @@ export namespace Opensearch {
 
     export interface GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfig {
         /**
-         * Remote cluster sources to trust for reindexing.
+         * Remote sources trusted for reindexing.
          */
         remoteSources: outputs.Opensearch.GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource[];
     }
 
     export interface GetOpensearchClustersOpensearchClusterCollectionItemRemoteReindexTrustConfigRemoteSource {
         /**
-         * OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+         * OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster's HTTPS certificate.
+         */
+        caBundleId: string;
+        /**
+         * **Deprecated** Alias of `caBundleId`. Both computed fields contain the same CA bundle OCID during the deprecation period; removal requires a major provider release.
+         *
+         * @deprecated Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
          */
         certificateId: string;
         /**
@@ -300023,6 +300737,10 @@ export namespace Psql {
          * The database system administrator username.
          */
         adminUsername: string;
+        /**
+         * Allow in-place upgrades when dbVersion changes to a higher major version. When false, changing dbVersion replaces the database system. This setting has no effect during creation.
+         */
+        allowMajorVersionUpgrade: boolean;
         applyChangeModeToStandAlone: string;
         applyConfig: string;
         /**
@@ -300139,6 +300857,10 @@ export namespace Psql {
          * The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
          */
         timeUpdated: string;
+        /**
+         * Optional post-upgrade operations, applied only when dbVersion changes and allowMajorVersionUpgrade is true. If omitted or empty, verification and vacuum are skipped.
+         */
+        upgradeOptions: string[];
     }
 
     export interface GetDbSystemsDbSystemCollectionItemCredential {
@@ -327579,6 +328301,87 @@ export namespace oci {
          * Additional information that helps to explain the resource.
          */
         metadata: {[key: string]: string};
+    }
+
+    export interface GetPssInstancesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPssInstancesInstanceCollection {
+        items: outputs.oci.GetPssInstancesInstanceCollectionItem[];
+    }
+
+    export interface GetPssInstancesInstanceCollectionItem {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the identity-domain user that initially administers the PSS instance.
+         */
+        adminIdentityDomainUserId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
+         */
+        compartmentId: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * A filter to return only resources that match the given display name exactly.
+         */
+        displayName: string;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Instance.
+         */
+        id: string;
+        /**
+         * The URL of the identity domain associated with the instance.  Example: `https://idcs-1234567890.identity.oraclecloud.com`
+         */
+        identityDomainUrl: string;
+        /**
+         * The client ID of the identity-domain confidential application used for browser authentication.
+         */
+        identityDomainWebAuthClientId: string;
+        /**
+         * The OCID of the Vault secret containing the identity-domain confidential application's client secret.
+         */
+        identityDomainWebAuthClientSecretVaultId: string;
+        /**
+         * A message that describes the current state of the Instance in more detail. For example, can be used to provide actionable information for a resource in the Failed state.
+         */
+        lifecycleDetails: string;
+        /**
+         * The public IP address for the instance's API gateway.
+         */
+        publicIp: string;
+        /**
+         * The HTTPS endpoint for the instance's PSS API.  Example: `https://example.pss.oraclecloud.com/api/`
+         */
+        serviceEndpoint: string;
+        /**
+         * A filter to return only resources that match the given lifecycle state. The state value is case-insensitive.
+         */
+        state: string;
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.example-key": "example-value"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The date and time the Instance was created, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+         */
+        timeCreated: string;
+        /**
+         * The date and time the Instance was updated, in the format defined by [RFC 3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
+         */
+        timeUpdated: string;
+        /**
+         * The HTTPS endpoint for the instance's PSS user interface.  Example: `https://example.pss.oraclecloud.com/ui/`
+         */
+        uiEndpoint: string;
     }
 
     export interface GetResourceAnalyticsMonitoredRegionsFilter {

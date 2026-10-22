@@ -69,7 +69,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
+        /// (Updatable) Controls the behavior of image replication across regions.  Image replication is enabled by default for DR Protection Groups.  This setting applies to the OKE cluster member in the primary region, and to the standby region  only if the image replication secret is stored in a vault instead of using the default secret.
         /// </summary>
         [Input("replicateImages")]
         public Input<string>? ReplicateImages { get; set; }

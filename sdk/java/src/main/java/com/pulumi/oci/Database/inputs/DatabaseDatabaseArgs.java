@@ -169,14 +169,14 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+     * The display name of the database to be created from the snapshot/database. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
      * 
      */
     @Import(name="dbName")
     private @Nullable Output<String> dbName;
 
     /**
-     * @return The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+     * @return The display name of the database to be created from the snapshot/database. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
      * 
      */
     public Optional<Output<String>> dbName() {
@@ -278,6 +278,36 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * Specifies whether thick or thin database cloning is to be performed.
+     * 
+     */
+    @Import(name="isThinClone")
+    private @Nullable Output<Boolean> isThinClone;
+
+    /**
+     * @return Specifies whether thick or thin database cloning is to be performed.
+     * 
+     */
+    public Optional<Output<Boolean>> isThinClone() {
+        return Optional.ofNullable(this.isThinClone);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+     * 
+     */
+    @Import(name="keyStoreId")
+    private @Nullable Output<String> keyStoreId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+     * 
+     */
+    public Optional<Output<String>> keyStoreId() {
+        return Optional.ofNullable(this.keyStoreId);
+    }
+
+    /**
      * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -293,14 +323,14 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     @Import(name="kmsKeyVersionId")
     private @Nullable Output<String> kmsKeyVersionId;
 
     /**
-     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     * @return The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
      * 
      */
     public Optional<Output<String>> kmsKeyVersionId() {
@@ -428,6 +458,21 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * The source database&#39;s password for SYS, SYSTEM.
+     * 
+     */
+    @Import(name="sourceAdminPassword")
+    private @Nullable Output<String> sourceAdminPassword;
+
+    /**
+     * @return The source database&#39;s password for SYS, SYSTEM.
+     * 
+     */
+    public Optional<Output<String>> sourceAdminPassword() {
+        return Optional.ofNullable(this.sourceAdminPassword);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
      * 
      */
@@ -455,6 +500,36 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
      */
     public Optional<Output<DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs>> sourceEncryptionKeyLocationDetails() {
         return Optional.ofNullable(this.sourceEncryptionKeyLocationDetails);
+    }
+
+    /**
+     * The snapshot [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    @Import(name="sourceSnapshotId")
+    private @Nullable Output<String> sourceSnapshotId;
+
+    /**
+     * @return The snapshot [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
+    public Optional<Output<String>> sourceSnapshotId() {
+        return Optional.ofNullable(this.sourceSnapshotId);
+    }
+
+    /**
+     * The password to open the TDE wallet.
+     * 
+     */
+    @Import(name="sourceTdePassword")
+    private @Nullable Output<String> sourceTdePassword;
+
+    /**
+     * @return The password to open the TDE wallet.
+     * 
+     */
+    public Optional<Output<String>> sourceTdePassword() {
+        return Optional.ofNullable(this.sourceTdePassword);
     }
 
     /**
@@ -587,6 +662,8 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         this.encryptionKeyLocationDetails = $.encryptionKeyLocationDetails;
         this.freeformTags = $.freeformTags;
         this.isActiveDataGuardEnabled = $.isActiveDataGuardEnabled;
+        this.isThinClone = $.isThinClone;
+        this.keyStoreId = $.keyStoreId;
         this.kmsKeyId = $.kmsKeyId;
         this.kmsKeyVersionId = $.kmsKeyVersionId;
         this.managedSoftwareUpdateDetails = $.managedSoftwareUpdateDetails;
@@ -597,8 +674,11 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         this.protectionMode = $.protectionMode;
         this.recoveryApplianceVpcPassword = $.recoveryApplianceVpcPassword;
         this.sidPrefix = $.sidPrefix;
+        this.sourceAdminPassword = $.sourceAdminPassword;
         this.sourceDatabaseId = $.sourceDatabaseId;
         this.sourceEncryptionKeyLocationDetails = $.sourceEncryptionKeyLocationDetails;
+        this.sourceSnapshotId = $.sourceSnapshotId;
+        this.sourceTdePassword = $.sourceTdePassword;
         this.sourceTdeWalletPassword = $.sourceTdeWalletPassword;
         this.storageSizeDetails = $.storageSizeDetails;
         this.tdeWalletPassword = $.tdeWalletPassword;
@@ -824,7 +904,7 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param dbName The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+         * @param dbName The display name of the database to be created from the snapshot/database. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
          * 
          * @return builder
          * 
@@ -835,7 +915,7 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param dbName The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+         * @param dbName The display name of the database to be created from the snapshot/database. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
          * 
          * @return builder
          * 
@@ -975,6 +1055,48 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
+         * @param isThinClone Specifies whether thick or thin database cloning is to be performed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isThinClone(@Nullable Output<Boolean> isThinClone) {
+            $.isThinClone = isThinClone;
+            return this;
+        }
+
+        /**
+         * @param isThinClone Specifies whether thick or thin database cloning is to be performed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isThinClone(Boolean isThinClone) {
+            return isThinClone(Output.of(isThinClone));
+        }
+
+        /**
+         * @param keyStoreId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyStoreId(@Nullable Output<String> keyStoreId) {
+            $.keyStoreId = keyStoreId;
+            return this;
+        }
+
+        /**
+         * @param keyStoreId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder keyStoreId(String keyStoreId) {
+            return keyStoreId(Output.of(keyStoreId));
+        }
+
+        /**
          * @param kmsKeyId The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
          * 
          * @return builder
@@ -996,7 +1118,7 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          * 
          * @return builder
          * 
@@ -1007,7 +1129,7 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         * @param kmsKeyVersionId The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
          * 
          * @return builder
          * 
@@ -1205,6 +1327,27 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
+         * @param sourceAdminPassword The source database&#39;s password for SYS, SYSTEM.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceAdminPassword(@Nullable Output<String> sourceAdminPassword) {
+            $.sourceAdminPassword = sourceAdminPassword;
+            return this;
+        }
+
+        /**
+         * @param sourceAdminPassword The source database&#39;s password for SYS, SYSTEM.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceAdminPassword(String sourceAdminPassword) {
+            return sourceAdminPassword(Output.of(sourceAdminPassword));
+        }
+
+        /**
          * @param sourceDatabaseId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
          * 
          * @return builder
@@ -1244,6 +1387,48 @@ public final class DatabaseDatabaseArgs extends com.pulumi.resources.ResourceArg
          */
         public Builder sourceEncryptionKeyLocationDetails(DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs sourceEncryptionKeyLocationDetails) {
             return sourceEncryptionKeyLocationDetails(Output.of(sourceEncryptionKeyLocationDetails));
+        }
+
+        /**
+         * @param sourceSnapshotId The snapshot [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceSnapshotId(@Nullable Output<String> sourceSnapshotId) {
+            $.sourceSnapshotId = sourceSnapshotId;
+            return this;
+        }
+
+        /**
+         * @param sourceSnapshotId The snapshot [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceSnapshotId(String sourceSnapshotId) {
+            return sourceSnapshotId(Output.of(sourceSnapshotId));
+        }
+
+        /**
+         * @param sourceTdePassword The password to open the TDE wallet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceTdePassword(@Nullable Output<String> sourceTdePassword) {
+            $.sourceTdePassword = sourceTdePassword;
+            return this;
+        }
+
+        /**
+         * @param sourceTdePassword The password to open the TDE wallet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceTdePassword(String sourceTdePassword) {
+            return sourceTdePassword(Output.of(sourceTdePassword));
         }
 
         /**

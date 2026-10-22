@@ -28,7 +28,10 @@ class GetDedicatedAiClustersResult:
     """
     A collection of values returned by getDedicatedAiClusters.
     """
-    def __init__(__self__, compartment_id=None, dedicated_ai_cluster_collections=None, display_name=None, filters=None, id=None, state=None):
+    def __init__(__self__, capacity_reservation_id=None, compartment_id=None, dedicated_ai_cluster_collections=None, display_name=None, filters=None, id=None, state=None):
+        if capacity_reservation_id and not isinstance(capacity_reservation_id, str):
+            raise TypeError("Expected argument 'capacity_reservation_id' to be a str")
+        pulumi.set(__self__, "capacity_reservation_id", capacity_reservation_id)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -47,6 +50,14 @@ class GetDedicatedAiClustersResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationId")
+    def capacity_reservation_id(self) -> Optional[_builtins.str]:
+        """
+        The OCID of the capacity reservation.
+        """
+        return pulumi.get(self, "capacity_reservation_id")
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -100,6 +111,7 @@ class AwaitableGetDedicatedAiClustersResult(GetDedicatedAiClustersResult):
         if False:
             yield self
         return GetDedicatedAiClustersResult(
+            capacity_reservation_id=self.capacity_reservation_id,
             compartment_id=self.compartment_id,
             dedicated_ai_cluster_collections=self.dedicated_ai_cluster_collections,
             display_name=self.display_name,
@@ -108,7 +120,8 @@ class AwaitableGetDedicatedAiClustersResult(GetDedicatedAiClustersResult):
             state=self.state)
 
 
-def get_dedicated_ai_clusters(compartment_id: Optional[_builtins.str] = None,
+def get_dedicated_ai_clusters(capacity_reservation_id: Optional[_builtins.str] = None,
+                              compartment_id: Optional[_builtins.str] = None,
                               display_name: Optional[_builtins.str] = None,
                               filters: Optional[Sequence[Union['GetDedicatedAiClustersFilterArgs', 'GetDedicatedAiClustersFilterArgsDict', 'outputs.GetDedicatedAiClustersFilterResult']]] = None,
                               id: Optional[_builtins.str] = None,
@@ -126,18 +139,21 @@ def get_dedicated_ai_clusters(compartment_id: Optional[_builtins.str] = None,
     import pulumi_oci as oci
 
     test_dedicated_ai_clusters = oci.generativeai.get_dedicated_ai_clusters(compartment_id=compartment_id,
+        capacity_reservation_id=test_capacity_reservation["id"],
         display_name=dedicated_ai_cluster_display_name,
         id=dedicated_ai_cluster_id,
         state=dedicated_ai_cluster_state)
     ```
 
 
+    :param _builtins.str capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
     :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
     :param _builtins.str state: A filter to return only the dedicated AI clusters that their lifecycle state matches the given lifecycle state.
     """
     __args__ = dict()
+    __args__['capacityReservationId'] = capacity_reservation_id
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
@@ -147,13 +163,15 @@ def get_dedicated_ai_clusters(compartment_id: Optional[_builtins.str] = None,
     __ret__ = pulumi.runtime.invoke('oci:GenerativeAi/getDedicatedAiClusters:getDedicatedAiClusters', __args__, opts=opts, typ=GetDedicatedAiClustersResult).value
 
     return AwaitableGetDedicatedAiClustersResult(
+        capacity_reservation_id=pulumi.get(__ret__, 'capacity_reservation_id'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         dedicated_ai_cluster_collections=pulumi.get(__ret__, 'dedicated_ai_cluster_collections'),
         display_name=pulumi.get(__ret__, 'display_name'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         state=pulumi.get(__ret__, 'state'))
-def get_dedicated_ai_clusters_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_dedicated_ai_clusters_output(capacity_reservation_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                     compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                      display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                      filters: pulumi.Input[Optional[Optional[Sequence[Union['GetDedicatedAiClustersFilterArgs', 'GetDedicatedAiClustersFilterArgsDict', 'outputs.GetDedicatedAiClustersFilterResult']]]]] = None,
                                      id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
@@ -171,18 +189,21 @@ def get_dedicated_ai_clusters_output(compartment_id: pulumi.Input[Optional[_buil
     import pulumi_oci as oci
 
     test_dedicated_ai_clusters = oci.generativeai.get_dedicated_ai_clusters(compartment_id=compartment_id,
+        capacity_reservation_id=test_capacity_reservation["id"],
         display_name=dedicated_ai_cluster_display_name,
         id=dedicated_ai_cluster_id,
         state=dedicated_ai_cluster_state)
     ```
 
 
+    :param _builtins.str capacity_reservation_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the capacity reservation.
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
     :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
     :param _builtins.str state: A filter to return only the dedicated AI clusters that their lifecycle state matches the given lifecycle state.
     """
     __args__ = dict()
+    __args__['capacityReservationId'] = capacity_reservation_id
     __args__['compartmentId'] = compartment_id
     __args__['displayName'] = display_name
     __args__['filters'] = filters
@@ -191,6 +212,7 @@ def get_dedicated_ai_clusters_output(compartment_id: pulumi.Input[Optional[_buil
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:GenerativeAi/getDedicatedAiClusters:getDedicatedAiClusters', __args__, opts=opts, typ=GetDedicatedAiClustersResult)
     return __ret__.apply(lambda __response__: GetDedicatedAiClustersResult(
+        capacity_reservation_id=pulumi.get(__response__, 'capacity_reservation_id'),
         compartment_id=pulumi.get(__response__, 'compartment_id'),
         dedicated_ai_cluster_collections=pulumi.get(__response__, 'dedicated_ai_cluster_collections'),
         display_name=pulumi.get(__response__, 'display_name'),

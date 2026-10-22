@@ -16,6 +16,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetDedicatedAiClustersResult {
     /**
+     * @return The OCID of the capacity reservation.
+     * 
+     */
+    private @Nullable String capacityReservationId;
+    /**
      * @return The compartment OCID to create the dedicated AI cluster in.
      * 
      */
@@ -43,6 +48,13 @@ public final class GetDedicatedAiClustersResult {
     private @Nullable String state;
 
     private GetDedicatedAiClustersResult() {}
+    /**
+     * @return The OCID of the capacity reservation.
+     * 
+     */
+    public Optional<String> capacityReservationId() {
+        return Optional.ofNullable(this.capacityReservationId);
+    }
     /**
      * @return The compartment OCID to create the dedicated AI cluster in.
      * 
@@ -91,6 +103,7 @@ public final class GetDedicatedAiClustersResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String capacityReservationId;
         private String compartmentId;
         private List<GetDedicatedAiClustersDedicatedAiClusterCollection> dedicatedAiClusterCollections;
         private @Nullable String displayName;
@@ -100,6 +113,7 @@ public final class GetDedicatedAiClustersResult {
         public Builder() {}
         public Builder(GetDedicatedAiClustersResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.capacityReservationId = defaults.capacityReservationId;
     	      this.compartmentId = defaults.compartmentId;
     	      this.dedicatedAiClusterCollections = defaults.dedicatedAiClusterCollections;
     	      this.displayName = defaults.displayName;
@@ -108,6 +122,12 @@ public final class GetDedicatedAiClustersResult {
     	      this.state = defaults.state;
         }
 
+        @CustomType.Setter
+        public Builder capacityReservationId(@Nullable String capacityReservationId) {
+
+            this.capacityReservationId = capacityReservationId;
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -156,6 +176,7 @@ public final class GetDedicatedAiClustersResult {
         }
         public GetDedicatedAiClustersResult build() {
             final var _resultValue = new GetDedicatedAiClustersResult();
+            _resultValue.capacityReservationId = capacityReservationId;
             _resultValue.compartmentId = compartmentId;
             _resultValue.dedicatedAiClusterCollections = dedicatedAiClusterCollections;
             _resultValue.displayName = displayName;

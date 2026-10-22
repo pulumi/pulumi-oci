@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string Bucket;
         /// <summary>
-        /// The OKE namespace where the config map resides. Example: `NamespaceString5`
+        /// The OKE namespace where the config map resides.  Example: `NamespaceString5`
         /// </summary>
         public readonly string Namespace;
         /// <summary>

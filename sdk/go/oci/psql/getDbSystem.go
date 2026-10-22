@@ -63,6 +63,7 @@ type LookupDbSystemArgs struct {
 type LookupDbSystemResult struct {
 	// The database system administrator username.
 	AdminUsername               string `pulumi:"adminUsername"`
+	AllowMajorVersionUpgrade    bool   `pulumi:"allowMajorVersionUpgrade"`
 	ApplyChangeModeToStandAlone string `pulumi:"applyChangeModeToStandAlone"`
 	ApplyConfig                 string `pulumi:"applyConfig"`
 	// target compartment to place a new backup
@@ -125,7 +126,8 @@ type LookupDbSystemResult struct {
 	// The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated string `pulumi:"timeCreated"`
 	// The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
-	TimeUpdated string `pulumi:"timeUpdated"`
+	TimeUpdated    string   `pulumi:"timeUpdated"`
+	UpgradeOptions []string `pulumi:"upgradeOptions"`
 }
 
 func LookupDbSystemOutput(ctx *pulumi.Context, args LookupDbSystemOutputArgs, opts ...pulumi.InvokeOption) LookupDbSystemResultOutput {
@@ -163,6 +165,10 @@ func (o LookupDbSystemResultOutput) ToLookupDbSystemResultOutputWithContext(ctx 
 // The database system administrator username.
 func (o LookupDbSystemResultOutput) AdminUsername() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.AdminUsername }).(pulumi.StringOutput)
+}
+
+func (o LookupDbSystemResultOutput) AllowMajorVersionUpgrade() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDbSystemResult) bool { return v.AllowMajorVersionUpgrade }).(pulumi.BoolOutput)
 }
 
 func (o LookupDbSystemResultOutput) ApplyChangeModeToStandAlone() pulumi.StringOutput {
@@ -328,6 +334,10 @@ func (o LookupDbSystemResultOutput) TimeCreated() pulumi.StringOutput {
 // The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
 func (o LookupDbSystemResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbSystemResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+func (o LookupDbSystemResultOutput) UpgradeOptions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupDbSystemResult) []string { return v.UpgradeOptions }).(pulumi.StringArrayOutput)
 }
 
 func init() {

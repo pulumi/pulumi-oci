@@ -35,9 +35,7 @@ export interface GetConnectionArgs {
  */
 export interface GetConnectionResult {
     /**
-     * * AMAZON_S3: Access key ID to access the Amazon S3 bucket.
-     * * OCI_OBJECT_STORAGE_S3_API: Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
-     *   Note: Despite the "Id" suffix, this value is not an Oracle Cloud Infrastructure OCID.
+     * Access Key ID from the Oracle Cloud Infrastructure IAM user's Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API.
      */
     readonly accessKeyId: string;
     /**
@@ -57,20 +55,42 @@ export interface GetConnectionResult {
      */
     readonly additionalAttributes: outputs.GoldenGate.GetConnectionAdditionalAttribute[];
     /**
-     * Represents authentication details for an AI Model connection.
+     * Location used to share engine application artifacts.
+     * * DATABRICKS_ENGINE: Location used to share Databricks application artifacts.
+     * * SPARK: Location used to share Spark application artifacts with a remote cluster.
+     */
+    readonly artifactLocations: outputs.GoldenGate.GetConnectionArtifactLocation[];
+    /**
+     * Authentication details for an AI Model or AI Provider connection.
      */
     readonly authDetails: outputs.GoldenGate.GetConnectionAuthDetail[];
+    /**
+     * @deprecated The 'auth_secret' field has been deprecated. Please use 'auth_secret_secret_id' instead.
+     */
+    readonly authSecret: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Spark authentication shared secret. Applicable when authenticationType is SHARED_SECRET. Note: When provided, 'authSecret' field must not be provided.
+     */
+    readonly authSecretSecretId: string;
+    /**
+     * @deprecated The 'auth_token' field has been deprecated. Please use 'auth_token_secret_id' instead.
+     */
+    readonly authToken: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the personal access token is stored. Only applicable for authenticationType == PERSONAL_ACCESS_TOKEN. Note: When provided, 'authToken' field must not be provided.
+     */
+    readonly authTokenSecretId: string;
     /**
      * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
      */
     readonly authenticationMode: string;
     /**
-     * Used authentication mechanism to be provided for the following connection types:
-     * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
-     * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
-     * * DATABRICKS - Required fields by authentication types:
-     * * PERSONAL_ACCESS_TOKEN: username is always 'token', user must enter password
-     * * OAUTH_M2M: user must enter clientId and clientSecret
+     * Authentication mechanism; supported values depend on `connectionType`.
+     * * DATABRICKS: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M.
+     * * DATABRICKS_ENGINE: Use PERSONAL_ACCESS_TOKEN or OAUTH_M2M for the Databricks Engine REST API.
+     * * JAVA_MESSAGE_SERVICE: Authentication type for Java Message Service. The default is NONE.
+     * * SPARK: Use SHARED_SECRET only when the target cluster has `spark.authenticate=true`. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET.
+     * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE: Authentication type supported by the target service.
      */
     readonly authenticationType: string;
     /**
@@ -93,7 +113,7 @@ export interface GetConnectionResult {
     readonly catalogs: outputs.GoldenGate.GetConnectionCatalog[];
     /**
      * * AZURE_DATA_LAKE_STORAGE: Azure client ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
-     * * DATABRICKS: OAuth client id, only applicable for authenticationType == OAUTH_M2M.
+     * * DATABRICKS, DATABRICKS_ENGINE: OAuth client ID, applicable to OAUTH_M2M authentication.
      * * MICROSOFT_FABRIC: Azure client ID of the application. e.g.: 06ecaabf-8b80-4ec8-a0ec-20cbf463703d
      */
     readonly clientId: string;
@@ -103,11 +123,15 @@ export interface GetConnectionResult {
     readonly clientSecret: string;
     /**
      * * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-     * * DATABRICKS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Only applicable for authenticationType == OAUTH_M2M.
+     * * DATABRICKS, DATABRICKS_ENGINE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Applicable to OAUTH_M2M authentication.
      * * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
      *   Note: When provided, 'clientSecret' field must not be provided.
      */
     readonly clientSecretSecretId: string;
+    /**
+     * Spark master URL used for job submission. Required for both SUBMIT and REST submit modes. e.g.: `spark://spark-master.example.com:7077`. High availability can be configured with a comma-separated list, for example `spark://h1.example.com:7077,h2.example.com:7077`.
+     */
+    readonly clusterEndpoint: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Kafka cluster being referenced from Oracle Cloud Infrastructure Streaming with Apache Kafka.
      */
@@ -184,10 +208,7 @@ export interface GetConnectionResult {
      */
     readonly doesUseSecretIds: boolean;
     /**
-     * * AMAZON_S3: The endpoint URL of the Amazon S3 storage service. e.g.: 'https://s3.amazonaws.com'
-     * * AZURE_DATA_LAKE_STORAGE: The Azure Blob Storage endpoint where Iceberg data is stored. e.g.: 'https://my-azure-storage-account.blob.core.windows.net'
-     * * GOOGLE_CLOUD_STORAGE: A legal URL to connect to Google Cloud Storage including scheme, server name and port, if not the default port. Default: https://storage.googleapis.com
-     * * OCI_OBJECT_STORAGE_S3_API: Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
+     * Oracle Cloud Infrastructure Object Storage S3 Compatibility API endpoint URL. Format: "https://<namespace>.compat.objectstorage.<region>.<domain>" Example: "https://mynamespace.compat.objectstorage.us-ashburn-1.oraclecloud.com"
      */
     readonly endpoint: string;
     /**
@@ -250,17 +271,21 @@ export interface GetConnectionResult {
      */
     readonly keyStorePassword: string;
     /**
-     * * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the KeyStore password is stored.
-     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
-     * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl KeyStore password is stored.
-     * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis KeyStore password is stored.
-     *   Note: When provided, 'keyStorePassword' field must not be provided.
+     * Secret OCID containing the key store password.
+     * * SPARK: Applicable when `securityProtocol` is TLS and a client key store is provided. Required when `keyStoreSecretId` is provided.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Password for the target connection's key store.
      */
     readonly keyStorePasswordSecretId: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore' field must not be provided.
+     * Secret OCID containing the key store content.
+     * * SPARK: Applicable when `securityProtocol` is TLS.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Key store file used by the target connection.
      */
     readonly keyStoreSecretId: string;
+    /**
+     * Client key store format used for mutual TLS.
+     */
+    readonly keyStoreType: string;
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
@@ -318,6 +343,10 @@ export interface GetConnectionResult {
      */
     readonly producerProperties: string;
     /**
+     * Optional identifier of the AI Provider Connection backing this AI Model Connection. When provided, it must reference an existing Active connection of type `AI_PROVIDER`. When `providerId` is set, `providerType` and `authDetails` must not be provided on the AI Model Connection, because provider metadata is resolved from the referenced AI Provider Connection. When `providerId` is not set, the AI Model Connection must provide inline provider metadata using `providerType` and `authDetails`.
+     */
+    readonly providerId: string;
+    /**
      * AI Provider type used by the AI Model Connection.
      */
     readonly providerType: string;
@@ -334,9 +363,25 @@ export interface GetConnectionResult {
      */
     readonly region: string;
     /**
+     * @deprecated The 'rest_auth_secret_key' field has been deprecated. Please use 'rest_auth_secret_key_secret_id' instead.
+     */
+    readonly restAuthSecretKey: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the REST submission signing key. Applicable only when submitMode is REST and the cluster enforces REST request signing. This setting is independent of authenticationType. Note: When provided, 'restAuthSecretKey' field must not be provided.
+     */
+    readonly restAuthSecretKeySecretId: string;
+    /**
+     * Spark standalone REST submission base URL. e.g.: 'https://spark-master.example.com:6066' Applicable only and required when submitMode is REST.
+     */
+    readonly restEndpoint: string;
+    /**
      * Controls the network traffic direction to the target: SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected. SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.
      */
     readonly routingMethod: string;
+    /**
+     * Cipher transform used for Spark RPC encryption. Applicable when securityProtocol is AES_RPC.
+     */
+    readonly rpcCipher: string;
     /**
      * @deprecated The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead.
      */
@@ -350,8 +395,7 @@ export interface GetConnectionResult {
      */
     readonly secretAccessKey: string;
     /**
-     * * AMAZON_S3: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key is stored.
-     * * OCI_OBJECT_STORAGE_S3_API: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication is stored.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
      */
     readonly secretAccessKeySecretId: string;
     /**
@@ -359,20 +403,13 @@ export interface GetConnectionResult {
      */
     readonly securityAttributes: {[key: string]: string};
     /**
-     * * DB2: Security protocol for the DB2 database.
-     * * ELASTICSEARCH: Security protocol for Elasticsearch.
-     * * JAVA_MESSAGE_SERVICE: Security protocol for Java Message Service. If not provided, default is PLAIN. Optional until 2024-06-27, in the release after it will be made required.
-     * * KAFKA: Security Type for Kafka.
-     * * MICROSOFT_SQLSERVER: Security Type for Microsoft SQL Server.
-     * * MONGODB: Security Type for MongoDB.
-     * * MYSQL: Security Type for MySQL.
-     * * POSTGRESQL: Security protocol for PostgreSQL.
-     * * REDIS: Security protocol for Redis.
+     * Security protocol; supported values depend on `connectionType`.
+     * * SPARK: PLAINTEXT, TLS, AES_RPC, or SASL_ENCRYPTED. AES_RPC and SASL_ENCRYPTED require SHARED_SECRET authentication.
+     * * Other connection types: Use the protocol supported by the target service.
      */
     readonly securityProtocol: string;
     /**
-     * * ELASTICSEARCH: Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
-     * * REDIS: Comma separated list of Redis server addresses, specified as host:port entries, where :port is optional. If port is not specified, it defaults to 6379. Used for establishing the initial connection to the Redis cluster. Example: `"server1.example.com:6379,server2.example.com:6379"`
+     * Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.  If port is not specified, it defaults to 9200. Used for establishing the initial connection to the Elasticsearch cluster. Example: `"server1.example.com:4000,server2.example.com:4000"`
      */
     readonly servers: string;
     /**
@@ -428,8 +465,7 @@ export interface GetConnectionResult {
      */
     readonly sslClientKeystoredbSecretId: string;
     /**
-     * * MYSQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
-     * * POSTGRESQL: The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). It is not included in GET responses if the `view=COMPACT` query parameter is specified.
+     * The base64 encoded list of certificates revoked by the trusted certificate authorities (Trusted CA). Note: This is an optional property and only applicable if TLS/MTLS option is selected. It is not included in GET responses if the `view=COMPACT` query parameter is specified.
      */
     readonly sslCrl: string;
     /**
@@ -441,20 +477,18 @@ export interface GetConnectionResult {
      */
     readonly sslKeyPassword: string;
     /**
-     * * JAVA_MESSAGE_SERVICE, KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored for the cert inside of the Keystore. In case it differs from the KeyStore password, it should be provided.
-     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
-     *   Note: When provided, 'sslKeyPassword' field must not be provided.
+     * Secret OCID containing the certificate private-key password inside the client key store.
+     * * SPARK: Applicable when `securityProtocol` is TLS and a client key store is provided.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY: Provide it when the private-key password differs from the key store password.
      */
     readonly sslKeyPasswordSecretId: string;
     /**
-     * * MYSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
-     * * POSTGRESQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the private key of the PostgreSQL server. The supported file formats are .pem and .crt.
-     *   Note: When provided, 'sslKey' field must not be provided.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+     * * The content of a .pem or .crt file containing the client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
      */
     readonly sslKeySecretId: string;
     /**
-     * * MYSQL: SSL modes for MySQL.
-     * * POSTGRESQL: SSL modes for PostgreSQL.
+     * SSL mode for PostgreSQL.
      */
     readonly sslMode: string;
     /**
@@ -478,6 +512,10 @@ export interface GetConnectionResult {
      */
     readonly streamPoolId: string;
     /**
+     * Submission channel used to connect to Spark.
+     */
+    readonly submitMode: string;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
      */
     readonly subnetId: string;
@@ -490,7 +528,14 @@ export interface GetConnectionResult {
      */
     readonly systemTags: {[key: string]: string};
     /**
-     * The technology type.
+     * Technology type selected for the connection.
+     * * AI_MODEL: AI Model technology type.
+     * * AI_PROVIDER: AI Provider technology type.
+     * * DATABRICKS_ENGINE: Databricks Engine technology type.
+     * * ICEBERG: Iceberg technology type. APACHE_ICEBERG supports all catalog types; AMAZON_S3_TABLES supports only REST catalog and S3 storage.
+     * * KAFKA_SCHEMA_REGISTRY: Kafka Schema Registry technology type.
+     * * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform Engine technology type.
+     * * SPARK: Spark technology type.
      */
     readonly technologyType: string;
     /**
@@ -530,6 +575,10 @@ export interface GetConnectionResult {
      * * The content of a .pem file containing the client private key (for 2-way SSL). Note: When provided, 'tlsCertificateKeyFile' field must not be provided.
      */
     readonly tlsCertificateKeyFileSecretId: string;
+    /**
+     * TLS protocol negotiated by the Spark client.
+     */
+    readonly tlsProtocol: string;
     readonly triggerRefresh: boolean;
     /**
      * @deprecated The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead.
@@ -540,24 +589,28 @@ export interface GetConnectionResult {
      */
     readonly trustStorePassword: string;
     /**
-     * * JAVA_MESSAGE_SERVICE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the TrustStore password is stored.
-     * * KAFKA: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
-     * * KAFKA_SCHEMA_REGISTRY: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl TrustStore password is stored.
-     * * REDIS: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Redis TrustStore password is stored.
-     *   Note: When provided, 'trustStorePassword' field must not be provided.
+     * Secret OCID containing the trust store password.
+     * * SPARK: Applicable when `securityProtocol` is TLS and a trust store is provided. Required when `trustStoreSecretId` is provided.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Password for the target connection's trust store.
      */
     readonly trustStorePasswordSecretId: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore' field must not be provided.
+     * Secret OCID containing the trust store content.
+     * * SPARK: Applicable when `securityProtocol` is TLS. Provide it when the server certificate is not already trusted by the JVM.
+     * * JAVA_MESSAGE_SERVICE, KAFKA, KAFKA_SCHEMA_REGISTRY, REDIS: Trust store file used by the target connection.
      */
     readonly trustStoreSecretId: string;
+    /**
+     * Trust store format used by the Spark client.
+     */
+    readonly trustStoreType: string;
     /**
      * Kafka Schema Registry URL. e.g.: 'https://server1.us.oracle.com:8081'
      */
     readonly url: string;
     /**
-     * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access Object Storage. The user must have write access to the bucket they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
-     * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who will access the Oracle NoSQL database. The user must have write access to the table they want to connect to. If the user is not provided, backend will default to the user who is calling the API endpoint.
+     * * OCI_OBJECT_STORAGE, ORACLE_AI_DATA_PLATFORM: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses Object Storage. The user must have write access to the bucket. If omitted, the service defaults to the user calling the API.
+     * * ORACLE_NOSQL: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure user who accesses the Oracle NoSQL database. The user must have write access to the table. If omitted, the service defaults to the user calling the API.
      */
     readonly userId: string;
     /**
@@ -576,6 +629,11 @@ export interface GetConnectionResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, 'wallet' field must not be provided.
      */
     readonly walletSecretId: string;
+    /**
+     * * DATABRICKS_ENGINE: Databricks workspace base URL for the REST API, for example `https://<workspace>.cloud.databricks.com/api/2.0/`.
+     * * ORACLE_AI_DATA_PLATFORM_ENGINE: Oracle AI Data Platform workspace URL.
+     */
+    readonly workspaceUrl: string;
 }
 /**
  * This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Golden Gate service.

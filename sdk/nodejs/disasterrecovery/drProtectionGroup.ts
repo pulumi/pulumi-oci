@@ -106,6 +106,17 @@ import * as utilities from "../utilities";
  *         destinationLoadBalancerId: testLoadBalancer.id,
  *         destinationNetworkLoadBalancerId: testNetworkLoadBalancer.id,
  *         destinationSnapshotPolicyId: testPolicy.id,
+ *         drDrillProperties: {
+ *             vnicMappings: [{
+ *                 destinationNsgIdLists: drProtectionGroupMembersDrDrillPropertiesVnicMappingsDestinationNsgIdList,
+ *                 destinationPrimaryPrivateIpAddress: drProtectionGroupMembersDrDrillPropertiesVnicMappingsDestinationPrimaryPrivateIpAddress,
+ *                 destinationPrimaryPrivateIpHostnameLabel: drProtectionGroupMembersDrDrillPropertiesVnicMappingsDestinationPrimaryPrivateIpHostnameLabel,
+ *                 destinationReservedPrimaryPrivateIpId: testPrivateIp.id,
+ *                 destinationReservedPublicIpId: testPublicIp.id,
+ *                 destinationSubnetId: testSubnet.id,
+ *                 sourceVnicId: testVnic.id,
+ *             }],
+ *         },
  *         exportMappings: [{
  *             destinationMountTargetId: testMountTarget.id,
  *             exportId: testExport.id,
@@ -176,6 +187,7 @@ import * as utilities from "../utilities";
  *                 destinationNsgIdLists: drProtectionGroupMembersVnicMappingsDestinationNsgIdList,
  *                 destinationPrimaryPrivateIpAddress: drProtectionGroupMembersVnicMappingsDestinationPrimaryPrivateIpAddress,
  *                 destinationPrimaryPrivateIpHostnameLabel: drProtectionGroupMembersVnicMappingsDestinationPrimaryPrivateIpHostnameLabel,
+ *                 destinationReservedPrimaryPrivateIpId: testPrivateIp.id,
  *                 destinationReservedPublicIpId: testPublicIp.id,
  *                 destinationSubnetId: testSubnet.id,
  *                 sourceVnicId: testVnic.id,

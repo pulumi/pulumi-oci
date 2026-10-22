@@ -32,14 +32,14 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
+     * (Updatable) Deprecated. Use the &#39;destinationReservedPrimaryPrivateIpId&#39; attribute instead of this. The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
      * 
      */
     @Import(name="destinationPrimaryPrivateIpAddress")
     private @Nullable Output<String> destinationPrimaryPrivateIpAddress;
 
     /**
-     * @return (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
+     * @return (Updatable) Deprecated. Use the &#39;destinationReservedPrimaryPrivateIpId&#39; attribute instead of this. The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
      * 
      */
     public Optional<Output<String>> destinationPrimaryPrivateIpAddress() {
@@ -47,18 +47,41 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, &#39;myhost1&#39; in the FQDN &#39;myhost1.subnet123.vcn1.oraclevcn.com&#39;).  Example: `myhost1`
+     * (Updatable) Deprecated. Use the &#39;destinationReservedPrimaryPrivateIpId&#39; attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, &#39;myhost1&#39; in the FQDN &#39;myhost1.subnet123.vcn1.oraclevcn.com&#39;).  Example: `myhost1`
      * 
      */
     @Import(name="destinationPrimaryPrivateIpHostnameLabel")
     private @Nullable Output<String> destinationPrimaryPrivateIpHostnameLabel;
 
     /**
-     * @return (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, &#39;myhost1&#39; in the FQDN &#39;myhost1.subnet123.vcn1.oraclevcn.com&#39;).  Example: `myhost1`
+     * @return (Updatable) Deprecated. Use the &#39;destinationReservedPrimaryPrivateIpId&#39; attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, &#39;myhost1&#39; in the FQDN &#39;myhost1.subnet123.vcn1.oraclevcn.com&#39;).  Example: `myhost1`
      * 
      */
     public Optional<Output<String>> destinationPrimaryPrivateIpHostnameLabel() {
         return Optional.ofNullable(this.destinationPrimaryPrivateIpHostnameLabel);
+    }
+
+    /**
+     * (Updatable) The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+     * 
+     * For legacy compatibility, omit this attribute and use either the legacy explicit private-IP fields or the freeform tag, but not both configuration mechanisms for the same source VNIC.
+     * 
+     * Example: `ocid1.privateip.oc1..uniqueID`
+     * 
+     */
+    @Import(name="destinationReservedPrimaryPrivateIpId")
+    private @Nullable Output<String> destinationReservedPrimaryPrivateIpId;
+
+    /**
+     * @return (Updatable) The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+     * 
+     * For legacy compatibility, omit this attribute and use either the legacy explicit private-IP fields or the freeform tag, but not both configuration mechanisms for the same source VNIC.
+     * 
+     * Example: `ocid1.privateip.oc1..uniqueID`
+     * 
+     */
+    public Optional<Output<String>> destinationReservedPrimaryPrivateIpId() {
+        return Optional.ofNullable(this.destinationReservedPrimaryPrivateIpId);
     }
 
     /**
@@ -112,6 +135,7 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
         this.destinationNsgIdLists = $.destinationNsgIdLists;
         this.destinationPrimaryPrivateIpAddress = $.destinationPrimaryPrivateIpAddress;
         this.destinationPrimaryPrivateIpHostnameLabel = $.destinationPrimaryPrivateIpHostnameLabel;
+        this.destinationReservedPrimaryPrivateIpId = $.destinationReservedPrimaryPrivateIpId;
         this.destinationReservedPublicIpId = $.destinationReservedPublicIpId;
         this.destinationSubnetId = $.destinationSubnetId;
         this.sourceVnicId = $.sourceVnicId;
@@ -167,7 +191,7 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
         }
 
         /**
-         * @param destinationPrimaryPrivateIpAddress (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
+         * @param destinationPrimaryPrivateIpAddress (Updatable) Deprecated. Use the &#39;destinationReservedPrimaryPrivateIpId&#39; attribute instead of this. The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
          * 
          * @return builder
          * 
@@ -178,7 +202,7 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
         }
 
         /**
-         * @param destinationPrimaryPrivateIpAddress (Updatable) The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
+         * @param destinationPrimaryPrivateIpAddress (Updatable) Deprecated. Use the &#39;destinationReservedPrimaryPrivateIpId&#39; attribute instead of this. The primary private IP address to be assigned to the source VNIC in the destination subnet.  This IP address must belong to the destination subnet.  Example: `10.0.3.3`
          * 
          * @return builder
          * 
@@ -188,7 +212,7 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
         }
 
         /**
-         * @param destinationPrimaryPrivateIpHostnameLabel (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, &#39;myhost1&#39; in the FQDN &#39;myhost1.subnet123.vcn1.oraclevcn.com&#39;).  Example: `myhost1`
+         * @param destinationPrimaryPrivateIpHostnameLabel (Updatable) Deprecated. Use the &#39;destinationReservedPrimaryPrivateIpId&#39; attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, &#39;myhost1&#39; in the FQDN &#39;myhost1.subnet123.vcn1.oraclevcn.com&#39;).  Example: `myhost1`
          * 
          * @return builder
          * 
@@ -199,13 +223,42 @@ public final class DrProtectionGroupMemberVnicMappingArgs extends com.pulumi.res
         }
 
         /**
-         * @param destinationPrimaryPrivateIpHostnameLabel (Updatable) The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, &#39;myhost1&#39; in the FQDN &#39;myhost1.subnet123.vcn1.oraclevcn.com&#39;).  Example: `myhost1`
+         * @param destinationPrimaryPrivateIpHostnameLabel (Updatable) Deprecated. Use the &#39;destinationReservedPrimaryPrivateIpId&#39; attribute instead of this. The hostname label to be assigned in the destination subnet for the primary private IP of the source VNIC. This label is the hostname portion of the private IP&#39;s fully qualified domain name (FQDN)  (for example, &#39;myhost1&#39; in the FQDN &#39;myhost1.subnet123.vcn1.oraclevcn.com&#39;).  Example: `myhost1`
          * 
          * @return builder
          * 
          */
         public Builder destinationPrimaryPrivateIpHostnameLabel(String destinationPrimaryPrivateIpHostnameLabel) {
             return destinationPrimaryPrivateIpHostnameLabel(Output.of(destinationPrimaryPrivateIpHostnameLabel));
+        }
+
+        /**
+         * @param destinationReservedPrimaryPrivateIpId (Updatable) The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+         * 
+         * For legacy compatibility, omit this attribute and use either the legacy explicit private-IP fields or the freeform tag, but not both configuration mechanisms for the same source VNIC.
+         * 
+         * Example: `ocid1.privateip.oc1..uniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder destinationReservedPrimaryPrivateIpId(@Nullable Output<String> destinationReservedPrimaryPrivateIpId) {
+            $.destinationReservedPrimaryPrivateIpId = destinationReservedPrimaryPrivateIpId;
+            return this;
+        }
+
+        /**
+         * @param destinationReservedPrimaryPrivateIpId (Updatable) The OCID of the reserved private IP (IPv4) to be assigned to the compute instance in the destination region. Do not specify this attribute together with `destinationPrimaryPrivateIpAddress`, `destinationPrimaryPrivateIpHostnameLabel`, or the `FsdrDestinationReservedPrimaryPrivateIpId` freeform tag on the source VNIC.
+         * 
+         * For legacy compatibility, omit this attribute and use either the legacy explicit private-IP fields or the freeform tag, but not both configuration mechanisms for the same source VNIC.
+         * 
+         * Example: `ocid1.privateip.oc1..uniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder destinationReservedPrimaryPrivateIpId(String destinationReservedPrimaryPrivateIpId) {
+            return destinationReservedPrimaryPrivateIpId(Output.of(destinationReservedPrimaryPrivateIpId));
         }
 
         /**

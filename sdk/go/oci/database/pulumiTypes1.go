@@ -11838,6 +11838,9 @@ type GetDatabaseDatabase struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled bool `pulumi:"isActiveDataGuardEnabled"`
+	IsThinClone              bool `pulumi:"isThinClone"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+	KeyStoreId string `pulumi:"keyStoreId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
@@ -11856,8 +11859,11 @@ type GetDatabaseDatabase struct {
 	RecoveryApplianceVpcPassword string `pulumi:"recoveryApplianceVpcPassword"`
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
 	SidPrefix                          string                                                 `pulumi:"sidPrefix"`
+	SourceAdminPassword                string                                                 `pulumi:"sourceAdminPassword"`
 	SourceDatabaseId                   string                                                 `pulumi:"sourceDatabaseId"`
 	SourceEncryptionKeyLocationDetails []GetDatabaseDatabaseSourceEncryptionKeyLocationDetail `pulumi:"sourceEncryptionKeyLocationDetails"`
+	SourceSnapshotId                   string                                                 `pulumi:"sourceSnapshotId"`
+	SourceTdePassword                  string                                                 `pulumi:"sourceTdePassword"`
 	SourceTdeWalletPassword            string                                                 `pulumi:"sourceTdeWalletPassword"`
 	// The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
 	StorageSizeDetails              []GetDatabaseDatabaseStorageSizeDetail `pulumi:"storageSizeDetails"`
@@ -11913,6 +11919,9 @@ type GetDatabaseDatabaseArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled pulumi.BoolInput `pulumi:"isActiveDataGuardEnabled"`
+	IsThinClone              pulumi.BoolInput `pulumi:"isThinClone"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+	KeyStoreId pulumi.StringInput `pulumi:"keyStoreId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
@@ -11931,8 +11940,11 @@ type GetDatabaseDatabaseArgs struct {
 	RecoveryApplianceVpcPassword pulumi.StringInput `pulumi:"recoveryApplianceVpcPassword"`
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
 	SidPrefix                          pulumi.StringInput                                             `pulumi:"sidPrefix"`
+	SourceAdminPassword                pulumi.StringInput                                             `pulumi:"sourceAdminPassword"`
 	SourceDatabaseId                   pulumi.StringInput                                             `pulumi:"sourceDatabaseId"`
 	SourceEncryptionKeyLocationDetails GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayInput `pulumi:"sourceEncryptionKeyLocationDetails"`
+	SourceSnapshotId                   pulumi.StringInput                                             `pulumi:"sourceSnapshotId"`
+	SourceTdePassword                  pulumi.StringInput                                             `pulumi:"sourceTdePassword"`
 	SourceTdeWalletPassword            pulumi.StringInput                                             `pulumi:"sourceTdeWalletPassword"`
 	// The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
 	StorageSizeDetails              GetDatabaseDatabaseStorageSizeDetailArrayInput `pulumi:"storageSizeDetails"`
@@ -12079,6 +12091,15 @@ func (o GetDatabaseDatabaseOutput) IsActiveDataGuardEnabled() pulumi.BoolOutput 
 	return o.ApplyT(func(v GetDatabaseDatabase) bool { return v.IsActiveDataGuardEnabled }).(pulumi.BoolOutput)
 }
 
+func (o GetDatabaseDatabaseOutput) IsThinClone() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) bool { return v.IsThinClone }).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+func (o GetDatabaseDatabaseOutput) KeyStoreId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.KeyStoreId }).(pulumi.StringOutput)
+}
+
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 func (o GetDatabaseDatabaseOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.KmsKeyId }).(pulumi.StringOutput)
@@ -12129,6 +12150,10 @@ func (o GetDatabaseDatabaseOutput) SidPrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.SidPrefix }).(pulumi.StringOutput)
 }
 
+func (o GetDatabaseDatabaseOutput) SourceAdminPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.SourceAdminPassword }).(pulumi.StringOutput)
+}
+
 func (o GetDatabaseDatabaseOutput) SourceDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.SourceDatabaseId }).(pulumi.StringOutput)
 }
@@ -12137,6 +12162,14 @@ func (o GetDatabaseDatabaseOutput) SourceEncryptionKeyLocationDetails() GetDatab
 	return o.ApplyT(func(v GetDatabaseDatabase) []GetDatabaseDatabaseSourceEncryptionKeyLocationDetail {
 		return v.SourceEncryptionKeyLocationDetails
 	}).(GetDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput)
+}
+
+func (o GetDatabaseDatabaseOutput) SourceSnapshotId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.SourceSnapshotId }).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseDatabaseOutput) SourceTdePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseDatabase) string { return v.SourceTdePassword }).(pulumi.StringOutput)
 }
 
 func (o GetDatabaseDatabaseOutput) SourceTdeWalletPassword() pulumi.StringOutput {
@@ -19122,6 +19155,398 @@ func (o GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutp
 	}).(GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput)
 }
 
+type GetDatabaseSnapshotsDatabaseSnapshotCollection struct {
+	Items []GetDatabaseSnapshotsDatabaseSnapshotCollectionItem `pulumi:"items"`
+}
+
+// GetDatabaseSnapshotsDatabaseSnapshotCollectionInput is an input type that accepts GetDatabaseSnapshotsDatabaseSnapshotCollectionArgs and GetDatabaseSnapshotsDatabaseSnapshotCollectionOutput values.
+// You can construct a concrete instance of `GetDatabaseSnapshotsDatabaseSnapshotCollectionInput` via:
+//
+//	GetDatabaseSnapshotsDatabaseSnapshotCollectionArgs{...}
+type GetDatabaseSnapshotsDatabaseSnapshotCollectionInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSnapshotsDatabaseSnapshotCollectionOutput() GetDatabaseSnapshotsDatabaseSnapshotCollectionOutput
+	ToGetDatabaseSnapshotsDatabaseSnapshotCollectionOutputWithContext(context.Context) GetDatabaseSnapshotsDatabaseSnapshotCollectionOutput
+}
+
+type GetDatabaseSnapshotsDatabaseSnapshotCollectionArgs struct {
+	Items GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetDatabaseSnapshotsDatabaseSnapshotCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSnapshotsDatabaseSnapshotCollection)(nil)).Elem()
+}
+
+func (i GetDatabaseSnapshotsDatabaseSnapshotCollectionArgs) ToGetDatabaseSnapshotsDatabaseSnapshotCollectionOutput() GetDatabaseSnapshotsDatabaseSnapshotCollectionOutput {
+	return i.ToGetDatabaseSnapshotsDatabaseSnapshotCollectionOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSnapshotsDatabaseSnapshotCollectionArgs) ToGetDatabaseSnapshotsDatabaseSnapshotCollectionOutputWithContext(ctx context.Context) GetDatabaseSnapshotsDatabaseSnapshotCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSnapshotsDatabaseSnapshotCollectionOutput)
+}
+
+// GetDatabaseSnapshotsDatabaseSnapshotCollectionArrayInput is an input type that accepts GetDatabaseSnapshotsDatabaseSnapshotCollectionArray and GetDatabaseSnapshotsDatabaseSnapshotCollectionArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseSnapshotsDatabaseSnapshotCollectionArrayInput` via:
+//
+//	GetDatabaseSnapshotsDatabaseSnapshotCollectionArray{ GetDatabaseSnapshotsDatabaseSnapshotCollectionArgs{...} }
+type GetDatabaseSnapshotsDatabaseSnapshotCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSnapshotsDatabaseSnapshotCollectionArrayOutput() GetDatabaseSnapshotsDatabaseSnapshotCollectionArrayOutput
+	ToGetDatabaseSnapshotsDatabaseSnapshotCollectionArrayOutputWithContext(context.Context) GetDatabaseSnapshotsDatabaseSnapshotCollectionArrayOutput
+}
+
+type GetDatabaseSnapshotsDatabaseSnapshotCollectionArray []GetDatabaseSnapshotsDatabaseSnapshotCollectionInput
+
+func (GetDatabaseSnapshotsDatabaseSnapshotCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSnapshotsDatabaseSnapshotCollection)(nil)).Elem()
+}
+
+func (i GetDatabaseSnapshotsDatabaseSnapshotCollectionArray) ToGetDatabaseSnapshotsDatabaseSnapshotCollectionArrayOutput() GetDatabaseSnapshotsDatabaseSnapshotCollectionArrayOutput {
+	return i.ToGetDatabaseSnapshotsDatabaseSnapshotCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSnapshotsDatabaseSnapshotCollectionArray) ToGetDatabaseSnapshotsDatabaseSnapshotCollectionArrayOutputWithContext(ctx context.Context) GetDatabaseSnapshotsDatabaseSnapshotCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSnapshotsDatabaseSnapshotCollectionArrayOutput)
+}
+
+type GetDatabaseSnapshotsDatabaseSnapshotCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSnapshotsDatabaseSnapshotCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSnapshotsDatabaseSnapshotCollection)(nil)).Elem()
+}
+
+func (o GetDatabaseSnapshotsDatabaseSnapshotCollectionOutput) ToGetDatabaseSnapshotsDatabaseSnapshotCollectionOutput() GetDatabaseSnapshotsDatabaseSnapshotCollectionOutput {
+	return o
+}
+
+func (o GetDatabaseSnapshotsDatabaseSnapshotCollectionOutput) ToGetDatabaseSnapshotsDatabaseSnapshotCollectionOutputWithContext(ctx context.Context) GetDatabaseSnapshotsDatabaseSnapshotCollectionOutput {
+	return o
+}
+
+func (o GetDatabaseSnapshotsDatabaseSnapshotCollectionOutput) Items() GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetDatabaseSnapshotsDatabaseSnapshotCollection) []GetDatabaseSnapshotsDatabaseSnapshotCollectionItem {
+		return v.Items
+	}).(GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayOutput)
+}
+
+type GetDatabaseSnapshotsDatabaseSnapshotCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSnapshotsDatabaseSnapshotCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSnapshotsDatabaseSnapshotCollection)(nil)).Elem()
+}
+
+func (o GetDatabaseSnapshotsDatabaseSnapshotCollectionArrayOutput) ToGetDatabaseSnapshotsDatabaseSnapshotCollectionArrayOutput() GetDatabaseSnapshotsDatabaseSnapshotCollectionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSnapshotsDatabaseSnapshotCollectionArrayOutput) ToGetDatabaseSnapshotsDatabaseSnapshotCollectionArrayOutputWithContext(ctx context.Context) GetDatabaseSnapshotsDatabaseSnapshotCollectionArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSnapshotsDatabaseSnapshotCollectionArrayOutput) Index(i pulumi.IntInput) GetDatabaseSnapshotsDatabaseSnapshotCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseSnapshotsDatabaseSnapshotCollection {
+		return vs[0].([]GetDatabaseSnapshotsDatabaseSnapshotCollection)[vs[1].(int)]
+	}).(GetDatabaseSnapshotsDatabaseSnapshotCollectionOutput)
+}
+
+type GetDatabaseSnapshotsDatabaseSnapshotCollectionItem struct {
+	// A filter to return only Exadata Database Snapshots that match the given VM cluster.
+	ClusterId string `pulumi:"clusterId"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// A filter to return only Exadata Database Snapshots that match the given Database Id.
+	DatabaseId string `pulumi:"databaseId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Snapshot.
+	Id string `pulumi:"id"`
+	// Additional information about the current lifecycle state of the Exadata Database Snapshot.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the entire name given. The match is not case sensitive.
+	Name string `pulumi:"name"`
+	// A filter to return only Exadata Database Snapshots that match the given lifecycle state exactly.
+	State string `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time that the Exadata Database Snapshot was created, as expressed in RFC 3339 format. For example: 2023-06-27T21:10:29Z
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetDatabaseSnapshotsDatabaseSnapshotCollectionItemInput is an input type that accepts GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArgs and GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput values.
+// You can construct a concrete instance of `GetDatabaseSnapshotsDatabaseSnapshotCollectionItemInput` via:
+//
+//	GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArgs{...}
+type GetDatabaseSnapshotsDatabaseSnapshotCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput() GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput
+	ToGetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutputWithContext(context.Context) GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput
+}
+
+type GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArgs struct {
+	// A filter to return only Exadata Database Snapshots that match the given VM cluster.
+	ClusterId pulumi.StringInput `pulumi:"clusterId"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// A filter to return only Exadata Database Snapshots that match the given Database Id.
+	DatabaseId pulumi.StringInput `pulumi:"databaseId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Snapshot.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Additional information about the current lifecycle state of the Exadata Database Snapshot.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the entire name given. The match is not case sensitive.
+	Name pulumi.StringInput `pulumi:"name"`
+	// A filter to return only Exadata Database Snapshots that match the given lifecycle state exactly.
+	State pulumi.StringInput `pulumi:"state"`
+	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time that the Exadata Database Snapshot was created, as expressed in RFC 3339 format. For example: 2023-06-27T21:10:29Z
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSnapshotsDatabaseSnapshotCollectionItem)(nil)).Elem()
+}
+
+func (i GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArgs) ToGetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput() GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput {
+	return i.ToGetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArgs) ToGetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutputWithContext(ctx context.Context) GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput)
+}
+
+// GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayInput is an input type that accepts GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArray and GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayInput` via:
+//
+//	GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArray{ GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArgs{...} }
+type GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayOutput() GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayOutput
+	ToGetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayOutputWithContext(context.Context) GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayOutput
+}
+
+type GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArray []GetDatabaseSnapshotsDatabaseSnapshotCollectionItemInput
+
+func (GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSnapshotsDatabaseSnapshotCollectionItem)(nil)).Elem()
+}
+
+func (i GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArray) ToGetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayOutput() GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayOutput {
+	return i.ToGetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArray) ToGetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayOutputWithContext(ctx context.Context) GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayOutput)
+}
+
+type GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSnapshotsDatabaseSnapshotCollectionItem)(nil)).Elem()
+}
+
+func (o GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput) ToGetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput() GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput {
+	return o
+}
+
+func (o GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput) ToGetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutputWithContext(ctx context.Context) GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput {
+	return o
+}
+
+// A filter to return only Exadata Database Snapshots that match the given VM cluster.
+func (o GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput) ClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSnapshotsDatabaseSnapshotCollectionItem) string { return v.ClusterId }).(pulumi.StringOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSnapshotsDatabaseSnapshotCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// A filter to return only Exadata Database Snapshots that match the given Database Id.
+func (o GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput) DatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSnapshotsDatabaseSnapshotCollectionItem) string { return v.DatabaseId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseSnapshotsDatabaseSnapshotCollectionItem) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseSnapshotsDatabaseSnapshotCollectionItem) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Snapshot.
+func (o GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSnapshotsDatabaseSnapshotCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state of the Exadata Database Snapshot.
+func (o GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSnapshotsDatabaseSnapshotCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire name given. The match is not case sensitive.
+func (o GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSnapshotsDatabaseSnapshotCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// A filter to return only Exadata Database Snapshots that match the given lifecycle state exactly.
+func (o GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSnapshotsDatabaseSnapshotCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetDatabaseSnapshotsDatabaseSnapshotCollectionItem) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time that the Exadata Database Snapshot was created, as expressed in RFC 3339 format. For example: 2023-06-27T21:10:29Z
+func (o GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSnapshotsDatabaseSnapshotCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSnapshotsDatabaseSnapshotCollectionItem)(nil)).Elem()
+}
+
+func (o GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayOutput) ToGetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayOutput() GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayOutput) ToGetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayOutputWithContext(ctx context.Context) GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayOutput) Index(i pulumi.IntInput) GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseSnapshotsDatabaseSnapshotCollectionItem {
+		return vs[0].([]GetDatabaseSnapshotsDatabaseSnapshotCollectionItem)[vs[1].(int)]
+	}).(GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput)
+}
+
+type GetDatabaseSnapshotsFilter struct {
+	// A filter to return only resources that match the entire name given. The match is not case sensitive.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetDatabaseSnapshotsFilterInput is an input type that accepts GetDatabaseSnapshotsFilterArgs and GetDatabaseSnapshotsFilterOutput values.
+// You can construct a concrete instance of `GetDatabaseSnapshotsFilterInput` via:
+//
+//	GetDatabaseSnapshotsFilterArgs{...}
+type GetDatabaseSnapshotsFilterInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSnapshotsFilterOutput() GetDatabaseSnapshotsFilterOutput
+	ToGetDatabaseSnapshotsFilterOutputWithContext(context.Context) GetDatabaseSnapshotsFilterOutput
+}
+
+type GetDatabaseSnapshotsFilterArgs struct {
+	// A filter to return only resources that match the entire name given. The match is not case sensitive.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetDatabaseSnapshotsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSnapshotsFilter)(nil)).Elem()
+}
+
+func (i GetDatabaseSnapshotsFilterArgs) ToGetDatabaseSnapshotsFilterOutput() GetDatabaseSnapshotsFilterOutput {
+	return i.ToGetDatabaseSnapshotsFilterOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSnapshotsFilterArgs) ToGetDatabaseSnapshotsFilterOutputWithContext(ctx context.Context) GetDatabaseSnapshotsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSnapshotsFilterOutput)
+}
+
+// GetDatabaseSnapshotsFilterArrayInput is an input type that accepts GetDatabaseSnapshotsFilterArray and GetDatabaseSnapshotsFilterArrayOutput values.
+// You can construct a concrete instance of `GetDatabaseSnapshotsFilterArrayInput` via:
+//
+//	GetDatabaseSnapshotsFilterArray{ GetDatabaseSnapshotsFilterArgs{...} }
+type GetDatabaseSnapshotsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetDatabaseSnapshotsFilterArrayOutput() GetDatabaseSnapshotsFilterArrayOutput
+	ToGetDatabaseSnapshotsFilterArrayOutputWithContext(context.Context) GetDatabaseSnapshotsFilterArrayOutput
+}
+
+type GetDatabaseSnapshotsFilterArray []GetDatabaseSnapshotsFilterInput
+
+func (GetDatabaseSnapshotsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSnapshotsFilter)(nil)).Elem()
+}
+
+func (i GetDatabaseSnapshotsFilterArray) ToGetDatabaseSnapshotsFilterArrayOutput() GetDatabaseSnapshotsFilterArrayOutput {
+	return i.ToGetDatabaseSnapshotsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetDatabaseSnapshotsFilterArray) ToGetDatabaseSnapshotsFilterArrayOutputWithContext(ctx context.Context) GetDatabaseSnapshotsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDatabaseSnapshotsFilterArrayOutput)
+}
+
+type GetDatabaseSnapshotsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSnapshotsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDatabaseSnapshotsFilter)(nil)).Elem()
+}
+
+func (o GetDatabaseSnapshotsFilterOutput) ToGetDatabaseSnapshotsFilterOutput() GetDatabaseSnapshotsFilterOutput {
+	return o
+}
+
+func (o GetDatabaseSnapshotsFilterOutput) ToGetDatabaseSnapshotsFilterOutputWithContext(ctx context.Context) GetDatabaseSnapshotsFilterOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire name given. The match is not case sensitive.
+func (o GetDatabaseSnapshotsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabaseSnapshotsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetDatabaseSnapshotsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetDatabaseSnapshotsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetDatabaseSnapshotsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetDatabaseSnapshotsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetDatabaseSnapshotsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDatabaseSnapshotsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDatabaseSnapshotsFilter)(nil)).Elem()
+}
+
+func (o GetDatabaseSnapshotsFilterArrayOutput) ToGetDatabaseSnapshotsFilterArrayOutput() GetDatabaseSnapshotsFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSnapshotsFilterArrayOutput) ToGetDatabaseSnapshotsFilterArrayOutputWithContext(ctx context.Context) GetDatabaseSnapshotsFilterArrayOutput {
+	return o
+}
+
+func (o GetDatabaseSnapshotsFilterArrayOutput) Index(i pulumi.IntInput) GetDatabaseSnapshotsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDatabaseSnapshotsFilter {
+		return vs[0].([]GetDatabaseSnapshotsFilter)[vs[1].(int)]
+	}).(GetDatabaseSnapshotsFilterOutput)
+}
+
 type GetDatabaseSoftwareImagesDatabaseSoftwareImage struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`
@@ -20887,6 +21312,9 @@ type GetDatabasesDatabaseDatabase struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled bool `pulumi:"isActiveDataGuardEnabled"`
+	IsThinClone              bool `pulumi:"isThinClone"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+	KeyStoreId string `pulumi:"keyStoreId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId string `pulumi:"kmsKeyId"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
@@ -20904,8 +21332,11 @@ type GetDatabasesDatabaseDatabase struct {
 	RecoveryApplianceVpcPassword string `pulumi:"recoveryApplianceVpcPassword"`
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
 	SidPrefix                          string                                                          `pulumi:"sidPrefix"`
+	SourceAdminPassword                string                                                          `pulumi:"sourceAdminPassword"`
 	SourceDatabaseId                   string                                                          `pulumi:"sourceDatabaseId"`
 	SourceEncryptionKeyLocationDetails []GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail `pulumi:"sourceEncryptionKeyLocationDetails"`
+	SourceSnapshotId                   string                                                          `pulumi:"sourceSnapshotId"`
+	SourceTdePassword                  string                                                          `pulumi:"sourceTdePassword"`
 	SourceTdeWalletPassword            string                                                          `pulumi:"sourceTdeWalletPassword"`
 	// The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
 	StorageSizeDetails              []GetDatabasesDatabaseDatabaseStorageSizeDetail `pulumi:"storageSizeDetails"`
@@ -20961,6 +21392,9 @@ type GetDatabasesDatabaseDatabaseArgs struct {
 	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
 	// True if active Data Guard is enabled.
 	IsActiveDataGuardEnabled pulumi.BoolInput `pulumi:"isActiveDataGuardEnabled"`
+	IsThinClone              pulumi.BoolInput `pulumi:"isThinClone"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+	KeyStoreId pulumi.StringInput `pulumi:"keyStoreId"`
 	// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
 	// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
@@ -20978,8 +21412,11 @@ type GetDatabasesDatabaseDatabaseArgs struct {
 	RecoveryApplianceVpcPassword pulumi.StringInput `pulumi:"recoveryApplianceVpcPassword"`
 	// Specifies a prefix for the `Oracle SID` of the database to be created.
 	SidPrefix                          pulumi.StringInput                                                      `pulumi:"sidPrefix"`
+	SourceAdminPassword                pulumi.StringInput                                                      `pulumi:"sourceAdminPassword"`
 	SourceDatabaseId                   pulumi.StringInput                                                      `pulumi:"sourceDatabaseId"`
 	SourceEncryptionKeyLocationDetails GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayInput `pulumi:"sourceEncryptionKeyLocationDetails"`
+	SourceSnapshotId                   pulumi.StringInput                                                      `pulumi:"sourceSnapshotId"`
+	SourceTdePassword                  pulumi.StringInput                                                      `pulumi:"sourceTdePassword"`
 	SourceTdeWalletPassword            pulumi.StringInput                                                      `pulumi:"sourceTdeWalletPassword"`
 	// The database storage size details. This database option is supported for the Exadata VM cluster on Exascale Infrastructure.
 	StorageSizeDetails              GetDatabasesDatabaseDatabaseStorageSizeDetailArrayInput `pulumi:"storageSizeDetails"`
@@ -21128,6 +21565,15 @@ func (o GetDatabasesDatabaseDatabaseOutput) IsActiveDataGuardEnabled() pulumi.Bo
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabase) bool { return v.IsActiveDataGuardEnabled }).(pulumi.BoolOutput)
 }
 
+func (o GetDatabasesDatabaseDatabaseOutput) IsThinClone() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabase) bool { return v.IsThinClone }).(pulumi.BoolOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+func (o GetDatabasesDatabaseDatabaseOutput) KeyStoreId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabase) string { return v.KeyStoreId }).(pulumi.StringOutput)
+}
+
 // The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
 func (o GetDatabasesDatabaseDatabaseOutput) KmsKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabase) string { return v.KmsKeyId }).(pulumi.StringOutput)
@@ -21177,6 +21623,10 @@ func (o GetDatabasesDatabaseDatabaseOutput) SidPrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabase) string { return v.SidPrefix }).(pulumi.StringOutput)
 }
 
+func (o GetDatabasesDatabaseDatabaseOutput) SourceAdminPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabase) string { return v.SourceAdminPassword }).(pulumi.StringOutput)
+}
+
 func (o GetDatabasesDatabaseDatabaseOutput) SourceDatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabase) string { return v.SourceDatabaseId }).(pulumi.StringOutput)
 }
@@ -21185,6 +21635,14 @@ func (o GetDatabasesDatabaseDatabaseOutput) SourceEncryptionKeyLocationDetails()
 	return o.ApplyT(func(v GetDatabasesDatabaseDatabase) []GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetail {
 		return v.SourceEncryptionKeyLocationDetails
 	}).(GetDatabasesDatabaseDatabaseSourceEncryptionKeyLocationDetailArrayOutput)
+}
+
+func (o GetDatabasesDatabaseDatabaseOutput) SourceSnapshotId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabase) string { return v.SourceSnapshotId }).(pulumi.StringOutput)
+}
+
+func (o GetDatabasesDatabaseDatabaseOutput) SourceTdePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDatabasesDatabaseDatabase) string { return v.SourceTdePassword }).(pulumi.StringOutput)
 }
 
 func (o GetDatabasesDatabaseDatabaseOutput) SourceTdeWalletPassword() pulumi.StringOutput {
@@ -63164,6 +63622,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasePdbConversionHistoryEntriesFilterArrayInput)(nil)).Elem(), GetDatabasePdbConversionHistoryEntriesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryInput)(nil)).Elem(), GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayInput)(nil)).Elem(), GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSnapshotsDatabaseSnapshotCollectionInput)(nil)).Elem(), GetDatabaseSnapshotsDatabaseSnapshotCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSnapshotsDatabaseSnapshotCollectionArrayInput)(nil)).Elem(), GetDatabaseSnapshotsDatabaseSnapshotCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSnapshotsDatabaseSnapshotCollectionItemInput)(nil)).Elem(), GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayInput)(nil)).Elem(), GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSnapshotsFilterInput)(nil)).Elem(), GetDatabaseSnapshotsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSnapshotsFilterArrayInput)(nil)).Elem(), GetDatabaseSnapshotsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSoftwareImagesDatabaseSoftwareImageInput)(nil)).Elem(), GetDatabaseSoftwareImagesDatabaseSoftwareImageArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSoftwareImagesDatabaseSoftwareImageArrayInput)(nil)).Elem(), GetDatabaseSoftwareImagesDatabaseSoftwareImageArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseSoftwareImagesFilterInput)(nil)).Elem(), GetDatabaseSoftwareImagesFilterArgs{})
@@ -64020,6 +64484,12 @@ func init() {
 	pulumi.RegisterOutputType(GetDatabasePdbConversionHistoryEntriesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryOutput{})
 	pulumi.RegisterOutputType(GetDatabasePdbConversionHistoryEntriesPdbConversionHistoryEntryArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSnapshotsDatabaseSnapshotCollectionOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSnapshotsDatabaseSnapshotCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSnapshotsDatabaseSnapshotCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSnapshotsDatabaseSnapshotCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSnapshotsFilterOutput{})
+	pulumi.RegisterOutputType(GetDatabaseSnapshotsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseSoftwareImagesDatabaseSoftwareImageOutput{})
 	pulumi.RegisterOutputType(GetDatabaseSoftwareImagesDatabaseSoftwareImageArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseSoftwareImagesFilterOutput{})

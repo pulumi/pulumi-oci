@@ -770,6 +770,16 @@ export const getPsaPsaWorkRequests: typeof import("./getPsaPsaWorkRequests").get
 export const getPsaPsaWorkRequestsOutput: typeof import("./getPsaPsaWorkRequests").getPsaPsaWorkRequestsOutput = null as any;
 utilities.lazyLoad(exports, ["getPsaPsaWorkRequests","getPsaPsaWorkRequestsOutput"], () => require("./getPsaPsaWorkRequests"));
 
+export { GetPssInstanceArgs, GetPssInstanceResult, GetPssInstanceOutputArgs } from "./getPssInstance";
+export const getPssInstance: typeof import("./getPssInstance").getPssInstance = null as any;
+export const getPssInstanceOutput: typeof import("./getPssInstance").getPssInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getPssInstance","getPssInstanceOutput"], () => require("./getPssInstance"));
+
+export { GetPssInstancesArgs, GetPssInstancesResult, GetPssInstancesOutputArgs } from "./getPssInstances";
+export const getPssInstances: typeof import("./getPssInstances").getPssInstances = null as any;
+export const getPssInstancesOutput: typeof import("./getPssInstances").getPssInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getPssInstances","getPssInstancesOutput"], () => require("./getPssInstances"));
+
 export { GetResourceAnalyticsMonitoredRegionArgs, GetResourceAnalyticsMonitoredRegionResult, GetResourceAnalyticsMonitoredRegionOutputArgs } from "./getResourceAnalyticsMonitoredRegion";
 export const getResourceAnalyticsMonitoredRegion: typeof import("./getResourceAnalyticsMonitoredRegion").getResourceAnalyticsMonitoredRegion = null as any;
 export const getResourceAnalyticsMonitoredRegionOutput: typeof import("./getResourceAnalyticsMonitoredRegion").getResourceAnalyticsMonitoredRegionOutput = null as any;
@@ -940,6 +950,11 @@ export type PsaPrivateServiceAccess = import("./psaPrivateServiceAccess").PsaPri
 export const PsaPrivateServiceAccess: typeof import("./psaPrivateServiceAccess").PsaPrivateServiceAccess = null as any;
 utilities.lazyLoad(exports, ["PsaPrivateServiceAccess"], () => require("./psaPrivateServiceAccess"));
 
+export { PssInstanceArgs, PssInstanceState } from "./pssInstance";
+export type PssInstance = import("./pssInstance").PssInstance;
+export const PssInstance: typeof import("./pssInstance").PssInstance = null as any;
+utilities.lazyLoad(exports, ["PssInstance"], () => require("./pssInstance"));
+
 export { ResourceAnalyticsMonitoredRegionArgs, ResourceAnalyticsMonitoredRegionState } from "./resourceAnalyticsMonitoredRegion";
 export type ResourceAnalyticsMonitoredRegion = import("./resourceAnalyticsMonitoredRegion").ResourceAnalyticsMonitoredRegion;
 export const ResourceAnalyticsMonitoredRegion: typeof import("./resourceAnalyticsMonitoredRegion").ResourceAnalyticsMonitoredRegion = null as any;
@@ -1072,6 +1087,8 @@ const _module = {
                 return new ProductCatalogInternalProduct(name, <any>undefined, { urn })
             case "oci:oci/psaPrivateServiceAccess:PsaPrivateServiceAccess":
                 return new PsaPrivateServiceAccess(name, <any>undefined, { urn })
+            case "oci:oci/pssInstance:PssInstance":
+                return new PssInstance(name, <any>undefined, { urn })
             case "oci:oci/resourceAnalyticsMonitoredRegion:ResourceAnalyticsMonitoredRegion":
                 return new ResourceAnalyticsMonitoredRegion(name, <any>undefined, { urn })
             case "oci:oci/resourceAnalyticsResourceAnalyticsInstance:ResourceAnalyticsResourceAnalyticsInstance":
@@ -1138,6 +1155,7 @@ pulumi.runtime.registerResourceModule("oci", "oci/managedKafkaKafkaClusterSuperu
 pulumi.runtime.registerResourceModule("oci", "oci/productCatalogInternalAdminProduct", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/productCatalogInternalProduct", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/psaPrivateServiceAccess", _module)
+pulumi.runtime.registerResourceModule("oci", "oci/pssInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/resourceAnalyticsMonitoredRegion", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/resourceAnalyticsResourceAnalyticsInstance", _module)
 pulumi.runtime.registerResourceModule("oci", "oci/resourceAnalyticsResourceAnalyticsInstanceOacManagement", _module)

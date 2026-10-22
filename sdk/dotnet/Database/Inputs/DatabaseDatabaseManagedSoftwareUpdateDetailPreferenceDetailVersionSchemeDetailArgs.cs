@@ -14,22 +14,18 @@ namespace Pulumi.Oci.Database.Inputs
     {
         /// <summary>
         /// The update should be applied on the database for the selected major version series.  The value can be provided as 23.X.X.X then 23 major version series will be considered.
-        /// 
-        /// The list of supported versions can be obtained using the API for the provided shape /20160918/dbVersions?compartmentId=&lt;compartmentId&gt;&amp;dbSystemShape=ExaDbXS
         /// </summary>
         [Input("majorVersion")]
         public Input<string>? MajorVersion { get; set; }
 
         /// <summary>
-        /// The update should be applied on the database for the selected version scheme.
+        /// The source of the database: Use `NONE` for creating a new database. Use `DB_BACKUP` for creating a new database by restoring from a backup. Use `DATAGUARD` for creating a new STANDBY database for a Data Guard setup.. The default is `NONE`.
         /// </summary>
         [Input("source")]
         public Input<string>? Source { get; set; }
 
         /// <summary>
         /// The update should be applied on the database for the selected version preference. *_N represents the LATEST version
-        /// 
-        /// For Ex: The current latest version is 23.7.0.0.0, If versionPreference selects option as ORACLE_DB_N then oracle applies the db update with LATEST version (i.e. 23.7.0.0.0) If versionPreference selects option as ORACLE_DB_N_1 then oracle applies the db update with LATEST-1 version (i.e. 23.6.0.0.0) If versionPreference selects option as ORACLE_DB_N_2 then oracle applies the db update with LATEST-2 version (i.e. 23.5.0.0.0)
         /// </summary>
         [Input("versionPreference")]
         public Input<string>? VersionPreference { get; set; }

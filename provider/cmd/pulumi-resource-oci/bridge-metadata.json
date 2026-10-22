@@ -7510,6 +7510,10 @@
                     }
                 }
             },
+            "oci_database_database_snapshot": {
+                "current": "oci:Database/databaseSnapshot:DatabaseSnapshot",
+                "majorVersion": 5
+            },
             "oci_database_database_snapshot_standby": {
                 "current": "oci:Database/databaseSnapshotStandby:DatabaseSnapshotStandby",
                 "majorVersion": 5,
@@ -13304,6 +13308,23 @@
                                 "destination_encryption_key": {
                                     "maxItemsOne": true
                                 },
+                                "dr_drill_properties": {
+                                    "maxItemsOne": true,
+                                    "elem": {
+                                        "fields": {
+                                            "vnic_mappings": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "destination_nsg_id_list": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
                                 "export_mappings": {
                                     "maxItemsOne": false
                                 },
@@ -15323,6 +15344,16 @@
                 "fields": {
                     "additional_attributes": {
                         "maxItemsOne": false
+                    },
+                    "artifact_location": {
+                        "maxItemsOne": true,
+                        "elem": {
+                            "fields": {
+                                "configuration": {
+                                    "maxItemsOne": true
+                                }
+                            }
+                        }
                     },
                     "auth_details": {
                         "maxItemsOne": true
@@ -22340,8 +22371,15 @@
                     },
                     "storage_details": {
                         "maxItemsOne": true
+                    },
+                    "upgrade_options": {
+                        "maxItemsOne": false
                     }
                 }
+            },
+            "oci_pss_instance": {
+                "current": "oci:oci/pssInstance:PssInstance",
+                "majorVersion": 5
             },
             "oci_queue_consumer_group": {
                 "current": "oci:Queue/consumerGroup:ConsumerGroup",
@@ -23293,6 +23331,15 @@
                                 }
                             }
                         }
+                    }
+                }
+            },
+            "oci_tenantmanagercontrolplane_child_tenancy": {
+                "current": "oci:Tenantmanagercontrolplane/childTenancy:ChildTenancy",
+                "majorVersion": 5,
+                "fields": {
+                    "features": {
+                        "maxItemsOne": false
                     }
                 }
             },
@@ -40733,6 +40780,9 @@
                                 },
                                 "resize_compatible_shapes": {
                                     "maxItemsOne": false
+                                },
+                                "supported_resource_management": {
+                                    "maxItemsOne": false
                                 }
                             }
                         }
@@ -40885,6 +40935,9 @@
                                     "maxItemsOne": false
                                 },
                                 "resize_compatible_shapes": {
+                                    "maxItemsOne": false
+                                },
+                                "supported_resource_management": {
                                     "maxItemsOne": false
                                 }
                             }
@@ -49922,6 +49975,36 @@
             "oci_database_database_pdb_conversion_history_entry": {
                 "current": "oci:Database/getDatabasePdbConversionHistoryEntry:getDatabasePdbConversionHistoryEntry",
                 "majorVersion": 5
+            },
+            "oci_database_database_snapshot": {
+                "current": "oci:Database/getDatabaseSnapshot:getDatabaseSnapshot",
+                "majorVersion": 5
+            },
+            "oci_database_database_snapshots": {
+                "current": "oci:Database/getDatabaseSnapshots:getDatabaseSnapshots",
+                "majorVersion": 5,
+                "fields": {
+                    "database_snapshot_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
             },
             "oci_database_database_software_image": {
                 "current": "oci:Database/getDatabaseSoftwareImage:getDatabaseSoftwareImage",
@@ -68168,6 +68251,23 @@
                                 "destination_encryption_key": {
                                     "maxItemsOne": false
                                 },
+                                "dr_drill_properties": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "vnic_mappings": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "destination_nsg_id_list": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
                                 "export_mappings": {
                                     "maxItemsOne": false
                                 },
@@ -68315,6 +68415,23 @@
                                                         },
                                                         "destination_encryption_key": {
                                                             "maxItemsOne": false
+                                                        },
+                                                        "dr_drill_properties": {
+                                                            "maxItemsOne": false,
+                                                            "elem": {
+                                                                "fields": {
+                                                                    "vnic_mappings": {
+                                                                        "maxItemsOne": false,
+                                                                        "elem": {
+                                                                            "fields": {
+                                                                                "destination_nsg_id_list": {
+                                                                                    "maxItemsOne": false
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
                                                         },
                                                         "export_mappings": {
                                                             "maxItemsOne": false
@@ -74013,6 +74130,39 @@
                     }
                 }
             },
+            "oci_generative_ai_dedicated_ai_cluster_allocatable_gpus": {
+                "current": "oci:GenerativeAi/getDedicatedAiClusterAllocatableGpus:getDedicatedAiClusterAllocatableGpus",
+                "majorVersion": 5,
+                "fields": {
+                    "allocatable_gpu_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false,
+                                    "elem": {
+                                        "fields": {
+                                            "gpu_allocations": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "oci_generative_ai_dedicated_ai_clusters": {
                 "current": "oci:GenerativeAi/getDedicatedAiClusters:getDedicatedAiClusters",
                 "majorVersion": 5,
@@ -75051,6 +75201,16 @@
                     "additional_attributes": {
                         "maxItemsOne": false
                     },
+                    "artifact_location": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "configuration": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
                     "auth_details": {
                         "maxItemsOne": false
                     },
@@ -75124,6 +75284,16 @@
                                         "fields": {
                                             "additional_attributes": {
                                                 "maxItemsOne": false
+                                            },
+                                            "artifact_location": {
+                                                "maxItemsOne": false,
+                                                "elem": {
+                                                    "fields": {
+                                                        "configuration": {
+                                                            "maxItemsOne": false
+                                                        }
+                                                    }
+                                                }
                                             },
                                             "auth_details": {
                                                 "maxItemsOne": false
@@ -98706,6 +98876,9 @@
                     },
                     "storage_details": {
                         "maxItemsOne": false
+                    },
+                    "upgrade_options": {
+                        "maxItemsOne": false
                     }
                 }
             },
@@ -98877,6 +99050,9 @@
                                                 "maxItemsOne": false
                                             },
                                             "storage_details": {
+                                                "maxItemsOne": false
+                                            },
+                                            "upgrade_options": {
                                                 "maxItemsOne": false
                                             }
                                         }
@@ -99064,6 +99240,36 @@
                                             }
                                         }
                                     }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "oci_pss_instance": {
+                "current": "oci:oci/getPssInstance:getPssInstance",
+                "majorVersion": 5
+            },
+            "oci_pss_instances": {
+                "current": "oci:oci/getPssInstances:getPssInstances",
+                "majorVersion": 5,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "instance_collection": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "items": {
+                                    "maxItemsOne": false
                                 }
                             }
                         }

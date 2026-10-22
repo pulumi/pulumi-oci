@@ -144,6 +144,12 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         [Input("destinationSnapshotPolicyId")]
         public Input<string>? DestinationSnapshotPolicyId { get; set; }
 
+        /// <summary>
+        /// (Updatable) Create properties for DR drill-specific settings. Use these when the properties for DR drills differ from the properties used for DR operations such as switchover and failover.
+        /// </summary>
+        [Input("drDrillProperties")]
+        public Input<Inputs.DrProtectionGroupMemberDrDrillPropertiesArgs>? DrDrillProperties { get; set; }
+
         [Input("exportMappings")]
         private InputList<Inputs.DrProtectionGroupMemberExportMappingArgs>? _exportMappings;
 
@@ -281,7 +287,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<string>? PeerClusterId { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the peer HeatWave MySQL DB System from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID`
+        /// (Updatable) The OCID of the peer HeatWave MySQL DB System or Oracle Cloud Infrastructure Database with PostgreSQL from the peer region.  Example: `ocid1.mysqldbsystem.oc1..uniqueID` or `ocid1.postgresqldbsystem.oc1..uniqueID`
         /// </summary>
         [Input("peerDbSystemId")]
         public Input<string>? PeerDbSystemId { get; set; }

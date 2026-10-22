@@ -42,6 +42,8 @@ import com.pulumi.oci.GenerativeAi.inputs.GetApikeyArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetApikeyPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetApikeysArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetApikeysPlainArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClusterAllocatableGpusArgs;
+import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClusterAllocatableGpusPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClusterArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClusterPlainArgs;
 import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClustersArgs;
@@ -109,6 +111,7 @@ import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetAgentToolsResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetApikeyResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetApikeysResult;
+import com.pulumi.oci.GenerativeAi.outputs.GetDedicatedAiClusterAllocatableGpusResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetDedicatedAiClusterResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetDedicatedAiClustersResult;
 import com.pulumi.oci.GenerativeAi.outputs.GetEndpointResult;
@@ -4713,6 +4716,226 @@ public final class GenerativeAiFunctions {
         return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getDedicatedAiCluster:getDedicatedAiCluster", TypeShape.of(GetDedicatedAiClusterResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Dedicated Ai Cluster Allocatable Gpus in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the allocatable GPUs for launching dedicated AI clusters tied to a specific capacity reservation id.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClusterAllocatableGpusArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedAiClusterAllocatableGpus = GenerativeAiFunctions.getDedicatedAiClusterAllocatableGpus(GetDedicatedAiClusterAllocatableGpusArgs.builder()
+     *             .capacityReservationId(testCapacityReservation.get("id"))
+     *             .compartmentId(compartmentId)
+     *             .computeShape(dedicatedAiClusterAllocatableGpuComputeShape)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDedicatedAiClusterAllocatableGpusResult> getDedicatedAiClusterAllocatableGpus(GetDedicatedAiClusterAllocatableGpusArgs args) {
+        return getDedicatedAiClusterAllocatableGpus(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Dedicated Ai Cluster Allocatable Gpus in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the allocatable GPUs for launching dedicated AI clusters tied to a specific capacity reservation id.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClusterAllocatableGpusArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedAiClusterAllocatableGpus = GenerativeAiFunctions.getDedicatedAiClusterAllocatableGpus(GetDedicatedAiClusterAllocatableGpusArgs.builder()
+     *             .capacityReservationId(testCapacityReservation.get("id"))
+     *             .compartmentId(compartmentId)
+     *             .computeShape(dedicatedAiClusterAllocatableGpuComputeShape)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDedicatedAiClusterAllocatableGpusResult> getDedicatedAiClusterAllocatableGpusPlain(GetDedicatedAiClusterAllocatableGpusPlainArgs args) {
+        return getDedicatedAiClusterAllocatableGpusPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Dedicated Ai Cluster Allocatable Gpus in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the allocatable GPUs for launching dedicated AI clusters tied to a specific capacity reservation id.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClusterAllocatableGpusArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedAiClusterAllocatableGpus = GenerativeAiFunctions.getDedicatedAiClusterAllocatableGpus(GetDedicatedAiClusterAllocatableGpusArgs.builder()
+     *             .capacityReservationId(testCapacityReservation.get("id"))
+     *             .compartmentId(compartmentId)
+     *             .computeShape(dedicatedAiClusterAllocatableGpuComputeShape)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDedicatedAiClusterAllocatableGpusResult> getDedicatedAiClusterAllocatableGpus(GetDedicatedAiClusterAllocatableGpusArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getDedicatedAiClusterAllocatableGpus:getDedicatedAiClusterAllocatableGpus", TypeShape.of(GetDedicatedAiClusterAllocatableGpusResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Dedicated Ai Cluster Allocatable Gpus in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the allocatable GPUs for launching dedicated AI clusters tied to a specific capacity reservation id.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClusterAllocatableGpusArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedAiClusterAllocatableGpus = GenerativeAiFunctions.getDedicatedAiClusterAllocatableGpus(GetDedicatedAiClusterAllocatableGpusArgs.builder()
+     *             .capacityReservationId(testCapacityReservation.get("id"))
+     *             .compartmentId(compartmentId)
+     *             .computeShape(dedicatedAiClusterAllocatableGpuComputeShape)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetDedicatedAiClusterAllocatableGpusResult> getDedicatedAiClusterAllocatableGpus(GetDedicatedAiClusterAllocatableGpusArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:GenerativeAi/getDedicatedAiClusterAllocatableGpus:getDedicatedAiClusterAllocatableGpus", TypeShape.of(GetDedicatedAiClusterAllocatableGpusResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Dedicated Ai Cluster Allocatable Gpus in Oracle Cloud Infrastructure Generative AI service.
+     * 
+     * Lists the allocatable GPUs for launching dedicated AI clusters tied to a specific capacity reservation id.
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.GenerativeAi.GenerativeAiFunctions;
+     * import com.pulumi.oci.GenerativeAi.inputs.GetDedicatedAiClusterAllocatableGpusArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDedicatedAiClusterAllocatableGpus = GenerativeAiFunctions.getDedicatedAiClusterAllocatableGpus(GetDedicatedAiClusterAllocatableGpusArgs.builder()
+     *             .capacityReservationId(testCapacityReservation.get("id"))
+     *             .compartmentId(compartmentId)
+     *             .computeShape(dedicatedAiClusterAllocatableGpuComputeShape)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetDedicatedAiClusterAllocatableGpusResult> getDedicatedAiClusterAllocatableGpusPlain(GetDedicatedAiClusterAllocatableGpusPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getDedicatedAiClusterAllocatableGpus:getDedicatedAiClusterAllocatableGpus", TypeShape.of(GetDedicatedAiClusterAllocatableGpusResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Lists the dedicated AI clusters in a specific compartment.
@@ -4743,6 +4966,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDedicatedAiClusters = GenerativeAiFunctions.getDedicatedAiClusters(GetDedicatedAiClustersArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .capacityReservationId(testCapacityReservation.get("id"))
      *             .displayName(dedicatedAiClusterDisplayName)
      *             .id(dedicatedAiClusterId)
      *             .state(dedicatedAiClusterState)
@@ -4788,6 +5012,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDedicatedAiClusters = GenerativeAiFunctions.getDedicatedAiClusters(GetDedicatedAiClustersArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .capacityReservationId(testCapacityReservation.get("id"))
      *             .displayName(dedicatedAiClusterDisplayName)
      *             .id(dedicatedAiClusterId)
      *             .state(dedicatedAiClusterState)
@@ -4833,6 +5058,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDedicatedAiClusters = GenerativeAiFunctions.getDedicatedAiClusters(GetDedicatedAiClustersArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .capacityReservationId(testCapacityReservation.get("id"))
      *             .displayName(dedicatedAiClusterDisplayName)
      *             .id(dedicatedAiClusterId)
      *             .state(dedicatedAiClusterState)
@@ -4878,6 +5104,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDedicatedAiClusters = GenerativeAiFunctions.getDedicatedAiClusters(GetDedicatedAiClustersArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .capacityReservationId(testCapacityReservation.get("id"))
      *             .displayName(dedicatedAiClusterDisplayName)
      *             .id(dedicatedAiClusterId)
      *             .state(dedicatedAiClusterState)
@@ -4923,6 +5150,7 @@ public final class GenerativeAiFunctions {
      *     public static void stack(Context ctx) {
      *         final var testDedicatedAiClusters = GenerativeAiFunctions.getDedicatedAiClusters(GetDedicatedAiClustersArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .capacityReservationId(testCapacityReservation.get("id"))
      *             .displayName(dedicatedAiClusterDisplayName)
      *             .id(dedicatedAiClusterId)
      *             .state(dedicatedAiClusterState)

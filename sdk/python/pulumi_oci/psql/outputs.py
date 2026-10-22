@@ -4041,6 +4041,7 @@ class GetDbSystemsDbSystemCollectionResult(dict):
 class GetDbSystemsDbSystemCollectionItemResult(dict):
     def __init__(__self__, *,
                  admin_username: _builtins.str,
+                 allow_major_version_upgrade: _builtins.bool,
                  apply_change_mode_to_stand_alone: _builtins.str,
                  apply_config: _builtins.str,
                  compartment_id: _builtins.str,
@@ -4072,9 +4073,11 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
                  system_tags: Mapping[str, _builtins.str],
                  system_type: _builtins.str,
                  time_created: _builtins.str,
-                 time_updated: _builtins.str):
+                 time_updated: _builtins.str,
+                 upgrade_options: Sequence[_builtins.str]):
         """
         :param _builtins.str admin_username: The database system administrator username.
+        :param _builtins.bool allow_major_version_upgrade: Allow in-place upgrades when db_version changes to a higher major version. When false, changing db_version replaces the database system. This setting has no effect during creation.
         :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
         :param _builtins.str config_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the configuration associated with the database system.
         :param Sequence['GetDbSystemsDbSystemCollectionItemCredentialArgs'] credentials: List of Kerberos Credentials to be configured for the dbsystem. Currently supports only one entry.
@@ -4103,8 +4106,10 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
         :param _builtins.str system_type: Type of the database system.
         :param _builtins.str time_created: The date and time that the database system was created, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         :param _builtins.str time_updated: The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
+        :param Sequence[_builtins.str] upgrade_options: Optional post-upgrade operations, applied only when db_version changes and allow_major_version_upgrade is true. If omitted or empty, verification and vacuum are skipped.
         """
         pulumi.set(__self__, "admin_username", admin_username)
+        pulumi.set(__self__, "allow_major_version_upgrade", allow_major_version_upgrade)
         pulumi.set(__self__, "apply_change_mode_to_stand_alone", apply_change_mode_to_stand_alone)
         pulumi.set(__self__, "apply_config", apply_config)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -4137,6 +4142,7 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
         pulumi.set(__self__, "system_type", system_type)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "upgrade_options", upgrade_options)
 
     @_builtins.property
     @pulumi.getter(name="adminUsername")
@@ -4145,6 +4151,14 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
         The database system administrator username.
         """
         return pulumi.get(self, "admin_username")
+
+    @_builtins.property
+    @pulumi.getter(name="allowMajorVersionUpgrade")
+    def allow_major_version_upgrade(self) -> _builtins.bool:
+        """
+        Allow in-place upgrades when db_version changes to a higher major version. When false, changing db_version replaces the database system. This setting has no effect during creation.
+        """
+        return pulumi.get(self, "allow_major_version_upgrade")
 
     @_builtins.property
     @pulumi.getter(name="applyChangeModeToStandAlone")
@@ -4389,6 +4403,14 @@ class GetDbSystemsDbSystemCollectionItemResult(dict):
         The date and time that the database system was updated, expressed in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.  Example: `2016-08-25T21:10:29.600Z`
         """
         return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="upgradeOptions")
+    def upgrade_options(self) -> Sequence[_builtins.str]:
+        """
+        Optional post-upgrade operations, applied only when db_version changes and allow_major_version_upgrade is true. If omitted or empty, verification and vacuum are skipped.
+        """
+        return pulumi.get(self, "upgrade_options")
 
 
 @pulumi.output_type

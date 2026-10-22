@@ -94,7 +94,7 @@ class DeploymentArgs:
         :param pulumi.Input['DeploymentMaintenanceConfigurationArgs'] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
         :param pulumi.Input['DeploymentMaintenanceWindowArgs'] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        :param pulumi.Input['DeploymentOggDataArgs'] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
+        :param pulumi.Input['DeploymentOggDataArgs'] ogg_data: (Updatable) Deployment Data for creating an OggDeployment.
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentPlacementArgs']]] placements: (Updatable) An array of local peers of deployment
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] source_deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
@@ -504,7 +504,7 @@ class DeploymentArgs:
     @pulumi.getter(name="oggData")
     def ogg_data(self) -> pulumi.Input[Optional['DeploymentOggDataArgs']]:
         """
-        (Updatable) Deployment Data for creating an OggDeployment
+        (Updatable) Deployment Data for creating an OggDeployment.
         """
         return pulumi.get(self, "ogg_data")
 
@@ -688,7 +688,7 @@ class _DeploymentState:
         :param pulumi.Input[_builtins.str] next_maintenance_action_type: Type of the next maintenance.
         :param pulumi.Input[_builtins.str] next_maintenance_description: Description of the next maintenance.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        :param pulumi.Input['DeploymentOggDataArgs'] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
+        :param pulumi.Input['DeploymentOggDataArgs'] ogg_data: (Updatable) Deployment Data for creating an OggDeployment.
         :param pulumi.Input[Sequence[pulumi.Input['DeploymentPlacementArgs']]] placements: (Updatable) An array of local peers of deployment
         :param pulumi.Input[_builtins.str] private_ip_address: The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
         :param pulumi.Input[_builtins.str] public_ip_address: The public IP address representing the access point for the Deployment.
@@ -1309,7 +1309,7 @@ class _DeploymentState:
     @pulumi.getter(name="oggData")
     def ogg_data(self) -> pulumi.Input[Optional['DeploymentOggDataArgs']]:
         """
-        (Updatable) Deployment Data for creating an OggDeployment
+        (Updatable) Deployment Data for creating an OggDeployment.
         """
         return pulumi.get(self, "ogg_data")
 
@@ -1620,7 +1620,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[Union['DeploymentMaintenanceConfigurationArgs', 'DeploymentMaintenanceConfigurationArgsDict', 'outputs.DeploymentMaintenanceConfiguration']] maintenance_configuration: (Updatable) Defines the maintenance configuration for create operation.
         :param pulumi.Input[Union['DeploymentMaintenanceWindowArgs', 'DeploymentMaintenanceWindowArgsDict', 'outputs.DeploymentMaintenanceWindow']] maintenance_window: (Updatable) Defines the maintenance window for create operation, when automatic actions can be performed.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        :param pulumi.Input[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict', 'outputs.DeploymentOggData']] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
+        :param pulumi.Input[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict', 'outputs.DeploymentOggData']] ogg_data: (Updatable) Deployment Data for creating an OggDeployment.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentPlacementArgs', 'DeploymentPlacementArgsDict', 'outputs.DeploymentPlacement']]]] placements: (Updatable) An array of local peers of deployment
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] security_attributes: (Updatable) Security attributes for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "enforce"}}}`
         :param pulumi.Input[_builtins.str] source_deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
@@ -1897,7 +1897,7 @@ class Deployment(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] next_maintenance_action_type: Type of the next maintenance.
         :param pulumi.Input[_builtins.str] next_maintenance_description: Description of the next maintenance.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
-        :param pulumi.Input[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict', 'outputs.DeploymentOggData']] ogg_data: (Updatable) Deployment Data for creating an OggDeployment
+        :param pulumi.Input[Union['DeploymentOggDataArgs', 'DeploymentOggDataArgsDict', 'outputs.DeploymentOggData']] ogg_data: (Updatable) Deployment Data for creating an OggDeployment.
         :param pulumi.Input[Sequence[pulumi.Input[Union['DeploymentPlacementArgs', 'DeploymentPlacementArgsDict', 'outputs.DeploymentPlacement']]]] placements: (Updatable) An array of local peers of deployment
         :param pulumi.Input[_builtins.str] private_ip_address: The private IP address in the customer's VCN representing the access point for the associated endpoint service in the GoldenGate service VCN.
         :param pulumi.Input[_builtins.str] public_ip_address: The public IP address representing the access point for the Deployment.
@@ -2307,7 +2307,7 @@ class Deployment(pulumi.CustomResource):
     @pulumi.getter(name="oggData")
     def ogg_data(self) -> pulumi.Output['outputs.DeploymentOggData']:
         """
-        (Updatable) Deployment Data for creating an OggDeployment
+        (Updatable) Deployment Data for creating an OggDeployment.
         """
         return pulumi.get(self, "ogg_data")
 

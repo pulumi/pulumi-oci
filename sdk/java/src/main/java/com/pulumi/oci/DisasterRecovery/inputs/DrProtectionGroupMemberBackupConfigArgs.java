@@ -121,14 +121,14 @@ public final class DrProtectionGroupMemberBackupConfigArgs extends com.pulumi.re
     }
 
     /**
-     * (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
+     * (Updatable) Controls the behavior of image replication across regions.  Image replication is enabled by default for DR Protection Groups.  This setting applies to the OKE cluster member in the primary region, and to the standby region  only if the image replication secret is stored in a vault instead of using the default secret.
      * 
      */
     @Import(name="replicateImages")
     private @Nullable Output<String> replicateImages;
 
     /**
-     * @return (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
+     * @return (Updatable) Controls the behavior of image replication across regions.  Image replication is enabled by default for DR Protection Groups.  This setting applies to the OKE cluster member in the primary region, and to the standby region  only if the image replication secret is stored in a vault instead of using the default secret.
      * 
      */
     public Optional<Output<String>> replicateImages() {
@@ -318,7 +318,7 @@ public final class DrProtectionGroupMemberBackupConfigArgs extends com.pulumi.re
         }
 
         /**
-         * @param replicateImages (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
+         * @param replicateImages (Updatable) Controls the behavior of image replication across regions.  Image replication is enabled by default for DR Protection Groups.  This setting applies to the OKE cluster member in the primary region, and to the standby region  only if the image replication secret is stored in a vault instead of using the default secret.
          * 
          * @return builder
          * 
@@ -329,7 +329,7 @@ public final class DrProtectionGroupMemberBackupConfigArgs extends com.pulumi.re
         }
 
         /**
-         * @param replicateImages (Updatable) Controls the behaviour of image replication across regions. Image replication is enabled by default for DR Protection Groups with a primary role. This property applies to the OKE cluster member in primary region.
+         * @param replicateImages (Updatable) Controls the behavior of image replication across regions.  Image replication is enabled by default for DR Protection Groups.  This setting applies to the OKE cluster member in the primary region, and to the standby region  only if the image replication secret is stored in a vault instead of using the default secret.
          * 
          * @return builder
          * 

@@ -132,6 +132,19 @@ import (
 //						DestinationLoadBalancerId:        pulumi.Any(testLoadBalancer.Id),
 //						DestinationNetworkLoadBalancerId: pulumi.Any(testNetworkLoadBalancer.Id),
 //						DestinationSnapshotPolicyId:      pulumi.Any(testPolicy.Id),
+//						DrDrillProperties: &disasterrecovery.DrProtectionGroupMemberDrDrillPropertiesArgs{
+//							VnicMappings: disasterrecovery.DrProtectionGroupMemberDrDrillPropertiesVnicMappingArray{
+//								&disasterrecovery.DrProtectionGroupMemberDrDrillPropertiesVnicMappingArgs{
+//									DestinationNsgIdLists:                    pulumi.Any(drProtectionGroupMembersDrDrillPropertiesVnicMappingsDestinationNsgIdList),
+//									DestinationPrimaryPrivateIpAddress:       pulumi.Any(drProtectionGroupMembersDrDrillPropertiesVnicMappingsDestinationPrimaryPrivateIpAddress),
+//									DestinationPrimaryPrivateIpHostnameLabel: pulumi.Any(drProtectionGroupMembersDrDrillPropertiesVnicMappingsDestinationPrimaryPrivateIpHostnameLabel),
+//									DestinationReservedPrimaryPrivateIpId:    pulumi.Any(testPrivateIp.Id),
+//									DestinationReservedPublicIpId:            pulumi.Any(testPublicIp.Id),
+//									DestinationSubnetId:                      pulumi.Any(testSubnet.Id),
+//									SourceVnicId:                             pulumi.Any(testVnic.Id),
+//								},
+//							},
+//						},
 //						ExportMappings: disasterrecovery.DrProtectionGroupMemberExportMappingArray{
 //							&disasterrecovery.DrProtectionGroupMemberExportMappingArgs{
 //								DestinationMountTargetId: pulumi.Any(testMountTarget.Id),
@@ -220,6 +233,7 @@ import (
 //								DestinationNsgIdLists:                    pulumi.Any(drProtectionGroupMembersVnicMappingsDestinationNsgIdList),
 //								DestinationPrimaryPrivateIpAddress:       pulumi.Any(drProtectionGroupMembersVnicMappingsDestinationPrimaryPrivateIpAddress),
 //								DestinationPrimaryPrivateIpHostnameLabel: pulumi.Any(drProtectionGroupMembersVnicMappingsDestinationPrimaryPrivateIpHostnameLabel),
+//								DestinationReservedPrimaryPrivateIpId:    pulumi.Any(testPrivateIp.Id),
 //								DestinationReservedPublicIpId:            pulumi.Any(testPublicIp.Id),
 //								DestinationSubnetId:                      pulumi.Any(testSubnet.Id),
 //								SourceVnicId:                             pulumi.Any(testVnic.Id),

@@ -101,7 +101,7 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<Inputs.DatabaseDatabaseDbBackupConfigArgs>? DbBackupConfig { get; set; }
 
         /// <summary>
-        /// The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+        /// The display name of the database to be created from the snapshot/database. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
         /// </summary>
         [Input("dbName")]
         public Input<string>? DbName { get; set; }
@@ -157,13 +157,25 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<bool>? IsActiveDataGuardEnabled { get; set; }
 
         /// <summary>
+        /// Specifies whether thick or thin database cloning is to be performed.
+        /// </summary>
+        [Input("isThinClone")]
+        public Input<bool>? IsThinClone { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        /// </summary>
+        [Input("keyStoreId")]
+        public Input<string>? KeyStoreId { get; set; }
+
+        /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         [Input("kmsKeyId")]
         public Input<string>? KmsKeyId { get; set; }
 
         /// <summary>
-        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+        /// The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous AI Database Serverless does not use key versions, hence is not applicable for Autonomous AI Database Serverless instances.
         /// </summary>
         [Input("kmsKeyVersionId")]
         public Input<string>? KmsKeyVersionId { get; set; }
@@ -238,6 +250,22 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("sidPrefix")]
         public Input<string>? SidPrefix { get; set; }
 
+        [Input("sourceAdminPassword")]
+        private Input<string>? _sourceAdminPassword;
+
+        /// <summary>
+        /// The source database's password for SYS, SYSTEM.
+        /// </summary>
+        public Input<string>? SourceAdminPassword
+        {
+            get => _sourceAdminPassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _sourceAdminPassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source database.
         /// </summary>
@@ -249,6 +277,28 @@ namespace Pulumi.Oci.Database.Inputs
         /// </summary>
         [Input("sourceEncryptionKeyLocationDetails")]
         public Input<Inputs.DatabaseDatabaseSourceEncryptionKeyLocationDetailsArgs>? SourceEncryptionKeyLocationDetails { get; set; }
+
+        /// <summary>
+        /// The snapshot [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
+        [Input("sourceSnapshotId")]
+        public Input<string>? SourceSnapshotId { get; set; }
+
+        [Input("sourceTdePassword")]
+        private Input<string>? _sourceTdePassword;
+
+        /// <summary>
+        /// The password to open the TDE wallet.
+        /// </summary>
+        public Input<string>? SourceTdePassword
+        {
+            get => _sourceTdePassword;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _sourceTdePassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
 
         [Input("sourceTdeWalletPassword")]
         private Input<string>? _sourceTdeWalletPassword;

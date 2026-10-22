@@ -13,10 +13,16 @@ namespace Pulumi.Oci.Opensearch.Inputs
     public sealed class ClusterRemoteReindexTrustConfigRemoteSourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) OCID of the certificate or CA chain used to verify the remote cluster's HTTPS certificate.
+        /// (Updatable) OCID of the Oracle Cloud Infrastructure Certificates service CA bundle containing the trusted CA certificates used to verify the remote cluster's HTTPS certificate. Required when `CertificateId` is not specified.
         /// </summary>
-        [Input("certificateId", required: true)]
-        public Input<string> CertificateId { get; set; } = null!;
+        [Input("caBundleId")]
+        public Input<string>? CaBundleId { get; set; }
+
+        /// <summary>
+        /// (Updatable) **Deprecated** Alias for `CaBundleId`; use `CaBundleId` instead. The value must be an OCI Certificates service CA bundle OCID, not a certificate OCID. Existing configurations remain supported during the deprecation period; removal requires a major provider release.
+        /// </summary>
+        [Input("certificateId")]
+        public Input<string>? CertificateId { get; set; }
 
         /// <summary>
         /// (Updatable) HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.

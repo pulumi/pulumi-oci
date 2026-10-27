@@ -13,6 +13,17 @@ import * as utilities from "../utilities";
  * You can filter the list using query parameters.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testByoasns = oci.core.getByoasns({
+ *     compartmentId: compartmentId,
+ *     displayName: byoasnDisplayName,
+ *     state: byoasnState,
+ * });
+ * ```
  */
 export function getByoasns(args: GetByoasnsArgs, opts?: pulumi.InvokeOptions): Promise<GetByoasnsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -58,6 +69,17 @@ export interface GetByoasnsResult {
  * You can filter the list using query parameters.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testByoasns = oci.core.getByoasns({
+ *     compartmentId: compartmentId,
+ *     displayName: byoasnDisplayName,
+ *     state: byoasnState,
+ * });
+ * ```
  */
 export function getByoasnsOutput(args: GetByoasnsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetByoasnsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

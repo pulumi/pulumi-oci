@@ -17,6 +17,30 @@ namespace Pulumi.Oci.Identity
         /// Search User Schema Attribute Settings
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testUserAttributesSettings = Oci.Identity.GetDomainsUserAttributesSettings.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         UserAttributesSettingId = testUserAttributesSetting.Id,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = userAttributesSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = userAttributesSettingResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetDomainsUserAttributesSettingsResult> InvokeAsync(GetDomainsUserAttributesSettingsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDomainsUserAttributesSettingsResult>("oci:Identity/getDomainsUserAttributesSettings:getDomainsUserAttributesSettings", args ?? new GetDomainsUserAttributesSettingsArgs(), options.WithDefaults());
@@ -27,6 +51,30 @@ namespace Pulumi.Oci.Identity
         /// Search User Schema Attribute Settings
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testUserAttributesSettings = Oci.Identity.GetDomainsUserAttributesSettings.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         UserAttributesSettingId = testUserAttributesSetting.Id,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = userAttributesSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = userAttributesSettingResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetDomainsUserAttributesSettingsResult> Invoke(GetDomainsUserAttributesSettingsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsUserAttributesSettingsResult>("oci:Identity/getDomainsUserAttributesSettings:getDomainsUserAttributesSettings", args ?? new GetDomainsUserAttributesSettingsInvokeArgs(), options.WithDefaults());
@@ -37,6 +85,30 @@ namespace Pulumi.Oci.Identity
         /// Search User Schema Attribute Settings
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testUserAttributesSettings = Oci.Identity.GetDomainsUserAttributesSettings.Invoke(new()
+        ///     {
+        ///         IdcsEndpoint = testDomain.Url,
+        ///         UserAttributesSettingId = testUserAttributesSetting.Id,
+        ///         AttributeSets = new[]
+        ///         {
+        ///             "all",
+        ///         },
+        ///         Attributes = "",
+        ///         Authorization = userAttributesSettingAuthorization,
+        ///         ResourceTypeSchemaVersion = userAttributesSettingResourceTypeSchemaVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetDomainsUserAttributesSettingsResult> Invoke(GetDomainsUserAttributesSettingsInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetDomainsUserAttributesSettingsResult>("oci:Identity/getDomainsUserAttributesSettings:getDomainsUserAttributesSettings", args ?? new GetDomainsUserAttributesSettingsInvokeArgs(), options.WithDefaults());

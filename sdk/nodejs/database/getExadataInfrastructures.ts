@@ -13,6 +13,18 @@ import * as utilities from "../utilities";
  * To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testExadataInfrastructures = oci.database.getExadataInfrastructures({
+ *     compartmentId: compartmentId,
+ *     displayName: exadataInfrastructureDisplayName,
+ *     excludedFields: exadataInfrastructureExcludedFields,
+ *     state: exadataInfrastructureState,
+ * });
+ * ```
  */
 export function getExadataInfrastructures(args: GetExadataInfrastructuresArgs, opts?: pulumi.InvokeOptions): Promise<GetExadataInfrastructuresResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -76,6 +88,18 @@ export interface GetExadataInfrastructuresResult {
  * To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testExadataInfrastructures = oci.database.getExadataInfrastructures({
+ *     compartmentId: compartmentId,
+ *     displayName: exadataInfrastructureDisplayName,
+ *     excludedFields: exadataInfrastructureExcludedFields,
+ *     state: exadataInfrastructureState,
+ * });
+ * ```
  */
 export function getExadataInfrastructuresOutput(args: GetExadataInfrastructuresOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetExadataInfrastructuresResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

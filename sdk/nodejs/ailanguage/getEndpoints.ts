@@ -12,6 +12,20 @@ import * as utilities from "../utilities";
  * Returns a list of Endpoints.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testEndpoints = oci.ailanguage.getEndpoints({
+ *     compartmentId: compartmentId,
+ *     displayName: endpointDisplayName,
+ *     endpointId: testEndpoint.id,
+ *     modelId: testModel.id,
+ *     projectId: testProject.id,
+ *     state: endpointState,
+ * });
+ * ```
  */
 export function getEndpoints(args: GetEndpointsArgs, opts?: pulumi.InvokeOptions): Promise<GetEndpointsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -97,6 +111,20 @@ export interface GetEndpointsResult {
  * Returns a list of Endpoints.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testEndpoints = oci.ailanguage.getEndpoints({
+ *     compartmentId: compartmentId,
+ *     displayName: endpointDisplayName,
+ *     endpointId: testEndpoint.id,
+ *     modelId: testModel.id,
+ *     projectId: testProject.id,
+ *     state: endpointState,
+ * });
+ * ```
  */
 export function getEndpointsOutput(args: GetEndpointsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetEndpointsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

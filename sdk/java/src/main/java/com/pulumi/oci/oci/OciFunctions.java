@@ -21424,6 +21424,38 @@ public final class OciFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterAddonArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterAddon = OciFunctions.getManagedKafkaKafkaClusterAddon(GetManagedKafkaKafkaClusterAddonArgs.builder()
+     *             .addonName(testAddon.get("name"))
+     *             .kafkaClusterId(testKafkaCluster.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetManagedKafkaKafkaClusterAddonResult> getManagedKafkaKafkaClusterAddon(GetManagedKafkaKafkaClusterAddonArgs args) {
         return getManagedKafkaKafkaClusterAddon(args, InvokeOptions.Empty);
@@ -21434,6 +21466,38 @@ public final class OciFunctions {
      * Gets information about a KafkaClusterAddon.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterAddonArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterAddon = OciFunctions.getManagedKafkaKafkaClusterAddon(GetManagedKafkaKafkaClusterAddonArgs.builder()
+     *             .addonName(testAddon.get("name"))
+     *             .kafkaClusterId(testKafkaCluster.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetManagedKafkaKafkaClusterAddonResult> getManagedKafkaKafkaClusterAddonPlain(GetManagedKafkaKafkaClusterAddonPlainArgs args) {
@@ -21446,6 +21510,38 @@ public final class OciFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterAddonArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterAddon = OciFunctions.getManagedKafkaKafkaClusterAddon(GetManagedKafkaKafkaClusterAddonArgs.builder()
+     *             .addonName(testAddon.get("name"))
+     *             .kafkaClusterId(testKafkaCluster.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetManagedKafkaKafkaClusterAddonResult> getManagedKafkaKafkaClusterAddon(GetManagedKafkaKafkaClusterAddonArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:oci/getManagedKafkaKafkaClusterAddon:getManagedKafkaKafkaClusterAddon", TypeShape.of(GetManagedKafkaKafkaClusterAddonResult.class), args, Utilities.withVersion(options));
@@ -21457,6 +21553,38 @@ public final class OciFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterAddonArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterAddon = OciFunctions.getManagedKafkaKafkaClusterAddon(GetManagedKafkaKafkaClusterAddonArgs.builder()
+     *             .addonName(testAddon.get("name"))
+     *             .kafkaClusterId(testKafkaCluster.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetManagedKafkaKafkaClusterAddonResult> getManagedKafkaKafkaClusterAddon(GetManagedKafkaKafkaClusterAddonArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:oci/getManagedKafkaKafkaClusterAddon:getManagedKafkaKafkaClusterAddon", TypeShape.of(GetManagedKafkaKafkaClusterAddonResult.class), args, Utilities.withVersion(options));
@@ -21467,6 +21595,38 @@ public final class OciFunctions {
      * Gets information about a KafkaClusterAddon.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.oci.OciFunctions;
+     * import com.pulumi.oci.oci.inputs.GetManagedKafkaKafkaClusterAddonArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testKafkaClusterAddon = OciFunctions.getManagedKafkaKafkaClusterAddon(GetManagedKafkaKafkaClusterAddonArgs.builder()
+     *             .addonName(testAddon.get("name"))
+     *             .kafkaClusterId(testKafkaCluster.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetManagedKafkaKafkaClusterAddonResult> getManagedKafkaKafkaClusterAddonPlain(GetManagedKafkaKafkaClusterAddonPlainArgs args, InvokeOptions options) {

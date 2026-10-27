@@ -19,6 +19,25 @@ namespace Pulumi.Oci.Database
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExadataInfrastructures = Oci.Database.GetExadataInfrastructures.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = exadataInfrastructureDisplayName,
+        ///         ExcludedFields = exadataInfrastructureExcludedFields,
+        ///         State = exadataInfrastructureState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetExadataInfrastructuresResult> InvokeAsync(GetExadataInfrastructuresArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetExadataInfrastructuresResult>("oci:Database/getExadataInfrastructures:getExadataInfrastructures", args ?? new GetExadataInfrastructuresArgs(), options.WithDefaults());
@@ -31,6 +50,25 @@ namespace Pulumi.Oci.Database
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExadataInfrastructures = Oci.Database.GetExadataInfrastructures.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = exadataInfrastructureDisplayName,
+        ///         ExcludedFields = exadataInfrastructureExcludedFields,
+        ///         State = exadataInfrastructureState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetExadataInfrastructuresResult> Invoke(GetExadataInfrastructuresInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetExadataInfrastructuresResult>("oci:Database/getExadataInfrastructures:getExadataInfrastructures", args ?? new GetExadataInfrastructuresInvokeArgs(), options.WithDefaults());
@@ -43,6 +81,25 @@ namespace Pulumi.Oci.Database
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testExadataInfrastructures = Oci.Database.GetExadataInfrastructures.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = exadataInfrastructureDisplayName,
+        ///         ExcludedFields = exadataInfrastructureExcludedFields,
+        ///         State = exadataInfrastructureState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetExadataInfrastructuresResult> Invoke(GetExadataInfrastructuresInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetExadataInfrastructuresResult>("oci:Database/getExadataInfrastructures:getExadataInfrastructures", args ?? new GetExadataInfrastructuresInvokeArgs(), options.WithDefaults());

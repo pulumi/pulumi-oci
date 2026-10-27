@@ -16,6 +16,31 @@ import (
 // Gets the details of the specified referential relation.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/datasafe"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := datasafe.GetSensitiveDataModelReferentialRelation(ctx, &datasafe.GetSensitiveDataModelReferentialRelationArgs{
+//				ReferentialRelationKey: sensitiveDataModelReferentialRelationReferentialRelationKey,
+//				SensitiveDataModelId:   testSensitiveDataModel.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupSensitiveDataModelReferentialRelation(ctx *pulumi.Context, args *LookupSensitiveDataModelReferentialRelationArgs, opts ...pulumi.InvokeOption) (*LookupSensitiveDataModelReferentialRelationResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupSensitiveDataModelReferentialRelationResult

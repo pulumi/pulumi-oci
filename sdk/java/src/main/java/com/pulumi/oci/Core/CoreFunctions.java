@@ -4151,6 +4151,39 @@ public final class CoreFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoasnsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoasns = CoreFunctions.getByoasns(GetByoasnsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(byoasnDisplayName)
+     *             .state(byoasnState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetByoasnsResult> getByoasns(GetByoasnsArgs args) {
         return getByoasns(args, InvokeOptions.Empty);
@@ -4162,6 +4195,39 @@ public final class CoreFunctions {
      * You can filter the list using query parameters.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoasnsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoasns = CoreFunctions.getByoasns(GetByoasnsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(byoasnDisplayName)
+     *             .state(byoasnState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetByoasnsResult> getByoasnsPlain(GetByoasnsPlainArgs args) {
@@ -4175,6 +4241,39 @@ public final class CoreFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoasnsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoasns = CoreFunctions.getByoasns(GetByoasnsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(byoasnDisplayName)
+     *             .state(byoasnState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetByoasnsResult> getByoasns(GetByoasnsArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getByoasns:getByoasns", TypeShape.of(GetByoasnsResult.class), args, Utilities.withVersion(options));
@@ -4187,6 +4286,39 @@ public final class CoreFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoasnsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoasns = CoreFunctions.getByoasns(GetByoasnsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(byoasnDisplayName)
+     *             .state(byoasnState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetByoasnsResult> getByoasns(GetByoasnsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getByoasns:getByoasns", TypeShape.of(GetByoasnsResult.class), args, Utilities.withVersion(options));
@@ -4198,6 +4330,39 @@ public final class CoreFunctions {
      * You can filter the list using query parameters.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetByoasnsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testByoasns = CoreFunctions.getByoasns(GetByoasnsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(byoasnDisplayName)
+     *             .state(byoasnState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetByoasnsResult> getByoasnsPlain(GetByoasnsPlainArgs args, InvokeOptions options) {
@@ -19561,6 +19726,40 @@ public final class CoreFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFirmwareBundlesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFirmwareBundles = CoreFunctions.getFirmwareBundles(GetFirmwareBundlesArgs.builder()
+     *             .platform(firmwareBundlePlatform)
+     *             .compartmentId(compartmentId)
+     *             .isDefaultBundle(firmwareBundleIsDefaultBundle)
+     *             .state(firmwareBundleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetFirmwareBundlesResult> getFirmwareBundles(GetFirmwareBundlesArgs args) {
         return getFirmwareBundles(args, InvokeOptions.Empty);
@@ -19572,6 +19771,40 @@ public final class CoreFunctions {
      * only the default (recommended) Firmware Bundle for the given platform.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFirmwareBundlesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFirmwareBundles = CoreFunctions.getFirmwareBundles(GetFirmwareBundlesArgs.builder()
+     *             .platform(firmwareBundlePlatform)
+     *             .compartmentId(compartmentId)
+     *             .isDefaultBundle(firmwareBundleIsDefaultBundle)
+     *             .state(firmwareBundleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetFirmwareBundlesResult> getFirmwareBundlesPlain(GetFirmwareBundlesPlainArgs args) {
@@ -19585,6 +19818,40 @@ public final class CoreFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFirmwareBundlesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFirmwareBundles = CoreFunctions.getFirmwareBundles(GetFirmwareBundlesArgs.builder()
+     *             .platform(firmwareBundlePlatform)
+     *             .compartmentId(compartmentId)
+     *             .isDefaultBundle(firmwareBundleIsDefaultBundle)
+     *             .state(firmwareBundleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetFirmwareBundlesResult> getFirmwareBundles(GetFirmwareBundlesArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getFirmwareBundles:getFirmwareBundles", TypeShape.of(GetFirmwareBundlesResult.class), args, Utilities.withVersion(options));
@@ -19597,6 +19864,40 @@ public final class CoreFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFirmwareBundlesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFirmwareBundles = CoreFunctions.getFirmwareBundles(GetFirmwareBundlesArgs.builder()
+     *             .platform(firmwareBundlePlatform)
+     *             .compartmentId(compartmentId)
+     *             .isDefaultBundle(firmwareBundleIsDefaultBundle)
+     *             .state(firmwareBundleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetFirmwareBundlesResult> getFirmwareBundles(GetFirmwareBundlesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Core/getFirmwareBundles:getFirmwareBundles", TypeShape.of(GetFirmwareBundlesResult.class), args, Utilities.withVersion(options));
@@ -19608,6 +19909,40 @@ public final class CoreFunctions {
      * only the default (recommended) Firmware Bundle for the given platform.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Core.CoreFunctions;
+     * import com.pulumi.oci.Core.inputs.GetFirmwareBundlesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testFirmwareBundles = CoreFunctions.getFirmwareBundles(GetFirmwareBundlesArgs.builder()
+     *             .platform(firmwareBundlePlatform)
+     *             .compartmentId(compartmentId)
+     *             .isDefaultBundle(firmwareBundleIsDefaultBundle)
+     *             .state(firmwareBundleState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetFirmwareBundlesResult> getFirmwareBundlesPlain(GetFirmwareBundlesPlainArgs args, InvokeOptions options) {

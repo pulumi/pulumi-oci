@@ -12,6 +12,25 @@ import * as utilities from "../utilities";
  * Returns a list of data assets within a data catalog.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDataAssets = oci.datacatalog.getDataAssets({
+ *     catalogId: testCatalog.id,
+ *     createdById: testCreatedBy.id,
+ *     displayName: dataAssetDisplayName,
+ *     displayNameContains: dataAssetDisplayNameContains,
+ *     externalKey: dataAssetExternalKey,
+ *     fields: dataAssetFields,
+ *     state: dataAssetState,
+ *     timeCreated: dataAssetTimeCreated,
+ *     timeUpdated: dataAssetTimeUpdated,
+ *     typeKey: dataAssetTypeKey,
+ *     updatedById: testUpdatedBy.id,
+ * });
+ * ```
  */
 export function getDataAssets(args: GetDataAssetsArgs, opts?: pulumi.InvokeOptions): Promise<GetDataAssetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -113,6 +132,25 @@ export interface GetDataAssetsResult {
  * Returns a list of data assets within a data catalog.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testDataAssets = oci.datacatalog.getDataAssets({
+ *     catalogId: testCatalog.id,
+ *     createdById: testCreatedBy.id,
+ *     displayName: dataAssetDisplayName,
+ *     displayNameContains: dataAssetDisplayNameContains,
+ *     externalKey: dataAssetExternalKey,
+ *     fields: dataAssetFields,
+ *     state: dataAssetState,
+ *     timeCreated: dataAssetTimeCreated,
+ *     timeUpdated: dataAssetTimeUpdated,
+ *     typeKey: dataAssetTypeKey,
+ *     updatedById: testUpdatedBy.id,
+ * });
+ * ```
  */
 export function getDataAssetsOutput(args: GetDataAssetsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDataAssetsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

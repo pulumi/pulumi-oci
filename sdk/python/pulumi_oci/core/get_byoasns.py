@@ -95,6 +95,15 @@ def get_byoasns(compartment_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_byoasns = oci.core.get_byoasns(compartment_id=compartment_id,
+        display_name=byoasn_display_name,
+        state=byoasn_state)
+    ```
+
 
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     """
@@ -119,6 +128,15 @@ def get_byoasns_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = N
     You can filter the list using query parameters.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_byoasns = oci.core.get_byoasns(compartment_id=compartment_id,
+        display_name=byoasn_display_name,
+        state=byoasn_state)
+    ```
 
 
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

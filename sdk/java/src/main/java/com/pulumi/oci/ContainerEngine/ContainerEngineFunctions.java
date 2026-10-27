@@ -3567,6 +3567,40 @@ public final class ContainerEngineFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualNodePools = ContainerEngineFunctions.getVirtualNodePools(GetVirtualNodePoolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.get("id"))
+     *             .name(virtualNodePoolName)
+     *             .states(virtualNodePoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetVirtualNodePoolsResult> getVirtualNodePools(GetVirtualNodePoolsArgs args) {
         return getVirtualNodePools(args, InvokeOptions.Empty);
@@ -3577,6 +3611,40 @@ public final class ContainerEngineFunctions {
      * List all the virtual node pools in a compartment, and optionally filter by cluster.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualNodePools = ContainerEngineFunctions.getVirtualNodePools(GetVirtualNodePoolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.get("id"))
+     *             .name(virtualNodePoolName)
+     *             .states(virtualNodePoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetVirtualNodePoolsResult> getVirtualNodePoolsPlain(GetVirtualNodePoolsPlainArgs args) {
@@ -3589,6 +3657,40 @@ public final class ContainerEngineFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualNodePools = ContainerEngineFunctions.getVirtualNodePools(GetVirtualNodePoolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.get("id"))
+     *             .name(virtualNodePoolName)
+     *             .states(virtualNodePoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetVirtualNodePoolsResult> getVirtualNodePools(GetVirtualNodePoolsArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:ContainerEngine/getVirtualNodePools:getVirtualNodePools", TypeShape.of(GetVirtualNodePoolsResult.class), args, Utilities.withVersion(options));
@@ -3600,6 +3702,40 @@ public final class ContainerEngineFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualNodePools = ContainerEngineFunctions.getVirtualNodePools(GetVirtualNodePoolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.get("id"))
+     *             .name(virtualNodePoolName)
+     *             .states(virtualNodePoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetVirtualNodePoolsResult> getVirtualNodePools(GetVirtualNodePoolsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ContainerEngine/getVirtualNodePools:getVirtualNodePools", TypeShape.of(GetVirtualNodePoolsResult.class), args, Utilities.withVersion(options));
@@ -3610,6 +3746,40 @@ public final class ContainerEngineFunctions {
      * List all the virtual node pools in a compartment, and optionally filter by cluster.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ContainerEngine.ContainerEngineFunctions;
+     * import com.pulumi.oci.ContainerEngine.inputs.GetVirtualNodePoolsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVirtualNodePools = ContainerEngineFunctions.getVirtualNodePools(GetVirtualNodePoolsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .clusterId(testCluster.get("id"))
+     *             .name(virtualNodePoolName)
+     *             .states(virtualNodePoolState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetVirtualNodePoolsResult> getVirtualNodePoolsPlain(GetVirtualNodePoolsPlainArgs args, InvokeOptions options) {

@@ -12,6 +12,16 @@ import * as utilities from "../utilities";
  * Retrieves a Connection.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testConnection = oci.goldengate.getConnection({
+ *     connectionId: testConnectionOciGoldenGateConnection.id,
+ *     view: connectionView,
+ * });
+ * ```
  */
 export function getConnection(args: GetConnectionArgs, opts?: pulumi.InvokeOptions): Promise<GetConnectionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -641,6 +651,16 @@ export interface GetConnectionResult {
  * Retrieves a Connection.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testConnection = oci.goldengate.getConnection({
+ *     connectionId: testConnectionOciGoldenGateConnection.id,
+ *     view: connectionView,
+ * });
+ * ```
  */
 export function getConnectionOutput(args: GetConnectionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetConnectionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

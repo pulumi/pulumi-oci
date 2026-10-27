@@ -17,6 +17,32 @@ namespace Pulumi.Oci.DataCatalog
         /// Returns a list of data assets within a data catalog.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDataAssets = Oci.DataCatalog.GetDataAssets.Invoke(new()
+        ///     {
+        ///         CatalogId = testCatalog.Id,
+        ///         CreatedById = testCreatedBy.Id,
+        ///         DisplayName = dataAssetDisplayName,
+        ///         DisplayNameContains = dataAssetDisplayNameContains,
+        ///         ExternalKey = dataAssetExternalKey,
+        ///         Fields = dataAssetFields,
+        ///         State = dataAssetState,
+        ///         TimeCreated = dataAssetTimeCreated,
+        ///         TimeUpdated = dataAssetTimeUpdated,
+        ///         TypeKey = dataAssetTypeKey,
+        ///         UpdatedById = testUpdatedBy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetDataAssetsResult> InvokeAsync(GetDataAssetsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDataAssetsResult>("oci:DataCatalog/getDataAssets:getDataAssets", args ?? new GetDataAssetsArgs(), options.WithDefaults());
@@ -27,6 +53,32 @@ namespace Pulumi.Oci.DataCatalog
         /// Returns a list of data assets within a data catalog.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDataAssets = Oci.DataCatalog.GetDataAssets.Invoke(new()
+        ///     {
+        ///         CatalogId = testCatalog.Id,
+        ///         CreatedById = testCreatedBy.Id,
+        ///         DisplayName = dataAssetDisplayName,
+        ///         DisplayNameContains = dataAssetDisplayNameContains,
+        ///         ExternalKey = dataAssetExternalKey,
+        ///         Fields = dataAssetFields,
+        ///         State = dataAssetState,
+        ///         TimeCreated = dataAssetTimeCreated,
+        ///         TimeUpdated = dataAssetTimeUpdated,
+        ///         TypeKey = dataAssetTypeKey,
+        ///         UpdatedById = testUpdatedBy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetDataAssetsResult> Invoke(GetDataAssetsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetDataAssetsResult>("oci:DataCatalog/getDataAssets:getDataAssets", args ?? new GetDataAssetsInvokeArgs(), options.WithDefaults());
@@ -37,6 +89,32 @@ namespace Pulumi.Oci.DataCatalog
         /// Returns a list of data assets within a data catalog.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testDataAssets = Oci.DataCatalog.GetDataAssets.Invoke(new()
+        ///     {
+        ///         CatalogId = testCatalog.Id,
+        ///         CreatedById = testCreatedBy.Id,
+        ///         DisplayName = dataAssetDisplayName,
+        ///         DisplayNameContains = dataAssetDisplayNameContains,
+        ///         ExternalKey = dataAssetExternalKey,
+        ///         Fields = dataAssetFields,
+        ///         State = dataAssetState,
+        ///         TimeCreated = dataAssetTimeCreated,
+        ///         TimeUpdated = dataAssetTimeUpdated,
+        ///         TypeKey = dataAssetTypeKey,
+        ///         UpdatedById = testUpdatedBy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetDataAssetsResult> Invoke(GetDataAssetsInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetDataAssetsResult>("oci:DataCatalog/getDataAssets:getDataAssets", args ?? new GetDataAssetsInvokeArgs(), options.WithDefaults());

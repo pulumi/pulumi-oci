@@ -17,6 +17,24 @@ namespace Pulumi.Oci.MediaServices
         /// Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMediaAssetDistributionChannelAttachment = Oci.MediaServices.GetMediaAssetDistributionChannelAttachment.Invoke(new()
+        ///     {
+        ///         DistributionChannelId = testChannel.Id,
+        ///         MediaAssetId = testMediaAsset.Id,
+        ///         Version = mediaAssetDistributionChannelAttachmentVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetMediaAssetDistributionChannelAttachmentResult> InvokeAsync(GetMediaAssetDistributionChannelAttachmentArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMediaAssetDistributionChannelAttachmentResult>("oci:MediaServices/getMediaAssetDistributionChannelAttachment:getMediaAssetDistributionChannelAttachment", args ?? new GetMediaAssetDistributionChannelAttachmentArgs(), options.WithDefaults());
@@ -27,6 +45,24 @@ namespace Pulumi.Oci.MediaServices
         /// Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMediaAssetDistributionChannelAttachment = Oci.MediaServices.GetMediaAssetDistributionChannelAttachment.Invoke(new()
+        ///     {
+        ///         DistributionChannelId = testChannel.Id,
+        ///         MediaAssetId = testMediaAsset.Id,
+        ///         Version = mediaAssetDistributionChannelAttachmentVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetMediaAssetDistributionChannelAttachmentResult> Invoke(GetMediaAssetDistributionChannelAttachmentInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMediaAssetDistributionChannelAttachmentResult>("oci:MediaServices/getMediaAssetDistributionChannelAttachment:getMediaAssetDistributionChannelAttachment", args ?? new GetMediaAssetDistributionChannelAttachmentInvokeArgs(), options.WithDefaults());
@@ -37,6 +73,24 @@ namespace Pulumi.Oci.MediaServices
         /// Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMediaAssetDistributionChannelAttachment = Oci.MediaServices.GetMediaAssetDistributionChannelAttachment.Invoke(new()
+        ///     {
+        ///         DistributionChannelId = testChannel.Id,
+        ///         MediaAssetId = testMediaAsset.Id,
+        ///         Version = mediaAssetDistributionChannelAttachmentVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetMediaAssetDistributionChannelAttachmentResult> Invoke(GetMediaAssetDistributionChannelAttachmentInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetMediaAssetDistributionChannelAttachmentResult>("oci:MediaServices/getMediaAssetDistributionChannelAttachment:getMediaAssetDistributionChannelAttachment", args ?? new GetMediaAssetDistributionChannelAttachmentInvokeArgs(), options.WithDefaults());

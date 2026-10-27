@@ -6941,6 +6941,41 @@ public final class DatabaseFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseWalletArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseWallet = DatabaseFunctions.getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.get("id"))
+     *             .password(autonomousDatabaseWalletPassword)
+     *             .base64EncodeContent(false)
+     *             .generateType(autonomousDatabaseWalletGenerateType)
+     *             .isRegional(autonomousDatabaseWalletIsRegional)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetAutonomousDatabaseWalletResult> getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs args) {
         return getAutonomousDatabaseWallet(args, InvokeOptions.Empty);
@@ -6953,6 +6988,41 @@ public final class DatabaseFunctions {
      * Creates and downloads a wallet for the specified Autonomous AI Database.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseWalletArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseWallet = DatabaseFunctions.getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.get("id"))
+     *             .password(autonomousDatabaseWalletPassword)
+     *             .base64EncodeContent(false)
+     *             .generateType(autonomousDatabaseWalletGenerateType)
+     *             .isRegional(autonomousDatabaseWalletIsRegional)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseWalletResult> getAutonomousDatabaseWalletPlain(GetAutonomousDatabaseWalletPlainArgs args) {
@@ -6967,6 +7037,41 @@ public final class DatabaseFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseWalletArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseWallet = DatabaseFunctions.getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.get("id"))
+     *             .password(autonomousDatabaseWalletPassword)
+     *             .base64EncodeContent(false)
+     *             .generateType(autonomousDatabaseWalletGenerateType)
+     *             .isRegional(autonomousDatabaseWalletIsRegional)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetAutonomousDatabaseWalletResult> getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", TypeShape.of(GetAutonomousDatabaseWalletResult.class), args, Utilities.withVersion(options));
@@ -6980,6 +7085,41 @@ public final class DatabaseFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseWalletArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseWallet = DatabaseFunctions.getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.get("id"))
+     *             .password(autonomousDatabaseWalletPassword)
+     *             .base64EncodeContent(false)
+     *             .generateType(autonomousDatabaseWalletGenerateType)
+     *             .isRegional(autonomousDatabaseWalletIsRegional)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetAutonomousDatabaseWalletResult> getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", TypeShape.of(GetAutonomousDatabaseWalletResult.class), args, Utilities.withVersion(options));
@@ -6992,6 +7132,41 @@ public final class DatabaseFunctions {
      * Creates and downloads a wallet for the specified Autonomous AI Database.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseWalletArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabaseWallet = DatabaseFunctions.getAutonomousDatabaseWallet(GetAutonomousDatabaseWalletArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.get("id"))
+     *             .password(autonomousDatabaseWalletPassword)
+     *             .base64EncodeContent(false)
+     *             .generateType(autonomousDatabaseWalletGenerateType)
+     *             .isRegional(autonomousDatabaseWalletIsRegional)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetAutonomousDatabaseWalletResult> getAutonomousDatabaseWalletPlain(GetAutonomousDatabaseWalletPlainArgs args, InvokeOptions options) {
@@ -22671,6 +22846,38 @@ public final class DatabaseFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
+     *             .exadataInfrastructureId(testExadataInfrastructureOciDatabaseExadataInfrastructure.get("id"))
+     *             .excludedFields(exadataInfrastructureExcludedFields)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetExadataInfrastructureResult> getExadataInfrastructure(GetExadataInfrastructureArgs args) {
         return getExadataInfrastructure(args, InvokeOptions.Empty);
@@ -22682,6 +22889,38 @@ public final class DatabaseFunctions {
      * To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
+     *             .exadataInfrastructureId(testExadataInfrastructureOciDatabaseExadataInfrastructure.get("id"))
+     *             .excludedFields(exadataInfrastructureExcludedFields)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetExadataInfrastructureResult> getExadataInfrastructurePlain(GetExadataInfrastructurePlainArgs args) {
@@ -22695,6 +22934,38 @@ public final class DatabaseFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
+     *             .exadataInfrastructureId(testExadataInfrastructureOciDatabaseExadataInfrastructure.get("id"))
+     *             .excludedFields(exadataInfrastructureExcludedFields)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetExadataInfrastructureResult> getExadataInfrastructure(GetExadataInfrastructureArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getExadataInfrastructure:getExadataInfrastructure", TypeShape.of(GetExadataInfrastructureResult.class), args, Utilities.withVersion(options));
@@ -22707,6 +22978,38 @@ public final class DatabaseFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
+     *             .exadataInfrastructureId(testExadataInfrastructureOciDatabaseExadataInfrastructure.get("id"))
+     *             .excludedFields(exadataInfrastructureExcludedFields)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetExadataInfrastructureResult> getExadataInfrastructure(GetExadataInfrastructureArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getExadataInfrastructure:getExadataInfrastructure", TypeShape.of(GetExadataInfrastructureResult.class), args, Utilities.withVersion(options));
@@ -22718,6 +23021,38 @@ public final class DatabaseFunctions {
      * To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
+     *             .exadataInfrastructureId(testExadataInfrastructureOciDatabaseExadataInfrastructure.get("id"))
+     *             .excludedFields(exadataInfrastructureExcludedFields)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetExadataInfrastructureResult> getExadataInfrastructurePlain(GetExadataInfrastructurePlainArgs args, InvokeOptions options) {
@@ -23161,6 +23496,40 @@ public final class DatabaseFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructuresArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructures = DatabaseFunctions.getExadataInfrastructures(GetExadataInfrastructuresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(exadataInfrastructureDisplayName)
+     *             .excludedFields(exadataInfrastructureExcludedFields)
+     *             .state(exadataInfrastructureState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetExadataInfrastructuresResult> getExadataInfrastructures(GetExadataInfrastructuresArgs args) {
         return getExadataInfrastructures(args, InvokeOptions.Empty);
@@ -23172,6 +23541,40 @@ public final class DatabaseFunctions {
      * To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructuresArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructures = DatabaseFunctions.getExadataInfrastructures(GetExadataInfrastructuresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(exadataInfrastructureDisplayName)
+     *             .excludedFields(exadataInfrastructureExcludedFields)
+     *             .state(exadataInfrastructureState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetExadataInfrastructuresResult> getExadataInfrastructuresPlain(GetExadataInfrastructuresPlainArgs args) {
@@ -23185,6 +23588,40 @@ public final class DatabaseFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructuresArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructures = DatabaseFunctions.getExadataInfrastructures(GetExadataInfrastructuresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(exadataInfrastructureDisplayName)
+     *             .excludedFields(exadataInfrastructureExcludedFields)
+     *             .state(exadataInfrastructureState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetExadataInfrastructuresResult> getExadataInfrastructures(GetExadataInfrastructuresArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getExadataInfrastructures:getExadataInfrastructures", TypeShape.of(GetExadataInfrastructuresResult.class), args, Utilities.withVersion(options));
@@ -23197,6 +23634,40 @@ public final class DatabaseFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructuresArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructures = DatabaseFunctions.getExadataInfrastructures(GetExadataInfrastructuresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(exadataInfrastructureDisplayName)
+     *             .excludedFields(exadataInfrastructureExcludedFields)
+     *             .state(exadataInfrastructureState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetExadataInfrastructuresResult> getExadataInfrastructures(GetExadataInfrastructuresArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Database/getExadataInfrastructures:getExadataInfrastructures", TypeShape.of(GetExadataInfrastructuresResult.class), args, Utilities.withVersion(options));
@@ -23208,6 +23679,40 @@ public final class DatabaseFunctions {
      * To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadataInfrastructuresArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadataInfrastructures = DatabaseFunctions.getExadataInfrastructures(GetExadataInfrastructuresArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(exadataInfrastructureDisplayName)
+     *             .excludedFields(exadataInfrastructureExcludedFields)
+     *             .state(exadataInfrastructureState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetExadataInfrastructuresResult> getExadataInfrastructuresPlain(GetExadataInfrastructuresPlainArgs args, InvokeOptions options) {

@@ -165,6 +165,15 @@ def get_media_asset_distribution_channel_attachment(distribution_channel_id: Opt
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_media_asset_distribution_channel_attachment = oci.mediaservices.get_media_asset_distribution_channel_attachment(distribution_channel_id=test_channel["id"],
+        media_asset_id=test_media_asset["id"],
+        version=media_asset_distribution_channel_attachment_version)
+    ```
+
 
     :param _builtins.str distribution_channel_id: Unique DistributionChannel identifier.
     :param Sequence[Union['GetMediaAssetDistributionChannelAttachmentLockArgs', 'GetMediaAssetDistributionChannelAttachmentLockArgsDict', 'outputs.GetMediaAssetDistributionChannelAttachmentLockResult']] locks: Locks associated with this resource.
@@ -200,6 +209,15 @@ def get_media_asset_distribution_channel_attachment_output(distribution_channel_
     Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_media_asset_distribution_channel_attachment = oci.mediaservices.get_media_asset_distribution_channel_attachment(distribution_channel_id=test_channel["id"],
+        media_asset_id=test_media_asset["id"],
+        version=media_asset_distribution_channel_attachment_version)
+    ```
 
 
     :param _builtins.str distribution_channel_id: Unique DistributionChannel identifier.

@@ -14,6 +14,19 @@ import * as utilities from "../utilities";
  * Overview of Patch Management.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPatchManagement = oci.dblm.getPatchManagement({
+ *     compartmentId: compartmentId,
+ *     databaseRelease: patchManagementDatabaseRelease,
+ *     state: patchManagementState,
+ *     timeStartedGreaterThanOrEqualTo: patchManagementTimeStartedGreaterThanOrEqualTo,
+ *     timeStartedLessThan: patchManagementTimeStartedLessThan,
+ * });
+ * ```
  */
 export function getPatchManagement(args: GetPatchManagementArgs, opts?: pulumi.InvokeOptions): Promise<GetPatchManagementResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -111,6 +124,19 @@ export interface GetPatchManagementResult {
  * Overview of Patch Management.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testPatchManagement = oci.dblm.getPatchManagement({
+ *     compartmentId: compartmentId,
+ *     databaseRelease: patchManagementDatabaseRelease,
+ *     state: patchManagementState,
+ *     timeStartedGreaterThanOrEqualTo: patchManagementTimeStartedGreaterThanOrEqualTo,
+ *     timeStartedLessThan: patchManagementTimeStartedLessThan,
+ * });
+ * ```
  */
 export function getPatchManagementOutput(args: GetPatchManagementOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetPatchManagementResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

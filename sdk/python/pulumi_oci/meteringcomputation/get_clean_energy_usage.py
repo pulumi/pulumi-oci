@@ -94,6 +94,14 @@ def get_clean_energy_usage(region: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_clean_energy_usage = oci.meteringcomputation.get_clean_energy_usage(region=clean_energy_usage_region,
+        ad=clean_energy_usage_ad)
+    ```
+
 
     :param _builtins.str region: The region.
     """
@@ -115,6 +123,14 @@ def get_clean_energy_usage_output(region: pulumi.Input[Optional[_builtins.str]] 
     Returns the clean energy usage summary by region.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_clean_energy_usage = oci.meteringcomputation.get_clean_energy_usage(region=clean_energy_usage_region,
+        ad=clean_energy_usage_ad)
+    ```
 
 
     :param _builtins.str region: The region.

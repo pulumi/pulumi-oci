@@ -1952,10 +1952,10 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) }{{@code
      *         final var testBdsInstanceBdsCapacityReservationConfiguration = BigDataServiceFunctions.getBdsInstanceBdsCapacityReservationConfiguration(GetBdsInstanceBdsCapacityReservationConfigurationArgs.builder()
-     *             .bdsCapacityReservationConfigurationId(((String) StdFunctions.regex(RegexArgs.builder()
+     *             .bdsCapacityReservationConfigurationId(StdFunctions.regex(RegexArgs.builder()
      *                 .pattern(".*}&#47;{@code bdsCapacityReservationConfigurations/([^/]+)$")
      *                 .string(testBdsInstanceBdsCapacityReservationConfigurationOciBdsBdsInstanceBdsCapacityReservationConfiguration.get("id"))
-     *                 .build()).result()[0]))
+     *                 .build()).result()[0])
      *             .bdsInstanceId(testBdsInstance.get("id"))
      *             .build());
      * 
@@ -2000,10 +2000,10 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) }{{@code
      *         final var testBdsInstanceBdsCapacityReservationConfiguration = BigDataServiceFunctions.getBdsInstanceBdsCapacityReservationConfiguration(GetBdsInstanceBdsCapacityReservationConfigurationArgs.builder()
-     *             .bdsCapacityReservationConfigurationId(((String) StdFunctions.regex(RegexArgs.builder()
+     *             .bdsCapacityReservationConfigurationId(StdFunctions.regex(RegexArgs.builder()
      *                 .pattern(".*}&#47;{@code bdsCapacityReservationConfigurations/([^/]+)$")
      *                 .string(testBdsInstanceBdsCapacityReservationConfigurationOciBdsBdsInstanceBdsCapacityReservationConfiguration.get("id"))
-     *                 .build()).result()[0]))
+     *                 .build()).result()[0])
      *             .bdsInstanceId(testBdsInstance.get("id"))
      *             .build());
      * 
@@ -2048,10 +2048,10 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) }{{@code
      *         final var testBdsInstanceBdsCapacityReservationConfiguration = BigDataServiceFunctions.getBdsInstanceBdsCapacityReservationConfiguration(GetBdsInstanceBdsCapacityReservationConfigurationArgs.builder()
-     *             .bdsCapacityReservationConfigurationId(((String) StdFunctions.regex(RegexArgs.builder()
+     *             .bdsCapacityReservationConfigurationId(StdFunctions.regex(RegexArgs.builder()
      *                 .pattern(".*}&#47;{@code bdsCapacityReservationConfigurations/([^/]+)$")
      *                 .string(testBdsInstanceBdsCapacityReservationConfigurationOciBdsBdsInstanceBdsCapacityReservationConfiguration.get("id"))
-     *                 .build()).result()[0]))
+     *                 .build()).result()[0])
      *             .bdsInstanceId(testBdsInstance.get("id"))
      *             .build());
      * 
@@ -2096,10 +2096,10 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) }{{@code
      *         final var testBdsInstanceBdsCapacityReservationConfiguration = BigDataServiceFunctions.getBdsInstanceBdsCapacityReservationConfiguration(GetBdsInstanceBdsCapacityReservationConfigurationArgs.builder()
-     *             .bdsCapacityReservationConfigurationId(((String) StdFunctions.regex(RegexArgs.builder()
+     *             .bdsCapacityReservationConfigurationId(StdFunctions.regex(RegexArgs.builder()
      *                 .pattern(".*}&#47;{@code bdsCapacityReservationConfigurations/([^/]+)$")
      *                 .string(testBdsInstanceBdsCapacityReservationConfigurationOciBdsBdsInstanceBdsCapacityReservationConfiguration.get("id"))
-     *                 .build()).result()[0]))
+     *                 .build()).result()[0])
      *             .bdsInstanceId(testBdsInstance.get("id"))
      *             .build());
      * 
@@ -2144,10 +2144,10 @@ public final class BigDataServiceFunctions {
      * 
      *     public static void stack(Context ctx) }{{@code
      *         final var testBdsInstanceBdsCapacityReservationConfiguration = BigDataServiceFunctions.getBdsInstanceBdsCapacityReservationConfiguration(GetBdsInstanceBdsCapacityReservationConfigurationArgs.builder()
-     *             .bdsCapacityReservationConfigurationId(((String) StdFunctions.regex(RegexArgs.builder()
+     *             .bdsCapacityReservationConfigurationId(StdFunctions.regex(RegexArgs.builder()
      *                 .pattern(".*}&#47;{@code bdsCapacityReservationConfigurations/([^/]+)$")
      *                 .string(testBdsInstanceBdsCapacityReservationConfigurationOciBdsBdsInstanceBdsCapacityReservationConfiguration.get("id"))
-     *                 .build()).result()[0]))
+     *                 .build()).result()[0])
      *             .bdsInstanceId(testBdsInstance.get("id"))
      *             .build());
      * 

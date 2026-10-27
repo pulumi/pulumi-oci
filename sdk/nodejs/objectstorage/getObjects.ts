@@ -21,6 +21,22 @@ import * as utilities from "../utilities";
  * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testObjects = oci.objectstorage.getObjects({
+ *     bucket: objectBucket,
+ *     namespace: objectNamespace,
+ *     delimiter: objectDelimiter,
+ *     end: objectEnd,
+ *     fields: objectFields,
+ *     prefix: objectPrefix,
+ *     start: objectStart,
+ *     startAfter: objectStartAfter,
+ * });
+ * ```
  */
 export function getObjects(args: GetObjectsArgs, opts?: pulumi.InvokeOptions): Promise<GetObjectsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -108,6 +124,22 @@ export interface GetObjectsResult {
  * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testObjects = oci.objectstorage.getObjects({
+ *     bucket: objectBucket,
+ *     namespace: objectNamespace,
+ *     delimiter: objectDelimiter,
+ *     end: objectEnd,
+ *     fields: objectFields,
+ *     prefix: objectPrefix,
+ *     start: objectStart,
+ *     startAfter: objectStartAfter,
+ * });
+ * ```
  */
 export function getObjectsOutput(args: GetObjectsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetObjectsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

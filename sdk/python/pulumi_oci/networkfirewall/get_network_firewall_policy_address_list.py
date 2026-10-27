@@ -137,6 +137,14 @@ def get_network_firewall_policy_address_list(name: Optional[_builtins.str] = Non
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_network_firewall_policy_address_list = oci.networkfirewall.get_network_firewall_policy_address_list(address_list_name=test_address_list["name"],
+        network_firewall_policy_id=test_network_firewall_policy["id"])
+    ```
+
 
     :param _builtins.str name: Unique name to identify the group of addresses to be used in the policy rules.
     :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
@@ -165,6 +173,14 @@ def get_network_firewall_policy_address_list_output(name: pulumi.Input[Optional[
     Get Address List by the given name in the context of network firewall policy.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_network_firewall_policy_address_list = oci.networkfirewall.get_network_firewall_policy_address_list(address_list_name=test_address_list["name"],
+        network_firewall_policy_id=test_network_firewall_policy["id"])
+    ```
 
 
     :param _builtins.str name: Unique name to identify the group of addresses to be used in the policy rules.

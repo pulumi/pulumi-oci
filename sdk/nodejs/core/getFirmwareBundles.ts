@@ -13,6 +13,18 @@ import * as utilities from "../utilities";
  * only the default (recommended) Firmware Bundle for the given platform.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFirmwareBundles = oci.core.getFirmwareBundles({
+ *     platform: firmwareBundlePlatform,
+ *     compartmentId: compartmentId,
+ *     isDefaultBundle: firmwareBundleIsDefaultBundle,
+ *     state: firmwareBundleState,
+ * });
+ * ```
  */
 export function getFirmwareBundles(args: GetFirmwareBundlesArgs, opts?: pulumi.InvokeOptions): Promise<GetFirmwareBundlesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -76,6 +88,18 @@ export interface GetFirmwareBundlesResult {
  * only the default (recommended) Firmware Bundle for the given platform.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testFirmwareBundles = oci.core.getFirmwareBundles({
+ *     platform: firmwareBundlePlatform,
+ *     compartmentId: compartmentId,
+ *     isDefaultBundle: firmwareBundleIsDefaultBundle,
+ *     state: firmwareBundleState,
+ * });
+ * ```
  */
 export function getFirmwareBundlesOutput(args: GetFirmwareBundlesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetFirmwareBundlesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

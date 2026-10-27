@@ -12,6 +12,18 @@ import * as utilities from "../utilities";
  * Returns a list of  Projects.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testProjects = oci.ailanguage.getProjects({
+ *     compartmentId: compartmentId,
+ *     displayName: projectDisplayName,
+ *     projectId: testProject.id,
+ *     state: projectState,
+ * });
+ * ```
  */
 export function getProjects(args: GetProjectsArgs, opts?: pulumi.InvokeOptions): Promise<GetProjectsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -79,6 +91,18 @@ export interface GetProjectsResult {
  * Returns a list of  Projects.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testProjects = oci.ailanguage.getProjects({
+ *     compartmentId: compartmentId,
+ *     displayName: projectDisplayName,
+ *     projectId: testProject.id,
+ *     state: projectState,
+ * });
+ * ```
  */
 export function getProjectsOutput(args: GetProjectsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProjectsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

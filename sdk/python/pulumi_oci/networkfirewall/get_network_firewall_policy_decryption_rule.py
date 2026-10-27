@@ -185,6 +185,14 @@ def get_network_firewall_policy_decryption_rule(name: Optional[_builtins.str] = 
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_network_firewall_policy_decryption_rule = oci.networkfirewall.get_network_firewall_policy_decryption_rule(decryption_rule_name=oci_network_firewall_network_firewall_policy_decryption_rule_name,
+        network_firewall_policy_id=test_network_firewall_policy["id"])
+    ```
+
 
     :param _builtins.str name: Name for the decryption rule, must be unique within the policy.
     :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
@@ -217,6 +225,14 @@ def get_network_firewall_policy_decryption_rule_output(name: pulumi.Input[Option
     Get Decryption Rule by the given name in the context of network firewall policy.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_network_firewall_policy_decryption_rule = oci.networkfirewall.get_network_firewall_policy_decryption_rule(decryption_rule_name=oci_network_firewall_network_firewall_policy_decryption_rule_name,
+        network_firewall_policy_id=test_network_firewall_policy["id"])
+    ```
 
 
     :param _builtins.str name: Name for the decryption rule, must be unique within the policy.

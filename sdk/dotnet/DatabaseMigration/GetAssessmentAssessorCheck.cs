@@ -18,6 +18,26 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAssessmentAssessorCheck = Oci.DatabaseMigration.GetAssessmentAssessorCheck.Invoke(new()
+        ///     {
+        ///         AssessmentId = testAssessment.Id,
+        ///         AssessorName = assessmentAssessorCheckAssessorName,
+        ///         CheckName = assessmentAssessorCheckCheckName,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = assessmentAssessorCheckDisplayName,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetAssessmentAssessorCheckResult> InvokeAsync(GetAssessmentAssessorCheckArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAssessmentAssessorCheckResult>("oci:DatabaseMigration/getAssessmentAssessorCheck:getAssessmentAssessorCheck", args ?? new GetAssessmentAssessorCheckArgs(), options.WithDefaults());
@@ -29,6 +49,26 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAssessmentAssessorCheck = Oci.DatabaseMigration.GetAssessmentAssessorCheck.Invoke(new()
+        ///     {
+        ///         AssessmentId = testAssessment.Id,
+        ///         AssessorName = assessmentAssessorCheckAssessorName,
+        ///         CheckName = assessmentAssessorCheckCheckName,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = assessmentAssessorCheckDisplayName,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetAssessmentAssessorCheckResult> Invoke(GetAssessmentAssessorCheckInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAssessmentAssessorCheckResult>("oci:DatabaseMigration/getAssessmentAssessorCheck:getAssessmentAssessorCheck", args ?? new GetAssessmentAssessorCheckInvokeArgs(), options.WithDefaults());
@@ -40,6 +80,26 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAssessmentAssessorCheck = Oci.DatabaseMigration.GetAssessmentAssessorCheck.Invoke(new()
+        ///     {
+        ///         AssessmentId = testAssessment.Id,
+        ///         AssessorName = assessmentAssessorCheckAssessorName,
+        ///         CheckName = assessmentAssessorCheckCheckName,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = assessmentAssessorCheckDisplayName,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetAssessmentAssessorCheckResult> Invoke(GetAssessmentAssessorCheckInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetAssessmentAssessorCheckResult>("oci:DatabaseMigration/getAssessmentAssessorCheck:getAssessmentAssessorCheck", args ?? new GetAssessmentAssessorCheckInvokeArgs(), options.WithDefaults());

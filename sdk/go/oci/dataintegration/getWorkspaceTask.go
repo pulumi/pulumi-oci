@@ -16,6 +16,32 @@ import (
 // Retrieves a task using the specified identifier.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/dataintegration"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := dataintegration.GetWorkspaceTask(ctx, &dataintegration.GetWorkspaceTaskArgs{
+//				TaskKey:          workspaceTaskTaskKey,
+//				WorkspaceId:      testWorkspace.Id,
+//				ExpandReferences: workspaceTaskExpandReferences,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupWorkspaceTask(ctx *pulumi.Context, args *LookupWorkspaceTaskArgs, opts ...pulumi.InvokeOption) (*LookupWorkspaceTaskResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupWorkspaceTaskResult

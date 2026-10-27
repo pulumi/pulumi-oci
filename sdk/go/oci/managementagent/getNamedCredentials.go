@@ -31,16 +31,16 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := managementagent.GetNamedCredentials(ctx, &managementagent.GetNamedCredentialsArgs{
 //				ManagementAgentId: testManagementAgent.Id,
-//				Ids: pulumi.StringArray{
+//				Ids: []string{
 //					namedCredentialId,
 //				},
-//				Names: pulumi.StringArray{
+//				Names: []string{
 //					namedCredentialName,
 //				},
-//				States: pulumi.StringArray{
+//				States: []string{
 //					namedCredentialState,
 //				},
-//				Types: pulumi.StringArray{
+//				Types: []string{
 //					namedCredentialType,
 //				},
 //			}, nil)

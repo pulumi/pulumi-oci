@@ -17,6 +17,24 @@ namespace Pulumi.Oci.DataIntegration
         /// Retrieves a task using the specified identifier.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testWorkspaceTask = Oci.DataIntegration.GetWorkspaceTask.Invoke(new()
+        ///     {
+        ///         TaskKey = workspaceTaskTaskKey,
+        ///         WorkspaceId = testWorkspace.Id,
+        ///         ExpandReferences = workspaceTaskExpandReferences,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetWorkspaceTaskResult> InvokeAsync(GetWorkspaceTaskArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetWorkspaceTaskResult>("oci:DataIntegration/getWorkspaceTask:getWorkspaceTask", args ?? new GetWorkspaceTaskArgs(), options.WithDefaults());
@@ -27,6 +45,24 @@ namespace Pulumi.Oci.DataIntegration
         /// Retrieves a task using the specified identifier.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testWorkspaceTask = Oci.DataIntegration.GetWorkspaceTask.Invoke(new()
+        ///     {
+        ///         TaskKey = workspaceTaskTaskKey,
+        ///         WorkspaceId = testWorkspace.Id,
+        ///         ExpandReferences = workspaceTaskExpandReferences,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetWorkspaceTaskResult> Invoke(GetWorkspaceTaskInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceTaskResult>("oci:DataIntegration/getWorkspaceTask:getWorkspaceTask", args ?? new GetWorkspaceTaskInvokeArgs(), options.WithDefaults());
@@ -37,6 +73,24 @@ namespace Pulumi.Oci.DataIntegration
         /// Retrieves a task using the specified identifier.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testWorkspaceTask = Oci.DataIntegration.GetWorkspaceTask.Invoke(new()
+        ///     {
+        ///         TaskKey = workspaceTaskTaskKey,
+        ///         WorkspaceId = testWorkspace.Id,
+        ///         ExpandReferences = workspaceTaskExpandReferences,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetWorkspaceTaskResult> Invoke(GetWorkspaceTaskInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetWorkspaceTaskResult>("oci:DataIntegration/getWorkspaceTask:getWorkspaceTask", args ?? new GetWorkspaceTaskInvokeArgs(), options.WithDefaults());

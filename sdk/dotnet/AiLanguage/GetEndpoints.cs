@@ -18,6 +18,27 @@ namespace Pulumi.Oci.AiLanguage
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testEndpoints = Oci.AiLanguage.GetEndpoints.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = endpointDisplayName,
+        ///         EndpointId = testEndpoint.Id,
+        ///         ModelId = testModel.Id,
+        ///         ProjectId = testProject.Id,
+        ///         State = endpointState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetEndpointsResult> InvokeAsync(GetEndpointsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetEndpointsResult>("oci:AiLanguage/getEndpoints:getEndpoints", args ?? new GetEndpointsArgs(), options.WithDefaults());
@@ -29,6 +50,27 @@ namespace Pulumi.Oci.AiLanguage
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testEndpoints = Oci.AiLanguage.GetEndpoints.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = endpointDisplayName,
+        ///         EndpointId = testEndpoint.Id,
+        ///         ModelId = testModel.Id,
+        ///         ProjectId = testProject.Id,
+        ///         State = endpointState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetEndpointsResult> Invoke(GetEndpointsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetEndpointsResult>("oci:AiLanguage/getEndpoints:getEndpoints", args ?? new GetEndpointsInvokeArgs(), options.WithDefaults());
@@ -40,6 +82,27 @@ namespace Pulumi.Oci.AiLanguage
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testEndpoints = Oci.AiLanguage.GetEndpoints.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = endpointDisplayName,
+        ///         EndpointId = testEndpoint.Id,
+        ///         ModelId = testModel.Id,
+        ///         ProjectId = testProject.Id,
+        ///         State = endpointState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetEndpointsResult> Invoke(GetEndpointsInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetEndpointsResult>("oci:AiLanguage/getEndpoints:getEndpoints", args ?? new GetEndpointsInvokeArgs(), options.WithDefaults());

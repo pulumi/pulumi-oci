@@ -16,6 +16,37 @@ import (
 // # Search User Schema Attribute Settings
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/identity"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := identity.GetDomainsUserAttributesSettings(ctx, &identity.GetDomainsUserAttributesSettingsArgs{
+//				IdcsEndpoint:            testDomain.Url,
+//				UserAttributesSettingId: testUserAttributesSetting.Id,
+//				AttributeSets: []string{
+//					"all",
+//				},
+//				Attributes:                pulumi.StringRef(""),
+//				Authorization:             pulumi.StringRef(userAttributesSettingAuthorization),
+//				ResourceTypeSchemaVersion: pulumi.StringRef(userAttributesSettingResourceTypeSchemaVersion),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetDomainsUserAttributesSettings(ctx *pulumi.Context, args *GetDomainsUserAttributesSettingsArgs, opts ...pulumi.InvokeOption) (*GetDomainsUserAttributesSettingsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDomainsUserAttributesSettingsResult

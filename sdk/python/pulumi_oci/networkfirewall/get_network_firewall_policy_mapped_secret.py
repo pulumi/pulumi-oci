@@ -151,6 +151,14 @@ def get_network_firewall_policy_mapped_secret(name: Optional[_builtins.str] = No
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_network_firewall_policy_mapped_secret = oci.networkfirewall.get_network_firewall_policy_mapped_secret(mapped_secret_name=oci_network_firewall_network_firewall_policy_mapped_secret_name,
+        network_firewall_policy_id=test_network_firewall_policy["id"])
+    ```
+
 
     :param _builtins.str name: Name of the secret.
     :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
@@ -180,6 +188,14 @@ def get_network_firewall_policy_mapped_secret_output(name: pulumi.Input[Optional
     Get Mapped Secret by the given name in the context of network firewall policy.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_network_firewall_policy_mapped_secret = oci.networkfirewall.get_network_firewall_policy_mapped_secret(mapped_secret_name=oci_network_firewall_network_firewall_policy_mapped_secret_name,
+        network_firewall_policy_id=test_network_firewall_policy["id"])
+    ```
 
 
     :param _builtins.str name: Name of the secret.

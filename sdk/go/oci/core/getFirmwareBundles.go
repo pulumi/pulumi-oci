@@ -17,6 +17,33 @@ import (
 // only the default (recommended) Firmware Bundle for the given platform.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := core.GetFirmwareBundles(ctx, &core.GetFirmwareBundlesArgs{
+//				Platform:        firmwareBundlePlatform,
+//				CompartmentId:   pulumi.StringRef(compartmentId),
+//				IsDefaultBundle: pulumi.BoolRef(firmwareBundleIsDefaultBundle),
+//				State:           firmwareBundleState,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetFirmwareBundles(ctx *pulumi.Context, args *GetFirmwareBundlesArgs, opts ...pulumi.InvokeOption) (*GetFirmwareBundlesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetFirmwareBundlesResult

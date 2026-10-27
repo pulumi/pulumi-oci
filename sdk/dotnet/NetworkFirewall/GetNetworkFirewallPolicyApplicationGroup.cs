@@ -17,6 +17,23 @@ namespace Pulumi.Oci.NetworkFirewall
         /// Get ApplicationGroup by the given name in the context of network firewall policy.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkFirewallPolicyApplicationGroup = Oci.NetworkFirewall.GetNetworkFirewallPolicyApplicationGroup.Invoke(new()
+        ///     {
+        ///         ApplicationGroupName = networkFirewallPolicyApplicationGroupDisplayName,
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetNetworkFirewallPolicyApplicationGroupResult> InvokeAsync(GetNetworkFirewallPolicyApplicationGroupArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkFirewallPolicyApplicationGroupResult>("oci:NetworkFirewall/getNetworkFirewallPolicyApplicationGroup:getNetworkFirewallPolicyApplicationGroup", args ?? new GetNetworkFirewallPolicyApplicationGroupArgs(), options.WithDefaults());
@@ -27,6 +44,23 @@ namespace Pulumi.Oci.NetworkFirewall
         /// Get ApplicationGroup by the given name in the context of network firewall policy.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkFirewallPolicyApplicationGroup = Oci.NetworkFirewall.GetNetworkFirewallPolicyApplicationGroup.Invoke(new()
+        ///     {
+        ///         ApplicationGroupName = networkFirewallPolicyApplicationGroupDisplayName,
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetNetworkFirewallPolicyApplicationGroupResult> Invoke(GetNetworkFirewallPolicyApplicationGroupInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyApplicationGroupResult>("oci:NetworkFirewall/getNetworkFirewallPolicyApplicationGroup:getNetworkFirewallPolicyApplicationGroup", args ?? new GetNetworkFirewallPolicyApplicationGroupInvokeArgs(), options.WithDefaults());
@@ -37,6 +71,23 @@ namespace Pulumi.Oci.NetworkFirewall
         /// Get ApplicationGroup by the given name in the context of network firewall policy.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkFirewallPolicyApplicationGroup = Oci.NetworkFirewall.GetNetworkFirewallPolicyApplicationGroup.Invoke(new()
+        ///     {
+        ///         ApplicationGroupName = networkFirewallPolicyApplicationGroupDisplayName,
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetNetworkFirewallPolicyApplicationGroupResult> Invoke(GetNetworkFirewallPolicyApplicationGroupInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyApplicationGroupResult>("oci:NetworkFirewall/getNetworkFirewallPolicyApplicationGroup:getNetworkFirewallPolicyApplicationGroup", args ?? new GetNetworkFirewallPolicyApplicationGroupInvokeArgs(), options.WithDefaults());

@@ -10,6 +10,16 @@ import * as utilities from "../utilities";
  * Get Mapped Secret by the given name in the context of network firewall policy.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNetworkFirewallPolicyMappedSecret = oci.networkfirewall.getNetworkFirewallPolicyMappedSecret({
+ *     mappedSecretName: ociNetworkFirewallNetworkFirewallPolicyMappedSecretName,
+ *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
+ * });
+ * ```
  */
 export function getNetworkFirewallPolicyMappedSecret(args: GetNetworkFirewallPolicyMappedSecretArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallPolicyMappedSecretResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -76,6 +86,16 @@ export interface GetNetworkFirewallPolicyMappedSecretResult {
  * Get Mapped Secret by the given name in the context of network firewall policy.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNetworkFirewallPolicyMappedSecret = oci.networkfirewall.getNetworkFirewallPolicyMappedSecret({
+ *     mappedSecretName: ociNetworkFirewallNetworkFirewallPolicyMappedSecretName,
+ *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
+ * });
+ * ```
  */
 export function getNetworkFirewallPolicyMappedSecretOutput(args: GetNetworkFirewallPolicyMappedSecretOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkFirewallPolicyMappedSecretResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

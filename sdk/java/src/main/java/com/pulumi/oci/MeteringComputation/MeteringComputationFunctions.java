@@ -277,6 +277,38 @@ public final class MeteringComputationFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetCleanEnergyUsageArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCleanEnergyUsage = MeteringComputationFunctions.getCleanEnergyUsage(GetCleanEnergyUsageArgs.builder()
+     *             .region(cleanEnergyUsageRegion)
+     *             .ad(cleanEnergyUsageAd)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetCleanEnergyUsageResult> getCleanEnergyUsage(GetCleanEnergyUsageArgs args) {
         return getCleanEnergyUsage(args, InvokeOptions.Empty);
@@ -287,6 +319,38 @@ public final class MeteringComputationFunctions {
      * Returns the clean energy usage summary by region.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetCleanEnergyUsageArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCleanEnergyUsage = MeteringComputationFunctions.getCleanEnergyUsage(GetCleanEnergyUsageArgs.builder()
+     *             .region(cleanEnergyUsageRegion)
+     *             .ad(cleanEnergyUsageAd)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetCleanEnergyUsageResult> getCleanEnergyUsagePlain(GetCleanEnergyUsagePlainArgs args) {
@@ -299,6 +363,38 @@ public final class MeteringComputationFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetCleanEnergyUsageArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCleanEnergyUsage = MeteringComputationFunctions.getCleanEnergyUsage(GetCleanEnergyUsageArgs.builder()
+     *             .region(cleanEnergyUsageRegion)
+     *             .ad(cleanEnergyUsageAd)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetCleanEnergyUsageResult> getCleanEnergyUsage(GetCleanEnergyUsageArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:MeteringComputation/getCleanEnergyUsage:getCleanEnergyUsage", TypeShape.of(GetCleanEnergyUsageResult.class), args, Utilities.withVersion(options));
@@ -310,6 +406,38 @@ public final class MeteringComputationFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetCleanEnergyUsageArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCleanEnergyUsage = MeteringComputationFunctions.getCleanEnergyUsage(GetCleanEnergyUsageArgs.builder()
+     *             .region(cleanEnergyUsageRegion)
+     *             .ad(cleanEnergyUsageAd)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetCleanEnergyUsageResult> getCleanEnergyUsage(GetCleanEnergyUsageArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:MeteringComputation/getCleanEnergyUsage:getCleanEnergyUsage", TypeShape.of(GetCleanEnergyUsageResult.class), args, Utilities.withVersion(options));
@@ -320,6 +448,38 @@ public final class MeteringComputationFunctions {
      * Returns the clean energy usage summary by region.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MeteringComputation.MeteringComputationFunctions;
+     * import com.pulumi.oci.MeteringComputation.inputs.GetCleanEnergyUsageArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCleanEnergyUsage = MeteringComputationFunctions.getCleanEnergyUsage(GetCleanEnergyUsageArgs.builder()
+     *             .region(cleanEnergyUsageRegion)
+     *             .ad(cleanEnergyUsageAd)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetCleanEnergyUsageResult> getCleanEnergyUsagePlain(GetCleanEnergyUsagePlainArgs args, InvokeOptions options) {

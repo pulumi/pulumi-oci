@@ -195,6 +195,15 @@ def get_backend_set(backend_set_name: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_backend_set = oci.networkloadbalancer.get_backend_set(backend_set_name=test_backend_set_oci_network_load_balancer_backend_set["name"],
+        network_load_balancer_id=test_network_load_balancer["id"],
+        ip_version=backend_set_ip_version)
+    ```
+
 
     :param _builtins.str backend_set_name: The name of the backend set to retrieve.  Example: `example_backend_set`
     :param _builtins.str network_load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network load balancer to update.
@@ -228,6 +237,15 @@ def get_backend_set_output(backend_set_name: pulumi.Input[Optional[_builtins.str
     Retrieves the configuration information for the specified backend set.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_backend_set = oci.networkloadbalancer.get_backend_set(backend_set_name=test_backend_set_oci_network_load_balancer_backend_set["name"],
+        network_load_balancer_id=test_network_load_balancer["id"],
+        ip_version=backend_set_ip_version)
+    ```
 
 
     :param _builtins.str backend_set_name: The name of the backend set to retrieve.  Example: `example_backend_set`

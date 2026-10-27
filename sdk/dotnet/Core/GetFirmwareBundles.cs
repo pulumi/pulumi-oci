@@ -19,6 +19,25 @@ namespace Pulumi.Oci.Core
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFirmwareBundles = Oci.Core.GetFirmwareBundles.Invoke(new()
+        ///     {
+        ///         Platform = firmwareBundlePlatform,
+        ///         CompartmentId = compartmentId,
+        ///         IsDefaultBundle = firmwareBundleIsDefaultBundle,
+        ///         State = firmwareBundleState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetFirmwareBundlesResult> InvokeAsync(GetFirmwareBundlesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetFirmwareBundlesResult>("oci:Core/getFirmwareBundles:getFirmwareBundles", args ?? new GetFirmwareBundlesArgs(), options.WithDefaults());
@@ -31,6 +50,25 @@ namespace Pulumi.Oci.Core
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFirmwareBundles = Oci.Core.GetFirmwareBundles.Invoke(new()
+        ///     {
+        ///         Platform = firmwareBundlePlatform,
+        ///         CompartmentId = compartmentId,
+        ///         IsDefaultBundle = firmwareBundleIsDefaultBundle,
+        ///         State = firmwareBundleState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetFirmwareBundlesResult> Invoke(GetFirmwareBundlesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetFirmwareBundlesResult>("oci:Core/getFirmwareBundles:getFirmwareBundles", args ?? new GetFirmwareBundlesInvokeArgs(), options.WithDefaults());
@@ -43,6 +81,25 @@ namespace Pulumi.Oci.Core
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testFirmwareBundles = Oci.Core.GetFirmwareBundles.Invoke(new()
+        ///     {
+        ///         Platform = firmwareBundlePlatform,
+        ///         CompartmentId = compartmentId,
+        ///         IsDefaultBundle = firmwareBundleIsDefaultBundle,
+        ///         State = firmwareBundleState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetFirmwareBundlesResult> Invoke(GetFirmwareBundlesInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetFirmwareBundlesResult>("oci:Core/getFirmwareBundles:getFirmwareBundles", args ?? new GetFirmwareBundlesInvokeArgs(), options.WithDefaults());

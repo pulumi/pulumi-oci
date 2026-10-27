@@ -961,6 +961,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyAddressListArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyAddressList = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressList(GetNetworkFirewallPolicyAddressListArgs.builder()
+     *             .addressListName(testAddressList.get("name"))
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicyAddressListResult> getNetworkFirewallPolicyAddressList(GetNetworkFirewallPolicyAddressListArgs args) {
         return getNetworkFirewallPolicyAddressList(args, InvokeOptions.Empty);
@@ -971,6 +1003,38 @@ public final class NetworkFirewallFunctions {
      * Get Address List by the given name in the context of network firewall policy.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyAddressListArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyAddressList = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressList(GetNetworkFirewallPolicyAddressListArgs.builder()
+     *             .addressListName(testAddressList.get("name"))
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyAddressListResult> getNetworkFirewallPolicyAddressListPlain(GetNetworkFirewallPolicyAddressListPlainArgs args) {
@@ -983,6 +1047,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyAddressListArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyAddressList = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressList(GetNetworkFirewallPolicyAddressListArgs.builder()
+     *             .addressListName(testAddressList.get("name"))
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicyAddressListResult> getNetworkFirewallPolicyAddressList(GetNetworkFirewallPolicyAddressListArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyAddressList:getNetworkFirewallPolicyAddressList", TypeShape.of(GetNetworkFirewallPolicyAddressListResult.class), args, Utilities.withVersion(options));
@@ -994,6 +1090,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyAddressListArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyAddressList = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressList(GetNetworkFirewallPolicyAddressListArgs.builder()
+     *             .addressListName(testAddressList.get("name"))
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicyAddressListResult> getNetworkFirewallPolicyAddressList(GetNetworkFirewallPolicyAddressListArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyAddressList:getNetworkFirewallPolicyAddressList", TypeShape.of(GetNetworkFirewallPolicyAddressListResult.class), args, Utilities.withVersion(options));
@@ -1004,6 +1132,38 @@ public final class NetworkFirewallFunctions {
      * Get Address List by the given name in the context of network firewall policy.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyAddressListArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyAddressList = NetworkFirewallFunctions.getNetworkFirewallPolicyAddressList(GetNetworkFirewallPolicyAddressListArgs.builder()
+     *             .addressListName(testAddressList.get("name"))
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyAddressListResult> getNetworkFirewallPolicyAddressListPlain(GetNetworkFirewallPolicyAddressListPlainArgs args, InvokeOptions options) {
@@ -1231,6 +1391,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplication = NetworkFirewallFunctions.getNetworkFirewallPolicyApplication(GetNetworkFirewallPolicyApplicationArgs.builder()
+     *             .applicationName(networkFirewallPolicyApplicationName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicyApplicationResult> getNetworkFirewallPolicyApplication(GetNetworkFirewallPolicyApplicationArgs args) {
         return getNetworkFirewallPolicyApplication(args, InvokeOptions.Empty);
@@ -1241,6 +1433,38 @@ public final class NetworkFirewallFunctions {
      * Get Application by the given name in the context of network firewall policy.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplication = NetworkFirewallFunctions.getNetworkFirewallPolicyApplication(GetNetworkFirewallPolicyApplicationArgs.builder()
+     *             .applicationName(networkFirewallPolicyApplicationName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyApplicationResult> getNetworkFirewallPolicyApplicationPlain(GetNetworkFirewallPolicyApplicationPlainArgs args) {
@@ -1253,6 +1477,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplication = NetworkFirewallFunctions.getNetworkFirewallPolicyApplication(GetNetworkFirewallPolicyApplicationArgs.builder()
+     *             .applicationName(networkFirewallPolicyApplicationName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicyApplicationResult> getNetworkFirewallPolicyApplication(GetNetworkFirewallPolicyApplicationArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyApplication:getNetworkFirewallPolicyApplication", TypeShape.of(GetNetworkFirewallPolicyApplicationResult.class), args, Utilities.withVersion(options));
@@ -1263,6 +1519,38 @@ public final class NetworkFirewallFunctions {
      * Get Application by the given name in the context of network firewall policy.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplication = NetworkFirewallFunctions.getNetworkFirewallPolicyApplication(GetNetworkFirewallPolicyApplicationArgs.builder()
+     *             .applicationName(networkFirewallPolicyApplicationName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static Output<GetNetworkFirewallPolicyApplicationResult> getNetworkFirewallPolicyApplication(GetNetworkFirewallPolicyApplicationArgs args, InvokeOutputOptions options) {
@@ -1275,6 +1563,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplication = NetworkFirewallFunctions.getNetworkFirewallPolicyApplication(GetNetworkFirewallPolicyApplicationArgs.builder()
+     *             .applicationName(networkFirewallPolicyApplicationName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyApplicationResult> getNetworkFirewallPolicyApplicationPlain(GetNetworkFirewallPolicyApplicationPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyApplication:getNetworkFirewallPolicyApplication", TypeShape.of(GetNetworkFirewallPolicyApplicationResult.class), args, Utilities.withVersion(options));
@@ -1285,6 +1605,38 @@ public final class NetworkFirewallFunctions {
      * Get ApplicationGroup by the given name in the context of network firewall policy.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationGroupArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplicationGroup = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroup(GetNetworkFirewallPolicyApplicationGroupArgs.builder()
+     *             .applicationGroupName(networkFirewallPolicyApplicationGroupDisplayName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static Output<GetNetworkFirewallPolicyApplicationGroupResult> getNetworkFirewallPolicyApplicationGroup(GetNetworkFirewallPolicyApplicationGroupArgs args) {
@@ -1297,6 +1649,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationGroupArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplicationGroup = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroup(GetNetworkFirewallPolicyApplicationGroupArgs.builder()
+     *             .applicationGroupName(networkFirewallPolicyApplicationGroupDisplayName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyApplicationGroupResult> getNetworkFirewallPolicyApplicationGroupPlain(GetNetworkFirewallPolicyApplicationGroupPlainArgs args) {
         return getNetworkFirewallPolicyApplicationGroupPlain(args, InvokeOptions.Empty);
@@ -1307,6 +1691,38 @@ public final class NetworkFirewallFunctions {
      * Get ApplicationGroup by the given name in the context of network firewall policy.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationGroupArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplicationGroup = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroup(GetNetworkFirewallPolicyApplicationGroupArgs.builder()
+     *             .applicationGroupName(networkFirewallPolicyApplicationGroupDisplayName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static Output<GetNetworkFirewallPolicyApplicationGroupResult> getNetworkFirewallPolicyApplicationGroup(GetNetworkFirewallPolicyApplicationGroupArgs args, InvokeOptions options) {
@@ -1319,6 +1735,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationGroupArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplicationGroup = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroup(GetNetworkFirewallPolicyApplicationGroupArgs.builder()
+     *             .applicationGroupName(networkFirewallPolicyApplicationGroupDisplayName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicyApplicationGroupResult> getNetworkFirewallPolicyApplicationGroup(GetNetworkFirewallPolicyApplicationGroupArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyApplicationGroup:getNetworkFirewallPolicyApplicationGroup", TypeShape.of(GetNetworkFirewallPolicyApplicationGroupResult.class), args, Utilities.withVersion(options));
@@ -1329,6 +1777,38 @@ public final class NetworkFirewallFunctions {
      * Get ApplicationGroup by the given name in the context of network firewall policy.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyApplicationGroupArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyApplicationGroup = NetworkFirewallFunctions.getNetworkFirewallPolicyApplicationGroup(GetNetworkFirewallPolicyApplicationGroupArgs.builder()
+     *             .applicationGroupName(networkFirewallPolicyApplicationGroupDisplayName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyApplicationGroupResult> getNetworkFirewallPolicyApplicationGroupPlain(GetNetworkFirewallPolicyApplicationGroupPlainArgs args, InvokeOptions options) {
@@ -1771,6 +2251,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionProfileArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionProfile = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfile(GetNetworkFirewallPolicyDecryptionProfileArgs.builder()
+     *             .decryptionProfileName(ociNetworkFirewallNetworkFirewallPolicyDecryptionProfileName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicyDecryptionProfileResult> getNetworkFirewallPolicyDecryptionProfile(GetNetworkFirewallPolicyDecryptionProfileArgs args) {
         return getNetworkFirewallPolicyDecryptionProfile(args, InvokeOptions.Empty);
@@ -1781,6 +2293,38 @@ public final class NetworkFirewallFunctions {
      * Get Decryption Profile by the given name in the context of network firewall policy.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionProfileArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionProfile = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfile(GetNetworkFirewallPolicyDecryptionProfileArgs.builder()
+     *             .decryptionProfileName(ociNetworkFirewallNetworkFirewallPolicyDecryptionProfileName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyDecryptionProfileResult> getNetworkFirewallPolicyDecryptionProfilePlain(GetNetworkFirewallPolicyDecryptionProfilePlainArgs args) {
@@ -1793,6 +2337,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionProfileArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionProfile = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfile(GetNetworkFirewallPolicyDecryptionProfileArgs.builder()
+     *             .decryptionProfileName(ociNetworkFirewallNetworkFirewallPolicyDecryptionProfileName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicyDecryptionProfileResult> getNetworkFirewallPolicyDecryptionProfile(GetNetworkFirewallPolicyDecryptionProfileArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionProfile:getNetworkFirewallPolicyDecryptionProfile", TypeShape.of(GetNetworkFirewallPolicyDecryptionProfileResult.class), args, Utilities.withVersion(options));
@@ -1804,6 +2380,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionProfileArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionProfile = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfile(GetNetworkFirewallPolicyDecryptionProfileArgs.builder()
+     *             .decryptionProfileName(ociNetworkFirewallNetworkFirewallPolicyDecryptionProfileName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicyDecryptionProfileResult> getNetworkFirewallPolicyDecryptionProfile(GetNetworkFirewallPolicyDecryptionProfileArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionProfile:getNetworkFirewallPolicyDecryptionProfile", TypeShape.of(GetNetworkFirewallPolicyDecryptionProfileResult.class), args, Utilities.withVersion(options));
@@ -1814,6 +2422,38 @@ public final class NetworkFirewallFunctions {
      * Get Decryption Profile by the given name in the context of network firewall policy.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionProfileArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionProfile = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionProfile(GetNetworkFirewallPolicyDecryptionProfileArgs.builder()
+     *             .decryptionProfileName(ociNetworkFirewallNetworkFirewallPolicyDecryptionProfileName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyDecryptionProfileResult> getNetworkFirewallPolicyDecryptionProfilePlain(GetNetworkFirewallPolicyDecryptionProfilePlainArgs args, InvokeOptions options) {
@@ -2041,6 +2681,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionRuleArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionRule = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRule(GetNetworkFirewallPolicyDecryptionRuleArgs.builder()
+     *             .decryptionRuleName(ociNetworkFirewallNetworkFirewallPolicyDecryptionRuleName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicyDecryptionRuleResult> getNetworkFirewallPolicyDecryptionRule(GetNetworkFirewallPolicyDecryptionRuleArgs args) {
         return getNetworkFirewallPolicyDecryptionRule(args, InvokeOptions.Empty);
@@ -2051,6 +2723,38 @@ public final class NetworkFirewallFunctions {
      * Get Decryption Rule by the given name in the context of network firewall policy.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionRuleArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionRule = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRule(GetNetworkFirewallPolicyDecryptionRuleArgs.builder()
+     *             .decryptionRuleName(ociNetworkFirewallNetworkFirewallPolicyDecryptionRuleName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyDecryptionRuleResult> getNetworkFirewallPolicyDecryptionRulePlain(GetNetworkFirewallPolicyDecryptionRulePlainArgs args) {
@@ -2063,6 +2767,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionRuleArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionRule = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRule(GetNetworkFirewallPolicyDecryptionRuleArgs.builder()
+     *             .decryptionRuleName(ociNetworkFirewallNetworkFirewallPolicyDecryptionRuleName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicyDecryptionRuleResult> getNetworkFirewallPolicyDecryptionRule(GetNetworkFirewallPolicyDecryptionRuleArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRule:getNetworkFirewallPolicyDecryptionRule", TypeShape.of(GetNetworkFirewallPolicyDecryptionRuleResult.class), args, Utilities.withVersion(options));
@@ -2074,6 +2810,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionRuleArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionRule = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRule(GetNetworkFirewallPolicyDecryptionRuleArgs.builder()
+     *             .decryptionRuleName(ociNetworkFirewallNetworkFirewallPolicyDecryptionRuleName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicyDecryptionRuleResult> getNetworkFirewallPolicyDecryptionRule(GetNetworkFirewallPolicyDecryptionRuleArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionRule:getNetworkFirewallPolicyDecryptionRule", TypeShape.of(GetNetworkFirewallPolicyDecryptionRuleResult.class), args, Utilities.withVersion(options));
@@ -2084,6 +2852,38 @@ public final class NetworkFirewallFunctions {
      * Get Decryption Rule by the given name in the context of network firewall policy.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyDecryptionRuleArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyDecryptionRule = NetworkFirewallFunctions.getNetworkFirewallPolicyDecryptionRule(GetNetworkFirewallPolicyDecryptionRuleArgs.builder()
+     *             .decryptionRuleName(ociNetworkFirewallNetworkFirewallPolicyDecryptionRuleName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyDecryptionRuleResult> getNetworkFirewallPolicyDecryptionRulePlain(GetNetworkFirewallPolicyDecryptionRulePlainArgs args, InvokeOptions options) {
@@ -2316,6 +3116,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyMappedSecretArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyMappedSecret = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecret(GetNetworkFirewallPolicyMappedSecretArgs.builder()
+     *             .mappedSecretName(ociNetworkFirewallNetworkFirewallPolicyMappedSecretName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicyMappedSecretResult> getNetworkFirewallPolicyMappedSecret(GetNetworkFirewallPolicyMappedSecretArgs args) {
         return getNetworkFirewallPolicyMappedSecret(args, InvokeOptions.Empty);
@@ -2326,6 +3158,38 @@ public final class NetworkFirewallFunctions {
      * Get Mapped Secret by the given name in the context of network firewall policy.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyMappedSecretArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyMappedSecret = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecret(GetNetworkFirewallPolicyMappedSecretArgs.builder()
+     *             .mappedSecretName(ociNetworkFirewallNetworkFirewallPolicyMappedSecretName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyMappedSecretResult> getNetworkFirewallPolicyMappedSecretPlain(GetNetworkFirewallPolicyMappedSecretPlainArgs args) {
@@ -2338,6 +3202,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyMappedSecretArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyMappedSecret = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecret(GetNetworkFirewallPolicyMappedSecretArgs.builder()
+     *             .mappedSecretName(ociNetworkFirewallNetworkFirewallPolicyMappedSecretName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicyMappedSecretResult> getNetworkFirewallPolicyMappedSecret(GetNetworkFirewallPolicyMappedSecretArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecret:getNetworkFirewallPolicyMappedSecret", TypeShape.of(GetNetworkFirewallPolicyMappedSecretResult.class), args, Utilities.withVersion(options));
@@ -2349,6 +3245,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyMappedSecretArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyMappedSecret = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecret(GetNetworkFirewallPolicyMappedSecretArgs.builder()
+     *             .mappedSecretName(ociNetworkFirewallNetworkFirewallPolicyMappedSecretName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicyMappedSecretResult> getNetworkFirewallPolicyMappedSecret(GetNetworkFirewallPolicyMappedSecretArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyMappedSecret:getNetworkFirewallPolicyMappedSecret", TypeShape.of(GetNetworkFirewallPolicyMappedSecretResult.class), args, Utilities.withVersion(options));
@@ -2359,6 +3287,38 @@ public final class NetworkFirewallFunctions {
      * Get Mapped Secret by the given name in the context of network firewall policy.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyMappedSecretArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyMappedSecret = NetworkFirewallFunctions.getNetworkFirewallPolicyMappedSecret(GetNetworkFirewallPolicyMappedSecretArgs.builder()
+     *             .mappedSecretName(ociNetworkFirewallNetworkFirewallPolicyMappedSecretName)
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyMappedSecretResult> getNetworkFirewallPolicyMappedSecretPlain(GetNetworkFirewallPolicyMappedSecretPlainArgs args, InvokeOptions options) {
@@ -3021,6 +3981,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicySecurityRuleArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicySecurityRule = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRule(GetNetworkFirewallPolicySecurityRuleArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .securityRuleName(ociNetworkFirewallNetworkFirewallPolicySecurityRuleName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicySecurityRuleResult> getNetworkFirewallPolicySecurityRule(GetNetworkFirewallPolicySecurityRuleArgs args) {
         return getNetworkFirewallPolicySecurityRule(args, InvokeOptions.Empty);
@@ -3031,6 +4023,38 @@ public final class NetworkFirewallFunctions {
      * Get Security Rule by the given name in the context of network firewall policy.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicySecurityRuleArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicySecurityRule = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRule(GetNetworkFirewallPolicySecurityRuleArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .securityRuleName(ociNetworkFirewallNetworkFirewallPolicySecurityRuleName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicySecurityRuleResult> getNetworkFirewallPolicySecurityRulePlain(GetNetworkFirewallPolicySecurityRulePlainArgs args) {
@@ -3043,6 +4067,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicySecurityRuleArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicySecurityRule = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRule(GetNetworkFirewallPolicySecurityRuleArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .securityRuleName(ociNetworkFirewallNetworkFirewallPolicySecurityRuleName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicySecurityRuleResult> getNetworkFirewallPolicySecurityRule(GetNetworkFirewallPolicySecurityRuleArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicySecurityRule:getNetworkFirewallPolicySecurityRule", TypeShape.of(GetNetworkFirewallPolicySecurityRuleResult.class), args, Utilities.withVersion(options));
@@ -3054,6 +4110,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicySecurityRuleArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicySecurityRule = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRule(GetNetworkFirewallPolicySecurityRuleArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .securityRuleName(ociNetworkFirewallNetworkFirewallPolicySecurityRuleName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicySecurityRuleResult> getNetworkFirewallPolicySecurityRule(GetNetworkFirewallPolicySecurityRuleArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicySecurityRule:getNetworkFirewallPolicySecurityRule", TypeShape.of(GetNetworkFirewallPolicySecurityRuleResult.class), args, Utilities.withVersion(options));
@@ -3064,6 +4152,38 @@ public final class NetworkFirewallFunctions {
      * Get Security Rule by the given name in the context of network firewall policy.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicySecurityRuleArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicySecurityRule = NetworkFirewallFunctions.getNetworkFirewallPolicySecurityRule(GetNetworkFirewallPolicySecurityRuleArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .securityRuleName(ociNetworkFirewallNetworkFirewallPolicySecurityRuleName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicySecurityRuleResult> getNetworkFirewallPolicySecurityRulePlain(GetNetworkFirewallPolicySecurityRulePlainArgs args, InvokeOptions options) {
@@ -3296,6 +4416,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyService = NetworkFirewallFunctions.getNetworkFirewallPolicyService(GetNetworkFirewallPolicyServiceArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .serviceName(ociNetworkFirewallNetworkFirewallPolicyServiceName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicyServiceResult> getNetworkFirewallPolicyService(GetNetworkFirewallPolicyServiceArgs args) {
         return getNetworkFirewallPolicyService(args, InvokeOptions.Empty);
@@ -3306,6 +4458,38 @@ public final class NetworkFirewallFunctions {
      * Get Service by the given name in the context of network firewall policy.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyService = NetworkFirewallFunctions.getNetworkFirewallPolicyService(GetNetworkFirewallPolicyServiceArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .serviceName(ociNetworkFirewallNetworkFirewallPolicyServiceName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyServiceResult> getNetworkFirewallPolicyServicePlain(GetNetworkFirewallPolicyServicePlainArgs args) {
@@ -3318,6 +4502,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyService = NetworkFirewallFunctions.getNetworkFirewallPolicyService(GetNetworkFirewallPolicyServiceArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .serviceName(ociNetworkFirewallNetworkFirewallPolicyServiceName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicyServiceResult> getNetworkFirewallPolicyService(GetNetworkFirewallPolicyServiceArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyService:getNetworkFirewallPolicyService", TypeShape.of(GetNetworkFirewallPolicyServiceResult.class), args, Utilities.withVersion(options));
@@ -3328,6 +4544,38 @@ public final class NetworkFirewallFunctions {
      * Get Service by the given name in the context of network firewall policy.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyService = NetworkFirewallFunctions.getNetworkFirewallPolicyService(GetNetworkFirewallPolicyServiceArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .serviceName(ociNetworkFirewallNetworkFirewallPolicyServiceName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static Output<GetNetworkFirewallPolicyServiceResult> getNetworkFirewallPolicyService(GetNetworkFirewallPolicyServiceArgs args, InvokeOutputOptions options) {
@@ -3340,6 +4588,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyService = NetworkFirewallFunctions.getNetworkFirewallPolicyService(GetNetworkFirewallPolicyServiceArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .serviceName(ociNetworkFirewallNetworkFirewallPolicyServiceName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyServiceResult> getNetworkFirewallPolicyServicePlain(GetNetworkFirewallPolicyServicePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:NetworkFirewall/getNetworkFirewallPolicyService:getNetworkFirewallPolicyService", TypeShape.of(GetNetworkFirewallPolicyServiceResult.class), args, Utilities.withVersion(options));
@@ -3350,6 +4630,38 @@ public final class NetworkFirewallFunctions {
      * Get ServiceList by the given name in the context of network firewall policy.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceListArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyServiceList = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceList(GetNetworkFirewallPolicyServiceListArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .serviceListName(networkFirewallPolicyServiceListServiceListName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static Output<GetNetworkFirewallPolicyServiceListResult> getNetworkFirewallPolicyServiceList(GetNetworkFirewallPolicyServiceListArgs args) {
@@ -3362,6 +4674,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceListArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyServiceList = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceList(GetNetworkFirewallPolicyServiceListArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .serviceListName(networkFirewallPolicyServiceListServiceListName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyServiceListResult> getNetworkFirewallPolicyServiceListPlain(GetNetworkFirewallPolicyServiceListPlainArgs args) {
         return getNetworkFirewallPolicyServiceListPlain(args, InvokeOptions.Empty);
@@ -3372,6 +4716,38 @@ public final class NetworkFirewallFunctions {
      * Get ServiceList by the given name in the context of network firewall policy.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceListArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyServiceList = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceList(GetNetworkFirewallPolicyServiceListArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .serviceListName(networkFirewallPolicyServiceListServiceListName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static Output<GetNetworkFirewallPolicyServiceListResult> getNetworkFirewallPolicyServiceList(GetNetworkFirewallPolicyServiceListArgs args, InvokeOptions options) {
@@ -3384,6 +4760,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceListArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyServiceList = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceList(GetNetworkFirewallPolicyServiceListArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .serviceListName(networkFirewallPolicyServiceListServiceListName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicyServiceListResult> getNetworkFirewallPolicyServiceList(GetNetworkFirewallPolicyServiceListArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyServiceList:getNetworkFirewallPolicyServiceList", TypeShape.of(GetNetworkFirewallPolicyServiceListResult.class), args, Utilities.withVersion(options));
@@ -3394,6 +4802,38 @@ public final class NetworkFirewallFunctions {
      * Get ServiceList by the given name in the context of network firewall policy.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyServiceListArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyServiceList = NetworkFirewallFunctions.getNetworkFirewallPolicyServiceList(GetNetworkFirewallPolicyServiceListArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .serviceListName(networkFirewallPolicyServiceListServiceListName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyServiceListResult> getNetworkFirewallPolicyServiceListPlain(GetNetworkFirewallPolicyServiceListPlainArgs args, InvokeOptions options) {
@@ -4271,6 +5711,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyUrlListArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyUrlList = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlList(GetNetworkFirewallPolicyUrlListArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .urlListName(networkFirewallPolicyUrlListUrlListName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicyUrlListResult> getNetworkFirewallPolicyUrlList(GetNetworkFirewallPolicyUrlListArgs args) {
         return getNetworkFirewallPolicyUrlList(args, InvokeOptions.Empty);
@@ -4281,6 +5753,38 @@ public final class NetworkFirewallFunctions {
      * Get Url List by the given name in the context of network firewall policy.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyUrlListArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyUrlList = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlList(GetNetworkFirewallPolicyUrlListArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .urlListName(networkFirewallPolicyUrlListUrlListName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyUrlListResult> getNetworkFirewallPolicyUrlListPlain(GetNetworkFirewallPolicyUrlListPlainArgs args) {
@@ -4293,6 +5797,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyUrlListArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyUrlList = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlList(GetNetworkFirewallPolicyUrlListArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .urlListName(networkFirewallPolicyUrlListUrlListName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicyUrlListResult> getNetworkFirewallPolicyUrlList(GetNetworkFirewallPolicyUrlListArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyUrlList:getNetworkFirewallPolicyUrlList", TypeShape.of(GetNetworkFirewallPolicyUrlListResult.class), args, Utilities.withVersion(options));
@@ -4304,6 +5840,38 @@ public final class NetworkFirewallFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyUrlListArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyUrlList = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlList(GetNetworkFirewallPolicyUrlListArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .urlListName(networkFirewallPolicyUrlListUrlListName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetNetworkFirewallPolicyUrlListResult> getNetworkFirewallPolicyUrlList(GetNetworkFirewallPolicyUrlListArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkFirewall/getNetworkFirewallPolicyUrlList:getNetworkFirewallPolicyUrlList", TypeShape.of(GetNetworkFirewallPolicyUrlListResult.class), args, Utilities.withVersion(options));
@@ -4314,6 +5882,38 @@ public final class NetworkFirewallFunctions {
      * Get Url List by the given name in the context of network firewall policy.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkFirewall.NetworkFirewallFunctions;
+     * import com.pulumi.oci.NetworkFirewall.inputs.GetNetworkFirewallPolicyUrlListArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testNetworkFirewallPolicyUrlList = NetworkFirewallFunctions.getNetworkFirewallPolicyUrlList(GetNetworkFirewallPolicyUrlListArgs.builder()
+     *             .networkFirewallPolicyId(testNetworkFirewallPolicy.get("id"))
+     *             .urlListName(networkFirewallPolicyUrlListUrlListName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetNetworkFirewallPolicyUrlListResult> getNetworkFirewallPolicyUrlListPlain(GetNetworkFirewallPolicyUrlListPlainArgs args, InvokeOptions options) {

@@ -23640,6 +23640,51 @@ public final class DatabaseManagementFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselinesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaselines = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .isAccepted(managedDatabaseSqlPlanBaselineIsAccepted)
+     *             .isAdaptive(managedDatabaseSqlPlanBaselineIsAdaptive)
+     *             .isAutoPurged(managedDatabaseSqlPlanBaselineIsAutoPurged)
+     *             .isEnabled(managedDatabaseSqlPlanBaselineIsEnabled)
+     *             .isFixed(managedDatabaseSqlPlanBaselineIsFixed)
+     *             .isNeverExecuted(managedDatabaseSqlPlanBaselineIsNeverExecuted)
+     *             .isReproduced(managedDatabaseSqlPlanBaselineIsReproduced)
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineOpcNamedCredentialId)
+     *             .origin(managedDatabaseSqlPlanBaselineOrigin)
+     *             .planName(managedDatabaseSqlPlanBaselinePlanName)
+     *             .sqlHandle(managedDatabaseSqlPlanBaselineSqlHandle)
+     *             .sqlText(managedDatabaseSqlPlanBaselineSqlText)
+     *             .timeLastExecutedGreaterThan(managedDatabaseSqlPlanBaselineTimeLastExecutedGreaterThan)
+     *             .timeLastExecutedLessThan(managedDatabaseSqlPlanBaselineTimeLastExecutedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetManagedDatabaseSqlPlanBaselinesResult> getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs args) {
         return getManagedDatabaseSqlPlanBaselines(args, InvokeOptions.Empty);
@@ -23650,6 +23695,51 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL plan baselines for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselinesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaselines = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .isAccepted(managedDatabaseSqlPlanBaselineIsAccepted)
+     *             .isAdaptive(managedDatabaseSqlPlanBaselineIsAdaptive)
+     *             .isAutoPurged(managedDatabaseSqlPlanBaselineIsAutoPurged)
+     *             .isEnabled(managedDatabaseSqlPlanBaselineIsEnabled)
+     *             .isFixed(managedDatabaseSqlPlanBaselineIsFixed)
+     *             .isNeverExecuted(managedDatabaseSqlPlanBaselineIsNeverExecuted)
+     *             .isReproduced(managedDatabaseSqlPlanBaselineIsReproduced)
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineOpcNamedCredentialId)
+     *             .origin(managedDatabaseSqlPlanBaselineOrigin)
+     *             .planName(managedDatabaseSqlPlanBaselinePlanName)
+     *             .sqlHandle(managedDatabaseSqlPlanBaselineSqlHandle)
+     *             .sqlText(managedDatabaseSqlPlanBaselineSqlText)
+     *             .timeLastExecutedGreaterThan(managedDatabaseSqlPlanBaselineTimeLastExecutedGreaterThan)
+     *             .timeLastExecutedLessThan(managedDatabaseSqlPlanBaselineTimeLastExecutedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlPlanBaselinesResult> getManagedDatabaseSqlPlanBaselinesPlain(GetManagedDatabaseSqlPlanBaselinesPlainArgs args) {
@@ -23662,6 +23752,51 @@ public final class DatabaseManagementFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselinesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaselines = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .isAccepted(managedDatabaseSqlPlanBaselineIsAccepted)
+     *             .isAdaptive(managedDatabaseSqlPlanBaselineIsAdaptive)
+     *             .isAutoPurged(managedDatabaseSqlPlanBaselineIsAutoPurged)
+     *             .isEnabled(managedDatabaseSqlPlanBaselineIsEnabled)
+     *             .isFixed(managedDatabaseSqlPlanBaselineIsFixed)
+     *             .isNeverExecuted(managedDatabaseSqlPlanBaselineIsNeverExecuted)
+     *             .isReproduced(managedDatabaseSqlPlanBaselineIsReproduced)
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineOpcNamedCredentialId)
+     *             .origin(managedDatabaseSqlPlanBaselineOrigin)
+     *             .planName(managedDatabaseSqlPlanBaselinePlanName)
+     *             .sqlHandle(managedDatabaseSqlPlanBaselineSqlHandle)
+     *             .sqlText(managedDatabaseSqlPlanBaselineSqlText)
+     *             .timeLastExecutedGreaterThan(managedDatabaseSqlPlanBaselineTimeLastExecutedGreaterThan)
+     *             .timeLastExecutedLessThan(managedDatabaseSqlPlanBaselineTimeLastExecutedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetManagedDatabaseSqlPlanBaselinesResult> getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselines:getManagedDatabaseSqlPlanBaselines", TypeShape.of(GetManagedDatabaseSqlPlanBaselinesResult.class), args, Utilities.withVersion(options));
@@ -23673,6 +23808,51 @@ public final class DatabaseManagementFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselinesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaselines = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .isAccepted(managedDatabaseSqlPlanBaselineIsAccepted)
+     *             .isAdaptive(managedDatabaseSqlPlanBaselineIsAdaptive)
+     *             .isAutoPurged(managedDatabaseSqlPlanBaselineIsAutoPurged)
+     *             .isEnabled(managedDatabaseSqlPlanBaselineIsEnabled)
+     *             .isFixed(managedDatabaseSqlPlanBaselineIsFixed)
+     *             .isNeverExecuted(managedDatabaseSqlPlanBaselineIsNeverExecuted)
+     *             .isReproduced(managedDatabaseSqlPlanBaselineIsReproduced)
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineOpcNamedCredentialId)
+     *             .origin(managedDatabaseSqlPlanBaselineOrigin)
+     *             .planName(managedDatabaseSqlPlanBaselinePlanName)
+     *             .sqlHandle(managedDatabaseSqlPlanBaselineSqlHandle)
+     *             .sqlText(managedDatabaseSqlPlanBaselineSqlText)
+     *             .timeLastExecutedGreaterThan(managedDatabaseSqlPlanBaselineTimeLastExecutedGreaterThan)
+     *             .timeLastExecutedLessThan(managedDatabaseSqlPlanBaselineTimeLastExecutedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetManagedDatabaseSqlPlanBaselinesResult> getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselines:getManagedDatabaseSqlPlanBaselines", TypeShape.of(GetManagedDatabaseSqlPlanBaselinesResult.class), args, Utilities.withVersion(options));
@@ -23683,6 +23863,51 @@ public final class DatabaseManagementFunctions {
      * Lists the SQL plan baselines for the specified Managed Database.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseManagement.DatabaseManagementFunctions;
+     * import com.pulumi.oci.DatabaseManagement.inputs.GetManagedDatabaseSqlPlanBaselinesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testManagedDatabaseSqlPlanBaselines = DatabaseManagementFunctions.getManagedDatabaseSqlPlanBaselines(GetManagedDatabaseSqlPlanBaselinesArgs.builder()
+     *             .managedDatabaseId(testManagedDatabase.get("id"))
+     *             .isAccepted(managedDatabaseSqlPlanBaselineIsAccepted)
+     *             .isAdaptive(managedDatabaseSqlPlanBaselineIsAdaptive)
+     *             .isAutoPurged(managedDatabaseSqlPlanBaselineIsAutoPurged)
+     *             .isEnabled(managedDatabaseSqlPlanBaselineIsEnabled)
+     *             .isFixed(managedDatabaseSqlPlanBaselineIsFixed)
+     *             .isNeverExecuted(managedDatabaseSqlPlanBaselineIsNeverExecuted)
+     *             .isReproduced(managedDatabaseSqlPlanBaselineIsReproduced)
+     *             .opcNamedCredentialId(managedDatabaseSqlPlanBaselineOpcNamedCredentialId)
+     *             .origin(managedDatabaseSqlPlanBaselineOrigin)
+     *             .planName(managedDatabaseSqlPlanBaselinePlanName)
+     *             .sqlHandle(managedDatabaseSqlPlanBaselineSqlHandle)
+     *             .sqlText(managedDatabaseSqlPlanBaselineSqlText)
+     *             .timeLastExecutedGreaterThan(managedDatabaseSqlPlanBaselineTimeLastExecutedGreaterThan)
+     *             .timeLastExecutedLessThan(managedDatabaseSqlPlanBaselineTimeLastExecutedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetManagedDatabaseSqlPlanBaselinesResult> getManagedDatabaseSqlPlanBaselinesPlain(GetManagedDatabaseSqlPlanBaselinesPlainArgs args, InvokeOptions options) {

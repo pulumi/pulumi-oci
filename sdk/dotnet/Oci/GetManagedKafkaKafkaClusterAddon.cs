@@ -17,6 +17,23 @@ namespace Pulumi.Oci.Oci
         /// Gets information about a KafkaClusterAddon.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testKafkaClusterAddon = Oci.Oci.GetManagedKafkaKafkaClusterAddon.Invoke(new()
+        ///     {
+        ///         AddonName = testAddon.Name,
+        ///         KafkaClusterId = testKafkaCluster.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetManagedKafkaKafkaClusterAddonResult> InvokeAsync(GetManagedKafkaKafkaClusterAddonArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedKafkaKafkaClusterAddonResult>("oci:oci/getManagedKafkaKafkaClusterAddon:getManagedKafkaKafkaClusterAddon", args ?? new GetManagedKafkaKafkaClusterAddonArgs(), options.WithDefaults());
@@ -27,6 +44,23 @@ namespace Pulumi.Oci.Oci
         /// Gets information about a KafkaClusterAddon.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testKafkaClusterAddon = Oci.Oci.GetManagedKafkaKafkaClusterAddon.Invoke(new()
+        ///     {
+        ///         AddonName = testAddon.Name,
+        ///         KafkaClusterId = testKafkaCluster.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetManagedKafkaKafkaClusterAddonResult> Invoke(GetManagedKafkaKafkaClusterAddonInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedKafkaKafkaClusterAddonResult>("oci:oci/getManagedKafkaKafkaClusterAddon:getManagedKafkaKafkaClusterAddon", args ?? new GetManagedKafkaKafkaClusterAddonInvokeArgs(), options.WithDefaults());
@@ -37,6 +71,23 @@ namespace Pulumi.Oci.Oci
         /// Gets information about a KafkaClusterAddon.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testKafkaClusterAddon = Oci.Oci.GetManagedKafkaKafkaClusterAddon.Invoke(new()
+        ///     {
+        ///         AddonName = testAddon.Name,
+        ///         KafkaClusterId = testKafkaCluster.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetManagedKafkaKafkaClusterAddonResult> Invoke(GetManagedKafkaKafkaClusterAddonInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedKafkaKafkaClusterAddonResult>("oci:oci/getManagedKafkaKafkaClusterAddon:getManagedKafkaKafkaClusterAddon", args ?? new GetManagedKafkaKafkaClusterAddonInvokeArgs(), options.WithDefaults());

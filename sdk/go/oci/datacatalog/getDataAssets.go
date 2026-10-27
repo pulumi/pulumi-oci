@@ -16,6 +16,40 @@ import (
 // Returns a list of data assets within a data catalog.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/datacatalog"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := datacatalog.GetDataAssets(ctx, &datacatalog.GetDataAssetsArgs{
+//				CatalogId:           testCatalog.Id,
+//				CreatedById:         pulumi.StringRef(testCreatedBy.Id),
+//				DisplayName:         pulumi.StringRef(dataAssetDisplayName),
+//				DisplayNameContains: pulumi.StringRef(dataAssetDisplayNameContains),
+//				ExternalKey:         pulumi.StringRef(dataAssetExternalKey),
+//				Fields:              dataAssetFields,
+//				State:               pulumi.StringRef(dataAssetState),
+//				TimeCreated:         dataAssetTimeCreated,
+//				TimeUpdated:         dataAssetTimeUpdated,
+//				TypeKey:             pulumi.StringRef(dataAssetTypeKey),
+//				UpdatedById:         testUpdatedBy.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetDataAssets(ctx *pulumi.Context, args *GetDataAssetsArgs, opts ...pulumi.InvokeOption) (*GetDataAssetsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetDataAssetsResult

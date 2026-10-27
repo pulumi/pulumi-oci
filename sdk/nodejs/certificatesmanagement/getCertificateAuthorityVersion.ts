@@ -13,6 +13,16 @@ import * as utilities from "../utilities";
  * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCertificateAuthorityVersion = oci.certificatesmanagement.getCertificateAuthorityVersion({
+ *     certificateAuthorityId: testCertificateAuthority.id,
+ *     versionNumber: certificateAuthorityVersionVersionNumber,
+ * });
+ * ```
  */
 export function getCertificateAuthorityVersion(args: GetCertificateAuthorityVersionArgs, opts?: pulumi.InvokeOptions): Promise<GetCertificateAuthorityVersionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -95,6 +105,16 @@ export interface GetCertificateAuthorityVersionResult {
  * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCertificateAuthorityVersion = oci.certificatesmanagement.getCertificateAuthorityVersion({
+ *     certificateAuthorityId: testCertificateAuthority.id,
+ *     versionNumber: certificateAuthorityVersionVersionNumber,
+ * });
+ * ```
  */
 export function getCertificateAuthorityVersionOutput(args: GetCertificateAuthorityVersionOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCertificateAuthorityVersionResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

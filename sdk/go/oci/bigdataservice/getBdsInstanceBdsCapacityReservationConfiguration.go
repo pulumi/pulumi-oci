@@ -38,7 +38,7 @@ import (
 //				return err
 //			}
 //			_, err := bigdataservice.GetBdsInstanceBdsCapacityReservationConfiguration(ctx, &bigdataservice.GetBdsInstanceBdsCapacityReservationConfigurationArgs{
-//				BdsCapacityReservationConfigurationId: pulumi.String(invokeRegex.Result[0]),
+//				BdsCapacityReservationConfigurationId: *string(invokeRegex.Result[0]),
 //				BdsInstanceId:                         testBdsInstance.Id,
 //			}, nil)
 //			if err != nil {

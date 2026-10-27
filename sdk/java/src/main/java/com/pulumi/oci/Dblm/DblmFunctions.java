@@ -48,6 +48,41 @@ public final class DblmFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dblm.DblmFunctions;
+     * import com.pulumi.oci.Dblm.inputs.GetPatchManagementArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPatchManagement = DblmFunctions.getPatchManagement(GetPatchManagementArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseRelease(patchManagementDatabaseRelease)
+     *             .state(patchManagementState)
+     *             .timeStartedGreaterThanOrEqualTo(patchManagementTimeStartedGreaterThanOrEqualTo)
+     *             .timeStartedLessThan(patchManagementTimeStartedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetPatchManagementResult> getPatchManagement(GetPatchManagementArgs args) {
         return getPatchManagement(args, InvokeOptions.Empty);
@@ -60,6 +95,41 @@ public final class DblmFunctions {
      * Overview of Patch Management.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dblm.DblmFunctions;
+     * import com.pulumi.oci.Dblm.inputs.GetPatchManagementArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPatchManagement = DblmFunctions.getPatchManagement(GetPatchManagementArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseRelease(patchManagementDatabaseRelease)
+     *             .state(patchManagementState)
+     *             .timeStartedGreaterThanOrEqualTo(patchManagementTimeStartedGreaterThanOrEqualTo)
+     *             .timeStartedLessThan(patchManagementTimeStartedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetPatchManagementResult> getPatchManagementPlain(GetPatchManagementPlainArgs args) {
@@ -74,6 +144,41 @@ public final class DblmFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dblm.DblmFunctions;
+     * import com.pulumi.oci.Dblm.inputs.GetPatchManagementArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPatchManagement = DblmFunctions.getPatchManagement(GetPatchManagementArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseRelease(patchManagementDatabaseRelease)
+     *             .state(patchManagementState)
+     *             .timeStartedGreaterThanOrEqualTo(patchManagementTimeStartedGreaterThanOrEqualTo)
+     *             .timeStartedLessThan(patchManagementTimeStartedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetPatchManagementResult> getPatchManagement(GetPatchManagementArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:Dblm/getPatchManagement:getPatchManagement", TypeShape.of(GetPatchManagementResult.class), args, Utilities.withVersion(options));
@@ -87,6 +192,41 @@ public final class DblmFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dblm.DblmFunctions;
+     * import com.pulumi.oci.Dblm.inputs.GetPatchManagementArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPatchManagement = DblmFunctions.getPatchManagement(GetPatchManagementArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseRelease(patchManagementDatabaseRelease)
+     *             .state(patchManagementState)
+     *             .timeStartedGreaterThanOrEqualTo(patchManagementTimeStartedGreaterThanOrEqualTo)
+     *             .timeStartedLessThan(patchManagementTimeStartedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetPatchManagementResult> getPatchManagement(GetPatchManagementArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Dblm/getPatchManagement:getPatchManagement", TypeShape.of(GetPatchManagementResult.class), args, Utilities.withVersion(options));
@@ -99,6 +239,41 @@ public final class DblmFunctions {
      * Overview of Patch Management.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dblm.DblmFunctions;
+     * import com.pulumi.oci.Dblm.inputs.GetPatchManagementArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testPatchManagement = DblmFunctions.getPatchManagement(GetPatchManagementArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseRelease(patchManagementDatabaseRelease)
+     *             .state(patchManagementState)
+     *             .timeStartedGreaterThanOrEqualTo(patchManagementTimeStartedGreaterThanOrEqualTo)
+     *             .timeStartedLessThan(patchManagementTimeStartedLessThan)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetPatchManagementResult> getPatchManagementPlain(GetPatchManagementPlainArgs args, InvokeOptions options) {
@@ -477,6 +652,39 @@ public final class DblmFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dblm.DblmFunctions;
+     * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerability = DblmFunctions.getVulnerability(GetVulnerabilityArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseRelease(vulnerabilityDatabaseRelease)
+     *             .state(vulnerabilityState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetVulnerabilityResult> getVulnerability(GetVulnerabilityArgs args) {
         return getVulnerability(args, InvokeOptions.Empty);
@@ -489,6 +697,39 @@ public final class DblmFunctions {
      * Gets a Vulnerability
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dblm.DblmFunctions;
+     * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerability = DblmFunctions.getVulnerability(GetVulnerabilityArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseRelease(vulnerabilityDatabaseRelease)
+     *             .state(vulnerabilityState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetVulnerabilityResult> getVulnerabilityPlain(GetVulnerabilityPlainArgs args) {
@@ -503,6 +744,39 @@ public final class DblmFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dblm.DblmFunctions;
+     * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerability = DblmFunctions.getVulnerability(GetVulnerabilityArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseRelease(vulnerabilityDatabaseRelease)
+     *             .state(vulnerabilityState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetVulnerabilityResult> getVulnerability(GetVulnerabilityArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:Dblm/getVulnerability:getVulnerability", TypeShape.of(GetVulnerabilityResult.class), args, Utilities.withVersion(options));
@@ -516,6 +790,39 @@ public final class DblmFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dblm.DblmFunctions;
+     * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerability = DblmFunctions.getVulnerability(GetVulnerabilityArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseRelease(vulnerabilityDatabaseRelease)
+     *             .state(vulnerabilityState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetVulnerabilityResult> getVulnerability(GetVulnerabilityArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Dblm/getVulnerability:getVulnerability", TypeShape.of(GetVulnerabilityResult.class), args, Utilities.withVersion(options));
@@ -528,6 +835,39 @@ public final class DblmFunctions {
      * Gets a Vulnerability
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Dblm.DblmFunctions;
+     * import com.pulumi.oci.Dblm.inputs.GetVulnerabilityArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testVulnerability = DblmFunctions.getVulnerability(GetVulnerabilityArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .databaseRelease(vulnerabilityDatabaseRelease)
+     *             .state(vulnerabilityState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetVulnerabilityResult> getVulnerabilityPlain(GetVulnerabilityPlainArgs args, InvokeOptions options) {

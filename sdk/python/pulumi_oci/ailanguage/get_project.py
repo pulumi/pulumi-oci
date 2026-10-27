@@ -178,6 +178,13 @@ def get_project(id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_project = oci.ailanguage.get_project(project_id=test_project_oci_ai_language_project["id"])
+    ```
+
 
     :param _builtins.str id: Unique identifier OCID of the project
     """
@@ -206,6 +213,13 @@ def get_project_output(id: pulumi.Input[Optional[_builtins.str]] = None,
     Gets a Project by identifier
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_project = oci.ailanguage.get_project(project_id=test_project_oci_ai_language_project["id"])
+    ```
 
 
     :param _builtins.str id: Unique identifier OCID of the project

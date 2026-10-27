@@ -112,6 +112,17 @@ def get_autonomous_database_wallet(autonomous_database_id: Optional[_builtins.st
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_autonomous_database_wallet = oci.database.get_autonomous_database_wallet(autonomous_database_id=test_autonomous_database["id"],
+        password=autonomous_database_wallet_password,
+        base64_encode_content=False,
+        generate_type=autonomous_database_wallet_generate_type,
+        is_regional=autonomous_database_wallet_is_regional)
+    ```
+
 
     :param _builtins.str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param _builtins.bool base64_encode_content: Encodes the downloaded zipped wallet in base64. It is recommended to set this to `true` to avoid corrupting the zip file in Terraform state. The default value is `false` to preserve backwards compatibility with Terraform v0.11 configurations.
@@ -152,6 +163,17 @@ def get_autonomous_database_wallet_output(autonomous_database_id: pulumi.Input[O
     Creates and downloads a wallet for the specified Autonomous AI Database.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_autonomous_database_wallet = oci.database.get_autonomous_database_wallet(autonomous_database_id=test_autonomous_database["id"],
+        password=autonomous_database_wallet_password,
+        base64_encode_content=False,
+        generate_type=autonomous_database_wallet_generate_type,
+        is_regional=autonomous_database_wallet_is_regional)
+    ```
 
 
     :param _builtins.str autonomous_database_id: The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

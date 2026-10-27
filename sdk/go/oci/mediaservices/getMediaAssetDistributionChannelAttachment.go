@@ -16,6 +16,32 @@ import (
 // Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/mediaservices"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := mediaservices.GetMediaAssetDistributionChannelAttachment(ctx, &mediaservices.GetMediaAssetDistributionChannelAttachmentArgs{
+//				DistributionChannelId: testChannel.Id,
+//				MediaAssetId:          testMediaAsset.Id,
+//				Version:               mediaAssetDistributionChannelAttachmentVersion,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetMediaAssetDistributionChannelAttachment(ctx *pulumi.Context, args *GetMediaAssetDistributionChannelAttachmentArgs, opts ...pulumi.InvokeOption) (*GetMediaAssetDistributionChannelAttachmentResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMediaAssetDistributionChannelAttachmentResult

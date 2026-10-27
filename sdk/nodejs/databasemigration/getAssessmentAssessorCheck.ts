@@ -12,6 +12,19 @@ import * as utilities from "../utilities";
  * Get Assessor Check details.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAssessmentAssessorCheck = oci.databasemigration.getAssessmentAssessorCheck({
+ *     assessmentId: testAssessment.id,
+ *     assessorName: assessmentAssessorCheckAssessorName,
+ *     checkName: assessmentAssessorCheckCheckName,
+ *     compartmentId: compartmentId,
+ *     displayName: assessmentAssessorCheckDisplayName,
+ * });
+ * ```
  */
 export function getAssessmentAssessorCheck(args: GetAssessmentAssessorCheckArgs, opts?: pulumi.InvokeOptions): Promise<GetAssessmentAssessorCheckResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -140,6 +153,19 @@ export interface GetAssessmentAssessorCheckResult {
  * Get Assessor Check details.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAssessmentAssessorCheck = oci.databasemigration.getAssessmentAssessorCheck({
+ *     assessmentId: testAssessment.id,
+ *     assessorName: assessmentAssessorCheckAssessorName,
+ *     checkName: assessmentAssessorCheckCheckName,
+ *     compartmentId: compartmentId,
+ *     displayName: assessmentAssessorCheckDisplayName,
+ * });
+ * ```
  */
 export function getAssessmentAssessorCheckOutput(args: GetAssessmentAssessorCheckOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAssessmentAssessorCheckResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

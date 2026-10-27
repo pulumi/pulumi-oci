@@ -17,6 +17,31 @@ import (
 // Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/certificatesmanagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := certificatesmanagement.GetCertificateAuthorityVersion(ctx, &certificatesmanagement.GetCertificateAuthorityVersionArgs{
+//				CertificateAuthorityId: testCertificateAuthority.Id,
+//				VersionNumber:          certificateAuthorityVersionVersionNumber,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetCertificateAuthorityVersion(ctx *pulumi.Context, args *GetCertificateAuthorityVersionArgs, opts ...pulumi.InvokeOption) (*GetCertificateAuthorityVersionResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCertificateAuthorityVersionResult

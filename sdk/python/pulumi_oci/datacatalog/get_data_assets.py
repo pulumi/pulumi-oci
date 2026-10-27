@@ -179,6 +179,23 @@ def get_data_assets(catalog_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_data_assets = oci.datacatalog.get_data_assets(catalog_id=test_catalog["id"],
+        created_by_id=test_created_by["id"],
+        display_name=data_asset_display_name,
+        display_name_contains=data_asset_display_name_contains,
+        external_key=data_asset_external_key,
+        fields=data_asset_fields,
+        state=data_asset_state,
+        time_created=data_asset_time_created,
+        time_updated=data_asset_time_updated,
+        type_key=data_asset_type_key,
+        updated_by_id=test_updated_by["id"])
+    ```
+
 
     :param _builtins.str catalog_id: Unique catalog identifier.
     :param _builtins.str created_by_id: OCID of the user who created the resource.
@@ -230,6 +247,23 @@ def get_data_assets_output(catalog_id: pulumi.Input[Optional[_builtins.str]] = N
     Returns a list of data assets within a data catalog.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_data_assets = oci.datacatalog.get_data_assets(catalog_id=test_catalog["id"],
+        created_by_id=test_created_by["id"],
+        display_name=data_asset_display_name,
+        display_name_contains=data_asset_display_name_contains,
+        external_key=data_asset_external_key,
+        fields=data_asset_fields,
+        state=data_asset_state,
+        time_created=data_asset_time_created,
+        time_updated=data_asset_time_updated,
+        type_key=data_asset_type_key,
+        updated_by_id=test_updated_by["id"])
+    ```
 
 
     :param _builtins.str catalog_id: Unique catalog identifier.

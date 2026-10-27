@@ -121,6 +121,16 @@ def get_projects(compartment_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_projects = oci.ailanguage.get_projects(compartment_id=compartment_id,
+        display_name=project_display_name,
+        project_id=test_project["id"],
+        state=project_state)
+    ```
+
 
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given.
@@ -155,6 +165,16 @@ def get_projects_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = 
     Returns a list of  Projects.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_projects = oci.ailanguage.get_projects(compartment_id=compartment_id,
+        display_name=project_display_name,
+        project_id=test_project["id"],
+        state=project_state)
+    ```
 
 
     :param _builtins.str compartment_id: The ID of the compartment in which to list resources.

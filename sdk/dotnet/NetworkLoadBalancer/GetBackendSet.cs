@@ -17,6 +17,24 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// Retrieves the configuration information for the specified backend set.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBackendSet = Oci.NetworkLoadBalancer.GetBackendSet.Invoke(new()
+        ///     {
+        ///         BackendSetName = testBackendSetOciNetworkLoadBalancerBackendSet.Name,
+        ///         NetworkLoadBalancerId = testNetworkLoadBalancer.Id,
+        ///         IpVersion = backendSetIpVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetBackendSetResult> InvokeAsync(GetBackendSetArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetBackendSetResult>("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", args ?? new GetBackendSetArgs(), options.WithDefaults());
@@ -27,6 +45,24 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// Retrieves the configuration information for the specified backend set.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBackendSet = Oci.NetworkLoadBalancer.GetBackendSet.Invoke(new()
+        ///     {
+        ///         BackendSetName = testBackendSetOciNetworkLoadBalancerBackendSet.Name,
+        ///         NetworkLoadBalancerId = testNetworkLoadBalancer.Id,
+        ///         IpVersion = backendSetIpVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetBackendSetResult> Invoke(GetBackendSetInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetBackendSetResult>("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", args ?? new GetBackendSetInvokeArgs(), options.WithDefaults());
@@ -37,6 +73,24 @@ namespace Pulumi.Oci.NetworkLoadBalancer
         /// Retrieves the configuration information for the specified backend set.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testBackendSet = Oci.NetworkLoadBalancer.GetBackendSet.Invoke(new()
+        ///     {
+        ///         BackendSetName = testBackendSetOciNetworkLoadBalancerBackendSet.Name,
+        ///         NetworkLoadBalancerId = testNetworkLoadBalancer.Id,
+        ///         IpVersion = backendSetIpVersion,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetBackendSetResult> Invoke(GetBackendSetInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetBackendSetResult>("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", args ?? new GetBackendSetInvokeArgs(), options.WithDefaults());

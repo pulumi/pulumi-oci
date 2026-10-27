@@ -137,6 +137,14 @@ def get_network_firewall_policy_application(name: Optional[_builtins.str] = None
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_network_firewall_policy_application = oci.networkfirewall.get_network_firewall_policy_application(application_name=network_firewall_policy_application_name,
+        network_firewall_policy_id=test_network_firewall_policy["id"])
+    ```
+
 
     :param _builtins.str name: Name of the application.
     :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
@@ -165,6 +173,14 @@ def get_network_firewall_policy_application_output(name: pulumi.Input[Optional[_
     Get Application by the given name in the context of network firewall policy.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_network_firewall_policy_application = oci.networkfirewall.get_network_firewall_policy_application(application_name=network_firewall_policy_application_name,
+        network_firewall_policy_id=test_network_firewall_policy["id"])
+    ```
 
 
     :param _builtins.str name: Name of the application.

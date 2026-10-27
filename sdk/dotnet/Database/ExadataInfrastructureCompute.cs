@@ -11,6 +11,24 @@ namespace Pulumi.Oci.Database
 {
     /// <summary>
     /// ## Example Usage
+    /// 
+    /// ```csharp
+    /// using System.Collections.Generic;
+    /// using System.Linq;
+    /// using Pulumi;
+    /// using Oci = Pulumi.Oci;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
+    /// {
+    ///     var testExadataInfrastructure = Oci.Database.GetExadataInfrastructure.Invoke(new()
+    ///     {
+    ///         ExadataInfrastructureId = testExadataInfrastructureOciDatabaseExadataInfrastructure.Id,
+    ///         AdditionalComputeCountComputeManagedResource = exadataInfrastructureAdditionalComputeCount,
+    ///         AdditionalComputeSystemModelComputeManagedResource = exadataInfrastructureAdditionalComputeSystemModel,
+    ///     });
+    /// 
+    /// });
+    /// ```
     /// </summary>
     [OciResourceType("oci:Database/exadataInfrastructureCompute:ExadataInfrastructureCompute")]
     public partial class ExadataInfrastructureCompute : global::Pulumi.CustomResource

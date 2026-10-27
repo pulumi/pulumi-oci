@@ -18,6 +18,34 @@ import (
 // Creates and downloads a wallet for the specified Autonomous AI Database.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := database.GetAutonomousDatabaseWallet(ctx, &database.GetAutonomousDatabaseWalletArgs{
+//				AutonomousDatabaseId: testAutonomousDatabase.Id,
+//				Password:             autonomousDatabaseWalletPassword,
+//				Base64EncodeContent:  pulumi.BoolRef(false),
+//				GenerateType:         pulumi.StringRef(autonomousDatabaseWalletGenerateType),
+//				IsRegional:           autonomousDatabaseWalletIsRegional,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupAutonomousDatabaseWallet(ctx *pulumi.Context, args *LookupAutonomousDatabaseWalletArgs, opts ...pulumi.InvokeOption) (*LookupAutonomousDatabaseWalletResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupAutonomousDatabaseWalletResult

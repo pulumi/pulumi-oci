@@ -18,6 +18,23 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCleanEnergyUsage = Oci.MeteringComputation.GetCleanEnergyUsage.Invoke(new()
+        ///     {
+        ///         Region = cleanEnergyUsageRegion,
+        ///         Ad = cleanEnergyUsageAd,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetCleanEnergyUsageResult> InvokeAsync(GetCleanEnergyUsageArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCleanEnergyUsageResult>("oci:MeteringComputation/getCleanEnergyUsage:getCleanEnergyUsage", args ?? new GetCleanEnergyUsageArgs(), options.WithDefaults());
@@ -29,6 +46,23 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCleanEnergyUsage = Oci.MeteringComputation.GetCleanEnergyUsage.Invoke(new()
+        ///     {
+        ///         Region = cleanEnergyUsageRegion,
+        ///         Ad = cleanEnergyUsageAd,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetCleanEnergyUsageResult> Invoke(GetCleanEnergyUsageInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCleanEnergyUsageResult>("oci:MeteringComputation/getCleanEnergyUsage:getCleanEnergyUsage", args ?? new GetCleanEnergyUsageInvokeArgs(), options.WithDefaults());
@@ -40,6 +74,23 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCleanEnergyUsage = Oci.MeteringComputation.GetCleanEnergyUsage.Invoke(new()
+        ///     {
+        ///         Region = cleanEnergyUsageRegion,
+        ///         Ad = cleanEnergyUsageAd,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetCleanEnergyUsageResult> Invoke(GetCleanEnergyUsageInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetCleanEnergyUsageResult>("oci:MeteringComputation/getCleanEnergyUsage:getCleanEnergyUsage", args ?? new GetCleanEnergyUsageInvokeArgs(), options.WithDefaults());

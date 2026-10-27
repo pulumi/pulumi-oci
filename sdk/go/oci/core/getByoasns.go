@@ -17,6 +17,32 @@ import (
 // You can filter the list using query parameters.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/core"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := core.GetByoasns(ctx, &core.GetByoasnsArgs{
+//				CompartmentId: compartmentId,
+//				DisplayName:   byoasnDisplayName,
+//				State:         byoasnState,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetByoasns(ctx *pulumi.Context, args *GetByoasnsArgs, opts ...pulumi.InvokeOption) (*GetByoasnsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetByoasnsResult

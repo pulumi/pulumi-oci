@@ -10,6 +10,16 @@ import * as utilities from "../utilities";
  * Get ServiceList by the given name in the context of network firewall policy.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNetworkFirewallPolicyServiceList = oci.networkfirewall.getNetworkFirewallPolicyServiceList({
+ *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
+ *     serviceListName: networkFirewallPolicyServiceListServiceListName,
+ * });
+ * ```
  */
 export function getNetworkFirewallPolicyServiceList(args: GetNetworkFirewallPolicyServiceListArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallPolicyServiceListResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -66,6 +76,16 @@ export interface GetNetworkFirewallPolicyServiceListResult {
  * Get ServiceList by the given name in the context of network firewall policy.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNetworkFirewallPolicyServiceList = oci.networkfirewall.getNetworkFirewallPolicyServiceList({
+ *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
+ *     serviceListName: networkFirewallPolicyServiceListServiceListName,
+ * });
+ * ```
  */
 export function getNetworkFirewallPolicyServiceListOutput(args: GetNetworkFirewallPolicyServiceListOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkFirewallPolicyServiceListResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

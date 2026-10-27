@@ -10,6 +10,16 @@ import * as utilities from "../utilities";
  * Get ApplicationGroup by the given name in the context of network firewall policy.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNetworkFirewallPolicyApplicationGroup = oci.networkfirewall.getNetworkFirewallPolicyApplicationGroup({
+ *     applicationGroupName: networkFirewallPolicyApplicationGroupDisplayName,
+ *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
+ * });
+ * ```
  */
 export function getNetworkFirewallPolicyApplicationGroup(args: GetNetworkFirewallPolicyApplicationGroupArgs, opts?: pulumi.InvokeOptions): Promise<GetNetworkFirewallPolicyApplicationGroupResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -66,6 +76,16 @@ export interface GetNetworkFirewallPolicyApplicationGroupResult {
  * Get ApplicationGroup by the given name in the context of network firewall policy.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testNetworkFirewallPolicyApplicationGroup = oci.networkfirewall.getNetworkFirewallPolicyApplicationGroup({
+ *     applicationGroupName: networkFirewallPolicyApplicationGroupDisplayName,
+ *     networkFirewallPolicyId: testNetworkFirewallPolicy.id,
+ * });
+ * ```
  */
 export function getNetworkFirewallPolicyApplicationGroupOutput(args: GetNetworkFirewallPolicyApplicationGroupOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetNetworkFirewallPolicyApplicationGroupResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

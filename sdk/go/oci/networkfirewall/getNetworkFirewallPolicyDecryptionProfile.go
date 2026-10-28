@@ -16,6 +16,31 @@ import (
 // Get Decryption Profile by the given name in the context of network firewall policy.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := networkfirewall.GetNetworkFirewallPolicyDecryptionProfile(ctx, &networkfirewall.GetNetworkFirewallPolicyDecryptionProfileArgs{
+//				DecryptionProfileName:   ociNetworkFirewallNetworkFirewallPolicyDecryptionProfileName,
+//				NetworkFirewallPolicyId: testNetworkFirewallPolicy.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupNetworkFirewallPolicyDecryptionProfile(ctx *pulumi.Context, args *LookupNetworkFirewallPolicyDecryptionProfileArgs, opts ...pulumi.InvokeOption) (*LookupNetworkFirewallPolicyDecryptionProfileResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupNetworkFirewallPolicyDecryptionProfileResult

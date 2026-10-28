@@ -19,6 +19,25 @@ namespace Pulumi.Oci.DatabaseMigration
         /// Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMigrations = Oci.DatabaseMigration.GetMigrations.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = migrationDisplayName,
+        ///         LifecycleDetails = migrationLifecycleDetails,
+        ///         State = migrationState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetMigrationsResult> InvokeAsync(GetMigrationsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMigrationsResult>("oci:DatabaseMigration/getMigrations:getMigrations", args ?? new GetMigrationsArgs(), options.WithDefaults());
@@ -31,6 +50,25 @@ namespace Pulumi.Oci.DatabaseMigration
         /// Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMigrations = Oci.DatabaseMigration.GetMigrations.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = migrationDisplayName,
+        ///         LifecycleDetails = migrationLifecycleDetails,
+        ///         State = migrationState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetMigrationsResult> Invoke(GetMigrationsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMigrationsResult>("oci:DatabaseMigration/getMigrations:getMigrations", args ?? new GetMigrationsInvokeArgs(), options.WithDefaults());
@@ -43,6 +81,25 @@ namespace Pulumi.Oci.DatabaseMigration
         /// Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testMigrations = Oci.DatabaseMigration.GetMigrations.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = migrationDisplayName,
+        ///         LifecycleDetails = migrationLifecycleDetails,
+        ///         State = migrationState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetMigrationsResult> Invoke(GetMigrationsInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetMigrationsResult>("oci:DatabaseMigration/getMigrations:getMigrations", args ?? new GetMigrationsInvokeArgs(), options.WithDefaults());

@@ -169,6 +169,18 @@ def get_domains_user_attributes_settings(attribute_sets: Optional[Sequence[_buil
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_user_attributes_settings = oci.identity.get_domains_user_attributes_settings(idcs_endpoint=test_domain["url"],
+        user_attributes_setting_id=test_user_attributes_setting["id"],
+        attribute_sets=["all"],
+        attributes="",
+        authorization=user_attributes_setting_authorization,
+        resource_type_schema_version=user_attributes_setting_resource_type_schema_version)
+    ```
+
 
     :param Sequence[_builtins.str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
     :param _builtins.str attributes: A comma-delimited string that specifies the names of resource attributes that should be returned in the response. By default, a response that contains resource attributes contains only attributes that are defined in the schema for that resource type as returned=always or returned=default. An attribute that is defined as returned=request is returned in a response only if the request specifies its name in the value of this query parameter. If a request specifies this query parameter, the response contains the attributes that this query parameter specifies, as well as any attribute that is defined as returned=always.
@@ -212,6 +224,18 @@ def get_domains_user_attributes_settings_output(attribute_sets: pulumi.Input[Opt
     Search User Schema Attribute Settings
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_user_attributes_settings = oci.identity.get_domains_user_attributes_settings(idcs_endpoint=test_domain["url"],
+        user_attributes_setting_id=test_user_attributes_setting["id"],
+        attribute_sets=["all"],
+        attributes="",
+        authorization=user_attributes_setting_authorization,
+        resource_type_schema_version=user_attributes_setting_resource_type_schema_version)
+    ```
 
 
     :param Sequence[_builtins.str] attribute_sets: A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.

@@ -17,6 +17,23 @@ namespace Pulumi.Oci.NetworkFirewall
         /// Get Decryption Profile by the given name in the context of network firewall policy.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkFirewallPolicyDecryptionProfile = Oci.NetworkFirewall.GetNetworkFirewallPolicyDecryptionProfile.Invoke(new()
+        ///     {
+        ///         DecryptionProfileName = ociNetworkFirewallNetworkFirewallPolicyDecryptionProfileName,
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetNetworkFirewallPolicyDecryptionProfileResult> InvokeAsync(GetNetworkFirewallPolicyDecryptionProfileArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkFirewallPolicyDecryptionProfileResult>("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionProfile:getNetworkFirewallPolicyDecryptionProfile", args ?? new GetNetworkFirewallPolicyDecryptionProfileArgs(), options.WithDefaults());
@@ -27,6 +44,23 @@ namespace Pulumi.Oci.NetworkFirewall
         /// Get Decryption Profile by the given name in the context of network firewall policy.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkFirewallPolicyDecryptionProfile = Oci.NetworkFirewall.GetNetworkFirewallPolicyDecryptionProfile.Invoke(new()
+        ///     {
+        ///         DecryptionProfileName = ociNetworkFirewallNetworkFirewallPolicyDecryptionProfileName,
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetNetworkFirewallPolicyDecryptionProfileResult> Invoke(GetNetworkFirewallPolicyDecryptionProfileInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyDecryptionProfileResult>("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionProfile:getNetworkFirewallPolicyDecryptionProfile", args ?? new GetNetworkFirewallPolicyDecryptionProfileInvokeArgs(), options.WithDefaults());
@@ -37,6 +71,23 @@ namespace Pulumi.Oci.NetworkFirewall
         /// Get Decryption Profile by the given name in the context of network firewall policy.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkFirewallPolicyDecryptionProfile = Oci.NetworkFirewall.GetNetworkFirewallPolicyDecryptionProfile.Invoke(new()
+        ///     {
+        ///         DecryptionProfileName = ociNetworkFirewallNetworkFirewallPolicyDecryptionProfileName,
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetNetworkFirewallPolicyDecryptionProfileResult> Invoke(GetNetworkFirewallPolicyDecryptionProfileInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyDecryptionProfileResult>("oci:NetworkFirewall/getNetworkFirewallPolicyDecryptionProfile:getNetworkFirewallPolicyDecryptionProfile", args ?? new GetNetworkFirewallPolicyDecryptionProfileInvokeArgs(), options.WithDefaults());

@@ -16,6 +16,34 @@ import (
 // Returns a list of models.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/ailanguage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ailanguage.GetModels(ctx, &ailanguage.GetModelsArgs{
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(modelDisplayName),
+//				ModelId:       testModel.Id,
+//				ProjectId:     pulumi.StringRef(testProject.Id),
+//				State:         pulumi.StringRef(modelState),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetModels(ctx *pulumi.Context, args *GetModelsArgs, opts ...pulumi.InvokeOption) (*GetModelsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetModelsResult

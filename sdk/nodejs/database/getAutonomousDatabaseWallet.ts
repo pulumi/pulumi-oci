@@ -12,6 +12,19 @@ import * as utilities from "../utilities";
  * Creates and downloads a wallet for the specified Autonomous AI Database.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousDatabaseWallet = oci.database.getAutonomousDatabaseWallet({
+ *     autonomousDatabaseId: testAutonomousDatabase.id,
+ *     password: autonomousDatabaseWalletPassword,
+ *     base64EncodeContent: false,
+ *     generateType: autonomousDatabaseWalletGenerateType,
+ *     isRegional: autonomousDatabaseWalletIsRegional,
+ * });
+ * ```
  */
 export function getAutonomousDatabaseWallet(args: GetAutonomousDatabaseWalletArgs, opts?: pulumi.InvokeOptions): Promise<GetAutonomousDatabaseWalletResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -81,6 +94,19 @@ export interface GetAutonomousDatabaseWalletResult {
  * Creates and downloads a wallet for the specified Autonomous AI Database.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testAutonomousDatabaseWallet = oci.database.getAutonomousDatabaseWallet({
+ *     autonomousDatabaseId: testAutonomousDatabase.id,
+ *     password: autonomousDatabaseWalletPassword,
+ *     base64EncodeContent: false,
+ *     generateType: autonomousDatabaseWalletGenerateType,
+ *     isRegional: autonomousDatabaseWalletIsRegional,
+ * });
+ * ```
  */
 export function getAutonomousDatabaseWalletOutput(args: GetAutonomousDatabaseWalletOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetAutonomousDatabaseWalletResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

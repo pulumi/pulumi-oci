@@ -223,6 +223,17 @@ def get_patch_management(compartment_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_patch_management = oci.dblm.get_patch_management(compartment_id=compartment_id,
+        database_release=patch_management_database_release,
+        state=patch_management_state,
+        time_started_greater_than_or_equal_to=patch_management_time_started_greater_than_or_equal_to,
+        time_started_less_than=patch_management_time_started_less_than)
+    ```
+
 
     :param _builtins.str compartment_id: The required ID of the compartment in which to list resources.
     :param _builtins.str database_release: A filter to return only database that match the given release version.
@@ -266,6 +277,17 @@ def get_patch_management_output(compartment_id: pulumi.Input[Optional[_builtins.
     Overview of Patch Management.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_patch_management = oci.dblm.get_patch_management(compartment_id=compartment_id,
+        database_release=patch_management_database_release,
+        state=patch_management_state,
+        time_started_greater_than_or_equal_to=patch_management_time_started_greater_than_or_equal_to,
+        time_started_less_than=patch_management_time_started_less_than)
+    ```
 
 
     :param _builtins.str compartment_id: The required ID of the compartment in which to list resources.

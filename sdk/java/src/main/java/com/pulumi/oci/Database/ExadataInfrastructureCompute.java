@@ -24,6 +24,39 @@ import javax.annotation.Nullable;
 /**
  * ## Example Usage
  * 
+ * <pre>
+ * {@code
+ * package generated_program;
+ * 
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.pulumi.oci.Database.DatabaseFunctions;
+ * import com.pulumi.oci.Database.inputs.GetExadataInfrastructureArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ * 
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ * 
+ *     public static void stack(Context ctx) {
+ *         final var testExadataInfrastructure = DatabaseFunctions.getExadataInfrastructure(GetExadataInfrastructureArgs.builder()
+ *             .exadataInfrastructureId(testExadataInfrastructureOciDatabaseExadataInfrastructure.get("id"))
+ *             .additionalComputeCountComputeManagedResource(exadataInfrastructureAdditionalComputeCount)
+ *             .additionalComputeSystemModelComputeManagedResource(exadataInfrastructureAdditionalComputeSystemModel)
+ *             .build());
+ * 
+ *     }
+ * }
+ * }
+ * </pre>
+ * 
  */
 @ResourceType(type="oci:Database/exadataInfrastructureCompute:ExadataInfrastructureCompute")
 public class ExadataInfrastructureCompute extends com.pulumi.resources.CustomResource {

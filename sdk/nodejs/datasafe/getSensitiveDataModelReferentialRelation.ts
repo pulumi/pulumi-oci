@@ -12,6 +12,16 @@ import * as utilities from "../utilities";
  * Gets the details of the specified referential relation.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSensitiveDataModelReferentialRelation = oci.datasafe.getSensitiveDataModelReferentialRelation({
+ *     referentialRelationKey: sensitiveDataModelReferentialRelationReferentialRelationKey,
+ *     sensitiveDataModelId: testSensitiveDataModel.id,
+ * });
+ * ```
  */
 export function getSensitiveDataModelReferentialRelation(args: GetSensitiveDataModelReferentialRelationArgs, opts?: pulumi.InvokeOptions): Promise<GetSensitiveDataModelReferentialRelationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -75,6 +85,16 @@ export interface GetSensitiveDataModelReferentialRelationResult {
  * Gets the details of the specified referential relation.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testSensitiveDataModelReferentialRelation = oci.datasafe.getSensitiveDataModelReferentialRelation({
+ *     referentialRelationKey: sensitiveDataModelReferentialRelationReferentialRelationKey,
+ *     sensitiveDataModelId: testSensitiveDataModel.id,
+ * });
+ * ```
  */
 export function getSensitiveDataModelReferentialRelationOutput(args: GetSensitiveDataModelReferentialRelationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetSensitiveDataModelReferentialRelationResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

@@ -16,6 +16,35 @@ import (
 // Returns a list of Endpoints.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/ailanguage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ailanguage.GetEndpoints(ctx, &ailanguage.GetEndpointsArgs{
+//				CompartmentId: compartmentId,
+//				DisplayName:   pulumi.StringRef(endpointDisplayName),
+//				EndpointId:    testEndpoint.Id,
+//				ModelId:       pulumi.StringRef(testModel.Id),
+//				ProjectId:     pulumi.StringRef(testProject.Id),
+//				State:         pulumi.StringRef(endpointState),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetEndpoints(ctx *pulumi.Context, args *GetEndpointsArgs, opts ...pulumi.InvokeOption) (*GetEndpointsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetEndpointsResult

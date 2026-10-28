@@ -17,6 +17,23 @@ namespace Pulumi.Oci.NetworkFirewall
         /// Get Security Rule by the given name in the context of network firewall policy.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkFirewallPolicySecurityRule = Oci.NetworkFirewall.GetNetworkFirewallPolicySecurityRule.Invoke(new()
+        ///     {
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///         SecurityRuleName = ociNetworkFirewallNetworkFirewallPolicySecurityRuleName,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetNetworkFirewallPolicySecurityRuleResult> InvokeAsync(GetNetworkFirewallPolicySecurityRuleArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkFirewallPolicySecurityRuleResult>("oci:NetworkFirewall/getNetworkFirewallPolicySecurityRule:getNetworkFirewallPolicySecurityRule", args ?? new GetNetworkFirewallPolicySecurityRuleArgs(), options.WithDefaults());
@@ -27,6 +44,23 @@ namespace Pulumi.Oci.NetworkFirewall
         /// Get Security Rule by the given name in the context of network firewall policy.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkFirewallPolicySecurityRule = Oci.NetworkFirewall.GetNetworkFirewallPolicySecurityRule.Invoke(new()
+        ///     {
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///         SecurityRuleName = ociNetworkFirewallNetworkFirewallPolicySecurityRuleName,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetNetworkFirewallPolicySecurityRuleResult> Invoke(GetNetworkFirewallPolicySecurityRuleInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicySecurityRuleResult>("oci:NetworkFirewall/getNetworkFirewallPolicySecurityRule:getNetworkFirewallPolicySecurityRule", args ?? new GetNetworkFirewallPolicySecurityRuleInvokeArgs(), options.WithDefaults());
@@ -37,6 +71,23 @@ namespace Pulumi.Oci.NetworkFirewall
         /// Get Security Rule by the given name in the context of network firewall policy.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkFirewallPolicySecurityRule = Oci.NetworkFirewall.GetNetworkFirewallPolicySecurityRule.Invoke(new()
+        ///     {
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///         SecurityRuleName = ociNetworkFirewallNetworkFirewallPolicySecurityRuleName,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetNetworkFirewallPolicySecurityRuleResult> Invoke(GetNetworkFirewallPolicySecurityRuleInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicySecurityRuleResult>("oci:NetworkFirewall/getNetworkFirewallPolicySecurityRule:getNetworkFirewallPolicySecurityRule", args ?? new GetNetworkFirewallPolicySecurityRuleInvokeArgs(), options.WithDefaults());

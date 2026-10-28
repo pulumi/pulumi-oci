@@ -19,6 +19,24 @@ namespace Pulumi.Oci.Core
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testByoasns = Oci.Core.GetByoasns.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = byoasnDisplayName,
+        ///         State = byoasnState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetByoasnsResult> InvokeAsync(GetByoasnsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetByoasnsResult>("oci:Core/getByoasns:getByoasns", args ?? new GetByoasnsArgs(), options.WithDefaults());
@@ -31,6 +49,24 @@ namespace Pulumi.Oci.Core
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testByoasns = Oci.Core.GetByoasns.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = byoasnDisplayName,
+        ///         State = byoasnState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetByoasnsResult> Invoke(GetByoasnsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetByoasnsResult>("oci:Core/getByoasns:getByoasns", args ?? new GetByoasnsInvokeArgs(), options.WithDefaults());
@@ -43,6 +79,24 @@ namespace Pulumi.Oci.Core
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testByoasns = Oci.Core.GetByoasns.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = byoasnDisplayName,
+        ///         State = byoasnState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetByoasnsResult> Invoke(GetByoasnsInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetByoasnsResult>("oci:Core/getByoasns:getByoasns", args ?? new GetByoasnsInvokeArgs(), options.WithDefaults());

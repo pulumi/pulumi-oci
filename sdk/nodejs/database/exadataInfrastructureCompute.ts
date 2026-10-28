@@ -8,6 +8,17 @@ import * as utilities from "../utilities";
 
 /**
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testExadataInfrastructure = oci.database.getExadataInfrastructure({
+ *     exadataInfrastructureId: testExadataInfrastructureOciDatabaseExadataInfrastructure.id,
+ *     additionalComputeCountComputeManagedResource: exadataInfrastructureAdditionalComputeCount,
+ *     additionalComputeSystemModelComputeManagedResource: exadataInfrastructureAdditionalComputeSystemModel,
+ * });
+ * ```
  */
 export class ExadataInfrastructureCompute extends pulumi.CustomResource {
     /**

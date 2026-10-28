@@ -173,6 +173,14 @@ def get_managed_kafka_kafka_cluster_addon(kafka_cluster_id: Optional[_builtins.s
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_kafka_cluster_addon = oci.oci.get_managed_kafka_kafka_cluster_addon(addon_name=test_addon["name"],
+        kafka_cluster_id=test_kafka_cluster["id"])
+    ```
+
 
     :param _builtins.str kafka_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.
     :param _builtins.str name: A unique user-friendly name.
@@ -204,6 +212,14 @@ def get_managed_kafka_kafka_cluster_addon_output(kafka_cluster_id: pulumi.Input[
     Gets information about a KafkaClusterAddon.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_kafka_cluster_addon = oci.oci.get_managed_kafka_kafka_cluster_addon(addon_name=test_addon["name"],
+        kafka_cluster_id=test_kafka_cluster["id"])
+    ```
 
 
     :param _builtins.str kafka_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KafkaCluster.

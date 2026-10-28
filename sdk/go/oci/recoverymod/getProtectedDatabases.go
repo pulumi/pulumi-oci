@@ -16,6 +16,36 @@ import (
 // Lists the protected databases based on the specified parameters.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/recoverymod"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := recoverymod.GetProtectedDatabases(ctx, &recoverymod.GetProtectedDatabasesArgs{
+//				BackupCloudLocation:     protectedDatabaseBackupCloudLocation,
+//				CompartmentId:           pulumi.StringRef(compartmentId),
+//				DisplayName:             pulumi.StringRef(protectedDatabaseDisplayName),
+//				Id:                      pulumi.StringRef(protectedDatabaseId),
+//				ProtectionPolicyId:      pulumi.StringRef(testProtectionPolicy.Id),
+//				RecoveryServiceSubnetId: pulumi.StringRef(testRecoveryServiceSubnet.Id),
+//				State:                   pulumi.StringRef(protectedDatabaseState),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetProtectedDatabases(ctx *pulumi.Context, args *GetProtectedDatabasesArgs, opts ...pulumi.InvokeOption) (*GetProtectedDatabasesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetProtectedDatabasesResult

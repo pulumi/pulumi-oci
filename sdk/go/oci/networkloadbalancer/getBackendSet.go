@@ -16,6 +16,32 @@ import (
 // Retrieves the configuration information for the specified backend set.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/networkloadbalancer"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := networkloadbalancer.GetBackendSet(ctx, &networkloadbalancer.GetBackendSetArgs{
+//				BackendSetName:        testBackendSetOciNetworkLoadBalancerBackendSet.Name,
+//				NetworkLoadBalancerId: testNetworkLoadBalancer.Id,
+//				IpVersion:             backendSetIpVersion,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupBackendSet(ctx *pulumi.Context, args *LookupBackendSetArgs, opts ...pulumi.InvokeOption) (*LookupBackendSetResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupBackendSetResult

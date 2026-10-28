@@ -20,6 +20,26 @@ namespace Pulumi.Oci.Dblm
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPatchManagement = Oci.Dblm.GetPatchManagement.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DatabaseRelease = patchManagementDatabaseRelease,
+        ///         State = patchManagementState,
+        ///         TimeStartedGreaterThanOrEqualTo = patchManagementTimeStartedGreaterThanOrEqualTo,
+        ///         TimeStartedLessThan = patchManagementTimeStartedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetPatchManagementResult> InvokeAsync(GetPatchManagementArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetPatchManagementResult>("oci:Dblm/getPatchManagement:getPatchManagement", args ?? new GetPatchManagementArgs(), options.WithDefaults());
@@ -33,6 +53,26 @@ namespace Pulumi.Oci.Dblm
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPatchManagement = Oci.Dblm.GetPatchManagement.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DatabaseRelease = patchManagementDatabaseRelease,
+        ///         State = patchManagementState,
+        ///         TimeStartedGreaterThanOrEqualTo = patchManagementTimeStartedGreaterThanOrEqualTo,
+        ///         TimeStartedLessThan = patchManagementTimeStartedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetPatchManagementResult> Invoke(GetPatchManagementInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetPatchManagementResult>("oci:Dblm/getPatchManagement:getPatchManagement", args ?? new GetPatchManagementInvokeArgs(), options.WithDefaults());
@@ -46,6 +86,26 @@ namespace Pulumi.Oci.Dblm
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testPatchManagement = Oci.Dblm.GetPatchManagement.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         DatabaseRelease = patchManagementDatabaseRelease,
+        ///         State = patchManagementState,
+        ///         TimeStartedGreaterThanOrEqualTo = patchManagementTimeStartedGreaterThanOrEqualTo,
+        ///         TimeStartedLessThan = patchManagementTimeStartedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetPatchManagementResult> Invoke(GetPatchManagementInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetPatchManagementResult>("oci:Dblm/getPatchManagement:getPatchManagement", args ?? new GetPatchManagementInvokeArgs(), options.WithDefaults());

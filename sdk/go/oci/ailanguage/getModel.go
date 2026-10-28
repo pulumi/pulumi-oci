@@ -16,6 +16,30 @@ import (
 // # Gets a model by identifier
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/ailanguage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := ailanguage.GetModel(ctx, &ailanguage.GetModelArgs{
+//				ModelId: testModelOciAiLanguageModel.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupModel(ctx *pulumi.Context, args *LookupModelArgs, opts ...pulumi.InvokeOption) (*LookupModelResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupModelResult

@@ -128,6 +128,16 @@ def get_firmware_bundles(compartment_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_firmware_bundles = oci.core.get_firmware_bundles(platform=firmware_bundle_platform,
+        compartment_id=compartment_id,
+        is_default_bundle=firmware_bundle_is_default_bundle,
+        state=firmware_bundle_state)
+    ```
+
 
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param _builtins.bool is_default_bundle: If true, return only the default firmware bundle for a given platform. Default is false.
@@ -163,6 +173,16 @@ def get_firmware_bundles_output(compartment_id: pulumi.Input[Optional[Optional[_
     only the default (recommended) Firmware Bundle for the given platform.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_firmware_bundles = oci.core.get_firmware_bundles(platform=firmware_bundle_platform,
+        compartment_id=compartment_id,
+        is_default_bundle=firmware_bundle_is_default_bundle,
+        state=firmware_bundle_state)
+    ```
 
 
     :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

@@ -126,6 +126,14 @@ def get_network_firewall_policy_service(name: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_network_firewall_policy_service = oci.networkfirewall.get_network_firewall_policy_service(network_firewall_policy_id=test_network_firewall_policy["id"],
+        service_name=oci_network_firewall_network_firewall_policy_service_name)
+    ```
+
 
     :param _builtins.str name: Name of the service.
     :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
@@ -153,6 +161,14 @@ def get_network_firewall_policy_service_output(name: pulumi.Input[Optional[_buil
     Get Service by the given name in the context of network firewall policy.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_network_firewall_policy_service = oci.networkfirewall.get_network_firewall_policy_service(network_firewall_policy_id=test_network_firewall_policy["id"],
+        service_name=oci_network_firewall_network_firewall_policy_service_name)
+    ```
 
 
     :param _builtins.str name: Name of the service.

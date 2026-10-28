@@ -16,6 +16,31 @@ import (
 // Returns the clean energy usage summary by region.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/meteringcomputation"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := meteringcomputation.GetCleanEnergyUsage(ctx, &meteringcomputation.GetCleanEnergyUsageArgs{
+//				Region: cleanEnergyUsageRegion,
+//				Ad:     cleanEnergyUsageAd,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetCleanEnergyUsage(ctx *pulumi.Context, args *GetCleanEnergyUsageArgs, opts ...pulumi.InvokeOption) (*GetCleanEnergyUsageResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetCleanEnergyUsageResult

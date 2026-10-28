@@ -18,6 +18,33 @@ import (
 // Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/databasemigration"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := databasemigration.GetMigrations(ctx, &databasemigration.GetMigrationsArgs{
+//				CompartmentId:    compartmentId,
+//				DisplayName:      migrationDisplayName,
+//				LifecycleDetails: migrationLifecycleDetails,
+//				State:            migrationState,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetMigrations(ctx *pulumi.Context, args *GetMigrationsArgs, opts ...pulumi.InvokeOption) (*GetMigrationsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetMigrationsResult

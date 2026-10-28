@@ -17,6 +17,23 @@ namespace Pulumi.Oci.NetworkFirewall
         /// Get ServiceList by the given name in the context of network firewall policy.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkFirewallPolicyServiceList = Oci.NetworkFirewall.GetNetworkFirewallPolicyServiceList.Invoke(new()
+        ///     {
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///         ServiceListName = networkFirewallPolicyServiceListServiceListName,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetNetworkFirewallPolicyServiceListResult> InvokeAsync(GetNetworkFirewallPolicyServiceListArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetNetworkFirewallPolicyServiceListResult>("oci:NetworkFirewall/getNetworkFirewallPolicyServiceList:getNetworkFirewallPolicyServiceList", args ?? new GetNetworkFirewallPolicyServiceListArgs(), options.WithDefaults());
@@ -27,6 +44,23 @@ namespace Pulumi.Oci.NetworkFirewall
         /// Get ServiceList by the given name in the context of network firewall policy.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkFirewallPolicyServiceList = Oci.NetworkFirewall.GetNetworkFirewallPolicyServiceList.Invoke(new()
+        ///     {
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///         ServiceListName = networkFirewallPolicyServiceListServiceListName,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetNetworkFirewallPolicyServiceListResult> Invoke(GetNetworkFirewallPolicyServiceListInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyServiceListResult>("oci:NetworkFirewall/getNetworkFirewallPolicyServiceList:getNetworkFirewallPolicyServiceList", args ?? new GetNetworkFirewallPolicyServiceListInvokeArgs(), options.WithDefaults());
@@ -37,6 +71,23 @@ namespace Pulumi.Oci.NetworkFirewall
         /// Get ServiceList by the given name in the context of network firewall policy.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testNetworkFirewallPolicyServiceList = Oci.NetworkFirewall.GetNetworkFirewallPolicyServiceList.Invoke(new()
+        ///     {
+        ///         NetworkFirewallPolicyId = testNetworkFirewallPolicy.Id,
+        ///         ServiceListName = networkFirewallPolicyServiceListServiceListName,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetNetworkFirewallPolicyServiceListResult> Invoke(GetNetworkFirewallPolicyServiceListInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetNetworkFirewallPolicyServiceListResult>("oci:NetworkFirewall/getNetworkFirewallPolicyServiceList:getNetworkFirewallPolicyServiceList", args ?? new GetNetworkFirewallPolicyServiceListInvokeArgs(), options.WithDefaults());

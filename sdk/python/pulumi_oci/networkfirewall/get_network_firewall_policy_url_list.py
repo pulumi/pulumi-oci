@@ -126,6 +126,14 @@ def get_network_firewall_policy_url_list(name: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_network_firewall_policy_url_list = oci.networkfirewall.get_network_firewall_policy_url_list(network_firewall_policy_id=test_network_firewall_policy["id"],
+        url_list_name=network_firewall_policy_url_list_url_list_name)
+    ```
+
 
     :param _builtins.str name: Unique name identifier for the URL list.
     :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
@@ -153,6 +161,14 @@ def get_network_firewall_policy_url_list_output(name: pulumi.Input[Optional[_bui
     Get Url List by the given name in the context of network firewall policy.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_network_firewall_policy_url_list = oci.networkfirewall.get_network_firewall_policy_url_list(network_firewall_policy_id=test_network_firewall_policy["id"],
+        url_list_name=network_firewall_policy_url_list_url_list_name)
+    ```
 
 
     :param _builtins.str name: Unique name identifier for the URL list.

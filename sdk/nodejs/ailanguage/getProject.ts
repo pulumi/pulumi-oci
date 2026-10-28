@@ -10,6 +10,15 @@ import * as utilities from "../utilities";
  * Gets a Project by identifier
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testProject = oci.ailanguage.getProject({
+ *     projectId: testProjectOciAiLanguageProject.id,
+ * });
+ * ```
  */
 export function getProject(args: GetProjectArgs, opts?: pulumi.InvokeOptions): Promise<GetProjectResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -83,6 +92,15 @@ export interface GetProjectResult {
  * Gets a Project by identifier
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testProject = oci.ailanguage.getProject({
+ *     projectId: testProjectOciAiLanguageProject.id,
+ * });
+ * ```
  */
 export function getProjectOutput(args: GetProjectOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProjectResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

@@ -829,6 +829,15 @@ class ExadataInfrastructureCompute(pulumi.CustomResource):
         """
         ## Example Usage
 
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_exadata_infrastructure = oci.database.get_exadata_infrastructure(exadata_infrastructure_id=test_exadata_infrastructure_oci_database_exadata_infrastructure["id"],
+            additional_compute_count_compute_managed_resource=exadata_infrastructure_additional_compute_count,
+            additional_compute_system_model_compute_managed_resource=exadata_infrastructure_additional_compute_system_model)
+        ```
+
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
@@ -845,6 +854,15 @@ class ExadataInfrastructureCompute(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
         ## Example Usage
+
+        ```python
+        import pulumi
+        import pulumi_oci as oci
+
+        test_exadata_infrastructure = oci.database.get_exadata_infrastructure(exadata_infrastructure_id=test_exadata_infrastructure_oci_database_exadata_infrastructure["id"],
+            additional_compute_count_compute_managed_resource=exadata_infrastructure_additional_compute_count,
+            additional_compute_system_model_compute_managed_resource=exadata_infrastructure_additional_compute_system_model)
+        ```
 
 
         :param str resource_name: The name of the resource.

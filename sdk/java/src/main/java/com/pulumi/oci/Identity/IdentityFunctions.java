@@ -29879,6 +29879,42 @@ public final class IdentityFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsUserAttributesSettingsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAttributesSettings = IdentityFunctions.getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs.builder()
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .userAttributesSettingId(testUserAttributesSetting.get("id"))
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(userAttributesSettingAuthorization)
+     *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetDomainsUserAttributesSettingsResult> getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs args) {
         return getDomainsUserAttributesSettings(args, InvokeOptions.Empty);
@@ -29889,6 +29925,42 @@ public final class IdentityFunctions {
      * Search User Schema Attribute Settings
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsUserAttributesSettingsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAttributesSettings = IdentityFunctions.getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs.builder()
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .userAttributesSettingId(testUserAttributesSetting.get("id"))
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(userAttributesSettingAuthorization)
+     *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetDomainsUserAttributesSettingsResult> getDomainsUserAttributesSettingsPlain(GetDomainsUserAttributesSettingsPlainArgs args) {
@@ -29901,6 +29973,42 @@ public final class IdentityFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsUserAttributesSettingsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAttributesSettings = IdentityFunctions.getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs.builder()
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .userAttributesSettingId(testUserAttributesSetting.get("id"))
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(userAttributesSettingAuthorization)
+     *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetDomainsUserAttributesSettingsResult> getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:Identity/getDomainsUserAttributesSettings:getDomainsUserAttributesSettings", TypeShape.of(GetDomainsUserAttributesSettingsResult.class), args, Utilities.withVersion(options));
@@ -29912,6 +30020,42 @@ public final class IdentityFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsUserAttributesSettingsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAttributesSettings = IdentityFunctions.getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs.builder()
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .userAttributesSettingId(testUserAttributesSetting.get("id"))
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(userAttributesSettingAuthorization)
+     *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetDomainsUserAttributesSettingsResult> getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:Identity/getDomainsUserAttributesSettings:getDomainsUserAttributesSettings", TypeShape.of(GetDomainsUserAttributesSettingsResult.class), args, Utilities.withVersion(options));
@@ -29922,6 +30066,42 @@ public final class IdentityFunctions {
      * Search User Schema Attribute Settings
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Identity.IdentityFunctions;
+     * import com.pulumi.oci.Identity.inputs.GetDomainsUserAttributesSettingsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testUserAttributesSettings = IdentityFunctions.getDomainsUserAttributesSettings(GetDomainsUserAttributesSettingsArgs.builder()
+     *             .idcsEndpoint(testDomain.get("url"))
+     *             .userAttributesSettingId(testUserAttributesSetting.get("id"))
+     *             .attributeSets("all")
+     *             .attributes("")
+     *             .authorization(userAttributesSettingAuthorization)
+     *             .resourceTypeSchemaVersion(userAttributesSettingResourceTypeSchemaVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetDomainsUserAttributesSettingsResult> getDomainsUserAttributesSettingsPlain(GetDomainsUserAttributesSettingsPlainArgs args, InvokeOptions options) {

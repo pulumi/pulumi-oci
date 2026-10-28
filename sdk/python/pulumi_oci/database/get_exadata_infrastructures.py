@@ -121,6 +121,16 @@ def get_exadata_infrastructures(compartment_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_exadata_infrastructures = oci.database.get_exadata_infrastructures(compartment_id=compartment_id,
+        display_name=exadata_infrastructure_display_name,
+        excluded_fields=exadata_infrastructure_excluded_fields,
+        state=exadata_infrastructure_state)
+    ```
+
 
     :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param _builtins.str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -153,6 +163,16 @@ def get_exadata_infrastructures_output(compartment_id: pulumi.Input[Optional[_bu
     To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_exadata_infrastructures = oci.database.get_exadata_infrastructures(compartment_id=compartment_id,
+        display_name=exadata_infrastructure_display_name,
+        excluded_fields=exadata_infrastructure_excluded_fields,
+        state=exadata_infrastructure_state)
+    ```
 
 
     :param _builtins.str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

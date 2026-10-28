@@ -251,6 +251,13 @@ def get_model(id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_model = oci.ailanguage.get_model(model_id=test_model_oci_ai_language_model["id"])
+    ```
+
 
     :param _builtins.str id: Unique identifier model OCID of a model that is immutable on creation
     """
@@ -285,6 +292,13 @@ def get_model_output(id: pulumi.Input[Optional[_builtins.str]] = None,
     Gets a model by identifier
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_model = oci.ailanguage.get_model(model_id=test_model_oci_ai_language_model["id"])
+    ```
 
 
     :param _builtins.str id: Unique identifier model OCID of a model that is immutable on creation

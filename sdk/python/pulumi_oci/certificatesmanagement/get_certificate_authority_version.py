@@ -211,6 +211,14 @@ def get_certificate_authority_version(certificate_authority_id: Optional[_builti
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_certificate_authority_version = oci.certificatesmanagement.get_certificate_authority_version(certificate_authority_id=test_certificate_authority["id"],
+        version_number=certificate_authority_version_version_number)
+    ```
+
 
     :param _builtins.str certificate_authority_id: The OCID of the certificate authority (CA).
     """
@@ -245,6 +253,14 @@ def get_certificate_authority_version_output(certificate_authority_id: pulumi.In
     Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_certificate_authority_version = oci.certificatesmanagement.get_certificate_authority_version(certificate_authority_id=test_certificate_authority["id"],
+        version_number=certificate_authority_version_version_number)
+    ```
 
 
     :param _builtins.str certificate_authority_id: The OCID of the certificate authority (CA).

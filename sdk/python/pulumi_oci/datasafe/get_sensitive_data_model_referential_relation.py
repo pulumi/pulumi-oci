@@ -141,6 +141,14 @@ def get_sensitive_data_model_referential_relation(key: Optional[_builtins.str] =
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_sensitive_data_model_referential_relation = oci.datasafe.get_sensitive_data_model_referential_relation(referential_relation_key=sensitive_data_model_referential_relation_referential_relation_key,
+        sensitive_data_model_id=test_sensitive_data_model["id"])
+    ```
+
 
     :param _builtins.str key: The unique key that identifies the referential relation. It's numeric and unique within a sensitive data model.
     :param _builtins.str sensitive_data_model_id: The OCID of the sensitive data model.
@@ -169,6 +177,14 @@ def get_sensitive_data_model_referential_relation_output(key: pulumi.Input[Optio
     Gets the details of the specified referential relation.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_sensitive_data_model_referential_relation = oci.datasafe.get_sensitive_data_model_referential_relation(referential_relation_key=sensitive_data_model_referential_relation_referential_relation_key,
+        sensitive_data_model_id=test_sensitive_data_model["id"])
+    ```
 
 
     :param _builtins.str key: The unique key that identifies the referential relation. It's numeric and unique within a sensitive data model.

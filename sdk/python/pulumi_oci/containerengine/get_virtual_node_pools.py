@@ -133,6 +133,16 @@ def get_virtual_node_pools(cluster_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_virtual_node_pools = oci.containerengine.get_virtual_node_pools(compartment_id=compartment_id,
+        cluster_id=test_cluster["id"],
+        name=virtual_node_pool_name,
+        states=virtual_node_pool_state)
+    ```
+
 
     :param _builtins.str cluster_id: The OCID of the cluster.
     :param _builtins.str compartment_id: The OCID of the compartment.
@@ -168,6 +178,16 @@ def get_virtual_node_pools_output(cluster_id: pulumi.Input[Optional[Optional[_bu
     List all the virtual node pools in a compartment, and optionally filter by cluster.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_virtual_node_pools = oci.containerengine.get_virtual_node_pools(compartment_id=compartment_id,
+        cluster_id=test_cluster["id"],
+        name=virtual_node_pool_name,
+        states=virtual_node_pool_state)
+    ```
 
 
     :param _builtins.str cluster_id: The OCID of the cluster.

@@ -1883,6 +1883,38 @@ public final class CertificatesManagementFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityVersionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthorityVersion = CertificatesManagementFunctions.getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs.builder()
+     *             .certificateAuthorityId(testCertificateAuthority.get("id"))
+     *             .versionNumber(certificateAuthorityVersionVersionNumber)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetCertificateAuthorityVersionResult> getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs args) {
         return getCertificateAuthorityVersion(args, InvokeOptions.Empty);
@@ -1894,6 +1926,38 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityVersionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthorityVersion = CertificatesManagementFunctions.getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs.builder()
+     *             .certificateAuthorityId(testCertificateAuthority.get("id"))
+     *             .versionNumber(certificateAuthorityVersionVersionNumber)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetCertificateAuthorityVersionResult> getCertificateAuthorityVersionPlain(GetCertificateAuthorityVersionPlainArgs args) {
@@ -1907,6 +1971,38 @@ public final class CertificatesManagementFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityVersionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthorityVersion = CertificatesManagementFunctions.getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs.builder()
+     *             .certificateAuthorityId(testCertificateAuthority.get("id"))
+     *             .versionNumber(certificateAuthorityVersionVersionNumber)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetCertificateAuthorityVersionResult> getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", TypeShape.of(GetCertificateAuthorityVersionResult.class), args, Utilities.withVersion(options));
@@ -1919,6 +2015,38 @@ public final class CertificatesManagementFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityVersionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthorityVersion = CertificatesManagementFunctions.getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs.builder()
+     *             .certificateAuthorityId(testCertificateAuthority.get("id"))
+     *             .versionNumber(certificateAuthorityVersionVersionNumber)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetCertificateAuthorityVersionResult> getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", TypeShape.of(GetCertificateAuthorityVersionResult.class), args, Utilities.withVersion(options));
@@ -1930,6 +2058,38 @@ public final class CertificatesManagementFunctions {
      * Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the results to a single item that matches the specified version number.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.CertificatesManagement.CertificatesManagementFunctions;
+     * import com.pulumi.oci.CertificatesManagement.inputs.GetCertificateAuthorityVersionArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testCertificateAuthorityVersion = CertificatesManagementFunctions.getCertificateAuthorityVersion(GetCertificateAuthorityVersionArgs.builder()
+     *             .certificateAuthorityId(testCertificateAuthority.get("id"))
+     *             .versionNumber(certificateAuthorityVersionVersionNumber)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetCertificateAuthorityVersionResult> getCertificateAuthorityVersionPlain(GetCertificateAuthorityVersionPlainArgs args, InvokeOptions options) {

@@ -17,6 +17,22 @@ namespace Pulumi.Oci.AiLanguage
         /// Gets a model by identifier
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testModel = Oci.AiLanguage.GetModel.Invoke(new()
+        ///     {
+        ///         ModelId = testModelOciAiLanguageModel.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetModelResult> InvokeAsync(GetModelArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetModelResult>("oci:AiLanguage/getModel:getModel", args ?? new GetModelArgs(), options.WithDefaults());
@@ -27,6 +43,22 @@ namespace Pulumi.Oci.AiLanguage
         /// Gets a model by identifier
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testModel = Oci.AiLanguage.GetModel.Invoke(new()
+        ///     {
+        ///         ModelId = testModelOciAiLanguageModel.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetModelResult> Invoke(GetModelInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetModelResult>("oci:AiLanguage/getModel:getModel", args ?? new GetModelInvokeArgs(), options.WithDefaults());
@@ -37,6 +69,22 @@ namespace Pulumi.Oci.AiLanguage
         /// Gets a model by identifier
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testModel = Oci.AiLanguage.GetModel.Invoke(new()
+        ///     {
+        ///         ModelId = testModelOciAiLanguageModel.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetModelResult> Invoke(GetModelInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetModelResult>("oci:AiLanguage/getModel:getModel", args ?? new GetModelInvokeArgs(), options.WithDefaults());

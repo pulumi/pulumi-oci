@@ -13,6 +13,32 @@ import (
 )
 
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := database.GetExadataInfrastructure(ctx, &database.GetExadataInfrastructureArgs{
+//				ExadataInfrastructureId:                            testExadataInfrastructureOciDatabaseExadataInfrastructure.Id,
+//				AdditionalComputeCountComputeManagedResource:       exadataInfrastructureAdditionalComputeCount,
+//				AdditionalComputeSystemModelComputeManagedResource: exadataInfrastructureAdditionalComputeSystemModel,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 type ExadataInfrastructureCompute struct {
 	pulumi.CustomResourceState
 

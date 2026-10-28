@@ -19,6 +19,23 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCertificateAuthorityVersion = Oci.CertificatesManagement.GetCertificateAuthorityVersion.Invoke(new()
+        ///     {
+        ///         CertificateAuthorityId = testCertificateAuthority.Id,
+        ///         VersionNumber = certificateAuthorityVersionVersionNumber,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetCertificateAuthorityVersionResult> InvokeAsync(GetCertificateAuthorityVersionArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetCertificateAuthorityVersionResult>("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", args ?? new GetCertificateAuthorityVersionArgs(), options.WithDefaults());
@@ -31,6 +48,23 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCertificateAuthorityVersion = Oci.CertificatesManagement.GetCertificateAuthorityVersion.Invoke(new()
+        ///     {
+        ///         CertificateAuthorityId = testCertificateAuthority.Id,
+        ///         VersionNumber = certificateAuthorityVersionVersionNumber,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetCertificateAuthorityVersionResult> Invoke(GetCertificateAuthorityVersionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetCertificateAuthorityVersionResult>("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", args ?? new GetCertificateAuthorityVersionInvokeArgs(), options.WithDefaults());
@@ -43,6 +77,23 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testCertificateAuthorityVersion = Oci.CertificatesManagement.GetCertificateAuthorityVersion.Invoke(new()
+        ///     {
+        ///         CertificateAuthorityId = testCertificateAuthority.Id,
+        ///         VersionNumber = certificateAuthorityVersionVersionNumber,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetCertificateAuthorityVersionResult> Invoke(GetCertificateAuthorityVersionInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetCertificateAuthorityVersionResult>("oci:CertificatesManagement/getCertificateAuthorityVersion:getCertificateAuthorityVersion", args ?? new GetCertificateAuthorityVersionInvokeArgs(), options.WithDefaults());

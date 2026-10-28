@@ -18,6 +18,28 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProtectedDatabases = Oci.RecoveryMod.GetProtectedDatabases.Invoke(new()
+        ///     {
+        ///         BackupCloudLocation = protectedDatabaseBackupCloudLocation,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = protectedDatabaseDisplayName,
+        ///         Id = protectedDatabaseId,
+        ///         ProtectionPolicyId = testProtectionPolicy.Id,
+        ///         RecoveryServiceSubnetId = testRecoveryServiceSubnet.Id,
+        ///         State = protectedDatabaseState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetProtectedDatabasesResult> InvokeAsync(GetProtectedDatabasesArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProtectedDatabasesResult>("oci:RecoveryMod/getProtectedDatabases:getProtectedDatabases", args ?? new GetProtectedDatabasesArgs(), options.WithDefaults());
@@ -29,6 +51,28 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProtectedDatabases = Oci.RecoveryMod.GetProtectedDatabases.Invoke(new()
+        ///     {
+        ///         BackupCloudLocation = protectedDatabaseBackupCloudLocation,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = protectedDatabaseDisplayName,
+        ///         Id = protectedDatabaseId,
+        ///         ProtectionPolicyId = testProtectionPolicy.Id,
+        ///         RecoveryServiceSubnetId = testRecoveryServiceSubnet.Id,
+        ///         State = protectedDatabaseState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetProtectedDatabasesResult> Invoke(GetProtectedDatabasesInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectedDatabasesResult>("oci:RecoveryMod/getProtectedDatabases:getProtectedDatabases", args ?? new GetProtectedDatabasesInvokeArgs(), options.WithDefaults());
@@ -40,6 +84,28 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProtectedDatabases = Oci.RecoveryMod.GetProtectedDatabases.Invoke(new()
+        ///     {
+        ///         BackupCloudLocation = protectedDatabaseBackupCloudLocation,
+        ///         CompartmentId = compartmentId,
+        ///         DisplayName = protectedDatabaseDisplayName,
+        ///         Id = protectedDatabaseId,
+        ///         ProtectionPolicyId = testProtectionPolicy.Id,
+        ///         RecoveryServiceSubnetId = testRecoveryServiceSubnet.Id,
+        ///         State = protectedDatabaseState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetProtectedDatabasesResult> Invoke(GetProtectedDatabasesInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetProtectedDatabasesResult>("oci:RecoveryMod/getProtectedDatabases:getProtectedDatabases", args ?? new GetProtectedDatabasesInvokeArgs(), options.WithDefaults());

@@ -12,6 +12,21 @@ import * as utilities from "../utilities";
  * Lists the protected databases based on the specified parameters.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testProtectedDatabases = oci.recoverymod.getProtectedDatabases({
+ *     backupCloudLocation: protectedDatabaseBackupCloudLocation,
+ *     compartmentId: compartmentId,
+ *     displayName: protectedDatabaseDisplayName,
+ *     id: protectedDatabaseId,
+ *     protectionPolicyId: testProtectionPolicy.id,
+ *     recoveryServiceSubnetId: testRecoveryServiceSubnet.id,
+ *     state: protectedDatabaseState,
+ * });
+ * ```
  */
 export function getProtectedDatabases(args?: GetProtectedDatabasesArgs, opts?: pulumi.InvokeOptions): Promise<GetProtectedDatabasesResult> {
     args = args || {};
@@ -98,6 +113,21 @@ export interface GetProtectedDatabasesResult {
  * Lists the protected databases based on the specified parameters.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testProtectedDatabases = oci.recoverymod.getProtectedDatabases({
+ *     backupCloudLocation: protectedDatabaseBackupCloudLocation,
+ *     compartmentId: compartmentId,
+ *     displayName: protectedDatabaseDisplayName,
+ *     id: protectedDatabaseId,
+ *     protectionPolicyId: testProtectionPolicy.id,
+ *     recoveryServiceSubnetId: testRecoveryServiceSubnet.id,
+ *     state: protectedDatabaseState,
+ * });
+ * ```
  */
 export function getProtectedDatabasesOutput(args?: GetProtectedDatabasesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetProtectedDatabasesResult> {
     args = args || {};

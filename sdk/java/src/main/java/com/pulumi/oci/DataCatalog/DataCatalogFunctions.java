@@ -2100,6 +2100,47 @@ public final class DataCatalogFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetDataAssetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataAssets = DataCatalogFunctions.getDataAssets(GetDataAssetsArgs.builder()
+     *             .catalogId(testCatalog.get("id"))
+     *             .createdById(testCreatedBy.get("id"))
+     *             .displayName(dataAssetDisplayName)
+     *             .displayNameContains(dataAssetDisplayNameContains)
+     *             .externalKey(dataAssetExternalKey)
+     *             .fields(dataAssetFields)
+     *             .state(dataAssetState)
+     *             .timeCreated(dataAssetTimeCreated)
+     *             .timeUpdated(dataAssetTimeUpdated)
+     *             .typeKey(dataAssetTypeKey)
+     *             .updatedById(testUpdatedBy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetDataAssetsResult> getDataAssets(GetDataAssetsArgs args) {
         return getDataAssets(args, InvokeOptions.Empty);
@@ -2110,6 +2151,47 @@ public final class DataCatalogFunctions {
      * Returns a list of data assets within a data catalog.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetDataAssetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataAssets = DataCatalogFunctions.getDataAssets(GetDataAssetsArgs.builder()
+     *             .catalogId(testCatalog.get("id"))
+     *             .createdById(testCreatedBy.get("id"))
+     *             .displayName(dataAssetDisplayName)
+     *             .displayNameContains(dataAssetDisplayNameContains)
+     *             .externalKey(dataAssetExternalKey)
+     *             .fields(dataAssetFields)
+     *             .state(dataAssetState)
+     *             .timeCreated(dataAssetTimeCreated)
+     *             .timeUpdated(dataAssetTimeUpdated)
+     *             .typeKey(dataAssetTypeKey)
+     *             .updatedById(testUpdatedBy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetDataAssetsResult> getDataAssetsPlain(GetDataAssetsPlainArgs args) {
@@ -2122,6 +2204,47 @@ public final class DataCatalogFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetDataAssetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataAssets = DataCatalogFunctions.getDataAssets(GetDataAssetsArgs.builder()
+     *             .catalogId(testCatalog.get("id"))
+     *             .createdById(testCreatedBy.get("id"))
+     *             .displayName(dataAssetDisplayName)
+     *             .displayNameContains(dataAssetDisplayNameContains)
+     *             .externalKey(dataAssetExternalKey)
+     *             .fields(dataAssetFields)
+     *             .state(dataAssetState)
+     *             .timeCreated(dataAssetTimeCreated)
+     *             .timeUpdated(dataAssetTimeUpdated)
+     *             .typeKey(dataAssetTypeKey)
+     *             .updatedById(testUpdatedBy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetDataAssetsResult> getDataAssets(GetDataAssetsArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:DataCatalog/getDataAssets:getDataAssets", TypeShape.of(GetDataAssetsResult.class), args, Utilities.withVersion(options));
@@ -2133,6 +2256,47 @@ public final class DataCatalogFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetDataAssetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataAssets = DataCatalogFunctions.getDataAssets(GetDataAssetsArgs.builder()
+     *             .catalogId(testCatalog.get("id"))
+     *             .createdById(testCreatedBy.get("id"))
+     *             .displayName(dataAssetDisplayName)
+     *             .displayNameContains(dataAssetDisplayNameContains)
+     *             .externalKey(dataAssetExternalKey)
+     *             .fields(dataAssetFields)
+     *             .state(dataAssetState)
+     *             .timeCreated(dataAssetTimeCreated)
+     *             .timeUpdated(dataAssetTimeUpdated)
+     *             .typeKey(dataAssetTypeKey)
+     *             .updatedById(testUpdatedBy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetDataAssetsResult> getDataAssets(GetDataAssetsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataCatalog/getDataAssets:getDataAssets", TypeShape.of(GetDataAssetsResult.class), args, Utilities.withVersion(options));
@@ -2143,6 +2307,47 @@ public final class DataCatalogFunctions {
      * Returns a list of data assets within a data catalog.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataCatalog.DataCatalogFunctions;
+     * import com.pulumi.oci.DataCatalog.inputs.GetDataAssetsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testDataAssets = DataCatalogFunctions.getDataAssets(GetDataAssetsArgs.builder()
+     *             .catalogId(testCatalog.get("id"))
+     *             .createdById(testCreatedBy.get("id"))
+     *             .displayName(dataAssetDisplayName)
+     *             .displayNameContains(dataAssetDisplayNameContains)
+     *             .externalKey(dataAssetExternalKey)
+     *             .fields(dataAssetFields)
+     *             .state(dataAssetState)
+     *             .timeCreated(dataAssetTimeCreated)
+     *             .timeUpdated(dataAssetTimeUpdated)
+     *             .typeKey(dataAssetTypeKey)
+     *             .updatedById(testUpdatedBy.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetDataAssetsResult> getDataAssetsPlain(GetDataAssetsPlainArgs args, InvokeOptions options) {

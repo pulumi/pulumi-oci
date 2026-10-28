@@ -17,6 +17,23 @@ namespace Pulumi.Oci.DataSafe
         /// Gets the details of the specified referential relation.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSensitiveDataModelReferentialRelation = Oci.DataSafe.GetSensitiveDataModelReferentialRelation.Invoke(new()
+        ///     {
+        ///         ReferentialRelationKey = sensitiveDataModelReferentialRelationReferentialRelationKey,
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetSensitiveDataModelReferentialRelationResult> InvokeAsync(GetSensitiveDataModelReferentialRelationArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetSensitiveDataModelReferentialRelationResult>("oci:DataSafe/getSensitiveDataModelReferentialRelation:getSensitiveDataModelReferentialRelation", args ?? new GetSensitiveDataModelReferentialRelationArgs(), options.WithDefaults());
@@ -27,6 +44,23 @@ namespace Pulumi.Oci.DataSafe
         /// Gets the details of the specified referential relation.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSensitiveDataModelReferentialRelation = Oci.DataSafe.GetSensitiveDataModelReferentialRelation.Invoke(new()
+        ///     {
+        ///         ReferentialRelationKey = sensitiveDataModelReferentialRelationReferentialRelationKey,
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetSensitiveDataModelReferentialRelationResult> Invoke(GetSensitiveDataModelReferentialRelationInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveDataModelReferentialRelationResult>("oci:DataSafe/getSensitiveDataModelReferentialRelation:getSensitiveDataModelReferentialRelation", args ?? new GetSensitiveDataModelReferentialRelationInvokeArgs(), options.WithDefaults());
@@ -37,6 +71,23 @@ namespace Pulumi.Oci.DataSafe
         /// Gets the details of the specified referential relation.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testSensitiveDataModelReferentialRelation = Oci.DataSafe.GetSensitiveDataModelReferentialRelation.Invoke(new()
+        ///     {
+        ///         ReferentialRelationKey = sensitiveDataModelReferentialRelationReferentialRelationKey,
+        ///         SensitiveDataModelId = testSensitiveDataModel.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetSensitiveDataModelReferentialRelationResult> Invoke(GetSensitiveDataModelReferentialRelationInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetSensitiveDataModelReferentialRelationResult>("oci:DataSafe/getSensitiveDataModelReferentialRelation:getSensitiveDataModelReferentialRelation", args ?? new GetSensitiveDataModelReferentialRelationInvokeArgs(), options.WithDefaults());

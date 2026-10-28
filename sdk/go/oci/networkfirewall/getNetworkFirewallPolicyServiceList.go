@@ -16,6 +16,31 @@ import (
 // Get ServiceList by the given name in the context of network firewall policy.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := networkfirewall.GetNetworkFirewallPolicyServiceList(ctx, &networkfirewall.GetNetworkFirewallPolicyServiceListArgs{
+//				NetworkFirewallPolicyId: testNetworkFirewallPolicy.Id,
+//				ServiceListName:         networkFirewallPolicyServiceListServiceListName,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupNetworkFirewallPolicyServiceList(ctx *pulumi.Context, args *LookupNetworkFirewallPolicyServiceListArgs, opts ...pulumi.InvokeOption) (*LookupNetworkFirewallPolicyServiceListResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupNetworkFirewallPolicyServiceListResult

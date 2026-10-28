@@ -10,6 +10,16 @@ import * as utilities from "../utilities";
  * Returns the clean energy usage summary by region.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCleanEnergyUsage = oci.meteringcomputation.getCleanEnergyUsage({
+ *     region: cleanEnergyUsageRegion,
+ *     ad: cleanEnergyUsageAd,
+ * });
+ * ```
  */
 export function getCleanEnergyUsage(args: GetCleanEnergyUsageArgs, opts?: pulumi.InvokeOptions): Promise<GetCleanEnergyUsageResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -55,6 +65,16 @@ export interface GetCleanEnergyUsageResult {
  * Returns the clean energy usage summary by region.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testCleanEnergyUsage = oci.meteringcomputation.getCleanEnergyUsage({
+ *     region: cleanEnergyUsageRegion,
+ *     ad: cleanEnergyUsageAd,
+ * });
+ * ```
  */
 export function getCleanEnergyUsageOutput(args: GetCleanEnergyUsageOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetCleanEnergyUsageResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

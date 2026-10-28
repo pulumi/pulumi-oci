@@ -408,6 +408,16 @@ def get_migrations(migration_id: Optional[_builtins.str] = None,
     Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_migrations = oci.databasemigration.get_migrations(compartment_id=compartment_id,
+        display_name=migration_display_name,
+        lifecycle_details=migration_lifecycle_details,
+        state=migration_state)
+    ```
     """
     __args__ = dict()
     __args__['migrationId'] = migration_id
@@ -456,6 +466,16 @@ def get_migrations_output(migration_id: pulumi.Input[Optional[_builtins.str]] = 
     Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_migrations = oci.databasemigration.get_migrations(compartment_id=compartment_id,
+        display_name=migration_display_name,
+        lifecycle_details=migration_lifecycle_details,
+        state=migration_state)
+    ```
     """
     __args__ = dict()
     __args__['migrationId'] = migration_id

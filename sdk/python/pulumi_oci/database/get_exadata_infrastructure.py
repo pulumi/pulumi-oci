@@ -723,6 +723,14 @@ def get_exadata_infrastructure(exadata_infrastructure_id: Optional[_builtins.str
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_exadata_infrastructure = oci.database.get_exadata_infrastructure(exadata_infrastructure_id=test_exadata_infrastructure_oci_database_exadata_infrastructure["id"],
+        excluded_fields=exadata_infrastructure_excluded_fields)
+    ```
+
 
     :param _builtins.str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     """
@@ -798,6 +806,14 @@ def get_exadata_infrastructure_output(exadata_infrastructure_id: pulumi.Input[Op
     To get information on an Exadata Cloud Service infrastructure resource, use the  [GetCloudExadataInfrastructure](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/GetCloudExadataInfrastructure) operation.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_exadata_infrastructure = oci.database.get_exadata_infrastructure(exadata_infrastructure_id=test_exadata_infrastructure_oci_database_exadata_infrastructure["id"],
+        excluded_fields=exadata_infrastructure_excluded_fields)
+    ```
 
 
     :param _builtins.str exadata_infrastructure_id: The Exadata infrastructure [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

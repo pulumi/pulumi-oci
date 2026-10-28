@@ -18,6 +18,23 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testConnection = Oci.GoldenGate.GetConnection.Invoke(new()
+        ///     {
+        ///         ConnectionId = testConnectionOciGoldenGateConnection.Id,
+        ///         View = connectionView,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetConnectionResult> InvokeAsync(GetConnectionArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetConnectionResult>("oci:GoldenGate/getConnection:getConnection", args ?? new GetConnectionArgs(), options.WithDefaults());
@@ -29,6 +46,23 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testConnection = Oci.GoldenGate.GetConnection.Invoke(new()
+        ///     {
+        ///         ConnectionId = testConnectionOciGoldenGateConnection.Id,
+        ///         View = connectionView,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetConnectionResult> Invoke(GetConnectionInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetConnectionResult>("oci:GoldenGate/getConnection:getConnection", args ?? new GetConnectionInvokeArgs(), options.WithDefaults());
@@ -40,6 +74,23 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testConnection = Oci.GoldenGate.GetConnection.Invoke(new()
+        ///     {
+        ///         ConnectionId = testConnectionOciGoldenGateConnection.Id,
+        ///         View = connectionView,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetConnectionResult> Invoke(GetConnectionInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetConnectionResult>("oci:GoldenGate/getConnection:getConnection", args ?? new GetConnectionInvokeArgs(), options.WithDefaults());

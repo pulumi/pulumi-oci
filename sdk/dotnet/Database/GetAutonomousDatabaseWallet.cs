@@ -20,6 +20,26 @@ namespace Pulumi.Oci.Database
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousDatabaseWallet = Oci.Database.GetAutonomousDatabaseWallet.Invoke(new()
+        ///     {
+        ///         AutonomousDatabaseId = testAutonomousDatabase.Id,
+        ///         Password = autonomousDatabaseWalletPassword,
+        ///         Base64EncodeContent = false,
+        ///         GenerateType = autonomousDatabaseWalletGenerateType,
+        ///         IsRegional = autonomousDatabaseWalletIsRegional,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetAutonomousDatabaseWalletResult> InvokeAsync(GetAutonomousDatabaseWalletArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetAutonomousDatabaseWalletResult>("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", args ?? new GetAutonomousDatabaseWalletArgs(), options.WithDefaults());
@@ -33,6 +53,26 @@ namespace Pulumi.Oci.Database
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousDatabaseWallet = Oci.Database.GetAutonomousDatabaseWallet.Invoke(new()
+        ///     {
+        ///         AutonomousDatabaseId = testAutonomousDatabase.Id,
+        ///         Password = autonomousDatabaseWalletPassword,
+        ///         Base64EncodeContent = false,
+        ///         GenerateType = autonomousDatabaseWalletGenerateType,
+        ///         IsRegional = autonomousDatabaseWalletIsRegional,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetAutonomousDatabaseWalletResult> Invoke(GetAutonomousDatabaseWalletInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseWalletResult>("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", args ?? new GetAutonomousDatabaseWalletInvokeArgs(), options.WithDefaults());
@@ -46,6 +86,26 @@ namespace Pulumi.Oci.Database
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testAutonomousDatabaseWallet = Oci.Database.GetAutonomousDatabaseWallet.Invoke(new()
+        ///     {
+        ///         AutonomousDatabaseId = testAutonomousDatabase.Id,
+        ///         Password = autonomousDatabaseWalletPassword,
+        ///         Base64EncodeContent = false,
+        ///         GenerateType = autonomousDatabaseWalletGenerateType,
+        ///         IsRegional = autonomousDatabaseWalletIsRegional,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetAutonomousDatabaseWalletResult> Invoke(GetAutonomousDatabaseWalletInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetAutonomousDatabaseWalletResult>("oci:Database/getAutonomousDatabaseWallet:getAutonomousDatabaseWallet", args ?? new GetAutonomousDatabaseWalletInvokeArgs(), options.WithDefaults());

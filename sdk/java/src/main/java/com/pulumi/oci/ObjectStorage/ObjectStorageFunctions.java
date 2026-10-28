@@ -1867,6 +1867,44 @@ public final class ObjectStorageFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjects = ObjectStorageFunctions.getObjects(GetObjectsArgs.builder()
+     *             .bucket(objectBucket)
+     *             .namespace(objectNamespace)
+     *             .delimiter(objectDelimiter)
+     *             .end(objectEnd)
+     *             .fields(objectFields)
+     *             .prefix(objectPrefix)
+     *             .start(objectStart)
+     *             .startAfter(objectStartAfter)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetObjectsResult> getObjects(GetObjectsArgs args) {
         return getObjects(args, InvokeOptions.Empty);
@@ -1886,6 +1924,44 @@ public final class ObjectStorageFunctions {
      * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjects = ObjectStorageFunctions.getObjects(GetObjectsArgs.builder()
+     *             .bucket(objectBucket)
+     *             .namespace(objectNamespace)
+     *             .delimiter(objectDelimiter)
+     *             .end(objectEnd)
+     *             .fields(objectFields)
+     *             .prefix(objectPrefix)
+     *             .start(objectStart)
+     *             .startAfter(objectStartAfter)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetObjectsResult> getObjectsPlain(GetObjectsPlainArgs args) {
@@ -1907,6 +1983,44 @@ public final class ObjectStorageFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjects = ObjectStorageFunctions.getObjects(GetObjectsArgs.builder()
+     *             .bucket(objectBucket)
+     *             .namespace(objectNamespace)
+     *             .delimiter(objectDelimiter)
+     *             .end(objectEnd)
+     *             .fields(objectFields)
+     *             .prefix(objectPrefix)
+     *             .start(objectStart)
+     *             .startAfter(objectStartAfter)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetObjectsResult> getObjects(GetObjectsArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:ObjectStorage/getObjects:getObjects", TypeShape.of(GetObjectsResult.class), args, Utilities.withVersion(options));
@@ -1927,6 +2041,44 @@ public final class ObjectStorageFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjects = ObjectStorageFunctions.getObjects(GetObjectsArgs.builder()
+     *             .bucket(objectBucket)
+     *             .namespace(objectNamespace)
+     *             .delimiter(objectDelimiter)
+     *             .end(objectEnd)
+     *             .fields(objectFields)
+     *             .prefix(objectPrefix)
+     *             .start(objectStart)
+     *             .startAfter(objectStartAfter)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetObjectsResult> getObjects(GetObjectsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:ObjectStorage/getObjects:getObjects", TypeShape.of(GetObjectsResult.class), args, Utilities.withVersion(options));
@@ -1946,6 +2098,44 @@ public final class ObjectStorageFunctions {
      * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.ObjectStorage.ObjectStorageFunctions;
+     * import com.pulumi.oci.ObjectStorage.inputs.GetObjectsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testObjects = ObjectStorageFunctions.getObjects(GetObjectsArgs.builder()
+     *             .bucket(objectBucket)
+     *             .namespace(objectNamespace)
+     *             .delimiter(objectDelimiter)
+     *             .end(objectEnd)
+     *             .fields(objectFields)
+     *             .prefix(objectPrefix)
+     *             .start(objectStart)
+     *             .startAfter(objectStartAfter)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetObjectsResult> getObjectsPlain(GetObjectsPlainArgs args, InvokeOptions options) {

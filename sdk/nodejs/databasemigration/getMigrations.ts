@@ -14,6 +14,18 @@ import * as utilities from "../utilities";
  * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMigrations = oci.databasemigration.getMigrations({
+ *     compartmentId: compartmentId,
+ *     displayName: migrationDisplayName,
+ *     lifecycleDetails: migrationLifecycleDetails,
+ *     state: migrationState,
+ * });
+ * ```
  */
 export function getMigrations(args: GetMigrationsArgs, opts?: pulumi.InvokeOptions): Promise<GetMigrationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -154,6 +166,18 @@ export interface GetMigrationsResult {
  * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMigrations = oci.databasemigration.getMigrations({
+ *     compartmentId: compartmentId,
+ *     displayName: migrationDisplayName,
+ *     lifecycleDetails: migrationLifecycleDetails,
+ *     state: migrationState,
+ * });
+ * ```
  */
 export function getMigrationsOutput(args: GetMigrationsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMigrationsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

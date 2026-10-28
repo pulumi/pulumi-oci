@@ -18,6 +18,36 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseSqlPlanBaselines = Oci.DatabaseManagement.GetManagedDatabaseSqlPlanBaselines.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         IsAccepted = managedDatabaseSqlPlanBaselineIsAccepted,
+        ///         IsAdaptive = managedDatabaseSqlPlanBaselineIsAdaptive,
+        ///         IsAutoPurged = managedDatabaseSqlPlanBaselineIsAutoPurged,
+        ///         IsEnabled = managedDatabaseSqlPlanBaselineIsEnabled,
+        ///         IsFixed = managedDatabaseSqlPlanBaselineIsFixed,
+        ///         IsNeverExecuted = managedDatabaseSqlPlanBaselineIsNeverExecuted,
+        ///         IsReproduced = managedDatabaseSqlPlanBaselineIsReproduced,
+        ///         OpcNamedCredentialId = managedDatabaseSqlPlanBaselineOpcNamedCredentialId,
+        ///         Origin = managedDatabaseSqlPlanBaselineOrigin,
+        ///         PlanName = managedDatabaseSqlPlanBaselinePlanName,
+        ///         SqlHandle = managedDatabaseSqlPlanBaselineSqlHandle,
+        ///         SqlText = managedDatabaseSqlPlanBaselineSqlText,
+        ///         TimeLastExecutedGreaterThan = managedDatabaseSqlPlanBaselineTimeLastExecutedGreaterThan,
+        ///         TimeLastExecutedLessThan = managedDatabaseSqlPlanBaselineTimeLastExecutedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetManagedDatabaseSqlPlanBaselinesResult> InvokeAsync(GetManagedDatabaseSqlPlanBaselinesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetManagedDatabaseSqlPlanBaselinesResult>("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselines:getManagedDatabaseSqlPlanBaselines", args ?? new GetManagedDatabaseSqlPlanBaselinesArgs(), options.WithDefaults());
@@ -29,6 +59,36 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseSqlPlanBaselines = Oci.DatabaseManagement.GetManagedDatabaseSqlPlanBaselines.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         IsAccepted = managedDatabaseSqlPlanBaselineIsAccepted,
+        ///         IsAdaptive = managedDatabaseSqlPlanBaselineIsAdaptive,
+        ///         IsAutoPurged = managedDatabaseSqlPlanBaselineIsAutoPurged,
+        ///         IsEnabled = managedDatabaseSqlPlanBaselineIsEnabled,
+        ///         IsFixed = managedDatabaseSqlPlanBaselineIsFixed,
+        ///         IsNeverExecuted = managedDatabaseSqlPlanBaselineIsNeverExecuted,
+        ///         IsReproduced = managedDatabaseSqlPlanBaselineIsReproduced,
+        ///         OpcNamedCredentialId = managedDatabaseSqlPlanBaselineOpcNamedCredentialId,
+        ///         Origin = managedDatabaseSqlPlanBaselineOrigin,
+        ///         PlanName = managedDatabaseSqlPlanBaselinePlanName,
+        ///         SqlHandle = managedDatabaseSqlPlanBaselineSqlHandle,
+        ///         SqlText = managedDatabaseSqlPlanBaselineSqlText,
+        ///         TimeLastExecutedGreaterThan = managedDatabaseSqlPlanBaselineTimeLastExecutedGreaterThan,
+        ///         TimeLastExecutedLessThan = managedDatabaseSqlPlanBaselineTimeLastExecutedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetManagedDatabaseSqlPlanBaselinesResult> Invoke(GetManagedDatabaseSqlPlanBaselinesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlPlanBaselinesResult>("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselines:getManagedDatabaseSqlPlanBaselines", args ?? new GetManagedDatabaseSqlPlanBaselinesInvokeArgs(), options.WithDefaults());
@@ -40,6 +100,36 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testManagedDatabaseSqlPlanBaselines = Oci.DatabaseManagement.GetManagedDatabaseSqlPlanBaselines.Invoke(new()
+        ///     {
+        ///         ManagedDatabaseId = testManagedDatabase.Id,
+        ///         IsAccepted = managedDatabaseSqlPlanBaselineIsAccepted,
+        ///         IsAdaptive = managedDatabaseSqlPlanBaselineIsAdaptive,
+        ///         IsAutoPurged = managedDatabaseSqlPlanBaselineIsAutoPurged,
+        ///         IsEnabled = managedDatabaseSqlPlanBaselineIsEnabled,
+        ///         IsFixed = managedDatabaseSqlPlanBaselineIsFixed,
+        ///         IsNeverExecuted = managedDatabaseSqlPlanBaselineIsNeverExecuted,
+        ///         IsReproduced = managedDatabaseSqlPlanBaselineIsReproduced,
+        ///         OpcNamedCredentialId = managedDatabaseSqlPlanBaselineOpcNamedCredentialId,
+        ///         Origin = managedDatabaseSqlPlanBaselineOrigin,
+        ///         PlanName = managedDatabaseSqlPlanBaselinePlanName,
+        ///         SqlHandle = managedDatabaseSqlPlanBaselineSqlHandle,
+        ///         SqlText = managedDatabaseSqlPlanBaselineSqlText,
+        ///         TimeLastExecutedGreaterThan = managedDatabaseSqlPlanBaselineTimeLastExecutedGreaterThan,
+        ///         TimeLastExecutedLessThan = managedDatabaseSqlPlanBaselineTimeLastExecutedLessThan,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetManagedDatabaseSqlPlanBaselinesResult> Invoke(GetManagedDatabaseSqlPlanBaselinesInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetManagedDatabaseSqlPlanBaselinesResult>("oci:DatabaseManagement/getManagedDatabaseSqlPlanBaselines:getManagedDatabaseSqlPlanBaselines", args ?? new GetManagedDatabaseSqlPlanBaselinesInvokeArgs(), options.WithDefaults());

@@ -12,6 +12,17 @@ import * as utilities from "../utilities";
  * Retrieves the configuration information for the specified backend set.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBackendSet = oci.networkloadbalancer.getBackendSet({
+ *     backendSetName: testBackendSetOciNetworkLoadBalancerBackendSet.name,
+ *     networkLoadBalancerId: testNetworkLoadBalancer.id,
+ *     ipVersion: backendSetIpVersion,
+ * });
+ * ```
  */
 export function getBackendSet(args: GetBackendSetArgs, opts?: pulumi.InvokeOptions): Promise<GetBackendSetResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -89,6 +100,17 @@ export interface GetBackendSetResult {
  * Retrieves the configuration information for the specified backend set.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testBackendSet = oci.networkloadbalancer.getBackendSet({
+ *     backendSetName: testBackendSetOciNetworkLoadBalancerBackendSet.name,
+ *     networkLoadBalancerId: testNetworkLoadBalancer.id,
+ *     ipVersion: backendSetIpVersion,
+ * });
+ * ```
  */
 export function getBackendSetOutput(args: GetBackendSetOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetBackendSetResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

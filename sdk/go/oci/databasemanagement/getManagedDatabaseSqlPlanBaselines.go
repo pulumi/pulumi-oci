@@ -16,6 +16,44 @@ import (
 // Lists the SQL plan baselines for the specified Managed Database.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/databasemanagement"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := databasemanagement.GetManagedDatabaseSqlPlanBaselines(ctx, &databasemanagement.GetManagedDatabaseSqlPlanBaselinesArgs{
+//				ManagedDatabaseId:           testManagedDatabase.Id,
+//				IsAccepted:                  pulumi.BoolRef(managedDatabaseSqlPlanBaselineIsAccepted),
+//				IsAdaptive:                  pulumi.BoolRef(managedDatabaseSqlPlanBaselineIsAdaptive),
+//				IsAutoPurged:                pulumi.BoolRef(managedDatabaseSqlPlanBaselineIsAutoPurged),
+//				IsEnabled:                   pulumi.BoolRef(managedDatabaseSqlPlanBaselineIsEnabled),
+//				IsFixed:                     pulumi.BoolRef(managedDatabaseSqlPlanBaselineIsFixed),
+//				IsNeverExecuted:             pulumi.BoolRef(managedDatabaseSqlPlanBaselineIsNeverExecuted),
+//				IsReproduced:                pulumi.BoolRef(managedDatabaseSqlPlanBaselineIsReproduced),
+//				OpcNamedCredentialId:        pulumi.StringRef(managedDatabaseSqlPlanBaselineOpcNamedCredentialId),
+//				Origin:                      pulumi.StringRef(managedDatabaseSqlPlanBaselineOrigin),
+//				PlanName:                    pulumi.StringRef(managedDatabaseSqlPlanBaselinePlanName),
+//				SqlHandle:                   pulumi.StringRef(managedDatabaseSqlPlanBaselineSqlHandle),
+//				SqlText:                     pulumi.StringRef(managedDatabaseSqlPlanBaselineSqlText),
+//				TimeLastExecutedGreaterThan: managedDatabaseSqlPlanBaselineTimeLastExecutedGreaterThan,
+//				TimeLastExecutedLessThan:    managedDatabaseSqlPlanBaselineTimeLastExecutedLessThan,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetManagedDatabaseSqlPlanBaselines(ctx *pulumi.Context, args *GetManagedDatabaseSqlPlanBaselinesArgs, opts ...pulumi.InvokeOption) (*GetManagedDatabaseSqlPlanBaselinesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetManagedDatabaseSqlPlanBaselinesResult

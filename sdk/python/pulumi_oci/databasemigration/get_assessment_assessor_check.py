@@ -326,6 +326,17 @@ def get_assessment_assessor_check(assessment_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_assessment_assessor_check = oci.databasemigration.get_assessment_assessor_check(assessment_id=test_assessment["id"],
+        assessor_name=assessment_assessor_check_assessor_name,
+        check_name=assessment_assessor_check_check_name,
+        compartment_id=compartment_id,
+        display_name=assessment_assessor_check_display_name)
+    ```
+
 
     :param _builtins.str assessment_id: The OCID of the Assessment
     :param _builtins.str assessor_name: The name of the Assessor
@@ -376,6 +387,17 @@ def get_assessment_assessor_check_output(assessment_id: pulumi.Input[Optional[_b
     Get Assessor Check details.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_assessment_assessor_check = oci.databasemigration.get_assessment_assessor_check(assessment_id=test_assessment["id"],
+        assessor_name=assessment_assessor_check_assessor_name,
+        check_name=assessment_assessor_check_check_name,
+        compartment_id=compartment_id,
+        display_name=assessment_assessor_check_display_name)
+    ```
 
 
     :param _builtins.str assessment_id: The OCID of the Assessment

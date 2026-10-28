@@ -147,6 +147,19 @@ def get_protected_databases(compartment_id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_protected_databases = oci.recoverymod.get_protected_databases(backup_cloud_location=protected_database_backup_cloud_location,
+        compartment_id=compartment_id,
+        display_name=protected_database_display_name,
+        id=protected_database_id,
+        protection_policy_id=test_protection_policy["id"],
+        recovery_service_subnet_id=test_recovery_service_subnet["id"],
+        state=protected_database_state)
+    ```
+
 
     :param _builtins.str compartment_id: The compartment OCID.
     :param _builtins.str display_name: A filter to return only resources that match the entire 'displayname' given.
@@ -189,6 +202,19 @@ def get_protected_databases_output(compartment_id: pulumi.Input[Optional[Optiona
     Lists the protected databases based on the specified parameters.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_protected_databases = oci.recoverymod.get_protected_databases(backup_cloud_location=protected_database_backup_cloud_location,
+        compartment_id=compartment_id,
+        display_name=protected_database_display_name,
+        id=protected_database_id,
+        protection_policy_id=test_protection_policy["id"],
+        recovery_service_subnet_id=test_recovery_service_subnet["id"],
+        state=protected_database_state)
+    ```
 
 
     :param _builtins.str compartment_id: The compartment OCID.

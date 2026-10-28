@@ -233,6 +233,27 @@ def get_managed_database_sql_plan_baselines(filters: Optional[Sequence[Union['Ge
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_managed_database_sql_plan_baselines = oci.databasemanagement.get_managed_database_sql_plan_baselines(managed_database_id=test_managed_database["id"],
+        is_accepted=managed_database_sql_plan_baseline_is_accepted,
+        is_adaptive=managed_database_sql_plan_baseline_is_adaptive,
+        is_auto_purged=managed_database_sql_plan_baseline_is_auto_purged,
+        is_enabled=managed_database_sql_plan_baseline_is_enabled,
+        is_fixed=managed_database_sql_plan_baseline_is_fixed,
+        is_never_executed=managed_database_sql_plan_baseline_is_never_executed,
+        is_reproduced=managed_database_sql_plan_baseline_is_reproduced,
+        opc_named_credential_id=managed_database_sql_plan_baseline_opc_named_credential_id,
+        origin=managed_database_sql_plan_baseline_origin,
+        plan_name=managed_database_sql_plan_baseline_plan_name,
+        sql_handle=managed_database_sql_plan_baseline_sql_handle,
+        sql_text=managed_database_sql_plan_baseline_sql_text,
+        time_last_executed_greater_than=managed_database_sql_plan_baseline_time_last_executed_greater_than,
+        time_last_executed_less_than=managed_database_sql_plan_baseline_time_last_executed_less_than)
+    ```
+
 
     :param _builtins.bool is_accepted: A filter to return only SQL plan baselines that are either accepted or not accepted. By default, all SQL plan baselines are returned.
     :param _builtins.bool is_adaptive: A filter to return only SQL plan baselines that are either adaptive or not adaptive. By default, all SQL plan baselines are returned.
@@ -307,6 +328,27 @@ def get_managed_database_sql_plan_baselines_output(filters: pulumi.Input[Optiona
     Lists the SQL plan baselines for the specified Managed Database.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_managed_database_sql_plan_baselines = oci.databasemanagement.get_managed_database_sql_plan_baselines(managed_database_id=test_managed_database["id"],
+        is_accepted=managed_database_sql_plan_baseline_is_accepted,
+        is_adaptive=managed_database_sql_plan_baseline_is_adaptive,
+        is_auto_purged=managed_database_sql_plan_baseline_is_auto_purged,
+        is_enabled=managed_database_sql_plan_baseline_is_enabled,
+        is_fixed=managed_database_sql_plan_baseline_is_fixed,
+        is_never_executed=managed_database_sql_plan_baseline_is_never_executed,
+        is_reproduced=managed_database_sql_plan_baseline_is_reproduced,
+        opc_named_credential_id=managed_database_sql_plan_baseline_opc_named_credential_id,
+        origin=managed_database_sql_plan_baseline_origin,
+        plan_name=managed_database_sql_plan_baseline_plan_name,
+        sql_handle=managed_database_sql_plan_baseline_sql_handle,
+        sql_text=managed_database_sql_plan_baseline_sql_text,
+        time_last_executed_greater_than=managed_database_sql_plan_baseline_time_last_executed_greater_than,
+        time_last_executed_less_than=managed_database_sql_plan_baseline_time_last_executed_less_than)
+    ```
 
 
     :param _builtins.bool is_accepted: A filter to return only SQL plan baselines that are either accepted or not accepted. By default, all SQL plan baselines are returned.

@@ -12,6 +12,20 @@ import * as utilities from "../utilities";
  * Search User Schema Attribute Settings
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testUserAttributesSettings = oci.identity.getDomainsUserAttributesSettings({
+ *     idcsEndpoint: testDomain.url,
+ *     userAttributesSettingId: testUserAttributesSetting.id,
+ *     attributeSets: ["all"],
+ *     attributes: "",
+ *     authorization: userAttributesSettingAuthorization,
+ *     resourceTypeSchemaVersion: userAttributesSettingResourceTypeSchemaVersion,
+ * });
+ * ```
  */
 export function getDomainsUserAttributesSettings(args: GetDomainsUserAttributesSettingsArgs, opts?: pulumi.InvokeOptions): Promise<GetDomainsUserAttributesSettingsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -84,6 +98,20 @@ export interface GetDomainsUserAttributesSettingsResult {
  * Search User Schema Attribute Settings
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testUserAttributesSettings = oci.identity.getDomainsUserAttributesSettings({
+ *     idcsEndpoint: testDomain.url,
+ *     userAttributesSettingId: testUserAttributesSetting.id,
+ *     attributeSets: ["all"],
+ *     attributes: "",
+ *     authorization: userAttributesSettingAuthorization,
+ *     resourceTypeSchemaVersion: userAttributesSettingResourceTypeSchemaVersion,
+ * });
+ * ```
  */
 export function getDomainsUserAttributesSettingsOutput(args: GetDomainsUserAttributesSettingsOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetDomainsUserAttributesSettingsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

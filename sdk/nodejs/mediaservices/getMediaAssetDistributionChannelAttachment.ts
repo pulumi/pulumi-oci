@@ -12,6 +12,17 @@ import * as utilities from "../utilities";
  * Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMediaAssetDistributionChannelAttachment = oci.mediaservices.getMediaAssetDistributionChannelAttachment({
+ *     distributionChannelId: testChannel.id,
+ *     mediaAssetId: testMediaAsset.id,
+ *     version: mediaAssetDistributionChannelAttachmentVersion,
+ * });
+ * ```
  */
 export function getMediaAssetDistributionChannelAttachment(args: GetMediaAssetDistributionChannelAttachmentArgs, opts?: pulumi.InvokeOptions): Promise<GetMediaAssetDistributionChannelAttachmentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -87,6 +98,17 @@ export interface GetMediaAssetDistributionChannelAttachmentResult {
  * Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testMediaAssetDistributionChannelAttachment = oci.mediaservices.getMediaAssetDistributionChannelAttachment({
+ *     distributionChannelId: testChannel.id,
+ *     mediaAssetId: testMediaAsset.id,
+ *     version: mediaAssetDistributionChannelAttachmentVersion,
+ * });
+ * ```
  */
 export function getMediaAssetDistributionChannelAttachmentOutput(args: GetMediaAssetDistributionChannelAttachmentOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetMediaAssetDistributionChannelAttachmentResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

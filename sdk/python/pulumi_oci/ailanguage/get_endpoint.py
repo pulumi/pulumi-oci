@@ -226,6 +226,13 @@ def get_endpoint(id: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_endpoint = oci.ailanguage.get_endpoint(endpoint_id=test_endpoint_oci_ai_language_endpoint["id"])
+    ```
+
 
     :param _builtins.str id: Unique identifier endpoint OCID of an endpoint that is immutable on creation.
     """
@@ -258,6 +265,13 @@ def get_endpoint_output(id: pulumi.Input[Optional[_builtins.str]] = None,
     Gets an endpoint by identifier
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_endpoint = oci.ailanguage.get_endpoint(endpoint_id=test_endpoint_oci_ai_language_endpoint["id"])
+    ```
 
 
     :param _builtins.str id: Unique identifier endpoint OCID of an endpoint that is immutable on creation.

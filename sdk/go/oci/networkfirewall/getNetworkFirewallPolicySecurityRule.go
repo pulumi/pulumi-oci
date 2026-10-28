@@ -16,6 +16,31 @@ import (
 // Get Security Rule by the given name in the context of network firewall policy.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/networkfirewall"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := networkfirewall.GetNetworkFirewallPolicySecurityRule(ctx, &networkfirewall.GetNetworkFirewallPolicySecurityRuleArgs{
+//				NetworkFirewallPolicyId: testNetworkFirewallPolicy.Id,
+//				SecurityRuleName:        ociNetworkFirewallNetworkFirewallPolicySecurityRuleName,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupNetworkFirewallPolicySecurityRule(ctx *pulumi.Context, args *LookupNetworkFirewallPolicySecurityRuleArgs, opts ...pulumi.InvokeOption) (*LookupNetworkFirewallPolicySecurityRuleResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupNetworkFirewallPolicySecurityRuleResult

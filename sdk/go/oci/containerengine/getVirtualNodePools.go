@@ -16,6 +16,33 @@ import (
 // List all the virtual node pools in a compartment, and optionally filter by cluster.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/containerengine"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := containerengine.GetVirtualNodePools(ctx, &containerengine.GetVirtualNodePoolsArgs{
+//				CompartmentId: compartmentId,
+//				ClusterId:     pulumi.StringRef(testCluster.Id),
+//				Name:          virtualNodePoolName,
+//				States:        virtualNodePoolState,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetVirtualNodePools(ctx *pulumi.Context, args *GetVirtualNodePoolsArgs, opts ...pulumi.InvokeOption) (*GetVirtualNodePoolsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetVirtualNodePoolsResult

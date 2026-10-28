@@ -169,6 +169,20 @@ def get_objects(bucket: Optional[_builtins.str] = None,
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_objects = oci.objectstorage.get_objects(bucket=object_bucket,
+        namespace=object_namespace,
+        delimiter=object_delimiter,
+        end=object_end,
+        fields=object_fields,
+        prefix=object_prefix,
+        start=object_start,
+        start_after=object_start_after)
+    ```
+
 
     :param _builtins.str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
     :param _builtins.str delimiter: When this parameter is set, only objects whose names do not contain the delimiter character (after an optionally specified prefix) are returned in the objects key of the response body. Scanned objects whose names contain the delimiter have the part of their name up to the first occurrence of the delimiter (including the optional prefix) returned as a set of prefixes. Note that only '/' is a supported delimiter character at this time.
@@ -226,6 +240,20 @@ def get_objects_output(bucket: pulumi.Input[Optional[_builtins.str]] = None,
     [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_objects = oci.objectstorage.get_objects(bucket=object_bucket,
+        namespace=object_namespace,
+        delimiter=object_delimiter,
+        end=object_end,
+        fields=object_fields,
+        prefix=object_prefix,
+        start=object_start,
+        start_after=object_start_after)
+    ```
 
 
     :param _builtins.str bucket: The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`

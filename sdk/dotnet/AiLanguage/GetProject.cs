@@ -17,6 +17,22 @@ namespace Pulumi.Oci.AiLanguage
         /// Gets a Project by identifier
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProject = Oci.AiLanguage.GetProject.Invoke(new()
+        ///     {
+        ///         ProjectId = testProjectOciAiLanguageProject.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetProjectResult> InvokeAsync(GetProjectArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetProjectResult>("oci:AiLanguage/getProject:getProject", args ?? new GetProjectArgs(), options.WithDefaults());
@@ -27,6 +43,22 @@ namespace Pulumi.Oci.AiLanguage
         /// Gets a Project by identifier
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProject = Oci.AiLanguage.GetProject.Invoke(new()
+        ///     {
+        ///         ProjectId = testProjectOciAiLanguageProject.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetProjectResult> Invoke(GetProjectInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetProjectResult>("oci:AiLanguage/getProject:getProject", args ?? new GetProjectInvokeArgs(), options.WithDefaults());
@@ -37,6 +69,22 @@ namespace Pulumi.Oci.AiLanguage
         /// Gets a Project by identifier
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testProject = Oci.AiLanguage.GetProject.Invoke(new()
+        ///     {
+        ///         ProjectId = testProjectOciAiLanguageProject.Id,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetProjectResult> Invoke(GetProjectInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetProjectResult>("oci:AiLanguage/getProject:getProject", args ?? new GetProjectInvokeArgs(), options.WithDefaults());

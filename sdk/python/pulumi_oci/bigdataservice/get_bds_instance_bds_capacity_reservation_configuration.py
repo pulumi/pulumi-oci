@@ -163,8 +163,8 @@ def get_bds_instance_bds_capacity_reservation_configuration(bds_capacity_reserva
     import pulumi_oci as oci
     import pulumi_std as std
 
-    test_bds_instance_bds_capacity_reservation_configuration = oci.bigdataservice.get_bds_instance_bds_capacity_reservation_configuration(bds_capacity_reservation_configuration_id=output(std.regex(pattern=".*/bdsCapacityReservationConfigurations/([^/]+)$",
-            string=test_bds_instance_bds_capacity_reservation_configuration_oci_bds_bds_instance_bds_capacity_reservation_configuration["id"]).result[0]).apply(lambda x: str(x)),
+    test_bds_instance_bds_capacity_reservation_configuration = oci.bigdataservice.get_bds_instance_bds_capacity_reservation_configuration(bds_capacity_reservation_configuration_id=std.regex(pattern=".*/bdsCapacityReservationConfigurations/([^/]+)$",
+            string=test_bds_instance_bds_capacity_reservation_configuration_oci_bds_bds_instance_bds_capacity_reservation_configuration["id"]).result[0],
         bds_instance_id=test_bds_instance["id"])
     ```
 
@@ -204,8 +204,8 @@ def get_bds_instance_bds_capacity_reservation_configuration_output(bds_capacity_
     import pulumi_oci as oci
     import pulumi_std as std
 
-    test_bds_instance_bds_capacity_reservation_configuration = oci.bigdataservice.get_bds_instance_bds_capacity_reservation_configuration(bds_capacity_reservation_configuration_id=output(std.regex(pattern=".*/bdsCapacityReservationConfigurations/([^/]+)$",
-            string=test_bds_instance_bds_capacity_reservation_configuration_oci_bds_bds_instance_bds_capacity_reservation_configuration["id"]).result[0]).apply(lambda x: str(x)),
+    test_bds_instance_bds_capacity_reservation_configuration = oci.bigdataservice.get_bds_instance_bds_capacity_reservation_configuration(bds_capacity_reservation_configuration_id=std.regex(pattern=".*/bdsCapacityReservationConfigurations/([^/]+)$",
+            string=test_bds_instance_bds_capacity_reservation_configuration_oci_bds_bds_instance_bds_capacity_reservation_configuration["id"]).result[0],
         bds_instance_id=test_bds_instance["id"])
     ```
 

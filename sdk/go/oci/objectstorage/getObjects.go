@@ -25,6 +25,37 @@ import (
 // [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/objectstorage"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := objectstorage.GetObjects(ctx, &objectstorage.GetObjectsArgs{
+//				Bucket:     objectBucket,
+//				Namespace:  objectNamespace,
+//				Delimiter:  pulumi.StringRef(objectDelimiter),
+//				End:        pulumi.StringRef(objectEnd),
+//				Fields:     objectFields,
+//				Prefix:     pulumi.StringRef(objectPrefix),
+//				Start:      pulumi.StringRef(objectStart),
+//				StartAfter: pulumi.StringRef(objectStartAfter),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetObjects(ctx *pulumi.Context, args *GetObjectsArgs, opts ...pulumi.InvokeOption) (*GetObjectsResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetObjectsResult

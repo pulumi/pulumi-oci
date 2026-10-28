@@ -27,6 +27,29 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testObjects = Oci.ObjectStorage.GetObjects.Invoke(new()
+        ///     {
+        ///         Bucket = objectBucket,
+        ///         Namespace = objectNamespace,
+        ///         Delimiter = objectDelimiter,
+        ///         End = objectEnd,
+        ///         Fields = objectFields,
+        ///         Prefix = objectPrefix,
+        ///         Start = objectStart,
+        ///         StartAfter = objectStartAfter,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetObjectsResult> InvokeAsync(GetObjectsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetObjectsResult>("oci:ObjectStorage/getObjects:getObjects", args ?? new GetObjectsArgs(), options.WithDefaults());
@@ -47,6 +70,29 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testObjects = Oci.ObjectStorage.GetObjects.Invoke(new()
+        ///     {
+        ///         Bucket = objectBucket,
+        ///         Namespace = objectNamespace,
+        ///         Delimiter = objectDelimiter,
+        ///         End = objectEnd,
+        ///         Fields = objectFields,
+        ///         Prefix = objectPrefix,
+        ///         Start = objectStart,
+        ///         StartAfter = objectStartAfter,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetObjectsResult> Invoke(GetObjectsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetObjectsResult>("oci:ObjectStorage/getObjects:getObjects", args ?? new GetObjectsInvokeArgs(), options.WithDefaults());
@@ -67,6 +113,29 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testObjects = Oci.ObjectStorage.GetObjects.Invoke(new()
+        ///     {
+        ///         Bucket = objectBucket,
+        ///         Namespace = objectNamespace,
+        ///         Delimiter = objectDelimiter,
+        ///         End = objectEnd,
+        ///         Fields = objectFields,
+        ///         Prefix = objectPrefix,
+        ///         Start = objectStart,
+        ///         StartAfter = objectStartAfter,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetObjectsResult> Invoke(GetObjectsInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetObjectsResult>("oci:ObjectStorage/getObjects:getObjects", args ?? new GetObjectsInvokeArgs(), options.WithDefaults());

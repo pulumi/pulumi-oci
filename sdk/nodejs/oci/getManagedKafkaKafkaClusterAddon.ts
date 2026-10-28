@@ -10,6 +10,16 @@ import * as utilities from "../utilities";
  * Gets information about a KafkaClusterAddon.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testKafkaClusterAddon = oci.oci.getManagedKafkaKafkaClusterAddon({
+ *     addonName: testAddon.name,
+ *     kafkaClusterId: testKafkaCluster.id,
+ * });
+ * ```
  */
 export function getManagedKafkaKafkaClusterAddon(args: GetManagedKafkaKafkaClusterAddonArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedKafkaKafkaClusterAddonResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -82,6 +92,16 @@ export interface GetManagedKafkaKafkaClusterAddonResult {
  * Gets information about a KafkaClusterAddon.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testKafkaClusterAddon = oci.oci.getManagedKafkaKafkaClusterAddon({
+ *     addonName: testAddon.name,
+ *     kafkaClusterId: testKafkaCluster.id,
+ * });
+ * ```
  */
 export function getManagedKafkaKafkaClusterAddonOutput(args: GetManagedKafkaKafkaClusterAddonOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedKafkaKafkaClusterAddonResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

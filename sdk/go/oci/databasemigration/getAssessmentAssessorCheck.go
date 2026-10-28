@@ -16,6 +16,34 @@ import (
 // Get Assessor Check details.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/databasemigration"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := databasemigration.GetAssessmentAssessorCheck(ctx, &databasemigration.GetAssessmentAssessorCheckArgs{
+//				AssessmentId:  testAssessment.Id,
+//				AssessorName:  assessmentAssessorCheckAssessorName,
+//				CheckName:     assessmentAssessorCheckCheckName,
+//				CompartmentId: compartmentId,
+//				DisplayName:   assessmentAssessorCheckDisplayName,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetAssessmentAssessorCheck(ctx *pulumi.Context, args *GetAssessmentAssessorCheckArgs, opts ...pulumi.InvokeOption) (*GetAssessmentAssessorCheckResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetAssessmentAssessorCheckResult

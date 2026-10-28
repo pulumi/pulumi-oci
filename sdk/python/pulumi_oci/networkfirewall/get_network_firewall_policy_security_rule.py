@@ -165,6 +165,14 @@ def get_network_firewall_policy_security_rule(name: Optional[_builtins.str] = No
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_network_firewall_policy_security_rule = oci.networkfirewall.get_network_firewall_policy_security_rule(network_firewall_policy_id=test_network_firewall_policy["id"],
+        security_rule_name=oci_network_firewall_network_firewall_policy_security_rule_name)
+    ```
+
 
     :param _builtins.str name: Name for the Security rule, must be unique within the policy.
     :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
@@ -195,6 +203,14 @@ def get_network_firewall_policy_security_rule_output(name: pulumi.Input[Optional
     Get Security Rule by the given name in the context of network firewall policy.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_network_firewall_policy_security_rule = oci.networkfirewall.get_network_firewall_policy_security_rule(network_firewall_policy_id=test_network_firewall_policy["id"],
+        security_rule_name=oci_network_firewall_network_firewall_policy_security_rule_name)
+    ```
 
 
     :param _builtins.str name: Name for the Security rule, must be unique within the policy.

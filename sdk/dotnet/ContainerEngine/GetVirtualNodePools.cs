@@ -17,6 +17,25 @@ namespace Pulumi.Oci.ContainerEngine
         /// List all the virtual node pools in a compartment, and optionally filter by cluster.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVirtualNodePools = Oci.ContainerEngine.GetVirtualNodePools.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ClusterId = testCluster.Id,
+        ///         Name = virtualNodePoolName,
+        ///         States = virtualNodePoolState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Task<GetVirtualNodePoolsResult> InvokeAsync(GetVirtualNodePoolsArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetVirtualNodePoolsResult>("oci:ContainerEngine/getVirtualNodePools:getVirtualNodePools", args ?? new GetVirtualNodePoolsArgs(), options.WithDefaults());
@@ -27,6 +46,25 @@ namespace Pulumi.Oci.ContainerEngine
         /// List all the virtual node pools in a compartment, and optionally filter by cluster.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVirtualNodePools = Oci.ContainerEngine.GetVirtualNodePools.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ClusterId = testCluster.Id,
+        ///         Name = virtualNodePoolName,
+        ///         States = virtualNodePoolState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetVirtualNodePoolsResult> Invoke(GetVirtualNodePoolsInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualNodePoolsResult>("oci:ContainerEngine/getVirtualNodePools:getVirtualNodePools", args ?? new GetVirtualNodePoolsInvokeArgs(), options.WithDefaults());
@@ -37,6 +75,25 @@ namespace Pulumi.Oci.ContainerEngine
         /// List all the virtual node pools in a compartment, and optionally filter by cluster.
         /// 
         /// ## Example Usage
+        /// 
+        /// ```csharp
+        /// using System.Collections.Generic;
+        /// using System.Linq;
+        /// using Pulumi;
+        /// using Oci = Pulumi.Oci;
+        /// 
+        /// return await Deployment.RunAsync(() =&gt; 
+        /// {
+        ///     var testVirtualNodePools = Oci.ContainerEngine.GetVirtualNodePools.Invoke(new()
+        ///     {
+        ///         CompartmentId = compartmentId,
+        ///         ClusterId = testCluster.Id,
+        ///         Name = virtualNodePoolName,
+        ///         States = virtualNodePoolState,
+        ///     });
+        /// 
+        /// });
+        /// ```
         /// </summary>
         public static Output<GetVirtualNodePoolsResult> Invoke(GetVirtualNodePoolsInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetVirtualNodePoolsResult>("oci:ContainerEngine/getVirtualNodePools:getVirtualNodePools", args ?? new GetVirtualNodePoolsInvokeArgs(), options.WithDefaults());

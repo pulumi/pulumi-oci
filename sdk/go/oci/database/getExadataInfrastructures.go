@@ -17,6 +17,33 @@ import (
 // To list the Exadata Cloud Service infrastructure resources in a compartment, use the  [ListCloudExadataInfrastructures](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudExadataInfrastructure/ListCloudExadataInfrastructures) operation.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/database"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := database.GetExadataInfrastructures(ctx, &database.GetExadataInfrastructuresArgs{
+//				CompartmentId:  compartmentId,
+//				DisplayName:    pulumi.StringRef(exadataInfrastructureDisplayName),
+//				ExcludedFields: exadataInfrastructureExcludedFields,
+//				State:          pulumi.StringRef(exadataInfrastructureState),
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func GetExadataInfrastructures(ctx *pulumi.Context, args *GetExadataInfrastructuresArgs, opts ...pulumi.InvokeOption) (*GetExadataInfrastructuresResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetExadataInfrastructuresResult

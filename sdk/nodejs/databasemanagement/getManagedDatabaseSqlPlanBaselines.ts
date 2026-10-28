@@ -12,6 +12,29 @@ import * as utilities from "../utilities";
  * Lists the SQL plan baselines for the specified Managed Database.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseSqlPlanBaselines = oci.databasemanagement.getManagedDatabaseSqlPlanBaselines({
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     isAccepted: managedDatabaseSqlPlanBaselineIsAccepted,
+ *     isAdaptive: managedDatabaseSqlPlanBaselineIsAdaptive,
+ *     isAutoPurged: managedDatabaseSqlPlanBaselineIsAutoPurged,
+ *     isEnabled: managedDatabaseSqlPlanBaselineIsEnabled,
+ *     isFixed: managedDatabaseSqlPlanBaselineIsFixed,
+ *     isNeverExecuted: managedDatabaseSqlPlanBaselineIsNeverExecuted,
+ *     isReproduced: managedDatabaseSqlPlanBaselineIsReproduced,
+ *     opcNamedCredentialId: managedDatabaseSqlPlanBaselineOpcNamedCredentialId,
+ *     origin: managedDatabaseSqlPlanBaselineOrigin,
+ *     planName: managedDatabaseSqlPlanBaselinePlanName,
+ *     sqlHandle: managedDatabaseSqlPlanBaselineSqlHandle,
+ *     sqlText: managedDatabaseSqlPlanBaselineSqlText,
+ *     timeLastExecutedGreaterThan: managedDatabaseSqlPlanBaselineTimeLastExecutedGreaterThan,
+ *     timeLastExecutedLessThan: managedDatabaseSqlPlanBaselineTimeLastExecutedLessThan,
+ * });
+ * ```
  */
 export function getManagedDatabaseSqlPlanBaselines(args: GetManagedDatabaseSqlPlanBaselinesArgs, opts?: pulumi.InvokeOptions): Promise<GetManagedDatabaseSqlPlanBaselinesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -140,6 +163,29 @@ export interface GetManagedDatabaseSqlPlanBaselinesResult {
  * Lists the SQL plan baselines for the specified Managed Database.
  *
  * ## Example Usage
+ *
+ * ```typescript
+ * import * as pulumi from "@pulumi/pulumi";
+ * import * as oci from "@pulumi/oci";
+ *
+ * const testManagedDatabaseSqlPlanBaselines = oci.databasemanagement.getManagedDatabaseSqlPlanBaselines({
+ *     managedDatabaseId: testManagedDatabase.id,
+ *     isAccepted: managedDatabaseSqlPlanBaselineIsAccepted,
+ *     isAdaptive: managedDatabaseSqlPlanBaselineIsAdaptive,
+ *     isAutoPurged: managedDatabaseSqlPlanBaselineIsAutoPurged,
+ *     isEnabled: managedDatabaseSqlPlanBaselineIsEnabled,
+ *     isFixed: managedDatabaseSqlPlanBaselineIsFixed,
+ *     isNeverExecuted: managedDatabaseSqlPlanBaselineIsNeverExecuted,
+ *     isReproduced: managedDatabaseSqlPlanBaselineIsReproduced,
+ *     opcNamedCredentialId: managedDatabaseSqlPlanBaselineOpcNamedCredentialId,
+ *     origin: managedDatabaseSqlPlanBaselineOrigin,
+ *     planName: managedDatabaseSqlPlanBaselinePlanName,
+ *     sqlHandle: managedDatabaseSqlPlanBaselineSqlHandle,
+ *     sqlText: managedDatabaseSqlPlanBaselineSqlText,
+ *     timeLastExecutedGreaterThan: managedDatabaseSqlPlanBaselineTimeLastExecutedGreaterThan,
+ *     timeLastExecutedLessThan: managedDatabaseSqlPlanBaselineTimeLastExecutedLessThan,
+ * });
+ * ```
  */
 export function getManagedDatabaseSqlPlanBaselinesOutput(args: GetManagedDatabaseSqlPlanBaselinesOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetManagedDatabaseSqlPlanBaselinesResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});

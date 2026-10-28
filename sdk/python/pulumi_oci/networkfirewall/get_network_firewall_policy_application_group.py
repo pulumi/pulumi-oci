@@ -125,6 +125,14 @@ def get_network_firewall_policy_application_group(name: Optional[_builtins.str] 
 
     ## Example Usage
 
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_network_firewall_policy_application_group = oci.networkfirewall.get_network_firewall_policy_application_group(application_group_name=network_firewall_policy_application_group_display_name,
+        network_firewall_policy_id=test_network_firewall_policy["id"])
+    ```
+
 
     :param _builtins.str name: Name of the application Group.
     :param _builtins.str network_firewall_policy_id: Unique Network Firewall Policy identifier
@@ -152,6 +160,14 @@ def get_network_firewall_policy_application_group_output(name: pulumi.Input[Opti
     Get ApplicationGroup by the given name in the context of network firewall policy.
 
     ## Example Usage
+
+    ```python
+    import pulumi
+    import pulumi_oci as oci
+
+    test_network_firewall_policy_application_group = oci.networkfirewall.get_network_firewall_policy_application_group(application_group_name=network_firewall_policy_application_group_display_name,
+        network_firewall_policy_id=test_network_firewall_policy["id"])
+    ```
 
 
     :param _builtins.str name: Name of the application Group.

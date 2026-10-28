@@ -513,6 +513,41 @@ public final class DatabaseMigrationFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorCheckArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessorCheck = DatabaseMigrationFunctions.getAssessmentAssessorCheck(GetAssessmentAssessorCheckArgs.builder()
+     *             .assessmentId(testAssessment.get("id"))
+     *             .assessorName(assessmentAssessorCheckAssessorName)
+     *             .checkName(assessmentAssessorCheckCheckName)
+     *             .compartmentId(compartmentId)
+     *             .displayName(assessmentAssessorCheckDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetAssessmentAssessorCheckResult> getAssessmentAssessorCheck(GetAssessmentAssessorCheckArgs args) {
         return getAssessmentAssessorCheck(args, InvokeOptions.Empty);
@@ -523,6 +558,41 @@ public final class DatabaseMigrationFunctions {
      * Get Assessor Check details.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorCheckArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessorCheck = DatabaseMigrationFunctions.getAssessmentAssessorCheck(GetAssessmentAssessorCheckArgs.builder()
+     *             .assessmentId(testAssessment.get("id"))
+     *             .assessorName(assessmentAssessorCheckAssessorName)
+     *             .checkName(assessmentAssessorCheckCheckName)
+     *             .compartmentId(compartmentId)
+     *             .displayName(assessmentAssessorCheckDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetAssessmentAssessorCheckResult> getAssessmentAssessorCheckPlain(GetAssessmentAssessorCheckPlainArgs args) {
@@ -535,6 +605,41 @@ public final class DatabaseMigrationFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorCheckArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessorCheck = DatabaseMigrationFunctions.getAssessmentAssessorCheck(GetAssessmentAssessorCheckArgs.builder()
+     *             .assessmentId(testAssessment.get("id"))
+     *             .assessorName(assessmentAssessorCheckAssessorName)
+     *             .checkName(assessmentAssessorCheckCheckName)
+     *             .compartmentId(compartmentId)
+     *             .displayName(assessmentAssessorCheckDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetAssessmentAssessorCheckResult> getAssessmentAssessorCheck(GetAssessmentAssessorCheckArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseMigration/getAssessmentAssessorCheck:getAssessmentAssessorCheck", TypeShape.of(GetAssessmentAssessorCheckResult.class), args, Utilities.withVersion(options));
@@ -546,6 +651,41 @@ public final class DatabaseMigrationFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorCheckArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessorCheck = DatabaseMigrationFunctions.getAssessmentAssessorCheck(GetAssessmentAssessorCheckArgs.builder()
+     *             .assessmentId(testAssessment.get("id"))
+     *             .assessorName(assessmentAssessorCheckAssessorName)
+     *             .checkName(assessmentAssessorCheckCheckName)
+     *             .compartmentId(compartmentId)
+     *             .displayName(assessmentAssessorCheckDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetAssessmentAssessorCheckResult> getAssessmentAssessorCheck(GetAssessmentAssessorCheckArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseMigration/getAssessmentAssessorCheck:getAssessmentAssessorCheck", TypeShape.of(GetAssessmentAssessorCheckResult.class), args, Utilities.withVersion(options));
@@ -556,6 +696,41 @@ public final class DatabaseMigrationFunctions {
      * Get Assessor Check details.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetAssessmentAssessorCheckArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAssessmentAssessorCheck = DatabaseMigrationFunctions.getAssessmentAssessorCheck(GetAssessmentAssessorCheckArgs.builder()
+     *             .assessmentId(testAssessment.get("id"))
+     *             .assessorName(assessmentAssessorCheckAssessorName)
+     *             .checkName(assessmentAssessorCheckCheckName)
+     *             .compartmentId(compartmentId)
+     *             .displayName(assessmentAssessorCheckDisplayName)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetAssessmentAssessorCheckResult> getAssessmentAssessorCheckPlain(GetAssessmentAssessorCheckPlainArgs args, InvokeOptions options) {
@@ -4640,6 +4815,40 @@ public final class DatabaseMigrationFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrations = DatabaseMigrationFunctions.getMigrations(GetMigrationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationDisplayName)
+     *             .lifecycleDetails(migrationLifecycleDetails)
+     *             .state(migrationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetMigrationsResult> getMigrations(GetMigrationsArgs args) {
         return getMigrations(args, InvokeOptions.Empty);
@@ -4652,6 +4861,40 @@ public final class DatabaseMigrationFunctions {
      * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrations = DatabaseMigrationFunctions.getMigrations(GetMigrationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationDisplayName)
+     *             .lifecycleDetails(migrationLifecycleDetails)
+     *             .state(migrationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetMigrationsResult> getMigrationsPlain(GetMigrationsPlainArgs args) {
@@ -4666,6 +4909,40 @@ public final class DatabaseMigrationFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrations = DatabaseMigrationFunctions.getMigrations(GetMigrationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationDisplayName)
+     *             .lifecycleDetails(migrationLifecycleDetails)
+     *             .state(migrationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetMigrationsResult> getMigrations(GetMigrationsArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseMigration/getMigrations:getMigrations", TypeShape.of(GetMigrationsResult.class), args, Utilities.withVersion(options));
@@ -4679,6 +4956,40 @@ public final class DatabaseMigrationFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrations = DatabaseMigrationFunctions.getMigrations(GetMigrationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationDisplayName)
+     *             .lifecycleDetails(migrationLifecycleDetails)
+     *             .state(migrationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetMigrationsResult> getMigrations(GetMigrationsArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DatabaseMigration/getMigrations:getMigrations", TypeShape.of(GetMigrationsResult.class), args, Utilities.withVersion(options));
@@ -4691,6 +5002,40 @@ public final class DatabaseMigrationFunctions {
      * Note: If you wish to use the DMS deprecated API version /20210929 it is necessary to pin the Terraform Provider version to v5.47.0. Newer Terraform provider versions will not support the DMS deprecated API version /20210929
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DatabaseMigration.DatabaseMigrationFunctions;
+     * import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationsArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMigrations = DatabaseMigrationFunctions.getMigrations(GetMigrationsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(migrationDisplayName)
+     *             .lifecycleDetails(migrationLifecycleDetails)
+     *             .state(migrationState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetMigrationsResult> getMigrationsPlain(GetMigrationsPlainArgs args, InvokeOptions options) {

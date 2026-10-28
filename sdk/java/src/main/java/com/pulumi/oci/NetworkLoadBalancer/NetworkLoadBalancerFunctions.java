@@ -278,6 +278,39 @@ public final class NetworkLoadBalancerFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendSetArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSet = NetworkLoadBalancerFunctions.getBackendSet(GetBackendSetArgs.builder()
+     *             .backendSetName(testBackendSetOciNetworkLoadBalancerBackendSet.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
+     *             .ipVersion(backendSetIpVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetBackendSetResult> getBackendSet(GetBackendSetArgs args) {
         return getBackendSet(args, InvokeOptions.Empty);
@@ -288,6 +321,39 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves the configuration information for the specified backend set.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendSetArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSet = NetworkLoadBalancerFunctions.getBackendSet(GetBackendSetArgs.builder()
+     *             .backendSetName(testBackendSetOciNetworkLoadBalancerBackendSet.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
+     *             .ipVersion(backendSetIpVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetBackendSetResult> getBackendSetPlain(GetBackendSetPlainArgs args) {
@@ -300,6 +366,39 @@ public final class NetworkLoadBalancerFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendSetArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSet = NetworkLoadBalancerFunctions.getBackendSet(GetBackendSetArgs.builder()
+     *             .backendSetName(testBackendSetOciNetworkLoadBalancerBackendSet.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
+     *             .ipVersion(backendSetIpVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetBackendSetResult> getBackendSet(GetBackendSetArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", TypeShape.of(GetBackendSetResult.class), args, Utilities.withVersion(options));
@@ -311,6 +410,39 @@ public final class NetworkLoadBalancerFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendSetArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSet = NetworkLoadBalancerFunctions.getBackendSet(GetBackendSetArgs.builder()
+     *             .backendSetName(testBackendSetOciNetworkLoadBalancerBackendSet.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
+     *             .ipVersion(backendSetIpVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetBackendSetResult> getBackendSet(GetBackendSetArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:NetworkLoadBalancer/getBackendSet:getBackendSet", TypeShape.of(GetBackendSetResult.class), args, Utilities.withVersion(options));
@@ -321,6 +453,39 @@ public final class NetworkLoadBalancerFunctions {
      * Retrieves the configuration information for the specified backend set.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.NetworkLoadBalancer.NetworkLoadBalancerFunctions;
+     * import com.pulumi.oci.NetworkLoadBalancer.inputs.GetBackendSetArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testBackendSet = NetworkLoadBalancerFunctions.getBackendSet(GetBackendSetArgs.builder()
+     *             .backendSetName(testBackendSetOciNetworkLoadBalancerBackendSet.get("name"))
+     *             .networkLoadBalancerId(testNetworkLoadBalancer.get("id"))
+     *             .ipVersion(backendSetIpVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetBackendSetResult> getBackendSetPlain(GetBackendSetPlainArgs args, InvokeOptions options) {

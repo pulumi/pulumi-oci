@@ -286,6 +286,39 @@ public final class MediaServicesFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetMediaAssetDistributionChannelAttachmentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMediaAssetDistributionChannelAttachment = MediaServicesFunctions.getMediaAssetDistributionChannelAttachment(GetMediaAssetDistributionChannelAttachmentArgs.builder()
+     *             .distributionChannelId(testChannel.get("id"))
+     *             .mediaAssetId(testMediaAsset.get("id"))
+     *             .version(mediaAssetDistributionChannelAttachmentVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetMediaAssetDistributionChannelAttachmentResult> getMediaAssetDistributionChannelAttachment(GetMediaAssetDistributionChannelAttachmentArgs args) {
         return getMediaAssetDistributionChannelAttachment(args, InvokeOptions.Empty);
@@ -296,6 +329,39 @@ public final class MediaServicesFunctions {
      * Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetMediaAssetDistributionChannelAttachmentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMediaAssetDistributionChannelAttachment = MediaServicesFunctions.getMediaAssetDistributionChannelAttachment(GetMediaAssetDistributionChannelAttachmentArgs.builder()
+     *             .distributionChannelId(testChannel.get("id"))
+     *             .mediaAssetId(testMediaAsset.get("id"))
+     *             .version(mediaAssetDistributionChannelAttachmentVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetMediaAssetDistributionChannelAttachmentResult> getMediaAssetDistributionChannelAttachmentPlain(GetMediaAssetDistributionChannelAttachmentPlainArgs args) {
@@ -308,6 +374,39 @@ public final class MediaServicesFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetMediaAssetDistributionChannelAttachmentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMediaAssetDistributionChannelAttachment = MediaServicesFunctions.getMediaAssetDistributionChannelAttachment(GetMediaAssetDistributionChannelAttachmentArgs.builder()
+     *             .distributionChannelId(testChannel.get("id"))
+     *             .mediaAssetId(testMediaAsset.get("id"))
+     *             .version(mediaAssetDistributionChannelAttachmentVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetMediaAssetDistributionChannelAttachmentResult> getMediaAssetDistributionChannelAttachment(GetMediaAssetDistributionChannelAttachmentArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:MediaServices/getMediaAssetDistributionChannelAttachment:getMediaAssetDistributionChannelAttachment", TypeShape.of(GetMediaAssetDistributionChannelAttachmentResult.class), args, Utilities.withVersion(options));
@@ -319,6 +418,39 @@ public final class MediaServicesFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetMediaAssetDistributionChannelAttachmentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMediaAssetDistributionChannelAttachment = MediaServicesFunctions.getMediaAssetDistributionChannelAttachment(GetMediaAssetDistributionChannelAttachmentArgs.builder()
+     *             .distributionChannelId(testChannel.get("id"))
+     *             .mediaAssetId(testMediaAsset.get("id"))
+     *             .version(mediaAssetDistributionChannelAttachmentVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetMediaAssetDistributionChannelAttachmentResult> getMediaAssetDistributionChannelAttachment(GetMediaAssetDistributionChannelAttachmentArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:MediaServices/getMediaAssetDistributionChannelAttachment:getMediaAssetDistributionChannelAttachment", TypeShape.of(GetMediaAssetDistributionChannelAttachmentResult.class), args, Utilities.withVersion(options));
@@ -329,6 +461,39 @@ public final class MediaServicesFunctions {
      * Gets a MediaAssetDistributionChannelAttachment for a MediaAsset by identifiers.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.MediaServices.MediaServicesFunctions;
+     * import com.pulumi.oci.MediaServices.inputs.GetMediaAssetDistributionChannelAttachmentArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testMediaAssetDistributionChannelAttachment = MediaServicesFunctions.getMediaAssetDistributionChannelAttachment(GetMediaAssetDistributionChannelAttachmentArgs.builder()
+     *             .distributionChannelId(testChannel.get("id"))
+     *             .mediaAssetId(testMediaAsset.get("id"))
+     *             .version(mediaAssetDistributionChannelAttachmentVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetMediaAssetDistributionChannelAttachmentResult> getMediaAssetDistributionChannelAttachmentPlain(GetMediaAssetDistributionChannelAttachmentPlainArgs args, InvokeOptions options) {

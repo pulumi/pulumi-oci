@@ -16,6 +16,31 @@ import (
 // Gets information about a KafkaClusterAddon.
 //
 // ## Example Usage
+//
+// ```go
+// package main
+//
+// import (
+//
+//	"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/oci"
+//	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
+//
+// )
+//
+//	func main() {
+//		pulumi.Run(func(ctx *pulumi.Context) error {
+//			_, err := oci.LookupManagedKafkaKafkaClusterAddon(ctx, &oci.LookupManagedKafkaKafkaClusterAddonArgs{
+//				AddonName:      testAddon.Name,
+//				KafkaClusterId: testKafkaCluster.Id,
+//			}, nil)
+//			if err != nil {
+//				return err
+//			}
+//			return nil
+//		})
+//	}
+//
+// ```
 func LookupManagedKafkaKafkaClusterAddon(ctx *pulumi.Context, args *LookupManagedKafkaKafkaClusterAddonArgs, opts ...pulumi.InvokeOption) (*LookupManagedKafkaKafkaClusterAddonResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupManagedKafkaKafkaClusterAddonResult

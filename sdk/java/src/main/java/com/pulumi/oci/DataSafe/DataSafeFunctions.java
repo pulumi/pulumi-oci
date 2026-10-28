@@ -28390,6 +28390,38 @@ public final class DataSafeFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelReferentialRelation = DataSafeFunctions.getSensitiveDataModelReferentialRelation(GetSensitiveDataModelReferentialRelationArgs.builder()
+     *             .referentialRelationKey(sensitiveDataModelReferentialRelationReferentialRelationKey)
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetSensitiveDataModelReferentialRelationResult> getSensitiveDataModelReferentialRelation(GetSensitiveDataModelReferentialRelationArgs args) {
         return getSensitiveDataModelReferentialRelation(args, InvokeOptions.Empty);
@@ -28400,6 +28432,38 @@ public final class DataSafeFunctions {
      * Gets the details of the specified referential relation.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelReferentialRelation = DataSafeFunctions.getSensitiveDataModelReferentialRelation(GetSensitiveDataModelReferentialRelationArgs.builder()
+     *             .referentialRelationKey(sensitiveDataModelReferentialRelationReferentialRelationKey)
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelReferentialRelationResult> getSensitiveDataModelReferentialRelationPlain(GetSensitiveDataModelReferentialRelationPlainArgs args) {
@@ -28412,6 +28476,38 @@ public final class DataSafeFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelReferentialRelation = DataSafeFunctions.getSensitiveDataModelReferentialRelation(GetSensitiveDataModelReferentialRelationArgs.builder()
+     *             .referentialRelationKey(sensitiveDataModelReferentialRelationReferentialRelationKey)
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetSensitiveDataModelReferentialRelationResult> getSensitiveDataModelReferentialRelation(GetSensitiveDataModelReferentialRelationArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("oci:DataSafe/getSensitiveDataModelReferentialRelation:getSensitiveDataModelReferentialRelation", TypeShape.of(GetSensitiveDataModelReferentialRelationResult.class), args, Utilities.withVersion(options));
@@ -28423,6 +28519,38 @@ public final class DataSafeFunctions {
      * 
      * ## Example Usage
      * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelReferentialRelation = DataSafeFunctions.getSensitiveDataModelReferentialRelation(GetSensitiveDataModelReferentialRelationArgs.builder()
+     *             .referentialRelationKey(sensitiveDataModelReferentialRelationReferentialRelationKey)
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
      */
     public static Output<GetSensitiveDataModelReferentialRelationResult> getSensitiveDataModelReferentialRelation(GetSensitiveDataModelReferentialRelationArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("oci:DataSafe/getSensitiveDataModelReferentialRelation:getSensitiveDataModelReferentialRelation", TypeShape.of(GetSensitiveDataModelReferentialRelationResult.class), args, Utilities.withVersion(options));
@@ -28433,6 +28561,38 @@ public final class DataSafeFunctions {
      * Gets the details of the specified referential relation.
      * 
      * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelReferentialRelationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelReferentialRelation = DataSafeFunctions.getSensitiveDataModelReferentialRelation(GetSensitiveDataModelReferentialRelationArgs.builder()
+     *             .referentialRelationKey(sensitiveDataModelReferentialRelationReferentialRelationKey)
+     *             .sensitiveDataModelId(testSensitiveDataModel.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
      * 
      */
     public static CompletableFuture<GetSensitiveDataModelReferentialRelationResult> getSensitiveDataModelReferentialRelationPlain(GetSensitiveDataModelReferentialRelationPlainArgs args, InvokeOptions options) {

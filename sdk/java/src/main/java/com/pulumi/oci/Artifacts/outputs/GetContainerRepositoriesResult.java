@@ -43,7 +43,17 @@ public final class GetContainerRepositoriesResult {
      * 
      */
     private @Nullable Boolean isPublic;
+    /**
+     * @return Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+     * 
+     */
+    private @Nullable Boolean isTopLevel;
     private @Nullable String repositoryId;
+    /**
+     * @return The type of container repository. This determines the repository behavior and required settings.
+     * 
+     */
+    private @Nullable String repositoryType;
     /**
      * @return The current state of the container repository.
      * 
@@ -92,8 +102,22 @@ public final class GetContainerRepositoriesResult {
     public Optional<Boolean> isPublic() {
         return Optional.ofNullable(this.isPublic);
     }
+    /**
+     * @return Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+     * 
+     */
+    public Optional<Boolean> isTopLevel() {
+        return Optional.ofNullable(this.isTopLevel);
+    }
     public Optional<String> repositoryId() {
         return Optional.ofNullable(this.repositoryId);
+    }
+    /**
+     * @return The type of container repository. This determines the repository behavior and required settings.
+     * 
+     */
+    public Optional<String> repositoryType() {
+        return Optional.ofNullable(this.repositoryType);
     }
     /**
      * @return The current state of the container repository.
@@ -119,7 +143,9 @@ public final class GetContainerRepositoriesResult {
         private @Nullable List<GetContainerRepositoriesFilter> filters;
         private String id;
         private @Nullable Boolean isPublic;
+        private @Nullable Boolean isTopLevel;
         private @Nullable String repositoryId;
+        private @Nullable String repositoryType;
         private @Nullable String state;
         public Builder() {}
         public Builder(GetContainerRepositoriesResult defaults) {
@@ -131,7 +157,9 @@ public final class GetContainerRepositoriesResult {
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.isPublic = defaults.isPublic;
+    	      this.isTopLevel = defaults.isTopLevel;
     	      this.repositoryId = defaults.repositoryId;
+    	      this.repositoryType = defaults.repositoryType;
     	      this.state = defaults.state;
         }
 
@@ -190,9 +218,21 @@ public final class GetContainerRepositoriesResult {
             return this;
         }
         @CustomType.Setter
+        public Builder isTopLevel(@Nullable Boolean isTopLevel) {
+
+            this.isTopLevel = isTopLevel;
+            return this;
+        }
+        @CustomType.Setter
         public Builder repositoryId(@Nullable String repositoryId) {
 
             this.repositoryId = repositoryId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder repositoryType(@Nullable String repositoryType) {
+
+            this.repositoryType = repositoryType;
             return this;
         }
         @CustomType.Setter
@@ -210,7 +250,9 @@ public final class GetContainerRepositoriesResult {
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.isPublic = isPublic;
+            _resultValue.isTopLevel = isTopLevel;
             _resultValue.repositoryId = repositoryId;
+            _resultValue.repositoryType = repositoryType;
             _resultValue.state = state;
             return _resultValue;
         }

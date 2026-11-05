@@ -218,6 +218,10 @@ export class Cluster extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly state: pulumi.Output<string>;
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
+    /**
      * (Updatable) Type of cluster
      */
     declare public readonly type: pulumi.Output<string>;
@@ -259,6 +263,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["openIdConnectDiscoveryKey"] = state?.openIdConnectDiscoveryKey;
             resourceInputs["options"] = state?.options;
             resourceInputs["state"] = state?.state;
+            resourceInputs["systemTags"] = state?.systemTags;
             resourceInputs["type"] = state?.type;
             resourceInputs["vcnId"] = state?.vcnId;
         } else {
@@ -291,6 +296,7 @@ export class Cluster extends pulumi.CustomResource {
             resourceInputs["openIdConnectDiscoveryEndpoint"] = undefined /*out*/;
             resourceInputs["openIdConnectDiscoveryKey"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Cluster.__pulumiType, name, resourceInputs, opts);
@@ -369,6 +375,10 @@ export interface ClusterState {
      * The state of the cluster masters.
      */
     state?: pulumi.Input<string | undefined>;
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     /**
      * (Updatable) Type of cluster
      */

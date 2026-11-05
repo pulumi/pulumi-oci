@@ -116,6 +116,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// The OCIDs of the subnets in which to place nodes for this node pool.
         /// </summary>
         public readonly ImmutableArray<string> SubnetIds;
+        /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SystemTags;
 
         [OutputConstructor]
         private GetNodePoolsNodePoolResult(
@@ -173,7 +177,9 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             string state,
 
-            ImmutableArray<string> subnetIds)
+            ImmutableArray<string> subnetIds,
+
+            ImmutableDictionary<string, string> systemTags)
         {
             ClusterId = clusterId;
             CompartmentId = compartmentId;
@@ -203,6 +209,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
             SshPublicKey = sshPublicKey;
             State = state;
             SubnetIds = subnetIds;
+            SystemTags = systemTags;
         }
     }
 }

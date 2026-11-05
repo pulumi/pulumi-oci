@@ -12,6 +12,7 @@ import java.util.Objects;
 
 @CustomType
 public final class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration {
+    private List<String> capacityReservationIds;
     /**
      * @return The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
      * 
@@ -39,6 +40,9 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
     private String subnetId;
 
     private GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration() {}
+    public List<String> capacityReservationIds() {
+        return this.capacityReservationIds;
+    }
     /**
      * @return The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
      * 
@@ -84,6 +88,7 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<String> capacityReservationIds;
         private String instanceShapeName;
         private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetail> modelDeploymentInstanceShapeConfigDetails;
         private String networkAccessType;
@@ -92,6 +97,7 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
         public Builder() {}
         public Builder(GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.capacityReservationIds = defaults.capacityReservationIds;
     	      this.instanceShapeName = defaults.instanceShapeName;
     	      this.modelDeploymentInstanceShapeConfigDetails = defaults.modelDeploymentInstanceShapeConfigDetails;
     	      this.networkAccessType = defaults.networkAccessType;
@@ -99,6 +105,17 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
+        public Builder capacityReservationIds(List<String> capacityReservationIds) {
+            if (capacityReservationIds == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration", "capacityReservationIds");
+            }
+            this.capacityReservationIds = capacityReservationIds;
+            return this;
+        }
+        public Builder capacityReservationIds(String... capacityReservationIds) {
+            return capacityReservationIds(List.of(capacityReservationIds));
+        }
         @CustomType.Setter
         public Builder instanceShapeName(String instanceShapeName) {
             if (instanceShapeName == null) {
@@ -144,6 +161,7 @@ public final class GetModelDeploymentsModelDeploymentModelDeploymentConfiguratio
         }
         public GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration build() {
             final var _resultValue = new GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration();
+            _resultValue.capacityReservationIds = capacityReservationIds;
             _resultValue.instanceShapeName = instanceShapeName;
             _resultValue.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
             _resultValue.networkAccessType = networkAccessType;

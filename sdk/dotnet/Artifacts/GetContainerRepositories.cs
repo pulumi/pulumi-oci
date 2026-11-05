@@ -32,7 +32,9 @@ namespace Pulumi.Oci.Artifacts
         ///         CompartmentIdInSubtree = containerRepositoryCompartmentIdInSubtree,
         ///         DisplayName = containerRepositoryDisplayName,
         ///         IsPublic = containerRepositoryIsPublic,
+        ///         IsTopLevel = containerRepositoryIsTopLevel,
         ///         RepositoryId = testRepository.Id,
+        ///         RepositoryType = containerRepositoryRepositoryType,
         ///         State = containerRepositoryState,
         ///     });
         /// 
@@ -63,7 +65,9 @@ namespace Pulumi.Oci.Artifacts
         ///         CompartmentIdInSubtree = containerRepositoryCompartmentIdInSubtree,
         ///         DisplayName = containerRepositoryDisplayName,
         ///         IsPublic = containerRepositoryIsPublic,
+        ///         IsTopLevel = containerRepositoryIsTopLevel,
         ///         RepositoryId = testRepository.Id,
+        ///         RepositoryType = containerRepositoryRepositoryType,
         ///         State = containerRepositoryState,
         ///     });
         /// 
@@ -94,7 +98,9 @@ namespace Pulumi.Oci.Artifacts
         ///         CompartmentIdInSubtree = containerRepositoryCompartmentIdInSubtree,
         ///         DisplayName = containerRepositoryDisplayName,
         ///         IsPublic = containerRepositoryIsPublic,
+        ///         IsTopLevel = containerRepositoryIsTopLevel,
         ///         RepositoryId = testRepository.Id,
+        ///         RepositoryType = containerRepositoryRepositoryType,
         ///         State = containerRepositoryState,
         ///     });
         /// 
@@ -141,10 +147,22 @@ namespace Pulumi.Oci.Artifacts
         public bool? IsPublic { get; set; }
 
         /// <summary>
+        /// A filter to return resources that match the isTopLevel value.
+        /// </summary>
+        [Input("isTopLevel")]
+        public bool? IsTopLevel { get; set; }
+
+        /// <summary>
         /// A filter to return container images only for the specified container repository OCID.
         /// </summary>
         [Input("repositoryId")]
         public string? RepositoryId { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources that match the given repository type exactly.
+        /// </summary>
+        [Input("repositoryType")]
+        public string? RepositoryType { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state name exactly.
@@ -193,10 +211,22 @@ namespace Pulumi.Oci.Artifacts
         public Input<bool>? IsPublic { get; set; }
 
         /// <summary>
+        /// A filter to return resources that match the isTopLevel value.
+        /// </summary>
+        [Input("isTopLevel")]
+        public Input<bool>? IsTopLevel { get; set; }
+
+        /// <summary>
         /// A filter to return container images only for the specified container repository OCID.
         /// </summary>
         [Input("repositoryId")]
         public Input<string>? RepositoryId { get; set; }
+
+        /// <summary>
+        /// A filter to return only resources that match the given repository type exactly.
+        /// </summary>
+        [Input("repositoryType")]
+        public Input<string>? RepositoryType { get; set; }
 
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state name exactly.
@@ -236,7 +266,15 @@ namespace Pulumi.Oci.Artifacts
         /// Whether the repository is public. A public repository allows unauthenticated access.
         /// </summary>
         public readonly bool? IsPublic;
+        /// <summary>
+        /// Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+        /// </summary>
+        public readonly bool? IsTopLevel;
         public readonly string? RepositoryId;
+        /// <summary>
+        /// The type of container repository. This determines the repository behavior and required settings.
+        /// </summary>
+        public readonly string? RepositoryType;
         /// <summary>
         /// The current state of the container repository.
         /// </summary>
@@ -258,7 +296,11 @@ namespace Pulumi.Oci.Artifacts
 
             bool? isPublic,
 
+            bool? isTopLevel,
+
             string? repositoryId,
+
+            string? repositoryType,
 
             string? state)
         {
@@ -269,7 +311,9 @@ namespace Pulumi.Oci.Artifacts
             Filters = filters;
             Id = id;
             IsPublic = isPublic;
+            IsTopLevel = isTopLevel;
             RepositoryId = repositoryId;
+            RepositoryType = repositoryType;
             State = state;
         }
     }

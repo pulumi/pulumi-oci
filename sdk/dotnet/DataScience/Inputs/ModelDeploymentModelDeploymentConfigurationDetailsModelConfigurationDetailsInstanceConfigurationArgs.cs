@@ -12,6 +12,14 @@ namespace Pulumi.Oci.DataScience.Inputs
 
     public sealed class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs : global::Pulumi.ResourceArgs
     {
+        [Input("capacityReservationIds")]
+        private InputList<string>? _capacityReservationIds;
+        public InputList<string> CapacityReservationIds
+        {
+            get => _capacityReservationIds ?? (_capacityReservationIds = new InputList<string>());
+            set => _capacityReservationIds = value;
+        }
+
         /// <summary>
         /// (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         /// </summary>

@@ -8,6 +8,8 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 @CustomType
 public final class GetConfigurationResult {
@@ -15,7 +17,7 @@ public final class GetConfigurationResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy into which ZPR will be onboarded.
      * 
      */
-    private String compartmentId;
+    private @Nullable String compartmentId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
@@ -67,8 +69,8 @@ public final class GetConfigurationResult {
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy into which ZPR will be onboarded.
      * 
      */
-    public String compartmentId() {
-        return this.compartmentId;
+    public Optional<String> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -143,7 +145,7 @@ public final class GetConfigurationResult {
     }
     @CustomType.Builder
     public static final class Builder {
-        private String compartmentId;
+        private @Nullable String compartmentId;
         private Map<String,String> definedTags;
         private Map<String,String> freeformTags;
         private String id;
@@ -169,10 +171,8 @@ public final class GetConfigurationResult {
         }
 
         @CustomType.Setter
-        public Builder compartmentId(String compartmentId) {
-            if (compartmentId == null) {
-              throw new MissingRequiredPropertyException("GetConfigurationResult", "compartmentId");
-            }
+        public Builder compartmentId(@Nullable String compartmentId) {
+
             this.compartmentId = compartmentId;
             return this;
         }

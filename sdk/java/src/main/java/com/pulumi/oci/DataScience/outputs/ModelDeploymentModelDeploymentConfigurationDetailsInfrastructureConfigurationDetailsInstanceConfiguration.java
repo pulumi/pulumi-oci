@@ -7,12 +7,14 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
 public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration {
+    private @Nullable List<String> capacityReservationIds;
     /**
      * @return The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
      * 
@@ -40,6 +42,9 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
     private @Nullable String subnetId;
 
     private ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration() {}
+    public List<String> capacityReservationIds() {
+        return this.capacityReservationIds == null ? List.of() : this.capacityReservationIds;
+    }
     /**
      * @return The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
      * 
@@ -85,6 +90,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable List<String> capacityReservationIds;
         private String instanceShapeName;
         private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails modelDeploymentInstanceShapeConfigDetails;
         private @Nullable String networkAccessType;
@@ -93,6 +99,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
         public Builder() {}
         public Builder(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.capacityReservationIds = defaults.capacityReservationIds;
     	      this.instanceShapeName = defaults.instanceShapeName;
     	      this.modelDeploymentInstanceShapeConfigDetails = defaults.modelDeploymentInstanceShapeConfigDetails;
     	      this.networkAccessType = defaults.networkAccessType;
@@ -100,6 +107,15 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
+        public Builder capacityReservationIds(@Nullable List<String> capacityReservationIds) {
+
+            this.capacityReservationIds = capacityReservationIds;
+            return this;
+        }
+        public Builder capacityReservationIds(String... capacityReservationIds) {
+            return capacityReservationIds(List.of(capacityReservationIds));
+        }
         @CustomType.Setter
         public Builder instanceShapeName(String instanceShapeName) {
             if (instanceShapeName == null) {
@@ -134,6 +150,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
         }
         public ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration build() {
             final var _resultValue = new ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration();
+            _resultValue.capacityReservationIds = capacityReservationIds;
             _resultValue.instanceShapeName = instanceShapeName;
             _resultValue.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
             _resultValue.networkAccessType = networkAccessType;

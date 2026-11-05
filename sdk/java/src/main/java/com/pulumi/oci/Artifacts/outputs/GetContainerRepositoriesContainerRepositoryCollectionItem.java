@@ -66,6 +66,11 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
      */
     private Boolean isPublic;
     /**
+     * @return A filter to return resources that match the isTopLevel value.
+     * 
+     */
+    private Boolean isTopLevel;
+    /**
      * @return Total number of layers.
      * 
      */
@@ -76,6 +81,11 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
      */
     private String layersSizeInBytes;
     /**
+     * @return List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, us-phoenix-1). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created.
+     * 
+     */
+    private List<String> multiRegionPeers;
+    /**
      * @return The tenancy namespace used in the container repository path.
      * 
      */
@@ -85,6 +95,11 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
      * 
      */
     private List<GetContainerRepositoriesContainerRepositoryCollectionItemReadme> readmes;
+    /**
+     * @return A filter to return only resources that match the given repository type exactly.
+     * 
+     */
+    private String repositoryType;
     /**
      * @return A filter to return only resources that match the given lifecycle state name exactly.
      * 
@@ -105,6 +120,21 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
      * 
      */
     private String timeLastPushed;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository.
+     * 
+     */
+    private String upstreamSecretId;
+    /**
+     * @return The upstream registry URL for a pull-through cache repository.
+     * 
+     */
+    private String upstreamUrl;
+    /**
+     * @return The upstream registry username for a pull-through cache repository.
+     * 
+     */
+    private String upstreamUsername;
 
     private GetContainerRepositoriesContainerRepositoryCollectionItem() {}
     /**
@@ -178,6 +208,13 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
         return this.isPublic;
     }
     /**
+     * @return A filter to return resources that match the isTopLevel value.
+     * 
+     */
+    public Boolean isTopLevel() {
+        return this.isTopLevel;
+    }
+    /**
      * @return Total number of layers.
      * 
      */
@@ -192,6 +229,13 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
         return this.layersSizeInBytes;
     }
     /**
+     * @return List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, us-phoenix-1). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created.
+     * 
+     */
+    public List<String> multiRegionPeers() {
+        return this.multiRegionPeers;
+    }
+    /**
      * @return The tenancy namespace used in the container repository path.
      * 
      */
@@ -204,6 +248,13 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
      */
     public List<GetContainerRepositoriesContainerRepositoryCollectionItemReadme> readmes() {
         return this.readmes;
+    }
+    /**
+     * @return A filter to return only resources that match the given repository type exactly.
+     * 
+     */
+    public String repositoryType() {
+        return this.repositoryType;
     }
     /**
      * @return A filter to return only resources that match the given lifecycle state name exactly.
@@ -233,6 +284,27 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
     public String timeLastPushed() {
         return this.timeLastPushed;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository.
+     * 
+     */
+    public String upstreamSecretId() {
+        return this.upstreamSecretId;
+    }
+    /**
+     * @return The upstream registry URL for a pull-through cache repository.
+     * 
+     */
+    public String upstreamUrl() {
+        return this.upstreamUrl;
+    }
+    /**
+     * @return The upstream registry username for a pull-through cache repository.
+     * 
+     */
+    public String upstreamUsername() {
+        return this.upstreamUsername;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -253,14 +325,20 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
         private Integer imageCount;
         private Boolean isImmutable;
         private Boolean isPublic;
+        private Boolean isTopLevel;
         private Integer layerCount;
         private String layersSizeInBytes;
+        private List<String> multiRegionPeers;
         private String namespace;
         private List<GetContainerRepositoriesContainerRepositoryCollectionItemReadme> readmes;
+        private String repositoryType;
         private String state;
         private Map<String,String> systemTags;
         private String timeCreated;
         private String timeLastPushed;
+        private String upstreamSecretId;
+        private String upstreamUrl;
+        private String upstreamUsername;
         public Builder() {}
         public Builder(GetContainerRepositoriesContainerRepositoryCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
@@ -274,14 +352,20 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
     	      this.imageCount = defaults.imageCount;
     	      this.isImmutable = defaults.isImmutable;
     	      this.isPublic = defaults.isPublic;
+    	      this.isTopLevel = defaults.isTopLevel;
     	      this.layerCount = defaults.layerCount;
     	      this.layersSizeInBytes = defaults.layersSizeInBytes;
+    	      this.multiRegionPeers = defaults.multiRegionPeers;
     	      this.namespace = defaults.namespace;
     	      this.readmes = defaults.readmes;
+    	      this.repositoryType = defaults.repositoryType;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeLastPushed = defaults.timeLastPushed;
+    	      this.upstreamSecretId = defaults.upstreamSecretId;
+    	      this.upstreamUrl = defaults.upstreamUrl;
+    	      this.upstreamUsername = defaults.upstreamUsername;
         }
 
         @CustomType.Setter
@@ -365,6 +449,14 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder isTopLevel(Boolean isTopLevel) {
+            if (isTopLevel == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "isTopLevel");
+            }
+            this.isTopLevel = isTopLevel;
+            return this;
+        }
+        @CustomType.Setter
         public Builder layerCount(Integer layerCount) {
             if (layerCount == null) {
               throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "layerCount");
@@ -379,6 +471,17 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
             }
             this.layersSizeInBytes = layersSizeInBytes;
             return this;
+        }
+        @CustomType.Setter
+        public Builder multiRegionPeers(List<String> multiRegionPeers) {
+            if (multiRegionPeers == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "multiRegionPeers");
+            }
+            this.multiRegionPeers = multiRegionPeers;
+            return this;
+        }
+        public Builder multiRegionPeers(String... multiRegionPeers) {
+            return multiRegionPeers(List.of(multiRegionPeers));
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
@@ -398,6 +501,14 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
         }
         public Builder readmes(GetContainerRepositoriesContainerRepositoryCollectionItemReadme... readmes) {
             return readmes(List.of(readmes));
+        }
+        @CustomType.Setter
+        public Builder repositoryType(String repositoryType) {
+            if (repositoryType == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "repositoryType");
+            }
+            this.repositoryType = repositoryType;
+            return this;
         }
         @CustomType.Setter
         public Builder state(String state) {
@@ -431,6 +542,30 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
             this.timeLastPushed = timeLastPushed;
             return this;
         }
+        @CustomType.Setter
+        public Builder upstreamSecretId(String upstreamSecretId) {
+            if (upstreamSecretId == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "upstreamSecretId");
+            }
+            this.upstreamSecretId = upstreamSecretId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder upstreamUrl(String upstreamUrl) {
+            if (upstreamUrl == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "upstreamUrl");
+            }
+            this.upstreamUrl = upstreamUrl;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder upstreamUsername(String upstreamUsername) {
+            if (upstreamUsername == null) {
+              throw new MissingRequiredPropertyException("GetContainerRepositoriesContainerRepositoryCollectionItem", "upstreamUsername");
+            }
+            this.upstreamUsername = upstreamUsername;
+            return this;
+        }
         public GetContainerRepositoriesContainerRepositoryCollectionItem build() {
             final var _resultValue = new GetContainerRepositoriesContainerRepositoryCollectionItem();
             _resultValue.billableSizeInGbs = billableSizeInGbs;
@@ -443,14 +578,20 @@ public final class GetContainerRepositoriesContainerRepositoryCollectionItem {
             _resultValue.imageCount = imageCount;
             _resultValue.isImmutable = isImmutable;
             _resultValue.isPublic = isPublic;
+            _resultValue.isTopLevel = isTopLevel;
             _resultValue.layerCount = layerCount;
             _resultValue.layersSizeInBytes = layersSizeInBytes;
+            _resultValue.multiRegionPeers = multiRegionPeers;
             _resultValue.namespace = namespace;
             _resultValue.readmes = readmes;
+            _resultValue.repositoryType = repositoryType;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeLastPushed = timeLastPushed;
+            _resultValue.upstreamSecretId = upstreamSecretId;
+            _resultValue.upstreamUrl = upstreamUrl;
+            _resultValue.upstreamUsername = upstreamUsername;
             return _resultValue;
         }
     }

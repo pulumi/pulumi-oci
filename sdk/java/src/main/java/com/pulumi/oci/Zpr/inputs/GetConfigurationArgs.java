@@ -5,9 +5,10 @@ package com.pulumi.oci.Zpr.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class GetConfigurationArgs extends com.pulumi.resources.InvokeArgs {
@@ -18,15 +19,15 @@ public final class GetConfigurationArgs extends com.pulumi.resources.InvokeArgs 
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
-    @Import(name="compartmentId", required=true)
-    private Output<String> compartmentId;
+    @Import(name="compartmentId")
+    private @Nullable Output<String> compartmentId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      * 
      */
-    public Output<String> compartmentId() {
-        return this.compartmentId;
+    public Optional<Output<String>> compartmentId() {
+        return Optional.ofNullable(this.compartmentId);
     }
 
     private GetConfigurationArgs() {}
@@ -59,7 +60,7 @@ public final class GetConfigurationArgs extends com.pulumi.resources.InvokeArgs 
          * @return builder
          * 
          */
-        public Builder compartmentId(Output<String> compartmentId) {
+        public Builder compartmentId(@Nullable Output<String> compartmentId) {
             $.compartmentId = compartmentId;
             return this;
         }
@@ -75,9 +76,6 @@ public final class GetConfigurationArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         public GetConfigurationArgs build() {
-            if ($.compartmentId == null) {
-                throw new MissingRequiredPropertyException("GetConfigurationArgs", "compartmentId");
-            }
             return $;
         }
     }

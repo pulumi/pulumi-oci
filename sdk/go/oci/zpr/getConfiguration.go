@@ -31,7 +31,7 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := zpr.GetConfiguration(ctx, &zpr.GetConfigurationArgs{
-//				CompartmentId: tenancyOcid,
+//				CompartmentId: pulumi.StringRef(tenancyOcid),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -54,13 +54,13 @@ func LookupConfiguration(ctx *pulumi.Context, args *LookupConfigurationArgs, opt
 // A collection of arguments for invoking getConfiguration.
 type LookupConfigurationArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 }
 
 // A collection of values returned by getConfiguration.
 type LookupConfigurationResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy into which ZPR will be onboarded.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId *string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`
 	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -89,7 +89,7 @@ func LookupConfigurationOutput(ctx *pulumi.Context, args LookupConfigurationOutp
 // A collection of arguments for invoking getConfiguration.
 type LookupConfigurationOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 }
 
 func (LookupConfigurationOutputArgs) ElementType() reflect.Type {
@@ -112,8 +112,8 @@ func (o LookupConfigurationResultOutput) ToLookupConfigurationResultOutputWithCo
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy into which ZPR will be onboarded.
-func (o LookupConfigurationResultOutput) CompartmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupConfigurationResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+func (o LookupConfigurationResultOutput) CompartmentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v LookupConfigurationResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`

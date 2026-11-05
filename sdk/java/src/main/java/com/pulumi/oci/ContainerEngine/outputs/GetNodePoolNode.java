@@ -83,6 +83,11 @@ public final class GetNodePoolNode {
      * 
      */
     private String subnetId;
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,String> systemTags;
 
     private GetNodePoolNode() {}
     /**
@@ -183,6 +188,13 @@ public final class GetNodePoolNode {
     public String subnetId() {
         return this.subnetId;
     }
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -207,6 +219,7 @@ public final class GetNodePoolNode {
         private String publicIp;
         private String state;
         private String subnetId;
+        private Map<String,String> systemTags;
         public Builder() {}
         public Builder(GetNodePoolNode defaults) {
     	      Objects.requireNonNull(defaults);
@@ -224,6 +237,7 @@ public final class GetNodePoolNode {
     	      this.publicIp = defaults.publicIp;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
+    	      this.systemTags = defaults.systemTags;
         }
 
         @CustomType.Setter
@@ -341,6 +355,14 @@ public final class GetNodePoolNode {
             this.subnetId = subnetId;
             return this;
         }
+        @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolNode", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
         public GetNodePoolNode build() {
             final var _resultValue = new GetNodePoolNode();
             _resultValue.availabilityDomain = availabilityDomain;
@@ -357,6 +379,7 @@ public final class GetNodePoolNode {
             _resultValue.publicIp = publicIp;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
+            _resultValue.systemTags = systemTags;
             return _resultValue;
         }
     }

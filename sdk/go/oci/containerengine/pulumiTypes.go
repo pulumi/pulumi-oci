@@ -6088,6 +6088,8 @@ type NodePoolNode struct {
 	State *string `pulumi:"state"`
 	// the ocid of the subnet to create the vnic in
 	SubnetId *string `pulumi:"subnetId"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 }
 
 // NodePoolNodeInput is an input type that accepts NodePoolNodeArgs and NodePoolNodeOutput values.
@@ -6130,6 +6132,8 @@ type NodePoolNodeArgs struct {
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// the ocid of the subnet to create the vnic in
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 }
 
 func (NodePoolNodeArgs) ElementType() reflect.Type {
@@ -6251,6 +6255,11 @@ func (o NodePoolNodeOutput) State() pulumi.StringPtrOutput {
 // the ocid of the subnet to create the vnic in
 func (o NodePoolNodeOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNode) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o NodePoolNodeOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v NodePoolNode) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 type NodePoolNodeArrayOutput struct{ *pulumi.OutputState }
@@ -13154,6 +13163,8 @@ type GetClustersCluster struct {
 	Options []GetClustersClusterOption `pulumi:"options"`
 	// A cluster lifecycle state to filter on. Can have multiple parameters of this name.
 	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
 	Type string `pulumi:"type"`
 	// The OCID of the virtual cloud network (VCN) in which the cluster exists.
@@ -13208,6 +13219,8 @@ type GetClustersClusterArgs struct {
 	Options GetClustersClusterOptionArrayInput `pulumi:"options"`
 	// A cluster lifecycle state to filter on. Can have multiple parameters of this name.
 	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 	// Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
 	Type pulumi.StringInput `pulumi:"type"`
 	// The OCID of the virtual cloud network (VCN) in which the cluster exists.
@@ -13355,6 +13368,11 @@ func (o GetClustersClusterOutput) Options() GetClustersClusterOptionArrayOutput 
 // A cluster lifecycle state to filter on. Can have multiple parameters of this name.
 func (o GetClustersClusterOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v GetClustersCluster) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetClustersClusterOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetClustersCluster) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
@@ -15479,6 +15497,8 @@ type GetNodePoolNode struct {
 	State string `pulumi:"state"`
 	// the ocid of the subnet to create the vnic in
 	SubnetId string `pulumi:"subnetId"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 }
 
 // GetNodePoolNodeInput is an input type that accepts GetNodePoolNodeArgs and GetNodePoolNodeOutput values.
@@ -15521,6 +15541,8 @@ type GetNodePoolNodeArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// the ocid of the subnet to create the vnic in
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 }
 
 func (GetNodePoolNodeArgs) ElementType() reflect.Type {
@@ -15642,6 +15664,11 @@ func (o GetNodePoolNodeOutput) State() pulumi.StringOutput {
 // the ocid of the subnet to create the vnic in
 func (o GetNodePoolNodeOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNode) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetNodePoolNodeOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNodePoolNode) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 type GetNodePoolNodeArrayOutput struct{ *pulumi.OutputState }
@@ -17808,6 +17835,8 @@ type GetNodePoolsNodePool struct {
 	State string `pulumi:"state"`
 	// The OCIDs of the subnets in which to place nodes for this node pool.
 	SubnetIds []string `pulumi:"subnetIds"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 }
 
 // GetNodePoolsNodePoolInput is an input type that accepts GetNodePoolsNodePoolArgs and GetNodePoolsNodePoolOutput values.
@@ -17879,6 +17908,8 @@ type GetNodePoolsNodePoolArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// The OCIDs of the subnets in which to place nodes for this node pool.
 	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 }
 
 func (GetNodePoolsNodePoolArgs) ElementType() reflect.Type {
@@ -18077,6 +18108,11 @@ func (o GetNodePoolsNodePoolOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePool) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }
 
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetNodePoolsNodePoolOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePool) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
 type GetNodePoolsNodePoolArrayOutput struct{ *pulumi.OutputState }
 
 func (GetNodePoolsNodePoolArrayOutput) ElementType() reflect.Type {
@@ -18227,6 +18263,8 @@ type GetNodePoolsNodePoolNode struct {
 	State string `pulumi:"state"`
 	// the ocid of the subnet to create the vnic in
 	SubnetId string `pulumi:"subnetId"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 }
 
 // GetNodePoolsNodePoolNodeInput is an input type that accepts GetNodePoolsNodePoolNodeArgs and GetNodePoolsNodePoolNodeOutput values.
@@ -18264,6 +18302,8 @@ type GetNodePoolsNodePoolNodeArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// the ocid of the subnet to create the vnic in
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
 }
 
 func (GetNodePoolsNodePoolNodeArgs) ElementType() reflect.Type {
@@ -18380,6 +18420,11 @@ func (o GetNodePoolsNodePoolNodeOutput) State() pulumi.StringOutput {
 // the ocid of the subnet to create the vnic in
 func (o GetNodePoolsNodePoolNodeOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolsNodePoolNode) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetNodePoolsNodePoolNodeOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetNodePoolsNodePoolNode) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 type GetNodePoolsNodePoolNodeArrayOutput struct{ *pulumi.OutputState }

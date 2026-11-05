@@ -368,6 +368,8 @@ __all__ = [
     'GetMlApplicationsFilterResult',
     'GetMlApplicationsMlApplicationCollectionResult',
     'GetMlApplicationsMlApplicationCollectionItemResult',
+    'GetModelArtifactSignaturesFilterResult',
+    'GetModelArtifactSignaturesModelArtifactSignatureResult',
     'GetModelBackupOperationDetailResult',
     'GetModelBackupSettingResult',
     'GetModelCustomMetadataListResult',
@@ -6680,6 +6682,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
         :param _builtins.int bandwidth_mbps: The minimum network bandwidth for the model deployment.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs' instance_configuration: The model deployment instance configuration.
         :param _builtins.int maximum_bandwidth_mbps: The maximum network bandwidth for the model deployment.
+        :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs' model_deployment_resource_configuration: (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyArgs' scaling_policy: The scaling policy to apply to each model of the deployment.
         """
         pulumi.set(__self__, "infrastructure_type", infrastructure_type)
@@ -6736,6 +6739,9 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
     @_builtins.property
     @pulumi.getter(name="modelDeploymentResourceConfiguration")
     def model_deployment_resource_configuration(self) -> Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration']:
+        """
+        (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+        """
         return pulumi.get(self, "model_deployment_resource_configuration")
 
     @_builtins.property
@@ -6754,6 +6760,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
         suggest = None
         if key == "instanceShapeName":
             suggest = "instance_shape_name"
+        elif key == "capacityReservationIds":
+            suggest = "capacity_reservation_ids"
         elif key == "modelDeploymentInstanceShapeConfigDetails":
             suggest = "model_deployment_instance_shape_config_details"
         elif key == "networkAccessType":
@@ -6776,6 +6784,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
 
     def __init__(__self__, *,
                  instance_shape_name: _builtins.str,
+                 capacity_reservation_ids: Optional[Sequence[_builtins.str]] = None,
                  model_deployment_instance_shape_config_details: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails'] = None,
                  network_access_type: Optional[_builtins.str] = None,
                  private_endpoint_id: Optional[_builtins.str] = None,
@@ -6788,6 +6797,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
         :param _builtins.str subnet_id: A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
         """
         pulumi.set(__self__, "instance_shape_name", instance_shape_name)
+        if capacity_reservation_ids is not None:
+            pulumi.set(__self__, "capacity_reservation_ids", capacity_reservation_ids)
         if model_deployment_instance_shape_config_details is not None:
             pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
         if network_access_type is not None:
@@ -6804,6 +6815,11 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
         The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         """
         return pulumi.get(self, "instance_shape_name")
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationIds")
+    def capacity_reservation_ids(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "capacity_reservation_ids")
 
     @_builtins.property
     @pulumi.getter(name="modelDeploymentInstanceShapeConfigDetails")
@@ -6924,6 +6940,10 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
     def __init__(__self__, *,
                  resource_request_configuration: 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration',
                  resource_limit_configuration: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfiguration'] = None):
+        """
+        :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationArgs' resource_request_configuration: (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
+        :param 'ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationArgs' resource_limit_configuration: (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+        """
         pulumi.set(__self__, "resource_request_configuration", resource_request_configuration)
         if resource_limit_configuration is not None:
             pulumi.set(__self__, "resource_limit_configuration", resource_limit_configuration)
@@ -6931,11 +6951,17 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
     @_builtins.property
     @pulumi.getter(name="resourceRequestConfiguration")
     def resource_request_configuration(self) -> 'outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration':
+        """
+        (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
+        """
         return pulumi.get(self, "resource_request_configuration")
 
     @_builtins.property
     @pulumi.getter(name="resourceLimitConfiguration")
     def resource_limit_configuration(self) -> Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfiguration']:
+        """
+        (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+        """
         return pulumi.get(self, "resource_limit_configuration")
 
 
@@ -7011,6 +7037,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
         """
         :param _builtins.float memory_in_gbs: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
         :param _builtins.float ocpus: A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the ocpu count to be specified with in the range of 1 to 64 ocpu. VM.Standard3.Flex OCPU range is between 1 to 32 ocpu and for VM.Optimized3.Flex OCPU range is 1 to 18 ocpu.
+        :param _builtins.int gpus: (Updatable) The total number of gpus required to be allocated to the workload.
         """
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "ocpus", ocpus)
@@ -7036,6 +7063,9 @@ class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurat
     @_builtins.property
     @pulumi.getter
     def gpus(self) -> Optional[_builtins.int]:
+        """
+        (Updatable) The total number of gpus required to be allocated to the workload.
+        """
         return pulumi.get(self, "gpus")
 
 
@@ -7703,6 +7733,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
             suggest = "instance_configuration"
         elif key == "maximumBandwidthMbps":
             suggest = "maximum_bandwidth_mbps"
+        elif key == "modelArtifactSignatureId":
+            suggest = "model_artifact_signature_id"
         elif key == "modelId":
             suggest = "model_id"
         elif key == "scalingPolicy":
@@ -7723,13 +7755,15 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
                  bandwidth_mbps: Optional[_builtins.int] = None,
                  instance_configuration: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration'] = None,
                  maximum_bandwidth_mbps: Optional[_builtins.int] = None,
+                 model_artifact_signature_id: Optional[_builtins.str] = None,
                  model_id: Optional[_builtins.str] = None,
                  scaling_policy: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy'] = None):
         """
         :param _builtins.int bandwidth_mbps: (Updatable) The minimum network bandwidth for the model deployment.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs' instance_configuration: (Updatable) The model deployment instance configuration.
         :param _builtins.int maximum_bandwidth_mbps: (Updatable) The maximum network bandwidth for the model deployment.
-        :param _builtins.str model_id: (Updatable) The OCID of the model you want to deploy.
+        :param _builtins.str model_artifact_signature_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+        :param _builtins.str model_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyArgs' scaling_policy: (Updatable) The scaling policy to apply to each model of the deployment.
         """
         if bandwidth_mbps is not None:
@@ -7738,6 +7772,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
             pulumi.set(__self__, "instance_configuration", instance_configuration)
         if maximum_bandwidth_mbps is not None:
             pulumi.set(__self__, "maximum_bandwidth_mbps", maximum_bandwidth_mbps)
+        if model_artifact_signature_id is not None:
+            pulumi.set(__self__, "model_artifact_signature_id", model_artifact_signature_id)
         if model_id is not None:
             pulumi.set(__self__, "model_id", model_id)
         if scaling_policy is not None:
@@ -7768,10 +7804,18 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         return pulumi.get(self, "maximum_bandwidth_mbps")
 
     @_builtins.property
+    @pulumi.getter(name="modelArtifactSignatureId")
+    def model_artifact_signature_id(self) -> Optional[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+        """
+        return pulumi.get(self, "model_artifact_signature_id")
+
+    @_builtins.property
     @pulumi.getter(name="modelId")
     def model_id(self) -> Optional[_builtins.str]:
         """
-        (Updatable) The OCID of the model you want to deploy.
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
         """
         return pulumi.get(self, "model_id")
 
@@ -7789,7 +7833,9 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "instanceShapeName":
+        if key == "capacityReservationIds":
+            suggest = "capacity_reservation_ids"
+        elif key == "instanceShapeName":
             suggest = "instance_shape_name"
         elif key == "modelDeploymentInstanceShapeConfigDetails":
             suggest = "model_deployment_instance_shape_config_details"
@@ -7812,6 +7858,7 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         return super().get(key, default)
 
     def __init__(__self__, *,
+                 capacity_reservation_ids: Optional[Sequence[_builtins.str]] = None,
                  instance_shape_name: Optional[_builtins.str] = None,
                  model_deployment_instance_shape_config_details: Optional['outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails'] = None,
                  network_access_type: Optional[_builtins.str] = None,
@@ -7824,6 +7871,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         :param _builtins.str private_endpoint_id: (Updatable) The OCID of a Data Science private endpoint.
         :param _builtins.str subnet_id: (Updatable) A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
         """
+        if capacity_reservation_ids is not None:
+            pulumi.set(__self__, "capacity_reservation_ids", capacity_reservation_ids)
         if instance_shape_name is not None:
             pulumi.set(__self__, "instance_shape_name", instance_shape_name)
         if model_deployment_instance_shape_config_details is not None:
@@ -7834,6 +7883,11 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
             pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationIds")
+    def capacity_reservation_ids(self) -> Optional[Sequence[_builtins.str]]:
+        return pulumi.get(self, "capacity_reservation_ids")
 
     @_builtins.property
     @pulumi.getter(name="instanceShapeName")
@@ -24306,6 +24360,223 @@ class GetMlApplicationsMlApplicationCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetModelArtifactSignaturesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: _builtins.str,
+                 values: Sequence[_builtins.str],
+                 regex: Optional[_builtins.bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        return pulumi.get(self, "name")
+
+    @_builtins.property
+    @pulumi.getter
+    def values(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "values")
+
+    @_builtins.property
+    @pulumi.getter
+    def regex(self) -> Optional[_builtins.bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetModelArtifactSignaturesModelArtifactSignatureResult(dict):
+    def __init__(__self__, *,
+                 compartment_id: _builtins.str,
+                 created_by: _builtins.str,
+                 defined_tags: Mapping[str, _builtins.str],
+                 digest: _builtins.str,
+                 display_name: _builtins.str,
+                 freeform_tags: Mapping[str, _builtins.str],
+                 id: _builtins.str,
+                 kms_key_id: _builtins.str,
+                 kms_key_version_id: _builtins.str,
+                 model_id: _builtins.str,
+                 signature: _builtins.str,
+                 signing_algorithm: _builtins.str,
+                 state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
+                 time_created: _builtins.str,
+                 time_updated: _builtins.str,
+                 verify_trigger: _builtins.int):
+        """
+        :param _builtins.str compartment_id: <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        :param _builtins.str created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
+        :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        :param _builtins.str digest: The digest of the model artifact.
+        :param _builtins.str display_name: <b>Filter</b> results by its user-friendly name.
+        :param Mapping[str, _builtins.str] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        :param _builtins.str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model artifact signature.
+        :param _builtins.str kms_key_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key from Oracle Cloud Infrastructure KMS.
+        :param _builtins.str kms_key_version_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key version from Oracle Cloud Infrastructure KMS.
+        :param _builtins.str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+        :param _builtins.str signature: The signature of the digest generated using kmsKeyId, kmsKeyVersion Id and signingAlgorithm.
+        :param _builtins.str signing_algorithm: The algorithm used for signing.
+        :param _builtins.str state: <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param _builtins.str time_created: The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+        :param _builtins.str time_updated: The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+        """
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "created_by", created_by)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "digest", digest)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "kms_key_id", kms_key_id)
+        pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
+        pulumi.set(__self__, "model_id", model_id)
+        pulumi.set(__self__, "signature", signature)
+        pulumi.set(__self__, "signing_algorithm", signing_algorithm)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_updated", time_updated)
+        pulumi.set(__self__, "verify_trigger", verify_trigger)
+
+    @_builtins.property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @_builtins.property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
+        """
+        return pulumi.get(self, "created_by")
+
+    @_builtins.property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def digest(self) -> _builtins.str:
+        """
+        The digest of the model artifact.
+        """
+        return pulumi.get(self, "digest")
+
+    @_builtins.property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by its user-friendly name.
+        """
+        return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model artifact signature.
+        """
+        return pulumi.get(self, "id")
+
+    @_builtins.property
+    @pulumi.getter(name="kmsKeyId")
+    def kms_key_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key from Oracle Cloud Infrastructure KMS.
+        """
+        return pulumi.get(self, "kms_key_id")
+
+    @_builtins.property
+    @pulumi.getter(name="kmsKeyVersionId")
+    def kms_key_version_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key version from Oracle Cloud Infrastructure KMS.
+        """
+        return pulumi.get(self, "kms_key_version_id")
+
+    @_builtins.property
+    @pulumi.getter(name="modelId")
+    def model_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+        """
+        return pulumi.get(self, "model_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def signature(self) -> _builtins.str:
+        """
+        The signature of the digest generated using kmsKeyId, kmsKeyVersion Id and signingAlgorithm.
+        """
+        return pulumi.get(self, "signature")
+
+    @_builtins.property
+    @pulumi.getter(name="signingAlgorithm")
+    def signing_algorithm(self) -> _builtins.str:
+        """
+        The algorithm used for signing.
+        """
+        return pulumi.get(self, "signing_algorithm")
+
+    @_builtins.property
+    @pulumi.getter
+    def state(self) -> _builtins.str:
+        """
+        <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+        """
+        return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> _builtins.str:
+        """
+        The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+        """
+        return pulumi.get(self, "time_created")
+
+    @_builtins.property
+    @pulumi.getter(name="timeUpdated")
+    def time_updated(self) -> _builtins.str:
+        """
+        The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+        """
+        return pulumi.get(self, "time_updated")
+
+    @_builtins.property
+    @pulumi.getter(name="verifyTrigger")
+    def verify_trigger(self) -> _builtins.int:
+        return pulumi.get(self, "verify_trigger")
+
+
+@pulumi.output_type
 class GetModelBackupOperationDetailResult(dict):
     def __init__(__self__, *,
                  backup_state: _builtins.str,
@@ -24971,6 +25242,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigur
 @pulumi.output_type
 class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationResult(dict):
     def __init__(__self__, *,
+                 capacity_reservation_ids: Sequence[_builtins.str],
                  instance_shape_name: _builtins.str,
                  model_deployment_instance_shape_config_details: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult'],
                  network_access_type: _builtins.str,
@@ -24983,11 +25255,17 @@ class GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigur
         :param _builtins.str private_endpoint_id: The OCID of a Data Science private endpoint.
         :param _builtins.str subnet_id: A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
         """
+        pulumi.set(__self__, "capacity_reservation_ids", capacity_reservation_ids)
         pulumi.set(__self__, "instance_shape_name", instance_shape_name)
         pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
         pulumi.set(__self__, "network_access_type", network_access_type)
         pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationIds")
+    def capacity_reservation_ids(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "capacity_reservation_ids")
 
     @_builtins.property
     @pulumi.getter(name="instanceShapeName")
@@ -25603,18 +25881,21 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
                  bandwidth_mbps: _builtins.int,
                  instance_configurations: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult'],
                  maximum_bandwidth_mbps: _builtins.int,
+                 model_artifact_signature_id: _builtins.str,
                  model_id: _builtins.str,
                  scaling_policies: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult']):
         """
         :param _builtins.int bandwidth_mbps: The minimum network bandwidth for the model deployment.
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs'] instance_configurations: The model deployment instance configuration.
         :param _builtins.int maximum_bandwidth_mbps: The maximum network bandwidth for the model deployment.
-        :param _builtins.str model_id: The OCID of the model you want to deploy.
+        :param _builtins.str model_artifact_signature_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+        :param _builtins.str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
         :param Sequence['GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs'] scaling_policies: The scaling policy to apply to each model of the deployment.
         """
         pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
         pulumi.set(__self__, "instance_configurations", instance_configurations)
         pulumi.set(__self__, "maximum_bandwidth_mbps", maximum_bandwidth_mbps)
+        pulumi.set(__self__, "model_artifact_signature_id", model_artifact_signature_id)
         pulumi.set(__self__, "model_id", model_id)
         pulumi.set(__self__, "scaling_policies", scaling_policies)
 
@@ -25643,10 +25924,18 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
         return pulumi.get(self, "maximum_bandwidth_mbps")
 
     @_builtins.property
+    @pulumi.getter(name="modelArtifactSignatureId")
+    def model_artifact_signature_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+        """
+        return pulumi.get(self, "model_artifact_signature_id")
+
+    @_builtins.property
     @pulumi.getter(name="modelId")
     def model_id(self) -> _builtins.str:
         """
-        The OCID of the model you want to deploy.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
         """
         return pulumi.get(self, "model_id")
 
@@ -25662,6 +25951,7 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
 @pulumi.output_type
 class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult(dict):
     def __init__(__self__, *,
+                 capacity_reservation_ids: Sequence[_builtins.str],
                  instance_shape_name: _builtins.str,
                  model_deployment_instance_shape_config_details: Sequence['outputs.GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult'],
                  network_access_type: _builtins.str,
@@ -25674,11 +25964,17 @@ class GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDeta
         :param _builtins.str private_endpoint_id: The OCID of a Data Science private endpoint.
         :param _builtins.str subnet_id: A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
         """
+        pulumi.set(__self__, "capacity_reservation_ids", capacity_reservation_ids)
         pulumi.set(__self__, "instance_shape_name", instance_shape_name)
         pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
         pulumi.set(__self__, "network_access_type", network_access_type)
         pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationIds")
+    def capacity_reservation_ids(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "capacity_reservation_ids")
 
     @_builtins.property
     @pulumi.getter(name="instanceShapeName")
@@ -26926,6 +27222,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfras
 @pulumi.output_type
 class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationResult(dict):
     def __init__(__self__, *,
+                 capacity_reservation_ids: Sequence[_builtins.str],
                  instance_shape_name: _builtins.str,
                  model_deployment_instance_shape_config_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult'],
                  network_access_type: _builtins.str,
@@ -26938,11 +27235,17 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfras
         :param _builtins.str private_endpoint_id: The OCID of a Data Science private endpoint.
         :param _builtins.str subnet_id: A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
         """
+        pulumi.set(__self__, "capacity_reservation_ids", capacity_reservation_ids)
         pulumi.set(__self__, "instance_shape_name", instance_shape_name)
         pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
         pulumi.set(__self__, "network_access_type", network_access_type)
         pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationIds")
+    def capacity_reservation_ids(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "capacity_reservation_ids")
 
     @_builtins.property
     @pulumi.getter(name="instanceShapeName")
@@ -27558,18 +27861,21 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
                  bandwidth_mbps: _builtins.int,
                  instance_configurations: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult'],
                  maximum_bandwidth_mbps: _builtins.int,
+                 model_artifact_signature_id: _builtins.str,
                  model_id: _builtins.str,
                  scaling_policies: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyResult']):
         """
         :param _builtins.int bandwidth_mbps: The minimum network bandwidth for the model deployment.
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs'] instance_configurations: The model deployment instance configuration.
         :param _builtins.int maximum_bandwidth_mbps: The maximum network bandwidth for the model deployment.
-        :param _builtins.str model_id: The OCID of the model you want to deploy.
+        :param _builtins.str model_artifact_signature_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+        :param _builtins.str model_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
         :param Sequence['GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArgs'] scaling_policies: The scaling policy to apply to each model of the deployment.
         """
         pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
         pulumi.set(__self__, "instance_configurations", instance_configurations)
         pulumi.set(__self__, "maximum_bandwidth_mbps", maximum_bandwidth_mbps)
+        pulumi.set(__self__, "model_artifact_signature_id", model_artifact_signature_id)
         pulumi.set(__self__, "model_id", model_id)
         pulumi.set(__self__, "scaling_policies", scaling_policies)
 
@@ -27598,10 +27904,18 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
         return pulumi.get(self, "maximum_bandwidth_mbps")
 
     @_builtins.property
+    @pulumi.getter(name="modelArtifactSignatureId")
+    def model_artifact_signature_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+        """
+        return pulumi.get(self, "model_artifact_signature_id")
+
+    @_builtins.property
     @pulumi.getter(name="modelId")
     def model_id(self) -> _builtins.str:
         """
-        The OCID of the model you want to deploy.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
         """
         return pulumi.get(self, "model_id")
 
@@ -27617,6 +27931,7 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
 @pulumi.output_type
 class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationResult(dict):
     def __init__(__self__, *,
+                 capacity_reservation_ids: Sequence[_builtins.str],
                  instance_shape_name: _builtins.str,
                  model_deployment_instance_shape_config_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationModelDeploymentInstanceShapeConfigDetailResult'],
                  network_access_type: _builtins.str,
@@ -27629,11 +27944,17 @@ class GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelC
         :param _builtins.str private_endpoint_id: The OCID of a Data Science private endpoint.
         :param _builtins.str subnet_id: A model deployment instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT/SGW gateway for egress.
         """
+        pulumi.set(__self__, "capacity_reservation_ids", capacity_reservation_ids)
         pulumi.set(__self__, "instance_shape_name", instance_shape_name)
         pulumi.set(__self__, "model_deployment_instance_shape_config_details", model_deployment_instance_shape_config_details)
         pulumi.set(__self__, "network_access_type", network_access_type)
         pulumi.set(__self__, "private_endpoint_id", private_endpoint_id)
         pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="capacityReservationIds")
+    def capacity_reservation_ids(self) -> Sequence[_builtins.str]:
+        return pulumi.get(self, "capacity_reservation_ids")
 
     @_builtins.property
     @pulumi.getter(name="instanceShapeName")

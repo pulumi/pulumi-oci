@@ -21,7 +21,8 @@ import * as utilities from "../utilities";
  * });
  * ```
  */
-export function getConfiguration(args: GetConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetConfigurationResult> {
+export function getConfiguration(args?: GetConfigurationArgs, opts?: pulumi.InvokeOptions): Promise<GetConfigurationResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Zpr/getConfiguration:getConfiguration", {
         "compartmentId": args.compartmentId,
@@ -35,7 +36,7 @@ export interface GetConfigurationArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId: string;
+    compartmentId?: string;
 }
 
 /**
@@ -45,7 +46,7 @@ export interface GetConfigurationResult {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy into which ZPR will be onboarded.
      */
-    readonly compartmentId: string;
+    readonly compartmentId?: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
@@ -100,7 +101,8 @@ export interface GetConfigurationResult {
  * });
  * ```
  */
-export function getConfigurationOutput(args: GetConfigurationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetConfigurationResult> {
+export function getConfigurationOutput(args?: GetConfigurationOutputArgs, opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetConfigurationResult> {
+    args = args || {};
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invokeOutput("oci:Zpr/getConfiguration:getConfiguration", {
         "compartmentId": args.compartmentId,
@@ -114,5 +116,5 @@ export interface GetConfigurationOutputArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
      */
-    compartmentId: pulumi.Input<string>;
+    compartmentId?: pulumi.Input<string | undefined>;
 }

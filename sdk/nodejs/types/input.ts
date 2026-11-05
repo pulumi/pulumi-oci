@@ -4873,9 +4873,6 @@ export namespace Artifacts {
         content: pulumi.Input<string>;
         /**
          * (Updatable) Readme format. Supported formats are text/plain and text/markdown.
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         format: pulumi.Input<string>;
     }
@@ -13571,6 +13568,10 @@ export namespace ContainerEngine {
          * the ocid of the subnet to create the vnic in
          */
         subnetId?: pulumi.Input<string | undefined>;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
     }
 
     export interface NodePoolNodeConfigDetails {
@@ -27301,6 +27302,18 @@ export namespace DataScience {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetModelArtifactSignaturesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetModelArtifactSignaturesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean | undefined>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetModelDeploymentModelStatesFilter {
         name: string;
         regex?: boolean;
@@ -28912,6 +28925,9 @@ export namespace DataScience {
          * The maximum network bandwidth for the model deployment.
          */
         maximumBandwidthMbps?: pulumi.Input<number | undefined>;
+        /**
+         * (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+         */
         modelDeploymentResourceConfiguration?: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration | undefined>;
         /**
          * The scaling policy to apply to each model of the deployment.
@@ -28920,6 +28936,7 @@ export namespace DataScience {
     }
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration {
+        capacityReservationIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
         /**
          * The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
          */
@@ -28958,7 +28975,13 @@ export namespace DataScience {
     }
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration {
+        /**
+         * (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+         */
         resourceLimitConfiguration?: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfiguration | undefined>;
+        /**
+         * (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
+         */
         resourceRequestConfiguration: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration>;
     }
 
@@ -28974,6 +28997,9 @@ export namespace DataScience {
     }
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration {
+        /**
+         * (Updatable) The total number of gpus required to be allocated to the workload.
+         */
         gpus?: pulumi.Input<number | undefined>;
         /**
          * A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
@@ -29156,7 +29182,11 @@ export namespace DataScience {
          */
         maximumBandwidthMbps?: pulumi.Input<number | undefined>;
         /**
-         * (Updatable) The OCID of the model you want to deploy.
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+         */
+        modelArtifactSignatureId?: pulumi.Input<string | undefined>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
          */
         modelId?: pulumi.Input<string | undefined>;
         /**
@@ -29166,6 +29196,7 @@ export namespace DataScience {
     }
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration {
+        capacityReservationIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
         /**
          * (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
          */

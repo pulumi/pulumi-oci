@@ -60,7 +60,7 @@ class GetConfigurationResult:
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
-    def compartment_id(self) -> _builtins.str:
+    def compartment_id(self) -> Optional[_builtins.str]:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy into which ZPR will be onboarded.
         """
@@ -193,7 +193,7 @@ def get_configuration(compartment_id: Optional[_builtins.str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'),
         zpr_status=pulumi.get(__ret__, 'zpr_status'))
-def get_configuration_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+def get_configuration_output(compartment_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                              opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetConfigurationResult]:
     """
     This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Zpr service.

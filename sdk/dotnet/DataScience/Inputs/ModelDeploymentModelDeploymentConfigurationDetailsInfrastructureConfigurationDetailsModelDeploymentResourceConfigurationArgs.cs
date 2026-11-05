@@ -12,9 +12,15 @@ namespace Pulumi.Oci.DataScience.Inputs
 
     public sealed class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+        /// </summary>
         [Input("resourceLimitConfiguration")]
         public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationArgs>? ResourceLimitConfiguration { get; set; }
 
+        /// <summary>
+        /// (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
+        /// </summary>
         [Input("resourceRequestConfiguration", required: true)]
         public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationArgs> ResourceRequestConfiguration { get; set; } = null!;
 

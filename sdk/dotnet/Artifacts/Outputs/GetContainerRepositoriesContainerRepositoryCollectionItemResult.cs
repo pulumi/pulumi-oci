@@ -54,6 +54,10 @@ namespace Pulumi.Oci.Artifacts.Outputs
         /// </summary>
         public readonly bool IsPublic;
         /// <summary>
+        /// A filter to return resources that match the isTopLevel value.
+        /// </summary>
+        public readonly bool IsTopLevel;
+        /// <summary>
         /// Total number of layers.
         /// </summary>
         public readonly int LayerCount;
@@ -62,6 +66,10 @@ namespace Pulumi.Oci.Artifacts.Outputs
         /// </summary>
         public readonly string LayersSizeInBytes;
         /// <summary>
+        /// List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, us-phoenix-1). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created.
+        /// </summary>
+        public readonly ImmutableArray<string> MultiRegionPeers;
+        /// <summary>
         /// The tenancy namespace used in the container repository path.
         /// </summary>
         public readonly string Namespace;
@@ -69,6 +77,10 @@ namespace Pulumi.Oci.Artifacts.Outputs
         /// Container repository readme.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetContainerRepositoriesContainerRepositoryCollectionItemReadmeResult> Readmes;
+        /// <summary>
+        /// A filter to return only resources that match the given repository type exactly.
+        /// </summary>
+        public readonly string RepositoryType;
         /// <summary>
         /// A filter to return only resources that match the given lifecycle state name exactly.
         /// </summary>
@@ -85,6 +97,18 @@ namespace Pulumi.Oci.Artifacts.Outputs
         /// An RFC 3339 timestamp indicating when an image was last pushed to the repository.
         /// </summary>
         public readonly string TimeLastPushed;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository.
+        /// </summary>
+        public readonly string UpstreamSecretId;
+        /// <summary>
+        /// The upstream registry URL for a pull-through cache repository.
+        /// </summary>
+        public readonly string UpstreamUrl;
+        /// <summary>
+        /// The upstream registry username for a pull-through cache repository.
+        /// </summary>
+        public readonly string UpstreamUsername;
 
         [OutputConstructor]
         private GetContainerRepositoriesContainerRepositoryCollectionItemResult(
@@ -108,13 +132,19 @@ namespace Pulumi.Oci.Artifacts.Outputs
 
             bool isPublic,
 
+            bool isTopLevel,
+
             int layerCount,
 
             string layersSizeInBytes,
 
+            ImmutableArray<string> multiRegionPeers,
+
             string @namespace,
 
             ImmutableArray<Outputs.GetContainerRepositoriesContainerRepositoryCollectionItemReadmeResult> readmes,
+
+            string repositoryType,
 
             string state,
 
@@ -122,7 +152,13 @@ namespace Pulumi.Oci.Artifacts.Outputs
 
             string timeCreated,
 
-            string timeLastPushed)
+            string timeLastPushed,
+
+            string upstreamSecretId,
+
+            string upstreamUrl,
+
+            string upstreamUsername)
         {
             BillableSizeInGbs = billableSizeInGbs;
             CompartmentId = compartmentId;
@@ -134,14 +170,20 @@ namespace Pulumi.Oci.Artifacts.Outputs
             ImageCount = imageCount;
             IsImmutable = isImmutable;
             IsPublic = isPublic;
+            IsTopLevel = isTopLevel;
             LayerCount = layerCount;
             LayersSizeInBytes = layersSizeInBytes;
+            MultiRegionPeers = multiRegionPeers;
             Namespace = @namespace;
             Readmes = readmes;
+            RepositoryType = repositoryType;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;
             TimeLastPushed = timeLastPushed;
+            UpstreamSecretId = upstreamSecretId;
+            UpstreamUrl = upstreamUrl;
+            UpstreamUsername = upstreamUsername;
         }
     }
 }

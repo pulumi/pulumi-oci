@@ -114,6 +114,18 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
 
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+
+        /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
+        }
+
         public NodePoolNodeGetArgs()
         {
         }

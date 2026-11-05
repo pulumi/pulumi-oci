@@ -27,7 +27,7 @@ class GetContainerRepositoryResult:
     """
     A collection of values returned by getContainerRepository.
     """
-    def __init__(__self__, billable_size_in_gbs=None, compartment_id=None, created_by=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, image_count=None, is_immutable=None, is_public=None, layer_count=None, layers_size_in_bytes=None, namespace=None, readmes=None, repository_id=None, state=None, system_tags=None, time_created=None, time_last_pushed=None):
+    def __init__(__self__, billable_size_in_gbs=None, compartment_id=None, created_by=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, image_count=None, is_immutable=None, is_public=None, is_top_level=None, layer_count=None, layers_size_in_bytes=None, multi_region_peers=None, namespace=None, readmes=None, repository_id=None, repository_type=None, state=None, system_tags=None, time_created=None, time_last_pushed=None, upstream_secret_id=None, upstream_url=None, upstream_username=None):
         if billable_size_in_gbs and not isinstance(billable_size_in_gbs, str):
             raise TypeError("Expected argument 'billable_size_in_gbs' to be a str")
         pulumi.set(__self__, "billable_size_in_gbs", billable_size_in_gbs)
@@ -58,12 +58,18 @@ class GetContainerRepositoryResult:
         if is_public and not isinstance(is_public, bool):
             raise TypeError("Expected argument 'is_public' to be a bool")
         pulumi.set(__self__, "is_public", is_public)
+        if is_top_level and not isinstance(is_top_level, bool):
+            raise TypeError("Expected argument 'is_top_level' to be a bool")
+        pulumi.set(__self__, "is_top_level", is_top_level)
         if layer_count and not isinstance(layer_count, int):
             raise TypeError("Expected argument 'layer_count' to be a int")
         pulumi.set(__self__, "layer_count", layer_count)
         if layers_size_in_bytes and not isinstance(layers_size_in_bytes, str):
             raise TypeError("Expected argument 'layers_size_in_bytes' to be a str")
         pulumi.set(__self__, "layers_size_in_bytes", layers_size_in_bytes)
+        if multi_region_peers and not isinstance(multi_region_peers, list):
+            raise TypeError("Expected argument 'multi_region_peers' to be a list")
+        pulumi.set(__self__, "multi_region_peers", multi_region_peers)
         if namespace and not isinstance(namespace, str):
             raise TypeError("Expected argument 'namespace' to be a str")
         pulumi.set(__self__, "namespace", namespace)
@@ -73,6 +79,9 @@ class GetContainerRepositoryResult:
         if repository_id and not isinstance(repository_id, str):
             raise TypeError("Expected argument 'repository_id' to be a str")
         pulumi.set(__self__, "repository_id", repository_id)
+        if repository_type and not isinstance(repository_type, str):
+            raise TypeError("Expected argument 'repository_type' to be a str")
+        pulumi.set(__self__, "repository_type", repository_type)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -85,6 +94,15 @@ class GetContainerRepositoryResult:
         if time_last_pushed and not isinstance(time_last_pushed, str):
             raise TypeError("Expected argument 'time_last_pushed' to be a str")
         pulumi.set(__self__, "time_last_pushed", time_last_pushed)
+        if upstream_secret_id and not isinstance(upstream_secret_id, str):
+            raise TypeError("Expected argument 'upstream_secret_id' to be a str")
+        pulumi.set(__self__, "upstream_secret_id", upstream_secret_id)
+        if upstream_url and not isinstance(upstream_url, str):
+            raise TypeError("Expected argument 'upstream_url' to be a str")
+        pulumi.set(__self__, "upstream_url", upstream_url)
+        if upstream_username and not isinstance(upstream_username, str):
+            raise TypeError("Expected argument 'upstream_username' to be a str")
+        pulumi.set(__self__, "upstream_username", upstream_username)
 
     @_builtins.property
     @pulumi.getter(name="billableSizeInGbs")
@@ -167,6 +185,14 @@ class GetContainerRepositoryResult:
         return pulumi.get(self, "is_public")
 
     @_builtins.property
+    @pulumi.getter(name="isTopLevel")
+    def is_top_level(self) -> _builtins.bool:
+        """
+        Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+        """
+        return pulumi.get(self, "is_top_level")
+
+    @_builtins.property
     @pulumi.getter(name="layerCount")
     def layer_count(self) -> _builtins.int:
         """
@@ -181,6 +207,14 @@ class GetContainerRepositoryResult:
         Total storage in bytes consumed by layers.
         """
         return pulumi.get(self, "layers_size_in_bytes")
+
+    @_builtins.property
+    @pulumi.getter(name="multiRegionPeers")
+    def multi_region_peers(self) -> Sequence[_builtins.str]:
+        """
+        List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, us-phoenix-1). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created.
+        """
+        return pulumi.get(self, "multi_region_peers")
 
     @_builtins.property
     @pulumi.getter
@@ -202,6 +236,14 @@ class GetContainerRepositoryResult:
     @pulumi.getter(name="repositoryId")
     def repository_id(self) -> _builtins.str:
         return pulumi.get(self, "repository_id")
+
+    @_builtins.property
+    @pulumi.getter(name="repositoryType")
+    def repository_type(self) -> _builtins.str:
+        """
+        The type of container repository. This determines the repository behavior and required settings.
+        """
+        return pulumi.get(self, "repository_type")
 
     @_builtins.property
     @pulumi.getter
@@ -235,6 +277,30 @@ class GetContainerRepositoryResult:
         """
         return pulumi.get(self, "time_last_pushed")
 
+    @_builtins.property
+    @pulumi.getter(name="upstreamSecretId")
+    def upstream_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository.
+        """
+        return pulumi.get(self, "upstream_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="upstreamUrl")
+    def upstream_url(self) -> _builtins.str:
+        """
+        The upstream registry URL for a pull-through cache repository.
+        """
+        return pulumi.get(self, "upstream_url")
+
+    @_builtins.property
+    @pulumi.getter(name="upstreamUsername")
+    def upstream_username(self) -> _builtins.str:
+        """
+        The upstream registry username for a pull-through cache repository.
+        """
+        return pulumi.get(self, "upstream_username")
+
 
 class AwaitableGetContainerRepositoryResult(GetContainerRepositoryResult):
     # pylint: disable=using-constant-test
@@ -252,15 +318,21 @@ class AwaitableGetContainerRepositoryResult(GetContainerRepositoryResult):
             image_count=self.image_count,
             is_immutable=self.is_immutable,
             is_public=self.is_public,
+            is_top_level=self.is_top_level,
             layer_count=self.layer_count,
             layers_size_in_bytes=self.layers_size_in_bytes,
+            multi_region_peers=self.multi_region_peers,
             namespace=self.namespace,
             readmes=self.readmes,
             repository_id=self.repository_id,
+            repository_type=self.repository_type,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
-            time_last_pushed=self.time_last_pushed)
+            time_last_pushed=self.time_last_pushed,
+            upstream_secret_id=self.upstream_secret_id,
+            upstream_url=self.upstream_url,
+            upstream_username=self.upstream_username)
 
 
 def get_container_repository(repository_id: Optional[_builtins.str] = None,
@@ -298,15 +370,21 @@ def get_container_repository(repository_id: Optional[_builtins.str] = None,
         image_count=pulumi.get(__ret__, 'image_count'),
         is_immutable=pulumi.get(__ret__, 'is_immutable'),
         is_public=pulumi.get(__ret__, 'is_public'),
+        is_top_level=pulumi.get(__ret__, 'is_top_level'),
         layer_count=pulumi.get(__ret__, 'layer_count'),
         layers_size_in_bytes=pulumi.get(__ret__, 'layers_size_in_bytes'),
+        multi_region_peers=pulumi.get(__ret__, 'multi_region_peers'),
         namespace=pulumi.get(__ret__, 'namespace'),
         readmes=pulumi.get(__ret__, 'readmes'),
         repository_id=pulumi.get(__ret__, 'repository_id'),
+        repository_type=pulumi.get(__ret__, 'repository_type'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
-        time_last_pushed=pulumi.get(__ret__, 'time_last_pushed'))
+        time_last_pushed=pulumi.get(__ret__, 'time_last_pushed'),
+        upstream_secret_id=pulumi.get(__ret__, 'upstream_secret_id'),
+        upstream_url=pulumi.get(__ret__, 'upstream_url'),
+        upstream_username=pulumi.get(__ret__, 'upstream_username'))
 def get_container_repository_output(repository_id: pulumi.Input[Optional[_builtins.str]] = None,
                                     opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetContainerRepositoryResult]:
     """
@@ -341,12 +419,18 @@ def get_container_repository_output(repository_id: pulumi.Input[Optional[_builti
         image_count=pulumi.get(__response__, 'image_count'),
         is_immutable=pulumi.get(__response__, 'is_immutable'),
         is_public=pulumi.get(__response__, 'is_public'),
+        is_top_level=pulumi.get(__response__, 'is_top_level'),
         layer_count=pulumi.get(__response__, 'layer_count'),
         layers_size_in_bytes=pulumi.get(__response__, 'layers_size_in_bytes'),
+        multi_region_peers=pulumi.get(__response__, 'multi_region_peers'),
         namespace=pulumi.get(__response__, 'namespace'),
         readmes=pulumi.get(__response__, 'readmes'),
         repository_id=pulumi.get(__response__, 'repository_id'),
+        repository_type=pulumi.get(__response__, 'repository_type'),
         state=pulumi.get(__response__, 'state'),
         system_tags=pulumi.get(__response__, 'system_tags'),
         time_created=pulumi.get(__response__, 'time_created'),
-        time_last_pushed=pulumi.get(__response__, 'time_last_pushed')))
+        time_last_pushed=pulumi.get(__response__, 'time_last_pushed'),
+        upstream_secret_id=pulumi.get(__response__, 'upstream_secret_id'),
+        upstream_url=pulumi.get(__response__, 'upstream_url'),
+        upstream_username=pulumi.get(__response__, 'upstream_username')))

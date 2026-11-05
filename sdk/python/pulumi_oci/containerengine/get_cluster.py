@@ -27,7 +27,7 @@ class GetClusterResult:
     """
     A collection of values returned by getCluster.
     """
-    def __init__(__self__, available_kubernetes_upgrades=None, cluster_id=None, cluster_pod_network_options=None, compartment_id=None, defined_tags=None, endpoint_configs=None, endpoints=None, freeform_tags=None, id=None, image_policy_configs=None, kms_key_id=None, kubernetes_version=None, lifecycle_details=None, metadatas=None, name=None, open_id_connect_discovery_endpoint=None, open_id_connect_discovery_key=None, options=None, should_include_oidc_config_file=None, state=None, type=None, vcn_id=None):
+    def __init__(__self__, available_kubernetes_upgrades=None, cluster_id=None, cluster_pod_network_options=None, compartment_id=None, defined_tags=None, endpoint_configs=None, endpoints=None, freeform_tags=None, id=None, image_policy_configs=None, kms_key_id=None, kubernetes_version=None, lifecycle_details=None, metadatas=None, name=None, open_id_connect_discovery_endpoint=None, open_id_connect_discovery_key=None, options=None, should_include_oidc_config_file=None, state=None, system_tags=None, type=None, vcn_id=None):
         if available_kubernetes_upgrades and not isinstance(available_kubernetes_upgrades, list):
             raise TypeError("Expected argument 'available_kubernetes_upgrades' to be a list")
         pulumi.set(__self__, "available_kubernetes_upgrades", available_kubernetes_upgrades)
@@ -88,6 +88,9 @@ class GetClusterResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
         if type and not isinstance(type, str):
             raise TypeError("Expected argument 'type' to be a str")
         pulumi.set(__self__, "type", type)
@@ -250,6 +253,14 @@ class GetClusterResult:
         return pulumi.get(self, "state")
 
     @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @_builtins.property
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
@@ -292,6 +303,7 @@ class AwaitableGetClusterResult(GetClusterResult):
             options=self.options,
             should_include_oidc_config_file=self.should_include_oidc_config_file,
             state=self.state,
+            system_tags=self.system_tags,
             type=self.type,
             vcn_id=self.vcn_id)
 
@@ -345,6 +357,7 @@ def get_cluster(cluster_id: Optional[_builtins.str] = None,
         options=pulumi.get(__ret__, 'options'),
         should_include_oidc_config_file=pulumi.get(__ret__, 'should_include_oidc_config_file'),
         state=pulumi.get(__ret__, 'state'),
+        system_tags=pulumi.get(__ret__, 'system_tags'),
         type=pulumi.get(__ret__, 'type'),
         vcn_id=pulumi.get(__ret__, 'vcn_id'))
 def get_cluster_output(cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -395,5 +408,6 @@ def get_cluster_output(cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
         options=pulumi.get(__response__, 'options'),
         should_include_oidc_config_file=pulumi.get(__response__, 'should_include_oidc_config_file'),
         state=pulumi.get(__response__, 'state'),
+        system_tags=pulumi.get(__response__, 'system_tags'),
         type=pulumi.get(__response__, 'type'),
         vcn_id=pulumi.get(__response__, 'vcn_id')))

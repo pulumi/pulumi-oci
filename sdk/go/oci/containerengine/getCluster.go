@@ -99,6 +99,8 @@ type LookupClusterResult struct {
 	ShouldIncludeOidcConfigFile *bool              `pulumi:"shouldIncludeOidcConfigFile"`
 	// The state of the cluster masters.
 	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
 	Type string `pulumi:"type"`
 	// The OCID of the virtual cloud network (VCN) in which the cluster exists.
@@ -233,6 +235,11 @@ func (o LookupClusterResultOutput) ShouldIncludeOidcConfigFile() pulumi.BoolPtrO
 // The state of the cluster masters.
 func (o LookupClusterResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupClusterResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o LookupClusterResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupClusterResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)

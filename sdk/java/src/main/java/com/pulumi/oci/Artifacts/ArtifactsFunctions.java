@@ -964,7 +964,9 @@ public final class ArtifactsFunctions {
      *             .compartmentIdInSubtree(containerRepositoryCompartmentIdInSubtree)
      *             .displayName(containerRepositoryDisplayName)
      *             .isPublic(containerRepositoryIsPublic)
+     *             .isTopLevel(containerRepositoryIsTopLevel)
      *             .repositoryId(testRepository.get("id"))
+     *             .repositoryType(containerRepositoryRepositoryType)
      *             .state(containerRepositoryState)
      *             .build());
      * 
@@ -1011,7 +1013,9 @@ public final class ArtifactsFunctions {
      *             .compartmentIdInSubtree(containerRepositoryCompartmentIdInSubtree)
      *             .displayName(containerRepositoryDisplayName)
      *             .isPublic(containerRepositoryIsPublic)
+     *             .isTopLevel(containerRepositoryIsTopLevel)
      *             .repositoryId(testRepository.get("id"))
+     *             .repositoryType(containerRepositoryRepositoryType)
      *             .state(containerRepositoryState)
      *             .build());
      * 
@@ -1058,7 +1062,9 @@ public final class ArtifactsFunctions {
      *             .compartmentIdInSubtree(containerRepositoryCompartmentIdInSubtree)
      *             .displayName(containerRepositoryDisplayName)
      *             .isPublic(containerRepositoryIsPublic)
+     *             .isTopLevel(containerRepositoryIsTopLevel)
      *             .repositoryId(testRepository.get("id"))
+     *             .repositoryType(containerRepositoryRepositoryType)
      *             .state(containerRepositoryState)
      *             .build());
      * 
@@ -1105,7 +1111,9 @@ public final class ArtifactsFunctions {
      *             .compartmentIdInSubtree(containerRepositoryCompartmentIdInSubtree)
      *             .displayName(containerRepositoryDisplayName)
      *             .isPublic(containerRepositoryIsPublic)
+     *             .isTopLevel(containerRepositoryIsTopLevel)
      *             .repositoryId(testRepository.get("id"))
+     *             .repositoryType(containerRepositoryRepositoryType)
      *             .state(containerRepositoryState)
      *             .build());
      * 
@@ -1152,7 +1160,9 @@ public final class ArtifactsFunctions {
      *             .compartmentIdInSubtree(containerRepositoryCompartmentIdInSubtree)
      *             .displayName(containerRepositoryDisplayName)
      *             .isPublic(containerRepositoryIsPublic)
+     *             .isTopLevel(containerRepositoryIsTopLevel)
      *             .repositoryId(testRepository.get("id"))
+     *             .repositoryType(containerRepositoryRepositoryType)
      *             .state(containerRepositoryState)
      *             .build());
      * 

@@ -22,7 +22,9 @@ import * as utilities from "../utilities";
  *     compartmentIdInSubtree: containerRepositoryCompartmentIdInSubtree,
  *     displayName: containerRepositoryDisplayName,
  *     isPublic: containerRepositoryIsPublic,
+ *     isTopLevel: containerRepositoryIsTopLevel,
  *     repositoryId: testRepository.id,
+ *     repositoryType: containerRepositoryRepositoryType,
  *     state: containerRepositoryState,
  * });
  * ```
@@ -35,7 +37,9 @@ export function getContainerRepositories(args: GetContainerRepositoriesArgs, opt
         "displayName": args.displayName,
         "filters": args.filters,
         "isPublic": args.isPublic,
+        "isTopLevel": args.isTopLevel,
         "repositoryId": args.repositoryId,
+        "repositoryType": args.repositoryType,
         "state": args.state,
     }, opts);
 }
@@ -62,9 +66,17 @@ export interface GetContainerRepositoriesArgs {
      */
     isPublic?: boolean;
     /**
+     * A filter to return resources that match the isTopLevel value.
+     */
+    isTopLevel?: boolean;
+    /**
      * A filter to return container images only for the specified container repository OCID.
      */
     repositoryId?: string;
+    /**
+     * A filter to return only resources that match the given repository type exactly.
+     */
+    repositoryType?: string;
     /**
      * A filter to return only resources that match the given lifecycle state name exactly.
      */
@@ -97,7 +109,15 @@ export interface GetContainerRepositoriesResult {
      * Whether the repository is public. A public repository allows unauthenticated access.
      */
     readonly isPublic?: boolean;
+    /**
+     * Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+     */
+    readonly isTopLevel?: boolean;
     readonly repositoryId?: string;
+    /**
+     * The type of container repository. This determines the repository behavior and required settings.
+     */
+    readonly repositoryType?: string;
     /**
      * The current state of the container repository.
      */
@@ -119,7 +139,9 @@ export interface GetContainerRepositoriesResult {
  *     compartmentIdInSubtree: containerRepositoryCompartmentIdInSubtree,
  *     displayName: containerRepositoryDisplayName,
  *     isPublic: containerRepositoryIsPublic,
+ *     isTopLevel: containerRepositoryIsTopLevel,
  *     repositoryId: testRepository.id,
+ *     repositoryType: containerRepositoryRepositoryType,
  *     state: containerRepositoryState,
  * });
  * ```
@@ -132,7 +154,9 @@ export function getContainerRepositoriesOutput(args: GetContainerRepositoriesOut
         "displayName": args.displayName,
         "filters": args.filters,
         "isPublic": args.isPublic,
+        "isTopLevel": args.isTopLevel,
         "repositoryId": args.repositoryId,
+        "repositoryType": args.repositoryType,
         "state": args.state,
     }, opts);
 }
@@ -159,9 +183,17 @@ export interface GetContainerRepositoriesOutputArgs {
      */
     isPublic?: pulumi.Input<boolean | undefined>;
     /**
+     * A filter to return resources that match the isTopLevel value.
+     */
+    isTopLevel?: pulumi.Input<boolean | undefined>;
+    /**
      * A filter to return container images only for the specified container repository OCID.
      */
     repositoryId?: pulumi.Input<string | undefined>;
+    /**
+     * A filter to return only resources that match the given repository type exactly.
+     */
+    repositoryType?: pulumi.Input<string | undefined>;
     /**
      * A filter to return only resources that match the given lifecycle state name exactly.
      */

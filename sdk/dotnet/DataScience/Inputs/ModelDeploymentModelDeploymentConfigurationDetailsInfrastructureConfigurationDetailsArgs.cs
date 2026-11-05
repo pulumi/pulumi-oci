@@ -39,6 +39,9 @@ namespace Pulumi.Oci.DataScience.Inputs
         [Input("maximumBandwidthMbps")]
         public Input<int>? MaximumBandwidthMbps { get; set; }
 
+        /// <summary>
+        /// (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+        /// </summary>
         [Input("modelDeploymentResourceConfiguration")]
         public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs>? ModelDeploymentResourceConfiguration { get; set; }
 

@@ -27,7 +27,13 @@ class ContainerRepositoryArgs:
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_immutable: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_public: pulumi.Input[Optional[_builtins.bool]] = None,
-                 readme: pulumi.Input[Optional['ContainerRepositoryReadmeArgs']] = None):
+                 is_top_level: pulumi.Input[Optional[_builtins.bool]] = None,
+                 multi_region_peers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 readme: pulumi.Input[Optional['ContainerRepositoryReadmeArgs']] = None,
+                 repository_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 upstream_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 upstream_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 upstream_username: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a ContainerRepository resource.
 
@@ -35,9 +41,22 @@ class ContainerRepositoryArgs:
         :param pulumi.Input[_builtins.str] display_name: The container repository name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.bool] is_immutable: (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+        :param pulumi.Input[_builtins.bool] is_immutable: (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
         :param pulumi.Input[_builtins.bool] is_public: (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
+        :param pulumi.Input[_builtins.bool] is_top_level: Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] multi_region_peers: List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.
         :param pulumi.Input['ContainerRepositoryReadmeArgs'] readme: (Updatable) Container repository readme.
+        :param pulumi.Input[_builtins.str] repository_type: The type of container repository. This determines the repository behavior and required settings.
+        :param pulumi.Input[_builtins.str] upstream_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+        :param pulumi.Input[_builtins.str] upstream_url: The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.
+               
+               If isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/<upstreamNamespace>/library/ubuntu`
+               
+               If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/<upstreamNamespace>/library` or `iad.ocir.io/<upstreamNamespace>`
+        :param pulumi.Input[_builtins.str] upstream_username: (Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -49,8 +68,20 @@ class ContainerRepositoryArgs:
             pulumi.set(__self__, "is_immutable", is_immutable)
         if is_public is not None:
             pulumi.set(__self__, "is_public", is_public)
+        if is_top_level is not None:
+            pulumi.set(__self__, "is_top_level", is_top_level)
+        if multi_region_peers is not None:
+            pulumi.set(__self__, "multi_region_peers", multi_region_peers)
         if readme is not None:
             pulumi.set(__self__, "readme", readme)
+        if repository_type is not None:
+            pulumi.set(__self__, "repository_type", repository_type)
+        if upstream_secret_id is not None:
+            pulumi.set(__self__, "upstream_secret_id", upstream_secret_id)
+        if upstream_url is not None:
+            pulumi.set(__self__, "upstream_url", upstream_url)
+        if upstream_username is not None:
+            pulumi.set(__self__, "upstream_username", upstream_username)
 
     @_builtins.property
     @pulumi.getter(name="compartmentId")
@@ -104,7 +135,7 @@ class ContainerRepositoryArgs:
     @pulumi.getter(name="isImmutable")
     def is_immutable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+        (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
         """
         return pulumi.get(self, "is_immutable")
 
@@ -125,6 +156,30 @@ class ContainerRepositoryArgs:
         pulumi.set(self, "is_public", value)
 
     @_builtins.property
+    @pulumi.getter(name="isTopLevel")
+    def is_top_level(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+        """
+        return pulumi.get(self, "is_top_level")
+
+    @is_top_level.setter
+    def is_top_level(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_top_level", value)
+
+    @_builtins.property
+    @pulumi.getter(name="multiRegionPeers")
+    def multi_region_peers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.
+        """
+        return pulumi.get(self, "multi_region_peers")
+
+    @multi_region_peers.setter
+    def multi_region_peers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "multi_region_peers", value)
+
+    @_builtins.property
     @pulumi.getter
     def readme(self) -> pulumi.Input[Optional['ContainerRepositoryReadmeArgs']]:
         """
@@ -135,6 +190,61 @@ class ContainerRepositoryArgs:
     @readme.setter
     def readme(self, value: pulumi.Input[Optional['ContainerRepositoryReadmeArgs']]):
         pulumi.set(self, "readme", value)
+
+    @_builtins.property
+    @pulumi.getter(name="repositoryType")
+    def repository_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The type of container repository. This determines the repository behavior and required settings.
+        """
+        return pulumi.get(self, "repository_type")
+
+    @repository_type.setter
+    def repository_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "repository_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="upstreamSecretId")
+    def upstream_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+        """
+        return pulumi.get(self, "upstream_secret_id")
+
+    @upstream_secret_id.setter
+    def upstream_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "upstream_secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="upstreamUrl")
+    def upstream_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.
+
+        If isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/<upstreamNamespace>/library/ubuntu`
+
+        If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/<upstreamNamespace>/library` or `iad.ocir.io/<upstreamNamespace>`
+        """
+        return pulumi.get(self, "upstream_url")
+
+    @upstream_url.setter
+    def upstream_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "upstream_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="upstreamUsername")
+    def upstream_username(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "upstream_username")
+
+    @upstream_username.setter
+    def upstream_username(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "upstream_username", value)
 
 
 @pulumi.input_type
@@ -149,14 +259,20 @@ class _ContainerRepositoryState:
                  image_count: pulumi.Input[Optional[_builtins.int]] = None,
                  is_immutable: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_public: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_top_level: pulumi.Input[Optional[_builtins.bool]] = None,
                  layer_count: pulumi.Input[Optional[_builtins.int]] = None,
                  layers_size_in_bytes: pulumi.Input[Optional[_builtins.str]] = None,
+                 multi_region_peers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  readme: pulumi.Input[Optional['ContainerRepositoryReadmeArgs']] = None,
+                 repository_type: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
                  system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  time_created: pulumi.Input[Optional[_builtins.str]] = None,
-                 time_last_pushed: pulumi.Input[Optional[_builtins.str]] = None):
+                 time_last_pushed: pulumi.Input[Optional[_builtins.str]] = None,
+                 upstream_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 upstream_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 upstream_username: pulumi.Input[Optional[_builtins.str]] = None):
         """
         Input properties used for looking up and filtering ContainerRepository resources.
 
@@ -167,16 +283,29 @@ class _ContainerRepositoryState:
         :param pulumi.Input[_builtins.str] display_name: The container repository name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.int] image_count: Total number of images.
-        :param pulumi.Input[_builtins.bool] is_immutable: (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+        :param pulumi.Input[_builtins.bool] is_immutable: (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
         :param pulumi.Input[_builtins.bool] is_public: (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
+        :param pulumi.Input[_builtins.bool] is_top_level: Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
         :param pulumi.Input[_builtins.int] layer_count: Total number of layers.
         :param pulumi.Input[_builtins.str] layers_size_in_bytes: Total storage in bytes consumed by layers.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] multi_region_peers: List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.
         :param pulumi.Input[_builtins.str] namespace: The tenancy namespace used in the container repository path.
         :param pulumi.Input['ContainerRepositoryReadmeArgs'] readme: (Updatable) Container repository readme.
+        :param pulumi.Input[_builtins.str] repository_type: The type of container repository. This determines the repository behavior and required settings.
         :param pulumi.Input[_builtins.str] state: The current state of the container repository.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: An RFC 3339 timestamp indicating when the repository was created.
         :param pulumi.Input[_builtins.str] time_last_pushed: An RFC 3339 timestamp indicating when an image was last pushed to the repository.
+        :param pulumi.Input[_builtins.str] upstream_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+        :param pulumi.Input[_builtins.str] upstream_url: The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.
+               
+               If isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/<upstreamNamespace>/library/ubuntu`
+               
+               If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/<upstreamNamespace>/library` or `iad.ocir.io/<upstreamNamespace>`
+        :param pulumi.Input[_builtins.str] upstream_username: (Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if billable_size_in_gbs is not None:
             pulumi.set(__self__, "billable_size_in_gbs", billable_size_in_gbs)
@@ -196,14 +325,20 @@ class _ContainerRepositoryState:
             pulumi.set(__self__, "is_immutable", is_immutable)
         if is_public is not None:
             pulumi.set(__self__, "is_public", is_public)
+        if is_top_level is not None:
+            pulumi.set(__self__, "is_top_level", is_top_level)
         if layer_count is not None:
             pulumi.set(__self__, "layer_count", layer_count)
         if layers_size_in_bytes is not None:
             pulumi.set(__self__, "layers_size_in_bytes", layers_size_in_bytes)
+        if multi_region_peers is not None:
+            pulumi.set(__self__, "multi_region_peers", multi_region_peers)
         if namespace is not None:
             pulumi.set(__self__, "namespace", namespace)
         if readme is not None:
             pulumi.set(__self__, "readme", readme)
+        if repository_type is not None:
+            pulumi.set(__self__, "repository_type", repository_type)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -212,6 +347,12 @@ class _ContainerRepositoryState:
             pulumi.set(__self__, "time_created", time_created)
         if time_last_pushed is not None:
             pulumi.set(__self__, "time_last_pushed", time_last_pushed)
+        if upstream_secret_id is not None:
+            pulumi.set(__self__, "upstream_secret_id", upstream_secret_id)
+        if upstream_url is not None:
+            pulumi.set(__self__, "upstream_url", upstream_url)
+        if upstream_username is not None:
+            pulumi.set(__self__, "upstream_username", upstream_username)
 
     @_builtins.property
     @pulumi.getter(name="billableSizeInGbs")
@@ -301,7 +442,7 @@ class _ContainerRepositoryState:
     @pulumi.getter(name="isImmutable")
     def is_immutable(self) -> pulumi.Input[Optional[_builtins.bool]]:
         """
-        (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+        (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
         """
         return pulumi.get(self, "is_immutable")
 
@@ -320,6 +461,18 @@ class _ContainerRepositoryState:
     @is_public.setter
     def is_public(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "is_public", value)
+
+    @_builtins.property
+    @pulumi.getter(name="isTopLevel")
+    def is_top_level(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+        """
+        return pulumi.get(self, "is_top_level")
+
+    @is_top_level.setter
+    def is_top_level(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "is_top_level", value)
 
     @_builtins.property
     @pulumi.getter(name="layerCount")
@@ -346,6 +499,18 @@ class _ContainerRepositoryState:
         pulumi.set(self, "layers_size_in_bytes", value)
 
     @_builtins.property
+    @pulumi.getter(name="multiRegionPeers")
+    def multi_region_peers(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.
+        """
+        return pulumi.get(self, "multi_region_peers")
+
+    @multi_region_peers.setter
+    def multi_region_peers(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "multi_region_peers", value)
+
+    @_builtins.property
     @pulumi.getter
     def namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -368,6 +533,18 @@ class _ContainerRepositoryState:
     @readme.setter
     def readme(self, value: pulumi.Input[Optional['ContainerRepositoryReadmeArgs']]):
         pulumi.set(self, "readme", value)
+
+    @_builtins.property
+    @pulumi.getter(name="repositoryType")
+    def repository_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The type of container repository. This determines the repository behavior and required settings.
+        """
+        return pulumi.get(self, "repository_type")
+
+    @repository_type.setter
+    def repository_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "repository_type", value)
 
     @_builtins.property
     @pulumi.getter
@@ -417,6 +594,49 @@ class _ContainerRepositoryState:
     def time_last_pushed(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "time_last_pushed", value)
 
+    @_builtins.property
+    @pulumi.getter(name="upstreamSecretId")
+    def upstream_secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+        """
+        return pulumi.get(self, "upstream_secret_id")
+
+    @upstream_secret_id.setter
+    def upstream_secret_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "upstream_secret_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="upstreamUrl")
+    def upstream_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.
+
+        If isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/<upstreamNamespace>/library/ubuntu`
+
+        If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/<upstreamNamespace>/library` or `iad.ocir.io/<upstreamNamespace>`
+        """
+        return pulumi.get(self, "upstream_url")
+
+    @upstream_url.setter
+    def upstream_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "upstream_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="upstreamUsername")
+    def upstream_username(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        (Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "upstream_username")
+
+    @upstream_username.setter
+    def upstream_username(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "upstream_username", value)
+
 
 @pulumi.type_token("oci:Artifacts/containerRepository:ContainerRepository")
 class ContainerRepository(pulumi.CustomResource):
@@ -430,7 +650,13 @@ class ContainerRepository(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_immutable: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_public: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_top_level: pulumi.Input[Optional[_builtins.bool]] = None,
+                 multi_region_peers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  readme: pulumi.Input[Optional[Union['ContainerRepositoryReadmeArgs', 'ContainerRepositoryReadmeArgsDict', 'outputs.ContainerRepositoryReadme']]] = None,
+                 repository_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 upstream_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 upstream_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 upstream_username: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
         This resource provides the Container Repository resource in Oracle Cloud Infrastructure Artifacts service.
@@ -457,10 +683,16 @@ class ContainerRepository(pulumi.CustomResource):
             },
             is_immutable=container_repository_is_immutable,
             is_public=container_repository_is_public,
+            is_top_level=container_repository_is_top_level,
+            multi_region_peers=container_repository_multi_region_peers,
             readme={
                 "content": container_repository_readme_content,
                 "format": container_repository_readme_format,
-            })
+            },
+            repository_type=container_repository_repository_type,
+            upstream_secret_id=container_repository_upstream_secret_id,
+            upstream_url=container_repository_upstream_url,
+            upstream_username=container_repository_upstream_username)
         ```
 
         ## Import
@@ -478,9 +710,22 @@ class ContainerRepository(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         :param pulumi.Input[_builtins.str] display_name: The container repository name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[_builtins.bool] is_immutable: (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+        :param pulumi.Input[_builtins.bool] is_immutable: (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
         :param pulumi.Input[_builtins.bool] is_public: (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
+        :param pulumi.Input[_builtins.bool] is_top_level: Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] multi_region_peers: List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.
         :param pulumi.Input[Union['ContainerRepositoryReadmeArgs', 'ContainerRepositoryReadmeArgsDict', 'outputs.ContainerRepositoryReadme']] readme: (Updatable) Container repository readme.
+        :param pulumi.Input[_builtins.str] repository_type: The type of container repository. This determines the repository behavior and required settings.
+        :param pulumi.Input[_builtins.str] upstream_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+        :param pulumi.Input[_builtins.str] upstream_url: The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.
+               
+               If isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/<upstreamNamespace>/library/ubuntu`
+               
+               If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/<upstreamNamespace>/library` or `iad.ocir.io/<upstreamNamespace>`
+        :param pulumi.Input[_builtins.str] upstream_username: (Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         ...
     @overload
@@ -513,10 +758,16 @@ class ContainerRepository(pulumi.CustomResource):
             },
             is_immutable=container_repository_is_immutable,
             is_public=container_repository_is_public,
+            is_top_level=container_repository_is_top_level,
+            multi_region_peers=container_repository_multi_region_peers,
             readme={
                 "content": container_repository_readme_content,
                 "format": container_repository_readme_format,
-            })
+            },
+            repository_type=container_repository_repository_type,
+            upstream_secret_id=container_repository_upstream_secret_id,
+            upstream_url=container_repository_upstream_url,
+            upstream_username=container_repository_upstream_username)
         ```
 
         ## Import
@@ -549,7 +800,13 @@ class ContainerRepository(pulumi.CustomResource):
                  freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  is_immutable: pulumi.Input[Optional[_builtins.bool]] = None,
                  is_public: pulumi.Input[Optional[_builtins.bool]] = None,
+                 is_top_level: pulumi.Input[Optional[_builtins.bool]] = None,
+                 multi_region_peers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  readme: pulumi.Input[Optional[Union['ContainerRepositoryReadmeArgs', 'ContainerRepositoryReadmeArgsDict', 'outputs.ContainerRepositoryReadme']]] = None,
+                 repository_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 upstream_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 upstream_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 upstream_username: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -569,7 +826,13 @@ class ContainerRepository(pulumi.CustomResource):
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["is_immutable"] = is_immutable
             __props__.__dict__["is_public"] = is_public
+            __props__.__dict__["is_top_level"] = is_top_level
+            __props__.__dict__["multi_region_peers"] = multi_region_peers
             __props__.__dict__["readme"] = readme
+            __props__.__dict__["repository_type"] = repository_type
+            __props__.__dict__["upstream_secret_id"] = upstream_secret_id
+            __props__.__dict__["upstream_url"] = upstream_url
+            __props__.__dict__["upstream_username"] = upstream_username
             __props__.__dict__["billable_size_in_gbs"] = None
             __props__.__dict__["created_by"] = None
             __props__.__dict__["image_count"] = None
@@ -599,14 +862,20 @@ class ContainerRepository(pulumi.CustomResource):
             image_count: pulumi.Input[Optional[_builtins.int]] = None,
             is_immutable: pulumi.Input[Optional[_builtins.bool]] = None,
             is_public: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_top_level: pulumi.Input[Optional[_builtins.bool]] = None,
             layer_count: pulumi.Input[Optional[_builtins.int]] = None,
             layers_size_in_bytes: pulumi.Input[Optional[_builtins.str]] = None,
+            multi_region_peers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             namespace: pulumi.Input[Optional[_builtins.str]] = None,
             readme: pulumi.Input[Optional[Union['ContainerRepositoryReadmeArgs', 'ContainerRepositoryReadmeArgsDict', 'outputs.ContainerRepositoryReadme']]] = None,
+            repository_type: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
-            time_last_pushed: pulumi.Input[Optional[_builtins.str]] = None) -> 'ContainerRepository':
+            time_last_pushed: pulumi.Input[Optional[_builtins.str]] = None,
+            upstream_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            upstream_url: pulumi.Input[Optional[_builtins.str]] = None,
+            upstream_username: pulumi.Input[Optional[_builtins.str]] = None) -> 'ContainerRepository':
         """
         Get an existing ContainerRepository resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -621,16 +890,29 @@ class ContainerRepository(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] display_name: The container repository name.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[_builtins.int] image_count: Total number of images.
-        :param pulumi.Input[_builtins.bool] is_immutable: (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+        :param pulumi.Input[_builtins.bool] is_immutable: (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
         :param pulumi.Input[_builtins.bool] is_public: (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
+        :param pulumi.Input[_builtins.bool] is_top_level: Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
         :param pulumi.Input[_builtins.int] layer_count: Total number of layers.
         :param pulumi.Input[_builtins.str] layers_size_in_bytes: Total storage in bytes consumed by layers.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] multi_region_peers: List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.
         :param pulumi.Input[_builtins.str] namespace: The tenancy namespace used in the container repository path.
         :param pulumi.Input[Union['ContainerRepositoryReadmeArgs', 'ContainerRepositoryReadmeArgsDict', 'outputs.ContainerRepositoryReadme']] readme: (Updatable) Container repository readme.
+        :param pulumi.Input[_builtins.str] repository_type: The type of container repository. This determines the repository behavior and required settings.
         :param pulumi.Input[_builtins.str] state: The current state of the container repository.
         :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] time_created: An RFC 3339 timestamp indicating when the repository was created.
         :param pulumi.Input[_builtins.str] time_last_pushed: An RFC 3339 timestamp indicating when an image was last pushed to the repository.
+        :param pulumi.Input[_builtins.str] upstream_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+        :param pulumi.Input[_builtins.str] upstream_url: The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.
+               
+               If isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/<upstreamNamespace>/library/ubuntu`
+               
+               If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/<upstreamNamespace>/library` or `iad.ocir.io/<upstreamNamespace>`
+        :param pulumi.Input[_builtins.str] upstream_username: (Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -645,14 +927,20 @@ class ContainerRepository(pulumi.CustomResource):
         __props__.__dict__["image_count"] = image_count
         __props__.__dict__["is_immutable"] = is_immutable
         __props__.__dict__["is_public"] = is_public
+        __props__.__dict__["is_top_level"] = is_top_level
         __props__.__dict__["layer_count"] = layer_count
         __props__.__dict__["layers_size_in_bytes"] = layers_size_in_bytes
+        __props__.__dict__["multi_region_peers"] = multi_region_peers
         __props__.__dict__["namespace"] = namespace
         __props__.__dict__["readme"] = readme
+        __props__.__dict__["repository_type"] = repository_type
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_last_pushed"] = time_last_pushed
+        __props__.__dict__["upstream_secret_id"] = upstream_secret_id
+        __props__.__dict__["upstream_url"] = upstream_url
+        __props__.__dict__["upstream_username"] = upstream_username
         return ContainerRepository(resource_name, opts=opts, __props__=__props__)
 
     @staticmethod
@@ -667,14 +955,20 @@ class ContainerRepository(pulumi.CustomResource):
             image_count: pulumi.Input[Optional[_builtins.int]] = None,
             is_immutable: pulumi.Input[Optional[_builtins.bool]] = None,
             is_public: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_top_level: pulumi.Input[Optional[_builtins.bool]] = None,
             layer_count: pulumi.Input[Optional[_builtins.int]] = None,
             layers_size_in_bytes: pulumi.Input[Optional[_builtins.str]] = None,
+            multi_region_peers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             namespace: pulumi.Input[Optional[_builtins.str]] = None,
             readme: pulumi.Input[Optional[Union['ContainerRepositoryReadmeArgs', 'ContainerRepositoryReadmeArgsDict', 'outputs.ContainerRepositoryReadme']]] = None,
+            repository_type: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
             system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             time_created: pulumi.Input[Optional[_builtins.str]] = None,
-            time_last_pushed: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+            time_last_pushed: pulumi.Input[Optional[_builtins.str]] = None,
+            upstream_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            upstream_url: pulumi.Input[Optional[_builtins.str]] = None,
+            upstream_username: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
         __props__: dict = {}
         __props__["billableSizeInGbs"] = billable_size_in_gbs
         __props__["compartmentId"] = compartment_id
@@ -685,14 +979,20 @@ class ContainerRepository(pulumi.CustomResource):
         __props__["imageCount"] = image_count
         __props__["isImmutable"] = is_immutable
         __props__["isPublic"] = is_public
+        __props__["isTopLevel"] = is_top_level
         __props__["layerCount"] = layer_count
         __props__["layersSizeInBytes"] = layers_size_in_bytes
+        __props__["multiRegionPeers"] = multi_region_peers
         __props__["namespace"] = namespace
         __props__["readme"] = readme
+        __props__["repositoryType"] = repository_type
         __props__["state"] = state
         __props__["systemTags"] = system_tags
         __props__["timeCreated"] = time_created
         __props__["timeLastPushed"] = time_last_pushed
+        __props__["upstreamSecretId"] = upstream_secret_id
+        __props__["upstreamUrl"] = upstream_url
+        __props__["upstreamUsername"] = upstream_username
         return pulumi.runtime.exists_resource(None, 'oci:Artifacts/containerRepository:ContainerRepository', id, __props__, opts or pulumi.ResourceOptions())
 
     @_builtins.property
@@ -755,7 +1055,7 @@ class ContainerRepository(pulumi.CustomResource):
     @pulumi.getter(name="isImmutable")
     def is_immutable(self) -> pulumi.Output[_builtins.bool]:
         """
-        (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+        (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
         """
         return pulumi.get(self, "is_immutable")
 
@@ -766,6 +1066,14 @@ class ContainerRepository(pulumi.CustomResource):
         (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
         """
         return pulumi.get(self, "is_public")
+
+    @_builtins.property
+    @pulumi.getter(name="isTopLevel")
+    def is_top_level(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+        """
+        return pulumi.get(self, "is_top_level")
 
     @_builtins.property
     @pulumi.getter(name="layerCount")
@@ -784,6 +1092,14 @@ class ContainerRepository(pulumi.CustomResource):
         return pulumi.get(self, "layers_size_in_bytes")
 
     @_builtins.property
+    @pulumi.getter(name="multiRegionPeers")
+    def multi_region_peers(self) -> pulumi.Output[Sequence[_builtins.str]]:
+        """
+        List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.
+        """
+        return pulumi.get(self, "multi_region_peers")
+
+    @_builtins.property
     @pulumi.getter
     def namespace(self) -> pulumi.Output[_builtins.str]:
         """
@@ -798,6 +1114,14 @@ class ContainerRepository(pulumi.CustomResource):
         (Updatable) Container repository readme.
         """
         return pulumi.get(self, "readme")
+
+    @_builtins.property
+    @pulumi.getter(name="repositoryType")
+    def repository_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        The type of container repository. This determines the repository behavior and required settings.
+        """
+        return pulumi.get(self, "repository_type")
 
     @_builtins.property
     @pulumi.getter
@@ -830,4 +1154,35 @@ class ContainerRepository(pulumi.CustomResource):
         An RFC 3339 timestamp indicating when an image was last pushed to the repository.
         """
         return pulumi.get(self, "time_last_pushed")
+
+    @_builtins.property
+    @pulumi.getter(name="upstreamSecretId")
+    def upstream_secret_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+        """
+        return pulumi.get(self, "upstream_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="upstreamUrl")
+    def upstream_url(self) -> pulumi.Output[_builtins.str]:
+        """
+        The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.
+
+        If isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/<upstreamNamespace>/library/ubuntu`
+
+        If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/<upstreamNamespace>/library` or `iad.ocir.io/<upstreamNamespace>`
+        """
+        return pulumi.get(self, "upstream_url")
+
+    @_builtins.property
+    @pulumi.getter(name="upstreamUsername")
+    def upstream_username(self) -> pulumi.Output[_builtins.str]:
+        """
+        (Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "upstream_username")
 

@@ -172,6 +172,8 @@ type Cluster struct {
 	Options ClusterOptionsOutput `pulumi:"options"`
 	// The state of the cluster masters.
 	State pulumi.StringOutput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 	// (Updatable) Type of cluster
 	Type pulumi.StringOutput `pulumi:"type"`
 	// The OCID of the virtual cloud network (VCN) in which to create the cluster.
@@ -254,6 +256,8 @@ type clusterState struct {
 	Options *ClusterOptions `pulumi:"options"`
 	// The state of the cluster masters.
 	State *string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 	// (Updatable) Type of cluster
 	Type *string `pulumi:"type"`
 	// The OCID of the virtual cloud network (VCN) in which to create the cluster.
@@ -298,6 +302,8 @@ type ClusterState struct {
 	Options ClusterOptionsPtrInput
 	// The state of the cluster masters.
 	State pulumi.StringPtrInput
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput
 	// (Updatable) Type of cluster
 	Type pulumi.StringPtrInput
 	// The OCID of the virtual cloud network (VCN) in which to create the cluster.
@@ -548,6 +554,11 @@ func (o ClusterOutput) Options() ClusterOptionsOutput {
 // The state of the cluster masters.
 func (o ClusterOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Cluster) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o ClusterOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *Cluster) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 // (Updatable) Type of cluster

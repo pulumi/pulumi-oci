@@ -2879,6 +2879,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataScience/modelArtifactSignature",
+  "fqn": "pulumi_oci.datascience",
+  "classes": {
+   "oci:DataScience/modelArtifactSignature:ModelArtifactSignature": "ModelArtifactSignature"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataScience/modelCustomMetadataArtifact",
   "fqn": "pulumi_oci.datascience",
   "classes": {

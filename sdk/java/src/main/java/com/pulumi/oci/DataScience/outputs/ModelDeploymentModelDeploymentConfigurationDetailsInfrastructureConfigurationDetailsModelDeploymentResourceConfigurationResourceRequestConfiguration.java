@@ -13,6 +13,10 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration {
+    /**
+     * @return (Updatable) The total number of gpus required to be allocated to the workload.
+     * 
+     */
     private @Nullable Integer gpus;
     /**
      * @return A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
@@ -26,6 +30,10 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
     private Double ocpus;
 
     private ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration() {}
+    /**
+     * @return (Updatable) The total number of gpus required to be allocated to the workload.
+     * 
+     */
     public Optional<Integer> gpus() {
         return Optional.ofNullable(this.gpus);
     }

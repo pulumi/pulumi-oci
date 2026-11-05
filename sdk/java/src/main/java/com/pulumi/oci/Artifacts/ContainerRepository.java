@@ -14,6 +14,7 @@ import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -57,10 +58,16 @@ import javax.annotation.Nullable;
  *             .freeformTags(Map.of("Department", "Finance"))
  *             .isImmutable(containerRepositoryIsImmutable)
  *             .isPublic(containerRepositoryIsPublic)
+ *             .isTopLevel(containerRepositoryIsTopLevel)
+ *             .multiRegionPeers(containerRepositoryMultiRegionPeers)
  *             .readme(ContainerRepositoryReadmeArgs.builder()
  *                 .content(containerRepositoryReadmeContent)
  *                 .format(containerRepositoryReadmeFormat)
  *                 .build())
+ *             .repositoryType(containerRepositoryRepositoryType)
+ *             .upstreamSecretId(containerRepositoryUpstreamSecretId)
+ *             .upstreamUrl(containerRepositoryUpstreamUrl)
+ *             .upstreamUsername(containerRepositoryUpstreamUsername)
  *             .build());
  * 
  *     }
@@ -178,14 +185,14 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
         return this.imageCount;
     }
     /**
-     * (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+     * (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
      * 
      */
     @Export(name="isImmutable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isImmutable;
 
     /**
-     * @return (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+     * @return (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
      * 
      */
     public Output<Boolean> isImmutable() {
@@ -204,6 +211,20 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isPublic() {
         return this.isPublic;
+    }
+    /**
+     * Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+     * 
+     */
+    @Export(name="isTopLevel", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isTopLevel;
+
+    /**
+     * @return Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+     * 
+     */
+    public Output<Boolean> isTopLevel() {
+        return this.isTopLevel;
     }
     /**
      * Total number of layers.
@@ -234,6 +255,20 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
         return this.layersSizeInBytes;
     }
     /**
+     * List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.
+     * 
+     */
+    @Export(name="multiRegionPeers", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> multiRegionPeers;
+
+    /**
+     * @return List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.
+     * 
+     */
+    public Output<List<String>> multiRegionPeers() {
+        return this.multiRegionPeers;
+    }
+    /**
      * The tenancy namespace used in the container repository path.
      * 
      */
@@ -260,6 +295,20 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      */
     public Output<ContainerRepositoryReadme> readme() {
         return this.readme;
+    }
+    /**
+     * The type of container repository. This determines the repository behavior and required settings.
+     * 
+     */
+    @Export(name="repositoryType", refs={String.class}, tree="[0]")
+    private Output<String> repositoryType;
+
+    /**
+     * @return The type of container repository. This determines the repository behavior and required settings.
+     * 
+     */
+    public Output<String> repositoryType() {
+        return this.repositoryType;
     }
     /**
      * The current state of the container repository.
@@ -316,6 +365,62 @@ public class ContainerRepository extends com.pulumi.resources.CustomResource {
      */
     public Output<String> timeLastPushed() {
         return this.timeLastPushed;
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+     * 
+     */
+    @Export(name="upstreamSecretId", refs={String.class}, tree="[0]")
+    private Output<String> upstreamSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+     * 
+     */
+    public Output<String> upstreamSecretId() {
+        return this.upstreamSecretId;
+    }
+    /**
+     * The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.
+     * 
+     * If isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/&lt;upstreamNamespace&gt;/library/ubuntu`
+     * 
+     * If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/&lt;upstreamNamespace&gt;/library` or `iad.ocir.io/&lt;upstreamNamespace&gt;`
+     * 
+     */
+    @Export(name="upstreamUrl", refs={String.class}, tree="[0]")
+    private Output<String> upstreamUrl;
+
+    /**
+     * @return The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.
+     * 
+     * If isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/&lt;upstreamNamespace&gt;/library/ubuntu`
+     * 
+     * If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/&lt;upstreamNamespace&gt;/library` or `iad.ocir.io/&lt;upstreamNamespace&gt;`
+     * 
+     */
+    public Output<String> upstreamUrl() {
+        return this.upstreamUrl;
+    }
+    /**
+     * (Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="upstreamUsername", refs={String.class}, tree="[0]")
+    private Output<String> upstreamUsername;
+
+    /**
+     * @return (Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<String> upstreamUsername() {
+        return this.upstreamUsername;
     }
 
     /**

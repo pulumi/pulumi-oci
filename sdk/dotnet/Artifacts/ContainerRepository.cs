@@ -41,11 +41,17 @@ namespace Pulumi.Oci.Artifacts
     ///         },
     ///         IsImmutable = containerRepositoryIsImmutable,
     ///         IsPublic = containerRepositoryIsPublic,
+    ///         IsTopLevel = containerRepositoryIsTopLevel,
+    ///         MultiRegionPeers = containerRepositoryMultiRegionPeers,
     ///         Readme = new Oci.Artifacts.Inputs.ContainerRepositoryReadmeArgs
     ///         {
     ///             Content = containerRepositoryReadmeContent,
     ///             Format = containerRepositoryReadmeFormat,
     ///         },
+    ///         RepositoryType = containerRepositoryRepositoryType,
+    ///         UpstreamSecretId = containerRepositoryUpstreamSecretId,
+    ///         UpstreamUrl = containerRepositoryUpstreamUrl,
+    ///         UpstreamUsername = containerRepositoryUpstreamUsername,
     ///     });
     /// 
     /// });
@@ -105,7 +111,7 @@ namespace Pulumi.Oci.Artifacts
         public Output<int> ImageCount { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+        /// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
         /// </summary>
         [Output("isImmutable")]
         public Output<bool> IsImmutable { get; private set; } = null!;
@@ -115,6 +121,12 @@ namespace Pulumi.Oci.Artifacts
         /// </summary>
         [Output("isPublic")]
         public Output<bool> IsPublic { get; private set; } = null!;
+
+        /// <summary>
+        /// Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+        /// </summary>
+        [Output("isTopLevel")]
+        public Output<bool> IsTopLevel { get; private set; } = null!;
 
         /// <summary>
         /// Total number of layers.
@@ -129,6 +141,12 @@ namespace Pulumi.Oci.Artifacts
         public Output<string> LayersSizeInBytes { get; private set; } = null!;
 
         /// <summary>
+        /// List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.
+        /// </summary>
+        [Output("multiRegionPeers")]
+        public Output<ImmutableArray<string>> MultiRegionPeers { get; private set; } = null!;
+
+        /// <summary>
         /// The tenancy namespace used in the container repository path.
         /// </summary>
         [Output("namespace")]
@@ -139,6 +157,12 @@ namespace Pulumi.Oci.Artifacts
         /// </summary>
         [Output("readme")]
         public Output<Outputs.ContainerRepositoryReadme> Readme { get; private set; } = null!;
+
+        /// <summary>
+        /// The type of container repository. This determines the repository behavior and required settings.
+        /// </summary>
+        [Output("repositoryType")]
+        public Output<string> RepositoryType { get; private set; } = null!;
 
         /// <summary>
         /// The current state of the container repository.
@@ -163,6 +187,31 @@ namespace Pulumi.Oci.Artifacts
         /// </summary>
         [Output("timeLastPushed")]
         public Output<string> TimeLastPushed { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+        /// </summary>
+        [Output("upstreamSecretId")]
+        public Output<string> UpstreamSecretId { get; private set; } = null!;
+
+        /// <summary>
+        /// The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.
+        /// 
+        /// If isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/&lt;upstreamNamespace&gt;/library/ubuntu`
+        /// 
+        /// If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/&lt;upstreamNamespace&gt;/library` or `iad.ocir.io/&lt;upstreamNamespace&gt;`
+        /// </summary>
+        [Output("upstreamUrl")]
+        public Output<string> UpstreamUrl { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("upstreamUsername")]
+        public Output<string> UpstreamUsername { get; private set; } = null!;
 
 
         /// <summary>
@@ -247,7 +296,7 @@ namespace Pulumi.Oci.Artifacts
         }
 
         /// <summary>
-        /// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+        /// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
         /// </summary>
         [Input("isImmutable")]
         public Input<bool>? IsImmutable { get; set; }
@@ -259,10 +308,59 @@ namespace Pulumi.Oci.Artifacts
         public Input<bool>? IsPublic { get; set; }
 
         /// <summary>
+        /// Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+        /// </summary>
+        [Input("isTopLevel")]
+        public Input<bool>? IsTopLevel { get; set; }
+
+        [Input("multiRegionPeers")]
+        private InputList<string>? _multiRegionPeers;
+
+        /// <summary>
+        /// List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.
+        /// </summary>
+        public InputList<string> MultiRegionPeers
+        {
+            get => _multiRegionPeers ?? (_multiRegionPeers = new InputList<string>());
+            set => _multiRegionPeers = value;
+        }
+
+        /// <summary>
         /// (Updatable) Container repository readme.
         /// </summary>
         [Input("readme")]
         public Input<Inputs.ContainerRepositoryReadmeArgs>? Readme { get; set; }
+
+        /// <summary>
+        /// The type of container repository. This determines the repository behavior and required settings.
+        /// </summary>
+        [Input("repositoryType")]
+        public Input<string>? RepositoryType { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+        /// </summary>
+        [Input("upstreamSecretId")]
+        public Input<string>? UpstreamSecretId { get; set; }
+
+        /// <summary>
+        /// The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.
+        /// 
+        /// If isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/&lt;upstreamNamespace&gt;/library/ubuntu`
+        /// 
+        /// If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/&lt;upstreamNamespace&gt;/library` or `iad.ocir.io/&lt;upstreamNamespace&gt;`
+        /// </summary>
+        [Input("upstreamUrl")]
+        public Input<string>? UpstreamUrl { get; set; }
+
+        /// <summary>
+        /// (Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("upstreamUsername")]
+        public Input<string>? UpstreamUsername { get; set; }
 
         public ContainerRepositoryArgs()
         {
@@ -327,7 +425,7 @@ namespace Pulumi.Oci.Artifacts
         public Input<int>? ImageCount { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+        /// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
         /// </summary>
         [Input("isImmutable")]
         public Input<bool>? IsImmutable { get; set; }
@@ -337,6 +435,12 @@ namespace Pulumi.Oci.Artifacts
         /// </summary>
         [Input("isPublic")]
         public Input<bool>? IsPublic { get; set; }
+
+        /// <summary>
+        /// Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+        /// </summary>
+        [Input("isTopLevel")]
+        public Input<bool>? IsTopLevel { get; set; }
 
         /// <summary>
         /// Total number of layers.
@@ -350,6 +454,18 @@ namespace Pulumi.Oci.Artifacts
         [Input("layersSizeInBytes")]
         public Input<string>? LayersSizeInBytes { get; set; }
 
+        [Input("multiRegionPeers")]
+        private InputList<string>? _multiRegionPeers;
+
+        /// <summary>
+        /// List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.
+        /// </summary>
+        public InputList<string> MultiRegionPeers
+        {
+            get => _multiRegionPeers ?? (_multiRegionPeers = new InputList<string>());
+            set => _multiRegionPeers = value;
+        }
+
         /// <summary>
         /// The tenancy namespace used in the container repository path.
         /// </summary>
@@ -361,6 +477,12 @@ namespace Pulumi.Oci.Artifacts
         /// </summary>
         [Input("readme")]
         public Input<Inputs.ContainerRepositoryReadmeGetArgs>? Readme { get; set; }
+
+        /// <summary>
+        /// The type of container repository. This determines the repository behavior and required settings.
+        /// </summary>
+        [Input("repositoryType")]
+        public Input<string>? RepositoryType { get; set; }
 
         /// <summary>
         /// The current state of the container repository.
@@ -391,6 +513,31 @@ namespace Pulumi.Oci.Artifacts
         /// </summary>
         [Input("timeLastPushed")]
         public Input<string>? TimeLastPushed { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+        /// </summary>
+        [Input("upstreamSecretId")]
+        public Input<string>? UpstreamSecretId { get; set; }
+
+        /// <summary>
+        /// The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.
+        /// 
+        /// If isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/&lt;upstreamNamespace&gt;/library/ubuntu`
+        /// 
+        /// If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/&lt;upstreamNamespace&gt;/library` or `iad.ocir.io/&lt;upstreamNamespace&gt;`
+        /// </summary>
+        [Input("upstreamUrl")]
+        public Input<string>? UpstreamUrl { get; set; }
+
+        /// <summary>
+        /// (Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("upstreamUsername")]
+        public Input<string>? UpstreamUsername { get; set; }
 
         public ContainerRepositoryState()
         {

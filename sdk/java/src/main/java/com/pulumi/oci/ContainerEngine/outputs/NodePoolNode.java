@@ -84,6 +84,11 @@ public final class NodePoolNode {
      * 
      */
     private @Nullable String subnetId;
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private @Nullable Map<String,String> systemTags;
 
     private NodePoolNode() {}
     /**
@@ -184,6 +189,13 @@ public final class NodePoolNode {
     public Optional<String> subnetId() {
         return Optional.ofNullable(this.subnetId);
     }
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags == null ? Map.of() : this.systemTags;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -208,6 +220,7 @@ public final class NodePoolNode {
         private @Nullable String publicIp;
         private @Nullable String state;
         private @Nullable String subnetId;
+        private @Nullable Map<String,String> systemTags;
         public Builder() {}
         public Builder(NodePoolNode defaults) {
     	      Objects.requireNonNull(defaults);
@@ -225,6 +238,7 @@ public final class NodePoolNode {
     	      this.publicIp = defaults.publicIp;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
+    	      this.systemTags = defaults.systemTags;
         }
 
         @CustomType.Setter
@@ -314,6 +328,12 @@ public final class NodePoolNode {
             this.subnetId = subnetId;
             return this;
         }
+        @CustomType.Setter
+        public Builder systemTags(@Nullable Map<String,String> systemTags) {
+
+            this.systemTags = systemTags;
+            return this;
+        }
         public NodePoolNode build() {
             final var _resultValue = new NodePoolNode();
             _resultValue.availabilityDomain = availabilityDomain;
@@ -330,6 +350,7 @@ public final class NodePoolNode {
             _resultValue.publicIp = publicIp;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
+            _resultValue.systemTags = systemTags;
             return _resultValue;
         }
     }

@@ -222,6 +222,8 @@ type NodePool struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetIds pulumi.StringArrayOutput `pulumi:"subnetIds"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapOutput `pulumi:"systemTags"`
 }
 
 // NewNodePool registers a new resource with the given unique name, arguments, and options.
@@ -322,6 +324,8 @@ type nodePoolState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetIds []string `pulumi:"subnetIds"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 }
 
 type NodePoolState struct {
@@ -384,6 +388,8 @@ type NodePoolState struct {
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SubnetIds pulumi.StringArrayInput
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput
 }
 
 func (NodePoolState) ElementType() reflect.Type {
@@ -727,6 +733,11 @@ func (o NodePoolOutput) State() pulumi.StringOutput {
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o NodePoolOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NodePool) pulumi.StringArrayOutput { return v.SubnetIds }).(pulumi.StringArrayOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o NodePoolOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v *NodePool) pulumi.StringMapOutput { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 type NodePoolArrayOutput struct{ *pulumi.OutputState }

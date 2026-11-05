@@ -242,6 +242,7 @@ class _ClusterState:
                  open_id_connect_discovery_key: pulumi.Input[Optional[_builtins.str]] = None,
                  options: pulumi.Input[Optional['ClusterOptionsArgs']] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
                  type: pulumi.Input[Optional[_builtins.str]] = None,
                  vcn_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
@@ -264,6 +265,7 @@ class _ClusterState:
         :param pulumi.Input[_builtins.str] open_id_connect_discovery_key: The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
         :param pulumi.Input['ClusterOptionsArgs'] options: (Updatable) Optional attributes for the cluster.
         :param pulumi.Input[_builtins.str] state: The state of the cluster masters.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] type: (Updatable) Type of cluster
         :param pulumi.Input[_builtins.str] vcn_id: The OCID of the virtual cloud network (VCN) in which to create the cluster.
                
@@ -304,6 +306,8 @@ class _ClusterState:
             pulumi.set(__self__, "options", options)
         if state is not None:
             pulumi.set(__self__, "state", state)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
         if type is not None:
             pulumi.set(__self__, "type", type)
         if vcn_id is not None:
@@ -512,6 +516,18 @@ class _ClusterState:
     @state.setter
     def state(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "state", value)
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
 
     @_builtins.property
     @pulumi.getter
@@ -853,6 +869,7 @@ class Cluster(pulumi.CustomResource):
             __props__.__dict__["open_id_connect_discovery_endpoint"] = None
             __props__.__dict__["open_id_connect_discovery_key"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
         super(Cluster, __self__).__init__(
             'oci:ContainerEngine/cluster:Cluster',
             resource_name,
@@ -880,6 +897,7 @@ class Cluster(pulumi.CustomResource):
             open_id_connect_discovery_key: pulumi.Input[Optional[_builtins.str]] = None,
             options: pulumi.Input[Optional[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict', 'outputs.ClusterOptions']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
             vcn_id: pulumi.Input[Optional[_builtins.str]] = None) -> 'Cluster':
         """
@@ -906,6 +924,7 @@ class Cluster(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] open_id_connect_discovery_key: The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
         :param pulumi.Input[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict', 'outputs.ClusterOptions']] options: (Updatable) Optional attributes for the cluster.
         :param pulumi.Input[_builtins.str] state: The state of the cluster masters.
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[_builtins.str] type: (Updatable) Type of cluster
         :param pulumi.Input[_builtins.str] vcn_id: The OCID of the virtual cloud network (VCN) in which to create the cluster.
                
@@ -933,6 +952,7 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["open_id_connect_discovery_key"] = open_id_connect_discovery_key
         __props__.__dict__["options"] = options
         __props__.__dict__["state"] = state
+        __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["type"] = type
         __props__.__dict__["vcn_id"] = vcn_id
         return Cluster(resource_name, opts=opts, __props__=__props__)
@@ -957,6 +977,7 @@ class Cluster(pulumi.CustomResource):
             open_id_connect_discovery_key: pulumi.Input[Optional[_builtins.str]] = None,
             options: pulumi.Input[Optional[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict', 'outputs.ClusterOptions']]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
             type: pulumi.Input[Optional[_builtins.str]] = None,
             vcn_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
         __props__: dict = {}
@@ -977,6 +998,7 @@ class Cluster(pulumi.CustomResource):
         __props__["openIdConnectDiscoveryKey"] = open_id_connect_discovery_key
         __props__["options"] = options
         __props__["state"] = state
+        __props__["systemTags"] = system_tags
         __props__["type"] = type
         __props__["vcnId"] = vcn_id
         return pulumi.runtime.exists_resource(None, 'oci:ContainerEngine/cluster:Cluster', id, __props__, opts or pulumi.ResourceOptions())
@@ -1116,6 +1138,14 @@ class Cluster(pulumi.CustomResource):
         The state of the cluster masters.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter

@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.DataScience.inputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetailsArgs;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -15,6 +16,13 @@ import javax.annotation.Nullable;
 public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs Empty = new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs();
+
+    @Import(name="capacityReservationIds")
+    private @Nullable Output<List<String>> capacityReservationIds;
+
+    public Optional<Output<List<String>>> capacityReservationIds() {
+        return Optional.ofNullable(this.capacityReservationIds);
+    }
 
     /**
      * (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
@@ -94,6 +102,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
     private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs() {}
 
     private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs $) {
+        this.capacityReservationIds = $.capacityReservationIds;
         this.instanceShapeName = $.instanceShapeName;
         this.modelDeploymentInstanceShapeConfigDetails = $.modelDeploymentInstanceShapeConfigDetails;
         this.networkAccessType = $.networkAccessType;
@@ -117,6 +126,19 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
 
         public Builder(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs defaults) {
             $ = new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs(Objects.requireNonNull(defaults));
+        }
+
+        public Builder capacityReservationIds(@Nullable Output<List<String>> capacityReservationIds) {
+            $.capacityReservationIds = capacityReservationIds;
+            return this;
+        }
+
+        public Builder capacityReservationIds(List<String> capacityReservationIds) {
+            return capacityReservationIds(Output.of(capacityReservationIds));
+        }
+
+        public Builder capacityReservationIds(String... capacityReservationIds) {
+            return capacityReservationIds(List.of(capacityReservationIds));
         }
 
         /**

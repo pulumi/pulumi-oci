@@ -39,7 +39,7 @@ public final class GetBackendSetsBackendSetCollectionItemHealthChecker {
      */
     private String requestData;
     /**
-     * @return A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
+     * @return A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|&#92;s)*$`
      * 
      */
     private String responseBodyRegex;
@@ -106,7 +106,7 @@ public final class GetBackendSetsBackendSetCollectionItemHealthChecker {
         return this.requestData;
     }
     /**
-     * @return A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
+     * @return A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|&#92;s)*$`
      * 
      */
     public String responseBodyRegex() {

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Gets a list of Compliance policy rules in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Gets a list of Compliance policy rules in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// This data source provides the list of Compliance Policy Rules in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
         /// Gets a list of Compliance policy rules in a compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

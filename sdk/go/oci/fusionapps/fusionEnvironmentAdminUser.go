@@ -160,6 +160,12 @@ func (FusionEnvironmentAdminUserState) ElementType() reflect.Type {
 	return reflect.TypeOf((*fusionEnvironmentAdminUserState)(nil)).Elem()
 }
 
+// FusionEnvironmentAdminUserExists checks whether an existing FusionEnvironmentAdminUser resource with the given ID exists.
+func FusionEnvironmentAdminUserExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FusionEnvironmentAdminUserState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser", id, state, "", opts...)
+}
+
 type fusionEnvironmentAdminUserArgs struct {
 	// The email address for the administrator.
 	EmailAddress string `pulumi:"emailAddress"`

@@ -291,6 +291,12 @@ func (GatewayState) ElementType() reflect.Type {
 	return reflect.TypeOf((*gatewayState)(nil)).Elem()
 }
 
+// GatewayExists checks whether an existing Gateway resource with the given ID exists.
+func GatewayExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GatewayState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ApiGateway/gateway:Gateway", id, state, "", opts...)
+}
+
 type gatewayArgs struct {
 	// (Updatable) An array of CA bundles that should be used on the Gateway for TLS validation.
 	CaBundles []GatewayCaBundle `pulumi:"caBundles"`

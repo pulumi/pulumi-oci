@@ -16,11 +16,10 @@ public final class GetConnectionStorage {
      */
     private String accessKeyId;
     /**
-     * @deprecated
-     * The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
+     * @deprecated The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead. */
+    @Deprecated
     private String accountKey;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
@@ -63,11 +62,10 @@ public final class GetConnectionStorage {
      */
     private String schemeType;
     /**
-     * @deprecated
-     * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+     * @deprecated The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
+    @Deprecated
     private String secretAccessKey;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
@@ -75,11 +73,10 @@ public final class GetConnectionStorage {
      */
     private String secretAccessKeySecretId;
     /**
-     * @deprecated
-     * The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
+     * @deprecated The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead. */
+    @Deprecated
     private String serviceAccountKeyFile;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
@@ -106,11 +103,10 @@ public final class GetConnectionStorage {
         return this.accessKeyId;
     }
     /**
-     * @deprecated
-     * The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
+     * @deprecated The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead. */
+    @Deprecated
     public String accountKey() {
         return this.accountKey;
     }
@@ -171,11 +167,10 @@ public final class GetConnectionStorage {
         return this.schemeType;
     }
     /**
-     * @deprecated
-     * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+     * @deprecated The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
+    @Deprecated
     public String secretAccessKey() {
         return this.secretAccessKey;
     }
@@ -187,11 +182,10 @@ public final class GetConnectionStorage {
         return this.secretAccessKeySecretId;
     }
     /**
-     * @deprecated
-     * The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
+     * @deprecated The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead. */
+    @Deprecated
     public String serviceAccountKeyFile() {
         return this.serviceAccountKeyFile;
     }

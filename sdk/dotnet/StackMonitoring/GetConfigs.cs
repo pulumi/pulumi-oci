@@ -16,7 +16,6 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// Get a list of configurations in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// Get a list of configurations in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.StackMonitoring
         /// This data source provides the list of Configs in Oracle Cloud Infrastructure Stack Monitoring service.
         /// 
         /// Get a list of configurations in a compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

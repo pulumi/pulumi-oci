@@ -16,7 +16,6 @@ namespace Pulumi.Oci.SecurityAttribute
         /// 
         /// Lists the security attributes in the specified namespace.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.SecurityAttribute
         /// 
         /// Lists the security attributes in the specified namespace.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.SecurityAttribute
         /// This data source provides the list of Security Attributes in Oracle Cloud Infrastructure Security Attribute service.
         /// 
         /// Lists the security attributes in the specified namespace.
-        /// 
         /// 
         /// ## Example Usage
         /// 

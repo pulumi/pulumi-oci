@@ -876,6 +876,64 @@ class HostInsight(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return HostInsight(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            enterprise_manager_bridge_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enterprise_manager_entity_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            enterprise_manager_entity_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            enterprise_manager_entity_name: pulumi.Input[Optional[_builtins.str]] = None,
+            enterprise_manager_entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+            enterprise_manager_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_source: pulumi.Input[Optional[_builtins.str]] = None,
+            exadata_insight_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            host_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            host_name: pulumi.Input[Optional[_builtins.str]] = None,
+            host_type: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            platform_name: pulumi.Input[Optional[_builtins.str]] = None,
+            platform_type: pulumi.Input[Optional[_builtins.str]] = None,
+            platform_version: pulumi.Input[Optional[_builtins.str]] = None,
+            processor_count: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["computeId"] = compute_id
+        __props__["definedTags"] = defined_tags
+        __props__["enterpriseManagerBridgeId"] = enterprise_manager_bridge_id
+        __props__["enterpriseManagerEntityDisplayName"] = enterprise_manager_entity_display_name
+        __props__["enterpriseManagerEntityIdentifier"] = enterprise_manager_entity_identifier
+        __props__["enterpriseManagerEntityName"] = enterprise_manager_entity_name
+        __props__["enterpriseManagerEntityType"] = enterprise_manager_entity_type
+        __props__["enterpriseManagerIdentifier"] = enterprise_manager_identifier
+        __props__["entitySource"] = entity_source
+        __props__["exadataInsightId"] = exadata_insight_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["hostDisplayName"] = host_display_name
+        __props__["hostName"] = host_name
+        __props__["hostType"] = host_type
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["managementAgentId"] = management_agent_id
+        __props__["platformName"] = platform_name
+        __props__["platformType"] = platform_type
+        __props__["platformVersion"] = platform_version
+        __props__["processorCount"] = processor_count
+        __props__["state"] = state
+        __props__["status"] = status
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Opsi/hostInsight:HostInsight', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

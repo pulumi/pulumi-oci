@@ -199,6 +199,12 @@ func (RemediationRunState) ElementType() reflect.Type {
 	return reflect.TypeOf((*remediationRunState)(nil)).Elem()
 }
 
+// RemediationRunExists checks whether an existing RemediationRun resource with the given ID exists.
+func RemediationRunExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RemediationRunState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Adm/remediationRun:RemediationRun", id, state, "", opts...)
+}
+
 type remediationRunArgs struct {
 	// (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation run.
 	CompartmentId *string `pulumi:"compartmentId"`

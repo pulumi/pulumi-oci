@@ -290,6 +290,18 @@ class PublicIpPoolCapacity(pulumi.CustomResource):
         __props__.__dict__["public_ip_pool_id"] = public_ip_pool_id
         return PublicIpPoolCapacity(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            byoip_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+            public_ip_pool_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["byoipId"] = byoip_id
+        __props__["cidrBlock"] = cidr_block
+        __props__["publicIpPoolId"] = public_ip_pool_id
+        return pulumi.runtime.exists_resource(None, 'oci:Core/publicIpPoolCapacity:PublicIpPoolCapacity', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="byoipId")
     def byoip_id(self) -> pulumi.Output[_builtins.str]:

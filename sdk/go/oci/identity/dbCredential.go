@@ -161,6 +161,12 @@ func (DbCredentialState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dbCredentialState)(nil)).Elem()
 }
 
+// DbCredentialExists checks whether an existing DbCredential resource with the given ID exists.
+func DbCredentialExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DbCredentialState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/dbCredential:DbCredential", id, state, "", opts...)
+}
+
 type dbCredentialArgs struct {
 	// The description you assign to the DB credentials during creation.
 	Description string `pulumi:"description"`

@@ -247,7 +247,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     }
 
     /**
-     * (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
+     * (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s &#92;&#34;syncedFromApp&#92;&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
      * 
      * **Added In:** 17.4.6
      * 
@@ -266,7 +266,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
     private @Nullable Output<DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetAppArgs> delegatedAuthenticationTargetApp;
 
     /**
-     * @return (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
+     * @return (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s &#92;&#34;syncedFromApp&#92;&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
      * 
      * **Added In:** 17.4.6
      * 
@@ -1330,7 +1330,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param delegatedAuthenticationTargetApp (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
+         * @param delegatedAuthenticationTargetApp (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s &#92;&#34;syncedFromApp&#92;&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
          * 
          * **Added In:** 17.4.6
          * 
@@ -1353,7 +1353,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         }
 
         /**
-         * @param delegatedAuthenticationTargetApp (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
+         * @param delegatedAuthenticationTargetApp (Updatable) If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s &#92;&#34;syncedFromApp&#92;&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
          * 
          * **Added In:** 17.4.6
          * 

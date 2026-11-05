@@ -905,6 +905,64 @@ class UserAssessment(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return UserAssessment(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ignored_assessment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ignored_targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserAssessmentIgnoredTargetArgs', 'UserAssessmentIgnoredTargetArgsDict', 'outputs.UserAssessmentIgnoredTarget']]]]] = None,
+            is_assessment_scheduled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_baseline: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_deviated_from_baseline: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_compared_baseline_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            schedule: pulumi.Input[Optional[_builtins.str]] = None,
+            schedule_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            statistics: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_database_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            target_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            target_type: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_assessed: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            triggered_by: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["ignoredAssessmentIds"] = ignored_assessment_ids
+        __props__["ignoredTargets"] = ignored_targets
+        __props__["isAssessmentScheduled"] = is_assessment_scheduled
+        __props__["isBaseline"] = is_baseline
+        __props__["isDeviatedFromBaseline"] = is_deviated_from_baseline
+        __props__["lastComparedBaselineId"] = last_compared_baseline_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["schedule"] = schedule
+        __props__["scheduleAssessmentId"] = schedule_assessment_id
+        __props__["state"] = state
+        __props__["statistics"] = statistics
+        __props__["systemTags"] = system_tags
+        __props__["targetDatabaseGroupId"] = target_database_group_id
+        __props__["targetId"] = target_id
+        __props__["targetIds"] = target_ids
+        __props__["targetType"] = target_type
+        __props__["timeCreated"] = time_created
+        __props__["timeLastAssessed"] = time_last_assessed
+        __props__["timeUpdated"] = time_updated
+        __props__["triggeredBy"] = triggered_by
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/userAssessment:UserAssessment', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

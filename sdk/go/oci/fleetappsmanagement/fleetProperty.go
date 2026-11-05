@@ -187,6 +187,12 @@ func (FleetPropertyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*fleetPropertyState)(nil)).Elem()
 }
 
+// FleetPropertyExists checks whether an existing FleetProperty resource with the given ID exists.
+func FleetPropertyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FleetPropertyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FleetAppsManagement/fleetProperty:FleetProperty", id, state, "", opts...)
+}
+
 type fleetPropertyArgs struct {
 	// Compartment OCID
 	CompartmentId string `pulumi:"compartmentId"`

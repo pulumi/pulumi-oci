@@ -165,6 +165,12 @@ func (SecurityAssessmentCheckState) ElementType() reflect.Type {
 	return reflect.TypeOf((*securityAssessmentCheckState)(nil)).Elem()
 }
 
+// SecurityAssessmentCheckExists checks whether an existing SecurityAssessmentCheck resource with the given ID exists.
+func SecurityAssessmentCheckExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SecurityAssessmentCheckState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/securityAssessmentCheck:SecurityAssessmentCheck", id, state, "", opts...)
+}
+
 type securityAssessmentCheckArgs struct {
 	// (Updatable)
 	PatchOperations []SecurityAssessmentCheckPatchOperation `pulumi:"patchOperations"`

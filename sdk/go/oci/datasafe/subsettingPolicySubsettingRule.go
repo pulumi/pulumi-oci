@@ -185,6 +185,12 @@ func (SubsettingPolicySubsettingRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*subsettingPolicySubsettingRuleState)(nil)).Elem()
 }
 
+// SubsettingPolicySubsettingRuleExists checks whether an existing SubsettingPolicySubsettingRule resource with the given ID exists.
+func SubsettingPolicySubsettingRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SubsettingPolicySubsettingRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/subsettingPolicySubsettingRule:SubsettingPolicySubsettingRule", id, state, "", opts...)
+}
+
 type subsettingPolicySubsettingRuleArgs struct {
 	// (Updatable) The description of the subset rule
 	Description *string `pulumi:"description"`

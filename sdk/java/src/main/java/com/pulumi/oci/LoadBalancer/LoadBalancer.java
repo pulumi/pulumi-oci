@@ -195,11 +195,10 @@ public class LoadBalancer extends com.pulumi.resources.CustomResource {
      * An array of IP addresses. Deprecated: use ipAddressDetails instead
      * *
      * 
-     * @deprecated
-     * The &#39;ip_addresses&#39; field has been deprecated. Please use &#39;ip_address_details&#39; instead.
+     * @deprecated The &#39;ip_addresses&#39; field has been deprecated. Please use &#39;ip_address_details&#39; instead.
      * 
      */
-    @Deprecated /* The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead. */
+    @Deprecated
     @Export(name="ipAddresses", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ipAddresses;
 

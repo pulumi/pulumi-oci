@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Waf
         /// 
         /// Lists of protection capabilities filtered by query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Waf
         /// 
         /// Lists of protection capabilities filtered by query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.Waf
         /// This data source provides the list of Protection Capabilities in Oracle Cloud Infrastructure Waf service.
         /// 
         /// Lists of protection capabilities filtered by query parameters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

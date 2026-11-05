@@ -472,6 +472,28 @@ class EncryptedData(pulumi.CustomResource):
         __props__.__dict__["plaintext"] = plaintext
         return EncryptedData(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            associated_data: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ciphertext: pulumi.Input[Optional[_builtins.str]] = None,
+            crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            encryption_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            logging_context: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            plaintext: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["associatedData"] = associated_data
+        __props__["ciphertext"] = ciphertext
+        __props__["cryptoEndpoint"] = crypto_endpoint
+        __props__["encryptionAlgorithm"] = encryption_algorithm
+        __props__["keyId"] = key_id
+        __props__["keyVersionId"] = key_version_id
+        __props__["loggingContext"] = logging_context
+        __props__["plaintext"] = plaintext
+        return pulumi.runtime.exists_resource(None, 'oci:Kms/encryptedData:EncryptedData', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="associatedData")
     def associated_data(self) -> pulumi.Output[Optional[Mapping[str, _builtins.str]]]:

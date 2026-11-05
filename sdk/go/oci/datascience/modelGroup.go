@@ -309,6 +309,12 @@ func (ModelGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*modelGroupState)(nil)).Elem()
 }
 
+// ModelGroupExists checks whether an existing ModelGroup resource with the given ID exists.
+func ModelGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ModelGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataScience/modelGroup:ModelGroup", id, state, "", opts...)
+}
+
 type modelGroupArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the modelGroup in.
 	CompartmentId string `pulumi:"compartmentId"`

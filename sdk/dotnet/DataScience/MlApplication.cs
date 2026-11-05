@@ -89,7 +89,6 @@ namespace Pulumi.Oci.DataScience
         /// <summary>
         /// The name of MlApplication. It is unique in a given tenancy.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -205,7 +204,6 @@ namespace Pulumi.Oci.DataScience
         /// <summary>
         /// The name of MlApplication. It is unique in a given tenancy.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -264,7 +262,6 @@ namespace Pulumi.Oci.DataScience
 
         /// <summary>
         /// The name of MlApplication. It is unique in a given tenancy.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

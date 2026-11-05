@@ -704,6 +704,62 @@ class CloudExadataStorageServer(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return CloudExadataStorageServer(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            additional_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            cloud_exadata_storage_server_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connectors: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudExadataStorageServerConnectorArgs', 'CloudExadataStorageServerConnectorArgsDict', 'outputs.CloudExadataStorageServerConnector']]]]] = None,
+            cpu_count: pulumi.Input[Optional[_builtins.float]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            internal_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            make_model: pulumi.Input[Optional[_builtins.str]] = None,
+            max_flash_disk_iops: pulumi.Input[Optional[_builtins.int]] = None,
+            max_flash_disk_throughput: pulumi.Input[Optional[_builtins.int]] = None,
+            max_hard_disk_iops: pulumi.Input[Optional[_builtins.int]] = None,
+            max_hard_disk_throughput: pulumi.Input[Optional[_builtins.int]] = None,
+            memory_gb: pulumi.Input[Optional[_builtins.float]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_grid_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["additionalDetails"] = additional_details
+        __props__["cloudExadataStorageServerId"] = cloud_exadata_storage_server_id
+        __props__["connectors"] = connectors
+        __props__["cpuCount"] = cpu_count
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["exadataInfrastructureId"] = exadata_infrastructure_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["internalId"] = internal_id
+        __props__["ipAddress"] = ip_address
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["makeModel"] = make_model
+        __props__["maxFlashDiskIops"] = max_flash_disk_iops
+        __props__["maxFlashDiskThroughput"] = max_flash_disk_throughput
+        __props__["maxHardDiskIops"] = max_hard_disk_iops
+        __props__["maxHardDiskThroughput"] = max_hard_disk_throughput
+        __props__["memoryGb"] = memory_gb
+        __props__["resourceType"] = resource_type
+        __props__["state"] = state
+        __props__["status"] = status
+        __props__["storageGridId"] = storage_grid_id
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseManagement/cloudExadataStorageServer:CloudExadataStorageServer', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="additionalDetails")
     def additional_details(self) -> pulumi.Output[Mapping[str, _builtins.str]]:

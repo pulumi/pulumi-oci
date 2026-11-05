@@ -765,6 +765,48 @@ class DatabaseSoftwareImage(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return DatabaseSoftwareImage(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_software_image_included_patches: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            database_software_image_one_off_patches: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            database_version: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            image_shape_family: pulumi.Input[Optional[_builtins.str]] = None,
+            image_type: pulumi.Input[Optional[_builtins.str]] = None,
+            included_patches_summary: pulumi.Input[Optional[_builtins.str]] = None,
+            is_upgrade_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            ls_inventory: pulumi.Input[Optional[_builtins.str]] = None,
+            patch_set: pulumi.Input[Optional[_builtins.str]] = None,
+            source_db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["databaseSoftwareImageIncludedPatches"] = database_software_image_included_patches
+        __props__["databaseSoftwareImageOneOffPatches"] = database_software_image_one_off_patches
+        __props__["databaseVersion"] = database_version
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["imageShapeFamily"] = image_shape_family
+        __props__["imageType"] = image_type
+        __props__["includedPatchesSummary"] = included_patches_summary
+        __props__["isUpgradeSupported"] = is_upgrade_supported
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["lsInventory"] = ls_inventory
+        __props__["patchSet"] = patch_set
+        __props__["sourceDbHomeId"] = source_db_home_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:Database/databaseSoftwareImage:DatabaseSoftwareImage', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

@@ -187,22 +187,20 @@ public final class VolumeBackupState extends com.pulumi.resources.ResourceArgs {
     /**
      * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
      * 
-     * @deprecated
-     * The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
+     * @deprecated The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
      * 
      */
-    @Deprecated /* The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead. */
+    @Deprecated
     @Import(name="sizeInMbs")
     private @Nullable Output<String> sizeInMbs;
 
     /**
      * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
      * 
-     * @deprecated
-     * The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
+     * @deprecated The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
      * 
      */
-    @Deprecated /* The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead. */
+    @Deprecated
     public Optional<Output<String>> sizeInMbs() {
         return Optional.ofNullable(this.sizeInMbs);
     }
@@ -360,22 +358,20 @@ public final class VolumeBackupState extends com.pulumi.resources.ResourceArgs {
     /**
      * The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
      * 
-     * @deprecated
-     * The &#39;unique_size_in_mbs&#39; field has been deprecated. Please use &#39;unique_size_in_gbs&#39; instead.
+     * @deprecated The &#39;unique_size_in_mbs&#39; field has been deprecated. Please use &#39;unique_size_in_gbs&#39; instead.
      * 
      */
-    @Deprecated /* The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead. */
+    @Deprecated
     @Import(name="uniqueSizeInMbs")
     private @Nullable Output<String> uniqueSizeInMbs;
 
     /**
      * @return The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
      * 
-     * @deprecated
-     * The &#39;unique_size_in_mbs&#39; field has been deprecated. Please use &#39;unique_size_in_gbs&#39; instead.
+     * @deprecated The &#39;unique_size_in_mbs&#39; field has been deprecated. Please use &#39;unique_size_in_gbs&#39; instead.
      * 
      */
-    @Deprecated /* The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead. */
+    @Deprecated
     public Optional<Output<String>> uniqueSizeInMbs() {
         return Optional.ofNullable(this.uniqueSizeInMbs);
     }
@@ -694,11 +690,10 @@ public final class VolumeBackupState extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
+         * @deprecated The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
          * 
          */
-        @Deprecated /* The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead. */
+        @Deprecated
         public Builder sizeInMbs(@Nullable Output<String> sizeInMbs) {
             $.sizeInMbs = sizeInMbs;
             return this;
@@ -709,11 +704,10 @@ public final class VolumeBackupState extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
+         * @deprecated The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
          * 
          */
-        @Deprecated /* The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead. */
+        @Deprecated
         public Builder sizeInMbs(String sizeInMbs) {
             return sizeInMbs(Output.of(sizeInMbs));
         }
@@ -933,11 +927,10 @@ public final class VolumeBackupState extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;unique_size_in_mbs&#39; field has been deprecated. Please use &#39;unique_size_in_gbs&#39; instead.
+         * @deprecated The &#39;unique_size_in_mbs&#39; field has been deprecated. Please use &#39;unique_size_in_gbs&#39; instead.
          * 
          */
-        @Deprecated /* The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead. */
+        @Deprecated
         public Builder uniqueSizeInMbs(@Nullable Output<String> uniqueSizeInMbs) {
             $.uniqueSizeInMbs = uniqueSizeInMbs;
             return this;
@@ -948,11 +941,10 @@ public final class VolumeBackupState extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;unique_size_in_mbs&#39; field has been deprecated. Please use &#39;unique_size_in_gbs&#39; instead.
+         * @deprecated The &#39;unique_size_in_mbs&#39; field has been deprecated. Please use &#39;unique_size_in_gbs&#39; instead.
          * 
          */
-        @Deprecated /* The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead. */
+        @Deprecated
         public Builder uniqueSizeInMbs(String uniqueSizeInMbs) {
             return uniqueSizeInMbs(Output.of(uniqueSizeInMbs));
         }

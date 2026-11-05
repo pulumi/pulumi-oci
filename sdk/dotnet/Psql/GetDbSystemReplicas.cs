@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Psql
         /// 
         /// Returns a list of replica database systems.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Psql
         /// 
         /// Returns a list of replica database systems.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Psql
         /// This data source provides the list of Db System Replicas in Oracle Cloud Infrastructure Psql service.
         /// 
         /// Returns a list of replica database systems.
-        /// 
         /// 
         /// ## Example Usage
         /// 

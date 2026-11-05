@@ -443,6 +443,28 @@ class Peer(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         return Peer(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            ad: pulumi.Input[Optional[_builtins.str]] = None,
+            alias: pulumi.Input[Optional[_builtins.str]] = None,
+            blockchain_platform_id: pulumi.Input[Optional[_builtins.str]] = None,
+            host: pulumi.Input[Optional[_builtins.str]] = None,
+            ocpu_allocation_param: pulumi.Input[Optional[Union['PeerOcpuAllocationParamArgs', 'PeerOcpuAllocationParamArgsDict', 'outputs.PeerOcpuAllocationParam']]] = None,
+            peer_key: pulumi.Input[Optional[_builtins.str]] = None,
+            role: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["ad"] = ad
+        __props__["alias"] = alias
+        __props__["blockchainPlatformId"] = blockchain_platform_id
+        __props__["host"] = host
+        __props__["ocpuAllocationParam"] = ocpu_allocation_param
+        __props__["peerKey"] = peer_key
+        __props__["role"] = role
+        __props__["state"] = state
+        return pulumi.runtime.exists_resource(None, 'oci:Blockchain/peer:Peer', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def ad(self) -> pulumi.Output[_builtins.str]:

@@ -124,6 +124,12 @@ func (ProfileAttachManagementStationManagementState) ElementType() reflect.Type 
 	return reflect.TypeOf((*profileAttachManagementStationManagementState)(nil)).Elem()
 }
 
+// ProfileAttachManagementStationManagementExists checks whether an existing ProfileAttachManagementStationManagement resource with the given ID exists.
+func ProfileAttachManagementStationManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProfileAttachManagementStationManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/profileAttachManagementStationManagement:ProfileAttachManagementStationManagement", id, state, "", opts...)
+}
+
 type profileAttachManagementStationManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station that the instance will be associated with.
 	ManagementStationId string `pulumi:"managementStationId"`

@@ -72,7 +72,6 @@ namespace Pulumi.Oci.AnnouncementsService
         /// <summary>
         /// The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -146,7 +145,6 @@ namespace Pulumi.Oci.AnnouncementsService
         /// <summary>
         /// The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -181,7 +179,6 @@ namespace Pulumi.Oci.AnnouncementsService
 
         /// <summary>
         /// The name of the filter group. The name must be unique and it cannot be changed. Avoid entering confidential information.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

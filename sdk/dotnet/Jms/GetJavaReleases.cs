@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Returns a list of Java releases.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Returns a list of Java releases.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.Jms
         /// This data source provides the list of Java Releases in Oracle Cloud Infrastructure Jms service.
         /// 
         /// Returns a list of Java releases.
-        /// 
         /// 
         /// ## Example Usage
         /// 

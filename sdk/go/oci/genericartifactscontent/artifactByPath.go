@@ -190,6 +190,12 @@ func (ArtifactByPathState) ElementType() reflect.Type {
 	return reflect.TypeOf((*artifactByPathState)(nil)).Elem()
 }
 
+// ArtifactByPathExists checks whether an existing ArtifactByPath resource with the given ID exists.
+func ArtifactByPathExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ArtifactByPathState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:GenericArtifactsContent/artifactByPath:ArtifactByPath", id, state, "", opts...)
+}
+
 type artifactByPathArgs struct {
 	// A user-defined path to describe the location of an artifact. You can use slashes to organize the repository, but slashes do not create a directory structure. An artifact path does not include an artifact version.
 	ArtifactPath string `pulumi:"artifactPath"`

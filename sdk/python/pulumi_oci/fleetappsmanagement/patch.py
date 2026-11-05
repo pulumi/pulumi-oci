@@ -833,6 +833,48 @@ class Patch(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return Patch(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            artifact_details: pulumi.Input[Optional[Union['PatchArtifactDetailsArgs', 'PatchArtifactDetailsArgsDict', 'outputs.PatchArtifactDetails']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            dependent_patches: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PatchDependentPatchArgs', 'PatchDependentPatchArgsDict', 'outputs.PatchDependentPatch']]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            patch_type: pulumi.Input[Optional[Union['PatchPatchTypeArgs', 'PatchPatchTypeArgsDict', 'outputs.PatchPatchType']]] = None,
+            product: pulumi.Input[Optional[Union['PatchProductArgs', 'PatchProductArgsDict', 'outputs.PatchProduct']]] = None,
+            resource_region: pulumi.Input[Optional[_builtins.str]] = None,
+            severity: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_released: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["artifactDetails"] = artifact_details
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["dependentPatches"] = dependent_patches
+        __props__["description"] = description
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["name"] = name
+        __props__["patchType"] = patch_type
+        __props__["product"] = product
+        __props__["resourceRegion"] = resource_region
+        __props__["severity"] = severity
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeReleased"] = time_released
+        __props__["timeUpdated"] = time_updated
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'oci:FleetAppsManagement/patch:Patch', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="artifactDetails")
     def artifact_details(self) -> pulumi.Output['outputs.PatchArtifactDetails']:

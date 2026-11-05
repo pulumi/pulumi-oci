@@ -1023,6 +1023,12 @@ func (DomainsCloudGateState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsCloudGateState)(nil)).Elem()
 }
 
+// DomainsCloudGateExists checks whether an existing DomainsCloudGate resource with the given ID exists.
+func DomainsCloudGateExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsCloudGateState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsCloudGate:DomainsCloudGate", id, state, "", opts...)
+}
+
 type domainsCloudGateArgs struct {
 	// (Updatable) Activation status for this Cloud Gate
 	//

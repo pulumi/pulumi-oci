@@ -302,6 +302,12 @@ func (AgentAgentEndpointState) ElementType() reflect.Type {
 	return reflect.TypeOf((*agentAgentEndpointState)(nil)).Elem()
 }
 
+// AgentAgentEndpointExists checks whether an existing AgentAgentEndpoint resource with the given ID exists.
+func AgentAgentEndpointExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AgentAgentEndpointState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:GenerativeAi/agentAgentEndpoint:AgentAgentEndpoint", id, state, "", opts...)
+}
+
 type agentAgentEndpointArgs struct {
 	// The OCID of the agent that this endpoint is associated with.
 	AgentId string `pulumi:"agentId"`

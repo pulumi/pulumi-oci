@@ -182,6 +182,12 @@ func (OnPremConnectorState) ElementType() reflect.Type {
 	return reflect.TypeOf((*onPremConnectorState)(nil)).Elem()
 }
 
+// OnPremConnectorExists checks whether an existing OnPremConnector resource with the given ID exists.
+func OnPremConnectorExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OnPremConnectorState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/onPremConnector:OnPremConnector", id, state, "", opts...)
+}
+
 type onPremConnectorArgs struct {
 	// (Updatable) The OCID of the compartment where you want to create the on-premises connector.
 	CompartmentId string `pulumi:"compartmentId"`

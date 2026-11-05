@@ -995,6 +995,62 @@ class WorkspaceApplication(pulumi.CustomResource):
         __props__.__dict__["workspace_id"] = workspace_id
         return WorkspaceApplication(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            application_version: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            dependent_object_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationDependentObjectMetadataArgs', 'WorkspaceApplicationDependentObjectMetadataArgsDict', 'outputs.WorkspaceApplicationDependentObjectMetadata']]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            key_map: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationMetadataArgs', 'WorkspaceApplicationMetadataArgsDict', 'outputs.WorkspaceApplicationMetadata']]]]] = None,
+            model_type: pulumi.Input[Optional[_builtins.str]] = None,
+            model_version: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            object_status: pulumi.Input[Optional[_builtins.int]] = None,
+            object_version: pulumi.Input[Optional[_builtins.int]] = None,
+            parent_reves: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationParentRefArgs', 'WorkspaceApplicationParentRefArgsDict', 'outputs.WorkspaceApplicationParentRef']]]]] = None,
+            published_object_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationPublishedObjectMetadataArgs', 'WorkspaceApplicationPublishedObjectMetadataArgsDict', 'outputs.WorkspaceApplicationPublishedObjectMetadata']]]]] = None,
+            registry_metadata: pulumi.Input[Optional[Union['WorkspaceApplicationRegistryMetadataArgs', 'WorkspaceApplicationRegistryMetadataArgsDict', 'outputs.WorkspaceApplicationRegistryMetadata']]] = None,
+            source_application_info: pulumi.Input[Optional[Union['WorkspaceApplicationSourceApplicationInfoArgs', 'WorkspaceApplicationSourceApplicationInfoArgsDict', 'outputs.WorkspaceApplicationSourceApplicationInfo']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_patched: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            workspace_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["applicationVersion"] = application_version
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["dependentObjectMetadatas"] = dependent_object_metadatas
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["identifier"] = identifier
+        __props__["key"] = key
+        __props__["keyMap"] = key_map
+        __props__["metadatas"] = metadatas
+        __props__["modelType"] = model_type
+        __props__["modelVersion"] = model_version
+        __props__["name"] = name
+        __props__["objectStatus"] = object_status
+        __props__["objectVersion"] = object_version
+        __props__["parentReves"] = parent_reves
+        __props__["publishedObjectMetadatas"] = published_object_metadatas
+        __props__["registryMetadata"] = registry_metadata
+        __props__["sourceApplicationInfo"] = source_application_info
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["timePatched"] = time_patched
+        __props__["timeUpdated"] = time_updated
+        __props__["workspaceId"] = workspace_id
+        return pulumi.runtime.exists_resource(None, 'oci:DataIntegration/workspaceApplication:WorkspaceApplication', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="applicationVersion")
     def application_version(self) -> pulumi.Output[_builtins.int]:

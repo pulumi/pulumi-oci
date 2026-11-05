@@ -559,6 +559,34 @@ class DedicatedVantagePoint(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return DedicatedVantagePoint(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dvp_stack_details: pulumi.Input[Optional[Union['DedicatedVantagePointDvpStackDetailsArgs', 'DedicatedVantagePointDvpStackDetailsArgsDict', 'outputs.DedicatedVantagePointDvpStackDetails']]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            monitor_status_count_maps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DedicatedVantagePointMonitorStatusCountMapArgs', 'DedicatedVantagePointMonitorStatusCountMapArgsDict', 'outputs.DedicatedVantagePointMonitorStatusCountMap']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["apmDomainId"] = apm_domain_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["dvpStackDetails"] = dvp_stack_details
+        __props__["freeformTags"] = freeform_tags
+        __props__["monitorStatusCountMaps"] = monitor_status_count_maps
+        __props__["name"] = name
+        __props__["region"] = region
+        __props__["status"] = status
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="apmDomainId")
     def apm_domain_id(self) -> pulumi.Output[_builtins.str]:

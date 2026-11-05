@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// List potential diagnoses that would put a fleet into FAILED or NEEDS_ATTENTION lifecycle state.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// List potential diagnoses that would put a fleet into FAILED or NEEDS_ATTENTION lifecycle state.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Jms
         /// This data source provides the list of Fleet Diagnoses in Oracle Cloud Infrastructure Jms service.
         /// 
         /// List potential diagnoses that would put a fleet into FAILED or NEEDS_ATTENTION lifecycle state.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Bastion
         /// 
         /// Retrieves a list of SessionSummary objects for an existing bastion. Bastion sessions let authorized users connect to a target resource for a predetermined amount of time.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Bastion
         /// 
         /// Retrieves a list of SessionSummary objects for an existing bastion. Bastion sessions let authorized users connect to a target resource for a predetermined amount of time.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.Bastion
         /// This data source provides the list of Sessions in Oracle Cloud Infrastructure Bastion service.
         /// 
         /// Retrieves a list of SessionSummary objects for an existing bastion. Bastion sessions let authorized users connect to a target resource for a predetermined amount of time.
-        /// 
         /// 
         /// ## Example Usage
         /// 

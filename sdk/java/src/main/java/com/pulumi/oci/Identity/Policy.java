@@ -86,11 +86,10 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Identity/policy:Policy")
 public class Policy extends com.pulumi.resources.CustomResource {
     /**
-     * @deprecated
-     * The &#39;ETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;ETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     @Export(name="ETag", refs={String.class}, tree="[0]")
     private Output<String> ETag;
 
@@ -168,11 +167,10 @@ public class Policy extends com.pulumi.resources.CustomResource {
         return this.inactiveState;
     }
     /**
-     * @deprecated
-     * The &#39;lastUpdateETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;lastUpdateETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     @Export(name="lastUpdateETag", refs={String.class}, tree="[0]")
     private Output<String> lastUpdateETag;
 
@@ -194,11 +192,10 @@ public class Policy extends com.pulumi.resources.CustomResource {
         return this.name;
     }
     /**
-     * @deprecated
-     * The &#39;policyHash&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;policyHash&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     @Export(name="policyHash", refs={String.class}, tree="[0]")
     private Output<String> policyHash;
 

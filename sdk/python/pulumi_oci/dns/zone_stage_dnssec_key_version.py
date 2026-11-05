@@ -293,6 +293,18 @@ class ZoneStageDnssecKeyVersion(pulumi.CustomResource):
         __props__.__dict__["zone_id"] = zone_id
         return ZoneStageDnssecKeyVersion(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            predecessor_dnssec_key_version_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            zone_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["predecessorDnssecKeyVersionUuid"] = predecessor_dnssec_key_version_uuid
+        __props__["scope"] = scope
+        __props__["zoneId"] = zone_id
+        return pulumi.runtime.exists_resource(None, 'oci:Dns/zoneStageDnssecKeyVersion:ZoneStageDnssecKeyVersion', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="predecessorDnssecKeyVersionUuid")
     def predecessor_dnssec_key_version_uuid(self) -> pulumi.Output[_builtins.str]:

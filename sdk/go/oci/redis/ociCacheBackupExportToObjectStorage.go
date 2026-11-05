@@ -137,6 +137,12 @@ func (OciCacheBackupExportToObjectStorageState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ociCacheBackupExportToObjectStorageState)(nil)).Elem()
 }
 
+// OciCacheBackupExportToObjectStorageExists checks whether an existing OciCacheBackupExportToObjectStorage resource with the given ID exists.
+func OciCacheBackupExportToObjectStorageExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OciCacheBackupExportToObjectStorageState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Redis/ociCacheBackupExportToObjectStorage:OciCacheBackupExportToObjectStorage", id, state, "", opts...)
+}
+
 type ociCacheBackupExportToObjectStorageArgs struct {
 	// The target Object Storage bucket name.
 	Bucket string `pulumi:"bucket"`

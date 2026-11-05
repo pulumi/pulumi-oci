@@ -103,8 +103,7 @@ namespace Pulumi.Oci.Database
         public Output<string> Name { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The target state for the Advanced Cluster File System. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Advanced Cluster File System. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -311,8 +310,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Updatable) The target state for the Advanced Cluster File System. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Advanced Cluster File System. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -128,8 +128,7 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableArray<string>> PrivateIpIds { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The desired number of instances for the GPU Memory Cluster. 
-        /// 
+        /// (Updatable) The desired number of instances for the GPU Memory Cluster.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -280,8 +279,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// (Updatable) The desired number of instances for the GPU Memory Cluster. 
-        /// 
+        /// (Updatable) The desired number of instances for the GPU Memory Cluster.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -376,8 +374,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// (Updatable) The desired number of instances for the GPU Memory Cluster. 
-        /// 
+        /// (Updatable) The desired number of instances for the GPU Memory Cluster.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

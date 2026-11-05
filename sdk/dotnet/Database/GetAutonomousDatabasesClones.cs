@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the Autonomous AI Database clones for the specified Autonomous AI Database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the Autonomous AI Database clones for the specified Autonomous AI Database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Autonomous Databases Clones in Oracle Cloud Infrastructure Database service.
         /// 
         /// Lists the Autonomous AI Database clones for the specified Autonomous AI Database.
-        /// 
         /// 
         /// ## Example Usage
         /// 

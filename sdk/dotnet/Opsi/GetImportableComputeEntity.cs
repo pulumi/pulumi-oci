@@ -22,7 +22,6 @@ namespace Pulumi.Oci.Opsi
         ///       2.2 The agent availabilityStatus = 'ACTIVE'
         ///       2.3 The agent lifecycleState = 'ACTIVE'
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -55,7 +54,6 @@ namespace Pulumi.Oci.Opsi
         ///       2.2 The agent availabilityStatus = 'ACTIVE'
         ///       2.3 The agent lifecycleState = 'ACTIVE'
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -87,7 +85,6 @@ namespace Pulumi.Oci.Opsi
         ///       2.1 The agent OCID is not already being used for an existing hostInsight.
         ///       2.2 The agent availabilityStatus = 'ACTIVE'
         ///       2.3 The agent lifecycleState = 'ACTIVE'
-        /// 
         /// 
         /// ## Example Usage
         /// 

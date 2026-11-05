@@ -121,6 +121,12 @@ func (LifecycleStageAttachManagedInstancesManagementState) ElementType() reflect
 	return reflect.TypeOf((*lifecycleStageAttachManagedInstancesManagementState)(nil)).Elem()
 }
 
+// LifecycleStageAttachManagedInstancesManagementExists checks whether an existing LifecycleStageAttachManagedInstancesManagement resource with the given ID exists.
+func LifecycleStageAttachManagedInstancesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LifecycleStageAttachManagedInstancesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/lifecycleStageAttachManagedInstancesManagement:LifecycleStageAttachManagedInstancesManagement", id, state, "", opts...)
+}
+
 type lifecycleStageAttachManagedInstancesManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
 	LifecycleStageId string `pulumi:"lifecycleStageId"`

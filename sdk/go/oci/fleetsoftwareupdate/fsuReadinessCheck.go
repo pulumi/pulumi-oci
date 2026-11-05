@@ -209,6 +209,12 @@ func (FsuReadinessCheckState) ElementType() reflect.Type {
 	return reflect.TypeOf((*fsuReadinessCheckState)(nil)).Elem()
 }
 
+// FsuReadinessCheckExists checks whether an existing FsuReadinessCheck resource with the given ID exists.
+func FsuReadinessCheckExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FsuReadinessCheckState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FleetSoftwareUpdate/fsuReadinessCheck:FsuReadinessCheck", id, state, "", opts...)
+}
+
 type fsuReadinessCheckArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
 	CompartmentId string `pulumi:"compartmentId"`

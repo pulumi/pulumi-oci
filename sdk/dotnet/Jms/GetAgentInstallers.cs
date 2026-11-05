@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Returns a list of the agent installer information.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Returns a list of the agent installer information.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.Jms
         /// This data source provides the list of Agent Installers in Oracle Cloud Infrastructure Jms service.
         /// 
         /// Returns a list of the agent installer information.
-        /// 
         /// 
         /// ## Example Usage
         /// 

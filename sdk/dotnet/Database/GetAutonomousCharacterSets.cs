@@ -120,8 +120,7 @@ namespace Pulumi.Oci.Database
         public bool? IsDedicated { get; set; }
 
         /// <summary>
-        /// Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure. 
-        /// 
+        /// Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure.
         /// 
         /// :
         /// </summary>
@@ -157,8 +156,7 @@ namespace Pulumi.Oci.Database
         public Input<bool>? IsDedicated { get; set; }
 
         /// <summary>
-        /// Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure. 
-        /// 
+        /// Specifies whether this request is for an Autonomous AI Database Serverless instance. By default, this request will be for Autonomous AI Database on Dedicated Exadata Infrastructure.
         /// 
         /// :
         /// </summary>

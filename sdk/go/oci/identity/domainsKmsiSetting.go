@@ -832,6 +832,12 @@ func (DomainsKmsiSettingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsKmsiSettingState)(nil)).Elem()
 }
 
+// DomainsKmsiSettingExists checks whether an existing DomainsKmsiSetting resource with the given ID exists.
+func DomainsKmsiSettingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsKmsiSettingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsKmsiSetting:DomainsKmsiSetting", id, state, "", opts...)
+}
+
 type domainsKmsiSettingArgs struct {
 	// (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets []string `pulumi:"attributeSets"`

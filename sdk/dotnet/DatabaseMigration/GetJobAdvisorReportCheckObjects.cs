@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// Get the Pre-Migration extended Advisor report object list.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// Get the Pre-Migration extended Advisor report object list.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// This data source provides the list of Job Advisor Report Check Objects in Oracle Cloud Infrastructure Database Migration service.
         /// 
         /// Get the Pre-Migration extended Advisor report object list.
-        /// 
         /// 
         /// ## Example Usage
         /// 

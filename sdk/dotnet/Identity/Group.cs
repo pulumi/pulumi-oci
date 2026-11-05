@@ -103,8 +103,7 @@ namespace Pulumi.Oci.Identity
         public Output<string> InactiveState { get; private set; } = null!;
 
         /// <summary>
-        /// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed. 
-        /// 
+        /// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -207,8 +206,7 @@ namespace Pulumi.Oci.Identity
         }
 
         /// <summary>
-        /// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed. 
-        /// 
+        /// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -267,8 +265,7 @@ namespace Pulumi.Oci.Identity
         public Input<string>? InactiveState { get; set; }
 
         /// <summary>
-        /// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed. 
-        /// 
+        /// The name you assign to the group during creation. The name must be unique across all groups in the tenancy and cannot be changed.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

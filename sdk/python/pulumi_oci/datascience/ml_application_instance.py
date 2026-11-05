@@ -740,6 +740,48 @@ class MlApplicationInstance(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return MlApplicationInstance(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            auth_configuration: pulumi.Input[Optional[Union['MlApplicationInstanceAuthConfigurationArgs', 'MlApplicationInstanceAuthConfigurationArgsDict', 'outputs.MlApplicationInstanceAuthConfiguration']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MlApplicationInstanceConfigurationArgs', 'MlApplicationInstanceConfigurationArgsDict', 'outputs.MlApplicationInstanceConfiguration']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_substate: pulumi.Input[Optional[_builtins.str]] = None,
+            ml_application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ml_application_implementation_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ml_application_implementation_name: pulumi.Input[Optional[_builtins.str]] = None,
+            ml_application_name: pulumi.Input[Optional[_builtins.str]] = None,
+            prediction_endpoint_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MlApplicationInstancePredictionEndpointDetailArgs', 'MlApplicationInstancePredictionEndpointDetailArgsDict', 'outputs.MlApplicationInstancePredictionEndpointDetail']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["authConfiguration"] = auth_configuration
+        __props__["compartmentId"] = compartment_id
+        __props__["configurations"] = configurations
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["isEnabled"] = is_enabled
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["lifecycleSubstate"] = lifecycle_substate
+        __props__["mlApplicationId"] = ml_application_id
+        __props__["mlApplicationImplementationId"] = ml_application_implementation_id
+        __props__["mlApplicationImplementationName"] = ml_application_implementation_name
+        __props__["mlApplicationName"] = ml_application_name
+        __props__["predictionEndpointDetails"] = prediction_endpoint_details
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:DataScience/mlApplicationInstance:MlApplicationInstance', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="authConfiguration")
     def auth_configuration(self) -> pulumi.Output['outputs.MlApplicationInstanceAuthConfiguration']:

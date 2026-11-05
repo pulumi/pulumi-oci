@@ -352,6 +352,26 @@ class SubscriptionMapping(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return SubscriptionMapping(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_explicitly_assigned: pulumi.Input[Optional[_builtins.bool]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_terminated: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["isExplicitlyAssigned"] = is_explicitly_assigned
+        __props__["state"] = state
+        __props__["subscriptionId"] = subscription_id
+        __props__["timeCreated"] = time_created
+        __props__["timeTerminated"] = time_terminated
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Tenantmanagercontrolplane/subscriptionMapping:SubscriptionMapping', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

@@ -309,6 +309,20 @@ class CalculateAuditVolumeCollected(pulumi.CustomResource):
         __props__.__dict__["time_to_month"] = time_to_month
         return CalculateAuditVolumeCollected(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+            collected_audit_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculateAuditVolumeCollectedCollectedAuditVolumeArgs', 'CalculateAuditVolumeCollectedCollectedAuditVolumeArgsDict', 'outputs.CalculateAuditVolumeCollectedCollectedAuditVolume']]]]] = None,
+            time_from_month: pulumi.Input[Optional[_builtins.str]] = None,
+            time_to_month: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["auditProfileId"] = audit_profile_id
+        __props__["collectedAuditVolumes"] = collected_audit_volumes
+        __props__["timeFromMonth"] = time_from_month
+        __props__["timeToMonth"] = time_to_month
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/calculateAuditVolumeCollected:CalculateAuditVolumeCollected', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="auditProfileId")
     def audit_profile_id(self) -> pulumi.Output[_builtins.str]:

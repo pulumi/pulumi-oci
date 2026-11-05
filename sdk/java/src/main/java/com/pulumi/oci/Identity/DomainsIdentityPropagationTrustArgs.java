@@ -284,7 +284,7 @@ public final class DomainsIdentityPropagationTrustArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \&#34;aud\&#34; or \&#34;client_id\&#34;. If Azure, then \&#34;appid\&#34;. If GCP, then \&#34;aud\&#34;.
+     * (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then &#92;&#34;aud&#92;&#34; or &#92;&#34;client_id&#92;&#34;. If Azure, then &#92;&#34;appid&#92;&#34;. If GCP, then &#92;&#34;aud&#92;&#34;.
      * 
      * **SCIM++ Properties:**
      * * type: string
@@ -300,7 +300,7 @@ public final class DomainsIdentityPropagationTrustArgs extends com.pulumi.resour
     private @Nullable Output<String> clientClaimName;
 
     /**
-     * @return (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \&#34;aud\&#34; or \&#34;client_id\&#34;. If Azure, then \&#34;appid\&#34;. If GCP, then \&#34;aud\&#34;.
+     * @return (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then &#92;&#34;aud&#92;&#34; or &#92;&#34;client_id&#92;&#34;. If Azure, then &#92;&#34;appid&#92;&#34;. If GCP, then &#92;&#34;aud&#92;&#34;.
      * 
      * **SCIM++ Properties:**
      * * type: string
@@ -771,7 +771,7 @@ public final class DomainsIdentityPropagationTrustArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard &#92;&#34;enterprise&#92;&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -788,7 +788,7 @@ public final class DomainsIdentityPropagationTrustArgs extends com.pulumi.resour
     private Output<List<String>> schemas;
 
     /**
-     * @return (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * @return (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard &#92;&#34;enterprise&#92;&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -1402,7 +1402,7 @@ public final class DomainsIdentityPropagationTrustArgs extends com.pulumi.resour
         }
 
         /**
-         * @param clientClaimName (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \&#34;aud\&#34; or \&#34;client_id\&#34;. If Azure, then \&#34;appid\&#34;. If GCP, then \&#34;aud\&#34;.
+         * @param clientClaimName (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then &#92;&#34;aud&#92;&#34; or &#92;&#34;client_id&#92;&#34;. If Azure, then &#92;&#34;appid&#92;&#34;. If GCP, then &#92;&#34;aud&#92;&#34;.
          * 
          * **SCIM++ Properties:**
          * * type: string
@@ -1422,7 +1422,7 @@ public final class DomainsIdentityPropagationTrustArgs extends com.pulumi.resour
         }
 
         /**
-         * @param clientClaimName (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then \&#34;aud\&#34; or \&#34;client_id\&#34;. If Azure, then \&#34;appid\&#34;. If GCP, then \&#34;aud\&#34;.
+         * @param clientClaimName (Updatable) The claim name that identifies to whom the JWT/SAML token is issued. If AWS, then &#92;&#34;aud&#92;&#34; or &#92;&#34;client_id&#92;&#34;. If Azure, then &#92;&#34;appid&#92;&#34;. If GCP, then &#92;&#34;aud&#92;&#34;.
          * 
          * **SCIM++ Properties:**
          * * type: string
@@ -2038,7 +2038,7 @@ public final class DomainsIdentityPropagationTrustArgs extends com.pulumi.resour
         }
 
         /**
-         * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+         * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard &#92;&#34;enterprise&#92;&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -2059,7 +2059,7 @@ public final class DomainsIdentityPropagationTrustArgs extends com.pulumi.resour
         }
 
         /**
-         * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+         * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard &#92;&#34;enterprise&#92;&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -2079,7 +2079,7 @@ public final class DomainsIdentityPropagationTrustArgs extends com.pulumi.resour
         }
 
         /**
-         * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+         * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard &#92;&#34;enterprise&#92;&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false

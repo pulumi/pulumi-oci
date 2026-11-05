@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Lists the PrivateServiceAccess work requests in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Lists the PrivateServiceAccess work requests in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Psa Work Requests in Oracle Cloud Infrastructure Psa service.
         /// 
         /// Lists the PrivateServiceAccess work requests in a compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

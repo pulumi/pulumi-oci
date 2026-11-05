@@ -199,6 +199,12 @@ func (TsigKeyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*tsigKeyState)(nil)).Elem()
 }
 
+// TsigKeyExists checks whether an existing TsigKey resource with the given ID exists.
+func TsigKeyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *TsigKeyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Dns/tsigKey:TsigKey", id, state, "", opts...)
+}
+
 type tsigKeyArgs struct {
 	// TSIG key algorithms are encoded as domain names, but most consist of only one non-empty label, which is not required to be explicitly absolute. Applicable algorithms include: hmac-sha1, hmac-sha224, hmac-sha256, hmac-sha512. For more information on these algorithms, see [RFC 4635](https://tools.ietf.org/html/rfc4635#section-2).
 	Algorithm string `pulumi:"algorithm"`

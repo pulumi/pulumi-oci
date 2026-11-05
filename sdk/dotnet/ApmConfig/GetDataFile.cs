@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ApmConfig
         /// 
         /// Retrieves the Data file with the specified name and type.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.ApmConfig
         /// 
         /// Retrieves the Data file with the specified name and type.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.ApmConfig
         /// This data source provides details about a specific Data File resource in Oracle Cloud Infrastructure Apm Config service.
         /// 
         /// Retrieves the Data file with the specified name and type.
-        /// 
         /// 
         /// ## Example Usage
         /// 

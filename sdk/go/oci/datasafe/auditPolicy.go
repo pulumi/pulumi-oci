@@ -196,6 +196,12 @@ func (AuditPolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*auditPolicyState)(nil)).Elem()
 }
 
+// AuditPolicyExists checks whether an existing AuditPolicy resource with the given ID exists.
+func AuditPolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AuditPolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/auditPolicy:AuditPolicy", id, state, "", opts...)
+}
+
 type auditPolicyArgs struct {
 	// Unique audit policy identifier.
 	AuditPolicyId string `pulumi:"auditPolicyId"`

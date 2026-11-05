@@ -162,6 +162,12 @@ func (ManagedDatabasesResetDatabaseParameterState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managedDatabasesResetDatabaseParameterState)(nil)).Elem()
 }
 
+// ManagedDatabasesResetDatabaseParameterExists checks whether an existing ManagedDatabasesResetDatabaseParameter resource with the given ID exists.
+func ManagedDatabasesResetDatabaseParameterExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedDatabasesResetDatabaseParameterState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/managedDatabasesResetDatabaseParameter:ManagedDatabasesResetDatabaseParameter", id, state, "", opts...)
+}
+
 type managedDatabasesResetDatabaseParameterArgs struct {
 	// The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
 	Credentials *ManagedDatabasesResetDatabaseParameterCredentials `pulumi:"credentials"`

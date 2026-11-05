@@ -1053,6 +1053,66 @@ class BlockchainPlatform(pulumi.CustomResource):
         __props__.__dict__["total_ocpu_capacity"] = total_ocpu_capacity
         return BlockchainPlatform(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            ca_cert_archive_text: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            component_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BlockchainPlatformComponentDetailArgs', 'BlockchainPlatformComponentDetailArgsDict', 'outputs.BlockchainPlatformComponentDetail']]]]] = None,
+            compute_shape: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            federated_user_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            host_ocpu_utilization_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BlockchainPlatformHostOcpuUtilizationInfoArgs', 'BlockchainPlatformHostOcpuUtilizationInfoArgsDict', 'outputs.BlockchainPlatformHostOcpuUtilizationInfo']]]]] = None,
+            idcs_access_token: pulumi.Input[Optional[_builtins.str]] = None,
+            is_byol: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_multi_ad: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            load_balancer_shape: pulumi.Input[Optional[_builtins.str]] = None,
+            platform_role: pulumi.Input[Optional[_builtins.str]] = None,
+            platform_shape_type: pulumi.Input[Optional[_builtins.str]] = None,
+            platform_version: pulumi.Input[Optional[_builtins.str]] = None,
+            replicas: pulumi.Input[Optional[Union['BlockchainPlatformReplicasArgs', 'BlockchainPlatformReplicasArgsDict', 'outputs.BlockchainPlatformReplicas']]] = None,
+            service_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            service_version: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+            storage_used_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            total_ocpu_capacity: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["caCertArchiveText"] = ca_cert_archive_text
+        __props__["compartmentId"] = compartment_id
+        __props__["componentDetails"] = component_details
+        __props__["computeShape"] = compute_shape
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["federatedUserId"] = federated_user_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["hostOcpuUtilizationInfos"] = host_ocpu_utilization_infos
+        __props__["idcsAccessToken"] = idcs_access_token
+        __props__["isByol"] = is_byol
+        __props__["isMultiAd"] = is_multi_ad
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["loadBalancerShape"] = load_balancer_shape
+        __props__["platformRole"] = platform_role
+        __props__["platformShapeType"] = platform_shape_type
+        __props__["platformVersion"] = platform_version
+        __props__["replicas"] = replicas
+        __props__["serviceEndpoint"] = service_endpoint
+        __props__["serviceVersion"] = service_version
+        __props__["state"] = state
+        __props__["storageSizeInTbs"] = storage_size_in_tbs
+        __props__["storageUsedInTbs"] = storage_used_in_tbs
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["totalOcpuCapacity"] = total_ocpu_capacity
+        return pulumi.runtime.exists_resource(None, 'oci:Blockchain/blockchainPlatform:BlockchainPlatform', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="caCertArchiveText")
     def ca_cert_archive_text(self) -> pulumi.Output[_builtins.str]:

@@ -143,8 +143,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// Type of Exadata Fleet Update Readiness Check. 
-        /// 
+        /// Type of Exadata Fleet Update Readiness Check.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -247,8 +246,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         }
 
         /// <summary>
-        /// Type of Exadata Fleet Update Readiness Check. 
-        /// 
+        /// Type of Exadata Fleet Update Readiness Check.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -373,8 +371,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// Type of Exadata Fleet Update Readiness Check. 
-        /// 
+        /// Type of Exadata Fleet Update Readiness Check.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

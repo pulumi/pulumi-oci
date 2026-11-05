@@ -181,6 +181,12 @@ func (ReplicationPolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*replicationPolicyState)(nil)).Elem()
 }
 
+// ReplicationPolicyExists checks whether an existing ReplicationPolicy resource with the given ID exists.
+func ReplicationPolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ReplicationPolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ObjectStorage/replicationPolicy:ReplicationPolicy", id, state, "", opts...)
+}
+
 type replicationPolicyArgs struct {
 	// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
 	Bucket string `pulumi:"bucket"`

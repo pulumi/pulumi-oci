@@ -125,6 +125,12 @@ func (ManagedInstanceSwitchSnapChannelManagementState) ElementType() reflect.Typ
 	return reflect.TypeOf((*managedInstanceSwitchSnapChannelManagementState)(nil)).Elem()
 }
 
+// ManagedInstanceSwitchSnapChannelManagementExists checks whether an existing ManagedInstanceSwitchSnapChannelManagement resource with the given ID exists.
+func ManagedInstanceSwitchSnapChannelManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedInstanceSwitchSnapChannelManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/managedInstanceSwitchSnapChannelManagement:ManagedInstanceSwitchSnapChannelManagement", id, state, "", opts...)
+}
+
 type managedInstanceSwitchSnapChannelManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
 	ManagedInstanceId string `pulumi:"managedInstanceId"`

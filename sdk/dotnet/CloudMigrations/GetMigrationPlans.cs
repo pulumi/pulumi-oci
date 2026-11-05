@@ -16,7 +16,6 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// Returns a list of migration plans.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// Returns a list of migration plans.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.CloudMigrations
         /// This data source provides the list of Migration Plans in Oracle Cloud Infrastructure Cloud Migrations service.
         /// 
         /// Returns a list of migration plans.
-        /// 
         /// 
         /// ## Example Usage
         /// 

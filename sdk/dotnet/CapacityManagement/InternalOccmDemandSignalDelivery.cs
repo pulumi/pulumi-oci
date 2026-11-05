@@ -117,8 +117,7 @@ namespace Pulumi.Oci.CapacityManagement
         public Output<string> Notes { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the corresponding customer group to which this demand signal delivery resource belongs to. 
-        /// 
+        /// The OCID of the corresponding customer group to which this demand signal delivery resource belongs to.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -257,8 +256,7 @@ namespace Pulumi.Oci.CapacityManagement
         public Input<string>? Notes { get; set; }
 
         /// <summary>
-        /// The OCID of the corresponding customer group to which this demand signal delivery resource belongs to. 
-        /// 
+        /// The OCID of the corresponding customer group to which this demand signal delivery resource belongs to.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -341,8 +339,7 @@ namespace Pulumi.Oci.CapacityManagement
         public Input<string>? Notes { get; set; }
 
         /// <summary>
-        /// The OCID of the corresponding customer group to which this demand signal delivery resource belongs to. 
-        /// 
+        /// The OCID of the corresponding customer group to which this demand signal delivery resource belongs to.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

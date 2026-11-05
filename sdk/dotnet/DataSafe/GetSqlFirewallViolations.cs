@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of all the SQL Firewall violations captured by the firewall.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of all the SQL Firewall violations captured by the firewall.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Sql Firewall Violations in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets a list of all the SQL Firewall violations captured by the firewall.
-        /// 
         /// 
         /// ## Example Usage
         /// 

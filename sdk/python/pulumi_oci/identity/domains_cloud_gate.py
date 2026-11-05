@@ -1987,6 +1987,68 @@ class DomainsCloudGate(pulumi.CustomResource):
         __props__.__dict__["upstream_servers"] = upstream_servers
         return DomainsCloudGate(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            active: pulumi.Input[Optional[_builtins.bool]] = None,
+            attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            attributes: pulumi.Input[Optional[_builtins.str]] = None,
+            authorization: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateIdcsCreatedByArgs', 'DomainsCloudGateIdcsCreatedByArgsDict', 'outputs.DomainsCloudGateIdcsCreatedBy']]]]] = None,
+            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateIdcsLastModifiedByArgs', 'DomainsCloudGateIdcsLastModifiedByArgsDict', 'outputs.DomainsCloudGateIdcsLastModifiedBy']]]]] = None,
+            idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            is_opc_service: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_modified_time: pulumi.Input[Optional[_builtins.str]] = None,
+            mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateMappingArgs', 'DomainsCloudGateMappingArgsDict', 'outputs.DomainsCloudGateMapping']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateMetaArgs', 'DomainsCloudGateMetaArgsDict', 'outputs.DomainsCloudGateMeta']]]]] = None,
+            oauth_clients: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateOauthClientArgs', 'DomainsCloudGateOauthClientArgsDict', 'outputs.DomainsCloudGateOauthClient']]]]] = None,
+            ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateServerArgs', 'DomainsCloudGateServerArgsDict', 'outputs.DomainsCloudGateServer']]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateTagArgs', 'DomainsCloudGateTagArgsDict', 'outputs.DomainsCloudGateTag']]]]] = None,
+            tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            upstream_server_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateUpstreamServerGroupArgs', 'DomainsCloudGateUpstreamServerGroupArgsDict', 'outputs.DomainsCloudGateUpstreamServerGroup']]]]] = None,
+            upstream_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsCloudGateUpstreamServerArgs', 'DomainsCloudGateUpstreamServerArgsDict', 'outputs.DomainsCloudGateUpstreamServer']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["active"] = active
+        __props__["attributeSets"] = attribute_sets
+        __props__["attributes"] = attributes
+        __props__["authorization"] = authorization
+        __props__["compartmentOcid"] = compartment_ocid
+        __props__["deleteInProgress"] = delete_in_progress
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["domainOcid"] = domain_ocid
+        __props__["idcsCreatedBies"] = idcs_created_bies
+        __props__["idcsEndpoint"] = idcs_endpoint
+        __props__["idcsLastModifiedBies"] = idcs_last_modified_bies
+        __props__["idcsLastUpgradedInRelease"] = idcs_last_upgraded_in_release
+        __props__["idcsPreventedOperations"] = idcs_prevented_operations
+        __props__["isOpcService"] = is_opc_service
+        __props__["lastModifiedTime"] = last_modified_time
+        __props__["mappings"] = mappings
+        __props__["metas"] = metas
+        __props__["oauthClients"] = oauth_clients
+        __props__["ocid"] = ocid
+        __props__["resourceTypeSchemaVersion"] = resource_type_schema_version
+        __props__["schemas"] = schemas
+        __props__["servers"] = servers
+        __props__["tags"] = tags
+        __props__["tenancyOcid"] = tenancy_ocid
+        __props__["type"] = type
+        __props__["upstreamServerGroups"] = upstream_server_groups
+        __props__["upstreamServers"] = upstream_servers
+        return pulumi.runtime.exists_resource(None, 'oci:Identity/domainsCloudGate:DomainsCloudGate', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def active(self) -> pulumi.Output[_builtins.bool]:

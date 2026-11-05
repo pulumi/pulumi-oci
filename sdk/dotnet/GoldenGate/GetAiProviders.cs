@@ -16,7 +16,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Returns the list of AI providers along with their supported models.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Returns the list of AI providers along with their supported models.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.GoldenGate
         /// This data source provides the list of Ai Providers in Oracle Cloud Infrastructure Golden Gate service.
         /// 
         /// Returns the list of AI providers along with their supported models.
-        /// 
         /// 
         /// ## Example Usage
         /// 

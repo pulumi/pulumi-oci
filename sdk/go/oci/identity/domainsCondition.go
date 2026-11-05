@@ -842,6 +842,12 @@ func (DomainsConditionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsConditionState)(nil)).Elem()
 }
 
+// DomainsConditionExists checks whether an existing DomainsCondition resource with the given ID exists.
+func DomainsConditionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsConditionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsCondition:DomainsCondition", id, state, "", opts...)
+}
+
 type domainsConditionArgs struct {
 	// (Updatable) AttributeName - RHS of condition
 	//

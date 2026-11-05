@@ -93,11 +93,10 @@ public class Rrset extends com.pulumi.resources.CustomResource {
      * 
      * This parameter is deprecated and should be omitted.
      * 
-     * @deprecated
-     * Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release.
+     * @deprecated Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release.
      * 
      */
-    @Deprecated /* Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release. */
+    @Deprecated
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> compartmentId;
 
@@ -157,11 +156,10 @@ public class Rrset extends com.pulumi.resources.CustomResource {
     /**
      * Specifies to operate only on resources that have a matching DNS scope.
      * 
-     * @deprecated
-     * Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release.
+     * @deprecated Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release.
      * 
      */
-    @Deprecated /* Deprecated; scope is inferred from the zone and this argument is ignored. Will be removed in a future release. */
+    @Deprecated
     @Export(name="scope", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> scope;
 

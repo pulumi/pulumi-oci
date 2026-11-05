@@ -1309,6 +1309,54 @@ class LoadBalancer(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return LoadBalancer(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ip_address_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LoadBalancerIpAddressDetailArgs', 'LoadBalancerIpAddressDetailArgsDict', 'outputs.LoadBalancerIpAddressDetail']]]]] = None,
+            ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ip_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            ipv6subnet_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+            is_delete_protection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_private: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_request_id_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            request_id_header: pulumi.Input[Optional[_builtins.str]] = None,
+            reserved_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LoadBalancerReservedIpArgs', 'LoadBalancerReservedIpArgsDict', 'outputs.LoadBalancerReservedIp']]]]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            shape_details: pulumi.Input[Optional[Union['LoadBalancerShapeDetailsArgs', 'LoadBalancerShapeDetailsArgsDict', 'outputs.LoadBalancerShapeDetails']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["ipAddressDetails"] = ip_address_details
+        __props__["ipAddresses"] = ip_addresses
+        __props__["ipMode"] = ip_mode
+        __props__["ipv6subnetCidr"] = ipv6subnet_cidr
+        __props__["isDeleteProtectionEnabled"] = is_delete_protection_enabled
+        __props__["isPrivate"] = is_private
+        __props__["isRequestIdEnabled"] = is_request_id_enabled
+        __props__["networkSecurityGroupIds"] = network_security_group_ids
+        __props__["requestIdHeader"] = request_id_header
+        __props__["reservedIps"] = reserved_ips
+        __props__["securityAttributes"] = security_attributes
+        __props__["shape"] = shape
+        __props__["shapeDetails"] = shape_details
+        __props__["state"] = state
+        __props__["subnetIds"] = subnet_ids
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:LoadBalancer/loadBalancer:LoadBalancer', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

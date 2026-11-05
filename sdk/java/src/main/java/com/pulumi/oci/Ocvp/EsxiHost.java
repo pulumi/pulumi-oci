@@ -83,9 +83,9 @@ import javax.annotation.Nullable;
  * 
  * 1. Before starting migration, back up your terraform state file.
  * 2. Get the ESXi host OCID for the `oci.Ocvp.EsxiHost` resource you plan to migrate.
- * 3. Remove the `oci.Ocvp.EsxiHost` resource from Terraform state via command: terraform state rm \&lt;resource address\&gt;
+ * 3. Remove the `oci.Ocvp.EsxiHost` resource from Terraform state via command: terraform state rm &#92;&lt;resource address&#92;&gt;
  * 4. Update `oci.Ocvp.EsxiHost` resource config. Remove all deprecated fields and add corresponding new fields to the resource config.
- * 5. Import `oci.Ocvp.EsxiHost` resource to Terraform state using command: terraform import \&lt;resource address\&gt; \&lt;ESXi host OCID\&gt;.
+ * 5. Import `oci.Ocvp.EsxiHost` resource to Terraform state using command: terraform import &#92;&lt;resource address&#92;&gt; &#92;&lt;ESXi host OCID&#92;&gt;.
  * 6. Run `pulumi preview` to check if there is any planned change for `oci.Ocvp.EsxiHost` resource. If there is any planned change, update `oci.Ocvp.EsxiHost` resource config until there is no planned change.
  * 
  * ## Import
@@ -122,11 +122,10 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
     /**
      * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
      * 
-     * @deprecated
-     * This &#39;billing_donor_host_id&#39; argument has been deprecated and will be computed only.
+     * @deprecated This &#39;billing_donor_host_id&#39; argument has been deprecated and will be computed only.
      * 
      */
-    @Deprecated /* This 'billing_donor_host_id' argument has been deprecated and will be computed only. */
+    @Deprecated
     @Export(name="billingDonorHostId", refs={String.class}, tree="[0]")
     private Output<String> billingDonorHostId;
 
@@ -238,11 +237,10 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
     /**
      * (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `currentCommitment` instead.
      * 
-     * @deprecated
-     * The &#39;current_sku&#39; field has been deprecated. It is no longer supported.
+     * @deprecated The &#39;current_sku&#39; field has been deprecated. It is no longer supported.
      * 
      */
-    @Deprecated /* The 'current_sku' field has been deprecated. It is no longer supported. */
+    @Deprecated
     @Export(name="currentSku", refs={String.class}, tree="[0]")
     private Output<String> currentSku;
 
@@ -340,11 +338,10 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
      * 
-     * @deprecated
-     * This &#39;failed_esxi_host_id&#39; argument has been deprecated and will be computed only.
+     * @deprecated This &#39;failed_esxi_host_id&#39; argument has been deprecated and will be computed only.
      * 
      */
-    @Deprecated /* This 'failed_esxi_host_id' argument has been deprecated and will be computed only. */
+    @Deprecated
     @Export(name="failedEsxiHostId", refs={String.class}, tree="[0]")
     private Output<String> failedEsxiHostId;
 
@@ -484,11 +481,10 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
     /**
      * (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `nextSku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
      * 
-     * @deprecated
-     * The &#39;next_sku&#39; field has been deprecated. It is no longer supported.
+     * @deprecated The &#39;next_sku&#39; field has been deprecated. It is no longer supported.
      * 
      */
-    @Deprecated /* The 'next_sku' field has been deprecated. It is no longer supported. */
+    @Deprecated
     @Export(name="nextSku", refs={String.class}, tree="[0]")
     private Output<String> nextSku;
 
@@ -502,11 +498,10 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
      * 
-     * @deprecated
-     * This &#39;non_upgraded_esxi_host_id&#39; argument has been deprecated and will be computed only.
+     * @deprecated This &#39;non_upgraded_esxi_host_id&#39; argument has been deprecated and will be computed only.
      * 
      */
-    @Deprecated /* This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only. */
+    @Deprecated
     @Export(name="nonUpgradedEsxiHostId", refs={String.class}, tree="[0]")
     private Output<String> nonUpgradedEsxiHostId;
 
@@ -543,11 +538,10 @@ public class EsxiHost extends com.pulumi.resources.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
-     * @deprecated
-     * The &#39;sddc_id&#39; field has been deprecated. Please use &#39;cluster_id&#39; instead.
+     * @deprecated The &#39;sddc_id&#39; field has been deprecated. Please use &#39;cluster_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead. */
+    @Deprecated
     @Export(name="sddcId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sddcId;
 

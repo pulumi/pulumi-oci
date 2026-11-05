@@ -759,6 +759,12 @@ func (DomainsMyCustomerSecretKeyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsMyCustomerSecretKeyState)(nil)).Elem()
 }
 
+// DomainsMyCustomerSecretKeyExists checks whether an existing DomainsMyCustomerSecretKey resource with the given ID exists.
+func DomainsMyCustomerSecretKeyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsMyCustomerSecretKeyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsMyCustomerSecretKey:DomainsMyCustomerSecretKey", id, state, "", opts...)
+}
+
 type domainsMyCustomerSecretKeyArgs struct {
 	// The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization *string `pulumi:"authorization"`

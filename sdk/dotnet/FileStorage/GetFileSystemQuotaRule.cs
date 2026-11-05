@@ -16,7 +16,6 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// Get an FS level, user or group quota rule given the `fileSystemId` and `quotaRuleId` parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// Get an FS level, user or group quota rule given the `fileSystemId` and `quotaRuleId` parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.FileStorage
         /// This data source provides details about a specific File System Quota Rule resource in Oracle Cloud Infrastructure File Storage service.
         /// 
         /// Get an FS level, user or group quota rule given the `fileSystemId` and `quotaRuleId` parameters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

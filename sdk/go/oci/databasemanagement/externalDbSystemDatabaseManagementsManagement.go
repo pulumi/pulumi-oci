@@ -123,6 +123,12 @@ func (ExternalDbSystemDatabaseManagementsManagementState) ElementType() reflect.
 	return reflect.TypeOf((*externalDbSystemDatabaseManagementsManagementState)(nil)).Elem()
 }
 
+// ExternalDbSystemDatabaseManagementsManagementExists checks whether an existing ExternalDbSystemDatabaseManagementsManagement resource with the given ID exists.
+func ExternalDbSystemDatabaseManagementsManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalDbSystemDatabaseManagementsManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/externalDbSystemDatabaseManagementsManagement:ExternalDbSystemDatabaseManagementsManagement", id, state, "", opts...)
+}
+
 type externalDbSystemDatabaseManagementsManagementArgs struct {
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 	//

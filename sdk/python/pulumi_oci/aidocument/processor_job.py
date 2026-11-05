@@ -547,6 +547,34 @@ class ProcessorJob(pulumi.CustomResource):
         __props__.__dict__["time_started"] = time_started
         return ProcessorJob(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            input_location: pulumi.Input[Optional[Union['ProcessorJobInputLocationArgs', 'ProcessorJobInputLocationArgsDict', 'outputs.ProcessorJobInputLocation']]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            output_location: pulumi.Input[Optional[Union['ProcessorJobOutputLocationArgs', 'ProcessorJobOutputLocationArgsDict', 'outputs.ProcessorJobOutputLocation']]] = None,
+            percent_complete: pulumi.Input[Optional[_builtins.float]] = None,
+            processor_config: pulumi.Input[Optional[Union['ProcessorJobProcessorConfigArgs', 'ProcessorJobProcessorConfigArgsDict', 'outputs.ProcessorJobProcessorConfig']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_accepted: pulumi.Input[Optional[_builtins.str]] = None,
+            time_finished: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["displayName"] = display_name
+        __props__["inputLocation"] = input_location
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["outputLocation"] = output_location
+        __props__["percentComplete"] = percent_complete
+        __props__["processorConfig"] = processor_config
+        __props__["state"] = state
+        __props__["timeAccepted"] = time_accepted
+        __props__["timeFinished"] = time_finished
+        __props__["timeStarted"] = time_started
+        return pulumi.runtime.exists_resource(None, 'oci:AiDocument/processorJob:ProcessorJob', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

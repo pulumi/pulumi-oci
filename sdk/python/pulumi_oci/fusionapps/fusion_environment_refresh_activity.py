@@ -494,6 +494,40 @@ class FusionEnvironmentRefreshActivity(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return FusionEnvironmentRefreshActivity(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_data_masking_opted: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            refresh_activity_id: pulumi.Input[Optional[_builtins.str]] = None,
+            refresh_issue_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgs', 'FusionEnvironmentRefreshActivityRefreshIssueDetailsListArgsDict', 'outputs.FusionEnvironmentRefreshActivityRefreshIssueDetailsList']]]]] = None,
+            service_availability: pulumi.Input[Optional[_builtins.str]] = None,
+            source_fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_accepted: pulumi.Input[Optional[_builtins.str]] = None,
+            time_expected_finish: pulumi.Input[Optional[_builtins.str]] = None,
+            time_finished: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_restoration_point: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["displayName"] = display_name
+        __props__["fusionEnvironmentId"] = fusion_environment_id
+        __props__["isDataMaskingOpted"] = is_data_masking_opted
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["refreshActivityId"] = refresh_activity_id
+        __props__["refreshIssueDetailsLists"] = refresh_issue_details_lists
+        __props__["serviceAvailability"] = service_availability
+        __props__["sourceFusionEnvironmentId"] = source_fusion_environment_id
+        __props__["state"] = state
+        __props__["timeAccepted"] = time_accepted
+        __props__["timeExpectedFinish"] = time_expected_finish
+        __props__["timeFinished"] = time_finished
+        __props__["timeOfRestorationPoint"] = time_of_restoration_point
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[_builtins.str]:

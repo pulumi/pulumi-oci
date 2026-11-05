@@ -272,6 +272,18 @@ class MarketplaceExternalAttestedMetadata(pulumi.CustomResource):
         __props__.__dict__["serialized_jwt"] = serialized_jwt
         return MarketplaceExternalAttestedMetadata(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            serialized_jwt: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["instanceId"] = instance_id
+        __props__["serializedJwt"] = serialized_jwt
+        return pulumi.runtime.exists_resource(None, 'oci:Marketplace/marketplaceExternalAttestedMetadata:MarketplaceExternalAttestedMetadata', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

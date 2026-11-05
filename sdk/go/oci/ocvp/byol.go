@@ -260,6 +260,12 @@ func (ByolState) ElementType() reflect.Type {
 	return reflect.TypeOf((*byolState)(nil)).Elem()
 }
 
+// ByolExists checks whether an existing Byol resource with the given ID exists.
+func ByolExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ByolState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Ocvp/byol:Byol", id, state, "", opts...)
+}
+
 type byolArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the BYOL.
 	CompartmentId string `pulumi:"compartmentId"`

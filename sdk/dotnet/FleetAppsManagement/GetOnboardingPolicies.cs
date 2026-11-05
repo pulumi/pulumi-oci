@@ -16,7 +16,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Returns a list of onboarding policy information for Fleet Application Management.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Returns a list of onboarding policy information for Fleet Application Management.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// This data source provides the list of Onboarding Policies in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
         /// Returns a list of onboarding policy information for Fleet Application Management.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -414,6 +414,12 @@ func (DbSystemsUpgradeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dbSystemsUpgradeState)(nil)).Elem()
 }
 
+// DbSystemsUpgradeExists checks whether an existing DbSystemsUpgrade resource with the given ID exists.
+func DbSystemsUpgradeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DbSystemsUpgradeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/dbSystemsUpgrade:DbSystemsUpgrade", id, state, "", opts...)
+}
+
 type dbSystemsUpgradeArgs struct {
 	// The operating system upgrade action.
 	Action string `pulumi:"action"`

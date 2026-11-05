@@ -593,6 +593,48 @@ class ResourceAction(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return ResourceAction(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            actions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ResourceActionActionArgs', 'ResourceActionActionArgsDict', 'outputs.ResourceActionAction']]]]] = None,
+            category_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_name: pulumi.Input[Optional[_builtins.str]] = None,
+            estimated_cost_saving: pulumi.Input[Optional[_builtins.float]] = None,
+            extended_metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            recommendation_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_action_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_status_begin: pulumi.Input[Optional[_builtins.str]] = None,
+            time_status_end: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["actions"] = actions
+        __props__["categoryId"] = category_id
+        __props__["compartmentId"] = compartment_id
+        __props__["compartmentName"] = compartment_name
+        __props__["estimatedCostSaving"] = estimated_cost_saving
+        __props__["extendedMetadata"] = extended_metadata
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["recommendationId"] = recommendation_id
+        __props__["resourceActionId"] = resource_action_id
+        __props__["resourceId"] = resource_id
+        __props__["resourceType"] = resource_type
+        __props__["state"] = state
+        __props__["status"] = status
+        __props__["timeCreated"] = time_created
+        __props__["timeStatusBegin"] = time_status_begin
+        __props__["timeStatusEnd"] = time_status_end
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Optimizer/resourceAction:ResourceAction', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def actions(self) -> pulumi.Output[Sequence['outputs.ResourceActionAction']]:

@@ -421,6 +421,12 @@ func (ConfigState) ElementType() reflect.Type {
 	return reflect.TypeOf((*configState)(nil)).Elem()
 }
 
+// ConfigExists checks whether an existing Config resource with the given ID exists.
+func ConfigExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ConfigState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ApmSynthetics/config:Config", id, state, "", opts...)
+}
+
 type configArgs struct {
 	// (Updatable) The APM domain ID the request is intended for.
 	ApmDomainId string `pulumi:"apmDomainId"`

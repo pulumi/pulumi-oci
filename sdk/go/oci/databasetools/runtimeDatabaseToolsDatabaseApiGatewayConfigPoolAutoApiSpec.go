@@ -224,6 +224,12 @@ func (RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecState) ElementT
 	return reflect.TypeOf((*runtimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecState)(nil)).Elem()
 }
 
+// RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecExists checks whether an existing RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec resource with the given ID exists.
+func RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec:RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpec", id, state, "", opts...)
+}
+
 type runtimeDatabaseToolsDatabaseApiGatewayConfigPoolAutoApiSpecArgs struct {
 	// (Updatable) Used as the URI path element for this object. When not specified the objectName lowercase is the default value.
 	Alias *string `pulumi:"alias"`

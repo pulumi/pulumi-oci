@@ -2429,6 +2429,12 @@ func (DomainsIdentityProviderState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsIdentityProviderState)(nil)).Elem()
 }
 
+// DomainsIdentityProviderExists checks whether an existing DomainsIdentityProvider resource with the given ID exists.
+func DomainsIdentityProviderExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsIdentityProviderState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsIdentityProvider:DomainsIdentityProvider", id, state, "", opts...)
+}
+
 type domainsIdentityProviderArgs struct {
 	// (Updatable) Assertion attribute name.
 	//

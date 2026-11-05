@@ -206,6 +206,12 @@ func (InstVbsInstanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*instVbsInstanceState)(nil)).Elem()
 }
 
+// InstVbsInstanceExists checks whether an existing InstVbsInstance resource with the given ID exists.
+func InstVbsInstanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *InstVbsInstanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Vbs/instVbsInstance:InstVbsInstance", id, state, "", opts...)
+}
+
 type instVbsInstanceArgs struct {
 	// (Updatable) Compartment Identifier. It can only be the root compartment
 	CompartmentId string `pulumi:"compartmentId"`

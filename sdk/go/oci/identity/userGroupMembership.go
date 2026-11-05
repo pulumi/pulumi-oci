@@ -148,6 +148,12 @@ func (UserGroupMembershipState) ElementType() reflect.Type {
 	return reflect.TypeOf((*userGroupMembershipState)(nil)).Elem()
 }
 
+// UserGroupMembershipExists checks whether an existing UserGroupMembership resource with the given ID exists.
+func UserGroupMembershipExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UserGroupMembershipState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/userGroupMembership:UserGroupMembership", id, state, "", opts...)
+}
+
 type userGroupMembershipArgs struct {
 	// The OCID of the tenancy containing the user, group, and membership object.
 	CompartmentId *string `pulumi:"compartmentId"`

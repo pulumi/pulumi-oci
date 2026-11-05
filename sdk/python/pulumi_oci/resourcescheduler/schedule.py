@@ -906,6 +906,52 @@ class Schedule(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return Schedule(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            last_run_status: pulumi.Input[Optional[_builtins.str]] = None,
+            local_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            recurrence_details: pulumi.Input[Optional[_builtins.str]] = None,
+            recurrence_type: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduleResourceFilterArgs', 'ScheduleResourceFilterArgsDict', 'outputs.ScheduleResourceFilter']]]]] = None,
+            resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduleResourceArgs', 'ScheduleResourceArgsDict', 'outputs.ScheduleResource']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_ends: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_run: pulumi.Input[Optional[_builtins.str]] = None,
+            time_next_run: pulumi.Input[Optional[_builtins.str]] = None,
+            time_starts: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["action"] = action
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["lastRunStatus"] = last_run_status
+        __props__["localTimeZone"] = local_time_zone
+        __props__["recurrenceDetails"] = recurrence_details
+        __props__["recurrenceType"] = recurrence_type
+        __props__["resourceFilters"] = resource_filters
+        __props__["resources"] = resources
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeEnds"] = time_ends
+        __props__["timeLastRun"] = time_last_run
+        __props__["timeNextRun"] = time_next_run
+        __props__["timeStarts"] = time_starts
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:ResourceScheduler/schedule:Schedule', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def action(self) -> pulumi.Output[_builtins.str]:

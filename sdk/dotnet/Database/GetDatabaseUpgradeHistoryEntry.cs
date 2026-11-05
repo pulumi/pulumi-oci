@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// gets the upgrade history for a specified database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// gets the upgrade history for a specified database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Database Upgrade History Entry resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// gets the upgrade history for a specified database.
-        /// 
         /// 
         /// ## Example Usage
         /// 

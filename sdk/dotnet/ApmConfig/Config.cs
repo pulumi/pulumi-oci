@@ -287,8 +287,7 @@ namespace Pulumi.Oci.ApmConfig
         public Output<string> RunAsUser { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface. 
-        /// 
+        /// (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -547,8 +546,7 @@ namespace Pulumi.Oci.ApmConfig
         public Input<string>? RunAsUser { get; set; }
 
         /// <summary>
-        /// (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface. 
-        /// 
+        /// (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -775,8 +773,7 @@ namespace Pulumi.Oci.ApmConfig
         public Input<string>? RunAsUser { get; set; }
 
         /// <summary>
-        /// (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface. 
-        /// 
+        /// (Updatable) The name of the service being monitored. This argument enables you to filter by service and view traces and other signals in the APM Explorer user interface.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

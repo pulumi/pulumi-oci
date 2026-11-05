@@ -834,6 +834,48 @@ class Config(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return Config(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            additional_configurations: pulumi.Input[Optional[Union['ConfigAdditionalConfigurationsArgs', 'ConfigAdditionalConfigurationsArgsDict', 'outputs.ConfigAdditionalConfigurations']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config_type: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dynamic_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigDynamicGroupArgs', 'ConfigDynamicGroupArgsDict', 'outputs.ConfigDynamicGroup']]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_manually_onboarded: pulumi.Input[Optional[_builtins.bool]] = None,
+            license: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            user_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigUserGroupArgs', 'ConfigUserGroupArgsDict', 'outputs.ConfigUserGroup']]]]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["additionalConfigurations"] = additional_configurations
+        __props__["compartmentId"] = compartment_id
+        __props__["configType"] = config_type
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["dynamicGroups"] = dynamic_groups
+        __props__["freeformTags"] = freeform_tags
+        __props__["isEnabled"] = is_enabled
+        __props__["isManuallyOnboarded"] = is_manually_onboarded
+        __props__["license"] = license
+        __props__["policyNames"] = policy_names
+        __props__["resourceType"] = resource_type
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["userGroups"] = user_groups
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'oci:StackMonitoring/config:Config', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="additionalConfigurations")
     def additional_configurations(self) -> pulumi.Output[Optional['outputs.ConfigAdditionalConfigurations']]:

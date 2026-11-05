@@ -311,6 +311,22 @@ class FusionEnvironmentDataMaskingActivity(pulumi.CustomResource):
         __props__.__dict__["time_masking_start"] = time_masking_start
         return FusionEnvironmentDataMaskingActivity(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_resume_data_masking: pulumi.Input[Optional[_builtins.bool]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_masking_finish: pulumi.Input[Optional[_builtins.str]] = None,
+            time_masking_start: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["fusionEnvironmentId"] = fusion_environment_id
+        __props__["isResumeDataMasking"] = is_resume_data_masking
+        __props__["state"] = state
+        __props__["timeMaskingFinish"] = time_masking_finish
+        __props__["timeMaskingStart"] = time_masking_start
+        return pulumi.runtime.exists_resource(None, 'oci:FusionApps/fusionEnvironmentDataMaskingActivity:FusionEnvironmentDataMaskingActivity', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="fusionEnvironmentId")
     def fusion_environment_id(self) -> pulumi.Output[_builtins.str]:

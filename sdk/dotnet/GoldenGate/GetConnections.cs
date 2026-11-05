@@ -16,7 +16,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Lists the Connections in the compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Lists the Connections in the compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -85,7 +83,6 @@ namespace Pulumi.Oci.GoldenGate
         /// This data source provides the list of Connections in Oracle Cloud Infrastructure Golden Gate service.
         /// 
         /// Lists the Connections in the compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

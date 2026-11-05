@@ -138,6 +138,12 @@ func (AnnouncementSubscriptionsFilterGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*announcementSubscriptionsFilterGroupState)(nil)).Elem()
 }
 
+// AnnouncementSubscriptionsFilterGroupExists checks whether an existing AnnouncementSubscriptionsFilterGroup resource with the given ID exists.
+func AnnouncementSubscriptionsFilterGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AnnouncementSubscriptionsFilterGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup", id, state, "", opts...)
+}
+
 type announcementSubscriptionsFilterGroupArgs struct {
 	// The OCID of the announcement subscription.
 	AnnouncementSubscriptionId string `pulumi:"announcementSubscriptionId"`

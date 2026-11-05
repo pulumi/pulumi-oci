@@ -148,6 +148,12 @@ func (UserCapabilitiesManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*userCapabilitiesManagementState)(nil)).Elem()
 }
 
+// UserCapabilitiesManagementExists checks whether an existing UserCapabilitiesManagement resource with the given ID exists.
+func UserCapabilitiesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UserCapabilitiesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement", id, state, "", opts...)
+}
+
 type userCapabilitiesManagementArgs struct {
 	// (Updatable) Indicates if the user can use API keys.
 	CanUseApiKeys *bool `pulumi:"canUseApiKeys"`

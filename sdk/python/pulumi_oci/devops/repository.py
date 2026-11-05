@@ -785,6 +785,58 @@ class Repository(pulumi.CustomResource):
         __props__.__dict__["trigger_build_events"] = trigger_build_events
         return Repository(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            branch_count: pulumi.Input[Optional[_builtins.int]] = None,
+            commit_count: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            default_branch: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            http_url: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecyle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            mirror_repository_config: pulumi.Input[Optional[Union['RepositoryMirrorRepositoryConfigArgs', 'RepositoryMirrorRepositoryConfigArgsDict', 'outputs.RepositoryMirrorRepositoryConfig']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_repository_id: pulumi.Input[Optional[_builtins.str]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            project_name: pulumi.Input[Optional[_builtins.str]] = None,
+            repository_type: pulumi.Input[Optional[_builtins.str]] = None,
+            size_in_bytes: pulumi.Input[Optional[_builtins.str]] = None,
+            ssh_url: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            trigger_build_events: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["branchCount"] = branch_count
+        __props__["commitCount"] = commit_count
+        __props__["compartmentId"] = compartment_id
+        __props__["defaultBranch"] = default_branch
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["freeformTags"] = freeform_tags
+        __props__["httpUrl"] = http_url
+        __props__["lifecyleDetails"] = lifecyle_details
+        __props__["mirrorRepositoryConfig"] = mirror_repository_config
+        __props__["name"] = name
+        __props__["namespace"] = namespace
+        __props__["parentRepositoryId"] = parent_repository_id
+        __props__["projectId"] = project_id
+        __props__["projectName"] = project_name
+        __props__["repositoryType"] = repository_type
+        __props__["sizeInBytes"] = size_in_bytes
+        __props__["sshUrl"] = ssh_url
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["triggerBuildEvents"] = trigger_build_events
+        return pulumi.runtime.exists_resource(None, 'oci:DevOps/repository:Repository', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="branchCount")
     def branch_count(self) -> pulumi.Output[_builtins.int]:

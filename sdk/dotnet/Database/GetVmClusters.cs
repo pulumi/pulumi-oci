@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Database
         /// Lists the VM clusters in the specified compartment. Applies to Exadata Cloud@Customer instances only.
         /// To list the cloud VM clusters in an Exadata Cloud Service instance, use the [ListCloudVmClusters ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/ListCloudVmClusters) operation.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.Database
         /// Lists the VM clusters in the specified compartment. Applies to Exadata Cloud@Customer instances only.
         /// To list the cloud VM clusters in an Exadata Cloud Service instance, use the [ListCloudVmClusters ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/ListCloudVmClusters) operation.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -80,7 +78,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the VM clusters in the specified compartment. Applies to Exadata Cloud@Customer instances only.
         /// To list the cloud VM clusters in an Exadata Cloud Service instance, use the [ListCloudVmClusters ](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/CloudVmCluster/ListCloudVmClusters) operation.
-        /// 
         /// 
         /// ## Example Usage
         /// 

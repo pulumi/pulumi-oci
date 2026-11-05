@@ -16,7 +16,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// Returns a list of events from CloudGuard DataSource
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// Returns a list of events from CloudGuard DataSource
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.CloudGuard
         /// This data source provides details about a specific Data Source Event resource in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
         /// Returns a list of events from CloudGuard DataSource
-        /// 
         /// 
         /// ## Example Usage
         /// 

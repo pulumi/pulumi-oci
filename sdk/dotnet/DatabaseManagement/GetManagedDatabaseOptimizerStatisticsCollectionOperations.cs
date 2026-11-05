@@ -22,7 +22,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// If you use the same header value in a consecutive request, the next page records are returned.
         /// To obtain the required results, you can apply the different types of filters supported by this API.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -59,7 +58,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// If you use the same header value in a consecutive request, the next page records are returned.
         /// To obtain the required results, you can apply the different types of filters supported by this API.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -95,7 +93,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This API also enables the pagination of results and the opc-next-page response header indicates whether there is a next page.
         /// If you use the same header value in a consecutive request, the next page records are returned.
         /// To obtain the required results, you can apply the different types of filters supported by this API.
-        /// 
         /// 
         /// ## Example Usage
         /// 

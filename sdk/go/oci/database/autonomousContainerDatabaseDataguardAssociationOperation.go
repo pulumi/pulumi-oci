@@ -118,6 +118,12 @@ func (AutonomousContainerDatabaseDataguardAssociationOperationState) ElementType
 	return reflect.TypeOf((*autonomousContainerDatabaseDataguardAssociationOperationState)(nil)).Elem()
 }
 
+// AutonomousContainerDatabaseDataguardAssociationOperationExists checks whether an existing AutonomousContainerDatabaseDataguardAssociationOperation resource with the given ID exists.
+func AutonomousContainerDatabaseDataguardAssociationOperationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutonomousContainerDatabaseDataguardAssociationOperationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/autonomousContainerDatabaseDataguardAssociationOperation:AutonomousContainerDatabaseDataguardAssociationOperation", id, state, "", opts...)
+}
+
 type autonomousContainerDatabaseDataguardAssociationOperationArgs struct {
 	// The Autonomous Container Database Dataguard Association [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This attribute is a forcenew attribute.
 	AutonomousContainerDatabaseDataguardAssociationId string `pulumi:"autonomousContainerDatabaseDataguardAssociationId"`

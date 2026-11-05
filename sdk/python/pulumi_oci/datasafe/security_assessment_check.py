@@ -391,6 +391,30 @@ class SecurityAssessmentCheck(pulumi.CustomResource):
         __props__.__dict__["title"] = title
         return SecurityAssessmentCheck(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            category: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            oneline: pulumi.Input[Optional[_builtins.str]] = None,
+            patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentCheckPatchOperationArgs', 'SecurityAssessmentCheckPatchOperationArgsDict', 'outputs.SecurityAssessmentCheckPatchOperation']]]]] = None,
+            references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentCheckReferenceArgs', 'SecurityAssessmentCheckReferenceArgsDict', 'outputs.SecurityAssessmentCheckReference']]]]] = None,
+            remarks: pulumi.Input[Optional[_builtins.str]] = None,
+            security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            suggested_severity: pulumi.Input[Optional[_builtins.str]] = None,
+            title: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["category"] = category
+        __props__["key"] = key
+        __props__["oneline"] = oneline
+        __props__["patchOperations"] = patch_operations
+        __props__["references"] = references
+        __props__["remarks"] = remarks
+        __props__["securityAssessmentId"] = security_assessment_id
+        __props__["suggestedSeverity"] = suggested_severity
+        __props__["title"] = title
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/securityAssessmentCheck:SecurityAssessmentCheck', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def category(self) -> pulumi.Output[_builtins.str]:

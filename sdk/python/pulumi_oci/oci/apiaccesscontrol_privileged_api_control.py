@@ -829,6 +829,50 @@ class ApiaccesscontrolPrivilegedApiControl(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return ApiaccesscontrolPrivilegedApiControl(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            approver_group_id_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            approver_group_level_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgs', 'ApiaccesscontrolPrivilegedApiControlApproverGroupLevelListArgsDict', 'outputs.ApiaccesscontrolPrivilegedApiControlApproverGroupLevelList']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
+            number_of_approvers: pulumi.Input[Optional[_builtins.int]] = None,
+            privileged_operation_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiControlPrivilegedOperationListArgsDict', 'outputs.ApiaccesscontrolPrivilegedApiControlPrivilegedOperationList']]]]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            resources: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            state_details: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_deleted: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["approverGroupIdLists"] = approver_group_id_lists
+        __props__["approverGroupLevelLists"] = approver_group_level_lists
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["notificationTopicId"] = notification_topic_id
+        __props__["numberOfApprovers"] = number_of_approvers
+        __props__["privilegedOperationLists"] = privileged_operation_lists
+        __props__["resourceType"] = resource_type
+        __props__["resources"] = resources
+        __props__["state"] = state
+        __props__["stateDetails"] = state_details
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeDeleted"] = time_deleted
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:oci/apiaccesscontrolPrivilegedApiControl:ApiaccesscontrolPrivilegedApiControl', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="approverGroupIdLists")
     def approver_group_id_lists(self) -> pulumi.Output[Sequence[_builtins.str]]:

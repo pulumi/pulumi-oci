@@ -114,6 +114,12 @@ func (RepositoryMirrorState) ElementType() reflect.Type {
 	return reflect.TypeOf((*repositoryMirrorState)(nil)).Elem()
 }
 
+// RepositoryMirrorExists checks whether an existing RepositoryMirror resource with the given ID exists.
+func RepositoryMirrorExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RepositoryMirrorState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DevOps/repositoryMirror:RepositoryMirror", id, state, "", opts...)
+}
+
 type repositoryMirrorArgs struct {
 	// Unique repository identifier.
 	//

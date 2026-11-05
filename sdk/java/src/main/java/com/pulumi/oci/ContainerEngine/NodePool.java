@@ -338,11 +338,10 @@ public class NodePool extends com.pulumi.resources.CustomResource {
     /**
      * Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
      * 
-     * @deprecated
-     * The &#39;node_image_id&#39; field has been deprecated. Please use &#39;node_source_details&#39; instead. If both fields are specified, then &#39;node_source_details&#39; will be used.
+     * @deprecated The &#39;node_image_id&#39; field has been deprecated. Please use &#39;node_source_details&#39; instead. If both fields are specified, then &#39;node_source_details&#39; will be used.
      * 
      */
-    @Deprecated /* The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used. */
+    @Deprecated
     @Export(name="nodeImageId", refs={String.class}, tree="[0]")
     private Output<String> nodeImageId;
 
@@ -356,11 +355,10 @@ public class NodePool extends com.pulumi.resources.CustomResource {
     /**
      * Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `nodeImageId` is specified.
      * 
-     * @deprecated
-     * The &#39;node_image_name&#39; field has been deprecated. Please use &#39;node_source_details&#39; instead. If both fields are specified, then &#39;node_source_details&#39; will be used.
+     * @deprecated The &#39;node_image_name&#39; field has been deprecated. Please use &#39;node_source_details&#39; instead. If both fields are specified, then &#39;node_source_details&#39; will be used.
      * 
      */
-    @Deprecated /* The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used. */
+    @Deprecated
     @Export(name="nodeImageName", refs={String.class}, tree="[0]")
     private Output<String> nodeImageName;
 

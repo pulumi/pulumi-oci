@@ -259,6 +259,12 @@ func (VolumeGroupBackupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*volumeGroupBackupState)(nil)).Elem()
 }
 
+// VolumeGroupBackupExists checks whether an existing VolumeGroupBackup resource with the given ID exists.
+func VolumeGroupBackupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VolumeGroupBackupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/volumeGroupBackup:VolumeGroupBackup", id, state, "", opts...)
+}
+
 type volumeGroupBackupArgs struct {
 	// (Updatable) The OCID of the compartment that will contain the volume group backup. This parameter is optional, by default backup will be created in the same compartment and source volume group.
 	CompartmentId *string `pulumi:"compartmentId"`

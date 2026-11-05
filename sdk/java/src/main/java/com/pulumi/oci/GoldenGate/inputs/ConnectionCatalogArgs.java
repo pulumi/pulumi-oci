@@ -64,22 +64,20 @@ public final class ConnectionCatalogArgs extends com.pulumi.resources.ResourceAr
     /**
      * (Updatable) Client secret required to connect to Polaris.
      * 
-     * @deprecated
-     * The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
+     * @deprecated The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
+    @Deprecated
     @Import(name="clientSecret")
     private @Nullable Output<String> clientSecret;
 
     /**
      * @return (Updatable) Client secret required to connect to Polaris.
      * 
-     * @deprecated
-     * The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
+     * @deprecated The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
+    @Deprecated
     public Optional<Output<String>> clientSecret() {
         return Optional.ofNullable(this.clientSecret);
     }
@@ -147,22 +145,20 @@ public final class ConnectionCatalogArgs extends com.pulumi.resources.ResourceAr
     /**
      * (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
      * 
-     * @deprecated
-     * The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
+     * @deprecated The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'properties' field has been deprecated. Please use 'properties_secret_id' instead. */
+    @Deprecated
     @Import(name="properties")
     private @Nullable Output<String> properties;
 
     /**
      * @return (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
      * 
-     * @deprecated
-     * The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
+     * @deprecated The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'properties' field has been deprecated. Please use 'properties_secret_id' instead. */
+    @Deprecated
     public Optional<Output<String>> properties() {
         return Optional.ofNullable(this.properties);
     }
@@ -299,11 +295,10 @@ public final class ConnectionCatalogArgs extends com.pulumi.resources.ResourceAr
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
+         * @deprecated The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
          * 
          */
-        @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
+        @Deprecated
         public Builder clientSecret(@Nullable Output<String> clientSecret) {
             $.clientSecret = clientSecret;
             return this;
@@ -314,11 +309,10 @@ public final class ConnectionCatalogArgs extends com.pulumi.resources.ResourceAr
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
+         * @deprecated The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
          * 
          */
-        @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
+        @Deprecated
         public Builder clientSecret(String clientSecret) {
             return clientSecret(Output.of(clientSecret));
         }
@@ -412,11 +406,10 @@ public final class ConnectionCatalogArgs extends com.pulumi.resources.ResourceAr
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
+         * @deprecated The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
          * 
          */
-        @Deprecated /* The 'properties' field has been deprecated. Please use 'properties_secret_id' instead. */
+        @Deprecated
         public Builder properties(@Nullable Output<String> properties) {
             $.properties = properties;
             return this;
@@ -427,11 +420,10 @@ public final class ConnectionCatalogArgs extends com.pulumi.resources.ResourceAr
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
+         * @deprecated The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
          * 
          */
-        @Deprecated /* The 'properties' field has been deprecated. Please use 'properties_secret_id' instead. */
+        @Deprecated
         public Builder properties(String properties) {
             return properties(Output.of(properties));
         }

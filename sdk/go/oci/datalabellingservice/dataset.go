@@ -271,6 +271,12 @@ func (DatasetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*datasetState)(nil)).Elem()
 }
 
+// DatasetExists checks whether an existing Dataset resource with the given ID exists.
+func DatasetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DatasetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataLabellingService/dataset:Dataset", id, state, "", opts...)
+}
+
 type datasetArgs struct {
 	// The annotation format name required for labeling records.
 	AnnotationFormat string `pulumi:"annotationFormat"`

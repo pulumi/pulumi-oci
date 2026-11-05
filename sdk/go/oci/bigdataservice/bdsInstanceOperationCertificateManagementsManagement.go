@@ -184,6 +184,12 @@ func (BdsInstanceOperationCertificateManagementsManagementState) ElementType() r
 	return reflect.TypeOf((*bdsInstanceOperationCertificateManagementsManagementState)(nil)).Elem()
 }
 
+// BdsInstanceOperationCertificateManagementsManagementExists checks whether an existing BdsInstanceOperationCertificateManagementsManagement resource with the given ID exists.
+func BdsInstanceOperationCertificateManagementsManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BdsInstanceOperationCertificateManagementsManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:BigDataService/bdsInstanceOperationCertificateManagementsManagement:BdsInstanceOperationCertificateManagementsManagement", id, state, "", opts...)
+}
+
 type bdsInstanceOperationCertificateManagementsManagementArgs struct {
 	// The OCID of the cluster.
 	BdsInstanceId string `pulumi:"bdsInstanceId"`

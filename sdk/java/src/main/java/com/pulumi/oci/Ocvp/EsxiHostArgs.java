@@ -29,22 +29,20 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
      * 
-     * @deprecated
-     * This &#39;billing_donor_host_id&#39; argument has been deprecated and will be computed only.
+     * @deprecated This &#39;billing_donor_host_id&#39; argument has been deprecated and will be computed only.
      * 
      */
-    @Deprecated /* This 'billing_donor_host_id' argument has been deprecated and will be computed only. */
+    @Deprecated
     @Import(name="billingDonorHostId")
     private @Nullable Output<String> billingDonorHostId;
 
     /**
      * @return (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
      * 
-     * @deprecated
-     * This &#39;billing_donor_host_id&#39; argument has been deprecated and will be computed only.
+     * @deprecated This &#39;billing_donor_host_id&#39; argument has been deprecated and will be computed only.
      * 
      */
-    @Deprecated /* This 'billing_donor_host_id' argument has been deprecated and will be computed only. */
+    @Deprecated
     public Optional<Output<String>> billingDonorHostId() {
         return Optional.ofNullable(this.billingDonorHostId);
     }
@@ -112,22 +110,20 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `currentCommitment` instead.
      * 
-     * @deprecated
-     * The &#39;current_sku&#39; field has been deprecated. It is no longer supported.
+     * @deprecated The &#39;current_sku&#39; field has been deprecated. It is no longer supported.
      * 
      */
-    @Deprecated /* The 'current_sku' field has been deprecated. It is no longer supported. */
+    @Deprecated
     @Import(name="currentSku")
     private @Nullable Output<String> currentSku;
 
     /**
      * @return (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `currentCommitment` instead.
      * 
-     * @deprecated
-     * The &#39;current_sku&#39; field has been deprecated. It is no longer supported.
+     * @deprecated The &#39;current_sku&#39; field has been deprecated. It is no longer supported.
      * 
      */
-    @Deprecated /* The 'current_sku' field has been deprecated. It is no longer supported. */
+    @Deprecated
     public Optional<Output<String>> currentSku() {
         return Optional.ofNullable(this.currentSku);
     }
@@ -195,22 +191,20 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
      * 
-     * @deprecated
-     * This &#39;failed_esxi_host_id&#39; argument has been deprecated and will be computed only.
+     * @deprecated This &#39;failed_esxi_host_id&#39; argument has been deprecated and will be computed only.
      * 
      */
-    @Deprecated /* This 'failed_esxi_host_id' argument has been deprecated and will be computed only. */
+    @Deprecated
     @Import(name="failedEsxiHostId")
     private @Nullable Output<String> failedEsxiHostId;
 
     /**
      * @return (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
      * 
-     * @deprecated
-     * This &#39;failed_esxi_host_id&#39; argument has been deprecated and will be computed only.
+     * @deprecated This &#39;failed_esxi_host_id&#39; argument has been deprecated and will be computed only.
      * 
      */
-    @Deprecated /* This 'failed_esxi_host_id' argument has been deprecated and will be computed only. */
+    @Deprecated
     public Optional<Output<String>> failedEsxiHostId() {
         return Optional.ofNullable(this.failedEsxiHostId);
     }
@@ -308,22 +302,20 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `nextSku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
      * 
-     * @deprecated
-     * The &#39;next_sku&#39; field has been deprecated. It is no longer supported.
+     * @deprecated The &#39;next_sku&#39; field has been deprecated. It is no longer supported.
      * 
      */
-    @Deprecated /* The 'next_sku' field has been deprecated. It is no longer supported. */
+    @Deprecated
     @Import(name="nextSku")
     private @Nullable Output<String> nextSku;
 
     /**
      * @return (Optional) (Updatable) The billing option to switch to after the existing billing cycle ends. If `nextSku` is null or empty, `currentSku` continues to the next billing cycle. In case of [SwapBilling](https://docs.oracle.com/en-us/iaas/api/#/en/vmware/20200501/EsxiHost/SwapBilling) which is not supported by Terraform, its value may be swapped with the other ESXi host. In this case, `nextSku` needs to be updated manually for both ESXi hosts in Terraform config to match the updated values. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus).  **Deprecated**. Please use `nextCommitment` instead.
      * 
-     * @deprecated
-     * The &#39;next_sku&#39; field has been deprecated. It is no longer supported.
+     * @deprecated The &#39;next_sku&#39; field has been deprecated. It is no longer supported.
      * 
      */
-    @Deprecated /* The 'next_sku' field has been deprecated. It is no longer supported. */
+    @Deprecated
     public Optional<Output<String>> nextSku() {
         return Optional.ofNullable(this.nextSku);
     }
@@ -331,22 +323,20 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
      * 
-     * @deprecated
-     * This &#39;non_upgraded_esxi_host_id&#39; argument has been deprecated and will be computed only.
+     * @deprecated This &#39;non_upgraded_esxi_host_id&#39; argument has been deprecated and will be computed only.
      * 
      */
-    @Deprecated /* This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only. */
+    @Deprecated
     @Import(name="nonUpgradedEsxiHostId")
     private @Nullable Output<String> nonUpgradedEsxiHostId;
 
     /**
      * @return (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
      * 
-     * @deprecated
-     * This &#39;non_upgraded_esxi_host_id&#39; argument has been deprecated and will be computed only.
+     * @deprecated This &#39;non_upgraded_esxi_host_id&#39; argument has been deprecated and will be computed only.
      * 
      */
-    @Deprecated /* This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only. */
+    @Deprecated
     public Optional<Output<String>> nonUpgradedEsxiHostId() {
         return Optional.ofNullable(this.nonUpgradedEsxiHostId);
     }
@@ -357,11 +347,10 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
-     * @deprecated
-     * The &#39;sddc_id&#39; field has been deprecated. Please use &#39;cluster_id&#39; instead.
+     * @deprecated The &#39;sddc_id&#39; field has been deprecated. Please use &#39;cluster_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead. */
+    @Deprecated
     @Import(name="sddcId")
     private @Nullable Output<String> sddcId;
 
@@ -371,11 +360,10 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
-     * @deprecated
-     * The &#39;sddc_id&#39; field has been deprecated. Please use &#39;cluster_id&#39; instead.
+     * @deprecated The &#39;sddc_id&#39; field has been deprecated. Please use &#39;cluster_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead. */
+    @Deprecated
     public Optional<Output<String>> sddcId() {
         return Optional.ofNullable(this.sddcId);
     }
@@ -474,11 +462,10 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * This &#39;billing_donor_host_id&#39; argument has been deprecated and will be computed only.
+         * @deprecated This &#39;billing_donor_host_id&#39; argument has been deprecated and will be computed only.
          * 
          */
-        @Deprecated /* This 'billing_donor_host_id' argument has been deprecated and will be computed only. */
+        @Deprecated
         public Builder billingDonorHostId(@Nullable Output<String> billingDonorHostId) {
             $.billingDonorHostId = billingDonorHostId;
             return this;
@@ -489,11 +476,10 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * This &#39;billing_donor_host_id&#39; argument has been deprecated and will be computed only.
+         * @deprecated This &#39;billing_donor_host_id&#39; argument has been deprecated and will be computed only.
          * 
          */
-        @Deprecated /* This 'billing_donor_host_id' argument has been deprecated and will be computed only. */
+        @Deprecated
         public Builder billingDonorHostId(String billingDonorHostId) {
             return billingDonorHostId(Output.of(billingDonorHostId));
         }
@@ -587,11 +573,10 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;current_sku&#39; field has been deprecated. It is no longer supported.
+         * @deprecated The &#39;current_sku&#39; field has been deprecated. It is no longer supported.
          * 
          */
-        @Deprecated /* The 'current_sku' field has been deprecated. It is no longer supported. */
+        @Deprecated
         public Builder currentSku(@Nullable Output<String> currentSku) {
             $.currentSku = currentSku;
             return this;
@@ -602,11 +587,10 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;current_sku&#39; field has been deprecated. It is no longer supported.
+         * @deprecated The &#39;current_sku&#39; field has been deprecated. It is no longer supported.
          * 
          */
-        @Deprecated /* The 'current_sku' field has been deprecated. It is no longer supported. */
+        @Deprecated
         public Builder currentSku(String currentSku) {
             return currentSku(Output.of(currentSku));
         }
@@ -700,11 +684,10 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * This &#39;failed_esxi_host_id&#39; argument has been deprecated and will be computed only.
+         * @deprecated This &#39;failed_esxi_host_id&#39; argument has been deprecated and will be computed only.
          * 
          */
-        @Deprecated /* This 'failed_esxi_host_id' argument has been deprecated and will be computed only. */
+        @Deprecated
         public Builder failedEsxiHostId(@Nullable Output<String> failedEsxiHostId) {
             $.failedEsxiHostId = failedEsxiHostId;
             return this;
@@ -715,11 +698,10 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * This &#39;failed_esxi_host_id&#39; argument has been deprecated and will be computed only.
+         * @deprecated This &#39;failed_esxi_host_id&#39; argument has been deprecated and will be computed only.
          * 
          */
-        @Deprecated /* This 'failed_esxi_host_id' argument has been deprecated and will be computed only. */
+        @Deprecated
         public Builder failedEsxiHostId(String failedEsxiHostId) {
             return failedEsxiHostId(Output.of(failedEsxiHostId));
         }
@@ -855,11 +837,10 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;next_sku&#39; field has been deprecated. It is no longer supported.
+         * @deprecated The &#39;next_sku&#39; field has been deprecated. It is no longer supported.
          * 
          */
-        @Deprecated /* The 'next_sku' field has been deprecated. It is no longer supported. */
+        @Deprecated
         public Builder nextSku(@Nullable Output<String> nextSku) {
             $.nextSku = nextSku;
             return this;
@@ -870,11 +851,10 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;next_sku&#39; field has been deprecated. It is no longer supported.
+         * @deprecated The &#39;next_sku&#39; field has been deprecated. It is no longer supported.
          * 
          */
-        @Deprecated /* The 'next_sku' field has been deprecated. It is no longer supported. */
+        @Deprecated
         public Builder nextSku(String nextSku) {
             return nextSku(Output.of(nextSku));
         }
@@ -884,11 +864,10 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * This &#39;non_upgraded_esxi_host_id&#39; argument has been deprecated and will be computed only.
+         * @deprecated This &#39;non_upgraded_esxi_host_id&#39; argument has been deprecated and will be computed only.
          * 
          */
-        @Deprecated /* This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only. */
+        @Deprecated
         public Builder nonUpgradedEsxiHostId(@Nullable Output<String> nonUpgradedEsxiHostId) {
             $.nonUpgradedEsxiHostId = nonUpgradedEsxiHostId;
             return this;
@@ -899,11 +878,10 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * This &#39;non_upgraded_esxi_host_id&#39; argument has been deprecated and will be computed only.
+         * @deprecated This &#39;non_upgraded_esxi_host_id&#39; argument has been deprecated and will be computed only.
          * 
          */
-        @Deprecated /* This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only. */
+        @Deprecated
         public Builder nonUpgradedEsxiHostId(String nonUpgradedEsxiHostId) {
             return nonUpgradedEsxiHostId(Output.of(nonUpgradedEsxiHostId));
         }
@@ -916,11 +894,10 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;sddc_id&#39; field has been deprecated. Please use &#39;cluster_id&#39; instead.
+         * @deprecated The &#39;sddc_id&#39; field has been deprecated. Please use &#39;cluster_id&#39; instead.
          * 
          */
-        @Deprecated /* The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead. */
+        @Deprecated
         public Builder sddcId(@Nullable Output<String> sddcId) {
             $.sddcId = sddcId;
             return this;
@@ -934,11 +911,10 @@ public final class EsxiHostArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;sddc_id&#39; field has been deprecated. Please use &#39;cluster_id&#39; instead.
+         * @deprecated The &#39;sddc_id&#39; field has been deprecated. Please use &#39;cluster_id&#39; instead.
          * 
          */
-        @Deprecated /* The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead. */
+        @Deprecated
         public Builder sddcId(String sddcId) {
             return sddcId(Output.of(sddcId));
         }

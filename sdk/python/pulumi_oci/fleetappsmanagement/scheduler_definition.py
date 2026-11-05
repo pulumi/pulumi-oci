@@ -793,6 +793,52 @@ class SchedulerDefinition(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return SchedulerDefinition(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            action_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SchedulerDefinitionActionGroupArgs', 'SchedulerDefinitionActionGroupArgsDict', 'outputs.SchedulerDefinitionActionGroup']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            count_of_affected_action_groups: pulumi.Input[Optional[_builtins.int]] = None,
+            count_of_affected_resources: pulumi.Input[Optional[_builtins.int]] = None,
+            count_of_affected_targets: pulumi.Input[Optional[_builtins.int]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            products: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            resource_region: pulumi.Input[Optional[_builtins.str]] = None,
+            run_books: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SchedulerDefinitionRunBookArgs', 'SchedulerDefinitionRunBookArgsDict', 'outputs.SchedulerDefinitionRunBook']]]]] = None,
+            schedule: pulumi.Input[Optional[Union['SchedulerDefinitionScheduleArgs', 'SchedulerDefinitionScheduleArgsDict', 'outputs.SchedulerDefinitionSchedule']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_next_run: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["actionGroups"] = action_groups
+        __props__["compartmentId"] = compartment_id
+        __props__["countOfAffectedActionGroups"] = count_of_affected_action_groups
+        __props__["countOfAffectedResources"] = count_of_affected_resources
+        __props__["countOfAffectedTargets"] = count_of_affected_targets
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["lifecycleOperations"] = lifecycle_operations
+        __props__["products"] = products
+        __props__["resourceRegion"] = resource_region
+        __props__["runBooks"] = run_books
+        __props__["schedule"] = schedule
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeOfNextRun"] = time_of_next_run
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:FleetAppsManagement/schedulerDefinition:SchedulerDefinition', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="actionGroups")
     def action_groups(self) -> pulumi.Output[Sequence['outputs.SchedulerDefinitionActionGroup']]:

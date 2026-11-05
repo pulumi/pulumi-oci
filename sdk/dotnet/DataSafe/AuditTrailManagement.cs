@@ -59,7 +59,6 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when StartTrigger is set.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -241,7 +240,6 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when StartTrigger is set.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -348,7 +346,6 @@ namespace Pulumi.Oci.DataSafe
     {
         /// <summary>
         /// The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when StartTrigger is set.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

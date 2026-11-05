@@ -828,6 +828,48 @@ class VolumeGroup(pulumi.CustomResource):
         __props__.__dict__["xrc_kms_key_id"] = xrc_kms_key_id
         return VolumeGroup(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_hydrated: pulumi.Input[Optional[_builtins.bool]] = None,
+            preserve_volume_replica: pulumi.Input[Optional[_builtins.bool]] = None,
+            size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
+            size_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+            source_details: pulumi.Input[Optional[Union['VolumeGroupSourceDetailsArgs', 'VolumeGroupSourceDetailsArgsDict', 'outputs.VolumeGroupSourceDetails']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            volume_group_replicas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeGroupVolumeGroupReplicaArgs', 'VolumeGroupVolumeGroupReplicaArgsDict', 'outputs.VolumeGroupVolumeGroupReplica']]]]] = None,
+            volume_group_replicas_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
+            volume_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            xrc_kms_key_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availabilityDomain"] = availability_domain
+        __props__["backupPolicyId"] = backup_policy_id
+        __props__["clusterPlacementGroupId"] = cluster_placement_group_id
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["isHydrated"] = is_hydrated
+        __props__["preserveVolumeReplica"] = preserve_volume_replica
+        __props__["sizeInGbs"] = size_in_gbs
+        __props__["sizeInMbs"] = size_in_mbs
+        __props__["sourceDetails"] = source_details
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["volumeGroupReplicas"] = volume_group_replicas
+        __props__["volumeGroupReplicasDeletion"] = volume_group_replicas_deletion
+        __props__["volumeIds"] = volume_ids
+        __props__["xrcKmsKeyId"] = xrc_kms_key_id
+        return pulumi.runtime.exists_resource(None, 'oci:Core/volumeGroup:VolumeGroup', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[_builtins.str]:

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Gets a list of Cost Anomaly Event in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Gets a list of Cost Anomaly Event in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -85,7 +83,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Cost Anomaly Events in Oracle Cloud Infrastructure Costad service.
         /// 
         /// Gets a list of Cost Anomaly Event in a compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

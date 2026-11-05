@@ -251,6 +251,12 @@ func (ClusterNetworkState) ElementType() reflect.Type {
 	return reflect.TypeOf((*clusterNetworkState)(nil)).Elem()
 }
 
+// ClusterNetworkExists checks whether an existing ClusterNetwork resource with the given ID exists.
+func ClusterNetworkExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ClusterNetworkState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/clusterNetwork:ClusterNetwork", id, state, "", opts...)
+}
+
 type clusterNetworkArgs struct {
 	// The HPC cluster configuration requested when launching instances of a cluster network.
 	//

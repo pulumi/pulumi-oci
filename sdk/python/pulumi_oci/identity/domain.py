@@ -946,6 +946,54 @@ class Domain(pulumi.CustomResource):
         __props__.__dict__["url"] = url
         return Domain(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            admin_email: pulumi.Input[Optional[_builtins.str]] = None,
+            admin_first_name: pulumi.Input[Optional[_builtins.str]] = None,
+            admin_last_name: pulumi.Input[Optional[_builtins.str]] = None,
+            admin_user_name: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            home_region: pulumi.Input[Optional[_builtins.str]] = None,
+            home_region_url: pulumi.Input[Optional[_builtins.str]] = None,
+            is_hidden_on_login: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_notification_bypassed: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_primary_email_required: pulumi.Input[Optional[_builtins.bool]] = None,
+            license_type: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            replica_regions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainReplicaRegionArgs', 'DomainReplicaRegionArgsDict', 'outputs.DomainReplicaRegion']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            url: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["adminEmail"] = admin_email
+        __props__["adminFirstName"] = admin_first_name
+        __props__["adminLastName"] = admin_last_name
+        __props__["adminUserName"] = admin_user_name
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["homeRegion"] = home_region
+        __props__["homeRegionUrl"] = home_region_url
+        __props__["isHiddenOnLogin"] = is_hidden_on_login
+        __props__["isNotificationBypassed"] = is_notification_bypassed
+        __props__["isPrimaryEmailRequired"] = is_primary_email_required
+        __props__["licenseType"] = license_type
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["replicaRegions"] = replica_regions
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["type"] = type
+        __props__["url"] = url
+        return pulumi.runtime.exists_resource(None, 'oci:Identity/domain:Domain', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="adminEmail")
     def admin_email(self) -> pulumi.Output[_builtins.str]:

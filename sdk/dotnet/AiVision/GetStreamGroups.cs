@@ -16,7 +16,6 @@ namespace Pulumi.Oci.AiVision
         /// 
         /// Gets a list of the streamGroups in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.AiVision
         /// 
         /// Gets a list of the streamGroups in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.AiVision
         /// This data source provides the list of Stream Groups in Oracle Cloud Infrastructure Ai Vision service.
         /// 
         /// Gets a list of the streamGroups in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

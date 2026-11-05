@@ -244,6 +244,12 @@ func (BackupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*backupState)(nil)).Elem()
 }
 
+// BackupExists checks whether an existing Backup resource with the given ID exists.
+func BackupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BackupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Psql/backup:Backup", id, state, "", opts...)
+}
+
 type backupArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the backup.
 	CompartmentId string `pulumi:"compartmentId"`

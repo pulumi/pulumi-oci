@@ -208,6 +208,12 @@ func (AgentAgentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*agentAgentState)(nil)).Elem()
 }
 
+// AgentAgentExists checks whether an existing AgentAgent resource with the given ID exists.
+func AgentAgentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AgentAgentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:GenerativeAi/agentAgent:AgentAgent", id, state, "", opts...)
+}
+
 type agentAgentArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the agent in.
 	CompartmentId string `pulumi:"compartmentId"`

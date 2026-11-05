@@ -82,22 +82,20 @@ public final class VolumeAttachmentState extends com.pulumi.resources.ResourceAr
     /**
      * The OCID of the compartment.
      * 
-     * @deprecated
-     * The &#39;compartment_id&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;compartment_id&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
      * @return The OCID of the compartment.
      * 
-     * @deprecated
-     * The &#39;compartment_id&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;compartment_id&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
@@ -561,11 +559,10 @@ public final class VolumeAttachmentState extends com.pulumi.resources.ResourceAr
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;compartment_id&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * @deprecated The &#39;compartment_id&#39; field has been deprecated and may be removed in a future version. Do not use this field.
          * 
          */
-        @Deprecated /* The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field. */
+        @Deprecated
         public Builder compartmentId(@Nullable Output<String> compartmentId) {
             $.compartmentId = compartmentId;
             return this;
@@ -576,11 +573,10 @@ public final class VolumeAttachmentState extends com.pulumi.resources.ResourceAr
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;compartment_id&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * @deprecated The &#39;compartment_id&#39; field has been deprecated and may be removed in a future version. Do not use this field.
          * 
          */
-        @Deprecated /* The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field. */
+        @Deprecated
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
         }

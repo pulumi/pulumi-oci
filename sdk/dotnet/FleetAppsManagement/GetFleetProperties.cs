@@ -16,7 +16,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// List properties associated with a fleet.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// List properties associated with a fleet.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// This data source provides the list of Fleet Properties in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
         /// List properties associated with a fleet.
-        /// 
         /// 
         /// ## Example Usage
         /// 

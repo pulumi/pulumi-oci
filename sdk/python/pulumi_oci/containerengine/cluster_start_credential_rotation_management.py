@@ -238,6 +238,16 @@ class ClusterStartCredentialRotationManagement(pulumi.CustomResource):
         __props__.__dict__["cluster_id"] = cluster_id
         return ClusterStartCredentialRotationManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            auto_completion_delay_duration: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["autoCompletionDelayDuration"] = auto_completion_delay_duration
+        __props__["clusterId"] = cluster_id
+        return pulumi.runtime.exists_resource(None, 'oci:ContainerEngine/clusterStartCredentialRotationManagement:ClusterStartCredentialRotationManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="autoCompletionDelayDuration")
     def auto_completion_delay_duration(self) -> pulumi.Output[_builtins.str]:

@@ -1410,6 +1410,92 @@ class DatabaseInsight(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return DatabaseInsight(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_credential_details: pulumi.Input[Optional[Union['DatabaseInsightConnectionCredentialDetailsArgs', 'DatabaseInsightConnectionCredentialDetailsArgsDict', 'outputs.DatabaseInsightConnectionCredentialDetails']]] = None,
+            connection_details: pulumi.Input[Optional[Union['DatabaseInsightConnectionDetailsArgs', 'DatabaseInsightConnectionDetailsArgsDict', 'outputs.DatabaseInsightConnectionDetails']]] = None,
+            connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+            credential_details: pulumi.Input[Optional[Union['DatabaseInsightCredentialDetailsArgs', 'DatabaseInsightCredentialDetailsArgsDict', 'outputs.DatabaseInsightCredentialDetails']]] = None,
+            database_connection_status_details: pulumi.Input[Optional[_builtins.str]] = None,
+            database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_name: pulumi.Input[Optional[_builtins.str]] = None,
+            database_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            database_type: pulumi.Input[Optional[_builtins.str]] = None,
+            database_version: pulumi.Input[Optional[_builtins.str]] = None,
+            dbm_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            enterprise_manager_bridge_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enterprise_manager_entity_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            enterprise_manager_entity_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            enterprise_manager_entity_name: pulumi.Input[Optional[_builtins.str]] = None,
+            enterprise_manager_entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+            enterprise_manager_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_source: pulumi.Input[Optional[_builtins.str]] = None,
+            exadata_insight_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_advanced_features_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_heat_wave_cluster_attached: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_highly_available: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            opsi_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            processor_count: pulumi.Input[Optional[_builtins.int]] = None,
+            root_id: pulumi.Input[Optional[_builtins.str]] = None,
+            service_name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["connectionCredentialDetails"] = connection_credential_details
+        __props__["connectionDetails"] = connection_details
+        __props__["connectorId"] = connector_id
+        __props__["credentialDetails"] = credential_details
+        __props__["databaseConnectionStatusDetails"] = database_connection_status_details
+        __props__["databaseConnectorId"] = database_connector_id
+        __props__["databaseDisplayName"] = database_display_name
+        __props__["databaseId"] = database_id
+        __props__["databaseName"] = database_name
+        __props__["databaseResourceType"] = database_resource_type
+        __props__["databaseType"] = database_type
+        __props__["databaseVersion"] = database_version
+        __props__["dbmPrivateEndpointId"] = dbm_private_endpoint_id
+        __props__["definedTags"] = defined_tags
+        __props__["deploymentType"] = deployment_type
+        __props__["enterpriseManagerBridgeId"] = enterprise_manager_bridge_id
+        __props__["enterpriseManagerEntityDisplayName"] = enterprise_manager_entity_display_name
+        __props__["enterpriseManagerEntityIdentifier"] = enterprise_manager_entity_identifier
+        __props__["enterpriseManagerEntityName"] = enterprise_manager_entity_name
+        __props__["enterpriseManagerEntityType"] = enterprise_manager_entity_type
+        __props__["enterpriseManagerIdentifier"] = enterprise_manager_identifier
+        __props__["entitySource"] = entity_source
+        __props__["exadataInsightId"] = exadata_insight_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["isAdvancedFeaturesEnabled"] = is_advanced_features_enabled
+        __props__["isHeatWaveClusterAttached"] = is_heat_wave_cluster_attached
+        __props__["isHighlyAvailable"] = is_highly_available
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["managementAgentId"] = management_agent_id
+        __props__["opsiPrivateEndpointId"] = opsi_private_endpoint_id
+        __props__["parentId"] = parent_id
+        __props__["processorCount"] = processor_count
+        __props__["rootId"] = root_id
+        __props__["serviceName"] = service_name
+        __props__["state"] = state
+        __props__["status"] = status
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Opsi/databaseInsight:DatabaseInsight', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

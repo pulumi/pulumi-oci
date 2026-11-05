@@ -1119,6 +1119,68 @@ class ExadataInsight(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return ExadataInsight(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            chargeback_plan_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInsightChargebackPlanDetailArgs', 'ExadataInsightChargebackPlanDetailArgsDict', 'outputs.ExadataInsightChargebackPlanDetail']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            enterprise_manager_bridge_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enterprise_manager_entity_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            enterprise_manager_entity_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            enterprise_manager_entity_name: pulumi.Input[Optional[_builtins.str]] = None,
+            enterprise_manager_entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+            enterprise_manager_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_source: pulumi.Input[Optional[_builtins.str]] = None,
+            exadata_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            exadata_infra_id: pulumi.Input[Optional[_builtins.str]] = None,
+            exadata_infra_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            exadata_name: pulumi.Input[Optional[_builtins.str]] = None,
+            exadata_rack_type: pulumi.Input[Optional[_builtins.str]] = None,
+            exadata_shape: pulumi.Input[Optional[_builtins.str]] = None,
+            exadata_type: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_auto_sync_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_virtualized_exadata: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            member_vm_cluster_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataInsightMemberVmClusterDetailArgs', 'ExadataInsightMemberVmClusterDetailArgsDict', 'outputs.ExadataInsightMemberVmClusterDetail']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            status_details: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["chargebackPlanDetails"] = chargeback_plan_details
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["enterpriseManagerBridgeId"] = enterprise_manager_bridge_id
+        __props__["enterpriseManagerEntityDisplayName"] = enterprise_manager_entity_display_name
+        __props__["enterpriseManagerEntityIdentifier"] = enterprise_manager_entity_identifier
+        __props__["enterpriseManagerEntityName"] = enterprise_manager_entity_name
+        __props__["enterpriseManagerEntityType"] = enterprise_manager_entity_type
+        __props__["enterpriseManagerIdentifier"] = enterprise_manager_identifier
+        __props__["entitySource"] = entity_source
+        __props__["exadataDisplayName"] = exadata_display_name
+        __props__["exadataInfraId"] = exadata_infra_id
+        __props__["exadataInfraResourceType"] = exadata_infra_resource_type
+        __props__["exadataName"] = exadata_name
+        __props__["exadataRackType"] = exadata_rack_type
+        __props__["exadataShape"] = exadata_shape
+        __props__["exadataType"] = exadata_type
+        __props__["freeformTags"] = freeform_tags
+        __props__["isAutoSyncEnabled"] = is_auto_sync_enabled
+        __props__["isVirtualizedExadata"] = is_virtualized_exadata
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["memberVmClusterDetails"] = member_vm_cluster_details
+        __props__["state"] = state
+        __props__["status"] = status
+        __props__["statusDetails"] = status_details
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Opsi/exadataInsight:ExadataInsight', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="chargebackPlanDetails")
     def chargeback_plan_details(self) -> pulumi.Output[Sequence['outputs.ExadataInsightChargebackPlanDetail']]:

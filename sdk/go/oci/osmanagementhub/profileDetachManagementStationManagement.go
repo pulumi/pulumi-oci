@@ -124,6 +124,12 @@ func (ProfileDetachManagementStationManagementState) ElementType() reflect.Type 
 	return reflect.TypeOf((*profileDetachManagementStationManagementState)(nil)).Elem()
 }
 
+// ProfileDetachManagementStationManagementExists checks whether an existing ProfileDetachManagementStationManagement resource with the given ID exists.
+func ProfileDetachManagementStationManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProfileDetachManagementStationManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/profileDetachManagementStationManagement:ProfileDetachManagementStationManagement", id, state, "", opts...)
+}
+
 type profileDetachManagementStationManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station to detach from the profile.
 	ManagementStationId string `pulumi:"managementStationId"`

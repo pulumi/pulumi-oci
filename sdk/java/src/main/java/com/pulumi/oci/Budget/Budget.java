@@ -310,11 +310,10 @@ public class Budget extends com.pulumi.resources.CustomResource {
     /**
      * This is DEPRECATED. Set the target compartment ID in targets instead.
      * 
-     * @deprecated
-     * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;targets&#39; instead.
+     * @deprecated The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;targets&#39; instead.
      * 
      */
-    @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'targets' instead. */
+    @Deprecated
     @Export(name="targetCompartmentId", refs={String.class}, tree="[0]")
     private Output<String> targetCompartmentId;
 

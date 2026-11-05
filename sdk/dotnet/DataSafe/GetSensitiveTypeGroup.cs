@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets the details of the specified sensitive type group.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets the details of the specified sensitive type group.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides details about a specific Sensitive Type Group resource in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets the details of the specified sensitive type group.
-        /// 
         /// 
         /// ## Example Usage
         /// 

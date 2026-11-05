@@ -240,6 +240,12 @@ func (JavaDownloadsJavaDownloadTokenState) ElementType() reflect.Type {
 	return reflect.TypeOf((*javaDownloadsJavaDownloadTokenState)(nil)).Elem()
 }
 
+// JavaDownloadsJavaDownloadTokenExists checks whether an existing JavaDownloadsJavaDownloadToken resource with the given ID exists.
+func JavaDownloadsJavaDownloadTokenExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *JavaDownloadsJavaDownloadTokenState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Jms/javaDownloadsJavaDownloadToken:JavaDownloadsJavaDownloadToken", id, state, "", opts...)
+}
+
 type javaDownloadsJavaDownloadTokenArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy scoped to the JavaDownloadToken.
 	CompartmentId string `pulumi:"compartmentId"`

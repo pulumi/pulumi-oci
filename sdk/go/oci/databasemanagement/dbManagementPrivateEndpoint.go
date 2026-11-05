@@ -214,6 +214,12 @@ func (DbManagementPrivateEndpointState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dbManagementPrivateEndpointState)(nil)).Elem()
 }
 
+// DbManagementPrivateEndpointExists checks whether an existing DbManagementPrivateEndpoint resource with the given ID exists.
+func DbManagementPrivateEndpointExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DbManagementPrivateEndpointState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/dbManagementPrivateEndpoint:DbManagementPrivateEndpoint", id, state, "", opts...)
+}
+
 type dbManagementPrivateEndpointArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -131,6 +131,12 @@ func (ExternalPluggableDatabaseOperationsInsightsManagementState) ElementType() 
 	return reflect.TypeOf((*externalPluggableDatabaseOperationsInsightsManagementState)(nil)).Elem()
 }
 
+// ExternalPluggableDatabaseOperationsInsightsManagementExists checks whether an existing ExternalPluggableDatabaseOperationsInsightsManagement resource with the given ID exists.
+func ExternalPluggableDatabaseOperationsInsightsManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalPluggableDatabaseOperationsInsightsManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/externalPluggableDatabaseOperationsInsightsManagement:ExternalPluggableDatabaseOperationsInsightsManagement", id, state, "", opts...)
+}
+
 type externalPluggableDatabaseOperationsInsightsManagementArgs struct {
 	// (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
 	//

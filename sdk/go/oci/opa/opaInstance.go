@@ -247,6 +247,12 @@ func (OpaInstanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*opaInstanceState)(nil)).Elem()
 }
 
+// OpaInstanceExists checks whether an existing OpaInstance resource with the given ID exists.
+func OpaInstanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpaInstanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Opa/opaInstance:OpaInstance", id, state, "", opts...)
+}
+
 type opaInstanceArgs struct {
 	// (Updatable) Compartment Identifier
 	CompartmentId string `pulumi:"compartmentId"`

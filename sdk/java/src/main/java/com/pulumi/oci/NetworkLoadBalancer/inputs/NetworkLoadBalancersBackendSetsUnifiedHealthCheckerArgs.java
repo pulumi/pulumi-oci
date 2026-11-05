@@ -94,14 +94,14 @@ public final class NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs exten
     }
 
     /**
-     * (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
+     * (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|&#92;s)*$`
      * 
      */
     @Import(name="responseBodyRegex")
     private @Nullable Output<String> responseBodyRegex;
 
     /**
-     * @return (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
+     * @return (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|&#92;s)*$`
      * 
      */
     public Optional<Output<String>> responseBodyRegex() {
@@ -323,7 +323,7 @@ public final class NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs exten
         }
 
         /**
-         * @param responseBodyRegex (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
+         * @param responseBodyRegex (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|&#92;s)*$`
          * 
          * @return builder
          * 
@@ -334,7 +334,7 @@ public final class NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs exten
         }
 
         /**
-         * @param responseBodyRegex (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
+         * @param responseBodyRegex (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|&#92;s)*$`
          * 
          * @return builder
          * 

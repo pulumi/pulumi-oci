@@ -17,7 +17,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// Lists lifecycle environments that match the specified compartment or lifecycle environment OCID. Filter the list
         /// against a variety of criteria including but not limited to its name, status, architecture, and OS family.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -53,7 +52,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// Lists lifecycle environments that match the specified compartment or lifecycle environment OCID. Filter the list
         /// against a variety of criteria including but not limited to its name, status, architecture, and OS family.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -88,7 +86,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Lists lifecycle environments that match the specified compartment or lifecycle environment OCID. Filter the list
         /// against a variety of criteria including but not limited to its name, status, architecture, and OS family.
-        /// 
         /// 
         /// ## Example Usage
         /// 

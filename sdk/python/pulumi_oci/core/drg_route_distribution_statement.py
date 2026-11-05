@@ -346,6 +346,20 @@ class DrgRouteDistributionStatement(pulumi.CustomResource):
         __props__.__dict__["priority"] = priority
         return DrgRouteDistributionStatement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
+            match_criteria: pulumi.Input[Optional[Union['DrgRouteDistributionStatementMatchCriteriaArgs', 'DrgRouteDistributionStatementMatchCriteriaArgsDict', 'outputs.DrgRouteDistributionStatementMatchCriteria']]] = None,
+            priority: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["action"] = action
+        __props__["drgRouteDistributionId"] = drg_route_distribution_id
+        __props__["matchCriteria"] = match_criteria
+        __props__["priority"] = priority
+        return pulumi.runtime.exists_resource(None, 'oci:Core/drgRouteDistributionStatement:DrgRouteDistributionStatement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def action(self) -> pulumi.Output[_builtins.str]:

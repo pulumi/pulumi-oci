@@ -148,6 +148,12 @@ func (OccCustomerGroupOccCustomerState) ElementType() reflect.Type {
 	return reflect.TypeOf((*occCustomerGroupOccCustomerState)(nil)).Elem()
 }
 
+// OccCustomerGroupOccCustomerExists checks whether an existing OccCustomerGroupOccCustomer resource with the given ID exists.
+func OccCustomerGroupOccCustomerExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OccCustomerGroupOccCustomerState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CapacityManagement/occCustomerGroupOccCustomer:OccCustomerGroupOccCustomer", id, state, "", opts...)
+}
+
 type occCustomerGroupOccCustomerArgs struct {
 	// (Updatable) The description about the customer group.
 	Description *string `pulumi:"description"`

@@ -650,6 +650,38 @@ class CloudGuardDataSource(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return CloudGuardDataSource(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            data_source_details: pulumi.Input[Optional[Union['CloudGuardDataSourceDataSourceDetailsArgs', 'CloudGuardDataSourceDataSourceDetailsArgsDict', 'outputs.CloudGuardDataSourceDataSourceDetails']]] = None,
+            data_source_detector_mapping_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudGuardDataSourceDataSourceDetectorMappingInfoArgs', 'CloudGuardDataSourceDataSourceDetectorMappingInfoArgsDict', 'outputs.CloudGuardDataSourceDataSourceDetectorMappingInfo']]]]] = None,
+            data_source_feed_provider: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            region_status_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CloudGuardDataSourceRegionStatusDetailArgs', 'CloudGuardDataSourceRegionStatusDetailArgsDict', 'outputs.CloudGuardDataSourceRegionStatusDetail']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["dataSourceDetails"] = data_source_details
+        __props__["dataSourceDetectorMappingInfos"] = data_source_detector_mapping_infos
+        __props__["dataSourceFeedProvider"] = data_source_feed_provider
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["regionStatusDetails"] = region_status_details
+        __props__["state"] = state
+        __props__["status"] = status
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:CloudGuard/cloudGuardDataSource:CloudGuardDataSource', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

@@ -273,6 +273,12 @@ func (AutonomousDatabaseBackupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*autonomousDatabaseBackupState)(nil)).Elem()
 }
 
+// AutonomousDatabaseBackupExists checks whether an existing AutonomousDatabaseBackup resource with the given ID exists.
+func AutonomousDatabaseBackupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutonomousDatabaseBackupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/autonomousDatabaseBackup:AutonomousDatabaseBackup", id, state, "", opts...)
+}
+
 type autonomousDatabaseBackupArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous AI Database backup.
 	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`

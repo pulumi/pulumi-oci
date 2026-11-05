@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Budget
         /// 
         /// Returns a list of Alert Rules for a specified budget.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Budget
         /// 
         /// Returns a list of Alert Rules for a specified budget.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.Budget
         /// This data source provides the list of Alert Rules in Oracle Cloud Infrastructure Budget service.
         /// 
         /// Returns a list of Alert Rules for a specified budget.
-        /// 
         /// 
         /// ## Example Usage
         /// 

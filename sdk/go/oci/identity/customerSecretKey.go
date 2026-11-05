@@ -164,6 +164,12 @@ func (CustomerSecretKeyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*customerSecretKeyState)(nil)).Elem()
 }
 
+// CustomerSecretKeyExists checks whether an existing CustomerSecretKey resource with the given ID exists.
+func CustomerSecretKeyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CustomerSecretKeyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/customerSecretKey:CustomerSecretKey", id, state, "", opts...)
+}
+
 type customerSecretKeyArgs struct {
 	// (Updatable) The name you assign to the secret key during creation. Does not have to be unique, and it's changeable.
 	DisplayName string `pulumi:"displayName"`

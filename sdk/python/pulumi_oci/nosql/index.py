@@ -465,6 +465,30 @@ class Index(pulumi.CustomResource):
         __props__.__dict__["table_name_or_id"] = table_name_or_id
         return Index(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_if_not_exists: pulumi.Input[Optional[_builtins.bool]] = None,
+            keys: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IndexKeyArgs', 'IndexKeyArgsDict', 'outputs.IndexKey']]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            table_id: pulumi.Input[Optional[_builtins.str]] = None,
+            table_name: pulumi.Input[Optional[_builtins.str]] = None,
+            table_name_or_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["isIfNotExists"] = is_if_not_exists
+        __props__["keys"] = keys
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["name"] = name
+        __props__["state"] = state
+        __props__["tableId"] = table_id
+        __props__["tableName"] = table_name
+        __props__["tableNameOrId"] = table_name_or_id
+        return pulumi.runtime.exists_resource(None, 'oci:Nosql/index:Index', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

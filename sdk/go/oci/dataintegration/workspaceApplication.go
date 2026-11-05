@@ -291,6 +291,12 @@ func (WorkspaceApplicationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*workspaceApplicationState)(nil)).Elem()
 }
 
+// WorkspaceApplicationExists checks whether an existing WorkspaceApplication resource with the given ID exists.
+func WorkspaceApplicationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WorkspaceApplicationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataIntegration/workspaceApplication:WorkspaceApplication", id, state, "", opts...)
+}
+
 type workspaceApplicationArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`

@@ -123,6 +123,12 @@ func (VaultVerificationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*vaultVerificationState)(nil)).Elem()
 }
 
+// VaultVerificationExists checks whether an existing VaultVerification resource with the given ID exists.
+func VaultVerificationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VaultVerificationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Kms/vaultVerification:VaultVerification", id, state, "", opts...)
+}
+
 type vaultVerificationArgs struct {
 	// (Updatable) The region to be created replica to. When updated,
 	// replica will be deleted from old region, and created to updated region.

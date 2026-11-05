@@ -98,11 +98,10 @@ public final class GetInstancesInstance {
      */
     private Map<String,String> freeformTags;
     /**
-     * @deprecated
-     * The &#39;hostname_label&#39; field has been deprecated. Please use &#39;hostname_label under create_vnic_details&#39; instead.
+     * @deprecated The &#39;hostname_label&#39; field has been deprecated. Please use &#39;hostname_label under create_vnic_details&#39; instead.
      * 
      */
-    @Deprecated /* The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead. */
+    @Deprecated
     private String hostnameLabel;
     /**
      * @return The OCID of the instance.
@@ -112,11 +111,10 @@ public final class GetInstancesInstance {
     /**
      * @return Deprecated. Use `sourceDetails` instead.
      * 
-     * @deprecated
-     * The &#39;image&#39; field has been deprecated. Please use &#39;source_details&#39; instead. If both fields are specified, then &#39;source_details&#39; will be used.
+     * @deprecated The &#39;image&#39; field has been deprecated. Please use &#39;source_details&#39; instead. If both fields are specified, then &#39;source_details&#39; will be used.
      * 
      */
-    @Deprecated /* The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used. */
+    @Deprecated
     private String image;
     /**
      * @return The OCID of the Instance Configuration used to source launch details for this instance. Any other fields supplied in the instance launch request override the details stored in the Instance Configuration for this instance launch.
@@ -229,11 +227,10 @@ public final class GetInstancesInstance {
      */
     private String state;
     /**
-     * @deprecated
-     * The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnet_id under create_vnic_details&#39; instead.
+     * @deprecated The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnet_id under create_vnic_details&#39; instead.
      * 
      */
-    @Deprecated /* The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead. */
+    @Deprecated
     private String subnetId;
     /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
@@ -358,11 +355,10 @@ public final class GetInstancesInstance {
         return this.freeformTags;
     }
     /**
-     * @deprecated
-     * The &#39;hostname_label&#39; field has been deprecated. Please use &#39;hostname_label under create_vnic_details&#39; instead.
+     * @deprecated The &#39;hostname_label&#39; field has been deprecated. Please use &#39;hostname_label under create_vnic_details&#39; instead.
      * 
      */
-    @Deprecated /* The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead. */
+    @Deprecated
     public String hostnameLabel() {
         return this.hostnameLabel;
     }
@@ -376,11 +372,10 @@ public final class GetInstancesInstance {
     /**
      * @return Deprecated. Use `sourceDetails` instead.
      * 
-     * @deprecated
-     * The &#39;image&#39; field has been deprecated. Please use &#39;source_details&#39; instead. If both fields are specified, then &#39;source_details&#39; will be used.
+     * @deprecated The &#39;image&#39; field has been deprecated. Please use &#39;source_details&#39; instead. If both fields are specified, then &#39;source_details&#39; will be used.
      * 
      */
-    @Deprecated /* The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used. */
+    @Deprecated
     public String image() {
         return this.image;
     }
@@ -545,11 +540,10 @@ public final class GetInstancesInstance {
         return this.state;
     }
     /**
-     * @deprecated
-     * The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnet_id under create_vnic_details&#39; instead.
+     * @deprecated The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnet_id under create_vnic_details&#39; instead.
      * 
      */
-    @Deprecated /* The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead. */
+    @Deprecated
     public String subnetId() {
         return this.subnetId;
     }

@@ -236,6 +236,12 @@ func (ExternalNonContainerDatabaseState) ElementType() reflect.Type {
 	return reflect.TypeOf((*externalNonContainerDatabaseState)(nil)).Elem()
 }
 
+// ExternalNonContainerDatabaseExists checks whether an existing ExternalNonContainerDatabase resource with the given ID exists.
+func ExternalNonContainerDatabaseExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalNonContainerDatabaseState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/externalNonContainerDatabase:ExternalNonContainerDatabase", id, state, "", opts...)
+}
+
 type externalNonContainerDatabaseArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

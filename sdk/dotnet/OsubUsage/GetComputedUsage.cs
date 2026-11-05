@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsubUsage
         /// 
         /// This is an API which returns Computed Usage corresponding to the id passed
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.OsubUsage
         /// 
         /// This is an API which returns Computed Usage corresponding to the id passed
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.OsubUsage
         /// This data source provides details about a specific Computed Usage resource in Oracle Cloud Infrastructure Osub Usage service.
         /// 
         /// This is an API which returns Computed Usage corresponding to the id passed
-        /// 
         /// 
         /// ## Example Usage
         /// 

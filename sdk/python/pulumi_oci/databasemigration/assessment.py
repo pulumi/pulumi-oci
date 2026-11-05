@@ -1045,6 +1045,60 @@ class Assessment(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return Assessment(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            acceptable_downtime: pulumi.Input[Optional[_builtins.str]] = None,
+            assessment_migration_type: pulumi.Input[Optional[_builtins.str]] = None,
+            bulk_include_exclude_data: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            creation_type: pulumi.Input[Optional[_builtins.str]] = None,
+            database_combination: pulumi.Input[Optional[_builtins.str]] = None,
+            database_data_size: pulumi.Input[Optional[_builtins.str]] = None,
+            ddl_expectation: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentExcludeObjectArgs', 'AssessmentExcludeObjectArgsDict', 'outputs.AssessmentExcludeObject']]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            include_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentIncludeObjectArgs', 'AssessmentIncludeObjectArgsDict', 'outputs.AssessmentIncludeObject']]]]] = None,
+            is_cdb_supported: pulumi.Input[Optional[_builtins.bool]] = None,
+            migration_id: pulumi.Input[Optional[_builtins.str]] = None,
+            migration_scope: pulumi.Input[Optional[_builtins.str]] = None,
+            network_speed_megabit_per_second: pulumi.Input[Optional[_builtins.str]] = None,
+            source_database_connection: pulumi.Input[Optional[Union['AssessmentSourceDatabaseConnectionArgs', 'AssessmentSourceDatabaseConnectionArgsDict', 'outputs.AssessmentSourceDatabaseConnection']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_database_connection: pulumi.Input[Optional[Union['AssessmentTargetDatabaseConnectionArgs', 'AssessmentTargetDatabaseConnectionArgsDict', 'outputs.AssessmentTargetDatabaseConnection']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["acceptableDowntime"] = acceptable_downtime
+        __props__["assessmentMigrationType"] = assessment_migration_type
+        __props__["bulkIncludeExcludeData"] = bulk_include_exclude_data
+        __props__["compartmentId"] = compartment_id
+        __props__["creationType"] = creation_type
+        __props__["databaseCombination"] = database_combination
+        __props__["databaseDataSize"] = database_data_size
+        __props__["ddlExpectation"] = ddl_expectation
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["excludeObjects"] = exclude_objects
+        __props__["freeformTags"] = freeform_tags
+        __props__["includeObjects"] = include_objects
+        __props__["isCdbSupported"] = is_cdb_supported
+        __props__["migrationId"] = migration_id
+        __props__["migrationScope"] = migration_scope
+        __props__["networkSpeedMegabitPerSecond"] = network_speed_megabit_per_second
+        __props__["sourceDatabaseConnection"] = source_database_connection
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["targetDatabaseConnection"] = target_database_connection
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseMigration/assessment:Assessment', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="acceptableDowntime")
     def acceptable_downtime(self) -> pulumi.Output[_builtins.str]:

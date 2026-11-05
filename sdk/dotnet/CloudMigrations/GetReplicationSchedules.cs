@@ -16,7 +16,6 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// Returns a list of replication schedules.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.CloudMigrations
         /// 
         /// Returns a list of replication schedules.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.CloudMigrations
         /// This data source provides the list of Replication Schedules in Oracle Cloud Infrastructure Cloud Migrations service.
         /// 
         /// Returns a list of replication schedules.
-        /// 
         /// 
         /// ## Example Usage
         /// 

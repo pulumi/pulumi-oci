@@ -317,6 +317,12 @@ func (FileStorageLustreFileSystemState) ElementType() reflect.Type {
 	return reflect.TypeOf((*fileStorageLustreFileSystemState)(nil)).Elem()
 }
 
+// FileStorageLustreFileSystemExists checks whether an existing FileStorageLustreFileSystem resource with the given ID exists.
+func FileStorageLustreFileSystemExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FileStorageLustreFileSystemState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Lustre/fileStorageLustreFileSystem:FileStorageLustreFileSystem", id, state, "", opts...)
+}
+
 type fileStorageLustreFileSystemArgs struct {
 	// The availability domain the file system is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`

@@ -40,7 +40,7 @@ public final class BackendSetHealthChecker {
      */
     private @Nullable String requestData;
     /**
-     * @return (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
+     * @return (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|&#92;s)*$`
      * 
      */
     private @Nullable String responseBodyRegex;
@@ -107,7 +107,7 @@ public final class BackendSetHealthChecker {
         return Optional.ofNullable(this.requestData);
     }
     /**
-     * @return (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
+     * @return (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|&#92;s)*$`
      * 
      */
     public Optional<String> responseBodyRegex() {

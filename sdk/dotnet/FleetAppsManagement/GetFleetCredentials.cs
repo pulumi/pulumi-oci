@@ -16,7 +16,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// List credentials associated with a fleet.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// List credentials associated with a fleet.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -81,7 +79,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// This data source provides the list of Fleet Credentials in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
         /// List credentials associated with a fleet.
-        /// 
         /// 
         /// ## Example Usage
         /// 

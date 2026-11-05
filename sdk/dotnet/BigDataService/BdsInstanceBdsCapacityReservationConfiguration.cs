@@ -69,7 +69,6 @@ namespace Pulumi.Oci.BigDataService
         /// <summary>
         /// (Updatable) An optional property that triggers Deactivate when its value is increased. If set during creation, Deactivate is called after the configuration is created.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -167,7 +166,6 @@ namespace Pulumi.Oci.BigDataService
         /// <summary>
         /// (Updatable) An optional property that triggers Deactivate when its value is increased. If set during creation, Deactivate is called after the configuration is created.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -208,7 +206,6 @@ namespace Pulumi.Oci.BigDataService
 
         /// <summary>
         /// (Updatable) An optional property that triggers Deactivate when its value is increased. If set during creation, Deactivate is called after the configuration is created.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

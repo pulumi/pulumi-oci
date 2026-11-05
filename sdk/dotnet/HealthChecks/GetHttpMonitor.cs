@@ -16,7 +16,6 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// Gets the configuration for the specified monitor.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// Gets the configuration for the specified monitor.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.HealthChecks
         /// This data source provides details about a specific Http Monitor resource in Oracle Cloud Infrastructure Health Checks service.
         /// 
         /// Gets the configuration for the specified monitor.
-        /// 
         /// 
         /// ## Example Usage
         /// 

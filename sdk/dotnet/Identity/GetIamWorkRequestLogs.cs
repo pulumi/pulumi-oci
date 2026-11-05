@@ -20,7 +20,6 @@ namespace Pulumi.Oci.Identity
         /// - If workrequest exists, returns 202 ACCEPTED
         /// - If workrequest does not exist, returns 404 NOT FOUND
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.Identity
         /// - If workrequest exists, returns 202 ACCEPTED
         /// - If workrequest does not exist, returns 404 NOT FOUND
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -81,7 +79,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// - If workrequest exists, returns 202 ACCEPTED
         /// - If workrequest does not exist, returns 404 NOT FOUND
-        /// 
         /// 
         /// ## Example Usage
         /// 

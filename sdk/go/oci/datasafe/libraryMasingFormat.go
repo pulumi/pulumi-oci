@@ -155,6 +155,12 @@ func (LibraryMasingFormatState) ElementType() reflect.Type {
 	return reflect.TypeOf((*libraryMasingFormatState)(nil)).Elem()
 }
 
+// LibraryMasingFormatExists checks whether an existing LibraryMasingFormat resource with the given ID exists.
+func LibraryMasingFormatExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LibraryMasingFormatState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/libraryMasingFormat:LibraryMasingFormat", id, state, "", opts...)
+}
+
 type libraryMasingFormatArgs struct {
 	// (Updatable) The OCID of the compartment where the library masking format should be created.
 	CompartmentId string `pulumi:"compartmentId"`

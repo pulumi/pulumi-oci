@@ -177,6 +177,12 @@ func (ManagedInstanceGroupManageModuleStreamsManagementState) ElementType() refl
 	return reflect.TypeOf((*managedInstanceGroupManageModuleStreamsManagementState)(nil)).Elem()
 }
 
+// ManagedInstanceGroupManageModuleStreamsManagementExists checks whether an existing ManagedInstanceGroupManageModuleStreamsManagement resource with the given ID exists.
+func ManagedInstanceGroupManageModuleStreamsManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedInstanceGroupManageModuleStreamsManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/managedInstanceGroupManageModuleStreamsManagement:ManagedInstanceGroupManageModuleStreamsManagement", id, state, "", opts...)
+}
+
 type managedInstanceGroupManageModuleStreamsManagementArgs struct {
 	// The set of module streams to disable.
 	Disables []ManagedInstanceGroupManageModuleStreamsManagementDisable `pulumi:"disables"`

@@ -216,7 +216,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// * H100_X1, H100_X2, H100_X4, H100_X8
         /// * H200_X1, H200_X2, H200_X4, H200_X8
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -400,7 +399,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// * A100_80G_X1, A100_80G_X2, A100_80G_X4, A100_80G_X8
         /// * H100_X1, H100_X2, H100_X4, H100_X8
         /// * H200_X1, H200_X2, H200_X4, H200_X8
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -595,7 +593,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// * A100_80G_X1, A100_80G_X2, A100_80G_X4, A100_80G_X8
         /// * H100_X1, H100_X2, H100_X4, H100_X8
         /// * H200_X1, H200_X2, H200_X4, H200_X8
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

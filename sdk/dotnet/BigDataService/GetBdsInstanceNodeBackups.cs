@@ -16,7 +16,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// Returns information about the node Backups.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// Returns information about the node Backups.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.BigDataService
         /// This data source provides the list of Bds Instance Node Backups in Oracle Cloud Infrastructure Big Data Service service.
         /// 
         /// Returns information about the node Backups.
-        /// 
         /// 
         /// ## Example Usage
         /// 

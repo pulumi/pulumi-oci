@@ -252,6 +252,12 @@ func (SqlCollectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*sqlCollectionState)(nil)).Elem()
 }
 
+// SqlCollectionExists checks whether an existing SqlCollection resource with the given ID exists.
+func SqlCollectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SqlCollectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/sqlCollection:SqlCollection", id, state, "", opts...)
+}
+
 type sqlCollectionArgs struct {
 	// (Updatable) The OCID of the compartment containing the SQL collection.
 	CompartmentId string `pulumi:"compartmentId"`

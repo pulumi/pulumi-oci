@@ -3134,6 +3134,86 @@ class DomainsSelfRegistrationProfile(pulumi.CustomResource):
         __props__.__dict__["user_attributes"] = user_attributes
         return DomainsSelfRegistrationProfile(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            activation_email_required: pulumi.Input[Optional[_builtins.bool]] = None,
+            active: pulumi.Input[Optional[_builtins.bool]] = None,
+            after_submit_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileAfterSubmitTextArgs', 'DomainsSelfRegistrationProfileAfterSubmitTextArgsDict', 'outputs.DomainsSelfRegistrationProfileAfterSubmitText']]]]] = None,
+            allowed_email_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            attributes: pulumi.Input[Optional[_builtins.str]] = None,
+            authorization: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            consent_text_present: pulumi.Input[Optional[_builtins.bool]] = None,
+            consent_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileConsentTextArgs', 'DomainsSelfRegistrationProfileConsentTextArgsDict', 'outputs.DomainsSelfRegistrationProfileConsentText']]]]] = None,
+            default_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileDefaultGroupArgs', 'DomainsSelfRegistrationProfileDefaultGroupArgsDict', 'outputs.DomainsSelfRegistrationProfileDefaultGroup']]]]] = None,
+            delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            disallowed_email_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            display_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileDisplayNameArgs', 'DomainsSelfRegistrationProfileDisplayNameArgsDict', 'outputs.DomainsSelfRegistrationProfileDisplayName']]]]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            email_template: pulumi.Input[Optional[Union['DomainsSelfRegistrationProfileEmailTemplateArgs', 'DomainsSelfRegistrationProfileEmailTemplateArgsDict', 'outputs.DomainsSelfRegistrationProfileEmailTemplate']]] = None,
+            external_id: pulumi.Input[Optional[_builtins.str]] = None,
+            footer_logo: pulumi.Input[Optional[_builtins.str]] = None,
+            footer_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileFooterTextArgs', 'DomainsSelfRegistrationProfileFooterTextArgsDict', 'outputs.DomainsSelfRegistrationProfileFooterText']]]]] = None,
+            header_logo: pulumi.Input[Optional[_builtins.str]] = None,
+            header_texts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileHeaderTextArgs', 'DomainsSelfRegistrationProfileHeaderTextArgsDict', 'outputs.DomainsSelfRegistrationProfileHeaderText']]]]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileIdcsCreatedByArgs', 'DomainsSelfRegistrationProfileIdcsCreatedByArgsDict', 'outputs.DomainsSelfRegistrationProfileIdcsCreatedBy']]]]] = None,
+            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileIdcsLastModifiedByArgs', 'DomainsSelfRegistrationProfileIdcsLastModifiedByArgsDict', 'outputs.DomainsSelfRegistrationProfileIdcsLastModifiedBy']]]]] = None,
+            idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileMetaArgs', 'DomainsSelfRegistrationProfileMetaArgsDict', 'outputs.DomainsSelfRegistrationProfileMeta']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            number_of_days_redirect_url_is_valid: pulumi.Input[Optional[_builtins.int]] = None,
+            ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            redirect_url: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            show_on_login_page: pulumi.Input[Optional[_builtins.bool]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileTagArgs', 'DomainsSelfRegistrationProfileTagArgsDict', 'outputs.DomainsSelfRegistrationProfileTag']]]]] = None,
+            tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            user_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSelfRegistrationProfileUserAttributeArgs', 'DomainsSelfRegistrationProfileUserAttributeArgsDict', 'outputs.DomainsSelfRegistrationProfileUserAttribute']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["activationEmailRequired"] = activation_email_required
+        __props__["active"] = active
+        __props__["afterSubmitTexts"] = after_submit_texts
+        __props__["allowedEmailDomains"] = allowed_email_domains
+        __props__["attributeSets"] = attribute_sets
+        __props__["attributes"] = attributes
+        __props__["authorization"] = authorization
+        __props__["compartmentOcid"] = compartment_ocid
+        __props__["consentTextPresent"] = consent_text_present
+        __props__["consentTexts"] = consent_texts
+        __props__["defaultGroups"] = default_groups
+        __props__["deleteInProgress"] = delete_in_progress
+        __props__["disallowedEmailDomains"] = disallowed_email_domains
+        __props__["displayNames"] = display_names
+        __props__["domainOcid"] = domain_ocid
+        __props__["emailTemplate"] = email_template
+        __props__["externalId"] = external_id
+        __props__["footerLogo"] = footer_logo
+        __props__["footerTexts"] = footer_texts
+        __props__["headerLogo"] = header_logo
+        __props__["headerTexts"] = header_texts
+        __props__["idcsCreatedBies"] = idcs_created_bies
+        __props__["idcsEndpoint"] = idcs_endpoint
+        __props__["idcsLastModifiedBies"] = idcs_last_modified_bies
+        __props__["idcsLastUpgradedInRelease"] = idcs_last_upgraded_in_release
+        __props__["idcsPreventedOperations"] = idcs_prevented_operations
+        __props__["metas"] = metas
+        __props__["name"] = name
+        __props__["numberOfDaysRedirectUrlIsValid"] = number_of_days_redirect_url_is_valid
+        __props__["ocid"] = ocid
+        __props__["redirectUrl"] = redirect_url
+        __props__["resourceTypeSchemaVersion"] = resource_type_schema_version
+        __props__["schemas"] = schemas
+        __props__["showOnLoginPage"] = show_on_login_page
+        __props__["tags"] = tags
+        __props__["tenancyOcid"] = tenancy_ocid
+        __props__["userAttributes"] = user_attributes
+        return pulumi.runtime.exists_resource(None, 'oci:Identity/domainsSelfRegistrationProfile:DomainsSelfRegistrationProfile', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="activationEmailRequired")
     def activation_email_required(self) -> pulumi.Output[_builtins.bool]:

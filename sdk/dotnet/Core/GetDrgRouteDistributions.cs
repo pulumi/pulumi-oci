@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Core
         /// To retrieve the statements in a distribution, use the
         /// ListDrgRouteDistributionStatements operation.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.Core
         /// To retrieve the statements in a distribution, use the
         /// ListDrgRouteDistributionStatements operation.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -82,7 +80,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// To retrieve the statements in a distribution, use the
         /// ListDrgRouteDistributionStatements operation.
-        /// 
         /// 
         /// ## Example Usage
         /// 

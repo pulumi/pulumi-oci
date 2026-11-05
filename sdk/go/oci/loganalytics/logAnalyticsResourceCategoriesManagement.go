@@ -140,6 +140,12 @@ func (LogAnalyticsResourceCategoriesManagementState) ElementType() reflect.Type 
 	return reflect.TypeOf((*logAnalyticsResourceCategoriesManagementState)(nil)).Elem()
 }
 
+// LogAnalyticsResourceCategoriesManagementExists checks whether an existing LogAnalyticsResourceCategoriesManagement resource with the given ID exists.
+func LogAnalyticsResourceCategoriesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogAnalyticsResourceCategoriesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LogAnalytics/logAnalyticsResourceCategoriesManagement:LogAnalyticsResourceCategoriesManagement", id, state, "", opts...)
+}
+
 type logAnalyticsResourceCategoriesManagementArgs struct {
 	// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
 	Namespace string `pulumi:"namespace"`

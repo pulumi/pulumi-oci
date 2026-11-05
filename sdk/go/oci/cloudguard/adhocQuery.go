@@ -199,6 +199,12 @@ func (AdhocQueryState) ElementType() reflect.Type {
 	return reflect.TypeOf((*adhocQueryState)(nil)).Elem()
 }
 
+// AdhocQueryExists checks whether an existing AdhocQuery resource with the given ID exists.
+func AdhocQueryExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AdhocQueryState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CloudGuard/adhocQuery:AdhocQuery", id, state, "", opts...)
+}
+
 type adhocQueryArgs struct {
 	// Detailed information about the adhoc query.
 	AdhocQueryDetails AdhocQueryAdhocQueryDetails `pulumi:"adhocQueryDetails"`

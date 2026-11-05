@@ -155,8 +155,7 @@ namespace Pulumi.Oci.Database
         public Output<int> TotalTimeTakenInMins { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes. 
-        /// 
+        /// (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -265,8 +264,7 @@ namespace Pulumi.Oci.Database
         public Input<string> TimeScheduled { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes. 
-        /// 
+        /// (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -397,8 +395,7 @@ namespace Pulumi.Oci.Database
         public Input<int>? TotalTimeTakenInMins { get; set; }
 
         /// <summary>
-        /// (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes. 
-        /// 
+        /// (Updatable) Duration window allows user to set a duration they plan to allocate for Scheduling window. The duration is in minutes.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Returns a list of all the report metadata.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Returns a list of all the report metadata.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// This data source provides the list of Report Metadata in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
         /// Returns a list of all the report metadata.
-        /// 
         /// 
         /// ## Example Usage
         /// 

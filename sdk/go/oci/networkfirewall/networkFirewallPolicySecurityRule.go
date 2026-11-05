@@ -191,6 +191,12 @@ func (NetworkFirewallPolicySecurityRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkFirewallPolicySecurityRuleState)(nil)).Elem()
 }
 
+// NetworkFirewallPolicySecurityRuleExists checks whether an existing NetworkFirewallPolicySecurityRule resource with the given ID exists.
+func NetworkFirewallPolicySecurityRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkFirewallPolicySecurityRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:NetworkFirewall/networkFirewallPolicySecurityRule:NetworkFirewallPolicySecurityRule", id, state, "", opts...)
+}
+
 type networkFirewallPolicySecurityRuleArgs struct {
 	// (Updatable) Types of Action on the Traffic flow.
 	// * ALLOW - Allows the traffic.

@@ -1058,6 +1058,84 @@ class MaintenanceRun(pulumi.CustomResource):
         __props__.__dict__["window_type_descriptions"] = window_type_descriptions
         return MaintenanceRun(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            current_custom_action_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
+            current_patching_component: pulumi.Input[Optional[_builtins.str]] = None,
+            custom_action_timeout_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
+            database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            estimated_component_patching_start_time: pulumi.Input[Optional[_builtins.str]] = None,
+            estimated_patching_times: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MaintenanceRunEstimatedPatchingTimeArgs', 'MaintenanceRunEstimatedPatchingTimeArgsDict', 'outputs.MaintenanceRunEstimatedPatchingTime']]]]] = None,
+            is_custom_action_timeout_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_dst_file_update_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_maintenance_run_granular: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            maintenance_subtype: pulumi.Input[Optional[_builtins.str]] = None,
+            maintenance_type: pulumi.Input[Optional[_builtins.str]] = None,
+            patch_failure_count: pulumi.Input[Optional[_builtins.int]] = None,
+            patch_id: pulumi.Input[Optional[_builtins.str]] = None,
+            patch_type: pulumi.Input[Optional[_builtins.str]] = None,
+            patching_end_time: pulumi.Input[Optional[_builtins.str]] = None,
+            patching_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            patching_start_time: pulumi.Input[Optional[_builtins.str]] = None,
+            patching_status: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_maintenance_run_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            reference_resource_id_for_image_updates: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_db_server_version: pulumi.Input[Optional[_builtins.str]] = None,
+            target_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            target_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            target_storage_server_version: pulumi.Input[Optional[_builtins.str]] = None,
+            time_ended: pulumi.Input[Optional[_builtins.str]] = None,
+            time_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started: pulumi.Input[Optional[_builtins.str]] = None,
+            total_time_taken_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
+            window_type_descriptions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MaintenanceRunWindowTypeDescriptionArgs', 'MaintenanceRunWindowTypeDescriptionArgsDict', 'outputs.MaintenanceRunWindowTypeDescription']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["currentCustomActionTimeoutInMins"] = current_custom_action_timeout_in_mins
+        __props__["currentPatchingComponent"] = current_patching_component
+        __props__["customActionTimeoutInMins"] = custom_action_timeout_in_mins
+        __props__["databaseSoftwareImageId"] = database_software_image_id
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["estimatedComponentPatchingStartTime"] = estimated_component_patching_start_time
+        __props__["estimatedPatchingTimes"] = estimated_patching_times
+        __props__["isCustomActionTimeoutEnabled"] = is_custom_action_timeout_enabled
+        __props__["isDstFileUpdateEnabled"] = is_dst_file_update_enabled
+        __props__["isMaintenanceRunGranular"] = is_maintenance_run_granular
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["maintenanceSubtype"] = maintenance_subtype
+        __props__["maintenanceType"] = maintenance_type
+        __props__["patchFailureCount"] = patch_failure_count
+        __props__["patchId"] = patch_id
+        __props__["patchType"] = patch_type
+        __props__["patchingEndTime"] = patching_end_time
+        __props__["patchingMode"] = patching_mode
+        __props__["patchingStartTime"] = patching_start_time
+        __props__["patchingStatus"] = patching_status
+        __props__["peerMaintenanceRunId"] = peer_maintenance_run_id
+        __props__["peerMaintenanceRunIds"] = peer_maintenance_run_ids
+        __props__["referenceResourceIdForImageUpdates"] = reference_resource_id_for_image_updates
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["targetDbServerVersion"] = target_db_server_version
+        __props__["targetResourceId"] = target_resource_id
+        __props__["targetResourceType"] = target_resource_type
+        __props__["targetStorageServerVersion"] = target_storage_server_version
+        __props__["timeEnded"] = time_ended
+        __props__["timeScheduled"] = time_scheduled
+        __props__["timeStarted"] = time_started
+        __props__["totalTimeTakenInMins"] = total_time_taken_in_mins
+        __props__["windowTypeDescriptions"] = window_type_descriptions
+        return pulumi.runtime.exists_resource(None, 'oci:Database/maintenanceRun:MaintenanceRun', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

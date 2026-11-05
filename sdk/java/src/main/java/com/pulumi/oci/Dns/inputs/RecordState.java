@@ -35,22 +35,20 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
     /**
      * The fully qualified domain name where the record can be located. Domain value is case insensitive.
      * 
-     * @deprecated
-     * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+     * @deprecated The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
      * 
      */
-    @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+    @Deprecated
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
      * @return The fully qualified domain name where the record can be located. Domain value is case insensitive.
      * 
-     * @deprecated
-     * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+     * @deprecated The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
      * 
      */
-    @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+    @Deprecated
     public Optional<Output<String>> domain() {
         return Optional.ofNullable(this.domain);
     }
@@ -118,22 +116,20 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
     /**
      * The canonical name for the record&#39;s type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      * 
-     * @deprecated
-     * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+     * @deprecated The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
      * 
      */
-    @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+    @Deprecated
     @Import(name="rtype")
     private @Nullable Output<String> rtype;
 
     /**
      * @return The canonical name for the record&#39;s type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      * 
-     * @deprecated
-     * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+     * @deprecated The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
      * 
      */
-    @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+    @Deprecated
     public Optional<Output<String>> rtype() {
         return Optional.ofNullable(this.rtype);
     }
@@ -159,11 +155,10 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
-     * @deprecated
-     * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+     * @deprecated The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
      * 
      */
-    @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+    @Deprecated
     @Import(name="zoneNameOrId")
     private @Nullable Output<String> zoneNameOrId;
 
@@ -173,11 +168,10 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
-     * @deprecated
-     * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+     * @deprecated The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
      * 
      */
-    @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+    @Deprecated
     public Optional<Output<String>> zoneNameOrId() {
         return Optional.ofNullable(this.zoneNameOrId);
     }
@@ -240,11 +234,10 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+         * @deprecated The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
          * 
          */
-        @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+        @Deprecated
         public Builder domain(@Nullable Output<String> domain) {
             $.domain = domain;
             return this;
@@ -255,11 +248,10 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+         * @deprecated The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
          * 
          */
-        @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+        @Deprecated
         public Builder domain(String domain) {
             return domain(Output.of(domain));
         }
@@ -353,11 +345,10 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+         * @deprecated The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
          * 
          */
-        @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+        @Deprecated
         public Builder rtype(@Nullable Output<String> rtype) {
             $.rtype = rtype;
             return this;
@@ -368,11 +359,10 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+         * @deprecated The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
          * 
          */
-        @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+        @Deprecated
         public Builder rtype(String rtype) {
             return rtype(Output.of(rtype));
         }
@@ -406,11 +396,10 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+         * @deprecated The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
          * 
          */
-        @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+        @Deprecated
         public Builder zoneNameOrId(@Nullable Output<String> zoneNameOrId) {
             $.zoneNameOrId = zoneNameOrId;
             return this;
@@ -424,11 +413,10 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+         * @deprecated The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
          * 
          */
-        @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+        @Deprecated
         public Builder zoneNameOrId(String zoneNameOrId) {
             return zoneNameOrId(Output.of(zoneNameOrId));
         }

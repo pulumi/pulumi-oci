@@ -21,11 +21,10 @@ public final class RouteTableRouteRule {
      * 
      * Example: `0.0.0.0/0`
      * 
-     * @deprecated
-     * The &#39;cidr_block&#39; field has been deprecated. Please use &#39;destination&#39; instead.
+     * @deprecated The &#39;cidr_block&#39; field has been deprecated. Please use &#39;destination&#39; instead.
      * 
      */
-    @Deprecated /* The 'cidr_block' field has been deprecated. Please use 'destination' instead. */
+    @Deprecated
     private @Nullable String cidrBlock;
     /**
      * @return (Updatable) An optional description of your choice for the rule.
@@ -69,11 +68,10 @@ public final class RouteTableRouteRule {
      * 
      * Example: `0.0.0.0/0`
      * 
-     * @deprecated
-     * The &#39;cidr_block&#39; field has been deprecated. Please use &#39;destination&#39; instead.
+     * @deprecated The &#39;cidr_block&#39; field has been deprecated. Please use &#39;destination&#39; instead.
      * 
      */
-    @Deprecated /* The 'cidr_block' field has been deprecated. Please use 'destination' instead. */
+    @Deprecated
     public Optional<String> cidrBlock() {
         return Optional.ofNullable(this.cidrBlock);
     }

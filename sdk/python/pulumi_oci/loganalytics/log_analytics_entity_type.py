@@ -438,6 +438,32 @@ class LogAnalyticsEntityType(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return LogAnalyticsEntityType(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            category: pulumi.Input[Optional[_builtins.str]] = None,
+            cloud_type: pulumi.Input[Optional[_builtins.str]] = None,
+            internal_name: pulumi.Input[Optional[_builtins.str]] = None,
+            management_agent_eligibility_status: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsEntityTypePropertyArgs', 'LogAnalyticsEntityTypePropertyArgsDict', 'outputs.LogAnalyticsEntityTypeProperty']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["category"] = category
+        __props__["cloudType"] = cloud_type
+        __props__["internalName"] = internal_name
+        __props__["managementAgentEligibilityStatus"] = management_agent_eligibility_status
+        __props__["name"] = name
+        __props__["namespace"] = namespace
+        __props__["properties"] = properties
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:LogAnalytics/logAnalyticsEntityType:LogAnalyticsEntityType', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def category(self) -> pulumi.Output[_builtins.str]:

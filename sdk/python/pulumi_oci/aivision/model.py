@@ -985,6 +985,64 @@ class Model(pulumi.CustomResource):
         __props__.__dict__["validation_dataset"] = validation_dataset
         return Model(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            average_precision: pulumi.Input[Optional[_builtins.float]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            confidence_threshold: pulumi.Input[Optional[_builtins.float]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_quick_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            max_training_duration_in_hours: pulumi.Input[Optional[_builtins.float]] = None,
+            metrics: pulumi.Input[Optional[_builtins.str]] = None,
+            model_type: pulumi.Input[Optional[_builtins.str]] = None,
+            model_version: pulumi.Input[Optional[_builtins.str]] = None,
+            precision: pulumi.Input[Optional[_builtins.float]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            recall: pulumi.Input[Optional[_builtins.float]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            test_image_count: pulumi.Input[Optional[_builtins.int]] = None,
+            testing_dataset: pulumi.Input[Optional[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict', 'outputs.ModelTestingDataset']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            total_image_count: pulumi.Input[Optional[_builtins.int]] = None,
+            trained_duration_in_hours: pulumi.Input[Optional[_builtins.float]] = None,
+            training_dataset: pulumi.Input[Optional[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict', 'outputs.ModelTrainingDataset']]] = None,
+            validation_dataset: pulumi.Input[Optional[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict', 'outputs.ModelValidationDataset']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["averagePrecision"] = average_precision
+        __props__["compartmentId"] = compartment_id
+        __props__["confidenceThreshold"] = confidence_threshold
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["isQuickMode"] = is_quick_mode
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["maxTrainingDurationInHours"] = max_training_duration_in_hours
+        __props__["metrics"] = metrics
+        __props__["modelType"] = model_type
+        __props__["modelVersion"] = model_version
+        __props__["precision"] = precision
+        __props__["projectId"] = project_id
+        __props__["recall"] = recall
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["testImageCount"] = test_image_count
+        __props__["testingDataset"] = testing_dataset
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["totalImageCount"] = total_image_count
+        __props__["trainedDurationInHours"] = trained_duration_in_hours
+        __props__["trainingDataset"] = training_dataset
+        __props__["validationDataset"] = validation_dataset
+        return pulumi.runtime.exists_resource(None, 'oci:AiVision/model:Model', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="averagePrecision")
     def average_precision(self) -> pulumi.Output[_builtins.float]:

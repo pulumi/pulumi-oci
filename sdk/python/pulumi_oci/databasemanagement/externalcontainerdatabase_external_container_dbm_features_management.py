@@ -359,6 +359,22 @@ class ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(pulumi.Cus
         __props__.__dict__["feature_details"] = feature_details
         return ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            can_disable_all_pdbs: pulumi.Input[Optional[_builtins.bool]] = None,
+            enable_external_container_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
+            external_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            feature: pulumi.Input[Optional[_builtins.str]] = None,
+            feature_details: pulumi.Input[Optional[Union['ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetailsArgsDict', 'outputs.ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementFeatureDetails']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["canDisableAllPdbs"] = can_disable_all_pdbs
+        __props__["enableExternalContainerDbmFeature"] = enable_external_container_dbm_feature
+        __props__["externalContainerDatabaseId"] = external_container_database_id
+        __props__["feature"] = feature
+        __props__["featureDetails"] = feature_details
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement:ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="canDisableAllPdbs")
     def can_disable_all_pdbs(self) -> pulumi.Output[Optional[_builtins.bool]]:

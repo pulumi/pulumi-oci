@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Analytics
         /// 
         /// List Analytics instances.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Analytics
         /// 
         /// List Analytics instances.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.Analytics
         /// This data source provides the list of Analytics Instances in Oracle Cloud Infrastructure Analytics service.
         /// 
         /// List Analytics instances.
-        /// 
         /// 
         /// ## Example Usage
         /// 

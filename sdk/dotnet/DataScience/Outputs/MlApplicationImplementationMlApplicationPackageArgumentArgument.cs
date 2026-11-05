@@ -24,7 +24,6 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// <summary>
         /// ML Application Implementation name which is unique for given ML Application.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

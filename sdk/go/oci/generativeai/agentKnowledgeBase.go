@@ -214,6 +214,12 @@ func (AgentKnowledgeBaseState) ElementType() reflect.Type {
 	return reflect.TypeOf((*agentKnowledgeBaseState)(nil)).Elem()
 }
 
+// AgentKnowledgeBaseExists checks whether an existing AgentKnowledgeBase resource with the given ID exists.
+func AgentKnowledgeBaseExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AgentKnowledgeBaseState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:GenerativeAi/agentKnowledgeBase:AgentKnowledgeBase", id, state, "", opts...)
+}
+
 type agentKnowledgeBaseArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the knowledge base in.
 	CompartmentId string `pulumi:"compartmentId"`

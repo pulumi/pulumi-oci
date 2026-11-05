@@ -295,6 +295,12 @@ func (MetricExtensionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*metricExtensionState)(nil)).Elem()
 }
 
+// MetricExtensionExists checks whether an existing MetricExtension resource with the given ID exists.
+func MetricExtensionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MetricExtensionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:StackMonitoring/metricExtension:MetricExtension", id, state, "", opts...)
+}
+
 type metricExtensionArgs struct {
 	// (Updatable) Schedule of metric extension should use RFC 5545 format i.e. recur-rule-part = "FREQ";INTERVAL where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
 	CollectionRecurrences string `pulumi:"collectionRecurrences"`

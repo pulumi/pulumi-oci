@@ -115,6 +115,12 @@ func (MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementState) Eleme
 	return reflect.TypeOf((*monitoringTemplateMonitoringTemplateOnGivenResourcesManagementState)(nil)).Elem()
 }
 
+// MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementExists checks whether an existing MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement resource with the given ID exists.
+func MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MonitoringTemplateMonitoringTemplateOnGivenResourcesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:StackMonitoring/monitoringTemplateMonitoringTemplateOnGivenResourcesManagement:MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement", id, state, "", opts...)
+}
+
 type monitoringTemplateMonitoringTemplateOnGivenResourcesManagementArgs struct {
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 	//

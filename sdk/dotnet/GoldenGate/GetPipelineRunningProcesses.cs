@@ -16,7 +16,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Retrieves a Pipeline's running replication process's status like Capture/Apply.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Retrieves a Pipeline's running replication process's status like Capture/Apply.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.GoldenGate
         /// This data source provides the list of Pipeline Running Processes in Oracle Cloud Infrastructure Golden Gate service.
         /// 
         /// Retrieves a Pipeline's running replication process's status like Capture/Apply.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -1084,6 +1084,64 @@ class DatabaseRegistration(pulumi.CustomResource):
         __props__.__dict__["wallet"] = wallet
         return DatabaseRegistration(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            alias_name: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_string: pulumi.Input[Optional[_builtins.str]] = None,
+            database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            fqdn: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            rce_private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            session_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            username: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+            wallet: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["aliasName"] = alias_name
+        __props__["compartmentId"] = compartment_id
+        __props__["connectionId"] = connection_id
+        __props__["connectionString"] = connection_string
+        __props__["databaseId"] = database_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["fqdn"] = fqdn
+        __props__["freeformTags"] = freeform_tags
+        __props__["ipAddress"] = ip_address
+        __props__["keyId"] = key_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["password"] = password
+        __props__["rcePrivateIp"] = rce_private_ip
+        __props__["secretCompartmentId"] = secret_compartment_id
+        __props__["secretId"] = secret_id
+        __props__["sessionMode"] = session_mode
+        __props__["state"] = state
+        __props__["subnetId"] = subnet_id
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["username"] = username
+        __props__["vaultId"] = vault_id
+        __props__["wallet"] = wallet
+        return pulumi.runtime.exists_resource(None, 'oci:GoldenGate/databaseRegistration:DatabaseRegistration', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="aliasName")
     def alias_name(self) -> pulumi.Output[_builtins.str]:

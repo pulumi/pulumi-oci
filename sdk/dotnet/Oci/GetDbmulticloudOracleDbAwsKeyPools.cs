@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Lists all DB AWS Key Pools based on the specified filters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Lists all DB AWS Key Pools based on the specified filters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Oracle Db Aws Key Pools in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
         /// Lists all DB AWS Key Pools based on the specified filters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

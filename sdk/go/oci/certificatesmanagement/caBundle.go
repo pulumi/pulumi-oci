@@ -174,6 +174,12 @@ func (CaBundleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*caBundleState)(nil)).Elem()
 }
 
+// CaBundleExists checks whether an existing CaBundle resource with the given ID exists.
+func CaBundleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CaBundleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CertificatesManagement/caBundle:CaBundle", id, state, "", opts...)
+}
+
 type caBundleArgs struct {
 	// (Updatable) Certificates (in PEM format) to include in the CA bundle.
 	CaBundlePem string `pulumi:"caBundlePem"`

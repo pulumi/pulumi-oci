@@ -438,6 +438,22 @@ class ManagedDatabasesChangeDatabaseParameter(pulumi.CustomResource):
         __props__.__dict__["scope"] = scope
         return ManagedDatabasesChangeDatabaseParameter(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            credentials: pulumi.Input[Optional[Union['ManagedDatabasesChangeDatabaseParameterCredentialsArgs', 'ManagedDatabasesChangeDatabaseParameterCredentialsArgsDict', 'outputs.ManagedDatabasesChangeDatabaseParameterCredentials']]] = None,
+            database_credential: pulumi.Input[Optional[Union['ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgs', 'ManagedDatabasesChangeDatabaseParameterDatabaseCredentialArgsDict', 'outputs.ManagedDatabasesChangeDatabaseParameterDatabaseCredential']]] = None,
+            managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedDatabasesChangeDatabaseParameterParameterArgs', 'ManagedDatabasesChangeDatabaseParameterParameterArgsDict', 'outputs.ManagedDatabasesChangeDatabaseParameterParameter']]]]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["credentials"] = credentials
+        __props__["databaseCredential"] = database_credential
+        __props__["managedDatabaseId"] = managed_database_id
+        __props__["parameters"] = parameters
+        __props__["scope"] = scope
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseManagement/managedDatabasesChangeDatabaseParameter:ManagedDatabasesChangeDatabaseParameter', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def credentials(self) -> pulumi.Output['outputs.ManagedDatabasesChangeDatabaseParameterCredentials']:

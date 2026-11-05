@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// Display sample object types to exclude or include for an Assessment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// Display sample object types to exclude or include for an Assessment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// This data source provides the list of Assessment Object Types in Oracle Cloud Infrastructure Database Migration service.
         /// 
         /// Display sample object types to exclude or include for an Assessment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

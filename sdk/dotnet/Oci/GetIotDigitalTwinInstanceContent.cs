@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Oci
         /// Retrieves the content associated with a digital twin instance identified by the specified OCID.
         /// The content can be retrieved only when a model is associated with the digital twin instance.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Oci
         /// Retrieves the content associated with a digital twin instance identified by the specified OCID.
         /// The content can be retrieved only when a model is associated with the digital twin instance.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -74,7 +72,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Retrieves the content associated with a digital twin instance identified by the specified OCID.
         /// The content can be retrieved only when a model is associated with the digital twin instance.
-        /// 
         /// 
         /// ## Example Usage
         /// 

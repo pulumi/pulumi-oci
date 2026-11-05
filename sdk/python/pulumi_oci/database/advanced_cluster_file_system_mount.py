@@ -132,6 +132,14 @@ class AdvancedClusterFileSystemMount(pulumi.CustomResource):
         __props__.__dict__["advanced_cluster_file_system_id"] = advanced_cluster_file_system_id
         return AdvancedClusterFileSystemMount(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            advanced_cluster_file_system_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["advancedClusterFileSystemId"] = advanced_cluster_file_system_id
+        return pulumi.runtime.exists_resource(None, 'oci:Database/advancedClusterFileSystemMount:AdvancedClusterFileSystemMount', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="advancedClusterFileSystemId")
     def advanced_cluster_file_system_id(self) -> pulumi.Output[_builtins.str]:

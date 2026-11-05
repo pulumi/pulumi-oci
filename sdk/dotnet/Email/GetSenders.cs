@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Email
         /// 
         /// Gets a collection of approved sender email addresses and sender IDs.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Email
         /// 
         /// Gets a collection of approved sender email addresses and sender IDs.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.Email
         /// This data source provides the list of Senders in Oracle Cloud Infrastructure Email service.
         /// 
         /// Gets a collection of approved sender email addresses and sender IDs.
-        /// 
         /// 
         /// ## Example Usage
         /// 

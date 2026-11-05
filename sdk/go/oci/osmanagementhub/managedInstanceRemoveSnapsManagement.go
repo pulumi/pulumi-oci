@@ -130,6 +130,12 @@ func (ManagedInstanceRemoveSnapsManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managedInstanceRemoveSnapsManagementState)(nil)).Elem()
 }
 
+// ManagedInstanceRemoveSnapsManagementExists checks whether an existing ManagedInstanceRemoveSnapsManagement resource with the given ID exists.
+func ManagedInstanceRemoveSnapsManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedInstanceRemoveSnapsManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/managedInstanceRemoveSnapsManagement:ManagedInstanceRemoveSnapsManagement", id, state, "", opts...)
+}
+
 type managedInstanceRemoveSnapsManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
 	ManagedInstanceId string `pulumi:"managedInstanceId"`

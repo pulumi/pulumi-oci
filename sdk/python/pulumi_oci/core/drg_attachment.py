@@ -798,6 +798,46 @@ class DrgAttachment(pulumi.CustomResource):
         __props__.__dict__["vcn_id"] = vcn_id
         return DrgAttachment(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            does_preserve_original_routes_with_nat: pulumi.Input[Optional[_builtins.bool]] = None,
+            drg_id: pulumi.Input[Optional[_builtins.str]] = None,
+            drg_nat_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            drg_route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+            export_drg_route_distribution_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_cross_tenancy: pulumi.Input[Optional[_builtins.bool]] = None,
+            network_details: pulumi.Input[Optional[Union['DrgAttachmentNetworkDetailsArgs', 'DrgAttachmentNetworkDetailsArgsDict', 'outputs.DrgAttachmentNetworkDetails']]] = None,
+            remove_drg_nat_policy_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+            remove_export_drg_route_distribution_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+            route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            vcn_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["doesPreserveOriginalRoutesWithNat"] = does_preserve_original_routes_with_nat
+        __props__["drgId"] = drg_id
+        __props__["drgNatPolicyId"] = drg_nat_policy_id
+        __props__["drgRouteTableId"] = drg_route_table_id
+        __props__["exportDrgRouteDistributionId"] = export_drg_route_distribution_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["isCrossTenancy"] = is_cross_tenancy
+        __props__["networkDetails"] = network_details
+        __props__["removeDrgNatPolicyTrigger"] = remove_drg_nat_policy_trigger
+        __props__["removeExportDrgRouteDistributionTrigger"] = remove_export_drg_route_distribution_trigger
+        __props__["routeTableId"] = route_table_id
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["vcnId"] = vcn_id
+        return pulumi.runtime.exists_resource(None, 'oci:Core/drgAttachment:DrgAttachment', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

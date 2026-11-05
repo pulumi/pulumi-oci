@@ -453,6 +453,28 @@ class TagDefault(pulumi.CustomResource):
         __props__.__dict__["value"] = value
         return TagDefault(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_required: pulumi.Input[Optional[_builtins.bool]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            tag_definition_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tag_definition_name: pulumi.Input[Optional[_builtins.str]] = None,
+            tag_namespace_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            value: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["isRequired"] = is_required
+        __props__["state"] = state
+        __props__["tagDefinitionId"] = tag_definition_id
+        __props__["tagDefinitionName"] = tag_definition_name
+        __props__["tagNamespaceId"] = tag_namespace_id
+        __props__["timeCreated"] = time_created
+        __props__["value"] = value
+        return pulumi.runtime.exists_resource(None, 'oci:Identity/tagDefault:TagDefault', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

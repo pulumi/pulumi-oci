@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous AI Database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous AI Database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Autonomous Database Dataguard Associations in Oracle Cloud Infrastructure Database service.
         /// 
         /// *Deprecated.* Use the [GetAutonomousContainerDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/AutonomousContainerDatabase/GetAutonomousContainerDatabase) operation to get a list of the Autonomous Data Guard-enabled databases associated with the specified Autonomous AI Database.
-        /// 
         /// 
         /// ## Example Usage
         /// 

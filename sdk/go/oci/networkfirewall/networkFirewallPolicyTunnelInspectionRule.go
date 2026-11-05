@@ -198,6 +198,12 @@ func (NetworkFirewallPolicyTunnelInspectionRuleState) ElementType() reflect.Type
 	return reflect.TypeOf((*networkFirewallPolicyTunnelInspectionRuleState)(nil)).Elem()
 }
 
+// NetworkFirewallPolicyTunnelInspectionRuleExists checks whether an existing NetworkFirewallPolicyTunnelInspectionRule resource with the given ID exists.
+func NetworkFirewallPolicyTunnelInspectionRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkFirewallPolicyTunnelInspectionRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:NetworkFirewall/networkFirewallPolicyTunnelInspectionRule:NetworkFirewallPolicyTunnelInspectionRule", id, state, "", opts...)
+}
+
 type networkFirewallPolicyTunnelInspectionRuleArgs struct {
 	// (Updatable) Types of Inspect Action on the traffic flow.
 	// * INSPECT - Inspect the traffic.

@@ -653,6 +653,40 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return OperationsInsightsWarehouseUser(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_password: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_awr_data_access: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_em_data_access: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_opsi_data_access: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            operations_insights_warehouse_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["connectionPassword"] = connection_password
+        __props__["definedTags"] = defined_tags
+        __props__["freeformTags"] = freeform_tags
+        __props__["isAwrDataAccess"] = is_awr_data_access
+        __props__["isEmDataAccess"] = is_em_data_access
+        __props__["isOpsiDataAccess"] = is_opsi_data_access
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["name"] = name
+        __props__["operationsInsightsWarehouseId"] = operations_insights_warehouse_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Opsi/operationsInsightsWarehouseUser:OperationsInsightsWarehouseUser', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

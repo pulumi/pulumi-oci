@@ -686,6 +686,36 @@ class Listener(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         return Listener(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            connection_configuration: pulumi.Input[Optional[Union['ListenerConnectionConfigurationArgs', 'ListenerConnectionConfigurationArgsDict', 'outputs.ListenerConnectionConfiguration']]] = None,
+            default_backend_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+            hostname_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            path_route_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            routing_policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_set_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ssl_configuration: pulumi.Input[Optional[Union['ListenerSslConfigurationArgs', 'ListenerSslConfigurationArgsDict', 'outputs.ListenerSslConfiguration']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["connectionConfiguration"] = connection_configuration
+        __props__["defaultBackendSetName"] = default_backend_set_name
+        __props__["hostnameNames"] = hostname_names
+        __props__["loadBalancerId"] = load_balancer_id
+        __props__["name"] = name
+        __props__["pathRouteSetName"] = path_route_set_name
+        __props__["port"] = port
+        __props__["protocol"] = protocol
+        __props__["routingPolicyName"] = routing_policy_name
+        __props__["ruleSetNames"] = rule_set_names
+        __props__["sslConfiguration"] = ssl_configuration
+        __props__["state"] = state
+        return pulumi.runtime.exists_resource(None, 'oci:LoadBalancer/listener:Listener', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="connectionConfiguration")
     def connection_configuration(self) -> pulumi.Output['outputs.ListenerConnectionConfiguration']:

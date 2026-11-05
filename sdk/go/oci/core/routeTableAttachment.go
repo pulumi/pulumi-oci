@@ -112,6 +112,12 @@ func (RouteTableAttachmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*routeTableAttachmentState)(nil)).Elem()
 }
 
+// RouteTableAttachmentExists checks whether an existing RouteTableAttachment resource with the given ID exists.
+func RouteTableAttachmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RouteTableAttachmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/routeTableAttachment:RouteTableAttachment", id, state, "", opts...)
+}
+
 type routeTableAttachmentArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table.
 	RouteTableId string `pulumi:"routeTableId"`

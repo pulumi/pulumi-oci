@@ -237,7 +237,7 @@ public final class GetDomainsAppsApp {
      */
     private Boolean disableKmsiTokenAuthentication;
     /**
-     * @return Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return Display name of the flatfile bundle configuration property. This attribute maps to &#92;&#34;displayName&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      */
     private String displayName;
@@ -528,7 +528,7 @@ public final class GetDomainsAppsApp {
      */
     private List<GetDomainsAppsAppSamlServiceProvider> samlServiceProviders;
     /**
-     * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard &#92;&#34;enterprise&#92;&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
     private List<String> schemas;
@@ -922,7 +922,7 @@ public final class GetDomainsAppsApp {
         return this.disableKmsiTokenAuthentication;
     }
     /**
-     * @return Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return Display name of the flatfile bundle configuration property. This attribute maps to &#92;&#34;displayName&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      */
     public String displayName() {
@@ -1331,7 +1331,7 @@ public final class GetDomainsAppsApp {
         return this.samlServiceProviders;
     }
     /**
-     * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard &#92;&#34;enterprise&#92;&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
     public List<String> schemas() {

@@ -148,6 +148,12 @@ func (DrgRouteDistributionStatementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*drgRouteDistributionStatementState)(nil)).Elem()
 }
 
+// DrgRouteDistributionStatementExists checks whether an existing DrgRouteDistributionStatement resource with the given ID exists.
+func DrgRouteDistributionStatementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DrgRouteDistributionStatementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/drgRouteDistributionStatement:DrgRouteDistributionStatement", id, state, "", opts...)
+}
+
 type drgRouteDistributionStatementArgs struct {
 	// Accept: import/export the route "as is"
 	Action string `pulumi:"action"`

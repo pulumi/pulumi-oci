@@ -228,6 +228,12 @@ func (PathAnalyzerTestState) ElementType() reflect.Type {
 	return reflect.TypeOf((*pathAnalyzerTestState)(nil)).Elem()
 }
 
+// PathAnalyzerTestExists checks whether an existing PathAnalyzerTest resource with the given ID exists.
+func PathAnalyzerTestExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PathAnalyzerTestState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:VnMonitoring/pathAnalyzerTest:PathAnalyzerTest", id, state, "", opts...)
+}
+
 type pathAnalyzerTestArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the `PathAnalyzerTest` resource's compartment.
 	CompartmentId string `pulumi:"compartmentId"`

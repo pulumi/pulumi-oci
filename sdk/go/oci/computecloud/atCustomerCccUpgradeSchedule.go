@@ -202,6 +202,12 @@ func (AtCustomerCccUpgradeScheduleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*atCustomerCccUpgradeScheduleState)(nil)).Elem()
 }
 
+// AtCustomerCccUpgradeScheduleExists checks whether an existing AtCustomerCccUpgradeSchedule resource with the given ID exists.
+func AtCustomerCccUpgradeScheduleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AtCustomerCccUpgradeScheduleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ComputeCloud/atCustomerCccUpgradeSchedule:AtCustomerCccUpgradeSchedule", id, state, "", opts...)
+}
+
 type atCustomerCccUpgradeScheduleArgs struct {
 	// (Updatable) Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the Compute Cloud@Customer Upgrade Schedule.
 	CompartmentId string `pulumi:"compartmentId"`

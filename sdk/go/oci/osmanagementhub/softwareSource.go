@@ -325,6 +325,12 @@ func (SoftwareSourceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*softwareSourceState)(nil)).Elem()
 }
 
+// SoftwareSourceExists checks whether an existing SoftwareSource resource with the given ID exists.
+func SoftwareSourceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SoftwareSourceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/softwareSource:SoftwareSource", id, state, "", opts...)
+}
+
 type softwareSourceArgs struct {
 	// (Updatable) Advanced repository options for the software source
 	AdvancedRepoOptions *string `pulumi:"advancedRepoOptions"`

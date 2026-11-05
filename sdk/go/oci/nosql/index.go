@@ -175,6 +175,12 @@ func (IndexState) ElementType() reflect.Type {
 	return reflect.TypeOf((*indexState)(nil)).Elem()
 }
 
+// IndexExists checks whether an existing Index resource with the given ID exists.
+func IndexExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IndexState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Nosql/index:Index", id, state, "", opts...)
+}
+
 type indexArgs struct {
 	// The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
 	CompartmentId *string `pulumi:"compartmentId"`

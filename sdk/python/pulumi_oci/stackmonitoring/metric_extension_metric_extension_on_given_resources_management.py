@@ -276,6 +276,18 @@ class MetricExtensionMetricExtensionOnGivenResourcesManagement(pulumi.CustomReso
         __props__.__dict__["resource_ids"] = resource_ids
         return MetricExtensionMetricExtensionOnGivenResourcesManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enable_metric_extension_on_given_resources: pulumi.Input[Optional[_builtins.bool]] = None,
+            metric_extension_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_ids: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enableMetricExtensionOnGivenResources"] = enable_metric_extension_on_given_resources
+        __props__["metricExtensionId"] = metric_extension_id
+        __props__["resourceIds"] = resource_ids
+        return pulumi.runtime.exists_resource(None, 'oci:StackMonitoring/metricExtensionMetricExtensionOnGivenResourcesManagement:MetricExtensionMetricExtensionOnGivenResourcesManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="enableMetricExtensionOnGivenResources")
     def enable_metric_extension_on_given_resources(self) -> pulumi.Output[_builtins.bool]:

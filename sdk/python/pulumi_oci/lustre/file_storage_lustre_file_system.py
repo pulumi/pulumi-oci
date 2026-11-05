@@ -1105,6 +1105,66 @@ class FileStorageLustreFileSystem(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return FileStorageLustreFileSystem(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            capacity_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            date_time_details: pulumi.Input[Optional[Union['FileStorageLustreFileSystemDateTimeDetailsArgs', 'FileStorageLustreFileSystemDateTimeDetailsArgsDict', 'outputs.FileStorageLustreFileSystemDateTimeDetails']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            file_system_description: pulumi.Input[Optional[_builtins.str]] = None,
+            file_system_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            lnet: pulumi.Input[Optional[_builtins.str]] = None,
+            maintenance_window: pulumi.Input[Optional[Union['FileStorageLustreFileSystemMaintenanceWindowArgs', 'FileStorageLustreFileSystemMaintenanceWindowArgsDict', 'outputs.FileStorageLustreFileSystemMaintenanceWindow']]] = None,
+            maintenance_window_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FileStorageLustreFileSystemMaintenanceWindowMetadataArgs', 'FileStorageLustreFileSystemMaintenanceWindowMetadataArgsDict', 'outputs.FileStorageLustreFileSystemMaintenanceWindowMetadata']]]]] = None,
+            major_version: pulumi.Input[Optional[_builtins.str]] = None,
+            management_service_address: pulumi.Input[Optional[_builtins.str]] = None,
+            nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            override_maintenance_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            performance_tier: pulumi.Input[Optional[_builtins.str]] = None,
+            root_squash_configuration: pulumi.Input[Optional[Union['FileStorageLustreFileSystemRootSquashConfigurationArgs', 'FileStorageLustreFileSystemRootSquashConfigurationArgsDict', 'outputs.FileStorageLustreFileSystemRootSquashConfiguration']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_billing_cycle_end: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availabilityDomain"] = availability_domain
+        __props__["capacityInGbs"] = capacity_in_gbs
+        __props__["clusterPlacementGroupId"] = cluster_placement_group_id
+        __props__["compartmentId"] = compartment_id
+        __props__["dateTimeDetails"] = date_time_details
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["fileSystemDescription"] = file_system_description
+        __props__["fileSystemName"] = file_system_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["kmsKeyId"] = kms_key_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["lnet"] = lnet
+        __props__["maintenanceWindow"] = maintenance_window
+        __props__["maintenanceWindowMetadatas"] = maintenance_window_metadatas
+        __props__["majorVersion"] = major_version
+        __props__["managementServiceAddress"] = management_service_address
+        __props__["nsgIds"] = nsg_ids
+        __props__["overrideMaintenanceTrigger"] = override_maintenance_trigger
+        __props__["performanceTier"] = performance_tier
+        __props__["rootSquashConfiguration"] = root_squash_configuration
+        __props__["state"] = state
+        __props__["subnetId"] = subnet_id
+        __props__["systemTags"] = system_tags
+        __props__["timeBillingCycleEnd"] = time_billing_cycle_end
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Lustre/fileStorageLustreFileSystem:FileStorageLustreFileSystem', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[_builtins.str]:

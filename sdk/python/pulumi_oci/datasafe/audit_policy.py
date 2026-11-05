@@ -685,6 +685,50 @@ class AuditPolicy(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return AuditPolicy(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            audit_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuditPolicyAuditConditionArgs', 'AuditPolicyAuditConditionArgsDict', 'outputs.AuditPolicyAuditCondition']]]]] = None,
+            audit_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            audit_specifications: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuditPolicyAuditSpecificationArgs', 'AuditPolicyAuditSpecificationArgsDict', 'outputs.AuditPolicyAuditSpecification']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_data_safe_service_account_excluded: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            provision_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            retrieve_from_target_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_provisioned: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_retrieved: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["auditConditions"] = audit_conditions
+        __props__["auditPolicyId"] = audit_policy_id
+        __props__["auditSpecifications"] = audit_specifications
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["isDataSafeServiceAccountExcluded"] = is_data_safe_service_account_excluded
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["provisionTrigger"] = provision_trigger
+        __props__["retrieveFromTargetTrigger"] = retrieve_from_target_trigger
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["targetId"] = target_id
+        __props__["timeCreated"] = time_created
+        __props__["timeLastProvisioned"] = time_last_provisioned
+        __props__["timeLastRetrieved"] = time_last_retrieved
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/auditPolicy:AuditPolicy', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="auditConditions")
     def audit_conditions(self) -> pulumi.Output[Sequence['outputs.AuditPolicyAuditCondition']]:

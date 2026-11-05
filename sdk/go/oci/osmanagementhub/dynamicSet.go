@@ -220,6 +220,12 @@ func (DynamicSetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dynamicSetState)(nil)).Elem()
 }
 
+// DynamicSetExists checks whether an existing DynamicSet resource with the given ID exists.
+func DynamicSetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DynamicSetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/dynamicSet:DynamicSet", id, state, "", opts...)
+}
+
 type dynamicSetArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the dynamic set.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -777,6 +777,12 @@ func (SddcState) ElementType() reflect.Type {
 	return reflect.TypeOf((*sddcState)(nil)).Elem()
 }
 
+// SddcExists checks whether an existing Sddc resource with the given ID exists.
+func SddcExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SddcState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Ocvp/sddc:Sddc", id, state, "", opts...)
+}
+
 type sddcArgs struct {
 	// (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation. **Deprecated**. Please use `capacityReservationId` of `initialClusterConfigurations` instead.
 	//

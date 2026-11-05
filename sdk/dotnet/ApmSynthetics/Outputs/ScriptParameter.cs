@@ -28,7 +28,6 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// <summary>
         /// (Updatable) Value of the parameter.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

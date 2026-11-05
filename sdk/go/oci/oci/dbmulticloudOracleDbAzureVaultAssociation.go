@@ -204,6 +204,12 @@ func (DbmulticloudOracleDbAzureVaultAssociationState) ElementType() reflect.Type
 	return reflect.TypeOf((*dbmulticloudOracleDbAzureVaultAssociationState)(nil)).Elem()
 }
 
+// DbmulticloudOracleDbAzureVaultAssociationExists checks whether an existing DbmulticloudOracleDbAzureVaultAssociation resource with the given ID exists.
+func DbmulticloudOracleDbAzureVaultAssociationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DbmulticloudOracleDbAzureVaultAssociationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/dbmulticloudOracleDbAzureVaultAssociation:DbmulticloudOracleDbAzureVaultAssociation", id, state, "", opts...)
+}
+
 type dbmulticloudOracleDbAzureVaultAssociationArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Vault Association resource.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -227,6 +227,12 @@ func (CrossConnectGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*crossConnectGroupState)(nil)).Elem()
 }
 
+// CrossConnectGroupExists checks whether an existing CrossConnectGroup resource with the given ID exists.
+func CrossConnectGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CrossConnectGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/crossConnectGroup:CrossConnectGroup", id, state, "", opts...)
+}
+
 type crossConnectGroupArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the cross-connect group.
 	CompartmentId string `pulumi:"compartmentId"`

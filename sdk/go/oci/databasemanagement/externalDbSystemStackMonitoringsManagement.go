@@ -130,6 +130,12 @@ func (ExternalDbSystemStackMonitoringsManagementState) ElementType() reflect.Typ
 	return reflect.TypeOf((*externalDbSystemStackMonitoringsManagementState)(nil)).Elem()
 }
 
+// ExternalDbSystemStackMonitoringsManagementExists checks whether an existing ExternalDbSystemStackMonitoringsManagement resource with the given ID exists.
+func ExternalDbSystemStackMonitoringsManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalDbSystemStackMonitoringsManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/externalDbSystemStackMonitoringsManagement:ExternalDbSystemStackMonitoringsManagement", id, state, "", opts...)
+}
+
 type externalDbSystemStackMonitoringsManagementArgs struct {
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 	//

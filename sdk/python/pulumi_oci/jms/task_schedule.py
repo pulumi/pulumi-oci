@@ -586,6 +586,32 @@ class TaskSchedule(pulumi.CustomResource):
         __props__.__dict__["time_next_run"] = time_next_run
         return TaskSchedule(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            execution_recurrences: pulumi.Input[Optional[_builtins.str]] = None,
+            fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            task_details: pulumi.Input[Optional[Union['TaskScheduleTaskDetailsArgs', 'TaskScheduleTaskDetailsArgsDict', 'outputs.TaskScheduleTaskDetails']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_run: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            time_next_run: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["createdBy"] = created_by
+        __props__["executionRecurrences"] = execution_recurrences
+        __props__["fleetId"] = fleet_id
+        __props__["name"] = name
+        __props__["state"] = state
+        __props__["taskDetails"] = task_details
+        __props__["timeCreated"] = time_created
+        __props__["timeLastRun"] = time_last_run
+        __props__["timeLastUpdated"] = time_last_updated
+        __props__["timeNextRun"] = time_next_run
+        return pulumi.runtime.exists_resource(None, 'oci:Jms/taskSchedule:TaskSchedule', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="createdBy")
     def created_by(self) -> pulumi.Output[_builtins.str]:

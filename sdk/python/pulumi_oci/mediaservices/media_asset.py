@@ -1004,6 +1004,60 @@ class MediaAsset(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return MediaAsset(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            bucket: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaAssetLockArgs', 'MediaAssetLockArgsDict', 'outputs.MediaAssetLock']]]]] = None,
+            master_media_asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+            media_asset_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaAssetMediaAssetTagArgs', 'MediaAssetMediaAssetTagArgsDict', 'outputs.MediaAssetMediaAssetTag']]]]] = None,
+            media_workflow_job_id: pulumi.Input[Optional[_builtins.str]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaAssetMetadataArgs', 'MediaAssetMetadataArgsDict', 'outputs.MediaAssetMetadata']]]]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            object: pulumi.Input[Optional[_builtins.str]] = None,
+            object_etag: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_media_asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+            segment_range_end_index: pulumi.Input[Optional[_builtins.str]] = None,
+            segment_range_start_index: pulumi.Input[Optional[_builtins.str]] = None,
+            source_media_workflow_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_media_workflow_version: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["bucket"] = bucket
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["isLockOverride"] = is_lock_override
+        __props__["locks"] = locks
+        __props__["masterMediaAssetId"] = master_media_asset_id
+        __props__["mediaAssetTags"] = media_asset_tags
+        __props__["mediaWorkflowJobId"] = media_workflow_job_id
+        __props__["metadatas"] = metadatas
+        __props__["namespace"] = namespace
+        __props__["object"] = object
+        __props__["objectEtag"] = object_etag
+        __props__["parentMediaAssetId"] = parent_media_asset_id
+        __props__["segmentRangeEndIndex"] = segment_range_end_index
+        __props__["segmentRangeStartIndex"] = segment_range_start_index
+        __props__["sourceMediaWorkflowId"] = source_media_workflow_id
+        __props__["sourceMediaWorkflowVersion"] = source_media_workflow_version
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'oci:MediaServices/mediaAsset:MediaAsset', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def bucket(self) -> pulumi.Output[_builtins.str]:

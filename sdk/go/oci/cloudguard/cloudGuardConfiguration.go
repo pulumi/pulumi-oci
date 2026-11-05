@@ -138,6 +138,12 @@ func (CloudGuardConfigurationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudGuardConfigurationState)(nil)).Elem()
 }
 
+// CloudGuardConfigurationExists checks whether an existing CloudGuardConfiguration resource with the given ID exists.
+func CloudGuardConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudGuardConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CloudGuard/cloudGuardConfiguration:CloudGuardConfiguration", id, state, "", opts...)
+}
+
 type cloudGuardConfigurationArgs struct {
 	// (Updatable) The OCID of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`

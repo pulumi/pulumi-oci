@@ -147,6 +147,12 @@ func (ComputeCapacityReportState) ElementType() reflect.Type {
 	return reflect.TypeOf((*computeCapacityReportState)(nil)).Elem()
 }
 
+// ComputeCapacityReportExists checks whether an existing ComputeCapacityReport resource with the given ID exists.
+func ComputeCapacityReportExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ComputeCapacityReportState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/computeCapacityReport:ComputeCapacityReport", id, state, "", opts...)
+}
+
 type computeCapacityReportArgs struct {
 	// The availability domain for the capacity report.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`

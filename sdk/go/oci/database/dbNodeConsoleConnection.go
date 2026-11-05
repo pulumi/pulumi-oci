@@ -178,6 +178,12 @@ func (DbNodeConsoleConnectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dbNodeConsoleConnectionState)(nil)).Elem()
 }
 
+// DbNodeConsoleConnectionExists checks whether an existing DbNodeConsoleConnection resource with the given ID exists.
+func DbNodeConsoleConnectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DbNodeConsoleConnectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/dbNodeConsoleConnection:DbNodeConsoleConnection", id, state, "", opts...)
+}
+
 type dbNodeConsoleConnectionArgs struct {
 	// The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbNodeId string `pulumi:"dbNodeId"`

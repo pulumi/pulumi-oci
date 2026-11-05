@@ -779,6 +779,54 @@ class ExternalExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return ExternalExadataInfrastructure(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            additional_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_compartments: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            database_systems: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalExadataInfrastructureDatabaseSystemArgs', 'ExternalExadataInfrastructureDatabaseSystemArgsDict', 'outputs.ExternalExadataInfrastructureDatabaseSystem']]]]] = None,
+            db_system_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            discovery_key: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            internal_id: pulumi.Input[Optional[_builtins.str]] = None,
+            license_model: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            rack_size: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_grids: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalExadataInfrastructureStorageGridArgs', 'ExternalExadataInfrastructureStorageGridArgsDict', 'outputs.ExternalExadataInfrastructureStorageGrid']]]]] = None,
+            storage_server_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["additionalDetails"] = additional_details
+        __props__["compartmentId"] = compartment_id
+        __props__["databaseCompartments"] = database_compartments
+        __props__["databaseSystems"] = database_systems
+        __props__["dbSystemIds"] = db_system_ids
+        __props__["definedTags"] = defined_tags
+        __props__["discoveryKey"] = discovery_key
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["internalId"] = internal_id
+        __props__["licenseModel"] = license_model
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["rackSize"] = rack_size
+        __props__["state"] = state
+        __props__["status"] = status
+        __props__["storageGrids"] = storage_grids
+        __props__["storageServerNames"] = storage_server_names
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseManagement/externalExadataInfrastructure:ExternalExadataInfrastructure', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="additionalDetails")
     def additional_details(self) -> pulumi.Output[Mapping[str, _builtins.str]]:

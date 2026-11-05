@@ -414,22 +414,20 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * (&#34;generatedRandomPasswordLength&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;generated_random_password_length&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;generated_random_password_length&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     @Import(name="generatedRandomPasswordLength")
     private @Nullable Output<Integer> generatedRandomPasswordLength;
 
     /**
      * @return (&#34;generatedRandomPasswordLength&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;generated_random_password_length&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;generated_random_password_length&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     public Optional<Output<Integer>> generatedRandomPasswordLength() {
         return Optional.ofNullable(this.generatedRandomPasswordLength);
     }
@@ -1310,22 +1308,20 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
      * 
-     * @deprecated
-     * The &#39;mysql_zstd_default_compression_level&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;mysql_zstd_default_compression_level&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     @Import(name="mysqlZstdDefaultCompressionLevel")
     private @Nullable Output<Integer> mysqlZstdDefaultCompressionLevel;
 
     /**
      * @return DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
      * 
-     * @deprecated
-     * The &#39;mysql_zstd_default_compression_level&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;mysql_zstd_default_compression_level&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     public Optional<Output<Integer>> mysqlZstdDefaultCompressionLevel() {
         return Optional.ofNullable(this.mysqlZstdDefaultCompressionLevel);
     }
@@ -1382,22 +1378,20 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * (&#34;mysqlxDocumentIdUniquePrefix&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;mysqlx_document_id_unique_prefix&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;mysqlx_document_id_unique_prefix&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     @Import(name="mysqlxDocumentIdUniquePrefix")
     private @Nullable Output<Integer> mysqlxDocumentIdUniquePrefix;
 
     /**
      * @return (&#34;mysqlxDocumentIdUniquePrefix&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;mysqlx_document_id_unique_prefix&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;mysqlx_document_id_unique_prefix&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     public Optional<Output<Integer>> mysqlxDocumentIdUniquePrefix() {
         return Optional.ofNullable(this.mysqlxDocumentIdUniquePrefix);
     }
@@ -1420,22 +1414,20 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * (&#34;mysqlxIdleWorkerThreadTimeout&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;mysqlx_idle_worker_thread_timeout&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;mysqlx_idle_worker_thread_timeout&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     @Import(name="mysqlxIdleWorkerThreadTimeout")
     private @Nullable Output<Integer> mysqlxIdleWorkerThreadTimeout;
 
     /**
      * @return (&#34;mysqlxIdleWorkerThreadTimeout&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;mysqlx_idle_worker_thread_timeout&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;mysqlx_idle_worker_thread_timeout&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     public Optional<Output<Integer>> mysqlxIdleWorkerThreadTimeout() {
         return Optional.ofNullable(this.mysqlxIdleWorkerThreadTimeout);
     }
@@ -1511,22 +1503,20 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * (&#34;mysqlxMinWorkerThreads&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;mysqlx_min_worker_threads&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;mysqlx_min_worker_threads&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     @Import(name="mysqlxMinWorkerThreads")
     private @Nullable Output<Integer> mysqlxMinWorkerThreads;
 
     /**
      * @return (&#34;mysqlxMinWorkerThreads&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;mysqlx_min_worker_threads&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;mysqlx_min_worker_threads&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     public Optional<Output<Integer>> mysqlxMinWorkerThreads() {
         return Optional.ofNullable(this.mysqlxMinWorkerThreads);
     }
@@ -1697,22 +1687,20 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * (&#34;queryAllocBlockSize&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;query_alloc_block_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;query_alloc_block_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     @Import(name="queryAllocBlockSize")
     private @Nullable Output<String> queryAllocBlockSize;
 
     /**
      * @return (&#34;queryAllocBlockSize&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;query_alloc_block_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;query_alloc_block_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     public Optional<Output<String>> queryAllocBlockSize() {
         return Optional.ofNullable(this.queryAllocBlockSize);
     }
@@ -1720,22 +1708,20 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
     /**
      * (&#34;queryPreallocSize&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     @Import(name="queryPreallocSize")
     private @Nullable Output<String> queryPreallocSize;
 
     /**
      * @return (&#34;queryPreallocSize&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     public Optional<Output<String>> queryPreallocSize() {
         return Optional.ofNullable(this.queryPreallocSize);
     }
@@ -2877,11 +2863,10 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;generated_random_password_length&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * @deprecated The &#39;generated_random_password_length&#39; field has been deprecated and may be removed in a future version. Do not use this field.
          * 
          */
-        @Deprecated /* The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field. */
+        @Deprecated
         public Builder generatedRandomPasswordLength(@Nullable Output<Integer> generatedRandomPasswordLength) {
             $.generatedRandomPasswordLength = generatedRandomPasswordLength;
             return this;
@@ -2892,11 +2877,10 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;generated_random_password_length&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * @deprecated The &#39;generated_random_password_length&#39; field has been deprecated and may be removed in a future version. Do not use this field.
          * 
          */
-        @Deprecated /* The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field. */
+        @Deprecated
         public Builder generatedRandomPasswordLength(Integer generatedRandomPasswordLength) {
             return generatedRandomPasswordLength(Output.of(generatedRandomPasswordLength));
         }
@@ -4061,11 +4045,10 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;mysql_zstd_default_compression_level&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * @deprecated The &#39;mysql_zstd_default_compression_level&#39; field has been deprecated and may be removed in a future version. Do not use this field.
          * 
          */
-        @Deprecated /* The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field. */
+        @Deprecated
         public Builder mysqlZstdDefaultCompressionLevel(@Nullable Output<Integer> mysqlZstdDefaultCompressionLevel) {
             $.mysqlZstdDefaultCompressionLevel = mysqlZstdDefaultCompressionLevel;
             return this;
@@ -4076,11 +4059,10 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;mysql_zstd_default_compression_level&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * @deprecated The &#39;mysql_zstd_default_compression_level&#39; field has been deprecated and may be removed in a future version. Do not use this field.
          * 
          */
-        @Deprecated /* The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field. */
+        @Deprecated
         public Builder mysqlZstdDefaultCompressionLevel(Integer mysqlZstdDefaultCompressionLevel) {
             return mysqlZstdDefaultCompressionLevel(Output.of(mysqlZstdDefaultCompressionLevel));
         }
@@ -4157,11 +4139,10 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;mysqlx_document_id_unique_prefix&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * @deprecated The &#39;mysqlx_document_id_unique_prefix&#39; field has been deprecated and may be removed in a future version. Do not use this field.
          * 
          */
-        @Deprecated /* The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field. */
+        @Deprecated
         public Builder mysqlxDocumentIdUniquePrefix(@Nullable Output<Integer> mysqlxDocumentIdUniquePrefix) {
             $.mysqlxDocumentIdUniquePrefix = mysqlxDocumentIdUniquePrefix;
             return this;
@@ -4172,11 +4153,10 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;mysqlx_document_id_unique_prefix&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * @deprecated The &#39;mysqlx_document_id_unique_prefix&#39; field has been deprecated and may be removed in a future version. Do not use this field.
          * 
          */
-        @Deprecated /* The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field. */
+        @Deprecated
         public Builder mysqlxDocumentIdUniquePrefix(Integer mysqlxDocumentIdUniquePrefix) {
             return mysqlxDocumentIdUniquePrefix(Output.of(mysqlxDocumentIdUniquePrefix));
         }
@@ -4207,11 +4187,10 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;mysqlx_idle_worker_thread_timeout&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * @deprecated The &#39;mysqlx_idle_worker_thread_timeout&#39; field has been deprecated and may be removed in a future version. Do not use this field.
          * 
          */
-        @Deprecated /* The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field. */
+        @Deprecated
         public Builder mysqlxIdleWorkerThreadTimeout(@Nullable Output<Integer> mysqlxIdleWorkerThreadTimeout) {
             $.mysqlxIdleWorkerThreadTimeout = mysqlxIdleWorkerThreadTimeout;
             return this;
@@ -4222,11 +4201,10 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;mysqlx_idle_worker_thread_timeout&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * @deprecated The &#39;mysqlx_idle_worker_thread_timeout&#39; field has been deprecated and may be removed in a future version. Do not use this field.
          * 
          */
-        @Deprecated /* The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field. */
+        @Deprecated
         public Builder mysqlxIdleWorkerThreadTimeout(Integer mysqlxIdleWorkerThreadTimeout) {
             return mysqlxIdleWorkerThreadTimeout(Output.of(mysqlxIdleWorkerThreadTimeout));
         }
@@ -4328,11 +4306,10 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;mysqlx_min_worker_threads&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * @deprecated The &#39;mysqlx_min_worker_threads&#39; field has been deprecated and may be removed in a future version. Do not use this field.
          * 
          */
-        @Deprecated /* The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field. */
+        @Deprecated
         public Builder mysqlxMinWorkerThreads(@Nullable Output<Integer> mysqlxMinWorkerThreads) {
             $.mysqlxMinWorkerThreads = mysqlxMinWorkerThreads;
             return this;
@@ -4343,11 +4320,10 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;mysqlx_min_worker_threads&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * @deprecated The &#39;mysqlx_min_worker_threads&#39; field has been deprecated and may be removed in a future version. Do not use this field.
          * 
          */
-        @Deprecated /* The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field. */
+        @Deprecated
         public Builder mysqlxMinWorkerThreads(Integer mysqlxMinWorkerThreads) {
             return mysqlxMinWorkerThreads(Output.of(mysqlxMinWorkerThreads));
         }
@@ -4574,11 +4550,10 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;query_alloc_block_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * @deprecated The &#39;query_alloc_block_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
          * 
          */
-        @Deprecated /* The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field. */
+        @Deprecated
         public Builder queryAllocBlockSize(@Nullable Output<String> queryAllocBlockSize) {
             $.queryAllocBlockSize = queryAllocBlockSize;
             return this;
@@ -4589,11 +4564,10 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;query_alloc_block_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * @deprecated The &#39;query_alloc_block_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
          * 
          */
-        @Deprecated /* The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field. */
+        @Deprecated
         public Builder queryAllocBlockSize(String queryAllocBlockSize) {
             return queryAllocBlockSize(Output.of(queryAllocBlockSize));
         }
@@ -4603,11 +4577,10 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * @deprecated The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
          * 
          */
-        @Deprecated /* The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field. */
+        @Deprecated
         public Builder queryPreallocSize(@Nullable Output<String> queryPreallocSize) {
             $.queryPreallocSize = queryPreallocSize;
             return this;
@@ -4618,11 +4591,10 @@ public final class MysqlConfigurationVariablesArgs extends com.pulumi.resources.
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * @deprecated The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
          * 
          */
-        @Deprecated /* The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field. */
+        @Deprecated
         public Builder queryPreallocSize(String queryPreallocSize) {
             return queryPreallocSize(Output.of(queryPreallocSize));
         }

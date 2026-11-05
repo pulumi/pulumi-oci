@@ -278,6 +278,12 @@ func (VtapState) ElementType() reflect.Type {
 	return reflect.TypeOf((*vtapState)(nil)).Elem()
 }
 
+// VtapExists checks whether an existing Vtap resource with the given ID exists.
+func VtapExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VtapState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/vtap:Vtap", id, state, "", opts...)
+}
+
 type vtapArgs struct {
 	// (Updatable) The capture filter's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
 	CaptureFilterId string `pulumi:"captureFilterId"`

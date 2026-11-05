@@ -278,6 +278,12 @@ func (PatchState) ElementType() reflect.Type {
 	return reflect.TypeOf((*patchState)(nil)).Elem()
 }
 
+// PatchExists checks whether an existing Patch resource with the given ID exists.
+func PatchExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PatchState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FleetAppsManagement/patch:Patch", id, state, "", opts...)
+}
+
 type patchArgs struct {
 	// (Updatable) Patch artifact description and content details.
 	ArtifactDetails PatchArtifactDetails `pulumi:"artifactDetails"`

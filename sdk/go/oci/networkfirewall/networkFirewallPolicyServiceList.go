@@ -150,6 +150,12 @@ func (NetworkFirewallPolicyServiceListState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkFirewallPolicyServiceListState)(nil)).Elem()
 }
 
+// NetworkFirewallPolicyServiceListExists checks whether an existing NetworkFirewallPolicyServiceList resource with the given ID exists.
+func NetworkFirewallPolicyServiceListExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkFirewallPolicyServiceListState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:NetworkFirewall/networkFirewallPolicyServiceList:NetworkFirewallPolicyServiceList", id, state, "", opts...)
+}
+
 type networkFirewallPolicyServiceListArgs struct {
 	// (Updatable) The description of the service list. This field can be used to add additional info.
 	Description *string `pulumi:"description"`

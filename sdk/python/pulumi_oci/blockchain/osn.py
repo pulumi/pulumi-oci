@@ -321,6 +321,22 @@ class Osn(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         return Osn(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            ad: pulumi.Input[Optional[_builtins.str]] = None,
+            blockchain_platform_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ocpu_allocation_param: pulumi.Input[Optional[Union['OsnOcpuAllocationParamArgs', 'OsnOcpuAllocationParamArgsDict', 'outputs.OsnOcpuAllocationParam']]] = None,
+            osn_key: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["ad"] = ad
+        __props__["blockchainPlatformId"] = blockchain_platform_id
+        __props__["ocpuAllocationParam"] = ocpu_allocation_param
+        __props__["osnKey"] = osn_key
+        __props__["state"] = state
+        return pulumi.runtime.exists_resource(None, 'oci:Blockchain/osn:Osn', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def ad(self) -> pulumi.Output[_builtins.str]:

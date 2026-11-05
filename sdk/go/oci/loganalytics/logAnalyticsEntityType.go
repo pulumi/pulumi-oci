@@ -164,6 +164,12 @@ func (LogAnalyticsEntityTypeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logAnalyticsEntityTypeState)(nil)).Elem()
 }
 
+// LogAnalyticsEntityTypeExists checks whether an existing LogAnalyticsEntityType resource with the given ID exists.
+func LogAnalyticsEntityTypeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogAnalyticsEntityTypeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LogAnalytics/logAnalyticsEntityType:LogAnalyticsEntityType", id, state, "", opts...)
+}
+
 type logAnalyticsEntityTypeArgs struct {
 	// Log analytics entity type category. Category will be used for grouping and filtering.
 	Category *string `pulumi:"category"`

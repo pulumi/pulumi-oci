@@ -247,6 +247,12 @@ func (ComputeHostState) ElementType() reflect.Type {
 	return reflect.TypeOf((*computeHostState)(nil)).Elem()
 }
 
+// ComputeHostExists checks whether an existing ComputeHost resource with the given ID exists.
+func ComputeHostExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ComputeHostState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/computeHost:ComputeHost", id, state, "", opts...)
+}
+
 type computeHostArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compute host group this host was attached to at the time of recycle.
 	ComputeHostGroupId *string `pulumi:"computeHostGroupId"`

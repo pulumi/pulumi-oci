@@ -17,7 +17,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// Lists available software source vendors. Filter the list against a variety of criteria including but not limited
         /// to its name.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// Lists available software source vendors. Filter the list against a variety of criteria including but not limited
         /// to its name.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -74,7 +72,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Lists available software source vendors. Filter the list against a variety of criteria including but not limited
         /// to its name.
-        /// 
         /// 
         /// ## Example Usage
         /// 

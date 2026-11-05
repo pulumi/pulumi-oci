@@ -287,6 +287,12 @@ func (UserAssessmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*userAssessmentState)(nil)).Elem()
 }
 
+// UserAssessmentExists checks whether an existing UserAssessment resource with the given ID exists.
+func UserAssessmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UserAssessmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/userAssessment:UserAssessment", id, state, "", opts...)
+}
+
 type userAssessmentArgs struct {
 	// (Updatable) The OCID of the compartment that contains the user assessment.
 	CompartmentId string `pulumi:"compartmentId"`

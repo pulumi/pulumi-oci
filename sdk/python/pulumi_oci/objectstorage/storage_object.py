@@ -908,6 +908,52 @@ class StorageObject(pulumi.CustomResource):
         __props__.__dict__["work_request_id"] = work_request_id
         return StorageObject(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            bucket: pulumi.Input[Optional[_builtins.str]] = None,
+            cache_control: pulumi.Input[Optional[_builtins.str]] = None,
+            content: pulumi.Input[Optional[_builtins.str]] = None,
+            content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+            content_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+            content_language: pulumi.Input[Optional[_builtins.str]] = None,
+            content_length: pulumi.Input[Optional[_builtins.str]] = None,
+            content_md5: pulumi.Input[Optional[_builtins.str]] = None,
+            content_type: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_all_object_versions: pulumi.Input[Optional[_builtins.bool]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            object: pulumi.Input[Optional[_builtins.str]] = None,
+            opc_sse_kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            source_uri_details: pulumi.Input[Optional[Union['StorageObjectSourceUriDetailsArgs', 'StorageObjectSourceUriDetailsArgsDict', 'outputs.StorageObjectSourceUriDetails']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_tier: pulumi.Input[Optional[_builtins.str]] = None,
+            version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            work_request_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["bucket"] = bucket
+        __props__["cacheControl"] = cache_control
+        __props__["content"] = content
+        __props__["contentDisposition"] = content_disposition
+        __props__["contentEncoding"] = content_encoding
+        __props__["contentLanguage"] = content_language
+        __props__["contentLength"] = content_length
+        __props__["contentMd5"] = content_md5
+        __props__["contentType"] = content_type
+        __props__["deleteAllObjectVersions"] = delete_all_object_versions
+        __props__["metadata"] = metadata
+        __props__["namespace"] = namespace
+        __props__["object"] = object
+        __props__["opcSseKmsKeyId"] = opc_sse_kms_key_id
+        __props__["source"] = source
+        __props__["sourceUriDetails"] = source_uri_details
+        __props__["state"] = state
+        __props__["storageTier"] = storage_tier
+        __props__["versionId"] = version_id
+        __props__["workRequestId"] = work_request_id
+        return pulumi.runtime.exists_resource(None, 'oci:ObjectStorage/storageObject:StorageObject', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def bucket(self) -> pulumi.Output[_builtins.str]:

@@ -260,6 +260,12 @@ func (ApiaccesscontrolPrivilegedApiControlState) ElementType() reflect.Type {
 	return reflect.TypeOf((*apiaccesscontrolPrivilegedApiControlState)(nil)).Elem()
 }
 
+// ApiaccesscontrolPrivilegedApiControlExists checks whether an existing ApiaccesscontrolPrivilegedApiControl resource with the given ID exists.
+func ApiaccesscontrolPrivilegedApiControlExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ApiaccesscontrolPrivilegedApiControlState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/apiaccesscontrolPrivilegedApiControl:ApiaccesscontrolPrivilegedApiControl", id, state, "", opts...)
+}
+
 type apiaccesscontrolPrivilegedApiControlArgs struct {
 	// (Updatable) List of user IAM group ids who can approve an privilegedApi request associated with a resource governed by this operator control.
 	ApproverGroupIdLists []string `pulumi:"approverGroupIdLists"`

@@ -224,6 +224,12 @@ func (StreamJobState) ElementType() reflect.Type {
 	return reflect.TypeOf((*streamJobState)(nil)).Elem()
 }
 
+// StreamJobExists checks whether an existing StreamJob resource with the given ID exists.
+func StreamJobExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *StreamJobState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:AiVision/streamJob:StreamJob", id, state, "", opts...)
+}
+
 type streamJobArgs struct {
 	// (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment
 	CompartmentId string `pulumi:"compartmentId"`

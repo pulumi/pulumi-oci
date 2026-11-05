@@ -248,6 +248,12 @@ func (PluggableDatabaseManagementsManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*pluggableDatabaseManagementsManagementState)(nil)).Elem()
 }
 
+// PluggableDatabaseManagementsManagementExists checks whether an existing PluggableDatabaseManagementsManagement resource with the given ID exists.
+func PluggableDatabaseManagementsManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PluggableDatabaseManagementsManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/pluggableDatabaseManagementsManagement:PluggableDatabaseManagementsManagement", id, state, "", opts...)
+}
+
 type pluggableDatabaseManagementsManagementArgs struct {
 	// Data for the credential used to connect to the database.
 	CredentialDetails PluggableDatabaseManagementsManagementCredentialDetails `pulumi:"credentialDetails"`

@@ -1237,6 +1237,60 @@ class ContainerInstance(pulumi.CustomResource):
         __props__.__dict__["volumes"] = volumes
         return ContainerInstance(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            container_count: pulumi.Input[Optional[_builtins.int]] = None,
+            container_restart_policy: pulumi.Input[Optional[_builtins.str]] = None,
+            containers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceContainerArgs', 'ContainerInstanceContainerArgsDict', 'outputs.ContainerInstanceContainer']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dns_config: pulumi.Input[Optional[Union['ContainerInstanceDnsConfigArgs', 'ContainerInstanceDnsConfigArgsDict', 'outputs.ContainerInstanceDnsConfig']]] = None,
+            fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            graceful_shutdown_timeout_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+            image_pull_secrets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceImagePullSecretArgs', 'ContainerInstanceImagePullSecretArgsDict', 'outputs.ContainerInstanceImagePullSecret']]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            security_context: pulumi.Input[Optional[Union['ContainerInstanceSecurityContextArgs', 'ContainerInstanceSecurityContextArgsDict', 'outputs.ContainerInstanceSecurityContext']]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            shape_config: pulumi.Input[Optional[Union['ContainerInstanceShapeConfigArgs', 'ContainerInstanceShapeConfigArgsDict', 'outputs.ContainerInstanceShapeConfig']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            vnics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceVnicArgs', 'ContainerInstanceVnicArgsDict', 'outputs.ContainerInstanceVnic']]]]] = None,
+            volume_count: pulumi.Input[Optional[_builtins.int]] = None,
+            volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ContainerInstanceVolumeArgs', 'ContainerInstanceVolumeArgsDict', 'outputs.ContainerInstanceVolume']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availabilityDomain"] = availability_domain
+        __props__["compartmentId"] = compartment_id
+        __props__["containerCount"] = container_count
+        __props__["containerRestartPolicy"] = container_restart_policy
+        __props__["containers"] = containers
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["dnsConfig"] = dns_config
+        __props__["faultDomain"] = fault_domain
+        __props__["freeformTags"] = freeform_tags
+        __props__["gracefulShutdownTimeoutInSeconds"] = graceful_shutdown_timeout_in_seconds
+        __props__["imagePullSecrets"] = image_pull_secrets
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["securityContext"] = security_context
+        __props__["shape"] = shape
+        __props__["shapeConfig"] = shape_config
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["tenantId"] = tenant_id
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["vnics"] = vnics
+        __props__["volumeCount"] = volume_count
+        __props__["volumes"] = volumes
+        return pulumi.runtime.exists_resource(None, 'oci:ContainerEngine/containerInstance:ContainerInstance', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[_builtins.str]:

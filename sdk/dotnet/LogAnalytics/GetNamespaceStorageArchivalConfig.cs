@@ -16,7 +16,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// This API gets the storage configuration of a tenancy
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// This API gets the storage configuration of a tenancy
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides details about a specific Namespace Storage Archival Config resource in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// This API gets the storage configuration of a tenancy
-        /// 
         /// 
         /// ## Example Usage
         /// 

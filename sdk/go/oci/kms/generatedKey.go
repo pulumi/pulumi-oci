@@ -176,6 +176,12 @@ func (GeneratedKeyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*generatedKeyState)(nil)).Elem()
 }
 
+// GeneratedKeyExists checks whether an existing GeneratedKey resource with the given ID exists.
+func GeneratedKeyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GeneratedKeyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Kms/generatedKey:GeneratedKey", id, state, "", opts...)
+}
+
 type generatedKeyArgs struct {
 	// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
 	AssociatedData map[string]string `pulumi:"associatedData"`

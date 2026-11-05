@@ -24,7 +24,6 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// <summary>
         /// (Updatable) Type of the node or nodes of the node backup which are going to be created.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

@@ -282,6 +282,12 @@ func (DeploymentBackupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*deploymentBackupState)(nil)).Elem()
 }
 
+// DeploymentBackupExists checks whether an existing DeploymentBackup resource with the given ID exists.
+func DeploymentBackupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DeploymentBackupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:GoldenGate/deploymentBackup:DeploymentBackup", id, state, "", opts...)
+}
+
 type deploymentBackupArgs struct {
 	// Name of the bucket where the object is to be uploaded in the object storage
 	Bucket string `pulumi:"bucket"`

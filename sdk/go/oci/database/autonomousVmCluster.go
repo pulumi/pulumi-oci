@@ -469,6 +469,12 @@ func (AutonomousVmClusterState) ElementType() reflect.Type {
 	return reflect.TypeOf((*autonomousVmClusterState)(nil)).Elem()
 }
 
+// AutonomousVmClusterExists checks whether an existing AutonomousVmCluster resource with the given ID exists.
+func AutonomousVmClusterExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutonomousVmClusterState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/autonomousVmCluster:AutonomousVmCluster", id, state, "", opts...)
+}
+
 type autonomousVmClusterArgs struct {
 	// (Updatable) The data disk group size to be allocated for Autonomous Databases, in TBs.
 	AutonomousDataStorageSizeInTbs *float64 `pulumi:"autonomousDataStorageSizeInTbs"`

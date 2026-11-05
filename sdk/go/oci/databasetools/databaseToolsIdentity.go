@@ -213,6 +213,12 @@ func (DatabaseToolsIdentityState) ElementType() reflect.Type {
 	return reflect.TypeOf((*databaseToolsIdentityState)(nil)).Elem()
 }
 
+// DatabaseToolsIdentityExists checks whether an existing DatabaseToolsIdentity resource with the given ID exists.
+func DatabaseToolsIdentityExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DatabaseToolsIdentityState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseTools/databaseToolsIdentity:DatabaseToolsIdentity", id, state, "", opts...)
+}
+
 type databaseToolsIdentityArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools identity.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -480,6 +480,30 @@ class GeneratedKey(pulumi.CustomResource):
         __props__.__dict__["plaintext_checksum"] = plaintext_checksum
         return GeneratedKey(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            associated_data: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ciphertext: pulumi.Input[Optional[_builtins.str]] = None,
+            crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            include_plaintext_key: pulumi.Input[Optional[_builtins.bool]] = None,
+            key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_shape: pulumi.Input[Optional[Union['GeneratedKeyKeyShapeArgs', 'GeneratedKeyKeyShapeArgsDict', 'outputs.GeneratedKeyKeyShape']]] = None,
+            logging_context: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            plaintext: pulumi.Input[Optional[_builtins.str]] = None,
+            plaintext_checksum: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["associatedData"] = associated_data
+        __props__["ciphertext"] = ciphertext
+        __props__["cryptoEndpoint"] = crypto_endpoint
+        __props__["includePlaintextKey"] = include_plaintext_key
+        __props__["keyId"] = key_id
+        __props__["keyShape"] = key_shape
+        __props__["loggingContext"] = logging_context
+        __props__["plaintext"] = plaintext
+        __props__["plaintextChecksum"] = plaintext_checksum
+        return pulumi.runtime.exists_resource(None, 'oci:Kms/generatedKey:GeneratedKey', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="associatedData")
     def associated_data(self) -> pulumi.Output[Optional[Mapping[str, _builtins.str]]]:

@@ -725,6 +725,50 @@ class ManagementAppliance(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return ManagementAppliance(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configuration: pulumi.Input[Optional[Union['ManagementApplianceConfigurationArgs', 'ManagementApplianceConfigurationArgsDict', 'outputs.ManagementApplianceConfiguration']]] = None,
+            connections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementApplianceConnectionArgs', 'ManagementApplianceConnectionArgsDict', 'outputs.ManagementApplianceConnection']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            heartbeat_connection_states: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementApplianceHeartbeatConnectionStateArgs', 'ManagementApplianceHeartbeatConnectionStateArgsDict', 'outputs.ManagementApplianceHeartbeatConnectionState']]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            plugin_version: pulumi.Input[Optional[_builtins.str]] = None,
+            public_ssh_keys: pulumi.Input[Optional[_builtins.str]] = None,
+            sddc_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_configuration_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_heartbeat: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["computeInstanceId"] = compute_instance_id
+        __props__["configuration"] = configuration
+        __props__["connections"] = connections
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["heartbeatConnectionStates"] = heartbeat_connection_states
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["managementAgentId"] = management_agent_id
+        __props__["pluginVersion"] = plugin_version
+        __props__["publicSshKeys"] = public_ssh_keys
+        __props__["sddcId"] = sddc_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeConfigurationUpdated"] = time_configuration_updated
+        __props__["timeCreated"] = time_created
+        __props__["timeLastHeartbeat"] = time_last_heartbeat
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Ocvp/managementAppliance:ManagementAppliance', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

@@ -260,6 +260,12 @@ func (ExascaleDbStorageVaultState) ElementType() reflect.Type {
 	return reflect.TypeOf((*exascaleDbStorageVaultState)(nil)).Elem()
 }
 
+// ExascaleDbStorageVaultExists checks whether an existing ExascaleDbStorageVault resource with the given ID exists.
+func ExascaleDbStorageVaultExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExascaleDbStorageVaultState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/exascaleDbStorageVault:ExascaleDbStorageVault", id, state, "", opts...)
+}
+
 type exascaleDbStorageVaultArgs struct {
 	// (Updatable) The size of additional Flash Cache in percentage of High Capacity database storage.
 	AdditionalFlashCacheInPercent *int `pulumi:"additionalFlashCacheInPercent"`

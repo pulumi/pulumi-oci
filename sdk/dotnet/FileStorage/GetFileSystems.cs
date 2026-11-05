@@ -17,7 +17,6 @@ namespace Pulumi.Oci.FileStorage
         /// Lists the file system resources in the specified compartment, or by the specified compartment and
         /// file system snapshot policy.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -52,7 +51,6 @@ namespace Pulumi.Oci.FileStorage
         /// Lists the file system resources in the specified compartment, or by the specified compartment and
         /// file system snapshot policy.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -86,7 +84,6 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// Lists the file system resources in the specified compartment, or by the specified compartment and
         /// file system snapshot policy.
-        /// 
         /// 
         /// ## Example Usage
         /// 

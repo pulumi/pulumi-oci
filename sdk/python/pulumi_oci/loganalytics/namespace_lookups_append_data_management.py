@@ -409,6 +409,24 @@ class NamespaceLookupsAppendDataManagement(pulumi.CustomResource):
         __props__.__dict__["namespace"] = namespace
         return NamespaceLookupsAppendDataManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            append_lookup_file: pulumi.Input[Optional[_builtins.str]] = None,
+            char_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+            expect: pulumi.Input[Optional[_builtins.str]] = None,
+            is_force: pulumi.Input[Optional[_builtins.bool]] = None,
+            lookup_name: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["appendLookupFile"] = append_lookup_file
+        __props__["charEncoding"] = char_encoding
+        __props__["expect"] = expect
+        __props__["isForce"] = is_force
+        __props__["lookupName"] = lookup_name
+        __props__["namespace"] = namespace
+        return pulumi.runtime.exists_resource(None, 'oci:LogAnalytics/namespaceLookupsAppendDataManagement:NamespaceLookupsAppendDataManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="appendLookupFile")
     def append_lookup_file(self) -> pulumi.Output[_builtins.str]:

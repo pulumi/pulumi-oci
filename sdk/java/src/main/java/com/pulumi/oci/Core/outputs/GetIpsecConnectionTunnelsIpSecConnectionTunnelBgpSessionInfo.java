@@ -16,11 +16,10 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo 
      */
     private String bgpIpv6State;
     /**
-     * @deprecated
-     * The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
+     * @deprecated The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
      * 
      */
-    @Deprecated /* The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead. */
+    @Deprecated
     private String bgpIpv6state;
     /**
      * @return The state of the BGP session.
@@ -67,11 +66,10 @@ public final class GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfo 
         return this.bgpIpv6State;
     }
     /**
-     * @deprecated
-     * The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
+     * @deprecated The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
      * 
      */
-    @Deprecated /* The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead. */
+    @Deprecated
     public String bgpIpv6state() {
         return this.bgpIpv6state;
     }

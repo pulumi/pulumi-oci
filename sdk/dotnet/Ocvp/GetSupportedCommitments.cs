@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Ocvp
         /// 
         /// Lists supported Commitments.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Ocvp
         /// 
         /// Lists supported Commitments.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.Ocvp
         /// This data source provides the list of Supported Commitments in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
         /// 
         /// Lists supported Commitments.
-        /// 
         /// 
         /// ## Example Usage
         /// 

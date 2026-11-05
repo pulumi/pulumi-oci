@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Zpr
         /// Retrieves the ZPR configuration details for the root compartment (the root compartment is the tenancy).
         /// Returns ZPR configuration for root compartment (the root compartment is the tenancy).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Zpr
         /// Retrieves the ZPR configuration details for the root compartment (the root compartment is the tenancy).
         /// Returns ZPR configuration for root compartment (the root compartment is the tenancy).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -72,7 +70,6 @@ namespace Pulumi.Oci.Zpr
         /// 
         /// Retrieves the ZPR configuration details for the root compartment (the root compartment is the tenancy).
         /// Returns ZPR configuration for root compartment (the root compartment is the tenancy).
-        /// 
         /// 
         /// ## Example Usage
         /// 

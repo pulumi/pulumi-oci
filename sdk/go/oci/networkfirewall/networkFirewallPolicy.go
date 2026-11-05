@@ -188,6 +188,12 @@ func (NetworkFirewallPolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkFirewallPolicyState)(nil)).Elem()
 }
 
+// NetworkFirewallPolicyExists checks whether an existing NetworkFirewallPolicy resource with the given ID exists.
+func NetworkFirewallPolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkFirewallPolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:NetworkFirewall/networkFirewallPolicy:NetworkFirewallPolicy", id, state, "", opts...)
+}
+
 type networkFirewallPolicyArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the NetworkFirewall Policy.
 	CompartmentId string `pulumi:"compartmentId"`

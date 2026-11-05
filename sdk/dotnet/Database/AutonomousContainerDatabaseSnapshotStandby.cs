@@ -62,8 +62,7 @@ namespace Pulumi.Oci.Database
         public Output<string> ConnectionStringsType { get; private set; } = null!;
 
         /// <summary>
-        /// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled. 
-        /// 
+        /// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -130,8 +129,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? ConnectionStringsType { get; set; }
 
         /// <summary>
-        /// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled. 
-        /// 
+        /// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -160,8 +158,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? ConnectionStringsType { get; set; }
 
         /// <summary>
-        /// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled. 
-        /// 
+        /// The Data Guard role of the Autonomous Container Database or Autonomous AI Database, if Autonomous Data Guard is enabled.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

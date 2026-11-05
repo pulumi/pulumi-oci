@@ -218,6 +218,12 @@ func (JmsPluginState) ElementType() reflect.Type {
 	return reflect.TypeOf((*jmsPluginState)(nil)).Elem()
 }
 
+// JmsPluginExists checks whether an existing JmsPlugin resource with the given ID exists.
+func JmsPluginExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *JmsPluginState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Jms/jmsPlugin:JmsPlugin", id, state, "", opts...)
+}
+
 type jmsPluginArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent (OMA), the Oracle Cloud Agent (OCA),  or the Oracle Container Management Agent (OCMA) instance where the JMS plugin is deployed.
 	AgentId string `pulumi:"agentId"`

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// Gets information about a provisioned capacity.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// Gets information about a provisioned capacity.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// This data source provides details about a specific Provisioned Capacity resource in Oracle Cloud Infrastructure Generative Ai Agent service.
         /// 
         /// Gets information about a provisioned capacity.
-        /// 
         /// 
         /// ## Example Usage
         /// 

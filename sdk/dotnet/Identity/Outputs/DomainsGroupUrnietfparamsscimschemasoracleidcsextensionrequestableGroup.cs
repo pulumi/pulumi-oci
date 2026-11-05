@@ -29,7 +29,6 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * type: boolean
         /// * uniqueness: none
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

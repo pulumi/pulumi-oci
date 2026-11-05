@@ -317,6 +317,20 @@ class VolumeBackupPolicyAssignment(pulumi.CustomResource):
         __props__.__dict__["xrc_kms_key_id"] = xrc_kms_key_id
         return VolumeBackupPolicyAssignment(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            xrc_kms_key_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["assetId"] = asset_id
+        __props__["policyId"] = policy_id
+        __props__["timeCreated"] = time_created
+        __props__["xrcKmsKeyId"] = xrc_kms_key_id
+        return pulumi.runtime.exists_resource(None, 'oci:Core/volumeBackupPolicyAssignment:VolumeBackupPolicyAssignment', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="assetId")
     def asset_id(self) -> pulumi.Output[_builtins.str]:

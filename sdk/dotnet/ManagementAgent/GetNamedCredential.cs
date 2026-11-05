@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// Get Named credential details for given Id and given Management Agent.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// Get Named credential details for given Id and given Management Agent.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// This data source provides details about a specific Named Credential resource in Oracle Cloud Infrastructure Management Agent service.
         /// 
         /// Get Named credential details for given Id and given Management Agent.
-        /// 
         /// 
         /// ## Example Usage
         /// 

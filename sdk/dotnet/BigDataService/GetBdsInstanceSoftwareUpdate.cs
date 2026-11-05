@@ -16,7 +16,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// Get the details of the software update of the given SoftwareUpdateId
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// Get the details of the software update of the given SoftwareUpdateId
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.BigDataService
         /// This data source provides details about a specific Bds Instance Software Update resource in Oracle Cloud Infrastructure Big Data Service service.
         /// 
         /// Get the details of the software update of the given SoftwareUpdateId
-        /// 
         /// 
         /// ## Example Usage
         /// 

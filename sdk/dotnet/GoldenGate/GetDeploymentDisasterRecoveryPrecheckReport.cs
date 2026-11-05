@@ -16,7 +16,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Returns DR precheck report for a standby peer with the specified placement (availabilityDomain and faultDomain).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Returns DR precheck report for a standby peer with the specified placement (availabilityDomain and faultDomain).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.GoldenGate
         /// This data source provides details about a specific Deployment Disaster Recovery Precheck Report resource in Oracle Cloud Infrastructure Golden Gate service.
         /// 
         /// Returns DR precheck report for a standby peer with the specified placement (availabilityDomain and faultDomain).
-        /// 
         /// 
         /// ## Example Usage
         /// 

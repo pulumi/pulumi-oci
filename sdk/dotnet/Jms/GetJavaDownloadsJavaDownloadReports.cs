@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Returns a list of JavaDownloadReports.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Returns a list of JavaDownloadReports.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.Jms
         /// This data source provides the list of Java Download Reports in Oracle Cloud Infrastructure Jms Java Downloads service.
         /// 
         /// Returns a list of JavaDownloadReports.
-        /// 
         /// 
         /// ## Example Usage
         /// 

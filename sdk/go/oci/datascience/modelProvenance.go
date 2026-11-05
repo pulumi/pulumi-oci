@@ -156,6 +156,12 @@ func (ModelProvenanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*modelProvenanceState)(nil)).Elem()
 }
 
+// ModelProvenanceExists checks whether an existing ModelProvenance resource with the given ID exists.
+func ModelProvenanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ModelProvenanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataScience/modelProvenance:ModelProvenance", id, state, "", opts...)
+}
+
 type modelProvenanceArgs struct {
 	// (Updatable) For model reproducibility purposes. Branch of the git repository associated with model training.
 	GitBranch *string `pulumi:"gitBranch"`

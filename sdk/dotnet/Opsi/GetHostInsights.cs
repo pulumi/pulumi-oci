@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Opsi
         /// Gets a list of host insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
         /// When both compartmentId and compartmentIdInSubtree are specified, a list of host insights in that compartment and in all sub-compartments will be returned.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -52,7 +51,6 @@ namespace Pulumi.Oci.Opsi
         /// Gets a list of host insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
         /// When both compartmentId and compartmentIdInSubtree are specified, a list of host insights in that compartment and in all sub-compartments will be returned.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -86,7 +84,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// Gets a list of host insights based on the query parameters specified. Either compartmentId or id query parameter must be specified.
         /// When both compartmentId and compartmentIdInSubtree are specified, a list of host insights in that compartment and in all sub-compartments will be returned.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -191,6 +191,12 @@ func (ResponderRecipeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*responderRecipeState)(nil)).Elem()
 }
 
+// ResponderRecipeExists checks whether an existing ResponderRecipe resource with the given ID exists.
+func ResponderRecipeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ResponderRecipeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CloudGuard/responderRecipe:ResponderRecipe", id, state, "", opts...)
+}
+
 type responderRecipeArgs struct {
 	// (Updatable) Compartment OCID
 	CompartmentId string `pulumi:"compartmentId"`

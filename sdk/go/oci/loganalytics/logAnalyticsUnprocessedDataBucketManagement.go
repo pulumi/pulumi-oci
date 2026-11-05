@@ -140,6 +140,12 @@ func (LogAnalyticsUnprocessedDataBucketManagementState) ElementType() reflect.Ty
 	return reflect.TypeOf((*logAnalyticsUnprocessedDataBucketManagementState)(nil)).Elem()
 }
 
+// LogAnalyticsUnprocessedDataBucketManagementExists checks whether an existing LogAnalyticsUnprocessedDataBucketManagement resource with the given ID exists.
+func LogAnalyticsUnprocessedDataBucketManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogAnalyticsUnprocessedDataBucketManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LogAnalytics/logAnalyticsUnprocessedDataBucketManagement:LogAnalyticsUnprocessedDataBucketManagement", id, state, "", opts...)
+}
+
 type logAnalyticsUnprocessedDataBucketManagementArgs struct {
 	// Name of the Object Storage bucket. Bucket name can be obtained by running 'oci os bucket list --namespace-name <namespace> --compartment-id <compartment>'. The json output 'name' parameter value contains the bucket name.
 	Bucket string `pulumi:"bucket"`

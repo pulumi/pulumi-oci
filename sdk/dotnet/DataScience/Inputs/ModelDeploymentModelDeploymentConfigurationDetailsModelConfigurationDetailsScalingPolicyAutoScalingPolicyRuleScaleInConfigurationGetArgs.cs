@@ -31,11 +31,11 @@ namespace Pulumi.Oci.DataScience.Inputs
         /// 
         /// Example of threshold alarm:
         /// 
-        /// -----
+        /// ***
         /// 
         /// CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() &lt; 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() &gt; 75
         /// 
-        /// -----
+        /// ***
         /// </summary>
         [Input("query")]
         public Input<string>? Query { get; set; }

@@ -600,6 +600,38 @@ class Script(pulumi.CustomResource):
         __props__.__dict__["time_uploaded"] = time_uploaded
         return Script(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            content: pulumi.Input[Optional[_builtins.str]] = None,
+            content_file_name: pulumi.Input[Optional[_builtins.str]] = None,
+            content_size_in_bytes: pulumi.Input[Optional[_builtins.int]] = None,
+            content_type: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            monitor_status_count_maps: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScriptMonitorStatusCountMapArgs', 'ScriptMonitorStatusCountMapArgsDict', 'outputs.ScriptMonitorStatusCountMap']]]]] = None,
+            parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScriptParameterArgs', 'ScriptParameterArgsDict', 'outputs.ScriptParameter']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            time_uploaded: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["apmDomainId"] = apm_domain_id
+        __props__["content"] = content
+        __props__["contentFileName"] = content_file_name
+        __props__["contentSizeInBytes"] = content_size_in_bytes
+        __props__["contentType"] = content_type
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["monitorStatusCountMaps"] = monitor_status_count_maps
+        __props__["parameters"] = parameters
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["timeUploaded"] = time_uploaded
+        return pulumi.runtime.exists_resource(None, 'oci:ApmSynthetics/script:Script', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="apmDomainId")
     def apm_domain_id(self) -> pulumi.Output[_builtins.str]:

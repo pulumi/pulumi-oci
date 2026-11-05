@@ -117,6 +117,12 @@ func (ClusterStartCredentialRotationManagementState) ElementType() reflect.Type 
 	return reflect.TypeOf((*clusterStartCredentialRotationManagementState)(nil)).Elem()
 }
 
+// ClusterStartCredentialRotationManagementExists checks whether an existing ClusterStartCredentialRotationManagement resource with the given ID exists.
+func ClusterStartCredentialRotationManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ClusterStartCredentialRotationManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ContainerEngine/clusterStartCredentialRotationManagement:ClusterStartCredentialRotationManagement", id, state, "", opts...)
+}
+
 type clusterStartCredentialRotationManagementArgs struct {
 	// The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
 	AutoCompletionDelayDuration string `pulumi:"autoCompletionDelayDuration"`

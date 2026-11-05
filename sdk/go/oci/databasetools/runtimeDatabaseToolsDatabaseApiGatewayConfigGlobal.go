@@ -224,6 +224,12 @@ func (RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalState) ElementType() ref
 	return reflect.TypeOf((*runtimeDatabaseToolsDatabaseApiGatewayConfigGlobalState)(nil)).Elem()
 }
 
+// RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalExists checks whether an existing RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal resource with the given ID exists.
+func RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigGlobal:RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal", id, state, "", opts...)
+}
+
 type runtimeDatabaseToolsDatabaseApiGatewayConfigGlobalArgs struct {
 	// (Updatable) Advanced global properties.
 	AdvancedProperties map[string]string `pulumi:"advancedProperties"`

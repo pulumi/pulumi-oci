@@ -17,7 +17,6 @@ namespace Pulumi.Oci.CloudGuard
         /// Returns a list of security zone recipes (SecurityRecipeSummary resources) in a
         /// compartment, identified by compartmentId.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.CloudGuard
         /// Returns a list of security zone recipes (SecurityRecipeSummary resources) in a
         /// compartment, identified by compartmentId.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -78,7 +76,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// Returns a list of security zone recipes (SecurityRecipeSummary resources) in a
         /// compartment, identified by compartmentId.
-        /// 
         /// 
         /// ## Example Usage
         /// 

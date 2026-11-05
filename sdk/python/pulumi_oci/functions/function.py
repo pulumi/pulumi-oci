@@ -986,6 +986,54 @@ class Function(pulumi.CustomResource):
         __props__.__dict__["trace_config"] = trace_config
         return Function(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            detached_mode_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            failure_destination: pulumi.Input[Optional[Union['FunctionFailureDestinationArgs', 'FunctionFailureDestinationArgsDict', 'outputs.FunctionFailureDestination']]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            image: pulumi.Input[Optional[_builtins.str]] = None,
+            image_digest: pulumi.Input[Optional[_builtins.str]] = None,
+            invoke_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            memory_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+            provisioned_concurrency_config: pulumi.Input[Optional[Union['FunctionProvisionedConcurrencyConfigArgs', 'FunctionProvisionedConcurrencyConfigArgsDict', 'outputs.FunctionProvisionedConcurrencyConfig']]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            source_details: pulumi.Input[Optional[Union['FunctionSourceDetailsArgs', 'FunctionSourceDetailsArgsDict', 'outputs.FunctionSourceDetails']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            success_destination: pulumi.Input[Optional[Union['FunctionSuccessDestinationArgs', 'FunctionSuccessDestinationArgsDict', 'outputs.FunctionSuccessDestination']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            trace_config: pulumi.Input[Optional[Union['FunctionTraceConfigArgs', 'FunctionTraceConfigArgsDict', 'outputs.FunctionTraceConfig']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["applicationId"] = application_id
+        __props__["compartmentId"] = compartment_id
+        __props__["config"] = config
+        __props__["definedTags"] = defined_tags
+        __props__["detachedModeTimeoutInSeconds"] = detached_mode_timeout_in_seconds
+        __props__["displayName"] = display_name
+        __props__["failureDestination"] = failure_destination
+        __props__["freeformTags"] = freeform_tags
+        __props__["image"] = image
+        __props__["imageDigest"] = image_digest
+        __props__["invokeEndpoint"] = invoke_endpoint
+        __props__["memoryInMbs"] = memory_in_mbs
+        __props__["provisionedConcurrencyConfig"] = provisioned_concurrency_config
+        __props__["shape"] = shape
+        __props__["sourceDetails"] = source_details
+        __props__["state"] = state
+        __props__["successDestination"] = success_destination
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["timeoutInSeconds"] = timeout_in_seconds
+        __props__["traceConfig"] = trace_config
+        return pulumi.runtime.exists_resource(None, 'oci:Functions/function:Function', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="applicationId")
     def application_id(self) -> pulumi.Output[_builtins.str]:

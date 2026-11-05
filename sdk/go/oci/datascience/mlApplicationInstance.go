@@ -241,6 +241,12 @@ func (MlApplicationInstanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*mlApplicationInstanceState)(nil)).Elem()
 }
 
+// MlApplicationInstanceExists checks whether an existing MlApplicationInstance resource with the given ID exists.
+func MlApplicationInstanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MlApplicationInstanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataScience/mlApplicationInstance:MlApplicationInstance", id, state, "", opts...)
+}
+
 type mlApplicationInstanceArgs struct {
 	// AuthN/Z configuration for online prediction
 	AuthConfiguration *MlApplicationInstanceAuthConfiguration `pulumi:"authConfiguration"`

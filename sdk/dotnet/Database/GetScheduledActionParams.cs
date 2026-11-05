@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// List all the action params and their possible values for a given action type
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// List all the action params and their possible values for a given action type
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Scheduled Action Params in Oracle Cloud Infrastructure Database service.
         /// 
         /// List all the action params and their possible values for a given action type
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -694,6 +694,44 @@ class User(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return User(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            capabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UserCapabilityArgs', 'UserCapabilityArgsDict', 'outputs.UserCapability']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_user_name: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            email: pulumi.Input[Optional[_builtins.str]] = None,
+            email_verified: pulumi.Input[Optional[_builtins.bool]] = None,
+            external_identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            identity_provider_id: pulumi.Input[Optional[_builtins.str]] = None,
+            inactive_state: pulumi.Input[Optional[_builtins.str]] = None,
+            last_successful_login_time: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            previous_successful_login_time: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["capabilities"] = capabilities
+        __props__["compartmentId"] = compartment_id
+        __props__["dbUserName"] = db_user_name
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["email"] = email
+        __props__["emailVerified"] = email_verified
+        __props__["externalIdentifier"] = external_identifier
+        __props__["freeformTags"] = freeform_tags
+        __props__["identityProviderId"] = identity_provider_id
+        __props__["inactiveState"] = inactive_state
+        __props__["lastSuccessfulLoginTime"] = last_successful_login_time
+        __props__["name"] = name
+        __props__["previousSuccessfulLoginTime"] = previous_successful_login_time
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:Identity/user:User', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def capabilities(self) -> pulumi.Output[Sequence['outputs.UserCapability']]:

@@ -24,7 +24,6 @@ namespace Pulumi.Oci.AiLanguage.Outputs
         /// <summary>
         /// The prefix (directory) in an Object Storage bucket.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

@@ -994,6 +994,60 @@ class Pipeline(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return Pipeline(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ingress_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineIngressIpArgs', 'PipelineIngressIpArgsDict', 'outputs.PipelineIngressIp']]]]] = None,
+            is_auto_scaling_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            license_model: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_sub_state: pulumi.Input[Optional[_builtins.str]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineLockArgs', 'PipelineLockArgsDict', 'outputs.PipelineLock']]]]] = None,
+            mapping_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineMappingRuleArgs', 'PipelineMappingRuleArgsDict', 'outputs.PipelineMappingRule']]]]] = None,
+            pipeline_diagnostic_datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelinePipelineDiagnosticDataArgs', 'PipelinePipelineDiagnosticDataArgsDict', 'outputs.PipelinePipelineDiagnosticData']]]]] = None,
+            process_options: pulumi.Input[Optional[Union['PipelineProcessOptionsArgs', 'PipelineProcessOptionsArgsDict', 'outputs.PipelineProcessOptions']]] = None,
+            recipe_type: pulumi.Input[Optional[_builtins.str]] = None,
+            source_connection_details: pulumi.Input[Optional[Union['PipelineSourceConnectionDetailsArgs', 'PipelineSourceConnectionDetailsArgsDict', 'outputs.PipelineSourceConnectionDetails']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_connection_details: pulumi.Input[Optional[Union['PipelineTargetConnectionDetailsArgs', 'PipelineTargetConnectionDetailsArgsDict', 'outputs.PipelineTargetConnectionDetails']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_recorded: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["cpuCoreCount"] = cpu_core_count
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["ingressIps"] = ingress_ips
+        __props__["isAutoScalingEnabled"] = is_auto_scaling_enabled
+        __props__["licenseModel"] = license_model
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["lifecycleSubState"] = lifecycle_sub_state
+        __props__["locks"] = locks
+        __props__["mappingRules"] = mapping_rules
+        __props__["pipelineDiagnosticDatas"] = pipeline_diagnostic_datas
+        __props__["processOptions"] = process_options
+        __props__["recipeType"] = recipe_type
+        __props__["sourceConnectionDetails"] = source_connection_details
+        __props__["state"] = state
+        __props__["subnetId"] = subnet_id
+        __props__["systemTags"] = system_tags
+        __props__["targetConnectionDetails"] = target_connection_details
+        __props__["timeCreated"] = time_created
+        __props__["timeLastRecorded"] = time_last_recorded
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:GoldenGate/pipeline:Pipeline', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

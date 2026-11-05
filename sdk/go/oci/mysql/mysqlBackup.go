@@ -277,6 +277,12 @@ func (MysqlBackupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*mysqlBackupState)(nil)).Elem()
 }
 
+// MysqlBackupExists checks whether an existing MysqlBackup resource with the given ID exists.
+func MysqlBackupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MysqlBackupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Mysql/mysqlBackup:MysqlBackup", id, state, "", opts...)
+}
+
 type mysqlBackupArgs struct {
 	// The type of backup.
 	BackupType *string `pulumi:"backupType"`

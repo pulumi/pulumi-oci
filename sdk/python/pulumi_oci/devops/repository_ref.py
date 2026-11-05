@@ -436,6 +436,28 @@ class RepositoryRef(pulumi.CustomResource):
         __props__.__dict__["repository_id"] = repository_id
         return RepositoryRef(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            commit_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            full_ref_name: pulumi.Input[Optional[_builtins.str]] = None,
+            object_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ref_name: pulumi.Input[Optional[_builtins.str]] = None,
+            ref_type: pulumi.Input[Optional[_builtins.str]] = None,
+            repository_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["commitId"] = commit_id
+        __props__["definedTags"] = defined_tags
+        __props__["freeformTags"] = freeform_tags
+        __props__["fullRefName"] = full_ref_name
+        __props__["objectId"] = object_id
+        __props__["refName"] = ref_name
+        __props__["refType"] = ref_type
+        __props__["repositoryId"] = repository_id
+        return pulumi.runtime.exists_resource(None, 'oci:DevOps/repositoryRef:RepositoryRef', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="commitId")
     def commit_id(self) -> pulumi.Output[_builtins.str]:

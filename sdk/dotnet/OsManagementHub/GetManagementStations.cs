@@ -14,9 +14,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Management Stations in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists management stations within the specified compartment. Filter the list against a variety of criteria 
+        /// Lists management stations within the specified compartment. Filter the list against a variety of criteria
         /// including but not limited to name, status, and location.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -50,9 +49,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Management Stations in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists management stations within the specified compartment. Filter the list against a variety of criteria 
+        /// Lists management stations within the specified compartment. Filter the list against a variety of criteria
         /// including but not limited to name, status, and location.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -86,9 +84,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Management Stations in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists management stations within the specified compartment. Filter the list against a variety of criteria 
+        /// Lists management stations within the specified compartment. Filter the list against a variety of criteria
         /// including but not limited to name, status, and location.
-        /// 
         /// 
         /// ## Example Usage
         /// 

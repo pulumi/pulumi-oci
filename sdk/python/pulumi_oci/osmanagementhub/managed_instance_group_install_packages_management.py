@@ -324,6 +324,20 @@ class ManagedInstanceGroupInstallPackagesManagement(pulumi.CustomResource):
         __props__.__dict__["work_request_details"] = work_request_details
         return ManagedInstanceGroupInstallPackagesManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            is_latest: pulumi.Input[Optional[_builtins.bool]] = None,
+            managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            package_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupInstallPackagesManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceGroupInstallPackagesManagementWorkRequestDetails']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["isLatest"] = is_latest
+        __props__["managedInstanceGroupId"] = managed_instance_group_id
+        __props__["packageNames"] = package_names
+        __props__["workRequestDetails"] = work_request_details
+        return pulumi.runtime.exists_resource(None, 'oci:OsManagementHub/managedInstanceGroupInstallPackagesManagement:ManagedInstanceGroupInstallPackagesManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="isLatest")
     def is_latest(self) -> pulumi.Output[_builtins.bool]:

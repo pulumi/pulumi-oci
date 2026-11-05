@@ -390,6 +390,12 @@ func (NodePoolState) ElementType() reflect.Type {
 	return reflect.TypeOf((*nodePoolState)(nil)).Elem()
 }
 
+// NodePoolExists checks whether an existing NodePool resource with the given ID exists.
+func NodePoolExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NodePoolState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ContainerEngine/nodePool:NodePool", id, state, "", opts...)
+}
+
 type nodePoolArgs struct {
 	// The OCID of the cluster to which this node pool is attached.
 	ClusterId string `pulumi:"clusterId"`

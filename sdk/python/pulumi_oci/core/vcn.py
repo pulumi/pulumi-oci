@@ -1011,6 +1011,52 @@ class Vcn(pulumi.CustomResource):
         __props__.__dict__["vcn_domain_name"] = vcn_domain_name
         return Vcn(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            byoipv6cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            byoipv6cidr_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VcnByoipv6cidrDetailArgs', 'VcnByoipv6cidrDetailArgsDict', 'outputs.VcnByoipv6cidrDetail']]]]] = None,
+            cidr_block: pulumi.Input[Optional[_builtins.str]] = None,
+            cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            default_dhcp_options_id: pulumi.Input[Optional[_builtins.str]] = None,
+            default_route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+            default_security_list_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dns_label: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ipv6cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ipv6private_cidr_blocks: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            is_ipv6enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_oracle_gua_allocation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            vcn_domain_name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["byoipv6cidrBlocks"] = byoipv6cidr_blocks
+        __props__["byoipv6cidrDetails"] = byoipv6cidr_details
+        __props__["cidrBlock"] = cidr_block
+        __props__["cidrBlocks"] = cidr_blocks
+        __props__["compartmentId"] = compartment_id
+        __props__["defaultDhcpOptionsId"] = default_dhcp_options_id
+        __props__["defaultRouteTableId"] = default_route_table_id
+        __props__["defaultSecurityListId"] = default_security_list_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["dnsLabel"] = dns_label
+        __props__["freeformTags"] = freeform_tags
+        __props__["ipv6cidrBlocks"] = ipv6cidr_blocks
+        __props__["ipv6privateCidrBlocks"] = ipv6private_cidr_blocks
+        __props__["isIpv6enabled"] = is_ipv6enabled
+        __props__["isOracleGuaAllocationEnabled"] = is_oracle_gua_allocation_enabled
+        __props__["securityAttributes"] = security_attributes
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["vcnDomainName"] = vcn_domain_name
+        return pulumi.runtime.exists_resource(None, 'oci:Core/vcn:Vcn', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="byoipv6cidrBlocks")
     def byoipv6cidr_blocks(self) -> pulumi.Output[Sequence[_builtins.str]]:

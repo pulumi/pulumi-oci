@@ -784,6 +784,12 @@ func (DomainsApprovalWorkflowStepState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsApprovalWorkflowStepState)(nil)).Elem()
 }
 
+// DomainsApprovalWorkflowStepExists checks whether an existing DomainsApprovalWorkflowStep resource with the given ID exists.
+func DomainsApprovalWorkflowStepExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsApprovalWorkflowStepState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsApprovalWorkflowStep:DomainsApprovalWorkflowStep", id, state, "", opts...)
+}
+
 type domainsApprovalWorkflowStepArgs struct {
 	// Approvers of the ApprovalWorkflowStep.
 	//

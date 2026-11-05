@@ -485,6 +485,12 @@ func (ExadbVmClusterState) ElementType() reflect.Type {
 	return reflect.TypeOf((*exadbVmClusterState)(nil)).Elem()
 }
 
+// ExadbVmClusterExists checks whether an existing ExadbVmCluster resource with the given ID exists.
+func ExadbVmClusterExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExadbVmClusterState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/exadbVmCluster:ExadbVmCluster", id, state, "", opts...)
+}
+
 type exadbVmClusterArgs struct {
 	// The name of the availability domain in which the Exadata VM cluster on Exascale Infrastructure is located.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`

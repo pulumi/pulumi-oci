@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// Gets the object lifecycle policy for the bucket.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// Gets the object lifecycle policy for the bucket.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// This data source provides details about a specific Object Lifecycle Policy resource in Oracle Cloud Infrastructure Object Storage service.
         /// 
         /// Gets the object lifecycle policy for the bucket.
-        /// 
         /// 
         /// ## Example Usage
         /// 

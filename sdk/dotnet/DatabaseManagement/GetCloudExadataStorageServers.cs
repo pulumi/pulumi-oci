@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Lists the Exadata storage servers for the specified Exadata infrastructure.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Lists the Exadata storage servers for the specified Exadata infrastructure.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides the list of Cloud Exadata Storage Servers in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Lists the Exadata storage servers for the specified Exadata infrastructure.
-        /// 
         /// 
         /// ## Example Usage
         /// 

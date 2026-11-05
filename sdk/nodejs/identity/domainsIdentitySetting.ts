@@ -36,6 +36,17 @@ export class DomainsIdentitySetting extends pulumi.CustomResource {
         return new DomainsIdentitySetting(name, <any>state, { ...opts, id: id });
     }
 
+    /**
+     * Check whether an existing DomainsIdentitySetting resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: DomainsIdentitySettingState, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("oci:Identity/domainsIdentitySetting:DomainsIdentitySetting", id, <any>state || {}, { ...opts }, undefined);
+    }
+
     /** @internal */
     public static readonly __pulumiType = 'oci:Identity/domainsIdentitySetting:DomainsIdentitySetting';
 

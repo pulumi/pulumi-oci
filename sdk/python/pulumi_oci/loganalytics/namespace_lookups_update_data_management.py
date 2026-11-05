@@ -409,6 +409,24 @@ class NamespaceLookupsUpdateDataManagement(pulumi.CustomResource):
         __props__.__dict__["update_lookup_file"] = update_lookup_file
         return NamespaceLookupsUpdateDataManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            char_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+            expect: pulumi.Input[Optional[_builtins.str]] = None,
+            is_force: pulumi.Input[Optional[_builtins.bool]] = None,
+            lookup_name: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            update_lookup_file: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["charEncoding"] = char_encoding
+        __props__["expect"] = expect
+        __props__["isForce"] = is_force
+        __props__["lookupName"] = lookup_name
+        __props__["namespace"] = namespace
+        __props__["updateLookupFile"] = update_lookup_file
+        return pulumi.runtime.exists_resource(None, 'oci:LogAnalytics/namespaceLookupsUpdateDataManagement:NamespaceLookupsUpdateDataManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="charEncoding")
     def char_encoding(self) -> pulumi.Output[_builtins.str]:

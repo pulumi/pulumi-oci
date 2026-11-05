@@ -875,11 +875,10 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
-     * @deprecated
-     * The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
+     * @deprecated The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
      * 
      */
-    @Deprecated /* The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead. */
+    @Deprecated
     @Import(name="isShrinkOnly")
     private @Nullable Output<Boolean> isShrinkOnly;
 
@@ -889,11 +888,10 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
-     * @deprecated
-     * The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
+     * @deprecated The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
      * 
      */
-    @Deprecated /* The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead. */
+    @Deprecated
     public Optional<Output<Boolean>> isShrinkOnly() {
         return Optional.ofNullable(this.isShrinkOnly);
     }
@@ -2936,11 +2934,10 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
+         * @deprecated The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
          * 
          */
-        @Deprecated /* The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead. */
+        @Deprecated
         public Builder isShrinkOnly(@Nullable Output<Boolean> isShrinkOnly) {
             $.isShrinkOnly = isShrinkOnly;
             return this;
@@ -2954,11 +2951,10 @@ public final class AutonomousDatabaseArgs extends com.pulumi.resources.ResourceA
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
+         * @deprecated The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
          * 
          */
-        @Deprecated /* The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead. */
+        @Deprecated
         public Builder isShrinkOnly(Boolean isShrinkOnly) {
             return isShrinkOnly(Output.of(isShrinkOnly));
         }

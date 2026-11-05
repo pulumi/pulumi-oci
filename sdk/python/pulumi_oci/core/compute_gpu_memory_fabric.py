@@ -731,6 +731,60 @@ class ComputeGpuMemoryFabric(pulumi.CustomResource):
         __props__.__dict__["total_host_count"] = total_host_count
         return ComputeGpuMemoryFabric(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            additional_data: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            available_host_count: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_gpu_memory_clusters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            compute_gpu_memory_fabric_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_hpc_island_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_local_block_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_network_block_id: pulumi.Input[Optional[_builtins.str]] = None,
+            current_firmware_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            fabric_health: pulumi.Input[Optional[_builtins.str]] = None,
+            firmware_update_reason: pulumi.Input[Optional[_builtins.str]] = None,
+            firmware_update_state: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            healthy_host_count: pulumi.Input[Optional[_builtins.str]] = None,
+            host_platform_name: pulumi.Input[Optional[_builtins.str]] = None,
+            memory_fabric_preferences: pulumi.Input[Optional[Union['ComputeGpuMemoryFabricMemoryFabricPreferencesArgs', 'ComputeGpuMemoryFabricMemoryFabricPreferencesArgsDict', 'outputs.ComputeGpuMemoryFabricMemoryFabricPreferences']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            switch_platform_name: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_firmware_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            total_host_count: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["additionalData"] = additional_data
+        __props__["availableHostCount"] = available_host_count
+        __props__["compartmentId"] = compartment_id
+        __props__["computeGpuMemoryClusters"] = compute_gpu_memory_clusters
+        __props__["computeGpuMemoryFabricId"] = compute_gpu_memory_fabric_id
+        __props__["computeHpcIslandId"] = compute_hpc_island_id
+        __props__["computeLocalBlockId"] = compute_local_block_id
+        __props__["computeNetworkBlockId"] = compute_network_block_id
+        __props__["currentFirmwareBundleId"] = current_firmware_bundle_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["fabricHealth"] = fabric_health
+        __props__["firmwareUpdateReason"] = firmware_update_reason
+        __props__["firmwareUpdateState"] = firmware_update_state
+        __props__["freeformTags"] = freeform_tags
+        __props__["healthyHostCount"] = healthy_host_count
+        __props__["hostPlatformName"] = host_platform_name
+        __props__["memoryFabricPreferences"] = memory_fabric_preferences
+        __props__["state"] = state
+        __props__["switchPlatformName"] = switch_platform_name
+        __props__["systemTags"] = system_tags
+        __props__["targetFirmwareBundleId"] = target_firmware_bundle_id
+        __props__["timeCreated"] = time_created
+        __props__["totalHostCount"] = total_host_count
+        return pulumi.runtime.exists_resource(None, 'oci:Core/computeGpuMemoryFabric:ComputeGpuMemoryFabric', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="additionalData")
     def additional_data(self) -> pulumi.Output[Mapping[str, _builtins.str]]:

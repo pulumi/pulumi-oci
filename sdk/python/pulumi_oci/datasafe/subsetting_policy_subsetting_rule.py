@@ -541,6 +541,30 @@ class SubsettingPolicySubsettingRule(pulumi.CustomResource):
         __props__.__dict__["subsetting_policy_id"] = subsetting_policy_id
         return SubsettingPolicySubsettingRule(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_tables_action: pulumi.Input[Optional[_builtins.str]] = None,
+            related_tables_propagation: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_combination_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[Union['SubsettingPolicySubsettingRuleScopeArgs', 'SubsettingPolicySubsettingRuleScopeArgsDict', 'outputs.SubsettingPolicySubsettingRuleScope']]] = None,
+            subset_rule_entry: pulumi.Input[Optional[Union['SubsettingPolicySubsettingRuleSubsetRuleEntryArgs', 'SubsettingPolicySubsettingRuleSubsetRuleEntryArgsDict', 'outputs.SubsettingPolicySubsettingRuleSubsetRuleEntry']]] = None,
+            subsetting_policy_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["key"] = key
+        __props__["peerTablesAction"] = peer_tables_action
+        __props__["relatedTablesPropagation"] = related_tables_propagation
+        __props__["ruleCombinationMode"] = rule_combination_mode
+        __props__["scope"] = scope
+        __props__["subsetRuleEntry"] = subset_rule_entry
+        __props__["subsettingPolicyId"] = subsetting_policy_id
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/subsettingPolicySubsettingRule:SubsettingPolicySubsettingRule', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Output[_builtins.str]:

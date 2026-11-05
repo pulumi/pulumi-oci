@@ -343,6 +343,12 @@ func (MysqlConfigurationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*mysqlConfigurationState)(nil)).Elem()
 }
 
+// MysqlConfigurationExists checks whether an existing MysqlConfiguration resource with the given ID exists.
+func MysqlConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MysqlConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Mysql/mysqlConfiguration:MysqlConfiguration", id, state, "", opts...)
+}
+
 type mysqlConfigurationArgs struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

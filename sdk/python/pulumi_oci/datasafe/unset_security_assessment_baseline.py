@@ -255,6 +255,16 @@ class UnsetSecurityAssessmentBaseline(pulumi.CustomResource):
         __props__.__dict__["target_ids"] = target_ids
         return UnsetSecurityAssessmentBaseline(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            target_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["securityAssessmentId"] = security_assessment_id
+        __props__["targetIds"] = target_ids
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/unsetSecurityAssessmentBaseline:UnsetSecurityAssessmentBaseline', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="securityAssessmentId")
     def security_assessment_id(self) -> pulumi.Output[_builtins.str]:

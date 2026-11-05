@@ -62,14 +62,14 @@ public final class AutonomousDatabaseSaasAdminUserState extends com.pulumi.resou
     }
 
     /**
-     * A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash).
+     * A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), &#92;# (hashtag), or - (dash).
      * 
      */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
-     * @return A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash).
+     * @return A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), &#92;# (hashtag), or - (dash).
      * 
      */
     public Optional<Output<String>> password() {
@@ -221,7 +221,7 @@ public final class AutonomousDatabaseSaasAdminUserState extends com.pulumi.resou
         }
 
         /**
-         * @param password A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash).
+         * @param password A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), &#92;# (hashtag), or - (dash).
          * 
          * @return builder
          * 
@@ -232,7 +232,7 @@ public final class AutonomousDatabaseSaasAdminUserState extends com.pulumi.resou
         }
 
         /**
-         * @param password A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), \# (hashtag), or - (dash).
+         * @param password A strong password for SaaS administrative user. The password must be a minimum of nine (9) characters and contain a minimum of two (2) uppercase, two (2) lowercase, two (2) numbers, and two (2) special characters from _ (underscore), &#92;# (hashtag), or - (dash).
          * 
          * @return builder
          * 

@@ -219,6 +219,12 @@ func (ProcessorJobState) ElementType() reflect.Type {
 	return reflect.TypeOf((*processorJobState)(nil)).Elem()
 }
 
+// ProcessorJobExists checks whether an existing ProcessorJob resource with the given ID exists.
+func ProcessorJobExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProcessorJobState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:AiDocument/processorJob:ProcessorJob", id, state, "", opts...)
+}
+
 type processorJobArgs struct {
 	// The compartment identifier.
 	CompartmentId string `pulumi:"compartmentId"`

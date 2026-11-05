@@ -184,6 +184,12 @@ func (GenericArtifactState) ElementType() reflect.Type {
 	return reflect.TypeOf((*genericArtifactState)(nil)).Elem()
 }
 
+// GenericArtifactExists checks whether an existing GenericArtifact resource with the given ID exists.
+func GenericArtifactExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GenericArtifactState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Artifacts/genericArtifact:GenericArtifact", id, state, "", opts...)
+}
+
 type genericArtifactArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the artifact.  Example: `ocid1.genericartifact.oc1..exampleuniqueID`
 	ArtifactId string `pulumi:"artifactId"`

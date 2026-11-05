@@ -40,7 +40,6 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// <summary>
         /// (Updatable) Whether to enable Hybrid search in service managed OpenSearch.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

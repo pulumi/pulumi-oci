@@ -254,6 +254,12 @@ func (DbmulticloudOracleDbGcpIdentityConnectorState) ElementType() reflect.Type 
 	return reflect.TypeOf((*dbmulticloudOracleDbGcpIdentityConnectorState)(nil)).Elem()
 }
 
+// DbmulticloudOracleDbGcpIdentityConnectorExists checks whether an existing DbmulticloudOracleDbGcpIdentityConnector resource with the given ID exists.
+func DbmulticloudOracleDbGcpIdentityConnectorExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DbmulticloudOracleDbGcpIdentityConnectorState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/dbmulticloudOracleDbGcpIdentityConnector:DbmulticloudOracleDbGcpIdentityConnector", id, state, "", opts...)
+}
+
 type dbmulticloudOracleDbGcpIdentityConnectorArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the Oracle DB GCP Identity Connector resource.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -228,6 +228,12 @@ func (OperationsInsightsWarehouseState) ElementType() reflect.Type {
 	return reflect.TypeOf((*operationsInsightsWarehouseState)(nil)).Elem()
 }
 
+// OperationsInsightsWarehouseExists checks whether an existing OperationsInsightsWarehouse resource with the given ID exists.
+func OperationsInsightsWarehouseExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OperationsInsightsWarehouseState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Opsi/operationsInsightsWarehouse:OperationsInsightsWarehouse", id, state, "", opts...)
+}
+
 type operationsInsightsWarehouseArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

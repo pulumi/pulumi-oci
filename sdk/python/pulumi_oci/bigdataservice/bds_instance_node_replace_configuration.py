@@ -513,6 +513,32 @@ class BdsInstanceNodeReplaceConfiguration(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return BdsInstanceNodeReplaceConfiguration(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            duration_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+            level_type_details: pulumi.Input[Optional[Union['BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgs', 'BdsInstanceNodeReplaceConfigurationLevelTypeDetailsArgsDict', 'outputs.BdsInstanceNodeReplaceConfigurationLevelTypeDetails']]] = None,
+            metric_type: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["bdsInstanceId"] = bds_instance_id
+        __props__["clusterAdminPassword"] = cluster_admin_password
+        __props__["displayName"] = display_name
+        __props__["durationInMinutes"] = duration_in_minutes
+        __props__["levelTypeDetails"] = level_type_details
+        __props__["metricType"] = metric_type
+        __props__["secretId"] = secret_id
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:BigDataService/bdsInstanceNodeReplaceConfiguration:BdsInstanceNodeReplaceConfiguration', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="bdsInstanceId")
     def bds_instance_id(self) -> pulumi.Output[_builtins.str]:

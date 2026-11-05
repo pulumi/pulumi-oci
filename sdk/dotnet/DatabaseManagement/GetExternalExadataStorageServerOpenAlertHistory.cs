@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the open alerts from the specified Exadata storage server.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the open alerts from the specified Exadata storage server.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides details about a specific External Exadata Storage Server Open Alert History resource in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Gets the open alerts from the specified Exadata storage server.
-        /// 
         /// 
         /// ## Example Usage
         /// 

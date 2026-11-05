@@ -219,6 +219,12 @@ func (IotDigitalTwinInstanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iotDigitalTwinInstanceState)(nil)).Elem()
 }
 
+// IotDigitalTwinInstanceExists checks whether an existing IotDigitalTwinInstance resource with the given ID exists.
+func IotDigitalTwinInstanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IotDigitalTwinInstanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/iotDigitalTwinInstance:IotDigitalTwinInstance", id, state, "", opts...)
+}
+
 type iotDigitalTwinInstanceArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource (like VaultSecret, ClientCertificate etc.,) used to authenticate the digital twin instance.
 	AuthId *string `pulumi:"authId"`

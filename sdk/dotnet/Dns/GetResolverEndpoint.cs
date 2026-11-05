@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Dns
         /// Note that attempting to get a resolver endpoint in the DELETED lifecycle state will result
         /// in a `404` response to be consistent with other operations of the API.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.Dns
         /// Note that attempting to get a resolver endpoint in the DELETED lifecycle state will result
         /// in a `404` response to be consistent with other operations of the API.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -82,7 +80,6 @@ namespace Pulumi.Oci.Dns
         /// 
         /// Note that attempting to get a resolver endpoint in the DELETED lifecycle state will result
         /// in a `404` response to be consistent with other operations of the API.
-        /// 
         /// 
         /// ## Example Usage
         /// 

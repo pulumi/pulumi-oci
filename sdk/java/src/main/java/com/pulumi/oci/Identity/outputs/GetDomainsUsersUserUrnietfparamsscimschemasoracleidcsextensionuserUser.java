@@ -52,7 +52,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
      */
     private String creationMechanism;
     /**
-     * @return If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
+     * @return If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s &#92;&#34;syncedFromApp&#92;&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
      * 
      */
     private List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp> delegatedAuthenticationTargetApps;
@@ -191,7 +191,7 @@ public final class GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensio
         return this.creationMechanism;
     }
     /**
-     * @return If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s \&#34;syncedFromApp\&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
+     * @return If set, indicates the user&#39;s preferred authentication target app. If not set and the user&#39;s &#92;&#34;syncedFromApp&#92;&#34; is set and is enabled for delegated authentication, it is used. Otherwise, the user authenticates locally to Oracle Identity Cloud Service.
      * 
      */
     public List<GetDomainsUsersUserUrnietfparamsscimschemasoracleidcsextensionuserUserDelegatedAuthenticationTargetApp> delegatedAuthenticationTargetApps() {

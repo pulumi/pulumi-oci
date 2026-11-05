@@ -246,6 +246,12 @@ func (QueueState) ElementType() reflect.Type {
 	return reflect.TypeOf((*queueState)(nil)).Elem()
 }
 
+// QueueExists checks whether an existing Queue resource with the given ID exists.
+func QueueExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *QueueState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Queue/queue:Queue", id, state, "", opts...)
+}
+
 type queueArgs struct {
 	// (Updatable) The capability to add on the queue
 	Capabilities []QueueCapability `pulumi:"capabilities"`

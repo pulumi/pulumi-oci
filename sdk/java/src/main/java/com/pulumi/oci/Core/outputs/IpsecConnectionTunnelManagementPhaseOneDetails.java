@@ -59,11 +59,10 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetails {
      */
     private @Nullable String negotiatedEncryptionAlgorithm;
     /**
-     * @deprecated
-     * The &#39;phase_one_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_one_details.0.remaining_lifetime_int&#39; instead.
+     * @deprecated The &#39;phase_one_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_one_details.0.remaining_lifetime_int&#39; instead.
      * 
      */
-    @Deprecated /* The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead. */
+    @Deprecated
     private @Nullable String remainingLifetime;
     /**
      * @return The remaining lifetime before the key is refreshed.
@@ -141,11 +140,10 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetails {
         return Optional.ofNullable(this.negotiatedEncryptionAlgorithm);
     }
     /**
-     * @deprecated
-     * The &#39;phase_one_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_one_details.0.remaining_lifetime_int&#39; instead.
+     * @deprecated The &#39;phase_one_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_one_details.0.remaining_lifetime_int&#39; instead.
      * 
      */
-    @Deprecated /* The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead. */
+    @Deprecated
     public Optional<String> remainingLifetime() {
         return Optional.ofNullable(this.remainingLifetime);
     }

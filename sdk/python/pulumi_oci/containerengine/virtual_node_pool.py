@@ -871,6 +871,50 @@ class VirtualNodePool(pulumi.CustomResource):
         __props__.__dict__["virtual_node_tags"] = virtual_node_tags
         return VirtualNodePool(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            initial_virtual_node_labels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualNodePoolInitialVirtualNodeLabelArgs', 'VirtualNodePoolInitialVirtualNodeLabelArgsDict', 'outputs.VirtualNodePoolInitialVirtualNodeLabel']]]]] = None,
+            kubernetes_version: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            placement_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualNodePoolPlacementConfigurationArgs', 'VirtualNodePoolPlacementConfigurationArgsDict', 'outputs.VirtualNodePoolPlacementConfiguration']]]]] = None,
+            pod_configuration: pulumi.Input[Optional[Union['VirtualNodePoolPodConfigurationArgs', 'VirtualNodePoolPodConfigurationArgsDict', 'outputs.VirtualNodePoolPodConfiguration']]] = None,
+            size: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            taints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualNodePoolTaintArgs', 'VirtualNodePoolTaintArgsDict', 'outputs.VirtualNodePoolTaint']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            virtual_node_pool_cycling_details: pulumi.Input[Optional[Union['VirtualNodePoolVirtualNodePoolCyclingDetailsArgs', 'VirtualNodePoolVirtualNodePoolCyclingDetailsArgsDict', 'outputs.VirtualNodePoolVirtualNodePoolCyclingDetails']]] = None,
+            virtual_node_tags: pulumi.Input[Optional[Union['VirtualNodePoolVirtualNodeTagsArgs', 'VirtualNodePoolVirtualNodeTagsArgsDict', 'outputs.VirtualNodePoolVirtualNodeTags']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["clusterId"] = cluster_id
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["initialVirtualNodeLabels"] = initial_virtual_node_labels
+        __props__["kubernetesVersion"] = kubernetes_version
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["nsgIds"] = nsg_ids
+        __props__["placementConfigurations"] = placement_configurations
+        __props__["podConfiguration"] = pod_configuration
+        __props__["size"] = size
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["taints"] = taints
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["virtualNodePoolCyclingDetails"] = virtual_node_pool_cycling_details
+        __props__["virtualNodeTags"] = virtual_node_tags
+        return pulumi.runtime.exists_resource(None, 'oci:ContainerEngine/virtualNodePool:VirtualNodePool', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Output[_builtins.str]:

@@ -176,6 +176,12 @@ func (SslCipherSuiteState) ElementType() reflect.Type {
 	return reflect.TypeOf((*sslCipherSuiteState)(nil)).Elem()
 }
 
+// SslCipherSuiteExists checks whether an existing SslCipherSuite resource with the given ID exists.
+func SslCipherSuiteExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SslCipherSuiteState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LoadBalancer/sslCipherSuite:SslCipherSuite", id, state, "", opts...)
+}
+
 type sslCipherSuiteArgs struct {
 	Ciphers []string `pulumi:"ciphers"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated load balancer.

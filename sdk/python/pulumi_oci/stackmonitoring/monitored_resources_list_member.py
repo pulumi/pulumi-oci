@@ -314,6 +314,20 @@ class MonitoredResourcesListMember(pulumi.CustomResource):
         __props__.__dict__["monitored_resource_id"] = monitored_resource_id
         return MonitoredResourcesListMember(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            destination_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcesListMemberItemArgs', 'MonitoredResourcesListMemberItemArgsDict', 'outputs.MonitoredResourcesListMemberItem']]]]] = None,
+            limit_level: pulumi.Input[Optional[_builtins.int]] = None,
+            monitored_resource_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["destinationResourceId"] = destination_resource_id
+        __props__["items"] = items
+        __props__["limitLevel"] = limit_level
+        __props__["monitoredResourceId"] = monitored_resource_id
+        return pulumi.runtime.exists_resource(None, 'oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="destinationResourceId")
     def destination_resource_id(self) -> pulumi.Output[Optional[_builtins.str]]:

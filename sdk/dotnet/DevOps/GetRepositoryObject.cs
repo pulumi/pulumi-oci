@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Retrieves blob of specific branch name/commit ID and file path.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Retrieves blob of specific branch name/commit ID and file path.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.DevOps
         /// This data source provides details about a specific Repository Object resource in Oracle Cloud Infrastructure Devops service.
         /// 
         /// Retrieves blob of specific branch name/commit ID and file path.
-        /// 
         /// 
         /// ## Example Usage
         /// 

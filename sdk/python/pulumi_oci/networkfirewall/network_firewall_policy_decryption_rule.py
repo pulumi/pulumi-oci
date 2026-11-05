@@ -603,6 +603,34 @@ class NetworkFirewallPolicyDecryptionRule(pulumi.CustomResource):
         __props__.__dict__["secrets"] = secrets
         return NetworkFirewallPolicyDecryptionRule(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            condition: pulumi.Input[Optional[Union['NetworkFirewallPolicyDecryptionRuleConditionArgs', 'NetworkFirewallPolicyDecryptionRuleConditionArgsDict', 'outputs.NetworkFirewallPolicyDecryptionRuleCondition']]] = None,
+            decryption_profile: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            position: pulumi.Input[Optional[Union['NetworkFirewallPolicyDecryptionRulePositionArgs', 'NetworkFirewallPolicyDecryptionRulePositionArgsDict', 'outputs.NetworkFirewallPolicyDecryptionRulePosition']]] = None,
+            priority_order: pulumi.Input[Optional[_builtins.str]] = None,
+            secret: pulumi.Input[Optional[_builtins.str]] = None,
+            secrets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["action"] = action
+        __props__["condition"] = condition
+        __props__["decryptionProfile"] = decryption_profile
+        __props__["description"] = description
+        __props__["name"] = name
+        __props__["networkFirewallPolicyId"] = network_firewall_policy_id
+        __props__["parentResourceId"] = parent_resource_id
+        __props__["position"] = position
+        __props__["priorityOrder"] = priority_order
+        __props__["secret"] = secret
+        __props__["secrets"] = secrets
+        return pulumi.runtime.exists_resource(None, 'oci:NetworkFirewall/networkFirewallPolicyDecryptionRule:NetworkFirewallPolicyDecryptionRule', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def action(self) -> pulumi.Output[_builtins.str]:

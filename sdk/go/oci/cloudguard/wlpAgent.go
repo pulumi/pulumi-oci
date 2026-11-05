@@ -205,6 +205,12 @@ func (WlpAgentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*wlpAgentState)(nil)).Elem()
 }
 
+// WlpAgentExists checks whether an existing WlpAgent resource with the given ID exists.
+func WlpAgentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WlpAgentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CloudGuard/wlpAgent:WlpAgent", id, state, "", opts...)
+}
+
 type wlpAgentArgs struct {
 	// The version of the agent making the request
 	AgentVersion string `pulumi:"agentVersion"`

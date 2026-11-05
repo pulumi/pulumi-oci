@@ -171,6 +171,12 @@ func (PeerState) ElementType() reflect.Type {
 	return reflect.TypeOf((*peerState)(nil)).Elem()
 }
 
+// PeerExists checks whether an existing Peer resource with the given ID exists.
+func PeerExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PeerState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Blockchain/peer:Peer", id, state, "", opts...)
+}
+
 type peerArgs struct {
 	// Availability Domain to place new peer
 	Ad string `pulumi:"ad"`

@@ -462,6 +462,26 @@ class AnalyticsInstanceVanityUrl(pulumi.CustomResource):
         __props__.__dict__["public_certificate"] = public_certificate
         return AnalyticsInstanceVanityUrl(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            analytics_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ca_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            hosts: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            passphrase: pulumi.Input[Optional[_builtins.str]] = None,
+            private_key: pulumi.Input[Optional[_builtins.str]] = None,
+            public_certificate: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["analyticsInstanceId"] = analytics_instance_id
+        __props__["caCertificate"] = ca_certificate
+        __props__["description"] = description
+        __props__["hosts"] = hosts
+        __props__["passphrase"] = passphrase
+        __props__["privateKey"] = private_key
+        __props__["publicCertificate"] = public_certificate
+        return pulumi.runtime.exists_resource(None, 'oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="analyticsInstanceId")
     def analytics_instance_id(self) -> pulumi.Output[_builtins.str]:

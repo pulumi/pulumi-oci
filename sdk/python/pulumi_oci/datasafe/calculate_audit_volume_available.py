@@ -349,6 +349,22 @@ class CalculateAuditVolumeAvailable(pulumi.CustomResource):
         __props__.__dict__["trail_locations"] = trail_locations
         return CalculateAuditVolumeAvailable(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            audit_collection_start_time: pulumi.Input[Optional[_builtins.str]] = None,
+            audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+            available_audit_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CalculateAuditVolumeAvailableAvailableAuditVolumeArgs', 'CalculateAuditVolumeAvailableAvailableAuditVolumeArgsDict', 'outputs.CalculateAuditVolumeAvailableAvailableAuditVolume']]]]] = None,
+            database_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+            trail_locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["auditCollectionStartTime"] = audit_collection_start_time
+        __props__["auditProfileId"] = audit_profile_id
+        __props__["availableAuditVolumes"] = available_audit_volumes
+        __props__["databaseUniqueName"] = database_unique_name
+        __props__["trailLocations"] = trail_locations
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/calculateAuditVolumeAvailable:CalculateAuditVolumeAvailable', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="auditCollectionStartTime")
     def audit_collection_start_time(self) -> pulumi.Output[_builtins.str]:

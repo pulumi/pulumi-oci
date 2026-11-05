@@ -224,6 +224,12 @@ func (BuildRunState) ElementType() reflect.Type {
 	return reflect.TypeOf((*buildRunState)(nil)).Elem()
 }
 
+// BuildRunExists checks whether an existing BuildRun resource with the given ID exists.
+func BuildRunExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BuildRunState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DevOps/buildRun:BuildRun", id, state, "", opts...)
+}
+
 type buildRunArgs struct {
 	// The OCID of the build pipeline.
 	BuildPipelineId string `pulumi:"buildPipelineId"`

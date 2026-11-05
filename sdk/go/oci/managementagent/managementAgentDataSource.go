@@ -252,6 +252,12 @@ func (ManagementAgentDataSourceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managementAgentDataSourceState)(nil)).Elem()
 }
 
+// ManagementAgentDataSourceExists checks whether an existing ManagementAgentDataSource resource with the given ID exists.
+func ManagementAgentDataSourceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagementAgentDataSourceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ManagementAgent/managementAgentDataSource:ManagementAgentDataSource", id, state, "", opts...)
+}
+
 type managementAgentDataSourceArgs struct {
 	// (Updatable) Comma separated metric name list. The complete set of desired scraped metrics. Use this property to limit the set of metrics uploaded if required.
 	AllowMetrics *string `pulumi:"allowMetrics"`

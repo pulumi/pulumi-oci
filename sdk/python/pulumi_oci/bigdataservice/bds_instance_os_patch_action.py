@@ -384,6 +384,22 @@ class BdsInstanceOsPatchAction(pulumi.CustomResource):
         __props__.__dict__["patching_configs"] = patching_configs
         return BdsInstanceOsPatchAction(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            is_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
+            os_patch_version: pulumi.Input[Optional[_builtins.str]] = None,
+            patching_configs: pulumi.Input[Optional[Union['BdsInstanceOsPatchActionPatchingConfigsArgs', 'BdsInstanceOsPatchActionPatchingConfigsArgsDict', 'outputs.BdsInstanceOsPatchActionPatchingConfigs']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["bdsInstanceId"] = bds_instance_id
+        __props__["clusterAdminPassword"] = cluster_admin_password
+        __props__["isDryRun"] = is_dry_run
+        __props__["osPatchVersion"] = os_patch_version
+        __props__["patchingConfigs"] = patching_configs
+        return pulumi.runtime.exists_resource(None, 'oci:BigDataService/bdsInstanceOsPatchAction:BdsInstanceOsPatchAction', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="bdsInstanceId")
     def bds_instance_id(self) -> pulumi.Output[_builtins.str]:

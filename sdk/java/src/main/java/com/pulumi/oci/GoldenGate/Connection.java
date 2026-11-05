@@ -313,11 +313,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by &#34;accountKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
+     * @deprecated The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead. */
+    @Deprecated
     @Export(name="accountKey", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> accountKey;
 
@@ -407,11 +406,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      * Deprecated: This field is deprecated and replaced by &#34;authSecretSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;auth_secret&#39; field has been deprecated. Please use &#39;auth_secret_secret_id&#39; instead.
+     * @deprecated The &#39;auth_secret&#39; field has been deprecated. Please use &#39;auth_secret_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'auth_secret' field has been deprecated. Please use 'auth_secret_secret_id' instead. */
+    @Deprecated
     @Export(name="authSecret", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> authSecret;
 
@@ -441,11 +439,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Personal access token used to connect to the Databricks Engine REST API. Only applicable for authenticationType == PERSONAL_ACCESS_TOKEN. Deprecated: This field is deprecated and replaced by &#34;authTokenSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;auth_token&#39; field has been deprecated. Please use &#39;auth_token_secret_id&#39; instead.
+     * @deprecated The &#39;auth_token&#39; field has been deprecated. Please use &#39;auth_token_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'auth_token' field has been deprecated. Please use 'auth_token_secret_id' instead. */
+    @Deprecated
     @Export(name="authToken", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> authToken;
 
@@ -591,11 +588,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Plaintext client secret for the selected connection type. For DATABRICKS and DATABRICKS_ENGINE it applies to OAUTH_M2M authentication. Deprecated: use `clientSecretSecretId`.
      * 
-     * @deprecated
-     * The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
+     * @deprecated The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
+    @Deprecated
     @Export(name="clientSecret", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> clientSecret;
 
@@ -1035,11 +1031,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The password associated to the principal. Deprecated: This field is deprecated and replaced by &#34;jndiSecurityCredentialsSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;jndi_security_credentials&#39; field has been deprecated. Please use &#39;jndi_security_credentials_secret_id&#39; instead.
+     * @deprecated The &#39;jndi_security_credentials&#39; field has been deprecated. Please use &#39;jndi_security_credentials_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'jndi_security_credentials' field has been deprecated. Please use 'jndi_security_credentials_secret_id' instead. */
+    @Deprecated
     @Export(name="jndiSecurityCredentials", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> jndiSecurityCredentials;
 
@@ -1107,11 +1102,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      * Deprecated: This field is deprecated and replaced by &#34;keyStoreSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;key_store&#39; field has been deprecated. Please use &#39;key_store_secret_id&#39; instead.
+     * @deprecated The &#39;key_store&#39; field has been deprecated. Please use &#39;key_store_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'key_store' field has been deprecated. Please use 'key_store_secret_id' instead. */
+    @Deprecated
     @Export(name="keyStore", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> keyStore;
 
@@ -1131,11 +1125,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      * Deprecated: This field is deprecated and replaced by &#34;keyStorePasswordSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;key_store_password&#39; field has been deprecated. Please use &#39;key_store_password_secret_id&#39; instead.
+     * @deprecated The &#39;key_store_password&#39; field has been deprecated. Please use &#39;key_store_password_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead. */
+    @Deprecated
     @Export(name="keyStorePassword", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> keyStorePassword;
 
@@ -1263,11 +1256,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The password Oracle GoldenGate uses to connect to Snowflake platform. Deprecated: This field is deprecated and replaced by &#34;passwordSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate Snowflake is phasing out password authentication for legacy service users. Oracle GoldenGate Snowflake connections will support only key-pair authentication. See the Snowflake documentation for details: https://docs.snowflake.com/en/user-guide/security-mfa-rollout
      * 
-     * @deprecated
-     * The &#39;password&#39; field has been deprecated. Please use &#39;password_secret_id&#39; instead.
+     * @deprecated The &#39;password&#39; field has been deprecated. Please use &#39;password_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'password' field has been deprecated. Please use 'password_secret_id' instead. */
+    @Deprecated
     @Export(name="password", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> password;
 
@@ -1323,11 +1315,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by &#34;privateKeyFileSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
+     * @deprecated The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead. */
+    @Deprecated
     @Export(name="privateKeyFile", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> privateKeyFile;
 
@@ -1355,11 +1346,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Password if the private key file is encrypted. Deprecated: This field is deprecated and replaced by &#34;privateKeyPassphraseSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
+     * @deprecated The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead. */
+    @Deprecated
     @Export(name="privateKeyPassphrase", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> privateKeyPassphrase;
 
@@ -1473,11 +1463,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      * Deprecated: This field is deprecated and replaced by &#34;restAuthSecretKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;rest_auth_secret_key&#39; field has been deprecated. Please use &#39;rest_auth_secret_key_secret_id&#39; instead.
+     * @deprecated The &#39;rest_auth_secret_key&#39; field has been deprecated. Please use &#39;rest_auth_secret_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'rest_auth_secret_key' field has been deprecated. Please use 'rest_auth_secret_key_secret_id' instead. */
+    @Deprecated
     @Export(name="restAuthSecretKey", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> restAuthSecretKey;
 
@@ -1553,11 +1542,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_ACCESS_SIGNATURE&#39;. e.g.: ?sv=2020-06-08&amp;ss=bfqt&amp;srt=sco&amp;sp=rwdlacupyx&amp;se=2020-09-10T20:27:28Z&amp;st=2022-08-05T12:27:28Z&amp;spr=https&amp;sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D Deprecated: This field is deprecated and replaced by &#34;sasTokenSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;sas_token&#39; field has been deprecated. Please use &#39;sas_token_secret_id&#39; instead.
+     * @deprecated The &#39;sas_token&#39; field has been deprecated. Please use &#39;sas_token_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead. */
+    @Deprecated
     @Export(name="sasToken", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sasToken;
 
@@ -1587,11 +1575,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      * Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+     * @deprecated The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
+    @Deprecated
     @Export(name="secretAccessKey", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> secretAccessKey;
 
@@ -1667,11 +1654,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by &#34;serviceAccountKeyFileSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
+     * @deprecated The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead. */
+    @Deprecated
     @Export(name="serviceAccountKeyFile", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> serviceAccountKeyFile;
 
@@ -1807,11 +1793,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      * Deprecated: This field is deprecated and replaced by &#34;sslClientKeystashSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;ssl_client_keystash&#39; field has been deprecated. Please use &#39;ssl_client_keystash_secret_id&#39; instead.
+     * @deprecated The &#39;ssl_client_keystash&#39; field has been deprecated. Please use &#39;ssl_client_keystash_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'ssl_client_keystash' field has been deprecated. Please use 'ssl_client_keystash_secret_id' instead. */
+    @Deprecated
     @Export(name="sslClientKeystash", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sslClientKeystash;
 
@@ -1847,11 +1832,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      * Deprecated: This field is deprecated and replaced by &#34;sslClientKeystoredbSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;ssl_client_keystoredb&#39; field has been deprecated. Please use &#39;ssl_client_keystoredb_secret_id&#39; instead.
+     * @deprecated The &#39;ssl_client_keystoredb&#39; field has been deprecated. Please use &#39;ssl_client_keystoredb_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'ssl_client_keystoredb' field has been deprecated. Please use 'ssl_client_keystoredb_secret_id' instead. */
+    @Deprecated
     @Export(name="sslClientKeystoredb", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sslClientKeystoredb;
 
@@ -1899,11 +1883,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Client Key - The base64 encoded content of a .pem or .crt file containing the client private key (for 2-way SSL). Deprecated: This field is deprecated and replaced by &#34;sslKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;ssl_key&#39; field has been deprecated. Please use &#39;ssl_key_secret_id&#39; instead.
+     * @deprecated The &#39;ssl_key&#39; field has been deprecated. Please use &#39;ssl_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead. */
+    @Deprecated
     @Export(name="sslKey", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sslKey;
 
@@ -1921,11 +1904,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      * Deprecated: This field is deprecated and replaced by &#34;sslKeyPasswordSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;ssl_key_password&#39; field has been deprecated. Please use &#39;ssl_key_password_secret_id&#39; instead.
+     * @deprecated The &#39;ssl_key_password&#39; field has been deprecated. Please use &#39;ssl_key_password_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead. */
+    @Deprecated
     @Export(name="sslKeyPassword", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> sslKeyPassword;
 
@@ -2219,11 +2201,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Client Certificate - The base64 encoded content of a .pem file, containing the client public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by &#34;tlsCertificateKeyFileSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;tls_certificate_key_file&#39; field has been deprecated. Please use &#39;tls_certificate_key_file_secret_id&#39; instead.
+     * @deprecated The &#39;tls_certificate_key_file&#39; field has been deprecated. Please use &#39;tls_certificate_key_file_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'tls_certificate_key_file' field has been deprecated. Please use 'tls_certificate_key_file_secret_id' instead. */
+    @Deprecated
     @Export(name="tlsCertificateKeyFile", refs={String.class}, tree="[0]")
     private Output<String> tlsCertificateKeyFile;
 
@@ -2237,11 +2218,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Client Certificate key file password. Deprecated: This field is deprecated and replaced by &#34;tlsCertificateKeyFilePasswordSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;tls_certificate_key_file_password&#39; field has been deprecated. Please use &#39;tls_certificate_key_file_password_secret_id&#39; instead.
+     * @deprecated The &#39;tls_certificate_key_file_password&#39; field has been deprecated. Please use &#39;tls_certificate_key_file_password_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'tls_certificate_key_file_password' field has been deprecated. Please use 'tls_certificate_key_file_password_secret_id' instead. */
+    @Deprecated
     @Export(name="tlsCertificateKeyFilePassword", refs={String.class}, tree="[0]")
     private Output<String> tlsCertificateKeyFilePassword;
 
@@ -2309,11 +2289,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      * Deprecated: This field is deprecated and replaced by &#34;trustStoreSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;trust_store&#39; field has been deprecated. Please use &#39;trust_store_secret_id&#39; instead.
+     * @deprecated The &#39;trust_store&#39; field has been deprecated. Please use &#39;trust_store_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead. */
+    @Deprecated
     @Export(name="trustStore", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> trustStore;
 
@@ -2333,11 +2312,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
      * 
      * Deprecated: This field is deprecated and replaced by &#34;trustStorePasswordSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;trust_store_password&#39; field has been deprecated. Please use &#39;trust_store_password_secret_id&#39; instead.
+     * @deprecated The &#39;trust_store_password&#39; field has been deprecated. Please use &#39;trust_store_password_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead. */
+    @Deprecated
     @Export(name="trustStorePassword", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> trustStorePassword;
 
@@ -2463,11 +2441,10 @@ public class Connection extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by &#34;walletSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;wallet&#39; field has been deprecated. Please use &#39;wallet_secret_id&#39; instead.
+     * @deprecated The &#39;wallet&#39; field has been deprecated. Please use &#39;wallet_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'wallet' field has been deprecated. Please use 'wallet_secret_id' instead. */
+    @Deprecated
     @Export(name="wallet", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> wallet;
 

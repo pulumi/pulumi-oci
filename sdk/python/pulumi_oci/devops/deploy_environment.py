@@ -773,6 +773,46 @@ class DeployEnvironment(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return DeployEnvironment(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_instance_group_selectors: pulumi.Input[Optional[Union['DeployEnvironmentComputeInstanceGroupSelectorsArgs', 'DeployEnvironmentComputeInstanceGroupSelectorsArgsDict', 'outputs.DeployEnvironmentComputeInstanceGroupSelectors']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            deploy_environment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            function_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            network_channel: pulumi.Input[Optional[Union['DeployEnvironmentNetworkChannelArgs', 'DeployEnvironmentNetworkChannelArgsDict', 'outputs.DeployEnvironmentNetworkChannel']]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["clusterId"] = cluster_id
+        __props__["compartmentId"] = compartment_id
+        __props__["computeInstanceGroupSelectors"] = compute_instance_group_selectors
+        __props__["definedTags"] = defined_tags
+        __props__["deployEnvironmentType"] = deploy_environment_type
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["functionId"] = function_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["networkChannel"] = network_channel
+        __props__["projectId"] = project_id
+        __props__["securityAttributes"] = security_attributes
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:DevOps/deployEnvironment:DeployEnvironment', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Output[_builtins.str]:

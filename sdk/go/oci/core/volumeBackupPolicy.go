@@ -172,6 +172,12 @@ func (VolumeBackupPolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*volumeBackupPolicyState)(nil)).Elem()
 }
 
+// VolumeBackupPolicyExists checks whether an existing VolumeBackupPolicy resource with the given ID exists.
+func VolumeBackupPolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VolumeBackupPolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/volumeBackupPolicy:VolumeBackupPolicy", id, state, "", opts...)
+}
+
 type volumeBackupPolicyArgs struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

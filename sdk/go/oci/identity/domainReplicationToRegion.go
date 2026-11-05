@@ -129,6 +129,12 @@ func (DomainReplicationToRegionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainReplicationToRegionState)(nil)).Elem()
 }
 
+// DomainReplicationToRegionExists checks whether an existing DomainReplicationToRegion resource with the given ID exists.
+func DomainReplicationToRegionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainReplicationToRegionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainReplicationToRegion:DomainReplicationToRegion", id, state, "", opts...)
+}
+
 type domainReplicationToRegionArgs struct {
 	// The OCID of the domain
 	DomainId string `pulumi:"domainId"`

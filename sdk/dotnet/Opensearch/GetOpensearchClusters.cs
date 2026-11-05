@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Opensearch
         /// Allow service opensearch to manage vcns in compartment {Compartment-Name}
         /// ```
         /// 
-        /// For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm  
+        /// For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
         /// Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
         /// 
         /// ## Example Usage
@@ -72,7 +72,7 @@ namespace Pulumi.Oci.Opensearch
         /// Allow service opensearch to manage vcns in compartment {Compartment-Name}
         /// ```
         /// 
-        /// For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm  
+        /// For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
         /// Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
         /// 
         /// ## Example Usage
@@ -116,7 +116,7 @@ namespace Pulumi.Oci.Opensearch
         /// Allow service opensearch to manage vcns in compartment {Compartment-Name}
         /// ```
         /// 
-        /// For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm  
+        /// For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
         /// Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
         /// 
         /// ## Example Usage

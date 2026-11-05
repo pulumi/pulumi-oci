@@ -202,6 +202,12 @@ func (CloudAsmState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudAsmState)(nil)).Elem()
 }
 
+// CloudAsmExists checks whether an existing CloudAsm resource with the given ID exists.
+func CloudAsmExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudAsmState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/cloudAsm:CloudAsm", id, state, "", opts...)
+}
+
 type cloudAsmArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud ASM.
 	CloudAsmId string `pulumi:"cloudAsmId"`

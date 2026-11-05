@@ -32,7 +32,6 @@ namespace Pulumi.Oci.CloudGuard
         /// To get a full list of all compartments and subcompartments in the tenancy (root compartment),
         /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -81,7 +80,6 @@ namespace Pulumi.Oci.CloudGuard
         /// To get a full list of all compartments and subcompartments in the tenancy (root compartment),
         /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -129,7 +127,6 @@ namespace Pulumi.Oci.CloudGuard
         /// `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
         /// To get a full list of all compartments and subcompartments in the tenancy (root compartment),
         /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
-        /// 
         /// 
         /// ## Example Usage
         /// 

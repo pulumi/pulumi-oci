@@ -195,6 +195,12 @@ func (BdsInstanceApiKeyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*bdsInstanceApiKeyState)(nil)).Elem()
 }
 
+// BdsInstanceApiKeyExists checks whether an existing BdsInstanceApiKey resource with the given ID exists.
+func BdsInstanceApiKeyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BdsInstanceApiKeyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey", id, state, "", opts...)
+}
+
 type bdsInstanceApiKeyArgs struct {
 	// The OCID of the cluster.
 	BdsInstanceId string `pulumi:"bdsInstanceId"`

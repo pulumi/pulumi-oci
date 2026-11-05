@@ -1660,6 +1660,60 @@ class DomainsSmtpCredential(pulumi.CustomResource):
         __props__.__dict__["user_name"] = user_name
         return DomainsSmtpCredential(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            attributes: pulumi.Input[Optional[_builtins.str]] = None,
+            authorization: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            expires_on: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSmtpCredentialIdcsCreatedByArgs', 'DomainsSmtpCredentialIdcsCreatedByArgsDict', 'outputs.DomainsSmtpCredentialIdcsCreatedBy']]]]] = None,
+            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSmtpCredentialIdcsLastModifiedByArgs', 'DomainsSmtpCredentialIdcsLastModifiedByArgsDict', 'outputs.DomainsSmtpCredentialIdcsLastModifiedBy']]]]] = None,
+            idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSmtpCredentialMetaArgs', 'DomainsSmtpCredentialMetaArgsDict', 'outputs.DomainsSmtpCredentialMeta']]]]] = None,
+            ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsSmtpCredentialTagArgs', 'DomainsSmtpCredentialTagArgsDict', 'outputs.DomainsSmtpCredentialTag']]]]] = None,
+            tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            urnietfparamsscimschemasoracleidcsextensionself_change_user: pulumi.Input[Optional[Union['DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs', 'DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgsDict', 'outputs.DomainsSmtpCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUser']]] = None,
+            user: pulumi.Input[Optional[Union['DomainsSmtpCredentialUserArgs', 'DomainsSmtpCredentialUserArgsDict', 'outputs.DomainsSmtpCredentialUser']]] = None,
+            user_name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["attributeSets"] = attribute_sets
+        __props__["attributes"] = attributes
+        __props__["authorization"] = authorization
+        __props__["compartmentOcid"] = compartment_ocid
+        __props__["deleteInProgress"] = delete_in_progress
+        __props__["description"] = description
+        __props__["domainOcid"] = domain_ocid
+        __props__["expiresOn"] = expires_on
+        __props__["idcsCreatedBies"] = idcs_created_bies
+        __props__["idcsEndpoint"] = idcs_endpoint
+        __props__["idcsLastModifiedBies"] = idcs_last_modified_bies
+        __props__["idcsLastUpgradedInRelease"] = idcs_last_upgraded_in_release
+        __props__["idcsPreventedOperations"] = idcs_prevented_operations
+        __props__["metas"] = metas
+        __props__["ocid"] = ocid
+        __props__["password"] = password
+        __props__["resourceTypeSchemaVersion"] = resource_type_schema_version
+        __props__["schemas"] = schemas
+        __props__["status"] = status
+        __props__["tags"] = tags
+        __props__["tenancyOcid"] = tenancy_ocid
+        __props__["urnietfparamsscimschemasoracleidcsextensionselfChangeUser"] = urnietfparamsscimschemasoracleidcsextensionself_change_user
+        __props__["user"] = user
+        __props__["userName"] = user_name
+        return pulumi.runtime.exists_resource(None, 'oci:Identity/domainsSmtpCredential:DomainsSmtpCredential', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="attributeSets")
     def attribute_sets(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

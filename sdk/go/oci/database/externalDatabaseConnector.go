@@ -231,6 +231,12 @@ func (ExternalDatabaseConnectorState) ElementType() reflect.Type {
 	return reflect.TypeOf((*externalDatabaseConnectorState)(nil)).Elem()
 }
 
+// ExternalDatabaseConnectorExists checks whether an existing ExternalDatabaseConnector resource with the given ID exists.
+func ExternalDatabaseConnectorExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalDatabaseConnectorState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/externalDatabaseConnector:ExternalDatabaseConnector", id, state, "", opts...)
+}
+
 type externalDatabaseConnectorArgs struct {
 	// (Updatable) Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
 	ConnectionCredentials ExternalDatabaseConnectorConnectionCredentials `pulumi:"connectionCredentials"`

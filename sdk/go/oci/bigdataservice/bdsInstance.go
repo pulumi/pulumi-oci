@@ -470,6 +470,12 @@ func (BdsInstanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*bdsInstanceState)(nil)).Elem()
 }
 
+// BdsInstanceExists checks whether an existing BdsInstance resource with the given ID exists.
+func BdsInstanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BdsInstanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:BigDataService/bdsInstance:BdsInstance", id, state, "", opts...)
+}
+
 type bdsInstanceArgs struct {
 	// Optional BDS capacity reservation configurations to associate with the cluster during creation.
 	BdsCapacityReservationConfigurations []BdsInstanceBdsCapacityReservationConfigurationType `pulumi:"bdsCapacityReservationConfigurations"`

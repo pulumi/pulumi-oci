@@ -16,7 +16,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// Lists an overview of all resources in that namespace in a given time interval.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// Lists an overview of all resources in that namespace in a given time interval.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// This data source provides the list of Internal Namespace Occ Overviews in Oracle Cloud Infrastructure Capacity Management service.
         /// 
         /// Lists an overview of all resources in that namespace in a given time interval.
-        /// 
         /// 
         /// ## Example Usage
         /// 

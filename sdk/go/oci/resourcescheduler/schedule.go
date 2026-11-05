@@ -277,6 +277,12 @@ func (ScheduleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*scheduleState)(nil)).Elem()
 }
 
+// ScheduleExists checks whether an existing Schedule resource with the given ID exists.
+func ScheduleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ScheduleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ResourceScheduler/schedule:Schedule", id, state, "", opts...)
+}
+
 type scheduleArgs struct {
 	// (Updatable) This is the action that will be executed by the schedule.
 	Action string `pulumi:"action"`

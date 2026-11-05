@@ -213,6 +213,12 @@ func (AgentDataSourceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*agentDataSourceState)(nil)).Elem()
 }
 
+// AgentDataSourceExists checks whether an existing AgentDataSource resource with the given ID exists.
+func AgentDataSourceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AgentDataSourceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:GenerativeAi/agentDataSource:AgentDataSource", id, state, "", opts...)
+}
+
 type agentDataSourceArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the data source in.
 	CompartmentId string `pulumi:"compartmentId"`

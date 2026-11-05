@@ -201,6 +201,12 @@ func (CpeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cpeState)(nil)).Elem()
 }
 
+// CpeExists checks whether an existing Cpe resource with the given ID exists.
+func CpeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CpeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/cpe:Cpe", id, state, "", opts...)
+}
+
 type cpeArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the CPE.
 	CompartmentId string `pulumi:"compartmentId"`

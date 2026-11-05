@@ -109,6 +109,12 @@ func (ClusterCompleteCredentialRotationManagementState) ElementType() reflect.Ty
 	return reflect.TypeOf((*clusterCompleteCredentialRotationManagementState)(nil)).Elem()
 }
 
+// ClusterCompleteCredentialRotationManagementExists checks whether an existing ClusterCompleteCredentialRotationManagement resource with the given ID exists.
+func ClusterCompleteCredentialRotationManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ClusterCompleteCredentialRotationManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ContainerEngine/clusterCompleteCredentialRotationManagement:ClusterCompleteCredentialRotationManagement", id, state, "", opts...)
+}
+
 type clusterCompleteCredentialRotationManagementArgs struct {
 	// The OCID of the cluster.
 	//

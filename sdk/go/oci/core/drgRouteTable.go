@@ -178,6 +178,12 @@ func (DrgRouteTableState) ElementType() reflect.Type {
 	return reflect.TypeOf((*drgRouteTableState)(nil)).Elem()
 }
 
+// DrgRouteTableExists checks whether an existing DrgRouteTable resource with the given ID exists.
+func DrgRouteTableExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DrgRouteTableState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/drgRouteTable:DrgRouteTable", id, state, "", opts...)
+}
+
 type drgRouteTableArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`

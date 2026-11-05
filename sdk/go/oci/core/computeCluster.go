@@ -182,6 +182,12 @@ func (ComputeClusterState) ElementType() reflect.Type {
 	return reflect.TypeOf((*computeClusterState)(nil)).Elem()
 }
 
+// ComputeClusterExists checks whether an existing ComputeCluster resource with the given ID exists.
+func ComputeClusterExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ComputeClusterState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/computeCluster:ComputeCluster", id, state, "", opts...)
+}
+
 type computeClusterArgs struct {
 	// The availability domain to place the compute cluster in.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`

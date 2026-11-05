@@ -213,6 +213,12 @@ func (TargetDatabaseGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*targetDatabaseGroupState)(nil)).Elem()
 }
 
+// TargetDatabaseGroupExists checks whether an existing TargetDatabaseGroup resource with the given ID exists.
+func TargetDatabaseGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *TargetDatabaseGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/targetDatabaseGroup:TargetDatabaseGroup", id, state, "", opts...)
+}
+
 type targetDatabaseGroupArgs struct {
 	// (Updatable) The OCID of the compartment to create the target database group.
 	CompartmentId string `pulumi:"compartmentId"`

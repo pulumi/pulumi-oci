@@ -583,6 +583,34 @@ class SubsetData(pulumi.CustomResource):
         __props__.__dict__["target_id"] = target_id
         return SubsetData(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            is_redo_logging_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_refresh_stats_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_rerun: pulumi.Input[Optional[_builtins.bool]] = None,
+            masking: pulumi.Input[Optional[_builtins.str]] = None,
+            parallel_degree: pulumi.Input[Optional[_builtins.str]] = None,
+            re_run_from_step: pulumi.Input[Optional[_builtins.str]] = None,
+            recompile: pulumi.Input[Optional[_builtins.str]] = None,
+            subsetting_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tablespace: pulumi.Input[Optional[_builtins.str]] = None,
+            target_credentials: pulumi.Input[Optional[Union['SubsetDataTargetCredentialsArgs', 'SubsetDataTargetCredentialsArgsDict', 'outputs.SubsetDataTargetCredentials']]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["isRedoLoggingEnabled"] = is_redo_logging_enabled
+        __props__["isRefreshStatsEnabled"] = is_refresh_stats_enabled
+        __props__["isRerun"] = is_rerun
+        __props__["masking"] = masking
+        __props__["parallelDegree"] = parallel_degree
+        __props__["reRunFromStep"] = re_run_from_step
+        __props__["recompile"] = recompile
+        __props__["subsettingPolicyId"] = subsetting_policy_id
+        __props__["tablespace"] = tablespace
+        __props__["targetCredentials"] = target_credentials
+        __props__["targetId"] = target_id
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/subsetData:SubsetData', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="isRedoLoggingEnabled")
     def is_redo_logging_enabled(self) -> pulumi.Output[Optional[_builtins.bool]]:

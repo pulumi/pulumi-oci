@@ -195,6 +195,12 @@ func (DrgRouteTableRouteRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*drgRouteTableRouteRuleState)(nil)).Elem()
 }
 
+// DrgRouteTableRouteRuleExists checks whether an existing DrgRouteTableRouteRule resource with the given ID exists.
+func DrgRouteTableRouteRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DrgRouteTableRouteRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/drgRouteTableRouteRule:DrgRouteTableRouteRule", id, state, "", opts...)
+}
+
 type drgRouteTableRouteRuleArgs struct {
 	// (Updatable) This is the range of IP addresses used for matching when routing traffic. Only CIDR_BLOCK values are allowed.
 	//

@@ -26,7 +26,7 @@ public final class ManagementDashboardFunctions {
      * 
      * Exports an array of dashboards and their saved searches. Export is designed to work with importDashboard.
      * Here&#39;s an example of how you can use CLI to export a dashboard:
-     * `$oci management-dashboard dashboard export --query data --export-dashboard-id &#34;{\&#34;dashboardIds\&#34;:[\&#34;ocid1.managementdashboard.oc1..dashboardId1\&#34;]}&#34;  &gt; dashboards.json`
+     * `$oci management-dashboard dashboard export --query data --export-dashboard-id &#34;{&#92;&#34;dashboardIds&#92;&#34;:[&#92;&#34;ocid1.managementdashboard.oc1..dashboardId1&#92;&#34;]}&#34;  &gt; dashboards.json`
      * 
      * ## Example Usage
      * 
@@ -70,7 +70,7 @@ public final class ManagementDashboardFunctions {
      * 
      * Exports an array of dashboards and their saved searches. Export is designed to work with importDashboard.
      * Here&#39;s an example of how you can use CLI to export a dashboard:
-     * `$oci management-dashboard dashboard export --query data --export-dashboard-id &#34;{\&#34;dashboardIds\&#34;:[\&#34;ocid1.managementdashboard.oc1..dashboardId1\&#34;]}&#34;  &gt; dashboards.json`
+     * `$oci management-dashboard dashboard export --query data --export-dashboard-id &#34;{&#92;&#34;dashboardIds&#92;&#34;:[&#92;&#34;ocid1.managementdashboard.oc1..dashboardId1&#92;&#34;]}&#34;  &gt; dashboards.json`
      * 
      * ## Example Usage
      * 
@@ -114,7 +114,7 @@ public final class ManagementDashboardFunctions {
      * 
      * Exports an array of dashboards and their saved searches. Export is designed to work with importDashboard.
      * Here&#39;s an example of how you can use CLI to export a dashboard:
-     * `$oci management-dashboard dashboard export --query data --export-dashboard-id &#34;{\&#34;dashboardIds\&#34;:[\&#34;ocid1.managementdashboard.oc1..dashboardId1\&#34;]}&#34;  &gt; dashboards.json`
+     * `$oci management-dashboard dashboard export --query data --export-dashboard-id &#34;{&#92;&#34;dashboardIds&#92;&#34;:[&#92;&#34;ocid1.managementdashboard.oc1..dashboardId1&#92;&#34;]}&#34;  &gt; dashboards.json`
      * 
      * ## Example Usage
      * 
@@ -158,7 +158,7 @@ public final class ManagementDashboardFunctions {
      * 
      * Exports an array of dashboards and their saved searches. Export is designed to work with importDashboard.
      * Here&#39;s an example of how you can use CLI to export a dashboard:
-     * `$oci management-dashboard dashboard export --query data --export-dashboard-id &#34;{\&#34;dashboardIds\&#34;:[\&#34;ocid1.managementdashboard.oc1..dashboardId1\&#34;]}&#34;  &gt; dashboards.json`
+     * `$oci management-dashboard dashboard export --query data --export-dashboard-id &#34;{&#92;&#34;dashboardIds&#92;&#34;:[&#92;&#34;ocid1.managementdashboard.oc1..dashboardId1&#92;&#34;]}&#34;  &gt; dashboards.json`
      * 
      * ## Example Usage
      * 
@@ -202,7 +202,7 @@ public final class ManagementDashboardFunctions {
      * 
      * Exports an array of dashboards and their saved searches. Export is designed to work with importDashboard.
      * Here&#39;s an example of how you can use CLI to export a dashboard:
-     * `$oci management-dashboard dashboard export --query data --export-dashboard-id &#34;{\&#34;dashboardIds\&#34;:[\&#34;ocid1.managementdashboard.oc1..dashboardId1\&#34;]}&#34;  &gt; dashboards.json`
+     * `$oci management-dashboard dashboard export --query data --export-dashboard-id &#34;{&#92;&#34;dashboardIds&#92;&#34;:[&#92;&#34;ocid1.managementdashboard.oc1..dashboardId1&#92;&#34;]}&#34;  &gt; dashboards.json`
      * 
      * ## Example Usage
      * 

@@ -933,6 +933,52 @@ class Zone(pulumi.CustomResource):
         __props__.__dict__["zone_type"] = zone_type
         return Zone(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            dnssec_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneDnssecConfigArgs', 'ZoneDnssecConfigArgsDict', 'outputs.ZoneDnssecConfig']]]]] = None,
+            dnssec_state: pulumi.Input[Optional[_builtins.str]] = None,
+            external_downstreams: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneExternalDownstreamArgs', 'ZoneExternalDownstreamArgsDict', 'outputs.ZoneExternalDownstream']]]]] = None,
+            external_masters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneExternalMasterArgs', 'ZoneExternalMasterArgsDict', 'outputs.ZoneExternalMaster']]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_protected: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            nameservers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneNameserverArgs', 'ZoneNameserverArgsDict', 'outputs.ZoneNameserver']]]]] = None,
+            resolution_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            self: pulumi.Input[Optional[_builtins.str]] = None,
+            serial: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None,
+            view_id: pulumi.Input[Optional[_builtins.str]] = None,
+            zone_transfer_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ZoneZoneTransferServerArgs', 'ZoneZoneTransferServerArgsDict', 'outputs.ZoneZoneTransferServer']]]]] = None,
+            zone_type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["dnssecConfigs"] = dnssec_configs
+        __props__["dnssecState"] = dnssec_state
+        __props__["externalDownstreams"] = external_downstreams
+        __props__["externalMasters"] = external_masters
+        __props__["freeformTags"] = freeform_tags
+        __props__["isProtected"] = is_protected
+        __props__["name"] = name
+        __props__["nameservers"] = nameservers
+        __props__["resolutionMode"] = resolution_mode
+        __props__["scope"] = scope
+        __props__["self"] = self
+        __props__["serial"] = serial
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["version"] = version
+        __props__["viewId"] = view_id
+        __props__["zoneTransferServers"] = zone_transfer_servers
+        __props__["zoneType"] = zone_type
+        return pulumi.runtime.exists_resource(None, 'oci:Dns/zone:Zone', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

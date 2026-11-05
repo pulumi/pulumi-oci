@@ -196,22 +196,20 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
     /**
      * Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
      * 
-     * @deprecated
-     * The &#39;node_image_id&#39; field has been deprecated. Please use &#39;node_source_details&#39; instead. If both fields are specified, then &#39;node_source_details&#39; will be used.
+     * @deprecated The &#39;node_image_id&#39; field has been deprecated. Please use &#39;node_source_details&#39; instead. If both fields are specified, then &#39;node_source_details&#39; will be used.
      * 
      */
-    @Deprecated /* The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used. */
+    @Deprecated
     @Import(name="nodeImageId")
     private @Nullable Output<String> nodeImageId;
 
     /**
      * @return Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
      * 
-     * @deprecated
-     * The &#39;node_image_id&#39; field has been deprecated. Please use &#39;node_source_details&#39; instead. If both fields are specified, then &#39;node_source_details&#39; will be used.
+     * @deprecated The &#39;node_image_id&#39; field has been deprecated. Please use &#39;node_source_details&#39; instead. If both fields are specified, then &#39;node_source_details&#39; will be used.
      * 
      */
-    @Deprecated /* The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used. */
+    @Deprecated
     public Optional<Output<String>> nodeImageId() {
         return Optional.ofNullable(this.nodeImageId);
     }
@@ -219,22 +217,20 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
     /**
      * Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `nodeImageId` is specified.
      * 
-     * @deprecated
-     * The &#39;node_image_name&#39; field has been deprecated. Please use &#39;node_source_details&#39; instead. If both fields are specified, then &#39;node_source_details&#39; will be used.
+     * @deprecated The &#39;node_image_name&#39; field has been deprecated. Please use &#39;node_source_details&#39; instead. If both fields are specified, then &#39;node_source_details&#39; will be used.
      * 
      */
-    @Deprecated /* The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used. */
+    @Deprecated
     @Import(name="nodeImageName")
     private @Nullable Output<String> nodeImageName;
 
     /**
      * @return Deprecated. Use `nodeSourceDetails` instead. If you specify values for both, this value is ignored. The name of the image running on the nodes in the node pool. Cannot be used when `nodeImageId` is specified.
      * 
-     * @deprecated
-     * The &#39;node_image_name&#39; field has been deprecated. Please use &#39;node_source_details&#39; instead. If both fields are specified, then &#39;node_source_details&#39; will be used.
+     * @deprecated The &#39;node_image_name&#39; field has been deprecated. Please use &#39;node_source_details&#39; instead. If both fields are specified, then &#39;node_source_details&#39; will be used.
      * 
      */
-    @Deprecated /* The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used. */
+    @Deprecated
     public Optional<Output<String>> nodeImageName() {
         return Optional.ofNullable(this.nodeImageName);
     }
@@ -735,11 +731,10 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;node_image_id&#39; field has been deprecated. Please use &#39;node_source_details&#39; instead. If both fields are specified, then &#39;node_source_details&#39; will be used.
+         * @deprecated The &#39;node_image_id&#39; field has been deprecated. Please use &#39;node_source_details&#39; instead. If both fields are specified, then &#39;node_source_details&#39; will be used.
          * 
          */
-        @Deprecated /* The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used. */
+        @Deprecated
         public Builder nodeImageId(@Nullable Output<String> nodeImageId) {
             $.nodeImageId = nodeImageId;
             return this;
@@ -750,11 +745,10 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;node_image_id&#39; field has been deprecated. Please use &#39;node_source_details&#39; instead. If both fields are specified, then &#39;node_source_details&#39; will be used.
+         * @deprecated The &#39;node_image_id&#39; field has been deprecated. Please use &#39;node_source_details&#39; instead. If both fields are specified, then &#39;node_source_details&#39; will be used.
          * 
          */
-        @Deprecated /* The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used. */
+        @Deprecated
         public Builder nodeImageId(String nodeImageId) {
             return nodeImageId(Output.of(nodeImageId));
         }
@@ -764,11 +758,10 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;node_image_name&#39; field has been deprecated. Please use &#39;node_source_details&#39; instead. If both fields are specified, then &#39;node_source_details&#39; will be used.
+         * @deprecated The &#39;node_image_name&#39; field has been deprecated. Please use &#39;node_source_details&#39; instead. If both fields are specified, then &#39;node_source_details&#39; will be used.
          * 
          */
-        @Deprecated /* The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used. */
+        @Deprecated
         public Builder nodeImageName(@Nullable Output<String> nodeImageName) {
             $.nodeImageName = nodeImageName;
             return this;
@@ -779,11 +772,10 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;node_image_name&#39; field has been deprecated. Please use &#39;node_source_details&#39; instead. If both fields are specified, then &#39;node_source_details&#39; will be used.
+         * @deprecated The &#39;node_image_name&#39; field has been deprecated. Please use &#39;node_source_details&#39; instead. If both fields are specified, then &#39;node_source_details&#39; will be used.
          * 
          */
-        @Deprecated /* The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used. */
+        @Deprecated
         public Builder nodeImageName(String nodeImageName) {
             return nodeImageName(Output.of(nodeImageName));
         }

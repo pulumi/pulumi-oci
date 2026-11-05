@@ -1142,6 +1142,12 @@ func (WorkspaceTaskState) ElementType() reflect.Type {
 	return reflect.TypeOf((*workspaceTaskState)(nil)).Elem()
 }
 
+// WorkspaceTaskExists checks whether an existing WorkspaceTask resource with the given ID exists.
+func WorkspaceTaskExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WorkspaceTaskState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataIntegration/workspaceTask:WorkspaceTask", id, state, "", opts...)
+}
+
 type workspaceTaskArgs struct {
 	// (Updatable) The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
 	ApiCallMode *string `pulumi:"apiCallMode"`

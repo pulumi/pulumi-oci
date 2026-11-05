@@ -343,6 +343,12 @@ func (MonitoredResourceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*monitoredResourceState)(nil)).Elem()
 }
 
+// MonitoredResourceExists checks whether an existing MonitoredResource resource with the given ID exists.
+func MonitoredResourceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MonitoredResourceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:StackMonitoring/monitoredResource:MonitoredResource", id, state, "", opts...)
+}
+
 type monitoredResourceArgs struct {
 	// (Updatable) List of MonitoredResourceAliasCredentials. This property complements the existing  "aliases" property by allowing user to specify more than one credential alias.  If both "aliases" and "additionalAliases" are specified, union of the  values is used as list of aliases applicable for this resource. If any duplicate found in the combined list of "alias" and "additionalAliases",  an error will be thrown.
 	AdditionalAliases []MonitoredResourceAdditionalAlias `pulumi:"additionalAliases"`

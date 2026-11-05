@@ -228,6 +228,12 @@ func (DeployArtifactState) ElementType() reflect.Type {
 	return reflect.TypeOf((*deployArtifactState)(nil)).Elem()
 }
 
+// DeployArtifactExists checks whether an existing DeployArtifact resource with the given ID exists.
+func DeployArtifactExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DeployArtifactState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DevOps/deployArtifact:DeployArtifact", id, state, "", opts...)
+}
+
 type deployArtifactArgs struct {
 	// (Updatable) Mode for artifact parameter substitution. Options: `"NONE", "SUBSTITUTE_PLACEHOLDERS"` For Helm Deployments only "NONE" is supported.
 	ArgumentSubstitutionMode string `pulumi:"argumentSubstitutionMode"`

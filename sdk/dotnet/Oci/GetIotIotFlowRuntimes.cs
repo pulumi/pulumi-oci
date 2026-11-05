@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Lists IoT flow runtimes in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Lists IoT flow runtimes in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Iot Flow Runtimes in Oracle Cloud Infrastructure Iot service.
         /// 
         /// Lists IoT flow runtimes in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

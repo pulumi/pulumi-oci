@@ -505,6 +505,34 @@ class Sender(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return Sender(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            email_address: pulumi.Input[Optional[_builtins.str]] = None,
+            email_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            email_ip_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_spf: pulumi.Input[Optional[_builtins.bool]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SenderLockArgs', 'SenderLockArgsDict', 'outputs.SenderLock']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["emailAddress"] = email_address
+        __props__["emailDomainId"] = email_domain_id
+        __props__["emailIpPoolId"] = email_ip_pool_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["isSpf"] = is_spf
+        __props__["locks"] = locks
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:Email/sender:Sender', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

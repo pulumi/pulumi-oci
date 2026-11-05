@@ -295,6 +295,12 @@ func (OpensearchClusterPipelineState) ElementType() reflect.Type {
 	return reflect.TypeOf((*opensearchClusterPipelineState)(nil)).Elem()
 }
 
+// OpensearchClusterPipelineExists checks whether an existing OpensearchClusterPipeline resource with the given ID exists.
+func OpensearchClusterPipelineExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpensearchClusterPipelineState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Opensearch/opensearchClusterPipeline:OpensearchClusterPipeline", id, state, "", opts...)
+}
+
 type opensearchClusterPipelineArgs struct {
 	// The OCID of the compartment to create the pipeline in.
 	CompartmentId string `pulumi:"compartmentId"`

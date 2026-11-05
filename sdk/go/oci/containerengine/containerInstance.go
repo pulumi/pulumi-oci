@@ -413,6 +413,12 @@ func (ContainerInstanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*containerInstanceState)(nil)).Elem()
 }
 
+// ContainerInstanceExists checks whether an existing ContainerInstance resource with the given ID exists.
+func ContainerInstanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ContainerInstanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ContainerEngine/containerInstance:ContainerInstance", id, state, "", opts...)
+}
+
 type containerInstanceArgs struct {
 	// The availability domain where the container instance runs.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`

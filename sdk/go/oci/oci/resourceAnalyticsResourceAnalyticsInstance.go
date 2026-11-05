@@ -240,6 +240,12 @@ func (ResourceAnalyticsResourceAnalyticsInstanceState) ElementType() reflect.Typ
 	return reflect.TypeOf((*resourceAnalyticsResourceAnalyticsInstanceState)(nil)).Elem()
 }
 
+// ResourceAnalyticsResourceAnalyticsInstanceExists checks whether an existing ResourceAnalyticsResourceAnalyticsInstance resource with the given ID exists.
+func ResourceAnalyticsResourceAnalyticsInstanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ResourceAnalyticsResourceAnalyticsInstanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/resourceAnalyticsResourceAnalyticsInstance:ResourceAnalyticsResourceAnalyticsInstance", id, state, "", opts...)
+}
+
 type resourceAnalyticsResourceAnalyticsInstanceArgs struct {
 	// Details for the ADW Admin password. Password can be passed as `VaultSecretPasswordDetails` or `PlainTextPasswordDetails`.  Example: `{"passwordType":"PLAIN_TEXT","password":"..."}` Example: `{"passwordType":"VAULT_SECRET","secretId":"ocid..."}`
 	AdwAdminPassword ResourceAnalyticsResourceAnalyticsInstanceAdwAdminPassword `pulumi:"adwAdminPassword"`

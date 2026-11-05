@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Oci
         /// For more information, see
         /// [Multicloud Resources](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resources.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -53,7 +52,6 @@ namespace Pulumi.Oci.Oci
         /// For more information, see
         /// [Multicloud Resources](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resources.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -86,7 +84,6 @@ namespace Pulumi.Oci.Oci
         /// Details for each resource include Multicloud base compartment, name, state, resource type, and network anchor.
         /// For more information, see
         /// [Multicloud Resources](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-resources.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

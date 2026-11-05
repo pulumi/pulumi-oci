@@ -176,6 +176,12 @@ func (MlApplicationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*mlApplicationState)(nil)).Elem()
 }
 
+// MlApplicationExists checks whether an existing MlApplication resource with the given ID exists.
+func MlApplicationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MlApplicationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataScience/mlApplication:MlApplication", id, state, "", opts...)
+}
+
 type mlApplicationArgs struct {
 	// (Updatable) The OCID of the compartment where the MlApplication is created.
 	CompartmentId string `pulumi:"compartmentId"`

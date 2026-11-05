@@ -227,6 +227,12 @@ func (CloudDbSystemDiscoveryState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudDbSystemDiscoveryState)(nil)).Elem()
 }
 
+// CloudDbSystemDiscoveryExists checks whether an existing CloudDbSystemDiscovery resource with the given ID exists.
+func CloudDbSystemDiscoveryExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudDbSystemDiscoveryState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/cloudDbSystemDiscovery:CloudDbSystemDiscovery", id, state, "", opts...)
+}
+
 type cloudDbSystemDiscoveryArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system discovery.
 	AgentId string `pulumi:"agentId"`

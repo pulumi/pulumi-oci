@@ -16,7 +16,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// This is an internal GET call is used to list all demand signals within the compartment passed as a query parameter.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// This is an internal GET call is used to list all demand signals within the compartment passed as a query parameter.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// This data source provides the list of Internal Occm Demand Signals in Oracle Cloud Infrastructure Capacity Management service.
         /// 
         /// This is an internal GET call is used to list all demand signals within the compartment passed as a query parameter.
-        /// 
         /// 
         /// ## Example Usage
         /// 

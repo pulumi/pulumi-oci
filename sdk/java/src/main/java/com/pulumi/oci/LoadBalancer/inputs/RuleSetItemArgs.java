@@ -218,9 +218,9 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
      * 
      * The tokens are case sensitive. For example, `{host}` is a valid token, but `{HOST}` is not.
      * 
-     * You can retain the literal characters of a token when you specify values for the path and query properties of the redirect URI. Use a backslash (\\) as the escape character for the \\, {, and } characters. For example, if the incoming HTTP request URI is `/video`, the path property value:
+     * You can retain the literal characters of a token when you specify values for the path and query properties of the redirect URI. Use a backslash (&#92;&#92;) as the escape character for the &#92;&#92;, {, and } characters. For example, if the incoming HTTP request URI is `/video`, the path property value:
      * 
-     * `/example{path}123\{path\}`
+     * `/example{path}123&#92;{path&#92;}`
      * 
      * appears in the constructed redirect URI as:
      * 
@@ -248,9 +248,9 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
      * 
      * The tokens are case sensitive. For example, `{host}` is a valid token, but `{HOST}` is not.
      * 
-     * You can retain the literal characters of a token when you specify values for the path and query properties of the redirect URI. Use a backslash (\\) as the escape character for the \\, {, and } characters. For example, if the incoming HTTP request URI is `/video`, the path property value:
+     * You can retain the literal characters of a token when you specify values for the path and query properties of the redirect URI. Use a backslash (&#92;&#92;) as the escape character for the &#92;&#92;, {, and } characters. For example, if the incoming HTTP request URI is `/video`, the path property value:
      * 
-     * `/example{path}123\{path\}`
+     * `/example{path}123&#92;{path&#92;}`
      * 
      * appears in the constructed redirect URI as:
      * 
@@ -691,9 +691,9 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * The tokens are case sensitive. For example, `{host}` is a valid token, but `{HOST}` is not.
          * 
-         * You can retain the literal characters of a token when you specify values for the path and query properties of the redirect URI. Use a backslash (\\) as the escape character for the \\, {, and } characters. For example, if the incoming HTTP request URI is `/video`, the path property value:
+         * You can retain the literal characters of a token when you specify values for the path and query properties of the redirect URI. Use a backslash (&#92;&#92;) as the escape character for the &#92;&#92;, {, and } characters. For example, if the incoming HTTP request URI is `/video`, the path property value:
          * 
-         * `/example{path}123\{path\}`
+         * `/example{path}123&#92;{path&#92;}`
          * 
          * appears in the constructed redirect URI as:
          * 
@@ -725,9 +725,9 @@ public final class RuleSetItemArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * The tokens are case sensitive. For example, `{host}` is a valid token, but `{HOST}` is not.
          * 
-         * You can retain the literal characters of a token when you specify values for the path and query properties of the redirect URI. Use a backslash (\\) as the escape character for the \\, {, and } characters. For example, if the incoming HTTP request URI is `/video`, the path property value:
+         * You can retain the literal characters of a token when you specify values for the path and query properties of the redirect URI. Use a backslash (&#92;&#92;) as the escape character for the &#92;&#92;, {, and } characters. For example, if the incoming HTTP request URI is `/video`, the path property value:
          * 
-         * `/example{path}123\{path\}`
+         * `/example{path}123&#92;{path&#92;}`
          * 
          * appears in the constructed redirect URI as:
          * 

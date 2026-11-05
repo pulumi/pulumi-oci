@@ -154,6 +154,12 @@ func (RunStatementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*runStatementState)(nil)).Elem()
 }
 
+// RunStatementExists checks whether an existing RunStatement resource with the given ID exists.
+func RunStatementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RunStatementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataFlow/runStatement:RunStatement", id, state, "", opts...)
+}
+
 type runStatementArgs struct {
 	// The statement code to execute. Example: `println(sc.version)`
 	Code string `pulumi:"code"`

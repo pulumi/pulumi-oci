@@ -184,6 +184,12 @@ func (TagDefaultState) ElementType() reflect.Type {
 	return reflect.TypeOf((*tagDefaultState)(nil)).Elem()
 }
 
+// TagDefaultExists checks whether an existing TagDefault resource with the given ID exists.
+func TagDefaultExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *TagDefaultState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/tagDefault:TagDefault", id, state, "", opts...)
+}
+
 type tagDefaultArgs struct {
 	// The OCID of the compartment. The tag default will be applied to all new resources created in this compartment.
 	CompartmentId string `pulumi:"compartmentId"`

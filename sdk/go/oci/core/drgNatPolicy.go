@@ -158,6 +158,12 @@ func (DrgNatPolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*drgNatPolicyState)(nil)).Elem()
 }
 
+// DrgNatPolicyExists checks whether an existing DrgNatPolicy resource with the given ID exists.
+func DrgNatPolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DrgNatPolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/drgNatPolicy:DrgNatPolicy", id, state, "", opts...)
+}
+
 type drgNatPolicyArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the DRG NAT policy.
 	CompartmentId string `pulumi:"compartmentId"`

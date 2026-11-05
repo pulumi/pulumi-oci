@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Apm
         /// Lists all Data Keys for the specified APM domain. The caller may filter the list by specifying the 'dataKeyType'
         /// query parameter.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Apm
         /// Lists all Data Keys for the specified APM domain. The caller may filter the list by specifying the 'dataKeyType'
         /// query parameter.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -74,7 +72,6 @@ namespace Pulumi.Oci.Apm
         /// 
         /// Lists all Data Keys for the specified APM domain. The caller may filter the list by specifying the 'dataKeyType'
         /// query parameter.
-        /// 
         /// 
         /// ## Example Usage
         /// 

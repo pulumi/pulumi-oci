@@ -292,6 +292,12 @@ func (AnalyticsInstanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*analyticsInstanceState)(nil)).Elem()
 }
 
+// AnalyticsInstanceExists checks whether an existing AnalyticsInstance resource with the given ID exists.
+func AnalyticsInstanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AnalyticsInstanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Analytics/analyticsInstance:AnalyticsInstance", id, state, "", opts...)
+}
+
 type analyticsInstanceArgs struct {
 	// The Analytics instance administrator user. This must be the user name (not OCID) of a user in the nominated identity domain. For example: john.smith@example.com.
 	AdminUser *string `pulumi:"adminUser"`

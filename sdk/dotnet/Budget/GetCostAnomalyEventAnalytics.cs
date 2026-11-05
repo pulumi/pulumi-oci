@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Budget
         /// 
         /// Gets a list of Cost Anomaly Events analytics summary - aggregated metrics for a given time period.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.Budget
         /// 
         /// Gets a list of Cost Anomaly Events analytics summary - aggregated metrics for a given time period.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -85,7 +83,6 @@ namespace Pulumi.Oci.Budget
         /// This data source provides the list of Cost Anomaly Event Analytics in Oracle Cloud Infrastructure Budget service.
         /// 
         /// Gets a list of Cost Anomaly Events analytics summary - aggregated metrics for a given time period.
-        /// 
         /// 
         /// ## Example Usage
         /// 

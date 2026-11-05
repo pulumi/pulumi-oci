@@ -35,7 +35,6 @@ namespace Pulumi.Oci.Core
         /// **Note:** An ephemeral public IP assigned to a private IP
         /// is always in the same availability domain and compartment as the private IP.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -85,7 +84,6 @@ namespace Pulumi.Oci.Core
         /// **Note:** An ephemeral public IP assigned to a private IP
         /// is always in the same availability domain and compartment as the private IP.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -134,7 +132,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// **Note:** An ephemeral public IP assigned to a private IP
         /// is always in the same availability domain and compartment as the private IP.
-        /// 
         /// 
         /// ## Example Usage
         /// 

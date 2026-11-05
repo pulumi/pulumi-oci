@@ -217,6 +217,12 @@ func (PropertyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*propertyState)(nil)).Elem()
 }
 
+// PropertyExists checks whether an existing Property resource with the given ID exists.
+func PropertyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PropertyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FleetAppsManagement/property:Property", id, state, "", opts...)
+}
+
 type propertyArgs struct {
 	// (Updatable) Compartment OCID
 	CompartmentId string `pulumi:"compartmentId"`

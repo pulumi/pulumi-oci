@@ -18,7 +18,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// If no explicit page size limit is specified, it will default to 1000.
         /// The response is limited to maximum 1000 records when compartmentIdInSubtree is true.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -62,7 +61,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// If no explicit page size limit is specified, it will default to 1000.
         /// The response is limited to maximum 1000 records when compartmentIdInSubtree is true.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -105,7 +103,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// Returns a list of Management Agents.
         /// If no explicit page size limit is specified, it will default to 1000.
         /// The response is limited to maximum 1000 records when compartmentIdInSubtree is true.
-        /// 
         /// 
         /// ## Example Usage
         /// 

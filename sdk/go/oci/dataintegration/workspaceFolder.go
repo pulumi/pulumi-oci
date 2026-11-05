@@ -216,6 +216,12 @@ func (WorkspaceFolderState) ElementType() reflect.Type {
 	return reflect.TypeOf((*workspaceFolderState)(nil)).Elem()
 }
 
+// WorkspaceFolderExists checks whether an existing WorkspaceFolder resource with the given ID exists.
+func WorkspaceFolderExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WorkspaceFolderState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataIntegration/workspaceFolder:WorkspaceFolder", id, state, "", opts...)
+}
+
 type workspaceFolderArgs struct {
 	// (Updatable) The category name.
 	CategoryName *string `pulumi:"categoryName"`

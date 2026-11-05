@@ -238,6 +238,12 @@ func (DiscoveryJobsResultState) ElementType() reflect.Type {
 	return reflect.TypeOf((*discoveryJobsResultState)(nil)).Elem()
 }
 
+// DiscoveryJobsResultExists checks whether an existing DiscoveryJobsResult resource with the given ID exists.
+func DiscoveryJobsResultExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DiscoveryJobsResultState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult", id, state, "", opts...)
+}
+
 type discoveryJobsResultArgs struct {
 	// The OCID of the discovery job.
 	//

@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Limits
         /// Includes a full list of resource limits belonging to a given service.
         /// If the subscription ID is provided, the limit value for the subscription will be returned.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.Limits
         /// Includes a full list of resource limits belonging to a given service.
         /// If the subscription ID is provided, the limit value for the subscription will be returned.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -84,7 +82,6 @@ namespace Pulumi.Oci.Limits
         /// 
         /// Includes a full list of resource limits belonging to a given service.
         /// If the subscription ID is provided, the limit value for the subscription will be returned.
-        /// 
         /// 
         /// ## Example Usage
         /// 

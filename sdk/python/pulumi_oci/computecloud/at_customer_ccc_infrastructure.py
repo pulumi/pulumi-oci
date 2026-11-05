@@ -772,6 +772,52 @@ class AtCustomerCccInfrastructure(pulumi.CustomResource):
         __props__.__dict__["upgrade_informations"] = upgrade_informations
         return AtCustomerCccInfrastructure(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            ccc_upgrade_schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_details: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_state: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            infrastructure_inventories: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AtCustomerCccInfrastructureInfrastructureInventoryArgs', 'AtCustomerCccInfrastructureInfrastructureInventoryArgsDict', 'outputs.AtCustomerCccInfrastructureInfrastructureInventory']]]]] = None,
+            infrastructure_network_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgs', 'AtCustomerCccInfrastructureInfrastructureNetworkConfigurationArgsDict', 'outputs.AtCustomerCccInfrastructureInfrastructureNetworkConfiguration']]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            provisioning_fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+            provisioning_pin: pulumi.Input[Optional[_builtins.str]] = None,
+            short_name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            upgrade_informations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AtCustomerCccInfrastructureUpgradeInformationArgs', 'AtCustomerCccInfrastructureUpgradeInformationArgsDict', 'outputs.AtCustomerCccInfrastructureUpgradeInformation']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["cccUpgradeScheduleId"] = ccc_upgrade_schedule_id
+        __props__["compartmentId"] = compartment_id
+        __props__["connectionDetails"] = connection_details
+        __props__["connectionState"] = connection_state
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["infrastructureInventories"] = infrastructure_inventories
+        __props__["infrastructureNetworkConfigurations"] = infrastructure_network_configurations
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["provisioningFingerprint"] = provisioning_fingerprint
+        __props__["provisioningPin"] = provisioning_pin
+        __props__["shortName"] = short_name
+        __props__["state"] = state
+        __props__["subnetId"] = subnet_id
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["upgradeInformations"] = upgrade_informations
+        return pulumi.runtime.exists_resource(None, 'oci:ComputeCloud/atCustomerCccInfrastructure:AtCustomerCccInfrastructure', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="cccUpgradeScheduleId")
     def ccc_upgrade_schedule_id(self) -> pulumi.Output[_builtins.str]:

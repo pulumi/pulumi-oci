@@ -197,6 +197,12 @@ func (MaskingReportManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*maskingReportManagementState)(nil)).Elem()
 }
 
+// MaskingReportManagementExists checks whether an existing MaskingReportManagement resource with the given ID exists.
+func MaskingReportManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MaskingReportManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/maskingReportManagement:MaskingReportManagement", id, state, "", opts...)
+}
+
 type maskingReportManagementArgs struct {
 	// The OCID of the compartment that contains the masking report.
 	CompartmentId *string `pulumi:"compartmentId"`

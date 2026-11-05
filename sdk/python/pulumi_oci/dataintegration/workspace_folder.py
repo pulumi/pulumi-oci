@@ -685,6 +685,42 @@ class WorkspaceFolder(pulumi.CustomResource):
         __props__.__dict__["workspace_id"] = workspace_id
         return WorkspaceFolder(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            category_name: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            folder_key: pulumi.Input[Optional[_builtins.str]] = None,
+            identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            key_map: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceFolderMetadataArgs', 'WorkspaceFolderMetadataArgsDict', 'outputs.WorkspaceFolderMetadata']]]]] = None,
+            model_type: pulumi.Input[Optional[_builtins.str]] = None,
+            model_version: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            object_status: pulumi.Input[Optional[_builtins.int]] = None,
+            object_version: pulumi.Input[Optional[_builtins.int]] = None,
+            parent_reves: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceFolderParentRefArgs', 'WorkspaceFolderParentRefArgsDict', 'outputs.WorkspaceFolderParentRef']]]]] = None,
+            registry_metadata: pulumi.Input[Optional[Union['WorkspaceFolderRegistryMetadataArgs', 'WorkspaceFolderRegistryMetadataArgsDict', 'outputs.WorkspaceFolderRegistryMetadata']]] = None,
+            workspace_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["categoryName"] = category_name
+        __props__["description"] = description
+        __props__["folderKey"] = folder_key
+        __props__["identifier"] = identifier
+        __props__["key"] = key
+        __props__["keyMap"] = key_map
+        __props__["metadatas"] = metadatas
+        __props__["modelType"] = model_type
+        __props__["modelVersion"] = model_version
+        __props__["name"] = name
+        __props__["objectStatus"] = object_status
+        __props__["objectVersion"] = object_version
+        __props__["parentReves"] = parent_reves
+        __props__["registryMetadata"] = registry_metadata
+        __props__["workspaceId"] = workspace_id
+        return pulumi.runtime.exists_resource(None, 'oci:DataIntegration/workspaceFolder:WorkspaceFolder', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="categoryName")
     def category_name(self) -> pulumi.Output[_builtins.str]:

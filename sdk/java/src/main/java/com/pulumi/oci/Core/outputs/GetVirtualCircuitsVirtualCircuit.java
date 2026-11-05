@@ -35,11 +35,10 @@ public final class GetVirtualCircuitsVirtualCircuit {
     /**
      * @return Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
      * 
-     * @deprecated
-     * The &#39;bgp_management&#39; field has been deprecated. Please use the &#39;oci_core_fast_connect_provider_service&#39; data source instead.
+     * @deprecated The &#39;bgp_management&#39; field has been deprecated. Please use the &#39;oci_core_fast_connect_provider_service&#39; data source instead.
      * 
      */
-    @Deprecated /* The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead. */
+    @Deprecated
     private String bgpManagement;
     /**
      * @return The state of the Ipv4 BGP session associated with the virtual circuit.
@@ -64,11 +63,10 @@ public final class GetVirtualCircuitsVirtualCircuit {
     /**
      * @return Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
      * 
-     * @deprecated
-     * The &#39;customer_bgp_asn&#39; field has been deprecated. Please use &#39;customer_asn&#39; instead.
+     * @deprecated The &#39;customer_bgp_asn&#39; field has been deprecated. Please use &#39;customer_asn&#39; instead.
      * 
      */
-    @Deprecated /* The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead. */
+    @Deprecated
     private Integer customerBgpAsn;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
@@ -222,11 +220,10 @@ public final class GetVirtualCircuitsVirtualCircuit {
     /**
      * @return Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
      * 
-     * @deprecated
-     * The &#39;bgp_management&#39; field has been deprecated. Please use the &#39;oci_core_fast_connect_provider_service&#39; data source instead.
+     * @deprecated The &#39;bgp_management&#39; field has been deprecated. Please use the &#39;oci_core_fast_connect_provider_service&#39; data source instead.
      * 
      */
-    @Deprecated /* The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead. */
+    @Deprecated
     public String bgpManagement() {
         return this.bgpManagement;
     }
@@ -261,11 +258,10 @@ public final class GetVirtualCircuitsVirtualCircuit {
     /**
      * @return Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
      * 
-     * @deprecated
-     * The &#39;customer_bgp_asn&#39; field has been deprecated. Please use &#39;customer_asn&#39; instead.
+     * @deprecated The &#39;customer_bgp_asn&#39; field has been deprecated. Please use &#39;customer_asn&#39; instead.
      * 
      */
-    @Deprecated /* The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead. */
+    @Deprecated
     public Integer customerBgpAsn() {
         return this.customerBgpAsn;
     }

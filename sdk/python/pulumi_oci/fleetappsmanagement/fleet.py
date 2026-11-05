@@ -842,6 +842,54 @@ class Fleet(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return Fleet(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetCredentialArgs', 'FleetCredentialArgsDict', 'outputs.FleetCredential']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            details: pulumi.Input[Optional[Union['FleetDetailsArgs', 'FleetDetailsArgsDict', 'outputs.FleetDetails']]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            environment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_target_auto_confirm: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_preferences: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetNotificationPreferenceArgs', 'FleetNotificationPreferenceArgsDict', 'outputs.FleetNotificationPreference']]]]] = None,
+            parent_fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            products: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetPropertyArgs', 'FleetPropertyArgsDict', 'outputs.FleetProperty']]]]] = None,
+            resource_region: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_selection: pulumi.Input[Optional[Union['FleetResourceSelectionArgs', 'FleetResourceSelectionArgsDict', 'outputs.FleetResourceSelection']]] = None,
+            resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FleetResourceArgs', 'FleetResourceArgsDict', 'outputs.FleetResource']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["credentials"] = credentials
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["details"] = details
+        __props__["displayName"] = display_name
+        __props__["environmentType"] = environment_type
+        __props__["freeformTags"] = freeform_tags
+        __props__["isTargetAutoConfirm"] = is_target_auto_confirm
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["notificationPreferences"] = notification_preferences
+        __props__["parentFleetId"] = parent_fleet_id
+        __props__["products"] = products
+        __props__["properties"] = properties
+        __props__["resourceRegion"] = resource_region
+        __props__["resourceSelection"] = resource_selection
+        __props__["resources"] = resources
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:FleetAppsManagement/fleet:Fleet', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

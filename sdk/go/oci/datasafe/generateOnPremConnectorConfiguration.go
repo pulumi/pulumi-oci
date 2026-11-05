@@ -128,6 +128,12 @@ func (GenerateOnPremConnectorConfigurationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*generateOnPremConnectorConfigurationState)(nil)).Elem()
 }
 
+// GenerateOnPremConnectorConfigurationExists checks whether an existing GenerateOnPremConnectorConfiguration resource with the given ID exists.
+func GenerateOnPremConnectorConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GenerateOnPremConnectorConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/generateOnPremConnectorConfiguration:GenerateOnPremConnectorConfiguration", id, state, "", opts...)
+}
+
 type generateOnPremConnectorConfigurationArgs struct {
 	// The OCID of the on-premises connector.
 	OnPremConnectorId string `pulumi:"onPremConnectorId"`

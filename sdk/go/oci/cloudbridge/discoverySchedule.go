@@ -179,6 +179,12 @@ func (DiscoveryScheduleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*discoveryScheduleState)(nil)).Elem()
 }
 
+// DiscoveryScheduleExists checks whether an existing DiscoverySchedule resource with the given ID exists.
+func DiscoveryScheduleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DiscoveryScheduleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CloudBridge/discoverySchedule:DiscoverySchedule", id, state, "", opts...)
+}
+
 type discoveryScheduleArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the discovery schedule is created.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -247,6 +247,12 @@ func (HttpMonitorState) ElementType() reflect.Type {
 	return reflect.TypeOf((*httpMonitorState)(nil)).Elem()
 }
 
+// HttpMonitorExists checks whether an existing HttpMonitor resource with the given ID exists.
+func HttpMonitorExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HttpMonitorState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:HealthChecks/httpMonitor:HttpMonitor", id, state, "", opts...)
+}
+
 type httpMonitorArgs struct {
 	// (Updatable) The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

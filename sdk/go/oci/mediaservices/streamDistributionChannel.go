@@ -181,6 +181,12 @@ func (StreamDistributionChannelState) ElementType() reflect.Type {
 	return reflect.TypeOf((*streamDistributionChannelState)(nil)).Elem()
 }
 
+// StreamDistributionChannelExists checks whether an existing StreamDistributionChannel resource with the given ID exists.
+func StreamDistributionChannelExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *StreamDistributionChannelState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:MediaServices/streamDistributionChannel:StreamDistributionChannel", id, state, "", opts...)
+}
+
 type streamDistributionChannelArgs struct {
 	// (Updatable) Compartment Identifier.
 	CompartmentId string `pulumi:"compartmentId"`

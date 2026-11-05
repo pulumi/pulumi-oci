@@ -206,6 +206,12 @@ func (FleetCredentialState) ElementType() reflect.Type {
 	return reflect.TypeOf((*fleetCredentialState)(nil)).Elem()
 }
 
+// FleetCredentialExists checks whether an existing FleetCredential resource with the given ID exists.
+func FleetCredentialExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FleetCredentialState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FleetAppsManagement/fleetCredential:FleetCredential", id, state, "", opts...)
+}
+
 type fleetCredentialArgs struct {
 	// Compartment OCID
 	CompartmentId string `pulumi:"compartmentId"`

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Retrieves a list of snaps for a managed instance. Filters may be applied to select a subset of snaps based on the filter criteria.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Retrieves a list of snaps for a managed instance. Filters may be applied to select a subset of snaps based on the filter criteria.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides the list of Managed Instance Snaps in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Retrieves a list of snaps for a managed instance. Filters may be applied to select a subset of snaps based on the filter criteria.
-        /// 
         /// 
         /// ## Example Usage
         /// 

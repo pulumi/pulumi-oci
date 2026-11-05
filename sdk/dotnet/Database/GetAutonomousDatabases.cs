@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of Autonomous AI Databases based on the query parameters specified.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -55,7 +54,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of Autonomous AI Databases based on the query parameters specified.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -93,7 +91,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Autonomous Databases in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets a list of Autonomous AI Databases based on the query parameters specified.
-        /// 
         /// 
         /// ## Example Usage
         /// 

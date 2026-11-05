@@ -170,6 +170,12 @@ func (ClusterWorkloadMappingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*clusterWorkloadMappingState)(nil)).Elem()
 }
 
+// ClusterWorkloadMappingExists checks whether an existing ClusterWorkloadMapping resource with the given ID exists.
+func ClusterWorkloadMappingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ClusterWorkloadMappingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ContainerEngine/clusterWorkloadMapping:ClusterWorkloadMapping", id, state, "", opts...)
+}
+
 type clusterWorkloadMappingArgs struct {
 	// The OCID of the cluster.
 	ClusterId string `pulumi:"clusterId"`

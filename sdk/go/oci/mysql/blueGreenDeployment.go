@@ -258,6 +258,12 @@ func (BlueGreenDeploymentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*blueGreenDeploymentState)(nil)).Elem()
 }
 
+// BlueGreenDeploymentExists checks whether an existing BlueGreenDeployment resource with the given ID exists.
+func BlueGreenDeploymentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BlueGreenDeploymentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Mysql/blueGreenDeployment:BlueGreenDeployment", id, state, "", opts...)
+}
+
 type blueGreenDeploymentArgs struct {
 	// Replication channel details for a blue/green deployment.
 	ChannelDetails BlueGreenDeploymentChannelDetails `pulumi:"channelDetails"`

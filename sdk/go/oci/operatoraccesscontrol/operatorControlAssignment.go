@@ -323,6 +323,12 @@ func (OperatorControlAssignmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*operatorControlAssignmentState)(nil)).Elem()
 }
 
+// OperatorControlAssignmentExists checks whether an existing OperatorControlAssignment resource with the given ID exists.
+func OperatorControlAssignmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OperatorControlAssignmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment", id, state, "", opts...)
+}
+
 type operatorControlAssignmentArgs struct {
 	// (Updatable) Comment about the assignment of the operator control to this target resource.
 	Comment *string `pulumi:"comment"`

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the VNICs in the specified network security group.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the VNICs in the specified network security group.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides the list of Network Security Group Vnics in Oracle Cloud Infrastructure Core service.
         /// 
         /// Lists the VNICs in the specified network security group.
-        /// 
         /// 
         /// ## Example Usage
         /// 

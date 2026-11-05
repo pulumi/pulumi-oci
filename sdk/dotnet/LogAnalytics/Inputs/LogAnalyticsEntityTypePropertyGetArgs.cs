@@ -19,8 +19,7 @@ namespace Pulumi.Oci.LogAnalytics.Inputs
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Log analytics entity type property name. 
-        /// 
+        /// Log analytics entity type property name.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

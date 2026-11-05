@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the details for the external ASM specified by `externalAsmId`.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the details for the external ASM specified by `externalAsmId`.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides details about a specific External Asm resource in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Gets the details for the external ASM specified by `externalAsmId`.
-        /// 
         /// 
         /// ## Example Usage
         /// 

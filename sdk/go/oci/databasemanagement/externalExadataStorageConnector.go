@@ -244,6 +244,12 @@ func (ExternalExadataStorageConnectorState) ElementType() reflect.Type {
 	return reflect.TypeOf((*externalExadataStorageConnectorState)(nil)).Elem()
 }
 
+// ExternalExadataStorageConnectorExists checks whether an existing ExternalExadataStorageConnector resource with the given ID exists.
+func ExternalExadataStorageConnectorExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalExadataStorageConnectorState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/externalExadataStorageConnector:ExternalExadataStorageConnector", id, state, "", opts...)
+}
+
 type externalExadataStorageConnectorArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the agent for the Exadata storage server.
 	AgentId string `pulumi:"agentId"`

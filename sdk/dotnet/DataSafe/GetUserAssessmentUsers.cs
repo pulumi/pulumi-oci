@@ -19,7 +19,6 @@ namespace Pulumi.Oci.DataSafe
         /// of the latest password change. It also contains the user category derived from these user details as well as privileges
         /// granted to each user.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +70,6 @@ namespace Pulumi.Oci.DataSafe
         /// of the latest password change. It also contains the user category derived from these user details as well as privileges
         /// granted to each user.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -122,7 +120,6 @@ namespace Pulumi.Oci.DataSafe
         /// as user type, account status, last login time, user creation time, authentication type, user profile, and the date and time
         /// of the latest password change. It also contains the user category derived from these user details as well as privileges
         /// granted to each user.
-        /// 
         /// 
         /// ## Example Usage
         /// 

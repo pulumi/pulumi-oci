@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Ocvp
         /// Lists the SDDCs in the specified compartment. The list can be
         /// filtered by display name or availability domain.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Ocvp
         /// Lists the SDDCs in the specified compartment. The list can be
         /// filtered by display name or availability domain.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -78,7 +76,6 @@ namespace Pulumi.Oci.Ocvp
         /// 
         /// Lists the SDDCs in the specified compartment. The list can be
         /// filtered by display name or availability domain.
-        /// 
         /// 
         /// ## Example Usage
         /// 

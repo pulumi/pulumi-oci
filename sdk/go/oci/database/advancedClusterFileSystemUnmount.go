@@ -62,6 +62,12 @@ func (AdvancedClusterFileSystemUnmountState) ElementType() reflect.Type {
 	return reflect.TypeOf((*advancedClusterFileSystemUnmountState)(nil)).Elem()
 }
 
+// AdvancedClusterFileSystemUnmountExists checks whether an existing AdvancedClusterFileSystemUnmount resource with the given ID exists.
+func AdvancedClusterFileSystemUnmountExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AdvancedClusterFileSystemUnmountState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/advancedClusterFileSystemUnmount:AdvancedClusterFileSystemUnmount", id, state, "", opts...)
+}
+
 type advancedClusterFileSystemUnmountArgs struct {
 	AdvancedClusterFileSystemId string `pulumi:"advancedClusterFileSystemId"`
 }

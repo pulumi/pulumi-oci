@@ -244,6 +244,16 @@ class IotIotDomainGroupConfigureDataAccess(pulumi.CustomResource):
         __props__.__dict__["iot_domain_group_id"] = iot_domain_group_id
         return IotIotDomainGroupConfigureDataAccess(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            db_allow_listed_vcn_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            iot_domain_group_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["dbAllowListedVcnIds"] = db_allow_listed_vcn_ids
+        __props__["iotDomainGroupId"] = iot_domain_group_id
+        return pulumi.runtime.exists_resource(None, 'oci:oci/iotIotDomainGroupConfigureDataAccess:IotIotDomainGroupConfigureDataAccess', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="dbAllowListedVcnIds")
     def db_allow_listed_vcn_ids(self) -> pulumi.Output[Sequence[_builtins.str]]:

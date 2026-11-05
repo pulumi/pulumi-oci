@@ -281,6 +281,18 @@ class CloudExadataInfrastructureManagedexadataManagement(pulumi.CustomResource):
         __props__.__dict__["license_model"] = license_model
         return CloudExadataInfrastructureManagedexadataManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cloud_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_managedexadata: pulumi.Input[Optional[_builtins.bool]] = None,
+            license_model: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["cloudExadataInfrastructureId"] = cloud_exadata_infrastructure_id
+        __props__["enableManagedexadata"] = enable_managedexadata
+        __props__["licenseModel"] = license_model
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseManagement/cloudExadataInfrastructureManagedexadataManagement:CloudExadataInfrastructureManagedexadataManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="cloudExadataInfrastructureId")
     def cloud_exadata_infrastructure_id(self) -> pulumi.Output[_builtins.str]:

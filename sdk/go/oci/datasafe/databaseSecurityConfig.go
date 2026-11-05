@@ -172,6 +172,12 @@ func (DatabaseSecurityConfigState) ElementType() reflect.Type {
 	return reflect.TypeOf((*databaseSecurityConfigState)(nil)).Elem()
 }
 
+// DatabaseSecurityConfigExists checks whether an existing DatabaseSecurityConfig resource with the given ID exists.
+func DatabaseSecurityConfigExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DatabaseSecurityConfigState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/databaseSecurityConfig:DatabaseSecurityConfig", id, state, "", opts...)
+}
+
 type databaseSecurityConfigArgs struct {
 	// (Updatable) The OCID of the compartment containing the database security config.
 	CompartmentId *string `pulumi:"compartmentId"`

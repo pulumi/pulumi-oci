@@ -13,11 +13,10 @@ import java.util.Objects;
 @CustomType
 public final class GetDeploymentsDeploymentCollectionItemOggData {
     /**
-     * @deprecated
-     * The &#39;admin_password&#39; field has been deprecated. Please use &#39;password_secret_id&#39; instead.
+     * @deprecated The &#39;admin_password&#39; field has been deprecated. Please use &#39;password_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'admin_password' field has been deprecated. Please use 'password_secret_id' instead. */
+    @Deprecated
     private String adminPassword;
     /**
      * @return The GoldenGate deployment console username.
@@ -68,11 +67,10 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
 
     private GetDeploymentsDeploymentCollectionItemOggData() {}
     /**
-     * @deprecated
-     * The &#39;admin_password&#39; field has been deprecated. Please use &#39;password_secret_id&#39; instead.
+     * @deprecated The &#39;admin_password&#39; field has been deprecated. Please use &#39;password_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'admin_password' field has been deprecated. Please use 'password_secret_id' instead. */
+    @Deprecated
     public String adminPassword() {
         return this.adminPassword;
     }

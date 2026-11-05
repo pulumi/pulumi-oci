@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Lists events that match the specified criteria, such as compartment, state, and event type.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -53,7 +52,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Lists events that match the specified criteria, such as compartment, state, and event type.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -89,7 +87,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides the list of Events in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Lists events that match the specified criteria, such as compartment, state, and event type.
-        /// 
         /// 
         /// ## Example Usage
         /// 

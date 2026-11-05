@@ -296,6 +296,12 @@ func (AssetSourceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*assetSourceState)(nil)).Elem()
 }
 
+// AssetSourceExists checks whether an existing AssetSource resource with the given ID exists.
+func AssetSourceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AssetSourceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CloudBridge/assetSource:AssetSource", id, state, "", opts...)
+}
+
 type assetSourceArgs struct {
 	// (Updatable) Flag indicating whether historical metrics are collected for assets, originating from this asset source.
 	AreHistoricalMetricsCollected *bool `pulumi:"areHistoricalMetricsCollected"`

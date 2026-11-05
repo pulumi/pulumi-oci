@@ -340,6 +340,12 @@ func (FusionEnvironmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*fusionEnvironmentState)(nil)).Elem()
 }
 
+// FusionEnvironmentExists checks whether an existing FusionEnvironment resource with the given ID exists.
+func FusionEnvironmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FusionEnvironmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FusionApps/fusionEnvironment:FusionEnvironment", id, state, "", opts...)
+}
+
 type fusionEnvironmentArgs struct {
 	// (Updatable) Additional egress rules that should be applied to the environment. Some standard ports are open for general use; see [Securing Network Access to a Fusion Applications Environment][iaas/Content/fusion-applications/plan-environment.htm#internet-cache]. If access to a non-standard port is required, however, they can be listed here.
 	AdditionalEgressRules []FusionEnvironmentAdditionalEgressRule `pulumi:"additionalEgressRules"`

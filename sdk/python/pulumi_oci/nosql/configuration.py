@@ -358,6 +358,20 @@ class Configuration(pulumi.CustomResource):
         __props__.__dict__["kms_key"] = kms_key
         return Configuration(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            environment: pulumi.Input[Optional[_builtins.str]] = None,
+            is_opc_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
+            kms_key: pulumi.Input[Optional[Union['ConfigurationKmsKeyArgs', 'ConfigurationKmsKeyArgsDict', 'outputs.ConfigurationKmsKey']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["environment"] = environment
+        __props__["isOpcDryRun"] = is_opc_dry_run
+        __props__["kmsKey"] = kms_key
+        return pulumi.runtime.exists_resource(None, 'oci:Nosql/configuration:Configuration', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

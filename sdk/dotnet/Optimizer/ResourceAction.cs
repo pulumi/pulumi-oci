@@ -134,7 +134,6 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// For example, "The current `Postponed` status of the resource action will end and change to `Pending` on this date and time."
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -209,7 +208,6 @@ namespace Pulumi.Oci.Optimizer
         /// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
         /// 
         /// For example, "The current `Postponed` status of the resource action will end and change to `Pending` on this date and time."
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -343,7 +341,6 @@ namespace Pulumi.Oci.Optimizer
         /// (Updatable) The date and time the current status will change. The format is defined by RFC3339.
         /// 
         /// For example, "The current `Postponed` status of the resource action will end and change to `Pending` on this date and time."
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

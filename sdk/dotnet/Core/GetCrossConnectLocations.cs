@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Core
         /// Lists the available FastConnect locations for cross-connect installation. You need
         /// this information so you can specify your desired location when you create a cross-connect.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Core
         /// Lists the available FastConnect locations for cross-connect installation. You need
         /// this information so you can specify your desired location when you create a cross-connect.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -72,7 +70,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the available FastConnect locations for cross-connect installation. You need
         /// this information so you can specify your desired location when you create a cross-connect.
-        /// 
         /// 
         /// ## Example Usage
         /// 

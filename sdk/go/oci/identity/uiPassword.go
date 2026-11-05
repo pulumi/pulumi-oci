@@ -144,6 +144,12 @@ func (UiPasswordState) ElementType() reflect.Type {
 	return reflect.TypeOf((*uiPasswordState)(nil)).Elem()
 }
 
+// UiPasswordExists checks whether an existing UiPassword resource with the given ID exists.
+func UiPasswordExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UiPasswordState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/uiPassword:UiPassword", id, state, "", opts...)
+}
+
 type uiPasswordArgs struct {
 	// The OCID of the user.
 	//

@@ -974,6 +974,54 @@ class NetworkLoadBalancer(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return NetworkLoadBalancer(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            assigned_ipv6: pulumi.Input[Optional[_builtins.str]] = None,
+            assigned_private_ipv4: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkLoadBalancerIpAddressArgs', 'NetworkLoadBalancerIpAddressArgsDict', 'outputs.NetworkLoadBalancerIpAddress']]]]] = None,
+            is_preserve_source_destination: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_private: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_symmetric_hash_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            nlb_ip_version: pulumi.Input[Optional[_builtins.str]] = None,
+            reserved_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkLoadBalancerReservedIpArgs', 'NetworkLoadBalancerReservedIpArgsDict', 'outputs.NetworkLoadBalancerReservedIp']]]]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_ipv6cidr: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["assignedIpv6"] = assigned_ipv6
+        __props__["assignedPrivateIpv4"] = assigned_private_ipv4
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["ipAddresses"] = ip_addresses
+        __props__["isPreserveSourceDestination"] = is_preserve_source_destination
+        __props__["isPrivate"] = is_private
+        __props__["isSymmetricHashEnabled"] = is_symmetric_hash_enabled
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["networkSecurityGroupIds"] = network_security_group_ids
+        __props__["nlbIpVersion"] = nlb_ip_version
+        __props__["reservedIps"] = reserved_ips
+        __props__["securityAttributes"] = security_attributes
+        __props__["state"] = state
+        __props__["subnetId"] = subnet_id
+        __props__["subnetIpv6cidr"] = subnet_ipv6cidr
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="assignedIpv6")
     def assigned_ipv6(self) -> pulumi.Output[Optional[_builtins.str]]:

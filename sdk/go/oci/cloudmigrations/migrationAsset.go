@@ -223,6 +223,12 @@ func (MigrationAssetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*migrationAssetState)(nil)).Elem()
 }
 
+// MigrationAssetExists checks whether an existing MigrationAsset resource with the given ID exists.
+func MigrationAssetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MigrationAssetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CloudMigrations/migrationAsset:MigrationAsset", id, state, "", opts...)
+}
+
 type migrationAssetArgs struct {
 	// Availability domain
 	AvailabilityDomain string `pulumi:"availabilityDomain"`

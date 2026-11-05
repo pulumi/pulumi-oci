@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the execution window resources in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the execution window resources in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Execution Windows in Oracle Cloud Infrastructure Database service.
         /// 
         /// Lists the execution window resources in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

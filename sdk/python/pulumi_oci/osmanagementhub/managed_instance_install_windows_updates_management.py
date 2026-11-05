@@ -323,6 +323,20 @@ class ManagedInstanceInstallWindowsUpdatesManagement(pulumi.CustomResource):
         __props__.__dict__["work_request_details"] = work_request_details
         return ManagedInstanceInstallWindowsUpdatesManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            windows_update_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            windows_update_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            work_request_details: pulumi.Input[Optional[Union['ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgs', 'ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceInstallWindowsUpdatesManagementWorkRequestDetails']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["managedInstanceId"] = managed_instance_id
+        __props__["windowsUpdateNames"] = windows_update_names
+        __props__["windowsUpdateTypes"] = windows_update_types
+        __props__["workRequestDetails"] = work_request_details
+        return pulumi.runtime.exists_resource(None, 'oci:OsManagementHub/managedInstanceInstallWindowsUpdatesManagement:ManagedInstanceInstallWindowsUpdatesManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="managedInstanceId")
     def managed_instance_id(self) -> pulumi.Output[_builtins.str]:

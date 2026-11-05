@@ -175,7 +175,6 @@ namespace Pulumi.Oci.StackMonitoring
         /// <summary>
         /// (Updatable) An optional property when set to `True` triggers Publish of a metric extension. Once set to `True`, it cannot be changed back to `False`. Update of PublishTrigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or PublishTrigger is updated to `True`.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -321,7 +320,6 @@ namespace Pulumi.Oci.StackMonitoring
         /// <summary>
         /// (Updatable) An optional property when set to `True` triggers Publish of a metric extension. Once set to `True`, it cannot be changed back to `False`. Update of PublishTrigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or PublishTrigger is updated to `True`.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -428,7 +426,6 @@ namespace Pulumi.Oci.StackMonitoring
 
         /// <summary>
         /// (Updatable) An optional property when set to `True` triggers Publish of a metric extension. Once set to `True`, it cannot be changed back to `False`. Update of PublishTrigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or PublishTrigger is updated to `True`.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

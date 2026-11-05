@@ -814,6 +814,62 @@ class InstanceMaintenanceEvent(pulumi.CustomResource):
         __props__.__dict__["time_window_start"] = time_window_start
         return InstanceMaintenanceEvent(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            additional_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            alternative_resolution_action: pulumi.Input[Optional[_builtins.str]] = None,
+            alternative_resolution_actions: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            can_delete_local_storage: pulumi.Input[Optional[_builtins.bool]] = None,
+            can_reschedule: pulumi.Input[Optional[_builtins.bool]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            correlation_token: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            estimated_duration: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            instance_action: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_maintenance_event_id: pulumi.Input[Optional[_builtins.str]] = None,
+            maintenance_category: pulumi.Input[Optional[_builtins.str]] = None,
+            maintenance_reason: pulumi.Input[Optional[_builtins.str]] = None,
+            start_window_duration: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_finished: pulumi.Input[Optional[_builtins.str]] = None,
+            time_hard_due_date: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started: pulumi.Input[Optional[_builtins.str]] = None,
+            time_window_start: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["additionalDetails"] = additional_details
+        __props__["alternativeResolutionAction"] = alternative_resolution_action
+        __props__["alternativeResolutionActions"] = alternative_resolution_actions
+        __props__["canDeleteLocalStorage"] = can_delete_local_storage
+        __props__["canReschedule"] = can_reschedule
+        __props__["compartmentId"] = compartment_id
+        __props__["correlationToken"] = correlation_token
+        __props__["createdBy"] = created_by
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["estimatedDuration"] = estimated_duration
+        __props__["freeformTags"] = freeform_tags
+        __props__["instanceAction"] = instance_action
+        __props__["instanceId"] = instance_id
+        __props__["instanceMaintenanceEventId"] = instance_maintenance_event_id
+        __props__["maintenanceCategory"] = maintenance_category
+        __props__["maintenanceReason"] = maintenance_reason
+        __props__["startWindowDuration"] = start_window_duration
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["timeFinished"] = time_finished
+        __props__["timeHardDueDate"] = time_hard_due_date
+        __props__["timeStarted"] = time_started
+        __props__["timeWindowStart"] = time_window_start
+        return pulumi.runtime.exists_resource(None, 'oci:Core/instanceMaintenanceEvent:InstanceMaintenanceEvent', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="additionalDetails")
     def additional_details(self) -> pulumi.Output[Mapping[str, _builtins.str]]:

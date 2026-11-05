@@ -548,6 +548,34 @@ class Stream(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return Stream(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
+            messages_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            partitions: pulumi.Input[Optional[_builtins.int]] = None,
+            retention_in_hours: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            stream_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleStateDetails"] = lifecycle_state_details
+        __props__["messagesEndpoint"] = messages_endpoint
+        __props__["name"] = name
+        __props__["partitions"] = partitions
+        __props__["retentionInHours"] = retention_in_hours
+        __props__["state"] = state
+        __props__["streamPoolId"] = stream_pool_id
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:Streaming/stream:Stream', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

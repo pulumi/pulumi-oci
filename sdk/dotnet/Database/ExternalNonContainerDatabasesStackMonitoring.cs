@@ -47,7 +47,6 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// (Updatable) Enabling Stack Monitoring on External Non Container Databases . Requires boolean value "true" or "false".
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -115,7 +114,6 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// (Updatable) Enabling Stack Monitoring on External Non Container Databases . Requires boolean value "true" or "false".
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -144,7 +142,6 @@ namespace Pulumi.Oci.Database
     {
         /// <summary>
         /// (Updatable) Enabling Stack Monitoring on External Non Container Databases . Requires boolean value "true" or "false".
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

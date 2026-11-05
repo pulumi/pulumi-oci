@@ -245,11 +245,10 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
     /**
      * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
      * 
-     * @deprecated
-     * The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
+     * @deprecated The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
      * 
      */
-    @Deprecated /* The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead. */
+    @Deprecated
     @Export(name="sizeInMbs", refs={String.class}, tree="[0]")
     private Output<String> sizeInMbs;
 
@@ -403,11 +402,10 @@ public class VolumeBackup extends com.pulumi.resources.CustomResource {
     /**
      * The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
      * 
-     * @deprecated
-     * The &#39;unique_size_in_mbs&#39; field has been deprecated. Please use &#39;unique_size_in_gbs&#39; instead.
+     * @deprecated The &#39;unique_size_in_mbs&#39; field has been deprecated. Please use &#39;unique_size_in_gbs&#39; instead.
      * 
      */
-    @Deprecated /* The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead. */
+    @Deprecated
     @Export(name="uniqueSizeInMbs", refs={String.class}, tree="[0]")
     private Output<String> uniqueSizeInMbs;
 

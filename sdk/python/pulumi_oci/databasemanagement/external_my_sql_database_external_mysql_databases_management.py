@@ -277,6 +277,18 @@ class ExternalMySqlDatabaseExternalMysqlDatabasesManagement(pulumi.CustomResourc
         __props__.__dict__["external_my_sql_database_id"] = external_my_sql_database_id
         return ExternalMySqlDatabaseExternalMysqlDatabasesManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_external_mysql_database: pulumi.Input[Optional[_builtins.bool]] = None,
+            external_my_sql_database_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["connectorId"] = connector_id
+        __props__["enableExternalMysqlDatabase"] = enable_external_mysql_database
+        __props__["externalMySqlDatabaseId"] = external_my_sql_database_id
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseManagement/externalMySqlDatabaseExternalMysqlDatabasesManagement:ExternalMySqlDatabaseExternalMysqlDatabasesManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="connectorId")
     def connector_id(self) -> pulumi.Output[_builtins.str]:

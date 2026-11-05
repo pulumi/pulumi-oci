@@ -74,6 +74,12 @@ func (DataPatchState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dataPatchState)(nil)).Elem()
 }
 
+// DataPatchExists checks whether an existing DataPatch resource with the given ID exists.
+func DataPatchExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DataPatchState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/dataPatch:DataPatch", id, state, "", opts...)
+}
+
 type dataPatchArgs struct {
 	Action             string                     `pulumi:"action"`
 	DataPatchOptions   []DataPatchDataPatchOption `pulumi:"dataPatchOptions"`

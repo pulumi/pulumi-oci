@@ -172,6 +172,12 @@ func (UnifiedAuditPolicyDefinitionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*unifiedAuditPolicyDefinitionState)(nil)).Elem()
 }
 
+// UnifiedAuditPolicyDefinitionExists checks whether an existing UnifiedAuditPolicyDefinition resource with the given ID exists.
+func UnifiedAuditPolicyDefinitionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UnifiedAuditPolicyDefinitionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/unifiedAuditPolicyDefinition:UnifiedAuditPolicyDefinition", id, state, "", opts...)
+}
+
 type unifiedAuditPolicyDefinitionArgs struct {
 	// (Updatable) The OCID of the compartment containing the unified audit policy definition.
 	CompartmentId *string `pulumi:"compartmentId"`

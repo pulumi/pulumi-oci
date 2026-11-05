@@ -243,6 +243,16 @@ class BackupCancelManagement(pulumi.CustomResource):
         __props__.__dict__["cancel_backup_trigger"] = cancel_backup_trigger
         return BackupCancelManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cancel_backup_trigger: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["backupId"] = backup_id
+        __props__["cancelBackupTrigger"] = cancel_backup_trigger
+        return pulumi.runtime.exists_resource(None, 'oci:Database/backupCancelManagement:BackupCancelManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="backupId")
     def backup_id(self) -> pulumi.Output[_builtins.str]:

@@ -206,8 +206,7 @@ namespace Pulumi.Oci.Dns
         public Output<ImmutableArray<Outputs.ZoneZoneTransferServer>> ZoneTransferServers { get; private set; } = null!;
 
         /// <summary>
-        /// The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
-        /// 
+        /// The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -364,8 +363,7 @@ namespace Pulumi.Oci.Dns
         public Input<string>? ViewId { get; set; }
 
         /// <summary>
-        /// The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
-        /// 
+        /// The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -556,8 +554,7 @@ namespace Pulumi.Oci.Dns
         }
 
         /// <summary>
-        /// The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones. 
-        /// 
+        /// The type of the zone. Must be either `PRIMARY` or `SECONDARY`. `SECONDARY` is only supported for GLOBAL zones.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

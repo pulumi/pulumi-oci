@@ -789,6 +789,68 @@ class ExternalListener(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return ExternalListener(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            additional_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            adr_home_directory: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            component_name: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalListenerEndpointArgs', 'ExternalListenerEndpointArgsDict', 'outputs.ExternalListenerEndpoint']]]]] = None,
+            external_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_db_node_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_listener_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            host_name: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            listener_alias: pulumi.Input[Optional[_builtins.str]] = None,
+            listener_ora_location: pulumi.Input[Optional[_builtins.str]] = None,
+            listener_type: pulumi.Input[Optional[_builtins.str]] = None,
+            log_directory: pulumi.Input[Optional[_builtins.str]] = None,
+            oracle_home: pulumi.Input[Optional[_builtins.str]] = None,
+            serviced_asms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalListenerServicedAsmArgs', 'ExternalListenerServicedAsmArgsDict', 'outputs.ExternalListenerServicedAsm']]]]] = None,
+            serviced_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalListenerServicedDatabaseArgs', 'ExternalListenerServicedDatabaseArgsDict', 'outputs.ExternalListenerServicedDatabase']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            trace_directory: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["additionalDetails"] = additional_details
+        __props__["adrHomeDirectory"] = adr_home_directory
+        __props__["compartmentId"] = compartment_id
+        __props__["componentName"] = component_name
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["endpoints"] = endpoints
+        __props__["externalConnectorId"] = external_connector_id
+        __props__["externalDbHomeId"] = external_db_home_id
+        __props__["externalDbNodeId"] = external_db_node_id
+        __props__["externalDbSystemId"] = external_db_system_id
+        __props__["externalListenerId"] = external_listener_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["hostName"] = host_name
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["listenerAlias"] = listener_alias
+        __props__["listenerOraLocation"] = listener_ora_location
+        __props__["listenerType"] = listener_type
+        __props__["logDirectory"] = log_directory
+        __props__["oracleHome"] = oracle_home
+        __props__["servicedAsms"] = serviced_asms
+        __props__["servicedDatabases"] = serviced_databases
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["traceDirectory"] = trace_directory
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseManagement/externalListener:ExternalListener', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="additionalDetails")
     def additional_details(self) -> pulumi.Output[Mapping[str, _builtins.str]]:

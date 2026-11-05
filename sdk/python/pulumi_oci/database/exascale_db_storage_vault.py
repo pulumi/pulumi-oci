@@ -896,6 +896,54 @@ class ExascaleDbStorageVault(pulumi.CustomResource):
         __props__.__dict__["vm_cluster_ids"] = vm_cluster_ids
         return ExascaleDbStorageVault(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            additional_flash_cache_in_percent: pulumi.Input[Optional[_builtins.int]] = None,
+            attached_shape_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            autoscale_limit_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            high_capacity_database_storage: pulumi.Input[Optional[Union['ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs', 'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgsDict', 'outputs.ExascaleDbStorageVaultHighCapacityDatabaseStorage']]] = None,
+            is_autoscale_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_cluster_count: pulumi.Input[Optional[_builtins.int]] = None,
+            vm_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["additionalFlashCacheInPercent"] = additional_flash_cache_in_percent
+        __props__["attachedShapeAttributes"] = attached_shape_attributes
+        __props__["autoscaleLimitInGbs"] = autoscale_limit_in_gbs
+        __props__["availabilityDomain"] = availability_domain
+        __props__["clusterPlacementGroupId"] = cluster_placement_group_id
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["exadataInfrastructureId"] = exadata_infrastructure_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["highCapacityDatabaseStorage"] = high_capacity_database_storage
+        __props__["isAutoscaleEnabled"] = is_autoscale_enabled
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["state"] = state
+        __props__["subscriptionId"] = subscription_id
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeZone"] = time_zone
+        __props__["vmClusterCount"] = vm_cluster_count
+        __props__["vmClusterIds"] = vm_cluster_ids
+        return pulumi.runtime.exists_resource(None, 'oci:Database/exascaleDbStorageVault:ExascaleDbStorageVault', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="additionalFlashCacheInPercent")
     def additional_flash_cache_in_percent(self) -> pulumi.Output[_builtins.int]:

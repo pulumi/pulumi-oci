@@ -18,7 +18,6 @@ namespace Pulumi.Oci.GoldenGate
         /// provider requires additional context to resolve its supported models,
         /// that context must be supplied in the request.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.GoldenGate
         /// provider requires additional context to resolve its supported models,
         /// that context must be supplied in the request.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -81,7 +79,6 @@ namespace Pulumi.Oci.GoldenGate
         /// Returns the list of AI models for the specified provider. If the
         /// provider requires additional context to resolve its supported models,
         /// that context must be supplied in the request.
-        /// 
         /// 
         /// ## Example Usage
         /// 

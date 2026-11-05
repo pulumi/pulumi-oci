@@ -161,8 +161,7 @@ namespace Pulumi.Oci.Jms
         public Output<Outputs.FleetAgentConfigurationWindowsConfiguration> WindowsConfiguration { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The validity period in days for work requests. 
-        /// 
+        /// (Updatable) The validity period in days for work requests.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -283,8 +282,7 @@ namespace Pulumi.Oci.Jms
         public Input<Inputs.FleetAgentConfigurationWindowsConfigurationArgs>? WindowsConfiguration { get; set; }
 
         /// <summary>
-        /// (Updatable) The validity period in days for work requests. 
-        /// 
+        /// (Updatable) The validity period in days for work requests.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -373,8 +371,7 @@ namespace Pulumi.Oci.Jms
         public Input<Inputs.FleetAgentConfigurationWindowsConfigurationGetArgs>? WindowsConfiguration { get; set; }
 
         /// <summary>
-        /// (Updatable) The validity period in days for work requests. 
-        /// 
+        /// (Updatable) The validity period in days for work requests.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

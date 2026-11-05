@@ -250,6 +250,12 @@ func (SensitiveDataModelState) ElementType() reflect.Type {
 	return reflect.TypeOf((*sensitiveDataModelState)(nil)).Elem()
 }
 
+// SensitiveDataModelExists checks whether an existing SensitiveDataModel resource with the given ID exists.
+func SensitiveDataModelExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SensitiveDataModelState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/sensitiveDataModel:SensitiveDataModel", id, state, "", opts...)
+}
+
 type sensitiveDataModelArgs struct {
 	// (Updatable) The application suite name identifying a collection of applications. It's useful only if maintaining a sensitive data model for a suite of applications.
 	AppSuiteName *string `pulumi:"appSuiteName"`

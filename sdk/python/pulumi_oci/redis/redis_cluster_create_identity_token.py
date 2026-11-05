@@ -364,6 +364,24 @@ class RedisClusterCreateIdentityToken(pulumi.CustomResource):
         __props__.__dict__["redis_user"] = redis_user
         return RedisClusterCreateIdentityToken(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            identity_token: pulumi.Input[Optional[_builtins.str]] = None,
+            public_key: pulumi.Input[Optional[_builtins.str]] = None,
+            redis_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            redis_user: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["definedTags"] = defined_tags
+        __props__["freeformTags"] = freeform_tags
+        __props__["identityToken"] = identity_token
+        __props__["publicKey"] = public_key
+        __props__["redisClusterId"] = redis_cluster_id
+        __props__["redisUser"] = redis_user
+        return pulumi.runtime.exists_resource(None, 'oci:Redis/redisClusterCreateIdentityToken:RedisClusterCreateIdentityToken', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Optional[Mapping[str, _builtins.str]]]:

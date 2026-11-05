@@ -172,8 +172,7 @@ namespace Pulumi.Oci.Opsi
         public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '&lt;TagNamespace&gt;.&lt;TagKey&gt;=&lt;TagValue&gt;'. Example for freeform tags - '&lt;TagKey&gt;=&lt;TagValue&gt;' 
-        /// 
+        /// (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '&lt;TagNamespace&gt;.&lt;TagKey&gt;=&lt;TagValue&gt;'. Example for freeform tags - '&lt;TagKey&gt;=&lt;TagValue&gt;'
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -333,8 +332,7 @@ namespace Pulumi.Oci.Opsi
         private InputList<string>? _tagFilters;
 
         /// <summary>
-        /// (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '&lt;TagNamespace&gt;.&lt;TagKey&gt;=&lt;TagValue&gt;'. Example for freeform tags - '&lt;TagKey&gt;=&lt;TagValue&gt;' 
-        /// 
+        /// (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '&lt;TagNamespace&gt;.&lt;TagKey&gt;=&lt;TagValue&gt;'. Example for freeform tags - '&lt;TagKey&gt;=&lt;TagValue&gt;'
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -471,8 +469,7 @@ namespace Pulumi.Oci.Opsi
         private InputList<string>? _tagFilters;
 
         /// <summary>
-        /// (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '&lt;TagNamespace&gt;.&lt;TagKey&gt;=&lt;TagValue&gt;'. Example for freeform tags - '&lt;TagKey&gt;=&lt;TagValue&gt;' 
-        /// 
+        /// (Updatable) List of tag filters; each filter composed by a namespace, key, and value. Example for defined tags - '&lt;TagNamespace&gt;.&lt;TagKey&gt;=&lt;TagValue&gt;'. Example for freeform tags - '&lt;TagKey&gt;=&lt;TagValue&gt;'
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

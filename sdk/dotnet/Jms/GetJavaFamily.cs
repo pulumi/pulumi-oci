@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Returns metadata associated with a specific Java release family.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Returns metadata associated with a specific Java release family.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Jms
         /// This data source provides details about a specific Java Family resource in Oracle Cloud Infrastructure Jms service.
         /// 
         /// Returns metadata associated with a specific Java release family.
-        /// 
         /// 
         /// ## Example Usage
         /// 

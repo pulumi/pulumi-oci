@@ -135,6 +135,12 @@ func (ExternalNonContainerDatabaseManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*externalNonContainerDatabaseManagementState)(nil)).Elem()
 }
 
+// ExternalNonContainerDatabaseManagementExists checks whether an existing ExternalNonContainerDatabaseManagement resource with the given ID exists.
+func ExternalNonContainerDatabaseManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalNonContainerDatabaseManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/externalNonContainerDatabaseManagement:ExternalNonContainerDatabaseManagement", id, state, "", opts...)
+}
+
 type externalNonContainerDatabaseManagementArgs struct {
 	EnableManagement bool `pulumi:"enableManagement"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).

@@ -25,7 +25,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// talk to an administrator. If you are an administrator who needs to write policies to give users access, see
         /// [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -68,7 +67,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// talk to an administrator. If you are an administrator who needs to write policies to give users access, see
         /// [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -110,7 +108,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
         /// talk to an administrator. If you are an administrator who needs to write policies to give users access, see
         /// [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

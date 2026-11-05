@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Oci
         /// List the private service accesses in the specified compartment. You can optionally filter the list by
         /// specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a subnet in the cunsumer's VCN.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.Oci
         /// List the private service accesses in the specified compartment. You can optionally filter the list by
         /// specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a subnet in the cunsumer's VCN.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -82,7 +80,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// List the private service accesses in the specified compartment. You can optionally filter the list by
         /// specifying the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a subnet in the cunsumer's VCN.
-        /// 
         /// 
         /// ## Example Usage
         /// 

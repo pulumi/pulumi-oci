@@ -203,6 +203,12 @@ func (HttpProbeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*httpProbeState)(nil)).Elem()
 }
 
+// HttpProbeExists checks whether an existing HttpProbe resource with the given ID exists.
+func HttpProbeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HttpProbeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:HealthChecks/httpProbe:HttpProbe", id, state, "", opts...)
+}
+
 type httpProbeArgs struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

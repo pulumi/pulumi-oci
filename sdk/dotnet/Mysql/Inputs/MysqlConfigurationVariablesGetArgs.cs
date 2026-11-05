@@ -457,7 +457,7 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<string>? JoinBufferSize { get; set; }
 
         /// <summary>
-        /// This variable controls server-side LOCAL capability for LOAD DATA statements. Depending on the LocalInfile setting, the server refuses or permits local data loading by clients that have LOCAL enabled on the client side. 
+        /// This variable controls server-side LOCAL capability for LOAD DATA statements. Depending on the LocalInfile setting, the server refuses or permits local data loading by clients that have LOCAL enabled on the client side.
         /// 
         /// LocalInfile corresponds to the MySQL Server system variable [LocalInfile](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_local_infile)
         /// </summary>
@@ -707,7 +707,7 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<string>? QueryPreallocSize { get; set; }
 
         /// <summary>
-        /// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans. 
+        /// The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
         /// 
         /// rangeOptimizerMaxMemSize corresponds to the MySQL Server System variable [RangeOptimizerMaxMemSize] (https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_range_optimizer_max_mem_size).
         /// </summary>
@@ -841,7 +841,7 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<int>? ThreadPoolMaxTransactionsLimit { get; set; }
 
         /// <summary>
-        /// The maximum number of query threads permitted in a thread group. The maximum value is 4096, but if ThreadPoolMaxTransactionsLimit is set, ThreadPoolQueryThreadsPerGroup must not exceed that value. The default value of 1 means there is one active query thread in each thread group, which works well for many loads. When you are using the high concurrency thread pool algorithm (thread_pool_algorithm = 1), consider increasing the value if you experience slower response times due to long-running transactions. 
+        /// The maximum number of query threads permitted in a thread group. The maximum value is 4096, but if ThreadPoolMaxTransactionsLimit is set, ThreadPoolQueryThreadsPerGroup must not exceed that value. The default value of 1 means there is one active query thread in each thread group, which works well for many loads. When you are using the high concurrency thread pool algorithm (thread_pool_algorithm = 1), consider increasing the value if you experience slower response times due to long-running transactions.
         /// 
         /// threadPoolQueryThreadsPerGroup corresponds to the MySQL Server system variable [ThreadPoolQueryThreadsPerGroup](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_query_threads_per_group)
         /// </summary>
@@ -857,7 +857,7 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<int>? ThreadPoolSize { get; set; }
 
         /// <summary>
-        /// The delay period before executing a new transaction, in milliseconds. The maximum value is 300000 (5 minutes). A transaction delay can be used in cases where parallel transactions affect the performance of other operations due to resource contention. For example, if parallel transactions affect index creation or an online buffer pool resizing operation, you can configure a transaction delay to reduce resource contention while those operations are running. 
+        /// The delay period before executing a new transaction, in milliseconds. The maximum value is 300000 (5 minutes). A transaction delay can be used in cases where parallel transactions affect the performance of other operations due to resource contention. For example, if parallel transactions affect index creation or an online buffer pool resizing operation, you can configure a transaction delay to reduce resource contention while those operations are running.
         /// 
         /// threadPoolTransactionDelay corresponds to the MySQL Server system variable [ThreadPoolTransactionDelay](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_thread_pool_transaction_delay)
         /// </summary>
@@ -894,7 +894,6 @@ namespace Pulumi.Oci.Mysql.Inputs
         /// The number of seconds the server waits for activity on a noninteractive connection before closing it.
         /// 
         /// waitTimeout corresponds to the MySQL system variable. [WaitTimeout](https://dev.mysql.com/doc/refman/8.0/en/server-system-variables.html#sysvar_wait_timeout)
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

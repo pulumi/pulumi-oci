@@ -306,6 +306,12 @@ func (InstanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*instanceState)(nil)).Elem()
 }
 
+// InstanceExists checks whether an existing Instance resource with the given ID exists.
+func InstanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *InstanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Oce/instance:Instance", id, state, "", opts...)
+}
+
 type instanceArgs struct {
 	// (Updatable) a list of add-on features for the ocm instance
 	AddOnFeatures []string `pulumi:"addOnFeatures"`

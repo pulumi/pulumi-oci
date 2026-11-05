@@ -1179,6 +1179,58 @@ class Job(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return Job(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            artifact_content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+            artifact_content_length: pulumi.Input[Optional[_builtins.str]] = None,
+            artifact_content_md5: pulumi.Input[Optional[_builtins.str]] = None,
+            artifact_last_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            delete_related_job_runs: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            empty_artifact: pulumi.Input[Optional[_builtins.bool]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            job_artifact: pulumi.Input[Optional[_builtins.str]] = None,
+            job_configuration_details: pulumi.Input[Optional[Union['JobJobConfigurationDetailsArgs', 'JobJobConfigurationDetailsArgsDict', 'outputs.JobJobConfigurationDetails']]] = None,
+            job_environment_configuration_details: pulumi.Input[Optional[Union['JobJobEnvironmentConfigurationDetailsArgs', 'JobJobEnvironmentConfigurationDetailsArgsDict', 'outputs.JobJobEnvironmentConfigurationDetails']]] = None,
+            job_infrastructure_configuration_details: pulumi.Input[Optional[Union['JobJobInfrastructureConfigurationDetailsArgs', 'JobJobInfrastructureConfigurationDetailsArgsDict', 'outputs.JobJobInfrastructureConfigurationDetails']]] = None,
+            job_log_configuration_details: pulumi.Input[Optional[Union['JobJobLogConfigurationDetailsArgs', 'JobJobLogConfigurationDetailsArgsDict', 'outputs.JobJobLogConfigurationDetails']]] = None,
+            job_node_configuration_details: pulumi.Input[Optional[Union['JobJobNodeConfigurationDetailsArgs', 'JobJobNodeConfigurationDetailsArgsDict', 'outputs.JobJobNodeConfigurationDetails']]] = None,
+            job_storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobJobStorageMountConfigurationDetailsListArgs', 'JobJobStorageMountConfigurationDetailsListArgsDict', 'outputs.JobJobStorageMountConfigurationDetailsList']]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["artifactContentDisposition"] = artifact_content_disposition
+        __props__["artifactContentLength"] = artifact_content_length
+        __props__["artifactContentMd5"] = artifact_content_md5
+        __props__["artifactLastModified"] = artifact_last_modified
+        __props__["compartmentId"] = compartment_id
+        __props__["createdBy"] = created_by
+        __props__["definedTags"] = defined_tags
+        __props__["deleteRelatedJobRuns"] = delete_related_job_runs
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["emptyArtifact"] = empty_artifact
+        __props__["freeformTags"] = freeform_tags
+        __props__["jobArtifact"] = job_artifact
+        __props__["jobConfigurationDetails"] = job_configuration_details
+        __props__["jobEnvironmentConfigurationDetails"] = job_environment_configuration_details
+        __props__["jobInfrastructureConfigurationDetails"] = job_infrastructure_configuration_details
+        __props__["jobLogConfigurationDetails"] = job_log_configuration_details
+        __props__["jobNodeConfigurationDetails"] = job_node_configuration_details
+        __props__["jobStorageMountConfigurationDetailsLists"] = job_storage_mount_configuration_details_lists
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["projectId"] = project_id
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:DataScience/job:Job', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="artifactContentDisposition")
     def artifact_content_disposition(self) -> pulumi.Output[Optional[_builtins.str]]:

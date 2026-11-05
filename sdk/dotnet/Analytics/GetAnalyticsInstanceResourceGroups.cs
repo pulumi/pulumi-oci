@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Analytics
         /// 
         /// List resource groups associated with an instance.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Analytics
         /// 
         /// List resource groups associated with an instance.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.Analytics
         /// This data source provides the list of Analytics Instance Resource Groups in Oracle Cloud Infrastructure Analytics service.
         /// 
         /// List resource groups associated with an instance.
-        /// 
         /// 
         /// ## Example Usage
         /// 

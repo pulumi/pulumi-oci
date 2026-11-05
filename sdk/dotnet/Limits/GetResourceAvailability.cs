@@ -17,9 +17,8 @@ namespace Pulumi.Oci.Limits
         /// For a given compartmentId, resource limit name, and scope, returns the following:
         ///   * The number of available resources associated with the given limit.
         ///   * The usage in the selected compartment for the given limit.
-        /// If the subscription ID is provided, then usage for resource created in that subscription will be returned.
-        /// Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
-        /// 
+        ///     If the subscription ID is provided, then usage for resource created in that subscription will be returned.
+        ///     Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
         /// 
         /// ## Example Usage
         /// 
@@ -53,9 +52,8 @@ namespace Pulumi.Oci.Limits
         /// For a given compartmentId, resource limit name, and scope, returns the following:
         ///   * The number of available resources associated with the given limit.
         ///   * The usage in the selected compartment for the given limit.
-        /// If the subscription ID is provided, then usage for resource created in that subscription will be returned.
-        /// Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
-        /// 
+        ///     If the subscription ID is provided, then usage for resource created in that subscription will be returned.
+        ///     Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
         /// 
         /// ## Example Usage
         /// 
@@ -89,9 +87,8 @@ namespace Pulumi.Oci.Limits
         /// For a given compartmentId, resource limit name, and scope, returns the following:
         ///   * The number of available resources associated with the given limit.
         ///   * The usage in the selected compartment for the given limit.
-        /// If the subscription ID is provided, then usage for resource created in that subscription will be returned.
-        /// Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
-        /// 
+        ///     If the subscription ID is provided, then usage for resource created in that subscription will be returned.
+        ///     Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
         /// 
         /// ## Example Usage
         /// 

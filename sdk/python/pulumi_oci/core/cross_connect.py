@@ -1053,6 +1053,56 @@ class CrossConnect(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return CrossConnect(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cross_connect_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            customer_reference_name: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            far_cross_connect_or_cross_connect_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            interface_down_timer_value_in_milliseconds: pulumi.Input[Optional[_builtins.int]] = None,
+            interface_name: pulumi.Input[Optional[_builtins.str]] = None,
+            is_active: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_interface_hold_timer_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_qos_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            loa_properties: pulumi.Input[Optional[Union['CrossConnectLoaPropertiesArgs', 'CrossConnectLoaPropertiesArgsDict', 'outputs.CrossConnectLoaProperties']]] = None,
+            location_name: pulumi.Input[Optional[_builtins.str]] = None,
+            macsec_properties: pulumi.Input[Optional[Union['CrossConnectMacsecPropertiesArgs', 'CrossConnectMacsecPropertiesArgsDict', 'outputs.CrossConnectMacsecProperties']]] = None,
+            near_cross_connect_or_cross_connect_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            oci_logical_device_name: pulumi.Input[Optional[_builtins.str]] = None,
+            oci_physical_device_name: pulumi.Input[Optional[_builtins.str]] = None,
+            port_name: pulumi.Input[Optional[_builtins.str]] = None,
+            port_speed_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["crossConnectGroupId"] = cross_connect_group_id
+        __props__["customerReferenceName"] = customer_reference_name
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["farCrossConnectOrCrossConnectGroupId"] = far_cross_connect_or_cross_connect_group_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["interfaceDownTimerValueInMilliseconds"] = interface_down_timer_value_in_milliseconds
+        __props__["interfaceName"] = interface_name
+        __props__["isActive"] = is_active
+        __props__["isInterfaceHoldTimerEnabled"] = is_interface_hold_timer_enabled
+        __props__["isQosEnabled"] = is_qos_enabled
+        __props__["loaProperties"] = loa_properties
+        __props__["locationName"] = location_name
+        __props__["macsecProperties"] = macsec_properties
+        __props__["nearCrossConnectOrCrossConnectGroupId"] = near_cross_connect_or_cross_connect_group_id
+        __props__["ociLogicalDeviceName"] = oci_logical_device_name
+        __props__["ociPhysicalDeviceName"] = oci_physical_device_name
+        __props__["portName"] = port_name
+        __props__["portSpeedShapeName"] = port_speed_shape_name
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:Core/crossConnect:CrossConnect', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

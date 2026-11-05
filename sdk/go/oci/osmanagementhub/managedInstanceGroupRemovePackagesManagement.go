@@ -125,6 +125,12 @@ func (ManagedInstanceGroupRemovePackagesManagementState) ElementType() reflect.T
 	return reflect.TypeOf((*managedInstanceGroupRemovePackagesManagementState)(nil)).Elem()
 }
 
+// ManagedInstanceGroupRemovePackagesManagementExists checks whether an existing ManagedInstanceGroupRemovePackagesManagement resource with the given ID exists.
+func ManagedInstanceGroupRemovePackagesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedInstanceGroupRemovePackagesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/managedInstanceGroupRemovePackagesManagement:ManagedInstanceGroupRemovePackagesManagement", id, state, "", opts...)
+}
+
 type managedInstanceGroupRemovePackagesManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
 	ManagedInstanceGroupId string `pulumi:"managedInstanceGroupId"`

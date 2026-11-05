@@ -831,6 +831,52 @@ class Bastion(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return Bastion(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            bastion_type: pulumi.Input[Optional[_builtins.str]] = None,
+            client_cidr_block_allow_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            dns_proxy_status: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            max_session_ttl_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            max_sessions_allowed: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            phone_book_entry: pulumi.Input[Optional[_builtins.str]] = None,
+            private_endpoint_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            static_jump_host_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            target_vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["bastionType"] = bastion_type
+        __props__["clientCidrBlockAllowLists"] = client_cidr_block_allow_lists
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["dnsProxyStatus"] = dns_proxy_status
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["maxSessionTtlInSeconds"] = max_session_ttl_in_seconds
+        __props__["maxSessionsAllowed"] = max_sessions_allowed
+        __props__["name"] = name
+        __props__["phoneBookEntry"] = phone_book_entry
+        __props__["privateEndpointIpAddress"] = private_endpoint_ip_address
+        __props__["securityAttributes"] = security_attributes
+        __props__["state"] = state
+        __props__["staticJumpHostIpAddresses"] = static_jump_host_ip_addresses
+        __props__["systemTags"] = system_tags
+        __props__["targetSubnetId"] = target_subnet_id
+        __props__["targetVcnId"] = target_vcn_id
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Bastion/bastion:Bastion', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="bastionType")
     def bastion_type(self) -> pulumi.Output[_builtins.str]:

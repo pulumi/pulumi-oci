@@ -14,11 +14,10 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetAutonomousDatabaseWalletResult {
     /**
-     * @deprecated
-     * The &#39;data.oci_database_autonomous_database_wallet&#39; resource has been deprecated. Please use &#39;oci_database_autonomous_database_wallet&#39; instead.
+     * @deprecated The &#39;data.oci_database_autonomous_database_wallet&#39; resource has been deprecated. Please use &#39;oci_database_autonomous_database_wallet&#39; instead.
      * 
      */
-    @Deprecated /* The 'data.oci_database_autonomous_database_wallet' resource has been deprecated. Please use 'oci_database_autonomous_database_wallet' instead. */
+    @Deprecated
     private String autonomousDatabaseId;
     private @Nullable Boolean base64EncodeContent;
     /**
@@ -36,11 +35,10 @@ public final class GetAutonomousDatabaseWalletResult {
 
     private GetAutonomousDatabaseWalletResult() {}
     /**
-     * @deprecated
-     * The &#39;data.oci_database_autonomous_database_wallet&#39; resource has been deprecated. Please use &#39;oci_database_autonomous_database_wallet&#39; instead.
+     * @deprecated The &#39;data.oci_database_autonomous_database_wallet&#39; resource has been deprecated. Please use &#39;oci_database_autonomous_database_wallet&#39; instead.
      * 
      */
-    @Deprecated /* The 'data.oci_database_autonomous_database_wallet' resource has been deprecated. Please use 'oci_database_autonomous_database_wallet' instead. */
+    @Deprecated
     public String autonomousDatabaseId() {
         return this.autonomousDatabaseId;
     }

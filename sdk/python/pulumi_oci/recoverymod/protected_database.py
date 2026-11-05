@@ -955,6 +955,60 @@ class ProtectedDatabase(pulumi.CustomResource):
         __props__.__dict__["vpc_user_name"] = vpc_user_name
         return ProtectedDatabase(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_size: pulumi.Input[Optional[_builtins.str]] = None,
+            db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            deletion_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            health: pulumi.Input[Optional[_builtins.str]] = None,
+            health_details: pulumi.Input[Optional[_builtins.str]] = None,
+            is_read_only_resource: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_redo_logs_shipped: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            metrics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectedDatabaseMetricArgs', 'ProtectedDatabaseMetricArgsDict', 'outputs.ProtectedDatabaseMetric']]]]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_locked_date_time: pulumi.Input[Optional[_builtins.str]] = None,
+            protection_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            recovery_service_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProtectedDatabaseRecoveryServiceSubnetArgs', 'ProtectedDatabaseRecoveryServiceSubnetArgsDict', 'outputs.ProtectedDatabaseRecoveryServiceSubnet']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            vpc_user_name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["databaseId"] = database_id
+        __props__["databaseSize"] = database_size
+        __props__["dbUniqueName"] = db_unique_name
+        __props__["definedTags"] = defined_tags
+        __props__["deletionSchedule"] = deletion_schedule
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["health"] = health
+        __props__["healthDetails"] = health_details
+        __props__["isReadOnlyResource"] = is_read_only_resource
+        __props__["isRedoLogsShipped"] = is_redo_logs_shipped
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["metrics"] = metrics
+        __props__["password"] = password
+        __props__["policyLockedDateTime"] = policy_locked_date_time
+        __props__["protectionPolicyId"] = protection_policy_id
+        __props__["recoveryServiceSubnets"] = recovery_service_subnets
+        __props__["state"] = state
+        __props__["subscriptionId"] = subscription_id
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["vpcUserName"] = vpc_user_name
+        return pulumi.runtime.exists_resource(None, 'oci:RecoveryMod/protectedDatabase:ProtectedDatabase', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

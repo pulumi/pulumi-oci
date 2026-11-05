@@ -266,6 +266,12 @@ func (OutboundConnectorState) ElementType() reflect.Type {
 	return reflect.TypeOf((*outboundConnectorState)(nil)).Elem()
 }
 
+// OutboundConnectorExists checks whether an existing OutboundConnector resource with the given ID exists.
+func OutboundConnectorExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OutboundConnectorState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FileStorage/outboundConnector:OutboundConnector", id, state, "", opts...)
+}
+
 type outboundConnectorArgs struct {
 	// The availability domain the outbound connector is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`

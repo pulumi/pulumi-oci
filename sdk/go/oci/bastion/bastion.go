@@ -249,6 +249,12 @@ func (BastionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*bastionState)(nil)).Elem()
 }
 
+// BastionExists checks whether an existing Bastion resource with the given ID exists.
+func BastionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BastionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Bastion/bastion:Bastion", id, state, "", opts...)
+}
+
 type bastionArgs struct {
 	// The type of bastion. Use `standard`.
 	BastionType string `pulumi:"bastionType"`

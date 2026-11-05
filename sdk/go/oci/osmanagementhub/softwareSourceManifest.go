@@ -118,6 +118,12 @@ func (SoftwareSourceManifestState) ElementType() reflect.Type {
 	return reflect.TypeOf((*softwareSourceManifestState)(nil)).Elem()
 }
 
+// SoftwareSourceManifestExists checks whether an existing SoftwareSourceManifest resource with the given ID exists.
+func SoftwareSourceManifestExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SoftwareSourceManifestState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/softwareSourceManifest:SoftwareSourceManifest", id, state, "", opts...)
+}
+
 type softwareSourceManifestArgs struct {
 	Content *string `pulumi:"content"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.

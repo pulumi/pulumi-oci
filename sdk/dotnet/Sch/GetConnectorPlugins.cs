@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Sch
         /// 
         /// Lists connector plugins according to the specified filter.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Sch
         /// 
         /// Lists connector plugins according to the specified filter.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.Sch
         /// This data source provides the list of Connector Plugins in Oracle Cloud Infrastructure Service Connector Hub service.
         /// 
         /// Lists connector plugins according to the specified filter.
-        /// 
         /// 
         /// ## Example Usage
         /// 

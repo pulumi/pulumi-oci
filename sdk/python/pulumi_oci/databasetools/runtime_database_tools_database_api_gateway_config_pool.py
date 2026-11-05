@@ -848,6 +848,48 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigPool(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return RuntimeDatabaseToolsDatabaseApiGatewayConfigPool(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            advanced_properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            database_actions_status: pulumi.Input[Optional[_builtins.str]] = None,
+            database_tools_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_tools_database_api_gateway_config_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            initial_pool_size: pulumi.Input[Optional[_builtins.int]] = None,
+            jwt_profile_audience: pulumi.Input[Optional[_builtins.str]] = None,
+            jwt_profile_issuer: pulumi.Input[Optional[_builtins.str]] = None,
+            jwt_profile_jwk_url: pulumi.Input[Optional[_builtins.str]] = None,
+            jwt_profile_role_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            max_pool_size: pulumi.Input[Optional[_builtins.int]] = None,
+            min_pool_size: pulumi.Input[Optional[_builtins.int]] = None,
+            pool_route_value: pulumi.Input[Optional[_builtins.str]] = None,
+            rest_enabled_sql_status: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["advancedProperties"] = advanced_properties
+        __props__["databaseActionsStatus"] = database_actions_status
+        __props__["databaseToolsConnectionId"] = database_tools_connection_id
+        __props__["databaseToolsDatabaseApiGatewayConfigId"] = database_tools_database_api_gateway_config_id
+        __props__["displayName"] = display_name
+        __props__["initialPoolSize"] = initial_pool_size
+        __props__["jwtProfileAudience"] = jwt_profile_audience
+        __props__["jwtProfileIssuer"] = jwt_profile_issuer
+        __props__["jwtProfileJwkUrl"] = jwt_profile_jwk_url
+        __props__["jwtProfileRoleClaimName"] = jwt_profile_role_claim_name
+        __props__["key"] = key
+        __props__["maxPoolSize"] = max_pool_size
+        __props__["minPoolSize"] = min_pool_size
+        __props__["poolRouteValue"] = pool_route_value
+        __props__["restEnabledSqlStatus"] = rest_enabled_sql_status
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigPool:RuntimeDatabaseToolsDatabaseApiGatewayConfigPool', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="advancedProperties")
     def advanced_properties(self) -> pulumi.Output[Mapping[str, _builtins.str]]:

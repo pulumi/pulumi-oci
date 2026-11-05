@@ -170,6 +170,12 @@ func (ConfigurationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*configurationState)(nil)).Elem()
 }
 
+// ConfigurationExists checks whether an existing Configuration resource with the given ID exists.
+func ConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Zpr/configuration:Configuration", id, state, "", opts...)
+}
+
 type configurationArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy into which ZPR resources will be bootstrapped.
 	CompartmentId string `pulumi:"compartmentId"`

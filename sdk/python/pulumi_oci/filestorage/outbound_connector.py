@@ -859,6 +859,46 @@ class OutboundConnector(pulumi.CustomResource):
         __props__.__dict__["trusted_certificate_secret_version"] = trusted_certificate_secret_version
         return OutboundConnector(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            bind_distinguished_name: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OutboundConnectorEndpointArgs', 'OutboundConnectorEndpointArgsDict', 'outputs.OutboundConnectorEndpoint']]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OutboundConnectorLockArgs', 'OutboundConnectorLockArgsDict', 'outputs.OutboundConnectorLock']]]]] = None,
+            password_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            password_secret_version: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            trusted_certificate_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            trusted_certificate_secret_version: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availabilityDomain"] = availability_domain
+        __props__["bindDistinguishedName"] = bind_distinguished_name
+        __props__["compartmentId"] = compartment_id
+        __props__["connectorType"] = connector_type
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["endpoints"] = endpoints
+        __props__["freeformTags"] = freeform_tags
+        __props__["isLockOverride"] = is_lock_override
+        __props__["locks"] = locks
+        __props__["passwordSecretId"] = password_secret_id
+        __props__["passwordSecretVersion"] = password_secret_version
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["trustedCertificateSecretId"] = trusted_certificate_secret_id
+        __props__["trustedCertificateSecretVersion"] = trusted_certificate_secret_version
+        return pulumi.runtime.exists_resource(None, 'oci:FileStorage/outboundConnector:OutboundConnector', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[_builtins.str]:

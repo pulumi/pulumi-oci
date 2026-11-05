@@ -772,6 +772,70 @@ class ComputeHost(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return ComputeHost(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            additional_data: pulumi.Input[Optional[_builtins.str]] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_host_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configuration_action_type: pulumi.Input[Optional[_builtins.str]] = None,
+            configuration_datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeHostConfigurationDataArgs', 'ComputeHostConfigurationDataArgsDict', 'outputs.ComputeHostConfigurationData']]]]] = None,
+            configuration_state: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            firmware_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            gpu_memory_fabric_id: pulumi.Input[Optional[_builtins.str]] = None,
+            health: pulumi.Input[Optional[_builtins.str]] = None,
+            hpc_island_id: pulumi.Input[Optional[_builtins.str]] = None,
+            impacted_component_details: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            local_block_id: pulumi.Input[Optional[_builtins.str]] = None,
+            network_block_id: pulumi.Input[Optional[_builtins.str]] = None,
+            platform: pulumi.Input[Optional[_builtins.str]] = None,
+            recycle_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeHostRecycleDetailArgs', 'ComputeHostRecycleDetailArgsDict', 'outputs.ComputeHostRecycleDetail']]]]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_configuration_check: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["additionalData"] = additional_data
+        __props__["availabilityDomain"] = availability_domain
+        __props__["capacityReservationId"] = capacity_reservation_id
+        __props__["compartmentId"] = compartment_id
+        __props__["computeHostGroupId"] = compute_host_group_id
+        __props__["computeHostId"] = compute_host_id
+        __props__["configurationActionType"] = configuration_action_type
+        __props__["configurationDatas"] = configuration_datas
+        __props__["configurationState"] = configuration_state
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["faultDomain"] = fault_domain
+        __props__["firmwareBundleId"] = firmware_bundle_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["gpuMemoryFabricId"] = gpu_memory_fabric_id
+        __props__["health"] = health
+        __props__["hpcIslandId"] = hpc_island_id
+        __props__["impactedComponentDetails"] = impacted_component_details
+        __props__["instanceId"] = instance_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["localBlockId"] = local_block_id
+        __props__["networkBlockId"] = network_block_id
+        __props__["platform"] = platform
+        __props__["recycleDetails"] = recycle_details
+        __props__["shape"] = shape
+        __props__["state"] = state
+        __props__["timeConfigurationCheck"] = time_configuration_check
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Core/computeHost:ComputeHost', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="additionalData")
     def additional_data(self) -> pulumi.Output[_builtins.str]:

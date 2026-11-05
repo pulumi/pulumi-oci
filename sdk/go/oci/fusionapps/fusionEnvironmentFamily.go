@@ -196,6 +196,12 @@ func (FusionEnvironmentFamilyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*fusionEnvironmentFamilyState)(nil)).Elem()
 }
 
+// FusionEnvironmentFamilyExists checks whether an existing FusionEnvironmentFamily resource with the given ID exists.
+func FusionEnvironmentFamilyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FusionEnvironmentFamilyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FusionApps/fusionEnvironmentFamily:FusionEnvironmentFamily", id, state, "", opts...)
+}
+
 type fusionEnvironmentFamilyArgs struct {
 	// (Updatable) The OCID of the compartment where the environment family is located.
 	CompartmentId string `pulumi:"compartmentId"`

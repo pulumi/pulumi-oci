@@ -213,6 +213,12 @@ func (TargetAlertPolicyAssociationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*targetAlertPolicyAssociationState)(nil)).Elem()
 }
 
+// TargetAlertPolicyAssociationExists checks whether an existing TargetAlertPolicyAssociation resource with the given ID exists.
+func TargetAlertPolicyAssociationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *TargetAlertPolicyAssociationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/targetAlertPolicyAssociation:TargetAlertPolicyAssociation", id, state, "", opts...)
+}
+
 type targetAlertPolicyAssociationArgs struct {
 	// (Updatable) The OCID of the compartment where the target-alert policy association is created.
 	CompartmentId string `pulumi:"compartmentId"`

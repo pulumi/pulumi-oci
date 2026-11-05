@@ -202,6 +202,12 @@ func (AutonomousDatabaseSoftwareImageState) ElementType() reflect.Type {
 	return reflect.TypeOf((*autonomousDatabaseSoftwareImageState)(nil)).Elem()
 }
 
+// AutonomousDatabaseSoftwareImageExists checks whether an existing AutonomousDatabaseSoftwareImage resource with the given ID exists.
+func AutonomousDatabaseSoftwareImageExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutonomousDatabaseSoftwareImageState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/autonomousDatabaseSoftwareImage:AutonomousDatabaseSoftwareImage", id, state, "", opts...)
+}
+
 type autonomousDatabaseSoftwareImageArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

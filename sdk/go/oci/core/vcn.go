@@ -335,6 +335,12 @@ func (VcnState) ElementType() reflect.Type {
 	return reflect.TypeOf((*vcnState)(nil)).Elem()
 }
 
+// VcnExists checks whether an existing Vcn resource with the given ID exists.
+func VcnExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VcnState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/vcn:Vcn", id, state, "", opts...)
+}
+
 type vcnArgs struct {
 	// The list of BYOIPv6 OCIDs and BYOIPv6 prefixes required to create a VCN that uses BYOIPv6 address ranges.
 	Byoipv6cidrDetails []VcnByoipv6cidrDetail `pulumi:"byoipv6cidrDetails"`

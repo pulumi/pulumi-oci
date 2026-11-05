@@ -1051,6 +1051,56 @@ class AgentAgentEndpoint(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return AgentAgentEndpoint(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            content_moderation_config: pulumi.Input[Optional[Union['AgentAgentEndpointContentModerationConfigArgs', 'AgentAgentEndpointContentModerationConfigArgsDict', 'outputs.AgentAgentEndpointContentModerationConfig']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            guardrail_config: pulumi.Input[Optional[Union['AgentAgentEndpointGuardrailConfigArgs', 'AgentAgentEndpointGuardrailConfigArgsDict', 'outputs.AgentAgentEndpointGuardrailConfig']]] = None,
+            human_input_config: pulumi.Input[Optional[Union['AgentAgentEndpointHumanInputConfigArgs', 'AgentAgentEndpointHumanInputConfigArgsDict', 'outputs.AgentAgentEndpointHumanInputConfig']]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            output_config: pulumi.Input[Optional[Union['AgentAgentEndpointOutputConfigArgs', 'AgentAgentEndpointOutputConfigArgsDict', 'outputs.AgentAgentEndpointOutputConfig']]] = None,
+            provisioned_capacity_config: pulumi.Input[Optional[Union['AgentAgentEndpointProvisionedCapacityConfigArgs', 'AgentAgentEndpointProvisionedCapacityConfigArgsDict', 'outputs.AgentAgentEndpointProvisionedCapacityConfig']]] = None,
+            session_config: pulumi.Input[Optional[Union['AgentAgentEndpointSessionConfigArgs', 'AgentAgentEndpointSessionConfigArgsDict', 'outputs.AgentAgentEndpointSessionConfig']]] = None,
+            should_enable_citation: pulumi.Input[Optional[_builtins.bool]] = None,
+            should_enable_multi_language: pulumi.Input[Optional[_builtins.bool]] = None,
+            should_enable_session: pulumi.Input[Optional[_builtins.bool]] = None,
+            should_enable_trace: pulumi.Input[Optional[_builtins.bool]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["agentId"] = agent_id
+        __props__["compartmentId"] = compartment_id
+        __props__["contentModerationConfig"] = content_moderation_config
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["guardrailConfig"] = guardrail_config
+        __props__["humanInputConfig"] = human_input_config
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["metadata"] = metadata
+        __props__["outputConfig"] = output_config
+        __props__["provisionedCapacityConfig"] = provisioned_capacity_config
+        __props__["sessionConfig"] = session_config
+        __props__["shouldEnableCitation"] = should_enable_citation
+        __props__["shouldEnableMultiLanguage"] = should_enable_multi_language
+        __props__["shouldEnableSession"] = should_enable_session
+        __props__["shouldEnableTrace"] = should_enable_trace
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:GenerativeAi/agentAgentEndpoint:AgentAgentEndpoint', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="agentId")
     def agent_id(self) -> pulumi.Output[_builtins.str]:

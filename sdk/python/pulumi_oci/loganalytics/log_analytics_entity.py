@@ -947,6 +947,58 @@ class LogAnalyticsEntity(pulumi.CustomResource):
         __props__.__dict__["timezone_region"] = timezone_region
         return LogAnalyticsEntity(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            are_logs_collected: pulumi.Input[Optional[_builtins.bool]] = None,
+            associated_sources_count: pulumi.Input[Optional[_builtins.int]] = None,
+            cloud_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            entity_type_internal_name: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_type_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            management_agent_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            management_agent_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Union['LogAnalyticsEntityMetadataArgs', 'LogAnalyticsEntityMetadataArgsDict', 'outputs.LogAnalyticsEntityMetadata']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            source_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_discovered: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            timezone_region: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["areLogsCollected"] = are_logs_collected
+        __props__["associatedSourcesCount"] = associated_sources_count
+        __props__["cloudResourceId"] = cloud_resource_id
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["entityTypeInternalName"] = entity_type_internal_name
+        __props__["entityTypeName"] = entity_type_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["hostname"] = hostname
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["managementAgentCompartmentId"] = management_agent_compartment_id
+        __props__["managementAgentDisplayName"] = management_agent_display_name
+        __props__["managementAgentId"] = management_agent_id
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["namespace"] = namespace
+        __props__["properties"] = properties
+        __props__["sourceId"] = source_id
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["timeLastDiscovered"] = time_last_discovered
+        __props__["timeUpdated"] = time_updated
+        __props__["timezoneRegion"] = timezone_region
+        return pulumi.runtime.exists_resource(None, 'oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="areLogsCollected")
     def are_logs_collected(self) -> pulumi.Output[_builtins.bool]:

@@ -138,11 +138,10 @@ public class VolumeAttachment extends com.pulumi.resources.CustomResource {
     /**
      * The OCID of the compartment.
      * 
-     * @deprecated
-     * The &#39;compartment_id&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;compartment_id&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 

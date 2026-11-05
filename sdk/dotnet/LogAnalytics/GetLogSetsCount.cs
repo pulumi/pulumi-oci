@@ -16,7 +16,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// This API returns the count of distinct log sets.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// This API returns the count of distinct log sets.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides details about a specific Log Sets Count resource in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// This API returns the count of distinct log sets.
-        /// 
         /// 
         /// ## Example Usage
         /// 

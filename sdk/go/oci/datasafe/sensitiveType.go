@@ -243,6 +243,12 @@ func (SensitiveTypeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*sensitiveTypeState)(nil)).Elem()
 }
 
+// SensitiveTypeExists checks whether an existing SensitiveType resource with the given ID exists.
+func SensitiveTypeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SensitiveTypeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/sensitiveType:SensitiveType", id, state, "", opts...)
+}
+
 type sensitiveTypeArgs struct {
 	// (Updatable) A regular expression to be used by data discovery for matching column comments.
 	CommentPattern *string `pulumi:"commentPattern"`

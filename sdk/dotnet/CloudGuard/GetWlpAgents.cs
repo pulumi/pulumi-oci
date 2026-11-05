@@ -16,7 +16,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// Returns a list of WLP agents in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// Returns a list of WLP agents in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.CloudGuard
         /// This data source provides the list of Wlp Agents in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
         /// Returns a list of WLP agents in a compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

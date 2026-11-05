@@ -258,6 +258,12 @@ func (ExternalMySqlDatabaseConnectorState) ElementType() reflect.Type {
 	return reflect.TypeOf((*externalMySqlDatabaseConnectorState)(nil)).Elem()
 }
 
+// ExternalMySqlDatabaseConnectorExists checks whether an existing ExternalMySqlDatabaseConnector resource with the given ID exists.
+func ExternalMySqlDatabaseConnectorExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalMySqlDatabaseConnectorState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/externalMySqlDatabaseConnector:ExternalMySqlDatabaseConnector", id, state, "", opts...)
+}
+
 type externalMySqlDatabaseConnectorArgs struct {
 	// (Updatable) An optional property when incremented triggers Check Connection Status. Could be set to any integer value.
 	//

@@ -650,6 +650,56 @@ class ManagedDatabase(pulumi.CustomResource):
         __props__.__dict__["workload_type"] = workload_type
         return ManagedDatabase(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            additional_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_platform_name: pulumi.Input[Optional[_builtins.str]] = None,
+            database_status: pulumi.Input[Optional[_builtins.str]] = None,
+            database_sub_type: pulumi.Input[Optional[_builtins.str]] = None,
+            database_type: pulumi.Input[Optional[_builtins.str]] = None,
+            database_version: pulumi.Input[Optional[_builtins.str]] = None,
+            db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            dbmgmt_feature_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedDatabaseDbmgmtFeatureConfigArgs', 'ManagedDatabaseDbmgmtFeatureConfigArgsDict', 'outputs.ManagedDatabaseDbmgmtFeatureConfig']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_cluster: pulumi.Input[Optional[_builtins.bool]] = None,
+            managed_database_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedDatabaseManagedDatabaseGroupArgs', 'ManagedDatabaseManagedDatabaseGroupArgsDict', 'outputs.ManagedDatabaseManagedDatabaseGroup']]]]] = None,
+            managed_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            management_option: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_container_id: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            workload_type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["additionalDetails"] = additional_details
+        __props__["compartmentId"] = compartment_id
+        __props__["databasePlatformName"] = database_platform_name
+        __props__["databaseStatus"] = database_status
+        __props__["databaseSubType"] = database_sub_type
+        __props__["databaseType"] = database_type
+        __props__["databaseVersion"] = database_version
+        __props__["dbSystemId"] = db_system_id
+        __props__["dbmgmtFeatureConfigs"] = dbmgmt_feature_configs
+        __props__["definedTags"] = defined_tags
+        __props__["deploymentType"] = deployment_type
+        __props__["freeformTags"] = freeform_tags
+        __props__["isCluster"] = is_cluster
+        __props__["managedDatabaseGroups"] = managed_database_groups
+        __props__["managedDatabaseId"] = managed_database_id
+        __props__["managementOption"] = management_option
+        __props__["name"] = name
+        __props__["parentContainerId"] = parent_container_id
+        __props__["storageSystemId"] = storage_system_id
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["workloadType"] = workload_type
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseManagement/managedDatabase:ManagedDatabase', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="additionalDetails")
     def additional_details(self) -> pulumi.Output[Mapping[str, _builtins.str]]:

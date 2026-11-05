@@ -148,6 +148,12 @@ func (AddonState) ElementType() reflect.Type {
 	return reflect.TypeOf((*addonState)(nil)).Elem()
 }
 
+// AddonExists checks whether an existing Addon resource with the given ID exists.
+func AddonExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AddonState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ContainerEngine/addon:Addon", id, state, "", opts...)
+}
+
 type addonArgs struct {
 	// The name of the addon.
 	AddonName string `pulumi:"addonName"`

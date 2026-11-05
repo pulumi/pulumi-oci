@@ -283,6 +283,12 @@ func (CatalogItemState) ElementType() reflect.Type {
 	return reflect.TypeOf((*catalogItemState)(nil)).Elem()
 }
 
+// CatalogItemExists checks whether an existing CatalogItem resource with the given ID exists.
+func CatalogItemExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CatalogItemState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FleetAppsManagement/catalogItem:CatalogItem", id, state, "", opts...)
+}
+
 type catalogItemArgs struct {
 	// Catalog source payload.
 	CatalogSourcePayload *CatalogItemCatalogSourcePayload `pulumi:"catalogSourcePayload"`

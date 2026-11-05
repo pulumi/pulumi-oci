@@ -164,6 +164,12 @@ func (LogAnalyticsImportCustomContentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logAnalyticsImportCustomContentState)(nil)).Elem()
 }
 
+// LogAnalyticsImportCustomContentExists checks whether an existing LogAnalyticsImportCustomContent resource with the given ID exists.
+func LogAnalyticsImportCustomContentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogAnalyticsImportCustomContentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LogAnalytics/logAnalyticsImportCustomContent:LogAnalyticsImportCustomContent", id, state, "", opts...)
+}
+
 type logAnalyticsImportCustomContentArgs struct {
 	// A value of `100-continue` requests preliminary verification of the request method, path, and headers before the request body is sent. If no error results from such verification, the server will send a 100 (Continue) interim response to indicate readiness for the request body. The only allowed value for this parameter is "100-Continue" (case-insensitive).
 	//

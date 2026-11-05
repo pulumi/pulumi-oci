@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Vbs
         /// 
         /// Returns a list of VbsInstances.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Vbs
         /// 
         /// Returns a list of VbsInstances.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.Vbs
         /// This data source provides the list of Vbs Instances in Oracle Cloud Infrastructure Vbs Inst service.
         /// 
         /// Returns a list of VbsInstances.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -40,12 +40,12 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly bool Stateless;
         /// <summary>
-        /// Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed. 
+        /// Optional and valid only for TCP. Use to specify particular destination ports for TCP rules. If you specify TCP as the protocol but omit this object, then all destination ports are allowed.
         /// * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSecurityListsSecurityListEgressSecurityRuleTcpOptionResult> TcpOptions;
         /// <summary>
-        /// Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed. 
+        /// Optional and valid only for UDP. Use to specify particular destination ports for UDP rules. If you specify UDP as the protocol but omit this object, then all destination ports are allowed.
         /// * The following 2 attributes specify an inclusive range of allowed destination ports. Use the same number for the min and max to indicate a single port. Defaults to all ports if not specified.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSecurityListsSecurityListEgressSecurityRuleUdpOptionResult> UdpOptions;

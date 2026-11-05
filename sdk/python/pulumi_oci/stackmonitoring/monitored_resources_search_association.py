@@ -519,6 +519,30 @@ class MonitoredResourcesSearchAssociation(pulumi.CustomResource):
         __props__.__dict__["source_resource_type"] = source_resource_type
         return MonitoredResourcesSearchAssociation(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            association_type: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            destination_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            destination_resource_name: pulumi.Input[Optional[_builtins.str]] = None,
+            destination_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcesSearchAssociationItemArgs', 'MonitoredResourcesSearchAssociationItemArgsDict', 'outputs.MonitoredResourcesSearchAssociationItem']]]]] = None,
+            source_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_resource_name: pulumi.Input[Optional[_builtins.str]] = None,
+            source_resource_type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["associationType"] = association_type
+        __props__["compartmentId"] = compartment_id
+        __props__["destinationResourceId"] = destination_resource_id
+        __props__["destinationResourceName"] = destination_resource_name
+        __props__["destinationResourceType"] = destination_resource_type
+        __props__["items"] = items
+        __props__["sourceResourceId"] = source_resource_id
+        __props__["sourceResourceName"] = source_resource_name
+        __props__["sourceResourceType"] = source_resource_type
+        return pulumi.runtime.exists_resource(None, 'oci:StackMonitoring/monitoredResourcesSearchAssociation:MonitoredResourcesSearchAssociation', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="associationType")
     def association_type(self) -> pulumi.Output[Optional[_builtins.str]]:

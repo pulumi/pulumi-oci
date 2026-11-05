@@ -171,11 +171,10 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
     /**
      * Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
      * 
-     * @deprecated
-     * The &#39;bgp_management&#39; field has been deprecated. Please use the &#39;oci_core_fast_connect_provider_service&#39; data source instead.
+     * @deprecated The &#39;bgp_management&#39; field has been deprecated. Please use the &#39;oci_core_fast_connect_provider_service&#39; data source instead.
      * 
      */
-    @Deprecated /* The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead. */
+    @Deprecated
     @Export(name="bgpManagement", refs={String.class}, tree="[0]")
     private Output<String> bgpManagement;
 
@@ -245,11 +244,10 @@ public class VirtualCircuit extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
      * 
-     * @deprecated
-     * The &#39;customer_bgp_asn&#39; field has been deprecated. Please use &#39;customer_asn&#39; instead.
+     * @deprecated The &#39;customer_bgp_asn&#39; field has been deprecated. Please use &#39;customer_asn&#39; instead.
      * 
      */
-    @Deprecated /* The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead. */
+    @Deprecated
     @Export(name="customerBgpAsn", refs={Integer.class}, tree="[0]")
     private Output<Integer> customerBgpAsn;
 

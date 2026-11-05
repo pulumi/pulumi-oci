@@ -96,7 +96,6 @@ namespace Pulumi.Oci.Budget
         /// <summary>
         /// The name of the cost alert subscription. Avoid entering confidential information.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -218,7 +217,6 @@ namespace Pulumi.Oci.Budget
         /// <summary>
         /// The name of the cost alert subscription. Avoid entering confidential information.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -283,7 +281,6 @@ namespace Pulumi.Oci.Budget
 
         /// <summary>
         /// The name of the cost alert subscription. Avoid entering confidential information.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

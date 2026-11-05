@@ -31,20 +31,18 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfoArgs extends com
     }
 
     /**
-     * @deprecated
-     * The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
+     * @deprecated The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
      * 
      */
-    @Deprecated /* The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead. */
+    @Deprecated
     @Import(name="bgpIpv6state")
     private @Nullable Output<String> bgpIpv6state;
 
     /**
-     * @deprecated
-     * The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
+     * @deprecated The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
      * 
      */
-    @Deprecated /* The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead. */
+    @Deprecated
     public Optional<Output<String>> bgpIpv6state() {
         return Optional.ofNullable(this.bgpIpv6state);
     }
@@ -282,11 +280,10 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfoArgs extends com
         /**
          * @return builder
          * 
-         * @deprecated
-         * The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
+         * @deprecated The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
          * 
          */
-        @Deprecated /* The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead. */
+        @Deprecated
         public Builder bgpIpv6state(@Nullable Output<String> bgpIpv6state) {
             $.bgpIpv6state = bgpIpv6state;
             return this;
@@ -295,11 +292,10 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfoArgs extends com
         /**
          * @return builder
          * 
-         * @deprecated
-         * The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
+         * @deprecated The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
          * 
          */
-        @Deprecated /* The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead. */
+        @Deprecated
         public Builder bgpIpv6state(String bgpIpv6state) {
             return bgpIpv6state(Output.of(bgpIpv6state));
         }

@@ -286,6 +286,18 @@ class ExternalPluggableDatabasesStackMonitoring(pulumi.CustomResource):
         __props__.__dict__["external_pluggable_database_id"] = external_pluggable_database_id
         return ExternalPluggableDatabasesStackMonitoring(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enable_stack_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+            external_database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_pluggable_database_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enableStackMonitoring"] = enable_stack_monitoring
+        __props__["externalDatabaseConnectorId"] = external_database_connector_id
+        __props__["externalPluggableDatabaseId"] = external_pluggable_database_id
+        return pulumi.runtime.exists_resource(None, 'oci:Database/externalPluggableDatabasesStackMonitoring:ExternalPluggableDatabasesStackMonitoring', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="enableStackMonitoring")
     def enable_stack_monitoring(self) -> pulumi.Output[_builtins.bool]:

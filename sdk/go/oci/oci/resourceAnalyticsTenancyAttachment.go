@@ -191,6 +191,12 @@ func (ResourceAnalyticsTenancyAttachmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*resourceAnalyticsTenancyAttachmentState)(nil)).Elem()
 }
 
+// ResourceAnalyticsTenancyAttachmentExists checks whether an existing ResourceAnalyticsTenancyAttachment resource with the given ID exists.
+func ResourceAnalyticsTenancyAttachmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ResourceAnalyticsTenancyAttachmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/resourceAnalyticsTenancyAttachment:ResourceAnalyticsTenancyAttachment", id, state, "", opts...)
+}
+
 type resourceAnalyticsTenancyAttachmentArgs struct {
 	// (Updatable) A description of the tenancy.
 	Description *string `pulumi:"description"`

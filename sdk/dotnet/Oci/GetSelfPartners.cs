@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Lists marketplace publisher partner info for a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Lists marketplace publisher partner info for a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Partners in Oracle Cloud Infrastructure Self service.
         /// 
         /// Lists marketplace publisher partner info for a compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

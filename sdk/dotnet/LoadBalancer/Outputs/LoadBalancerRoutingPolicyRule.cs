@@ -22,8 +22,7 @@ namespace Pulumi.Oci.LoadBalancer.Outputs
         /// </summary>
         public readonly string Condition;
         /// <summary>
-        /// (Updatable) A unique name for the routing policy rule. Avoid entering confidential information. 
-        /// 
+        /// (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

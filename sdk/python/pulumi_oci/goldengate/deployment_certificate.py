@@ -675,6 +675,54 @@ class DeploymentCertificate(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return DeploymentCertificate(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            authority_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            certificate_content: pulumi.Input[Optional[_builtins.str]] = None,
+            deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_ca: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_self_signed: pulumi.Input[Optional[_builtins.bool]] = None,
+            issuer: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            md5hash: pulumi.Input[Optional[_builtins.str]] = None,
+            public_key: pulumi.Input[Optional[_builtins.str]] = None,
+            public_key_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            public_key_size: pulumi.Input[Optional[_builtins.str]] = None,
+            serial: pulumi.Input[Optional[_builtins.str]] = None,
+            sha1hash: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subject: pulumi.Input[Optional[_builtins.str]] = None,
+            subject_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_valid_from: pulumi.Input[Optional[_builtins.str]] = None,
+            time_valid_to: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["authorityKeyId"] = authority_key_id
+        __props__["certificateContent"] = certificate_content
+        __props__["deploymentId"] = deployment_id
+        __props__["isCa"] = is_ca
+        __props__["isLockOverride"] = is_lock_override
+        __props__["isSelfSigned"] = is_self_signed
+        __props__["issuer"] = issuer
+        __props__["key"] = key
+        __props__["md5hash"] = md5hash
+        __props__["publicKey"] = public_key
+        __props__["publicKeyAlgorithm"] = public_key_algorithm
+        __props__["publicKeySize"] = public_key_size
+        __props__["serial"] = serial
+        __props__["sha1hash"] = sha1hash
+        __props__["state"] = state
+        __props__["subject"] = subject
+        __props__["subjectKeyId"] = subject_key_id
+        __props__["timeCreated"] = time_created
+        __props__["timeValidFrom"] = time_valid_from
+        __props__["timeValidTo"] = time_valid_to
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'oci:GoldenGate/deploymentCertificate:DeploymentCertificate', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="authorityKeyId")
     def authority_key_id(self) -> pulumi.Output[_builtins.str]:

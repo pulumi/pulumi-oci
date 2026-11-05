@@ -235,6 +235,12 @@ func (BdsInstanceIdentityConfigurationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*bdsInstanceIdentityConfigurationState)(nil)).Elem()
 }
 
+// BdsInstanceIdentityConfigurationExists checks whether an existing BdsInstanceIdentityConfiguration resource with the given ID exists.
+func BdsInstanceIdentityConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BdsInstanceIdentityConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:BigDataService/bdsInstanceIdentityConfiguration:BdsInstanceIdentityConfiguration", id, state, "", opts...)
+}
+
 type bdsInstanceIdentityConfigurationArgs struct {
 	// (Updatable) An optional property when set to "true" triggers Activate Iam User Sync Configuration and when set to "false" triggers Deactivate Iam User Sync Configuration.
 	ActivateIamUserSyncConfigurationTrigger *string `pulumi:"activateIamUserSyncConfigurationTrigger"`

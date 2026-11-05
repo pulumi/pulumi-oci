@@ -247,6 +247,12 @@ func (StorageObjectState) ElementType() reflect.Type {
 	return reflect.TypeOf((*storageObjectState)(nil)).Elem()
 }
 
+// StorageObjectExists checks whether an existing StorageObject resource with the given ID exists.
+func StorageObjectExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *StorageObjectState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ObjectStorage/storageObject:StorageObject", id, state, "", opts...)
+}
+
 type storageObjectArgs struct {
 	// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
 	Bucket string `pulumi:"bucket"`

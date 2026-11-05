@@ -962,6 +962,58 @@ class Budget(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return Budget(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            actual_spend: pulumi.Input[Optional[_builtins.float]] = None,
+            alert_rule_count: pulumi.Input[Optional[_builtins.int]] = None,
+            amount: pulumi.Input[Optional[_builtins.int]] = None,
+            budget_processing_period_start_offset: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            end_date: pulumi.Input[Optional[_builtins.str]] = None,
+            forecasted_spend: pulumi.Input[Optional[_builtins.float]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            processing_period_type: pulumi.Input[Optional[_builtins.str]] = None,
+            reset_period: pulumi.Input[Optional[_builtins.str]] = None,
+            start_date: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            target_type: pulumi.Input[Optional[_builtins.str]] = None,
+            targets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_spend_computed: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["actualSpend"] = actual_spend
+        __props__["alertRuleCount"] = alert_rule_count
+        __props__["amount"] = amount
+        __props__["budgetProcessingPeriodStartOffset"] = budget_processing_period_start_offset
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["endDate"] = end_date
+        __props__["forecastedSpend"] = forecasted_spend
+        __props__["freeformTags"] = freeform_tags
+        __props__["processingPeriodType"] = processing_period_type
+        __props__["resetPeriod"] = reset_period
+        __props__["startDate"] = start_date
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["targetCompartmentId"] = target_compartment_id
+        __props__["targetType"] = target_type
+        __props__["targets"] = targets
+        __props__["timeCreated"] = time_created
+        __props__["timeSpendComputed"] = time_spend_computed
+        __props__["timeUpdated"] = time_updated
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'oci:Budget/budget:Budget', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="actualSpend")
     def actual_spend(self) -> pulumi.Output[_builtins.float]:

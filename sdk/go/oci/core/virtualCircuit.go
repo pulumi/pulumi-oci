@@ -380,6 +380,12 @@ func (VirtualCircuitState) ElementType() reflect.Type {
 	return reflect.TypeOf((*virtualCircuitState)(nil)).Elem()
 }
 
+// VirtualCircuitExists checks whether an existing VirtualCircuit resource with the given ID exists.
+func VirtualCircuitExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VirtualCircuitState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/virtualCircuit:VirtualCircuit", id, state, "", opts...)
+}
+
 type virtualCircuitArgs struct {
 	// (Updatable) The provisioned data rate of the connection. To get a list of the available bandwidth levels (that is, shapes), see [ListFastConnectProviderServiceVirtualCircuitBandwidthShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/ListFastConnectProviderVirtualCircuitBandwidthShapes).  Example: `10 Gbps`
 	BandwidthShapeName *string `pulumi:"bandwidthShapeName"`

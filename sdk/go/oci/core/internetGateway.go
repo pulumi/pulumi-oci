@@ -194,6 +194,12 @@ func (InternetGatewayState) ElementType() reflect.Type {
 	return reflect.TypeOf((*internetGatewayState)(nil)).Elem()
 }
 
+// InternetGatewayExists checks whether an existing InternetGateway resource with the given ID exists.
+func InternetGatewayExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *InternetGatewayState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/internetGateway:InternetGateway", id, state, "", opts...)
+}
+
 type internetGatewayArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the internet gateway.
 	CompartmentId string `pulumi:"compartmentId"`

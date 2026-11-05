@@ -20,7 +20,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// The `objectType` filter is a database-specific string and is validated by the backend.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -57,7 +56,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// The `objectType` filter is a database-specific string and is validated by the backend.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -93,7 +91,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// The migration must already have Data Verification results.
         /// 
         /// The `objectType` filter is a database-specific string and is validated by the backend.
-        /// 
         /// 
         /// ## Example Usage
         /// 

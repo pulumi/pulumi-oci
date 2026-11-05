@@ -166,6 +166,12 @@ func (RepositoryRefState) ElementType() reflect.Type {
 	return reflect.TypeOf((*repositoryRefState)(nil)).Elem()
 }
 
+// RepositoryRefExists checks whether an existing RepositoryRef resource with the given ID exists.
+func RepositoryRefExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RepositoryRefState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DevOps/repositoryRef:RepositoryRef", id, state, "", opts...)
+}
+
 type repositoryRefArgs struct {
 	// (Updatable) Commit ID pointed to by the new branch.
 	CommitId *string `pulumi:"commitId"`

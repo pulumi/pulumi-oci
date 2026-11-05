@@ -765,6 +765,54 @@ class Backup(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return Backup(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            backup_size: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            copy_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BackupCopyStatusArgs', 'BackupCopyStatusArgsDict', 'outputs.BackupCopyStatus']]]]] = None,
+            db_system_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BackupDbSystemDetailArgs', 'BackupDbSystemDetailArgsDict', 'outputs.BackupDbSystemDetail']]]]] = None,
+            db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            last_accepted_request_token: pulumi.Input[Optional[_builtins.str]] = None,
+            last_completed_request_token: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            retention_period: pulumi.Input[Optional[_builtins.int]] = None,
+            source_backup_details: pulumi.Input[Optional[Union['BackupSourceBackupDetailsArgs', 'BackupSourceBackupDetailsArgsDict', 'outputs.BackupSourceBackupDetails']]] = None,
+            source_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created_precise: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["backupSize"] = backup_size
+        __props__["compartmentId"] = compartment_id
+        __props__["copyStatuses"] = copy_statuses
+        __props__["dbSystemDetails"] = db_system_details
+        __props__["dbSystemId"] = db_system_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["kmsKeyId"] = kms_key_id
+        __props__["lastAcceptedRequestToken"] = last_accepted_request_token
+        __props__["lastCompletedRequestToken"] = last_completed_request_token
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["retentionPeriod"] = retention_period
+        __props__["sourceBackupDetails"] = source_backup_details
+        __props__["sourceType"] = source_type
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeCreatedPrecise"] = time_created_precise
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Psql/backup:Backup', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="backupSize")
     def backup_size(self) -> pulumi.Output[_builtins.int]:

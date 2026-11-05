@@ -168,6 +168,12 @@ func (SignState) ElementType() reflect.Type {
 	return reflect.TypeOf((*signState)(nil)).Elem()
 }
 
+// SignExists checks whether an existing Sign resource with the given ID exists.
+func SignExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SignState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Kms/sign:Sign", id, state, "", opts...)
+}
+
 type signArgs struct {
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,', 'GenerateDataEncryptionKey', 'Sign' and 'Verify' operations. see Vault Crypto endpoint.
 	CryptoEndpoint string `pulumi:"cryptoEndpoint"`

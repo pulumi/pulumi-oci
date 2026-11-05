@@ -205,6 +205,12 @@ func (UsageState) ElementType() reflect.Type {
 	return reflect.TypeOf((*usageState)(nil)).Elem()
 }
 
+// UsageExists checks whether an existing Usage resource with the given ID exists.
+func UsageExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UsageState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:MeteringComputation/usage:Usage", id, state, "", opts...)
+}
+
 type usageArgs struct {
 	// The compartment depth level.
 	CompartmentDepth *float64 `pulumi:"compartmentDepth"`

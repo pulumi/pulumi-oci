@@ -518,6 +518,32 @@ class FileSystemQuotaRule(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return FileSystemQuotaRule(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            are_violators_only: pulumi.Input[Optional[_builtins.bool]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_hard_quota: pulumi.Input[Optional[_builtins.bool]] = None,
+            principal_id: pulumi.Input[Optional[_builtins.int]] = None,
+            principal_type: pulumi.Input[Optional[_builtins.str]] = None,
+            quota_limit_in_gigabytes: pulumi.Input[Optional[_builtins.int]] = None,
+            quota_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["areViolatorsOnly"] = are_violators_only
+        __props__["displayName"] = display_name
+        __props__["fileSystemId"] = file_system_id
+        __props__["isHardQuota"] = is_hard_quota
+        __props__["principalId"] = principal_id
+        __props__["principalType"] = principal_type
+        __props__["quotaLimitInGigabytes"] = quota_limit_in_gigabytes
+        __props__["quotaRuleId"] = quota_rule_id
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:FileStorage/fileSystemQuotaRule:FileSystemQuotaRule', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="areViolatorsOnly")
     def are_violators_only(self) -> pulumi.Output[Optional[_builtins.bool]]:

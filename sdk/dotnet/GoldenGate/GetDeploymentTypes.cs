@@ -16,7 +16,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Returns an array of DeploymentTypeDescriptor
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Returns an array of DeploymentTypeDescriptor
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.GoldenGate
         /// This data source provides the list of Deployment Types in Oracle Cloud Infrastructure Golden Gate service.
         /// 
         /// Returns an array of DeploymentTypeDescriptor
-        /// 
         /// 
         /// ## Example Usage
         /// 

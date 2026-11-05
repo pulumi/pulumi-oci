@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Lists all Oracle DB AWS Identity Connectors based on the specified filters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Lists all Oracle DB AWS Identity Connectors based on the specified filters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Oracle Db Aws Identity Connectors in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
         /// Lists all Oracle DB AWS Identity Connectors based on the specified filters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

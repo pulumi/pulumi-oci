@@ -847,6 +847,48 @@ class Dataset(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return Dataset(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            additional_properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            annotation_format: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            dataset_format_details: pulumi.Input[Optional[Union['DatasetDatasetFormatDetailsArgs', 'DatasetDatasetFormatDetailsArgsDict', 'outputs.DatasetDatasetFormatDetails']]] = None,
+            dataset_source_details: pulumi.Input[Optional[Union['DatasetDatasetSourceDetailsArgs', 'DatasetDatasetSourceDetailsArgsDict', 'outputs.DatasetDatasetSourceDetails']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            initial_import_dataset_configuration: pulumi.Input[Optional[Union['DatasetInitialImportDatasetConfigurationArgs', 'DatasetInitialImportDatasetConfigurationArgsDict', 'outputs.DatasetInitialImportDatasetConfiguration']]] = None,
+            initial_record_generation_configuration: pulumi.Input[Optional[Union['DatasetInitialRecordGenerationConfigurationArgs', 'DatasetInitialRecordGenerationConfigurationArgsDict', 'outputs.DatasetInitialRecordGenerationConfiguration']]] = None,
+            label_set: pulumi.Input[Optional[Union['DatasetLabelSetArgs', 'DatasetLabelSetArgsDict', 'outputs.DatasetLabelSet']]] = None,
+            labeling_instructions: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_substate: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["additionalProperties"] = additional_properties
+        __props__["annotationFormat"] = annotation_format
+        __props__["compartmentId"] = compartment_id
+        __props__["datasetFormatDetails"] = dataset_format_details
+        __props__["datasetSourceDetails"] = dataset_source_details
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["initialImportDatasetConfiguration"] = initial_import_dataset_configuration
+        __props__["initialRecordGenerationConfiguration"] = initial_record_generation_configuration
+        __props__["labelSet"] = label_set
+        __props__["labelingInstructions"] = labeling_instructions
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["lifecycleSubstate"] = lifecycle_substate
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:DataLabellingService/dataset:Dataset', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="additionalProperties")
     def additional_properties(self) -> pulumi.Output[Mapping[str, _builtins.str]]:

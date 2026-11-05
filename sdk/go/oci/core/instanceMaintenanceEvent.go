@@ -247,6 +247,12 @@ func (InstanceMaintenanceEventState) ElementType() reflect.Type {
 	return reflect.TypeOf((*instanceMaintenanceEventState)(nil)).Elem()
 }
 
+// InstanceMaintenanceEventExists checks whether an existing InstanceMaintenanceEvent resource with the given ID exists.
+func InstanceMaintenanceEventExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *InstanceMaintenanceEventState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/instanceMaintenanceEvent:InstanceMaintenanceEvent", id, state, "", opts...)
+}
+
 type instanceMaintenanceEventArgs struct {
 	// (Updatable) One of the alternativeResolutionActions that was provided in the InstanceMaintenanceEvent.
 	AlternativeResolutionAction *string `pulumi:"alternativeResolutionAction"`

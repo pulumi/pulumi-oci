@@ -282,6 +282,20 @@ class AutonomousDatabaseRegionalWalletManagement(pulumi.CustomResource):
         __props__.__dict__["time_rotated"] = time_rotated
         return AutonomousDatabaseRegionalWalletManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            grace_period: pulumi.Input[Optional[_builtins.int]] = None,
+            should_rotate: pulumi.Input[Optional[_builtins.bool]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_rotated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["gracePeriod"] = grace_period
+        __props__["shouldRotate"] = should_rotate
+        __props__["state"] = state
+        __props__["timeRotated"] = time_rotated
+        return pulumi.runtime.exists_resource(None, 'oci:Database/autonomousDatabaseRegionalWalletManagement:AutonomousDatabaseRegionalWalletManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="gracePeriod")
     def grace_period(self) -> pulumi.Output[_builtins.int]:

@@ -209,6 +209,12 @@ func (DeployPipelineState) ElementType() reflect.Type {
 	return reflect.TypeOf((*deployPipelineState)(nil)).Elem()
 }
 
+// DeployPipelineExists checks whether an existing DeployPipeline resource with the given ID exists.
+func DeployPipelineExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DeployPipelineState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DevOps/deployPipeline:DeployPipeline", id, state, "", opts...)
+}
+
 type deployPipelineArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`

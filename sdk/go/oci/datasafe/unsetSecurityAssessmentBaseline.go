@@ -123,6 +123,12 @@ func (UnsetSecurityAssessmentBaselineState) ElementType() reflect.Type {
 	return reflect.TypeOf((*unsetSecurityAssessmentBaselineState)(nil)).Elem()
 }
 
+// UnsetSecurityAssessmentBaselineExists checks whether an existing UnsetSecurityAssessmentBaseline resource with the given ID exists.
+func UnsetSecurityAssessmentBaselineExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UnsetSecurityAssessmentBaselineState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/unsetSecurityAssessmentBaseline:UnsetSecurityAssessmentBaseline", id, state, "", opts...)
+}
+
 type unsetSecurityAssessmentBaselineArgs struct {
 	// The OCID of the security assessment.
 	SecurityAssessmentId string `pulumi:"securityAssessmentId"`

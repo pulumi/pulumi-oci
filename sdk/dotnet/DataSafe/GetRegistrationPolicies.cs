@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Retrieves a list of registration policies according to the specified query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -54,7 +53,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Retrieves a list of registration policies according to the specified query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -91,7 +89,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Registration Policies in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Retrieves a list of registration policies according to the specified query parameters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

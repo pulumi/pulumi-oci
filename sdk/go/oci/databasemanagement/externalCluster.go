@@ -208,6 +208,12 @@ func (ExternalClusterState) ElementType() reflect.Type {
 	return reflect.TypeOf((*externalClusterState)(nil)).Elem()
 }
 
+// ExternalClusterExists checks whether an existing ExternalCluster resource with the given ID exists.
+func ExternalClusterExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalClusterState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/externalCluster:ExternalCluster", id, state, "", opts...)
+}
+
 type externalClusterArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`

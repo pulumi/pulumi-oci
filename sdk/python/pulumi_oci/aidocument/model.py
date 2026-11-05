@@ -1072,6 +1072,70 @@ class Model(pulumi.CustomResource):
         __props__.__dict__["validation_dataset"] = validation_dataset
         return Model(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            component_models: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelComponentModelArgs', 'ModelComponentModelArgsDict', 'outputs.ModelComponentModel']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            inference_units: pulumi.Input[Optional[_builtins.int]] = None,
+            is_composed_model: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_quick_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+            labels: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            language: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelLockArgs', 'ModelLockArgsDict', 'outputs.ModelLock']]]]] = None,
+            max_training_time_in_hours: pulumi.Input[Optional[_builtins.float]] = None,
+            metrics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelMetricArgs', 'ModelMetricArgsDict', 'outputs.ModelMetric']]]]] = None,
+            model_id: pulumi.Input[Optional[_builtins.str]] = None,
+            model_sub_type: pulumi.Input[Optional[Union['ModelModelSubTypeArgs', 'ModelModelSubTypeArgsDict', 'outputs.ModelModelSubType']]] = None,
+            model_type: pulumi.Input[Optional[_builtins.str]] = None,
+            model_version: pulumi.Input[Optional[_builtins.str]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            testing_dataset: pulumi.Input[Optional[Union['ModelTestingDatasetArgs', 'ModelTestingDatasetArgsDict', 'outputs.ModelTestingDataset']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            trained_time_in_hours: pulumi.Input[Optional[_builtins.float]] = None,
+            training_dataset: pulumi.Input[Optional[Union['ModelTrainingDatasetArgs', 'ModelTrainingDatasetArgsDict', 'outputs.ModelTrainingDataset']]] = None,
+            validation_dataset: pulumi.Input[Optional[Union['ModelValidationDatasetArgs', 'ModelValidationDatasetArgsDict', 'outputs.ModelValidationDataset']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["componentModels"] = component_models
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["inferenceUnits"] = inference_units
+        __props__["isComposedModel"] = is_composed_model
+        __props__["isQuickMode"] = is_quick_mode
+        __props__["labels"] = labels
+        __props__["language"] = language
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["locks"] = locks
+        __props__["maxTrainingTimeInHours"] = max_training_time_in_hours
+        __props__["metrics"] = metrics
+        __props__["modelId"] = model_id
+        __props__["modelSubType"] = model_sub_type
+        __props__["modelType"] = model_type
+        __props__["modelVersion"] = model_version
+        __props__["projectId"] = project_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["tenancyId"] = tenancy_id
+        __props__["testingDataset"] = testing_dataset
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["trainedTimeInHours"] = trained_time_in_hours
+        __props__["trainingDataset"] = training_dataset
+        __props__["validationDataset"] = validation_dataset
+        return pulumi.runtime.exists_resource(None, 'oci:AiDocument/model:Model', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

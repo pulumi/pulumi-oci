@@ -17,7 +17,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// Returns a list of Inventory Resources based on the criteria provided.
         /// instance, dbsystem, cloudvmcluster resources are supported.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -53,7 +52,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// Returns a list of Inventory Resources based on the criteria provided.
         /// instance, dbsystem, cloudvmcluster resources are supported.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -88,7 +86,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Returns a list of Inventory Resources based on the criteria provided.
         /// instance, dbsystem, cloudvmcluster resources are supported.
-        /// 
         /// 
         /// ## Example Usage
         /// 

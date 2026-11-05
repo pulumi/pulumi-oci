@@ -227,6 +227,12 @@ func (WorkspaceImportRequestState) ElementType() reflect.Type {
 	return reflect.TypeOf((*workspaceImportRequestState)(nil)).Elem()
 }
 
+// WorkspaceImportRequestExists checks whether an existing WorkspaceImportRequest resource with the given ID exists.
+func WorkspaceImportRequestExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WorkspaceImportRequestState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataIntegration/workspaceImportRequest:WorkspaceImportRequest", id, state, "", opts...)
+}
+
 type workspaceImportRequestArgs struct {
 	// This field controls if the data asset references will be included during import.
 	AreDataAssetReferencesIncluded *bool `pulumi:"areDataAssetReferencesIncluded"`

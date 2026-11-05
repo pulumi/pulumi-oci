@@ -1520,6 +1520,92 @@ class EsxiHost(pulumi.CustomResource):
         __props__.__dict__["vmware_software_version"] = vmware_software_version
         return EsxiHost(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            attach_datastore_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            billing_contract_end_date: pulumi.Input[Optional[_builtins.str]] = None,
+            billing_donor_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            current_commitment: pulumi.Input[Optional[_builtins.str]] = None,
+            current_sku: pulumi.Input[Optional[_builtins.str]] = None,
+            datastore_attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EsxiHostDatastoreAttachmentArgs', 'EsxiHostDatastoreAttachmentArgsDict', 'outputs.EsxiHostDatastoreAttachment']]]]] = None,
+            datastore_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            detach_datastore_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            esxi_software_version: pulumi.Input[Optional[_builtins.str]] = None,
+            failed_esxi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            grace_period_end_date: pulumi.Input[Optional[_builtins.str]] = None,
+            host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
+            host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+            initial_fault_domain_host_distribution: pulumi.Input[Optional[_builtins.str]] = None,
+            is_billing_continuation_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_billing_swapping_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_vsan_byol_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            next_commitment: pulumi.Input[Optional[_builtins.str]] = None,
+            next_sku: pulumi.Input[Optional[_builtins.str]] = None,
+            non_upgraded_esxi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            primary_vnic_mac_address: pulumi.Input[Optional[_builtins.str]] = None,
+            replacement_esxi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            sddc_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            swap_billing_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            upgraded_replacement_esxi_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vcf_byol_allocation_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vmware_software_version: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["attachDatastoreClusterIds"] = attach_datastore_cluster_ids
+        __props__["billingContractEndDate"] = billing_contract_end_date
+        __props__["billingDonorHostId"] = billing_donor_host_id
+        __props__["capacityReservationId"] = capacity_reservation_id
+        __props__["clusterId"] = cluster_id
+        __props__["compartmentId"] = compartment_id
+        __props__["computeAvailabilityDomain"] = compute_availability_domain
+        __props__["computeFaultDomain"] = compute_fault_domain
+        __props__["computeInstanceId"] = compute_instance_id
+        __props__["currentCommitment"] = current_commitment
+        __props__["currentSku"] = current_sku
+        __props__["datastoreAttachments"] = datastore_attachments
+        __props__["datastoreClusterIds"] = datastore_cluster_ids
+        __props__["definedTags"] = defined_tags
+        __props__["detachDatastoreClusterIds"] = detach_datastore_cluster_ids
+        __props__["displayName"] = display_name
+        __props__["esxiSoftwareVersion"] = esxi_software_version
+        __props__["failedEsxiHostId"] = failed_esxi_host_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["gracePeriodEndDate"] = grace_period_end_date
+        __props__["hostOcpuCount"] = host_ocpu_count
+        __props__["hostShapeName"] = host_shape_name
+        __props__["initialFaultDomainHostDistribution"] = initial_fault_domain_host_distribution
+        __props__["isBillingContinuationInProgress"] = is_billing_continuation_in_progress
+        __props__["isBillingSwappingInProgress"] = is_billing_swapping_in_progress
+        __props__["isVsanByolEnabled"] = is_vsan_byol_enabled
+        __props__["nextCommitment"] = next_commitment
+        __props__["nextSku"] = next_sku
+        __props__["nonUpgradedEsxiHostId"] = non_upgraded_esxi_host_id
+        __props__["primaryVnicMacAddress"] = primary_vnic_mac_address
+        __props__["replacementEsxiHostId"] = replacement_esxi_host_id
+        __props__["sddcId"] = sddc_id
+        __props__["state"] = state
+        __props__["swapBillingHostId"] = swap_billing_host_id
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["upgradedReplacementEsxiHostId"] = upgraded_replacement_esxi_host_id
+        __props__["vcfByolAllocationId"] = vcf_byol_allocation_id
+        __props__["vmwareSoftwareVersion"] = vmware_software_version
+        return pulumi.runtime.exists_resource(None, 'oci:Ocvp/esxiHost:EsxiHost', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="attachDatastoreClusterIds")
     def attach_datastore_cluster_ids(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

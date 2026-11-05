@@ -256,6 +256,16 @@ class AnnouncementSubscriptionsActionsChangeCompartment(pulumi.CustomResource):
         __props__.__dict__["compartment_id"] = compartment_id
         return AnnouncementSubscriptionsActionsChangeCompartment(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            announcement_subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["announcementSubscriptionId"] = announcement_subscription_id
+        __props__["compartmentId"] = compartment_id
+        return pulumi.runtime.exists_resource(None, 'oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="announcementSubscriptionId")
     def announcement_subscription_id(self) -> pulumi.Output[_builtins.str]:

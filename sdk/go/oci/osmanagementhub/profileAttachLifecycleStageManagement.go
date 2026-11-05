@@ -124,6 +124,12 @@ func (ProfileAttachLifecycleStageManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*profileAttachLifecycleStageManagementState)(nil)).Elem()
 }
 
+// ProfileAttachLifecycleStageManagementExists checks whether an existing ProfileAttachLifecycleStageManagement resource with the given ID exists.
+func ProfileAttachLifecycleStageManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProfileAttachLifecycleStageManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/profileAttachLifecycleStageManagement:ProfileAttachLifecycleStageManagement", id, state, "", opts...)
+}
+
 type profileAttachLifecycleStageManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage that the instance will be associated with.
 	LifecycleStageId string `pulumi:"lifecycleStageId"`

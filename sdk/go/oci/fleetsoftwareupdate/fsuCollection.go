@@ -287,6 +287,12 @@ func (FsuCollectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*fsuCollectionState)(nil)).Elem()
 }
 
+// FsuCollectionExists checks whether an existing FsuCollection resource with the given ID exists.
+func FsuCollectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FsuCollectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FleetSoftwareUpdate/fsuCollection:FsuCollection", id, state, "", opts...)
+}
+
 type fsuCollectionArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Compartment.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -200,6 +200,14 @@ class SoftwareSourceChangeAvailabilityManagement(pulumi.CustomResource):
         __props__.__dict__["software_source_availabilities"] = software_source_availabilities
         return SoftwareSourceChangeAvailabilityManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            software_source_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgs', 'SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailabilityArgsDict', 'outputs.SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailability']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["softwareSourceAvailabilities"] = software_source_availabilities
+        return pulumi.runtime.exists_resource(None, 'oci:OsManagementHub/softwareSourceChangeAvailabilityManagement:SoftwareSourceChangeAvailabilityManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="softwareSourceAvailabilities")
     def software_source_availabilities(self) -> pulumi.Output[Sequence['outputs.SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailability']]:

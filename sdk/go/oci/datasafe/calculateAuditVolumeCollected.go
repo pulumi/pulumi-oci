@@ -134,6 +134,12 @@ func (CalculateAuditVolumeCollectedState) ElementType() reflect.Type {
 	return reflect.TypeOf((*calculateAuditVolumeCollectedState)(nil)).Elem()
 }
 
+// CalculateAuditVolumeCollectedExists checks whether an existing CalculateAuditVolumeCollected resource with the given ID exists.
+func CalculateAuditVolumeCollectedExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CalculateAuditVolumeCollectedState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/calculateAuditVolumeCollected:CalculateAuditVolumeCollected", id, state, "", opts...)
+}
+
 type calculateAuditVolumeCollectedArgs struct {
 	// The OCID of the audit.
 	AuditProfileId string `pulumi:"auditProfileId"`

@@ -587,6 +587,48 @@ class CostadCostAnomalyEvent(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return CostadCostAnomalyEvent(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cost_anomaly_event_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cost_anomaly_name: pulumi.Input[Optional[_builtins.str]] = None,
+            cost_impact: pulumi.Input[Optional[_builtins.float]] = None,
+            cost_monitor_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cost_monitor_name: pulumi.Input[Optional[_builtins.str]] = None,
+            cost_monitor_type: pulumi.Input[Optional[_builtins.str]] = None,
+            cost_variance_percentage: pulumi.Input[Optional[_builtins.float]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            feedback_response: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            root_cause_detail: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_resource_filter: pulumi.Input[Optional[_builtins.str]] = None,
+            time_anomaly_event_date: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["costAnomalyEventId"] = cost_anomaly_event_id
+        __props__["costAnomalyName"] = cost_anomaly_name
+        __props__["costImpact"] = cost_impact
+        __props__["costMonitorId"] = cost_monitor_id
+        __props__["costMonitorName"] = cost_monitor_name
+        __props__["costMonitorType"] = cost_monitor_type
+        __props__["costVariancePercentage"] = cost_variance_percentage
+        __props__["definedTags"] = defined_tags
+        __props__["feedbackResponse"] = feedback_response
+        __props__["freeformTags"] = freeform_tags
+        __props__["rootCauseDetail"] = root_cause_detail
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["targetResourceFilter"] = target_resource_filter
+        __props__["timeAnomalyEventDate"] = time_anomaly_event_date
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:oci/costadCostAnomalyEvent:CostadCostAnomalyEvent', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

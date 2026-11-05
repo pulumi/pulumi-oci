@@ -195,6 +195,12 @@ func (MetastoreState) ElementType() reflect.Type {
 	return reflect.TypeOf((*metastoreState)(nil)).Elem()
 }
 
+// MetastoreExists checks whether an existing Metastore resource with the given ID exists.
+func MetastoreExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MetastoreState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataCatalog/metastore:Metastore", id, state, "", opts...)
+}
+
 type metastoreArgs struct {
 	// (Updatable) OCID of the compartment which holds the metastore.
 	CompartmentId string `pulumi:"compartmentId"`

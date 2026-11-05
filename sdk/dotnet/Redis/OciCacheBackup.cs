@@ -116,7 +116,6 @@ namespace Pulumi.Oci.Redis
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Export To Object Storage. Could be set to any integer value.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -262,7 +261,6 @@ namespace Pulumi.Oci.Redis
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Export To Object Storage. Could be set to any integer value.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -363,7 +361,6 @@ namespace Pulumi.Oci.Redis
 
         /// <summary>
         /// (Updatable) An optional property when incremented triggers Export To Object Storage. Could be set to any integer value.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

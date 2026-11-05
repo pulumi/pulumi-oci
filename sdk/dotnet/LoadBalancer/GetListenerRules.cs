@@ -22,7 +22,6 @@ namespace Pulumi.Oci.LoadBalancer
         /// *  Request header rules
         /// *  Response header rules
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -56,7 +55,6 @@ namespace Pulumi.Oci.LoadBalancer
         /// *  Request header rules
         /// *  Response header rules
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -89,7 +87,6 @@ namespace Pulumi.Oci.LoadBalancer
         /// *  Allow method rules
         /// *  Request header rules
         /// *  Response header rules
-        /// 
         /// 
         /// ## Example Usage
         /// 

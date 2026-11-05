@@ -18,8 +18,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? ComputeBareMetalHostId;
         /// <summary>
-        /// The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID. 
-        /// 
+        /// The type for the placement constraints. Use `COMPUTE_BARE_METAL_HOST` when specifying the compute bare metal host OCID. Use `HOST_GROUP` when specifying the compute host group OCID.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

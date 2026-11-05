@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ApmTraces
         /// 
         /// Retrieve a log in the APM Domain.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.ApmTraces
         /// 
         /// Retrieve a log in the APM Domain.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.ApmTraces
         /// This data source provides details about a specific Log resource in Oracle Cloud Infrastructure Apm Traces service.
         /// 
         /// Retrieve a log in the APM Domain.
-        /// 
         /// 
         /// ## Example Usage
         /// 

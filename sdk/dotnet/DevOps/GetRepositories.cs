@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Returns a list of repositories given a compartment ID or a project ID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Returns a list of repositories given a compartment ID or a project ID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.DevOps
         /// This data source provides the list of Repositories in Oracle Cloud Infrastructure Devops service.
         /// 
         /// Returns a list of repositories given a compartment ID or a project ID.
-        /// 
         /// 
         /// ## Example Usage
         /// 

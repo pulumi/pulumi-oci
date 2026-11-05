@@ -16,7 +16,6 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// Lists the mount target resources in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// Lists the mount target resources in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.FileStorage
         /// This data source provides the list of Mount Targets in Oracle Cloud Infrastructure File Storage service.
         /// 
         /// Lists the mount target resources in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

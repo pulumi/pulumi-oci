@@ -20,7 +20,6 @@ namespace Pulumi.Oci.Nosql
         /// current state of the environment's global encryption key is
         /// included in the response.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.Nosql
         /// current state of the environment's global encryption key is
         /// included in the response.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -81,7 +79,6 @@ namespace Pulumi.Oci.Nosql
         /// HOSTED environment type.  In the latter case, information about the
         /// current state of the environment's global encryption key is
         /// included in the response.
-        /// 
         /// 
         /// ## Example Usage
         /// 

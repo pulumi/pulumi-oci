@@ -238,6 +238,12 @@ func (DbmulticloudOracleDbAzureVaultState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dbmulticloudOracleDbAzureVaultState)(nil)).Elem()
 }
 
+// DbmulticloudOracleDbAzureVaultExists checks whether an existing DbmulticloudOracleDbAzureVault resource with the given ID exists.
+func DbmulticloudOracleDbAzureVaultExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DbmulticloudOracleDbAzureVaultState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/dbmulticloudOracleDbAzureVault:DbmulticloudOracleDbAzureVault", id, state, "", opts...)
+}
+
 type dbmulticloudOracleDbAzureVaultArgs struct {
 	Action *string `pulumi:"action"`
 	// (Updatable) Azure Vault ID.

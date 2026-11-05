@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Jms
         /// Returns a list of all the Fleets contained by a compartment. The query parameter `compartmentId`
         /// is required unless the query parameter `Id` is specified.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.Jms
         /// Returns a list of all the Fleets contained by a compartment. The query parameter `compartmentId`
         /// is required unless the query parameter `Id` is specified.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -80,7 +78,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Returns a list of all the Fleets contained by a compartment. The query parameter `compartmentId`
         /// is required unless the query parameter `Id` is specified.
-        /// 
         /// 
         /// ## Example Usage
         /// 

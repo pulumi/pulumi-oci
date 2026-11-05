@@ -16,7 +16,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// Returns a list of all identity configurations associated with this Big Data Service cluster.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// Returns a list of all identity configurations associated with this Big Data Service cluster.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.BigDataService
         /// This data source provides the list of Bds Instance Identity Configurations in Oracle Cloud Infrastructure Big Data Service service.
         /// 
         /// Returns a list of all identity configurations associated with this Big Data Service cluster.
-        /// 
         /// 
         /// ## Example Usage
         /// 

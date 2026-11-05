@@ -163,6 +163,12 @@ func (SmtpCredentialState) ElementType() reflect.Type {
 	return reflect.TypeOf((*smtpCredentialState)(nil)).Elem()
 }
 
+// SmtpCredentialExists checks whether an existing SmtpCredential resource with the given ID exists.
+func SmtpCredentialExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SmtpCredentialState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/smtpCredential:SmtpCredential", id, state, "", opts...)
+}
+
 type smtpCredentialArgs struct {
 	// (Updatable) The description you assign to the SMTP credentials during creation. Does not have to be unique, and it's changeable.
 	Description string `pulumi:"description"`

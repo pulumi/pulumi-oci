@@ -200,6 +200,12 @@ func (AppAccelerationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appAccelerationState)(nil)).Elem()
 }
 
+// AppAccelerationExists checks whether an existing AppAcceleration resource with the given ID exists.
+func AppAccelerationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppAccelerationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Waa/appAcceleration:AppAcceleration", id, state, "", opts...)
+}
+
 type appAccelerationArgs struct {
 	// Type of the WebAppFirewall, as example LOAD_BALANCER.
 	BackendType string `pulumi:"backendType"`

@@ -294,6 +294,12 @@ func (IpsecConnectionTunnelManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ipsecConnectionTunnelManagementState)(nil)).Elem()
 }
 
+// IpsecConnectionTunnelManagementExists checks whether an existing IpsecConnectionTunnelManagement resource with the given ID exists.
+func IpsecConnectionTunnelManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IpsecConnectionTunnelManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/ipsecConnectionTunnelManagement:IpsecConnectionTunnelManagement", id, state, "", opts...)
+}
+
 type ipsecConnectionTunnelManagementArgs struct {
 	// Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
 	//

@@ -165,7 +165,6 @@ namespace Pulumi.Oci.Ocvp
         /// * VSAN: storage capacity in TiB (tebibytes)
         /// * AVI_LOAD_BALANCER: number of instances
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -300,7 +299,6 @@ namespace Pulumi.Oci.Ocvp
         /// * VSAN: storage capacity in TiB (tebibytes)
         /// * AVI_LOAD_BALANCER: number of instances
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -432,7 +430,6 @@ namespace Pulumi.Oci.Ocvp
         /// * VCF, VDEFEND: number of OCPUs
         /// * VSAN: storage capacity in TiB (tebibytes)
         /// * AVI_LOAD_BALANCER: number of instances
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

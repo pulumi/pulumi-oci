@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// Returns a list of MlApplicationImplementations.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// Returns a list of MlApplicationImplementations.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.DataScience
         /// This data source provides the list of Ml Application Implementations in Oracle Cloud Infrastructure Data Science service.
         /// 
         /// Returns a list of MlApplicationImplementations.
-        /// 
         /// 
         /// ## Example Usage
         /// 

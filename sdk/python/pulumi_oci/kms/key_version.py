@@ -552,6 +552,44 @@ class KeyVersion(pulumi.CustomResource):
         __props__.__dict__["vault_id"] = vault_id
         return KeyVersion(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_key_reference_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyVersionExternalKeyReferenceDetailArgs', 'KeyVersionExternalKeyReferenceDetailArgsDict', 'outputs.KeyVersionExternalKeyReferenceDetail']]]]] = None,
+            external_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_auto_rotated: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_primary: pulumi.Input[Optional[_builtins.bool]] = None,
+            key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            public_key: pulumi.Input[Optional[_builtins.str]] = None,
+            replica_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyVersionReplicaDetailArgs', 'KeyVersionReplicaDetailArgsDict', 'outputs.KeyVersionReplicaDetail']]]]] = None,
+            restored_from_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            restored_from_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["externalKeyReferenceDetails"] = external_key_reference_details
+        __props__["externalKeyVersionId"] = external_key_version_id
+        __props__["isAutoRotated"] = is_auto_rotated
+        __props__["isPrimary"] = is_primary
+        __props__["keyId"] = key_id
+        __props__["keyVersionId"] = key_version_id
+        __props__["managementEndpoint"] = management_endpoint
+        __props__["publicKey"] = public_key
+        __props__["replicaDetails"] = replica_details
+        __props__["restoredFromKeyId"] = restored_from_key_id
+        __props__["restoredFromKeyVersionId"] = restored_from_key_version_id
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["timeOfDeletion"] = time_of_deletion
+        __props__["vaultId"] = vault_id
+        return pulumi.runtime.exists_resource(None, 'oci:Kms/keyVersion:KeyVersion', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

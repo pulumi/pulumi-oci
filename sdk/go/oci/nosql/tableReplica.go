@@ -145,6 +145,12 @@ func (TableReplicaState) ElementType() reflect.Type {
 	return reflect.TypeOf((*tableReplicaState)(nil)).Elem()
 }
 
+// TableReplicaExists checks whether an existing TableReplica resource with the given ID exists.
+func TableReplicaExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *TableReplicaState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Nosql/tableReplica:TableReplica", id, state, "", opts...)
+}
+
 type tableReplicaArgs struct {
 	// The OCID of the table's compartment.  Required if the tableNameOrId path parameter is a table name. Optional if tableNameOrId is an OCID.  If tableNameOrId is an OCID, and compartmentId is supplied, the latter must match the identified table's compartmentId.
 	CompartmentId *string `pulumi:"compartmentId"`

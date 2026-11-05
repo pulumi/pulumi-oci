@@ -208,6 +208,14 @@ class SoftwareSourceGenerateMetadataManagement(pulumi.CustomResource):
         __props__.__dict__["software_source_id"] = software_source_id
         return SoftwareSourceGenerateMetadataManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            software_source_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["softwareSourceId"] = software_source_id
+        return pulumi.runtime.exists_resource(None, 'oci:OsManagementHub/softwareSourceGenerateMetadataManagement:SoftwareSourceGenerateMetadataManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="softwareSourceId")
     def software_source_id(self) -> pulumi.Output[_builtins.str]:

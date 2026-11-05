@@ -768,6 +768,50 @@ class Snapshot(pulumi.CustomResource):
         __props__.__dict__["time_locked"] = time_locked
         return Snapshot(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            exclusive_bytes: pulumi.Input[Optional[_builtins.str]] = None,
+            expiration_time: pulumi.Input[Optional[_builtins.str]] = None,
+            file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            filesystem_snapshot_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_clone_source: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            lock_duration_details: pulumi.Input[Optional[Union['SnapshotLockDurationDetailsArgs', 'SnapshotLockDurationDetailsArgsDict', 'outputs.SnapshotLockDurationDetails']]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SnapshotLockArgs', 'SnapshotLockArgsDict', 'outputs.SnapshotLock']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            provenance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            snapshot_time: pulumi.Input[Optional[_builtins.str]] = None,
+            snapshot_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_locked: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["definedTags"] = defined_tags
+        __props__["exclusiveBytes"] = exclusive_bytes
+        __props__["expirationTime"] = expiration_time
+        __props__["fileSystemId"] = file_system_id
+        __props__["filesystemSnapshotPolicyId"] = filesystem_snapshot_policy_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["isCloneSource"] = is_clone_source
+        __props__["isLockOverride"] = is_lock_override
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["lockDurationDetails"] = lock_duration_details
+        __props__["locks"] = locks
+        __props__["name"] = name
+        __props__["provenanceId"] = provenance_id
+        __props__["snapshotTime"] = snapshot_time
+        __props__["snapshotType"] = snapshot_type
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeLocked"] = time_locked
+        return pulumi.runtime.exists_resource(None, 'oci:FileStorage/snapshot:Snapshot', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:

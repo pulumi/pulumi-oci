@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.Jms
         /// This data source provides details about a specific Summarize Resource Inventory resource in Oracle Cloud Infrastructure Jms service.
         /// 
         /// Retrieve the inventory of JMS resources in the specified compartment: a list of the number of _active_ fleets, managed instances, Java Runtimes, Java installations, and applications.
-        /// 
         /// 
         /// ## Example Usage
         /// 

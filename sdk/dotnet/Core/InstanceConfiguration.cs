@@ -88,7 +88,6 @@ namespace Pulumi.Oci.Core
         /// * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
         /// * `GMC`: Creates an instance configuration which can be used to create GMC backed pools.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -212,7 +211,6 @@ namespace Pulumi.Oci.Core
         /// * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
         /// * `GMC`: Creates an instance configuration which can be used to create GMC backed pools.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -303,7 +301,6 @@ namespace Pulumi.Oci.Core
         /// * `NONE`: Creates an instance configuration using the list of settings that you specify.
         /// * `INSTANCE`: Creates an instance configuration using an existing instance as a template.
         /// * `GMC`: Creates an instance configuration which can be used to create GMC backed pools.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

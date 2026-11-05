@@ -447,6 +447,26 @@ class SensitiveDataModelReferentialRelation(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         return SensitiveDataModelReferentialRelation(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            child: pulumi.Input[Optional[Union['SensitiveDataModelReferentialRelationChildArgs', 'SensitiveDataModelReferentialRelationChildArgsDict', 'outputs.SensitiveDataModelReferentialRelationChild']]] = None,
+            is_sensitive: pulumi.Input[Optional[_builtins.bool]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            parent: pulumi.Input[Optional[Union['SensitiveDataModelReferentialRelationParentArgs', 'SensitiveDataModelReferentialRelationParentArgsDict', 'outputs.SensitiveDataModelReferentialRelationParent']]] = None,
+            relation_type: pulumi.Input[Optional[_builtins.str]] = None,
+            sensitive_data_model_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["child"] = child
+        __props__["isSensitive"] = is_sensitive
+        __props__["key"] = key
+        __props__["parent"] = parent
+        __props__["relationType"] = relation_type
+        __props__["sensitiveDataModelId"] = sensitive_data_model_id
+        __props__["state"] = state
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/sensitiveDataModelReferentialRelation:SensitiveDataModelReferentialRelation', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def child(self) -> pulumi.Output['outputs.SensitiveDataModelReferentialRelationChild']:

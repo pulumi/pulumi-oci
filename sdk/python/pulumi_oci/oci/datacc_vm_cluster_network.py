@@ -889,6 +889,54 @@ class DataccVmClusterNetwork(pulumi.CustomResource):
         __props__.__dict__["vm_networks"] = vm_networks
         return DataccVmClusterNetwork(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            associated_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            base_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            consumer_type: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dns_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_scan_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            listener_port: pulumi.Input[Optional[_builtins.int]] = None,
+            listener_port_ssl: pulumi.Input[Optional[_builtins.int]] = None,
+            node_count: pulumi.Input[Optional[_builtins.int]] = None,
+            ntp_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            scans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccVmClusterNetworkScanArgs', 'DataccVmClusterNetworkScanArgsDict', 'outputs.DataccVmClusterNetworkScan']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataccVmClusterNetworkVmNetworkArgs', 'DataccVmClusterNetworkVmNetworkArgsDict', 'outputs.DataccVmClusterNetworkVmNetwork']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["associatedResourceId"] = associated_resource_id
+        __props__["baseVmClusterId"] = base_vm_cluster_id
+        __props__["compartmentId"] = compartment_id
+        __props__["consumerType"] = consumer_type
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["dnsServers"] = dns_servers
+        __props__["freeformTags"] = freeform_tags
+        __props__["infrastructureId"] = infrastructure_id
+        __props__["isScanEnabled"] = is_scan_enabled
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["listenerPort"] = listener_port
+        __props__["listenerPortSsl"] = listener_port_ssl
+        __props__["nodeCount"] = node_count
+        __props__["ntpServers"] = ntp_servers
+        __props__["scans"] = scans
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["vmNetworks"] = vm_networks
+        return pulumi.runtime.exists_resource(None, 'oci:oci/dataccVmClusterNetwork:DataccVmClusterNetwork', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="associatedResourceId")
     def associated_resource_id(self) -> pulumi.Output[_builtins.str]:

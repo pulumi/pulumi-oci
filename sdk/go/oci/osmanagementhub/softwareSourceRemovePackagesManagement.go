@@ -128,6 +128,12 @@ func (SoftwareSourceRemovePackagesManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*softwareSourceRemovePackagesManagementState)(nil)).Elem()
 }
 
+// SoftwareSourceRemovePackagesManagementExists checks whether an existing SoftwareSourceRemovePackagesManagement resource with the given ID exists.
+func SoftwareSourceRemovePackagesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SoftwareSourceRemovePackagesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/softwareSourceRemovePackagesManagement:SoftwareSourceRemovePackagesManagement", id, state, "", opts...)
+}
+
 type softwareSourceRemovePackagesManagementArgs struct {
 	// List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
 	Packages []string `pulumi:"packages"`

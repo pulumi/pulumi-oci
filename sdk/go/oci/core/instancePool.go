@@ -283,6 +283,12 @@ func (InstancePoolState) ElementType() reflect.Type {
 	return reflect.TypeOf((*instancePoolState)(nil)).Elem()
 }
 
+// InstancePoolExists checks whether an existing InstancePool resource with the given ID exists.
+func InstancePoolExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *InstancePoolState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/instancePool:InstancePool", id, state, "", opts...)
+}
+
 type instancePoolArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
 	CompartmentId string `pulumi:"compartmentId"`

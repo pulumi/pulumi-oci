@@ -288,6 +288,18 @@ class ExternalPluggableDatabaseOperationsInsightsManagement(pulumi.CustomResourc
         __props__.__dict__["external_pluggable_database_id"] = external_pluggable_database_id
         return ExternalPluggableDatabaseOperationsInsightsManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enable_operations_insights: pulumi.Input[Optional[_builtins.bool]] = None,
+            external_database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_pluggable_database_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enableOperationsInsights"] = enable_operations_insights
+        __props__["externalDatabaseConnectorId"] = external_database_connector_id
+        __props__["externalPluggableDatabaseId"] = external_pluggable_database_id
+        return pulumi.runtime.exists_resource(None, 'oci:Database/externalPluggableDatabaseOperationsInsightsManagement:ExternalPluggableDatabaseOperationsInsightsManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="enableOperationsInsights")
     def enable_operations_insights(self) -> pulumi.Output[_builtins.bool]:

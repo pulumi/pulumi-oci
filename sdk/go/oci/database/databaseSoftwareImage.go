@@ -231,6 +231,12 @@ func (DatabaseSoftwareImageState) ElementType() reflect.Type {
 	return reflect.TypeOf((*databaseSoftwareImageState)(nil)).Elem()
 }
 
+// DatabaseSoftwareImageExists checks whether an existing DatabaseSoftwareImage resource with the given ID exists.
+func DatabaseSoftwareImageExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DatabaseSoftwareImageState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/databaseSoftwareImage:DatabaseSoftwareImage", id, state, "", opts...)
+}
+
 type databaseSoftwareImageArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the database software image  belongs in.
 	CompartmentId string `pulumi:"compartmentId"`

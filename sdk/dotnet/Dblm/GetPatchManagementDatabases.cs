@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Dblm
         /// 
         /// Gets the list of databases
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -55,7 +54,6 @@ namespace Pulumi.Oci.Dblm
         /// 
         /// Gets the list of databases
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -91,7 +89,6 @@ namespace Pulumi.Oci.Dblm
         /// &gt; **WARNING:** End of Life: Database Lifecycle Management is deprecated and will reach end of life in January 2027. DBLM Terraform resources and data sources will no longer be supported after that date.
         /// 
         /// Gets the list of databases
-        /// 
         /// 
         /// ## Example Usage
         /// 

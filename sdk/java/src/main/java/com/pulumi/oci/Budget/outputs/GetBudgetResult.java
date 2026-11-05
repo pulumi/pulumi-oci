@@ -103,11 +103,10 @@ public final class GetBudgetResult {
     /**
      * @return This is DEPRECATED. For backwards compatability, the property is populated when the targetType is &#34;COMPARTMENT&#34;, and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
      * 
-     * @deprecated
-     * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;targets&#39; instead.
+     * @deprecated The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;targets&#39; instead.
      * 
      */
-    @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'targets' instead. */
+    @Deprecated
     private String targetCompartmentId;
     /**
      * @return The type of target on which the budget is applied.
@@ -266,11 +265,10 @@ public final class GetBudgetResult {
     /**
      * @return This is DEPRECATED. For backwards compatability, the property is populated when the targetType is &#34;COMPARTMENT&#34;, and targets contain the specific target compartment OCID. For all other scenarios, this property will be left empty.
      * 
-     * @deprecated
-     * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;targets&#39; instead.
+     * @deprecated The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;targets&#39; instead.
      * 
      */
-    @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'targets' instead. */
+    @Deprecated
     public String targetCompartmentId() {
         return this.targetCompartmentId;
     }

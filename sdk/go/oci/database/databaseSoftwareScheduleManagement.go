@@ -111,6 +111,12 @@ func (DatabaseSoftwareScheduleManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*databaseSoftwareScheduleManagementState)(nil)).Elem()
 }
 
+// DatabaseSoftwareScheduleManagementExists checks whether an existing DatabaseSoftwareScheduleManagement resource with the given ID exists.
+func DatabaseSoftwareScheduleManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DatabaseSoftwareScheduleManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/databaseSoftwareScheduleManagement:DatabaseSoftwareScheduleManagement", id, state, "", opts...)
+}
+
 type databaseSoftwareScheduleManagementArgs struct {
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	//

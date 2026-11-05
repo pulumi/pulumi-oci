@@ -285,6 +285,18 @@ class ExternalExadataInfrastructureExadataManagement(pulumi.CustomResource):
         __props__.__dict__["license_model"] = license_model
         return ExternalExadataInfrastructureExadataManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enable_exadata: pulumi.Input[Optional[_builtins.bool]] = None,
+            external_exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+            license_model: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enableExadata"] = enable_exadata
+        __props__["externalExadataInfrastructureId"] = external_exadata_infrastructure_id
+        __props__["licenseModel"] = license_model
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseManagement/externalExadataInfrastructureExadataManagement:ExternalExadataInfrastructureExadataManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="enableExadata")
     def enable_exadata(self) -> pulumi.Output[_builtins.bool]:

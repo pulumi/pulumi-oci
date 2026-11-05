@@ -675,6 +675,40 @@ class PublicIp(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return PublicIp(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            assigned_entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+            assigned_entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            lifetime: pulumi.Input[Optional[_builtins.str]] = None,
+            private_ip_id: pulumi.Input[Optional[_builtins.str]] = None,
+            public_ip_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["assignedEntityId"] = assigned_entity_id
+        __props__["assignedEntityType"] = assigned_entity_type
+        __props__["availabilityDomain"] = availability_domain
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["ipAddress"] = ip_address
+        __props__["lifetime"] = lifetime
+        __props__["privateIpId"] = private_ip_id
+        __props__["publicIpPoolId"] = public_ip_pool_id
+        __props__["scope"] = scope
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:Core/publicIp:PublicIp', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="assignedEntityId")
     def assigned_entity_id(self) -> pulumi.Output[_builtins.str]:

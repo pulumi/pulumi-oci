@@ -745,6 +745,12 @@ func (DomainsMappedAttributeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsMappedAttributeState)(nil)).Elem()
 }
 
+// DomainsMappedAttributeExists checks whether an existing DomainsMappedAttribute resource with the given ID exists.
+func DomainsMappedAttributeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsMappedAttributeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsMappedAttribute:DomainsMappedAttribute", id, state, "", opts...)
+}
+
 type domainsMappedAttributeArgs struct {
 	// (Updatable) A list of attribute mappings between Oracle Identity Cloud Service Resource Type and Account Object Class
 	//

@@ -40,11 +40,10 @@ public final class GetSupportedHostShapesResult {
      */
     private @Nullable String name;
     /**
-     * @deprecated
-     * The &#39;sddc_type&#39; field has been deprecated. Please use &#39;is_single_host_sddc_supported&#39; instead.
+     * @deprecated The &#39;sddc_type&#39; field has been deprecated. Please use &#39;is_single_host_sddc_supported&#39; instead.
      * 
      */
-    @Deprecated /* The 'sddc_type' field has been deprecated. Please use 'is_single_host_sddc_supported' instead. */
+    @Deprecated
     private @Nullable String sddcType;
 
     private GetSupportedHostShapesResult() {}
@@ -86,11 +85,10 @@ public final class GetSupportedHostShapesResult {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @deprecated
-     * The &#39;sddc_type&#39; field has been deprecated. Please use &#39;is_single_host_sddc_supported&#39; instead.
+     * @deprecated The &#39;sddc_type&#39; field has been deprecated. Please use &#39;is_single_host_sddc_supported&#39; instead.
      * 
      */
-    @Deprecated /* The 'sddc_type' field has been deprecated. Please use 'is_single_host_sddc_supported' instead. */
+    @Deprecated
     public Optional<String> sddcType() {
         return Optional.ofNullable(this.sddcType);
     }

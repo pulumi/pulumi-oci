@@ -239,6 +239,12 @@ func (OciCacheBackupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ociCacheBackupState)(nil)).Elem()
 }
 
+// OciCacheBackupExists checks whether an existing OciCacheBackup resource with the given ID exists.
+func OciCacheBackupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OciCacheBackupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Redis/ociCacheBackup:OciCacheBackup", id, state, "", opts...)
+}
+
 type ociCacheBackupArgs struct {
 	// Specifies whether the backup was created from a replica or primary node
 	BackupSource *string `pulumi:"backupSource"`

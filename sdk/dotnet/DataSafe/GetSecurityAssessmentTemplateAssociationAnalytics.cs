@@ -17,7 +17,7 @@ namespace Pulumi.Oci.DataSafe
         /// Gets a list of template association details in the specified compartment. This provides information about the
         /// overall template usage, by returning the count of the target databases/target groups using the templates.
         /// 
-        /// If the template baseline is created for a target group which contains several targets, we will have each individual target 
+        /// If the template baseline is created for a target group which contains several targets, we will have each individual target
         /// listed there as targetId field together with targetDatabaseGroupId. And if the template baseline is created for an individual target,
         /// it will have targetId field only.
         /// 
@@ -29,7 +29,6 @@ namespace Pulumi.Oci.DataSafe
         /// permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
         /// root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
         /// compartmentId, then "Not Authorized" is returned.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -64,7 +63,7 @@ namespace Pulumi.Oci.DataSafe
         /// Gets a list of template association details in the specified compartment. This provides information about the
         /// overall template usage, by returning the count of the target databases/target groups using the templates.
         /// 
-        /// If the template baseline is created for a target group which contains several targets, we will have each individual target 
+        /// If the template baseline is created for a target group which contains several targets, we will have each individual target
         /// listed there as targetId field together with targetDatabaseGroupId. And if the template baseline is created for an individual target,
         /// it will have targetId field only.
         /// 
@@ -76,7 +75,6 @@ namespace Pulumi.Oci.DataSafe
         /// permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
         /// root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
         /// compartmentId, then "Not Authorized" is returned.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -111,7 +109,7 @@ namespace Pulumi.Oci.DataSafe
         /// Gets a list of template association details in the specified compartment. This provides information about the
         /// overall template usage, by returning the count of the target databases/target groups using the templates.
         /// 
-        /// If the template baseline is created for a target group which contains several targets, we will have each individual target 
+        /// If the template baseline is created for a target group which contains several targets, we will have each individual target
         /// listed there as targetId field together with targetDatabaseGroupId. And if the template baseline is created for an individual target,
         /// it will have targetId field only.
         /// 
@@ -123,7 +121,6 @@ namespace Pulumi.Oci.DataSafe
         /// permissions on at least one resource, directly or indirectly (in subcompartments). If the operation is performed at the
         /// root compartment and the requestor does not have access to at least one subcompartment of the compartment specified by
         /// compartmentId, then "Not Authorized" is returned.
-        /// 
         /// 
         /// ## Example Usage
         /// 

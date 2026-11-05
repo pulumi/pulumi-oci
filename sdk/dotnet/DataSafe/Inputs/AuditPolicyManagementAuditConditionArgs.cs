@@ -45,7 +45,6 @@ namespace Pulumi.Oci.DataSafe.Inputs
         /// <summary>
         /// Indicates whether the privileged user list is managed by Data Safe.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

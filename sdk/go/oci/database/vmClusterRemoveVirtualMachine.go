@@ -326,6 +326,12 @@ func (VmClusterRemoveVirtualMachineState) ElementType() reflect.Type {
 	return reflect.TypeOf((*vmClusterRemoveVirtualMachineState)(nil)).Elem()
 }
 
+// VmClusterRemoveVirtualMachineExists checks whether an existing VmClusterRemoveVirtualMachine resource with the given ID exists.
+func VmClusterRemoveVirtualMachineExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VmClusterRemoveVirtualMachineState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine", id, state, "", opts...)
+}
+
 type vmClusterRemoveVirtualMachineArgs struct {
 	// The list of Exacc DB servers for the cluster to be removed.
 	DbServers []VmClusterRemoveVirtualMachineDbServer `pulumi:"dbServers"`

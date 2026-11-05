@@ -200,6 +200,12 @@ func (ExadataInfrastructureStorageState) ElementType() reflect.Type {
 	return reflect.TypeOf((*exadataInfrastructureStorageState)(nil)).Elem()
 }
 
+// ExadataInfrastructureStorageExists checks whether an existing ExadataInfrastructureStorage resource with the given ID exists.
+func ExadataInfrastructureStorageExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExadataInfrastructureStorageState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/exadataInfrastructureStorage:ExadataInfrastructureStorage", id, state, "", opts...)
+}
+
 type exadataInfrastructureStorageArgs struct {
 	ActivationFile           *string                                        `pulumi:"activationFile"`
 	AdminNetworkCidr         string                                         `pulumi:"adminNetworkCidr"`

@@ -102,8 +102,7 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<string?> SourceResourceName { get; private set; } = null!;
 
         /// <summary>
-        /// Source Monitored Resource Type. 
-        /// 
+        /// Source Monitored Resource Type.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -200,8 +199,7 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string>? SourceResourceName { get; set; }
 
         /// <summary>
-        /// Source Monitored Resource Type. 
-        /// 
+        /// Source Monitored Resource Type.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -272,8 +270,7 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string>? SourceResourceName { get; set; }
 
         /// <summary>
-        /// Source Monitored Resource Type. 
-        /// 
+        /// Source Monitored Resource Type.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

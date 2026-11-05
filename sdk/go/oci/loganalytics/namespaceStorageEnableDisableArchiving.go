@@ -121,6 +121,12 @@ func (NamespaceStorageEnableDisableArchivingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*namespaceStorageEnableDisableArchivingState)(nil)).Elem()
 }
 
+// NamespaceStorageEnableDisableArchivingExists checks whether an existing NamespaceStorageEnableDisableArchiving resource with the given ID exists.
+func NamespaceStorageEnableDisableArchivingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NamespaceStorageEnableDisableArchivingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LogAnalytics/namespaceStorageEnableDisableArchiving:NamespaceStorageEnableDisableArchiving", id, state, "", opts...)
+}
+
 type namespaceStorageEnableDisableArchivingArgs struct {
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 	//

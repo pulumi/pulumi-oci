@@ -136,6 +136,12 @@ func (ZonePromoteDnssecKeyVersionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*zonePromoteDnssecKeyVersionState)(nil)).Elem()
 }
 
+// ZonePromoteDnssecKeyVersionExists checks whether an existing ZonePromoteDnssecKeyVersion resource with the given ID exists.
+func ZonePromoteDnssecKeyVersionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ZonePromoteDnssecKeyVersionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Dns/zonePromoteDnssecKeyVersion:ZonePromoteDnssecKeyVersion", id, state, "", opts...)
+}
+
 type zonePromoteDnssecKeyVersionArgs struct {
 	// The UUID of the `DnssecKeyVersion` that is being promoted.
 	DnssecKeyVersionUuid string `pulumi:"dnssecKeyVersionUuid"`

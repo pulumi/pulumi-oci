@@ -324,6 +324,12 @@ func (ModelState) ElementType() reflect.Type {
 	return reflect.TypeOf((*modelState)(nil)).Elem()
 }
 
+// ModelExists checks whether an existing Model resource with the given ID exists.
+func ModelExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ModelState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataScience/model:Model", id, state, "", opts...)
+}
+
 type modelArgs struct {
 	// This allows to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. Example: `attachment; filename=model-artifact.zip`
 	ArtifactContentDisposition *string `pulumi:"artifactContentDisposition"`

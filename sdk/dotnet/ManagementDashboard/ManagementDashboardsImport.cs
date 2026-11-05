@@ -72,8 +72,7 @@ namespace Pulumi.Oci.ManagementDashboard
         public Output<string> OverrideSameName { get; private set; } = null!;
 
         /// <summary>
-        /// If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
-        /// 
+        /// If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -146,8 +145,7 @@ namespace Pulumi.Oci.ManagementDashboard
         public Input<string>? OverrideSameName { get; set; }
 
         /// <summary>
-        /// If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
-        /// 
+        /// If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -182,8 +180,7 @@ namespace Pulumi.Oci.ManagementDashboard
         public Input<string>? OverrideSameName { get; set; }
 
         /// <summary>
-        /// If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used. 
-        /// 
+        /// If this attribute is set, the saved search resources are created or updated in the compartment specified by OCID. If this attribute is not set, the compartment specified in the JSON metadata is used.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

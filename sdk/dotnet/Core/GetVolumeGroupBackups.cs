@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Core
         /// Lists the volume group backups in the specified compartment. You can filter the results by volume group.
         /// For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Core
         /// Lists the volume group backups in the specified compartment. You can filter the results by volume group.
         /// For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -76,7 +74,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the volume group backups in the specified compartment. You can filter the results by volume group.
         /// For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -161,6 +161,12 @@ func (IdpGroupMappingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*idpGroupMappingState)(nil)).Elem()
 }
 
+// IdpGroupMappingExists checks whether an existing IdpGroupMapping resource with the given ID exists.
+func IdpGroupMappingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IdpGroupMappingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/idpGroupMapping:IdpGroupMapping", id, state, "", opts...)
+}
+
 type idpGroupMappingArgs struct {
 	// (Updatable) The OCID of the IAM Service [group](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/Group/) you want to map to the IdP group.
 	GroupId string `pulumi:"groupId"`

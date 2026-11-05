@@ -134,6 +134,12 @@ func (RuntimeDatabaseToolsConnectionCredentialExecuteGranteeState) ElementType()
 	return reflect.TypeOf((*runtimeDatabaseToolsConnectionCredentialExecuteGranteeState)(nil)).Elem()
 }
 
+// RuntimeDatabaseToolsConnectionCredentialExecuteGranteeExists checks whether an existing RuntimeDatabaseToolsConnectionCredentialExecuteGrantee resource with the given ID exists.
+func RuntimeDatabaseToolsConnectionCredentialExecuteGranteeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RuntimeDatabaseToolsConnectionCredentialExecuteGranteeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseTools/runtimeDatabaseToolsConnectionCredentialExecuteGrantee:RuntimeDatabaseToolsConnectionCredentialExecuteGrantee", id, state, "", opts...)
+}
+
 type runtimeDatabaseToolsConnectionCredentialExecuteGranteeArgs struct {
 	// The name of the credential
 	CredentialKey string `pulumi:"credentialKey"`

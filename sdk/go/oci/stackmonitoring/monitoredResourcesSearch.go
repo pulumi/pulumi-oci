@@ -291,6 +291,12 @@ func (MonitoredResourcesSearchState) ElementType() reflect.Type {
 	return reflect.TypeOf((*monitoredResourcesSearchState)(nil)).Elem()
 }
 
+// MonitoredResourcesSearchExists checks whether an existing MonitoredResourcesSearch resource with the given ID exists.
+func MonitoredResourcesSearchExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MonitoredResourcesSearchState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:StackMonitoring/monitoredResourcesSearch:MonitoredResourcesSearch", id, state, "", opts...)
+}
+
 type monitoredResourcesSearchArgs struct {
 	// Compartment Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`

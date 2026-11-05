@@ -216,6 +216,12 @@ func (PrivateApplicationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*privateApplicationState)(nil)).Elem()
 }
 
+// PrivateApplicationExists checks whether an existing PrivateApplication resource with the given ID exists.
+func PrivateApplicationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PrivateApplicationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ServiceCatalog/privateApplication:PrivateApplication", id, state, "", opts...)
+}
+
 type privateApplicationArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private application.
 	CompartmentId string `pulumi:"compartmentId"`

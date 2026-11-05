@@ -179,6 +179,12 @@ func (AnalyticsInstanceVanityUrlState) ElementType() reflect.Type {
 	return reflect.TypeOf((*analyticsInstanceVanityUrlState)(nil)).Elem()
 }
 
+// AnalyticsInstanceVanityUrlExists checks whether an existing AnalyticsInstanceVanityUrl resource with the given ID exists.
+func AnalyticsInstanceVanityUrlExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AnalyticsInstanceVanityUrlState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Analytics/analyticsInstanceVanityUrl:AnalyticsInstanceVanityUrl", id, state, "", opts...)
+}
+
 type analyticsInstanceVanityUrlArgs struct {
 	// The OCID of the Analytics instance.
 	AnalyticsInstanceId string `pulumi:"analyticsInstanceId"`

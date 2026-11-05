@@ -217,6 +217,12 @@ func (DatastoreClusterState) ElementType() reflect.Type {
 	return reflect.TypeOf((*datastoreClusterState)(nil)).Elem()
 }
 
+// DatastoreClusterExists checks whether an existing DatastoreCluster resource with the given ID exists.
+func DatastoreClusterExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DatastoreClusterState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Ocvp/datastoreCluster:DatastoreCluster", id, state, "", opts...)
+}
+
 type datastoreClusterArgs struct {
 	// The availability domain to create the Datastore Cluster in.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`

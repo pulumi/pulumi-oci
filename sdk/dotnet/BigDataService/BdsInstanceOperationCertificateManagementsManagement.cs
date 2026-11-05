@@ -80,7 +80,6 @@ namespace Pulumi.Oci.BigDataService
         /// <summary>
         /// (Updatable) A required field when set to `True` calls renew action and when set to `False` defaults to enable_operation_certificate_management's value action.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -199,7 +198,6 @@ namespace Pulumi.Oci.BigDataService
         /// <summary>
         /// (Updatable) A required field when set to `True` calls renew action and when set to `False` defaults to enable_operation_certificate_management's value action.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -290,7 +288,6 @@ namespace Pulumi.Oci.BigDataService
 
         /// <summary>
         /// (Updatable) A required field when set to `True` calls renew action and when set to `False` defaults to enable_operation_certificate_management's value action.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -22,7 +22,7 @@ import javax.annotation.Nullable;
  * 
  * Imports an array of dashboards and their saved searches.
  * Here&#39;s an example of how you can use CLI to import a dashboard. For information on the details that must be passed to IMPORT, you can use the EXPORT API to obtain the Import.json file:
- * `oci management-dashboard dashboard export --query data --export-dashboard-id &#34;{\&#34;dashboardIds\&#34;:[\&#34;ocid1.managementdashboard.oc1..dashboardId1\&#34;]}&#34;  &gt; Import.json`.
+ * `oci management-dashboard dashboard export --query data --export-dashboard-id &#34;{&#92;&#34;dashboardIds&#92;&#34;:[&#92;&#34;ocid1.managementdashboard.oc1..dashboardId1&#92;&#34;]}&#34;  &gt; Import.json`.
  * Note that import API updates the resource if it already exists, and creates a new resource if it does not exist. To import to a different compartment, edit and change the compartmentId to the desired compartment OCID.
  * Here&#39;s an example of how you can use CLI to import:
  * `oci management-dashboard dashboard import --from-json file://Import.json`

@@ -563,6 +563,32 @@ class InstanceConfiguration(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return InstanceConfiguration(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            deferred_fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            gmc_configs: pulumi.Input[Optional[Union['InstanceConfigurationGmcConfigsArgs', 'InstanceConfigurationGmcConfigsArgsDict', 'outputs.InstanceConfigurationGmcConfigs']]] = None,
+            instance_details: pulumi.Input[Optional[Union['InstanceConfigurationInstanceDetailsArgs', 'InstanceConfigurationInstanceDetailsArgsDict', 'outputs.InstanceConfigurationInstanceDetails']]] = None,
+            instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["deferredFields"] = deferred_fields
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["gmcConfigs"] = gmc_configs
+        __props__["instanceDetails"] = instance_details
+        __props__["instanceId"] = instance_id
+        __props__["source"] = source
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:Core/instanceConfiguration:InstanceConfiguration', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

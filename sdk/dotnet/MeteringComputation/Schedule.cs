@@ -179,7 +179,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// <summary>
         /// The date and time of the first time job execution.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -307,7 +306,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// <summary>
         /// The date and time of the first time job execution.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -426,7 +424,6 @@ namespace Pulumi.Oci.MeteringComputation
 
         /// <summary>
         /// The date and time of the first time job execution.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

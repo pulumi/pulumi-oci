@@ -498,6 +498,34 @@ class BdsInstanceResourcePrincipalConfiguration(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return BdsInstanceResourcePrincipalConfiguration(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            force_refresh_resource_principal_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            session_token_life_span_duration_in_hours: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_token_expiry: pulumi.Input[Optional[_builtins.str]] = None,
+            time_token_refreshed: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["bdsInstanceId"] = bds_instance_id
+        __props__["clusterAdminPassword"] = cluster_admin_password
+        __props__["displayName"] = display_name
+        __props__["forceRefreshResourcePrincipalTrigger"] = force_refresh_resource_principal_trigger
+        __props__["secretId"] = secret_id
+        __props__["sessionTokenLifeSpanDurationInHours"] = session_token_life_span_duration_in_hours
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["timeTokenExpiry"] = time_token_expiry
+        __props__["timeTokenRefreshed"] = time_token_refreshed
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:BigDataService/bdsInstanceResourcePrincipalConfiguration:BdsInstanceResourcePrincipalConfiguration', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="bdsInstanceId")
     def bds_instance_id(self) -> pulumi.Output[_builtins.str]:

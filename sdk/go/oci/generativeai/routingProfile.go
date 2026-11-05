@@ -194,6 +194,12 @@ func (RoutingProfileState) ElementType() reflect.Type {
 	return reflect.TypeOf((*routingProfileState)(nil)).Elem()
 }
 
+// RoutingProfileExists checks whether an existing RoutingProfile resource with the given ID exists.
+func RoutingProfileExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RoutingProfileState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:GenerativeAi/routingProfile:RoutingProfile", id, state, "", opts...)
+}
+
 type routingProfileArgs struct {
 	// (Updatable) The OCID of the compartment in which to create the routing profile.
 	CompartmentId string `pulumi:"compartmentId"`

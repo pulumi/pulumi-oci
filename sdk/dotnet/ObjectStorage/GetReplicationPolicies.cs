@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// List the replication policies associated with a bucket.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// List the replication policies associated with a bucket.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// This data source provides the list of Replication Policies in Oracle Cloud Infrastructure Object Storage service.
         /// 
         /// List the replication policies associated with a bucket.
-        /// 
         /// 
         /// ## Example Usage
         /// 

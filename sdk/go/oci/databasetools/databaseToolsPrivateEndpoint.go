@@ -264,6 +264,12 @@ func (DatabaseToolsPrivateEndpointState) ElementType() reflect.Type {
 	return reflect.TypeOf((*databaseToolsPrivateEndpointState)(nil)).Elem()
 }
 
+// DatabaseToolsPrivateEndpointExists checks whether an existing DatabaseToolsPrivateEndpoint resource with the given ID exists.
+func DatabaseToolsPrivateEndpointExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DatabaseToolsPrivateEndpointState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint", id, state, "", opts...)
+}
+
 type databaseToolsPrivateEndpointArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools private endpoint.
 	CompartmentId string `pulumi:"compartmentId"`

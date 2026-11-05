@@ -201,6 +201,12 @@ func (PreauthrequestState) ElementType() reflect.Type {
 	return reflect.TypeOf((*preauthrequestState)(nil)).Elem()
 }
 
+// PreauthrequestExists checks whether an existing Preauthrequest resource with the given ID exists.
+func PreauthrequestExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PreauthrequestState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ObjectStorage/preauthrequest:Preauthrequest", id, state, "", opts...)
+}
+
 type preauthrequestArgs struct {
 	// The operation that can be performed on this resource. Allowed Values: `ObjectRead`, `ObjectWrite`, `ObjectReadWrite`, `AnyObjectReadWrite` or `AnyObjectRead`
 	AccessType string `pulumi:"accessType"`

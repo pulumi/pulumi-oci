@@ -101,6 +101,12 @@ func (BdsInstanceSoftwareUpdateActionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*bdsInstanceSoftwareUpdateActionState)(nil)).Elem()
 }
 
+// BdsInstanceSoftwareUpdateActionExists checks whether an existing BdsInstanceSoftwareUpdateAction resource with the given ID exists.
+func BdsInstanceSoftwareUpdateActionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BdsInstanceSoftwareUpdateActionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:BigDataService/bdsInstanceSoftwareUpdateAction:BdsInstanceSoftwareUpdateAction", id, state, "", opts...)
+}
+
 type bdsInstanceSoftwareUpdateActionArgs struct {
 	// The OCID of the cluster.
 	BdsInstanceId      string   `pulumi:"bdsInstanceId"`

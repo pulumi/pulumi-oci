@@ -20,7 +20,6 @@ namespace Pulumi.Oci.Identity
         /// Note that the order of the results returned can change if availability domains are added or removed; therefore, do not
         /// create a dependency on the list order.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.Identity
         /// Note that the order of the results returned can change if availability domains are added or removed; therefore, do not
         /// create a dependency on the list order.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -81,7 +79,6 @@ namespace Pulumi.Oci.Identity
         /// See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
         /// Note that the order of the results returned can change if availability domains are added or removed; therefore, do not
         /// create a dependency on the list order.
-        /// 
         /// 
         /// ## Example Usage
         /// 

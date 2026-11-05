@@ -19,11 +19,10 @@ public final class GetAutonomousExadataInfrastructureResult {
     /**
      * @return The name of the availability domain that the Autonomous Exadata Infrastructure is located in.
      * 
-     * @deprecated
-     * Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.
+     * @deprecated Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.
      * 
      */
-    @Deprecated /* Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead. */
+    @Deprecated
     private String availabilityDomain;
     /**
      * @return The OCID of the compartment.
@@ -131,11 +130,10 @@ public final class GetAutonomousExadataInfrastructureResult {
     /**
      * @return The name of the availability domain that the Autonomous Exadata Infrastructure is located in.
      * 
-     * @deprecated
-     * Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.
+     * @deprecated Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.
      * 
      */
-    @Deprecated /* Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead. */
+    @Deprecated
     public String availabilityDomain() {
         return this.availabilityDomain;
     }

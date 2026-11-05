@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Obtain a list of VM cluster networks on Database Infrastructure.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Obtain a list of VM cluster networks on Database Infrastructure.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -81,7 +79,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Vm Cluster Networks in Oracle Cloud Infrastructure Datacc service.
         /// 
         /// Obtain a list of VM cluster networks on Database Infrastructure.
-        /// 
         /// 
         /// ## Example Usage
         /// 

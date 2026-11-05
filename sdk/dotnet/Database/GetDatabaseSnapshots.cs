@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of the Exadata Database Snapshots in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of the Exadata Database Snapshots in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Database Snapshots in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets a list of the Exadata Database Snapshots in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

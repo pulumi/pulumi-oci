@@ -215,11 +215,10 @@ public class BackupDestination extends com.pulumi.resources.CustomResource {
     /**
      * (Updatable) **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes. This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
      * 
-     * @deprecated
-     * The &#39;local_mount_point_path&#39; field has been deprecated. Please use &#39;local_mount_point_path under mount_type_details&#39; instead.
+     * @deprecated The &#39;local_mount_point_path&#39; field has been deprecated. Please use &#39;local_mount_point_path under mount_type_details&#39; instead.
      * 
      */
-    @Deprecated /* The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead. */
+    @Deprecated
     @Export(name="localMountPointPath", refs={String.class}, tree="[0]")
     private Output<String> localMountPointPath;
 

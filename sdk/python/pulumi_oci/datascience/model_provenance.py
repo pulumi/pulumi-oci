@@ -456,6 +456,26 @@ class ModelProvenance(pulumi.CustomResource):
         __props__.__dict__["training_script"] = training_script
         return ModelProvenance(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            git_branch: pulumi.Input[Optional[_builtins.str]] = None,
+            git_commit: pulumi.Input[Optional[_builtins.str]] = None,
+            model_id: pulumi.Input[Optional[_builtins.str]] = None,
+            repository_url: pulumi.Input[Optional[_builtins.str]] = None,
+            script_dir: pulumi.Input[Optional[_builtins.str]] = None,
+            training_id: pulumi.Input[Optional[_builtins.str]] = None,
+            training_script: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["gitBranch"] = git_branch
+        __props__["gitCommit"] = git_commit
+        __props__["modelId"] = model_id
+        __props__["repositoryUrl"] = repository_url
+        __props__["scriptDir"] = script_dir
+        __props__["trainingId"] = training_id
+        __props__["trainingScript"] = training_script
+        return pulumi.runtime.exists_resource(None, 'oci:DataScience/modelProvenance:ModelProvenance', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="gitBranch")
     def git_branch(self) -> pulumi.Output[_builtins.str]:

@@ -509,6 +509,30 @@ class Record(pulumi.CustomResource):
         __props__.__dict__["zone_name_or_id"] = zone_name_or_id
         return Record(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            domain: pulumi.Input[Optional[_builtins.str]] = None,
+            is_protected: pulumi.Input[Optional[_builtins.bool]] = None,
+            rdata: pulumi.Input[Optional[_builtins.str]] = None,
+            record_hash: pulumi.Input[Optional[_builtins.str]] = None,
+            rrset_version: pulumi.Input[Optional[_builtins.str]] = None,
+            rtype: pulumi.Input[Optional[_builtins.str]] = None,
+            ttl: pulumi.Input[Optional[_builtins.int]] = None,
+            zone_name_or_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["domain"] = domain
+        __props__["isProtected"] = is_protected
+        __props__["rdata"] = rdata
+        __props__["recordHash"] = record_hash
+        __props__["rrsetVersion"] = rrset_version
+        __props__["rtype"] = rtype
+        __props__["ttl"] = ttl
+        __props__["zoneNameOrId"] = zone_name_or_id
+        return pulumi.runtime.exists_resource(None, 'oci:Dns/record:Record', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[Optional[_builtins.str]]:

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// List all of the compute GPU memory clusters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// List all of the compute GPU memory clusters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides the list of Compute Gpu Memory Clusters in Oracle Cloud Infrastructure Core service.
         /// 
         /// List all of the compute GPU memory clusters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

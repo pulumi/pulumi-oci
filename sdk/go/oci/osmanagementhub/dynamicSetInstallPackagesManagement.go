@@ -132,6 +132,12 @@ func (DynamicSetInstallPackagesManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dynamicSetInstallPackagesManagementState)(nil)).Elem()
 }
 
+// DynamicSetInstallPackagesManagementExists checks whether an existing DynamicSetInstallPackagesManagement resource with the given ID exists.
+func DynamicSetInstallPackagesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DynamicSetInstallPackagesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/dynamicSetInstallPackagesManagement:DynamicSetInstallPackagesManagement", id, state, "", opts...)
+}
+
 type dynamicSetInstallPackagesManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
 	DynamicSetId string `pulumi:"dynamicSetId"`

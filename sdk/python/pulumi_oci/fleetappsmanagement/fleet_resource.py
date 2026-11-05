@@ -690,6 +690,52 @@ class FleetResource(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return FleetResource(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compliance_state: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            environment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            percent_compliant: pulumi.Input[Optional[_builtins.float]] = None,
+            product: pulumi.Input[Optional[_builtins.str]] = None,
+            product_count: pulumi.Input[Optional[_builtins.int]] = None,
+            resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_region: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_count: pulumi.Input[Optional[_builtins.int]] = None,
+            tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tenancy_name: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartment"] = compartment
+        __props__["compartmentId"] = compartment_id
+        __props__["complianceState"] = compliance_state
+        __props__["displayName"] = display_name
+        __props__["environmentType"] = environment_type
+        __props__["fleetId"] = fleet_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["percentCompliant"] = percent_compliant
+        __props__["product"] = product
+        __props__["productCount"] = product_count
+        __props__["resourceId"] = resource_id
+        __props__["resourceRegion"] = resource_region
+        __props__["resourceType"] = resource_type
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["targetCount"] = target_count
+        __props__["tenancyId"] = tenancy_id
+        __props__["tenancyName"] = tenancy_name
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:FleetAppsManagement/fleetResource:FleetResource', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def compartment(self) -> pulumi.Output[_builtins.str]:

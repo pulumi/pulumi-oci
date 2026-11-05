@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the Exadata DB servers in the ExadataInfrastructureId and specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the Exadata DB servers in the ExadataInfrastructureId and specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Db Servers in Oracle Cloud Infrastructure Database service.
         /// 
         /// Lists the Exadata DB servers in the ExadataInfrastructureId and specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

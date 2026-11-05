@@ -194,6 +194,12 @@ func (InstancePoolInstanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*instancePoolInstanceState)(nil)).Elem()
 }
 
+// InstancePoolInstanceExists checks whether an existing InstancePoolInstance resource with the given ID exists.
+func InstancePoolInstanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *InstancePoolInstanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/instancePoolInstance:InstancePoolInstance", id, state, "", opts...)
+}
+
 type instancePoolInstanceArgs struct {
 	AutoTerminateInstanceOnDelete *bool `pulumi:"autoTerminateInstanceOnDelete"`
 	DecrementSizeOnDelete         *bool `pulumi:"decrementSizeOnDelete"`

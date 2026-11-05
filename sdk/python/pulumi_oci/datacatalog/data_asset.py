@@ -576,6 +576,42 @@ class DataAsset(pulumi.CustomResource):
         __props__.__dict__["uri"] = uri
         return DataAsset(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            catalog_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            external_key: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_harvested: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type_key: pulumi.Input[Optional[_builtins.str]] = None,
+            updated_by_id: pulumi.Input[Optional[_builtins.str]] = None,
+            uri: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["catalogId"] = catalog_id
+        __props__["createdById"] = created_by_id
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["externalKey"] = external_key
+        __props__["key"] = key
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["properties"] = properties
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["timeHarvested"] = time_harvested
+        __props__["timeUpdated"] = time_updated
+        __props__["typeKey"] = type_key
+        __props__["updatedById"] = updated_by_id
+        __props__["uri"] = uri
+        return pulumi.runtime.exists_resource(None, 'oci:DataCatalog/dataAsset:DataAsset', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="catalogId")
     def catalog_id(self) -> pulumi.Output[_builtins.str]:

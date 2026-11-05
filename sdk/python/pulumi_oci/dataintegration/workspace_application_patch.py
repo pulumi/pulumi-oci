@@ -856,6 +856,56 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
         __props__.__dict__["workspace_id"] = workspace_id
         return WorkspaceApplicationPatch(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            application_key: pulumi.Input[Optional[_builtins.str]] = None,
+            application_version: pulumi.Input[Optional[_builtins.int]] = None,
+            dependent_object_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationPatchDependentObjectMetadataArgs', 'WorkspaceApplicationPatchDependentObjectMetadataArgsDict', 'outputs.WorkspaceApplicationPatchDependentObjectMetadata']]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            error_messages: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            key_map: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationPatchMetadataArgs', 'WorkspaceApplicationPatchMetadataArgsDict', 'outputs.WorkspaceApplicationPatchMetadata']]]]] = None,
+            model_type: pulumi.Input[Optional[_builtins.str]] = None,
+            model_version: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            object_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            object_status: pulumi.Input[Optional[_builtins.int]] = None,
+            object_version: pulumi.Input[Optional[_builtins.int]] = None,
+            parent_reves: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationPatchParentRefArgs', 'WorkspaceApplicationPatchParentRefArgsDict', 'outputs.WorkspaceApplicationPatchParentRef']]]]] = None,
+            patch_object_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationPatchPatchObjectMetadataArgs', 'WorkspaceApplicationPatchPatchObjectMetadataArgsDict', 'outputs.WorkspaceApplicationPatchPatchObjectMetadata']]]]] = None,
+            patch_status: pulumi.Input[Optional[_builtins.str]] = None,
+            patch_type: pulumi.Input[Optional[_builtins.str]] = None,
+            registry_metadata: pulumi.Input[Optional[Union['WorkspaceApplicationPatchRegistryMetadataArgs', 'WorkspaceApplicationPatchRegistryMetadataArgsDict', 'outputs.WorkspaceApplicationPatchRegistryMetadata']]] = None,
+            time_patched: pulumi.Input[Optional[_builtins.str]] = None,
+            workspace_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["applicationKey"] = application_key
+        __props__["applicationVersion"] = application_version
+        __props__["dependentObjectMetadatas"] = dependent_object_metadatas
+        __props__["description"] = description
+        __props__["errorMessages"] = error_messages
+        __props__["identifier"] = identifier
+        __props__["key"] = key
+        __props__["keyMap"] = key_map
+        __props__["metadatas"] = metadatas
+        __props__["modelType"] = model_type
+        __props__["modelVersion"] = model_version
+        __props__["name"] = name
+        __props__["objectKeys"] = object_keys
+        __props__["objectStatus"] = object_status
+        __props__["objectVersion"] = object_version
+        __props__["parentReves"] = parent_reves
+        __props__["patchObjectMetadatas"] = patch_object_metadatas
+        __props__["patchStatus"] = patch_status
+        __props__["patchType"] = patch_type
+        __props__["registryMetadata"] = registry_metadata
+        __props__["timePatched"] = time_patched
+        __props__["workspaceId"] = workspace_id
+        return pulumi.runtime.exists_resource(None, 'oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="applicationKey")
     def application_key(self) -> pulumi.Output[_builtins.str]:

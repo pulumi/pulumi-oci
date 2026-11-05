@@ -599,6 +599,46 @@ class Event(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return Event(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EventDataArgs', 'EventDataArgsDict', 'outputs.EventData']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            event_details: pulumi.Input[Optional[_builtins.str]] = None,
+            event_id: pulumi.Input[Optional[_builtins.str]] = None,
+            event_summary: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_managed_by_autonomous_linux: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EventSystemDetailArgs', 'EventSystemDetailArgsDict', 'outputs.EventSystemDetail']]]]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_occurred: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["datas"] = datas
+        __props__["definedTags"] = defined_tags
+        __props__["eventDetails"] = event_details
+        __props__["eventId"] = event_id
+        __props__["eventSummary"] = event_summary
+        __props__["freeformTags"] = freeform_tags
+        __props__["isManagedByAutonomousLinux"] = is_managed_by_autonomous_linux
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["resourceId"] = resource_id
+        __props__["state"] = state
+        __props__["systemDetails"] = system_details
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeOccurred"] = time_occurred
+        __props__["timeUpdated"] = time_updated
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'oci:OsManagementHub/event:Event', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

@@ -32,11 +32,10 @@ public final class GetVolumesVolume {
      */
     private String availabilityDomain;
     /**
-     * @deprecated
-     * The &#39;backup_policy_id&#39; field has been deprecated. Please use the &#39;oci_core_volume_backup_policy_assignment&#39; resource instead.
+     * @deprecated The &#39;backup_policy_id&#39; field has been deprecated. Please use the &#39;oci_core_volume_backup_policy_assignment&#39; resource instead.
      * 
      */
-    @Deprecated /* The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead. */
+    @Deprecated
     private String backupPolicyId;
     /**
      * @return The list of block volume replicas of this volume.
@@ -102,11 +101,10 @@ public final class GetVolumesVolume {
     /**
      * @return The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
      * 
-     * @deprecated
-     * The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
+     * @deprecated The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
      * 
      */
-    @Deprecated /* The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead. */
+    @Deprecated
     private String sizeInMbs;
     /**
      * @return Specifies the volume source details for a new Block volume. The volume source is either another Block volume in the same Availability Domain or a Block volume backup. This is an optional field. If not specified or set to null, the new Block volume will be empty. When specified, the new Block volume will contain data from the source volume or backup.
@@ -164,11 +162,10 @@ public final class GetVolumesVolume {
         return this.availabilityDomain;
     }
     /**
-     * @deprecated
-     * The &#39;backup_policy_id&#39; field has been deprecated. Please use the &#39;oci_core_volume_backup_policy_assignment&#39; resource instead.
+     * @deprecated The &#39;backup_policy_id&#39; field has been deprecated. Please use the &#39;oci_core_volume_backup_policy_assignment&#39; resource instead.
      * 
      */
-    @Deprecated /* The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead. */
+    @Deprecated
     public String backupPolicyId() {
         return this.backupPolicyId;
     }
@@ -262,11 +259,10 @@ public final class GetVolumesVolume {
     /**
      * @return The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
      * 
-     * @deprecated
-     * The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
+     * @deprecated The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
      * 
      */
-    @Deprecated /* The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead. */
+    @Deprecated
     public String sizeInMbs() {
         return this.sizeInMbs;
     }

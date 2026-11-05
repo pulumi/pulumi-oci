@@ -19,7 +19,7 @@ public final class HttpRedirectTarget {
      */
     private String host;
     /**
-     * @return (Updatable) The path component of the target URL (e.g., &#34;/path/to/resource&#34; in &#34;https://target.example.com/path/to/resource?redirected&#34;), which can be empty, static, or request-copying, or request-prefixing. Use of \ is not permitted except to escape a following \, {, or }. An empty value is treated the same as static &#34;/&#34;. A static value must begin with a leading &#34;/&#34;, optionally followed by other path characters. A request-copying value must exactly match &#34;{path}&#34;, and will be replaced with the path component of the request URL (including its initial &#34;/&#34;). A request-prefixing value must start with &#34;/&#34; and end with a non-escaped &#34;{path}&#34;, which will be replaced with the path component of the request URL (including its initial &#34;/&#34;). Only one such replacement token is allowed.
+     * @return (Updatable) The path component of the target URL (e.g., &#34;/path/to/resource&#34; in &#34;https://target.example.com/path/to/resource?redirected&#34;), which can be empty, static, or request-copying, or request-prefixing. Use of &#92; is not permitted except to escape a following &#92;, {, or }. An empty value is treated the same as static &#34;/&#34;. A static value must begin with a leading &#34;/&#34;, optionally followed by other path characters. A request-copying value must exactly match &#34;{path}&#34;, and will be replaced with the path component of the request URL (including its initial &#34;/&#34;). A request-prefixing value must start with &#34;/&#34; and end with a non-escaped &#34;{path}&#34;, which will be replaced with the path component of the request URL (including its initial &#34;/&#34;). Only one such replacement token is allowed.
      * 
      */
     private String path;
@@ -34,7 +34,7 @@ public final class HttpRedirectTarget {
      */
     private String protocol;
     /**
-     * @return (Updatable) The query component of the target URL (e.g., &#34;?redirected&#34; in &#34;https://target.example.com/path/to/resource?redirected&#34;), which can be empty, static, or request-copying. Use of \ is not permitted except to escape a following \, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading &#34;?&#34;, optionally followed by other query characters. A request-copying value must exactly match &#34;{query}&#34;, and will be replaced with the query component of the request URL (including a leading &#34;?&#34; if and only if the request URL includes a query component).
+     * @return (Updatable) The query component of the target URL (e.g., &#34;?redirected&#34; in &#34;https://target.example.com/path/to/resource?redirected&#34;), which can be empty, static, or request-copying. Use of &#92; is not permitted except to escape a following &#92;, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading &#34;?&#34;, optionally followed by other query characters. A request-copying value must exactly match &#34;{query}&#34;, and will be replaced with the query component of the request URL (including a leading &#34;?&#34; if and only if the request URL includes a query component).
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -51,7 +51,7 @@ public final class HttpRedirectTarget {
         return this.host;
     }
     /**
-     * @return (Updatable) The path component of the target URL (e.g., &#34;/path/to/resource&#34; in &#34;https://target.example.com/path/to/resource?redirected&#34;), which can be empty, static, or request-copying, or request-prefixing. Use of \ is not permitted except to escape a following \, {, or }. An empty value is treated the same as static &#34;/&#34;. A static value must begin with a leading &#34;/&#34;, optionally followed by other path characters. A request-copying value must exactly match &#34;{path}&#34;, and will be replaced with the path component of the request URL (including its initial &#34;/&#34;). A request-prefixing value must start with &#34;/&#34; and end with a non-escaped &#34;{path}&#34;, which will be replaced with the path component of the request URL (including its initial &#34;/&#34;). Only one such replacement token is allowed.
+     * @return (Updatable) The path component of the target URL (e.g., &#34;/path/to/resource&#34; in &#34;https://target.example.com/path/to/resource?redirected&#34;), which can be empty, static, or request-copying, or request-prefixing. Use of &#92; is not permitted except to escape a following &#92;, {, or }. An empty value is treated the same as static &#34;/&#34;. A static value must begin with a leading &#34;/&#34;, optionally followed by other path characters. A request-copying value must exactly match &#34;{path}&#34;, and will be replaced with the path component of the request URL (including its initial &#34;/&#34;). A request-prefixing value must start with &#34;/&#34; and end with a non-escaped &#34;{path}&#34;, which will be replaced with the path component of the request URL (including its initial &#34;/&#34;). Only one such replacement token is allowed.
      * 
      */
     public String path() {
@@ -72,7 +72,7 @@ public final class HttpRedirectTarget {
         return this.protocol;
     }
     /**
-     * @return (Updatable) The query component of the target URL (e.g., &#34;?redirected&#34; in &#34;https://target.example.com/path/to/resource?redirected&#34;), which can be empty, static, or request-copying. Use of \ is not permitted except to escape a following \, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading &#34;?&#34;, optionally followed by other query characters. A request-copying value must exactly match &#34;{query}&#34;, and will be replaced with the query component of the request URL (including a leading &#34;?&#34; if and only if the request URL includes a query component).
+     * @return (Updatable) The query component of the target URL (e.g., &#34;?redirected&#34; in &#34;https://target.example.com/path/to/resource?redirected&#34;), which can be empty, static, or request-copying. Use of &#92; is not permitted except to escape a following &#92;, {, or }. An empty value results in a redirection target URL with no query component. A static value must begin with a leading &#34;?&#34;, optionally followed by other query characters. A request-copying value must exactly match &#34;{query}&#34;, and will be replaced with the query component of the request URL (including a leading &#34;?&#34; if and only if the request URL includes a query component).
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

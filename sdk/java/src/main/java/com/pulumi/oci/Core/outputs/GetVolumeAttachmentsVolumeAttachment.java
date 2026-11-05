@@ -37,11 +37,10 @@ public final class GetVolumeAttachmentsVolumeAttachment {
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
-     * @deprecated
-     * The &#39;compartment_id&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;compartment_id&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     private String compartmentId;
     /**
      * @return The device name.
@@ -182,11 +181,10 @@ public final class GetVolumeAttachmentsVolumeAttachment {
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
-     * @deprecated
-     * The &#39;compartment_id&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;compartment_id&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     public String compartmentId() {
         return this.compartmentId;
     }

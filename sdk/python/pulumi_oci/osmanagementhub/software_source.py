@@ -1421,6 +1421,90 @@ class SoftwareSource(pulumi.CustomResource):
         __props__.__dict__["vendor_software_sources"] = vendor_software_sources
         return SoftwareSource(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            advanced_repo_options: pulumi.Input[Optional[_builtins.str]] = None,
+            arch_type: pulumi.Input[Optional[_builtins.str]] = None,
+            availability: pulumi.Input[Optional[_builtins.str]] = None,
+            availability_at_oci: pulumi.Input[Optional[_builtins.str]] = None,
+            checksum_type: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            custom_software_source_filter: pulumi.Input[Optional[Union['SoftwareSourceCustomSoftwareSourceFilterArgs', 'SoftwareSourceCustomSoftwareSourceFilterArgsDict', 'outputs.SoftwareSourceCustomSoftwareSourceFilter']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            gpg_key_fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+            gpg_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            gpg_key_url: pulumi.Input[Optional[_builtins.str]] = None,
+            is_auto_resolve_dependencies: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_automatically_updated: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_created_from_package_list: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_gpg_check_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_latest_content_only: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_mandatory_for_autonomous_linux: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_mirror_sync_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_ssl_verify_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            origin_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            origin_software_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+            os_family: pulumi.Input[Optional[_builtins.str]] = None,
+            package_count: pulumi.Input[Optional[_builtins.str]] = None,
+            packages: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            repo_id: pulumi.Input[Optional[_builtins.str]] = None,
+            size: pulumi.Input[Optional[_builtins.float]] = None,
+            software_source_sub_type: pulumi.Input[Optional[_builtins.str]] = None,
+            software_source_type: pulumi.Input[Optional[_builtins.str]] = None,
+            software_source_version: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_metadata_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            url: pulumi.Input[Optional[_builtins.str]] = None,
+            vendor_name: pulumi.Input[Optional[_builtins.str]] = None,
+            vendor_software_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SoftwareSourceVendorSoftwareSourceArgs', 'SoftwareSourceVendorSoftwareSourceArgsDict', 'outputs.SoftwareSourceVendorSoftwareSource']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["advancedRepoOptions"] = advanced_repo_options
+        __props__["archType"] = arch_type
+        __props__["availability"] = availability
+        __props__["availabilityAtOci"] = availability_at_oci
+        __props__["checksumType"] = checksum_type
+        __props__["compartmentId"] = compartment_id
+        __props__["customSoftwareSourceFilter"] = custom_software_source_filter
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["gpgKeyFingerprint"] = gpg_key_fingerprint
+        __props__["gpgKeyId"] = gpg_key_id
+        __props__["gpgKeyUrl"] = gpg_key_url
+        __props__["isAutoResolveDependencies"] = is_auto_resolve_dependencies
+        __props__["isAutomaticallyUpdated"] = is_automatically_updated
+        __props__["isCreatedFromPackageList"] = is_created_from_package_list
+        __props__["isGpgCheckEnabled"] = is_gpg_check_enabled
+        __props__["isLatestContentOnly"] = is_latest_content_only
+        __props__["isMandatoryForAutonomousLinux"] = is_mandatory_for_autonomous_linux
+        __props__["isMirrorSyncAllowed"] = is_mirror_sync_allowed
+        __props__["isSslVerifyEnabled"] = is_ssl_verify_enabled
+        __props__["originDisplayName"] = origin_display_name
+        __props__["originSoftwareSourceId"] = origin_software_source_id
+        __props__["osFamily"] = os_family
+        __props__["packageCount"] = package_count
+        __props__["packages"] = packages
+        __props__["repoId"] = repo_id
+        __props__["size"] = size
+        __props__["softwareSourceSubType"] = software_source_sub_type
+        __props__["softwareSourceType"] = software_source_type
+        __props__["softwareSourceVersion"] = software_source_version
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeMetadataUpdated"] = time_metadata_updated
+        __props__["url"] = url
+        __props__["vendorName"] = vendor_name
+        __props__["vendorSoftwareSources"] = vendor_software_sources
+        return pulumi.runtime.exists_resource(None, 'oci:OsManagementHub/softwareSource:SoftwareSource', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="advancedRepoOptions")
     def advanced_repo_options(self) -> pulumi.Output[_builtins.str]:

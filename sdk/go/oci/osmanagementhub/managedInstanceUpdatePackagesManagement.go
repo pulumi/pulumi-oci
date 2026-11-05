@@ -129,6 +129,12 @@ func (ManagedInstanceUpdatePackagesManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managedInstanceUpdatePackagesManagementState)(nil)).Elem()
 }
 
+// ManagedInstanceUpdatePackagesManagementExists checks whether an existing ManagedInstanceUpdatePackagesManagement resource with the given ID exists.
+func ManagedInstanceUpdatePackagesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedInstanceUpdatePackagesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/managedInstanceUpdatePackagesManagement:ManagedInstanceUpdatePackagesManagement", id, state, "", opts...)
+}
+
 type managedInstanceUpdatePackagesManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
 	ManagedInstanceId string `pulumi:"managedInstanceId"`

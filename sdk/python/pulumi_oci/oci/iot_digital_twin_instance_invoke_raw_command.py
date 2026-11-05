@@ -491,6 +491,28 @@ class IotDigitalTwinInstanceInvokeRawCommand(pulumi.CustomResource):
         __props__.__dict__["response_endpoint"] = response_endpoint
         return IotDigitalTwinInstanceInvokeRawCommand(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            digital_twin_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            request_data: pulumi.Input[Optional[_builtins.str]] = None,
+            request_data_content_type: pulumi.Input[Optional[_builtins.str]] = None,
+            request_data_format: pulumi.Input[Optional[_builtins.str]] = None,
+            request_duration: pulumi.Input[Optional[_builtins.str]] = None,
+            request_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            response_duration: pulumi.Input[Optional[_builtins.str]] = None,
+            response_endpoint: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["digitalTwinInstanceId"] = digital_twin_instance_id
+        __props__["requestData"] = request_data
+        __props__["requestDataContentType"] = request_data_content_type
+        __props__["requestDataFormat"] = request_data_format
+        __props__["requestDuration"] = request_duration
+        __props__["requestEndpoint"] = request_endpoint
+        __props__["responseDuration"] = response_duration
+        __props__["responseEndpoint"] = response_endpoint
+        return pulumi.runtime.exists_resource(None, 'oci:oci/iotDigitalTwinInstanceInvokeRawCommand:IotDigitalTwinInstanceInvokeRawCommand', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="digitalTwinInstanceId")
     def digital_twin_instance_id(self) -> pulumi.Output[_builtins.str]:

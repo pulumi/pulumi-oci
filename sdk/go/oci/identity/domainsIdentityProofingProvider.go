@@ -917,6 +917,12 @@ func (DomainsIdentityProofingProviderState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsIdentityProofingProviderState)(nil)).Elem()
 }
 
+// DomainsIdentityProofingProviderExists checks whether an existing DomainsIdentityProofingProvider resource with the given ID exists.
+func DomainsIdentityProofingProviderExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsIdentityProofingProviderState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsIdentityProofingProvider:DomainsIdentityProofingProvider", id, state, "", opts...)
+}
+
 type domainsIdentityProofingProviderArgs struct {
 	// (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets []string `pulumi:"attributeSets"`

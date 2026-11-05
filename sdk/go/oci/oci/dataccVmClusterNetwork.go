@@ -272,6 +272,12 @@ func (DataccVmClusterNetworkState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dataccVmClusterNetworkState)(nil)).Elem()
 }
 
+// DataccVmClusterNetworkExists checks whether an existing DataccVmClusterNetwork resource with the given ID exists.
+func DataccVmClusterNetworkExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DataccVmClusterNetworkState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/dataccVmClusterNetwork:DataccVmClusterNetwork", id, state, "", opts...)
+}
+
 type dataccVmClusterNetworkArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the VM cluster network.
 	CompartmentId string `pulumi:"compartmentId"`

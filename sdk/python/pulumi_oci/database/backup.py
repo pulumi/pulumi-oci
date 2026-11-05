@@ -712,6 +712,62 @@ class Backup(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return Backup(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_destination_type: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_edition: pulumi.Input[Optional[_builtins.str]] = None,
+            database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_size_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            encryption_key_location_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BackupEncryptionKeyLocationDetailArgs', 'BackupEncryptionKeyLocationDetailArgsDict', 'outputs.BackupEncryptionKeyLocationDetail']]]]] = None,
+            is_using_oracle_managed_keys: pulumi.Input[Optional[_builtins.bool]] = None,
+            key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_store_wallet_name: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+            retention_period_in_years: pulumi.Input[Optional[_builtins.int]] = None,
+            secondary_kms_key_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_ended: pulumi.Input[Optional[_builtins.str]] = None,
+            time_expiry_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availabilityDomain"] = availability_domain
+        __props__["backupDestinationType"] = backup_destination_type
+        __props__["compartmentId"] = compartment_id
+        __props__["databaseEdition"] = database_edition
+        __props__["databaseId"] = database_id
+        __props__["databaseSizeInGbs"] = database_size_in_gbs
+        __props__["displayName"] = display_name
+        __props__["encryptionKeyLocationDetails"] = encryption_key_location_details
+        __props__["isUsingOracleManagedKeys"] = is_using_oracle_managed_keys
+        __props__["keyStoreId"] = key_store_id
+        __props__["keyStoreWalletName"] = key_store_wallet_name
+        __props__["kmsKeyId"] = kms_key_id
+        __props__["kmsKeyVersionId"] = kms_key_version_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["retentionPeriodInDays"] = retention_period_in_days
+        __props__["retentionPeriodInYears"] = retention_period_in_years
+        __props__["secondaryKmsKeyIds"] = secondary_kms_key_ids
+        __props__["shape"] = shape
+        __props__["state"] = state
+        __props__["timeEnded"] = time_ended
+        __props__["timeExpiryScheduled"] = time_expiry_scheduled
+        __props__["timeStarted"] = time_started
+        __props__["type"] = type
+        __props__["vaultId"] = vault_id
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'oci:Database/backup:Backup', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[_builtins.str]:

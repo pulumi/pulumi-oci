@@ -315,6 +315,12 @@ func (ApiaccesscontrolPrivilegedApiRequestState) ElementType() reflect.Type {
 	return reflect.TypeOf((*apiaccesscontrolPrivilegedApiRequestState)(nil)).Elem()
 }
 
+// ApiaccesscontrolPrivilegedApiRequestExists checks whether an existing ApiaccesscontrolPrivilegedApiRequest resource with the given ID exists.
+func ApiaccesscontrolPrivilegedApiRequestExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ApiaccesscontrolPrivilegedApiRequestState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/apiaccesscontrolPrivilegedApiRequest:ApiaccesscontrolPrivilegedApiRequest", id, state, "", opts...)
+}
+
 type apiaccesscontrolPrivilegedApiRequestArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`

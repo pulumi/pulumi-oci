@@ -129,6 +129,12 @@ func (DynamicSetRebootManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dynamicSetRebootManagementState)(nil)).Elem()
 }
 
+// DynamicSetRebootManagementExists checks whether an existing DynamicSetRebootManagement resource with the given ID exists.
+func DynamicSetRebootManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DynamicSetRebootManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/dynamicSetRebootManagement:DynamicSetRebootManagement", id, state, "", opts...)
+}
+
 type dynamicSetRebootManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dynamic set. This filter returns resources associated with this dynamic set.
 	DynamicSetId string `pulumi:"dynamicSetId"`

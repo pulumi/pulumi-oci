@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Obtain a list of VM instances.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Obtain a list of VM instances.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Vm Instances in Oracle Cloud Infrastructure Datacc service.
         /// 
         /// Obtain a list of VM instances.
-        /// 
         /// 
         /// ## Example Usage
         /// 

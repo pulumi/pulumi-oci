@@ -240,6 +240,12 @@ func (DeployEnvironmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*deployEnvironmentState)(nil)).Elem()
 }
 
+// DeployEnvironmentExists checks whether an existing DeployEnvironment resource with the given ID exists.
+func DeployEnvironmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DeployEnvironmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DevOps/deployEnvironment:DeployEnvironment", id, state, "", opts...)
+}
+
 type deployEnvironmentArgs struct {
 	// (Updatable) The OCID of the Kubernetes cluster.
 	ClusterId *string `pulumi:"clusterId"`

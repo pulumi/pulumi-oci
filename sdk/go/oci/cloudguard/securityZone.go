@@ -209,6 +209,12 @@ func (SecurityZoneState) ElementType() reflect.Type {
 	return reflect.TypeOf((*securityZoneState)(nil)).Elem()
 }
 
+// SecurityZoneExists checks whether an existing SecurityZone resource with the given ID exists.
+func SecurityZoneExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SecurityZoneState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CloudGuard/securityZone:SecurityZone", id, state, "", opts...)
+}
+
 type securityZoneArgs struct {
 	// (Updatable) The OCID of the compartment for the security zone
 	CompartmentId string `pulumi:"compartmentId"`

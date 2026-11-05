@@ -122,6 +122,12 @@ func (LifecycleStageRebootManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*lifecycleStageRebootManagementState)(nil)).Elem()
 }
 
+// LifecycleStageRebootManagementExists checks whether an existing LifecycleStageRebootManagement resource with the given ID exists.
+func LifecycleStageRebootManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LifecycleStageRebootManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/lifecycleStageRebootManagement:LifecycleStageRebootManagement", id, state, "", opts...)
+}
+
 type lifecycleStageRebootManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
 	LifecycleStageId string `pulumi:"lifecycleStageId"`

@@ -220,6 +220,12 @@ func (PingMonitorState) ElementType() reflect.Type {
 	return reflect.TypeOf((*pingMonitorState)(nil)).Elem()
 }
 
+// PingMonitorExists checks whether an existing PingMonitor resource with the given ID exists.
+func PingMonitorExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PingMonitorState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:HealthChecks/pingMonitor:PingMonitor", id, state, "", opts...)
+}
+
 type pingMonitorArgs struct {
 	// (Updatable) The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -24,11 +24,10 @@ public final class GetRecordsRecord {
     /**
      * @return Search by domain. Will match any record whose domain (case-insensitive) equals the provided value.
      * 
-     * @deprecated
-     * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+     * @deprecated The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
      * 
      */
-    @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+    @Deprecated
     private String domain;
     /**
      * @return A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
@@ -53,11 +52,10 @@ public final class GetRecordsRecord {
     /**
      * @return Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
      * 
-     * @deprecated
-     * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+     * @deprecated The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
      * 
      */
-    @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+    @Deprecated
     private String rtype;
     /**
      * @return The Time To Live for the record, in seconds. Using a TTL lower than 30 seconds is not recommended.
@@ -67,11 +65,10 @@ public final class GetRecordsRecord {
     /**
      * @return The name or OCID of the target zone.
      * 
-     * @deprecated
-     * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+     * @deprecated The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
      * 
      */
-    @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+    @Deprecated
     private String zoneNameOrId;
 
     private GetRecordsRecord() {}
@@ -87,11 +84,10 @@ public final class GetRecordsRecord {
     /**
      * @return Search by domain. Will match any record whose domain (case-insensitive) equals the provided value.
      * 
-     * @deprecated
-     * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+     * @deprecated The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
      * 
      */
-    @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+    @Deprecated
     public String domain() {
         return this.domain;
     }
@@ -126,11 +122,10 @@ public final class GetRecordsRecord {
     /**
      * @return Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
      * 
-     * @deprecated
-     * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+     * @deprecated The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
      * 
      */
-    @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+    @Deprecated
     public String rtype() {
         return this.rtype;
     }
@@ -144,11 +139,10 @@ public final class GetRecordsRecord {
     /**
      * @return The name or OCID of the target zone.
      * 
-     * @deprecated
-     * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+     * @deprecated The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
      * 
      */
-    @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+    @Deprecated
     public String zoneNameOrId() {
         return this.zoneNameOrId;
     }

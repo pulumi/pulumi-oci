@@ -1055,6 +1055,72 @@ class ManagementStation(pulumi.CustomResource):
         __props__.__dict__["total_mirrors"] = total_mirrors
         return ManagementStation(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            arch_type: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            healths: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementStationHealthArgs', 'ManagementStationHealthArgsDict', 'outputs.ManagementStationHealth']]]]] = None,
+            hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            is_auto_config_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            location: pulumi.Input[Optional[_builtins.str]] = None,
+            managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            mirror: pulumi.Input[Optional[Union['ManagementStationMirrorArgs', 'ManagementStationMirrorArgsDict', 'outputs.ManagementStationMirror']]] = None,
+            mirror_capacity: pulumi.Input[Optional[_builtins.int]] = None,
+            mirror_package_count: pulumi.Input[Optional[_builtins.int]] = None,
+            mirror_size: pulumi.Input[Optional[_builtins.str]] = None,
+            mirror_storage_available_size: pulumi.Input[Optional[_builtins.str]] = None,
+            mirror_storage_size: pulumi.Input[Optional[_builtins.str]] = None,
+            mirror_sync_statuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementStationMirrorSyncStatusArgs', 'ManagementStationMirrorSyncStatusArgsDict', 'outputs.ManagementStationMirrorSyncStatus']]]]] = None,
+            mirror_unique_package_count: pulumi.Input[Optional[_builtins.int]] = None,
+            os_family: pulumi.Input[Optional[_builtins.str]] = None,
+            overall_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+            overall_state: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_management_stations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementStationPeerManagementStationArgs', 'ManagementStationPeerManagementStationArgsDict', 'outputs.ManagementStationPeerManagementStation']]]]] = None,
+            profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+            proxy: pulumi.Input[Optional[Union['ManagementStationProxyArgs', 'ManagementStationProxyArgsDict', 'outputs.ManagementStationProxy']]] = None,
+            refresh_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            scheduled_job_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            total_mirrors: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["archType"] = arch_type
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["healths"] = healths
+        __props__["hostname"] = hostname
+        __props__["isAutoConfigEnabled"] = is_auto_config_enabled
+        __props__["location"] = location
+        __props__["managedInstanceId"] = managed_instance_id
+        __props__["mirror"] = mirror
+        __props__["mirrorCapacity"] = mirror_capacity
+        __props__["mirrorPackageCount"] = mirror_package_count
+        __props__["mirrorSize"] = mirror_size
+        __props__["mirrorStorageAvailableSize"] = mirror_storage_available_size
+        __props__["mirrorStorageSize"] = mirror_storage_size
+        __props__["mirrorSyncStatuses"] = mirror_sync_statuses
+        __props__["mirrorUniquePackageCount"] = mirror_unique_package_count
+        __props__["osFamily"] = os_family
+        __props__["overallPercentage"] = overall_percentage
+        __props__["overallState"] = overall_state
+        __props__["peerManagementStations"] = peer_management_stations
+        __props__["profileId"] = profile_id
+        __props__["proxy"] = proxy
+        __props__["refreshTrigger"] = refresh_trigger
+        __props__["scheduledJobId"] = scheduled_job_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["totalMirrors"] = total_mirrors
+        return pulumi.runtime.exists_resource(None, 'oci:OsManagementHub/managementStation:ManagementStation', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="archType")
     def arch_type(self) -> pulumi.Output[_builtins.str]:

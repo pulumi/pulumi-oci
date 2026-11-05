@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Retrieves the members of the target database group with the specified OCID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Retrieves the members of the target database group with the specified OCID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides details about a specific Target Database Group Group Member resource in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Retrieves the members of the target database group with the specified OCID.
-        /// 
         /// 
         /// ## Example Usage
         /// 

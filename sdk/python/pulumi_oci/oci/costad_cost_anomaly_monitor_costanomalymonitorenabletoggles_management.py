@@ -236,6 +236,16 @@ class CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement(pulumi.C
         __props__.__dict__["enable_costanomalymonitorenabletoggle"] = enable_costanomalymonitorenabletoggle
         return CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cost_anomaly_monitor_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_costanomalymonitorenabletoggle: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["costAnomalyMonitorId"] = cost_anomaly_monitor_id
+        __props__["enableCostanomalymonitorenabletoggle"] = enable_costanomalymonitorenabletoggle
+        return pulumi.runtime.exists_resource(None, 'oci:oci/costadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement:CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="costAnomalyMonitorId")
     def cost_anomaly_monitor_id(self) -> pulumi.Output[_builtins.str]:

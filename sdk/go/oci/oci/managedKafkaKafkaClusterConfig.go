@@ -175,6 +175,12 @@ func (ManagedKafkaKafkaClusterConfigState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managedKafkaKafkaClusterConfigState)(nil)).Elem()
 }
 
+// ManagedKafkaKafkaClusterConfigExists checks whether an existing ManagedKafkaKafkaClusterConfig resource with the given ID exists.
+func ManagedKafkaKafkaClusterConfigExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedKafkaKafkaClusterConfigState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/managedKafkaKafkaClusterConfig:ManagedKafkaKafkaClusterConfig", id, state, "", opts...)
+}
+
 type managedKafkaKafkaClusterConfigArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the KafkaClusterConfig in.
 	CompartmentId string `pulumi:"compartmentId"`

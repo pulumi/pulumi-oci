@@ -186,6 +186,12 @@ func (ListenerState) ElementType() reflect.Type {
 	return reflect.TypeOf((*listenerState)(nil)).Elem()
 }
 
+// ListenerExists checks whether an existing Listener resource with the given ID exists.
+func ListenerExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ListenerState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:NetworkLoadBalancer/listener:Listener", id, state, "", opts...)
+}
+
 type listenerArgs struct {
 	// (Updatable) The name of the associated backend set.  Example: `exampleBackendSet`
 	DefaultBackendSetName string `pulumi:"defaultBackendSetName"`

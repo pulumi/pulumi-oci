@@ -220,6 +220,12 @@ func (DataSafePrivateEndpointState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dataSafePrivateEndpointState)(nil)).Elem()
 }
 
+// DataSafePrivateEndpointExists checks whether an existing DataSafePrivateEndpoint resource with the given ID exists.
+func DataSafePrivateEndpointExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DataSafePrivateEndpointState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/dataSafePrivateEndpoint:DataSafePrivateEndpoint", id, state, "", opts...)
+}
+
 type dataSafePrivateEndpointArgs struct {
 	// (Updatable) The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

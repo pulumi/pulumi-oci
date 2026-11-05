@@ -83,6 +83,12 @@ func (DefaultRouteTableState) ElementType() reflect.Type {
 	return reflect.TypeOf((*defaultRouteTableState)(nil)).Elem()
 }
 
+// DefaultRouteTableExists checks whether an existing DefaultRouteTable resource with the given ID exists.
+func DefaultRouteTableExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DefaultRouteTableState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/defaultRouteTable:DefaultRouteTable", id, state, "", opts...)
+}
+
 type defaultRouteTableArgs struct {
 	CompartmentId           *string                      `pulumi:"compartmentId"`
 	DefinedTags             map[string]string            `pulumi:"definedTags"`

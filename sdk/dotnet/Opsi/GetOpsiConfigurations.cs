@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// Gets a list of OPSI configuration resources based on the query parameters specified.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// Gets a list of OPSI configuration resources based on the query parameters specified.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.Opsi
         /// This data source provides the list of Opsi Configurations in Oracle Cloud Infrastructure Opsi service.
         /// 
         /// Gets a list of OPSI configuration resources based on the query parameters specified.
-        /// 
         /// 
         /// ## Example Usage
         /// 

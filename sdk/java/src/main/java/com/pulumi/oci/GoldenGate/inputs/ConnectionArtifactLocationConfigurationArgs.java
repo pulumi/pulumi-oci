@@ -95,22 +95,20 @@ public final class ConnectionArtifactLocationConfigurationArgs extends com.pulum
     /**
      * (Updatable) A pre-authenticated request (PAR) URL that provides access to the artifact location. Deprecated: This field is deprecated and replaced by &#34;parUrlSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;par_url&#39; field has been deprecated. Please use &#39;par_url_secret_id&#39; instead.
+     * @deprecated The &#39;par_url&#39; field has been deprecated. Please use &#39;par_url_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'par_url' field has been deprecated. Please use 'par_url_secret_id' instead. */
+    @Deprecated
     @Import(name="parUrl")
     private @Nullable Output<String> parUrl;
 
     /**
      * @return (Updatable) A pre-authenticated request (PAR) URL that provides access to the artifact location. Deprecated: This field is deprecated and replaced by &#34;parUrlSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;par_url&#39; field has been deprecated. Please use &#39;par_url_secret_id&#39; instead.
+     * @deprecated The &#39;par_url&#39; field has been deprecated. Please use &#39;par_url_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'par_url' field has been deprecated. Please use 'par_url_secret_id' instead. */
+    @Deprecated
     public Optional<Output<String>> parUrl() {
         return Optional.ofNullable(this.parUrl);
     }
@@ -148,22 +146,20 @@ public final class ConnectionArtifactLocationConfigurationArgs extends com.pulum
     /**
      * (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by &#34;privateKeyFileSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
+     * @deprecated The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead. */
+    @Deprecated
     @Import(name="privateKeyFile")
     private @Nullable Output<String> privateKeyFile;
 
     /**
      * @return (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by &#34;privateKeyFileSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
+     * @deprecated The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead. */
+    @Deprecated
     public Optional<Output<String>> privateKeyFile() {
         return Optional.ofNullable(this.privateKeyFile);
     }
@@ -186,22 +182,20 @@ public final class ConnectionArtifactLocationConfigurationArgs extends com.pulum
     /**
      * (Updatable) The passphrase of the private key. Deprecated: This field is deprecated and replaced by &#34;privateKeyPassphraseSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
+     * @deprecated The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead. */
+    @Deprecated
     @Import(name="privateKeyPassphrase")
     private @Nullable Output<String> privateKeyPassphrase;
 
     /**
      * @return (Updatable) The passphrase of the private key. Deprecated: This field is deprecated and replaced by &#34;privateKeyPassphraseSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
+     * @deprecated The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead. */
+    @Deprecated
     public Optional<Output<String>> privateKeyPassphrase() {
         return Optional.ofNullable(this.privateKeyPassphrase);
     }
@@ -254,22 +248,20 @@ public final class ConnectionArtifactLocationConfigurationArgs extends com.pulum
     /**
      * (Updatable) Secret access key used for Oracle Cloud Infrastructure Object Storage secret-key authentication. Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+     * @deprecated The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
+    @Deprecated
     @Import(name="secretAccessKey")
     private @Nullable Output<String> secretAccessKey;
 
     /**
      * @return (Updatable) Secret access key used for Oracle Cloud Infrastructure Object Storage secret-key authentication. Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+     * @deprecated The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
+    @Deprecated
     public Optional<Output<String>> secretAccessKey() {
         return Optional.ofNullable(this.secretAccessKey);
     }
@@ -464,11 +456,10 @@ public final class ConnectionArtifactLocationConfigurationArgs extends com.pulum
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;par_url&#39; field has been deprecated. Please use &#39;par_url_secret_id&#39; instead.
+         * @deprecated The &#39;par_url&#39; field has been deprecated. Please use &#39;par_url_secret_id&#39; instead.
          * 
          */
-        @Deprecated /* The 'par_url' field has been deprecated. Please use 'par_url_secret_id' instead. */
+        @Deprecated
         public Builder parUrl(@Nullable Output<String> parUrl) {
             $.parUrl = parUrl;
             return this;
@@ -479,11 +470,10 @@ public final class ConnectionArtifactLocationConfigurationArgs extends com.pulum
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;par_url&#39; field has been deprecated. Please use &#39;par_url_secret_id&#39; instead.
+         * @deprecated The &#39;par_url&#39; field has been deprecated. Please use &#39;par_url_secret_id&#39; instead.
          * 
          */
-        @Deprecated /* The 'par_url' field has been deprecated. Please use 'par_url_secret_id' instead. */
+        @Deprecated
         public Builder parUrl(String parUrl) {
             return parUrl(Output.of(parUrl));
         }
@@ -535,11 +525,10 @@ public final class ConnectionArtifactLocationConfigurationArgs extends com.pulum
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
+         * @deprecated The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
          * 
          */
-        @Deprecated /* The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead. */
+        @Deprecated
         public Builder privateKeyFile(@Nullable Output<String> privateKeyFile) {
             $.privateKeyFile = privateKeyFile;
             return this;
@@ -550,11 +539,10 @@ public final class ConnectionArtifactLocationConfigurationArgs extends com.pulum
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
+         * @deprecated The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
          * 
          */
-        @Deprecated /* The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead. */
+        @Deprecated
         public Builder privateKeyFile(String privateKeyFile) {
             return privateKeyFile(Output.of(privateKeyFile));
         }
@@ -585,11 +573,10 @@ public final class ConnectionArtifactLocationConfigurationArgs extends com.pulum
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
+         * @deprecated The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
          * 
          */
-        @Deprecated /* The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead. */
+        @Deprecated
         public Builder privateKeyPassphrase(@Nullable Output<String> privateKeyPassphrase) {
             $.privateKeyPassphrase = privateKeyPassphrase;
             return this;
@@ -600,11 +587,10 @@ public final class ConnectionArtifactLocationConfigurationArgs extends com.pulum
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
+         * @deprecated The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
          * 
          */
-        @Deprecated /* The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead. */
+        @Deprecated
         public Builder privateKeyPassphrase(String privateKeyPassphrase) {
             return privateKeyPassphrase(Output.of(privateKeyPassphrase));
         }
@@ -677,11 +663,10 @@ public final class ConnectionArtifactLocationConfigurationArgs extends com.pulum
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+         * @deprecated The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
          * 
          */
-        @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
+        @Deprecated
         public Builder secretAccessKey(@Nullable Output<String> secretAccessKey) {
             $.secretAccessKey = secretAccessKey;
             return this;
@@ -692,11 +677,10 @@ public final class ConnectionArtifactLocationConfigurationArgs extends com.pulum
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+         * @deprecated The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
          * 
          */
-        @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
+        @Deprecated
         public Builder secretAccessKey(String secretAccessKey) {
             return secretAccessKey(Output.of(secretAccessKey));
         }

@@ -700,6 +700,12 @@ func (DomainsMyApiKeyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsMyApiKeyState)(nil)).Elem()
 }
 
+// DomainsMyApiKeyExists checks whether an existing DomainsMyApiKey resource with the given ID exists.
+func DomainsMyApiKeyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsMyApiKeyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsMyApiKey:DomainsMyApiKey", id, state, "", opts...)
+}
+
 type domainsMyApiKeyArgs struct {
 	// The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization *string `pulumi:"authorization"`

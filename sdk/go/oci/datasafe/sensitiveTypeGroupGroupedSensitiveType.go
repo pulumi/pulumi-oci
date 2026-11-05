@@ -129,6 +129,12 @@ func (SensitiveTypeGroupGroupedSensitiveTypeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*sensitiveTypeGroupGroupedSensitiveTypeState)(nil)).Elem()
 }
 
+// SensitiveTypeGroupGroupedSensitiveTypeExists checks whether an existing SensitiveTypeGroupGroupedSensitiveType resource with the given ID exists.
+func SensitiveTypeGroupGroupedSensitiveTypeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SensitiveTypeGroupGroupedSensitiveTypeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/sensitiveTypeGroupGroupedSensitiveType:SensitiveTypeGroupGroupedSensitiveType", id, state, "", opts...)
+}
+
 type sensitiveTypeGroupGroupedSensitiveTypeArgs struct {
 	// (Updatable)
 	PatchOperations []SensitiveTypeGroupGroupedSensitiveTypePatchOperation `pulumi:"patchOperations"`

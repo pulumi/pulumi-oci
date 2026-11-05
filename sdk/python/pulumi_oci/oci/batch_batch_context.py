@@ -758,6 +758,42 @@ class BatchBatchContext(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return BatchBatchContext(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            entitlements: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            fleets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchContextFleetArgs', 'BatchBatchContextFleetArgsDict', 'outputs.BatchBatchContextFleet']]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            job_priority_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchContextJobPriorityConfigurationArgs', 'BatchBatchContextJobPriorityConfigurationArgsDict', 'outputs.BatchBatchContextJobPriorityConfiguration']]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            logging_configuration: pulumi.Input[Optional[Union['BatchBatchContextLoggingConfigurationArgs', 'BatchBatchContextLoggingConfigurationArgsDict', 'outputs.BatchBatchContextLoggingConfiguration']]] = None,
+            network: pulumi.Input[Optional[Union['BatchBatchContextNetworkArgs', 'BatchBatchContextNetworkArgsDict', 'outputs.BatchBatchContextNetwork']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["entitlements"] = entitlements
+        __props__["fleets"] = fleets
+        __props__["freeformTags"] = freeform_tags
+        __props__["jobPriorityConfigurations"] = job_priority_configurations
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["loggingConfiguration"] = logging_configuration
+        __props__["network"] = network
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:oci/batchBatchContext:BatchBatchContext', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

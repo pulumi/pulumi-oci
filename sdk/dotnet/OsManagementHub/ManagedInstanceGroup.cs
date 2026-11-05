@@ -191,8 +191,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<string> TimeModified { get; private set; } = null!;
 
         /// <summary>
-        /// The vendor of the operating system that will be used by the managed instances in the group. 
-        /// 
+        /// The vendor of the operating system that will be used by the managed instances in the group.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -343,8 +342,7 @@ namespace Pulumi.Oci.OsManagementHub
         }
 
         /// <summary>
-        /// The vendor of the operating system that will be used by the managed instances in the group. 
-        /// 
+        /// The vendor of the operating system that will be used by the managed instances in the group.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -517,8 +515,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? TimeModified { get; set; }
 
         /// <summary>
-        /// The vendor of the operating system that will be used by the managed instances in the group. 
-        /// 
+        /// The vendor of the operating system that will be used by the managed instances in the group.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -520,6 +520,40 @@ class InstancePoolInstance(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return InstancePoolInstance(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            auto_terminate_instance_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            decrement_size_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+            load_balancer_backends: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstancePoolInstanceLoadBalancerBackendArgs', 'InstancePoolInstanceLoadBalancerBackendArgsDict', 'outputs.InstancePoolInstanceLoadBalancerBackend']]]]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["autoTerminateInstanceOnDelete"] = auto_terminate_instance_on_delete
+        __props__["availabilityDomain"] = availability_domain
+        __props__["compartmentId"] = compartment_id
+        __props__["decrementSizeOnDelete"] = decrement_size_on_delete
+        __props__["displayName"] = display_name
+        __props__["faultDomain"] = fault_domain
+        __props__["instanceConfigurationId"] = instance_configuration_id
+        __props__["instanceId"] = instance_id
+        __props__["instancePoolId"] = instance_pool_id
+        __props__["loadBalancerBackends"] = load_balancer_backends
+        __props__["region"] = region
+        __props__["shape"] = shape
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:Core/instancePoolInstance:InstancePoolInstance', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="autoTerminateInstanceOnDelete")
     def auto_terminate_instance_on_delete(self) -> pulumi.Output[Optional[_builtins.bool]]:

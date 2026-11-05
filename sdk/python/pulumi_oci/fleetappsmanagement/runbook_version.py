@@ -603,6 +603,42 @@ class RunbookVersion(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return RunbookVersion(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            execution_workflow_details: pulumi.Input[Optional[Union['RunbookVersionExecutionWorkflowDetailsArgs', 'RunbookVersionExecutionWorkflowDetailsArgsDict', 'outputs.RunbookVersionExecutionWorkflowDetails']]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunbookVersionGroupArgs', 'RunbookVersionGroupArgsDict', 'outputs.RunbookVersionGroup']]]]] = None,
+            is_latest: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            rollback_workflow_details: pulumi.Input[Optional[Union['RunbookVersionRollbackWorkflowDetailsArgs', 'RunbookVersionRollbackWorkflowDetailsArgsDict', 'outputs.RunbookVersionRollbackWorkflowDetails']]] = None,
+            runbook_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tasks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunbookVersionTaskArgs', 'RunbookVersionTaskArgsDict', 'outputs.RunbookVersionTask']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["executionWorkflowDetails"] = execution_workflow_details
+        __props__["freeformTags"] = freeform_tags
+        __props__["groups"] = groups
+        __props__["isLatest"] = is_latest
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["name"] = name
+        __props__["rollbackWorkflowDetails"] = rollback_workflow_details
+        __props__["runbookId"] = runbook_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["tasks"] = tasks
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:FleetAppsManagement/runbookVersion:RunbookVersion', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

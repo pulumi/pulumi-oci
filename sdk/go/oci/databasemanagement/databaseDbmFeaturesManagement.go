@@ -160,6 +160,12 @@ func (DatabaseDbmFeaturesManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*databaseDbmFeaturesManagementState)(nil)).Elem()
 }
 
+// DatabaseDbmFeaturesManagementExists checks whether an existing DatabaseDbmFeaturesManagement resource with the given ID exists.
+func DatabaseDbmFeaturesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DatabaseDbmFeaturesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement", id, state, "", opts...)
+}
+
 type databaseDbmFeaturesManagementArgs struct {
 	CanDisableAllPdbs *bool `pulumi:"canDisableAllPdbs"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database.

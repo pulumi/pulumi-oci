@@ -255,6 +255,12 @@ func (ModelState) ElementType() reflect.Type {
 	return reflect.TypeOf((*modelState)(nil)).Elem()
 }
 
+// ModelExists checks whether an existing Model resource with the given ID exists.
+func ModelExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ModelState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:AiLanguage/model:Model", id, state, "", opts...)
+}
+
 type modelArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)  for the models compartment.
 	CompartmentId string `pulumi:"compartmentId"`

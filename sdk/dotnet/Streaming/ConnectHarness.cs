@@ -79,8 +79,7 @@ namespace Pulumi.Oci.Streaming
         public Output<string> LifecycleStateDetails { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector` 
-        /// 
+        /// The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -177,8 +176,7 @@ namespace Pulumi.Oci.Streaming
         }
 
         /// <summary>
-        /// The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector` 
-        /// 
+        /// The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -231,8 +229,7 @@ namespace Pulumi.Oci.Streaming
         public Input<string>? LifecycleStateDetails { get; set; }
 
         /// <summary>
-        /// The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector` 
-        /// 
+        /// The name of the connect harness. Avoid entering confidential information.  Example: `JDBCConnector`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

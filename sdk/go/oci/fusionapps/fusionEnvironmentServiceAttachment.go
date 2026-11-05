@@ -188,6 +188,12 @@ func (FusionEnvironmentServiceAttachmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*fusionEnvironmentServiceAttachmentState)(nil)).Elem()
 }
 
+// FusionEnvironmentServiceAttachmentExists checks whether an existing FusionEnvironmentServiceAttachment resource with the given ID exists.
+func FusionEnvironmentServiceAttachmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FusionEnvironmentServiceAttachmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FusionApps/fusionEnvironmentServiceAttachment:FusionEnvironmentServiceAttachment", id, state, "", opts...)
+}
+
 type fusionEnvironmentServiceAttachmentArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`

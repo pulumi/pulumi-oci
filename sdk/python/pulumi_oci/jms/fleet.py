@@ -735,6 +735,50 @@ class Fleet(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return Fleet(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            approximate_application_count: pulumi.Input[Optional[_builtins.int]] = None,
+            approximate_installation_count: pulumi.Input[Optional[_builtins.int]] = None,
+            approximate_java_server_count: pulumi.Input[Optional[_builtins.int]] = None,
+            approximate_jre_count: pulumi.Input[Optional[_builtins.int]] = None,
+            approximate_library_count: pulumi.Input[Optional[_builtins.int]] = None,
+            approximate_library_vulnerability_count: pulumi.Input[Optional[_builtins.int]] = None,
+            approximate_managed_instance_count: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            inventory_log: pulumi.Input[Optional[Union['FleetInventoryLogArgs', 'FleetInventoryLogArgsDict', 'outputs.FleetInventoryLog']]] = None,
+            is_advanced_features_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_export_setting_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            operation_log: pulumi.Input[Optional[Union['FleetOperationLogArgs', 'FleetOperationLogArgsDict', 'outputs.FleetOperationLog']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["approximateApplicationCount"] = approximate_application_count
+        __props__["approximateInstallationCount"] = approximate_installation_count
+        __props__["approximateJavaServerCount"] = approximate_java_server_count
+        __props__["approximateJreCount"] = approximate_jre_count
+        __props__["approximateLibraryCount"] = approximate_library_count
+        __props__["approximateLibraryVulnerabilityCount"] = approximate_library_vulnerability_count
+        __props__["approximateManagedInstanceCount"] = approximate_managed_instance_count
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["inventoryLog"] = inventory_log
+        __props__["isAdvancedFeaturesEnabled"] = is_advanced_features_enabled
+        __props__["isExportSettingEnabled"] = is_export_setting_enabled
+        __props__["operationLog"] = operation_log
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:Jms/fleet:Fleet', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="approximateApplicationCount")
     def approximate_application_count(self) -> pulumi.Output[_builtins.int]:

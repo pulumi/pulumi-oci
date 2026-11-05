@@ -361,6 +361,22 @@ class AutonomousVmClusterSslCertificateManagement(pulumi.CustomResource):
         __props__.__dict__["certificate_id"] = certificate_id
         return AutonomousVmClusterSslCertificateManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ca_bundle_id: pulumi.Input[Optional[_builtins.str]] = None,
+            certificate_authority_id: pulumi.Input[Optional[_builtins.str]] = None,
+            certificate_generation_type: pulumi.Input[Optional[_builtins.str]] = None,
+            certificate_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["autonomousVmClusterId"] = autonomous_vm_cluster_id
+        __props__["caBundleId"] = ca_bundle_id
+        __props__["certificateAuthorityId"] = certificate_authority_id
+        __props__["certificateGenerationType"] = certificate_generation_type
+        __props__["certificateId"] = certificate_id
+        return pulumi.runtime.exists_resource(None, 'oci:Database/autonomousVmClusterSslCertificateManagement:AutonomousVmClusterSslCertificateManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="autonomousVmClusterId")
     def autonomous_vm_cluster_id(self) -> pulumi.Output[_builtins.str]:

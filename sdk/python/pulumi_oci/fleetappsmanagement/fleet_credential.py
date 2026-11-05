@@ -542,6 +542,34 @@ class FleetCredential(pulumi.CustomResource):
         __props__.__dict__["user"] = user
         return FleetCredential(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_specifics: pulumi.Input[Optional[Union['FleetCredentialEntitySpecificsArgs', 'FleetCredentialEntitySpecificsArgsDict', 'outputs.FleetCredentialEntitySpecifics']]] = None,
+            fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            password: pulumi.Input[Optional[Union['FleetCredentialPasswordArgs', 'FleetCredentialPasswordArgsDict', 'outputs.FleetCredentialPassword']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            user: pulumi.Input[Optional[Union['FleetCredentialUserArgs', 'FleetCredentialUserArgsDict', 'outputs.FleetCredentialUser']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["displayName"] = display_name
+        __props__["entitySpecifics"] = entity_specifics
+        __props__["fleetId"] = fleet_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["password"] = password
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["user"] = user
+        return pulumi.runtime.exists_resource(None, 'oci:FleetAppsManagement/fleetCredential:FleetCredential', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

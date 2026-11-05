@@ -86,6 +86,12 @@ func (ShapeManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*shapeManagementState)(nil)).Elem()
 }
 
+// ShapeManagementExists checks whether an existing ShapeManagement resource with the given ID exists.
+func ShapeManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ShapeManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/shapeManagement:ShapeManagement", id, state, "", opts...)
+}
+
 type shapeManagementArgs struct {
 	// The OCID of the compartment containing the image.
 	CompartmentId string `pulumi:"compartmentId"`

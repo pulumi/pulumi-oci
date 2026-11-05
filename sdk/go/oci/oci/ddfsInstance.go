@@ -191,6 +191,12 @@ func (DdfsInstanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ddfsInstanceState)(nil)).Elem()
 }
 
+// DdfsInstanceExists checks whether an existing DdfsInstance resource with the given ID exists.
+func DdfsInstanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DdfsInstanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/ddfsInstance:DdfsInstance", id, state, "", opts...)
+}
+
 type ddfsInstanceArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the Instance in.
 	CompartmentId string `pulumi:"compartmentId"`

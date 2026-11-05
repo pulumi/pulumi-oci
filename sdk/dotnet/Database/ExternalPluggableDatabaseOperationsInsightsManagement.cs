@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Database
     public partial class ExternalPluggableDatabaseOperationsInsightsManagement : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false". 
+        /// (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -113,7 +113,7 @@ namespace Pulumi.Oci.Database
     public sealed class ExternalPluggableDatabaseOperationsInsightsManagementArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false". 
+        /// (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -142,7 +142,7 @@ namespace Pulumi.Oci.Database
     public sealed class ExternalPluggableDatabaseOperationsInsightsManagementState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false". 
+        /// (Updatable) Enabling OPSI on External Pluggable Databases . Requires boolean value "true" or "false".
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -37,14 +37,14 @@ public final class OpensearchClusterPipelineArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \.
+     * (Updatable) The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with &#92;.
      * 
      */
     @Import(name="dataPrepperConfigurationBody", required=true)
     private Output<String> dataPrepperConfigurationBody;
 
     /**
-     * @return (Updatable) The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \.
+     * @return (Updatable) The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with &#92;.
      * 
      */
     public Output<String> dataPrepperConfigurationBody() {
@@ -187,14 +187,14 @@ public final class OpensearchClusterPipelineArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \.
+     * (Updatable) The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with &#92;.
      * 
      */
     @Import(name="pipelineConfigurationBody", required=true)
     private Output<String> pipelineConfigurationBody;
 
     /**
-     * @return (Updatable) The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \.
+     * @return (Updatable) The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with &#92;.
      * 
      */
     public Output<String> pipelineConfigurationBody() {
@@ -344,7 +344,7 @@ public final class OpensearchClusterPipelineArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param dataPrepperConfigurationBody (Updatable) The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \.
+         * @param dataPrepperConfigurationBody (Updatable) The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with &#92;.
          * 
          * @return builder
          * 
@@ -355,7 +355,7 @@ public final class OpensearchClusterPipelineArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param dataPrepperConfigurationBody (Updatable) The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \.
+         * @param dataPrepperConfigurationBody (Updatable) The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with &#92;.
          * 
          * @return builder
          * 
@@ -554,7 +554,7 @@ public final class OpensearchClusterPipelineArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param pipelineConfigurationBody (Updatable) The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \.
+         * @param pipelineConfigurationBody (Updatable) The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with &#92;.
          * 
          * @return builder
          * 
@@ -565,7 +565,7 @@ public final class OpensearchClusterPipelineArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param pipelineConfigurationBody (Updatable) The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \.
+         * @param pipelineConfigurationBody (Updatable) The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with &#92;.
          * 
          * @return builder
          * 

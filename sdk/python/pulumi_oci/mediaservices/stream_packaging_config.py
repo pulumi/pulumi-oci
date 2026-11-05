@@ -657,6 +657,40 @@ class StreamPackagingConfig(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return StreamPackagingConfig(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            distribution_channel_id: pulumi.Input[Optional[_builtins.str]] = None,
+            encryption: pulumi.Input[Optional[Union['StreamPackagingConfigEncryptionArgs', 'StreamPackagingConfigEncryptionArgsDict', 'outputs.StreamPackagingConfigEncryption']]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['StreamPackagingConfigLockArgs', 'StreamPackagingConfigLockArgsDict', 'outputs.StreamPackagingConfigLock']]]]] = None,
+            segment_time_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            stream_packaging_format: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["distributionChannelId"] = distribution_channel_id
+        __props__["encryption"] = encryption
+        __props__["freeformTags"] = freeform_tags
+        __props__["isLockOverride"] = is_lock_override
+        __props__["locks"] = locks
+        __props__["segmentTimeInSeconds"] = segment_time_in_seconds
+        __props__["state"] = state
+        __props__["streamPackagingFormat"] = stream_packaging_format
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:MediaServices/streamPackagingConfig:StreamPackagingConfig', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

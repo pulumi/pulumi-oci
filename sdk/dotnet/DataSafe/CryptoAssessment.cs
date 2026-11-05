@@ -125,7 +125,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Specify either day-of-week for weekly schedules or day-of-month for monthly schedules. Do not specify both. For monthly schedules, day-of-month must be between 1 and 28. If the service generates a default monthly schedule for an assessment created on day 29, 30, or 31 of a month, it uses day 28. Schedule updates are supported only for assessments of type LATEST.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -299,7 +298,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Specify either day-of-week for weekly schedules or day-of-month for monthly schedules. Do not specify both. For monthly schedules, day-of-month must be between 1 and 28. If the service generates a default monthly schedule for an assessment created on day 29, 30, or 31 of a month, it uses day 28. Schedule updates are supported only for assessments of type LATEST.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -428,7 +426,6 @@ namespace Pulumi.Oci.DataSafe
         /// For v1, the version-specific schedule format is: &lt;ss&gt; &lt;mm&gt; &lt;hh&gt; &lt;day-of-week&gt; &lt;day-of-month&gt;
         /// 
         /// Specify either day-of-week for weekly schedules or day-of-month for monthly schedules. Do not specify both. For monthly schedules, day-of-month must be between 1 and 28. If the service generates a default monthly schedule for an assessment created on day 29, 30, or 31 of a month, it uses day 28. Schedule updates are supported only for assessments of type LATEST.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

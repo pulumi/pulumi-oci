@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Gets a list of the maintenance executions in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -53,7 +52,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Gets a list of the maintenance executions in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -89,7 +87,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Maintenance Executions in Oracle Cloud Infrastructure Datacc service.
         /// 
         /// Gets a list of the maintenance executions in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

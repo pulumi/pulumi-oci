@@ -21,7 +21,6 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
         /// <summary>
         /// A user-friendly name for the job. The name does not have to be unique. Avoid entering confidential information.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

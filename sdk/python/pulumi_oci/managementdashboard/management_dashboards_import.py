@@ -359,6 +359,22 @@ class ManagementDashboardsImport(pulumi.CustomResource):
         __props__.__dict__["override_saved_search_compartment_ocid"] = override_saved_search_compartment_ocid
         return ManagementDashboardsImport(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            import_details: pulumi.Input[Optional[_builtins.str]] = None,
+            import_details_file: pulumi.Input[Optional[_builtins.str]] = None,
+            override_dashboard_compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            override_same_name: pulumi.Input[Optional[_builtins.str]] = None,
+            override_saved_search_compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["importDetails"] = import_details
+        __props__["importDetailsFile"] = import_details_file
+        __props__["overrideDashboardCompartmentOcid"] = override_dashboard_compartment_ocid
+        __props__["overrideSameName"] = override_same_name
+        __props__["overrideSavedSearchCompartmentOcid"] = override_saved_search_compartment_ocid
+        return pulumi.runtime.exists_resource(None, 'oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="importDetails")
     def import_details(self) -> pulumi.Output[Optional[_builtins.str]]:

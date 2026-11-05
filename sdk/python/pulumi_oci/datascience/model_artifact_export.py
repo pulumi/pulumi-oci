@@ -282,6 +282,24 @@ class ModelArtifactExport(pulumi.CustomResource):
         __props__.__dict__["source_region"] = source_region
         return ModelArtifactExport(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            artifact_source_type: pulumi.Input[Optional[_builtins.str]] = None,
+            model_id: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            source_bucket: pulumi.Input[Optional[_builtins.str]] = None,
+            source_object_name: pulumi.Input[Optional[_builtins.str]] = None,
+            source_region: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["artifactSourceType"] = artifact_source_type
+        __props__["modelId"] = model_id
+        __props__["namespace"] = namespace
+        __props__["sourceBucket"] = source_bucket
+        __props__["sourceObjectName"] = source_object_name
+        __props__["sourceRegion"] = source_region
+        return pulumi.runtime.exists_resource(None, 'oci:DataScience/modelArtifactExport:ModelArtifactExport', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="artifactSourceType")
     def artifact_source_type(self) -> pulumi.Output[_builtins.str]:

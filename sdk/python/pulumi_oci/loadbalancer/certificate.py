@@ -595,6 +595,26 @@ class Certificate(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         return Certificate(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            ca_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+            certificate_name: pulumi.Input[Optional[_builtins.str]] = None,
+            load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+            passphrase: pulumi.Input[Optional[_builtins.str]] = None,
+            private_key: pulumi.Input[Optional[_builtins.str]] = None,
+            public_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["caCertificate"] = ca_certificate
+        __props__["certificateName"] = certificate_name
+        __props__["loadBalancerId"] = load_balancer_id
+        __props__["passphrase"] = passphrase
+        __props__["privateKey"] = private_key
+        __props__["publicCertificate"] = public_certificate
+        __props__["state"] = state
+        return pulumi.runtime.exists_resource(None, 'oci:LoadBalancer/certificate:Certificate', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="caCertificate")
     def ca_certificate(self) -> pulumi.Output[_builtins.str]:

@@ -124,6 +124,12 @@ func (IotIotFlowRuntimeFlowState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iotIotFlowRuntimeFlowState)(nil)).Elem()
 }
 
+// IotIotFlowRuntimeFlowExists checks whether an existing IotIotFlowRuntimeFlow resource with the given ID exists.
+func IotIotFlowRuntimeFlowExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IotIotFlowRuntimeFlowState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/iotIotFlowRuntimeFlow:IotIotFlowRuntimeFlow", id, state, "", opts...)
+}
+
 type iotIotFlowRuntimeFlowArgs struct {
 	// (Updatable) The opaque flows document for the IoT flow runtime.
 	FlowsDocument string `pulumi:"flowsDocument"`

@@ -743,6 +743,52 @@ class Job(pulumi.CustomResource):
         __props__.__dict__["warnings_count"] = warnings_count
         return Job(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            completed_documents: pulumi.Input[Optional[_builtins.int]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            failed_documents: pulumi.Input[Optional[_builtins.int]] = None,
+            input_configuration: pulumi.Input[Optional[Union['JobInputConfigurationArgs', 'JobInputConfigurationArgsDict', 'outputs.JobInputConfiguration']]] = None,
+            input_location: pulumi.Input[Optional[Union['JobInputLocationArgs', 'JobInputLocationArgsDict', 'outputs.JobInputLocation']]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            model_metadata_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobModelMetadataDetailArgs', 'JobModelMetadataDetailArgsDict', 'outputs.JobModelMetadataDetail']]]]] = None,
+            output_location: pulumi.Input[Optional[Union['JobOutputLocationArgs', 'JobOutputLocationArgsDict', 'outputs.JobOutputLocation']]] = None,
+            pending_documents: pulumi.Input[Optional[_builtins.int]] = None,
+            percent_complete: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_accepted: pulumi.Input[Optional[_builtins.str]] = None,
+            time_completed: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started: pulumi.Input[Optional[_builtins.str]] = None,
+            total_documents: pulumi.Input[Optional[_builtins.int]] = None,
+            ttl_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+            warnings_count: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["completedDocuments"] = completed_documents
+        __props__["createdBy"] = created_by
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["failedDocuments"] = failed_documents
+        __props__["inputConfiguration"] = input_configuration
+        __props__["inputLocation"] = input_location
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["modelMetadataDetails"] = model_metadata_details
+        __props__["outputLocation"] = output_location
+        __props__["pendingDocuments"] = pending_documents
+        __props__["percentComplete"] = percent_complete
+        __props__["state"] = state
+        __props__["timeAccepted"] = time_accepted
+        __props__["timeCompleted"] = time_completed
+        __props__["timeStarted"] = time_started
+        __props__["totalDocuments"] = total_documents
+        __props__["ttlInDays"] = ttl_in_days
+        __props__["warningsCount"] = warnings_count
+        return pulumi.runtime.exists_resource(None, 'oci:AiLanguage/job:Job', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

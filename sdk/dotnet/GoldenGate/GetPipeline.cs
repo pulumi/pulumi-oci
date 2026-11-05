@@ -16,7 +16,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Retrieves a Pipeline details.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Retrieves a Pipeline details.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.GoldenGate
         /// This data source provides details about a specific Pipeline resource in Oracle Cloud Infrastructure Golden Gate service.
         /// 
         /// Retrieves a Pipeline details.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Identity
         /// Lists all the tags enabled for cost-tracking in the specified tenancy. For information about
         /// cost-tracking tags, see [Using Cost-tracking Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#costs).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Identity
         /// Lists all the tags enabled for cost-tracking in the specified tenancy. For information about
         /// cost-tracking tags, see [Using Cost-tracking Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#costs).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -72,7 +70,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Lists all the tags enabled for cost-tracking in the specified tenancy. For information about
         /// cost-tracking tags, see [Using Cost-tracking Tags](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/taggingoverview.htm#costs).
-        /// 
         /// 
         /// ## Example Usage
         /// 

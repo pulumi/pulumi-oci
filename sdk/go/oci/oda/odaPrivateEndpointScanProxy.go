@@ -165,6 +165,12 @@ func (OdaPrivateEndpointScanProxyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*odaPrivateEndpointScanProxyState)(nil)).Elem()
 }
 
+// OdaPrivateEndpointScanProxyExists checks whether an existing OdaPrivateEndpointScanProxy resource with the given ID exists.
+func OdaPrivateEndpointScanProxyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OdaPrivateEndpointScanProxyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Oda/odaPrivateEndpointScanProxy:OdaPrivateEndpointScanProxy", id, state, "", opts...)
+}
+
 type odaPrivateEndpointScanProxyArgs struct {
 	// Unique ODA Private Endpoint identifier which is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	OdaPrivateEndpointId string `pulumi:"odaPrivateEndpointId"`

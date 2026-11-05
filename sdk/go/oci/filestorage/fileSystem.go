@@ -325,6 +325,12 @@ func (FileSystemState) ElementType() reflect.Type {
 	return reflect.TypeOf((*fileSystemState)(nil)).Elem()
 }
 
+// FileSystemExists checks whether an existing FileSystem resource with the given ID exists.
+func FileSystemExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FileSystemState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FileStorage/fileSystem:FileSystem", id, state, "", opts...)
+}
+
 type fileSystemArgs struct {
 	// (Updatable) Specifies the enforcement of quota rules on the file system.
 	AreQuotaRulesEnabled *bool `pulumi:"areQuotaRulesEnabled"`

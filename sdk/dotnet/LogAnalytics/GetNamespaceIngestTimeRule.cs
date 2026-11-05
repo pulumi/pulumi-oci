@@ -16,7 +16,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Gets detailed information about the specified ingest time rule such as description, defined tags, and free-form tags.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Gets detailed information about the specified ingest time rule such as description, defined tags, and free-form tags.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides details about a specific Namespace Ingest Time Rule resource in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// Gets detailed information about the specified ingest time rule such as description, defined tags, and free-form tags.
-        /// 
         /// 
         /// ## Example Usage
         /// 

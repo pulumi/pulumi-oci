@@ -125,6 +125,12 @@ func (CompareUserAssessmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*compareUserAssessmentState)(nil)).Elem()
 }
 
+// CompareUserAssessmentExists checks whether an existing CompareUserAssessment resource with the given ID exists.
+func CompareUserAssessmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CompareUserAssessmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/compareUserAssessment:CompareUserAssessment", id, state, "", opts...)
+}
+
 type compareUserAssessmentArgs struct {
 	// The OCID of the user assessment to be compared. You can compare with another user assessment, a latest assessment, or a baseline.
 	ComparisonUserAssessmentId string `pulumi:"comparisonUserAssessmentId"`

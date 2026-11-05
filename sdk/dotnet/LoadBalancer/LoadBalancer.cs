@@ -154,7 +154,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Output<string> IpMode { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Applies to IPV6 LB creation only. 
+        /// (Updatable) Applies to IPV6 LB creation only.
         /// 
         /// Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
         /// 
@@ -265,7 +265,6 @@ namespace Pulumi.Oci.LoadBalancer
 
         /// <summary>
         /// An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -380,7 +379,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<string>? IpMode { get; set; }
 
         /// <summary>
-        /// (Updatable) Applies to IPV6 LB creation only. 
+        /// (Updatable) Applies to IPV6 LB creation only.
         /// 
         /// Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
         /// 
@@ -507,7 +506,6 @@ namespace Pulumi.Oci.LoadBalancer
         /// <summary>
         /// An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -600,7 +598,7 @@ namespace Pulumi.Oci.LoadBalancer
         public Input<string>? IpMode { get; set; }
 
         /// <summary>
-        /// (Updatable) Applies to IPV6 LB creation only. 
+        /// (Updatable) Applies to IPV6 LB creation only.
         /// 
         /// Used to disambiguate which subnet prefix should be used to create an IPv6 LB.
         /// 
@@ -732,7 +730,6 @@ namespace Pulumi.Oci.LoadBalancer
 
         /// <summary>
         /// An array of subnet [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -128,6 +128,12 @@ func (MonitorPluginManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*monitorPluginManagementState)(nil)).Elem()
 }
 
+// MonitorPluginManagementExists checks whether an existing MonitorPluginManagement resource with the given ID exists.
+func MonitorPluginManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MonitorPluginManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:AppMgmtControl/monitorPluginManagement:MonitorPluginManagement", id, state, "", opts...)
+}
+
 type monitorPluginManagementArgs struct {
 	// OCID of monitored instance.
 	//

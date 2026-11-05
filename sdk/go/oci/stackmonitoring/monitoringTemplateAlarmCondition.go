@@ -228,6 +228,12 @@ func (MonitoringTemplateAlarmConditionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*monitoringTemplateAlarmConditionState)(nil)).Elem()
 }
 
+// MonitoringTemplateAlarmConditionExists checks whether an existing MonitoringTemplateAlarmCondition resource with the given ID exists.
+func MonitoringTemplateAlarmConditionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MonitoringTemplateAlarmConditionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:StackMonitoring/monitoringTemplateAlarmCondition:MonitoringTemplateAlarmCondition", id, state, "", opts...)
+}
+
 type monitoringTemplateAlarmConditionArgs struct {
 	// (Updatable) The OCID of the composite resource type like EBS/PEOPLE_SOFT.
 	CompositeType *string `pulumi:"compositeType"`

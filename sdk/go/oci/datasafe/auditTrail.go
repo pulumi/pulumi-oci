@@ -238,6 +238,12 @@ func (AuditTrailState) ElementType() reflect.Type {
 	return reflect.TypeOf((*auditTrailState)(nil)).Elem()
 }
 
+// AuditTrailExists checks whether an existing AuditTrail resource with the given ID exists.
+func AuditTrailExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AuditTrailState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/auditTrail:AuditTrail", id, state, "", opts...)
+}
+
 type auditTrailArgs struct {
 	// The OCID of the audit trail.
 	AuditTrailId string `pulumi:"auditTrailId"`

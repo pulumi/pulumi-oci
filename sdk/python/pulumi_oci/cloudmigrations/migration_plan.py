@@ -609,6 +609,44 @@ class MigrationPlan(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return MigrationPlan(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            calculated_limits: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            migration_id: pulumi.Input[Optional[_builtins.str]] = None,
+            migration_plan_stats: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationPlanMigrationPlanStatArgs', 'MigrationPlanMigrationPlanStatArgsDict', 'outputs.MigrationPlanMigrationPlanStat']]]]] = None,
+            reference_to_rms_stack: pulumi.Input[Optional[_builtins.str]] = None,
+            source_migration_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            strategies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationPlanStrategyArgs', 'MigrationPlanStrategyArgsDict', 'outputs.MigrationPlanStrategy']]]]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_environments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationPlanTargetEnvironmentArgs', 'MigrationPlanTargetEnvironmentArgsDict', 'outputs.MigrationPlanTargetEnvironment']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["calculatedLimits"] = calculated_limits
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["migrationId"] = migration_id
+        __props__["migrationPlanStats"] = migration_plan_stats
+        __props__["referenceToRmsStack"] = reference_to_rms_stack
+        __props__["sourceMigrationPlanId"] = source_migration_plan_id
+        __props__["state"] = state
+        __props__["strategies"] = strategies
+        __props__["systemTags"] = system_tags
+        __props__["targetEnvironments"] = target_environments
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:CloudMigrations/migrationPlan:MigrationPlan', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="calculatedLimits")
     def calculated_limits(self) -> pulumi.Output[Mapping[str, _builtins.str]]:

@@ -231,6 +231,12 @@ func (DrPlanState) ElementType() reflect.Type {
 	return reflect.TypeOf((*drPlanState)(nil)).Elem()
 }
 
+// DrPlanExists checks whether an existing DrPlan resource with the given ID exists.
+func DrPlanExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DrPlanState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DisasterRecovery/drPlan:DrPlan", id, state, "", opts...)
+}
+
 type drPlanArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`

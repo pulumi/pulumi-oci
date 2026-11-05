@@ -80,6 +80,12 @@ func (OracleManagedCustomEndpointState) ElementType() reflect.Type {
 	return reflect.TypeOf((*oracleManagedCustomEndpointState)(nil)).Elem()
 }
 
+// OracleManagedCustomEndpointExists checks whether an existing OracleManagedCustomEndpoint resource with the given ID exists.
+func OracleManagedCustomEndpointExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OracleManagedCustomEndpointState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Integration/oracleManagedCustomEndpoint:OracleManagedCustomEndpoint", id, state, "", opts...)
+}
+
 type oracleManagedCustomEndpointArgs struct {
 	DnsType               *string `pulumi:"dnsType"`
 	DnsZoneName           *string `pulumi:"dnsZoneName"`

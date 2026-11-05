@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Core
         /// Lists the remote peering connections (RPCs) for the specified DRG and compartment
         /// (the RPC's compartment).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Core
         /// Lists the remote peering connections (RPCs) for the specified DRG and compartment
         /// (the RPC's compartment).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -74,7 +72,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the remote peering connections (RPCs) for the specified DRG and compartment
         /// (the RPC's compartment).
-        /// 
         /// 
         /// ## Example Usage
         /// 

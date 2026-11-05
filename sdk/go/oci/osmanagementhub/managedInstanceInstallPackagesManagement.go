@@ -125,6 +125,12 @@ func (ManagedInstanceInstallPackagesManagementState) ElementType() reflect.Type 
 	return reflect.TypeOf((*managedInstanceInstallPackagesManagementState)(nil)).Elem()
 }
 
+// ManagedInstanceInstallPackagesManagementExists checks whether an existing ManagedInstanceInstallPackagesManagement resource with the given ID exists.
+func ManagedInstanceInstallPackagesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedInstanceInstallPackagesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/managedInstanceInstallPackagesManagement:ManagedInstanceInstallPackagesManagement", id, state, "", opts...)
+}
+
 type managedInstanceInstallPackagesManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
 	ManagedInstanceId string `pulumi:"managedInstanceId"`

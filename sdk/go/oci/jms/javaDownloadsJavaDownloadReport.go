@@ -207,6 +207,12 @@ func (JavaDownloadsJavaDownloadReportState) ElementType() reflect.Type {
 	return reflect.TypeOf((*javaDownloadsJavaDownloadReportState)(nil)).Elem()
 }
 
+// JavaDownloadsJavaDownloadReportExists checks whether an existing JavaDownloadsJavaDownloadReport resource with the given ID exists.
+func JavaDownloadsJavaDownloadReportExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *JavaDownloadsJavaDownloadReportState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Jms/javaDownloadsJavaDownloadReport:JavaDownloadsJavaDownloadReport", id, state, "", opts...)
+}
+
 type javaDownloadsJavaDownloadReportArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) here should be the tenancy OCID.
 	CompartmentId string `pulumi:"compartmentId"`

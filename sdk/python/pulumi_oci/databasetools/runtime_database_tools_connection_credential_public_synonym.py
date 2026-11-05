@@ -294,6 +294,18 @@ class RuntimeDatabaseToolsConnectionCredentialPublicSynonym(pulumi.CustomResourc
         __props__.__dict__["key"] = key
         return RuntimeDatabaseToolsConnectionCredentialPublicSynonym(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            credential_key: pulumi.Input[Optional[_builtins.str]] = None,
+            database_tools_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["credentialKey"] = credential_key
+        __props__["databaseToolsConnectionId"] = database_tools_connection_id
+        __props__["key"] = key
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseTools/runtimeDatabaseToolsConnectionCredentialPublicSynonym:RuntimeDatabaseToolsConnectionCredentialPublicSynonym', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="credentialKey")
     def credential_key(self) -> pulumi.Output[_builtins.str]:

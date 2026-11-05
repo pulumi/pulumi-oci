@@ -257,6 +257,12 @@ func (VolumeGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*volumeGroupState)(nil)).Elem()
 }
 
+// VolumeGroupExists checks whether an existing VolumeGroup resource with the given ID exists.
+func VolumeGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VolumeGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/volumeGroup:VolumeGroup", id, state, "", opts...)
+}
+
 type volumeGroupArgs struct {
 	// The availability domain of the volume group.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`

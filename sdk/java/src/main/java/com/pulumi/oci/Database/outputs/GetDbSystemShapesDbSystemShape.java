@@ -127,11 +127,10 @@ public final class GetDbSystemShapesDbSystemShape {
     /**
      * @return Deprecated. Use `name` instead of `shape`.
      * 
-     * @deprecated
-     * The &#39;shape&#39; field has been deprecated. Please use &#39;name&#39; instead.
+     * @deprecated The &#39;shape&#39; field has been deprecated. Please use &#39;name&#39; instead.
      * 
      */
-    @Deprecated /* The 'shape' field has been deprecated. Please use 'name' instead. */
+    @Deprecated
     private String shape;
     /**
      * @return The shapeAttributes of the DB system shape.
@@ -307,11 +306,10 @@ public final class GetDbSystemShapesDbSystemShape {
     /**
      * @return Deprecated. Use `name` instead of `shape`.
      * 
-     * @deprecated
-     * The &#39;shape&#39; field has been deprecated. Please use &#39;name&#39; instead.
+     * @deprecated The &#39;shape&#39; field has been deprecated. Please use &#39;name&#39; instead.
      * 
      */
-    @Deprecated /* The 'shape' field has been deprecated. Please use 'name' instead. */
+    @Deprecated
     public String shape() {
         return this.shape;
     }

@@ -2223,6 +2223,72 @@ class DomainsAppRole(pulumi.CustomResource):
         __props__.__dict__["unique_name"] = unique_name
         return DomainsAppRole(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            admin_role: pulumi.Input[Optional[_builtins.bool]] = None,
+            app: pulumi.Input[Optional[Union['DomainsAppRoleAppArgs', 'DomainsAppRoleAppArgsDict', 'outputs.DomainsAppRoleApp']]] = None,
+            attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            attributes: pulumi.Input[Optional[_builtins.str]] = None,
+            authorization: pulumi.Input[Optional[_builtins.str]] = None,
+            available_to_clients: pulumi.Input[Optional[_builtins.bool]] = None,
+            available_to_groups: pulumi.Input[Optional[_builtins.bool]] = None,
+            available_to_users: pulumi.Input[Optional[_builtins.bool]] = None,
+            compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppRoleIdcsCreatedByArgs', 'DomainsAppRoleIdcsCreatedByArgsDict', 'outputs.DomainsAppRoleIdcsCreatedBy']]]]] = None,
+            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppRoleIdcsLastModifiedByArgs', 'DomainsAppRoleIdcsLastModifiedByArgsDict', 'outputs.DomainsAppRoleIdcsLastModifiedBy']]]]] = None,
+            idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            legacy_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+            limited_to_one_or_more_groups: pulumi.Input[Optional[_builtins.bool]] = None,
+            localized_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppRoleMemberArgs', 'DomainsAppRoleMemberArgsDict', 'outputs.DomainsAppRoleMember']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppRoleMetaArgs', 'DomainsAppRoleMetaArgsDict', 'outputs.DomainsAppRoleMeta']]]]] = None,
+            ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            public: pulumi.Input[Optional[_builtins.bool]] = None,
+            resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsAppRoleTagArgs', 'DomainsAppRoleTagArgsDict', 'outputs.DomainsAppRoleTag']]]]] = None,
+            tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            unique_name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["adminRole"] = admin_role
+        __props__["app"] = app
+        __props__["attributeSets"] = attribute_sets
+        __props__["attributes"] = attributes
+        __props__["authorization"] = authorization
+        __props__["availableToClients"] = available_to_clients
+        __props__["availableToGroups"] = available_to_groups
+        __props__["availableToUsers"] = available_to_users
+        __props__["compartmentOcid"] = compartment_ocid
+        __props__["deleteInProgress"] = delete_in_progress
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["domainOcid"] = domain_ocid
+        __props__["idcsCreatedBies"] = idcs_created_bies
+        __props__["idcsEndpoint"] = idcs_endpoint
+        __props__["idcsLastModifiedBies"] = idcs_last_modified_bies
+        __props__["idcsLastUpgradedInRelease"] = idcs_last_upgraded_in_release
+        __props__["idcsPreventedOperations"] = idcs_prevented_operations
+        __props__["legacyGroupName"] = legacy_group_name
+        __props__["limitedToOneOrMoreGroups"] = limited_to_one_or_more_groups
+        __props__["localizedDisplayName"] = localized_display_name
+        __props__["members"] = members
+        __props__["metas"] = metas
+        __props__["ocid"] = ocid
+        __props__["public"] = public
+        __props__["resourceTypeSchemaVersion"] = resource_type_schema_version
+        __props__["schemas"] = schemas
+        __props__["tags"] = tags
+        __props__["tenancyOcid"] = tenancy_ocid
+        __props__["uniqueName"] = unique_name
+        return pulumi.runtime.exists_resource(None, 'oci:Identity/domainsAppRole:DomainsAppRole', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="adminRole")
     def admin_role(self) -> pulumi.Output[_builtins.bool]:

@@ -723,6 +723,12 @@ func (DomainsMySupportAccountState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsMySupportAccountState)(nil)).Elem()
 }
 
+// DomainsMySupportAccountExists checks whether an existing DomainsMySupportAccount resource with the given ID exists.
+func DomainsMySupportAccountExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsMySupportAccountState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsMySupportAccount:DomainsMySupportAccount", id, state, "", opts...)
+}
+
 type domainsMySupportAccountArgs struct {
 	// The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization *string `pulumi:"authorization"`

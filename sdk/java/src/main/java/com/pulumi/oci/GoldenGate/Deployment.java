@@ -417,11 +417,10 @@ public class Deployment extends com.pulumi.resources.CustomResource {
     /**
      * Deprecated: This field is not updated and will be removed in future versions. If storage utilization exceeds the limit, the respective warning message will appear in deployment messages, which can be accessed through /messages?deploymentId=. Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment&#39;s GoldenGate service.
      * 
-     * @deprecated
-     * The &#39;is_storage_utilization_limit_exceeded&#39; field has been deprecated. It is no longer supported.
+     * @deprecated The &#39;is_storage_utilization_limit_exceeded&#39; field has been deprecated. It is no longer supported.
      * 
      */
-    @Deprecated /* The 'is_storage_utilization_limit_exceeded' field has been deprecated. It is no longer supported. */
+    @Deprecated
     @Export(name="isStorageUtilizationLimitExceeded", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isStorageUtilizationLimitExceeded;
 

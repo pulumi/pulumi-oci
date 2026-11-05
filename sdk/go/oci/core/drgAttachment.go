@@ -215,6 +215,12 @@ func (DrgAttachmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*drgAttachmentState)(nil)).Elem()
 }
 
+// DrgAttachmentExists checks whether an existing DrgAttachment resource with the given ID exists.
+func DrgAttachmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DrgAttachmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/drgAttachment:DrgAttachment", id, state, "", opts...)
+}
+
 type drgAttachmentArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`

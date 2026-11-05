@@ -190,6 +190,12 @@ func (ConsumerGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*consumerGroupState)(nil)).Elem()
 }
 
+// ConsumerGroupExists checks whether an existing ConsumerGroup resource with the given ID exists.
+func ConsumerGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ConsumerGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Queue/consumerGroup:ConsumerGroup", id, state, "", opts...)
+}
+
 type consumerGroupArgs struct {
 	// (Updatable) The filter used by the consumer group. Only messages matching the filter will be available by consumers of the group. The primary consumer group cannot have any filter.
 	ConsumerGroupFilter *string `pulumi:"consumerGroupFilter"`

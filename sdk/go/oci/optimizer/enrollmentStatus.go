@@ -127,6 +127,12 @@ func (EnrollmentStatusState) ElementType() reflect.Type {
 	return reflect.TypeOf((*enrollmentStatusState)(nil)).Elem()
 }
 
+// EnrollmentStatusExists checks whether an existing EnrollmentStatus resource with the given ID exists.
+func EnrollmentStatusExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *EnrollmentStatusState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Optimizer/enrollmentStatus:EnrollmentStatus", id, state, "", opts...)
+}
+
 type enrollmentStatusArgs struct {
 	// The unique OCID associated with the enrollment status.
 	EnrollmentStatusId string `pulumi:"enrollmentStatusId"`

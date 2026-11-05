@@ -268,6 +268,12 @@ func (PluggableDatabasesRemoteCloneState) ElementType() reflect.Type {
 	return reflect.TypeOf((*pluggableDatabasesRemoteCloneState)(nil)).Elem()
 }
 
+// PluggableDatabasesRemoteCloneExists checks whether an existing PluggableDatabasesRemoteClone resource with the given ID exists.
+func PluggableDatabasesRemoteCloneExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PluggableDatabasesRemoteCloneState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/pluggableDatabasesRemoteClone:PluggableDatabasesRemoteClone", id, state, "", opts...)
+}
+
 type pluggableDatabasesRemoteCloneArgs struct {
 	// The name for the pluggable database (PDB). The name is unique in the context of a [container database](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/Database/). The name must begin with an alphabetic character and can contain a maximum of thirty alphanumeric characters. Special characters are not permitted. The pluggable database name should not be same as the container database name.
 	ClonedPdbName string `pulumi:"clonedPdbName"`

@@ -422,6 +422,24 @@ class DatabaseDbmFeaturesManagement(pulumi.CustomResource):
         __props__.__dict__["modify_database_dbm_feature"] = modify_database_dbm_feature
         return DatabaseDbmFeaturesManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            can_disable_all_pdbs: pulumi.Input[Optional[_builtins.bool]] = None,
+            database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_database_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
+            feature: pulumi.Input[Optional[_builtins.str]] = None,
+            feature_details: pulumi.Input[Optional[Union['DatabaseDbmFeaturesManagementFeatureDetailsArgs', 'DatabaseDbmFeaturesManagementFeatureDetailsArgsDict', 'outputs.DatabaseDbmFeaturesManagementFeatureDetails']]] = None,
+            modify_database_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["canDisableAllPdbs"] = can_disable_all_pdbs
+        __props__["databaseId"] = database_id
+        __props__["enableDatabaseDbmFeature"] = enable_database_dbm_feature
+        __props__["feature"] = feature
+        __props__["featureDetails"] = feature_details
+        __props__["modifyDatabaseDbmFeature"] = modify_database_dbm_feature
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseManagement/databaseDbmFeaturesManagement:DatabaseDbmFeaturesManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="canDisableAllPdbs")
     def can_disable_all_pdbs(self) -> pulumi.Output[Optional[_builtins.bool]]:

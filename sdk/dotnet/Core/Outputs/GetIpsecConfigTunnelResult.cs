@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class GetIpsecConfigTunnelResult
     {
         /// <summary>
-        /// The IP address of Oracle's VPN headend.  Example: `203.0.113.50 `
+        /// The IP address of Oracle's VPN headend.  Example: ` 203.0.113.50  `
         /// </summary>
         public readonly string IpAddress;
         /// <summary>

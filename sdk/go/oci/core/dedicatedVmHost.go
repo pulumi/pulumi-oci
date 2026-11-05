@@ -256,6 +256,12 @@ func (DedicatedVmHostState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dedicatedVmHostState)(nil)).Elem()
 }
 
+// DedicatedVmHostExists checks whether an existing DedicatedVmHost resource with the given ID exists.
+func DedicatedVmHostExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DedicatedVmHostState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/dedicatedVmHost:DedicatedVmHost", id, state, "", opts...)
+}
+
 type dedicatedVmHostArgs struct {
 	// The availability domain of the dedicated virtual machine host.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`

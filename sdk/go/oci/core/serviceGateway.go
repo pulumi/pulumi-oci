@@ -217,6 +217,12 @@ func (ServiceGatewayState) ElementType() reflect.Type {
 	return reflect.TypeOf((*serviceGatewayState)(nil)).Elem()
 }
 
+// ServiceGatewayExists checks whether an existing ServiceGateway resource with the given ID exists.
+func ServiceGatewayExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ServiceGatewayState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/serviceGateway:ServiceGateway", id, state, "", opts...)
+}
+
 type serviceGatewayArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the service gateway.
 	CompartmentId string `pulumi:"compartmentId"`

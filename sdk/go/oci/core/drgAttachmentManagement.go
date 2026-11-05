@@ -233,6 +233,12 @@ func (DrgAttachmentManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*drgAttachmentManagementState)(nil)).Elem()
 }
 
+// DrgAttachmentManagementExists checks whether an existing DrgAttachmentManagement resource with the given ID exists.
+func DrgAttachmentManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DrgAttachmentManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/drgAttachmentManagement:DrgAttachmentManagement", id, state, "", opts...)
+}
+
 type drgAttachmentManagementArgs struct {
 	// The type for the network resource attached to the DRG.
 	AttachmentType string `pulumi:"attachmentType"`

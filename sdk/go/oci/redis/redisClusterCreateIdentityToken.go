@@ -142,6 +142,12 @@ func (RedisClusterCreateIdentityTokenState) ElementType() reflect.Type {
 	return reflect.TypeOf((*redisClusterCreateIdentityTokenState)(nil)).Elem()
 }
 
+// RedisClusterCreateIdentityTokenExists checks whether an existing RedisClusterCreateIdentityToken resource with the given ID exists.
+func RedisClusterCreateIdentityTokenExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RedisClusterCreateIdentityTokenState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Redis/redisClusterCreateIdentityToken:RedisClusterCreateIdentityToken", id, state, "", opts...)
+}
+
 type redisClusterCreateIdentityTokenArgs struct {
 	DefinedTags  map[string]string `pulumi:"definedTags"`
 	FreeformTags map[string]string `pulumi:"freeformTags"`

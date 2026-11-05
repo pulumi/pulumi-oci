@@ -181,6 +181,12 @@ func (JavaDownloadsJavaLicenseAcceptanceRecordState) ElementType() reflect.Type 
 	return reflect.TypeOf((*javaDownloadsJavaLicenseAcceptanceRecordState)(nil)).Elem()
 }
 
+// JavaDownloadsJavaLicenseAcceptanceRecordExists checks whether an existing JavaDownloadsJavaLicenseAcceptanceRecord resource with the given ID exists.
+func JavaDownloadsJavaLicenseAcceptanceRecordExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *JavaDownloadsJavaLicenseAcceptanceRecordState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Jms/javaDownloadsJavaLicenseAcceptanceRecord:JavaDownloadsJavaLicenseAcceptanceRecord", id, state, "", opts...)
+}
+
 type javaDownloadsJavaLicenseAcceptanceRecordArgs struct {
 	// The tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user accepting the license.
 	CompartmentId string `pulumi:"compartmentId"`

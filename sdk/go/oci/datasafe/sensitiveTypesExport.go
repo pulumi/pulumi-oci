@@ -186,6 +186,12 @@ func (SensitiveTypesExportState) ElementType() reflect.Type {
 	return reflect.TypeOf((*sensitiveTypesExportState)(nil)).Elem()
 }
 
+// SensitiveTypesExportExists checks whether an existing SensitiveTypesExport resource with the given ID exists.
+func SensitiveTypesExportExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SensitiveTypesExportState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/sensitiveTypesExport:SensitiveTypesExport", id, state, "", opts...)
+}
+
 type sensitiveTypesExportArgs struct {
 	// (Updatable) The OCID of the compartment where the sensitive types export should be created.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// Lists pre-authenticated requests for the bucket.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// 
         /// Lists pre-authenticated requests for the bucket.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// This data source provides the list of Preauthenticated Requests in Oracle Cloud Infrastructure Object Storage service.
         /// 
         /// Lists pre-authenticated requests for the bucket.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Functions
         /// Fetches a wrapped list of all FunctionsRuntimes. Returns a FunctionsRuntimeCollection containing
         /// an array of FunctionsRuntimeSummary response models.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.Functions
         /// Fetches a wrapped list of all FunctionsRuntimes. Returns a FunctionsRuntimeCollection containing
         /// an array of FunctionsRuntimeSummary response models.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -84,7 +82,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// Fetches a wrapped list of all FunctionsRuntimes. Returns a FunctionsRuntimeCollection containing
         /// an array of FunctionsRuntimeSummary response models.
-        /// 
         /// 
         /// ## Example Usage
         /// 

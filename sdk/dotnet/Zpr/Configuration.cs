@@ -107,7 +107,6 @@ namespace Pulumi.Oci.Zpr
         /// <summary>
         /// The enabled or disabled status of ZPR in the tenancy.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -193,7 +192,6 @@ namespace Pulumi.Oci.Zpr
         /// <summary>
         /// The enabled or disabled status of ZPR in the tenancy.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -276,7 +274,6 @@ namespace Pulumi.Oci.Zpr
 
         /// <summary>
         /// The enabled or disabled status of ZPR in the tenancy.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

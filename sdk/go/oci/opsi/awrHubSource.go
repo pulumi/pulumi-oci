@@ -257,6 +257,12 @@ func (AwrHubSourceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*awrHubSourceState)(nil)).Elem()
 }
 
+// AwrHubSourceExists checks whether an existing AwrHubSource resource with the given ID exists.
+func AwrHubSourceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AwrHubSourceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Opsi/awrHubSource:AwrHubSource", id, state, "", opts...)
+}
+
 type awrHubSourceArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database id.
 	AssociatedOpsiId *string `pulumi:"associatedOpsiId"`

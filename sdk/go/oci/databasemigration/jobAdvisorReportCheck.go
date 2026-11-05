@@ -146,6 +146,12 @@ func (JobAdvisorReportCheckState) ElementType() reflect.Type {
 	return reflect.TypeOf((*jobAdvisorReportCheckState)(nil)).Elem()
 }
 
+// JobAdvisorReportCheckExists checks whether an existing JobAdvisorReportCheck resource with the given ID exists.
+func JobAdvisorReportCheckExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *JobAdvisorReportCheckState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseMigration/jobAdvisorReportCheck:JobAdvisorReportCheck", id, state, "", opts...)
+}
+
 type jobAdvisorReportCheckArgs struct {
 	// The ID of the advisor check
 	AdvisorReportCheckId string `pulumi:"advisorReportCheckId"`

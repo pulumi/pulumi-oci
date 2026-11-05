@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Dns
         /// 
         /// The results are sorted by `recordHash` by default. When accessing a private zone by name, the `ViewId` parameter is required.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.Dns
         /// 
         /// The results are sorted by `recordHash` by default. When accessing a private zone by name, the `ViewId` parameter is required.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -81,7 +79,6 @@ namespace Pulumi.Oci.Dns
         /// Gets a list of all records in the specified RRSet.
         /// 
         /// The results are sorted by `recordHash` by default. When accessing a private zone by name, the `ViewId` parameter is required.
-        /// 
         /// 
         /// ## Example Usage
         /// 

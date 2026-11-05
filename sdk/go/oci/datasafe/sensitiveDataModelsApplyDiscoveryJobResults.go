@@ -68,6 +68,12 @@ func (SensitiveDataModelsApplyDiscoveryJobResultsState) ElementType() reflect.Ty
 	return reflect.TypeOf((*sensitiveDataModelsApplyDiscoveryJobResultsState)(nil)).Elem()
 }
 
+// SensitiveDataModelsApplyDiscoveryJobResultsExists checks whether an existing SensitiveDataModelsApplyDiscoveryJobResults resource with the given ID exists.
+func SensitiveDataModelsApplyDiscoveryJobResultsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SensitiveDataModelsApplyDiscoveryJobResultsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/sensitiveDataModelsApplyDiscoveryJobResults:SensitiveDataModelsApplyDiscoveryJobResults", id, state, "", opts...)
+}
+
 type sensitiveDataModelsApplyDiscoveryJobResultsArgs struct {
 	DiscoveryJobId       string `pulumi:"discoveryJobId"`
 	SensitiveDataModelId string `pulumi:"sensitiveDataModelId"`

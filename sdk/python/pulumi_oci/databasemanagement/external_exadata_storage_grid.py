@@ -550,6 +550,46 @@ class ExternalExadataStorageGrid(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return ExternalExadataStorageGrid(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            additional_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_exadata_storage_grid_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            internal_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            server_count: pulumi.Input[Optional[_builtins.float]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalExadataStorageGridStorageServerArgs', 'ExternalExadataStorageGridStorageServerArgsDict', 'outputs.ExternalExadataStorageGridStorageServer']]]]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["additionalDetails"] = additional_details
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["exadataInfrastructureId"] = exadata_infrastructure_id
+        __props__["externalExadataStorageGridId"] = external_exadata_storage_grid_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["internalId"] = internal_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["resourceType"] = resource_type
+        __props__["serverCount"] = server_count
+        __props__["state"] = state
+        __props__["status"] = status
+        __props__["storageServers"] = storage_servers
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseManagement/externalExadataStorageGrid:ExternalExadataStorageGrid', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="additionalDetails")
     def additional_details(self) -> pulumi.Output[Mapping[str, _builtins.str]]:

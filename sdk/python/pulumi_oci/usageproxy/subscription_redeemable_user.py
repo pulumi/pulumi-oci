@@ -345,6 +345,20 @@ class SubscriptionRedeemableUser(pulumi.CustomResource):
         __props__.__dict__["user_id"] = user_id
         return SubscriptionRedeemableUser(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubscriptionRedeemableUserItemArgs', 'SubscriptionRedeemableUserItemArgsDict', 'outputs.SubscriptionRedeemableUserItem']]]]] = None,
+            subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            user_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["items"] = items
+        __props__["subscriptionId"] = subscription_id
+        __props__["tenancyId"] = tenancy_id
+        __props__["userId"] = user_id
+        return pulumi.runtime.exists_resource(None, 'oci:UsageProxy/subscriptionRedeemableUser:SubscriptionRedeemableUser', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def items(self) -> pulumi.Output[Sequence['outputs.SubscriptionRedeemableUserItem']]:

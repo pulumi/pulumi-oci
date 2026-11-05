@@ -196,6 +196,12 @@ func (TargetDatabasePeerTargetDatabaseState) ElementType() reflect.Type {
 	return reflect.TypeOf((*targetDatabasePeerTargetDatabaseState)(nil)).Elem()
 }
 
+// TargetDatabasePeerTargetDatabaseExists checks whether an existing TargetDatabasePeerTargetDatabase resource with the given ID exists.
+func TargetDatabasePeerTargetDatabaseExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *TargetDatabasePeerTargetDatabaseState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase", id, state, "", opts...)
+}
+
 type targetDatabasePeerTargetDatabaseArgs struct {
 	// (Updatable) Details of the database for the registration in Data Safe.
 	DatabaseDetails TargetDatabasePeerTargetDatabaseDatabaseDetails `pulumi:"databaseDetails"`

@@ -86,8 +86,7 @@ namespace Pulumi.Oci.FileStorage
         public Output<string> PrincipalType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The value of the quota rule. The unit is Gigabyte. 
-        /// 
+        /// (Updatable) The value of the quota rule. The unit is Gigabyte.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -190,8 +189,7 @@ namespace Pulumi.Oci.FileStorage
         public Input<string> PrincipalType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The value of the quota rule. The unit is Gigabyte. 
-        /// 
+        /// (Updatable) The value of the quota rule. The unit is Gigabyte.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -244,8 +242,7 @@ namespace Pulumi.Oci.FileStorage
         public Input<string>? PrincipalType { get; set; }
 
         /// <summary>
-        /// (Updatable) The value of the quota rule. The unit is Gigabyte. 
-        /// 
+        /// (Updatable) The value of the quota rule. The unit is Gigabyte.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

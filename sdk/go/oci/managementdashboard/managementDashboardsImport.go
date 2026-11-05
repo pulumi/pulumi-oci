@@ -135,6 +135,12 @@ func (ManagementDashboardsImportState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managementDashboardsImportState)(nil)).Elem()
 }
 
+// ManagementDashboardsImportExists checks whether an existing ManagementDashboardsImport resource with the given ID exists.
+func ManagementDashboardsImportExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagementDashboardsImportState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ManagementDashboard/managementDashboardsImport:ManagementDashboardsImport", id, state, "", opts...)
+}
+
 type managementDashboardsImportArgs struct {
 	ImportDetails     *string `pulumi:"importDetails"`
 	ImportDetailsFile *string `pulumi:"importDetailsFile"`

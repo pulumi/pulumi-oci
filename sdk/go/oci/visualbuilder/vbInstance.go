@@ -221,6 +221,12 @@ func (VbInstanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*vbInstanceState)(nil)).Elem()
 }
 
+// VbInstanceExists checks whether an existing VbInstance resource with the given ID exists.
+func VbInstanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VbInstanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:VisualBuilder/vbInstance:VbInstance", id, state, "", opts...)
+}
+
 type vbInstanceArgs struct {
 	// (Updatable) A list of alternate custom endpoints to be used for the vb instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
 	AlternateCustomEndpoints []VbInstanceAlternateCustomEndpoint `pulumi:"alternateCustomEndpoints"`

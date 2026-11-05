@@ -134,6 +134,12 @@ func (ResourceAnalyticsResourceAnalyticsInstanceOacManagementState) ElementType(
 	return reflect.TypeOf((*resourceAnalyticsResourceAnalyticsInstanceOacManagementState)(nil)).Elem()
 }
 
+// ResourceAnalyticsResourceAnalyticsInstanceOacManagementExists checks whether an existing ResourceAnalyticsResourceAnalyticsInstanceOacManagement resource with the given ID exists.
+func ResourceAnalyticsResourceAnalyticsInstanceOacManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ResourceAnalyticsResourceAnalyticsInstanceOacManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/resourceAnalyticsResourceAnalyticsInstanceOacManagement:ResourceAnalyticsResourceAnalyticsInstanceOacManagement", id, state, "", opts...)
+}
+
 type resourceAnalyticsResourceAnalyticsInstanceOacManagementArgs struct {
 	// Additional details needed when attaching the OAC instance.  Example: `{"idcsDomainId":"ocid...","networkDetails":{...}, ...}`
 	AttachmentDetails *ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails `pulumi:"attachmentDetails"`

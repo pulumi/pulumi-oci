@@ -809,6 +809,46 @@ class OccmDemandSignalItem(pulumi.CustomResource):
         __props__.__dict__["time_needed_before"] = time_needed_before
         return OccmDemandSignalItem(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            demand_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+            demand_signal_catalog_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            demand_signal_id: pulumi.Input[Optional[_builtins.str]] = None,
+            demand_signal_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            notes: pulumi.Input[Optional[_builtins.str]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            request_type: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_name_: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_needed_before: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availabilityDomain"] = availability_domain
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["demandQuantity"] = demand_quantity
+        __props__["demandSignalCatalogResourceId"] = demand_signal_catalog_resource_id
+        __props__["demandSignalId"] = demand_signal_id
+        __props__["demandSignalNamespace"] = demand_signal_namespace
+        __props__["freeformTags"] = freeform_tags
+        __props__["notes"] = notes
+        __props__["region"] = region
+        __props__["requestType"] = request_type
+        __props__["resourceName"] = resource_name_
+        __props__["resourceProperties"] = resource_properties
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["targetCompartmentId"] = target_compartment_id
+        __props__["timeNeededBefore"] = time_needed_before
+        return pulumi.runtime.exists_resource(None, 'oci:CapacityManagement/occmDemandSignalItem:OccmDemandSignalItem', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[_builtins.str]:

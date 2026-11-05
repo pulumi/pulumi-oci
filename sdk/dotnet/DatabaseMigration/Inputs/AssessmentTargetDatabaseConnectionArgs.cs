@@ -39,7 +39,6 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         /// <summary>
         /// (Updatable) The technology type.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

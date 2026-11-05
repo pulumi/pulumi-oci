@@ -201,6 +201,12 @@ func (BatchBatchTaskProfileState) ElementType() reflect.Type {
 	return reflect.TypeOf((*batchBatchTaskProfileState)(nil)).Elem()
 }
 
+// BatchBatchTaskProfileExists checks whether an existing BatchBatchTaskProfile resource with the given ID exists.
+func BatchBatchTaskProfileExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BatchBatchTaskProfileState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/batchBatchTaskProfile:BatchBatchTaskProfile", id, state, "", opts...)
+}
+
 type batchBatchTaskProfileArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

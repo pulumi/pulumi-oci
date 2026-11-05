@@ -612,6 +612,56 @@ class DiscoveryJobsResult(pulumi.CustomResource):
         __props__.__dict__["sensitive_type_id"] = sensitive_type_id
         return DiscoveryJobsResult(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            app_defined_child_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            app_name: pulumi.Input[Optional[_builtins.str]] = None,
+            column_name: pulumi.Input[Optional[_builtins.str]] = None,
+            confidence_level: pulumi.Input[Optional[_builtins.str]] = None,
+            confidence_level_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DiscoveryJobsResultConfidenceLevelDetailArgs', 'DiscoveryJobsResultConfidenceLevelDetailArgsDict', 'outputs.DiscoveryJobsResultConfidenceLevelDetail']]]]] = None,
+            data_type: pulumi.Input[Optional[_builtins.str]] = None,
+            db_defined_child_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            discovery_job_id: pulumi.Input[Optional[_builtins.str]] = None,
+            discovery_type: pulumi.Input[Optional[_builtins.str]] = None,
+            estimated_data_value_count: pulumi.Input[Optional[_builtins.str]] = None,
+            is_result_applied: pulumi.Input[Optional[_builtins.bool]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            modified_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DiscoveryJobsResultModifiedAttributeArgs', 'DiscoveryJobsResultModifiedAttributeArgsDict', 'outputs.DiscoveryJobsResultModifiedAttribute']]]]] = None,
+            object: pulumi.Input[Optional[_builtins.str]] = None,
+            object_type: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            planned_action: pulumi.Input[Optional[_builtins.str]] = None,
+            relation_type: pulumi.Input[Optional[_builtins.str]] = None,
+            sample_data_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            schema_name: pulumi.Input[Optional[_builtins.str]] = None,
+            sensitive_columnkey: pulumi.Input[Optional[_builtins.str]] = None,
+            sensitive_type_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["appDefinedChildColumnKeys"] = app_defined_child_column_keys
+        __props__["appName"] = app_name
+        __props__["columnName"] = column_name
+        __props__["confidenceLevel"] = confidence_level
+        __props__["confidenceLevelDetails"] = confidence_level_details
+        __props__["dataType"] = data_type
+        __props__["dbDefinedChildColumnKeys"] = db_defined_child_column_keys
+        __props__["discoveryJobId"] = discovery_job_id
+        __props__["discoveryType"] = discovery_type
+        __props__["estimatedDataValueCount"] = estimated_data_value_count
+        __props__["isResultApplied"] = is_result_applied
+        __props__["key"] = key
+        __props__["modifiedAttributes"] = modified_attributes
+        __props__["object"] = object
+        __props__["objectType"] = object_type
+        __props__["parentColumnKeys"] = parent_column_keys
+        __props__["plannedAction"] = planned_action
+        __props__["relationType"] = relation_type
+        __props__["sampleDataValues"] = sample_data_values
+        __props__["schemaName"] = schema_name
+        __props__["sensitiveColumnkey"] = sensitive_columnkey
+        __props__["sensitiveTypeId"] = sensitive_type_id
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/discoveryJobsResult:DiscoveryJobsResult', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="appDefinedChildColumnKeys")
     def app_defined_child_column_keys(self) -> pulumi.Output[Sequence[_builtins.str]]:

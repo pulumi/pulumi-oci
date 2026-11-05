@@ -17,20 +17,18 @@ public final class DefaultRouteTableRouteRuleArgs extends com.pulumi.resources.R
     public static final DefaultRouteTableRouteRuleArgs Empty = new DefaultRouteTableRouteRuleArgs();
 
     /**
-     * @deprecated
-     * The &#39;cidr_block&#39; field has been deprecated. Please use &#39;destination&#39; instead.
+     * @deprecated The &#39;cidr_block&#39; field has been deprecated. Please use &#39;destination&#39; instead.
      * 
      */
-    @Deprecated /* The 'cidr_block' field has been deprecated. Please use 'destination' instead. */
+    @Deprecated
     @Import(name="cidrBlock")
     private @Nullable Output<String> cidrBlock;
 
     /**
-     * @deprecated
-     * The &#39;cidr_block&#39; field has been deprecated. Please use &#39;destination&#39; instead.
+     * @deprecated The &#39;cidr_block&#39; field has been deprecated. Please use &#39;destination&#39; instead.
      * 
      */
-    @Deprecated /* The 'cidr_block' field has been deprecated. Please use 'destination' instead. */
+    @Deprecated
     public Optional<Output<String>> cidrBlock() {
         return Optional.ofNullable(this.cidrBlock);
     }
@@ -102,11 +100,10 @@ public final class DefaultRouteTableRouteRuleArgs extends com.pulumi.resources.R
         /**
          * @return builder
          * 
-         * @deprecated
-         * The &#39;cidr_block&#39; field has been deprecated. Please use &#39;destination&#39; instead.
+         * @deprecated The &#39;cidr_block&#39; field has been deprecated. Please use &#39;destination&#39; instead.
          * 
          */
-        @Deprecated /* The 'cidr_block' field has been deprecated. Please use 'destination' instead. */
+        @Deprecated
         public Builder cidrBlock(@Nullable Output<String> cidrBlock) {
             $.cidrBlock = cidrBlock;
             return this;
@@ -115,11 +112,10 @@ public final class DefaultRouteTableRouteRuleArgs extends com.pulumi.resources.R
         /**
          * @return builder
          * 
-         * @deprecated
-         * The &#39;cidr_block&#39; field has been deprecated. Please use &#39;destination&#39; instead.
+         * @deprecated The &#39;cidr_block&#39; field has been deprecated. Please use &#39;destination&#39; instead.
          * 
          */
-        @Deprecated /* The 'cidr_block' field has been deprecated. Please use 'destination' instead. */
+        @Deprecated
         public Builder cidrBlock(String cidrBlock) {
             return cidrBlock(Output.of(cidrBlock));
         }

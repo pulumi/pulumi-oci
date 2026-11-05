@@ -168,6 +168,12 @@ func (StreamSourceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*streamSourceState)(nil)).Elem()
 }
 
+// StreamSourceExists checks whether an existing StreamSource resource with the given ID exists.
+func StreamSourceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *StreamSourceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:AiVision/streamSource:StreamSource", id, state, "", opts...)
+}
+
 type streamSourceArgs struct {
 	// (Updatable) [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of compartment
 	CompartmentId string `pulumi:"compartmentId"`

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// Returns a list of MlApplicationsInstances.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// Returns a list of MlApplicationsInstances.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.DataScience
         /// This data source provides the list of Ml Application Instances in Oracle Cloud Infrastructure Data Science service.
         /// 
         /// Returns a list of MlApplicationsInstances.
-        /// 
         /// 
         /// ## Example Usage
         /// 

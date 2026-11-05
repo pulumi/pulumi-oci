@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Retrieve lines of a specified file. Supports starting line number and limit.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Retrieve lines of a specified file. Supports starting line number and limit.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.DevOps
         /// This data source provides details about a specific Repo File Line resource in Oracle Cloud Infrastructure Devops service.
         /// 
         /// Retrieve lines of a specified file. Supports starting line number and limit.
-        /// 
         /// 
         /// ## Example Usage
         /// 

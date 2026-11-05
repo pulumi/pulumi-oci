@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// Returns the terms of use agreements that must be accepted before you can deploy the specified version of a package.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// Returns the terms of use agreements that must be accepted before you can deploy the specified version of a package.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.Marketplace
         /// This data source provides the list of Listing Package Agreements in Oracle Cloud Infrastructure Marketplace service.
         /// 
         /// Returns the terms of use agreements that must be accepted before you can deploy the specified version of a package.
-        /// 
         /// 
         /// ## Example Usage
         /// 

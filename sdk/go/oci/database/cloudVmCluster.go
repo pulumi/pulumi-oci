@@ -657,6 +657,12 @@ func (CloudVmClusterState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudVmClusterState)(nil)).Elem()
 }
 
+// CloudVmClusterExists checks whether an existing CloudVmCluster resource with the given ID exists.
+func CloudVmClusterExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudVmClusterState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/cloudVmCluster:CloudVmCluster", id, state, "", opts...)
+}
+
 type cloudVmClusterArgs struct {
 	// (Updatable) A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
 	BackupNetworkNsgIds []string `pulumi:"backupNetworkNsgIds"`

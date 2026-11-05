@@ -172,6 +172,12 @@ func (CloudDbHomeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudDbHomeState)(nil)).Elem()
 }
 
+// CloudDbHomeExists checks whether an existing CloudDbHome resource with the given ID exists.
+func CloudDbHomeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudDbHomeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/cloudDbHome:CloudDbHome", id, state, "", opts...)
+}
+
 type cloudDbHomeArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud database home.
 	CloudDbHomeId string `pulumi:"cloudDbHomeId"`

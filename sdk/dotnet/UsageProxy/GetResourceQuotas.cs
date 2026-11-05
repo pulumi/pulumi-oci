@@ -17,7 +17,6 @@ namespace Pulumi.Oci.UsageProxy
         /// Returns the resource quota details under a tenancy
         /// &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.UsageProxy
         /// Returns the resource quota details under a tenancy
         /// &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -76,7 +74,6 @@ namespace Pulumi.Oci.UsageProxy
         /// 
         /// Returns the resource quota details under a tenancy
         /// &gt; **Important**: Calls to this API will only succeed against the endpoint in the home region.
-        /// 
         /// 
         /// ## Example Usage
         /// 

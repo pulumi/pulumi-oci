@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Database
         /// Gets a list of supported Autonomous AI Database versions. Note that preview version software is only available for
         /// Autonomous AI Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Database
         /// Gets a list of supported Autonomous AI Database versions. Note that preview version software is only available for
         /// Autonomous AI Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -72,7 +70,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of supported Autonomous AI Database versions. Note that preview version software is only available for
         /// Autonomous AI Database Serverless (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) databases.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -432,6 +432,28 @@ class BdsInstanceBdsCapacityReservationConfiguration(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return BdsInstanceBdsCapacityReservationConfiguration(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            activate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            bds_capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+            bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            deactivate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["activateTrigger"] = activate_trigger
+        __props__["bdsCapacityReservationId"] = bds_capacity_reservation_id
+        __props__["bdsInstanceId"] = bds_instance_id
+        __props__["deactivateTrigger"] = deactivate_trigger
+        __props__["displayName"] = display_name
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:BigDataService/bdsInstanceBdsCapacityReservationConfiguration:BdsInstanceBdsCapacityReservationConfiguration', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="activateTrigger")
     def activate_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:

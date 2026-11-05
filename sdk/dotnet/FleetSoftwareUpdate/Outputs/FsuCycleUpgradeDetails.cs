@@ -34,8 +34,7 @@ namespace Pulumi.Oci.FleetSoftwareUpdate.Outputs
         /// </summary>
         public readonly bool? IsTimeZoneUpgrade;
         /// <summary>
-        /// (Updatable) Service drain timeout specified in seconds. 
-        /// 
+        /// (Updatable) Service drain timeout specified in seconds.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -168,6 +168,12 @@ func (SubsetDataState) ElementType() reflect.Type {
 	return reflect.TypeOf((*subsetDataState)(nil)).Elem()
 }
 
+// SubsetDataExists checks whether an existing SubsetData resource with the given ID exists.
+func SubsetDataExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SubsetDataState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/subsetData:SubsetData", id, state, "", opts...)
+}
+
 type subsetDataArgs struct {
 	// Whether redo logging is enabled during the subsetting operation.
 	IsRedoLoggingEnabled *bool `pulumi:"isRedoLoggingEnabled"`

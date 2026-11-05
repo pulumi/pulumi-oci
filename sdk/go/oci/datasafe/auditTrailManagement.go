@@ -244,6 +244,12 @@ func (AuditTrailManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*auditTrailManagementState)(nil)).Elem()
 }
 
+// AuditTrailManagementExists checks whether an existing AuditTrailManagement resource with the given ID exists.
+func AuditTrailManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AuditTrailManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/auditTrailManagement:AuditTrailManagement", id, state, "", opts...)
+}
+
 type auditTrailManagementArgs struct {
 	// The date from which the audit trail must start collecting data, in the format defined by RFC3339. It is a required field when startTrigger is set.
 	//

@@ -287,6 +287,12 @@ func (TargetDatabaseState) ElementType() reflect.Type {
 	return reflect.TypeOf((*targetDatabaseState)(nil)).Elem()
 }
 
+// TargetDatabaseExists checks whether an existing TargetDatabase resource with the given ID exists.
+func TargetDatabaseExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *TargetDatabaseState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/targetDatabase:TargetDatabase", id, state, "", opts...)
+}
+
 type targetDatabaseArgs struct {
 	// (Updatable) The OCID of the compartment in which to create the Data Safe target database.
 	CompartmentId string `pulumi:"compartmentId"`

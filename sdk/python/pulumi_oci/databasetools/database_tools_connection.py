@@ -1079,6 +1079,60 @@ class DatabaseToolsConnection(pulumi.CustomResource):
         __props__.__dict__["user_password"] = user_password
         return DatabaseToolsConnection(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            advanced_properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            authentication_type: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_string: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            key_stores: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsConnectionKeyStoreArgs', 'DatabaseToolsConnectionKeyStoreArgsDict', 'outputs.DatabaseToolsConnectionKeyStore']]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsConnectionLockArgs', 'DatabaseToolsConnectionLockArgsDict', 'outputs.DatabaseToolsConnectionLock']]]]] = None,
+            private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+            proxy_client: pulumi.Input[Optional[Union['DatabaseToolsConnectionProxyClientArgs', 'DatabaseToolsConnectionProxyClientArgsDict', 'outputs.DatabaseToolsConnectionProxyClient']]] = None,
+            related_resource: pulumi.Input[Optional[Union['DatabaseToolsConnectionRelatedResourceArgs', 'DatabaseToolsConnectionRelatedResourceArgsDict', 'outputs.DatabaseToolsConnectionRelatedResource']]] = None,
+            runtime_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            runtime_identity: pulumi.Input[Optional[_builtins.str]] = None,
+            runtime_support: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            url: pulumi.Input[Optional[_builtins.str]] = None,
+            user_name: pulumi.Input[Optional[_builtins.str]] = None,
+            user_password: pulumi.Input[Optional[Union['DatabaseToolsConnectionUserPasswordArgs', 'DatabaseToolsConnectionUserPasswordArgsDict', 'outputs.DatabaseToolsConnectionUserPassword']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["advancedProperties"] = advanced_properties
+        __props__["authenticationType"] = authentication_type
+        __props__["compartmentId"] = compartment_id
+        __props__["connectionString"] = connection_string
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["keyStores"] = key_stores
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["locks"] = locks
+        __props__["privateEndpointId"] = private_endpoint_id
+        __props__["proxyClient"] = proxy_client
+        __props__["relatedResource"] = related_resource
+        __props__["runtimeEndpoint"] = runtime_endpoint
+        __props__["runtimeIdentity"] = runtime_identity
+        __props__["runtimeSupport"] = runtime_support
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["type"] = type
+        __props__["url"] = url
+        __props__["userName"] = user_name
+        __props__["userPassword"] = user_password
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="advancedProperties")
     def advanced_properties(self) -> pulumi.Output[Mapping[str, _builtins.str]]:

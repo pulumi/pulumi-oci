@@ -251,6 +251,12 @@ func (MonitoringTemplateState) ElementType() reflect.Type {
 	return reflect.TypeOf((*monitoringTemplateState)(nil)).Elem()
 }
 
+// MonitoringTemplateExists checks whether an existing MonitoringTemplate resource with the given ID exists.
+func MonitoringTemplateExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MonitoringTemplateState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:StackMonitoring/monitoringTemplate:MonitoringTemplate", id, state, "", opts...)
+}
+
 type monitoringTemplateArgs struct {
 	// The OCID of the compartment containing the monitoringTemplate.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -184,6 +184,12 @@ func (DataFileState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dataFileState)(nil)).Elem()
 }
 
+// DataFileExists checks whether an existing DataFile resource with the given ID exists.
+func DataFileExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DataFileState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ApmConfig/dataFile:DataFile", id, state, "", opts...)
+}
+
 type dataFileArgs struct {
 	// (Updatable) The APM Domain ID the request is intended for.
 	ApmDomainId string `pulumi:"apmDomainId"`

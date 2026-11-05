@@ -89,8 +89,7 @@ namespace Pulumi.Oci.DataScience
         public Output<string> TrainingId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
-        /// 
+        /// (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -181,8 +180,7 @@ namespace Pulumi.Oci.DataScience
         public Input<string>? TrainingId { get; set; }
 
         /// <summary>
-        /// (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
-        /// 
+        /// (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -235,8 +233,7 @@ namespace Pulumi.Oci.DataScience
         public Input<string>? TrainingId { get; set; }
 
         /// <summary>
-        /// (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained." 
-        /// 
+        /// (Updatable) For model reproducibility purposes. Path to the python script or notebook in which the model was trained."
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DelegateAccessControl
         /// 
         /// Returns a history of all status associated with the Delegated Resource Access RequestId.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.DelegateAccessControl
         /// 
         /// Returns a history of all status associated with the Delegated Resource Access RequestId.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.DelegateAccessControl
         /// This data source provides the list of Delegated Resource Access Request Histories in Oracle Cloud Infrastructure Delegate Access Control service.
         /// 
         /// Returns a history of all status associated with the Delegated Resource Access RequestId.
-        /// 
         /// 
         /// ## Example Usage
         /// 

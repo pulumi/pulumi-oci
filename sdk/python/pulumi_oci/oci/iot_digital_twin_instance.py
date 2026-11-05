@@ -749,6 +749,44 @@ class IotDigitalTwinInstance(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return IotDigitalTwinInstance(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            auth_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connectivity_type: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            digital_twin_adapter_id: pulumi.Input[Optional[_builtins.str]] = None,
+            digital_twin_model_id: pulumi.Input[Optional[_builtins.str]] = None,
+            digital_twin_model_spec_uri: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            external_key: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            gateways: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["authId"] = auth_id
+        __props__["connectivityType"] = connectivity_type
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["digitalTwinAdapterId"] = digital_twin_adapter_id
+        __props__["digitalTwinModelId"] = digital_twin_model_id
+        __props__["digitalTwinModelSpecUri"] = digital_twin_model_spec_uri
+        __props__["displayName"] = display_name
+        __props__["externalKey"] = external_key
+        __props__["freeformTags"] = freeform_tags
+        __props__["gateways"] = gateways
+        __props__["iotDomainId"] = iot_domain_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:oci/iotDigitalTwinInstance:IotDigitalTwinInstance', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="authId")
     def auth_id(self) -> pulumi.Output[_builtins.str]:

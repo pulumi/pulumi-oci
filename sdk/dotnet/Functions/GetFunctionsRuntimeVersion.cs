@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// Fetches a FunctionsRuntimeVersion by ID. Returns a FunctionsRuntimeVersion response model.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// Fetches a FunctionsRuntimeVersion by ID. Returns a FunctionsRuntimeVersion response model.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Functions
         /// This data source provides details about a specific Functions Runtime Version resource in Oracle Cloud Infrastructure Functions service.
         /// 
         /// Fetches a FunctionsRuntimeVersion by ID. Returns a FunctionsRuntimeVersion response model.
-        /// 
         /// 
         /// ## Example Usage
         /// 

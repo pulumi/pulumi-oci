@@ -655,6 +655,42 @@ class DbmulticloudOracleDbAzureConnector(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return DbmulticloudOracleDbAzureConnector(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            access_token: pulumi.Input[Optional[_builtins.str]] = None,
+            arc_agent_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAzureConnectorArcAgentNodeArgs', 'DbmulticloudOracleDbAzureConnectorArcAgentNodeArgsDict', 'outputs.DbmulticloudOracleDbAzureConnectorArcAgentNode']]]]] = None,
+            azure_identity_connectivity_status: pulumi.Input[Optional[_builtins.str]] = None,
+            azure_identity_mechanism: pulumi.Input[Optional[_builtins.str]] = None,
+            azure_resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            azure_subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+            azure_tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_cluster_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            last_modification: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["accessToken"] = access_token
+        __props__["arcAgentNodes"] = arc_agent_nodes
+        __props__["azureIdentityConnectivityStatus"] = azure_identity_connectivity_status
+        __props__["azureIdentityMechanism"] = azure_identity_mechanism
+        __props__["azureResourceGroup"] = azure_resource_group
+        __props__["azureSubscriptionId"] = azure_subscription_id
+        __props__["azureTenantId"] = azure_tenant_id
+        __props__["compartmentId"] = compartment_id
+        __props__["dbClusterResourceId"] = db_cluster_resource_id
+        __props__["displayName"] = display_name
+        __props__["lastModification"] = last_modification
+        __props__["lifecycleStateDetails"] = lifecycle_state_details
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:oci/dbmulticloudOracleDbAzureConnector:DbmulticloudOracleDbAzureConnector', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="accessToken")
     def access_token(self) -> pulumi.Output[_builtins.str]:

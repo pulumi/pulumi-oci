@@ -400,6 +400,24 @@ class FusionEnvironmentAdminUser(pulumi.CustomResource):
         __props__.__dict__["username"] = username
         return FusionEnvironmentAdminUser(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            email_address: pulumi.Input[Optional[_builtins.str]] = None,
+            first_name: pulumi.Input[Optional[_builtins.str]] = None,
+            fusion_environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FusionEnvironmentAdminUserItemArgs', 'FusionEnvironmentAdminUserItemArgsDict', 'outputs.FusionEnvironmentAdminUserItem']]]]] = None,
+            last_name: pulumi.Input[Optional[_builtins.str]] = None,
+            username: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["emailAddress"] = email_address
+        __props__["firstName"] = first_name
+        __props__["fusionEnvironmentId"] = fusion_environment_id
+        __props__["items"] = items
+        __props__["lastName"] = last_name
+        __props__["username"] = username
+        return pulumi.runtime.exists_resource(None, 'oci:FusionApps/fusionEnvironmentAdminUser:FusionEnvironmentAdminUser', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="emailAddress")
     def email_address(self) -> pulumi.Output[_builtins.str]:

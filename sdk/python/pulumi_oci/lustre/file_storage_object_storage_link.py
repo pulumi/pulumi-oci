@@ -841,6 +841,52 @@ class FileStorageObjectStorageLink(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return FileStorageObjectStorageLink(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            current_job_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            file_system_path: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_overwrite: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_job_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            lustre_file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            object_storage_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            start_export_to_object_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            start_import_from_object_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            stop_export_to_object_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            stop_import_from_object_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availabilityDomain"] = availability_domain
+        __props__["compartmentId"] = compartment_id
+        __props__["currentJobId"] = current_job_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["fileSystemPath"] = file_system_path
+        __props__["freeformTags"] = freeform_tags
+        __props__["isOverwrite"] = is_overwrite
+        __props__["lastJobId"] = last_job_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["lustreFileSystemId"] = lustre_file_system_id
+        __props__["objectStoragePrefix"] = object_storage_prefix
+        __props__["startExportToObjectTrigger"] = start_export_to_object_trigger
+        __props__["startImportFromObjectTrigger"] = start_import_from_object_trigger
+        __props__["state"] = state
+        __props__["stopExportToObjectTrigger"] = stop_export_to_object_trigger
+        __props__["stopImportFromObjectTrigger"] = stop_import_from_object_trigger
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Lustre/fileStorageObjectStorageLink:FileStorageObjectStorageLink', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[_builtins.str]:

@@ -242,6 +242,12 @@ func (RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolState) ElementType() refle
 	return reflect.TypeOf((*runtimeDatabaseToolsDatabaseApiGatewayConfigPoolState)(nil)).Elem()
 }
 
+// RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolExists checks whether an existing RuntimeDatabaseToolsDatabaseApiGatewayConfigPool resource with the given ID exists.
+func RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigPool:RuntimeDatabaseToolsDatabaseApiGatewayConfigPool", id, state, "", opts...)
+}
+
 type runtimeDatabaseToolsDatabaseApiGatewayConfigPoolArgs struct {
 	// (Updatable) Advanced pool properties.
 	AdvancedProperties map[string]string `pulumi:"advancedProperties"`

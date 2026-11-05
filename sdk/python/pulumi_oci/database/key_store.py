@@ -545,6 +545,38 @@ class KeyStore(pulumi.CustomResource):
         __props__.__dict__["type_details"] = type_details
         return KeyStore(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            associated_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyStoreAssociatedDatabaseArgs', 'KeyStoreAssociatedDatabaseArgsDict', 'outputs.KeyStoreAssociatedDatabase']]]]] = None,
+            associated_long_term_backup_count: pulumi.Input[Optional[_builtins.int]] = None,
+            associated_long_term_backups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyStoreAssociatedLongTermBackupArgs', 'KeyStoreAssociatedLongTermBackupArgsDict', 'outputs.KeyStoreAssociatedLongTermBackup']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            confirm_details_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            type_details: pulumi.Input[Optional[Union['KeyStoreTypeDetailsArgs', 'KeyStoreTypeDetailsArgsDict', 'outputs.KeyStoreTypeDetails']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["associatedDatabases"] = associated_databases
+        __props__["associatedLongTermBackupCount"] = associated_long_term_backup_count
+        __props__["associatedLongTermBackups"] = associated_long_term_backups
+        __props__["compartmentId"] = compartment_id
+        __props__["confirmDetailsTrigger"] = confirm_details_trigger
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["typeDetails"] = type_details
+        return pulumi.runtime.exists_resource(None, 'oci:Database/keyStore:KeyStore', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="associatedDatabases")
     def associated_databases(self) -> pulumi.Output[Sequence['outputs.KeyStoreAssociatedDatabase']]:

@@ -125,6 +125,12 @@ func (CompareSecurityAssessmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*compareSecurityAssessmentState)(nil)).Elem()
 }
 
+// CompareSecurityAssessmentExists checks whether an existing CompareSecurityAssessment resource with the given ID exists.
+func CompareSecurityAssessmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CompareSecurityAssessmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/compareSecurityAssessment:CompareSecurityAssessment", id, state, "", opts...)
+}
+
 type compareSecurityAssessmentArgs struct {
 	// The OCID of the security assessment. In this case a security assessment can be another security assessment, a latest assessment or a baseline.
 	ComparisonSecurityAssessmentId string `pulumi:"comparisonSecurityAssessmentId"`

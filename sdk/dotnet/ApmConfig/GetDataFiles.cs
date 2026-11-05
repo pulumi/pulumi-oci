@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ApmConfig
         /// 
         /// Fetches a list of Data files using some parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.ApmConfig
         /// 
         /// Fetches a list of Data files using some parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.ApmConfig
         /// This data source provides the list of Data Files in Oracle Cloud Infrastructure Apm Config service.
         /// 
         /// Fetches a list of Data files using some parameters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

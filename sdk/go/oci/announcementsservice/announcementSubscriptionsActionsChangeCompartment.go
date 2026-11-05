@@ -126,6 +126,12 @@ func (AnnouncementSubscriptionsActionsChangeCompartmentState) ElementType() refl
 	return reflect.TypeOf((*announcementSubscriptionsActionsChangeCompartmentState)(nil)).Elem()
 }
 
+// AnnouncementSubscriptionsActionsChangeCompartmentExists checks whether an existing AnnouncementSubscriptionsActionsChangeCompartment resource with the given ID exists.
+func AnnouncementSubscriptionsActionsChangeCompartmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AnnouncementSubscriptionsActionsChangeCompartmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:AnnouncementsService/announcementSubscriptionsActionsChangeCompartment:AnnouncementSubscriptionsActionsChangeCompartment", id, state, "", opts...)
+}
+
 type announcementSubscriptionsActionsChangeCompartmentArgs struct {
 	// The OCID of the announcement subscription.
 	AnnouncementSubscriptionId string `pulumi:"announcementSubscriptionId"`

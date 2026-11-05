@@ -308,6 +308,12 @@ func (DatabaseRegistrationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*databaseRegistrationState)(nil)).Elem()
 }
 
+// DatabaseRegistrationExists checks whether an existing DatabaseRegistration resource with the given ID exists.
+func DatabaseRegistrationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DatabaseRegistrationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:GoldenGate/databaseRegistration:DatabaseRegistration", id, state, "", opts...)
+}
+
 type databaseRegistrationArgs struct {
 	// (Updatable) Credential store alias.
 	AliasName string `pulumi:"aliasName"`

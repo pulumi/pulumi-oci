@@ -641,6 +641,40 @@ class WorkspaceProject(pulumi.CustomResource):
         __props__.__dict__["workspace_id"] = workspace_id
         return WorkspaceProject(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            key_map: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceProjectMetadataArgs', 'WorkspaceProjectMetadataArgsDict', 'outputs.WorkspaceProjectMetadata']]]]] = None,
+            model_type: pulumi.Input[Optional[_builtins.str]] = None,
+            model_version: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            object_status: pulumi.Input[Optional[_builtins.int]] = None,
+            object_version: pulumi.Input[Optional[_builtins.int]] = None,
+            parent_reves: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceProjectParentRefArgs', 'WorkspaceProjectParentRefArgsDict', 'outputs.WorkspaceProjectParentRef']]]]] = None,
+            project_key: pulumi.Input[Optional[_builtins.str]] = None,
+            registry_metadata: pulumi.Input[Optional[Union['WorkspaceProjectRegistryMetadataArgs', 'WorkspaceProjectRegistryMetadataArgsDict', 'outputs.WorkspaceProjectRegistryMetadata']]] = None,
+            workspace_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["description"] = description
+        __props__["identifier"] = identifier
+        __props__["key"] = key
+        __props__["keyMap"] = key_map
+        __props__["metadatas"] = metadatas
+        __props__["modelType"] = model_type
+        __props__["modelVersion"] = model_version
+        __props__["name"] = name
+        __props__["objectStatus"] = object_status
+        __props__["objectVersion"] = object_version
+        __props__["parentReves"] = parent_reves
+        __props__["projectKey"] = project_key
+        __props__["registryMetadata"] = registry_metadata
+        __props__["workspaceId"] = workspace_id
+        return pulumi.runtime.exists_resource(None, 'oci:DataIntegration/workspaceProject:WorkspaceProject', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Output[_builtins.str]:

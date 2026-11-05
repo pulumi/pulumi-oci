@@ -628,6 +628,40 @@ class DbmulticloudOracleDbAzureBlobContainer(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return DbmulticloudOracleDbAzureBlobContainer(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            azure_storage_account_name: pulumi.Input[Optional[_builtins.str]] = None,
+            azure_storage_container_name: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            last_modification: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
+            private_endpoint_dns_alias: pulumi.Input[Optional[_builtins.str]] = None,
+            private_endpoint_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["azureStorageAccountName"] = azure_storage_account_name
+        __props__["azureStorageContainerName"] = azure_storage_container_name
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["lastModification"] = last_modification
+        __props__["lifecycleStateDetails"] = lifecycle_state_details
+        __props__["privateEndpointDnsAlias"] = private_endpoint_dns_alias
+        __props__["privateEndpointIpAddress"] = private_endpoint_ip_address
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:oci/dbmulticloudOracleDbAzureBlobContainer:DbmulticloudOracleDbAzureBlobContainer', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="azureStorageAccountName")
     def azure_storage_account_name(self) -> pulumi.Output[_builtins.str]:

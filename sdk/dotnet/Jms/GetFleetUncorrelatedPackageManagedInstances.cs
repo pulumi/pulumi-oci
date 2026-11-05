@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// List managed instances where an uncorrelated package has been detected, filtered by query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// List managed instances where an uncorrelated package has been detected, filtered by query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.Jms
         /// This data source provides the list of Fleet Uncorrelated Package Managed Instances in Oracle Cloud Infrastructure Jms service.
         /// 
         /// List managed instances where an uncorrelated package has been detected, filtered by query parameters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

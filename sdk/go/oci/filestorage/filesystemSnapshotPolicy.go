@@ -225,6 +225,12 @@ func (FilesystemSnapshotPolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*filesystemSnapshotPolicyState)(nil)).Elem()
 }
 
+// FilesystemSnapshotPolicyExists checks whether an existing FilesystemSnapshotPolicy resource with the given ID exists.
+func FilesystemSnapshotPolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FilesystemSnapshotPolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FileStorage/filesystemSnapshotPolicy:FilesystemSnapshotPolicy", id, state, "", opts...)
+}
+
 type filesystemSnapshotPolicyArgs struct {
 	// The availability domain that the file system snapshot policy is in.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`

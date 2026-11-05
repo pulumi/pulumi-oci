@@ -839,6 +839,50 @@ class Queue(pulumi.CustomResource):
         __props__.__dict__["visibility_in_seconds"] = visibility_in_seconds
         return Queue(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            capabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['QueueCapabilityArgs', 'QueueCapabilityArgsDict', 'outputs.QueueCapability']]]]] = None,
+            channel_consumption_limit: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            custom_encryption_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            dead_letter_queue_delivery_count: pulumi.Input[Optional[_builtins.int]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            messages_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            purge_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            purge_type: pulumi.Input[Optional[_builtins.str]] = None,
+            retention_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            visibility_in_seconds: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["capabilities"] = capabilities
+        __props__["channelConsumptionLimit"] = channel_consumption_limit
+        __props__["compartmentId"] = compartment_id
+        __props__["customEncryptionKeyId"] = custom_encryption_key_id
+        __props__["deadLetterQueueDeliveryCount"] = dead_letter_queue_delivery_count
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["messagesEndpoint"] = messages_endpoint
+        __props__["purgeTrigger"] = purge_trigger
+        __props__["purgeType"] = purge_type
+        __props__["retentionInSeconds"] = retention_in_seconds
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["timeoutInSeconds"] = timeout_in_seconds
+        __props__["visibilityInSeconds"] = visibility_in_seconds
+        return pulumi.runtime.exists_resource(None, 'oci:Queue/queue:Queue', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def capabilities(self) -> pulumi.Output[Sequence['outputs.QueueCapability']]:

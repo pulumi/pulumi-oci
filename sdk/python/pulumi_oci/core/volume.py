@@ -1147,6 +1147,62 @@ class Volume(pulumi.CustomResource):
         __props__.__dict__["xrc_kms_key_id"] = xrc_kms_key_id
         return Volume(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            auto_tuned_vpus_per_gb: pulumi.Input[Optional[_builtins.str]] = None,
+            autotune_policies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeAutotunePolicyArgs', 'VolumeAutotunePolicyArgsDict', 'outputs.VolumeAutotunePolicy']]]]] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            block_volume_replicas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeBlockVolumeReplicaArgs', 'VolumeBlockVolumeReplicaArgsDict', 'outputs.VolumeBlockVolumeReplica']]]]] = None,
+            block_volume_replicas_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
+            cluster_placement_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_auto_tune_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_hydrated: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_reservations_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
+            size_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+            source_details: pulumi.Input[Optional[Union['VolumeSourceDetailsArgs', 'VolumeSourceDetailsArgsDict', 'outputs.VolumeSourceDetails']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            volume_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+            volume_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vpus_per_gb: pulumi.Input[Optional[_builtins.str]] = None,
+            xrc_kms_key_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["autoTunedVpusPerGb"] = auto_tuned_vpus_per_gb
+        __props__["autotunePolicies"] = autotune_policies
+        __props__["availabilityDomain"] = availability_domain
+        __props__["backupPolicyId"] = backup_policy_id
+        __props__["blockVolumeReplicas"] = block_volume_replicas
+        __props__["blockVolumeReplicasDeletion"] = block_volume_replicas_deletion
+        __props__["clusterPlacementGroupId"] = cluster_placement_group_id
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["isAutoTuneEnabled"] = is_auto_tune_enabled
+        __props__["isHydrated"] = is_hydrated
+        __props__["isReservationsEnabled"] = is_reservations_enabled
+        __props__["kmsKeyId"] = kms_key_id
+        __props__["sizeInGbs"] = size_in_gbs
+        __props__["sizeInMbs"] = size_in_mbs
+        __props__["sourceDetails"] = source_details
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["volumeBackupId"] = volume_backup_id
+        __props__["volumeGroupId"] = volume_group_id
+        __props__["vpusPerGb"] = vpus_per_gb
+        __props__["xrcKmsKeyId"] = xrc_kms_key_id
+        return pulumi.runtime.exists_resource(None, 'oci:Core/volume:Volume', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="autoTunedVpusPerGb")
     def auto_tuned_vpus_per_gb(self) -> pulumi.Output[_builtins.str]:

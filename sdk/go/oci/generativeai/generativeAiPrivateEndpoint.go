@@ -228,6 +228,12 @@ func (GenerativeAiPrivateEndpointState) ElementType() reflect.Type {
 	return reflect.TypeOf((*generativeAiPrivateEndpointState)(nil)).Elem()
 }
 
+// GenerativeAiPrivateEndpointExists checks whether an existing GenerativeAiPrivateEndpoint resource with the given ID exists.
+func GenerativeAiPrivateEndpointExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GenerativeAiPrivateEndpointState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:GenerativeAi/generativeAiPrivateEndpoint:GenerativeAiPrivateEndpoint", id, state, "", opts...)
+}
+
 type generativeAiPrivateEndpointArgs struct {
 	// (Updatable) The OCID of the compartment where the private endpoint is created.
 	CompartmentId string `pulumi:"compartmentId"`

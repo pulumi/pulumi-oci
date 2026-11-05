@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataFlow
         /// 
         /// Retrieves an application using an `applicationId`.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.DataFlow
         /// 
         /// Retrieves an application using an `applicationId`.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.DataFlow
         /// This data source provides details about a specific Application resource in Oracle Cloud Infrastructure Data Flow service.
         /// 
         /// Retrieves an application using an `applicationId`.
-        /// 
         /// 
         /// ## Example Usage
         /// 

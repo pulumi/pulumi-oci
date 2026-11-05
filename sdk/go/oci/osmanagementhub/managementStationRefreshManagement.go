@@ -114,6 +114,12 @@ func (ManagementStationRefreshManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managementStationRefreshManagementState)(nil)).Elem()
 }
 
+// ManagementStationRefreshManagementExists checks whether an existing ManagementStationRefreshManagement resource with the given ID exists.
+func ManagementStationRefreshManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagementStationRefreshManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/managementStationRefreshManagement:ManagementStationRefreshManagement", id, state, "", opts...)
+}
+
 type managementStationRefreshManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
 	//

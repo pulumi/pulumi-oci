@@ -18,8 +18,7 @@ namespace Pulumi.Oci.OsManagementHub.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// (Updatable) Indicates if the child compartments are included in the matching rule. 
-        /// 
+        /// (Updatable) Indicates if the child compartments are included in the matching rule.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

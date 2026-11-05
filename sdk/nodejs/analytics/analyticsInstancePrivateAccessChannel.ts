@@ -61,6 +61,17 @@ export class AnalyticsInstancePrivateAccessChannel extends pulumi.CustomResource
         return new AnalyticsInstancePrivateAccessChannel(name, <any>state, { ...opts, id: id });
     }
 
+    /**
+     * Check whether an existing AnalyticsInstancePrivateAccessChannel resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: AnalyticsInstancePrivateAccessChannelState, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel", id, <any>state || {}, { ...opts }, undefined);
+    }
+
     /** @internal */
     public static readonly __pulumiType = 'oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel';
 

@@ -134,6 +134,12 @@ func (PathRouteSetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*pathRouteSetState)(nil)).Elem()
 }
 
+// PathRouteSetExists checks whether an existing PathRouteSet resource with the given ID exists.
+func PathRouteSetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PathRouteSetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LoadBalancer/pathRouteSet:PathRouteSet", id, state, "", opts...)
+}
+
 type pathRouteSetArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the load balancer to add the path route set to.
 	LoadBalancerId string `pulumi:"loadBalancerId"`

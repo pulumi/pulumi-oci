@@ -305,6 +305,18 @@ class AnnouncementSubscriptionsFilterGroup(pulumi.CustomResource):
         __props__.__dict__["name"] = name
         return AnnouncementSubscriptionsFilterGroup(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            announcement_subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+            filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AnnouncementSubscriptionsFilterGroupFilterArgs', 'AnnouncementSubscriptionsFilterGroupFilterArgsDict', 'outputs.AnnouncementSubscriptionsFilterGroupFilter']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["announcementSubscriptionId"] = announcement_subscription_id
+        __props__["filters"] = filters
+        __props__["name"] = name
+        return pulumi.runtime.exists_resource(None, 'oci:AnnouncementsService/announcementSubscriptionsFilterGroup:AnnouncementSubscriptionsFilterGroup', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="announcementSubscriptionId")
     def announcement_subscription_id(self) -> pulumi.Output[_builtins.str]:

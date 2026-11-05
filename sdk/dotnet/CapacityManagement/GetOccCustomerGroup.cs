@@ -16,7 +16,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// Gets information about the specified customer group.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// Gets information about the specified customer group.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// This data source provides details about a specific Occ Customer Group resource in Oracle Cloud Infrastructure Capacity Management service.
         /// 
         /// Gets information about the specified customer group.
-        /// 
         /// 
         /// ## Example Usage
         /// 

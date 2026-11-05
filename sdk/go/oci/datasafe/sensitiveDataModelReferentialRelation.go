@@ -177,6 +177,12 @@ func (SensitiveDataModelReferentialRelationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*sensitiveDataModelReferentialRelationState)(nil)).Elem()
 }
 
+// SensitiveDataModelReferentialRelationExists checks whether an existing SensitiveDataModelReferentialRelation resource with the given ID exists.
+func SensitiveDataModelReferentialRelationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SensitiveDataModelReferentialRelationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/sensitiveDataModelReferentialRelation:SensitiveDataModelReferentialRelation", id, state, "", opts...)
+}
+
 type sensitiveDataModelReferentialRelationArgs struct {
 	// columnsInfo object has details of column group with schema details.
 	Child SensitiveDataModelReferentialRelationChild `pulumi:"child"`

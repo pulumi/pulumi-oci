@@ -134,6 +134,12 @@ func (LogAnalyticsEntityAssociationsAddState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logAnalyticsEntityAssociationsAddState)(nil)).Elem()
 }
 
+// LogAnalyticsEntityAssociationsAddExists checks whether an existing LogAnalyticsEntityAssociationsAdd resource with the given ID exists.
+func LogAnalyticsEntityAssociationsAddExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogAnalyticsEntityAssociationsAddState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LogAnalytics/logAnalyticsEntityAssociationsAdd:LogAnalyticsEntityAssociationsAdd", id, state, "", opts...)
+}
+
 type logAnalyticsEntityAssociationsAddArgs struct {
 	// Destination entities OCIDs with which associations are to be added.
 	AssociationEntities []string `pulumi:"associationEntities"`

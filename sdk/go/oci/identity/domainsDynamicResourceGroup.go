@@ -783,6 +783,12 @@ func (DomainsDynamicResourceGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsDynamicResourceGroupState)(nil)).Elem()
 }
 
+// DomainsDynamicResourceGroupExists checks whether an existing DomainsDynamicResourceGroup resource with the given ID exists.
+func DomainsDynamicResourceGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsDynamicResourceGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsDynamicResourceGroup:DomainsDynamicResourceGroup", id, state, "", opts...)
+}
+
 type domainsDynamicResourceGroupArgs struct {
 	// (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets []string `pulumi:"attributeSets"`

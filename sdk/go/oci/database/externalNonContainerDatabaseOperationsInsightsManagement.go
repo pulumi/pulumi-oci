@@ -131,6 +131,12 @@ func (ExternalNonContainerDatabaseOperationsInsightsManagementState) ElementType
 	return reflect.TypeOf((*externalNonContainerDatabaseOperationsInsightsManagementState)(nil)).Elem()
 }
 
+// ExternalNonContainerDatabaseOperationsInsightsManagementExists checks whether an existing ExternalNonContainerDatabaseOperationsInsightsManagement resource with the given ID exists.
+func ExternalNonContainerDatabaseOperationsInsightsManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalNonContainerDatabaseOperationsInsightsManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/externalNonContainerDatabaseOperationsInsightsManagement:ExternalNonContainerDatabaseOperationsInsightsManagement", id, state, "", opts...)
+}
+
 type externalNonContainerDatabaseOperationsInsightsManagementArgs struct {
 	// (Updatable) Enabling OPSI on External non-container Databases . Requires boolean value "true" or "false".
 	//

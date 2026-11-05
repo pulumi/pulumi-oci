@@ -257,6 +257,12 @@ func (OdaInstanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*odaInstanceState)(nil)).Elem()
 }
 
+// OdaInstanceExists checks whether an existing OdaInstance resource with the given ID exists.
+func OdaInstanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OdaInstanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Oda/odaInstance:OdaInstance", id, state, "", opts...)
+}
+
 type odaInstanceArgs struct {
 	// (Updatable) Identifier of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

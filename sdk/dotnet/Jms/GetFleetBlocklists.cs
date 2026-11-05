@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Returns a list of blocklist entities contained by a fleet.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Returns a list of blocklist entities contained by a fleet.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.Jms
         /// This data source provides the list of Fleet Blocklists in Oracle Cloud Infrastructure Jms service.
         /// 
         /// Returns a list of blocklist entities contained by a fleet.
-        /// 
         /// 
         /// ## Example Usage
         /// 

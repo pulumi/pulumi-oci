@@ -128,6 +128,12 @@ func (ImportStandardTagsManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*importStandardTagsManagementState)(nil)).Elem()
 }
 
+// ImportStandardTagsManagementExists checks whether an existing ImportStandardTagsManagement resource with the given ID exists.
+func ImportStandardTagsManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ImportStandardTagsManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement", id, state, "", opts...)
+}
+
 type importStandardTagsManagementArgs struct {
 	// The OCID of the compartment where the bulk create request is submitted and where the tag namespaces will be created.
 	CompartmentId string `pulumi:"compartmentId"`

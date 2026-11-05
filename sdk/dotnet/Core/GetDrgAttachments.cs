@@ -21,7 +21,6 @@ namespace Pulumi.Oci.Core
         /// The LIST API lists DRG attachments by attachment type. It will default to list VCN attachments,
         /// but you may request to list ALL attachments of ALL types.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -61,7 +60,6 @@ namespace Pulumi.Oci.Core
         /// The LIST API lists DRG attachments by attachment type. It will default to list VCN attachments,
         /// but you may request to list ALL attachments of ALL types.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -100,7 +98,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// The LIST API lists DRG attachments by attachment type. It will default to list VCN attachments,
         /// but you may request to list ALL attachments of ALL types.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -369,6 +369,22 @@ class IotIotDomainConfigureDataAccess(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return IotIotDomainConfigureDataAccess(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            db_allow_listed_identity_group_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            db_allowed_identity_domain_host: pulumi.Input[Optional[_builtins.str]] = None,
+            db_workspace_admin_initial_password: pulumi.Input[Optional[_builtins.str]] = None,
+            iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["dbAllowListedIdentityGroupNames"] = db_allow_listed_identity_group_names
+        __props__["dbAllowedIdentityDomainHost"] = db_allowed_identity_domain_host
+        __props__["dbWorkspaceAdminInitialPassword"] = db_workspace_admin_initial_password
+        __props__["iotDomainId"] = iot_domain_id
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'oci:oci/iotIotDomainConfigureDataAccess:IotIotDomainConfigureDataAccess', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="dbAllowListedIdentityGroupNames")
     def db_allow_listed_identity_group_names(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

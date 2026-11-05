@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DataFlow
         /// The query must include compartmentId or sqlEndpointId.
         /// If the query does not include either compartmentId or sqlEndpointId, an error is returned.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.DataFlow
         /// The query must include compartmentId or sqlEndpointId.
         /// If the query does not include either compartmentId or sqlEndpointId, an error is returned.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -81,7 +79,6 @@ namespace Pulumi.Oci.DataFlow
         /// Lists all Sql Endpoints in the specified compartment.
         /// The query must include compartmentId or sqlEndpointId.
         /// If the query does not include either compartmentId or sqlEndpointId, an error is returned.
-        /// 
         /// 
         /// ## Example Usage
         /// 

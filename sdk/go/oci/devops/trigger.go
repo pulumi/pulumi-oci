@@ -235,6 +235,12 @@ func (TriggerState) ElementType() reflect.Type {
 	return reflect.TypeOf((*triggerState)(nil)).Elem()
 }
 
+// TriggerExists checks whether an existing Trigger resource with the given ID exists.
+func TriggerExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *TriggerState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DevOps/trigger:Trigger", id, state, "", opts...)
+}
+
 type triggerArgs struct {
 	// (Updatable) The list of actions that are to be performed for this trigger.
 	Actions []TriggerAction `pulumi:"actions"`

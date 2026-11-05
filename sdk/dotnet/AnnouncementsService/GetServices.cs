@@ -16,7 +16,6 @@ namespace Pulumi.Oci.AnnouncementsService
         /// 
         /// List all OCI services
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.AnnouncementsService
         /// 
         /// List all OCI services
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.AnnouncementsService
         /// This data source provides the list of Services in Oracle Cloud Infrastructure.
         /// 
         /// List all OCI services
-        /// 
         /// 
         /// ## Example Usage
         /// 

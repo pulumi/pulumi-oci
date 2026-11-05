@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Database
         /// Gets details of the Exadata Infrastructure target system software versions that can be applied to the specified infrastructure resource for maintenance updates.
         /// Applies to Exadata Cloud@Customer and Exadata Cloud instances only.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Database
         /// Gets details of the Exadata Infrastructure target system software versions that can be applied to the specified infrastructure resource for maintenance updates.
         /// Applies to Exadata Cloud@Customer and Exadata Cloud instances only.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -76,7 +74,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets details of the Exadata Infrastructure target system software versions that can be applied to the specified infrastructure resource for maintenance updates.
         /// Applies to Exadata Cloud@Customer and Exadata Cloud instances only.
-        /// 
         /// 
         /// ## Example Usage
         /// 

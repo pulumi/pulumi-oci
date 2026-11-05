@@ -14,9 +14,8 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// This data source provides details about a specific Exadata Infrastructure Fleet Metric resource in Oracle Cloud Infrastructure Database Management service.
         /// 
-        /// Gets the health metrics for a fleet of Exadata infrastructure in a compartment. 
+        /// Gets the health metrics for a fleet of Exadata infrastructure in a compartment.
         /// The CompartmentId query parameters must be provided to retrieve the health metrics.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -47,9 +46,8 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// This data source provides details about a specific Exadata Infrastructure Fleet Metric resource in Oracle Cloud Infrastructure Database Management service.
         /// 
-        /// Gets the health metrics for a fleet of Exadata infrastructure in a compartment. 
+        /// Gets the health metrics for a fleet of Exadata infrastructure in a compartment.
         /// The CompartmentId query parameters must be provided to retrieve the health metrics.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -80,9 +78,8 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// This data source provides details about a specific Exadata Infrastructure Fleet Metric resource in Oracle Cloud Infrastructure Database Management service.
         /// 
-        /// Gets the health metrics for a fleet of Exadata infrastructure in a compartment. 
+        /// Gets the health metrics for a fleet of Exadata infrastructure in a compartment.
         /// The CompartmentId query parameters must be provided to retrieve the health metrics.
-        /// 
         /// 
         /// ## Example Usage
         /// 

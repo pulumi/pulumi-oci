@@ -229,6 +229,12 @@ func (VlanState) ElementType() reflect.Type {
 	return reflect.TypeOf((*vlanState)(nil)).Elem()
 }
 
+// VlanExists checks whether an existing Vlan resource with the given ID exists.
+func VlanExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VlanState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/vlan:Vlan", id, state, "", opts...)
+}
+
 type vlanArgs struct {
 	// Controls whether the VLAN is regional or specific to an availability domain. A regional VLAN has the flexibility to implement failover across availability domains. Previously, all VLANs were AD-specific.
 	//

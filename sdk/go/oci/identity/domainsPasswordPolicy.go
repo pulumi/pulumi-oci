@@ -1917,6 +1917,12 @@ func (DomainsPasswordPolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsPasswordPolicyState)(nil)).Elem()
 }
 
+// DomainsPasswordPolicyExists checks whether an existing DomainsPasswordPolicy resource with the given ID exists.
+func DomainsPasswordPolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsPasswordPolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsPasswordPolicy:DomainsPasswordPolicy", id, state, "", opts...)
+}
+
 type domainsPasswordPolicyArgs struct {
 	// (Updatable) A String value whose contents indicate a set of characters that can appear, in any sequence, in a password value
 	//

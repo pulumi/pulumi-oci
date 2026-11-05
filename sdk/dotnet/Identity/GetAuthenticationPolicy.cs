@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Identity
         /// Gets the authentication policy for the given tenancy. You must specify your tenant’s OCID as the value for
         /// the compartment ID (remember that the tenancy is simply the root compartment).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Identity
         /// Gets the authentication policy for the given tenancy. You must specify your tenant’s OCID as the value for
         /// the compartment ID (remember that the tenancy is simply the root compartment).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -72,7 +70,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Gets the authentication policy for the given tenancy. You must specify your tenant’s OCID as the value for
         /// the compartment ID (remember that the tenancy is simply the root compartment).
-        /// 
         /// 
         /// ## Example Usage
         /// 

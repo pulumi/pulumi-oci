@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Redis
         /// 
         /// Lists Oracle Cloud Infrastructure Cache Engine options
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Redis
         /// 
         /// Lists Oracle Cloud Infrastructure Cache Engine options
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Redis
         /// This data source provides the list of Oci Cache Engine Options in Oracle Cloud Infrastructure Redis service.
         /// 
         /// Lists Oracle Cloud Infrastructure Cache Engine options
-        /// 
         /// 
         /// ## Example Usage
         /// 

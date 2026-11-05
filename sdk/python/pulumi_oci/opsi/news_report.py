@@ -876,6 +876,50 @@ class NewsReport(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return NewsReport(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            are_child_compartments_included: pulumi.Input[Optional[_builtins.bool]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            content_types: pulumi.Input[Optional[Union['NewsReportContentTypesArgs', 'NewsReportContentTypesArgsDict', 'outputs.NewsReportContentTypes']]] = None,
+            day_of_week: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            locale: pulumi.Input[Optional[_builtins.str]] = None,
+            match_rule: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            news_frequency: pulumi.Input[Optional[_builtins.str]] = None,
+            ons_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tag_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["areChildCompartmentsIncluded"] = are_child_compartments_included
+        __props__["compartmentId"] = compartment_id
+        __props__["contentTypes"] = content_types
+        __props__["dayOfWeek"] = day_of_week
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["locale"] = locale
+        __props__["matchRule"] = match_rule
+        __props__["name"] = name
+        __props__["newsFrequency"] = news_frequency
+        __props__["onsTopicId"] = ons_topic_id
+        __props__["state"] = state
+        __props__["status"] = status
+        __props__["systemTags"] = system_tags
+        __props__["tagFilters"] = tag_filters
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Opsi/newsReport:NewsReport', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="areChildCompartmentsIncluded")
     def are_child_compartments_included(self) -> pulumi.Output[_builtins.bool]:

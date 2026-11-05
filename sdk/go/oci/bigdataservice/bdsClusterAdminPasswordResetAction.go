@@ -88,6 +88,12 @@ func (BdsClusterAdminPasswordResetActionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*bdsClusterAdminPasswordResetActionState)(nil)).Elem()
 }
 
+// BdsClusterAdminPasswordResetActionExists checks whether an existing BdsClusterAdminPasswordResetAction resource with the given ID exists.
+func BdsClusterAdminPasswordResetActionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BdsClusterAdminPasswordResetActionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:BigDataService/bdsClusterAdminPasswordResetAction:BdsClusterAdminPasswordResetAction", id, state, "", opts...)
+}
+
 type bdsClusterAdminPasswordResetActionArgs struct {
 	BdsInstanceId               string  `pulumi:"bdsInstanceId"`
 	CurrentClusterAdminPassword *string `pulumi:"currentClusterAdminPassword"`

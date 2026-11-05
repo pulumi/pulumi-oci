@@ -188,6 +188,12 @@ func (ApiPlatformApiPlatformInstanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*apiPlatformApiPlatformInstanceState)(nil)).Elem()
 }
 
+// ApiPlatformApiPlatformInstanceExists checks whether an existing ApiPlatformApiPlatformInstance resource with the given ID exists.
+func ApiPlatformApiPlatformInstanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ApiPlatformApiPlatformInstanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/apiPlatformApiPlatformInstance:ApiPlatformApiPlatformInstance", id, state, "", opts...)
+}
+
 type apiPlatformApiPlatformInstanceArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the instance in.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -159,7 +159,7 @@ namespace Pulumi.Oci.ObjectStorage
         public Output<string?> Source { get; private set; } = null!;
 
         /// <summary>
-        /// Details of the source URI of the object in the cloud. Cannot be defined if `Content` or `Source` is defined. 
+        /// Details of the source URI of the object in the cloud. Cannot be defined if `Content` or `Source` is defined.
         /// Note: To enable object copy, you must authorize the service to manage objects on your behalf.
         /// </summary>
         [Output("sourceUriDetails")]
@@ -320,7 +320,7 @@ namespace Pulumi.Oci.ObjectStorage
         public Input<string>? Source { get; set; }
 
         /// <summary>
-        /// Details of the source URI of the object in the cloud. Cannot be defined if `Content` or `Source` is defined. 
+        /// Details of the source URI of the object in the cloud. Cannot be defined if `Content` or `Source` is defined.
         /// Note: To enable object copy, you must authorize the service to manage objects on your behalf.
         /// </summary>
         [Input("sourceUriDetails")]
@@ -440,7 +440,7 @@ namespace Pulumi.Oci.ObjectStorage
         public Input<string>? Source { get; set; }
 
         /// <summary>
-        /// Details of the source URI of the object in the cloud. Cannot be defined if `Content` or `Source` is defined. 
+        /// Details of the source URI of the object in the cloud. Cannot be defined if `Content` or `Source` is defined.
         /// Note: To enable object copy, you must authorize the service to manage objects on your behalf.
         /// </summary>
         [Input("sourceUriDetails")]

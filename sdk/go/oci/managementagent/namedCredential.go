@@ -228,6 +228,12 @@ func (NamedCredentialState) ElementType() reflect.Type {
 	return reflect.TypeOf((*namedCredentialState)(nil)).Elem()
 }
 
+// NamedCredentialExists checks whether an existing NamedCredential resource with the given ID exists.
+func NamedCredentialExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NamedCredentialState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ManagementAgent/namedCredential:NamedCredential", id, state, "", opts...)
+}
+
 type namedCredentialArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`

@@ -262,6 +262,18 @@ class AutonomousContainerDatabaseDataguardAssociationOperation(pulumi.CustomReso
         __props__.__dict__["operation"] = operation
         return AutonomousContainerDatabaseDataguardAssociationOperation(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            autonomous_container_database_dataguard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
+            autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            operation: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["autonomousContainerDatabaseDataguardAssociationId"] = autonomous_container_database_dataguard_association_id
+        __props__["autonomousContainerDatabaseId"] = autonomous_container_database_id
+        __props__["operation"] = operation
+        return pulumi.runtime.exists_resource(None, 'oci:Database/autonomousContainerDatabaseDataguardAssociationOperation:AutonomousContainerDatabaseDataguardAssociationOperation', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="autonomousContainerDatabaseDataguardAssociationId")
     def autonomous_container_database_dataguard_association_id(self) -> pulumi.Output[_builtins.str]:

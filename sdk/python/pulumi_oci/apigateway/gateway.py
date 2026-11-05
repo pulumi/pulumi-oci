@@ -974,6 +974,56 @@ class Gateway(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return Gateway(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            ca_bundles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GatewayCaBundleArgs', 'GatewayCaBundleArgsDict', 'outputs.GatewayCaBundle']]]]] = None,
+            certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GatewayIpAddressArgs', 'GatewayIpAddressArgsDict', 'outputs.GatewayIpAddress']]]]] = None,
+            ip_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            ipv4address_configuration: pulumi.Input[Optional[Union['GatewayIpv4addressConfigurationArgs', 'GatewayIpv4addressConfigurationArgsDict', 'outputs.GatewayIpv4addressConfiguration']]] = None,
+            ipv6address_configuration: pulumi.Input[Optional[Union['GatewayIpv6addressConfigurationArgs', 'GatewayIpv6addressConfigurationArgsDict', 'outputs.GatewayIpv6addressConfiguration']]] = None,
+            is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GatewayLockArgs', 'GatewayLockArgsDict', 'outputs.GatewayLock']]]]] = None,
+            network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            response_cache_details: pulumi.Input[Optional[Union['GatewayResponseCacheDetailsArgs', 'GatewayResponseCacheDetailsArgsDict', 'outputs.GatewayResponseCacheDetails']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["caBundles"] = ca_bundles
+        __props__["certificateId"] = certificate_id
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["endpointType"] = endpoint_type
+        __props__["freeformTags"] = freeform_tags
+        __props__["hostname"] = hostname
+        __props__["ipAddresses"] = ip_addresses
+        __props__["ipMode"] = ip_mode
+        __props__["ipv4addressConfiguration"] = ipv4address_configuration
+        __props__["ipv6addressConfiguration"] = ipv6address_configuration
+        __props__["isLockOverride"] = is_lock_override
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["locks"] = locks
+        __props__["networkSecurityGroupIds"] = network_security_group_ids
+        __props__["responseCacheDetails"] = response_cache_details
+        __props__["state"] = state
+        __props__["subnetId"] = subnet_id
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:ApiGateway/gateway:Gateway', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="caBundles")
     def ca_bundles(self) -> pulumi.Output[Sequence['outputs.GatewayCaBundle']]:

@@ -71,6 +71,12 @@ func (ClusterPublicApiEndpointDecommissionManagerState) ElementType() reflect.Ty
 	return reflect.TypeOf((*clusterPublicApiEndpointDecommissionManagerState)(nil)).Elem()
 }
 
+// ClusterPublicApiEndpointDecommissionManagerExists checks whether an existing ClusterPublicApiEndpointDecommissionManager resource with the given ID exists.
+func ClusterPublicApiEndpointDecommissionManagerExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ClusterPublicApiEndpointDecommissionManagerState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ContainerEngine/clusterPublicApiEndpointDecommissionManager:ClusterPublicApiEndpointDecommissionManager", id, state, "", opts...)
+}
+
 type clusterPublicApiEndpointDecommissionManagerArgs struct {
 	ClusterId                         string  `pulumi:"clusterId"`
 	IsPublicApiEndpointDecommissioned bool    `pulumi:"isPublicApiEndpointDecommissioned"`

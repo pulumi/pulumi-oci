@@ -120,8 +120,7 @@ namespace Pulumi.Oci.Kms
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of subnet in which the EKMS private endpoint is to be created 
-        /// 
+        /// The OCID of subnet in which the EKMS private endpoint is to be created
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -242,8 +241,7 @@ namespace Pulumi.Oci.Kms
         public Input<int>? Port { get; set; }
 
         /// <summary>
-        /// The OCID of subnet in which the EKMS private endpoint is to be created 
-        /// 
+        /// The OCID of subnet in which the EKMS private endpoint is to be created
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -332,8 +330,7 @@ namespace Pulumi.Oci.Kms
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The OCID of subnet in which the EKMS private endpoint is to be created 
-        /// 
+        /// The OCID of subnet in which the EKMS private endpoint is to be created
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

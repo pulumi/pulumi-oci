@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Lustre
         /// 
         /// Gets a list of Object Storage links.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Lustre
         /// 
         /// Gets a list of Object Storage links.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.Lustre
         /// This data source provides the list of Object Storage Links in Oracle Cloud Infrastructure Lustre File Storage service.
         /// 
         /// Gets a list of Object Storage links.
-        /// 
         /// 
         /// ## Example Usage
         /// 

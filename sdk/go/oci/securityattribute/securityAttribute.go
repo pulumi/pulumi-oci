@@ -193,6 +193,12 @@ func (SecurityAttributeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*securityAttributeState)(nil)).Elem()
 }
 
+// SecurityAttributeExists checks whether an existing SecurityAttribute resource with the given ID exists.
+func SecurityAttributeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SecurityAttributeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:SecurityAttribute/securityAttribute:SecurityAttribute", id, state, "", opts...)
+}
+
 type securityAttributeArgs struct {
 	// (Updatable) The description you assign to the security attribute during creation.
 	Description string `pulumi:"description"`

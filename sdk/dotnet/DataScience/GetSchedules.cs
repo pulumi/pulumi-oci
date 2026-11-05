@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// Returns a list of Schedules.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// Returns a list of Schedules.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.DataScience
         /// This data source provides the list of Schedules in Oracle Cloud Infrastructure Data Science service.
         /// 
         /// Returns a list of Schedules.
-        /// 
         /// 
         /// ## Example Usage
         /// 

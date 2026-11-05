@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// List all Assessors.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// List all Assessors.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// This data source provides the list of Assessment Assessors in Oracle Cloud Infrastructure Database Migration service.
         /// 
         /// List all Assessors.
-        /// 
         /// 
         /// ## Example Usage
         /// 

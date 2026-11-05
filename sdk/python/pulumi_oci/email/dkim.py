@@ -677,6 +677,46 @@ class Dkim(pulumi.CustomResource):
         __props__.__dict__["txt_record_value"] = txt_record_value
         return Dkim(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cname_record_value: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            dns_subdomain_name: pulumi.Input[Optional[_builtins.str]] = None,
+            email_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_imported: pulumi.Input[Optional[_builtins.bool]] = None,
+            key_length: pulumi.Input[Optional[_builtins.int]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            private_key: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            txt_record_value: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["cnameRecordValue"] = cname_record_value
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["dnsSubdomainName"] = dns_subdomain_name
+        __props__["emailDomainId"] = email_domain_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["isImported"] = is_imported
+        __props__["keyLength"] = key_length
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["name"] = name
+        __props__["privateKey"] = private_key
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["txtRecordValue"] = txt_record_value
+        return pulumi.runtime.exists_resource(None, 'oci:Email/dkim:Dkim', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="cnameRecordValue")
     def cname_record_value(self) -> pulumi.Output[_builtins.str]:

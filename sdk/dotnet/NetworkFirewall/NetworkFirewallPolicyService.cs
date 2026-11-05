@@ -88,8 +88,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public Output<ImmutableArray<Outputs.NetworkFirewallPolicyServicePortRange>> PortRanges { get; private set; } = null!;
 
         /// <summary>
-        /// Describes the type of Service. The accepted values are 
-        /// 
+        /// Describes the type of Service. The accepted values are
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -174,8 +173,7 @@ namespace Pulumi.Oci.NetworkFirewall
         }
 
         /// <summary>
-        /// Describes the type of Service. The accepted values are 
-        /// 
+        /// Describes the type of Service. The accepted values are
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -228,8 +226,7 @@ namespace Pulumi.Oci.NetworkFirewall
         }
 
         /// <summary>
-        /// Describes the type of Service. The accepted values are 
-        /// 
+        /// Describes the type of Service. The accepted values are
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

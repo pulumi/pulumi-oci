@@ -250,6 +250,12 @@ func (PrivateIpState) ElementType() reflect.Type {
 	return reflect.TypeOf((*privateIpState)(nil)).Elem()
 }
 
+// PrivateIpExists checks whether an existing PrivateIp resource with the given ID exists.
+func PrivateIpExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PrivateIpState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/privateIp:PrivateIp", id, state, "", opts...)
+}
+
 type privateIpArgs struct {
 	// An optional field that when combined with the ipAddress field, will be used to allocate secondary IPv4 CIDRs. The CIDR range created by this combination must be within the subnet's CIDR  and the CIDR range should not collide with any existing IPv4 address allocation. The VNIC ID specified in the request object should not already been assigned more than the max IPv4 addresses. If you don't specify a value, this option will be ignored.  Example: 18
 	CidrPrefixLength *int `pulumi:"cidrPrefixLength"`

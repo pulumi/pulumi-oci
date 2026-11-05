@@ -520,6 +520,26 @@ class Rrset(pulumi.CustomResource):
         __props__.__dict__["zone_name_or_id"] = zone_name_or_id
         return Rrset(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            domain: pulumi.Input[Optional[_builtins.str]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RrsetItemArgs', 'RrsetItemArgsDict', 'outputs.RrsetItem']]]]] = None,
+            rtype: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            view_id: pulumi.Input[Optional[_builtins.str]] = None,
+            zone_name_or_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["domain"] = domain
+        __props__["items"] = items
+        __props__["rtype"] = rtype
+        __props__["scope"] = scope
+        __props__["viewId"] = view_id
+        __props__["zoneNameOrId"] = zone_name_or_id
+        return pulumi.runtime.exists_resource(None, 'oci:Dns/rrset:Rrset', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     @_utilities.deprecated("""Deprecated; compartment is inferred from the zone and this argument is ignored. Will be removed in a future release.""")

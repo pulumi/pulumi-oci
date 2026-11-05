@@ -98,11 +98,10 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
     /**
      * @return BYOK key id
      * 
-     * @deprecated
-     * Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
+     * @deprecated Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
      * 
      */
-    @Deprecated /* Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment. */
+    @Deprecated
     private String kmsKeyId;
     /**
      * @return BYOK key info
@@ -287,11 +286,10 @@ public final class GetFusionEnvironmentsFusionEnvironmentCollectionItem {
     /**
      * @return BYOK key id
      * 
-     * @deprecated
-     * Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
+     * @deprecated Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment.
      * 
      */
-    @Deprecated /* Starting November 23, 2026, kmsKeyId will no longer be supported when updating a Fusion Application environment. Use the Oracle Cloud Console to add customer-managed keys to existing environments. It remains supported for initial BYOK enablement when creating a Fusion Environment. */
+    @Deprecated
     public String kmsKeyId() {
         return this.kmsKeyId;
     }

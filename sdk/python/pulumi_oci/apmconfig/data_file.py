@@ -660,6 +660,38 @@ class DataFile(pulumi.CustomResource):
         __props__.__dict__["time_last_modified"] = time_last_modified
         return DataFile(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            apm_type: pulumi.Input[Optional[_builtins.str]] = None,
+            content: pulumi.Input[Optional[_builtins.str]] = None,
+            content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+            content_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+            content_language: pulumi.Input[Optional[_builtins.str]] = None,
+            content_length: pulumi.Input[Optional[_builtins.int]] = None,
+            content_md5: pulumi.Input[Optional[_builtins.str]] = None,
+            content_type: pulumi.Input[Optional[_builtins.str]] = None,
+            data_file_name: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_modified: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["apmDomainId"] = apm_domain_id
+        __props__["apmType"] = apm_type
+        __props__["content"] = content
+        __props__["contentDisposition"] = content_disposition
+        __props__["contentEncoding"] = content_encoding
+        __props__["contentLanguage"] = content_language
+        __props__["contentLength"] = content_length
+        __props__["contentMd5"] = content_md5
+        __props__["contentType"] = content_type
+        __props__["dataFileName"] = data_file_name
+        __props__["metadata"] = metadata
+        __props__["source"] = source
+        __props__["timeLastModified"] = time_last_modified
+        return pulumi.runtime.exists_resource(None, 'oci:ApmConfig/dataFile:DataFile', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="apmDomainId")
     def apm_domain_id(self) -> pulumi.Output[_builtins.str]:

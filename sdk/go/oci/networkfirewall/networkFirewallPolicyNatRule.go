@@ -190,6 +190,12 @@ func (NetworkFirewallPolicyNatRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkFirewallPolicyNatRuleState)(nil)).Elem()
 }
 
+// NetworkFirewallPolicyNatRuleExists checks whether an existing NetworkFirewallPolicyNatRule resource with the given ID exists.
+func NetworkFirewallPolicyNatRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkFirewallPolicyNatRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:NetworkFirewall/networkFirewallPolicyNatRule:NetworkFirewallPolicyNatRule", id, state, "", opts...)
+}
+
 type networkFirewallPolicyNatRuleArgs struct {
 	// (Updatable) action:
 	// * DIPP_SRC_NAT - Dynamic-ip-port source NAT.

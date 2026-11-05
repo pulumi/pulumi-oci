@@ -249,6 +249,12 @@ func (SqlFirewallPolicyManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*sqlFirewallPolicyManagementState)(nil)).Elem()
 }
 
+// SqlFirewallPolicyManagementExists checks whether an existing SqlFirewallPolicyManagement resource with the given ID exists.
+func SqlFirewallPolicyManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SqlFirewallPolicyManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/sqlFirewallPolicyManagement:SqlFirewallPolicyManagement", id, state, "", opts...)
+}
+
 type sqlFirewallPolicyManagementArgs struct {
 	// (Updatable) List of allowed ip addresses for the SQL Firewall policy.
 	AllowedClientIps []string `pulumi:"allowedClientIps"`

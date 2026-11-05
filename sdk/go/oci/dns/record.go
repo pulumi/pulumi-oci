@@ -195,6 +195,12 @@ func (RecordState) ElementType() reflect.Type {
 	return reflect.TypeOf((*recordState)(nil)).Elem()
 }
 
+// RecordExists checks whether an existing Record resource with the given ID exists.
+func RecordExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RecordState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Dns/record:Record", id, state, "", opts...)
+}
+
 type recordArgs struct {
 	// (Updatable) The OCID of the compartment the resource belongs to. If supplied, it must match the Zone's compartment ocid.
 	CompartmentId *string `pulumi:"compartmentId"`

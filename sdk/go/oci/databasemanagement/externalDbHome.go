@@ -166,6 +166,12 @@ func (ExternalDbHomeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*externalDbHomeState)(nil)).Elem()
 }
 
+// ExternalDbHomeExists checks whether an existing ExternalDbHome resource with the given ID exists.
+func ExternalDbHomeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalDbHomeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/externalDbHome:ExternalDbHome", id, state, "", opts...)
+}
+
 type externalDbHomeArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`

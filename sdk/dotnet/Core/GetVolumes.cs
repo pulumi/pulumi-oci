@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the volumes in the specified compartment and availability domain.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the volumes in the specified compartment and availability domain.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides the list of Volumes in Oracle Cloud Infrastructure Core service.
         /// 
         /// Lists the volumes in the specified compartment and availability domain.
-        /// 
         /// 
         /// ## Example Usage
         /// 

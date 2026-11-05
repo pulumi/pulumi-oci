@@ -982,6 +982,64 @@ class AutonomousContainerDatabaseDataguardAssociation(pulumi.CustomResource):
         __props__.__dict__["transport_lag"] = transport_lag
         return AutonomousContainerDatabaseDataguardAssociation(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            apply_lag: pulumi.Input[Optional[_builtins.str]] = None,
+            apply_rate: pulumi.Input[Optional[_builtins.str]] = None,
+            autonomous_container_database_dataguard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
+            autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            fast_start_fail_over_lag_limit_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            is_automatic_failover_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            migrate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            peer_autonomous_container_database_backup_config: pulumi.Input[Optional[Union['AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgs', 'AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfigArgsDict', 'outputs.AutonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseBackupConfig']]] = None,
+            peer_autonomous_container_database_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_autonomous_container_database_dataguard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_autonomous_container_database_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_cloud_autonomous_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_role: pulumi.Input[Optional[_builtins.str]] = None,
+            protection_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            role: pulumi.Input[Optional[_builtins.str]] = None,
+            standby_maintenance_buffer_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_role_changed: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_synced: pulumi.Input[Optional[_builtins.str]] = None,
+            transport_lag: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["applyLag"] = apply_lag
+        __props__["applyRate"] = apply_rate
+        __props__["autonomousContainerDatabaseDataguardAssociationId"] = autonomous_container_database_dataguard_association_id
+        __props__["autonomousContainerDatabaseId"] = autonomous_container_database_id
+        __props__["fastStartFailOverLagLimitInSeconds"] = fast_start_fail_over_lag_limit_in_seconds
+        __props__["isAutomaticFailoverEnabled"] = is_automatic_failover_enabled
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["migrateTrigger"] = migrate_trigger
+        __props__["peerAutonomousContainerDatabaseBackupConfig"] = peer_autonomous_container_database_backup_config
+        __props__["peerAutonomousContainerDatabaseCompartmentId"] = peer_autonomous_container_database_compartment_id
+        __props__["peerAutonomousContainerDatabaseDataguardAssociationId"] = peer_autonomous_container_database_dataguard_association_id
+        __props__["peerAutonomousContainerDatabaseDisplayName"] = peer_autonomous_container_database_display_name
+        __props__["peerAutonomousContainerDatabaseId"] = peer_autonomous_container_database_id
+        __props__["peerAutonomousVmClusterId"] = peer_autonomous_vm_cluster_id
+        __props__["peerCloudAutonomousVmClusterId"] = peer_cloud_autonomous_vm_cluster_id
+        __props__["peerDbUniqueName"] = peer_db_unique_name
+        __props__["peerLifecycleState"] = peer_lifecycle_state
+        __props__["peerRole"] = peer_role
+        __props__["protectionMode"] = protection_mode
+        __props__["role"] = role
+        __props__["standbyMaintenanceBufferInDays"] = standby_maintenance_buffer_in_days
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["timeLastRoleChanged"] = time_last_role_changed
+        __props__["timeLastSynced"] = time_last_synced
+        __props__["transportLag"] = transport_lag
+        return pulumi.runtime.exists_resource(None, 'oci:Database/autonomousContainerDatabaseDataguardAssociation:AutonomousContainerDatabaseDataguardAssociation', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="applyLag")
     def apply_lag(self) -> pulumi.Output[_builtins.str]:

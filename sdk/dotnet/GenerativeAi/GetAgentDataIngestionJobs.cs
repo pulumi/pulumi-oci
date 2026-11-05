@@ -18,7 +18,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// Gets a list of data ingestion jobs.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// Gets a list of data ingestion jobs.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -81,7 +79,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// **ListDataIngestionJobs**
         /// 
         /// Gets a list of data ingestion jobs.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -282,6 +282,24 @@ class ModelArtifactImport(pulumi.CustomResource):
         __props__.__dict__["namespace"] = namespace
         return ModelArtifactImport(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            artifact_source_type: pulumi.Input[Optional[_builtins.str]] = None,
+            destination_bucket: pulumi.Input[Optional[_builtins.str]] = None,
+            destination_object_name: pulumi.Input[Optional[_builtins.str]] = None,
+            destination_region: pulumi.Input[Optional[_builtins.str]] = None,
+            model_id: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["artifactSourceType"] = artifact_source_type
+        __props__["destinationBucket"] = destination_bucket
+        __props__["destinationObjectName"] = destination_object_name
+        __props__["destinationRegion"] = destination_region
+        __props__["modelId"] = model_id
+        __props__["namespace"] = namespace
+        return pulumi.runtime.exists_resource(None, 'oci:DataScience/modelArtifactImport:ModelArtifactImport', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="artifactSourceType")
     def artifact_source_type(self) -> pulumi.Output[_builtins.str]:

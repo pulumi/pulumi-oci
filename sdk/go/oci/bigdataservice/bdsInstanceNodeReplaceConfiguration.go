@@ -185,6 +185,12 @@ func (BdsInstanceNodeReplaceConfigurationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*bdsInstanceNodeReplaceConfigurationState)(nil)).Elem()
 }
 
+// BdsInstanceNodeReplaceConfigurationExists checks whether an existing BdsInstanceNodeReplaceConfiguration resource with the given ID exists.
+func BdsInstanceNodeReplaceConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BdsInstanceNodeReplaceConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:BigDataService/bdsInstanceNodeReplaceConfiguration:BdsInstanceNodeReplaceConfiguration", id, state, "", opts...)
+}
+
 type bdsInstanceNodeReplaceConfigurationArgs struct {
 	// The OCID of the cluster.
 	BdsInstanceId string `pulumi:"bdsInstanceId"`

@@ -1498,6 +1498,80 @@ class Application(pulumi.CustomResource):
         __props__.__dict__["warehouse_bucket_uri"] = warehouse_bucket_uri
         return Application(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            application_log_config: pulumi.Input[Optional[Union['ApplicationApplicationLogConfigArgs', 'ApplicationApplicationLogConfigArgsDict', 'outputs.ApplicationApplicationLogConfig']]] = None,
+            archive_uri: pulumi.Input[Optional[_builtins.str]] = None,
+            arguments: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            class_name: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configuration: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            driver_shape: pulumi.Input[Optional[_builtins.str]] = None,
+            driver_shape_config: pulumi.Input[Optional[Union['ApplicationDriverShapeConfigArgs', 'ApplicationDriverShapeConfigArgsDict', 'outputs.ApplicationDriverShapeConfig']]] = None,
+            execute: pulumi.Input[Optional[_builtins.str]] = None,
+            executor_shape: pulumi.Input[Optional[_builtins.str]] = None,
+            executor_shape_config: pulumi.Input[Optional[Union['ApplicationExecutorShapeConfigArgs', 'ApplicationExecutorShapeConfigArgsDict', 'outputs.ApplicationExecutorShapeConfig']]] = None,
+            file_uri: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            idle_timeout_in_minutes: pulumi.Input[Optional[_builtins.str]] = None,
+            language: pulumi.Input[Optional[_builtins.str]] = None,
+            logs_bucket_uri: pulumi.Input[Optional[_builtins.str]] = None,
+            max_duration_in_minutes: pulumi.Input[Optional[_builtins.str]] = None,
+            metastore_id: pulumi.Input[Optional[_builtins.str]] = None,
+            num_executors: pulumi.Input[Optional[_builtins.int]] = None,
+            owner_principal_id: pulumi.Input[Optional[_builtins.str]] = None,
+            owner_user_name: pulumi.Input[Optional[_builtins.str]] = None,
+            parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApplicationParameterArgs', 'ApplicationParameterArgsDict', 'outputs.ApplicationParameter']]]]] = None,
+            pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+            private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+            spark_version: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            terminate_runs_on_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            warehouse_bucket_uri: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["applicationLogConfig"] = application_log_config
+        __props__["archiveUri"] = archive_uri
+        __props__["arguments"] = arguments
+        __props__["className"] = class_name
+        __props__["compartmentId"] = compartment_id
+        __props__["configuration"] = configuration
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["driverShape"] = driver_shape
+        __props__["driverShapeConfig"] = driver_shape_config
+        __props__["execute"] = execute
+        __props__["executorShape"] = executor_shape
+        __props__["executorShapeConfig"] = executor_shape_config
+        __props__["fileUri"] = file_uri
+        __props__["freeformTags"] = freeform_tags
+        __props__["idleTimeoutInMinutes"] = idle_timeout_in_minutes
+        __props__["language"] = language
+        __props__["logsBucketUri"] = logs_bucket_uri
+        __props__["maxDurationInMinutes"] = max_duration_in_minutes
+        __props__["metastoreId"] = metastore_id
+        __props__["numExecutors"] = num_executors
+        __props__["ownerPrincipalId"] = owner_principal_id
+        __props__["ownerUserName"] = owner_user_name
+        __props__["parameters"] = parameters
+        __props__["poolId"] = pool_id
+        __props__["privateEndpointId"] = private_endpoint_id
+        __props__["sparkVersion"] = spark_version
+        __props__["state"] = state
+        __props__["terminateRunsOnDeletion"] = terminate_runs_on_deletion
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["type"] = type
+        __props__["warehouseBucketUri"] = warehouse_bucket_uri
+        return pulumi.runtime.exists_resource(None, 'oci:DataFlow/application:Application', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="applicationLogConfig")
     def application_log_config(self) -> pulumi.Output['outputs.ApplicationApplicationLogConfig']:

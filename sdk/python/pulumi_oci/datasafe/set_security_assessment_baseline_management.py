@@ -276,6 +276,20 @@ class SetSecurityAssessmentBaselineManagement(pulumi.CustomResource):
         __props__.__dict__["target_id"] = target_id
         return SetSecurityAssessmentBaselineManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            assessment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["assessmentIds"] = assessment_ids
+        __props__["compartmentId"] = compartment_id
+        __props__["securityAssessmentId"] = security_assessment_id
+        __props__["targetId"] = target_id
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/setSecurityAssessmentBaselineManagement:SetSecurityAssessmentBaselineManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="assessmentIds")
     def assessment_ids(self) -> pulumi.Output[Sequence[_builtins.str]]:

@@ -175,6 +175,12 @@ func (MigrationPlanState) ElementType() reflect.Type {
 	return reflect.TypeOf((*migrationPlanState)(nil)).Elem()
 }
 
+// MigrationPlanExists checks whether an existing MigrationPlan resource with the given ID exists.
+func MigrationPlanExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MigrationPlanState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CloudMigrations/migrationPlan:MigrationPlan", id, state, "", opts...)
+}
+
 type migrationPlanArgs struct {
 	// (Updatable) Compartment identifier
 	CompartmentId string `pulumi:"compartmentId"`

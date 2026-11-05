@@ -12,11 +12,10 @@ import java.util.Objects;
 public final class GetReplicationPolicyResult {
     private String bucket;
     /**
-     * @deprecated
-     * The &#39;delete_object_in_destination_bucket&#39; field has been deprecated. It is no longer supported.
+     * @deprecated The &#39;delete_object_in_destination_bucket&#39; field has been deprecated. It is no longer supported.
      * 
      */
-    @Deprecated /* The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported. */
+    @Deprecated
     private String deleteObjectInDestinationBucket;
     /**
      * @return The bucket to replicate to in the destination region. Replication policy creation does not automatically create a destination bucket. Create the destination bucket before creating the policy.
@@ -66,11 +65,10 @@ public final class GetReplicationPolicyResult {
         return this.bucket;
     }
     /**
-     * @deprecated
-     * The &#39;delete_object_in_destination_bucket&#39; field has been deprecated. It is no longer supported.
+     * @deprecated The &#39;delete_object_in_destination_bucket&#39; field has been deprecated. It is no longer supported.
      * 
      */
-    @Deprecated /* The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported. */
+    @Deprecated
     public String deleteObjectInDestinationBucket() {
         return this.deleteObjectInDestinationBucket;
     }

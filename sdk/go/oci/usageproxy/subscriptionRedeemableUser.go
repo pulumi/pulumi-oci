@@ -147,6 +147,12 @@ func (SubscriptionRedeemableUserState) ElementType() reflect.Type {
 	return reflect.TypeOf((*subscriptionRedeemableUserState)(nil)).Elem()
 }
 
+// SubscriptionRedeemableUserExists checks whether an existing SubscriptionRedeemableUser resource with the given ID exists.
+func SubscriptionRedeemableUserExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SubscriptionRedeemableUserState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:UsageProxy/subscriptionRedeemableUser:SubscriptionRedeemableUser", id, state, "", opts...)
+}
+
 type subscriptionRedeemableUserArgs struct {
 	// The list of new user to be added to the list of user that can redeem rewards.
 	Items []SubscriptionRedeemableUserItem `pulumi:"items"`

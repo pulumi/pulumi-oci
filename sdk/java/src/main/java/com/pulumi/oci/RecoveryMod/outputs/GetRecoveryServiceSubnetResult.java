@@ -61,11 +61,10 @@ public final class GetRecoveryServiceSubnetResult {
     /**
      * @return Deprecated. One of the subnets associated with the Recovery Service subnet.
      * 
-     * @deprecated
-     * The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnets&#39; instead.
+     * @deprecated The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnets&#39; instead.
      * 
      */
-    @Deprecated /* The 'subnet_id' field has been deprecated. Please use 'subnets' instead. */
+    @Deprecated
     private String subnetId;
     /**
      * @return A list of OCIDs of all the subnets associated with the Recovery Service subnet.
@@ -163,11 +162,10 @@ public final class GetRecoveryServiceSubnetResult {
     /**
      * @return Deprecated. One of the subnets associated with the Recovery Service subnet.
      * 
-     * @deprecated
-     * The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnets&#39; instead.
+     * @deprecated The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnets&#39; instead.
      * 
      */
-    @Deprecated /* The 'subnet_id' field has been deprecated. Please use 'subnets' instead. */
+    @Deprecated
     public String subnetId() {
         return this.subnetId;
     }

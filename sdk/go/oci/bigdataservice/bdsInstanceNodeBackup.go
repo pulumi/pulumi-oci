@@ -154,6 +154,12 @@ func (BdsInstanceNodeBackupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*bdsInstanceNodeBackupState)(nil)).Elem()
 }
 
+// BdsInstanceNodeBackupExists checks whether an existing BdsInstanceNodeBackup resource with the given ID exists.
+func BdsInstanceNodeBackupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BdsInstanceNodeBackupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:BigDataService/bdsInstanceNodeBackup:BdsInstanceNodeBackup", id, state, "", opts...)
+}
+
 type bdsInstanceNodeBackupArgs struct {
 	BackupConfigId *string `pulumi:"backupConfigId"`
 	// Incremental backup type includes only the changes since the last backup. Full backup type includes all changes since the volume was created.

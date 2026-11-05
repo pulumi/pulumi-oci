@@ -628,6 +628,44 @@ class JmsPlugin(pulumi.CustomResource):
         __props__.__dict__["time_registered"] = time_registered
         return JmsPlugin(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            agent_type: pulumi.Input[Optional[_builtins.str]] = None,
+            availability_status: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            os_architecture: pulumi.Input[Optional[_builtins.str]] = None,
+            os_distribution: pulumi.Input[Optional[_builtins.str]] = None,
+            os_family: pulumi.Input[Optional[_builtins.str]] = None,
+            plugin_version: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_last_seen: pulumi.Input[Optional[_builtins.str]] = None,
+            time_registered: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["agentId"] = agent_id
+        __props__["agentType"] = agent_type
+        __props__["availabilityStatus"] = availability_status
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["fleetId"] = fleet_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["hostname"] = hostname
+        __props__["osArchitecture"] = os_architecture
+        __props__["osDistribution"] = os_distribution
+        __props__["osFamily"] = os_family
+        __props__["pluginVersion"] = plugin_version
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeLastSeen"] = time_last_seen
+        __props__["timeRegistered"] = time_registered
+        return pulumi.runtime.exists_resource(None, 'oci:Jms/jmsPlugin:JmsPlugin', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="agentId")
     def agent_id(self) -> pulumi.Output[_builtins.str]:

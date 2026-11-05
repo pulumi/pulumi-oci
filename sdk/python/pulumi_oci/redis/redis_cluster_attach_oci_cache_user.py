@@ -244,6 +244,16 @@ class RedisClusterAttachOciCacheUser(pulumi.CustomResource):
         __props__.__dict__["redis_cluster_id"] = redis_cluster_id
         return RedisClusterAttachOciCacheUser(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            oci_cache_users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            redis_cluster_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["ociCacheUsers"] = oci_cache_users
+        __props__["redisClusterId"] = redis_cluster_id
+        return pulumi.runtime.exists_resource(None, 'oci:Redis/redisClusterAttachOciCacheUser:RedisClusterAttachOciCacheUser', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="ociCacheUsers")
     def oci_cache_users(self) -> pulumi.Output[Sequence[_builtins.str]]:

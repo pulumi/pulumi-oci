@@ -16,7 +16,6 @@ namespace Pulumi.Oci.AiVision
         /// 
         /// Get details of a stream analysis job.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.AiVision
         /// 
         /// Get details of a stream analysis job.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.AiVision
         /// This data source provides details about a specific Stream Job resource in Oracle Cloud Infrastructure Ai Vision service.
         /// 
         /// Get details of a stream analysis job.
-        /// 
         /// 
         /// ## Example Usage
         /// 

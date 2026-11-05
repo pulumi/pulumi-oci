@@ -243,6 +243,12 @@ func (DeploymentCertificateState) ElementType() reflect.Type {
 	return reflect.TypeOf((*deploymentCertificateState)(nil)).Elem()
 }
 
+// DeploymentCertificateExists checks whether an existing DeploymentCertificate resource with the given ID exists.
+func DeploymentCertificateExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DeploymentCertificateState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:GoldenGate/deploymentCertificate:DeploymentCertificate", id, state, "", opts...)
+}
+
 type deploymentCertificateArgs struct {
 	// The base64 encoded content of the PEM file containing the SSL certificate.
 	CertificateContent string `pulumi:"certificateContent"`

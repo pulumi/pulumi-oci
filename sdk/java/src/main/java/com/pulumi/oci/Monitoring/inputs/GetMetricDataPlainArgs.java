@@ -86,7 +86,7 @@ public final class GetMetricDataPlainArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. When specifying a dimension value, surround it with double quotes, and escape each double quote with a backslash (`\`) character. Supported grouping functions: `grouping()`, `groupBy()`.
+     * The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. When specifying a dimension value, surround it with double quotes, and escape each double quote with a backslash (`&#92;`) character. Supported grouping functions: `grouping()`, `groupBy()`.
      * 
      * Construct your query to avoid exceeding limits on returned data. See [MetricData Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/20180401/MetricData).
      * 
@@ -94,14 +94,14 @@ public final class GetMetricDataPlainArgs extends com.pulumi.resources.InvokeArg
      * 
      * Example 1: `CpuUtilization[1m].sum()`
      * 
-     * Example 2 (escaped double quotes for value string): `CpuUtilization[1m]{resourceId = \&#34;&lt;var&gt;&amp;lt;instance_OCID&amp;gt;&lt;/var&gt;\&#34;}.max()`
+     * Example 2 (escaped double quotes for value string): `CpuUtilization[1m]{resourceId = &#92;&#34;&lt;var&gt;&amp;lt;instance_OCID&amp;gt;&lt;/var&gt;&#92;&#34;}.max()`
      * 
      */
     @Import(name="query", required=true)
     private String query;
 
     /**
-     * @return The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. When specifying a dimension value, surround it with double quotes, and escape each double quote with a backslash (`\`) character. Supported grouping functions: `grouping()`, `groupBy()`.
+     * @return The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. When specifying a dimension value, surround it with double quotes, and escape each double quote with a backslash (`&#92;`) character. Supported grouping functions: `grouping()`, `groupBy()`.
      * 
      * Construct your query to avoid exceeding limits on returned data. See [MetricData Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/20180401/MetricData).
      * 
@@ -109,7 +109,7 @@ public final class GetMetricDataPlainArgs extends com.pulumi.resources.InvokeArg
      * 
      * Example 1: `CpuUtilization[1m].sum()`
      * 
-     * Example 2 (escaped double quotes for value string): `CpuUtilization[1m]{resourceId = \&#34;&lt;var&gt;&amp;lt;instance_OCID&amp;gt;&lt;/var&gt;\&#34;}.max()`
+     * Example 2 (escaped double quotes for value string): `CpuUtilization[1m]{resourceId = &#92;&#34;&lt;var&gt;&amp;lt;instance_OCID&amp;gt;&lt;/var&gt;&#92;&#34;}.max()`
      * 
      */
     public String query() {
@@ -247,7 +247,7 @@ public final class GetMetricDataPlainArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param query The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. When specifying a dimension value, surround it with double quotes, and escape each double quote with a backslash (`\`) character. Supported grouping functions: `grouping()`, `groupBy()`.
+         * @param query The Monitoring Query Language (MQL) expression to use when searching for metric data points to aggregate. The query must specify a metric, statistic, and interval. Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. When specifying a dimension value, surround it with double quotes, and escape each double quote with a backslash (`&#92;`) character. Supported grouping functions: `grouping()`, `groupBy()`.
          * 
          * Construct your query to avoid exceeding limits on returned data. See [MetricData Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/20180401/MetricData).
          * 
@@ -255,7 +255,7 @@ public final class GetMetricDataPlainArgs extends com.pulumi.resources.InvokeArg
          * 
          * Example 1: `CpuUtilization[1m].sum()`
          * 
-         * Example 2 (escaped double quotes for value string): `CpuUtilization[1m]{resourceId = \&#34;&lt;var&gt;&amp;lt;instance_OCID&amp;gt;&lt;/var&gt;\&#34;}.max()`
+         * Example 2 (escaped double quotes for value string): `CpuUtilization[1m]{resourceId = &#92;&#34;&lt;var&gt;&amp;lt;instance_OCID&amp;gt;&lt;/var&gt;&#92;&#34;}.max()`
          * 
          * @return builder
          * 

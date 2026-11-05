@@ -383,6 +383,24 @@ class DbNodeSnapshotManagement(pulumi.CustomResource):
         __props__.__dict__["source_dbnode_ids"] = source_dbnode_ids
         return DbNodeSnapshotManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            exadb_vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            snapshots: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbNodeSnapshotManagementSnapshotArgs', 'DbNodeSnapshotManagementSnapshotArgsDict', 'outputs.DbNodeSnapshotManagementSnapshot']]]]] = None,
+            source_dbnode_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["definedTags"] = defined_tags
+        __props__["exadbVmClusterId"] = exadb_vm_cluster_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["name"] = name
+        __props__["snapshots"] = snapshots
+        __props__["sourceDbnodeIds"] = source_dbnode_ids
+        return pulumi.runtime.exists_resource(None, 'oci:Database/dbNodeSnapshotManagement:DbNodeSnapshotManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:

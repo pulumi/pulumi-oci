@@ -1733,6 +1733,12 @@ func (DomainsSocialIdentityProviderState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsSocialIdentityProviderState)(nil)).Elem()
 }
 
+// DomainsSocialIdentityProviderExists checks whether an existing DomainsSocialIdentityProvider resource with the given ID exists.
+func DomainsSocialIdentityProviderExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsSocialIdentityProviderState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsSocialIdentityProvider:DomainsSocialIdentityProvider", id, state, "", opts...)
+}
+
 type domainsSocialIdentityProviderArgs struct {
 	// (Updatable) Social IDP Access token URL
 	//

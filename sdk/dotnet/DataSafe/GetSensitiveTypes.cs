@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of sensitive types based on the specified query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -55,7 +54,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of sensitive types based on the specified query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -93,7 +91,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Sensitive Types in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets a list of sensitive types based on the specified query parameters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

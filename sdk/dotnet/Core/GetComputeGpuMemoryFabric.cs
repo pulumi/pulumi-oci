@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Gets information about the specified compute GPU memory fabric
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Gets information about the specified compute GPU memory fabric
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides details about a specific Compute Gpu Memory Fabric resource in Oracle Cloud Infrastructure Core service.
         /// 
         /// Gets information about the specified compute GPU memory fabric
-        /// 
         /// 
         /// ## Example Usage
         /// 

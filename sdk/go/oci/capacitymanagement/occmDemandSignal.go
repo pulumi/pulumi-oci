@@ -179,6 +179,12 @@ func (OccmDemandSignalState) ElementType() reflect.Type {
 	return reflect.TypeOf((*occmDemandSignalState)(nil)).Elem()
 }
 
+// OccmDemandSignalExists checks whether an existing OccmDemandSignal resource with the given ID exists.
+func OccmDemandSignalExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OccmDemandSignalState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CapacityManagement/occmDemandSignal:OccmDemandSignal", id, state, "", opts...)
+}
+
 type occmDemandSignalArgs struct {
 	// The OCID of the tenancy where we would like to create a demand signal.
 	CompartmentId string `pulumi:"compartmentId"`

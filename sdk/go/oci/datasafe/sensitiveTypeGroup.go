@@ -176,6 +176,12 @@ func (SensitiveTypeGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*sensitiveTypeGroupState)(nil)).Elem()
 }
 
+// SensitiveTypeGroupExists checks whether an existing SensitiveTypeGroup resource with the given ID exists.
+func SensitiveTypeGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SensitiveTypeGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/sensitiveTypeGroup:SensitiveTypeGroup", id, state, "", opts...)
+}
+
 type sensitiveTypeGroupArgs struct {
 	// (Updatable) The OCID of the compartment where the sensitive type group should be created.
 	CompartmentId string `pulumi:"compartmentId"`

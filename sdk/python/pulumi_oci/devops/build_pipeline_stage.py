@@ -1099,6 +1099,62 @@ class BuildPipelineStage(pulumi.CustomResource):
         __props__.__dict__["wait_criteria"] = wait_criteria
         return BuildPipelineStage(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            build_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+            build_pipeline_stage_predecessor_collection: pulumi.Input[Optional[Union['BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs', 'BuildPipelineStageBuildPipelineStagePredecessorCollectionArgsDict', 'outputs.BuildPipelineStageBuildPipelineStagePredecessorCollection']]] = None,
+            build_pipeline_stage_type: pulumi.Input[Optional[_builtins.str]] = None,
+            build_runner_shape_config: pulumi.Input[Optional[Union['BuildPipelineStageBuildRunnerShapeConfigArgs', 'BuildPipelineStageBuildRunnerShapeConfigArgsDict', 'outputs.BuildPipelineStageBuildRunnerShapeConfig']]] = None,
+            build_source_collection: pulumi.Input[Optional[Union['BuildPipelineStageBuildSourceCollectionArgs', 'BuildPipelineStageBuildSourceCollectionArgsDict', 'outputs.BuildPipelineStageBuildSourceCollection']]] = None,
+            build_spec_file: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            deliver_artifact_collection: pulumi.Input[Optional[Union['BuildPipelineStageDeliverArtifactCollectionArgs', 'BuildPipelineStageDeliverArtifactCollectionArgsDict', 'outputs.BuildPipelineStageDeliverArtifactCollection']]] = None,
+            deploy_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            image: pulumi.Input[Optional[_builtins.str]] = None,
+            is_pass_all_parameters_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            primary_build_source: pulumi.Input[Optional[_builtins.str]] = None,
+            private_access_config: pulumi.Input[Optional[Union['BuildPipelineStagePrivateAccessConfigArgs', 'BuildPipelineStagePrivateAccessConfigArgsDict', 'outputs.BuildPipelineStagePrivateAccessConfig']]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            stage_execution_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            wait_criteria: pulumi.Input[Optional[Union['BuildPipelineStageWaitCriteriaArgs', 'BuildPipelineStageWaitCriteriaArgsDict', 'outputs.BuildPipelineStageWaitCriteria']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["buildPipelineId"] = build_pipeline_id
+        __props__["buildPipelineStagePredecessorCollection"] = build_pipeline_stage_predecessor_collection
+        __props__["buildPipelineStageType"] = build_pipeline_stage_type
+        __props__["buildRunnerShapeConfig"] = build_runner_shape_config
+        __props__["buildSourceCollection"] = build_source_collection
+        __props__["buildSpecFile"] = build_spec_file
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["deliverArtifactCollection"] = deliver_artifact_collection
+        __props__["deployPipelineId"] = deploy_pipeline_id
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["image"] = image
+        __props__["isPassAllParametersEnabled"] = is_pass_all_parameters_enabled
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["primaryBuildSource"] = primary_build_source
+        __props__["privateAccessConfig"] = private_access_config
+        __props__["projectId"] = project_id
+        __props__["stageExecutionTimeoutInSeconds"] = stage_execution_timeout_in_seconds
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["waitCriteria"] = wait_criteria
+        return pulumi.runtime.exists_resource(None, 'oci:DevOps/buildPipelineStage:BuildPipelineStage', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="buildPipelineId")
     def build_pipeline_id(self) -> pulumi.Output[_builtins.str]:

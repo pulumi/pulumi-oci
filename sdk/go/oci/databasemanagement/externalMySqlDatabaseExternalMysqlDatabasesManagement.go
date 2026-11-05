@@ -123,6 +123,12 @@ func (ExternalMySqlDatabaseExternalMysqlDatabasesManagementState) ElementType() 
 	return reflect.TypeOf((*externalMySqlDatabaseExternalMysqlDatabasesManagementState)(nil)).Elem()
 }
 
+// ExternalMySqlDatabaseExternalMysqlDatabasesManagementExists checks whether an existing ExternalMySqlDatabaseExternalMysqlDatabasesManagement resource with the given ID exists.
+func ExternalMySqlDatabaseExternalMysqlDatabasesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalMySqlDatabaseExternalMysqlDatabasesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/externalMySqlDatabaseExternalMysqlDatabasesManagement:ExternalMySqlDatabaseExternalMysqlDatabasesManagement", id, state, "", opts...)
+}
+
 type externalMySqlDatabaseExternalMysqlDatabasesManagementArgs struct {
 	// OCID of External MySQL Database connector.
 	ConnectorId *string `pulumi:"connectorId"`

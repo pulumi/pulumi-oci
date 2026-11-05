@@ -103,7 +103,6 @@ namespace Pulumi.Oci.AiVision
         /// <summary>
         /// (Updatable) List of streamSource OCIDs associated with the stream group
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -234,7 +233,6 @@ namespace Pulumi.Oci.AiVision
         /// <summary>
         /// (Updatable) List of streamSource OCIDs associated with the stream group
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -317,7 +315,6 @@ namespace Pulumi.Oci.AiVision
 
         /// <summary>
         /// (Updatable) List of streamSource OCIDs associated with the stream group
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

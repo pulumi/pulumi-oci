@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the Scheduling Plan resources in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the Scheduling Plan resources in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Scheduling Plans in Oracle Cloud Infrastructure Database service.
         /// 
         /// Lists the Scheduling Plan resources in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

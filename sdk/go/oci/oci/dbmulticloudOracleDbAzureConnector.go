@@ -186,6 +186,12 @@ func (DbmulticloudOracleDbAzureConnectorState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dbmulticloudOracleDbAzureConnectorState)(nil)).Elem()
 }
 
+// DbmulticloudOracleDbAzureConnectorExists checks whether an existing DbmulticloudOracleDbAzureConnector resource with the given ID exists.
+func DbmulticloudOracleDbAzureConnectorExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DbmulticloudOracleDbAzureConnectorState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/dbmulticloudOracleDbAzureConnector:DbmulticloudOracleDbAzureConnector", id, state, "", opts...)
+}
+
 type dbmulticloudOracleDbAzureConnectorArgs struct {
 	// (Updatable) Azure bearer access token.
 	AccessToken string `pulumi:"accessToken"`

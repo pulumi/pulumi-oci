@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// List managed instances where a library has been detected, filtered by query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// List managed instances where a library has been detected, filtered by query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -83,7 +81,6 @@ namespace Pulumi.Oci.Jms
         /// This data source provides the list of Fleet Library Managed Instances in Oracle Cloud Infrastructure Jms service.
         /// 
         /// List managed instances where a library has been detected, filtered by query parameters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

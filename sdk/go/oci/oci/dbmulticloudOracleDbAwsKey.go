@@ -258,6 +258,12 @@ func (DbmulticloudOracleDbAwsKeyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dbmulticloudOracleDbAwsKeyState)(nil)).Elem()
 }
 
+// DbmulticloudOracleDbAwsKeyExists checks whether an existing DbmulticloudOracleDbAwsKey resource with the given ID exists.
+func DbmulticloudOracleDbAwsKeyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DbmulticloudOracleDbAwsKeyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/dbmulticloudOracleDbAwsKey:DbmulticloudOracleDbAwsKey", id, state, "", opts...)
+}
+
 type dbmulticloudOracleDbAwsKeyArgs struct {
 	Action *string `pulumi:"action"`
 	// AWS Account ID.

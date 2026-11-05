@@ -49,11 +49,10 @@ public final class GetPreauthrequestsPreauthenticatedRequest {
     /**
      * @return Deprecated. Instead use `objectName`.The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
      * 
-     * @deprecated
-     * The &#39;object&#39; field has been deprecated. Please use &#39;object_name&#39; instead.
+     * @deprecated The &#39;object&#39; field has been deprecated. Please use &#39;object_name&#39; instead.
      * 
      */
-    @Deprecated /* The 'object' field has been deprecated. Please use 'object_name' instead. */
+    @Deprecated
     private String object;
     /**
      * @return The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
@@ -128,11 +127,10 @@ public final class GetPreauthrequestsPreauthenticatedRequest {
     /**
      * @return Deprecated. Instead use `objectName`.The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
      * 
-     * @deprecated
-     * The &#39;object&#39; field has been deprecated. Please use &#39;object_name&#39; instead.
+     * @deprecated The &#39;object&#39; field has been deprecated. Please use &#39;object_name&#39; instead.
      * 
      */
-    @Deprecated /* The 'object' field has been deprecated. Please use 'object_name' instead. */
+    @Deprecated
     public String object() {
         return this.object;
     }

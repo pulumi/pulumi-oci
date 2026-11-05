@@ -236,6 +236,12 @@ func (PrivateEndpointState) ElementType() reflect.Type {
 	return reflect.TypeOf((*privateEndpointState)(nil)).Elem()
 }
 
+// PrivateEndpointExists checks whether an existing PrivateEndpoint resource with the given ID exists.
+func PrivateEndpointExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PrivateEndpointState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ObjectStorage/privateEndpoint:PrivateEndpoint", id, state, "", opts...)
+}
+
 type privateEndpointArgs struct {
 	// (Updatable) When you create a private endpoint, you can restrict access to certain Object Storage resources by specifying access targets (limit of 10). Each access target consists of the following required parameters: namespace, compartmentId and bucket.
 	AccessTargets []PrivateEndpointAccessTarget `pulumi:"accessTargets"`

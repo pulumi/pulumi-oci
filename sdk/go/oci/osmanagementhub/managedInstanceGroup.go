@@ -266,6 +266,12 @@ func (ManagedInstanceGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managedInstanceGroupState)(nil)).Elem()
 }
 
+// ManagedInstanceGroupExists checks whether an existing ManagedInstanceGroup resource with the given ID exists.
+func ManagedInstanceGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedInstanceGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/managedInstanceGroup:ManagedInstanceGroup", id, state, "", opts...)
+}
+
 type managedInstanceGroupArgs struct {
 	// The CPU architecture type of the managed instances that will be attached to this group.
 	ArchType string `pulumi:"archType"`

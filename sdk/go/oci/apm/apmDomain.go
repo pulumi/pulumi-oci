@@ -187,6 +187,12 @@ func (ApmDomainState) ElementType() reflect.Type {
 	return reflect.TypeOf((*apmDomainState)(nil)).Elem()
 }
 
+// ApmDomainExists checks whether an existing ApmDomain resource with the given ID exists.
+func ApmDomainExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ApmDomainState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Apm/apmDomain:ApmDomain", id, state, "", opts...)
+}
+
 type apmDomainArgs struct {
 	// (Updatable) The OCID of the compartment corresponding to the APM domain.
 	CompartmentId string `pulumi:"compartmentId"`

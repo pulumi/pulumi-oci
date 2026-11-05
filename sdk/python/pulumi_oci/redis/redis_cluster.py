@@ -1090,6 +1090,72 @@ class RedisCluster(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return RedisCluster(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_replication_topologies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RedisClusterClusterReplicationTopologyArgs', 'RedisClusterClusterReplicationTopologyArgsDict', 'outputs.RedisClusterClusterReplicationTopology']]]]] = None,
+            cluster_role: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            discovery_endpoint_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            discovery_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            import_from_object_storage_details: pulumi.Input[Optional[Union['RedisClusterImportFromObjectStorageDetailsArgs', 'RedisClusterImportFromObjectStorageDetailsArgsDict', 'outputs.RedisClusterImportFromObjectStorageDetails']]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            node_collections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RedisClusterNodeCollectionArgs', 'RedisClusterNodeCollectionArgsDict', 'outputs.RedisClusterNodeCollection']]]]] = None,
+            node_count: pulumi.Input[Optional[_builtins.int]] = None,
+            node_memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+            nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            oci_cache_config_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+            primary_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            primary_endpoint_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            primary_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
+            replicas_endpoint_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            replicas_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            shard_count: pulumi.Input[Optional[_builtins.int]] = None,
+            software_version: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["backupId"] = backup_id
+        __props__["clusterMode"] = cluster_mode
+        __props__["clusterReplicationTopologies"] = cluster_replication_topologies
+        __props__["clusterRole"] = cluster_role
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["discoveryEndpointIpAddress"] = discovery_endpoint_ip_address
+        __props__["discoveryFqdn"] = discovery_fqdn
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["importFromObjectStorageDetails"] = import_from_object_storage_details
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["nodeCollections"] = node_collections
+        __props__["nodeCount"] = node_count
+        __props__["nodeMemoryInGbs"] = node_memory_in_gbs
+        __props__["nsgIds"] = nsg_ids
+        __props__["ociCacheConfigSetId"] = oci_cache_config_set_id
+        __props__["primaryClusterId"] = primary_cluster_id
+        __props__["primaryEndpointIpAddress"] = primary_endpoint_ip_address
+        __props__["primaryFqdn"] = primary_fqdn
+        __props__["replicasEndpointIpAddress"] = replicas_endpoint_ip_address
+        __props__["replicasFqdn"] = replicas_fqdn
+        __props__["securityAttributes"] = security_attributes
+        __props__["shardCount"] = shard_count
+        __props__["softwareVersion"] = software_version
+        __props__["state"] = state
+        __props__["subnetId"] = subnet_id
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Redis/redisCluster:RedisCluster', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="backupId")
     def backup_id(self) -> pulumi.Output[_builtins.str]:

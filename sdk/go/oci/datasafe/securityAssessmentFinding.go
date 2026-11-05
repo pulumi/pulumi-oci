@@ -244,6 +244,12 @@ func (SecurityAssessmentFindingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*securityAssessmentFindingState)(nil)).Elem()
 }
 
+// SecurityAssessmentFindingExists checks whether an existing SecurityAssessmentFinding resource with the given ID exists.
+func SecurityAssessmentFindingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SecurityAssessmentFindingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/securityAssessmentFinding:SecurityAssessmentFinding", id, state, "", opts...)
+}
+
 type securityAssessmentFindingArgs struct {
 	// (Updatable)
 	PatchOperations []SecurityAssessmentFindingPatchOperation `pulumi:"patchOperations"`

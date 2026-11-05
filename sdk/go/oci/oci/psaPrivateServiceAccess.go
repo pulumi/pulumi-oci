@@ -116,6 +116,12 @@ func (PsaPrivateServiceAccessState) ElementType() reflect.Type {
 	return reflect.TypeOf((*psaPrivateServiceAccessState)(nil)).Elem()
 }
 
+// PsaPrivateServiceAccessExists checks whether an existing PsaPrivateServiceAccess resource with the given ID exists.
+func PsaPrivateServiceAccessExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PsaPrivateServiceAccessState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/psaPrivateServiceAccess:PsaPrivateServiceAccess", id, state, "", opts...)
+}
+
 type psaPrivateServiceAccessArgs struct {
 	CompartmentId      string            `pulumi:"compartmentId"`
 	DefinedTags        map[string]string `pulumi:"definedTags"`

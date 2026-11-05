@@ -41,11 +41,11 @@ namespace Pulumi.Oci.Autoscaling.Outputs
         /// 
         /// Example of threshold alarm:
         /// 
-        /// -----
+        /// ***
         /// 
         /// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) &gt; 85
         /// 
-        /// -----
+        /// ***
         /// </summary>
         public readonly string? Query;
         /// <summary>

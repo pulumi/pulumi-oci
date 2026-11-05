@@ -44,7 +44,6 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// <summary>
         /// (Updatable) Unique identifier for target detector recipe
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

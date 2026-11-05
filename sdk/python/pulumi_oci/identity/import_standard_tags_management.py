@@ -269,6 +269,18 @@ class ImportStandardTagsManagement(pulumi.CustomResource):
         __props__.__dict__["work_request_id"] = work_request_id
         return ImportStandardTagsManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            standard_tag_namespace_name: pulumi.Input[Optional[_builtins.str]] = None,
+            work_request_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["standardTagNamespaceName"] = standard_tag_namespace_name
+        __props__["workRequestId"] = work_request_id
+        return pulumi.runtime.exists_resource(None, 'oci:Identity/importStandardTagsManagement:ImportStandardTagsManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

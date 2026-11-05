@@ -958,6 +958,12 @@ func (DomainsRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsRuleState)(nil)).Elem()
 }
 
+// DomainsRuleExists checks whether an existing DomainsRule resource with the given ID exists.
+func DomainsRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsRule:DomainsRule", id, state, "", opts...)
+}
+
 type domainsRuleArgs struct {
 	// (Updatable) If true, rule is active
 	//

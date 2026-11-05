@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Retrieves a list of target database groups according to the specified query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Retrieves a list of target database groups according to the specified query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -85,7 +83,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Target Database Groups in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Retrieves a list of target database groups according to the specified query parameters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

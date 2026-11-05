@@ -125,6 +125,12 @@ func (NamespaceIngestTimeRulesManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*namespaceIngestTimeRulesManagementState)(nil)).Elem()
 }
 
+// NamespaceIngestTimeRulesManagementExists checks whether an existing NamespaceIngestTimeRulesManagement resource with the given ID exists.
+func NamespaceIngestTimeRulesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NamespaceIngestTimeRulesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LogAnalytics/namespaceIngestTimeRulesManagement:NamespaceIngestTimeRulesManagement", id, state, "", opts...)
+}
+
 type namespaceIngestTimeRulesManagementArgs struct {
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 	//

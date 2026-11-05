@@ -114,6 +114,12 @@ func (MaintenanceWindowsRetryFailedOperationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*maintenanceWindowsRetryFailedOperationState)(nil)).Elem()
 }
 
+// MaintenanceWindowsRetryFailedOperationExists checks whether an existing MaintenanceWindowsRetryFailedOperation resource with the given ID exists.
+func MaintenanceWindowsRetryFailedOperationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MaintenanceWindowsRetryFailedOperationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:StackMonitoring/maintenanceWindowsRetryFailedOperation:MaintenanceWindowsRetryFailedOperation", id, state, "", opts...)
+}
+
 type maintenanceWindowsRetryFailedOperationArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
 	//

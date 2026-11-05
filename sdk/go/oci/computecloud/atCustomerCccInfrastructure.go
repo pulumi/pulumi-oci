@@ -247,6 +247,12 @@ func (AtCustomerCccInfrastructureState) ElementType() reflect.Type {
 	return reflect.TypeOf((*atCustomerCccInfrastructureState)(nil)).Elem()
 }
 
+// AtCustomerCccInfrastructureExists checks whether an existing AtCustomerCccInfrastructure resource with the given ID exists.
+func AtCustomerCccInfrastructureExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AtCustomerCccInfrastructureState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ComputeCloud/atCustomerCccInfrastructure:AtCustomerCccInfrastructure", id, state, "", opts...)
+}
+
 type atCustomerCccInfrastructureArgs struct {
 	// (Updatable) Schedule used for upgrades. If no schedule is associated with the infrastructure, it can be upgraded at any time.
 	CccUpgradeScheduleId *string `pulumi:"cccUpgradeScheduleId"`

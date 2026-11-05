@@ -21,7 +21,6 @@ namespace Pulumi.Oci.DataSafe
         ///              &amp;summaryField=dmls&amp;summaryField=privilege_changes&amp;summaryField=ddls&amp;summaryField=login_failure&amp;summaryField=login_success
         ///              &amp;summaryField=eventcount&amp;q=(operationTime ge '2021-06-13T23:49:14')&amp;groupBy=targetName
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -61,7 +60,6 @@ namespace Pulumi.Oci.DataSafe
         ///              &amp;summaryField=dmls&amp;summaryField=privilege_changes&amp;summaryField=ddls&amp;summaryField=login_failure&amp;summaryField=login_success
         ///              &amp;summaryField=eventcount&amp;q=(operationTime ge '2021-06-13T23:49:14')&amp;groupBy=targetName
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -100,7 +98,6 @@ namespace Pulumi.Oci.DataSafe
         /// **Example:** /ListAuditEventAnalytics?summaryField=targetName&amp;summaryField=userName&amp;summaryField=clientHostName&amp;summaryField
         ///              &amp;summaryField=dmls&amp;summaryField=privilege_changes&amp;summaryField=ddls&amp;summaryField=login_failure&amp;summaryField=login_success
         ///              &amp;summaryField=eventcount&amp;q=(operationTime ge '2021-06-13T23:49:14')&amp;groupBy=targetName
-        /// 
         /// 
         /// ## Example Usage
         /// 

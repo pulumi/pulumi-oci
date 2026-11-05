@@ -398,6 +398,24 @@ class BdsInstanceReplaceNodeAction(pulumi.CustomResource):
         __props__.__dict__["shape"] = shape
         return BdsInstanceReplaceNodeAction(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            node_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+            node_host_name: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["bdsInstanceId"] = bds_instance_id
+        __props__["clusterAdminPassword"] = cluster_admin_password
+        __props__["nodeBackupId"] = node_backup_id
+        __props__["nodeHostName"] = node_host_name
+        __props__["secretId"] = secret_id
+        __props__["shape"] = shape
+        return pulumi.runtime.exists_resource(None, 'oci:BigDataService/bdsInstanceReplaceNodeAction:BdsInstanceReplaceNodeAction', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="bdsInstanceId")
     def bds_instance_id(self) -> pulumi.Output[_builtins.str]:

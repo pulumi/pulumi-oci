@@ -860,6 +860,64 @@ class Replica(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return Replica(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            encrypt_datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReplicaEncryptDataArgs', 'ReplicaEncryptDataArgsDict', 'outputs.ReplicaEncryptData']]]]] = None,
+            fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            ipv6address: pulumi.Input[Optional[_builtins.str]] = None,
+            is_delete_protected: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            mysql_version: pulumi.Input[Optional[_builtins.str]] = None,
+            nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            port_x: pulumi.Input[Optional[_builtins.int]] = None,
+            replica_overrides: pulumi.Input[Optional[Union['ReplicaReplicaOverridesArgs', 'ReplicaReplicaOverridesArgsDict', 'outputs.ReplicaReplicaOverrides']]] = None,
+            secure_connections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReplicaSecureConnectionArgs', 'ReplicaSecureConnectionArgsDict', 'outputs.ReplicaSecureConnection']]]]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            telemetry_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReplicaTelemetryConfigurationArgs', 'ReplicaTelemetryConfigurationArgsDict', 'outputs.ReplicaTelemetryConfiguration']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availabilityDomain"] = availability_domain
+        __props__["compartmentId"] = compartment_id
+        __props__["configurationId"] = configuration_id
+        __props__["dbSystemId"] = db_system_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["encryptDatas"] = encrypt_datas
+        __props__["faultDomain"] = fault_domain
+        __props__["freeformTags"] = freeform_tags
+        __props__["ipAddress"] = ip_address
+        __props__["ipv6address"] = ipv6address
+        __props__["isDeleteProtected"] = is_delete_protected
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["mysqlVersion"] = mysql_version
+        __props__["nsgIds"] = nsg_ids
+        __props__["port"] = port
+        __props__["portX"] = port_x
+        __props__["replicaOverrides"] = replica_overrides
+        __props__["secureConnections"] = secure_connections
+        __props__["securityAttributes"] = security_attributes
+        __props__["shapeName"] = shape_name
+        __props__["state"] = state
+        __props__["telemetryConfigurations"] = telemetry_configurations
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Mysql/replica:Replica', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[_builtins.str]:

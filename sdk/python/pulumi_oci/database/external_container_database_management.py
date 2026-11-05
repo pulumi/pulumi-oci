@@ -319,6 +319,20 @@ class ExternalContainerDatabaseManagement(pulumi.CustomResource):
         __props__.__dict__["license_model"] = license_model
         return ExternalContainerDatabaseManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enable_management: pulumi.Input[Optional[_builtins.bool]] = None,
+            external_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_database_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+            license_model: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enableManagement"] = enable_management
+        __props__["externalContainerDatabaseId"] = external_container_database_id
+        __props__["externalDatabaseConnectorId"] = external_database_connector_id
+        __props__["licenseModel"] = license_model
+        return pulumi.runtime.exists_resource(None, 'oci:Database/externalContainerDatabaseManagement:ExternalContainerDatabaseManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="enableManagement")
     def enable_management(self) -> pulumi.Output[_builtins.bool]:

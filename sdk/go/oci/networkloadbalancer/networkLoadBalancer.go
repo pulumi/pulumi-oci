@@ -271,6 +271,12 @@ func (NetworkLoadBalancerState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkLoadBalancerState)(nil)).Elem()
 }
 
+// NetworkLoadBalancerExists checks whether an existing NetworkLoadBalancer resource with the given ID exists.
+func NetworkLoadBalancerExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkLoadBalancerState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:NetworkLoadBalancer/networkLoadBalancer:NetworkLoadBalancer", id, state, "", opts...)
+}
+
 type networkLoadBalancerArgs struct {
 	// IPv6 address to be assigned to the network load balancer being created. This IP address has to be part of one of the prefixes supported by the subnet. Example: "2607:9b80:9a0a:9a7e:abcd:ef01:2345:6789"
 	AssignedIpv6 *string `pulumi:"assignedIpv6"`

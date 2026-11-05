@@ -19,7 +19,6 @@ namespace Pulumi.Oci.Dns
         /// The collection can be filtered by name, time created, scope, associated view, and zone type.
         /// Filtering by view is only supported for private zones.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -59,7 +58,6 @@ namespace Pulumi.Oci.Dns
         /// The collection can be filtered by name, time created, scope, associated view, and zone type.
         /// Filtering by view is only supported for private zones.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -98,7 +96,6 @@ namespace Pulumi.Oci.Dns
         /// 
         /// The collection can be filtered by name, time created, scope, associated view, and zone type.
         /// Filtering by view is only supported for private zones.
-        /// 
         /// 
         /// ## Example Usage
         /// 

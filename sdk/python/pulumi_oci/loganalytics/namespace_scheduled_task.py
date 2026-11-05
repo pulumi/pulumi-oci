@@ -900,6 +900,48 @@ class NamespaceScheduledTask(pulumi.CustomResource):
         __props__.__dict__["work_request_id"] = work_request_id
         return NamespaceScheduledTask(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            action: pulumi.Input[Optional[Union['NamespaceScheduledTaskActionArgs', 'NamespaceScheduledTaskActionArgsDict', 'outputs.NamespaceScheduledTaskAction']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            kind: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            num_occurrences: pulumi.Input[Optional[_builtins.str]] = None,
+            saved_search_id: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_task_id: pulumi.Input[Optional[_builtins.str]] = None,
+            schedules: pulumi.Input[Optional[Union['NamespaceScheduledTaskSchedulesArgs', 'NamespaceScheduledTaskSchedulesArgsDict', 'outputs.NamespaceScheduledTaskSchedules']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            task_status: pulumi.Input[Optional[_builtins.str]] = None,
+            task_type: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            work_request_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["action"] = action
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["kind"] = kind
+        __props__["namespace"] = namespace
+        __props__["numOccurrences"] = num_occurrences
+        __props__["savedSearchId"] = saved_search_id
+        __props__["scheduledTaskId"] = scheduled_task_id
+        __props__["schedules"] = schedules
+        __props__["state"] = state
+        __props__["taskStatus"] = task_status
+        __props__["taskType"] = task_type
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["workRequestId"] = work_request_id
+        return pulumi.runtime.exists_resource(None, 'oci:LogAnalytics/namespaceScheduledTask:NamespaceScheduledTask', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def action(self) -> pulumi.Output['outputs.NamespaceScheduledTaskAction']:

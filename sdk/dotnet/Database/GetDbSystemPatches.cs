@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the patches applicable to the specified DB system.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the patches applicable to the specified DB system.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Db System Patches in Oracle Cloud Infrastructure Database service.
         /// 
         /// Lists the patches applicable to the specified DB system.
-        /// 
         /// 
         /// ## Example Usage
         /// 

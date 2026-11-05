@@ -327,6 +327,20 @@ class OciCacheBackupExportToObjectStorage(pulumi.CustomResource):
         __props__.__dict__["prefix"] = prefix
         return OciCacheBackupExportToObjectStorage(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            bucket: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            oci_cache_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+            prefix: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["bucket"] = bucket
+        __props__["namespace"] = namespace
+        __props__["ociCacheBackupId"] = oci_cache_backup_id
+        __props__["prefix"] = prefix
+        return pulumi.runtime.exists_resource(None, 'oci:Redis/ociCacheBackupExportToObjectStorage:OciCacheBackupExportToObjectStorage', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def bucket(self) -> pulumi.Output[_builtins.str]:

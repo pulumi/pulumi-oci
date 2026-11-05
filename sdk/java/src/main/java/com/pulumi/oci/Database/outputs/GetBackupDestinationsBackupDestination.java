@@ -69,11 +69,10 @@ public final class GetBackupDestinationsBackupDestination {
     /**
      * @return The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
      * 
-     * @deprecated
-     * The &#39;local_mount_point_path&#39; field has been deprecated. Please use &#39;local_mount_point_path under mount_type_details&#39; instead.
+     * @deprecated The &#39;local_mount_point_path&#39; field has been deprecated. Please use &#39;local_mount_point_path under mount_type_details&#39; instead.
      * 
      */
-    @Deprecated /* The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead. */
+    @Deprecated
     private String localMountPointPath;
     private List<GetBackupDestinationsBackupDestinationMountTypeDetail> mountTypeDetails;
     /**
@@ -206,11 +205,10 @@ public final class GetBackupDestinationsBackupDestination {
     /**
      * @return The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
      * 
-     * @deprecated
-     * The &#39;local_mount_point_path&#39; field has been deprecated. Please use &#39;local_mount_point_path under mount_type_details&#39; instead.
+     * @deprecated The &#39;local_mount_point_path&#39; field has been deprecated. Please use &#39;local_mount_point_path under mount_type_details&#39; instead.
      * 
      */
-    @Deprecated /* The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead. */
+    @Deprecated
     public String localMountPointPath() {
         return this.localMountPointPath;
     }

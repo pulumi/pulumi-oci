@@ -222,6 +222,12 @@ func (ImportedModelState) ElementType() reflect.Type {
 	return reflect.TypeOf((*importedModelState)(nil)).Elem()
 }
 
+// ImportedModelExists checks whether an existing ImportedModel resource with the given ID exists.
+func ImportedModelExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ImportedModelState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:GenerativeAi/importedModel:ImportedModel", id, state, "", opts...)
+}
+
 type importedModelArgs struct {
 	// Specifies the intended use or supported capabilities of the imported model.
 	Capabilities []string `pulumi:"capabilities"`

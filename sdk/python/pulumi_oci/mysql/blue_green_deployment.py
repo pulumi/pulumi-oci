@@ -776,6 +776,50 @@ class BlueGreenDeployment(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return BlueGreenDeployment(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            active_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            channel_details: pulumi.Input[Optional[Union['BlueGreenDeploymentChannelDetailsArgs', 'BlueGreenDeploymentChannelDetailsArgsDict', 'outputs.BlueGreenDeploymentChannelDetails']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            delete_target_db_system_on_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_channel_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            switchover_status: pulumi.Input[Optional[_builtins.str]] = None,
+            switchover_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_db_system_details: pulumi.Input[Optional[Union['BlueGreenDeploymentTargetDbSystemDetailsArgs', 'BlueGreenDeploymentTargetDbSystemDetailsArgsDict', 'outputs.BlueGreenDeploymentTargetDbSystemDetails']]] = None,
+            target_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["activeDbSystemId"] = active_db_system_id
+        __props__["channelDetails"] = channel_details
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["deleteTargetDbSystemOnDelete"] = delete_target_db_system_on_delete
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["replicationChannelId"] = replication_channel_id
+        __props__["sourceDbSystemId"] = source_db_system_id
+        __props__["sslMode"] = ssl_mode
+        __props__["state"] = state
+        __props__["switchoverStatus"] = switchover_status
+        __props__["switchoverTrigger"] = switchover_trigger
+        __props__["systemTags"] = system_tags
+        __props__["targetDbSystemDetails"] = target_db_system_details
+        __props__["targetDbSystemId"] = target_db_system_id
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Mysql/blueGreenDeployment:BlueGreenDeployment', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="activeDbSystemId")
     def active_db_system_id(self) -> pulumi.Output[_builtins.str]:

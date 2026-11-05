@@ -298,6 +298,12 @@ func (TargetAssetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*targetAssetState)(nil)).Elem()
 }
 
+// TargetAssetExists checks whether an existing TargetAsset resource with the given ID exists.
+func TargetAssetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *TargetAssetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CloudMigrations/targetAsset:TargetAsset", id, state, "", opts...)
+}
+
 type targetAssetArgs struct {
 	// (Updatable) Performance of the block volumes.
 	BlockVolumesPerformance *int `pulumi:"blockVolumesPerformance"`

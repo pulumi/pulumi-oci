@@ -30,7 +30,7 @@ public final class DomainsMappedAttributeAttributeMapping {
      */
     private @Nullable List<String> appliesToActions;
     /**
-     * @return (Updatable) The name or expression of an attribute that corresponds to the Oracle Identity Cloud Service Resource referred in the \&#34;idcsResourceType\&#34; attribute.
+     * @return (Updatable) The name or expression of an attribute that corresponds to the Oracle Identity Cloud Service Resource referred in the &#92;&#34;idcsResourceType&#92;&#34; attribute.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -44,7 +44,7 @@ public final class DomainsMappedAttributeAttributeMapping {
      */
     private String idcsAttributeName;
     /**
-     * @return (Updatable) The name or expression of an attribute defined in the schema of the Managed Object Class. This is the SCIM compliant Oracle Identity Cloud Service Name of the attribute that maps to the \&#34;idcsName\&#34; attribute in the schema of an Managed Object Class.
+     * @return (Updatable) The name or expression of an attribute defined in the schema of the Managed Object Class. This is the SCIM compliant Oracle Identity Cloud Service Name of the attribute that maps to the &#92;&#34;idcsName&#92;&#34; attribute in the schema of an Managed Object Class.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: true
@@ -58,7 +58,7 @@ public final class DomainsMappedAttributeAttributeMapping {
      */
     private String managedObjectAttributeName;
     /**
-     * @return (Updatable) If true, indicates that this attribute must have a value. This attribute maps to the \&#34;required\&#34; sub-attribute in the schema of an Managed Object Class.
+     * @return (Updatable) If true, indicates that this attribute must have a value. This attribute maps to the &#92;&#34;required&#92;&#34; sub-attribute in the schema of an Managed Object Class.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -108,7 +108,7 @@ public final class DomainsMappedAttributeAttributeMapping {
         return this.appliesToActions == null ? List.of() : this.appliesToActions;
     }
     /**
-     * @return (Updatable) The name or expression of an attribute that corresponds to the Oracle Identity Cloud Service Resource referred in the \&#34;idcsResourceType\&#34; attribute.
+     * @return (Updatable) The name or expression of an attribute that corresponds to the Oracle Identity Cloud Service Resource referred in the &#92;&#34;idcsResourceType&#92;&#34; attribute.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -124,7 +124,7 @@ public final class DomainsMappedAttributeAttributeMapping {
         return this.idcsAttributeName;
     }
     /**
-     * @return (Updatable) The name or expression of an attribute defined in the schema of the Managed Object Class. This is the SCIM compliant Oracle Identity Cloud Service Name of the attribute that maps to the \&#34;idcsName\&#34; attribute in the schema of an Managed Object Class.
+     * @return (Updatable) The name or expression of an attribute defined in the schema of the Managed Object Class. This is the SCIM compliant Oracle Identity Cloud Service Name of the attribute that maps to the &#92;&#34;idcsName&#92;&#34; attribute in the schema of an Managed Object Class.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: true
@@ -140,7 +140,7 @@ public final class DomainsMappedAttributeAttributeMapping {
         return this.managedObjectAttributeName;
     }
     /**
-     * @return (Updatable) If true, indicates that this attribute must have a value. This attribute maps to the \&#34;required\&#34; sub-attribute in the schema of an Managed Object Class.
+     * @return (Updatable) If true, indicates that this attribute must have a value. This attribute maps to the &#92;&#34;required&#92;&#34; sub-attribute in the schema of an Managed Object Class.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false

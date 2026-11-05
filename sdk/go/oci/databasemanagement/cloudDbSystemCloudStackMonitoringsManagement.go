@@ -130,6 +130,12 @@ func (CloudDbSystemCloudStackMonitoringsManagementState) ElementType() reflect.T
 	return reflect.TypeOf((*cloudDbSystemCloudStackMonitoringsManagementState)(nil)).Elem()
 }
 
+// CloudDbSystemCloudStackMonitoringsManagementExists checks whether an existing CloudDbSystemCloudStackMonitoringsManagement resource with the given ID exists.
+func CloudDbSystemCloudStackMonitoringsManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudDbSystemCloudStackMonitoringsManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/cloudDbSystemCloudStackMonitoringsManagement:CloudDbSystemCloudStackMonitoringsManagement", id, state, "", opts...)
+}
+
 type cloudDbSystemCloudStackMonitoringsManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud DB system.
 	CloudDbSystemId string `pulumi:"cloudDbSystemId"`

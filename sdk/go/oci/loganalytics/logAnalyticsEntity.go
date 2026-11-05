@@ -277,6 +277,12 @@ func (LogAnalyticsEntityState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logAnalyticsEntityState)(nil)).Elem()
 }
 
+// LogAnalyticsEntityExists checks whether an existing LogAnalyticsEntity resource with the given ID exists.
+func LogAnalyticsEntityExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogAnalyticsEntityState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LogAnalytics/logAnalyticsEntity:LogAnalyticsEntity", id, state, "", opts...)
+}
+
 type logAnalyticsEntityArgs struct {
 	// (Updatable) The OCID of the Cloud resource which this entity is a representation of. This may be blank when the entity represents a non-cloud resource that the customer may have on their premises.
 	CloudResourceId *string `pulumi:"cloudResourceId"`

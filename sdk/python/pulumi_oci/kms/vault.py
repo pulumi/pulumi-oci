@@ -785,6 +785,50 @@ class Vault(pulumi.CustomResource):
         __props__.__dict__["vault_type"] = vault_type
         return Vault(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            external_key_manager_metadata: pulumi.Input[Optional[Union['VaultExternalKeyManagerMetadataArgs', 'VaultExternalKeyManagerMetadataArgsDict', 'outputs.VaultExternalKeyManagerMetadata']]] = None,
+            external_key_manager_metadata_summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VaultExternalKeyManagerMetadataSummaryArgs', 'VaultExternalKeyManagerMetadataSummaryArgsDict', 'outputs.VaultExternalKeyManagerMetadataSummary']]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_primary: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_vault_replicable: pulumi.Input[Optional[_builtins.bool]] = None,
+            management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            replica_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VaultReplicaDetailArgs', 'VaultReplicaDetailArgsDict', 'outputs.VaultReplicaDetail']]]]] = None,
+            restore_from_file: pulumi.Input[Optional[Union['VaultRestoreFromFileArgs', 'VaultRestoreFromFileArgsDict', 'outputs.VaultRestoreFromFile']]] = None,
+            restore_from_object_store: pulumi.Input[Optional[Union['VaultRestoreFromObjectStoreArgs', 'VaultRestoreFromObjectStoreArgsDict', 'outputs.VaultRestoreFromObjectStore']]] = None,
+            restore_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+            restored_from_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["cryptoEndpoint"] = crypto_endpoint
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["externalKeyManagerMetadata"] = external_key_manager_metadata
+        __props__["externalKeyManagerMetadataSummaries"] = external_key_manager_metadata_summaries
+        __props__["freeformTags"] = freeform_tags
+        __props__["isPrimary"] = is_primary
+        __props__["isVaultReplicable"] = is_vault_replicable
+        __props__["managementEndpoint"] = management_endpoint
+        __props__["replicaDetails"] = replica_details
+        __props__["restoreFromFile"] = restore_from_file
+        __props__["restoreFromObjectStore"] = restore_from_object_store
+        __props__["restoreTrigger"] = restore_trigger
+        __props__["restoredFromVaultId"] = restored_from_vault_id
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["timeOfDeletion"] = time_of_deletion
+        __props__["vaultType"] = vault_type
+        return pulumi.runtime.exists_resource(None, 'oci:Kms/vault:Vault', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

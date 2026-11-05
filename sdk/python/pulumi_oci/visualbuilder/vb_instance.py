@@ -786,6 +786,54 @@ class VbInstance(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return VbInstance(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            alternate_custom_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VbInstanceAlternateCustomEndpointArgs', 'VbInstanceAlternateCustomEndpointArgsDict', 'outputs.VbInstanceAlternateCustomEndpoint']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            consumption_model: pulumi.Input[Optional[_builtins.str]] = None,
+            custom_endpoint: pulumi.Input[Optional[Union['VbInstanceCustomEndpointArgs', 'VbInstanceCustomEndpointArgsDict', 'outputs.VbInstanceCustomEndpoint']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            idcs_open_id: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_url: pulumi.Input[Optional[_builtins.str]] = None,
+            is_visual_builder_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            management_nat_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            management_vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
+            network_endpoint_details: pulumi.Input[Optional[Union['VbInstanceNetworkEndpointDetailsArgs', 'VbInstanceNetworkEndpointDetailsArgsDict', 'outputs.VbInstanceNetworkEndpointDetails']]] = None,
+            node_count: pulumi.Input[Optional[_builtins.int]] = None,
+            service_nat_gateway_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            service_vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            state_message: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["alternateCustomEndpoints"] = alternate_custom_endpoints
+        __props__["compartmentId"] = compartment_id
+        __props__["consumptionModel"] = consumption_model
+        __props__["customEndpoint"] = custom_endpoint
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["idcsOpenId"] = idcs_open_id
+        __props__["instanceUrl"] = instance_url
+        __props__["isVisualBuilderEnabled"] = is_visual_builder_enabled
+        __props__["managementNatGatewayIp"] = management_nat_gateway_ip
+        __props__["managementVcnId"] = management_vcn_id
+        __props__["networkEndpointDetails"] = network_endpoint_details
+        __props__["nodeCount"] = node_count
+        __props__["serviceNatGatewayIp"] = service_nat_gateway_ip
+        __props__["serviceVcnId"] = service_vcn_id
+        __props__["state"] = state
+        __props__["stateMessage"] = state_message
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:VisualBuilder/vbInstance:VbInstance', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="alternateCustomEndpoints")
     def alternate_custom_endpoints(self) -> pulumi.Output[Sequence['outputs.VbInstanceAlternateCustomEndpoint']]:

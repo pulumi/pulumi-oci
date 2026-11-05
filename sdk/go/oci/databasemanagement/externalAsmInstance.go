@@ -178,6 +178,12 @@ func (ExternalAsmInstanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*externalAsmInstanceState)(nil)).Elem()
 }
 
+// ExternalAsmInstanceExists checks whether an existing ExternalAsmInstance resource with the given ID exists.
+func ExternalAsmInstanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalAsmInstanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/externalAsmInstance:ExternalAsmInstance", id, state, "", opts...)
+}
+
 type externalAsmInstanceArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`

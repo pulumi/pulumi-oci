@@ -120,6 +120,12 @@ func (IotIotDomainGroupConfigureDataAccessState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iotIotDomainGroupConfigureDataAccessState)(nil)).Elem()
 }
 
+// IotIotDomainGroupConfigureDataAccessExists checks whether an existing IotIotDomainGroupConfigureDataAccess resource with the given ID exists.
+func IotIotDomainGroupConfigureDataAccessExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IotIotDomainGroupConfigureDataAccessState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/iotIotDomainGroupConfigureDataAccess:IotIotDomainGroupConfigureDataAccess", id, state, "", opts...)
+}
+
 type iotIotDomainGroupConfigureDataAccessArgs struct {
 	// This is an array of VCN OCID (virtual cloud network Oracle Cloud ID) that is allowed to connect the data host.
 	DbAllowListedVcnIds []string `pulumi:"dbAllowListedVcnIds"`

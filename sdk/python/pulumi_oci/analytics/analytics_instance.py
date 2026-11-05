@@ -1009,6 +1009,56 @@ class AnalyticsInstance(pulumi.CustomResource):
         __props__.__dict__["update_channel"] = update_channel
         return AnalyticsInstance(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            admin_user: pulumi.Input[Optional[_builtins.str]] = None,
+            capacity: pulumi.Input[Optional[Union['AnalyticsInstanceCapacityArgs', 'AnalyticsInstanceCapacityArgsDict', 'outputs.AnalyticsInstanceCapacity']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            email_notification: pulumi.Input[Optional[_builtins.str]] = None,
+            feature_bundle: pulumi.Input[Optional[_builtins.str]] = None,
+            feature_set: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            idcs_access_token: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            license_type: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_endpoint_details: pulumi.Input[Optional[Union['AnalyticsInstanceNetworkEndpointDetailsArgs', 'AnalyticsInstanceNetworkEndpointDetailsArgsDict', 'outputs.AnalyticsInstanceNetworkEndpointDetails']]] = None,
+            resource_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AnalyticsInstanceResourceGroupArgs', 'AnalyticsInstanceResourceGroupArgsDict', 'outputs.AnalyticsInstanceResourceGroup']]]]] = None,
+            service_url: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            update_channel: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["adminUser"] = admin_user
+        __props__["capacity"] = capacity
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["domainId"] = domain_id
+        __props__["emailNotification"] = email_notification
+        __props__["featureBundle"] = feature_bundle
+        __props__["featureSet"] = feature_set
+        __props__["freeformTags"] = freeform_tags
+        __props__["idcsAccessToken"] = idcs_access_token
+        __props__["kmsKeyId"] = kms_key_id
+        __props__["licenseType"] = license_type
+        __props__["name"] = name
+        __props__["networkEndpointDetails"] = network_endpoint_details
+        __props__["resourceGroups"] = resource_groups
+        __props__["serviceUrl"] = service_url
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["updateChannel"] = update_channel
+        return pulumi.runtime.exists_resource(None, 'oci:Analytics/analyticsInstance:AnalyticsInstance', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="adminUser")
     def admin_user(self) -> pulumi.Output[_builtins.str]:

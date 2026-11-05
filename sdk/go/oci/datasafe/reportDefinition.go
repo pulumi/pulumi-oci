@@ -331,6 +331,12 @@ func (ReportDefinitionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*reportDefinitionState)(nil)).Elem()
 }
 
+// ReportDefinitionExists checks whether an existing ReportDefinition resource with the given ID exists.
+func ReportDefinitionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ReportDefinitionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/reportDefinition:ReportDefinition", id, state, "", opts...)
+}
+
 type reportDefinitionArgs struct {
 	// (Updatable) An array of column filter objects. A column Filter object stores all information about a column filter including field name, an operator, one or more expressions, if the filter is enabled, or if the filter is hidden.
 	ColumnFilters []ReportDefinitionColumnFilter `pulumi:"columnFilters"`

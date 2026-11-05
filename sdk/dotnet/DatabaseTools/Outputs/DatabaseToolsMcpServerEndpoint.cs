@@ -20,7 +20,6 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// <summary>
         /// (Updatable) The Database Tools MCP server type.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

@@ -624,6 +624,34 @@ class Backend(pulumi.CustomResource):
         __props__.__dict__["weight"] = weight
         return Backend(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            backendset_name: pulumi.Input[Optional[_builtins.str]] = None,
+            backup: pulumi.Input[Optional[_builtins.bool]] = None,
+            drain: pulumi.Input[Optional[_builtins.bool]] = None,
+            ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+            max_connections: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            offline: pulumi.Input[Optional[_builtins.bool]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            weight: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["backendsetName"] = backendset_name
+        __props__["backup"] = backup
+        __props__["drain"] = drain
+        __props__["ipAddress"] = ip_address
+        __props__["loadBalancerId"] = load_balancer_id
+        __props__["maxConnections"] = max_connections
+        __props__["name"] = name
+        __props__["offline"] = offline
+        __props__["port"] = port
+        __props__["state"] = state
+        __props__["weight"] = weight
+        return pulumi.runtime.exists_resource(None, 'oci:LoadBalancer/backend:Backend', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="backendsetName")
     def backendset_name(self) -> pulumi.Output[_builtins.str]:

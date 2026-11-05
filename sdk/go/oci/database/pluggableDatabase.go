@@ -258,6 +258,12 @@ func (PluggableDatabaseState) ElementType() reflect.Type {
 	return reflect.TypeOf((*pluggableDatabaseState)(nil)).Elem()
 }
 
+// PluggableDatabaseExists checks whether an existing PluggableDatabase resource with the given ID exists.
+func PluggableDatabaseExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PluggableDatabaseState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/pluggableDatabase:PluggableDatabase", id, state, "", opts...)
+}
+
 type pluggableDatabaseArgs struct {
 	// The DB system administrator password of the Container Database.
 	ContainerDatabaseAdminPassword *string `pulumi:"containerDatabaseAdminPassword"`

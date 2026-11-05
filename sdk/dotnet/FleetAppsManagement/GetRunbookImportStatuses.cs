@@ -17,7 +17,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// Returns a list of all the Runbook import status in the specified compartment.
         /// The query parameter `compartmentId` is required.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// Returns a list of all the Runbook import status in the specified compartment.
         /// The query parameter `compartmentId` is required.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -72,7 +70,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Returns a list of all the Runbook import status in the specified compartment.
         /// The query parameter `compartmentId` is required.
-        /// 
         /// 
         /// ## Example Usage
         /// 

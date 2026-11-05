@@ -909,6 +909,50 @@ class SelfSubscription(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return SelfSubscription(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            additional_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SelfSubscriptionAdditionalDetailArgs', 'SelfSubscriptionAdditionalDetailArgsDict', 'outputs.SelfSubscriptionAdditionalDetail']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            product_id: pulumi.Input[Optional[_builtins.str]] = None,
+            realm: pulumi.Input[Optional[_builtins.str]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            seller_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subscription_details: pulumi.Input[Optional[Union['SelfSubscriptionSubscriptionDetailsArgs', 'SelfSubscriptionSubscriptionDetailsArgsDict', 'outputs.SelfSubscriptionSubscriptionDetails']]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_ended: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["additionalDetails"] = additional_details
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["productId"] = product_id
+        __props__["realm"] = realm
+        __props__["region"] = region
+        __props__["sellerId"] = seller_id
+        __props__["sourceType"] = source_type
+        __props__["state"] = state
+        __props__["subscriptionDetails"] = subscription_details
+        __props__["systemTags"] = system_tags
+        __props__["tenantId"] = tenant_id
+        __props__["timeCreated"] = time_created
+        __props__["timeEnded"] = time_ended
+        __props__["timeStarted"] = time_started
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:oci/selfSubscription:SelfSubscription', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="additionalDetails")
     def additional_details(self) -> pulumi.Output[Sequence['outputs.SelfSubscriptionAdditionalDetail']]:

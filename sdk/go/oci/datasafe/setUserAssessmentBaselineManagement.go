@@ -127,6 +127,12 @@ func (SetUserAssessmentBaselineManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*setUserAssessmentBaselineManagementState)(nil)).Elem()
 }
 
+// SetUserAssessmentBaselineManagementExists checks whether an existing SetUserAssessmentBaselineManagement resource with the given ID exists.
+func SetUserAssessmentBaselineManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SetUserAssessmentBaselineManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/setUserAssessmentBaselineManagement:SetUserAssessmentBaselineManagement", id, state, "", opts...)
+}
+
 type setUserAssessmentBaselineManagementArgs struct {
 	// The compartment OCID of the target.
 	//

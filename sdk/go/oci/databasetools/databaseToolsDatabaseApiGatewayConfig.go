@@ -206,6 +206,12 @@ func (DatabaseToolsDatabaseApiGatewayConfigState) ElementType() reflect.Type {
 	return reflect.TypeOf((*databaseToolsDatabaseApiGatewayConfigState)(nil)).Elem()
 }
 
+// DatabaseToolsDatabaseApiGatewayConfigExists checks whether an existing DatabaseToolsDatabaseApiGatewayConfig resource with the given ID exists.
+func DatabaseToolsDatabaseApiGatewayConfigExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DatabaseToolsDatabaseApiGatewayConfigState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseTools/databaseToolsDatabaseApiGatewayConfig:DatabaseToolsDatabaseApiGatewayConfig", id, state, "", opts...)
+}
+
 type databaseToolsDatabaseApiGatewayConfigArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Database Tools database API gateway config.
 	CompartmentId string `pulumi:"compartmentId"`

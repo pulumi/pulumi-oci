@@ -85,7 +85,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -162,7 +161,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// <summary>
         /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -200,7 +198,6 @@ namespace Pulumi.Oci.DatabaseManagement
 
         /// <summary>
         /// (Updatable) A required field when set to `True` calls enable action and when set to `False` calls disable action.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

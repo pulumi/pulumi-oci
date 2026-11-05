@@ -211,6 +211,12 @@ func (SemanticStoreState) ElementType() reflect.Type {
 	return reflect.TypeOf((*semanticStoreState)(nil)).Elem()
 }
 
+// SemanticStoreExists checks whether an existing SemanticStore resource with the given ID exists.
+func SemanticStoreExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SemanticStoreState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:GenerativeAi/semanticStore:SemanticStore", id, state, "", opts...)
+}
+
 type semanticStoreArgs struct {
 	// (Updatable) Owning compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a SemanticStore.
 	CompartmentId string `pulumi:"compartmentId"`

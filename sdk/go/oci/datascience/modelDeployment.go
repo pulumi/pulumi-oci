@@ -178,6 +178,12 @@ func (ModelDeploymentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*modelDeploymentState)(nil)).Elem()
 }
 
+// ModelDeploymentExists checks whether an existing ModelDeployment resource with the given ID exists.
+func ModelDeploymentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ModelDeploymentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataScience/modelDeployment:ModelDeployment", id, state, "", opts...)
+}
+
 type modelDeploymentArgs struct {
 	// (Updatable) The log details for each category.
 	CategoryLogDetails *ModelDeploymentCategoryLogDetails `pulumi:"categoryLogDetails"`

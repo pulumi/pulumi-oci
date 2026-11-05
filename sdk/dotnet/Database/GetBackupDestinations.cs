@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of backup destinations in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of backup destinations in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Backup Destinations in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets a list of backup destinations in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

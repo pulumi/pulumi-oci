@@ -182,6 +182,12 @@ func (VisionPrivateEndpointState) ElementType() reflect.Type {
 	return reflect.TypeOf((*visionPrivateEndpointState)(nil)).Elem()
 }
 
+// VisionPrivateEndpointExists checks whether an existing VisionPrivateEndpoint resource with the given ID exists.
+func VisionPrivateEndpointExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VisionPrivateEndpointState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:AiVision/visionPrivateEndpoint:VisionPrivateEndpoint", id, state, "", opts...)
+}
+
 type visionPrivateEndpointArgs struct {
 	// (Updatable) The compartment identifier.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -110,6 +110,12 @@ func (IotIotFlowRuntimeDeactivateState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iotIotFlowRuntimeDeactivateState)(nil)).Elem()
 }
 
+// IotIotFlowRuntimeDeactivateExists checks whether an existing IotIotFlowRuntimeDeactivate resource with the given ID exists.
+func IotIotFlowRuntimeDeactivateExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IotIotFlowRuntimeDeactivateState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/iotIotFlowRuntimeDeactivate:IotIotFlowRuntimeDeactivate", id, state, "", opts...)
+}
+
 type iotIotFlowRuntimeDeactivateArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an IoT flow runtime.
 	//

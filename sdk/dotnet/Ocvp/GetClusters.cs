@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Ocvp
         /// 
         /// Lists the Clusters in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Ocvp
         /// 
         /// Lists the Clusters in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.Ocvp
         /// This data source provides the list of Clusters in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
         /// 
         /// Lists the Clusters in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

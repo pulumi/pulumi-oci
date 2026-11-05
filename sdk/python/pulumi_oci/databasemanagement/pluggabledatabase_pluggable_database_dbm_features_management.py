@@ -393,6 +393,22 @@ class PluggabledatabasePluggableDatabaseDbmFeaturesManagement(pulumi.CustomResou
         __props__.__dict__["pluggable_database_id"] = pluggable_database_id
         return PluggabledatabasePluggableDatabaseDbmFeaturesManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enable_pluggable_database_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
+            feature: pulumi.Input[Optional[_builtins.str]] = None,
+            feature_details: pulumi.Input[Optional[Union['PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs', 'PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgsDict', 'outputs.PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetails']]] = None,
+            modify_pluggable_database_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
+            pluggable_database_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enablePluggableDatabaseDbmFeature"] = enable_pluggable_database_dbm_feature
+        __props__["feature"] = feature
+        __props__["featureDetails"] = feature_details
+        __props__["modifyPluggableDatabaseDbmFeature"] = modify_pluggable_database_dbm_feature
+        __props__["pluggableDatabaseId"] = pluggable_database_id
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseManagement/pluggabledatabasePluggableDatabaseDbmFeaturesManagement:PluggabledatabasePluggableDatabaseDbmFeaturesManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="enablePluggableDatabaseDbmFeature")
     def enable_pluggable_database_dbm_feature(self) -> pulumi.Output[_builtins.bool]:

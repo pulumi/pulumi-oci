@@ -759,6 +759,40 @@ class NetworkSecurityGroupSecurityRule(pulumi.CustomResource):
         __props__.__dict__["udp_options"] = udp_options
         return NetworkSecurityGroupSecurityRule(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            destination: pulumi.Input[Optional[_builtins.str]] = None,
+            destination_type: pulumi.Input[Optional[_builtins.str]] = None,
+            direction: pulumi.Input[Optional[_builtins.str]] = None,
+            icmp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleIcmpOptionsArgs', 'NetworkSecurityGroupSecurityRuleIcmpOptionsArgsDict', 'outputs.NetworkSecurityGroupSecurityRuleIcmpOptions']]] = None,
+            is_valid: pulumi.Input[Optional[_builtins.bool]] = None,
+            network_security_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            source_type: pulumi.Input[Optional[_builtins.str]] = None,
+            stateless: pulumi.Input[Optional[_builtins.bool]] = None,
+            tcp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleTcpOptionsArgs', 'NetworkSecurityGroupSecurityRuleTcpOptionsArgsDict', 'outputs.NetworkSecurityGroupSecurityRuleTcpOptions']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            udp_options: pulumi.Input[Optional[Union['NetworkSecurityGroupSecurityRuleUdpOptionsArgs', 'NetworkSecurityGroupSecurityRuleUdpOptionsArgsDict', 'outputs.NetworkSecurityGroupSecurityRuleUdpOptions']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["description"] = description
+        __props__["destination"] = destination
+        __props__["destinationType"] = destination_type
+        __props__["direction"] = direction
+        __props__["icmpOptions"] = icmp_options
+        __props__["isValid"] = is_valid
+        __props__["networkSecurityGroupId"] = network_security_group_id
+        __props__["protocol"] = protocol
+        __props__["source"] = source
+        __props__["sourceType"] = source_type
+        __props__["stateless"] = stateless
+        __props__["tcpOptions"] = tcp_options
+        __props__["timeCreated"] = time_created
+        __props__["udpOptions"] = udp_options
+        return pulumi.runtime.exists_resource(None, 'oci:Core/networkSecurityGroupSecurityRule:NetworkSecurityGroupSecurityRule', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Output[_builtins.str]:

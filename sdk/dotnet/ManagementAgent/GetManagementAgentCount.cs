@@ -17,7 +17,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// Gets count of the inventory of agents for a given compartment id, group by, and isPluginDeployed parameters.
         /// Supported groupBy parameters: availabilityStatus, platformType, version
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// Gets count of the inventory of agents for a given compartment id, group by, and isPluginDeployed parameters.
         /// Supported groupBy parameters: availabilityStatus, platformType, version
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -78,7 +76,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// Gets count of the inventory of agents for a given compartment id, group by, and isPluginDeployed parameters.
         /// Supported groupBy parameters: availabilityStatus, platformType, version
-        /// 
         /// 
         /// ## Example Usage
         /// 

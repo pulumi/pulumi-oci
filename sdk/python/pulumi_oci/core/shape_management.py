@@ -230,6 +230,18 @@ class ShapeManagement(pulumi.CustomResource):
         __props__.__dict__["shape_name"] = shape_name
         return ShapeManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            image_id: pulumi.Input[Optional[_builtins.str]] = None,
+            shape_name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["imageId"] = image_id
+        __props__["shapeName"] = shape_name
+        return pulumi.runtime.exists_resource(None, 'oci:Core/shapeManagement:ShapeManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

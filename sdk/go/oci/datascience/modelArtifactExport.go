@@ -92,6 +92,12 @@ func (ModelArtifactExportState) ElementType() reflect.Type {
 	return reflect.TypeOf((*modelArtifactExportState)(nil)).Elem()
 }
 
+// ModelArtifactExportExists checks whether an existing ModelArtifactExport resource with the given ID exists.
+func ModelArtifactExportExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ModelArtifactExportState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataScience/modelArtifactExport:ModelArtifactExport", id, state, "", opts...)
+}
+
 type modelArtifactExportArgs struct {
 	ArtifactSourceType string `pulumi:"artifactSourceType"`
 	ModelId            string `pulumi:"modelId"`

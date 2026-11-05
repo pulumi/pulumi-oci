@@ -853,6 +853,56 @@ class OnPremiseVantagePointWorker(pulumi.CustomResource):
         __props__.__dict__["worker_type"] = worker_type
         return OnPremiseVantagePointWorker(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configuration_details: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            geo_info: pulumi.Input[Optional[_builtins.str]] = None,
+            identity_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerIdentityInfoArgs', 'OnPremiseVantagePointWorkerIdentityInfoArgsDict', 'outputs.OnPremiseVantagePointWorkerIdentityInfo']]]]] = None,
+            monitor_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerMonitorListArgs', 'OnPremiseVantagePointWorkerMonitorListArgsDict', 'outputs.OnPremiseVantagePointWorkerMonitorList']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            on_premise_vantage_point_id: pulumi.Input[Optional[_builtins.str]] = None,
+            opvp_id: pulumi.Input[Optional[_builtins.str]] = None,
+            opvp_name: pulumi.Input[Optional[_builtins.str]] = None,
+            priority: pulumi.Input[Optional[_builtins.int]] = None,
+            resource_principal_token_public_key: pulumi.Input[Optional[_builtins.str]] = None,
+            runtime_id: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_sync_up: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None,
+            version_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OnPremiseVantagePointWorkerVersionDetailArgs', 'OnPremiseVantagePointWorkerVersionDetailArgsDict', 'outputs.OnPremiseVantagePointWorkerVersionDetail']]]]] = None,
+            worker_type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["apmDomainId"] = apm_domain_id
+        __props__["configurationDetails"] = configuration_details
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["geoInfo"] = geo_info
+        __props__["identityInfos"] = identity_infos
+        __props__["monitorLists"] = monitor_lists
+        __props__["name"] = name
+        __props__["onPremiseVantagePointId"] = on_premise_vantage_point_id
+        __props__["opvpId"] = opvp_id
+        __props__["opvpName"] = opvp_name
+        __props__["priority"] = priority
+        __props__["resourcePrincipalTokenPublicKey"] = resource_principal_token_public_key
+        __props__["runtimeId"] = runtime_id
+        __props__["status"] = status
+        __props__["timeCreated"] = time_created
+        __props__["timeLastSyncUp"] = time_last_sync_up
+        __props__["timeUpdated"] = time_updated
+        __props__["version"] = version
+        __props__["versionDetails"] = version_details
+        __props__["workerType"] = worker_type
+        return pulumi.runtime.exists_resource(None, 'oci:ApmSynthetics/onPremiseVantagePointWorker:OnPremiseVantagePointWorker', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="apmDomainId")
     def apm_domain_id(self) -> pulumi.Output[_builtins.str]:

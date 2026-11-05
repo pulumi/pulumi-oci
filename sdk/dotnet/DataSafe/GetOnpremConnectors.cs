@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of on-premises connectors.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of on-premises connectors.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of On Prem Connectors in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets a list of on-premises connectors.
-        /// 
         /// 
         /// ## Example Usage
         /// 

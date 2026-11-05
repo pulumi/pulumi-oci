@@ -37,8 +37,7 @@ namespace Pulumi.Oci.Oci.Inputs
         public Input<Inputs.BatchBatchContextFleetShapeGetArgs> Shape { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

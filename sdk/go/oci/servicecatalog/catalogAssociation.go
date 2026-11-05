@@ -137,6 +137,12 @@ func (CatalogAssociationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*catalogAssociationState)(nil)).Elem()
 }
 
+// CatalogAssociationExists checks whether an existing CatalogAssociation resource with the given ID exists.
+func CatalogAssociationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CatalogAssociationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ServiceCatalog/catalogAssociation:CatalogAssociation", id, state, "", opts...)
+}
+
 type catalogAssociationArgs struct {
 	// Identifier of the entity being associated with service catalog.
 	EntityId string `pulumi:"entityId"`

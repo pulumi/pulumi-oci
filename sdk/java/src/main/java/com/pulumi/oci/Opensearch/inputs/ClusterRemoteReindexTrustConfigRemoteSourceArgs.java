@@ -34,22 +34,20 @@ public final class ClusterRemoteReindexTrustConfigRemoteSourceArgs extends com.p
     /**
      * (Updatable) **Deprecated** Alias for `caBundleId`; use `caBundleId` instead. The value must be an OCI Certificates service CA bundle OCID, not a certificate OCID. Existing configurations remain supported during the deprecation period; removal requires a major provider release.
      * 
-     * @deprecated
-     * Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
+     * @deprecated Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
      * 
      */
-    @Deprecated /* Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID. */
+    @Deprecated
     @Import(name="certificateId")
     private @Nullable Output<String> certificateId;
 
     /**
      * @return (Updatable) **Deprecated** Alias for `caBundleId`; use `caBundleId` instead. The value must be an OCI Certificates service CA bundle OCID, not a certificate OCID. Existing configurations remain supported during the deprecation period; removal requires a major provider release.
      * 
-     * @deprecated
-     * Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
+     * @deprecated Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
      * 
      */
-    @Deprecated /* Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID. */
+    @Deprecated
     public Optional<Output<String>> certificateId() {
         return Optional.ofNullable(this.certificateId);
     }
@@ -137,11 +135,10 @@ public final class ClusterRemoteReindexTrustConfigRemoteSourceArgs extends com.p
          * 
          * @return builder
          * 
-         * @deprecated
-         * Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
+         * @deprecated Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
          * 
          */
-        @Deprecated /* Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID. */
+        @Deprecated
         public Builder certificateId(@Nullable Output<String> certificateId) {
             $.certificateId = certificateId;
             return this;
@@ -152,11 +149,10 @@ public final class ClusterRemoteReindexTrustConfigRemoteSourceArgs extends com.p
          * 
          * @return builder
          * 
-         * @deprecated
-         * Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
+         * @deprecated Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
          * 
          */
-        @Deprecated /* Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID. */
+        @Deprecated
         public Builder certificateId(String certificateId) {
             return certificateId(Output.of(certificateId));
         }

@@ -759,6 +759,46 @@ class Connection(pulumi.CustomResource):
         __props__.__dict__["username"] = username
         return Connection(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            access_token: pulumi.Input[Optional[_builtins.str]] = None,
+            app_password: pulumi.Input[Optional[_builtins.str]] = None,
+            base_url: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_type: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            last_connection_validation_results: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionLastConnectionValidationResultArgs', 'ConnectionLastConnectionValidationResultArgsDict', 'outputs.ConnectionLastConnectionValidationResult']]]]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            tls_verify_config: pulumi.Input[Optional[Union['ConnectionTlsVerifyConfigArgs', 'ConnectionTlsVerifyConfigArgsDict', 'outputs.ConnectionTlsVerifyConfig']]] = None,
+            username: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["accessToken"] = access_token
+        __props__["appPassword"] = app_password
+        __props__["baseUrl"] = base_url
+        __props__["compartmentId"] = compartment_id
+        __props__["connectionType"] = connection_type
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["lastConnectionValidationResults"] = last_connection_validation_results
+        __props__["projectId"] = project_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["tlsVerifyConfig"] = tls_verify_config
+        __props__["username"] = username
+        return pulumi.runtime.exists_resource(None, 'oci:DevOps/connection:Connection', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="accessToken")
     def access_token(self) -> pulumi.Output[_builtins.str]:

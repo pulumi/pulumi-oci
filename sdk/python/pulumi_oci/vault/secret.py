@@ -942,6 +942,64 @@ class Secret(pulumi.CustomResource):
         __props__.__dict__["vault_id"] = vault_id
         return Secret(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            current_version_number: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_auto_generation: pulumi.Input[Optional[_builtins.bool]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_auto_generation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_replica: pulumi.Input[Optional[_builtins.bool]] = None,
+            key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            last_rotation_time: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            next_rotation_time: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_config: pulumi.Input[Optional[Union['SecretReplicationConfigArgs', 'SecretReplicationConfigArgsDict', 'outputs.SecretReplicationConfig']]] = None,
+            rotation_config: pulumi.Input[Optional[Union['SecretRotationConfigArgs', 'SecretRotationConfigArgsDict', 'outputs.SecretRotationConfig']]] = None,
+            rotation_status: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_content: pulumi.Input[Optional[Union['SecretSecretContentArgs', 'SecretSecretContentArgsDict', 'outputs.SecretSecretContent']]] = None,
+            secret_generation_context: pulumi.Input[Optional[Union['SecretSecretGenerationContextArgs', 'SecretSecretGenerationContextArgsDict', 'outputs.SecretSecretGenerationContext']]] = None,
+            secret_name: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecretSecretRuleArgs', 'SecretSecretRuleArgsDict', 'outputs.SecretSecretRule']]]]] = None,
+            source_region_informations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecretSourceRegionInformationArgs', 'SecretSourceRegionInformationArgsDict', 'outputs.SecretSourceRegionInformation']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_current_version_expiry: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["currentVersionNumber"] = current_version_number
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["enableAutoGeneration"] = enable_auto_generation
+        __props__["freeformTags"] = freeform_tags
+        __props__["isAutoGenerationEnabled"] = is_auto_generation_enabled
+        __props__["isReplica"] = is_replica
+        __props__["keyId"] = key_id
+        __props__["lastRotationTime"] = last_rotation_time
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["metadata"] = metadata
+        __props__["nextRotationTime"] = next_rotation_time
+        __props__["replicationConfig"] = replication_config
+        __props__["rotationConfig"] = rotation_config
+        __props__["rotationStatus"] = rotation_status
+        __props__["secretContent"] = secret_content
+        __props__["secretGenerationContext"] = secret_generation_context
+        __props__["secretName"] = secret_name
+        __props__["secretRules"] = secret_rules
+        __props__["sourceRegionInformations"] = source_region_informations
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["timeOfCurrentVersionExpiry"] = time_of_current_version_expiry
+        __props__["timeOfDeletion"] = time_of_deletion
+        __props__["vaultId"] = vault_id
+        return pulumi.runtime.exists_resource(None, 'oci:Vault/secret:Secret', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

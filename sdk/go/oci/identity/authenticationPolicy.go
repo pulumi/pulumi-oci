@@ -128,6 +128,12 @@ func (AuthenticationPolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*authenticationPolicyState)(nil)).Elem()
 }
 
+// AuthenticationPolicyExists checks whether an existing AuthenticationPolicy resource with the given ID exists.
+func AuthenticationPolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AuthenticationPolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/authenticationPolicy:AuthenticationPolicy", id, state, "", opts...)
+}
+
 type authenticationPolicyArgs struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

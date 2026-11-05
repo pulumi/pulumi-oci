@@ -379,6 +379,12 @@ func (ScheduledJobState) ElementType() reflect.Type {
 	return reflect.TypeOf((*scheduledJobState)(nil)).Elem()
 }
 
+// ScheduledJobExists checks whether an existing ScheduledJob resource with the given ID exists.
+func ScheduledJobExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ScheduledJobState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/scheduledJob:ScheduledJob", id, state, "", opts...)
+}
+
 type scheduledJobArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the scheduled job.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Returns a task schedule.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Returns a task schedule.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.Jms
         /// This data source provides details about a specific Task Schedule resource in Oracle Cloud Infrastructure Jms service.
         /// 
         /// Returns a task schedule.
-        /// 
         /// 
         /// ## Example Usage
         /// 

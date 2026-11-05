@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Waa
         /// 
         /// Gets a list of all WebAppAccelerationPolicies in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Waa
         /// 
         /// Gets a list of all WebAppAccelerationPolicies in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.Waa
         /// This data source provides the list of Web App Acceleration Policies in Oracle Cloud Infrastructure Waa service.
         /// 
         /// Gets a list of all WebAppAccelerationPolicies in a compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

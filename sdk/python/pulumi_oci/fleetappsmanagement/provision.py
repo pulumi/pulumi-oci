@@ -976,6 +976,66 @@ class Provision(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return Provision(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config_catalog_item_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            config_catalog_item_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config_catalog_item_listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config_catalog_item_listing_version: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            deployed_resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProvisionDeployedResourceArgs', 'ProvisionDeployedResourceArgsDict', 'outputs.ProvisionDeployedResource']]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            package_catalog_item_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            package_catalog_item_id: pulumi.Input[Optional[_builtins.str]] = None,
+            package_catalog_item_listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+            package_catalog_item_listing_version: pulumi.Input[Optional[_builtins.str]] = None,
+            provision_description: pulumi.Input[Optional[_builtins.str]] = None,
+            rms_apply_job_id: pulumi.Input[Optional[_builtins.str]] = None,
+            stack_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tf_outputs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProvisionTfOutputArgs', 'ProvisionTfOutputArgsDict', 'outputs.ProvisionTfOutput']]]]] = None,
+            tf_variable_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tf_variable_current_user_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tf_variable_region_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tf_variable_tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["configCatalogItemDisplayName"] = config_catalog_item_display_name
+        __props__["configCatalogItemId"] = config_catalog_item_id
+        __props__["configCatalogItemListingId"] = config_catalog_item_listing_id
+        __props__["configCatalogItemListingVersion"] = config_catalog_item_listing_version
+        __props__["definedTags"] = defined_tags
+        __props__["deployedResources"] = deployed_resources
+        __props__["displayName"] = display_name
+        __props__["fleetId"] = fleet_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["packageCatalogItemDisplayName"] = package_catalog_item_display_name
+        __props__["packageCatalogItemId"] = package_catalog_item_id
+        __props__["packageCatalogItemListingId"] = package_catalog_item_listing_id
+        __props__["packageCatalogItemListingVersion"] = package_catalog_item_listing_version
+        __props__["provisionDescription"] = provision_description
+        __props__["rmsApplyJobId"] = rms_apply_job_id
+        __props__["stackId"] = stack_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["tfOutputs"] = tf_outputs
+        __props__["tfVariableCompartmentId"] = tf_variable_compartment_id
+        __props__["tfVariableCurrentUserId"] = tf_variable_current_user_id
+        __props__["tfVariableRegionId"] = tf_variable_region_id
+        __props__["tfVariableTenancyId"] = tf_variable_tenancy_id
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:FleetAppsManagement/provision:Provision', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

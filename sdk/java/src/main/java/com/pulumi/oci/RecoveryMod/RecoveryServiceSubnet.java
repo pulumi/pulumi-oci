@@ -190,11 +190,10 @@ public class RecoveryServiceSubnet extends com.pulumi.resources.CustomResource {
     /**
      * Deprecated. One of the subnets associated with the Recovery Service subnet.
      * 
-     * @deprecated
-     * The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnets&#39; instead.
+     * @deprecated The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnets&#39; instead.
      * 
      */
-    @Deprecated /* The 'subnet_id' field has been deprecated. Please use 'subnets' instead. */
+    @Deprecated
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 

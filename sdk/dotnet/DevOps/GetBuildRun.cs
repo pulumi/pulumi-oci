@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Returns the details of a build run for a given build run ID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Returns the details of a build run for a given build run ID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.DevOps
         /// This data source provides details about a specific Build Run resource in Oracle Cloud Infrastructure Devops service.
         /// 
         /// Returns the details of a build run for a given build run ID.
-        /// 
         /// 
         /// ## Example Usage
         /// 

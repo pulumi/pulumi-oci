@@ -303,6 +303,12 @@ func (DatabaseToolsConnectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*databaseToolsConnectionState)(nil)).Elem()
 }
 
+// DatabaseToolsConnectionExists checks whether an existing DatabaseToolsConnection resource with the given ID exists.
+func DatabaseToolsConnectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DatabaseToolsConnectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseTools/databaseToolsConnection:DatabaseToolsConnection", id, state, "", opts...)
+}
+
 type databaseToolsConnectionArgs struct {
 	// (Updatable) The advanced connection properties key-value pair (e.g., `oracle.net.ssl_server_dn_match`).
 	AdvancedProperties map[string]string `pulumi:"advancedProperties"`

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides the list of Compute Image Capability Schemas in Oracle Cloud Infrastructure Core service.
         /// 
         /// Lists Compute Image Capability Schema in the specified compartment. You can also query by a specific imageId.
-        /// 
         /// 
         /// ## Example Usage
         /// 

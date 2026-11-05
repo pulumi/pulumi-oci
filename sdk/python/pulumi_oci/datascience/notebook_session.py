@@ -744,6 +744,40 @@ class NotebookSession(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return NotebookSession(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            notebook_session_config_details: pulumi.Input[Optional[Union['NotebookSessionNotebookSessionConfigDetailsArgs', 'NotebookSessionNotebookSessionConfigDetailsArgsDict', 'outputs.NotebookSessionNotebookSessionConfigDetails']]] = None,
+            notebook_session_configuration_details: pulumi.Input[Optional[Union['NotebookSessionNotebookSessionConfigurationDetailsArgs', 'NotebookSessionNotebookSessionConfigurationDetailsArgsDict', 'outputs.NotebookSessionNotebookSessionConfigurationDetails']]] = None,
+            notebook_session_runtime_config_details: pulumi.Input[Optional[Union['NotebookSessionNotebookSessionRuntimeConfigDetailsArgs', 'NotebookSessionNotebookSessionRuntimeConfigDetailsArgsDict', 'outputs.NotebookSessionNotebookSessionRuntimeConfigDetails']]] = None,
+            notebook_session_storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgs', 'NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArgsDict', 'outputs.NotebookSessionNotebookSessionStorageMountConfigurationDetailsList']]]]] = None,
+            notebook_session_url: pulumi.Input[Optional[_builtins.str]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["createdBy"] = created_by
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["notebookSessionConfigDetails"] = notebook_session_config_details
+        __props__["notebookSessionConfigurationDetails"] = notebook_session_configuration_details
+        __props__["notebookSessionRuntimeConfigDetails"] = notebook_session_runtime_config_details
+        __props__["notebookSessionStorageMountConfigurationDetailsLists"] = notebook_session_storage_mount_configuration_details_lists
+        __props__["notebookSessionUrl"] = notebook_session_url
+        __props__["projectId"] = project_id
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:DataScience/notebookSession:NotebookSession', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

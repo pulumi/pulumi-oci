@@ -332,6 +332,12 @@ func (DataccVmInstanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dataccVmInstanceState)(nil)).Elem()
 }
 
+// DataccVmInstanceExists checks whether an existing DataccVmInstance resource with the given ID exists.
+func DataccVmInstanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DataccVmInstanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/dataccVmInstance:DataccVmInstance", id, state, "", opts...)
+}
+
 type dataccVmInstanceArgs struct {
 	// Boot storage memory to be allocated in GBs.
 	BootStorageSizeInGbs *float64 `pulumi:"bootStorageSizeInGbs"`

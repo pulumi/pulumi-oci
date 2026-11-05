@@ -719,6 +719,42 @@ class Ipv6(pulumi.CustomResource):
         __props__.__dict__["vnic_id"] = vnic_id
         return Ipv6(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cidr_prefix_length: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_state: pulumi.Input[Optional[_builtins.str]] = None,
+            ipv6subnet_cidr: pulumi.Input[Optional[_builtins.str]] = None,
+            lifetime: pulumi.Input[Optional[_builtins.str]] = None,
+            route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            vnic_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["cidrPrefixLength"] = cidr_prefix_length
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["hostname"] = hostname
+        __props__["ipAddress"] = ip_address
+        __props__["ipState"] = ip_state
+        __props__["ipv6subnetCidr"] = ipv6subnet_cidr
+        __props__["lifetime"] = lifetime
+        __props__["routeTableId"] = route_table_id
+        __props__["state"] = state
+        __props__["subnetId"] = subnet_id
+        __props__["timeCreated"] = time_created
+        __props__["vnicId"] = vnic_id
+        return pulumi.runtime.exists_resource(None, 'oci:Core/ipv6:Ipv6', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="cidrPrefixLength")
     def cidr_prefix_length(self) -> pulumi.Output[_builtins.int]:

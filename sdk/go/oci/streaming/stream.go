@@ -186,6 +186,12 @@ func (StreamState) ElementType() reflect.Type {
 	return reflect.TypeOf((*streamState)(nil)).Elem()
 }
 
+// StreamExists checks whether an existing Stream resource with the given ID exists.
+func StreamExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *StreamState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Streaming/stream:Stream", id, state, "", opts...)
+}
+
 type streamArgs struct {
 	// (Updatable) The OCID of the compartment that contains the stream.
 	CompartmentId *string `pulumi:"compartmentId"`

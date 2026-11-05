@@ -192,6 +192,12 @@ func (DelegationSubscriptionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*delegationSubscriptionState)(nil)).Elem()
 }
 
+// DelegationSubscriptionExists checks whether an existing DelegationSubscription resource with the given ID exists.
+func DelegationSubscriptionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DelegationSubscriptionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DelegateAccessControl/delegationSubscription:DelegationSubscription", id, state, "", opts...)
+}
+
 type delegationSubscriptionArgs struct {
 	// (Updatable) The OCID of the compartment that contains the Delegation Subscription.
 	CompartmentId string `pulumi:"compartmentId"`

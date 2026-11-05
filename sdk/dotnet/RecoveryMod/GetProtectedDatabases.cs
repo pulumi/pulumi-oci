@@ -16,7 +16,6 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// Lists the protected databases based on the specified parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// Lists the protected databases based on the specified parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -81,7 +79,6 @@ namespace Pulumi.Oci.RecoveryMod
         /// This data source provides the list of Protected Databases in Oracle Cloud Infrastructure Recovery service.
         /// 
         /// Lists the protected databases based on the specified parameters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

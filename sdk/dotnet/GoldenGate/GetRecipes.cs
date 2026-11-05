@@ -16,7 +16,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Returns an array of Recipe Summary.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Returns an array of Recipe Summary.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.GoldenGate
         /// This data source provides the list of Recipes in Oracle Cloud Infrastructure Golden Gate service.
         /// 
         /// Returns an array of Recipe Summary.
-        /// 
         /// 
         /// ## Example Usage
         /// 

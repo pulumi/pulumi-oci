@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Gets a list of Cost Alert Subscription in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Gets a list of Cost Alert Subscription in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Cost Alert Subscriptions in Oracle Cloud Infrastructure Costad service.
         /// 
         /// Gets a list of Cost Alert Subscription in a compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

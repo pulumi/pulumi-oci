@@ -832,6 +832,50 @@ class ManagedKafkaKafkaCluster(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return ManagedKafkaKafkaCluster(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            access_subnets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedKafkaKafkaClusterAccessSubnetArgs', 'ManagedKafkaKafkaClusterAccessSubnetArgsDict', 'outputs.ManagedKafkaKafkaClusterAccessSubnet']]]]] = None,
+            broker_shape: pulumi.Input[Optional[Union['ManagedKafkaKafkaClusterBrokerShapeArgs', 'ManagedKafkaKafkaClusterBrokerShapeArgsDict', 'outputs.ManagedKafkaKafkaClusterBrokerShape']]] = None,
+            client_certificate_bundle: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_config_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_config_version: pulumi.Input[Optional[_builtins.int]] = None,
+            cluster_type: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            coordination_type: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            kafka_bootstrap_urls: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedKafkaKafkaClusterKafkaBootstrapUrlArgs', 'ManagedKafkaKafkaClusterKafkaBootstrapUrlArgsDict', 'outputs.ManagedKafkaKafkaClusterKafkaBootstrapUrl']]]]] = None,
+            kafka_version: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["accessSubnets"] = access_subnets
+        __props__["brokerShape"] = broker_shape
+        __props__["clientCertificateBundle"] = client_certificate_bundle
+        __props__["clusterConfigId"] = cluster_config_id
+        __props__["clusterConfigVersion"] = cluster_config_version
+        __props__["clusterType"] = cluster_type
+        __props__["compartmentId"] = compartment_id
+        __props__["coordinationType"] = coordination_type
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["kafkaBootstrapUrls"] = kafka_bootstrap_urls
+        __props__["kafkaVersion"] = kafka_version
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["secretId"] = secret_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:oci/managedKafkaKafkaCluster:ManagedKafkaKafkaCluster', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="accessSubnets")
     def access_subnets(self) -> pulumi.Output[Sequence['outputs.ManagedKafkaKafkaClusterAccessSubnet']]:

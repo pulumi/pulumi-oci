@@ -146,6 +146,12 @@ func (QueryState) ElementType() reflect.Type {
 	return reflect.TypeOf((*queryState)(nil)).Elem()
 }
 
+// QueryExists checks whether an existing Query resource with the given ID exists.
+func QueryExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *QueryState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:MeteringComputation/query:Query", id, state, "", opts...)
+}
+
 type queryArgs struct {
 	// The compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`

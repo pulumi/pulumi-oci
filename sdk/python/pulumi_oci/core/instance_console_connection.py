@@ -470,6 +470,32 @@ class InstanceConsoleConnection(pulumi.CustomResource):
         __props__.__dict__["vnc_connection_string"] = vnc_connection_string
         return InstanceConsoleConnection(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_string: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            public_key: pulumi.Input[Optional[_builtins.str]] = None,
+            service_host_key_fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            vnc_connection_string: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["connectionString"] = connection_string
+        __props__["definedTags"] = defined_tags
+        __props__["fingerprint"] = fingerprint
+        __props__["freeformTags"] = freeform_tags
+        __props__["instanceId"] = instance_id
+        __props__["publicKey"] = public_key
+        __props__["serviceHostKeyFingerprint"] = service_host_key_fingerprint
+        __props__["state"] = state
+        __props__["vncConnectionString"] = vnc_connection_string
+        return pulumi.runtime.exists_resource(None, 'oci:Core/instanceConsoleConnection:InstanceConsoleConnection', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

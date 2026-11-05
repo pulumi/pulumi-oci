@@ -1107,6 +1107,72 @@ class FusionEnvironment(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return FusionEnvironment(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            additional_egress_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FusionEnvironmentAdditionalEgressRuleArgs', 'FusionEnvironmentAdditionalEgressRuleArgsDict', 'outputs.FusionEnvironmentAdditionalEgressRule']]]]] = None,
+            additional_language_packs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            applied_patch_bundles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            create_fusion_environment_admin_user_details: pulumi.Input[Optional[Union['FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgs', 'FusionEnvironmentCreateFusionEnvironmentAdminUserDetailsArgsDict', 'outputs.FusionEnvironmentCreateFusionEnvironmentAdminUserDetails']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dns_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            fusion_environment_family_id: pulumi.Input[Optional[_builtins.str]] = None,
+            fusion_environment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_domain_url: pulumi.Input[Optional[_builtins.str]] = None,
+            is_break_glass_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_ipv6dual_stack_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FusionEnvironmentKmsKeyInfoArgs', 'FusionEnvironmentKmsKeyInfoArgsDict', 'outputs.FusionEnvironmentKmsKeyInfo']]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            lockbox_id: pulumi.Input[Optional[_builtins.str]] = None,
+            maintenance_policy: pulumi.Input[Optional[Union['FusionEnvironmentMaintenancePolicyArgs', 'FusionEnvironmentMaintenancePolicyArgsDict', 'outputs.FusionEnvironmentMaintenancePolicy']]] = None,
+            public_url: pulumi.Input[Optional[_builtins.str]] = None,
+            refreshes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FusionEnvironmentRefreshArgs', 'FusionEnvironmentRefreshArgsDict', 'outputs.FusionEnvironmentRefresh']]]]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FusionEnvironmentRuleArgs', 'FusionEnvironmentRuleArgsDict', 'outputs.FusionEnvironmentRule']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subscription_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            system_name: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_upcoming_maintenance: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["additionalEgressRules"] = additional_egress_rules
+        __props__["additionalLanguagePacks"] = additional_language_packs
+        __props__["appliedPatchBundles"] = applied_patch_bundles
+        __props__["compartmentId"] = compartment_id
+        __props__["createFusionEnvironmentAdminUserDetails"] = create_fusion_environment_admin_user_details
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["dnsPrefix"] = dns_prefix
+        __props__["domainId"] = domain_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["fusionEnvironmentFamilyId"] = fusion_environment_family_id
+        __props__["fusionEnvironmentType"] = fusion_environment_type
+        __props__["idcsDomainUrl"] = idcs_domain_url
+        __props__["isBreakGlassEnabled"] = is_break_glass_enabled
+        __props__["isIpv6dualStackEnabled"] = is_ipv6dual_stack_enabled
+        __props__["kmsKeyId"] = kms_key_id
+        __props__["kmsKeyInfos"] = kms_key_infos
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["lockboxId"] = lockbox_id
+        __props__["maintenancePolicy"] = maintenance_policy
+        __props__["publicUrl"] = public_url
+        __props__["refreshes"] = refreshes
+        __props__["rules"] = rules
+        __props__["state"] = state
+        __props__["subscriptionIds"] = subscription_ids
+        __props__["systemName"] = system_name
+        __props__["timeCreated"] = time_created
+        __props__["timeUpcomingMaintenance"] = time_upcoming_maintenance
+        __props__["timeUpdated"] = time_updated
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'oci:FusionApps/fusionEnvironment:FusionEnvironment', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="additionalEgressRules")
     def additional_egress_rules(self) -> pulumi.Output[Sequence['outputs.FusionEnvironmentAdditionalEgressRule']]:

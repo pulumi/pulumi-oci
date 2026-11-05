@@ -313,6 +313,12 @@ func (NamespaceScheduledTaskState) ElementType() reflect.Type {
 	return reflect.TypeOf((*namespaceScheduledTaskState)(nil)).Elem()
 }
 
+// NamespaceScheduledTaskExists checks whether an existing NamespaceScheduledTask resource with the given ID exists.
+func NamespaceScheduledTaskExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NamespaceScheduledTaskState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LogAnalytics/namespaceScheduledTask:NamespaceScheduledTask", id, state, "", opts...)
+}
+
 type namespaceScheduledTaskArgs struct {
 	// Action for scheduled task.
 	Action NamespaceScheduledTaskAction `pulumi:"action"`

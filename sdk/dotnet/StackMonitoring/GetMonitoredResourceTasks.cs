@@ -16,7 +16,6 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// Returns a list of stack monitoring resource tasks in the compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.StackMonitoring
         /// 
         /// Returns a list of stack monitoring resource tasks in the compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.StackMonitoring
         /// This data source provides the list of Monitored Resource Tasks in Oracle Cloud Infrastructure Stack Monitoring service.
         /// 
         /// Returns a list of stack monitoring resource tasks in the compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Adm
         /// Returns a list of Remediation Recipes based on the specified query parameters.
         /// The query parameters `compartmentId` or `Id` must be provided.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Adm
         /// Returns a list of Remediation Recipes based on the specified query parameters.
         /// The query parameters `compartmentId` or `Id` must be provided.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -78,7 +76,6 @@ namespace Pulumi.Oci.Adm
         /// 
         /// Returns a list of Remediation Recipes based on the specified query parameters.
         /// The query parameters `compartmentId` or `Id` must be provided.
-        /// 
         /// 
         /// ## Example Usage
         /// 

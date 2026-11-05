@@ -16,7 +16,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// Returns a list of all Big Data Service clusters in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// Returns a list of all Big Data Service clusters in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.BigDataService
         /// This data source provides the list of Bds Instances in Oracle Cloud Infrastructure Big Data Service service.
         /// 
         /// Returns a list of all Big Data Service clusters in a compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

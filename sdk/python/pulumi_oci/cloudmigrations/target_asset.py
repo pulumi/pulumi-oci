@@ -870,6 +870,52 @@ class TargetAsset(pulumi.CustomResource):
         __props__.__dict__["user_spec"] = user_spec
         return TargetAsset(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            block_volumes_performance: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compatibility_messages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetAssetCompatibilityMessageArgs', 'TargetAssetCompatibilityMessageArgsDict', 'outputs.TargetAssetCompatibilityMessage']]]]] = None,
+            created_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            estimated_costs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetAssetEstimatedCostArgs', 'TargetAssetEstimatedCostArgsDict', 'outputs.TargetAssetEstimatedCost']]]]] = None,
+            is_excluded_from_execution: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            migration_assets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetAssetMigrationAssetArgs', 'TargetAssetMigrationAssetArgsDict', 'outputs.TargetAssetMigrationAsset']]]]] = None,
+            migration_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ms_license: pulumi.Input[Optional[_builtins.str]] = None,
+            preferred_shape_type: pulumi.Input[Optional[_builtins.str]] = None,
+            recommended_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetAssetRecommendedSpecArgs', 'TargetAssetRecommendedSpecArgsDict', 'outputs.TargetAssetRecommendedSpec']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            test_specs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetAssetTestSpecArgs', 'TargetAssetTestSpecArgsDict', 'outputs.TargetAssetTestSpec']]]]] = None,
+            time_assessed: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            user_spec: pulumi.Input[Optional[Union['TargetAssetUserSpecArgs', 'TargetAssetUserSpecArgsDict', 'outputs.TargetAssetUserSpec']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["blockVolumesPerformance"] = block_volumes_performance
+        __props__["compartmentId"] = compartment_id
+        __props__["compatibilityMessages"] = compatibility_messages
+        __props__["createdResourceId"] = created_resource_id
+        __props__["displayName"] = display_name
+        __props__["estimatedCosts"] = estimated_costs
+        __props__["isExcludedFromExecution"] = is_excluded_from_execution
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["migrationAssets"] = migration_assets
+        __props__["migrationPlanId"] = migration_plan_id
+        __props__["msLicense"] = ms_license
+        __props__["preferredShapeType"] = preferred_shape_type
+        __props__["recommendedSpecs"] = recommended_specs
+        __props__["state"] = state
+        __props__["testSpecs"] = test_specs
+        __props__["timeAssessed"] = time_assessed
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["type"] = type
+        __props__["userSpec"] = user_spec
+        return pulumi.runtime.exists_resource(None, 'oci:CloudMigrations/targetAsset:TargetAsset', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="blockVolumesPerformance")
     def block_volumes_performance(self) -> pulumi.Output[_builtins.int]:

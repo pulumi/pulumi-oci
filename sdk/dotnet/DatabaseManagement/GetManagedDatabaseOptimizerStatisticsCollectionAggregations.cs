@@ -21,7 +21,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// You can further filter the results by providing the optional type of TaskTypeQueryParam.
         /// If the task type if not provided, then both Auto and Manual tasks are considered for aggregation.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -57,7 +56,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// You can further filter the results by providing the optional type of TaskTypeQueryParam.
         /// If the task type if not provided, then both Auto and Manual tasks are considered for aggregation.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -92,7 +90,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// If the date-time range is not specified, then the operations in the last seven days are listed.
         /// You can further filter the results by providing the optional type of TaskTypeQueryParam.
         /// If the task type if not provided, then both Auto and Manual tasks are considered for aggregation.
-        /// 
         /// 
         /// ## Example Usage
         /// 

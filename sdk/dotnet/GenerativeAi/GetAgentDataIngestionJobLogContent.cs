@@ -18,7 +18,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// Returns the raw log file for the specified data ingestion job in text format.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// Returns the raw log file for the specified data ingestion job in text format.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// **GetDataIngestionJobLogContent**
         /// 
         /// Returns the raw log file for the specified data ingestion job in text format.
-        /// 
         /// 
         /// ## Example Usage
         /// 

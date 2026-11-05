@@ -936,6 +936,12 @@ func (DomainsGrantState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsGrantState)(nil)).Elem()
 }
 
+// DomainsGrantExists checks whether an existing DomainsGrant resource with the given ID exists.
+func DomainsGrantExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsGrantState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsGrant:DomainsGrant", id, state, "", opts...)
+}
+
 type domainsGrantArgs struct {
 	// Application that is being granted. Each Grant must grant either an App or an App-Entitlement-Collection.
 	//

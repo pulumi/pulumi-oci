@@ -823,6 +823,12 @@ func (DomainsMyOauth2clientCredentialState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsMyOauth2clientCredentialState)(nil)).Elem()
 }
 
+// DomainsMyOauth2clientCredentialExists checks whether an existing DomainsMyOauth2clientCredential resource with the given ID exists.
+func DomainsMyOauth2clientCredentialExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsMyOauth2clientCredentialState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsMyOauth2clientCredential:DomainsMyOauth2clientCredential", id, state, "", opts...)
+}
+
 type domainsMyOauth2clientCredentialArgs struct {
 	// The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization *string `pulumi:"authorization"`

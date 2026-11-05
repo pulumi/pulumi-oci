@@ -157,6 +157,12 @@ func (PluggabledatabasePluggableDatabaseDbmFeaturesManagementState) ElementType(
 	return reflect.TypeOf((*pluggabledatabasePluggableDatabaseDbmFeaturesManagementState)(nil)).Elem()
 }
 
+// PluggabledatabasePluggableDatabaseDbmFeaturesManagementExists checks whether an existing PluggabledatabasePluggableDatabaseDbmFeaturesManagement resource with the given ID exists.
+func PluggabledatabasePluggableDatabaseDbmFeaturesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PluggabledatabasePluggableDatabaseDbmFeaturesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/pluggabledatabasePluggableDatabaseDbmFeaturesManagement:PluggabledatabasePluggableDatabaseDbmFeaturesManagement", id, state, "", opts...)
+}
+
 type pluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs struct {
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 	//

@@ -232,6 +232,12 @@ func (PrivateEndpointState) ElementType() reflect.Type {
 	return reflect.TypeOf((*privateEndpointState)(nil)).Elem()
 }
 
+// PrivateEndpointExists checks whether an existing PrivateEndpoint resource with the given ID exists.
+func PrivateEndpointExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PrivateEndpointState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataFlow/privateEndpoint:PrivateEndpoint", id, state, "", opts...)
+}
+
 type privateEndpointArgs struct {
 	// (Updatable) The OCID of a compartment.
 	CompartmentId string `pulumi:"compartmentId"`

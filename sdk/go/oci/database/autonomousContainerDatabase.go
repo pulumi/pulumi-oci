@@ -595,6 +595,12 @@ func (AutonomousContainerDatabaseState) ElementType() reflect.Type {
 	return reflect.TypeOf((*autonomousContainerDatabaseState)(nil)).Elem()
 }
 
+// AutonomousContainerDatabaseExists checks whether an existing AutonomousContainerDatabase resource with the given ID exists.
+func AutonomousContainerDatabaseExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutonomousContainerDatabaseState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/autonomousContainerDatabase:AutonomousContainerDatabase", id, state, "", opts...)
+}
+
 type autonomousContainerDatabaseArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source ACD backup that you will clone to create a new ACD.
 	AutonomousContainerDatabaseBackupId *string `pulumi:"autonomousContainerDatabaseBackupId"`

@@ -94,11 +94,10 @@ public class Record extends com.pulumi.resources.CustomResource {
     /**
      * The fully qualified domain name where the record can be located. Domain value is case insensitive.
      * 
-     * @deprecated
-     * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+     * @deprecated The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
      * 
      */
-    @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+    @Deprecated
     @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
@@ -168,11 +167,10 @@ public class Record extends com.pulumi.resources.CustomResource {
     /**
      * The canonical name for the record&#39;s type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
      * 
-     * @deprecated
-     * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+     * @deprecated The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
      * 
      */
-    @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+    @Deprecated
     @Export(name="rtype", refs={String.class}, tree="[0]")
     private Output<String> rtype;
 
@@ -203,11 +201,10 @@ public class Record extends com.pulumi.resources.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
-     * @deprecated
-     * The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
+     * @deprecated The &#39;oci_dns_record&#39; resource has been deprecated. Please use &#39;oci_dns_rrset&#39; instead.
      * 
      */
-    @Deprecated /* The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead. */
+    @Deprecated
     @Export(name="zoneNameOrId", refs={String.class}, tree="[0]")
     private Output<String> zoneNameOrId;
 

@@ -499,6 +499,12 @@ func (DeployStageState) ElementType() reflect.Type {
 	return reflect.TypeOf((*deployStageState)(nil)).Elem()
 }
 
+// DeployStageExists checks whether an existing DeployStage resource with the given ID exists.
+func DeployStageExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DeployStageState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DevOps/deployStage:DeployStage", id, state, "", opts...)
+}
+
 type deployStageArgs struct {
 	// (Updatable) Specifies the approval policy.
 	ApprovalPolicy *DeployStageApprovalPolicy `pulumi:"approvalPolicy"`

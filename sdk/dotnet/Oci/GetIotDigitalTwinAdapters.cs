@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Retrieves a list of digital twin adapters within the specified IoT domain.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Retrieves a list of digital twin adapters within the specified IoT domain.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Digital Twin Adapters in Oracle Cloud Infrastructure Iot service.
         /// 
         /// Retrieves a list of digital twin adapters within the specified IoT domain.
-        /// 
         /// 
         /// ## Example Usage
         /// 

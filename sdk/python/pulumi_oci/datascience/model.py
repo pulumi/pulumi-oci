@@ -1178,6 +1178,70 @@ class Model(pulumi.CustomResource):
         __props__.__dict__["version_label"] = version_label
         return Model(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            artifact_content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+            artifact_content_length: pulumi.Input[Optional[_builtins.str]] = None,
+            artifact_content_md5: pulumi.Input[Optional[_builtins.str]] = None,
+            artifact_last_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_operation_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelBackupOperationDetailArgs', 'ModelBackupOperationDetailArgsDict', 'outputs.ModelBackupOperationDetail']]]]] = None,
+            backup_setting: pulumi.Input[Optional[Union['ModelBackupSettingArgs', 'ModelBackupSettingArgsDict', 'outputs.ModelBackupSetting']]] = None,
+            category: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            custom_metadata_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelCustomMetadataListArgs', 'ModelCustomMetadataListArgsDict', 'outputs.ModelCustomMetadataList']]]]] = None,
+            defined_metadata_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelDefinedMetadataListArgs', 'ModelDefinedMetadataListArgsDict', 'outputs.ModelDefinedMetadataList']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            empty_model: pulumi.Input[Optional[_builtins.bool]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            input_schema: pulumi.Input[Optional[_builtins.str]] = None,
+            is_model_by_reference: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            model_artifact: pulumi.Input[Optional[_builtins.str]] = None,
+            model_version_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+            model_version_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+            output_schema: pulumi.Input[Optional[_builtins.str]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            retention_operation_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelRetentionOperationDetailArgs', 'ModelRetentionOperationDetailArgsDict', 'outputs.ModelRetentionOperationDetail']]]]] = None,
+            retention_setting: pulumi.Input[Optional[Union['ModelRetentionSettingArgs', 'ModelRetentionSettingArgsDict', 'outputs.ModelRetentionSetting']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            version_label: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["artifactContentDisposition"] = artifact_content_disposition
+        __props__["artifactContentLength"] = artifact_content_length
+        __props__["artifactContentMd5"] = artifact_content_md5
+        __props__["artifactLastModified"] = artifact_last_modified
+        __props__["backupOperationDetails"] = backup_operation_details
+        __props__["backupSetting"] = backup_setting
+        __props__["category"] = category
+        __props__["compartmentId"] = compartment_id
+        __props__["createdBy"] = created_by
+        __props__["customMetadataLists"] = custom_metadata_lists
+        __props__["definedMetadataLists"] = defined_metadata_lists
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["emptyModel"] = empty_model
+        __props__["freeformTags"] = freeform_tags
+        __props__["inputSchema"] = input_schema
+        __props__["isModelByReference"] = is_model_by_reference
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["modelArtifact"] = model_artifact
+        __props__["modelVersionSetId"] = model_version_set_id
+        __props__["modelVersionSetName"] = model_version_set_name
+        __props__["outputSchema"] = output_schema
+        __props__["projectId"] = project_id
+        __props__["retentionOperationDetails"] = retention_operation_details
+        __props__["retentionSetting"] = retention_setting
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["versionLabel"] = version_label
+        return pulumi.runtime.exists_resource(None, 'oci:DataScience/model:Model', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="artifactContentDisposition")
     def artifact_content_disposition(self) -> pulumi.Output[_builtins.str]:

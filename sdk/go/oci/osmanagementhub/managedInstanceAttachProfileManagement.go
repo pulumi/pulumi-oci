@@ -125,6 +125,12 @@ func (ManagedInstanceAttachProfileManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managedInstanceAttachProfileManagementState)(nil)).Elem()
 }
 
+// ManagedInstanceAttachProfileManagementExists checks whether an existing ManagedInstanceAttachProfileManagement resource with the given ID exists.
+func ManagedInstanceAttachProfileManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedInstanceAttachProfileManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/managedInstanceAttachProfileManagement:ManagedInstanceAttachProfileManagement", id, state, "", opts...)
+}
+
 type managedInstanceAttachProfileManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
 	ManagedInstanceId string `pulumi:"managedInstanceId"`

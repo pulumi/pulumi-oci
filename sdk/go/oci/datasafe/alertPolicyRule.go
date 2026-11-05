@@ -156,6 +156,12 @@ func (AlertPolicyRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*alertPolicyRuleState)(nil)).Elem()
 }
 
+// AlertPolicyRuleExists checks whether an existing AlertPolicyRule resource with the given ID exists.
+func AlertPolicyRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AlertPolicyRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/alertPolicyRule:AlertPolicyRule", id, state, "", opts...)
+}
+
 type alertPolicyRuleArgs struct {
 	// The OCID of the alert policy.
 	AlertPolicyId string `pulumi:"alertPolicyId"`

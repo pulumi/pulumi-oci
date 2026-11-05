@@ -725,6 +725,48 @@ class ProductCatalogInternalProduct(pulumi.CustomResource):
         __props__.__dict__["time_ready"] = time_ready
         return ProductCatalogInternalProduct(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            backfill_eligibility: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_excluded: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            limits: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProductCatalogInternalProductLimitArgs', 'ProductCatalogInternalProductLimitArgsDict', 'outputs.ProductCatalogInternalProductLimit']]]]] = None,
+            meters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProductCatalogInternalProductMeterArgs', 'ProductCatalogInternalProductMeterArgsDict', 'outputs.ProductCatalogInternalProductMeter']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            product_id: pulumi.Input[Optional[_builtins.str]] = None,
+            service_name: pulumi.Input[Optional[_builtins.str]] = None,
+            skuses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProductCatalogInternalProductSkusArgs', 'ProductCatalogInternalProductSkusArgsDict', 'outputs.ProductCatalogInternalProductSkus']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_launched: pulumi.Input[Optional[_builtins.str]] = None,
+            time_ready: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["backfillEligibility"] = backfill_eligibility
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["freeformTags"] = freeform_tags
+        __props__["isExcluded"] = is_excluded
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["limits"] = limits
+        __props__["meters"] = meters
+        __props__["name"] = name
+        __props__["productId"] = product_id
+        __props__["serviceName"] = service_name
+        __props__["skuses"] = skuses
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeLaunched"] = time_launched
+        __props__["timeReady"] = time_ready
+        return pulumi.runtime.exists_resource(None, 'oci:oci/productCatalogInternalProduct:ProductCatalogInternalProduct', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="backfillEligibility")
     def backfill_eligibility(self) -> pulumi.Output[_builtins.str]:

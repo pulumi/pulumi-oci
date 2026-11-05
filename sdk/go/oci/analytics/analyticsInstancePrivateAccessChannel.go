@@ -198,6 +198,12 @@ func (AnalyticsInstancePrivateAccessChannelState) ElementType() reflect.Type {
 	return reflect.TypeOf((*analyticsInstancePrivateAccessChannelState)(nil)).Elem()
 }
 
+// AnalyticsInstancePrivateAccessChannelExists checks whether an existing AnalyticsInstancePrivateAccessChannel resource with the given ID exists.
+func AnalyticsInstancePrivateAccessChannelExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AnalyticsInstancePrivateAccessChannelState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel", id, state, "", opts...)
+}
+
 type analyticsInstancePrivateAccessChannelArgs struct {
 	// The OCID of the Analytics instance.
 	AnalyticsInstanceId string `pulumi:"analyticsInstanceId"`

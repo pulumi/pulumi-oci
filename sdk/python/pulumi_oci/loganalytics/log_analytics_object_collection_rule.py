@@ -1390,6 +1390,76 @@ class LogAnalyticsObjectCollectionRule(pulumi.CustomResource):
         __props__.__dict__["timezone"] = timezone
         return LogAnalyticsObjectCollectionRule(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            char_encoding: pulumi.Input[Optional[_builtins.str]] = None,
+            collection_type: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_force_historic_collection: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_collected_object: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            log_set: pulumi.Input[Optional[_builtins.str]] = None,
+            log_set_ext_regex: pulumi.Input[Optional[_builtins.str]] = None,
+            log_set_key: pulumi.Input[Optional[_builtins.str]] = None,
+            log_source_name: pulumi.Input[Optional[_builtins.str]] = None,
+            log_type: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            object_name_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            os_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+            os_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsObjectCollectionRuleOverrideArgs', 'LogAnalyticsObjectCollectionRuleOverrideArgsDict', 'outputs.LogAnalyticsObjectCollectionRuleOverride']]]]] = None,
+            poll_since: pulumi.Input[Optional[_builtins.str]] = None,
+            poll_till: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            stream_cursor_time: pulumi.Input[Optional[_builtins.str]] = None,
+            stream_cursor_type: pulumi.Input[Optional[_builtins.str]] = None,
+            stream_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            timezone: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["charEncoding"] = char_encoding
+        __props__["collectionType"] = collection_type
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["entityId"] = entity_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["isEnabled"] = is_enabled
+        __props__["isForceHistoricCollection"] = is_force_historic_collection
+        __props__["lastCollectedObject"] = last_collected_object
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["logGroupId"] = log_group_id
+        __props__["logSet"] = log_set
+        __props__["logSetExtRegex"] = log_set_ext_regex
+        __props__["logSetKey"] = log_set_key
+        __props__["logSourceName"] = log_source_name
+        __props__["logType"] = log_type
+        __props__["name"] = name
+        __props__["namespace"] = namespace
+        __props__["objectNameFilters"] = object_name_filters
+        __props__["osBucketName"] = os_bucket_name
+        __props__["osNamespace"] = os_namespace
+        __props__["overrides"] = overrides
+        __props__["pollSince"] = poll_since
+        __props__["pollTill"] = poll_till
+        __props__["state"] = state
+        __props__["streamCursorTime"] = stream_cursor_time
+        __props__["streamCursorType"] = stream_cursor_type
+        __props__["streamId"] = stream_id
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["timezone"] = timezone
+        return pulumi.runtime.exists_resource(None, 'oci:LogAnalytics/logAnalyticsObjectCollectionRule:LogAnalyticsObjectCollectionRule', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="charEncoding")
     def char_encoding(self) -> pulumi.Output[_builtins.str]:

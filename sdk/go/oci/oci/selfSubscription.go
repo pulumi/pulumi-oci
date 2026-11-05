@@ -310,6 +310,12 @@ func (SelfSubscriptionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*selfSubscriptionState)(nil)).Elem()
 }
 
+// SelfSubscriptionExists checks whether an existing SelfSubscription resource with the given ID exists.
+func SelfSubscriptionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SelfSubscriptionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/selfSubscription:SelfSubscription", id, state, "", opts...)
+}
+
 type selfSubscriptionArgs struct {
 	// Additional details that are specific for this subscription such as activation details.
 	AdditionalDetails []SelfSubscriptionAdditionalDetail `pulumi:"additionalDetails"`

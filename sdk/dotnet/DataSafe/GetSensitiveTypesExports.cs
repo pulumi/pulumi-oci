@@ -17,7 +17,6 @@ namespace Pulumi.Oci.DataSafe
         /// Retrieves a list of all sensitive types export in Data Safe based on the specified query parameters.
         /// The ListSensitiveTypesExports operation returns only the sensitive types export in the specified `compartmentId`.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -52,7 +51,6 @@ namespace Pulumi.Oci.DataSafe
         /// Retrieves a list of all sensitive types export in Data Safe based on the specified query parameters.
         /// The ListSensitiveTypesExports operation returns only the sensitive types export in the specified `compartmentId`.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -86,7 +84,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Retrieves a list of all sensitive types export in Data Safe based on the specified query parameters.
         /// The ListSensitiveTypesExports operation returns only the sensitive types export in the specified `compartmentId`.
-        /// 
         /// 
         /// ## Example Usage
         /// 

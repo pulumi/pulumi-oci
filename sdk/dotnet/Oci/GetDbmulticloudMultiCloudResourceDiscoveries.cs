@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Lists all Multicloud Resource Discovery resources based on the specified filters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Lists all Multicloud Resource Discovery resources based on the specified filters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -81,7 +79,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Multi Cloud Resource Discoveries in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
         /// Lists all Multicloud Resource Discovery resources based on the specified filters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

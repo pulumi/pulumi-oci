@@ -300,6 +300,22 @@ class UiPassword(pulumi.CustomResource):
         __props__.__dict__["user_id"] = user_id
         return UiPassword(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            inactive_status: pulumi.Input[Optional[_builtins.str]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            user_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["inactiveStatus"] = inactive_status
+        __props__["password"] = password
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["userId"] = user_id
+        return pulumi.runtime.exists_resource(None, 'oci:Identity/uiPassword:UiPassword', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="inactiveStatus")
     def inactive_status(self) -> pulumi.Output[_builtins.str]:

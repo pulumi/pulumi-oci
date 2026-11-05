@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty {
     /**
-     * @return (Updatable) If true, this flatfile bundle configuration property value is confidential and will be encrypted in Oracle Identity Cloud Service. This attribute maps to \&#34;isConfidential\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return (Updatable) If true, this flatfile bundle configuration property value is confidential and will be encrypted in Oracle Identity Cloud Service. This attribute maps to &#92;&#34;isConfidential&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -30,7 +30,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
      */
     private @Nullable Boolean confidential;
     /**
-     * @return (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to &#92;&#34;displayName&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -45,7 +45,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
      */
     private @Nullable String displayName;
     /**
-     * @return (Updatable) Help message of the flatfile bundle configuration property. This attribute maps to \&#34;helpMessage\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return (Updatable) Help message of the flatfile bundle configuration property. This attribute maps to &#92;&#34;helpMessage&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -60,7 +60,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
      */
     private @Nullable String helpMessage;
     /**
-     * @return (Updatable) ICF data type of flatfile the bundle configuration property. This attribute maps to \&#34;type\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return (Updatable) ICF data type of flatfile the bundle configuration property. This attribute maps to &#92;&#34;type&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -75,7 +75,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
      */
     private String icfType;
     /**
-     * @return (Updatable) Name of the flatfile bundle configuration property. This attribute maps to \&#34;name\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return (Updatable) Name of the flatfile bundle configuration property. This attribute maps to &#92;&#34;name&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -105,7 +105,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
      */
     private @Nullable Integer order;
     /**
-     * @return (Updatable) If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \&#34;isRequired\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return (Updatable) If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to &#92;&#34;isRequired&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: true
@@ -119,7 +119,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
      */
     private Boolean required;
     /**
-     * @return (Updatable) Value of the flatfile bundle configuration property. This attribute maps to \&#34;value\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return (Updatable) Value of the flatfile bundle configuration property. This attribute maps to &#92;&#34;value&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -137,7 +137,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
 
     private DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty() {}
     /**
-     * @return (Updatable) If true, this flatfile bundle configuration property value is confidential and will be encrypted in Oracle Identity Cloud Service. This attribute maps to \&#34;isConfidential\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return (Updatable) If true, this flatfile bundle configuration property value is confidential and will be encrypted in Oracle Identity Cloud Service. This attribute maps to &#92;&#34;isConfidential&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -153,7 +153,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         return Optional.ofNullable(this.confidential);
     }
     /**
-     * @return (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to &#92;&#34;displayName&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -170,7 +170,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return (Updatable) Help message of the flatfile bundle configuration property. This attribute maps to \&#34;helpMessage\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return (Updatable) Help message of the flatfile bundle configuration property. This attribute maps to &#92;&#34;helpMessage&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -187,7 +187,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         return Optional.ofNullable(this.helpMessage);
     }
     /**
-     * @return (Updatable) ICF data type of flatfile the bundle configuration property. This attribute maps to \&#34;type\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return (Updatable) ICF data type of flatfile the bundle configuration property. This attribute maps to &#92;&#34;type&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -204,7 +204,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         return this.icfType;
     }
     /**
-     * @return (Updatable) Name of the flatfile bundle configuration property. This attribute maps to \&#34;name\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return (Updatable) Name of the flatfile bundle configuration property. This attribute maps to &#92;&#34;name&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -238,7 +238,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         return Optional.ofNullable(this.order);
     }
     /**
-     * @return (Updatable) If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \&#34;isRequired\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return (Updatable) If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to &#92;&#34;isRequired&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: true
@@ -254,7 +254,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         return this.required;
     }
     /**
-     * @return (Updatable) Value of the flatfile bundle configuration property. This attribute maps to \&#34;value\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return (Updatable) Value of the flatfile bundle configuration property. This attribute maps to &#92;&#34;value&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false

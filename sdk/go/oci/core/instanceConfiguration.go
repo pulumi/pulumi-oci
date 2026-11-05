@@ -173,6 +173,12 @@ func (InstanceConfigurationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*instanceConfigurationState)(nil)).Elem()
 }
 
+// InstanceConfigurationExists checks whether an existing InstanceConfiguration resource with the given ID exists.
+func InstanceConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *InstanceConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/instanceConfiguration:InstanceConfiguration", id, state, "", opts...)
+}
+
 type instanceConfigurationArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
 	CompartmentId string `pulumi:"compartmentId"`

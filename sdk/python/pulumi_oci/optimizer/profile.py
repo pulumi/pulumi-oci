@@ -635,6 +635,38 @@ class Profile(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return Profile(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            aggregation_interval_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            levels_configuration: pulumi.Input[Optional[Union['ProfileLevelsConfigurationArgs', 'ProfileLevelsConfigurationArgsDict', 'outputs.ProfileLevelsConfiguration']]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_compartments: pulumi.Input[Optional[Union['ProfileTargetCompartmentsArgs', 'ProfileTargetCompartmentsArgsDict', 'outputs.ProfileTargetCompartments']]] = None,
+            target_tags: pulumi.Input[Optional[Union['ProfileTargetTagsArgs', 'ProfileTargetTagsArgsDict', 'outputs.ProfileTargetTags']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["aggregationIntervalInDays"] = aggregation_interval_in_days
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["freeformTags"] = freeform_tags
+        __props__["levelsConfiguration"] = levels_configuration
+        __props__["name"] = name
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["targetCompartments"] = target_compartments
+        __props__["targetTags"] = target_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Optimizer/profile:Profile', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="aggregationIntervalInDays")
     def aggregation_interval_in_days(self) -> pulumi.Output[_builtins.int]:

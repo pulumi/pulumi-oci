@@ -159,6 +159,12 @@ func (BdsInstanceOsPatchActionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*bdsInstanceOsPatchActionState)(nil)).Elem()
 }
 
+// BdsInstanceOsPatchActionExists checks whether an existing BdsInstanceOsPatchAction resource with the given ID exists.
+func BdsInstanceOsPatchActionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BdsInstanceOsPatchActionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:BigDataService/bdsInstanceOsPatchAction:BdsInstanceOsPatchAction", id, state, "", opts...)
+}
+
 type bdsInstanceOsPatchActionArgs struct {
 	// The OCID of the cluster.
 	BdsInstanceId string `pulumi:"bdsInstanceId"`

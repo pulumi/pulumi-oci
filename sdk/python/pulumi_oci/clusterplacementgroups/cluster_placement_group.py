@@ -741,6 +741,42 @@ class ClusterPlacementGroup(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return ClusterPlacementGroup(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            capabilities: pulumi.Input[Optional[Union['ClusterPlacementGroupCapabilitiesArgs', 'ClusterPlacementGroupCapabilitiesArgsDict', 'outputs.ClusterPlacementGroupCapabilities']]] = None,
+            cluster_placement_group_type: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            opc_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
+            placement_instruction: pulumi.Input[Optional[Union['ClusterPlacementGroupPlacementInstructionArgs', 'ClusterPlacementGroupPlacementInstructionArgsDict', 'outputs.ClusterPlacementGroupPlacementInstruction']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availabilityDomain"] = availability_domain
+        __props__["capabilities"] = capabilities
+        __props__["clusterPlacementGroupType"] = cluster_placement_group_type
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["name"] = name
+        __props__["opcDryRun"] = opc_dry_run
+        __props__["placementInstruction"] = placement_instruction
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:ClusterPlacementGroups/clusterPlacementGroup:ClusterPlacementGroup', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[_builtins.str]:

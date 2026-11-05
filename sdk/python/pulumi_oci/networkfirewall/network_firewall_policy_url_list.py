@@ -364,6 +364,24 @@ class NetworkFirewallPolicyUrlList(pulumi.CustomResource):
         __props__.__dict__["urls"] = urls
         return NetworkFirewallPolicyUrlList(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            total_urls: pulumi.Input[Optional[_builtins.int]] = None,
+            urls: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFirewallPolicyUrlListUrlArgs', 'NetworkFirewallPolicyUrlListUrlArgsDict', 'outputs.NetworkFirewallPolicyUrlListUrl']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["description"] = description
+        __props__["name"] = name
+        __props__["networkFirewallPolicyId"] = network_firewall_policy_id
+        __props__["parentResourceId"] = parent_resource_id
+        __props__["totalUrls"] = total_urls
+        __props__["urls"] = urls
+        return pulumi.runtime.exists_resource(None, 'oci:NetworkFirewall/networkFirewallPolicyUrlList:NetworkFirewallPolicyUrlList', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[_builtins.str]]:

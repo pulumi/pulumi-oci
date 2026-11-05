@@ -16,7 +16,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Returns a list of products associated with the confirmed targets.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Returns a list of products associated with the confirmed targets.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// This data source provides the list of Fleet Products in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
         /// Returns a list of products associated with the confirmed targets.
-        /// 
         /// 
         /// ## Example Usage
         /// 

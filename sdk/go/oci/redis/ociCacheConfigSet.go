@@ -206,6 +206,12 @@ func (OciCacheConfigSetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ociCacheConfigSetState)(nil)).Elem()
 }
 
+// OciCacheConfigSetExists checks whether an existing OciCacheConfigSet resource with the given ID exists.
+func OciCacheConfigSetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OciCacheConfigSetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Redis/ociCacheConfigSet:OciCacheConfigSet", id, state, "", opts...)
+}
+
 type ociCacheConfigSetArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Oracle Cloud Infrastructure Cache Config Set.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Lists Windows updates that have been reported to the service.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Lists Windows updates that have been reported to the service.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides the list of Windows Updates in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Lists Windows updates that have been reported to the service.
-        /// 
         /// 
         /// ## Example Usage
         /// 

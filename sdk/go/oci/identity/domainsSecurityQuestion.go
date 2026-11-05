@@ -738,6 +738,12 @@ func (DomainsSecurityQuestionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsSecurityQuestionState)(nil)).Elem()
 }
 
+// DomainsSecurityQuestionExists checks whether an existing DomainsSecurityQuestion resource with the given ID exists.
+func DomainsSecurityQuestionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsSecurityQuestionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsSecurityQuestion:DomainsSecurityQuestion", id, state, "", opts...)
+}
+
 type domainsSecurityQuestionArgs struct {
 	// This indicates if the question is selected by the Security Admin and is available for the end user.
 	//

@@ -119,8 +119,7 @@ namespace Pulumi.Oci.ApmTraces
         public Output<string> ScheduledQuerySchedule { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Scheduled query to be run. 
-        /// 
+        /// (Updatable) Scheduled query to be run.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -277,8 +276,7 @@ namespace Pulumi.Oci.ApmTraces
         public Input<string>? ScheduledQuerySchedule { get; set; }
 
         /// <summary>
-        /// (Updatable) Scheduled query to be run. 
-        /// 
+        /// (Updatable) Scheduled query to be run.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -397,8 +395,7 @@ namespace Pulumi.Oci.ApmTraces
         public Input<string>? ScheduledQuerySchedule { get; set; }
 
         /// <summary>
-        /// (Updatable) Scheduled query to be run. 
-        /// 
+        /// (Updatable) Scheduled query to be run.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

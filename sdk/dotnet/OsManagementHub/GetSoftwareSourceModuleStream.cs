@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Returns information about the specified module stream in a software source.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Returns information about the specified module stream in a software source.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides details about a specific Software Source Module Stream resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Returns information about the specified module stream in a software source.
-        /// 
         /// 
         /// ## Example Usage
         /// 

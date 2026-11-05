@@ -203,6 +203,12 @@ func (OciCacheUserState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ociCacheUserState)(nil)).Elem()
 }
 
+// OciCacheUserExists checks whether an existing OciCacheUser resource with the given ID exists.
+func OciCacheUserExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OciCacheUserState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Redis/ociCacheUser:OciCacheUser", id, state, "", opts...)
+}
+
 type ociCacheUserArgs struct {
 	// (Updatable) ACL string of Oracle Cloud Infrastructure cache user.
 	AclString string `pulumi:"aclString"`

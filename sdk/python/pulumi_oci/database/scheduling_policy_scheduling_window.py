@@ -499,6 +499,34 @@ class SchedulingPolicySchedulingWindow(pulumi.CustomResource):
         __props__.__dict__["window_preference"] = window_preference
         return SchedulingPolicySchedulingWindow(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduling_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_next_scheduling_window_starts: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            window_preference: pulumi.Input[Optional[Union['SchedulingPolicySchedulingWindowWindowPreferenceArgs', 'SchedulingPolicySchedulingWindowWindowPreferenceArgsDict', 'outputs.SchedulingPolicySchedulingWindowWindowPreference']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["schedulingPolicyId"] = scheduling_policy_id
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["timeNextSchedulingWindowStarts"] = time_next_scheduling_window_starts
+        __props__["timeUpdated"] = time_updated
+        __props__["windowPreference"] = window_preference
+        return pulumi.runtime.exists_resource(None, 'oci:Database/schedulingPolicySchedulingWindow:SchedulingPolicySchedulingWindow', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

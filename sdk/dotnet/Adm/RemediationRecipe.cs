@@ -150,8 +150,7 @@ namespace Pulumi.Oci.Adm
         public Output<Outputs.RemediationRecipeScmConfiguration> ScmConfiguration { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -296,8 +295,7 @@ namespace Pulumi.Oci.Adm
         public Input<Inputs.RemediationRecipeScmConfigurationArgs> ScmConfiguration { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -386,8 +384,7 @@ namespace Pulumi.Oci.Adm
         public Input<Inputs.RemediationRecipeScmConfigurationGetArgs>? ScmConfiguration { get; set; }
 
         /// <summary>
-        /// (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Remediation Recipe. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -201,6 +201,12 @@ func (AppCatalogSubscriptionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appCatalogSubscriptionState)(nil)).Elem()
 }
 
+// AppCatalogSubscriptionExists checks whether an existing AppCatalogSubscription resource with the given ID exists.
+func AppCatalogSubscriptionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppCatalogSubscriptionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/appCatalogSubscription:AppCatalogSubscription", id, state, "", opts...)
+}
+
 type appCatalogSubscriptionArgs struct {
 	// The compartmentID for the subscription.
 	CompartmentId string `pulumi:"compartmentId"`

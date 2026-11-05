@@ -172,6 +172,12 @@ func (InventoryState) ElementType() reflect.Type {
 	return reflect.TypeOf((*inventoryState)(nil)).Elem()
 }
 
+// InventoryExists checks whether an existing Inventory resource with the given ID exists.
+func InventoryExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *InventoryState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CloudBridge/inventory:Inventory", id, state, "", opts...)
+}
+
 type inventoryArgs struct {
 	// The OCID of the tenantId.
 	CompartmentId string `pulumi:"compartmentId"`

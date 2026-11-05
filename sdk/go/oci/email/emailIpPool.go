@@ -199,6 +199,12 @@ func (EmailIpPoolState) ElementType() reflect.Type {
 	return reflect.TypeOf((*emailIpPoolState)(nil)).Elem()
 }
 
+// EmailIpPoolExists checks whether an existing EmailIpPool resource with the given ID exists.
+func EmailIpPoolExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *EmailIpPoolState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Email/emailIpPool:EmailIpPool", id, state, "", opts...)
+}
+
 type emailIpPoolArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this IpPool.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -220,6 +220,12 @@ func (DbNodeSnapshotState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dbNodeSnapshotState)(nil)).Elem()
 }
 
+// DbNodeSnapshotExists checks whether an existing DbNodeSnapshot resource with the given ID exists.
+func DbNodeSnapshotExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DbNodeSnapshotState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/dbNodeSnapshot:DbNodeSnapshot", id, state, "", opts...)
+}
+
 type dbNodeSnapshotArgs struct {
 	// The Exadata Database Node Snapshot [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbnodeSnapshotId string `pulumi:"dbnodeSnapshotId"`

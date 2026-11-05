@@ -325,6 +325,12 @@ func (DatabaseInsightState) ElementType() reflect.Type {
 	return reflect.TypeOf((*databaseInsightState)(nil)).Elem()
 }
 
+// DatabaseInsightExists checks whether an existing DatabaseInsight resource with the given ID exists.
+func DatabaseInsightExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DatabaseInsightState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Opsi/databaseInsight:DatabaseInsight", id, state, "", opts...)
+}
+
 type databaseInsightArgs struct {
 	// (Updatable) Compartment Identifier of database
 	CompartmentId string `pulumi:"compartmentId"`

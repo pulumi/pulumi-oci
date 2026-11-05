@@ -209,6 +209,12 @@ func (SubscriberState) ElementType() reflect.Type {
 	return reflect.TypeOf((*subscriberState)(nil)).Elem()
 }
 
+// SubscriberExists checks whether an existing Subscriber resource with the given ID exists.
+func SubscriberExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SubscriberState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ApiGateway/subscriber:Subscriber", id, state, "", opts...)
+}
+
 type subscriberArgs struct {
 	// (Updatable) The clients belonging to this subscriber.
 	Clients []SubscriberClient `pulumi:"clients"`

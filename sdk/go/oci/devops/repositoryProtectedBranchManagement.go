@@ -133,6 +133,12 @@ func (RepositoryProtectedBranchManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*repositoryProtectedBranchManagementState)(nil)).Elem()
 }
 
+// RepositoryProtectedBranchManagementExists checks whether an existing RepositoryProtectedBranchManagement resource with the given ID exists.
+func RepositoryProtectedBranchManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RepositoryProtectedBranchManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DevOps/repositoryProtectedBranchManagement:RepositoryProtectedBranchManagement", id, state, "", opts...)
+}
+
 type repositoryProtectedBranchManagementArgs struct {
 	// Name of a branch to protect.
 	BranchName string `pulumi:"branchName"`

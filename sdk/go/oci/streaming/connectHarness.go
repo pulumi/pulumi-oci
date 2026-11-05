@@ -157,6 +157,12 @@ func (ConnectHarnessState) ElementType() reflect.Type {
 	return reflect.TypeOf((*connectHarnessState)(nil)).Elem()
 }
 
+// ConnectHarnessExists checks whether an existing ConnectHarness resource with the given ID exists.
+func ConnectHarnessExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ConnectHarnessState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Streaming/connectHarness:ConnectHarness", id, state, "", opts...)
+}
+
 type connectHarnessArgs struct {
 	// (Updatable) The OCID of the compartment that contains the connect harness.
 	CompartmentId string `pulumi:"compartmentId"`

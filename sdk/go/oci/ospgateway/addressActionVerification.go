@@ -324,6 +324,12 @@ func (AddressActionVerificationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*addressActionVerificationState)(nil)).Elem()
 }
 
+// AddressActionVerificationExists checks whether an existing AddressActionVerification resource with the given ID exists.
+func AddressActionVerificationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AddressActionVerificationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OspGateway/addressActionVerification:AddressActionVerification", id, state, "", opts...)
+}
+
 type addressActionVerificationArgs struct {
 	// Address identifier.
 	AddressKey *string `pulumi:"addressKey"`

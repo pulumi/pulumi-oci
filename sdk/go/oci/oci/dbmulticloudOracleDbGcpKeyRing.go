@@ -225,6 +225,12 @@ func (DbmulticloudOracleDbGcpKeyRingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dbmulticloudOracleDbGcpKeyRingState)(nil)).Elem()
 }
 
+// DbmulticloudOracleDbGcpKeyRingExists checks whether an existing DbmulticloudOracleDbGcpKeyRing resource with the given ID exists.
+func DbmulticloudOracleDbGcpKeyRingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DbmulticloudOracleDbGcpKeyRingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/dbmulticloudOracleDbGcpKeyRing:DbmulticloudOracleDbGcpKeyRing", id, state, "", opts...)
+}
+
 type dbmulticloudOracleDbGcpKeyRingArgs struct {
 	Action *string `pulumi:"action"`
 	// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where the Oracle DB GCP Key Ring resource resides.

@@ -219,6 +219,12 @@ func (NamedCredentialState) ElementType() reflect.Type {
 	return reflect.TypeOf((*namedCredentialState)(nil)).Elem()
 }
 
+// NamedCredentialExists checks whether an existing NamedCredential resource with the given ID exists.
+func NamedCredentialExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NamedCredentialState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/namedCredential:NamedCredential", id, state, "", opts...)
+}
+
 type namedCredentialArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that  is associated to the named credential.
 	AssociatedResource *string `pulumi:"associatedResource"`

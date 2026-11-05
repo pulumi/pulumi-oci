@@ -626,6 +626,40 @@ class InstVbsInstance(pulumi.CustomResource):
         __props__.__dict__["vbs_access_url"] = vbs_access_url
         return InstVbsInstance(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            idcs_access_token: pulumi.Input[Optional[_builtins.str]] = None,
+            is_resource_usage_agreement_granted: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecyle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            vbs_access_url: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["idcsAccessToken"] = idcs_access_token
+        __props__["isResourceUsageAgreementGranted"] = is_resource_usage_agreement_granted
+        __props__["lifecyleDetails"] = lifecyle_details
+        __props__["name"] = name
+        __props__["resourceCompartmentId"] = resource_compartment_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["vbsAccessUrl"] = vbs_access_url
+        return pulumi.runtime.exists_resource(None, 'oci:Vbs/instVbsInstance:InstVbsInstance', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

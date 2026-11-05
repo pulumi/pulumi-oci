@@ -1172,6 +1172,72 @@ class OperatorControlAssignment(pulumi.CustomResource):
         __props__.__dict__["validate_assignment_trigger"] = validate_assignment_trigger
         return OperatorControlAssignment(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            assigner_id: pulumi.Input[Optional[_builtins.str]] = None,
+            comment: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            detachment_description: pulumi.Input[Optional[_builtins.str]] = None,
+            error_code: pulumi.Input[Optional[_builtins.int]] = None,
+            error_message: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_auto_approve_during_maintenance: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_default_assignment: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_enforced_always: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_hypervisor_log_forwarded: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_log_forwarded: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            op_control_name: pulumi.Input[Optional[_builtins.str]] = None,
+            operator_control_id: pulumi.Input[Optional[_builtins.str]] = None,
+            remote_syslog_server_address: pulumi.Input[Optional[_builtins.str]] = None,
+            remote_syslog_server_ca_cert: pulumi.Input[Optional[_builtins.str]] = None,
+            remote_syslog_server_port: pulumi.Input[Optional[_builtins.int]] = None,
+            resource_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_name_: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_assignment_from: pulumi.Input[Optional[_builtins.str]] = None,
+            time_assignment_to: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_assignment: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
+            unassigner_id: pulumi.Input[Optional[_builtins.str]] = None,
+            validate_assignment_trigger: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["assignerId"] = assigner_id
+        __props__["comment"] = comment
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["detachmentDescription"] = detachment_description
+        __props__["errorCode"] = error_code
+        __props__["errorMessage"] = error_message
+        __props__["freeformTags"] = freeform_tags
+        __props__["isAutoApproveDuringMaintenance"] = is_auto_approve_during_maintenance
+        __props__["isDefaultAssignment"] = is_default_assignment
+        __props__["isEnforcedAlways"] = is_enforced_always
+        __props__["isHypervisorLogForwarded"] = is_hypervisor_log_forwarded
+        __props__["isLogForwarded"] = is_log_forwarded
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["opControlName"] = op_control_name
+        __props__["operatorControlId"] = operator_control_id
+        __props__["remoteSyslogServerAddress"] = remote_syslog_server_address
+        __props__["remoteSyslogServerCaCert"] = remote_syslog_server_ca_cert
+        __props__["remoteSyslogServerPort"] = remote_syslog_server_port
+        __props__["resourceCompartmentId"] = resource_compartment_id
+        __props__["resourceId"] = resource_id
+        __props__["resourceName"] = resource_name_
+        __props__["resourceType"] = resource_type
+        __props__["state"] = state
+        __props__["timeAssignmentFrom"] = time_assignment_from
+        __props__["timeAssignmentTo"] = time_assignment_to
+        __props__["timeOfAssignment"] = time_of_assignment
+        __props__["timeOfDeletion"] = time_of_deletion
+        __props__["unassignerId"] = unassigner_id
+        __props__["validateAssignmentTrigger"] = validate_assignment_trigger
+        return pulumi.runtime.exists_resource(None, 'oci:OperatorAccessControl/operatorControlAssignment:OperatorControlAssignment', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="assignerId")
     def assigner_id(self) -> pulumi.Output[_builtins.str]:

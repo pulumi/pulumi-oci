@@ -579,6 +579,40 @@ class Session(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return Session(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            bastion_id: pulumi.Input[Optional[_builtins.str]] = None,
+            bastion_name: pulumi.Input[Optional[_builtins.str]] = None,
+            bastion_public_host_key_info: pulumi.Input[Optional[_builtins.str]] = None,
+            bastion_user_name: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            key_details: pulumi.Input[Optional[Union['SessionKeyDetailsArgs', 'SessionKeyDetailsArgsDict', 'outputs.SessionKeyDetails']]] = None,
+            key_type: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            session_ttl_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            ssh_metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            target_resource_details: pulumi.Input[Optional[Union['SessionTargetResourceDetailsArgs', 'SessionTargetResourceDetailsArgsDict', 'outputs.SessionTargetResourceDetails']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["bastionId"] = bastion_id
+        __props__["bastionName"] = bastion_name
+        __props__["bastionPublicHostKeyInfo"] = bastion_public_host_key_info
+        __props__["bastionUserName"] = bastion_user_name
+        __props__["displayName"] = display_name
+        __props__["keyDetails"] = key_details
+        __props__["keyType"] = key_type
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["sessionTtlInSeconds"] = session_ttl_in_seconds
+        __props__["sshMetadata"] = ssh_metadata
+        __props__["state"] = state
+        __props__["targetResourceDetails"] = target_resource_details
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Bastion/session:Session', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="bastionId")
     def bastion_id(self) -> pulumi.Output[_builtins.str]:

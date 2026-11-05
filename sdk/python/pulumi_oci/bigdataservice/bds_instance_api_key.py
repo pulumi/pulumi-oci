@@ -520,6 +520,34 @@ class BdsInstanceApiKey(pulumi.CustomResource):
         __props__.__dict__["user_id"] = user_id
         return BdsInstanceApiKey(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            default_region: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            fingerprint: pulumi.Input[Optional[_builtins.str]] = None,
+            key_alias: pulumi.Input[Optional[_builtins.str]] = None,
+            passphrase: pulumi.Input[Optional[_builtins.str]] = None,
+            pemfilepath: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            user_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["bdsInstanceId"] = bds_instance_id
+        __props__["defaultRegion"] = default_region
+        __props__["domainOcid"] = domain_ocid
+        __props__["fingerprint"] = fingerprint
+        __props__["keyAlias"] = key_alias
+        __props__["passphrase"] = passphrase
+        __props__["pemfilepath"] = pemfilepath
+        __props__["state"] = state
+        __props__["tenantId"] = tenant_id
+        __props__["timeCreated"] = time_created
+        __props__["userId"] = user_id
+        return pulumi.runtime.exists_resource(None, 'oci:BigDataService/bdsInstanceApiKey:BdsInstanceApiKey', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="bdsInstanceId")
     def bds_instance_id(self) -> pulumi.Output[_builtins.str]:

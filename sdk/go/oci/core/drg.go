@@ -180,6 +180,12 @@ func (DrgState) ElementType() reflect.Type {
 	return reflect.TypeOf((*drgState)(nil)).Elem()
 }
 
+// DrgExists checks whether an existing Drg resource with the given ID exists.
+func DrgExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DrgState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/drg:Drg", id, state, "", opts...)
+}
+
 type drgArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the DRG.
 	CompartmentId string `pulumi:"compartmentId"`

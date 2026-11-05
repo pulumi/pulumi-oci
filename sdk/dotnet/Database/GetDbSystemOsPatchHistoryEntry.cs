@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets the details of the specified OS patch action for the specified DB system.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets the details of the specified OS patch action for the specified DB system.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Db System Os Patch History Entry resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets the details of the specified OS patch action for the specified DB system.
-        /// 
         /// 
         /// ## Example Usage
         /// 

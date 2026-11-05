@@ -347,6 +347,22 @@ class ExadataIormConfig(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         return ExadataIormConfig(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            db_plans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExadataIormConfigDbPlanArgs', 'ExadataIormConfigDbPlanArgsDict', 'outputs.ExadataIormConfigDbPlan']]]]] = None,
+            db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            objective: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["dbPlans"] = db_plans
+        __props__["dbSystemId"] = db_system_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["objective"] = objective
+        __props__["state"] = state
+        return pulumi.runtime.exists_resource(None, 'oci:Database/exadataIormConfig:ExadataIormConfig', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="dbPlans")
     def db_plans(self) -> pulumi.Output[Sequence['outputs.ExadataIormConfigDbPlan']]:

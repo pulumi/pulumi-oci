@@ -582,6 +582,32 @@ class Listener(pulumi.CustomResource):
         __props__.__dict__["udp_idle_timeout"] = udp_idle_timeout
         return Listener(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            default_backend_set_name: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_version: pulumi.Input[Optional[_builtins.str]] = None,
+            is_ppv2enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            l3ip_idle_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            tcp_idle_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+            udp_idle_timeout: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["defaultBackendSetName"] = default_backend_set_name
+        __props__["ipVersion"] = ip_version
+        __props__["isPpv2enabled"] = is_ppv2enabled
+        __props__["l3ipIdleTimeout"] = l3ip_idle_timeout
+        __props__["name"] = name
+        __props__["networkLoadBalancerId"] = network_load_balancer_id
+        __props__["port"] = port
+        __props__["protocol"] = protocol
+        __props__["tcpIdleTimeout"] = tcp_idle_timeout
+        __props__["udpIdleTimeout"] = udp_idle_timeout
+        return pulumi.runtime.exists_resource(None, 'oci:NetworkLoadBalancer/listener:Listener', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="defaultBackendSetName")
     def default_backend_set_name(self) -> pulumi.Output[_builtins.str]:

@@ -321,6 +321,12 @@ func (DatabaseUpgradeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*databaseUpgradeState)(nil)).Elem()
 }
 
+// DatabaseUpgradeExists checks whether an existing DatabaseUpgrade resource with the given ID exists.
+func DatabaseUpgradeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DatabaseUpgradeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/databaseUpgrade:DatabaseUpgrade", id, state, "", opts...)
+}
+
 type databaseUpgradeArgs struct {
 	// The database upgrade action.
 	Action string `pulumi:"action"`

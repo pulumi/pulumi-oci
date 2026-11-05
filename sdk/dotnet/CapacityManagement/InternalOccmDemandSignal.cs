@@ -92,8 +92,7 @@ namespace Pulumi.Oci.CapacityManagement
         public Output<string> OccCustomerGroupId { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the demand signal. 
-        /// 
+        /// The OCID of the demand signal.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -180,8 +179,7 @@ namespace Pulumi.Oci.CapacityManagement
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// The OCID of the demand signal. 
-        /// 
+        /// The OCID of the demand signal.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -254,8 +252,7 @@ namespace Pulumi.Oci.CapacityManagement
         public Input<string>? OccCustomerGroupId { get; set; }
 
         /// <summary>
-        /// The OCID of the demand signal. 
-        /// 
+        /// The OCID of the demand signal.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Mysql
         /// 
         /// The list is sorted by version family.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Mysql
         /// 
         /// The list is sorted by version family.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.Mysql
         /// Get a list of supported and available MySQL database major versions.
         /// 
         /// The list is sorted by version family.
-        /// 
         /// 
         /// ## Example Usage
         /// 

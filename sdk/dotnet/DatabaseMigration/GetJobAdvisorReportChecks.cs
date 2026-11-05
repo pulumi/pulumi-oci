@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// List of Pre-Migration checks from the advisor.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// List of Pre-Migration checks from the advisor.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// This data source provides the list of Job Advisor Report Checks in Oracle Cloud Infrastructure Database Migration service.
         /// 
         /// List of Pre-Migration checks from the advisor.
-        /// 
         /// 
         /// ## Example Usage
         /// 

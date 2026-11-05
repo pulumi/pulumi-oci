@@ -16,7 +16,6 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         /// 
         /// Gets a list of all Exadata Fleet Update Collections in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         /// 
         /// Gets a list of all Exadata Fleet Update Collections in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         /// This data source provides the list of Fsu Collections in Oracle Cloud Infrastructure Fleet Software Update service.
         /// 
         /// Gets a list of all Exadata Fleet Update Collections in a compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -151,6 +151,12 @@ func (OdaPrivateEndpointAttachmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*odaPrivateEndpointAttachmentState)(nil)).Elem()
 }
 
+// OdaPrivateEndpointAttachmentExists checks whether an existing OdaPrivateEndpointAttachment resource with the given ID exists.
+func OdaPrivateEndpointAttachmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OdaPrivateEndpointAttachmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Oda/odaPrivateEndpointAttachment:OdaPrivateEndpointAttachment", id, state, "", opts...)
+}
+
 type odaPrivateEndpointAttachmentArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the attached ODA Instance.
 	OdaInstanceId string `pulumi:"odaInstanceId"`

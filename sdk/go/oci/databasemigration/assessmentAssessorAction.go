@@ -140,6 +140,12 @@ func (AssessmentAssessorActionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*assessmentAssessorActionState)(nil)).Elem()
 }
 
+// AssessmentAssessorActionExists checks whether an existing AssessmentAssessorAction resource with the given ID exists.
+func AssessmentAssessorActionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AssessmentAssessorActionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseMigration/assessmentAssessorAction:AssessmentAssessorAction", id, state, "", opts...)
+}
+
 type assessmentAssessorActionArgs struct {
 	// The OCID of the Assessment
 	AssessmentId string `pulumi:"assessmentId"`

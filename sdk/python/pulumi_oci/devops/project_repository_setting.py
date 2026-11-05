@@ -318,6 +318,18 @@ class ProjectRepositorySetting(pulumi.CustomResource):
         __props__.__dict__["project_id"] = project_id
         return ProjectRepositorySetting(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            approval_rules: pulumi.Input[Optional[Union['ProjectRepositorySettingApprovalRulesArgs', 'ProjectRepositorySettingApprovalRulesArgsDict', 'outputs.ProjectRepositorySettingApprovalRules']]] = None,
+            merge_settings: pulumi.Input[Optional[Union['ProjectRepositorySettingMergeSettingsArgs', 'ProjectRepositorySettingMergeSettingsArgsDict', 'outputs.ProjectRepositorySettingMergeSettings']]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["approvalRules"] = approval_rules
+        __props__["mergeSettings"] = merge_settings
+        __props__["projectId"] = project_id
+        return pulumi.runtime.exists_resource(None, 'oci:DevOps/projectRepositorySetting:ProjectRepositorySetting', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="approvalRules")
     def approval_rules(self) -> pulumi.Output['outputs.ProjectRepositorySettingApprovalRules']:

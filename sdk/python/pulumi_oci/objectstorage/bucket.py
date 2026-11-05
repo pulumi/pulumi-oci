@@ -991,6 +991,60 @@ class Bucket(pulumi.CustomResource):
         __props__.__dict__["versioning"] = versioning
         return Bucket(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            access_type: pulumi.Input[Optional[_builtins.str]] = None,
+            approximate_count: pulumi.Input[Optional[_builtins.str]] = None,
+            approximate_size: pulumi.Input[Optional[_builtins.str]] = None,
+            auto_tiering: pulumi.Input[Optional[_builtins.str]] = None,
+            bucket_id: pulumi.Input[Optional[_builtins.str]] = None,
+            bucket_scope: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            etag: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_bucket_key_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_read_only: pulumi.Input[Optional[_builtins.bool]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            object_events_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            object_lifecycle_policy_etag: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            retention_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BucketRetentionRuleArgs', 'BucketRetentionRuleArgsDict', 'outputs.BucketRetentionRule']]]]] = None,
+            storage_tier: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            versioning: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["accessType"] = access_type
+        __props__["approximateCount"] = approximate_count
+        __props__["approximateSize"] = approximate_size
+        __props__["autoTiering"] = auto_tiering
+        __props__["bucketId"] = bucket_id
+        __props__["bucketScope"] = bucket_scope
+        __props__["compartmentId"] = compartment_id
+        __props__["createdBy"] = created_by
+        __props__["definedTags"] = defined_tags
+        __props__["etag"] = etag
+        __props__["freeformTags"] = freeform_tags
+        __props__["isBucketKeyEnabled"] = is_bucket_key_enabled
+        __props__["isReadOnly"] = is_read_only
+        __props__["kmsKeyId"] = kms_key_id
+        __props__["metadata"] = metadata
+        __props__["name"] = name
+        __props__["namespace"] = namespace
+        __props__["objectEventsEnabled"] = object_events_enabled
+        __props__["objectLifecyclePolicyEtag"] = object_lifecycle_policy_etag
+        __props__["replicationEnabled"] = replication_enabled
+        __props__["retentionRules"] = retention_rules
+        __props__["storageTier"] = storage_tier
+        __props__["timeCreated"] = time_created
+        __props__["versioning"] = versioning
+        return pulumi.runtime.exists_resource(None, 'oci:ObjectStorage/bucket:Bucket', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="accessType")
     def access_type(self) -> pulumi.Output[Optional[_builtins.str]]:

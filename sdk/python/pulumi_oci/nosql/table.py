@@ -675,6 +675,48 @@ class Table(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return Table(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ddl_statement: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_auto_reclaimable: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_multi_region: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            local_replica_initialization_in_percent: pulumi.Input[Optional[_builtins.int]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            replicas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TableReplicaArgs', 'TableReplicaArgsDict', 'outputs.TableReplica']]]]] = None,
+            schema_state: pulumi.Input[Optional[_builtins.str]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TableSchemaArgs', 'TableSchemaArgsDict', 'outputs.TableSchema']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            table_limits: pulumi.Input[Optional[Union['TableTableLimitsArgs', 'TableTableLimitsArgsDict', 'outputs.TableTableLimits']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_expiration: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["ddlStatement"] = ddl_statement
+        __props__["definedTags"] = defined_tags
+        __props__["freeformTags"] = freeform_tags
+        __props__["isAutoReclaimable"] = is_auto_reclaimable
+        __props__["isMultiRegion"] = is_multi_region
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["localReplicaInitializationInPercent"] = local_replica_initialization_in_percent
+        __props__["name"] = name
+        __props__["replicas"] = replicas
+        __props__["schemaState"] = schema_state
+        __props__["schemas"] = schemas
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["tableLimits"] = table_limits
+        __props__["timeCreated"] = time_created
+        __props__["timeOfExpiration"] = time_of_expiration
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Nosql/table:Table', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

@@ -300,6 +300,12 @@ func (ProtectedDatabaseState) ElementType() reflect.Type {
 	return reflect.TypeOf((*protectedDatabaseState)(nil)).Elem()
 }
 
+// ProtectedDatabaseExists checks whether an existing ProtectedDatabase resource with the given ID exists.
+func ProtectedDatabaseExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProtectedDatabaseState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:RecoveryMod/protectedDatabase:ProtectedDatabase", id, state, "", opts...)
+}
+
 type protectedDatabaseArgs struct {
 	// (Updatable) The OCID of the compartment that contains the protected database.
 	CompartmentId string `pulumi:"compartmentId"`

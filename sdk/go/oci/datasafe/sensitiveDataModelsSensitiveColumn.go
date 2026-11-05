@@ -273,6 +273,12 @@ func (SensitiveDataModelsSensitiveColumnState) ElementType() reflect.Type {
 	return reflect.TypeOf((*sensitiveDataModelsSensitiveColumnState)(nil)).Elem()
 }
 
+// SensitiveDataModelsSensitiveColumnExists checks whether an existing SensitiveDataModelsSensitiveColumn resource with the given ID exists.
+func SensitiveDataModelsSensitiveColumnExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SensitiveDataModelsSensitiveColumnState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/sensitiveDataModelsSensitiveColumn:SensitiveDataModelsSensitiveColumn", id, state, "", opts...)
+}
+
 type sensitiveDataModelsSensitiveColumnArgs struct {
 	// (Updatable) Unique keys identifying the columns that are application-level (non-dictionary) children of the sensitive column. This attribute can be used to establish relationship between columns in a sensitive data model. Note that the child columns must be added to the sensitive data model before their keys can be specified here. If this attribute is provided, the parentColumnKeys and relationType attributes of the child columns are automatically updated to reflect the relationship.
 	AppDefinedChildColumnKeys []string `pulumi:"appDefinedChildColumnKeys"`

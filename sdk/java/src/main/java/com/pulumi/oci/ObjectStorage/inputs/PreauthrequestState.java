@@ -123,22 +123,20 @@ public final class PreauthrequestState extends com.pulumi.resources.ResourceArgs
     /**
      * Deprecated. Instead use `objectName`. Requests that include both `object` and `objectName` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
      * 
-     * @deprecated
-     * The &#39;object&#39; field has been deprecated. Please use &#39;object_name&#39; instead.
+     * @deprecated The &#39;object&#39; field has been deprecated. Please use &#39;object_name&#39; instead.
      * 
      */
-    @Deprecated /* The 'object' field has been deprecated. Please use 'object_name' instead. */
+    @Deprecated
     @Import(name="object")
     private @Nullable Output<String> object;
 
     /**
      * @return Deprecated. Instead use `objectName`. Requests that include both `object` and `objectName` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
      * 
-     * @deprecated
-     * The &#39;object&#39; field has been deprecated. Please use &#39;object_name&#39; instead.
+     * @deprecated The &#39;object&#39; field has been deprecated. Please use &#39;object_name&#39; instead.
      * 
      */
-    @Deprecated /* The 'object' field has been deprecated. Please use 'object_name' instead. */
+    @Deprecated
     public Optional<Output<String>> object() {
         return Optional.ofNullable(this.object);
     }
@@ -396,11 +394,10 @@ public final class PreauthrequestState extends com.pulumi.resources.ResourceArgs
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;object&#39; field has been deprecated. Please use &#39;object_name&#39; instead.
+         * @deprecated The &#39;object&#39; field has been deprecated. Please use &#39;object_name&#39; instead.
          * 
          */
-        @Deprecated /* The 'object' field has been deprecated. Please use 'object_name' instead. */
+        @Deprecated
         public Builder object(@Nullable Output<String> object) {
             $.object = object;
             return this;
@@ -411,11 +408,10 @@ public final class PreauthrequestState extends com.pulumi.resources.ResourceArgs
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;object&#39; field has been deprecated. Please use &#39;object_name&#39; instead.
+         * @deprecated The &#39;object&#39; field has been deprecated. Please use &#39;object_name&#39; instead.
          * 
          */
-        @Deprecated /* The 'object' field has been deprecated. Please use 'object_name' instead. */
+        @Deprecated
         public Builder object(String object) {
             return object(Output.of(object));
         }

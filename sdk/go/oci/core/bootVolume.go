@@ -303,6 +303,12 @@ func (BootVolumeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*bootVolumeState)(nil)).Elem()
 }
 
+// BootVolumeExists checks whether an existing BootVolume resource with the given ID exists.
+func BootVolumeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BootVolumeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/bootVolume:BootVolume", id, state, "", opts...)
+}
+
 type bootVolumeArgs struct {
 	// (Updatable) The list of autotune policies to be enabled for this volume.
 	AutotunePolicies []BootVolumeAutotunePolicy `pulumi:"autotunePolicies"`

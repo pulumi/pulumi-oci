@@ -160,6 +160,12 @@ func (NetworkFirewallPolicyAddressListState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkFirewallPolicyAddressListState)(nil)).Elem()
 }
 
+// NetworkFirewallPolicyAddressListExists checks whether an existing NetworkFirewallPolicyAddressList resource with the given ID exists.
+func NetworkFirewallPolicyAddressListExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkFirewallPolicyAddressListState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:NetworkFirewall/networkFirewallPolicyAddressList:NetworkFirewallPolicyAddressList", id, state, "", opts...)
+}
+
 type networkFirewallPolicyAddressListArgs struct {
 	// (Updatable) List of addresses.
 	Addresses []string `pulumi:"addresses"`

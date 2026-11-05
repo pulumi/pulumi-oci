@@ -16,7 +16,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// List all the available patches for this cluster.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// List all the available patches for this cluster.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.BigDataService
         /// This data source provides the list of Bds Instance Patches in Oracle Cloud Infrastructure Big Data Service service.
         /// 
         /// List all the available patches for this cluster.
-        /// 
         /// 
         /// ## Example Usage
         /// 

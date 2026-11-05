@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Returns a list of connections.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Returns a list of connections.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.DevOps
         /// This data source provides the list of Connections in Oracle Cloud Infrastructure Devops service.
         /// 
         /// Returns a list of connections.
-        /// 
         /// 
         /// ## Example Usage
         /// 

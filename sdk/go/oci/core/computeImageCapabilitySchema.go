@@ -138,6 +138,12 @@ func (ComputeImageCapabilitySchemaState) ElementType() reflect.Type {
 	return reflect.TypeOf((*computeImageCapabilitySchemaState)(nil)).Elem()
 }
 
+// ComputeImageCapabilitySchemaExists checks whether an existing ComputeImageCapabilitySchema resource with the given ID exists.
+func ComputeImageCapabilitySchemaExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ComputeImageCapabilitySchemaState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/computeImageCapabilitySchema:ComputeImageCapabilitySchema", id, state, "", opts...)
+}
+
 type computeImageCapabilitySchemaArgs struct {
 	// (Updatable) The OCID of the compartment that contains the resource.
 	CompartmentId string `pulumi:"compartmentId"`

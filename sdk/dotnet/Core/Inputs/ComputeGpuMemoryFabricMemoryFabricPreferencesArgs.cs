@@ -19,8 +19,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? CustomerDesiredFirmwareBundleId { get; set; }
 
         /// <summary>
-        /// (Updatable) The recycle level of GPU memory fabric. 
-        /// 
+        /// (Updatable) The recycle level of GPU memory fabric.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -150,6 +150,12 @@ func (SubsettingPolicySubsettingRuleProcessingChainObjectState) ElementType() re
 	return reflect.TypeOf((*subsettingPolicySubsettingRuleProcessingChainObjectState)(nil)).Elem()
 }
 
+// SubsettingPolicySubsettingRuleProcessingChainObjectExists checks whether an existing SubsettingPolicySubsettingRuleProcessingChainObject resource with the given ID exists.
+func SubsettingPolicySubsettingRuleProcessingChainObjectExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SubsettingPolicySubsettingRuleProcessingChainObjectState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/subsettingPolicySubsettingRuleProcessingChainObject:SubsettingPolicySubsettingRuleProcessingChainObject", id, state, "", opts...)
+}
+
 type subsettingPolicySubsettingRuleProcessingChainObjectArgs struct {
 	// (Updatable) Indicates if this object/edge is enabled for processing
 	IsEnabledForProcessing bool `pulumi:"isEnabledForProcessing"`

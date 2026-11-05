@@ -186,6 +186,12 @@ func (SubsettingPolicyHealthReportManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*subsettingPolicyHealthReportManagementState)(nil)).Elem()
 }
 
+// SubsettingPolicyHealthReportManagementExists checks whether an existing SubsettingPolicyHealthReportManagement resource with the given ID exists.
+func SubsettingPolicyHealthReportManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SubsettingPolicyHealthReportManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/subsettingPolicyHealthReportManagement:SubsettingPolicyHealthReportManagement", id, state, "", opts...)
+}
+
 type subsettingPolicyHealthReportManagementArgs struct {
 	// The health check to run. Allowed values are `ALL` and `TABLESPACE_CHECK`.
 	CheckType *string `pulumi:"checkType"`

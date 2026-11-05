@@ -130,6 +130,12 @@ func (ExternalPluggableDatabasesStackMonitoringState) ElementType() reflect.Type
 	return reflect.TypeOf((*externalPluggableDatabasesStackMonitoringState)(nil)).Elem()
 }
 
+// ExternalPluggableDatabasesStackMonitoringExists checks whether an existing ExternalPluggableDatabasesStackMonitoring resource with the given ID exists.
+func ExternalPluggableDatabasesStackMonitoringExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalPluggableDatabasesStackMonitoringState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/externalPluggableDatabasesStackMonitoring:ExternalPluggableDatabasesStackMonitoring", id, state, "", opts...)
+}
+
 type externalPluggableDatabasesStackMonitoringArgs struct {
 	// (Updatable) Enabling Stack Monitoring on External Pluggable Databases . Requires boolean value "true" or "false".
 	//

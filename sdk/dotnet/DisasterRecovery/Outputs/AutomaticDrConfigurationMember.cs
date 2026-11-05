@@ -26,8 +26,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string MemberId;
         /// <summary>
-        /// (Updatable) The type of the member. 
-        /// 
+        /// (Updatable) The type of the member.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

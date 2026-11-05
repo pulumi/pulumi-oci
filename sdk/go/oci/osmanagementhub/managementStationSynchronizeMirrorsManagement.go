@@ -124,6 +124,12 @@ func (ManagementStationSynchronizeMirrorsManagementState) ElementType() reflect.
 	return reflect.TypeOf((*managementStationSynchronizeMirrorsManagementState)(nil)).Elem()
 }
 
+// ManagementStationSynchronizeMirrorsManagementExists checks whether an existing ManagementStationSynchronizeMirrorsManagement resource with the given ID exists.
+func ManagementStationSynchronizeMirrorsManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagementStationSynchronizeMirrorsManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/managementStationSynchronizeMirrorsManagement:ManagementStationSynchronizeMirrorsManagement", id, state, "", opts...)
+}
+
 type managementStationSynchronizeMirrorsManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management station.
 	ManagementStationId string `pulumi:"managementStationId"`

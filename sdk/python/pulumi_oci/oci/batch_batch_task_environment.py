@@ -661,6 +661,38 @@ class BatchBatchTaskEnvironment(pulumi.CustomResource):
         __props__.__dict__["working_directory"] = working_directory
         return BatchBatchTaskEnvironment(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            image_url: pulumi.Input[Optional[_builtins.str]] = None,
+            security_context: pulumi.Input[Optional[Union['BatchBatchTaskEnvironmentSecurityContextArgs', 'BatchBatchTaskEnvironmentSecurityContextArgsDict', 'outputs.BatchBatchTaskEnvironmentSecurityContext']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BatchBatchTaskEnvironmentVolumeArgs', 'BatchBatchTaskEnvironmentVolumeArgsDict', 'outputs.BatchBatchTaskEnvironmentVolume']]]]] = None,
+            working_directory: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["imageUrl"] = image_url
+        __props__["securityContext"] = security_context
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["volumes"] = volumes
+        __props__["workingDirectory"] = working_directory
+        return pulumi.runtime.exists_resource(None, 'oci:oci/batchBatchTaskEnvironment:BatchBatchTaskEnvironment', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

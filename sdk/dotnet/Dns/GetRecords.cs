@@ -23,7 +23,6 @@ namespace Pulumi.Oci.Dns
         /// When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
         /// then the viewId query parameter is required.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -61,7 +60,6 @@ namespace Pulumi.Oci.Dns
         /// When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
         /// then the viewId query parameter is required.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -98,7 +96,6 @@ namespace Pulumi.Oci.Dns
         /// see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
         /// When the zone name is provided as a path parameter and `PRIVATE` is used for the scope query parameter
         /// then the viewId query parameter is required.
-        /// 
         /// 
         /// ## Example Usage
         /// 

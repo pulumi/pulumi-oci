@@ -449,6 +449,30 @@ class SteeringPolicyAttachment(pulumi.CustomResource):
         __props__.__dict__["zone_id"] = zone_id
         return SteeringPolicyAttachment(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_name: pulumi.Input[Optional[_builtins.str]] = None,
+            rtypes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            self: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            steering_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            zone_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["displayName"] = display_name
+        __props__["domainName"] = domain_name
+        __props__["rtypes"] = rtypes
+        __props__["self"] = self
+        __props__["state"] = state
+        __props__["steeringPolicyId"] = steering_policy_id
+        __props__["timeCreated"] = time_created
+        __props__["zoneId"] = zone_id
+        return pulumi.runtime.exists_resource(None, 'oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

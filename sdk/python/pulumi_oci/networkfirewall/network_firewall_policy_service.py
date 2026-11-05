@@ -404,6 +404,24 @@ class NetworkFirewallPolicyService(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return NetworkFirewallPolicyService(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            port_ranges: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFirewallPolicyServicePortRangeArgs', 'NetworkFirewallPolicyServicePortRangeArgsDict', 'outputs.NetworkFirewallPolicyServicePortRange']]]]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["description"] = description
+        __props__["name"] = name
+        __props__["networkFirewallPolicyId"] = network_firewall_policy_id
+        __props__["parentResourceId"] = parent_resource_id
+        __props__["portRanges"] = port_ranges
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'oci:NetworkFirewall/networkFirewallPolicyService:NetworkFirewallPolicyService', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[_builtins.str]]:

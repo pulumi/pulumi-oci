@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Retrieve a list of all the authors.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Retrieve a list of all the authors.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.DevOps
         /// This data source provides the list of Repository Authors in Oracle Cloud Infrastructure Devops service.
         /// 
         /// Retrieve a list of all the authors.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Autoscaling
         /// 
         /// Lists autoscaling configurations in the specifed compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Autoscaling
         /// 
         /// Lists autoscaling configurations in the specifed compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.Autoscaling
         /// This data source provides the list of Auto Scaling Configurations in Oracle Cloud Infrastructure Auto Scaling service.
         /// 
         /// Lists autoscaling configurations in the specifed compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

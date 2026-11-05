@@ -190,6 +190,12 @@ func (RunbookVersionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*runbookVersionState)(nil)).Elem()
 }
 
+// RunbookVersionExists checks whether an existing RunbookVersion resource with the given ID exists.
+func RunbookVersionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RunbookVersionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FleetAppsManagement/runbookVersion:RunbookVersion", id, state, "", opts...)
+}
+
 type runbookVersionArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example:
 	// `{"foo-namespace.bar-key": "value"}`

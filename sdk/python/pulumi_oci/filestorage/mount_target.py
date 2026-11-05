@@ -1187,6 +1187,64 @@ class MountTarget(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return MountTarget(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            export_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            hostname_label: pulumi.Input[Optional[_builtins.str]] = None,
+            idmap_type: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            kerberos: pulumi.Input[Optional[Union['MountTargetKerberosArgs', 'MountTargetKerberosArgsDict', 'outputs.MountTargetKerberos']]] = None,
+            ldap_idmap: pulumi.Input[Optional[Union['MountTargetLdapIdmapArgs', 'MountTargetLdapIdmapArgsDict', 'outputs.MountTargetLdapIdmap']]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MountTargetLockArgs', 'MountTargetLockArgsDict', 'outputs.MountTargetLock']]]]] = None,
+            mount_target_ipv6ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            observed_throughput: pulumi.Input[Optional[_builtins.str]] = None,
+            private_ip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            requested_throughput: pulumi.Input[Optional[_builtins.str]] = None,
+            reserved_storage_capacity: pulumi.Input[Optional[_builtins.str]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_billing_cycle_end: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availabilityDomain"] = availability_domain
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["exportSetId"] = export_set_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["hostnameLabel"] = hostname_label
+        __props__["idmapType"] = idmap_type
+        __props__["ipAddress"] = ip_address
+        __props__["isLockOverride"] = is_lock_override
+        __props__["kerberos"] = kerberos
+        __props__["ldapIdmap"] = ldap_idmap
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["locks"] = locks
+        __props__["mountTargetIpv6ids"] = mount_target_ipv6ids
+        __props__["nsgIds"] = nsg_ids
+        __props__["observedThroughput"] = observed_throughput
+        __props__["privateIpIds"] = private_ip_ids
+        __props__["requestedThroughput"] = requested_throughput
+        __props__["reservedStorageCapacity"] = reserved_storage_capacity
+        __props__["securityAttributes"] = security_attributes
+        __props__["state"] = state
+        __props__["subnetId"] = subnet_id
+        __props__["systemTags"] = system_tags
+        __props__["timeBillingCycleEnd"] = time_billing_cycle_end
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:FileStorage/mountTarget:MountTarget', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[_builtins.str]:

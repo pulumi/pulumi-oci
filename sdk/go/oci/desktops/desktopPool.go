@@ -310,6 +310,12 @@ func (DesktopPoolState) ElementType() reflect.Type {
 	return reflect.TypeOf((*desktopPoolState)(nil)).Elem()
 }
 
+// DesktopPoolExists checks whether an existing DesktopPool resource with the given ID exists.
+func DesktopPoolExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DesktopPoolState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Desktops/desktopPool:DesktopPool", id, state, "", opts...)
+}
+
 type desktopPoolArgs struct {
 	// Indicates whether desktop pool users have administrative privileges on their desktop.
 	ArePrivilegedUsers bool `pulumi:"arePrivilegedUsers"`

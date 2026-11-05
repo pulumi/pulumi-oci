@@ -1319,6 +1319,74 @@ class DesktopPool(pulumi.CustomResource):
         __props__.__dict__["use_dedicated_vm_host"] = use_dedicated_vm_host
         return DesktopPool(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            active_desktops: pulumi.Input[Optional[_builtins.int]] = None,
+            are_privileged_users: pulumi.Input[Optional[_builtins.bool]] = None,
+            are_volumes_preserved: pulumi.Input[Optional[_builtins.bool]] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            availability_policy: pulumi.Input[Optional[Union['DesktopPoolAvailabilityPolicyArgs', 'DesktopPoolAvailabilityPolicyArgsDict', 'outputs.DesktopPoolAvailabilityPolicy']]] = None,
+            boot_volume_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            contact_details: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            device_policy: pulumi.Input[Optional[Union['DesktopPoolDevicePolicyArgs', 'DesktopPoolDevicePolicyArgsDict', 'outputs.DesktopPoolDevicePolicy']]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            image: pulumi.Input[Optional[Union['DesktopPoolImageArgs', 'DesktopPoolImageArgsDict', 'outputs.DesktopPoolImage']]] = None,
+            is_storage_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            maximum_size: pulumi.Input[Optional[_builtins.int]] = None,
+            network_configuration: pulumi.Input[Optional[Union['DesktopPoolNetworkConfigurationArgs', 'DesktopPoolNetworkConfigurationArgsDict', 'outputs.DesktopPoolNetworkConfiguration']]] = None,
+            nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            private_access_details: pulumi.Input[Optional[Union['DesktopPoolPrivateAccessDetailsArgs', 'DesktopPoolPrivateAccessDetailsArgsDict', 'outputs.DesktopPoolPrivateAccessDetails']]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            session_lifecycle_actions: pulumi.Input[Optional[Union['DesktopPoolSessionLifecycleActionsArgs', 'DesktopPoolSessionLifecycleActionsArgsDict', 'outputs.DesktopPoolSessionLifecycleActions']]] = None,
+            shape_config: pulumi.Input[Optional[Union['DesktopPoolShapeConfigArgs', 'DesktopPoolShapeConfigArgsDict', 'outputs.DesktopPoolShapeConfig']]] = None,
+            shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+            standby_size: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_backup_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_start_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
+            time_stop_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
+            use_dedicated_vm_host: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["activeDesktops"] = active_desktops
+        __props__["arePrivilegedUsers"] = are_privileged_users
+        __props__["areVolumesPreserved"] = are_volumes_preserved
+        __props__["availabilityDomain"] = availability_domain
+        __props__["availabilityPolicy"] = availability_policy
+        __props__["bootVolumeSizeInGbs"] = boot_volume_size_in_gbs
+        __props__["compartmentId"] = compartment_id
+        __props__["contactDetails"] = contact_details
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["devicePolicy"] = device_policy
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["image"] = image
+        __props__["isStorageEnabled"] = is_storage_enabled
+        __props__["maximumSize"] = maximum_size
+        __props__["networkConfiguration"] = network_configuration
+        __props__["nsgIds"] = nsg_ids
+        __props__["privateAccessDetails"] = private_access_details
+        __props__["securityAttributes"] = security_attributes
+        __props__["sessionLifecycleActions"] = session_lifecycle_actions
+        __props__["shapeConfig"] = shape_config
+        __props__["shapeName"] = shape_name
+        __props__["standbySize"] = standby_size
+        __props__["state"] = state
+        __props__["storageBackupPolicyId"] = storage_backup_policy_id
+        __props__["storageSizeInGbs"] = storage_size_in_gbs
+        __props__["timeCreated"] = time_created
+        __props__["timeStartScheduled"] = time_start_scheduled
+        __props__["timeStopScheduled"] = time_stop_scheduled
+        __props__["useDedicatedVmHost"] = use_dedicated_vm_host
+        return pulumi.runtime.exists_resource(None, 'oci:Desktops/desktopPool:DesktopPool', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="activeDesktops")
     def active_desktops(self) -> pulumi.Output[_builtins.int]:

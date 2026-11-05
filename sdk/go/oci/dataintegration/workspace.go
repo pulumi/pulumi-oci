@@ -256,6 +256,12 @@ func (WorkspaceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*workspaceState)(nil)).Elem()
 }
 
+// WorkspaceExists checks whether an existing Workspace resource with the given ID exists.
+func WorkspaceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WorkspaceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataIntegration/workspace:Workspace", id, state, "", opts...)
+}
+
 type workspaceArgs struct {
 	// (Updatable) The OCID of the compartment containing the workspace.
 	CompartmentId string `pulumi:"compartmentId"`

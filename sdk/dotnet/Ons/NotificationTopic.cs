@@ -108,7 +108,6 @@ namespace Pulumi.Oci.Ons
         /// <summary>
         /// The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -224,7 +223,6 @@ namespace Pulumi.Oci.Ons
         /// <summary>
         /// The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -289,7 +287,6 @@ namespace Pulumi.Oci.Ons
 
         /// <summary>
         /// The name of the topic being created. The topic name must be unique across the tenancy. Avoid entering confidential information.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

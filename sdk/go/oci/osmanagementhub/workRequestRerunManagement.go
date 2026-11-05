@@ -131,6 +131,12 @@ func (WorkRequestRerunManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*workRequestRerunManagementState)(nil)).Elem()
 }
 
+// WorkRequestRerunManagementExists checks whether an existing WorkRequestRerunManagement resource with the given ID exists.
+func WorkRequestRerunManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WorkRequestRerunManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/workRequestRerunManagement:WorkRequestRerunManagement", id, state, "", opts...)
+}
+
 type workRequestRerunManagementArgs struct {
 	// List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to affected by the rerun of the work request.
 	ManagedInstances []string `pulumi:"managedInstances"`

@@ -219,6 +219,12 @@ func (ComputeGpuMemoryClusterState) ElementType() reflect.Type {
 	return reflect.TypeOf((*computeGpuMemoryClusterState)(nil)).Elem()
 }
 
+// ComputeGpuMemoryClusterExists checks whether an existing ComputeGpuMemoryCluster resource with the given ID exists.
+func ComputeGpuMemoryClusterExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ComputeGpuMemoryClusterState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/computeGpuMemoryCluster:ComputeGpuMemoryCluster", id, state, "", opts...)
+}
+
 type computeGpuMemoryClusterArgs struct {
 	// The availability domain of the GPU Memory Cluster.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`

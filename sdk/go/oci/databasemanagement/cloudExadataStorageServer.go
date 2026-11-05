@@ -229,6 +229,12 @@ func (CloudExadataStorageServerState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudExadataStorageServerState)(nil)).Elem()
 }
 
+// CloudExadataStorageServerExists checks whether an existing CloudExadataStorageServer resource with the given ID exists.
+func CloudExadataStorageServerExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudExadataStorageServerState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/cloudExadataStorageServer:CloudExadataStorageServer", id, state, "", opts...)
+}
+
 type cloudExadataStorageServerArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage server.
 	CloudExadataStorageServerId string `pulumi:"cloudExadataStorageServerId"`

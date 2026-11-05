@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Creates and downloads a wallet for the specified Autonomous AI Database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Creates and downloads a wallet for the specified Autonomous AI Database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -83,7 +81,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Autonomous Database Wallet resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Creates and downloads a wallet for the specified Autonomous AI Database.
-        /// 
         /// 
         /// ## Example Usage
         /// 

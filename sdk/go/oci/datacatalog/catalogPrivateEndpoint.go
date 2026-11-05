@@ -208,6 +208,12 @@ func (CatalogPrivateEndpointState) ElementType() reflect.Type {
 	return reflect.TypeOf((*catalogPrivateEndpointState)(nil)).Elem()
 }
 
+// CatalogPrivateEndpointExists checks whether an existing CatalogPrivateEndpoint resource with the given ID exists.
+func CatalogPrivateEndpointExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CatalogPrivateEndpointState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataCatalog/catalogPrivateEndpoint:CatalogPrivateEndpoint", id, state, "", opts...)
+}
+
 type catalogPrivateEndpointArgs struct {
 	// (Updatable) Compartment identifier.
 	CompartmentId string `pulumi:"compartmentId"`

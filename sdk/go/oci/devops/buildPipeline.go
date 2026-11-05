@@ -197,6 +197,12 @@ func (BuildPipelineState) ElementType() reflect.Type {
 	return reflect.TypeOf((*buildPipelineState)(nil)).Elem()
 }
 
+// BuildPipelineExists checks whether an existing BuildPipeline resource with the given ID exists.
+func BuildPipelineExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BuildPipelineState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DevOps/buildPipeline:BuildPipeline", id, state, "", opts...)
+}
+
 type buildPipelineArgs struct {
 	// (Updatable) Specifies list of parameters present in a build pipeline. An UPDATE operation replaces the existing parameters list entirely.
 	BuildPipelineParameters *BuildPipelineBuildPipelineParameters `pulumi:"buildPipelineParameters"`

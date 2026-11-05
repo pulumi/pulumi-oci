@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets information about the specified cloud VM cluster. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets information about the specified cloud VM cluster. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Cloud Vm Cluster resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets information about the specified cloud VM cluster. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
-        /// 
         /// 
         /// ## Example Usage
         /// 

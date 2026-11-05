@@ -16,7 +16,6 @@ namespace Pulumi.Oci.NetworkFirewall
         /// 
         /// Get Overall health status of Network Firewall
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.NetworkFirewall
         /// 
         /// Get Overall health status of Network Firewall
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.NetworkFirewall
         /// This data source provides details about a specific Network Firewall Health Status resource in Oracle Cloud Infrastructure Network Firewall service.
         /// 
         /// Get Overall health status of Network Firewall
-        /// 
         /// 
         /// ## Example Usage
         /// 

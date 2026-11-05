@@ -165,6 +165,12 @@ func (IotDigitalTwinInstanceInvokeRawCommandState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iotDigitalTwinInstanceInvokeRawCommandState)(nil)).Elem()
 }
 
+// IotDigitalTwinInstanceInvokeRawCommandExists checks whether an existing IotDigitalTwinInstanceInvokeRawCommand resource with the given ID exists.
+func IotDigitalTwinInstanceInvokeRawCommandExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IotDigitalTwinInstanceInvokeRawCommandState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/iotDigitalTwinInstanceInvokeRawCommand:IotDigitalTwinInstanceInvokeRawCommand", id, state, "", opts...)
+}
+
 type iotDigitalTwinInstanceInvokeRawCommandArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of digital twin instance.
 	DigitalTwinInstanceId string `pulumi:"digitalTwinInstanceId"`

@@ -233,6 +233,12 @@ func (DbmulticloudOracleDbAwsIdentityConnectorState) ElementType() reflect.Type 
 	return reflect.TypeOf((*dbmulticloudOracleDbAwsIdentityConnectorState)(nil)).Elem()
 }
 
+// DbmulticloudOracleDbAwsIdentityConnectorExists checks whether an existing DbmulticloudOracleDbAwsIdentityConnector resource with the given ID exists.
+func DbmulticloudOracleDbAwsIdentityConnectorExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DbmulticloudOracleDbAwsIdentityConnectorState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/dbmulticloudOracleDbAwsIdentityConnector:DbmulticloudOracleDbAwsIdentityConnector", id, state, "", opts...)
+}
+
 type dbmulticloudOracleDbAwsIdentityConnectorArgs struct {
 	// (Updatable) AWS Account ID.
 	AwsAccountId *string `pulumi:"awsAccountId"`

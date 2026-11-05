@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Lustre
         /// 
         /// Gets a list of Lustre file systems.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Lustre
         /// 
         /// Gets a list of Lustre file systems.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.Lustre
         /// This data source provides the list of Lustre File Systems in Oracle Cloud Infrastructure Lustre File Storage service.
         /// 
         /// Gets a list of Lustre file systems.
-        /// 
         /// 
         /// ## Example Usage
         /// 

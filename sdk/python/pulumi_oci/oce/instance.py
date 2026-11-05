@@ -1061,6 +1061,64 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["waf_primary_domain"] = waf_primary_domain
         return Instance(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            add_on_features: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            admin_email: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            dr_region: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            guid: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_access_token: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_tenancy: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_access_type: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_license_type: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_usage_type: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            object_storage_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            service: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            state_message: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tenancy_name: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            upgrade_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+            waf_primary_domain: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["addOnFeatures"] = add_on_features
+        __props__["adminEmail"] = admin_email
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["drRegion"] = dr_region
+        __props__["freeformTags"] = freeform_tags
+        __props__["guid"] = guid
+        __props__["idcsAccessToken"] = idcs_access_token
+        __props__["idcsTenancy"] = idcs_tenancy
+        __props__["instanceAccessType"] = instance_access_type
+        __props__["instanceLicenseType"] = instance_license_type
+        __props__["instanceUsageType"] = instance_usage_type
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["name"] = name
+        __props__["objectStorageNamespace"] = object_storage_namespace
+        __props__["service"] = service
+        __props__["state"] = state
+        __props__["stateMessage"] = state_message
+        __props__["systemTags"] = system_tags
+        __props__["tenancyId"] = tenancy_id
+        __props__["tenancyName"] = tenancy_name
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["upgradeSchedule"] = upgrade_schedule
+        __props__["wafPrimaryDomain"] = waf_primary_domain
+        return pulumi.runtime.exists_resource(None, 'oci:Oce/instance:Instance', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="addOnFeatures")
     def add_on_features(self) -> pulumi.Output[Sequence[_builtins.str]]:

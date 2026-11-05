@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Returns Fleet level advanced feature configuration.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Returns Fleet level advanced feature configuration.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Jms
         /// This data source provides details about a specific Fleet Advanced Feature Configuration resource in Oracle Cloud Infrastructure Jms service.
         /// 
         /// Returns Fleet level advanced feature configuration.
-        /// 
         /// 
         /// ## Example Usage
         /// 

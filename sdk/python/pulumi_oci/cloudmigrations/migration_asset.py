@@ -758,6 +758,56 @@ class MigrationAsset(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return MigrationAsset(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            depended_on_bies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            destination_disks: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            inventory_asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            migration_asset_depends_ons: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            migration_id: pulumi.Input[Optional[_builtins.str]] = None,
+            notifications: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            parent_snapshot: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_location_detail: pulumi.Input[Optional[Union['MigrationAssetReplicationLocationDetailArgs', 'MigrationAssetReplicationLocationDetailArgsDict', 'outputs.MigrationAssetReplicationLocationDetail']]] = None,
+            replication_schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
+            snap_shot_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+            snapshots: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            source_asset_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availabilityDomain"] = availability_domain
+        __props__["compartmentId"] = compartment_id
+        __props__["dependedOnBies"] = depended_on_bies
+        __props__["destinationDisks"] = destination_disks
+        __props__["displayName"] = display_name
+        __props__["inventoryAssetId"] = inventory_asset_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["migrationAssetDependsOns"] = migration_asset_depends_ons
+        __props__["migrationId"] = migration_id
+        __props__["notifications"] = notifications
+        __props__["parentSnapshot"] = parent_snapshot
+        __props__["replicationCompartmentId"] = replication_compartment_id
+        __props__["replicationLocationDetail"] = replication_location_detail
+        __props__["replicationScheduleId"] = replication_schedule_id
+        __props__["snapShotBucketName"] = snap_shot_bucket_name
+        __props__["snapshots"] = snapshots
+        __props__["sourceAssetId"] = source_asset_id
+        __props__["state"] = state
+        __props__["tenancyId"] = tenancy_id
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'oci:CloudMigrations/migrationAsset:MigrationAsset', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[_builtins.str]:

@@ -144,6 +144,12 @@ func (MetricExtensionsTestManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*metricExtensionsTestManagementState)(nil)).Elem()
 }
 
+// MetricExtensionsTestManagementExists checks whether an existing MetricExtensionsTestManagement resource with the given ID exists.
+func MetricExtensionsTestManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MetricExtensionsTestManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:StackMonitoring/metricExtensionsTestManagement:MetricExtensionsTestManagement", id, state, "", opts...)
+}
+
 type metricExtensionsTestManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the metric extension resource.
 	MetricExtensionId string `pulumi:"metricExtensionId"`

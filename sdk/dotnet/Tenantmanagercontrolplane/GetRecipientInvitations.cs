@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
         /// 
         /// Return a (paginated) list of recipient invitations.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
         /// 
         /// Return a (paginated) list of recipient invitations.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
         /// This data source provides the list of Recipient Invitations in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
         /// 
         /// Return a (paginated) list of recipient invitations.
-        /// 
         /// 
         /// ## Example Usage
         /// 

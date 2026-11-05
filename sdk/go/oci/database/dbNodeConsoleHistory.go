@@ -164,6 +164,12 @@ func (DbNodeConsoleHistoryState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dbNodeConsoleHistoryState)(nil)).Elem()
 }
 
+// DbNodeConsoleHistoryExists checks whether an existing DbNodeConsoleHistory resource with the given ID exists.
+func DbNodeConsoleHistoryExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DbNodeConsoleHistoryState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/dbNodeConsoleHistory:DbNodeConsoleHistory", id, state, "", opts...)
+}
+
 type dbNodeConsoleHistoryArgs struct {
 	// The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbNodeId string `pulumi:"dbNodeId"`

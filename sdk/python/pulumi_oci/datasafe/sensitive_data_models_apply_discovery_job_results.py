@@ -162,6 +162,16 @@ class SensitiveDataModelsApplyDiscoveryJobResults(pulumi.CustomResource):
         __props__.__dict__["sensitive_data_model_id"] = sensitive_data_model_id
         return SensitiveDataModelsApplyDiscoveryJobResults(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            discovery_job_id: pulumi.Input[Optional[_builtins.str]] = None,
+            sensitive_data_model_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["discoveryJobId"] = discovery_job_id
+        __props__["sensitiveDataModelId"] = sensitive_data_model_id
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/sensitiveDataModelsApplyDiscoveryJobResults:SensitiveDataModelsApplyDiscoveryJobResults', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="discoveryJobId")
     def discovery_job_id(self) -> pulumi.Output[_builtins.str]:

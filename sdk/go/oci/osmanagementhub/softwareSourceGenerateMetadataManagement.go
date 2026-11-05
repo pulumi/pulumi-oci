@@ -114,6 +114,12 @@ func (SoftwareSourceGenerateMetadataManagementState) ElementType() reflect.Type 
 	return reflect.TypeOf((*softwareSourceGenerateMetadataManagementState)(nil)).Elem()
 }
 
+// SoftwareSourceGenerateMetadataManagementExists checks whether an existing SoftwareSourceGenerateMetadataManagement resource with the given ID exists.
+func SoftwareSourceGenerateMetadataManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SoftwareSourceGenerateMetadataManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/softwareSourceGenerateMetadataManagement:SoftwareSourceGenerateMetadataManagement", id, state, "", opts...)
+}
+
 type softwareSourceGenerateMetadataManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	//

@@ -28,11 +28,10 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
      */
     private String clientId;
     /**
-     * @deprecated
-     * The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
+     * @deprecated The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
+    @Deprecated
     private String clientSecret;
     /**
      * @return Secret OCID containing the client secret. For DATABRICKS and DATABRICKS_ENGINE it applies to OAUTH_M2M authentication. When provided, `clientSecret` must not be provided.
@@ -55,11 +54,10 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
      */
     private String principalRole;
     /**
-     * @deprecated
-     * The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
+     * @deprecated The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'properties' field has been deprecated. Please use 'properties_secret_id' instead. */
+    @Deprecated
     private String properties;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
@@ -97,11 +95,10 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
         return this.clientId;
     }
     /**
-     * @deprecated
-     * The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
+     * @deprecated The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
+    @Deprecated
     public String clientSecret() {
         return this.clientSecret;
     }
@@ -134,11 +131,10 @@ public final class GetConnectionsConnectionCollectionItemCatalog {
         return this.principalRole;
     }
     /**
-     * @deprecated
-     * The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
+     * @deprecated The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'properties' field has been deprecated. Please use 'properties_secret_id' instead. */
+    @Deprecated
     public String properties() {
         return this.properties;
     }

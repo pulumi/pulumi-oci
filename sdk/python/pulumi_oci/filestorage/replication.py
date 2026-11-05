@@ -800,6 +800,50 @@ class Replication(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return Replication(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            delta_progress: pulumi.Input[Optional[_builtins.str]] = None,
+            delta_status: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReplicationLockArgs', 'ReplicationLockArgsDict', 'outputs.ReplicationLock']]]]] = None,
+            recovery_point_time: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_interval: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availabilityDomain"] = availability_domain
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["deltaProgress"] = delta_progress
+        __props__["deltaStatus"] = delta_status
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["isLockOverride"] = is_lock_override
+        __props__["lastSnapshotId"] = last_snapshot_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["locks"] = locks
+        __props__["recoveryPointTime"] = recovery_point_time
+        __props__["replicationInterval"] = replication_interval
+        __props__["replicationTargetId"] = replication_target_id
+        __props__["sourceId"] = source_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["targetId"] = target_id
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:FileStorage/replication:Replication', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[_builtins.str]:

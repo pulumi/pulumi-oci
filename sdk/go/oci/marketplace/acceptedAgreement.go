@@ -186,6 +186,12 @@ func (AcceptedAgreementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*acceptedAgreementState)(nil)).Elem()
 }
 
+// AcceptedAgreementExists checks whether an existing AcceptedAgreement resource with the given ID exists.
+func AcceptedAgreementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AcceptedAgreementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Marketplace/acceptedAgreement:AcceptedAgreement", id, state, "", opts...)
+}
+
 type acceptedAgreementArgs struct {
 	// The agreement to accept.
 	AgreementId string `pulumi:"agreementId"`

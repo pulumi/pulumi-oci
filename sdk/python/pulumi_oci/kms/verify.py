@@ -487,6 +487,28 @@ class Verify(pulumi.CustomResource):
         __props__.__dict__["signing_algorithm"] = signing_algorithm
         return Verify(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            is_signature_valid: pulumi.Input[Optional[_builtins.bool]] = None,
+            key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            message: pulumi.Input[Optional[_builtins.str]] = None,
+            message_type: pulumi.Input[Optional[_builtins.str]] = None,
+            signature: pulumi.Input[Optional[_builtins.str]] = None,
+            signing_algorithm: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["cryptoEndpoint"] = crypto_endpoint
+        __props__["isSignatureValid"] = is_signature_valid
+        __props__["keyId"] = key_id
+        __props__["keyVersionId"] = key_version_id
+        __props__["message"] = message
+        __props__["messageType"] = message_type
+        __props__["signature"] = signature
+        __props__["signingAlgorithm"] = signing_algorithm
+        return pulumi.runtime.exists_resource(None, 'oci:Kms/verify:Verify', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="cryptoEndpoint")
     def crypto_endpoint(self) -> pulumi.Output[_builtins.str]:

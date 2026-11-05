@@ -498,6 +498,32 @@ class ManagedKafkaKafkaClusterAddon(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return ManagedKafkaKafkaClusterAddon(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            addon_type: pulumi.Input[Optional[_builtins.str]] = None,
+            authentication_mechanism: pulumi.Input[Optional[_builtins.str]] = None,
+            bootstrap_url: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            kafka_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_cidrs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["addonType"] = addon_type
+        __props__["authenticationMechanism"] = authentication_mechanism
+        __props__["bootstrapUrl"] = bootstrap_url
+        __props__["description"] = description
+        __props__["kafkaClusterId"] = kafka_cluster_id
+        __props__["name"] = name
+        __props__["networkCidrs"] = network_cidrs
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:oci/managedKafkaKafkaClusterAddon:ManagedKafkaKafkaClusterAddon', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="addonType")
     def addon_type(self) -> pulumi.Output[_builtins.str]:

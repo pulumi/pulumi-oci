@@ -220,6 +220,12 @@ func (ProtectionPolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*protectionPolicyState)(nil)).Elem()
 }
 
+// ProtectionPolicyExists checks whether an existing ProtectionPolicy resource with the given ID exists.
+func ProtectionPolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProtectionPolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:RecoveryMod/protectionPolicy:ProtectionPolicy", id, state, "", opts...)
+}
+
 type protectionPolicyArgs struct {
 	// (Updatable) The maximum number of days to retain backups for a protected database.
 	BackupRetentionPeriodInDays int `pulumi:"backupRetentionPeriodInDays"`

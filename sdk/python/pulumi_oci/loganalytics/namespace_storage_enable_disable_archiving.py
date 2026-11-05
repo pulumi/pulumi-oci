@@ -254,6 +254,18 @@ class NamespaceStorageEnableDisableArchiving(pulumi.CustomResource):
         __props__.__dict__["namespace"] = namespace
         return NamespaceStorageEnableDisableArchiving(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enable_archiving_tenant: pulumi.Input[Optional[_builtins.bool]] = None,
+            message: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enableArchivingTenant"] = enable_archiving_tenant
+        __props__["message"] = message
+        __props__["namespace"] = namespace
+        return pulumi.runtime.exists_resource(None, 'oci:LogAnalytics/namespaceStorageEnableDisableArchiving:NamespaceStorageEnableDisableArchiving', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="enableArchivingTenant")
     def enable_archiving_tenant(self) -> pulumi.Output[_builtins.bool]:

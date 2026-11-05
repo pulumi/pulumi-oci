@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Identity
         /// Gets the specified user's console password information. The returned object contains the user's OCID,
         /// but not the password itself. The actual password is returned only when created or reset.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Identity
         /// Gets the specified user's console password information. The returned object contains the user's OCID,
         /// but not the password itself. The actual password is returned only when created or reset.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -72,7 +70,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Gets the specified user's console password information. The returned object contains the user's OCID,
         /// but not the password itself. The actual password is returned only when created or reset.
-        /// 
         /// 
         /// ## Example Usage
         /// 

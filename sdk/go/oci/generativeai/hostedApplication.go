@@ -241,6 +241,12 @@ func (HostedApplicationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*hostedApplicationState)(nil)).Elem()
 }
 
+// HostedApplicationExists checks whether an existing HostedApplication resource with the given ID exists.
+func HostedApplicationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HostedApplicationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:GenerativeAi/hostedApplication:HostedApplication", id, state, "", opts...)
+}
+
 type hostedApplicationArgs struct {
 	// (Updatable) The compartment OCID for the Hosted Application.
 	CompartmentId string `pulumi:"compartmentId"`

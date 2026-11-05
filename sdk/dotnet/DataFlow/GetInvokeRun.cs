@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataFlow
         /// 
         /// Retrieves the run for the specified `runId`.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.DataFlow
         /// 
         /// Retrieves the run for the specified `runId`.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.DataFlow
         /// This data source provides details about a specific Invoke Run resource in Oracle Cloud Infrastructure Data Flow service.
         /// 
         /// Retrieves the run for the specified `runId`.
-        /// 
         /// 
         /// ## Example Usage
         /// 

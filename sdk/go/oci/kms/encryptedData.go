@@ -165,6 +165,12 @@ func (EncryptedDataState) ElementType() reflect.Type {
 	return reflect.TypeOf((*encryptedDataState)(nil)).Elem()
 }
 
+// EncryptedDataExists checks whether an existing EncryptedData resource with the given ID exists.
+func EncryptedDataExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *EncryptedDataState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Kms/encryptedData:EncryptedData", id, state, "", opts...)
+}
+
 type encryptedDataArgs struct {
 	// Information that can be used to provide an encryption context for the encrypted data. The length of the string representation of the associated data must be fewer than 4096 characters.
 	AssociatedData map[string]string `pulumi:"associatedData"`

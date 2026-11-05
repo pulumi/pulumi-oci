@@ -189,6 +189,12 @@ func (ZprPolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*zprPolicyState)(nil)).Elem()
 }
 
+// ZprPolicyExists checks whether an existing ZprPolicy resource with the given ID exists.
+func ZprPolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ZprPolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Zpr/zprPolicy:ZprPolicy", id, state, "", opts...)
+}
+
 type zprPolicyArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the ZprPolicy in.
 	CompartmentId string `pulumi:"compartmentId"`

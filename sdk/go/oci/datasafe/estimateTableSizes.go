@@ -118,6 +118,12 @@ func (EstimateTableSizesState) ElementType() reflect.Type {
 	return reflect.TypeOf((*estimateTableSizesState)(nil)).Elem()
 }
 
+// EstimateTableSizesExists checks whether an existing EstimateTableSizes resource with the given ID exists.
+func EstimateTableSizesExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *EstimateTableSizesState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/estimateTableSizes:EstimateTableSizes", id, state, "", opts...)
+}
+
 type estimateTableSizesArgs struct {
 	// The OCID of the subsetting policy.
 	SubsettingPolicyId string `pulumi:"subsettingPolicyId"`

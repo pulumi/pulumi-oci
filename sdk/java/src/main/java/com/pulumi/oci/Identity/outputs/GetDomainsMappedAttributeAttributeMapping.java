@@ -18,17 +18,17 @@ public final class GetDomainsMappedAttributeAttributeMapping {
      */
     private List<String> appliesToActions;
     /**
-     * @return The name or expression of an attribute that corresponds to the Oracle Identity Cloud Service Resource referred in the \&#34;idcsResourceType\&#34; attribute.
+     * @return The name or expression of an attribute that corresponds to the Oracle Identity Cloud Service Resource referred in the &#92;&#34;idcsResourceType&#92;&#34; attribute.
      * 
      */
     private String idcsAttributeName;
     /**
-     * @return The name or expression of an attribute defined in the schema of the Managed Object Class. This is the SCIM compliant Oracle Identity Cloud Service Name of the attribute that maps to the \&#34;idcsName\&#34; attribute in the schema of an Managed Object Class.
+     * @return The name or expression of an attribute defined in the schema of the Managed Object Class. This is the SCIM compliant Oracle Identity Cloud Service Name of the attribute that maps to the &#92;&#34;idcsName&#92;&#34; attribute in the schema of an Managed Object Class.
      * 
      */
     private String managedObjectAttributeName;
     /**
-     * @return If true, indicates that this attribute must have a value. This attribute maps to the \&#34;required\&#34; sub-attribute in the schema of an Managed Object Class.
+     * @return If true, indicates that this attribute must have a value. This attribute maps to the &#92;&#34;required&#92;&#34; sub-attribute in the schema of an Managed Object Class.
      * 
      */
     private Boolean required;
@@ -47,21 +47,21 @@ public final class GetDomainsMappedAttributeAttributeMapping {
         return this.appliesToActions;
     }
     /**
-     * @return The name or expression of an attribute that corresponds to the Oracle Identity Cloud Service Resource referred in the \&#34;idcsResourceType\&#34; attribute.
+     * @return The name or expression of an attribute that corresponds to the Oracle Identity Cloud Service Resource referred in the &#92;&#34;idcsResourceType&#92;&#34; attribute.
      * 
      */
     public String idcsAttributeName() {
         return this.idcsAttributeName;
     }
     /**
-     * @return The name or expression of an attribute defined in the schema of the Managed Object Class. This is the SCIM compliant Oracle Identity Cloud Service Name of the attribute that maps to the \&#34;idcsName\&#34; attribute in the schema of an Managed Object Class.
+     * @return The name or expression of an attribute defined in the schema of the Managed Object Class. This is the SCIM compliant Oracle Identity Cloud Service Name of the attribute that maps to the &#92;&#34;idcsName&#92;&#34; attribute in the schema of an Managed Object Class.
      * 
      */
     public String managedObjectAttributeName() {
         return this.managedObjectAttributeName;
     }
     /**
-     * @return If true, indicates that this attribute must have a value. This attribute maps to the \&#34;required\&#34; sub-attribute in the schema of an Managed Object Class.
+     * @return If true, indicates that this attribute must have a value. This attribute maps to the &#92;&#34;required&#92;&#34; sub-attribute in the schema of an Managed Object Class.
      * 
      */
     public Boolean required() {

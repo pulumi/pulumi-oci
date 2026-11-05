@@ -132,9 +132,9 @@ import javax.annotation.Nullable;
  * 
  * 1. Before starting migration, back up your terraform state file.
  * 2. Get the SDDC OCID for the `oci.Ocvp.Sddc` resource you plan to migrate.
- * 3. Remove the `oci.Ocvp.Sddc` resource from Terraform state via command: terraform state rm \&lt;resource address\&gt;
+ * 3. Remove the `oci.Ocvp.Sddc` resource from Terraform state via command: terraform state rm &#92;&lt;resource address&#92;&gt;
  * 4. Update `oci.Ocvp.Sddc` resource config. Remove all deprecated fields and add corresponding new fields to the resource config. Note: Remove and do not add `hcxAction` or `refreshHcxLicenseStatus` because these fields will not be imported.
- * 5. Import `oci.Ocvp.Sddc` resource to Terraform state using command: terraform import \&lt;resource address\&gt; \&lt;SDDC OCID\&gt;.
+ * 5. Import `oci.Ocvp.Sddc` resource to Terraform state using command: terraform import &#92;&lt;resource address&#92;&gt; &#92;&lt;SDDC OCID&#92;&gt;.
  * 6. Run `pulumi preview` to check if there is any planned change for `oci.Ocvp.Sddc` resource. If there is any planned change, update `oci.Ocvp.Sddc` resource config until there is no planned change.
  * 
  * ## Import
@@ -151,11 +151,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * The number of actual ESXi hosts in the SDDC on the cloud. This attribute will be different when esxi Host is added to an existing SDDC. **Deprecated**.
      * 
-     * @deprecated
-     * The &#39;actual_esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;actual_esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'actual_esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Export(name="actualEsxiHostsCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> actualEsxiHostsCount;
 
@@ -169,11 +168,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation. **Deprecated**. Please use `capacityReservationId` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;capacity_reservation_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;capacity_reservation_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Export(name="capacityReservationId", refs={String.class}, tree="[0]")
     private Output<String> capacityReservationId;
 
@@ -215,11 +213,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (Required) The availability domain to create the SDDC&#39;s ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`. **Deprecated**. Please use `computeAvailabilityDomain` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;compute_availability_domain&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;compute_availability_domain&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Export(name="computeAvailabilityDomain", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> computeAvailabilityDomain;
 
@@ -233,11 +230,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (Optional) A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape. **Deprecated**. Please use `datastores` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;datastores&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;datastores&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'datastores' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Export(name="datastores", refs={List.class,SddcDatastore.class}, tree="[0,1]")
     private Output<List<SddcDatastore>> datastores;
 
@@ -281,11 +277,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * 
      * **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
      * 
-     * @deprecated
-     * The &#39;esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Export(name="esxiHostsCount", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> esxiHostsCount;
 
@@ -357,11 +352,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (**Deprecated**) The SDDC includes an administrator username and initial password for HCX Manager. Make sure to change this initial HCX Manager password to a different value. **Deprecated**. Please use the `oci.Ocvp.getRetrievePassword` data source instead.
      * 
-     * @deprecated
-     * The &#39;hcx_initial_password&#39; field has been deprecated. Please use the &#39;oci_ocvp_retrieve_password&#39; data source instead.
+     * @deprecated The &#39;hcx_initial_password&#39; field has been deprecated. Please use the &#39;oci_ocvp_retrieve_password&#39; data source instead.
      * 
      */
-    @Deprecated /* The 'hcx_initial_password' field has been deprecated. Please use the 'oci_ocvp_retrieve_password' data source instead. */
+    @Deprecated
     @Export(name="hcxInitialPassword", refs={String.class}, tree="[0]")
     private Output<String> hcxInitialPassword;
 
@@ -389,11 +383,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (**Deprecated**) The activation keys to use on the on-premises HCX Enterprise appliances you site pair with HCX Manager in your VMware Solution. The number of keys provided depends on the HCX license type. HCX Advanced provides 3 activation keys. HCX Enterprise provides 10 activation keys. **Deprecated**. Please use `hcxOnPremLicenses` instead.
      * 
-     * @deprecated
-     * The &#39;hcx_on_prem_key&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;hcx_on_prem_key&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'hcx_on_prem_key' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     @Export(name="hcxOnPremKey", refs={String.class}, tree="[0]")
     private Output<String> hcxOnPremKey;
 
@@ -435,11 +428,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true. **Deprecated**. Please use `hcxVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;hcx_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;hcx_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Export(name="hcxVlanId", refs={String.class}, tree="[0]")
     private Output<String> hcxVlanId;
 
@@ -467,11 +459,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (Optional) The initial OCPU count of the SDDC&#39;s ESXi hosts. **Deprecated**. Please use `initialHostOcpuCount` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;initial_host_ocpu_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;initial_host_ocpu_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Export(name="initialHostOcpuCount", refs={Double.class}, tree="[0]")
     private Output<Double> initialHostOcpuCount;
 
@@ -485,11 +476,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (Optional) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initialHostShapeName` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;initial_host_shape_name&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;initial_host_shape_name&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Export(name="initialHostShapeName", refs={String.class}, tree="[0]")
     private Output<String> initialHostShapeName;
 
@@ -503,11 +493,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (Optional) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use  `initialCommitment` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;initial_sku&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;initial_sku&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Export(name="initialSku", refs={String.class}, tree="[0]")
     private Output<String> initialSku;
 
@@ -523,11 +512,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * 
      * For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on. **Deprecated**. Please use  `instanceDisplayNamePrefix` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;instance_display_name_prefix&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;instance_display_name_prefix&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Export(name="instanceDisplayNamePrefix", refs={String.class}, tree="[0]")
     private Output<String> instanceDisplayNamePrefix;
 
@@ -557,11 +545,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (**Deprecated**) Indicates whether HCX Enterprise is enabled for this SDDC.
      * 
-     * @deprecated
-     * The &#39;is_hcx_enterprise_enabled&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;is_hcx_enterprise_enabled&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'is_hcx_enterprise_enabled' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     @Export(name="isHcxEnterpriseEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isHcxEnterpriseEnabled;
 
@@ -589,11 +576,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (Optional) Indicates whether shielded instance is enabled for this SDDC. **Deprecated**. Please use `isShieldedInstanceEnabled` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;is_shielded_instance_enabled&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;is_shielded_instance_enabled&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Export(name="isShieldedInstanceEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isShieldedInstanceEnabled;
 
@@ -621,11 +607,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment. **Deprecated**. Please use `nsxEdgeUplink1vlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;nsx_edge_uplink1vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;nsx_edge_uplink1vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Export(name="nsxEdgeUplink1vlanId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> nsxEdgeUplink1vlanId;
 
@@ -641,11 +626,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * 
      * **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
      * 
-     * @deprecated
-     * The &#39;nsx_edge_uplink2vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;nsx_edge_uplink2vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Export(name="nsxEdgeUplink2vlanId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> nsxEdgeUplink2vlanId;
 
@@ -675,11 +659,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment. **Deprecated**. Please use `nsxEdgeVtepVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;nsx_edge_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;nsx_edge_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Export(name="nsxEdgeVtepVlanId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> nsxEdgeVtepVlanId;
 
@@ -707,11 +690,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (**Deprecated**) The SDDC includes an administrator username and initial password for NSX Manager. Make sure to change this initial NSX Manager password to a different value. **Deprecated**. Please use the `oci.Ocvp.getRetrievePassword` data source instead.
      * 
-     * @deprecated
-     * The &#39;nsx_manager_initial_password&#39; field has been deprecated. Please use the &#39;oci_ocvp_retrieve_password&#39; data source instead.
+     * @deprecated The &#39;nsx_manager_initial_password&#39; field has been deprecated. Please use the &#39;oci_ocvp_retrieve_password&#39; data source instead.
      * 
      */
-    @Deprecated /* The 'nsx_manager_initial_password' field has been deprecated. Please use the 'oci_ocvp_retrieve_password' data source instead. */
+    @Deprecated
     @Export(name="nsxManagerInitialPassword", refs={String.class}, tree="[0]")
     private Output<String> nsxManagerInitialPassword;
 
@@ -753,11 +735,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (**Deprecated**) The VMware NSX overlay workload segment to host your application. Connect to workload portgroup in vCenter to access this overlay segment.
      * 
-     * @deprecated
-     * The &#39;nsx_overlay_segment_name&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;nsx_overlay_segment_name&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'nsx_overlay_segment_name' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     @Export(name="nsxOverlaySegmentName", refs={String.class}, tree="[0]")
     private Output<String> nsxOverlaySegmentName;
 
@@ -771,11 +752,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment. **Deprecated**. Please use `nsxVtepVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;nsx_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;nsx_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Export(name="nsxVtepVlanId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> nsxVtepVlanId;
 
@@ -789,11 +769,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC. **Deprecated**. Please use `provisioningSubnetId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;provisioning_subnet_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;provisioning_subnet_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Export(name="provisioningSubnetId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> provisioningSubnetId;
 
@@ -807,11 +786,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment. **Deprecated**. Please use `provisioningVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;provisioning_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;provisioning_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Export(name="provisioningVlanId", refs={String.class}, tree="[0]")
     private Output<String> provisioningVlanId;
 
@@ -839,11 +817,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replicationVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;replication_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;replication_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Export(name="replicationVlanId", refs={String.class}, tree="[0]")
     private Output<String> replicationVlanId;
 
@@ -983,11 +960,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (**Deprecated**) The vSphere licenses to use when upgrading the SDDC.
      * 
-     * @deprecated
-     * The &#39;upgrade_licenses&#39; field has been deprecated. Please use the &#39;ocvp_cluster_resource&#39; resource instead.
+     * @deprecated The &#39;upgrade_licenses&#39; field has been deprecated. Please use the &#39;ocvp_cluster_resource&#39; resource instead.
      * 
      */
-    @Deprecated /* The 'upgrade_licenses' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead. */
+    @Deprecated
     @Export(name="upgradeLicenses", refs={List.class,SddcUpgradeLicense.class}, tree="[0,1]")
     private Output<List<SddcUpgradeLicense>> upgradeLicenses;
 
@@ -1015,11 +991,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (**Deprecated**) The SDDC includes an administrator username and initial password for vCenter. Make sure to change this initial vCenter password to a different value. **Deprecated**. Please use the `oci.Ocvp.getRetrievePassword` data source instead.
      * 
-     * @deprecated
-     * The &#39;vcenter_initial_password&#39; field has been deprecated. Please use the &#39;oci_ocvp_retrieve_password&#39; data source instead.
+     * @deprecated The &#39;vcenter_initial_password&#39; field has been deprecated. Please use the &#39;oci_ocvp_retrieve_password&#39; data source instead.
      * 
      */
-    @Deprecated /* The 'vcenter_initial_password' field has been deprecated. Please use the 'oci_ocvp_retrieve_password' data source instead. */
+    @Deprecated
     @Export(name="vcenterInitialPassword", refs={String.class}, tree="[0]")
     private Output<String> vcenterInitialPassword;
 
@@ -1061,11 +1036,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment. **Deprecated**. Please use `vmotionVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;vmotion_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;vmotion_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Export(name="vmotionVlanId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> vmotionVlanId;
 
@@ -1093,11 +1067,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment. **Deprecated**. Please use `vsanVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;vsan_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;vsan_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Export(name="vsanVlanId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> vsanVlanId;
 
@@ -1111,11 +1084,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (**Deprecated**) The link to guidance for upgrading vSphere.
      * 
-     * @deprecated
-     * The &#39;vsphere_upgrade_guide&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;vsphere_upgrade_guide&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'vsphere_upgrade_guide' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     @Export(name="vsphereUpgradeGuide", refs={String.class}, tree="[0]")
     private Output<String> vsphereUpgradeGuide;
 
@@ -1129,11 +1101,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (**Deprecated**) The links to binary objects needed to upgrade vSphere.
      * 
-     * @deprecated
-     * The &#39;vsphere_upgrade_objects&#39; field has been deprecated. Please use the &#39;ocvp_cluster_resource&#39; resource instead.
+     * @deprecated The &#39;vsphere_upgrade_objects&#39; field has been deprecated. Please use the &#39;ocvp_cluster_resource&#39; resource instead.
      * 
      */
-    @Deprecated /* The 'vsphere_upgrade_objects' field has been deprecated. Please use the 'ocvp_cluster_resource' resource instead. */
+    @Deprecated
     @Export(name="vsphereUpgradeObjects", refs={List.class,SddcVsphereUpgradeObject.class}, tree="[0,1]")
     private Output<List<SddcVsphereUpgradeObject>> vsphereUpgradeObjects;
 
@@ -1147,11 +1118,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment. **Deprecated**. Please use `vsphereVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;vsphere_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;vsphere_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Export(name="vsphereVlanId", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> vsphereVlanId;
 
@@ -1168,11 +1138,10 @@ public class Sddc extends com.pulumi.resources.CustomResource {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
-     * @deprecated
-     * The &#39;workload_network_cidr&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;workload_network_cidr&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Export(name="workloadNetworkCidr", refs={String.class}, tree="[0]")
     private Output<String> workloadNetworkCidr;
 

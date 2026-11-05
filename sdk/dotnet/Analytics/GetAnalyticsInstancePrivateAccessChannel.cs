@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Analytics
         /// 
         /// Retrieve private access channel for the specified Analytics Instance.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Analytics
         /// 
         /// Retrieve private access channel for the specified Analytics Instance.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.Analytics
         /// This data source provides details about a specific Analytics Instance Private Access Channel resource in Oracle Cloud Infrastructure Analytics service.
         /// 
         /// Retrieve private access channel for the specified Analytics Instance.
-        /// 
         /// 
         /// ## Example Usage
         /// 

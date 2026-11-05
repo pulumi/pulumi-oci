@@ -204,6 +204,12 @@ func (IotIotDomainState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iotIotDomainState)(nil)).Elem()
 }
 
+// IotIotDomainExists checks whether an existing IotIotDomain resource with the given ID exists.
+func IotIotDomainExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IotIotDomainState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/iotIotDomain:IotIotDomain", id, state, "", opts...)
+}
+
 type iotIotDomainArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment corresponding to the resource.
 	CompartmentId string `pulumi:"compartmentId"`

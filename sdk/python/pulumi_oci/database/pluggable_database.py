@@ -946,6 +946,64 @@ class PluggableDatabase(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return PluggableDatabase(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PluggableDatabaseConnectionStringArgs', 'PluggableDatabaseConnectionStringArgsDict', 'outputs.PluggableDatabaseConnectionString']]]]] = None,
+            container_database_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            convert_to_regular_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_restricted: pulumi.Input[Optional[_builtins.bool]] = None,
+            kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            open_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            patch_version: pulumi.Input[Optional[_builtins.str]] = None,
+            pdb_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            pdb_creation_type_details: pulumi.Input[Optional[Union['PluggableDatabasePdbCreationTypeDetailsArgs', 'PluggableDatabasePdbCreationTypeDetailsArgsDict', 'outputs.PluggableDatabasePdbCreationTypeDetails']]] = None,
+            pdb_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pdb_node_level_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PluggableDatabasePdbNodeLevelDetailArgs', 'PluggableDatabasePdbNodeLevelDetailArgsDict', 'outputs.PluggableDatabasePdbNodeLevelDetail']]]]] = None,
+            pluggable_database_management_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PluggableDatabasePluggableDatabaseManagementConfigArgs', 'PluggableDatabasePluggableDatabaseManagementConfigArgsDict', 'outputs.PluggableDatabasePluggableDatabaseManagementConfig']]]]] = None,
+            refresh_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            refreshable_clone_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PluggableDatabaseRefreshableCloneConfigArgs', 'PluggableDatabaseRefreshableCloneConfigArgsDict', 'outputs.PluggableDatabaseRefreshableCloneConfig']]]]] = None,
+            rotate_key_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            should_create_pdb_backup: pulumi.Input[Optional[_builtins.bool]] = None,
+            should_pdb_admin_account_be_locked: pulumi.Input[Optional[_builtins.bool]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tde_wallet_password: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["connectionStrings"] = connection_strings
+        __props__["containerDatabaseAdminPassword"] = container_database_admin_password
+        __props__["containerDatabaseId"] = container_database_id
+        __props__["convertToRegularTrigger"] = convert_to_regular_trigger
+        __props__["definedTags"] = defined_tags
+        __props__["freeformTags"] = freeform_tags
+        __props__["isRestricted"] = is_restricted
+        __props__["kmsKeyVersionId"] = kms_key_version_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["openMode"] = open_mode
+        __props__["patchVersion"] = patch_version
+        __props__["pdbAdminPassword"] = pdb_admin_password
+        __props__["pdbCreationTypeDetails"] = pdb_creation_type_details
+        __props__["pdbName"] = pdb_name
+        __props__["pdbNodeLevelDetails"] = pdb_node_level_details
+        __props__["pluggableDatabaseManagementConfigs"] = pluggable_database_management_configs
+        __props__["refreshTrigger"] = refresh_trigger
+        __props__["refreshableCloneConfigs"] = refreshable_clone_configs
+        __props__["rotateKeyTrigger"] = rotate_key_trigger
+        __props__["shouldCreatePdbBackup"] = should_create_pdb_backup
+        __props__["shouldPdbAdminAccountBeLocked"] = should_pdb_admin_account_be_locked
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["tdeWalletPassword"] = tde_wallet_password
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:Database/pluggableDatabase:PluggableDatabase', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

@@ -510,6 +510,40 @@ class DbNodeSnapshot(pulumi.CustomResource):
         __props__.__dict__["volumes"] = volumes
         return DbNodeSnapshot(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            dbnode_snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            mount_dbnode_id: pulumi.Input[Optional[_builtins.str]] = None,
+            mount_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbNodeSnapshotMountPointArgs', 'DbNodeSnapshotMountPointArgsDict', 'outputs.DbNodeSnapshotMountPoint']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            source_dbnode_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbNodeSnapshotVolumeArgs', 'DbNodeSnapshotVolumeArgsDict', 'outputs.DbNodeSnapshotVolume']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["clusterId"] = cluster_id
+        __props__["compartmentId"] = compartment_id
+        __props__["dbnodeSnapshotId"] = dbnode_snapshot_id
+        __props__["definedTags"] = defined_tags
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["mountDbnodeId"] = mount_dbnode_id
+        __props__["mountPoints"] = mount_points
+        __props__["name"] = name
+        __props__["sourceDbnodeId"] = source_dbnode_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["volumes"] = volumes
+        return pulumi.runtime.exists_resource(None, 'oci:Database/dbNodeSnapshot:DbNodeSnapshot', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="clusterId")
     def cluster_id(self) -> pulumi.Output[_builtins.str]:

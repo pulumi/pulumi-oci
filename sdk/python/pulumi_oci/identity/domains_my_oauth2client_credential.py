@@ -1749,6 +1749,56 @@ class DomainsMyOauth2clientCredential(pulumi.CustomResource):
         __props__.__dict__["user"] = user
         return DomainsMyOauth2clientCredential(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            authorization: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            expires_on: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyOauth2clientCredentialIdcsCreatedByArgs', 'DomainsMyOauth2clientCredentialIdcsCreatedByArgsDict', 'outputs.DomainsMyOauth2clientCredentialIdcsCreatedBy']]]]] = None,
+            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyOauth2clientCredentialIdcsLastModifiedByArgs', 'DomainsMyOauth2clientCredentialIdcsLastModifiedByArgsDict', 'outputs.DomainsMyOauth2clientCredentialIdcsLastModifiedBy']]]]] = None,
+            idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            is_reset_secret: pulumi.Input[Optional[_builtins.bool]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyOauth2clientCredentialMetaArgs', 'DomainsMyOauth2clientCredentialMetaArgsDict', 'outputs.DomainsMyOauth2clientCredentialMeta']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            scopes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyOauth2clientCredentialScopeArgs', 'DomainsMyOauth2clientCredentialScopeArgsDict', 'outputs.DomainsMyOauth2clientCredentialScope']]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyOauth2clientCredentialTagArgs', 'DomainsMyOauth2clientCredentialTagArgsDict', 'outputs.DomainsMyOauth2clientCredentialTag']]]]] = None,
+            tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            user: pulumi.Input[Optional[Union['DomainsMyOauth2clientCredentialUserArgs', 'DomainsMyOauth2clientCredentialUserArgsDict', 'outputs.DomainsMyOauth2clientCredentialUser']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["authorization"] = authorization
+        __props__["compartmentOcid"] = compartment_ocid
+        __props__["deleteInProgress"] = delete_in_progress
+        __props__["description"] = description
+        __props__["domainOcid"] = domain_ocid
+        __props__["expiresOn"] = expires_on
+        __props__["idcsCreatedBies"] = idcs_created_bies
+        __props__["idcsEndpoint"] = idcs_endpoint
+        __props__["idcsLastModifiedBies"] = idcs_last_modified_bies
+        __props__["idcsLastUpgradedInRelease"] = idcs_last_upgraded_in_release
+        __props__["idcsPreventedOperations"] = idcs_prevented_operations
+        __props__["isResetSecret"] = is_reset_secret
+        __props__["metas"] = metas
+        __props__["name"] = name
+        __props__["ocid"] = ocid
+        __props__["resourceTypeSchemaVersion"] = resource_type_schema_version
+        __props__["schemas"] = schemas
+        __props__["scopes"] = scopes
+        __props__["status"] = status
+        __props__["tags"] = tags
+        __props__["tenancyOcid"] = tenancy_ocid
+        __props__["user"] = user
+        return pulumi.runtime.exists_resource(None, 'oci:Identity/domainsMyOauth2clientCredential:DomainsMyOauth2clientCredential', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def authorization(self) -> pulumi.Output[Optional[_builtins.str]]:

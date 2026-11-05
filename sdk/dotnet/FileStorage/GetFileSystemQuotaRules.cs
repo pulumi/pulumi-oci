@@ -16,7 +16,6 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// List user or group usages and their quota rules by certain principal type.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.FileStorage
         /// 
         /// List user or group usages and their quota rules by certain principal type.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.FileStorage
         /// This data source provides the list of File System Quota Rules in Oracle Cloud Infrastructure File Storage service.
         /// 
         /// List user or group usages and their quota rules by certain principal type.
-        /// 
         /// 
         /// ## Example Usage
         /// 

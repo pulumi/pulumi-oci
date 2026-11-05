@@ -645,6 +645,42 @@ class ModelDeployment(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return ModelDeployment(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            category_log_details: pulumi.Input[Optional[Union['ModelDeploymentCategoryLogDetailsArgs', 'ModelDeploymentCategoryLogDetailsArgsDict', 'outputs.ModelDeploymentCategoryLogDetails']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            model_deployment_configuration_details: pulumi.Input[Optional[Union['ModelDeploymentModelDeploymentConfigurationDetailsArgs', 'ModelDeploymentModelDeploymentConfigurationDetailsArgsDict', 'outputs.ModelDeploymentModelDeploymentConfigurationDetails']]] = None,
+            model_deployment_system_datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ModelDeploymentModelDeploymentSystemDataArgs', 'ModelDeploymentModelDeploymentSystemDataArgsDict', 'outputs.ModelDeploymentModelDeploymentSystemData']]]]] = None,
+            model_deployment_url: pulumi.Input[Optional[_builtins.str]] = None,
+            opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["categoryLogDetails"] = category_log_details
+        __props__["compartmentId"] = compartment_id
+        __props__["createdBy"] = created_by
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["modelDeploymentConfigurationDetails"] = model_deployment_configuration_details
+        __props__["modelDeploymentSystemDatas"] = model_deployment_system_datas
+        __props__["modelDeploymentUrl"] = model_deployment_url
+        __props__["opcParentRptUrl"] = opc_parent_rpt_url
+        __props__["projectId"] = project_id
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:DataScience/modelDeployment:ModelDeployment', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="categoryLogDetails")
     def category_log_details(self) -> pulumi.Output['outputs.ModelDeploymentCategoryLogDetails']:

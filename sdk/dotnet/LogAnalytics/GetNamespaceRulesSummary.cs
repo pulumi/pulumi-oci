@@ -16,7 +16,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Returns the count of detection rules in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Returns the count of detection rules in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides details about a specific Namespace Rules Summary resource in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// Returns the count of detection rules in a compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -260,6 +260,12 @@ func (JobState) ElementType() reflect.Type {
 	return reflect.TypeOf((*jobState)(nil)).Elem()
 }
 
+// JobExists checks whether an existing Job resource with the given ID exists.
+func JobExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *JobState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:AiLanguage/job:Job", id, state, "", opts...)
+}
+
 type jobArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the job.
 	CompartmentId string `pulumi:"compartmentId"`

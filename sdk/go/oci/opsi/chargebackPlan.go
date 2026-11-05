@@ -230,6 +230,12 @@ func (ChargebackPlanState) ElementType() reflect.Type {
 	return reflect.TypeOf((*chargebackPlanState)(nil)).Elem()
 }
 
+// ChargebackPlanExists checks whether an existing ChargebackPlan resource with the given ID exists.
+func ChargebackPlanExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ChargebackPlanState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Opsi/chargebackPlan:ChargebackPlan", id, state, "", opts...)
+}
+
 type chargebackPlanArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

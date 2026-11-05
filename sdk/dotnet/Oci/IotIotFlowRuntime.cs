@@ -132,8 +132,7 @@ namespace Pulumi.Oci.Oci
         public Output<Outputs.IotIotFlowRuntimeNetworkConfig> NetworkConfig { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The scale of the IoT flow runtime. Larger values allocate more CPU and memory for higher throughput and operational headroom. MEDIUM is the default value. 
-        /// 
+        /// (Updatable) The scale of the IoT flow runtime. Larger values allocate more CPU and memory for higher throughput and operational headroom. MEDIUM is the default value.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -272,8 +271,7 @@ namespace Pulumi.Oci.Oci
         public Input<Inputs.IotIotFlowRuntimeNetworkConfigArgs>? NetworkConfig { get; set; }
 
         /// <summary>
-        /// (Updatable) The scale of the IoT flow runtime. Larger values allocate more CPU and memory for higher throughput and operational headroom. MEDIUM is the default value. 
-        /// 
+        /// (Updatable) The scale of the IoT flow runtime. Larger values allocate more CPU and memory for higher throughput and operational headroom. MEDIUM is the default value.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -356,8 +354,7 @@ namespace Pulumi.Oci.Oci
         public Input<Inputs.IotIotFlowRuntimeNetworkConfigGetArgs>? NetworkConfig { get; set; }
 
         /// <summary>
-        /// (Updatable) The scale of the IoT flow runtime. Larger values allocate more CPU and memory for higher throughput and operational headroom. MEDIUM is the default value. 
-        /// 
+        /// (Updatable) The scale of the IoT flow runtime. Larger values allocate more CPU and memory for higher throughput and operational headroom. MEDIUM is the default value.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

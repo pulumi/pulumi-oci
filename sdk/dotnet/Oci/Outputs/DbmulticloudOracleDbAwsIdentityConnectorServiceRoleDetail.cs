@@ -32,7 +32,6 @@ namespace Pulumi.Oci.Oci.Outputs
         /// <summary>
         /// (Updatable) Type of service.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

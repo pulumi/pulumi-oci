@@ -334,6 +334,12 @@ func (ManagedInstanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managedInstanceState)(nil)).Elem()
 }
 
+// ManagedInstanceExists checks whether an existing ManagedInstance resource with the given ID exists.
+func ManagedInstanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedInstanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/managedInstance:ManagedInstance", id, state, "", opts...)
+}
+
 type managedInstanceArgs struct {
 	// (Updatable) Updatable settings for the Autonomous Linux service. This is required when creating an Autonomous Linux Managed Instance Group. Do not include it when creating a standard (non-Autonomous) Managed Instance Group.
 	AutonomousSettings *ManagedInstanceAutonomousSettings `pulumi:"autonomousSettings"`

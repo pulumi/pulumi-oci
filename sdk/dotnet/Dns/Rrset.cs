@@ -84,7 +84,7 @@ namespace Pulumi.Oci.Dns
         public Output<string> Domain { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) 
+        /// (Updatable)
         /// **NOTE** Omitting `Items` at time of create will delete any existing records in the RRSet
         /// </summary>
         [Output("items")]
@@ -110,7 +110,6 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// The name or OCID of the target zone.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -182,7 +181,7 @@ namespace Pulumi.Oci.Dns
         private InputList<Inputs.RrsetItemArgs>? _items;
 
         /// <summary>
-        /// (Updatable) 
+        /// (Updatable)
         /// **NOTE** Omitting `Items` at time of create will delete any existing records in the RRSet
         /// </summary>
         public InputList<Inputs.RrsetItemArgs> Items
@@ -211,7 +210,6 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// The name or OCID of the target zone.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -245,7 +243,7 @@ namespace Pulumi.Oci.Dns
         private InputList<Inputs.RrsetItemGetArgs>? _items;
 
         /// <summary>
-        /// (Updatable) 
+        /// (Updatable)
         /// **NOTE** Omitting `Items` at time of create will delete any existing records in the RRSet
         /// </summary>
         public InputList<Inputs.RrsetItemGetArgs> Items
@@ -274,7 +272,6 @@ namespace Pulumi.Oci.Dns
 
         /// <summary>
         /// The name or OCID of the target zone.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

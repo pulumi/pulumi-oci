@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Ocvp
         /// List the Datastore Clusters in the specified compartment. The list can be filtered
         /// by compartment, Datastore Cluster, Display name and Lifecycle state
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.Ocvp
         /// List the Datastore Clusters in the specified compartment. The list can be filtered
         /// by compartment, Datastore Cluster, Display name and Lifecycle state
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -80,7 +78,6 @@ namespace Pulumi.Oci.Ocvp
         /// 
         /// List the Datastore Clusters in the specified compartment. The list can be filtered
         /// by compartment, Datastore Cluster, Display name and Lifecycle state
-        /// 
         /// 
         /// ## Example Usage
         /// 

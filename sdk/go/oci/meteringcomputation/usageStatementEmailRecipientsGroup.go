@@ -150,6 +150,12 @@ func (UsageStatementEmailRecipientsGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*usageStatementEmailRecipientsGroupState)(nil)).Elem()
 }
 
+// UsageStatementEmailRecipientsGroupExists checks whether an existing UsageStatementEmailRecipientsGroup resource with the given ID exists.
+func UsageStatementEmailRecipientsGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UsageStatementEmailRecipientsGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:MeteringComputation/usageStatementEmailRecipientsGroup:UsageStatementEmailRecipientsGroup", id, state, "", opts...)
+}
+
 type usageStatementEmailRecipientsGroupArgs struct {
 	// (Updatable) The customer tenancy.
 	CompartmentId          string  `pulumi:"compartmentId"`

@@ -204,6 +204,12 @@ func (DbmulticloudOracleDbAzureBlobMountState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dbmulticloudOracleDbAzureBlobMountState)(nil)).Elem()
 }
 
+// DbmulticloudOracleDbAzureBlobMountExists checks whether an existing DbmulticloudOracleDbAzureBlobMount resource with the given ID exists.
+func DbmulticloudOracleDbAzureBlobMountExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DbmulticloudOracleDbAzureBlobMountState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/dbmulticloudOracleDbAzureBlobMount:DbmulticloudOracleDbAzureBlobMount", id, state, "", opts...)
+}
+
 type dbmulticloudOracleDbAzureBlobMountArgs struct {
 	// (Updatable) TThe [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Oracle DB Azure Blob Mount resource.
 	CompartmentId string `pulumi:"compartmentId"`

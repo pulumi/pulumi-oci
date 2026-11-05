@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Logging
         /// 
         /// Lists LogSavedSearches for this compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Logging
         /// 
         /// Lists LogSavedSearches for this compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.Logging
         /// This data source provides the list of Log Saved Searches in Oracle Cloud Infrastructure Logging service.
         /// 
         /// Lists LogSavedSearches for this compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

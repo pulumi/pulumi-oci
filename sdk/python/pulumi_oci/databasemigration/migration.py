@@ -1412,6 +1412,70 @@ class Migration(pulumi.CustomResource):
         __props__.__dict__["wait_after"] = wait_after
         return Migration(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            advanced_parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationAdvancedParameterArgs', 'MigrationAdvancedParameterArgsDict', 'outputs.MigrationAdvancedParameter']]]]] = None,
+            advisor_settings: pulumi.Input[Optional[Union['MigrationAdvisorSettingsArgs', 'MigrationAdvisorSettingsArgsDict', 'outputs.MigrationAdvisorSettings']]] = None,
+            assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            bulk_include_exclude_data: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            data_transfer_medium_details: pulumi.Input[Optional[Union['MigrationDataTransferMediumDetailsArgs', 'MigrationDataTransferMediumDetailsArgsDict', 'outputs.MigrationDataTransferMediumDetails']]] = None,
+            database_combination: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            exclude_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationExcludeObjectArgs', 'MigrationExcludeObjectArgsDict', 'outputs.MigrationExcludeObject']]]]] = None,
+            executing_job_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ggs_details: pulumi.Input[Optional[Union['MigrationGgsDetailsArgs', 'MigrationGgsDetailsArgsDict', 'outputs.MigrationGgsDetails']]] = None,
+            hub_details: pulumi.Input[Optional[Union['MigrationHubDetailsArgs', 'MigrationHubDetailsArgsDict', 'outputs.MigrationHubDetails']]] = None,
+            include_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MigrationIncludeObjectArgs', 'MigrationIncludeObjectArgsDict', 'outputs.MigrationIncludeObject']]]]] = None,
+            initial_load_settings: pulumi.Input[Optional[Union['MigrationInitialLoadSettingsArgs', 'MigrationInitialLoadSettingsArgsDict', 'outputs.MigrationInitialLoadSettings']]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            source_container_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_standby_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_database_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_migration: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            wait_after: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["advancedParameters"] = advanced_parameters
+        __props__["advisorSettings"] = advisor_settings
+        __props__["assessmentId"] = assessment_id
+        __props__["bulkIncludeExcludeData"] = bulk_include_exclude_data
+        __props__["compartmentId"] = compartment_id
+        __props__["dataTransferMediumDetails"] = data_transfer_medium_details
+        __props__["databaseCombination"] = database_combination
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["excludeObjects"] = exclude_objects
+        __props__["executingJobId"] = executing_job_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["ggsDetails"] = ggs_details
+        __props__["hubDetails"] = hub_details
+        __props__["includeObjects"] = include_objects
+        __props__["initialLoadSettings"] = initial_load_settings
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["sourceContainerDatabaseConnectionId"] = source_container_database_connection_id
+        __props__["sourceDatabaseConnectionId"] = source_database_connection_id
+        __props__["sourceStandbyDatabaseConnectionId"] = source_standby_database_connection_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["targetDatabaseConnectionId"] = target_database_connection_id
+        __props__["timeCreated"] = time_created
+        __props__["timeLastMigration"] = time_last_migration
+        __props__["timeUpdated"] = time_updated
+        __props__["type"] = type
+        __props__["waitAfter"] = wait_after
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseMigration/migration:Migration', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="advancedParameters")
     def advanced_parameters(self) -> pulumi.Output[Sequence['outputs.MigrationAdvancedParameter']]:

@@ -127,6 +127,12 @@ func (RedisClusterGetOciCacheUserState) ElementType() reflect.Type {
 	return reflect.TypeOf((*redisClusterGetOciCacheUserState)(nil)).Elem()
 }
 
+// RedisClusterGetOciCacheUserExists checks whether an existing RedisClusterGetOciCacheUser resource with the given ID exists.
+func RedisClusterGetOciCacheUserExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RedisClusterGetOciCacheUserState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Redis/redisClusterGetOciCacheUser:RedisClusterGetOciCacheUser", id, state, "", opts...)
+}
+
 type redisClusterGetOciCacheUserArgs struct {
 	// The ID of the compartment in which to list resources.
 	CompartmentId *string `pulumi:"compartmentId"`

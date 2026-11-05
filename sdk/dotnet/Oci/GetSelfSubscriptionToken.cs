@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Gets a token of Subscriptions.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Gets a token of Subscriptions.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides details about a specific Subscription Token resource in Oracle Cloud Infrastructure Self service.
         /// 
         /// Gets a token of Subscriptions.
-        /// 
         /// 
         /// ## Example Usage
         /// 

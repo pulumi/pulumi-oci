@@ -116,6 +116,12 @@ func (CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagementState) El
 	return reflect.TypeOf((*costadCostAnomalyMonitorCostanomalymonitorenabletogglesManagementState)(nil)).Elem()
 }
 
+// CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagementExists checks whether an existing CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement resource with the given ID exists.
+func CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/costadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement:CostadCostAnomalyMonitorCostanomalymonitorenabletogglesManagement", id, state, "", opts...)
+}
+
 type costadCostAnomalyMonitorCostanomalymonitorenabletogglesManagementArgs struct {
 	// The unique costAnomalyMonitor OCID.
 	CostAnomalyMonitorId string `pulumi:"costAnomalyMonitorId"`

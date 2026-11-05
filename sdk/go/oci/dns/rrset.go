@@ -198,6 +198,12 @@ func (RrsetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*rrsetState)(nil)).Elem()
 }
 
+// RrsetExists checks whether an existing Rrset resource with the given ID exists.
+func RrsetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RrsetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Dns/rrset:Rrset", id, state, "", opts...)
+}
+
 type rrsetArgs struct {
 	// (Updatable) The OCID of the compartment the zone belongs to.
 	//

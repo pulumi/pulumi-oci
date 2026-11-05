@@ -1916,6 +1916,12 @@ func (DomainsUserState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsUserState)(nil)).Elem()
 }
 
+// DomainsUserExists checks whether an existing DomainsUser resource with the given ID exists.
+func DomainsUserExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsUserState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsUser:DomainsUser", id, state, "", opts...)
+}
+
 type domainsUserArgs struct {
 	// (Updatable) User status
 	//

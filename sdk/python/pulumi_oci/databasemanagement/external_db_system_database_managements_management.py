@@ -277,6 +277,18 @@ class ExternalDbSystemDatabaseManagementsManagement(pulumi.CustomResource):
         __props__.__dict__["license_model"] = license_model
         return ExternalDbSystemDatabaseManagementsManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enable_database_management: pulumi.Input[Optional[_builtins.bool]] = None,
+            external_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            license_model: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enableDatabaseManagement"] = enable_database_management
+        __props__["externalDbSystemId"] = external_db_system_id
+        __props__["licenseModel"] = license_model
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseManagement/externalDbSystemDatabaseManagementsManagement:ExternalDbSystemDatabaseManagementsManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="enableDatabaseManagement")
     def enable_database_management(self) -> pulumi.Output[_builtins.bool]:

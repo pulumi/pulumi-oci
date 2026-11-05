@@ -238,6 +238,12 @@ func (OccMetricAlarmState) ElementType() reflect.Type {
 	return reflect.TypeOf((*occMetricAlarmState)(nil)).Elem()
 }
 
+// OccMetricAlarmExists checks whether an existing OccMetricAlarm resource with the given ID exists.
+func OccMetricAlarmExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OccMetricAlarmState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DemandSignal/occMetricAlarm:OccMetricAlarm", id, state, "", opts...)
+}
+
 type occMetricAlarmArgs struct {
 	// Compartment OCID in which the alarm is created.
 	CompartmentId string `pulumi:"compartmentId"`

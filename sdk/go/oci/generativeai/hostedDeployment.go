@@ -151,6 +151,12 @@ func (HostedDeploymentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*hostedDeploymentState)(nil)).Elem()
 }
 
+// HostedDeploymentExists checks whether an existing HostedDeployment resource with the given ID exists.
+func HostedDeploymentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HostedDeploymentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:GenerativeAi/hostedDeployment:HostedDeployment", id, state, "", opts...)
+}
+
 type hostedDeploymentArgs struct {
 	// (Updatable) Container/artifact configuration for the deployment.
 	ActiveArtifact HostedDeploymentActiveArtifact `pulumi:"activeArtifact"`

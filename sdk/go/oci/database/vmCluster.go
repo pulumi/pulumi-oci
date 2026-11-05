@@ -438,6 +438,12 @@ func (VmClusterState) ElementType() reflect.Type {
 	return reflect.TypeOf((*vmClusterState)(nil)).Elem()
 }
 
+// VmClusterExists checks whether an existing VmCluster resource with the given ID exists.
+func VmClusterExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VmClusterState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/vmCluster:VmCluster", id, state, "", opts...)
+}
+
 type vmClusterArgs struct {
 	// (Updatable) Specifies the properties necessary for cloud automation updates. This includes modifying the apply update time preference, enabling or disabling early adoption, and enabling, modifying, or disabling the update freeze period.
 	CloudAutomationUpdateDetails *VmClusterCloudAutomationUpdateDetails `pulumi:"cloudAutomationUpdateDetails"`

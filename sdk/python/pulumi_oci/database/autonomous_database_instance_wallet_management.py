@@ -324,6 +324,22 @@ class AutonomousDatabaseInstanceWalletManagement(pulumi.CustomResource):
         __props__.__dict__["time_rotated"] = time_rotated
         return AutonomousDatabaseInstanceWalletManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            grace_period: pulumi.Input[Optional[_builtins.int]] = None,
+            should_rotate: pulumi.Input[Optional[_builtins.bool]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_rotated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["autonomousDatabaseId"] = autonomous_database_id
+        __props__["gracePeriod"] = grace_period
+        __props__["shouldRotate"] = should_rotate
+        __props__["state"] = state
+        __props__["timeRotated"] = time_rotated
+        return pulumi.runtime.exists_resource(None, 'oci:Database/autonomousDatabaseInstanceWalletManagement:AutonomousDatabaseInstanceWalletManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> pulumi.Output[_builtins.str]:

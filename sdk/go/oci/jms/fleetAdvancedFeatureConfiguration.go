@@ -223,6 +223,12 @@ func (FleetAdvancedFeatureConfigurationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*fleetAdvancedFeatureConfigurationState)(nil)).Elem()
 }
 
+// FleetAdvancedFeatureConfigurationExists checks whether an existing FleetAdvancedFeatureConfiguration resource with the given ID exists.
+func FleetAdvancedFeatureConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FleetAdvancedFeatureConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Jms/fleetAdvancedFeatureConfiguration:FleetAdvancedFeatureConfiguration", id, state, "", opts...)
+}
+
 type fleetAdvancedFeatureConfigurationArgs struct {
 	// (Updatable) AdvancedUsageTracking configuration
 	AdvancedUsageTracking *FleetAdvancedFeatureConfigurationAdvancedUsageTracking `pulumi:"advancedUsageTracking"`

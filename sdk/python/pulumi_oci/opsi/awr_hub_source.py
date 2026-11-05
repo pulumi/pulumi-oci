@@ -787,6 +787,56 @@ class AwrHubSource(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return AwrHubSource(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            associated_opsi_id: pulumi.Input[Optional[_builtins.str]] = None,
+            associated_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            awr_hub_id: pulumi.Input[Optional[_builtins.str]] = None,
+            awr_hub_opsi_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+            awr_source_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            hours_since_last_import: pulumi.Input[Optional[_builtins.float]] = None,
+            is_registered_with_awr_hub: pulumi.Input[Optional[_builtins.bool]] = None,
+            max_snapshot_identifier: pulumi.Input[Optional[_builtins.float]] = None,
+            min_snapshot_identifier: pulumi.Input[Optional[_builtins.float]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            source_mail_box_url: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_first_snapshot_generated: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_snapshot_generated: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["associatedOpsiId"] = associated_opsi_id
+        __props__["associatedResourceId"] = associated_resource_id
+        __props__["awrHubId"] = awr_hub_id
+        __props__["awrHubOpsiSourceId"] = awr_hub_opsi_source_id
+        __props__["awrSourceDatabaseId"] = awr_source_database_id
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["freeformTags"] = freeform_tags
+        __props__["hoursSinceLastImport"] = hours_since_last_import
+        __props__["isRegisteredWithAwrHub"] = is_registered_with_awr_hub
+        __props__["maxSnapshotIdentifier"] = max_snapshot_identifier
+        __props__["minSnapshotIdentifier"] = min_snapshot_identifier
+        __props__["name"] = name
+        __props__["sourceMailBoxUrl"] = source_mail_box_url
+        __props__["state"] = state
+        __props__["status"] = status
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeFirstSnapshotGenerated"] = time_first_snapshot_generated
+        __props__["timeLastSnapshotGenerated"] = time_last_snapshot_generated
+        __props__["timeUpdated"] = time_updated
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'oci:Opsi/awrHubSource:AwrHubSource', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="associatedOpsiId")
     def associated_opsi_id(self) -> pulumi.Output[_builtins.str]:

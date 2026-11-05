@@ -268,6 +268,18 @@ class ContainerConfiguration(pulumi.CustomResource):
         __props__.__dict__["namespace"] = namespace
         return ContainerConfiguration(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_repository_created_on_first_push: pulumi.Input[Optional[_builtins.bool]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["isRepositoryCreatedOnFirstPush"] = is_repository_created_on_first_push
+        __props__["namespace"] = namespace
+        return pulumi.runtime.exists_resource(None, 'oci:Artifacts/containerConfiguration:ContainerConfiguration', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

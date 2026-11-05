@@ -745,6 +745,60 @@ class Alert(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return Alert(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            alert_id: pulumi.Input[Optional[_builtins.str]] = None,
+            alert_policy_rule_key: pulumi.Input[Optional[_builtins.str]] = None,
+            alert_policy_rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+            alert_type: pulumi.Input[Optional[_builtins.str]] = None,
+            comment: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            feature_details: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            operation: pulumi.Input[Optional[_builtins.str]] = None,
+            operation_status: pulumi.Input[Optional[_builtins.str]] = None,
+            operation_time: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_name_: pulumi.Input[Optional[_builtins.str]] = None,
+            severity: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            target_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["alertId"] = alert_id
+        __props__["alertPolicyRuleKey"] = alert_policy_rule_key
+        __props__["alertPolicyRuleName"] = alert_policy_rule_name
+        __props__["alertType"] = alert_type
+        __props__["comment"] = comment
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["featureDetails"] = feature_details
+        __props__["freeformTags"] = freeform_tags
+        __props__["operation"] = operation
+        __props__["operationStatus"] = operation_status
+        __props__["operationTime"] = operation_time
+        __props__["policyId"] = policy_id
+        __props__["resourceName"] = resource_name_
+        __props__["severity"] = severity
+        __props__["state"] = state
+        __props__["status"] = status
+        __props__["systemTags"] = system_tags
+        __props__["targetIds"] = target_ids
+        __props__["targetNames"] = target_names
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/alert:Alert', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="alertId")
     def alert_id(self) -> pulumi.Output[_builtins.str]:

@@ -1031,6 +1031,46 @@ class DrProtectionGroup(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return DrProtectionGroup(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            association: pulumi.Input[Optional[Union['DrProtectionGroupAssociationArgs', 'DrProtectionGroupAssociationArgsDict', 'outputs.DrProtectionGroupAssociation']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            disassociate_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            life_cycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_sub_state: pulumi.Input[Optional[_builtins.str]] = None,
+            log_location: pulumi.Input[Optional[Union['DrProtectionGroupLogLocationArgs', 'DrProtectionGroupLogLocationArgsDict', 'outputs.DrProtectionGroupLogLocation']]] = None,
+            members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DrProtectionGroupMemberArgs', 'DrProtectionGroupMemberArgsDict', 'outputs.DrProtectionGroupMember']]]]] = None,
+            peer_id: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_region: pulumi.Input[Optional[_builtins.str]] = None,
+            role: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["association"] = association
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["disassociateTrigger"] = disassociate_trigger
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifeCycleDetails"] = life_cycle_details
+        __props__["lifecycleSubState"] = lifecycle_sub_state
+        __props__["logLocation"] = log_location
+        __props__["members"] = members
+        __props__["peerId"] = peer_id
+        __props__["peerRegion"] = peer_region
+        __props__["role"] = role
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:DisasterRecovery/drProtectionGroup:DrProtectionGroup', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def association(self) -> pulumi.Output['outputs.DrProtectionGroupAssociation']:

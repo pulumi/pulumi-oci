@@ -301,6 +301,18 @@ class ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement(pulu
         __props__.__dict__["feature_details"] = feature_details
         return ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enable_external_non_container_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
+            external_non_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            feature_details: pulumi.Input[Optional[Union['ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgs', 'ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetailsArgsDict', 'outputs.ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementFeatureDetails']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enableExternalNonContainerDbmFeature"] = enable_external_non_container_dbm_feature
+        __props__["externalNonContainerDatabaseId"] = external_non_container_database_id
+        __props__["featureDetails"] = feature_details
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseManagement/externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement:ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="enableExternalNonContainerDbmFeature")
     def enable_external_non_container_dbm_feature(self) -> pulumi.Output[_builtins.bool]:

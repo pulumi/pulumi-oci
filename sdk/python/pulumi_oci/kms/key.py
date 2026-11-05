@@ -911,6 +911,58 @@ class Key(pulumi.CustomResource):
         __props__.__dict__["vault_id"] = vault_id
         return Key(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            auto_key_rotation_details: pulumi.Input[Optional[Union['KeyAutoKeyRotationDetailsArgs', 'KeyAutoKeyRotationDetailsArgsDict', 'outputs.KeyAutoKeyRotationDetails']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            current_key_version: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            desired_state: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            external_key_reference: pulumi.Input[Optional[Union['KeyExternalKeyReferenceArgs', 'KeyExternalKeyReferenceArgsDict', 'outputs.KeyExternalKeyReference']]] = None,
+            external_key_reference_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyExternalKeyReferenceDetailArgs', 'KeyExternalKeyReferenceDetailArgsDict', 'outputs.KeyExternalKeyReferenceDetail']]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_auto_rotation_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_primary: pulumi.Input[Optional[_builtins.bool]] = None,
+            key_shape: pulumi.Input[Optional[Union['KeyKeyShapeArgs', 'KeyKeyShapeArgsDict', 'outputs.KeyKeyShape']]] = None,
+            management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            protection_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            replica_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeyReplicaDetailArgs', 'KeyReplicaDetailArgsDict', 'outputs.KeyReplicaDetail']]]]] = None,
+            restore_from_file: pulumi.Input[Optional[Union['KeyRestoreFromFileArgs', 'KeyRestoreFromFileArgsDict', 'outputs.KeyRestoreFromFile']]] = None,
+            restore_from_object_store: pulumi.Input[Optional[Union['KeyRestoreFromObjectStoreArgs', 'KeyRestoreFromObjectStoreArgsDict', 'outputs.KeyRestoreFromObjectStore']]] = None,
+            restore_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+            restored_from_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["autoKeyRotationDetails"] = auto_key_rotation_details
+        __props__["compartmentId"] = compartment_id
+        __props__["currentKeyVersion"] = current_key_version
+        __props__["definedTags"] = defined_tags
+        __props__["desiredState"] = desired_state
+        __props__["displayName"] = display_name
+        __props__["externalKeyReference"] = external_key_reference
+        __props__["externalKeyReferenceDetails"] = external_key_reference_details
+        __props__["freeformTags"] = freeform_tags
+        __props__["isAutoRotationEnabled"] = is_auto_rotation_enabled
+        __props__["isPrimary"] = is_primary
+        __props__["keyShape"] = key_shape
+        __props__["managementEndpoint"] = management_endpoint
+        __props__["protectionMode"] = protection_mode
+        __props__["replicaDetails"] = replica_details
+        __props__["restoreFromFile"] = restore_from_file
+        __props__["restoreFromObjectStore"] = restore_from_object_store
+        __props__["restoreTrigger"] = restore_trigger
+        __props__["restoredFromKeyId"] = restored_from_key_id
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["timeOfDeletion"] = time_of_deletion
+        __props__["vaultId"] = vault_id
+        return pulumi.runtime.exists_resource(None, 'oci:Kms/key:Key', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="autoKeyRotationDetails")
     def auto_key_rotation_details(self) -> pulumi.Output['outputs.KeyAutoKeyRotationDetails']:

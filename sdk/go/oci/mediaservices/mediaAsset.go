@@ -226,6 +226,12 @@ func (MediaAssetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*mediaAssetState)(nil)).Elem()
 }
 
+// MediaAssetExists checks whether an existing MediaAsset resource with the given ID exists.
+func MediaAssetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MediaAssetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:MediaServices/mediaAsset:MediaAsset", id, state, "", opts...)
+}
+
 type mediaAssetArgs struct {
 	// The name of the object storage bucket where this asset is located.
 	Bucket *string `pulumi:"bucket"`

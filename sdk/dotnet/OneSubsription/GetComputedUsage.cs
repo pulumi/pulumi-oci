@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// This is an API which returns Computed Usage corresponding to the id passed
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// This is an API which returns Computed Usage corresponding to the id passed
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.OneSubsription
         /// This data source provides details about a specific Computed Usage resource in Oracle Cloud Infrastructure Onesubscription service.
         /// 
         /// This is an API which returns Computed Usage corresponding to the id passed
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// List the Job Outputs
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// List the Job Outputs
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// This data source provides details about a specific Job Output resource in Oracle Cloud Infrastructure Database Migration service.
         /// 
         /// List the Job Outputs
-        /// 
         /// 
         /// ## Example Usage
         /// 

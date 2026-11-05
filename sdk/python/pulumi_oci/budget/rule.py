@@ -670,6 +670,40 @@ class Rule(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return Rule(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            budget_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            message: pulumi.Input[Optional[_builtins.str]] = None,
+            recipients: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            threshold: pulumi.Input[Optional[_builtins.float]] = None,
+            threshold_type: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["budgetId"] = budget_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["message"] = message
+        __props__["recipients"] = recipients
+        __props__["state"] = state
+        __props__["threshold"] = threshold
+        __props__["thresholdType"] = threshold_type
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["type"] = type
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'oci:Budget/rule:Rule', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="budgetId")
     def budget_id(self) -> pulumi.Output[_builtins.str]:

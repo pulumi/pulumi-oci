@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Returns a list of build pipelines.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Returns a list of build pipelines.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.DevOps
         /// This data source provides the list of Build Pipelines in Oracle Cloud Infrastructure Devops service.
         /// 
         /// Returns a list of build pipelines.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -169,8 +169,7 @@ namespace Pulumi.Oci.ResourceScheduler
         public Output<ImmutableArray<Outputs.ScheduleResource>> Resources { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -357,8 +356,7 @@ namespace Pulumi.Oci.ResourceScheduler
         }
 
         /// <summary>
-        /// (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -483,8 +481,7 @@ namespace Pulumi.Oci.ResourceScheduler
         }
 
         /// <summary>
-        /// (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Schedule. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

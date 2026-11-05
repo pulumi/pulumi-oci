@@ -16,7 +16,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// Lists all Generative AI private endpoints in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// Lists all Generative AI private endpoints in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// This data source provides the list of Generative Ai Private Endpoints in Oracle Cloud Infrastructure Generative AI service.
         /// 
         /// Lists all Generative AI private endpoints in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

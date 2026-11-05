@@ -594,6 +594,32 @@ class CloudDatabaseManagement(pulumi.CustomResource):
         __props__.__dict__["ssl_secret_id"] = ssl_secret_id
         return CloudDatabaseManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            credentialdetails: pulumi.Input[Optional[Union['CloudDatabaseManagementCredentialdetailsArgs', 'CloudDatabaseManagementCredentialdetailsArgsDict', 'outputs.CloudDatabaseManagementCredentialdetails']]] = None,
+            database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_management: pulumi.Input[Optional[_builtins.bool]] = None,
+            management_type: pulumi.Input[Optional[_builtins.str]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            private_end_point_id: pulumi.Input[Optional[_builtins.str]] = None,
+            protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            role: pulumi.Input[Optional[_builtins.str]] = None,
+            service_name: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["credentialdetails"] = credentialdetails
+        __props__["databaseId"] = database_id
+        __props__["enableManagement"] = enable_management
+        __props__["managementType"] = management_type
+        __props__["port"] = port
+        __props__["privateEndPointId"] = private_end_point_id
+        __props__["protocol"] = protocol
+        __props__["role"] = role
+        __props__["serviceName"] = service_name
+        __props__["sslSecretId"] = ssl_secret_id
+        return pulumi.runtime.exists_resource(None, 'oci:Database/cloudDatabaseManagement:CloudDatabaseManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def credentialdetails(self) -> pulumi.Output['outputs.CloudDatabaseManagementCredentialdetails']:

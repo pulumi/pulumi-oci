@@ -294,6 +294,12 @@ func (AgentToolState) ElementType() reflect.Type {
 	return reflect.TypeOf((*agentToolState)(nil)).Elem()
 }
 
+// AgentToolExists checks whether an existing AgentTool resource with the given ID exists.
+func AgentToolExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AgentToolState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:GenerativeAi/agentTool:AgentTool", id, state, "", opts...)
+}
+
 type agentToolArgs struct {
 	// The OCID of the agent that this Tool is attached to.
 	AgentId string `pulumi:"agentId"`

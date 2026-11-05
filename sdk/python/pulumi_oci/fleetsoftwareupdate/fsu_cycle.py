@@ -1132,6 +1132,68 @@ class FsuCycle(pulumi.CustomResource):
         __props__.__dict__["upgrade_details"] = upgrade_details
         return FsuCycle(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            apply_action_schedule: pulumi.Input[Optional[Union['FsuCycleApplyActionScheduleArgs', 'FsuCycleApplyActionScheduleArgsDict', 'outputs.FsuCycleApplyActionSchedule']]] = None,
+            batching_strategy: pulumi.Input[Optional[Union['FsuCycleBatchingStrategyArgs', 'FsuCycleBatchingStrategyArgsDict', 'outputs.FsuCycleBatchingStrategy']]] = None,
+            collection_type: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            diagnostics_collection: pulumi.Input[Optional[Union['FsuCycleDiagnosticsCollectionArgs', 'FsuCycleDiagnosticsCollectionArgsDict', 'outputs.FsuCycleDiagnosticsCollection']]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            executing_fsu_action_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            fsu_collection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            goal_version_details: pulumi.Input[Optional[Union['FsuCycleGoalVersionDetailsArgs', 'FsuCycleGoalVersionDetailsArgsDict', 'outputs.FsuCycleGoalVersionDetails']]] = None,
+            is_ignore_missing_patches: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            is_ignore_patches: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_keep_placement: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_completed_action: pulumi.Input[Optional[_builtins.str]] = None,
+            last_completed_action_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            max_drain_timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            next_action_to_executes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FsuCycleNextActionToExecuteArgs', 'FsuCycleNextActionToExecuteArgsDict', 'outputs.FsuCycleNextActionToExecute']]]]] = None,
+            rollback_cycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            stage_action_schedule: pulumi.Input[Optional[Union['FsuCycleStageActionScheduleArgs', 'FsuCycleStageActionScheduleArgsDict', 'outputs.FsuCycleStageActionSchedule']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_finished: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            upgrade_details: pulumi.Input[Optional[Union['FsuCycleUpgradeDetailsArgs', 'FsuCycleUpgradeDetailsArgsDict', 'outputs.FsuCycleUpgradeDetails']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["applyActionSchedule"] = apply_action_schedule
+        __props__["batchingStrategy"] = batching_strategy
+        __props__["collectionType"] = collection_type
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["diagnosticsCollection"] = diagnostics_collection
+        __props__["displayName"] = display_name
+        __props__["executingFsuActionId"] = executing_fsu_action_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["fsuCollectionId"] = fsu_collection_id
+        __props__["goalVersionDetails"] = goal_version_details
+        __props__["isIgnoreMissingPatches"] = is_ignore_missing_patches
+        __props__["isIgnorePatches"] = is_ignore_patches
+        __props__["isKeepPlacement"] = is_keep_placement
+        __props__["lastCompletedAction"] = last_completed_action
+        __props__["lastCompletedActionId"] = last_completed_action_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["maxDrainTimeoutInSeconds"] = max_drain_timeout_in_seconds
+        __props__["nextActionToExecutes"] = next_action_to_executes
+        __props__["rollbackCycleState"] = rollback_cycle_state
+        __props__["stageActionSchedule"] = stage_action_schedule
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeFinished"] = time_finished
+        __props__["timeUpdated"] = time_updated
+        __props__["type"] = type
+        __props__["upgradeDetails"] = upgrade_details
+        return pulumi.runtime.exists_resource(None, 'oci:FleetSoftwareUpdate/fsuCycle:FsuCycle', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="applyActionSchedule")
     def apply_action_schedule(self) -> pulumi.Output['outputs.FsuCycleApplyActionSchedule']:

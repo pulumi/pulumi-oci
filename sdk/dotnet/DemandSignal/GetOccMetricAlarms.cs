@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DemandSignal
         /// 
         /// Gets a list of OccMetricAlarms.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.DemandSignal
         /// 
         /// Gets a list of OccMetricAlarms.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.DemandSignal
         /// This data source provides the list of Occ Metric Alarms in Oracle Cloud Infrastructure Demand Signal service.
         /// 
         /// Gets a list of OccMetricAlarms.
-        /// 
         /// 
         /// ## Example Usage
         /// 

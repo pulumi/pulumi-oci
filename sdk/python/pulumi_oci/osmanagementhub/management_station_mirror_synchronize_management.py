@@ -252,6 +252,16 @@ class ManagementStationMirrorSynchronizeManagement(pulumi.CustomResource):
         __props__.__dict__["mirror_id"] = mirror_id
         return ManagementStationMirrorSynchronizeManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            management_station_id: pulumi.Input[Optional[_builtins.str]] = None,
+            mirror_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["managementStationId"] = management_station_id
+        __props__["mirrorId"] = mirror_id
+        return pulumi.runtime.exists_resource(None, 'oci:OsManagementHub/managementStationMirrorSynchronizeManagement:ManagementStationMirrorSynchronizeManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="managementStationId")
     def management_station_id(self) -> pulumi.Output[_builtins.str]:

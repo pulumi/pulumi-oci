@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DelegateAccessControl
         /// 
         /// Lists the Delegation Controls in the compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.DelegateAccessControl
         /// 
         /// Lists the Delegation Controls in the compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.DelegateAccessControl
         /// This data source provides the list of Delegation Controls in Oracle Cloud Infrastructure Delegate Access Control service.
         /// 
         /// Lists the Delegation Controls in the compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

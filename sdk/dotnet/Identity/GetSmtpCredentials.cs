@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Identity
         /// Lists the SMTP credentials for the specified user. The returned object contains the credential's OCID,
         /// the SMTP user name but not the SMTP password. The SMTP password is returned only upon creation.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Identity
         /// Lists the SMTP credentials for the specified user. The returned object contains the credential's OCID,
         /// the SMTP user name but not the SMTP password. The SMTP password is returned only upon creation.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -72,7 +70,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Lists the SMTP credentials for the specified user. The returned object contains the credential's OCID,
         /// the SMTP user name but not the SMTP password. The SMTP password is returned only upon creation.
-        /// 
         /// 
         /// ## Example Usage
         /// 

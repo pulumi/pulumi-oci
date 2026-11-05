@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Gets a list of Stacks.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Gets a list of Stacks.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Stacks in Oracle Cloud Infrastructure Dif service.
         /// 
         /// Gets a list of Stacks.
-        /// 
         /// 
         /// ## Example Usage
         /// 

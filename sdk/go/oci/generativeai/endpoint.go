@@ -216,6 +216,12 @@ func (EndpointState) ElementType() reflect.Type {
 	return reflect.TypeOf((*endpointState)(nil)).Elem()
 }
 
+// EndpointExists checks whether an existing Endpoint resource with the given ID exists.
+func EndpointExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *EndpointState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:GenerativeAi/endpoint:Endpoint", id, state, "", opts...)
+}
+
 type endpointArgs struct {
 	// (Updatable) The compartment OCID to create the endpoint in.
 	CompartmentId string `pulumi:"compartmentId"`

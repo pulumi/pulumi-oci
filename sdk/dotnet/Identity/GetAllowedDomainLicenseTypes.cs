@@ -21,7 +21,6 @@ namespace Pulumi.Oci.Identity
         /// - If license type details are retrieved sucessfully, return 202 ACCEPTED.
         /// - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -53,7 +52,6 @@ namespace Pulumi.Oci.Identity
         /// - If license type details are retrieved sucessfully, return 202 ACCEPTED.
         /// - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -84,7 +82,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// - If license type details are retrieved sucessfully, return 202 ACCEPTED.
         /// - If any internal error occurs, return 500 INTERNAL SERVER ERROR.
-        /// 
         /// 
         /// ## Example Usage
         /// 

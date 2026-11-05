@@ -136,6 +136,12 @@ func (OsnState) ElementType() reflect.Type {
 	return reflect.TypeOf((*osnState)(nil)).Elem()
 }
 
+// OsnExists checks whether an existing Osn resource with the given ID exists.
+func OsnExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OsnState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Blockchain/osn:Osn", id, state, "", opts...)
+}
+
 type osnArgs struct {
 	// Availability Domain to place new OSN
 	Ad string `pulumi:"ad"`

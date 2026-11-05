@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// Gets the recommendation for the specified OCID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// Gets the recommendation for the specified OCID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Optimizer
         /// This data source provides details about a specific Recommendation resource in Oracle Cloud Infrastructure Optimizer service.
         /// 
         /// Gets the recommendation for the specified OCID.
-        /// 
         /// 
         /// ## Example Usage
         /// 

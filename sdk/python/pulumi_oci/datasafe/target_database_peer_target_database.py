@@ -554,6 +554,36 @@ class TargetDatabasePeerTargetDatabase(pulumi.CustomResource):
         __props__.__dict__["tls_config"] = tls_config
         return TargetDatabasePeerTargetDatabase(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            database_details: pulumi.Input[Optional[Union['TargetDatabasePeerTargetDatabaseDatabaseDetailsArgs', 'TargetDatabasePeerTargetDatabaseDatabaseDetailsArgsDict', 'outputs.TargetDatabasePeerTargetDatabaseDatabaseDetails']]] = None,
+            database_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dataguard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.int]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            role: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            target_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            tls_config: pulumi.Input[Optional[Union['TargetDatabasePeerTargetDatabaseTlsConfigArgs', 'TargetDatabasePeerTargetDatabaseTlsConfigArgsDict', 'outputs.TargetDatabasePeerTargetDatabaseTlsConfig']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["databaseDetails"] = database_details
+        __props__["databaseUniqueName"] = database_unique_name
+        __props__["dataguardAssociationId"] = dataguard_association_id
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["key"] = key
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["role"] = role
+        __props__["state"] = state
+        __props__["targetDatabaseId"] = target_database_id
+        __props__["timeCreated"] = time_created
+        __props__["tlsConfig"] = tls_config
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/targetDatabasePeerTargetDatabase:TargetDatabasePeerTargetDatabase', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="databaseDetails")
     def database_details(self) -> pulumi.Output['outputs.TargetDatabasePeerTargetDatabaseDatabaseDetails']:

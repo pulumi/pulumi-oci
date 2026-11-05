@@ -459,6 +459,26 @@ class ChildTenancy(pulumi.CustomResource):
         __props__.__dict__["tenancy_name"] = tenancy_name
         return ChildTenancy(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            admin_email: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            features: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            governance_status: pulumi.Input[Optional[_builtins.str]] = None,
+            home_region: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_name: pulumi.Input[Optional[_builtins.str]] = None,
+            tenancy_name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["adminEmail"] = admin_email
+        __props__["compartmentId"] = compartment_id
+        __props__["features"] = features
+        __props__["governanceStatus"] = governance_status
+        __props__["homeRegion"] = home_region
+        __props__["policyName"] = policy_name
+        __props__["tenancyName"] = tenancy_name
+        return pulumi.runtime.exists_resource(None, 'oci:Tenantmanagercontrolplane/childTenancy:ChildTenancy', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="adminEmail")
     def admin_email(self) -> pulumi.Output[_builtins.str]:

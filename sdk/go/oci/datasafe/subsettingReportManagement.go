@@ -270,6 +270,12 @@ func (SubsettingReportManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*subsettingReportManagementState)(nil)).Elem()
 }
 
+// SubsettingReportManagementExists checks whether an existing SubsettingReportManagement resource with the given ID exists.
+func SubsettingReportManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SubsettingReportManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/subsettingReportManagement:SubsettingReportManagement", id, state, "", opts...)
+}
+
 type subsettingReportManagementArgs struct {
 	// Whether redo logging is enabled during the subsetting operation.
 	IsRedoLoggingEnabled *bool `pulumi:"isRedoLoggingEnabled"`

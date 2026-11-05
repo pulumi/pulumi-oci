@@ -670,6 +670,38 @@ class IotDigitalTwinAdapter(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return IotDigitalTwinAdapter(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            digital_twin_model_id: pulumi.Input[Optional[_builtins.str]] = None,
+            digital_twin_model_spec_uri: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            inbound_envelope: pulumi.Input[Optional[Union['IotDigitalTwinAdapterInboundEnvelopeArgs', 'IotDigitalTwinAdapterInboundEnvelopeArgsDict', 'outputs.IotDigitalTwinAdapterInboundEnvelope']]] = None,
+            inbound_routes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IotDigitalTwinAdapterInboundRouteArgs', 'IotDigitalTwinAdapterInboundRouteArgsDict', 'outputs.IotDigitalTwinAdapterInboundRoute']]]]] = None,
+            iot_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["digitalTwinModelId"] = digital_twin_model_id
+        __props__["digitalTwinModelSpecUri"] = digital_twin_model_spec_uri
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["inboundEnvelope"] = inbound_envelope
+        __props__["inboundRoutes"] = inbound_routes
+        __props__["iotDomainId"] = iot_domain_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:oci/iotDigitalTwinAdapter:IotDigitalTwinAdapter', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:

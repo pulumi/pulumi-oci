@@ -203,6 +203,12 @@ func (BdsInstanceMetastoreConfigState) ElementType() reflect.Type {
 	return reflect.TypeOf((*bdsInstanceMetastoreConfigState)(nil)).Elem()
 }
 
+// BdsInstanceMetastoreConfigExists checks whether an existing BdsInstanceMetastoreConfig resource with the given ID exists.
+func BdsInstanceMetastoreConfigExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BdsInstanceMetastoreConfigState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:BigDataService/bdsInstanceMetastoreConfig:BdsInstanceMetastoreConfig", id, state, "", opts...)
+}
+
 type bdsInstanceMetastoreConfigArgs struct {
 	// (Updatable) An optional integer, when flipped triggers activation of metastore config.
 	//

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// Retrieves a lists of projects in a workspace and provides options to filter the list.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// Retrieves a lists of projects in a workspace and provides options to filter the list.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.DataIntegration
         /// This data source provides the list of Workspace Projects in Oracle Cloud Infrastructure Data Integration service.
         /// 
         /// Retrieves a lists of projects in a workspace and provides options to filter the list.
-        /// 
         /// 
         /// ## Example Usage
         /// 

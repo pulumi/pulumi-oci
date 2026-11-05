@@ -972,6 +972,56 @@ class Workspace(pulumi.CustomResource):
         __props__.__dict__["vcn_id"] = vcn_id
         return Workspace(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dns_server_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            dns_server_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoint_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+            endpoint_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_force_operation: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_private_network_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            quiesce_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+            registry_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            registry_id: pulumi.Input[Optional[_builtins.str]] = None,
+            registry_name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            state_message: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            vcn_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["dnsServerIp"] = dns_server_ip
+        __props__["dnsServerZone"] = dns_server_zone
+        __props__["endpointCompartmentId"] = endpoint_compartment_id
+        __props__["endpointId"] = endpoint_id
+        __props__["endpointName"] = endpoint_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["isForceOperation"] = is_force_operation
+        __props__["isPrivateNetworkEnabled"] = is_private_network_enabled
+        __props__["quiesceTimeout"] = quiesce_timeout
+        __props__["registryCompartmentId"] = registry_compartment_id
+        __props__["registryId"] = registry_id
+        __props__["registryName"] = registry_name
+        __props__["state"] = state
+        __props__["stateMessage"] = state_message
+        __props__["subnetId"] = subnet_id
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["vcnId"] = vcn_id
+        return pulumi.runtime.exists_resource(None, 'oci:DataIntegration/workspace:Workspace', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

@@ -600,6 +600,34 @@ class NetworkSource(pulumi.CustomResource):
         __props__.__dict__["virtual_source_lists"] = virtual_source_lists
         return NetworkSource(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            inactive_state: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            public_source_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            virtual_source_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkSourceVirtualSourceListArgs', 'NetworkSourceVirtualSourceListArgsDict', 'outputs.NetworkSourceVirtualSourceList']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["freeformTags"] = freeform_tags
+        __props__["inactiveState"] = inactive_state
+        __props__["name"] = name
+        __props__["publicSourceLists"] = public_source_lists
+        __props__["services"] = services
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["virtualSourceLists"] = virtual_source_lists
+        return pulumi.runtime.exists_resource(None, 'oci:Identity/networkSource:NetworkSource', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

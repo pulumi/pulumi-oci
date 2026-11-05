@@ -127,6 +127,12 @@ func (ExternalExadataInfrastructureExadataManagementState) ElementType() reflect
 	return reflect.TypeOf((*externalExadataInfrastructureExadataManagementState)(nil)).Elem()
 }
 
+// ExternalExadataInfrastructureExadataManagementExists checks whether an existing ExternalExadataInfrastructureExadataManagement resource with the given ID exists.
+func ExternalExadataInfrastructureExadataManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalExadataInfrastructureExadataManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/externalExadataInfrastructureExadataManagement:ExternalExadataInfrastructureExadataManagement", id, state, "", opts...)
+}
+
 type externalExadataInfrastructureExadataManagementArgs struct {
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 	//

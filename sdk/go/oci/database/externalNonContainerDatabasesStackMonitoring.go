@@ -130,6 +130,12 @@ func (ExternalNonContainerDatabasesStackMonitoringState) ElementType() reflect.T
 	return reflect.TypeOf((*externalNonContainerDatabasesStackMonitoringState)(nil)).Elem()
 }
 
+// ExternalNonContainerDatabasesStackMonitoringExists checks whether an existing ExternalNonContainerDatabasesStackMonitoring resource with the given ID exists.
+func ExternalNonContainerDatabasesStackMonitoringExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalNonContainerDatabasesStackMonitoringState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/externalNonContainerDatabasesStackMonitoring:ExternalNonContainerDatabasesStackMonitoring", id, state, "", opts...)
+}
+
 type externalNonContainerDatabasesStackMonitoringArgs struct {
 	// (Updatable) Enabling Stack Monitoring on External Non Container Databases . Requires boolean value "true" or "false".
 	//

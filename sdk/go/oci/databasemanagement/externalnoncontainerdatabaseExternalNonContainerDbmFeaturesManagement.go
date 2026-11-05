@@ -134,6 +134,12 @@ func (ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementState
 	return reflect.TypeOf((*externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementState)(nil)).Elem()
 }
 
+// ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementExists checks whether an existing ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement resource with the given ID exists.
+func ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement:ExternalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagement", id, state, "", opts...)
+}
+
 type externalnoncontainerdatabaseExternalNonContainerDbmFeaturesManagementArgs struct {
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 	//

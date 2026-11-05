@@ -71,7 +71,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// A value determining if the Fleet Application Management tagging is enabled or not.
         /// Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
-        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
+        /// &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -204,7 +204,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// A value determining if the Fleet Application Management tagging is enabled or not.
         /// Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
-        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
+        /// &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the
@@ -280,7 +280,7 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// <summary>
         /// A value determining if the Fleet Application Management tagging is enabled or not.
         /// Allow Fleet Application Management to tag resources with fleet name using "Oracle$FAMS-Tags.FleetName" tag.
-        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
+        /// &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the

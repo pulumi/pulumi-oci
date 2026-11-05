@@ -220,6 +220,20 @@ class PrivateEndpointOutboundConnection(pulumi.CustomResource):
         __props__.__dict__["subnet_id"] = subnet_id
         return PrivateEndpointOutboundConnection(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            integration_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["integrationInstanceId"] = integration_instance_id
+        __props__["nsgIds"] = nsg_ids
+        __props__["state"] = state
+        __props__["subnetId"] = subnet_id
+        return pulumi.runtime.exists_resource(None, 'oci:Integration/privateEndpointOutboundConnection:PrivateEndpointOutboundConnection', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="integrationInstanceId")
     def integration_instance_id(self) -> pulumi.Output[_builtins.str]:

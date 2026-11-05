@@ -16,7 +16,6 @@ namespace Pulumi.Oci.NetworkFirewall
         /// 
         /// Returns a list of Network Firewall Policies.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.NetworkFirewall
         /// 
         /// Returns a list of Network Firewall Policies.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.NetworkFirewall
         /// This data source provides the list of Network Firewall Policies in Oracle Cloud Infrastructure Network Firewall service.
         /// 
         /// Returns a list of Network Firewall Policies.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// The list of DrgNatPolicies in the compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// The list of DrgNatPolicies in the compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides the list of DrgNatPolicies in Oracle Cloud Infrastructure Core service.
         /// 
         /// The list of DrgNatPolicies in the compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

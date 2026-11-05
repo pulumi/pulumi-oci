@@ -482,6 +482,32 @@ class RuntimeDatabaseToolsConnectionCredential(pulumi.CustomResource):
         __props__.__dict__["windows_domain"] = windows_domain
         return RuntimeDatabaseToolsConnectionCredential(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            database_tools_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            key_type: pulumi.Input[Optional[_builtins.str]] = None,
+            owner: pulumi.Input[Optional[_builtins.str]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            related_resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgs', 'RuntimeDatabaseToolsConnectionCredentialRelatedResourceArgsDict', 'outputs.RuntimeDatabaseToolsConnectionCredentialRelatedResource']]]]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            user_name: pulumi.Input[Optional[_builtins.str]] = None,
+            windows_domain: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["databaseToolsConnectionId"] = database_tools_connection_id
+        __props__["enabled"] = enabled
+        __props__["key"] = key
+        __props__["keyType"] = key_type
+        __props__["owner"] = owner
+        __props__["password"] = password
+        __props__["relatedResources"] = related_resources
+        __props__["type"] = type
+        __props__["userName"] = user_name
+        __props__["windowsDomain"] = windows_domain
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseTools/runtimeDatabaseToolsConnectionCredential:RuntimeDatabaseToolsConnectionCredential', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="databaseToolsConnectionId")
     def database_tools_connection_id(self) -> pulumi.Output[_builtins.str]:

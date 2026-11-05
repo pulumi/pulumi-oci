@@ -371,6 +371,22 @@ class ModelDefinedMetadataArtifact(pulumi.CustomResource):
         __props__.__dict__["model_id"] = model_id
         return ModelDefinedMetadataArtifact(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            content_disposition: pulumi.Input[Optional[_builtins.str]] = None,
+            content_length: pulumi.Input[Optional[_builtins.str]] = None,
+            metadatum_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+            model_defined_metadatum_artifact: pulumi.Input[Optional[_builtins.str]] = None,
+            model_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["contentDisposition"] = content_disposition
+        __props__["contentLength"] = content_length
+        __props__["metadatumKeyName"] = metadatum_key_name
+        __props__["modelDefinedMetadatumArtifact"] = model_defined_metadatum_artifact
+        __props__["modelId"] = model_id
+        return pulumi.runtime.exists_resource(None, 'oci:DataScience/modelDefinedMetadataArtifact:ModelDefinedMetadataArtifact', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="contentDisposition")
     def content_disposition(self) -> pulumi.Output[_builtins.str]:

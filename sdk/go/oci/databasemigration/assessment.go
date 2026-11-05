@@ -308,6 +308,12 @@ func (AssessmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*assessmentState)(nil)).Elem()
 }
 
+// AssessmentExists checks whether an existing Assessment resource with the given ID exists.
+func AssessmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AssessmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseMigration/assessment:Assessment", id, state, "", opts...)
+}
+
 type assessmentArgs struct {
 	// (Updatable) Time allowed for the application downtime.
 	AcceptableDowntime string `pulumi:"acceptableDowntime"`

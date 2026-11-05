@@ -655,6 +655,46 @@ class ContainerRepository(pulumi.CustomResource):
         __props__.__dict__["time_last_pushed"] = time_last_pushed
         return ContainerRepository(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            billable_size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            image_count: pulumi.Input[Optional[_builtins.int]] = None,
+            is_immutable: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_public: pulumi.Input[Optional[_builtins.bool]] = None,
+            layer_count: pulumi.Input[Optional[_builtins.int]] = None,
+            layers_size_in_bytes: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            readme: pulumi.Input[Optional[Union['ContainerRepositoryReadmeArgs', 'ContainerRepositoryReadmeArgsDict', 'outputs.ContainerRepositoryReadme']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_pushed: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["billableSizeInGbs"] = billable_size_in_gbs
+        __props__["compartmentId"] = compartment_id
+        __props__["createdBy"] = created_by
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["imageCount"] = image_count
+        __props__["isImmutable"] = is_immutable
+        __props__["isPublic"] = is_public
+        __props__["layerCount"] = layer_count
+        __props__["layersSizeInBytes"] = layers_size_in_bytes
+        __props__["namespace"] = namespace
+        __props__["readme"] = readme
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeLastPushed"] = time_last_pushed
+        return pulumi.runtime.exists_resource(None, 'oci:Artifacts/containerRepository:ContainerRepository', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="billableSizeInGbs")
     def billable_size_in_gbs(self) -> pulumi.Output[_builtins.str]:

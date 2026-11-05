@@ -163,8 +163,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public Input<Inputs.ContainerInstanceContainerSecurityContextGetArgs>? SecurityContext { get; set; }
 
         /// <summary>
-        /// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Container Instance. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the virtual test access points (VTAPs) in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the virtual test access points (VTAPs) in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -83,7 +81,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides the list of Vtaps in Oracle Cloud Infrastructure Core service.
         /// 
         /// Lists the virtual test access points (VTAPs) in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

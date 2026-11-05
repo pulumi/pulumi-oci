@@ -219,6 +219,12 @@ func (PssInstanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*pssInstanceState)(nil)).Elem()
 }
 
+// PssInstanceExists checks whether an existing PssInstance resource with the given ID exists.
+func PssInstanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PssInstanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/pssInstance:PssInstance", id, state, "", opts...)
+}
+
 type pssInstanceArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the identity-domain user that initially administers the PSS instance.
 	AdminIdentityDomainUserId string `pulumi:"adminIdentityDomainUserId"`

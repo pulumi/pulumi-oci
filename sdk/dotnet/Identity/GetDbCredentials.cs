@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Lists the DB credentials for the specified user. The returned object contains the credential's OCID
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Lists the DB credentials for the specified user. The returned object contains the credential's OCID
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.Identity
         /// This data source provides the list of Db Credentials in Oracle Cloud Infrastructure Identity service.
         /// 
         /// Lists the DB credentials for the specified user. The returned object contains the credential's OCID
-        /// 
         /// 
         /// ## Example Usage
         /// 

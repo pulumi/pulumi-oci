@@ -19,7 +19,6 @@ namespace Pulumi.Oci.DataSafe
         /// It is built from the selected subsetting table, subsetting rule, the chosen relatedTablesPropagation direction,
         /// and the referential relationships in the schema.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.DataSafe
         /// It is built from the selected subsetting table, subsetting rule, the chosen relatedTablesPropagation direction,
         /// and the referential relationships in the schema.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -82,7 +80,6 @@ namespace Pulumi.Oci.DataSafe
         /// A processing chain is the relationship path that determines how a subsetting rule is applied across related tables.
         /// It is built from the selected subsetting table, subsetting rule, the chosen relatedTablesPropagation direction,
         /// and the referential relationships in the schema.
-        /// 
         /// 
         /// ## Example Usage
         /// 

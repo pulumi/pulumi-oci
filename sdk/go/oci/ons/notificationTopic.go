@@ -195,6 +195,12 @@ func (NotificationTopicState) ElementType() reflect.Type {
 	return reflect.TypeOf((*notificationTopicState)(nil)).Elem()
 }
 
+// NotificationTopicExists checks whether an existing NotificationTopic resource with the given ID exists.
+func NotificationTopicExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NotificationTopicState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Ons/notificationTopic:NotificationTopic", id, state, "", opts...)
+}
+
 type notificationTopicArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the topic in.
 	CompartmentId string `pulumi:"compartmentId"`

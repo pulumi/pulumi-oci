@@ -132,6 +132,12 @@ func (ManagedInstanceGroupInstallPackagesManagementState) ElementType() reflect.
 	return reflect.TypeOf((*managedInstanceGroupInstallPackagesManagementState)(nil)).Elem()
 }
 
+// ManagedInstanceGroupInstallPackagesManagementExists checks whether an existing ManagedInstanceGroupInstallPackagesManagement resource with the given ID exists.
+func ManagedInstanceGroupInstallPackagesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedInstanceGroupInstallPackagesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/managedInstanceGroupInstallPackagesManagement:ManagedInstanceGroupInstallPackagesManagement", id, state, "", opts...)
+}
+
 type managedInstanceGroupInstallPackagesManagementArgs struct {
 	// Indicates whether this is the latest package version.
 	IsLatest *bool `pulumi:"isLatest"`

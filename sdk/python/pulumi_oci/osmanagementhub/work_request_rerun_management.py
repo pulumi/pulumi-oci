@@ -300,6 +300,18 @@ class WorkRequestRerunManagement(pulumi.CustomResource):
         __props__.__dict__["work_request_id"] = work_request_id
         return WorkRequestRerunManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            work_request_details: pulumi.Input[Optional[Union['WorkRequestRerunManagementWorkRequestDetailsArgs', 'WorkRequestRerunManagementWorkRequestDetailsArgsDict', 'outputs.WorkRequestRerunManagementWorkRequestDetails']]] = None,
+            work_request_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["managedInstances"] = managed_instances
+        __props__["workRequestDetails"] = work_request_details
+        __props__["workRequestId"] = work_request_id
+        return pulumi.runtime.exists_resource(None, 'oci:OsManagementHub/workRequestRerunManagement:WorkRequestRerunManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="managedInstances")
     def managed_instances(self) -> pulumi.Output[Sequence[_builtins.str]]:

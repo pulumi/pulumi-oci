@@ -16,7 +16,6 @@ namespace Pulumi.Oci.AiLanguage
         /// 
         /// Returns a list of language service async Jobs.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.AiLanguage
         /// 
         /// Returns a list of language service async Jobs.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.AiLanguage
         /// This data source provides the list of Jobs in Oracle Cloud Infrastructure Ai Language service.
         /// 
         /// Returns a list of language service async Jobs.
-        /// 
         /// 
         /// ## Example Usage
         /// 

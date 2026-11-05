@@ -181,6 +181,12 @@ func (TagNamespaceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*tagNamespaceState)(nil)).Elem()
 }
 
+// TagNamespaceExists checks whether an existing TagNamespace resource with the given ID exists.
+func TagNamespaceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *TagNamespaceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/tagNamespace:TagNamespace", id, state, "", opts...)
+}
+
 type tagNamespaceArgs struct {
 	// (Updatable) The OCID of the tenancy containing the tag namespace.
 	CompartmentId string `pulumi:"compartmentId"`

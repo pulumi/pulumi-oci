@@ -618,6 +618,36 @@ class HttpProbe(pulumi.CustomResource):
         __props__.__dict__["vantage_point_names"] = vantage_point_names
         return HttpProbe(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            headers: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            home_region: pulumi.Input[Optional[_builtins.str]] = None,
+            method: pulumi.Input[Optional[_builtins.str]] = None,
+            path: pulumi.Input[Optional[_builtins.str]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            results_url: pulumi.Input[Optional[_builtins.str]] = None,
+            targets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            vantage_point_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["headers"] = headers
+        __props__["homeRegion"] = home_region
+        __props__["method"] = method
+        __props__["path"] = path
+        __props__["port"] = port
+        __props__["protocol"] = protocol
+        __props__["resultsUrl"] = results_url
+        __props__["targets"] = targets
+        __props__["timeCreated"] = time_created
+        __props__["timeoutInSeconds"] = timeout_in_seconds
+        __props__["vantagePointNames"] = vantage_point_names
+        return pulumi.runtime.exists_resource(None, 'oci:HealthChecks/httpProbe:HttpProbe', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

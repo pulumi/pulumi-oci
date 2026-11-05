@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Dns
         /// 
         /// You can optionally filter the results using the listed parameters. When accessing a private zone by name, the `ViewId` parameter is required.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.Dns
         /// 
         /// You can optionally filter the results using the listed parameters. When accessing a private zone by name, the `ViewId` parameter is required.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -83,7 +81,6 @@ namespace Pulumi.Oci.Dns
         /// Gets a list of all rrsets in the specified zone.
         /// 
         /// You can optionally filter the results using the listed parameters. When accessing a private zone by name, the `ViewId` parameter is required.
-        /// 
         /// 
         /// ## Example Usage
         /// 

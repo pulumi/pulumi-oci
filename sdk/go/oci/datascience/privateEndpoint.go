@@ -222,6 +222,12 @@ func (PrivateEndpointState) ElementType() reflect.Type {
 	return reflect.TypeOf((*privateEndpointState)(nil)).Elem()
 }
 
+// PrivateEndpointExists checks whether an existing PrivateEndpoint resource with the given ID exists.
+func PrivateEndpointExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PrivateEndpointState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataScience/privateEndpoint:PrivateEndpoint", id, state, "", opts...)
+}
+
 type privateEndpointArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the private endpoint.
 	CompartmentId string `pulumi:"compartmentId"`

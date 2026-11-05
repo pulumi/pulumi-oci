@@ -16,7 +16,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Retrieve  aggregated summary information of ComplianceRecords within a Compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Retrieve  aggregated summary information of ComplianceRecords within a Compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// This data source provides the list of Compliance Record Counts in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
         /// Retrieve  aggregated summary information of ComplianceRecords within a Compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

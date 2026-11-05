@@ -16,7 +16,6 @@ namespace Pulumi.Oci.UsageProxy
         /// 
         /// Provides product information that is specific to a reward usage period and its usage details.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.UsageProxy
         /// 
         /// Provides product information that is specific to a reward usage period and its usage details.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.UsageProxy
         /// This data source provides details about a specific Subscription Product resource in Oracle Cloud Infrastructure Usage Proxy service.
         /// 
         /// Provides product information that is specific to a reward usage period and its usage details.
-        /// 
         /// 
         /// ## Example Usage
         /// 

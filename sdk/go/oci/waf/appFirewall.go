@@ -200,6 +200,12 @@ func (AppFirewallState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appFirewallState)(nil)).Elem()
 }
 
+// AppFirewallExists checks whether an existing AppFirewall resource with the given ID exists.
+func AppFirewallExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppFirewallState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Waf/appFirewall:AppFirewall", id, state, "", opts...)
+}
+
 type appFirewallArgs struct {
 	// Type of the WebAppFirewall, as example LOAD_BALANCER.
 	BackendType string `pulumi:"backendType"`

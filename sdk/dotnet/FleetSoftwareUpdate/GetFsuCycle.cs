@@ -16,7 +16,6 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         /// 
         /// Gets a Exadata Fleet Update Cycle by identifier.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         /// 
         /// Gets a Exadata Fleet Update Cycle by identifier.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         /// This data source provides details about a specific Fsu Cycle resource in Oracle Cloud Infrastructure Fleet Software Update service.
         /// 
         /// Gets a Exadata Fleet Update Cycle by identifier.
-        /// 
         /// 
         /// ## Example Usage
         /// 

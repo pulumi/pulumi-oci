@@ -297,6 +297,12 @@ func (AutonomousExadataInfrastructureState) ElementType() reflect.Type {
 	return reflect.TypeOf((*autonomousExadataInfrastructureState)(nil)).Elem()
 }
 
+// AutonomousExadataInfrastructureExists checks whether an existing AutonomousExadataInfrastructure resource with the given ID exists.
+func AutonomousExadataInfrastructureExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutonomousExadataInfrastructureState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure", id, state, "", opts...)
+}
+
 type autonomousExadataInfrastructureArgs struct {
 	// The availability domain where the Autonomous Exadata Infrastructure is located.
 	//

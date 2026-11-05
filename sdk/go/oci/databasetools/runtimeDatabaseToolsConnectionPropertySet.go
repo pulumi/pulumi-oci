@@ -238,6 +238,12 @@ func (RuntimeDatabaseToolsConnectionPropertySetState) ElementType() reflect.Type
 	return reflect.TypeOf((*runtimeDatabaseToolsConnectionPropertySetState)(nil)).Elem()
 }
 
+// RuntimeDatabaseToolsConnectionPropertySetExists checks whether an existing RuntimeDatabaseToolsConnectionPropertySet resource with the given ID exists.
+func RuntimeDatabaseToolsConnectionPropertySetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RuntimeDatabaseToolsConnectionPropertySetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseTools/runtimeDatabaseToolsConnectionPropertySet:RuntimeDatabaseToolsConnectionPropertySet", id, state, "", opts...)
+}
+
 type runtimeDatabaseToolsConnectionPropertySetArgs struct {
 	// (Updatable) APEX FA Integration key-value pairs.
 	AuthenticationSubstitutions map[string]string `pulumi:"authenticationSubstitutions"`

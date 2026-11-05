@@ -841,6 +841,54 @@ class OperatorControl(pulumi.CustomResource):
         __props__.__dict__["time_of_modification"] = time_of_modification
         return OperatorControl(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            approval_required_op_action_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            approver_groups_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            approvers_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            email_id_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_default_operator_control: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_fully_pre_approved: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_modified_info: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
+            number_of_approvers: pulumi.Input[Optional[_builtins.int]] = None,
+            operator_control_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pre_approved_op_action_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_message: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_creation: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_modification: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["approvalRequiredOpActionLists"] = approval_required_op_action_lists
+        __props__["approverGroupsLists"] = approver_groups_lists
+        __props__["approversLists"] = approvers_lists
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["emailIdLists"] = email_id_lists
+        __props__["freeformTags"] = freeform_tags
+        __props__["isDefaultOperatorControl"] = is_default_operator_control
+        __props__["isFullyPreApproved"] = is_fully_pre_approved
+        __props__["lastModifiedInfo"] = last_modified_info
+        __props__["notificationTopicId"] = notification_topic_id
+        __props__["numberOfApprovers"] = number_of_approvers
+        __props__["operatorControlName"] = operator_control_name
+        __props__["preApprovedOpActionLists"] = pre_approved_op_action_lists
+        __props__["resourceType"] = resource_type
+        __props__["state"] = state
+        __props__["systemMessage"] = system_message
+        __props__["timeOfCreation"] = time_of_creation
+        __props__["timeOfDeletion"] = time_of_deletion
+        __props__["timeOfModification"] = time_of_modification
+        return pulumi.runtime.exists_resource(None, 'oci:OperatorAccessControl/operatorControl:OperatorControl', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="approvalRequiredOpActionLists")
     def approval_required_op_action_lists(self) -> pulumi.Output[Sequence[_builtins.str]]:

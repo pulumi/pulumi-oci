@@ -323,6 +323,20 @@ class DynamicSetUpdatePackagesManagement(pulumi.CustomResource):
         __props__.__dict__["work_request_details"] = work_request_details
         return DynamicSetUpdatePackagesManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            dynamic_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+            managed_instances: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            update_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            work_request_details: pulumi.Input[Optional[Union['DynamicSetUpdatePackagesManagementWorkRequestDetailsArgs', 'DynamicSetUpdatePackagesManagementWorkRequestDetailsArgsDict', 'outputs.DynamicSetUpdatePackagesManagementWorkRequestDetails']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["dynamicSetId"] = dynamic_set_id
+        __props__["managedInstances"] = managed_instances
+        __props__["updateTypes"] = update_types
+        __props__["workRequestDetails"] = work_request_details
+        return pulumi.runtime.exists_resource(None, 'oci:OsManagementHub/dynamicSetUpdatePackagesManagement:DynamicSetUpdatePackagesManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="dynamicSetId")
     def dynamic_set_id(self) -> pulumi.Output[_builtins.str]:

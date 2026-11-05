@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DemandSignal
         /// 
         /// Retrieves the specified OccMetricAlarm resource based on its identifier.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.DemandSignal
         /// 
         /// Retrieves the specified OccMetricAlarm resource based on its identifier.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.DemandSignal
         /// This data source provides details about a specific Occ Metric Alarm resource in Oracle Cloud Infrastructure Demand Signal service.
         /// 
         /// Retrieves the specified OccMetricAlarm resource based on its identifier.
-        /// 
         /// 
         /// ## Example Usage
         /// 

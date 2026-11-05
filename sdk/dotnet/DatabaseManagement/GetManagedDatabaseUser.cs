@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the details of the user specified by managedDatabaseId and userName.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the details of the user specified by managedDatabaseId and userName.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides details about a specific Managed Database User resource in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Gets the details of the user specified by managedDatabaseId and userName.
-        /// 
         /// 
         /// ## Example Usage
         /// 

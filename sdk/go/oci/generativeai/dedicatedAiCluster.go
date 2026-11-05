@@ -426,6 +426,12 @@ func (DedicatedAiClusterState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dedicatedAiClusterState)(nil)).Elem()
 }
 
+// DedicatedAiClusterExists checks whether an existing DedicatedAiCluster resource with the given ID exists.
+func DedicatedAiClusterExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DedicatedAiClusterState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:GenerativeAi/dedicatedAiCluster:DedicatedAiCluster", id, state, "", opts...)
+}
+
 type dedicatedAiClusterArgs struct {
 	// The OCID of the capacity reservation.
 	CapacityReservationId *string `pulumi:"capacityReservationId"`

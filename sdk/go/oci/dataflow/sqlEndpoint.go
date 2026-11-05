@@ -343,6 +343,12 @@ func (SqlEndpointState) ElementType() reflect.Type {
 	return reflect.TypeOf((*sqlEndpointState)(nil)).Elem()
 }
 
+// SqlEndpointExists checks whether an existing SqlEndpoint resource with the given ID exists.
+func SqlEndpointExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SqlEndpointState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataFlow/sqlEndpoint:SqlEndpoint", id, state, "", opts...)
+}
+
 type sqlEndpointArgs struct {
 	// (Updatable) The identifier of the compartment used with the SQL Endpoint.
 	CompartmentId string `pulumi:"compartmentId"`

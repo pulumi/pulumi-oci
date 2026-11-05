@@ -240,6 +240,12 @@ func (NetworkFirewallState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkFirewallState)(nil)).Elem()
 }
 
+// NetworkFirewallExists checks whether an existing NetworkFirewall resource with the given ID exists.
+func NetworkFirewallExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkFirewallState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:NetworkFirewall/networkFirewall:NetworkFirewall", id, state, "", opts...)
+}
+
 type networkFirewallArgs struct {
 	// Availability Domain where Network Firewall instance is created. To get a list of availability domains for a tenancy, use [ListAvailabilityDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/AvailabilityDomain/ListAvailabilityDomains) operation. Example: `kIdk:PHX-AD-1`
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`

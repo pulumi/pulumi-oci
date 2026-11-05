@@ -237,6 +237,12 @@ func (ComputeTargetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*computeTargetState)(nil)).Elem()
 }
 
+// ComputeTargetExists checks whether an existing ComputeTarget resource with the given ID exists.
+func ComputeTargetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ComputeTargetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataScience/computeTarget:ComputeTarget", id, state, "", opts...)
+}
+
 type computeTargetArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the compute target.
 	CompartmentId string `pulumi:"compartmentId"`

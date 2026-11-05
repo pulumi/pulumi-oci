@@ -451,6 +451,30 @@ class MonitoredResourcesAssociateMonitoredResource(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return MonitoredResourcesAssociateMonitoredResource(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            association_type: pulumi.Input[Optional[_builtins.str]] = None,
+            category: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            destination_resource_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgs', 'MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetailArgsDict', 'outputs.MonitoredResourcesAssociateMonitoredResourceDestinationResourceDetail']]]]] = None,
+            destination_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_resource_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgs', 'MonitoredResourcesAssociateMonitoredResourceSourceResourceDetailArgsDict', 'outputs.MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail']]]]] = None,
+            source_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["associationType"] = association_type
+        __props__["category"] = category
+        __props__["compartmentId"] = compartment_id
+        __props__["destinationResourceDetails"] = destination_resource_details
+        __props__["destinationResourceId"] = destination_resource_id
+        __props__["sourceResourceDetails"] = source_resource_details
+        __props__["sourceResourceId"] = source_resource_id
+        __props__["tenantId"] = tenant_id
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:StackMonitoring/monitoredResourcesAssociateMonitoredResource:MonitoredResourcesAssociateMonitoredResource', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="associationType")
     def association_type(self) -> pulumi.Output[_builtins.str]:

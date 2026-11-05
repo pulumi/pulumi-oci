@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Lists all software source mirrors associated with a specified management station.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Lists all software source mirrors associated with a specified management station.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides the list of Management Station Mirrors in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Lists all software source mirrors associated with a specified management station.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -125,11 +125,10 @@ public final class GetMysqlConfigurationVariable {
     /**
      * @return (&#34;generatedRandomPasswordLength&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;generated_random_password_length&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;generated_random_password_length&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     private Integer generatedRandomPasswordLength;
     /**
      * @return Set the total amount of memory that can be used by all user connections.
@@ -375,11 +374,10 @@ public final class GetMysqlConfigurationVariable {
     /**
      * @return DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
      * 
-     * @deprecated
-     * The &#39;mysql_zstd_default_compression_level&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;mysql_zstd_default_compression_level&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     private Integer mysqlZstdDefaultCompressionLevel;
     /**
      * @return The number of seconds X Plugin waits for the first packet to be received from newly connected clients.
@@ -399,11 +397,10 @@ public final class GetMysqlConfigurationVariable {
     /**
      * @return (&#34;mysqlxDocumentIdUniquePrefix&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;mysqlx_document_id_unique_prefix&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;mysqlx_document_id_unique_prefix&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     private Integer mysqlxDocumentIdUniquePrefix;
     /**
      * @return (&#34;mysqlxEnableHelloNotice&#34;) DEPRECATED -- variable should not be settable and will be ignored
@@ -413,11 +410,10 @@ public final class GetMysqlConfigurationVariable {
     /**
      * @return (&#34;mysqlxIdleWorkerThreadTimeout&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;mysqlx_idle_worker_thread_timeout&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;mysqlx_idle_worker_thread_timeout&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     private Integer mysqlxIdleWorkerThreadTimeout;
     /**
      * @return The number of seconds to wait for interactive clients to timeout.
@@ -442,11 +438,10 @@ public final class GetMysqlConfigurationVariable {
     /**
      * @return (&#34;mysqlxMinWorkerThreads&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;mysqlx_min_worker_threads&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;mysqlx_min_worker_threads&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     private Integer mysqlxMinWorkerThreads;
     /**
      * @return The number of seconds that X Plugin waits for blocking read operations to complete. After this time, if the read operation is not successful, X Plugin closes the connection and returns a warning notice with the error code ER_IO_READ_ERROR to the client application.
@@ -496,20 +491,18 @@ public final class GetMysqlConfigurationVariable {
     /**
      * @return (&#34;queryAllocBlockSize&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;query_alloc_block_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;query_alloc_block_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     private String queryAllocBlockSize;
     /**
      * @return (&#34;queryPreallocSize&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     private String queryPreallocSize;
     /**
      * @return The limit on memory consumption for the range optimizer. A value of 0 means “no limit.” If an execution plan considered by the optimizer uses the range access method but the optimizer estimates that the amount of memory needed for this method would exceed the limit, it abandons the plan and considers other plans.
@@ -795,11 +788,10 @@ public final class GetMysqlConfigurationVariable {
     /**
      * @return (&#34;generatedRandomPasswordLength&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;generated_random_password_length&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;generated_random_password_length&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'generated_random_password_length' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     public Integer generatedRandomPasswordLength() {
         return this.generatedRandomPasswordLength;
     }
@@ -1141,11 +1133,10 @@ public final class GetMysqlConfigurationVariable {
     /**
      * @return DEPRECATED -- typo of mysqlx_zstd_default_compression_level. variable will be ignored.
      * 
-     * @deprecated
-     * The &#39;mysql_zstd_default_compression_level&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;mysql_zstd_default_compression_level&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'mysql_zstd_default_compression_level' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     public Integer mysqlZstdDefaultCompressionLevel() {
         return this.mysqlZstdDefaultCompressionLevel;
     }
@@ -1173,11 +1164,10 @@ public final class GetMysqlConfigurationVariable {
     /**
      * @return (&#34;mysqlxDocumentIdUniquePrefix&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;mysqlx_document_id_unique_prefix&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;mysqlx_document_id_unique_prefix&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'mysqlx_document_id_unique_prefix' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     public Integer mysqlxDocumentIdUniquePrefix() {
         return this.mysqlxDocumentIdUniquePrefix;
     }
@@ -1191,11 +1181,10 @@ public final class GetMysqlConfigurationVariable {
     /**
      * @return (&#34;mysqlxIdleWorkerThreadTimeout&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;mysqlx_idle_worker_thread_timeout&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;mysqlx_idle_worker_thread_timeout&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'mysqlx_idle_worker_thread_timeout' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     public Integer mysqlxIdleWorkerThreadTimeout() {
         return this.mysqlxIdleWorkerThreadTimeout;
     }
@@ -1230,11 +1219,10 @@ public final class GetMysqlConfigurationVariable {
     /**
      * @return (&#34;mysqlxMinWorkerThreads&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;mysqlx_min_worker_threads&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;mysqlx_min_worker_threads&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'mysqlx_min_worker_threads' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     public Integer mysqlxMinWorkerThreads() {
         return this.mysqlxMinWorkerThreads;
     }
@@ -1304,22 +1292,20 @@ public final class GetMysqlConfigurationVariable {
     /**
      * @return (&#34;queryAllocBlockSize&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;query_alloc_block_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;query_alloc_block_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'query_alloc_block_size' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     public String queryAllocBlockSize() {
         return this.queryAllocBlockSize;
     }
     /**
      * @return (&#34;queryPreallocSize&#34;) DEPRECATED -- variable should not be settable and will be ignored
      * 
-     * @deprecated
-     * The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;query_prealloc_size&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'query_prealloc_size' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     public String queryPreallocSize() {
         return this.queryPreallocSize;
     }

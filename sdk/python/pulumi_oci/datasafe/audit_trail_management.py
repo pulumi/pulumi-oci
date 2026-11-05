@@ -892,6 +892,56 @@ class AuditTrailManagement(pulumi.CustomResource):
         __props__.__dict__["work_request_id"] = work_request_id
         return AuditTrailManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            audit_collection_start_time: pulumi.Input[Optional[_builtins.str]] = None,
+            audit_profile_id: pulumi.Input[Optional[_builtins.str]] = None,
+            can_update_last_archive_time_on_target: pulumi.Input[Optional[_builtins.bool]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_auto_purge_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            resume_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+            start_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            stop_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_collected: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            trail_location: pulumi.Input[Optional[_builtins.str]] = None,
+            work_request_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["auditCollectionStartTime"] = audit_collection_start_time
+        __props__["auditProfileId"] = audit_profile_id
+        __props__["canUpdateLastArchiveTimeOnTarget"] = can_update_last_archive_time_on_target
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["isAutoPurgeEnabled"] = is_auto_purge_enabled
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["resumeTrigger"] = resume_trigger
+        __props__["startTrigger"] = start_trigger
+        __props__["state"] = state
+        __props__["status"] = status
+        __props__["stopTrigger"] = stop_trigger
+        __props__["systemTags"] = system_tags
+        __props__["targetId"] = target_id
+        __props__["timeCreated"] = time_created
+        __props__["timeLastCollected"] = time_last_collected
+        __props__["timeUpdated"] = time_updated
+        __props__["trailLocation"] = trail_location
+        __props__["workRequestId"] = work_request_id
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/auditTrailManagement:AuditTrailManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="auditCollectionStartTime")
     def audit_collection_start_time(self) -> pulumi.Output[Optional[_builtins.str]]:

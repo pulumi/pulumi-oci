@@ -122,6 +122,12 @@ func (ManagedInstancesInstallWindowsUpdatesManagementState) ElementType() reflec
 	return reflect.TypeOf((*managedInstancesInstallWindowsUpdatesManagementState)(nil)).Elem()
 }
 
+// ManagedInstancesInstallWindowsUpdatesManagementExists checks whether an existing ManagedInstancesInstallWindowsUpdatesManagement resource with the given ID exists.
+func ManagedInstancesInstallWindowsUpdatesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedInstancesInstallWindowsUpdatesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/managedInstancesInstallWindowsUpdatesManagement:ManagedInstancesInstallWindowsUpdatesManagement", id, state, "", opts...)
+}
+
 type managedInstancesInstallWindowsUpdatesManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

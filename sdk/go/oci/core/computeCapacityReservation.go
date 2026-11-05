@@ -221,6 +221,12 @@ func (ComputeCapacityReservationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*computeCapacityReservationState)(nil)).Elem()
 }
 
+// ComputeCapacityReservationExists checks whether an existing ComputeCapacityReservation resource with the given ID exists.
+func ComputeCapacityReservationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ComputeCapacityReservationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/computeCapacityReservation:ComputeCapacityReservation", id, state, "", opts...)
+}
+
 type computeCapacityReservationArgs struct {
 	// The availability domain of this compute capacity reservation.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`

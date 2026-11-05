@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// Get Assessor Check details.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// Get Assessor Check details.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// This data source provides details about a specific Assessment Assessor Check resource in Oracle Cloud Infrastructure Database Migration service.
         /// 
         /// Get Assessor Check details.
-        /// 
         /// 
         /// ## Example Usage
         /// 

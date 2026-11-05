@@ -904,6 +904,60 @@ class BootVolumeBackup(pulumi.CustomResource):
         __props__.__dict__["volume_group_backup_id"] = volume_group_backup_id
         return BootVolumeBackup(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            boot_volume_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            expiration_time: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            image_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_indefinite_retention_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_prevent_deletion_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_retention_lock_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            retention_period: pulumi.Input[Optional[Union['BootVolumeBackupRetentionPeriodArgs', 'BootVolumeBackupRetentionPeriodArgsDict', 'outputs.BootVolumeBackupRetentionPeriod']]] = None,
+            size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
+            source_boot_volume_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_details: pulumi.Input[Optional[Union['BootVolumeBackupSourceDetailsArgs', 'BootVolumeBackupSourceDetailsArgsDict', 'outputs.BootVolumeBackupSourceDetails']]] = None,
+            source_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_request_received: pulumi.Input[Optional[_builtins.str]] = None,
+            time_retention_expires_at: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            unique_size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
+            volume_group_backup_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["bootVolumeId"] = boot_volume_id
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["expirationTime"] = expiration_time
+        __props__["freeformTags"] = freeform_tags
+        __props__["imageId"] = image_id
+        __props__["isIndefiniteRetentionEnabled"] = is_indefinite_retention_enabled
+        __props__["isPreventDeletionEnabled"] = is_prevent_deletion_enabled
+        __props__["isRetentionLockEnabled"] = is_retention_lock_enabled
+        __props__["kmsKeyId"] = kms_key_id
+        __props__["retentionPeriod"] = retention_period
+        __props__["sizeInGbs"] = size_in_gbs
+        __props__["sourceBootVolumeBackupId"] = source_boot_volume_backup_id
+        __props__["sourceDetails"] = source_details
+        __props__["sourceType"] = source_type
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeRequestReceived"] = time_request_received
+        __props__["timeRetentionExpiresAt"] = time_retention_expires_at
+        __props__["type"] = type
+        __props__["uniqueSizeInGbs"] = unique_size_in_gbs
+        __props__["volumeGroupBackupId"] = volume_group_backup_id
+        return pulumi.runtime.exists_resource(None, 'oci:Core/bootVolumeBackup:BootVolumeBackup', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="bootVolumeId")
     def boot_volume_id(self) -> pulumi.Output[_builtins.str]:

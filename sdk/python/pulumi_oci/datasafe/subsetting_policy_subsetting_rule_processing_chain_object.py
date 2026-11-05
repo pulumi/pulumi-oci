@@ -358,6 +358,22 @@ class SubsettingPolicySubsettingRuleProcessingChainObject(pulumi.CustomResource)
         __props__.__dict__["subsetting_rule_key"] = subsetting_rule_key
         return SubsettingPolicySubsettingRuleProcessingChainObject(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            is_enabled_for_processing: pulumi.Input[Optional[_builtins.bool]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubsettingPolicySubsettingRuleProcessingChainObjectItemArgs', 'SubsettingPolicySubsettingRuleProcessingChainObjectItemArgsDict', 'outputs.SubsettingPolicySubsettingRuleProcessingChainObjectItem']]]]] = None,
+            processing_chain_object_key: pulumi.Input[Optional[_builtins.str]] = None,
+            subsetting_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            subsetting_rule_key: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["isEnabledForProcessing"] = is_enabled_for_processing
+        __props__["items"] = items
+        __props__["processingChainObjectKey"] = processing_chain_object_key
+        __props__["subsettingPolicyId"] = subsetting_policy_id
+        __props__["subsettingRuleKey"] = subsetting_rule_key
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/subsettingPolicySubsettingRuleProcessingChainObject:SubsettingPolicySubsettingRuleProcessingChainObject', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="isEnabledForProcessing")
     def is_enabled_for_processing(self) -> pulumi.Output[_builtins.bool]:

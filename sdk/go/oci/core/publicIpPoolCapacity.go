@@ -132,6 +132,12 @@ func (PublicIpPoolCapacityState) ElementType() reflect.Type {
 	return reflect.TypeOf((*publicIpPoolCapacityState)(nil)).Elem()
 }
 
+// PublicIpPoolCapacityExists checks whether an existing PublicIpPoolCapacity resource with the given ID exists.
+func PublicIpPoolCapacityExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PublicIpPoolCapacityState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/publicIpPoolCapacity:PublicIpPoolCapacity", id, state, "", opts...)
+}
+
 type publicIpPoolCapacityArgs struct {
 	// The OCID of the Byoip Range Id object to which the cidr block belongs.
 	ByoipId string `pulumi:"byoipId"`

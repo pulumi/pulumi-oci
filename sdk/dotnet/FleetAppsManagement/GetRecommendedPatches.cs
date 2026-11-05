@@ -16,7 +16,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Gets a list of recommended patches for the specified target.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Gets a list of recommended patches for the specified target.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -81,7 +79,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// This data source provides the list of Recommended Patches in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
         /// Gets a list of recommended patches for the specified target.
-        /// 
         /// 
         /// ## Example Usage
         /// 

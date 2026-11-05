@@ -857,6 +857,52 @@ class ResolverEndpoint(pulumi.CustomResource):
         __props__.__dict__["vnic_id"] = vnic_id
         return ResolverEndpoint(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            endpoint_type: pulumi.Input[Optional[_builtins.str]] = None,
+            forwarding_address: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_forwarding: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_listening: pulumi.Input[Optional[_builtins.bool]] = None,
+            listening_address: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            pe_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resolver_id: pulumi.Input[Optional[_builtins.str]] = None,
+            scope: pulumi.Input[Optional[_builtins.str]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            self: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            vnic_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["endpointType"] = endpoint_type
+        __props__["forwardingAddress"] = forwarding_address
+        __props__["freeformTags"] = freeform_tags
+        __props__["isForwarding"] = is_forwarding
+        __props__["isListening"] = is_listening
+        __props__["listeningAddress"] = listening_address
+        __props__["name"] = name
+        __props__["nsgIds"] = nsg_ids
+        __props__["peId"] = pe_id
+        __props__["resolverId"] = resolver_id
+        __props__["scope"] = scope
+        __props__["securityAttributes"] = security_attributes
+        __props__["self"] = self
+        __props__["state"] = state
+        __props__["subnetId"] = subnet_id
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["vnicId"] = vnic_id
+        return pulumi.runtime.exists_resource(None, 'oci:Dns/resolverEndpoint:ResolverEndpoint', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

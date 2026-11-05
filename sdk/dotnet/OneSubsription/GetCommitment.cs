@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// This API returns the commitment details corresponding to the id provided
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.OneSubsription
         /// 
         /// This API returns the commitment details corresponding to the id provided
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.OneSubsription
         /// This data source provides details about a specific Commitment resource in Oracle Cloud Infrastructure Onesubscription service.
         /// 
         /// This API returns the commitment details corresponding to the id provided
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -260,6 +260,12 @@ func (NamespaceAssociationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*namespaceAssociationState)(nil)).Elem()
 }
 
+// NamespaceAssociationExists checks whether an existing NamespaceAssociation resource with the given ID exists.
+func NamespaceAssociationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NamespaceAssociationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LogAnalytics/namespaceAssociation:NamespaceAssociation", id, state, "", opts...)
+}
+
 type namespaceAssociationArgs struct {
 	// A list of association properties.
 	AssociationProperties []NamespaceAssociationAssociationProperty `pulumi:"associationProperties"`

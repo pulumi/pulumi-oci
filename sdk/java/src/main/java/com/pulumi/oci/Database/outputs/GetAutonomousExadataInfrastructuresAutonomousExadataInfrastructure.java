@@ -18,11 +18,10 @@ public final class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastru
     /**
      * @return A filter to return only resources that match the given availability domain exactly.
      * 
-     * @deprecated
-     * Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.
+     * @deprecated Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.
      * 
      */
-    @Deprecated /* Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead. */
+    @Deprecated
     private String availabilityDomain;
     /**
      * @return The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
@@ -127,11 +126,10 @@ public final class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastru
     /**
      * @return A filter to return only resources that match the given availability domain exactly.
      * 
-     * @deprecated
-     * Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.
+     * @deprecated Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.
      * 
      */
-    @Deprecated /* Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead. */
+    @Deprecated
     public String availabilityDomain() {
         return this.availabilityDomain;
     }

@@ -1590,6 +1590,90 @@ class IntegrationInstance(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return IntegrationInstance(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            alternate_custom_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstanceAlternateCustomEndpointArgs', 'IntegrationInstanceAlternateCustomEndpointArgsDict', 'outputs.IntegrationInstanceAlternateCustomEndpoint']]]]] = None,
+            attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            attachments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstanceAttachmentArgs', 'IntegrationInstanceAttachmentArgsDict', 'outputs.IntegrationInstanceAttachment']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            consumption_model: pulumi.Input[Optional[_builtins.str]] = None,
+            convert_instance_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            custom_endpoint: pulumi.Input[Optional[Union['IntegrationInstanceCustomEndpointArgs', 'IntegrationInstanceCustomEndpointArgsDict', 'outputs.IntegrationInstanceCustomEndpoint']]] = None,
+            data_retention_period: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            disable_process_automation_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            disaster_recovery_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstanceDisasterRecoveryDetailArgs', 'IntegrationInstanceDisasterRecoveryDetailArgsDict', 'outputs.IntegrationInstanceDisasterRecoveryDetail']]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_process_automation_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            extend_data_retention_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            failover_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            idcs_at: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstanceIdcsInfoArgs', 'IntegrationInstanceIdcsInfoArgsDict', 'outputs.IntegrationInstanceIdcsInfo']]]]] = None,
+            instance_design_time_url: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_url: pulumi.Input[Optional[_builtins.str]] = None,
+            integration_instance_type: pulumi.Input[Optional[_builtins.str]] = None,
+            is_byol: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_disaster_recovery_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_file_server_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_visual_builder_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            message_packs: pulumi.Input[Optional[_builtins.int]] = None,
+            network_endpoint_details: pulumi.Input[Optional[Union['IntegrationInstanceNetworkEndpointDetailsArgs', 'IntegrationInstanceNetworkEndpointDetailsArgsDict', 'outputs.IntegrationInstanceNetworkEndpointDetails']]] = None,
+            private_endpoint_outbound_connections: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IntegrationInstancePrivateEndpointOutboundConnectionArgs', 'IntegrationInstancePrivateEndpointOutboundConnectionArgsDict', 'outputs.IntegrationInstancePrivateEndpointOutboundConnection']]]]] = None,
+            process_automation_log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            state_message: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["alternateCustomEndpoints"] = alternate_custom_endpoints
+        __props__["attachmentType"] = attachment_type
+        __props__["attachments"] = attachments
+        __props__["compartmentId"] = compartment_id
+        __props__["consumptionModel"] = consumption_model
+        __props__["convertInstanceTrigger"] = convert_instance_trigger
+        __props__["customEndpoint"] = custom_endpoint
+        __props__["dataRetentionPeriod"] = data_retention_period
+        __props__["definedTags"] = defined_tags
+        __props__["disableProcessAutomationTrigger"] = disable_process_automation_trigger
+        __props__["disasterRecoveryDetails"] = disaster_recovery_details
+        __props__["displayName"] = display_name
+        __props__["domainId"] = domain_id
+        __props__["enableProcessAutomationTrigger"] = enable_process_automation_trigger
+        __props__["extendDataRetentionTrigger"] = extend_data_retention_trigger
+        __props__["failoverTrigger"] = failover_trigger
+        __props__["freeformTags"] = freeform_tags
+        __props__["idcsAt"] = idcs_at
+        __props__["idcsInfos"] = idcs_infos
+        __props__["instanceDesignTimeUrl"] = instance_design_time_url
+        __props__["instanceUrl"] = instance_url
+        __props__["integrationInstanceType"] = integration_instance_type
+        __props__["isByol"] = is_byol
+        __props__["isDisasterRecoveryEnabled"] = is_disaster_recovery_enabled
+        __props__["isFileServerEnabled"] = is_file_server_enabled
+        __props__["isVisualBuilderEnabled"] = is_visual_builder_enabled
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["logGroupId"] = log_group_id
+        __props__["messagePacks"] = message_packs
+        __props__["networkEndpointDetails"] = network_endpoint_details
+        __props__["privateEndpointOutboundConnections"] = private_endpoint_outbound_connections
+        __props__["processAutomationLogGroupId"] = process_automation_log_group_id
+        __props__["securityAttributes"] = security_attributes
+        __props__["shape"] = shape
+        __props__["state"] = state
+        __props__["stateMessage"] = state_message
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Integration/integrationInstance:IntegrationInstance', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="alternateCustomEndpoints")
     def alternate_custom_endpoints(self) -> pulumi.Output[Sequence['outputs.IntegrationInstanceAlternateCustomEndpoint']]:

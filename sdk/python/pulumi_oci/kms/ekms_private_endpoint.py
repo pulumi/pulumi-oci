@@ -609,6 +609,38 @@ class EkmsPrivateEndpoint(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return EkmsPrivateEndpoint(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            ca_bundle: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            external_key_manager_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["caBundle"] = ca_bundle
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["externalKeyManagerIp"] = external_key_manager_ip
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["port"] = port
+        __props__["privateEndpointIp"] = private_endpoint_ip
+        __props__["state"] = state
+        __props__["subnetId"] = subnet_id
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="caBundle")
     def ca_bundle(self) -> pulumi.Output[_builtins.str]:

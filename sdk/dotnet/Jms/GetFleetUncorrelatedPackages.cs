@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// List uncorrelated package summaries in a fleet, filtered by query parameters. Uncorrelated packages are Java packages which can't be accurately correlated to a library during a library scan.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// List uncorrelated package summaries in a fleet, filtered by query parameters. Uncorrelated packages are Java packages which can't be accurately correlated to a library during a library scan.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.Jms
         /// This data source provides the list of Fleet Uncorrelated Packages in Oracle Cloud Infrastructure Jms service.
         /// 
         /// List uncorrelated package summaries in a fleet, filtered by query parameters. Uncorrelated packages are Java packages which can't be accurately correlated to a library during a library scan.
-        /// 
         /// 
         /// ## Example Usage
         /// 

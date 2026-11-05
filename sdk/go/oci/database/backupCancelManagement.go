@@ -117,6 +117,12 @@ func (BackupCancelManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*backupCancelManagementState)(nil)).Elem()
 }
 
+// BackupCancelManagementExists checks whether an existing BackupCancelManagement resource with the given ID exists.
+func BackupCancelManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BackupCancelManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/backupCancelManagement:BackupCancelManagement", id, state, "", opts...)
+}
+
 type backupCancelManagementArgs struct {
 	// The backup [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	BackupId string `pulumi:"backupId"`

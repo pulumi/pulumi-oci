@@ -376,6 +376,12 @@ func (ExadataInsightState) ElementType() reflect.Type {
 	return reflect.TypeOf((*exadataInsightState)(nil)).Elem()
 }
 
+// ExadataInsightExists checks whether an existing ExadataInsight resource with the given ID exists.
+func ExadataInsightExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExadataInsightState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Opsi/exadataInsight:ExadataInsight", id, state, "", opts...)
+}
+
 type exadataInsightArgs struct {
 	// (Updatable) Compartment Identifier of Exadata insight
 	CompartmentId string `pulumi:"compartmentId"`

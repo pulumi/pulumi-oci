@@ -278,6 +278,12 @@ func (TargetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*targetState)(nil)).Elem()
 }
 
+// TargetExists checks whether an existing Target resource with the given ID exists.
+func TargetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *TargetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CloudGuard/target:Target", id, state, "", opts...)
+}
+
 type targetArgs struct {
 	// Compartment OCID where the resource is created
 	CompartmentId string `pulumi:"compartmentId"`

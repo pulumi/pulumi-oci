@@ -203,6 +203,12 @@ func (ScriptState) ElementType() reflect.Type {
 	return reflect.TypeOf((*scriptState)(nil)).Elem()
 }
 
+// ScriptExists checks whether an existing Script resource with the given ID exists.
+func ScriptExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ScriptState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ApmSynthetics/script:Script", id, state, "", opts...)
+}
+
 type scriptArgs struct {
 	// (Updatable) The APM domain ID the request is intended for.
 	ApmDomainId string `pulumi:"apmDomainId"`

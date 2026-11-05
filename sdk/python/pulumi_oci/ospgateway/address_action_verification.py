@@ -1380,6 +1380,74 @@ class AddressActionVerification(pulumi.CustomResource):
         __props__.__dict__["verification_code"] = verification_code
         return AddressActionVerification(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            address_key: pulumi.Input[Optional[_builtins.str]] = None,
+            addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AddressActionVerificationAddressArgs', 'AddressActionVerificationAddressArgsDict', 'outputs.AddressActionVerificationAddress']]]]] = None,
+            city: pulumi.Input[Optional[_builtins.str]] = None,
+            company_name: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            contributor_class: pulumi.Input[Optional[_builtins.str]] = None,
+            country: pulumi.Input[Optional[_builtins.str]] = None,
+            county: pulumi.Input[Optional[_builtins.str]] = None,
+            department_name: pulumi.Input[Optional[_builtins.str]] = None,
+            email_address: pulumi.Input[Optional[_builtins.str]] = None,
+            first_name: pulumi.Input[Optional[_builtins.str]] = None,
+            internal_number: pulumi.Input[Optional[_builtins.str]] = None,
+            job_title: pulumi.Input[Optional[_builtins.str]] = None,
+            last_name: pulumi.Input[Optional[_builtins.str]] = None,
+            line1: pulumi.Input[Optional[_builtins.str]] = None,
+            line2: pulumi.Input[Optional[_builtins.str]] = None,
+            line3: pulumi.Input[Optional[_builtins.str]] = None,
+            line4: pulumi.Input[Optional[_builtins.str]] = None,
+            middle_name: pulumi.Input[Optional[_builtins.str]] = None,
+            municipal_inscription: pulumi.Input[Optional[_builtins.str]] = None,
+            osp_home_region: pulumi.Input[Optional[_builtins.str]] = None,
+            phone_country_code: pulumi.Input[Optional[_builtins.str]] = None,
+            phone_number: pulumi.Input[Optional[_builtins.str]] = None,
+            postal_code: pulumi.Input[Optional[_builtins.str]] = None,
+            province: pulumi.Input[Optional[_builtins.str]] = None,
+            quality: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            state_inscription: pulumi.Input[Optional[_builtins.str]] = None,
+            street_name: pulumi.Input[Optional[_builtins.str]] = None,
+            street_number: pulumi.Input[Optional[_builtins.str]] = None,
+            verification_code: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["addressKey"] = address_key
+        __props__["addresses"] = addresses
+        __props__["city"] = city
+        __props__["companyName"] = company_name
+        __props__["compartmentId"] = compartment_id
+        __props__["contributorClass"] = contributor_class
+        __props__["country"] = country
+        __props__["county"] = county
+        __props__["departmentName"] = department_name
+        __props__["emailAddress"] = email_address
+        __props__["firstName"] = first_name
+        __props__["internalNumber"] = internal_number
+        __props__["jobTitle"] = job_title
+        __props__["lastName"] = last_name
+        __props__["line1"] = line1
+        __props__["line2"] = line2
+        __props__["line3"] = line3
+        __props__["line4"] = line4
+        __props__["middleName"] = middle_name
+        __props__["municipalInscription"] = municipal_inscription
+        __props__["ospHomeRegion"] = osp_home_region
+        __props__["phoneCountryCode"] = phone_country_code
+        __props__["phoneNumber"] = phone_number
+        __props__["postalCode"] = postal_code
+        __props__["province"] = province
+        __props__["quality"] = quality
+        __props__["state"] = state
+        __props__["stateInscription"] = state_inscription
+        __props__["streetName"] = street_name
+        __props__["streetNumber"] = street_number
+        __props__["verificationCode"] = verification_code
+        return pulumi.runtime.exists_resource(None, 'oci:OspGateway/addressActionVerification:AddressActionVerification', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="addressKey")
     def address_key(self) -> pulumi.Output[_builtins.str]:

@@ -202,6 +202,12 @@ func (CloudClusterInstanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudClusterInstanceState)(nil)).Elem()
 }
 
+// CloudClusterInstanceExists checks whether an existing CloudClusterInstance resource with the given ID exists.
+func CloudClusterInstanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudClusterInstanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/cloudClusterInstance:CloudClusterInstance", id, state, "", opts...)
+}
+
 type cloudClusterInstanceArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud cluster instance.
 	CloudClusterInstanceId string `pulumi:"cloudClusterInstanceId"`

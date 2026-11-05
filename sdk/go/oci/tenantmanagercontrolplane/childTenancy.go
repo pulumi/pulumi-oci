@@ -165,6 +165,12 @@ func (ChildTenancyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*childTenancyState)(nil)).Elem()
 }
 
+// ChildTenancyExists checks whether an existing ChildTenancy resource with the given ID exists.
+func ChildTenancyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ChildTenancyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Tenantmanagercontrolplane/childTenancy:ChildTenancy", id, state, "", opts...)
+}
+
 type childTenancyArgs struct {
 	// Email address of the child tenancy administrator.
 	AdminEmail string `pulumi:"adminEmail"`

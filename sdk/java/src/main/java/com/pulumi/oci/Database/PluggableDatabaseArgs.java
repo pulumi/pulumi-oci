@@ -111,14 +111,14 @@ public final class PluggableDatabaseArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
+     * A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, &#92;#, or -.
      * 
      */
     @Import(name="pdbAdminPassword")
     private @Nullable Output<String> pdbAdminPassword;
 
     /**
-     * @return A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
+     * @return A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, &#92;#, or -.
      * 
      */
     public Optional<Output<String>> pdbAdminPassword() {
@@ -400,7 +400,7 @@ public final class PluggableDatabaseArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param pdbAdminPassword A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
+         * @param pdbAdminPassword A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, &#92;#, or -.
          * 
          * @return builder
          * 
@@ -411,7 +411,7 @@ public final class PluggableDatabaseArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param pdbAdminPassword A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
+         * @param pdbAdminPassword A strong password for PDB Admin. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, &#92;#, or -.
          * 
          * @return builder
          * 

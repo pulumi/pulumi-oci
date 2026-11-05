@@ -195,6 +195,12 @@ func (HostedApplicationStorageState) ElementType() reflect.Type {
 	return reflect.TypeOf((*hostedApplicationStorageState)(nil)).Elem()
 }
 
+// HostedApplicationStorageExists checks whether an existing HostedApplicationStorage resource with the given ID exists.
+func HostedApplicationStorageExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HostedApplicationStorageState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:GenerativeAi/hostedApplicationStorage:HostedApplicationStorage", id, state, "", opts...)
+}
+
 type hostedApplicationStorageArgs struct {
 	// (Updatable) The compartment OCID to create the hosted application in.
 	CompartmentId string `pulumi:"compartmentId"`

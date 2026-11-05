@@ -207,6 +207,12 @@ func (NetworkFirewallPolicyDecryptionProfileState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkFirewallPolicyDecryptionProfileState)(nil)).Elem()
 }
 
+// NetworkFirewallPolicyDecryptionProfileExists checks whether an existing NetworkFirewallPolicyDecryptionProfile resource with the given ID exists.
+func NetworkFirewallPolicyDecryptionProfileExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkFirewallPolicyDecryptionProfileState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:NetworkFirewall/networkFirewallPolicyDecryptionProfile:NetworkFirewallPolicyDecryptionProfile", id, state, "", opts...)
+}
+
 type networkFirewallPolicyDecryptionProfileArgs struct {
 	// (Updatable) Whether to block sessions if the server's certificate uses extensions other than key usage and/or extended key usage.
 	AreCertificateExtensionsRestricted *bool `pulumi:"areCertificateExtensionsRestricted"`

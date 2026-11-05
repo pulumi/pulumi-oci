@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Return a list with details of all Java licenses.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Return a list with details of all Java licenses.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.Jms
         /// This data source provides the list of Java Licenses in Oracle Cloud Infrastructure Jms Java Downloads service.
         /// 
         /// Return a list with details of all Java licenses.
-        /// 
         /// 
         /// ## Example Usage
         /// 

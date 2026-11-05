@@ -478,6 +478,30 @@ class DrgRouteTableRouteRule(pulumi.CustomResource):
         __props__.__dict__["route_type"] = route_type
         return DrgRouteTableRouteRule(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            destination: pulumi.Input[Optional[_builtins.str]] = None,
+            destination_type: pulumi.Input[Optional[_builtins.str]] = None,
+            drg_route_table_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_blackhole: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_conflict: pulumi.Input[Optional[_builtins.bool]] = None,
+            next_hop_drg_attachment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            route_provenance: pulumi.Input[Optional[_builtins.str]] = None,
+            route_type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["attributes"] = attributes
+        __props__["destination"] = destination
+        __props__["destinationType"] = destination_type
+        __props__["drgRouteTableId"] = drg_route_table_id
+        __props__["isBlackhole"] = is_blackhole
+        __props__["isConflict"] = is_conflict
+        __props__["nextHopDrgAttachmentId"] = next_hop_drg_attachment_id
+        __props__["routeProvenance"] = route_provenance
+        __props__["routeType"] = route_type
+        return pulumi.runtime.exists_resource(None, 'oci:Core/drgRouteTableRouteRule:DrgRouteTableRouteRule', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def attributes(self) -> pulumi.Output[Mapping[str, _builtins.str]]:

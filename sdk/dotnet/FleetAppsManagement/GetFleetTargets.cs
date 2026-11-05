@@ -16,7 +16,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Returns the list of all confirmed targets within a fleet.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Returns the list of all confirmed targets within a fleet.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// This data source provides the list of Fleet Targets in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
         /// Returns the list of all confirmed targets within a fleet.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Lists ASM disk groups for the cloud ASM specified by `cloudAsmId`.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Lists ASM disk groups for the cloud ASM specified by `cloudAsmId`.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides the list of Cloud Asm Disk Groups in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Lists ASM disk groups for the cloud ASM specified by `cloudAsmId`.
-        /// 
         /// 
         /// ## Example Usage
         /// 

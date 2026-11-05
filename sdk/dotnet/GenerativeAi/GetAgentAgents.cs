@@ -14,10 +14,9 @@ namespace Pulumi.Oci.GenerativeAi
         /// <summary>
         /// This data source provides the list of Agents in Oracle Cloud Infrastructure Generative Ai Agent service.
         /// 
-        /// **ListAgents** 
+        /// **ListAgents**
         /// 
         /// Gets a list of agents.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -45,10 +44,9 @@ namespace Pulumi.Oci.GenerativeAi
         /// <summary>
         /// This data source provides the list of Agents in Oracle Cloud Infrastructure Generative Ai Agent service.
         /// 
-        /// **ListAgents** 
+        /// **ListAgents**
         /// 
         /// Gets a list of agents.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -76,10 +74,9 @@ namespace Pulumi.Oci.GenerativeAi
         /// <summary>
         /// This data source provides the list of Agents in Oracle Cloud Infrastructure Generative Ai Agent service.
         /// 
-        /// **ListAgents** 
+        /// **ListAgents**
         /// 
         /// Gets a list of agents.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -234,6 +234,16 @@ class MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement(pulumi.Cust
         __props__.__dict__["monitoring_template_id"] = monitoring_template_id
         return MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enable_monitoring_template_on_given_resources: pulumi.Input[Optional[_builtins.bool]] = None,
+            monitoring_template_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enableMonitoringTemplateOnGivenResources"] = enable_monitoring_template_on_given_resources
+        __props__["monitoringTemplateId"] = monitoring_template_id
+        return pulumi.runtime.exists_resource(None, 'oci:StackMonitoring/monitoringTemplateMonitoringTemplateOnGivenResourcesManagement:MonitoringTemplateMonitoringTemplateOnGivenResourcesManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="enableMonitoringTemplateOnGivenResources")
     def enable_monitoring_template_on_given_resources(self) -> pulumi.Output[_builtins.bool]:

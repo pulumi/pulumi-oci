@@ -22,8 +22,7 @@ namespace Pulumi.Oci.FusionApps.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.FusionEnvironmentRuleCondition> Conditions;
         /// <summary>
-        /// (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.` 
-        /// 
+        /// (Updatable) A brief description of the access control rule. Avoid entering confidential information. example: `192.168.0.0/16 and 2001:db8::/32 are trusted clients. Whitelist them.`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

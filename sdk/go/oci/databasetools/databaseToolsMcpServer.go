@@ -296,6 +296,12 @@ func (DatabaseToolsMcpServerState) ElementType() reflect.Type {
 	return reflect.TypeOf((*databaseToolsMcpServerState)(nil)).Elem()
 }
 
+// DatabaseToolsMcpServerExists checks whether an existing DatabaseToolsMcpServer resource with the given ID exists.
+func DatabaseToolsMcpServerExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DatabaseToolsMcpServerState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseTools/databaseToolsMcpServer:DatabaseToolsMcpServer", id, state, "", opts...)
+}
+
 type databaseToolsMcpServerArgs struct {
 	// (Updatable) Access token expiry in seconds
 	AccessTokenExpiryInSeconds *int `pulumi:"accessTokenExpiryInSeconds"`

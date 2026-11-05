@@ -231,6 +231,12 @@ func (CertificateState) ElementType() reflect.Type {
 	return reflect.TypeOf((*certificateState)(nil)).Elem()
 }
 
+// CertificateExists checks whether an existing Certificate resource with the given ID exists.
+func CertificateExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CertificateState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LoadBalancer/certificate:Certificate", id, state, "", opts...)
+}
+
 type certificateArgs struct {
 	// The Certificate Authority certificate, or any interim certificate, that you received from your SSL certificate provider.
 	//

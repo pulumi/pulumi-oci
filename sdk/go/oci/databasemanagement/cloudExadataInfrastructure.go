@@ -266,6 +266,12 @@ func (CloudExadataInfrastructureState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudExadataInfrastructureState)(nil)).Elem()
 }
 
+// CloudExadataInfrastructureExists checks whether an existing CloudExadataInfrastructure resource with the given ID exists.
+func CloudExadataInfrastructureExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudExadataInfrastructureState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/cloudExadataInfrastructure:CloudExadataInfrastructure", id, state, "", opts...)
+}
+
 type cloudExadataInfrastructureArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

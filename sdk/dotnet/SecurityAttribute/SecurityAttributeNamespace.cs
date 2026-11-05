@@ -106,8 +106,7 @@ namespace Pulumi.Oci.SecurityAttribute
         public Output<ImmutableArray<string>> Modes { get; private set; } = null!;
 
         /// <summary>
-        /// The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed. 
-        /// 
+        /// The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -222,8 +221,7 @@ namespace Pulumi.Oci.SecurityAttribute
         public Input<bool>? IsRetired { get; set; }
 
         /// <summary>
-        /// The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed. 
-        /// 
+        /// The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -294,8 +292,7 @@ namespace Pulumi.Oci.SecurityAttribute
         }
 
         /// <summary>
-        /// The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed. 
-        /// 
+        /// The name you assign to the security attribute namespace during creation. The name must be unique across all namespaces in the tenancy and cannot be changed.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

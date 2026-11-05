@@ -17,7 +17,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Lists the database services registered with the specified cloud listener
         /// for the specified Managed Database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Lists the database services registered with the specified cloud listener
         /// for the specified Managed Database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -76,7 +74,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Lists the database services registered with the specified cloud listener
         /// for the specified Managed Database.
-        /// 
         /// 
         /// ## Example Usage
         /// 

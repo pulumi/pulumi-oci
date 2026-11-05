@@ -484,6 +484,26 @@ class ManagedInstanceGroupManageModuleStreamsManagement(pulumi.CustomResource):
         __props__.__dict__["work_request_details"] = work_request_details
         return ManagedInstanceGroupManageModuleStreamsManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            disables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementDisableArgs', 'ManagedInstanceGroupManageModuleStreamsManagementDisableArgsDict', 'outputs.ManagedInstanceGroupManageModuleStreamsManagementDisable']]]]] = None,
+            enables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementEnableArgs', 'ManagedInstanceGroupManageModuleStreamsManagementEnableArgsDict', 'outputs.ManagedInstanceGroupManageModuleStreamsManagementEnable']]]]] = None,
+            installs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementInstallArgs', 'ManagedInstanceGroupManageModuleStreamsManagementInstallArgsDict', 'outputs.ManagedInstanceGroupManageModuleStreamsManagementInstall']]]]] = None,
+            is_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
+            managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            removes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceGroupManageModuleStreamsManagementRemoveArgs', 'ManagedInstanceGroupManageModuleStreamsManagementRemoveArgsDict', 'outputs.ManagedInstanceGroupManageModuleStreamsManagementRemove']]]]] = None,
+            work_request_details: pulumi.Input[Optional[Union['ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgs', 'ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetailsArgsDict', 'outputs.ManagedInstanceGroupManageModuleStreamsManagementWorkRequestDetails']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["disables"] = disables
+        __props__["enables"] = enables
+        __props__["installs"] = installs
+        __props__["isDryRun"] = is_dry_run
+        __props__["managedInstanceGroupId"] = managed_instance_group_id
+        __props__["removes"] = removes
+        __props__["workRequestDetails"] = work_request_details
+        return pulumi.runtime.exists_resource(None, 'oci:OsManagementHub/managedInstanceGroupManageModuleStreamsManagement:ManagedInstanceGroupManageModuleStreamsManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def disables(self) -> pulumi.Output[Sequence['outputs.ManagedInstanceGroupManageModuleStreamsManagementDisable']]:

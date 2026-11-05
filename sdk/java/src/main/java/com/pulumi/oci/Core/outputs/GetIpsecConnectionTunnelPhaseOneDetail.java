@@ -58,11 +58,10 @@ public final class GetIpsecConnectionTunnelPhaseOneDetail {
      */
     private String negotiatedEncryptionAlgorithm;
     /**
-     * @deprecated
-     * The &#39;phase_one_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_one_details.0.remaining_lifetime_int&#39; instead.
+     * @deprecated The &#39;phase_one_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_one_details.0.remaining_lifetime_int&#39; instead.
      * 
      */
-    @Deprecated /* The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead. */
+    @Deprecated
     private String remainingLifetime;
     /**
      * @return The remaining lifetime before the key is refreshed.
@@ -140,11 +139,10 @@ public final class GetIpsecConnectionTunnelPhaseOneDetail {
         return this.negotiatedEncryptionAlgorithm;
     }
     /**
-     * @deprecated
-     * The &#39;phase_one_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_one_details.0.remaining_lifetime_int&#39; instead.
+     * @deprecated The &#39;phase_one_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_one_details.0.remaining_lifetime_int&#39; instead.
      * 
      */
-    @Deprecated /* The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead. */
+    @Deprecated
     public String remainingLifetime() {
         return this.remainingLifetime;
     }

@@ -275,6 +275,12 @@ func (SchedulerDefinitionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*schedulerDefinitionState)(nil)).Elem()
 }
 
+// SchedulerDefinitionExists checks whether an existing SchedulerDefinition resource with the given ID exists.
+func SchedulerDefinitionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SchedulerDefinitionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FleetAppsManagement/schedulerDefinition:SchedulerDefinition", id, state, "", opts...)
+}
+
 type schedulerDefinitionArgs struct {
 	// (Updatable) Action Groups associated with the Schedule.
 	ActionGroups []SchedulerDefinitionActionGroup `pulumi:"actionGroups"`

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Returns the list of audit archive retrieval.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Returns the list of audit archive retrieval.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -85,7 +83,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Audit Archive Retrievals in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Returns the list of audit archive retrieval.
-        /// 
         /// 
         /// ## Example Usage
         /// 

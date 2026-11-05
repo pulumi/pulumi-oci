@@ -955,6 +955,58 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
         __props__.__dict__["vpn_ip"] = vpn_ip
         return IpsecConnectionTunnelManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            associated_virtual_circuits: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            bgp_session_info: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementBgpSessionInfoArgs', 'IpsecConnectionTunnelManagementBgpSessionInfoArgsDict', 'outputs.IpsecConnectionTunnelManagementBgpSessionInfo']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cpe_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dpd_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['IpsecConnectionTunnelManagementDpdConfigArgs', 'IpsecConnectionTunnelManagementDpdConfigArgsDict', 'outputs.IpsecConnectionTunnelManagementDpdConfig']]]]] = None,
+            dpd_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            dpd_timeout_in_sec: pulumi.Input[Optional[_builtins.int]] = None,
+            encryption_domain_config: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs', 'IpsecConnectionTunnelManagementEncryptionDomainConfigArgsDict', 'outputs.IpsecConnectionTunnelManagementEncryptionDomainConfig']]] = None,
+            ike_version: pulumi.Input[Optional[_builtins.str]] = None,
+            ipsec_id: pulumi.Input[Optional[_builtins.str]] = None,
+            nat_translation_enabled: pulumi.Input[Optional[_builtins.str]] = None,
+            oracle_can_initiate: pulumi.Input[Optional[_builtins.str]] = None,
+            phase_one_details: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementPhaseOneDetailsArgs', 'IpsecConnectionTunnelManagementPhaseOneDetailsArgsDict', 'outputs.IpsecConnectionTunnelManagementPhaseOneDetails']]] = None,
+            phase_two_details: pulumi.Input[Optional[Union['IpsecConnectionTunnelManagementPhaseTwoDetailsArgs', 'IpsecConnectionTunnelManagementPhaseTwoDetailsArgsDict', 'outputs.IpsecConnectionTunnelManagementPhaseTwoDetails']]] = None,
+            routing: pulumi.Input[Optional[_builtins.str]] = None,
+            shared_secret: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_status_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            tunnel_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vpn_ip: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["associatedVirtualCircuits"] = associated_virtual_circuits
+        __props__["bgpSessionInfo"] = bgp_session_info
+        __props__["compartmentId"] = compartment_id
+        __props__["cpeIp"] = cpe_ip
+        __props__["displayName"] = display_name
+        __props__["dpdConfigs"] = dpd_configs
+        __props__["dpdMode"] = dpd_mode
+        __props__["dpdTimeoutInSec"] = dpd_timeout_in_sec
+        __props__["encryptionDomainConfig"] = encryption_domain_config
+        __props__["ikeVersion"] = ike_version
+        __props__["ipsecId"] = ipsec_id
+        __props__["natTranslationEnabled"] = nat_translation_enabled
+        __props__["oracleCanInitiate"] = oracle_can_initiate
+        __props__["phaseOneDetails"] = phase_one_details
+        __props__["phaseTwoDetails"] = phase_two_details
+        __props__["routing"] = routing
+        __props__["sharedSecret"] = shared_secret
+        __props__["state"] = state
+        __props__["status"] = status
+        __props__["timeCreated"] = time_created
+        __props__["timeStatusUpdated"] = time_status_updated
+        __props__["tunnelId"] = tunnel_id
+        __props__["vpnIp"] = vpn_ip
+        return pulumi.runtime.exists_resource(None, 'oci:Core/ipsecConnectionTunnelManagement:IpsecConnectionTunnelManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="associatedVirtualCircuits")
     def associated_virtual_circuits(self) -> pulumi.Output[Sequence[_builtins.str]]:

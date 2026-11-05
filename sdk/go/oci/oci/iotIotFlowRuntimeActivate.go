@@ -110,6 +110,12 @@ func (IotIotFlowRuntimeActivateState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iotIotFlowRuntimeActivateState)(nil)).Elem()
 }
 
+// IotIotFlowRuntimeActivateExists checks whether an existing IotIotFlowRuntimeActivate resource with the given ID exists.
+func IotIotFlowRuntimeActivateExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IotIotFlowRuntimeActivateState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/iotIotFlowRuntimeActivate:IotIotFlowRuntimeActivate", id, state, "", opts...)
+}
+
 type iotIotFlowRuntimeActivateArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of an IoT flow runtime.
 	//

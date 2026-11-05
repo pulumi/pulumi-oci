@@ -392,6 +392,24 @@ class OdaPrivateEndpointScanProxy(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return OdaPrivateEndpointScanProxy(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            oda_private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+            protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            scan_listener_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OdaPrivateEndpointScanProxyScanListenerInfoArgs', 'OdaPrivateEndpointScanProxyScanListenerInfoArgsDict', 'outputs.OdaPrivateEndpointScanProxyScanListenerInfo']]]]] = None,
+            scan_listener_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["odaPrivateEndpointId"] = oda_private_endpoint_id
+        __props__["protocol"] = protocol
+        __props__["scanListenerInfos"] = scan_listener_infos
+        __props__["scanListenerType"] = scan_listener_type
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:Oda/odaPrivateEndpointScanProxy:OdaPrivateEndpointScanProxy', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="odaPrivateEndpointId")
     def oda_private_endpoint_id(self) -> pulumi.Output[_builtins.str]:

@@ -200,6 +200,12 @@ func (MediaWorkflowConfigurationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*mediaWorkflowConfigurationState)(nil)).Elem()
 }
 
+// MediaWorkflowConfigurationExists checks whether an existing MediaWorkflowConfiguration resource with the given ID exists.
+func MediaWorkflowConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MediaWorkflowConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:MediaServices/mediaWorkflowConfiguration:MediaWorkflowConfiguration", id, state, "", opts...)
+}
+
 type mediaWorkflowConfigurationArgs struct {
 	// (Updatable) Compartment Identifier.
 	CompartmentId string `pulumi:"compartmentId"`

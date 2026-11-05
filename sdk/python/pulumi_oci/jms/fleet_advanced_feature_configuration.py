@@ -638,6 +638,32 @@ class FleetAdvancedFeatureConfiguration(pulumi.CustomResource):
         __props__.__dict__["time_last_modified"] = time_last_modified
         return FleetAdvancedFeatureConfiguration(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            advanced_usage_tracking: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs', 'FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgsDict', 'outputs.FleetAdvancedFeatureConfigurationAdvancedUsageTracking']]] = None,
+            analytic_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+            analytic_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            crypto_event_analysis: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs', 'FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgsDict', 'outputs.FleetAdvancedFeatureConfigurationCryptoEventAnalysis']]] = None,
+            fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            java_migration_analysis: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs', 'FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgsDict', 'outputs.FleetAdvancedFeatureConfigurationJavaMigrationAnalysis']]] = None,
+            jfr_recording: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationJfrRecordingArgs', 'FleetAdvancedFeatureConfigurationJfrRecordingArgsDict', 'outputs.FleetAdvancedFeatureConfigurationJfrRecording']]] = None,
+            lcm: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationLcmArgs', 'FleetAdvancedFeatureConfigurationLcmArgsDict', 'outputs.FleetAdvancedFeatureConfigurationLcm']]] = None,
+            performance_tuning_analysis: pulumi.Input[Optional[Union['FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs', 'FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgsDict', 'outputs.FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis']]] = None,
+            time_last_modified: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["advancedUsageTracking"] = advanced_usage_tracking
+        __props__["analyticBucketName"] = analytic_bucket_name
+        __props__["analyticNamespace"] = analytic_namespace
+        __props__["cryptoEventAnalysis"] = crypto_event_analysis
+        __props__["fleetId"] = fleet_id
+        __props__["javaMigrationAnalysis"] = java_migration_analysis
+        __props__["jfrRecording"] = jfr_recording
+        __props__["lcm"] = lcm
+        __props__["performanceTuningAnalysis"] = performance_tuning_analysis
+        __props__["timeLastModified"] = time_last_modified
+        return pulumi.runtime.exists_resource(None, 'oci:Jms/fleetAdvancedFeatureConfiguration:FleetAdvancedFeatureConfiguration', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="advancedUsageTracking")
     def advanced_usage_tracking(self) -> pulumi.Output['outputs.FleetAdvancedFeatureConfigurationAdvancedUsageTracking']:

@@ -424,6 +424,12 @@ func (InvokeRunState) ElementType() reflect.Type {
 	return reflect.TypeOf((*invokeRunState)(nil)).Elem()
 }
 
+// InvokeRunExists checks whether an existing InvokeRun resource with the given ID exists.
+func InvokeRunExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *InvokeRunState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataFlow/invokeRun:InvokeRun", id, state, "", opts...)
+}
+
 type invokeRunArgs struct {
 	// The OCID of the associated application. If this value is set, then no value for the execute parameter is required. If this value is not set, then a value for the execute parameter is required, and a new application is created and associated with the new run.
 	ApplicationId *string `pulumi:"applicationId"`

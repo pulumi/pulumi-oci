@@ -792,6 +792,44 @@ class Application(pulumi.CustomResource):
         __props__.__dict__["trace_config"] = trace_config
         return Application(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            image_policy_config: pulumi.Input[Optional[Union['ApplicationImagePolicyConfigArgs', 'ApplicationImagePolicyConfigArgsDict', 'outputs.ApplicationImagePolicyConfig']]] = None,
+            logging: pulumi.Input[Optional[Union['ApplicationLoggingArgs', 'ApplicationLoggingArgsDict', 'outputs.ApplicationLogging']]] = None,
+            network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            syslog_url: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            trace_config: pulumi.Input[Optional[Union['ApplicationTraceConfigArgs', 'ApplicationTraceConfigArgsDict', 'outputs.ApplicationTraceConfig']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["config"] = config
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["imagePolicyConfig"] = image_policy_config
+        __props__["logging"] = logging
+        __props__["networkSecurityGroupIds"] = network_security_group_ids
+        __props__["securityAttributes"] = security_attributes
+        __props__["shape"] = shape
+        __props__["state"] = state
+        __props__["subnetIds"] = subnet_ids
+        __props__["syslogUrl"] = syslog_url
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["traceConfig"] = trace_config
+        return pulumi.runtime.exists_resource(None, 'oci:Functions/application:Application', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

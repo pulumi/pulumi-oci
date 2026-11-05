@@ -17,7 +17,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Gets the details for the Exadata infrastructure specified by exadataInfrastructureId. It includes the VMCluster and storage grid within the
         /// Exadata infrastructure.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Gets the details for the Exadata infrastructure specified by exadataInfrastructureId. It includes the VMCluster and storage grid within the
         /// Exadata infrastructure.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -72,7 +70,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the details for the Exadata infrastructure specified by exadataInfrastructureId. It includes the VMCluster and storage grid within the
         /// Exadata infrastructure.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -697,6 +697,12 @@ func (DomainsAccountRecoverySettingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsAccountRecoverySettingState)(nil)).Elem()
 }
 
+// DomainsAccountRecoverySettingExists checks whether an existing DomainsAccountRecoverySetting resource with the given ID exists.
+func DomainsAccountRecoverySettingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsAccountRecoverySettingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsAccountRecoverySetting:DomainsAccountRecoverySetting", id, state, "", opts...)
+}
+
 type domainsAccountRecoverySettingArgs struct {
 	// ID of the resource
 	AccountRecoverySettingId string `pulumi:"accountRecoverySettingId"`

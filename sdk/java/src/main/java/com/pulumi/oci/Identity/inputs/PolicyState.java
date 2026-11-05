@@ -18,20 +18,18 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
     public static final PolicyState Empty = new PolicyState();
 
     /**
-     * @deprecated
-     * The &#39;ETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;ETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     @Import(name="ETag")
     private @Nullable Output<String> ETag;
 
     /**
-     * @deprecated
-     * The &#39;ETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;ETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     public Optional<Output<String>> ETag() {
         return Optional.ofNullable(this.ETag);
     }
@@ -112,20 +110,18 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * @deprecated
-     * The &#39;lastUpdateETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;lastUpdateETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     @Import(name="lastUpdateETag")
     private @Nullable Output<String> lastUpdateETag;
 
     /**
-     * @deprecated
-     * The &#39;lastUpdateETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;lastUpdateETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     public Optional<Output<String>> lastUpdateETag() {
         return Optional.ofNullable(this.lastUpdateETag);
     }
@@ -146,20 +142,18 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * @deprecated
-     * The &#39;policyHash&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;policyHash&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     @Import(name="policyHash")
     private @Nullable Output<String> policyHash;
 
     /**
-     * @deprecated
-     * The &#39;policyHash&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;policyHash&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     public Optional<Output<String>> policyHash() {
         return Optional.ofNullable(this.policyHash);
     }
@@ -269,11 +263,10 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         /**
          * @return builder
          * 
-         * @deprecated
-         * The &#39;ETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * @deprecated The &#39;ETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
          * 
          */
-        @Deprecated /* The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field. */
+        @Deprecated
         public Builder ETag(@Nullable Output<String> ETag) {
             $.ETag = ETag;
             return this;
@@ -282,11 +275,10 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         /**
          * @return builder
          * 
-         * @deprecated
-         * The &#39;ETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * @deprecated The &#39;ETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
          * 
          */
-        @Deprecated /* The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field. */
+        @Deprecated
         public Builder ETag(String ETag) {
             return ETag(Output.of(ETag));
         }
@@ -399,11 +391,10 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         /**
          * @return builder
          * 
-         * @deprecated
-         * The &#39;lastUpdateETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * @deprecated The &#39;lastUpdateETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
          * 
          */
-        @Deprecated /* The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field. */
+        @Deprecated
         public Builder lastUpdateETag(@Nullable Output<String> lastUpdateETag) {
             $.lastUpdateETag = lastUpdateETag;
             return this;
@@ -412,11 +403,10 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         /**
          * @return builder
          * 
-         * @deprecated
-         * The &#39;lastUpdateETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * @deprecated The &#39;lastUpdateETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
          * 
          */
-        @Deprecated /* The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field. */
+        @Deprecated
         public Builder lastUpdateETag(String lastUpdateETag) {
             return lastUpdateETag(Output.of(lastUpdateETag));
         }
@@ -445,11 +435,10 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         /**
          * @return builder
          * 
-         * @deprecated
-         * The &#39;policyHash&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * @deprecated The &#39;policyHash&#39; field has been deprecated and may be removed in a future version. Do not use this field.
          * 
          */
-        @Deprecated /* The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field. */
+        @Deprecated
         public Builder policyHash(@Nullable Output<String> policyHash) {
             $.policyHash = policyHash;
             return this;
@@ -458,11 +447,10 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         /**
          * @return builder
          * 
-         * @deprecated
-         * The &#39;policyHash&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+         * @deprecated The &#39;policyHash&#39; field has been deprecated and may be removed in a future version. Do not use this field.
          * 
          */
-        @Deprecated /* The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field. */
+        @Deprecated
         public Builder policyHash(String policyHash) {
             return policyHash(Output.of(policyHash));
         }

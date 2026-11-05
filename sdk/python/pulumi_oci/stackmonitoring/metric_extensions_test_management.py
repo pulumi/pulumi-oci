@@ -324,6 +324,24 @@ class MetricExtensionsTestManagement(pulumi.CustomResource):
         __props__.__dict__["test_run_resource_group_name"] = test_run_resource_group_name
         return MetricExtensionsTestManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            metric_extension_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_ids: pulumi.Input[Optional[_builtins.str]] = None,
+            test_run_id: pulumi.Input[Optional[_builtins.str]] = None,
+            test_run_metric_suffix: pulumi.Input[Optional[_builtins.str]] = None,
+            test_run_namespace_name: pulumi.Input[Optional[_builtins.str]] = None,
+            test_run_resource_group_name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["metricExtensionId"] = metric_extension_id
+        __props__["resourceIds"] = resource_ids
+        __props__["testRunId"] = test_run_id
+        __props__["testRunMetricSuffix"] = test_run_metric_suffix
+        __props__["testRunNamespaceName"] = test_run_namespace_name
+        __props__["testRunResourceGroupName"] = test_run_resource_group_name
+        return pulumi.runtime.exists_resource(None, 'oci:StackMonitoring/metricExtensionsTestManagement:MetricExtensionsTestManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="metricExtensionId")
     def metric_extension_id(self) -> pulumi.Output[_builtins.str]:

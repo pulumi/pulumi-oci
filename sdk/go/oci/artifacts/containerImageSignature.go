@@ -222,6 +222,12 @@ func (ContainerImageSignatureState) ElementType() reflect.Type {
 	return reflect.TypeOf((*containerImageSignatureState)(nil)).Elem()
 }
 
+// ContainerImageSignatureExists checks whether an existing ContainerImageSignature resource with the given ID exists.
+func ContainerImageSignatureExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ContainerImageSignatureState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Artifacts/containerImageSignature:ContainerImageSignature", id, state, "", opts...)
+}
+
 type containerImageSignatureArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the container repository exists.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -267,6 +267,12 @@ func (ManagedKafkaKafkaClusterState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managedKafkaKafkaClusterState)(nil)).Elem()
 }
 
+// ManagedKafkaKafkaClusterExists checks whether an existing ManagedKafkaKafkaCluster resource with the given ID exists.
+func ManagedKafkaKafkaClusterExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedKafkaKafkaClusterState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/managedKafkaKafkaCluster:ManagedKafkaKafkaCluster", id, state, "", opts...)
+}
+
 type managedKafkaKafkaClusterArgs struct {
 	// (Updatable) Subnets where broker/coordinator VNICs will be created.
 	AccessSubnets []ManagedKafkaKafkaClusterAccessSubnet `pulumi:"accessSubnets"`

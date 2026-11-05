@@ -136,6 +136,12 @@ func (AutonomousDatabaseInstanceWalletManagementState) ElementType() reflect.Typ
 	return reflect.TypeOf((*autonomousDatabaseInstanceWalletManagementState)(nil)).Elem()
 }
 
+// AutonomousDatabaseInstanceWalletManagementExists checks whether an existing AutonomousDatabaseInstanceWalletManagement resource with the given ID exists.
+func AutonomousDatabaseInstanceWalletManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutonomousDatabaseInstanceWalletManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/autonomousDatabaseInstanceWalletManagement:AutonomousDatabaseInstanceWalletManagement", id, state, "", opts...)
+}
+
 type autonomousDatabaseInstanceWalletManagementArgs struct {
 	// (Updatable) The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`

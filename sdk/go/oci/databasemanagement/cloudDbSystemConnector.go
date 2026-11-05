@@ -209,6 +209,12 @@ func (CloudDbSystemConnectorState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudDbSystemConnectorState)(nil)).Elem()
 }
 
+// CloudDbSystemConnectorExists checks whether an existing CloudDbSystemConnector resource with the given ID exists.
+func CloudDbSystemConnectorExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudDbSystemConnectorState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/cloudDbSystemConnector:CloudDbSystemConnector", id, state, "", opts...)
+}
+
 type cloudDbSystemConnectorArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the cloud DB system connector.
 	AgentId *string `pulumi:"agentId"`

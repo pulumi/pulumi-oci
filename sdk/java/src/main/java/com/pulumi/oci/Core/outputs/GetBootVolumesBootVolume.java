@@ -32,11 +32,10 @@ public final class GetBootVolumesBootVolume {
      */
     private String availabilityDomain;
     /**
-     * @deprecated
-     * The &#39;backup_policy_id&#39; field has been deprecated. Please use the &#39;oci_core_volume_backup_policy_assignment&#39; resource instead.
+     * @deprecated The &#39;backup_policy_id&#39; field has been deprecated. Please use the &#39;oci_core_volume_backup_policy_assignment&#39; resource instead.
      * 
      */
-    @Deprecated /* The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead. */
+    @Deprecated
     private String backupPolicyId;
     /**
      * @return The list of boot volume replicas of this boot volume
@@ -155,11 +154,10 @@ public final class GetBootVolumesBootVolume {
         return this.availabilityDomain;
     }
     /**
-     * @deprecated
-     * The &#39;backup_policy_id&#39; field has been deprecated. Please use the &#39;oci_core_volume_backup_policy_assignment&#39; resource instead.
+     * @deprecated The &#39;backup_policy_id&#39; field has been deprecated. Please use the &#39;oci_core_volume_backup_policy_assignment&#39; resource instead.
      * 
      */
-    @Deprecated /* The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead. */
+    @Deprecated
     public String backupPolicyId() {
         return this.backupPolicyId;
     }

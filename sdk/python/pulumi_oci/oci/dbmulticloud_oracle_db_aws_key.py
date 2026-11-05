@@ -901,6 +901,56 @@ class DbmulticloudOracleDbAwsKey(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return DbmulticloudOracleDbAwsKey(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            aws_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            aws_key_arn: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_aws_key_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_oracle_aws_key_used: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
+            location: pulumi.Input[Optional[_builtins.str]] = None,
+            oracle_db_aws_key_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+            oracle_db_connector_id: pulumi.Input[Optional[_builtins.str]] = None,
+            properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ref_count: pulumi.Input[Optional[_builtins.int]] = None,
+            replication_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbAwsKeyReplicationMetadataArgs', 'DbmulticloudOracleDbAwsKeyReplicationMetadataArgsDict', 'outputs.DbmulticloudOracleDbAwsKeyReplicationMetadata']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_region: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["action"] = action
+        __props__["awsAccountId"] = aws_account_id
+        __props__["awsKeyArn"] = aws_key_arn
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["isAwsKeyEnabled"] = is_aws_key_enabled
+        __props__["isOracleAwsKeyUsed"] = is_oracle_aws_key_used
+        __props__["lifecycleStateDetails"] = lifecycle_state_details
+        __props__["location"] = location
+        __props__["oracleDbAwsKeyPoolId"] = oracle_db_aws_key_pool_id
+        __props__["oracleDbConnectorId"] = oracle_db_connector_id
+        __props__["properties"] = properties
+        __props__["refCount"] = ref_count
+        __props__["replicationMetadatas"] = replication_metadatas
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["targetRegion"] = target_region
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'oci:oci/dbmulticloudOracleDbAwsKey:DbmulticloudOracleDbAwsKey', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def action(self) -> pulumi.Output[Optional[_builtins.str]]:

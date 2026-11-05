@@ -217,6 +217,12 @@ func (LocalPeeringGatewayState) ElementType() reflect.Type {
 	return reflect.TypeOf((*localPeeringGatewayState)(nil)).Elem()
 }
 
+// LocalPeeringGatewayExists checks whether an existing LocalPeeringGateway resource with the given ID exists.
+func LocalPeeringGatewayExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LocalPeeringGatewayState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/localPeeringGateway:LocalPeeringGateway", id, state, "", opts...)
+}
+
 type localPeeringGatewayArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the local peering gateway (LPG).
 	CompartmentId string `pulumi:"compartmentId"`

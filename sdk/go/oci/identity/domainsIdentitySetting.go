@@ -886,6 +886,12 @@ func (DomainsIdentitySettingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsIdentitySettingState)(nil)).Elem()
 }
 
+// DomainsIdentitySettingExists checks whether an existing DomainsIdentitySetting resource with the given ID exists.
+func DomainsIdentitySettingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsIdentitySettingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsIdentitySetting:DomainsIdentitySetting", id, state, "", opts...)
+}
+
 type domainsIdentitySettingArgs struct {
 	// (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets []string `pulumi:"attributeSets"`

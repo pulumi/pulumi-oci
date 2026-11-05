@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Lists all privilegedApi requests in the compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Lists all privilegedApi requests in the compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Privileged Api Requests in Oracle Cloud Infrastructure Apiaccesscontrol service.
         /// 
         /// Lists all privilegedApi requests in the compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

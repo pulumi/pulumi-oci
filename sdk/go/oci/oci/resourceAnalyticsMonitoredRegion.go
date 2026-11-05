@@ -154,6 +154,12 @@ func (ResourceAnalyticsMonitoredRegionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*resourceAnalyticsMonitoredRegionState)(nil)).Elem()
 }
 
+// ResourceAnalyticsMonitoredRegionExists checks whether an existing ResourceAnalyticsMonitoredRegion resource with the given ID exists.
+func ResourceAnalyticsMonitoredRegionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ResourceAnalyticsMonitoredRegionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/resourceAnalyticsMonitoredRegion:ResourceAnalyticsMonitoredRegion", id, state, "", opts...)
+}
+
 type resourceAnalyticsMonitoredRegionArgs struct {
 	// The [Region Identifier](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm) of this MonitoredRegion.
 	RegionId string `pulumi:"regionId"`

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Retrieves a list of IoT domain groups within the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Retrieves a list of IoT domain groups within the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Iot Domain Groups in Oracle Cloud Infrastructure Iot service.
         /// 
         /// Retrieves a list of IoT domain groups within the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

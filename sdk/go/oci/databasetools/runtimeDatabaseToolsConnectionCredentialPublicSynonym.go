@@ -134,6 +134,12 @@ func (RuntimeDatabaseToolsConnectionCredentialPublicSynonymState) ElementType() 
 	return reflect.TypeOf((*runtimeDatabaseToolsConnectionCredentialPublicSynonymState)(nil)).Elem()
 }
 
+// RuntimeDatabaseToolsConnectionCredentialPublicSynonymExists checks whether an existing RuntimeDatabaseToolsConnectionCredentialPublicSynonym resource with the given ID exists.
+func RuntimeDatabaseToolsConnectionCredentialPublicSynonymExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RuntimeDatabaseToolsConnectionCredentialPublicSynonymState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseTools/runtimeDatabaseToolsConnectionCredentialPublicSynonym:RuntimeDatabaseToolsConnectionCredentialPublicSynonym", id, state, "", opts...)
+}
+
 type runtimeDatabaseToolsConnectionCredentialPublicSynonymArgs struct {
 	// The name of the credential
 	CredentialKey string `pulumi:"credentialKey"`

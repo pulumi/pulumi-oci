@@ -154,6 +154,12 @@ func (SubscriptionMappingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*subscriptionMappingState)(nil)).Elem()
 }
 
+// SubscriptionMappingExists checks whether an existing SubscriptionMapping resource with the given ID exists.
+func SubscriptionMappingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SubscriptionMappingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Tenantmanagercontrolplane/subscriptionMapping:SubscriptionMapping", id, state, "", opts...)
+}
+
 type subscriptionMappingArgs struct {
 	// OCID of the compartment. Always a tenancy OCID.
 	CompartmentId string `pulumi:"compartmentId"`

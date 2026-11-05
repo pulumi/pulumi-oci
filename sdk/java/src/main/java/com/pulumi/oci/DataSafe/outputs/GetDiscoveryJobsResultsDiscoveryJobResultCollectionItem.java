@@ -52,20 +52,18 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
     /**
      * @return The OCID of the discovery job.
      * 
-     * @deprecated
-     * The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
+     * @deprecated The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
      * 
      */
-    @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
+    @Deprecated
     private String discoveryJobId;
     /**
      * @return A filter to return only the resources that match the specified discovery type.
      * 
-     * @deprecated
-     * The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
+     * @deprecated The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
      * 
      */
-    @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
+    @Deprecated
     private String discoveryType;
     /**
      * @return The estimated number of data values the column has in the associated database.
@@ -80,11 +78,10 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
     /**
      * @return The unique key that identifies the discovery result.
      * 
-     * @deprecated
-     * The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
+     * @deprecated The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
      * 
      */
-    @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
+    @Deprecated
     private String key;
     /**
      * @return The attributes of a sensitive column that have been modified in the target database. It&#39;s populated only in the case of MODIFIED discovery results and shows the new values of the modified attributes.
@@ -190,22 +187,20 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
     /**
      * @return The OCID of the discovery job.
      * 
-     * @deprecated
-     * The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
+     * @deprecated The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
      * 
      */
-    @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
+    @Deprecated
     public String discoveryJobId() {
         return this.discoveryJobId;
     }
     /**
      * @return A filter to return only the resources that match the specified discovery type.
      * 
-     * @deprecated
-     * The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
+     * @deprecated The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
      * 
      */
-    @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
+    @Deprecated
     public String discoveryType() {
         return this.discoveryType;
     }
@@ -226,11 +221,10 @@ public final class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItem {
     /**
      * @return The unique key that identifies the discovery result.
      * 
-     * @deprecated
-     * The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
+     * @deprecated The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
      * 
      */
-    @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
+    @Deprecated
     public String key() {
         return this.key;
     }

@@ -203,6 +203,12 @@ func (AgentDataIngestionJobState) ElementType() reflect.Type {
 	return reflect.TypeOf((*agentDataIngestionJobState)(nil)).Elem()
 }
 
+// AgentDataIngestionJobExists checks whether an existing AgentDataIngestionJob resource with the given ID exists.
+func AgentDataIngestionJobExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AgentDataIngestionJobState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:GenerativeAi/agentDataIngestionJob:AgentDataIngestionJob", id, state, "", opts...)
+}
+
 type agentDataIngestionJobArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the data ingestion job in.
 	CompartmentId string `pulumi:"compartmentId"`

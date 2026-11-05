@@ -68,6 +68,12 @@ func (NamespaceMetadataState) ElementType() reflect.Type {
 	return reflect.TypeOf((*namespaceMetadataState)(nil)).Elem()
 }
 
+// NamespaceMetadataExists checks whether an existing NamespaceMetadata resource with the given ID exists.
+func NamespaceMetadataExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NamespaceMetadataState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ObjectStorage/namespaceMetadata:NamespaceMetadata", id, state, "", opts...)
+}
+
 type namespaceMetadataArgs struct {
 	DefaultS3compartmentId    *string `pulumi:"defaultS3compartmentId"`
 	DefaultSwiftCompartmentId *string `pulumi:"defaultSwiftCompartmentId"`

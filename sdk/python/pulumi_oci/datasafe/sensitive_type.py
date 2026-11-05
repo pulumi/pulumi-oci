@@ -835,6 +835,50 @@ class SensitiveType(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return SensitiveType(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            comment_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            data_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+            default_masking_format_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_common: pulumi.Input[Optional[_builtins.bool]] = None,
+            name_pattern: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_category_id: pulumi.Input[Optional[_builtins.str]] = None,
+            search_type: pulumi.Input[Optional[_builtins.str]] = None,
+            short_name: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["commentPattern"] = comment_pattern
+        __props__["compartmentId"] = compartment_id
+        __props__["dataPattern"] = data_pattern
+        __props__["defaultMaskingFormatId"] = default_masking_format_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["entityType"] = entity_type
+        __props__["freeformTags"] = freeform_tags
+        __props__["isCommon"] = is_common
+        __props__["namePattern"] = name_pattern
+        __props__["parentCategoryId"] = parent_category_id
+        __props__["searchType"] = search_type
+        __props__["shortName"] = short_name
+        __props__["source"] = source
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/sensitiveType:SensitiveType', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="commentPattern")
     def comment_pattern(self) -> pulumi.Output[_builtins.str]:

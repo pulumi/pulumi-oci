@@ -125,6 +125,12 @@ func (ManagedInstanceGroupInstallWindowsUpdatesManagementState) ElementType() re
 	return reflect.TypeOf((*managedInstanceGroupInstallWindowsUpdatesManagementState)(nil)).Elem()
 }
 
+// ManagedInstanceGroupInstallWindowsUpdatesManagementExists checks whether an existing ManagedInstanceGroupInstallWindowsUpdatesManagement resource with the given ID exists.
+func ManagedInstanceGroupInstallWindowsUpdatesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedInstanceGroupInstallWindowsUpdatesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/managedInstanceGroupInstallWindowsUpdatesManagement:ManagedInstanceGroupInstallWindowsUpdatesManagement", id, state, "", opts...)
+}
+
 type managedInstanceGroupInstallWindowsUpdatesManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
 	ManagedInstanceGroupId string `pulumi:"managedInstanceGroupId"`

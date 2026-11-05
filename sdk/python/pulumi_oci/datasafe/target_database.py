@@ -883,6 +883,50 @@ class TargetDatabase(pulumi.CustomResource):
         __props__.__dict__["tls_config"] = tls_config
         return TargetDatabase(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            associated_resource_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_option: pulumi.Input[Optional[Union['TargetDatabaseConnectionOptionArgs', 'TargetDatabaseConnectionOptionArgsDict', 'outputs.TargetDatabaseConnectionOption']]] = None,
+            credentials: pulumi.Input[Optional[Union['TargetDatabaseCredentialsArgs', 'TargetDatabaseCredentialsArgsDict', 'outputs.TargetDatabaseCredentials']]] = None,
+            database_details: pulumi.Input[Optional[Union['TargetDatabaseDatabaseDetailsArgs', 'TargetDatabaseDatabaseDetailsArgsDict', 'outputs.TargetDatabaseDatabaseDetails']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            features: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            manage_privileges_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            peer_target_database_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseDetailArgs', 'TargetDatabasePeerTargetDatabaseDetailArgsDict', 'outputs.TargetDatabasePeerTargetDatabaseDetail']]]]] = None,
+            peer_target_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetDatabasePeerTargetDatabaseArgs', 'TargetDatabasePeerTargetDatabaseArgsDict', 'outputs.TargetDatabasePeerTargetDatabase']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            tls_config: pulumi.Input[Optional[Union['TargetDatabaseTlsConfigArgs', 'TargetDatabaseTlsConfigArgsDict', 'outputs.TargetDatabaseTlsConfig']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["associatedResourceIds"] = associated_resource_ids
+        __props__["compartmentId"] = compartment_id
+        __props__["connectionOption"] = connection_option
+        __props__["credentials"] = credentials
+        __props__["databaseDetails"] = database_details
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["features"] = features
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["managePrivilegesTrigger"] = manage_privileges_trigger
+        __props__["peerTargetDatabaseDetails"] = peer_target_database_details
+        __props__["peerTargetDatabases"] = peer_target_databases
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["tlsConfig"] = tls_config
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/targetDatabase:TargetDatabase', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="associatedResourceIds")
     def associated_resource_ids(self) -> pulumi.Output[Sequence[_builtins.str]]:

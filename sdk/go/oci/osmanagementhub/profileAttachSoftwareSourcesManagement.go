@@ -124,6 +124,12 @@ func (ProfileAttachSoftwareSourcesManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*profileAttachSoftwareSourcesManagementState)(nil)).Elem()
 }
 
+// ProfileAttachSoftwareSourcesManagementExists checks whether an existing ProfileAttachSoftwareSourcesManagement resource with the given ID exists.
+func ProfileAttachSoftwareSourcesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProfileAttachSoftwareSourcesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/profileAttachSoftwareSourcesManagement:ProfileAttachSoftwareSourcesManagement", id, state, "", opts...)
+}
+
 type profileAttachSoftwareSourcesManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
 	ProfileId string `pulumi:"profileId"`

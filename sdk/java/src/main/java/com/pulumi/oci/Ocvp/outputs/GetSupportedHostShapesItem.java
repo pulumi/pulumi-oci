@@ -36,11 +36,10 @@ public final class GetSupportedHostShapesItem {
     /**
      * @return (**Deprecated**) Whether the shape supports &#34;MONTH&#34; SKU.
      * 
-     * @deprecated
-     * The &#39;is_support_monthly_sku&#39; field has been deprecated. Please use &#39;is_support_monthly_commitment&#39; instead.
+     * @deprecated The &#39;is_support_monthly_sku&#39; field has been deprecated. Please use &#39;is_support_monthly_commitment&#39; instead.
      * 
      */
-    @Deprecated /* The 'is_support_monthly_sku' field has been deprecated. Please use 'is_support_monthly_commitment' instead. */
+    @Deprecated
     private Boolean isSupportMonthlySku;
     /**
      * @return Indicates whether the shape supports shielded instances.
@@ -70,11 +69,10 @@ public final class GetSupportedHostShapesItem {
     /**
      * @return (**Deprecated**) The supported SDDC types for the shape.
      * 
-     * @deprecated
-     * The &#39;supported_sddc_types&#39; field has been deprecated. Please use &#39;is_single_host_sddc_supported&#39; instead.
+     * @deprecated The &#39;supported_sddc_types&#39; field has been deprecated. Please use &#39;is_single_host_sddc_supported&#39; instead.
      * 
      */
-    @Deprecated /* The 'supported_sddc_types' field has been deprecated. Please use 'is_single_host_sddc_supported' instead. */
+    @Deprecated
     private List<String> supportedSddcTypes;
     /**
      * @return The VMware software versions supported by the shape.
@@ -114,11 +112,10 @@ public final class GetSupportedHostShapesItem {
     /**
      * @return (**Deprecated**) Whether the shape supports &#34;MONTH&#34; SKU.
      * 
-     * @deprecated
-     * The &#39;is_support_monthly_sku&#39; field has been deprecated. Please use &#39;is_support_monthly_commitment&#39; instead.
+     * @deprecated The &#39;is_support_monthly_sku&#39; field has been deprecated. Please use &#39;is_support_monthly_commitment&#39; instead.
      * 
      */
-    @Deprecated /* The 'is_support_monthly_sku' field has been deprecated. Please use 'is_support_monthly_commitment' instead. */
+    @Deprecated
     public Boolean isSupportMonthlySku() {
         return this.isSupportMonthlySku;
     }
@@ -160,11 +157,10 @@ public final class GetSupportedHostShapesItem {
     /**
      * @return (**Deprecated**) The supported SDDC types for the shape.
      * 
-     * @deprecated
-     * The &#39;supported_sddc_types&#39; field has been deprecated. Please use &#39;is_single_host_sddc_supported&#39; instead.
+     * @deprecated The &#39;supported_sddc_types&#39; field has been deprecated. Please use &#39;is_single_host_sddc_supported&#39; instead.
      * 
      */
-    @Deprecated /* The 'supported_sddc_types' field has been deprecated. Please use 'is_single_host_sddc_supported' instead. */
+    @Deprecated
     public List<String> supportedSddcTypes() {
         return this.supportedSddcTypes;
     }

@@ -167,8 +167,7 @@ namespace Pulumi.Oci.DataScience
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Metadata for the compute target. The size of metadata must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall metadata is limited to 2048 bytes. Key can't be reserved Compute Target metadata. 
-        /// 
+        /// (Updatable) Metadata for the compute target. The size of metadata must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall metadata is limited to 2048 bytes. Key can't be reserved Compute Target metadata.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -286,8 +285,7 @@ namespace Pulumi.Oci.DataScience
         private InputMap<string>? _metadata;
 
         /// <summary>
-        /// (Updatable) Metadata for the compute target. The size of metadata must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall metadata is limited to 2048 bytes. Key can't be reserved Compute Target metadata. 
-        /// 
+        /// (Updatable) Metadata for the compute target. The size of metadata must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall metadata is limited to 2048 bytes. Key can't be reserved Compute Target metadata.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -382,8 +380,7 @@ namespace Pulumi.Oci.DataScience
         private InputMap<string>? _metadata;
 
         /// <summary>
-        /// (Updatable) Metadata for the compute target. The size of metadata must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall metadata is limited to 2048 bytes. Key can't be reserved Compute Target metadata. 
-        /// 
+        /// (Updatable) Metadata for the compute target. The size of metadata must be less than 2048 bytes. Key should be under 32 characters. Key should contain only letters, digits and underscore (_) Key should start with a letter. Key should have at least 2 characters. Key should not end with underscore eg. `TEST_` Key if added cannot be empty. Value can be empty. No specific size limits on individual Values. But overall metadata is limited to 2048 bytes. Key can't be reserved Compute Target metadata.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

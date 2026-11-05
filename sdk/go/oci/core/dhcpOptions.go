@@ -249,6 +249,12 @@ func (DhcpOptionsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dhcpOptionsState)(nil)).Elem()
 }
 
+// DhcpOptionsExists checks whether an existing DhcpOptions resource with the given ID exists.
+func DhcpOptionsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DhcpOptionsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/dhcpOptions:DhcpOptions", id, state, "", opts...)
+}
+
 type dhcpOptionsArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the set of DHCP options.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -124,6 +124,12 @@ func (LifecycleStagePromoteSoftwareSourceManagementState) ElementType() reflect.
 	return reflect.TypeOf((*lifecycleStagePromoteSoftwareSourceManagementState)(nil)).Elem()
 }
 
+// LifecycleStagePromoteSoftwareSourceManagementExists checks whether an existing LifecycleStagePromoteSoftwareSourceManagement resource with the given ID exists.
+func LifecycleStagePromoteSoftwareSourceManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LifecycleStagePromoteSoftwareSourceManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/lifecycleStagePromoteSoftwareSourceManagement:LifecycleStagePromoteSoftwareSourceManagement", id, state, "", opts...)
+}
+
 type lifecycleStagePromoteSoftwareSourceManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the lifecycle stage.
 	LifecycleStageId string `pulumi:"lifecycleStageId"`

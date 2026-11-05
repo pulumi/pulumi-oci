@@ -28,11 +28,10 @@ public final class GetConnectionResult {
      */
     private String accessKeyId;
     /**
-     * @deprecated
-     * The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
+     * @deprecated The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead. */
+    @Deprecated
     private String accountKey;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
@@ -62,11 +61,10 @@ public final class GetConnectionResult {
      */
     private List<GetConnectionAuthDetail> authDetails;
     /**
-     * @deprecated
-     * The &#39;auth_secret&#39; field has been deprecated. Please use &#39;auth_secret_secret_id&#39; instead.
+     * @deprecated The &#39;auth_secret&#39; field has been deprecated. Please use &#39;auth_secret_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'auth_secret' field has been deprecated. Please use 'auth_secret_secret_id' instead. */
+    @Deprecated
     private String authSecret;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the Spark authentication shared secret. Applicable when authenticationType is SHARED_SECRET. Note: When provided, &#39;authSecret&#39; field must not be provided.
@@ -74,11 +72,10 @@ public final class GetConnectionResult {
      */
     private String authSecretSecretId;
     /**
-     * @deprecated
-     * The &#39;auth_token&#39; field has been deprecated. Please use &#39;auth_token_secret_id&#39; instead.
+     * @deprecated The &#39;auth_token&#39; field has been deprecated. Please use &#39;auth_token_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'auth_token' field has been deprecated. Please use 'auth_token_secret_id' instead. */
+    @Deprecated
     private String authToken;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the personal access token is stored. Only applicable for authenticationType == PERSONAL_ACCESS_TOKEN. Note: When provided, &#39;authToken&#39; field must not be provided.
@@ -130,11 +127,10 @@ public final class GetConnectionResult {
      */
     private String clientId;
     /**
-     * @deprecated
-     * The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
+     * @deprecated The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
+    @Deprecated
     private String clientSecret;
     /**
      * @return * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
@@ -290,11 +286,10 @@ public final class GetConnectionResult {
      */
     private String jndiProviderUrl;
     /**
-     * @deprecated
-     * The &#39;jndi_security_credentials&#39; field has been deprecated. Please use &#39;jndi_security_credentials_secret_id&#39; instead.
+     * @deprecated The &#39;jndi_security_credentials&#39; field has been deprecated. Please use &#39;jndi_security_credentials_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'jndi_security_credentials' field has been deprecated. Please use 'jndi_security_credentials_secret_id' instead. */
+    @Deprecated
     private String jndiSecurityCredentials;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the security credentials are stored associated to the principal. Note: When provided, &#39;jndiSecurityCredentials&#39; field must not be provided.
@@ -312,18 +307,16 @@ public final class GetConnectionResult {
      */
     private String keyId;
     /**
-     * @deprecated
-     * The &#39;key_store&#39; field has been deprecated. Please use &#39;key_store_secret_id&#39; instead.
+     * @deprecated The &#39;key_store&#39; field has been deprecated. Please use &#39;key_store_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'key_store' field has been deprecated. Please use 'key_store_secret_id' instead. */
+    @Deprecated
     private String keyStore;
     /**
-     * @deprecated
-     * The &#39;key_store_password&#39; field has been deprecated. Please use &#39;key_store_password_secret_id&#39; instead.
+     * @deprecated The &#39;key_store_password&#39; field has been deprecated. Please use &#39;key_store_password_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead. */
+    @Deprecated
     private String keyStorePassword;
     /**
      * @return Secret OCID containing the key store password.
@@ -370,11 +363,10 @@ public final class GetConnectionResult {
      */
     private List<String> nsgIds;
     /**
-     * @deprecated
-     * The &#39;password&#39; field has been deprecated. Please use &#39;password_secret_id&#39; instead.
+     * @deprecated The &#39;password&#39; field has been deprecated. Please use &#39;password_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'password' field has been deprecated. Please use 'password_secret_id' instead. */
+    @Deprecated
     private String password;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored. The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on. Note: When provided, &#39;password&#39; field must not be provided.
@@ -392,11 +384,10 @@ public final class GetConnectionResult {
      */
     private String privateIp;
     /**
-     * @deprecated
-     * The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
+     * @deprecated The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead. */
+    @Deprecated
     private String privateKeyFile;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, &#39;privateKeyFile&#39; field must not be provided.
@@ -404,11 +395,10 @@ public final class GetConnectionResult {
      */
     private String privateKeyFileSecretId;
     /**
-     * @deprecated
-     * The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
+     * @deprecated The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead. */
+    @Deprecated
     private String privateKeyPassphrase;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, &#39;privateKeyPassphrase&#39; field must not be provided.
@@ -446,11 +436,10 @@ public final class GetConnectionResult {
      */
     private String region;
     /**
-     * @deprecated
-     * The &#39;rest_auth_secret_key&#39; field has been deprecated. Please use &#39;rest_auth_secret_key_secret_id&#39; instead.
+     * @deprecated The &#39;rest_auth_secret_key&#39; field has been deprecated. Please use &#39;rest_auth_secret_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'rest_auth_secret_key' field has been deprecated. Please use 'rest_auth_secret_key_secret_id' instead. */
+    @Deprecated
     private String restAuthSecretKey;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the REST submission signing key. Applicable only when submitMode is REST and the cluster enforces REST request signing. This setting is independent of authenticationType. Note: When provided, &#39;restAuthSecretKey&#39; field must not be provided.
@@ -473,11 +462,10 @@ public final class GetConnectionResult {
      */
     private String rpcCipher;
     /**
-     * @deprecated
-     * The &#39;sas_token&#39; field has been deprecated. Please use &#39;sas_token_secret_id&#39; instead.
+     * @deprecated The &#39;sas_token&#39; field has been deprecated. Please use &#39;sas_token_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead. */
+    @Deprecated
     private String sasToken;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored. Note: When provided, &#39;sasToken&#39; field must not be provided.
@@ -485,11 +473,10 @@ public final class GetConnectionResult {
      */
     private String sasTokenSecretId;
     /**
-     * @deprecated
-     * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+     * @deprecated The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
+    @Deprecated
     private String secretAccessKey;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
@@ -514,11 +501,10 @@ public final class GetConnectionResult {
      */
     private String servers;
     /**
-     * @deprecated
-     * The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
+     * @deprecated The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead. */
+    @Deprecated
     private String serviceAccountKeyFile;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
@@ -560,11 +546,10 @@ public final class GetConnectionResult {
      */
     private String sslCert;
     /**
-     * @deprecated
-     * The &#39;ssl_client_keystash&#39; field has been deprecated. Please use &#39;ssl_client_keystash_secret_id&#39; instead.
+     * @deprecated The &#39;ssl_client_keystash&#39; field has been deprecated. Please use &#39;ssl_client_keystash_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'ssl_client_keystash' field has been deprecated. Please use 'ssl_client_keystash_secret_id' instead. */
+    @Deprecated
     private String sslClientKeystash;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystash file is stored,  which contains the encrypted password to the key database file. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
@@ -572,11 +557,10 @@ public final class GetConnectionResult {
      */
     private String sslClientKeystashSecretId;
     /**
-     * @deprecated
-     * The &#39;ssl_client_keystoredb&#39; field has been deprecated. Please use &#39;ssl_client_keystoredb_secret_id&#39; instead.
+     * @deprecated The &#39;ssl_client_keystoredb&#39; field has been deprecated. Please use &#39;ssl_client_keystoredb_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'ssl_client_keystoredb' field has been deprecated. Please use 'ssl_client_keystoredb_secret_id' instead. */
+    @Deprecated
     private String sslClientKeystoredb;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the keystore file stored,  which created at the client containing the server certificate / CA root certificate. This property is not supported for IBM Db2 for i, as client TLS mode is not available.
@@ -589,18 +573,16 @@ public final class GetConnectionResult {
      */
     private String sslCrl;
     /**
-     * @deprecated
-     * The &#39;ssl_key&#39; field has been deprecated. Please use &#39;ssl_key_secret_id&#39; instead.
+     * @deprecated The &#39;ssl_key&#39; field has been deprecated. Please use &#39;ssl_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead. */
+    @Deprecated
     private String sslKey;
     /**
-     * @deprecated
-     * The &#39;ssl_key_password&#39; field has been deprecated. Please use &#39;ssl_key_password_secret_id&#39; instead.
+     * @deprecated The &#39;ssl_key_password&#39; field has been deprecated. Please use &#39;ssl_key_password_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead. */
+    @Deprecated
     private String sslKeyPassword;
     /**
      * @return Secret OCID containing the certificate private-key password inside the client key store.
@@ -703,18 +685,16 @@ public final class GetConnectionResult {
      */
     private String tlsCaFile;
     /**
-     * @deprecated
-     * The &#39;tls_certificate_key_file&#39; field has been deprecated. Please use &#39;tls_certificate_key_file_secret_id&#39; instead.
+     * @deprecated The &#39;tls_certificate_key_file&#39; field has been deprecated. Please use &#39;tls_certificate_key_file_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'tls_certificate_key_file' field has been deprecated. Please use 'tls_certificate_key_file_secret_id' instead. */
+    @Deprecated
     private String tlsCertificateKeyFile;
     /**
-     * @deprecated
-     * The &#39;tls_certificate_key_file_password&#39; field has been deprecated. Please use &#39;tls_certificate_key_file_password_secret_id&#39; instead.
+     * @deprecated The &#39;tls_certificate_key_file_password&#39; field has been deprecated. Please use &#39;tls_certificate_key_file_password_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'tls_certificate_key_file_password' field has been deprecated. Please use 'tls_certificate_key_file_password_secret_id' instead. */
+    @Deprecated
     private String tlsCertificateKeyFilePassword;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password of the tls certificate key file. Note: When provided, &#39;tlsCertificateKeyFilePassword&#39; field must not be provided.
@@ -734,18 +714,16 @@ public final class GetConnectionResult {
     private String tlsProtocol;
     private Boolean triggerRefresh;
     /**
-     * @deprecated
-     * The &#39;trust_store&#39; field has been deprecated. Please use &#39;trust_store_secret_id&#39; instead.
+     * @deprecated The &#39;trust_store&#39; field has been deprecated. Please use &#39;trust_store_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead. */
+    @Deprecated
     private String trustStore;
     /**
-     * @deprecated
-     * The &#39;trust_store_password&#39; field has been deprecated. Please use &#39;trust_store_password_secret_id&#39; instead.
+     * @deprecated The &#39;trust_store_password&#39; field has been deprecated. Please use &#39;trust_store_password_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead. */
+    @Deprecated
     private String trustStorePassword;
     /**
      * @return Secret OCID containing the trust store password.
@@ -788,11 +766,10 @@ public final class GetConnectionResult {
      */
     private String vaultId;
     /**
-     * @deprecated
-     * The &#39;wallet&#39; field has been deprecated. Please use &#39;wallet_secret_id&#39; instead.
+     * @deprecated The &#39;wallet&#39; field has been deprecated. Please use &#39;wallet_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'wallet' field has been deprecated. Please use 'wallet_secret_id' instead. */
+    @Deprecated
     private String wallet;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the wallet file is stored.  The wallet contents Oracle GoldenGate uses to make connections to a database. Note: When provided, &#39;wallet&#39; field must not be provided.
@@ -815,11 +792,10 @@ public final class GetConnectionResult {
         return this.accessKeyId;
     }
     /**
-     * @deprecated
-     * The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
+     * @deprecated The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead. */
+    @Deprecated
     public String accountKey() {
         return this.accountKey;
     }
@@ -861,11 +837,10 @@ public final class GetConnectionResult {
         return this.authDetails;
     }
     /**
-     * @deprecated
-     * The &#39;auth_secret&#39; field has been deprecated. Please use &#39;auth_secret_secret_id&#39; instead.
+     * @deprecated The &#39;auth_secret&#39; field has been deprecated. Please use &#39;auth_secret_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'auth_secret' field has been deprecated. Please use 'auth_secret_secret_id' instead. */
+    @Deprecated
     public String authSecret() {
         return this.authSecret;
     }
@@ -877,11 +852,10 @@ public final class GetConnectionResult {
         return this.authSecretSecretId;
     }
     /**
-     * @deprecated
-     * The &#39;auth_token&#39; field has been deprecated. Please use &#39;auth_token_secret_id&#39; instead.
+     * @deprecated The &#39;auth_token&#39; field has been deprecated. Please use &#39;auth_token_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'auth_token' field has been deprecated. Please use 'auth_token_secret_id' instead. */
+    @Deprecated
     public String authToken() {
         return this.authToken;
     }
@@ -951,11 +925,10 @@ public final class GetConnectionResult {
         return this.clientId;
     }
     /**
-     * @deprecated
-     * The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
+     * @deprecated The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
+    @Deprecated
     public String clientSecret() {
         return this.clientSecret;
     }
@@ -1173,11 +1146,10 @@ public final class GetConnectionResult {
         return this.jndiProviderUrl;
     }
     /**
-     * @deprecated
-     * The &#39;jndi_security_credentials&#39; field has been deprecated. Please use &#39;jndi_security_credentials_secret_id&#39; instead.
+     * @deprecated The &#39;jndi_security_credentials&#39; field has been deprecated. Please use &#39;jndi_security_credentials_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'jndi_security_credentials' field has been deprecated. Please use 'jndi_security_credentials_secret_id' instead. */
+    @Deprecated
     public String jndiSecurityCredentials() {
         return this.jndiSecurityCredentials;
     }
@@ -1203,20 +1175,18 @@ public final class GetConnectionResult {
         return this.keyId;
     }
     /**
-     * @deprecated
-     * The &#39;key_store&#39; field has been deprecated. Please use &#39;key_store_secret_id&#39; instead.
+     * @deprecated The &#39;key_store&#39; field has been deprecated. Please use &#39;key_store_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'key_store' field has been deprecated. Please use 'key_store_secret_id' instead. */
+    @Deprecated
     public String keyStore() {
         return this.keyStore;
     }
     /**
-     * @deprecated
-     * The &#39;key_store_password&#39; field has been deprecated. Please use &#39;key_store_password_secret_id&#39; instead.
+     * @deprecated The &#39;key_store_password&#39; field has been deprecated. Please use &#39;key_store_password_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'key_store_password' field has been deprecated. Please use 'key_store_password_secret_id' instead. */
+    @Deprecated
     public String keyStorePassword() {
         return this.keyStorePassword;
     }
@@ -1281,11 +1251,10 @@ public final class GetConnectionResult {
         return this.nsgIds;
     }
     /**
-     * @deprecated
-     * The &#39;password&#39; field has been deprecated. Please use &#39;password_secret_id&#39; instead.
+     * @deprecated The &#39;password&#39; field has been deprecated. Please use &#39;password_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'password' field has been deprecated. Please use 'password_secret_id' instead. */
+    @Deprecated
     public String password() {
         return this.password;
     }
@@ -1311,11 +1280,10 @@ public final class GetConnectionResult {
         return this.privateIp;
     }
     /**
-     * @deprecated
-     * The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
+     * @deprecated The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead. */
+    @Deprecated
     public String privateKeyFile() {
         return this.privateKeyFile;
     }
@@ -1327,11 +1295,10 @@ public final class GetConnectionResult {
         return this.privateKeyFileSecretId;
     }
     /**
-     * @deprecated
-     * The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
+     * @deprecated The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead. */
+    @Deprecated
     public String privateKeyPassphrase() {
         return this.privateKeyPassphrase;
     }
@@ -1385,11 +1352,10 @@ public final class GetConnectionResult {
         return this.region;
     }
     /**
-     * @deprecated
-     * The &#39;rest_auth_secret_key&#39; field has been deprecated. Please use &#39;rest_auth_secret_key_secret_id&#39; instead.
+     * @deprecated The &#39;rest_auth_secret_key&#39; field has been deprecated. Please use &#39;rest_auth_secret_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'rest_auth_secret_key' field has been deprecated. Please use 'rest_auth_secret_key_secret_id' instead. */
+    @Deprecated
     public String restAuthSecretKey() {
         return this.restAuthSecretKey;
     }
@@ -1422,11 +1388,10 @@ public final class GetConnectionResult {
         return this.rpcCipher;
     }
     /**
-     * @deprecated
-     * The &#39;sas_token&#39; field has been deprecated. Please use &#39;sas_token_secret_id&#39; instead.
+     * @deprecated The &#39;sas_token&#39; field has been deprecated. Please use &#39;sas_token_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'sas_token' field has been deprecated. Please use 'sas_token_secret_id' instead. */
+    @Deprecated
     public String sasToken() {
         return this.sasToken;
     }
@@ -1438,11 +1403,10 @@ public final class GetConnectionResult {
         return this.sasTokenSecretId;
     }
     /**
-     * @deprecated
-     * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+     * @deprecated The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
+    @Deprecated
     public String secretAccessKey() {
         return this.secretAccessKey;
     }
@@ -1477,11 +1441,10 @@ public final class GetConnectionResult {
         return this.servers;
     }
     /**
-     * @deprecated
-     * The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
+     * @deprecated The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead. */
+    @Deprecated
     public String serviceAccountKeyFile() {
         return this.serviceAccountKeyFile;
     }
@@ -1539,11 +1502,10 @@ public final class GetConnectionResult {
         return this.sslCert;
     }
     /**
-     * @deprecated
-     * The &#39;ssl_client_keystash&#39; field has been deprecated. Please use &#39;ssl_client_keystash_secret_id&#39; instead.
+     * @deprecated The &#39;ssl_client_keystash&#39; field has been deprecated. Please use &#39;ssl_client_keystash_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'ssl_client_keystash' field has been deprecated. Please use 'ssl_client_keystash_secret_id' instead. */
+    @Deprecated
     public String sslClientKeystash() {
         return this.sslClientKeystash;
     }
@@ -1555,11 +1517,10 @@ public final class GetConnectionResult {
         return this.sslClientKeystashSecretId;
     }
     /**
-     * @deprecated
-     * The &#39;ssl_client_keystoredb&#39; field has been deprecated. Please use &#39;ssl_client_keystoredb_secret_id&#39; instead.
+     * @deprecated The &#39;ssl_client_keystoredb&#39; field has been deprecated. Please use &#39;ssl_client_keystoredb_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'ssl_client_keystoredb' field has been deprecated. Please use 'ssl_client_keystoredb_secret_id' instead. */
+    @Deprecated
     public String sslClientKeystoredb() {
         return this.sslClientKeystoredb;
     }
@@ -1578,20 +1539,18 @@ public final class GetConnectionResult {
         return this.sslCrl;
     }
     /**
-     * @deprecated
-     * The &#39;ssl_key&#39; field has been deprecated. Please use &#39;ssl_key_secret_id&#39; instead.
+     * @deprecated The &#39;ssl_key&#39; field has been deprecated. Please use &#39;ssl_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'ssl_key' field has been deprecated. Please use 'ssl_key_secret_id' instead. */
+    @Deprecated
     public String sslKey() {
         return this.sslKey;
     }
     /**
-     * @deprecated
-     * The &#39;ssl_key_password&#39; field has been deprecated. Please use &#39;ssl_key_password_secret_id&#39; instead.
+     * @deprecated The &#39;ssl_key_password&#39; field has been deprecated. Please use &#39;ssl_key_password_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'ssl_key_password' field has been deprecated. Please use 'ssl_key_password_secret_id' instead. */
+    @Deprecated
     public String sslKeyPassword() {
         return this.sslKeyPassword;
     }
@@ -1732,20 +1691,18 @@ public final class GetConnectionResult {
         return this.tlsCaFile;
     }
     /**
-     * @deprecated
-     * The &#39;tls_certificate_key_file&#39; field has been deprecated. Please use &#39;tls_certificate_key_file_secret_id&#39; instead.
+     * @deprecated The &#39;tls_certificate_key_file&#39; field has been deprecated. Please use &#39;tls_certificate_key_file_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'tls_certificate_key_file' field has been deprecated. Please use 'tls_certificate_key_file_secret_id' instead. */
+    @Deprecated
     public String tlsCertificateKeyFile() {
         return this.tlsCertificateKeyFile;
     }
     /**
-     * @deprecated
-     * The &#39;tls_certificate_key_file_password&#39; field has been deprecated. Please use &#39;tls_certificate_key_file_password_secret_id&#39; instead.
+     * @deprecated The &#39;tls_certificate_key_file_password&#39; field has been deprecated. Please use &#39;tls_certificate_key_file_password_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'tls_certificate_key_file_password' field has been deprecated. Please use 'tls_certificate_key_file_password_secret_id' instead. */
+    @Deprecated
     public String tlsCertificateKeyFilePassword() {
         return this.tlsCertificateKeyFilePassword;
     }
@@ -1775,20 +1732,18 @@ public final class GetConnectionResult {
         return this.triggerRefresh;
     }
     /**
-     * @deprecated
-     * The &#39;trust_store&#39; field has been deprecated. Please use &#39;trust_store_secret_id&#39; instead.
+     * @deprecated The &#39;trust_store&#39; field has been deprecated. Please use &#39;trust_store_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'trust_store' field has been deprecated. Please use 'trust_store_secret_id' instead. */
+    @Deprecated
     public String trustStore() {
         return this.trustStore;
     }
     /**
-     * @deprecated
-     * The &#39;trust_store_password&#39; field has been deprecated. Please use &#39;trust_store_password_secret_id&#39; instead.
+     * @deprecated The &#39;trust_store_password&#39; field has been deprecated. Please use &#39;trust_store_password_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'trust_store_password' field has been deprecated. Please use 'trust_store_password_secret_id' instead. */
+    @Deprecated
     public String trustStorePassword() {
         return this.trustStorePassword;
     }
@@ -1847,11 +1802,10 @@ public final class GetConnectionResult {
         return this.vaultId;
     }
     /**
-     * @deprecated
-     * The &#39;wallet&#39; field has been deprecated. Please use &#39;wallet_secret_id&#39; instead.
+     * @deprecated The &#39;wallet&#39; field has been deprecated. Please use &#39;wallet_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'wallet' field has been deprecated. Please use 'wallet_secret_id' instead. */
+    @Deprecated
     public String wallet() {
         return this.wallet;
     }

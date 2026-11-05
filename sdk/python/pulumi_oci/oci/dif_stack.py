@@ -1328,6 +1328,60 @@ class DifStack(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return DifStack(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            adbs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackAdbArgs', 'DifStackAdbArgsDict', 'outputs.DifStackAdb']]]]] = None,
+            add_service_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            aidataplatforms: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackAidataplatformArgs', 'DifStackAidataplatformArgsDict', 'outputs.DifStackAidataplatform']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            dataflows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackDataflowArgs', 'DifStackDataflowArgsDict', 'outputs.DifStackDataflow']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            deploy_artifacts_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            genais: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackGenaiArgs', 'DifStackGenaiArgsDict', 'outputs.DifStackGenai']]]]] = None,
+            ggcs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackGgcArgs', 'DifStackGgcArgsDict', 'outputs.DifStackGgc']]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_email: pulumi.Input[Optional[_builtins.str]] = None,
+            objectstorages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackObjectstorageArgs', 'DifStackObjectstorageArgsDict', 'outputs.DifStackObjectstorage']]]]] = None,
+            okes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackOkeArgs', 'DifStackOkeArgsDict', 'outputs.DifStackOke']]]]] = None,
+            omks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackOmkArgs', 'DifStackOmkArgsDict', 'outputs.DifStackOmk']]]]] = None,
+            service_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DifStackServiceDetailArgs', 'DifStackServiceDetailArgsDict', 'outputs.DifStackServiceDetail']]]]] = None,
+            services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            stack_templates: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["adbs"] = adbs
+        __props__["addServiceTrigger"] = add_service_trigger
+        __props__["aidataplatforms"] = aidataplatforms
+        __props__["compartmentId"] = compartment_id
+        __props__["dataflows"] = dataflows
+        __props__["definedTags"] = defined_tags
+        __props__["deployArtifactsTrigger"] = deploy_artifacts_trigger
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["genais"] = genais
+        __props__["ggcs"] = ggcs
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["notificationEmail"] = notification_email
+        __props__["objectstorages"] = objectstorages
+        __props__["okes"] = okes
+        __props__["omks"] = omks
+        __props__["serviceDetails"] = service_details
+        __props__["services"] = services
+        __props__["stackTemplates"] = stack_templates
+        __props__["state"] = state
+        __props__["subnetId"] = subnet_id
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:oci/difStack:DifStack', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def adbs(self) -> pulumi.Output[Optional[Sequence['outputs.DifStackAdb']]]:

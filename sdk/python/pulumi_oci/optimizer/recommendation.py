@@ -553,6 +553,44 @@ class Recommendation(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return Recommendation(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            category_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            estimated_cost_saving: pulumi.Input[Optional[_builtins.float]] = None,
+            extended_metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            importance: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            recommendation_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_counts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecommendationResourceCountArgs', 'RecommendationResourceCountArgsDict', 'outputs.RecommendationResourceCount']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            supported_levels: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RecommendationSupportedLevelArgs', 'RecommendationSupportedLevelArgsDict', 'outputs.RecommendationSupportedLevel']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_status_begin: pulumi.Input[Optional[_builtins.str]] = None,
+            time_status_end: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["categoryId"] = category_id
+        __props__["compartmentId"] = compartment_id
+        __props__["description"] = description
+        __props__["estimatedCostSaving"] = estimated_cost_saving
+        __props__["extendedMetadata"] = extended_metadata
+        __props__["importance"] = importance
+        __props__["name"] = name
+        __props__["recommendationId"] = recommendation_id
+        __props__["resourceCounts"] = resource_counts
+        __props__["state"] = state
+        __props__["status"] = status
+        __props__["supportedLevels"] = supported_levels
+        __props__["timeCreated"] = time_created
+        __props__["timeStatusBegin"] = time_status_begin
+        __props__["timeStatusEnd"] = time_status_end
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Optimizer/recommendation:Recommendation', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="categoryId")
     def category_id(self) -> pulumi.Output[_builtins.str]:

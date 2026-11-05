@@ -214,6 +214,12 @@ func (EventState) ElementType() reflect.Type {
 	return reflect.TypeOf((*eventState)(nil)).Elem()
 }
 
+// EventExists checks whether an existing Event resource with the given ID exists.
+func EventExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *EventState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/event:Event", id, state, "", opts...)
+}
+
 type eventArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`

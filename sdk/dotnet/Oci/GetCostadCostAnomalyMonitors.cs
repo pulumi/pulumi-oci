@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Gets a list of Cost Anomaly Monitors in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Gets a list of Cost Anomaly Monitors in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Cost Anomaly Monitors in Oracle Cloud Infrastructure Costad service.
         /// 
         /// Gets a list of Cost Anomaly Monitors in a compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

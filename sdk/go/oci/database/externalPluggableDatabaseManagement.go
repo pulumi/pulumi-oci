@@ -128,6 +128,12 @@ func (ExternalPluggableDatabaseManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*externalPluggableDatabaseManagementState)(nil)).Elem()
 }
 
+// ExternalPluggableDatabaseManagementExists checks whether an existing ExternalPluggableDatabaseManagement resource with the given ID exists.
+func ExternalPluggableDatabaseManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalPluggableDatabaseManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/externalPluggableDatabaseManagement:ExternalPluggableDatabaseManagement", id, state, "", opts...)
+}
+
 type externalPluggableDatabaseManagementArgs struct {
 	EnableManagement bool `pulumi:"enableManagement"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).

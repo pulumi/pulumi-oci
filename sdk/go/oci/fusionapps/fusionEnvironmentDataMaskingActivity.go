@@ -139,6 +139,12 @@ func (FusionEnvironmentDataMaskingActivityState) ElementType() reflect.Type {
 	return reflect.TypeOf((*fusionEnvironmentDataMaskingActivityState)(nil)).Elem()
 }
 
+// FusionEnvironmentDataMaskingActivityExists checks whether an existing FusionEnvironmentDataMaskingActivity resource with the given ID exists.
+func FusionEnvironmentDataMaskingActivityExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FusionEnvironmentDataMaskingActivityState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FusionApps/fusionEnvironmentDataMaskingActivity:FusionEnvironmentDataMaskingActivity", id, state, "", opts...)
+}
+
 type fusionEnvironmentDataMaskingActivityArgs struct {
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`

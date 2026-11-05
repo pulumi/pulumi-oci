@@ -34,22 +34,20 @@ public final class RuleActionsArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Deprecated. Use `action` instead. This nested block is retained for backward compatibility.
      * 
-     * @deprecated
-     * Use action instead. This field is retained for backward compatibility.
+     * @deprecated Use action instead. This field is retained for backward compatibility.
      * 
      */
-    @Deprecated /* Use action instead. This field is retained for backward compatibility. */
+    @Deprecated
     @Import(name="actions")
     private @Nullable Output<List<RuleActionsActionArgs>> actions;
 
     /**
      * @return (Updatable) Deprecated. Use `action` instead. This nested block is retained for backward compatibility.
      * 
-     * @deprecated
-     * Use action instead. This field is retained for backward compatibility.
+     * @deprecated Use action instead. This field is retained for backward compatibility.
      * 
      */
-    @Deprecated /* Use action instead. This field is retained for backward compatibility. */
+    @Deprecated
     public Optional<Output<List<RuleActionsActionArgs>>> actions() {
         return Optional.ofNullable(this.actions);
     }
@@ -115,11 +113,10 @@ public final class RuleActionsArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * Use action instead. This field is retained for backward compatibility.
+         * @deprecated Use action instead. This field is retained for backward compatibility.
          * 
          */
-        @Deprecated /* Use action instead. This field is retained for backward compatibility. */
+        @Deprecated
         public Builder actions(@Nullable Output<List<RuleActionsActionArgs>> actions) {
             $.actions = actions;
             return this;
@@ -130,11 +127,10 @@ public final class RuleActionsArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * Use action instead. This field is retained for backward compatibility.
+         * @deprecated Use action instead. This field is retained for backward compatibility.
          * 
          */
-        @Deprecated /* Use action instead. This field is retained for backward compatibility. */
+        @Deprecated
         public Builder actions(List<RuleActionsActionArgs> actions) {
             return actions(Output.of(actions));
         }
@@ -144,11 +140,10 @@ public final class RuleActionsArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * Use action instead. This field is retained for backward compatibility.
+         * @deprecated Use action instead. This field is retained for backward compatibility.
          * 
          */
-        @Deprecated /* Use action instead. This field is retained for backward compatibility. */
+        @Deprecated
         public Builder actions(RuleActionsActionArgs... actions) {
             return actions(List.of(actions));
         }

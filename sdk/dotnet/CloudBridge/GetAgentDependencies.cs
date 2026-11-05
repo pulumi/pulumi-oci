@@ -16,7 +16,6 @@ namespace Pulumi.Oci.CloudBridge
         /// 
         /// Returns a list of AgentDependencies such as AgentDependencyCollection.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.CloudBridge
         /// 
         /// Returns a list of AgentDependencies such as AgentDependencyCollection.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.CloudBridge
         /// This data source provides the list of Agent Dependencies in Oracle Cloud Infrastructure Cloud Bridge service.
         /// 
         /// Returns a list of AgentDependencies such as AgentDependencyCollection.
-        /// 
         /// 
         /// ## Example Usage
         /// 

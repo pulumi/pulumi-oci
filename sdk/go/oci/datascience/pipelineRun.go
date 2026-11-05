@@ -373,6 +373,12 @@ func (PipelineRunState) ElementType() reflect.Type {
 	return reflect.TypeOf((*pipelineRunState)(nil)).Elem()
 }
 
+// PipelineRunExists checks whether an existing PipelineRun resource with the given ID exists.
+func PipelineRunExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PipelineRunState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataScience/pipelineRun:PipelineRun", id, state, "", opts...)
+}
+
 type pipelineRunArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline run.
 	CompartmentId string `pulumi:"compartmentId"`

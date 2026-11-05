@@ -62,6 +62,12 @@ func (AddSdmColumnsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*addSdmColumnsState)(nil)).Elem()
 }
 
+// AddSdmColumnsExists checks whether an existing AddSdmColumns resource with the given ID exists.
+func AddSdmColumnsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AddSdmColumnsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/addSdmColumns:AddSdmColumns", id, state, "", opts...)
+}
+
 type addSdmColumnsArgs struct {
 	MaskingPolicyId string `pulumi:"maskingPolicyId"`
 }

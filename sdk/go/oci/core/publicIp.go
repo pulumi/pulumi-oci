@@ -243,6 +243,12 @@ func (PublicIpState) ElementType() reflect.Type {
 	return reflect.TypeOf((*publicIpState)(nil)).Elem()
 }
 
+// PublicIpExists checks whether an existing PublicIp resource with the given ID exists.
+func PublicIpExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PublicIpState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/publicIp:PublicIp", id, state, "", opts...)
+}
+
 type publicIpArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the public IP. For ephemeral public IPs, you must set this to the private IP's compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`

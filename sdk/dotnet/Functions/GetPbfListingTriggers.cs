@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// Returns a list of Triggers.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Functions
         /// 
         /// Returns a list of Triggers.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Functions
         /// This data source provides the list of Pbf Listing Triggers in Oracle Cloud Infrastructure Functions service.
         /// 
         /// Returns a list of Triggers.
-        /// 
         /// 
         /// ## Example Usage
         /// 

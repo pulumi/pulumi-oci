@@ -283,6 +283,12 @@ func (SteeringPolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*steeringPolicyState)(nil)).Elem()
 }
 
+// SteeringPolicyExists checks whether an existing SteeringPolicy resource with the given ID exists.
+func SteeringPolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SteeringPolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Dns/steeringPolicy:SteeringPolicy", id, state, "", opts...)
+}
+
 type steeringPolicyArgs struct {
 	// The set of all answers that can potentially issue from the steering policy.
 	Answers []SteeringPolicyAnswer `pulumi:"answers"`

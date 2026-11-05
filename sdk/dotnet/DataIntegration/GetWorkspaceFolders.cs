@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// Retrieves a list of folders in a project and provides options to filter the list.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.DataIntegration
         /// 
         /// Retrieves a list of folders in a project and provides options to filter the list.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.DataIntegration
         /// This data source provides the list of Workspace Folders in Oracle Cloud Infrastructure Data Integration service.
         /// 
         /// Retrieves a list of folders in a project and provides options to filter the list.
-        /// 
         /// 
         /// ## Example Usage
         /// 

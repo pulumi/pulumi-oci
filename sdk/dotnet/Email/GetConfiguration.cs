@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Email
         /// 
         /// Returns  email configuration associated with the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Email
         /// 
         /// Returns  email configuration associated with the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Email
         /// This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Email service.
         /// 
         /// Returns  email configuration associated with the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

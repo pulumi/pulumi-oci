@@ -193,6 +193,12 @@ func (NetworkFirewallPolicyDecryptionRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkFirewallPolicyDecryptionRuleState)(nil)).Elem()
 }
 
+// NetworkFirewallPolicyDecryptionRuleExists checks whether an existing NetworkFirewallPolicyDecryptionRule resource with the given ID exists.
+func NetworkFirewallPolicyDecryptionRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkFirewallPolicyDecryptionRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:NetworkFirewall/networkFirewallPolicyDecryptionRule:NetworkFirewallPolicyDecryptionRule", id, state, "", opts...)
+}
+
 type networkFirewallPolicyDecryptionRuleArgs struct {
 	// (Updatable) Action:
 	// * NO_DECRYPT - Matching traffic is not decrypted.

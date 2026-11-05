@@ -16,7 +16,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Lists the local and remote peers in a deployment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Lists the local and remote peers in a deployment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.GoldenGate
         /// This data source provides the list of Deployment Peers in Oracle Cloud Infrastructure Golden Gate service.
         /// 
         /// Lists the local and remote peers in a deployment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

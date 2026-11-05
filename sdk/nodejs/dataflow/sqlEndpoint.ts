@@ -94,6 +94,17 @@ export class SqlEndpoint extends pulumi.CustomResource {
         return new SqlEndpoint(name, <any>state, { ...opts, id: id });
     }
 
+    /**
+     * Check whether an existing SqlEndpoint resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: SqlEndpointState, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("oci:DataFlow/sqlEndpoint:SqlEndpoint", id, <any>state || {}, { ...opts }, undefined);
+    }
+
     /** @internal */
     public static readonly __pulumiType = 'oci:DataFlow/sqlEndpoint:SqlEndpoint';
 

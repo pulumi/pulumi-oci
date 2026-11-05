@@ -128,6 +128,12 @@ func (ContainerConfigurationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*containerConfigurationState)(nil)).Elem()
 }
 
+// ContainerConfigurationExists checks whether an existing ContainerConfiguration resource with the given ID exists.
+func ContainerConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ContainerConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Artifacts/containerConfiguration:ContainerConfiguration", id, state, "", opts...)
+}
+
 type containerConfigurationArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

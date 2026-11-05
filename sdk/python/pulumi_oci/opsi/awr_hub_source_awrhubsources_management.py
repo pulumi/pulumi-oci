@@ -234,6 +234,16 @@ class AwrHubSourceAwrhubsourcesManagement(pulumi.CustomResource):
         __props__.__dict__["enable_awrhubsource"] = enable_awrhubsource
         return AwrHubSourceAwrhubsourcesManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            awr_hub_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_awrhubsource: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["awrHubSourceId"] = awr_hub_source_id
+        __props__["enableAwrhubsource"] = enable_awrhubsource
+        return pulumi.runtime.exists_resource(None, 'oci:Opsi/awrHubSourceAwrhubsourcesManagement:AwrHubSourceAwrhubsourcesManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="awrHubSourceId")
     def awr_hub_source_id(self) -> pulumi.Output[_builtins.str]:

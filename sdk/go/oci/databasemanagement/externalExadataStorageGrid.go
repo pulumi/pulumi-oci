@@ -184,6 +184,12 @@ func (ExternalExadataStorageGridState) ElementType() reflect.Type {
 	return reflect.TypeOf((*externalExadataStorageGridState)(nil)).Elem()
 }
 
+// ExternalExadataStorageGridExists checks whether an existing ExternalExadataStorageGrid resource with the given ID exists.
+func ExternalExadataStorageGridExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalExadataStorageGridState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/externalExadataStorageGrid:ExternalExadataStorageGrid", id, state, "", opts...)
+}
+
 type externalExadataStorageGridArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`

@@ -86,6 +86,12 @@ func (DefaultSecurityListState) ElementType() reflect.Type {
 	return reflect.TypeOf((*defaultSecurityListState)(nil)).Elem()
 }
 
+// DefaultSecurityListExists checks whether an existing DefaultSecurityList resource with the given ID exists.
+func DefaultSecurityListExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DefaultSecurityListState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/defaultSecurityList:DefaultSecurityList", id, state, "", opts...)
+}
+
 type defaultSecurityListArgs struct {
 	CompartmentId           *string                                  `pulumi:"compartmentId"`
 	DefinedTags             map[string]string                        `pulumi:"definedTags"`

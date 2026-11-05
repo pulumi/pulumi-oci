@@ -114,7 +114,6 @@ namespace Pulumi.Oci.NetworkFirewall
         /// (Updatable) NAT type:
         /// * NATV4 - NATV4 type NAT.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -208,7 +207,6 @@ namespace Pulumi.Oci.NetworkFirewall
         /// (Updatable) NAT type:
         /// * NATV4 - NATV4 type NAT.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -275,7 +273,6 @@ namespace Pulumi.Oci.NetworkFirewall
         /// <summary>
         /// (Updatable) NAT type:
         /// * NATV4 - NATV4 type NAT.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -67,8 +67,7 @@ namespace Pulumi.Oci.DatabaseMigration
         public Output<ImmutableArray<Outputs.JobAdvisorReportCheckItem>> Items { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the job 
-        /// 
+        /// The OCID of the job
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -141,8 +140,7 @@ namespace Pulumi.Oci.DatabaseMigration
         public Input<bool> IsReviewed { get; set; } = null!;
 
         /// <summary>
-        /// The OCID of the job 
-        /// 
+        /// The OCID of the job
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -183,8 +181,7 @@ namespace Pulumi.Oci.DatabaseMigration
         }
 
         /// <summary>
-        /// The OCID of the job 
-        /// 
+        /// The OCID of the job
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

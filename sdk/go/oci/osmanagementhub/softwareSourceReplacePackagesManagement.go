@@ -128,6 +128,12 @@ func (SoftwareSourceReplacePackagesManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*softwareSourceReplacePackagesManagementState)(nil)).Elem()
 }
 
+// SoftwareSourceReplacePackagesManagementExists checks whether an existing SoftwareSourceReplacePackagesManagement resource with the given ID exists.
+func SoftwareSourceReplacePackagesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SoftwareSourceReplacePackagesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/softwareSourceReplacePackagesManagement:SoftwareSourceReplacePackagesManagement", id, state, "", opts...)
+}
+
 type softwareSourceReplacePackagesManagementArgs struct {
 	// List of packages specified by the name of the package (N) or the full package name (NVRA or NEVRA).
 	Packages []string `pulumi:"packages"`

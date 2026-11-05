@@ -18,8 +18,7 @@ namespace Pulumi.Oci.Functions.Outputs
         /// </summary>
         public readonly string? DomainId;
         /// <summary>
-        /// (Updatable) Define if tracing is enabled for the resource. 
-        /// 
+        /// (Updatable) Define if tracing is enabled for the resource.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

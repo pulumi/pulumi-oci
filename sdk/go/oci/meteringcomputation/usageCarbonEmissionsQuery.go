@@ -142,6 +142,12 @@ func (UsageCarbonEmissionsQueryState) ElementType() reflect.Type {
 	return reflect.TypeOf((*usageCarbonEmissionsQueryState)(nil)).Elem()
 }
 
+// UsageCarbonEmissionsQueryExists checks whether an existing UsageCarbonEmissionsQuery resource with the given ID exists.
+func UsageCarbonEmissionsQueryExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UsageCarbonEmissionsQueryState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:MeteringComputation/usageCarbonEmissionsQuery:UsageCarbonEmissionsQuery", id, state, "", opts...)
+}
+
 type usageCarbonEmissionsQueryArgs struct {
 	// The compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`

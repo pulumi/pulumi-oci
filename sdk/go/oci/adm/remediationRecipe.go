@@ -253,6 +253,12 @@ func (RemediationRecipeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*remediationRecipeState)(nil)).Elem()
 }
 
+// RemediationRecipeExists checks whether an existing RemediationRecipe resource with the given ID exists.
+func RemediationRecipeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RemediationRecipeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Adm/remediationRecipe:RemediationRecipe", id, state, "", opts...)
+}
+
 type remediationRecipeArgs struct {
 	// (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the remediation recipe.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -374,6 +374,24 @@ class NetworkFirewallPolicyServiceList(pulumi.CustomResource):
         __props__.__dict__["total_services"] = total_services
         return NetworkFirewallPolicyServiceList(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            total_services: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["description"] = description
+        __props__["name"] = name
+        __props__["networkFirewallPolicyId"] = network_firewall_policy_id
+        __props__["parentResourceId"] = parent_resource_id
+        __props__["services"] = services
+        __props__["totalServices"] = total_services
+        return pulumi.runtime.exists_resource(None, 'oci:NetworkFirewall/networkFirewallPolicyServiceList:NetworkFirewallPolicyServiceList', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[_builtins.str]]:

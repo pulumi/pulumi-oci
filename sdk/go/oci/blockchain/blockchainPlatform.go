@@ -304,6 +304,12 @@ func (BlockchainPlatformState) ElementType() reflect.Type {
 	return reflect.TypeOf((*blockchainPlatformState)(nil)).Elem()
 }
 
+// BlockchainPlatformExists checks whether an existing BlockchainPlatform resource with the given ID exists.
+func BlockchainPlatformExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BlockchainPlatformState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Blockchain/blockchainPlatform:BlockchainPlatform", id, state, "", opts...)
+}
+
 type blockchainPlatformArgs struct {
 	// Base64 encoded text in ASCII character set of a Thirdparty CA Certificates archive file. The Archive file is a zip file containing third part CA Certificates, the ca key and certificate files used when issuing enrollment certificates (ECerts) and transaction certificates (TCerts). The chainfile (if it exists) contains the certificate chain which should be trusted for this CA, where the 1st in the chain is always the root CA certificate. File list in zip file [ca-cert.pem,ca-key.pem,ca-chain.pem(optional)].
 	CaCertArchiveText *string `pulumi:"caCertArchiveText"`

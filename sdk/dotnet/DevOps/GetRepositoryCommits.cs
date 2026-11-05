@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Returns a list of commits.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Returns a list of commits.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -83,7 +81,6 @@ namespace Pulumi.Oci.DevOps
         /// This data source provides the list of Repository Commits in Oracle Cloud Infrastructure Devops service.
         /// 
         /// Returns a list of commits.
-        /// 
         /// 
         /// ## Example Usage
         /// 

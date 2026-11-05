@@ -242,6 +242,12 @@ func (DkimState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dkimState)(nil)).Elem()
 }
 
+// DkimExists checks whether an existing Dkim resource with the given ID exists.
+func DkimExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DkimState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Email/dkim:Dkim", id, state, "", opts...)
+}
+
 type dkimArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`

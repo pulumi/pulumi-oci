@@ -918,6 +918,82 @@ class VmClusterRemoveVirtualMachine(pulumi.CustomResource):
         __props__.__dict__["vm_cluster_type"] = vm_cluster_type
         return VmClusterRemoveVirtualMachine(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            cloud_automation_update_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgs', 'VmClusterRemoveVirtualMachineCloudAutomationUpdateDetailArgsDict', 'outputs.VmClusterRemoveVirtualMachineCloudAutomationUpdateDetail']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_model: pulumi.Input[Optional[_builtins.str]] = None,
+            cpus_enabled: pulumi.Input[Optional[_builtins.int]] = None,
+            data_collection_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineDataCollectionOptionArgs', 'VmClusterRemoveVirtualMachineDataCollectionOptionArgsDict', 'outputs.VmClusterRemoveVirtualMachineDataCollectionOption']]]]] = None,
+            data_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+            data_storage_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+            db_node_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            db_servers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineDbServerArgs', 'VmClusterRemoveVirtualMachineDbServerArgsDict', 'outputs.VmClusterRemoveVirtualMachineDbServer']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+            exascale_db_storage_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+            file_system_configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgs', 'VmClusterRemoveVirtualMachineFileSystemConfigurationDetailArgsDict', 'outputs.VmClusterRemoveVirtualMachineFileSystemConfigurationDetail']]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            gi_version: pulumi.Input[Optional[_builtins.str]] = None,
+            is_local_backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_sparse_diskgroup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_patch_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
+            license_model: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            reco_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            sparse_storage_percentage: pulumi.Input[Optional[_builtins.int]] = None,
+            ssh_public_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_management_type: pulumi.Input[Optional[_builtins.str]] = None,
+            system_version: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_cluster_network_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_cluster_type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availabilityDomain"] = availability_domain
+        __props__["cloudAutomationUpdateDetails"] = cloud_automation_update_details
+        __props__["compartmentId"] = compartment_id
+        __props__["computeModel"] = compute_model
+        __props__["cpusEnabled"] = cpus_enabled
+        __props__["dataCollectionOptions"] = data_collection_options
+        __props__["dataStoragePercentage"] = data_storage_percentage
+        __props__["dataStorageSizeInTbs"] = data_storage_size_in_tbs
+        __props__["dbNodeStorageSizeInGbs"] = db_node_storage_size_in_gbs
+        __props__["dbServers"] = db_servers
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["exadataInfrastructureId"] = exadata_infrastructure_id
+        __props__["exascaleDbStorageVaultId"] = exascale_db_storage_vault_id
+        __props__["fileSystemConfigurationDetails"] = file_system_configuration_details
+        __props__["freeformTags"] = freeform_tags
+        __props__["giVersion"] = gi_version
+        __props__["isLocalBackupEnabled"] = is_local_backup_enabled
+        __props__["isSparseDiskgroupEnabled"] = is_sparse_diskgroup_enabled
+        __props__["lastPatchHistoryEntryId"] = last_patch_history_entry_id
+        __props__["licenseModel"] = license_model
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["memorySizeInGbs"] = memory_size_in_gbs
+        __props__["recoStoragePercentage"] = reco_storage_percentage
+        __props__["shape"] = shape
+        __props__["sparseStoragePercentage"] = sparse_storage_percentage
+        __props__["sshPublicKeys"] = ssh_public_keys
+        __props__["state"] = state
+        __props__["storageManagementType"] = storage_management_type
+        __props__["systemVersion"] = system_version
+        __props__["timeCreated"] = time_created
+        __props__["timeZone"] = time_zone
+        __props__["vmClusterId"] = vm_cluster_id
+        __props__["vmClusterNetworkId"] = vm_cluster_network_id
+        __props__["vmClusterType"] = vm_cluster_type
+        return pulumi.runtime.exists_resource(None, 'oci:Database/vmClusterRemoveVirtualMachine:VmClusterRemoveVirtualMachine', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[_builtins.str]:

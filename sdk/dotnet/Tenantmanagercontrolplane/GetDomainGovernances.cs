@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
         /// 
         /// Return a (paginated) list of domain governance entities.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
         /// 
         /// Return a (paginated) list of domain governance entities.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.Tenantmanagercontrolplane
         /// This data source provides the list of Domain Governances in Oracle Cloud Infrastructure Tenantmanagercontrolplane service.
         /// 
         /// Return a (paginated) list of domain governance entities.
-        /// 
         /// 
         /// ## Example Usage
         /// 

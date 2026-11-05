@@ -724,6 +724,42 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            advanced_properties: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            certificate_bundle: pulumi.Input[Optional[Union['RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgs', 'RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundleArgsDict', 'outputs.RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobalCertificateBundle']]] = None,
+            database_api_status: pulumi.Input[Optional[_builtins.str]] = None,
+            database_tools_database_api_gateway_config_id: pulumi.Input[Optional[_builtins.str]] = None,
+            document_root: pulumi.Input[Optional[_builtins.str]] = None,
+            global_key: pulumi.Input[Optional[_builtins.str]] = None,
+            http_port: pulumi.Input[Optional[_builtins.int]] = None,
+            https_port: pulumi.Input[Optional[_builtins.int]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            metadata_source: pulumi.Input[Optional[_builtins.str]] = None,
+            pool_route: pulumi.Input[Optional[_builtins.str]] = None,
+            pool_routing_header: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["advancedProperties"] = advanced_properties
+        __props__["certificateBundle"] = certificate_bundle
+        __props__["databaseApiStatus"] = database_api_status
+        __props__["databaseToolsDatabaseApiGatewayConfigId"] = database_tools_database_api_gateway_config_id
+        __props__["documentRoot"] = document_root
+        __props__["globalKey"] = global_key
+        __props__["httpPort"] = http_port
+        __props__["httpsPort"] = https_port
+        __props__["key"] = key
+        __props__["metadataSource"] = metadata_source
+        __props__["poolRoute"] = pool_route
+        __props__["poolRoutingHeader"] = pool_routing_header
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigGlobal:RuntimeDatabaseToolsDatabaseApiGatewayConfigGlobal', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="advancedProperties")
     def advanced_properties(self) -> pulumi.Output[Mapping[str, _builtins.str]]:

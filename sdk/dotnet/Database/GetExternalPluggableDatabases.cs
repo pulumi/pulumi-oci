@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Database
         /// Gets a list of the [ExternalPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails)
         /// resources in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Database
         /// Gets a list of the [ExternalPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails)
         /// resources in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -78,7 +76,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of the [ExternalPluggableDatabase](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalPluggableDatabaseDetails)
         /// resources in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

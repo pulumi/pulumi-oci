@@ -125,6 +125,12 @@ func (ManagementStationAssociateManagedInstancesManagementState) ElementType() r
 	return reflect.TypeOf((*managementStationAssociateManagedInstancesManagementState)(nil)).Elem()
 }
 
+// ManagementStationAssociateManagedInstancesManagementExists checks whether an existing ManagementStationAssociateManagedInstancesManagement resource with the given ID exists.
+func ManagementStationAssociateManagedInstancesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagementStationAssociateManagedInstancesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/managementStationAssociateManagedInstancesManagement:ManagementStationAssociateManagedInstancesManagement", id, state, "", opts...)
+}
+
 type managementStationAssociateManagedInstancesManagementArgs struct {
 	// List of managed instance [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to associate to the management station.
 	ManagedInstances []string `pulumi:"managedInstances"`

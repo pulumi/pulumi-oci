@@ -18,7 +18,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute {
     /**
-     * @return A collection of canonical values. Applicable Service Providers MUST specify the canonical types specified in the core schema specification--for example, \&#34;work\&#34;, \&#34;home\&#34;.
+     * @return A collection of canonical values. Applicable Service Providers MUST specify the canonical types specified in the core schema specification--for example, &#92;&#34;work&#92;&#34;, &#92;&#34;home&#92;&#34;.
      * 
      */
     private List<String> canonicalValues;
@@ -73,7 +73,7 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
      */
     private Integer idcsAddedSinceVersion;
     /**
-     * @return Specifies whether the attribute is cacheable. True by default for all attributes. If attribute with idcsAttributeCachable = false, is present \&#34;attributesToGet\&#34; while executing GET/SEARCH on cacheable resource, Cache is missed and data is fetched from Data Provider.
+     * @return Specifies whether the attribute is cacheable. True by default for all attributes. If attribute with idcsAttributeCachable = false, is present &#92;&#34;attributesToGet&#92;&#34; while executing GET/SEARCH on cacheable resource, Cache is missed and data is fetched from Data Provider.
      * 
      */
     private Boolean idcsAttributeCacheable;
@@ -331,7 +331,7 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
      */
     private String ocid;
     /**
-     * @return The names of the Resource types that may be referenced--for example, User. This is only applicable for attributes that are of the \&#34;reference\&#34; data type.
+     * @return The names of the Resource types that may be referenced--for example, User. This is only applicable for attributes that are of the &#92;&#34;reference&#92;&#34; data type.
      * 
      */
     private List<String> referenceTypes;
@@ -371,14 +371,14 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
      */
     private String type;
     /**
-     * @return A single keyword value that specifies how the Service Provider enforces uniqueness of attribute values. A server MAY reject an invalid value based on uniqueness by returning an HTTP response code of 400 (Bad Request). A client MAY enforce uniqueness on the client side to a greater degree than the Service Provider enforces. For example, a client could make a value unique while the server has the uniqueness of \&#34;none\&#34;.
+     * @return A single keyword value that specifies how the Service Provider enforces uniqueness of attribute values. A server MAY reject an invalid value based on uniqueness by returning an HTTP response code of 400 (Bad Request). A client MAY enforce uniqueness on the client side to a greater degree than the Service Provider enforces. For example, a client could make a value unique while the server has the uniqueness of &#92;&#34;none&#92;&#34;.
      * 
      */
     private String uniqueness;
 
     private GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttribute() {}
     /**
-     * @return A collection of canonical values. Applicable Service Providers MUST specify the canonical types specified in the core schema specification--for example, \&#34;work\&#34;, \&#34;home\&#34;.
+     * @return A collection of canonical values. Applicable Service Providers MUST specify the canonical types specified in the core schema specification--for example, &#92;&#34;work&#92;&#34;, &#92;&#34;home&#92;&#34;.
      * 
      */
     public List<String> canonicalValues() {
@@ -455,7 +455,7 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
         return this.idcsAddedSinceVersion;
     }
     /**
-     * @return Specifies whether the attribute is cacheable. True by default for all attributes. If attribute with idcsAttributeCachable = false, is present \&#34;attributesToGet\&#34; while executing GET/SEARCH on cacheable resource, Cache is missed and data is fetched from Data Provider.
+     * @return Specifies whether the attribute is cacheable. True by default for all attributes. If attribute with idcsAttributeCachable = false, is present &#92;&#34;attributesToGet&#92;&#34; while executing GET/SEARCH on cacheable resource, Cache is missed and data is fetched from Data Provider.
      * 
      */
     public Boolean idcsAttributeCacheable() {
@@ -813,7 +813,7 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
         return this.ocid;
     }
     /**
-     * @return The names of the Resource types that may be referenced--for example, User. This is only applicable for attributes that are of the \&#34;reference\&#34; data type.
+     * @return The names of the Resource types that may be referenced--for example, User. This is only applicable for attributes that are of the &#92;&#34;reference&#92;&#34; data type.
      * 
      */
     public List<String> referenceTypes() {
@@ -869,7 +869,7 @@ public final class GetDomainsResourceTypeSchemaAttributesResourceTypeSchemaAttri
         return this.type;
     }
     /**
-     * @return A single keyword value that specifies how the Service Provider enforces uniqueness of attribute values. A server MAY reject an invalid value based on uniqueness by returning an HTTP response code of 400 (Bad Request). A client MAY enforce uniqueness on the client side to a greater degree than the Service Provider enforces. For example, a client could make a value unique while the server has the uniqueness of \&#34;none\&#34;.
+     * @return A single keyword value that specifies how the Service Provider enforces uniqueness of attribute values. A server MAY reject an invalid value based on uniqueness by returning an HTTP response code of 400 (Bad Request). A client MAY enforce uniqueness on the client side to a greater degree than the Service Provider enforces. For example, a client could make a value unique while the server has the uniqueness of &#92;&#34;none&#92;&#34;.
      * 
      */
     public String uniqueness() {

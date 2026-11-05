@@ -27,22 +27,20 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation. **Deprecated**. Please use `capacityReservationId` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;capacity_reservation_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;capacity_reservation_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Import(name="capacityReservationId")
     private @Nullable Output<String> capacityReservationId;
 
     /**
      * @return (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Capacity Reservation. **Deprecated**. Please use `capacityReservationId` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;capacity_reservation_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;capacity_reservation_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     public Optional<Output<String>> capacityReservationId() {
         return Optional.ofNullable(this.capacityReservationId);
     }
@@ -65,22 +63,20 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Required) The availability domain to create the SDDC&#39;s ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`. **Deprecated**. Please use `computeAvailabilityDomain` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;compute_availability_domain&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;compute_availability_domain&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Import(name="computeAvailabilityDomain")
     private @Nullable Output<String> computeAvailabilityDomain;
 
     /**
      * @return (Required) The availability domain to create the SDDC&#39;s ESXi hosts in. For multi-AD SDDC deployment, set to `multi-AD`. **Deprecated**. Please use `computeAvailabilityDomain` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;compute_availability_domain&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;compute_availability_domain&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     public Optional<Output<String>> computeAvailabilityDomain() {
         return Optional.ofNullable(this.computeAvailabilityDomain);
     }
@@ -88,22 +84,20 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Optional) A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape. **Deprecated**. Please use `datastores` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;datastores&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;datastores&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'datastores' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Import(name="datastores")
     private @Nullable Output<List<SddcDatastoreArgs>> datastores;
 
     /**
      * @return (Optional) A list of datastore info for the SDDC. This value is required only when `initialHostShapeName` is a standard shape. **Deprecated**. Please use `datastores` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;datastores&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;datastores&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'datastores' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     public Optional<Output<List<SddcDatastoreArgs>>> datastores() {
         return Optional.ofNullable(this.datastores);
     }
@@ -143,11 +137,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
      * 
      * **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
      * 
-     * @deprecated
-     * The &#39;esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Import(name="esxiHostsCount")
     private @Nullable Output<Integer> esxiHostsCount;
 
@@ -156,11 +149,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
      * 
      * **Note:** If you later delete EXSi hosts from a production SDDC to total less than 3, you are still billed for the 3 minimum recommended ESXi hosts. Also, you cannot add more VMware workloads to the SDDC until it again has at least 3 ESXi hosts.
      * 
-     * @deprecated
-     * The &#39;esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     public Optional<Output<Integer>> esxiHostsCount() {
         return Optional.ofNullable(this.esxiHostsCount);
     }
@@ -213,22 +205,20 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true. **Deprecated**. Please use `hcxVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;hcx_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;hcx_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Import(name="hcxVlanId")
     private @Nullable Output<String> hcxVlanId;
 
     /**
      * @return (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the HCX component of the VMware environment. This value is required only when `isHcxEnabled` is true. **Deprecated**. Please use `hcxVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;hcx_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;hcx_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     public Optional<Output<String>> hcxVlanId() {
         return Optional.ofNullable(this.hcxVlanId);
     }
@@ -251,22 +241,20 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Optional) The initial OCPU count of the SDDC&#39;s ESXi hosts. **Deprecated**. Please use `initialHostOcpuCount` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;initial_host_ocpu_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;initial_host_ocpu_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Import(name="initialHostOcpuCount")
     private @Nullable Output<Double> initialHostOcpuCount;
 
     /**
      * @return (Optional) The initial OCPU count of the SDDC&#39;s ESXi hosts. **Deprecated**. Please use `initialHostOcpuCount` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;initial_host_ocpu_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;initial_host_ocpu_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     public Optional<Output<Double>> initialHostOcpuCount() {
         return Optional.ofNullable(this.initialHostOcpuCount);
     }
@@ -274,22 +262,20 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Optional) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initialHostShapeName` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;initial_host_shape_name&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;initial_host_shape_name&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Import(name="initialHostShapeName")
     private @Nullable Output<String> initialHostShapeName;
 
     /**
      * @return (Optional) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initialHostShapeName` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;initial_host_shape_name&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;initial_host_shape_name&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     public Optional<Output<String>> initialHostShapeName() {
         return Optional.ofNullable(this.initialHostShapeName);
     }
@@ -297,22 +283,20 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Optional) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use  `initialCommitment` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;initial_sku&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;initial_sku&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Import(name="initialSku")
     private @Nullable Output<String> initialSku;
 
     /**
      * @return (Optional) The billing option selected during SDDC creation. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use  `initialCommitment` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;initial_sku&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;initial_sku&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     public Optional<Output<String>> initialSku() {
         return Optional.ofNullable(this.initialSku);
     }
@@ -322,11 +306,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
      * 
      * For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on. **Deprecated**. Please use  `instanceDisplayNamePrefix` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;instance_display_name_prefix&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;instance_display_name_prefix&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Import(name="instanceDisplayNamePrefix")
     private @Nullable Output<String> instanceDisplayNamePrefix;
 
@@ -335,11 +318,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
      * 
      * For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on. **Deprecated**. Please use  `instanceDisplayNamePrefix` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;instance_display_name_prefix&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;instance_display_name_prefix&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     public Optional<Output<String>> instanceDisplayNamePrefix() {
         return Optional.ofNullable(this.instanceDisplayNamePrefix);
     }
@@ -362,22 +344,20 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Optional) Indicates whether shielded instance is enabled for this SDDC. **Deprecated**. Please use `isShieldedInstanceEnabled` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;is_shielded_instance_enabled&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;is_shielded_instance_enabled&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Import(name="isShieldedInstanceEnabled")
     private @Nullable Output<Boolean> isShieldedInstanceEnabled;
 
     /**
      * @return (Optional) Indicates whether shielded instance is enabled for this SDDC. **Deprecated**. Please use `isShieldedInstanceEnabled` of `initialClusterConfigurations` instead.
      * 
-     * @deprecated
-     * The &#39;is_shielded_instance_enabled&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;is_shielded_instance_enabled&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     public Optional<Output<Boolean>> isShieldedInstanceEnabled() {
         return Optional.ofNullable(this.isShieldedInstanceEnabled);
     }
@@ -400,22 +380,20 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment. **Deprecated**. Please use `nsxEdgeUplink1vlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;nsx_edge_uplink1vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;nsx_edge_uplink1vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Import(name="nsxEdgeUplink1vlanId")
     private @Nullable Output<String> nsxEdgeUplink1vlanId;
 
     /**
      * @return (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge Uplink 1 component of the VMware environment. **Deprecated**. Please use `nsxEdgeUplink1vlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;nsx_edge_uplink1vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;nsx_edge_uplink1vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     public Optional<Output<String>> nsxEdgeUplink1vlanId() {
         return Optional.ofNullable(this.nsxEdgeUplink1vlanId);
     }
@@ -425,11 +403,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
      * 
      * **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
      * 
-     * @deprecated
-     * The &#39;nsx_edge_uplink2vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;nsx_edge_uplink2vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Import(name="nsxEdgeUplink2vlanId")
     private @Nullable Output<String> nsxEdgeUplink2vlanId;
 
@@ -438,11 +415,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
      * 
      * **Note:** This VLAN is reserved for future use to deploy public-facing applications on the VMware SDDC.
      * 
-     * @deprecated
-     * The &#39;nsx_edge_uplink2vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;nsx_edge_uplink2vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     public Optional<Output<String>> nsxEdgeUplink2vlanId() {
         return Optional.ofNullable(this.nsxEdgeUplink2vlanId);
     }
@@ -450,22 +426,20 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment. **Deprecated**. Please use `nsxEdgeVtepVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;nsx_edge_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;nsx_edge_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Import(name="nsxEdgeVtepVlanId")
     private @Nullable Output<String> nsxEdgeVtepVlanId;
 
     /**
      * @return (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX Edge VTEP component of the VMware environment. **Deprecated**. Please use `nsxEdgeVtepVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;nsx_edge_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;nsx_edge_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     public Optional<Output<String>> nsxEdgeVtepVlanId() {
         return Optional.ofNullable(this.nsxEdgeVtepVlanId);
     }
@@ -473,22 +447,20 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment. **Deprecated**. Please use `nsxVtepVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;nsx_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;nsx_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Import(name="nsxVtepVlanId")
     private @Nullable Output<String> nsxVtepVlanId;
 
     /**
      * @return (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the NSX VTEP component of the VMware environment. **Deprecated**. Please use `nsxVtepVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;nsx_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;nsx_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     public Optional<Output<String>> nsxVtepVlanId() {
         return Optional.ofNullable(this.nsxVtepVlanId);
     }
@@ -496,22 +468,20 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC. **Deprecated**. Please use `provisioningSubnetId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;provisioning_subnet_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;provisioning_subnet_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Import(name="provisioningSubnetId")
     private @Nullable Output<String> provisioningSubnetId;
 
     /**
      * @return (Required) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management subnet to use for provisioning the SDDC. **Deprecated**. Please use `provisioningSubnetId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;provisioning_subnet_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;provisioning_subnet_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     public Optional<Output<String>> provisioningSubnetId() {
         return Optional.ofNullable(this.provisioningSubnetId);
     }
@@ -519,22 +489,20 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment. **Deprecated**. Please use `provisioningVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;provisioning_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;provisioning_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Import(name="provisioningVlanId")
     private @Nullable Output<String> provisioningVlanId;
 
     /**
      * @return (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the Provisioning component of the VMware environment. **Deprecated**. Please use `provisioningVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;provisioning_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;provisioning_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     public Optional<Output<String>> provisioningVlanId() {
         return Optional.ofNullable(this.provisioningVlanId);
     }
@@ -557,22 +525,20 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replicationVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;replication_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;replication_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Import(name="replicationVlanId")
     private @Nullable Output<String> replicationVlanId;
 
     /**
      * @return (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN used by the SDDC for the vSphere Replication component of the VMware environment. **Deprecated**. Please use `replicationVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;replication_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;replication_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     public Optional<Output<String>> replicationVlanId() {
         return Optional.ofNullable(this.replicationVlanId);
     }
@@ -625,22 +591,20 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment. **Deprecated**. Please use `vmotionVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;vmotion_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;vmotion_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Import(name="vmotionVlanId")
     private @Nullable Output<String> vmotionVlanId;
 
     /**
      * @return (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vMotion component of the VMware environment. **Deprecated**. Please use `vmotionVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;vmotion_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;vmotion_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     public Optional<Output<String>> vmotionVlanId() {
         return Optional.ofNullable(this.vmotionVlanId);
     }
@@ -663,22 +627,20 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment. **Deprecated**. Please use `vsanVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;vsan_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;vsan_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Import(name="vsanVlanId")
     private @Nullable Output<String> vsanVlanId;
 
     /**
      * @return (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSAN component of the VMware environment. **Deprecated**. Please use `vsanVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;vsan_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;vsan_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     public Optional<Output<String>> vsanVlanId() {
         return Optional.ofNullable(this.vsanVlanId);
     }
@@ -686,22 +648,20 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment. **Deprecated**. Please use `vsphereVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;vsphere_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;vsphere_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Import(name="vsphereVlanId")
     private @Nullable Output<String> vsphereVlanId;
 
     /**
      * @return (Required) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN to use for the vSphere component of the VMware environment. **Deprecated**. Please use `vsphereVlanId` of `networkConfiguration` instead.
      * 
-     * @deprecated
-     * The &#39;vsphere_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;vsphere_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     public Optional<Output<String>> vsphereVlanId() {
         return Optional.ofNullable(this.vsphereVlanId);
     }
@@ -712,11 +672,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
-     * @deprecated
-     * The &#39;workload_network_cidr&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;workload_network_cidr&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     @Import(name="workloadNetworkCidr")
     private @Nullable Output<String> workloadNetworkCidr;
 
@@ -726,11 +685,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
-     * @deprecated
-     * The &#39;workload_network_cidr&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+     * @deprecated The &#39;workload_network_cidr&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
      * 
      */
-    @Deprecated /* The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead. */
+    @Deprecated
     public Optional<Output<String>> workloadNetworkCidr() {
         return Optional.ofNullable(this.workloadNetworkCidr);
     }
@@ -798,11 +756,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;capacity_reservation_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;capacity_reservation_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder capacityReservationId(@Nullable Output<String> capacityReservationId) {
             $.capacityReservationId = capacityReservationId;
             return this;
@@ -813,11 +770,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;capacity_reservation_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;capacity_reservation_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'capacity_reservation_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder capacityReservationId(String capacityReservationId) {
             return capacityReservationId(Output.of(capacityReservationId));
         }
@@ -848,11 +804,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;compute_availability_domain&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;compute_availability_domain&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder computeAvailabilityDomain(@Nullable Output<String> computeAvailabilityDomain) {
             $.computeAvailabilityDomain = computeAvailabilityDomain;
             return this;
@@ -863,11 +818,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;compute_availability_domain&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;compute_availability_domain&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'compute_availability_domain' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder computeAvailabilityDomain(String computeAvailabilityDomain) {
             return computeAvailabilityDomain(Output.of(computeAvailabilityDomain));
         }
@@ -877,11 +831,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;datastores&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;datastores&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'datastores' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder datastores(@Nullable Output<List<SddcDatastoreArgs>> datastores) {
             $.datastores = datastores;
             return this;
@@ -892,11 +845,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;datastores&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;datastores&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'datastores' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder datastores(List<SddcDatastoreArgs> datastores) {
             return datastores(Output.of(datastores));
         }
@@ -906,11 +858,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;datastores&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;datastores&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'datastores' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder datastores(SddcDatastoreArgs... datastores) {
             return datastores(List.of(datastores));
         }
@@ -964,11 +915,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder esxiHostsCount(@Nullable Output<Integer> esxiHostsCount) {
             $.esxiHostsCount = esxiHostsCount;
             return this;
@@ -981,11 +931,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;esxi_hosts_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'esxi_hosts_count' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder esxiHostsCount(Integer esxiHostsCount) {
             return esxiHostsCount(Output.of(esxiHostsCount));
         }
@@ -1058,11 +1007,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;hcx_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;hcx_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder hcxVlanId(@Nullable Output<String> hcxVlanId) {
             $.hcxVlanId = hcxVlanId;
             return this;
@@ -1073,11 +1021,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;hcx_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;hcx_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'hcx_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder hcxVlanId(String hcxVlanId) {
             return hcxVlanId(Output.of(hcxVlanId));
         }
@@ -1118,11 +1065,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;initial_host_ocpu_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;initial_host_ocpu_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder initialHostOcpuCount(@Nullable Output<Double> initialHostOcpuCount) {
             $.initialHostOcpuCount = initialHostOcpuCount;
             return this;
@@ -1133,11 +1079,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;initial_host_ocpu_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;initial_host_ocpu_count&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'initial_host_ocpu_count' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder initialHostOcpuCount(Double initialHostOcpuCount) {
             return initialHostOcpuCount(Output.of(initialHostOcpuCount));
         }
@@ -1147,11 +1092,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;initial_host_shape_name&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;initial_host_shape_name&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder initialHostShapeName(@Nullable Output<String> initialHostShapeName) {
             $.initialHostShapeName = initialHostShapeName;
             return this;
@@ -1162,11 +1106,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;initial_host_shape_name&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;initial_host_shape_name&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'initial_host_shape_name' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder initialHostShapeName(String initialHostShapeName) {
             return initialHostShapeName(Output.of(initialHostShapeName));
         }
@@ -1176,11 +1119,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;initial_sku&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;initial_sku&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder initialSku(@Nullable Output<String> initialSku) {
             $.initialSku = initialSku;
             return this;
@@ -1191,11 +1133,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;initial_sku&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;initial_sku&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'initial_sku' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder initialSku(String initialSku) {
             return initialSku(Output.of(initialSku));
         }
@@ -1207,11 +1148,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;instance_display_name_prefix&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;instance_display_name_prefix&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder instanceDisplayNamePrefix(@Nullable Output<String> instanceDisplayNamePrefix) {
             $.instanceDisplayNamePrefix = instanceDisplayNamePrefix;
             return this;
@@ -1224,11 +1164,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;instance_display_name_prefix&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;instance_display_name_prefix&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'instance_display_name_prefix' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder instanceDisplayNamePrefix(String instanceDisplayNamePrefix) {
             return instanceDisplayNamePrefix(Output.of(instanceDisplayNamePrefix));
         }
@@ -1259,11 +1198,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;is_shielded_instance_enabled&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;is_shielded_instance_enabled&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder isShieldedInstanceEnabled(@Nullable Output<Boolean> isShieldedInstanceEnabled) {
             $.isShieldedInstanceEnabled = isShieldedInstanceEnabled;
             return this;
@@ -1274,11 +1212,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;is_shielded_instance_enabled&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;is_shielded_instance_enabled&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'is_shielded_instance_enabled' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder isShieldedInstanceEnabled(Boolean isShieldedInstanceEnabled) {
             return isShieldedInstanceEnabled(Output.of(isShieldedInstanceEnabled));
         }
@@ -1309,11 +1246,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;nsx_edge_uplink1vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;nsx_edge_uplink1vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder nsxEdgeUplink1vlanId(@Nullable Output<String> nsxEdgeUplink1vlanId) {
             $.nsxEdgeUplink1vlanId = nsxEdgeUplink1vlanId;
             return this;
@@ -1324,11 +1260,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;nsx_edge_uplink1vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;nsx_edge_uplink1vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'nsx_edge_uplink1vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder nsxEdgeUplink1vlanId(String nsxEdgeUplink1vlanId) {
             return nsxEdgeUplink1vlanId(Output.of(nsxEdgeUplink1vlanId));
         }
@@ -1340,11 +1275,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;nsx_edge_uplink2vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;nsx_edge_uplink2vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder nsxEdgeUplink2vlanId(@Nullable Output<String> nsxEdgeUplink2vlanId) {
             $.nsxEdgeUplink2vlanId = nsxEdgeUplink2vlanId;
             return this;
@@ -1357,11 +1291,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;nsx_edge_uplink2vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;nsx_edge_uplink2vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'nsx_edge_uplink2vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder nsxEdgeUplink2vlanId(String nsxEdgeUplink2vlanId) {
             return nsxEdgeUplink2vlanId(Output.of(nsxEdgeUplink2vlanId));
         }
@@ -1371,11 +1304,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;nsx_edge_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;nsx_edge_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder nsxEdgeVtepVlanId(@Nullable Output<String> nsxEdgeVtepVlanId) {
             $.nsxEdgeVtepVlanId = nsxEdgeVtepVlanId;
             return this;
@@ -1386,11 +1318,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;nsx_edge_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;nsx_edge_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'nsx_edge_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder nsxEdgeVtepVlanId(String nsxEdgeVtepVlanId) {
             return nsxEdgeVtepVlanId(Output.of(nsxEdgeVtepVlanId));
         }
@@ -1400,11 +1331,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;nsx_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;nsx_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder nsxVtepVlanId(@Nullable Output<String> nsxVtepVlanId) {
             $.nsxVtepVlanId = nsxVtepVlanId;
             return this;
@@ -1415,11 +1345,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;nsx_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;nsx_vtep_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'nsx_vtep_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder nsxVtepVlanId(String nsxVtepVlanId) {
             return nsxVtepVlanId(Output.of(nsxVtepVlanId));
         }
@@ -1429,11 +1358,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;provisioning_subnet_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;provisioning_subnet_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder provisioningSubnetId(@Nullable Output<String> provisioningSubnetId) {
             $.provisioningSubnetId = provisioningSubnetId;
             return this;
@@ -1444,11 +1372,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;provisioning_subnet_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;provisioning_subnet_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'provisioning_subnet_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder provisioningSubnetId(String provisioningSubnetId) {
             return provisioningSubnetId(Output.of(provisioningSubnetId));
         }
@@ -1458,11 +1385,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;provisioning_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;provisioning_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder provisioningVlanId(@Nullable Output<String> provisioningVlanId) {
             $.provisioningVlanId = provisioningVlanId;
             return this;
@@ -1473,11 +1399,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;provisioning_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;provisioning_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'provisioning_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder provisioningVlanId(String provisioningVlanId) {
             return provisioningVlanId(Output.of(provisioningVlanId));
         }
@@ -1508,11 +1433,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;replication_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;replication_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder replicationVlanId(@Nullable Output<String> replicationVlanId) {
             $.replicationVlanId = replicationVlanId;
             return this;
@@ -1523,11 +1447,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;replication_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;replication_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'replication_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder replicationVlanId(String replicationVlanId) {
             return replicationVlanId(Output.of(replicationVlanId));
         }
@@ -1610,11 +1533,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;vmotion_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;vmotion_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder vmotionVlanId(@Nullable Output<String> vmotionVlanId) {
             $.vmotionVlanId = vmotionVlanId;
             return this;
@@ -1625,11 +1547,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;vmotion_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;vmotion_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'vmotion_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder vmotionVlanId(String vmotionVlanId) {
             return vmotionVlanId(Output.of(vmotionVlanId));
         }
@@ -1660,11 +1581,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;vsan_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;vsan_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder vsanVlanId(@Nullable Output<String> vsanVlanId) {
             $.vsanVlanId = vsanVlanId;
             return this;
@@ -1675,11 +1595,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;vsan_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;vsan_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'vsan_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder vsanVlanId(String vsanVlanId) {
             return vsanVlanId(Output.of(vsanVlanId));
         }
@@ -1689,11 +1608,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;vsphere_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;vsphere_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder vsphereVlanId(@Nullable Output<String> vsphereVlanId) {
             $.vsphereVlanId = vsphereVlanId;
             return this;
@@ -1704,11 +1622,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;vsphere_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;vsphere_vlan_id&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'vsphere_vlan_id' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder vsphereVlanId(String vsphereVlanId) {
             return vsphereVlanId(Output.of(vsphereVlanId));
         }
@@ -1721,11 +1638,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;workload_network_cidr&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;workload_network_cidr&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder workloadNetworkCidr(@Nullable Output<String> workloadNetworkCidr) {
             $.workloadNetworkCidr = workloadNetworkCidr;
             return this;
@@ -1739,11 +1655,10 @@ public final class SddcArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;workload_network_cidr&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
+         * @deprecated The &#39;workload_network_cidr&#39; field has been deprecated. Please use &#39;initial_configuration&#39; instead.
          * 
          */
-        @Deprecated /* The 'workload_network_cidr' field has been deprecated. Please use 'initial_configuration' instead. */
+        @Deprecated
         public Builder workloadNetworkCidr(String workloadNetworkCidr) {
             return workloadNetworkCidr(Output.of(workloadNetworkCidr));
         }

@@ -17,7 +17,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// Gets count of the inventory of management agent plugins for a given compartment id and group by parameter.
         /// Supported groupBy parameter: pluginName
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// Gets count of the inventory of management agent plugins for a given compartment id and group by parameter.
         /// Supported groupBy parameter: pluginName
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -74,7 +72,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// Gets count of the inventory of management agent plugins for a given compartment id and group by parameter.
         /// Supported groupBy parameter: pluginName
-        /// 
         /// 
         /// ## Example Usage
         /// 

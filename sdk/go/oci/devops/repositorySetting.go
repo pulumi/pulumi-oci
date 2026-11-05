@@ -153,6 +153,12 @@ func (RepositorySettingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*repositorySettingState)(nil)).Elem()
 }
 
+// RepositorySettingExists checks whether an existing RepositorySetting resource with the given ID exists.
+func RepositorySettingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RepositorySettingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DevOps/repositorySetting:RepositorySetting", id, state, "", opts...)
+}
+
 type repositorySettingArgs struct {
 	// (Updatable) List of approval rules which must be statisfied before pull requests which match the rules can be merged
 	ApprovalRules *RepositorySettingApprovalRules `pulumi:"approvalRules"`

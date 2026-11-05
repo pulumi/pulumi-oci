@@ -207,6 +207,12 @@ func (PathAnalysiState) ElementType() reflect.Type {
 	return reflect.TypeOf((*pathAnalysiState)(nil)).Elem()
 }
 
+// PathAnalysiExists checks whether an existing PathAnalysi resource with the given ID exists.
+func PathAnalysiExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PathAnalysiState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:VnMonitoring/pathAnalysi:PathAnalysi", id, state, "", opts...)
+}
+
 type pathAnalysiArgs struct {
 	// The Cache-Control HTTP header holds directives (instructions) for caching in both requests and responses.
 	CacheControl *string `pulumi:"cacheControl"`

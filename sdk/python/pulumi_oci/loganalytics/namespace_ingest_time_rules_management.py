@@ -276,6 +276,18 @@ class NamespaceIngestTimeRulesManagement(pulumi.CustomResource):
         __props__.__dict__["namespace"] = namespace
         return NamespaceIngestTimeRulesManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enable_ingest_time_rule: pulumi.Input[Optional[_builtins.bool]] = None,
+            ingest_time_rule_id: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enableIngestTimeRule"] = enable_ingest_time_rule
+        __props__["ingestTimeRuleId"] = ingest_time_rule_id
+        __props__["namespace"] = namespace
+        return pulumi.runtime.exists_resource(None, 'oci:LogAnalytics/namespaceIngestTimeRulesManagement:NamespaceIngestTimeRulesManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="enableIngestTimeRule")
     def enable_ingest_time_rule(self) -> pulumi.Output[_builtins.bool]:

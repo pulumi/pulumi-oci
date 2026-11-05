@@ -54,8 +54,7 @@ namespace Pulumi.Oci.IdentityDataPlane
         public Output<string> PublicKey { get; private set; } = null!;
 
         /// <summary>
-        /// Scope definition for the scoped access token 
-        /// 
+        /// Scope definition for the scoped access token
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -122,8 +121,7 @@ namespace Pulumi.Oci.IdentityDataPlane
         public Input<string> PublicKey { get; set; } = null!;
 
         /// <summary>
-        /// Scope definition for the scoped access token 
-        /// 
+        /// Scope definition for the scoped access token
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -146,8 +144,7 @@ namespace Pulumi.Oci.IdentityDataPlane
         public Input<string>? PublicKey { get; set; }
 
         /// <summary>
-        /// Scope definition for the scoped access token 
-        /// 
+        /// Scope definition for the scoped access token
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

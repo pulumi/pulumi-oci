@@ -285,6 +285,12 @@ func (ReplicaState) ElementType() reflect.Type {
 	return reflect.TypeOf((*replicaState)(nil)).Elem()
 }
 
+// ReplicaExists checks whether an existing Replica resource with the given ID exists.
+func ReplicaExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ReplicaState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Mysql/replica:Replica", id, state, "", opts...)
+}
+
 type replicaArgs struct {
 	// The OCID of the DB System the read replica is associated with.
 	DbSystemId string `pulumi:"dbSystemId"`

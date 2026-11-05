@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Lists the SQL plan baselines for the specified Managed Database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -57,7 +56,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Lists the SQL plan baselines for the specified Managed Database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -97,7 +95,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides the list of Managed Database Sql Plan Baselines in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Lists the SQL plan baselines for the specified Managed Database.
-        /// 
         /// 
         /// ## Example Usage
         /// 

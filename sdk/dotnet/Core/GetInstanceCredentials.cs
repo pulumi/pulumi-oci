@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Core
         /// Gets the generated credentials for the instance. Only works for instances that require a password to log in, such as Windows.
         /// For certain operating systems, users will be forced to change the initial credentials.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Core
         /// Gets the generated credentials for the instance. Only works for instances that require a password to log in, such as Windows.
         /// For certain operating systems, users will be forced to change the initial credentials.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -72,7 +70,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Gets the generated credentials for the instance. Only works for instances that require a password to log in, such as Windows.
         /// For certain operating systems, users will be forced to change the initial credentials.
-        /// 
         /// 
         /// ## Example Usage
         /// 

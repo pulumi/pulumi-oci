@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Queue
         /// 
         /// Returns a list of consumer groups.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Queue
         /// 
         /// Returns a list of consumer groups.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.Queue
         /// This data source provides the list of Consumer Groups in Oracle Cloud Infrastructure Queue service.
         /// 
         /// Returns a list of consumer groups.
-        /// 
         /// 
         /// ## Example Usage
         /// 

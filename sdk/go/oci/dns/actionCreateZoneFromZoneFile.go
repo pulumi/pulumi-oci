@@ -227,6 +227,12 @@ func (ActionCreateZoneFromZoneFileState) ElementType() reflect.Type {
 	return reflect.TypeOf((*actionCreateZoneFromZoneFileState)(nil)).Elem()
 }
 
+// ActionCreateZoneFromZoneFileExists checks whether an existing ActionCreateZoneFromZoneFile resource with the given ID exists.
+func ActionCreateZoneFromZoneFileExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ActionCreateZoneFromZoneFileState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Dns/actionCreateZoneFromZoneFile:ActionCreateZoneFromZoneFile", id, state, "", opts...)
+}
+
 type actionCreateZoneFromZoneFileArgs struct {
 	// The OCID of the compartment the resource belongs to.
 	CompartmentId string `pulumi:"compartmentId"`

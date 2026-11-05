@@ -318,6 +318,18 @@ class CustomTable(pulumi.CustomResource):
         __props__.__dict__["saved_report_id"] = saved_report_id
         return CustomTable(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            saved_custom_table: pulumi.Input[Optional[Union['CustomTableSavedCustomTableArgs', 'CustomTableSavedCustomTableArgsDict', 'outputs.CustomTableSavedCustomTable']]] = None,
+            saved_report_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["savedCustomTable"] = saved_custom_table
+        __props__["savedReportId"] = saved_report_id
+        return pulumi.runtime.exists_resource(None, 'oci:MeteringComputation/customTable:CustomTable', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

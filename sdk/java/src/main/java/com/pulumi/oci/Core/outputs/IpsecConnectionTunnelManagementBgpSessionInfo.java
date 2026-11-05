@@ -17,11 +17,10 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
      */
     private @Nullable String bgpIpv6State;
     /**
-     * @deprecated
-     * The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
+     * @deprecated The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
      * 
      */
-    @Deprecated /* The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead. */
+    @Deprecated
     private @Nullable String bgpIpv6state;
     /**
      * @return The state of the BGP session.
@@ -104,11 +103,10 @@ public final class IpsecConnectionTunnelManagementBgpSessionInfo {
         return Optional.ofNullable(this.bgpIpv6State);
     }
     /**
-     * @deprecated
-     * The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
+     * @deprecated The &#39;bgp_session_info.0.bgp_ipv6state&#39; field has been deprecated. Please use &#39;bgp_session_info.0.bgp_ipv6_state&#39; instead.
      * 
      */
-    @Deprecated /* The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead. */
+    @Deprecated
     public Optional<String> bgpIpv6state() {
         return Optional.ofNullable(this.bgpIpv6state);
     }

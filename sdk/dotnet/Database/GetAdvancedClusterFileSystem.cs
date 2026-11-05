@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets information about the specified advanced cluster file systems.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets information about the specified advanced cluster file systems.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Advanced Cluster File System resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets information about the specified advanced cluster file systems.
-        /// 
         /// 
         /// ## Example Usage
         /// 

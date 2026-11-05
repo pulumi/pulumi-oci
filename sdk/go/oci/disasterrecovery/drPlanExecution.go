@@ -261,6 +261,12 @@ func (DrPlanExecutionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*drPlanExecutionState)(nil)).Elem()
 }
 
+// DrPlanExecutionExists checks whether an existing DrPlanExecution resource with the given ID exists.
+func DrPlanExecutionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DrPlanExecutionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DisasterRecovery/drPlanExecution:DrPlanExecution", id, state, "", opts...)
+}
+
 type drPlanExecutionArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`

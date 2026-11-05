@@ -219,6 +219,12 @@ func (BatchBatchTaskEnvironmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*batchBatchTaskEnvironmentState)(nil)).Elem()
 }
 
+// BatchBatchTaskEnvironmentExists checks whether an existing BatchBatchTaskEnvironment resource with the given ID exists.
+func BatchBatchTaskEnvironmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BatchBatchTaskEnvironmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/batchBatchTaskEnvironment:BatchBatchTaskEnvironment", id, state, "", opts...)
+}
+
 type batchBatchTaskEnvironmentArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

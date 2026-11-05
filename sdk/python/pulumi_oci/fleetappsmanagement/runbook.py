@@ -1118,6 +1118,54 @@ class Runbook(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return Runbook(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            estimated_time: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            has_draft_version: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_default: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_sudo_access_needed: pulumi.Input[Optional[_builtins.bool]] = None,
+            latest_version: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            operation: pulumi.Input[Optional[_builtins.str]] = None,
+            os_type: pulumi.Input[Optional[_builtins.str]] = None,
+            platform: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_region: pulumi.Input[Optional[_builtins.str]] = None,
+            runbook_version: pulumi.Input[Optional[Union['RunbookRunbookVersionArgs', 'RunbookRunbookVersionArgsDict', 'outputs.RunbookRunbookVersion']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["estimatedTime"] = estimated_time
+        __props__["freeformTags"] = freeform_tags
+        __props__["hasDraftVersion"] = has_draft_version
+        __props__["isDefault"] = is_default
+        __props__["isSudoAccessNeeded"] = is_sudo_access_needed
+        __props__["latestVersion"] = latest_version
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["operation"] = operation
+        __props__["osType"] = os_type
+        __props__["platform"] = platform
+        __props__["resourceRegion"] = resource_region
+        __props__["runbookVersion"] = runbook_version
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'oci:FleetAppsManagement/runbook:Runbook', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

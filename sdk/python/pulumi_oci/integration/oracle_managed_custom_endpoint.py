@@ -278,6 +278,24 @@ class OracleManagedCustomEndpoint(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         return OracleManagedCustomEndpoint(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            dns_type: pulumi.Input[Optional[_builtins.str]] = None,
+            dns_zone_name: pulumi.Input[Optional[_builtins.str]] = None,
+            hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            integration_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            managed_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["dnsType"] = dns_type
+        __props__["dnsZoneName"] = dns_zone_name
+        __props__["hostname"] = hostname
+        __props__["integrationInstanceId"] = integration_instance_id
+        __props__["managedType"] = managed_type
+        __props__["state"] = state
+        return pulumi.runtime.exists_resource(None, 'oci:Integration/oracleManagedCustomEndpoint:OracleManagedCustomEndpoint', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="dnsType")
     def dns_type(self) -> pulumi.Output[_builtins.str]:

@@ -779,6 +779,44 @@ class MaskingPoliciesMaskingColumn(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return MaskingPoliciesMaskingColumn(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            child_columns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            column_name: pulumi.Input[Optional[_builtins.str]] = None,
+            data_type: pulumi.Input[Optional[_builtins.str]] = None,
+            is_masking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            masking_column_group: pulumi.Input[Optional[_builtins.str]] = None,
+            masking_formats: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MaskingPoliciesMaskingColumnMaskingFormatArgs', 'MaskingPoliciesMaskingColumnMaskingFormatArgsDict', 'outputs.MaskingPoliciesMaskingColumnMaskingFormat']]]]] = None,
+            masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            object: pulumi.Input[Optional[_builtins.str]] = None,
+            object_type: pulumi.Input[Optional[_builtins.str]] = None,
+            schema_name: pulumi.Input[Optional[_builtins.str]] = None,
+            sensitive_type_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["childColumns"] = child_columns
+        __props__["columnName"] = column_name
+        __props__["dataType"] = data_type
+        __props__["isMaskingEnabled"] = is_masking_enabled
+        __props__["key"] = key
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["maskingColumnGroup"] = masking_column_group
+        __props__["maskingFormats"] = masking_formats
+        __props__["maskingPolicyId"] = masking_policy_id
+        __props__["object"] = object
+        __props__["objectType"] = object_type
+        __props__["schemaName"] = schema_name
+        __props__["sensitiveTypeId"] = sensitive_type_id
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="childColumns")
     def child_columns(self) -> pulumi.Output[Sequence[_builtins.str]]:

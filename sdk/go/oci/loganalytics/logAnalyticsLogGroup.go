@@ -171,6 +171,12 @@ func (LogAnalyticsLogGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logAnalyticsLogGroupState)(nil)).Elem()
 }
 
+// LogAnalyticsLogGroupExists checks whether an existing LogAnalyticsLogGroup resource with the given ID exists.
+func LogAnalyticsLogGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogAnalyticsLogGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LogAnalytics/logAnalyticsLogGroup:LogAnalyticsLogGroup", id, state, "", opts...)
+}
+
 type logAnalyticsLogGroupArgs struct {
 	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string `pulumi:"compartmentId"`

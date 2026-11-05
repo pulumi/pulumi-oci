@@ -1377,6 +1377,74 @@ class Config(pulumi.CustomResource):
         __props__.__dict__["updated_by"] = updated_by
         return Config(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            agent_version: pulumi.Input[Optional[_builtins.str]] = None,
+            apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            attach_install_dir: pulumi.Input[Optional[_builtins.str]] = None,
+            config: pulumi.Input[Optional[Union['ConfigConfigArgs', 'ConfigConfigArgsDict', 'outputs.ConfigConfig']]] = None,
+            config_type: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigDimensionArgs', 'ConfigDimensionArgsDict', 'outputs.ConfigDimension']]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            etag: pulumi.Input[Optional[_builtins.str]] = None,
+            filter_id: pulumi.Input[Optional[_builtins.str]] = None,
+            filter_text: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            group: pulumi.Input[Optional[_builtins.str]] = None,
+            in_use_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigInUseByArgs', 'ConfigInUseByArgsDict', 'outputs.ConfigInUseBy']]]]] = None,
+            management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            match_agents_with_attribute_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            match_agents_with_attribute_value: pulumi.Input[Optional[_builtins.str]] = None,
+            metrics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigMetricArgs', 'ConfigMetricArgsDict', 'outputs.ConfigMetric']]]]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            opc_dry_run: pulumi.Input[Optional[_builtins.str]] = None,
+            options: pulumi.Input[Optional[_builtins.str]] = None,
+            overrides: pulumi.Input[Optional[Union['ConfigOverridesArgs', 'ConfigOverridesArgsDict', 'outputs.ConfigOverrides']]] = None,
+            process_filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigRuleArgs', 'ConfigRuleArgsDict', 'outputs.ConfigRule']]]]] = None,
+            run_as_user: pulumi.Input[Optional[_builtins.str]] = None,
+            service_name: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            updated_by: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["agentVersion"] = agent_version
+        __props__["apmDomainId"] = apm_domain_id
+        __props__["attachInstallDir"] = attach_install_dir
+        __props__["config"] = config
+        __props__["configType"] = config_type
+        __props__["createdBy"] = created_by
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["dimensions"] = dimensions
+        __props__["displayName"] = display_name
+        __props__["etag"] = etag
+        __props__["filterId"] = filter_id
+        __props__["filterText"] = filter_text
+        __props__["freeformTags"] = freeform_tags
+        __props__["group"] = group
+        __props__["inUseBies"] = in_use_bies
+        __props__["managementAgentId"] = management_agent_id
+        __props__["matchAgentsWithAttributeKeys"] = match_agents_with_attribute_keys
+        __props__["matchAgentsWithAttributeValue"] = match_agents_with_attribute_value
+        __props__["metrics"] = metrics
+        __props__["namespace"] = namespace
+        __props__["opcDryRun"] = opc_dry_run
+        __props__["options"] = options
+        __props__["overrides"] = overrides
+        __props__["processFilters"] = process_filters
+        __props__["rules"] = rules
+        __props__["runAsUser"] = run_as_user
+        __props__["serviceName"] = service_name
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["updatedBy"] = updated_by
+        return pulumi.runtime.exists_resource(None, 'oci:ApmConfig/config:Config', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="agentVersion")
     def agent_version(self) -> pulumi.Output[_builtins.str]:

@@ -71,6 +71,17 @@ export class MonitoredResourceType extends pulumi.CustomResource {
         return new MonitoredResourceType(name, <any>state, { ...opts, id: id });
     }
 
+    /**
+     * Check whether an existing MonitoredResourceType resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: MonitoredResourceTypeState, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("oci:StackMonitoring/monitoredResourceType:MonitoredResourceType", id, <any>state || {}, { ...opts }, undefined);
+    }
+
     /** @internal */
     public static readonly __pulumiType = 'oci:StackMonitoring/monitoredResourceType:MonitoredResourceType';
 

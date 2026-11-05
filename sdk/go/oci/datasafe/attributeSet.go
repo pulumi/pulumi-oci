@@ -205,6 +205,12 @@ func (AttributeSetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*attributeSetState)(nil)).Elem()
 }
 
+// AttributeSetExists checks whether an existing AttributeSet resource with the given ID exists.
+func AttributeSetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AttributeSetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/attributeSet:AttributeSet", id, state, "", opts...)
+}
+
 type attributeSetArgs struct {
 	// The type of attribute set.
 	AttributeSetType string `pulumi:"attributeSetType"`

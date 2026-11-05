@@ -809,6 +809,52 @@ class DedicatedVmHost(pulumi.CustomResource):
         __props__.__dict__["total_ocpus"] = total_ocpus
         return DedicatedVmHost(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            capacity_bins: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DedicatedVmHostCapacityBinArgs', 'DedicatedVmHostCapacityBinArgsDict', 'outputs.DedicatedVmHostCapacityBin']]]]] = None,
+            capacity_config: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_bare_metal_host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            dedicated_vm_host_shape: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_memory_encryption_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            placement_constraint_details: pulumi.Input[Optional[Union['DedicatedVmHostPlacementConstraintDetailsArgs', 'DedicatedVmHostPlacementConstraintDetailsArgsDict', 'outputs.DedicatedVmHostPlacementConstraintDetails']]] = None,
+            remaining_local_volume_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+            remaining_memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+            remaining_ocpus: pulumi.Input[Optional[_builtins.float]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            total_local_volume_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+            total_memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+            total_ocpus: pulumi.Input[Optional[_builtins.float]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availabilityDomain"] = availability_domain
+        __props__["capacityBins"] = capacity_bins
+        __props__["capacityConfig"] = capacity_config
+        __props__["compartmentId"] = compartment_id
+        __props__["computeBareMetalHostId"] = compute_bare_metal_host_id
+        __props__["dedicatedVmHostShape"] = dedicated_vm_host_shape
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["faultDomain"] = fault_domain
+        __props__["freeformTags"] = freeform_tags
+        __props__["isMemoryEncryptionEnabled"] = is_memory_encryption_enabled
+        __props__["placementConstraintDetails"] = placement_constraint_details
+        __props__["remainingLocalVolumeInGbs"] = remaining_local_volume_in_gbs
+        __props__["remainingMemoryInGbs"] = remaining_memory_in_gbs
+        __props__["remainingOcpus"] = remaining_ocpus
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["totalLocalVolumeInGbs"] = total_local_volume_in_gbs
+        __props__["totalMemoryInGbs"] = total_memory_in_gbs
+        __props__["totalOcpus"] = total_ocpus
+        return pulumi.runtime.exists_resource(None, 'oci:Core/dedicatedVmHost:DedicatedVmHost', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[_builtins.str]:

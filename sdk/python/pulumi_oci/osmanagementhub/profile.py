@@ -996,6 +996,62 @@ class Profile(pulumi.CustomResource):
         __props__.__dict__["vendor_name"] = vendor_name
         return Profile(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            arch_type: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_default_profile: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_service_provided_profile: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_environments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProfileLifecycleEnvironmentArgs', 'ProfileLifecycleEnvironmentArgsDict', 'outputs.ProfileLifecycleEnvironment']]]]] = None,
+            lifecycle_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_stages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProfileLifecycleStageArgs', 'ProfileLifecycleStageArgsDict', 'outputs.ProfileLifecycleStage']]]]] = None,
+            managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            managed_instance_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProfileManagedInstanceGroupArgs', 'ProfileManagedInstanceGroupArgsDict', 'outputs.ProfileManagedInstanceGroup']]]]] = None,
+            management_station_id: pulumi.Input[Optional[_builtins.str]] = None,
+            os_family: pulumi.Input[Optional[_builtins.str]] = None,
+            profile_type: pulumi.Input[Optional[_builtins.str]] = None,
+            profile_version: pulumi.Input[Optional[_builtins.str]] = None,
+            registration_type: pulumi.Input[Optional[_builtins.str]] = None,
+            software_source_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            software_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ProfileSoftwareSourceArgs', 'ProfileSoftwareSourceArgsDict', 'outputs.ProfileSoftwareSource']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            vendor_name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["archType"] = arch_type
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["isDefaultProfile"] = is_default_profile
+        __props__["isServiceProvidedProfile"] = is_service_provided_profile
+        __props__["lifecycleEnvironments"] = lifecycle_environments
+        __props__["lifecycleStageId"] = lifecycle_stage_id
+        __props__["lifecycleStages"] = lifecycle_stages
+        __props__["managedInstanceGroupId"] = managed_instance_group_id
+        __props__["managedInstanceGroups"] = managed_instance_groups
+        __props__["managementStationId"] = management_station_id
+        __props__["osFamily"] = os_family
+        __props__["profileType"] = profile_type
+        __props__["profileVersion"] = profile_version
+        __props__["registrationType"] = registration_type
+        __props__["softwareSourceIds"] = software_source_ids
+        __props__["softwareSources"] = software_sources
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeModified"] = time_modified
+        __props__["vendorName"] = vendor_name
+        return pulumi.runtime.exists_resource(None, 'oci:OsManagementHub/profile:Profile', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="archType")
     def arch_type(self) -> pulumi.Output[_builtins.str]:

@@ -198,6 +198,12 @@ func (CloudDatabaseManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudDatabaseManagementState)(nil)).Elem()
 }
 
+// CloudDatabaseManagementExists checks whether an existing CloudDatabaseManagement resource with the given ID exists.
+func CloudDatabaseManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudDatabaseManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/cloudDatabaseManagement:CloudDatabaseManagement", id, state, "", opts...)
+}
+
 type cloudDatabaseManagementArgs struct {
 	Credentialdetails CloudDatabaseManagementCredentialdetails `pulumi:"credentialdetails"`
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).

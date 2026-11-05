@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the tunnel security associations information for the specified IPSec tunnel ID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the tunnel security associations information for the specified IPSec tunnel ID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides the list of Tunnel Security Associations in Oracle Cloud Infrastructure Core service.
         /// 
         /// Lists the tunnel security associations information for the specified IPSec tunnel ID.
-        /// 
         /// 
         /// ## Example Usage
         /// 

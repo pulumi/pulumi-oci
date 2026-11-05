@@ -263,6 +263,12 @@ func (OnPremiseVantagePointWorkerState) ElementType() reflect.Type {
 	return reflect.TypeOf((*onPremiseVantagePointWorkerState)(nil)).Elem()
 }
 
+// OnPremiseVantagePointWorkerExists checks whether an existing OnPremiseVantagePointWorker resource with the given ID exists.
+func OnPremiseVantagePointWorkerExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OnPremiseVantagePointWorkerState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ApmSynthetics/onPremiseVantagePointWorker:OnPremiseVantagePointWorker", id, state, "", opts...)
+}
+
 type onPremiseVantagePointWorkerArgs struct {
 	// (Updatable) The APM domain ID the request is intended for.
 	ApmDomainId string `pulumi:"apmDomainId"`

@@ -186,6 +186,12 @@ func (CostadCostAlertSubscriptionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*costadCostAlertSubscriptionState)(nil)).Elem()
 }
 
+// CostadCostAlertSubscriptionExists checks whether an existing CostadCostAlertSubscription resource with the given ID exists.
+func CostadCostAlertSubscriptionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CostadCostAlertSubscriptionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/costadCostAlertSubscription:CostadCostAlertSubscription", id, state, "", opts...)
+}
+
 type costadCostAlertSubscriptionArgs struct {
 	// (Updatable) The notification channels string.
 	Channels string `pulumi:"channels"`

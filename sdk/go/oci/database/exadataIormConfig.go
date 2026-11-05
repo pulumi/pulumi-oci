@@ -151,6 +151,12 @@ func (ExadataIormConfigState) ElementType() reflect.Type {
 	return reflect.TypeOf((*exadataIormConfigState)(nil)).Elem()
 }
 
+// ExadataIormConfigExists checks whether an existing ExadataIormConfig resource with the given ID exists.
+func ExadataIormConfigExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExadataIormConfigState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/exadataIormConfig:ExadataIormConfig", id, state, "", opts...)
+}
+
 type exadataIormConfigArgs struct {
 	// (Updatable) Array of IORM Setting for all the database in this Exadata DB System
 	DbPlans []ExadataIormConfigDbPlan `pulumi:"dbPlans"`

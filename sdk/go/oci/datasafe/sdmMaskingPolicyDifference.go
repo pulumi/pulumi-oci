@@ -190,6 +190,12 @@ func (SdmMaskingPolicyDifferenceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*sdmMaskingPolicyDifferenceState)(nil)).Elem()
 }
 
+// SdmMaskingPolicyDifferenceExists checks whether an existing SdmMaskingPolicyDifference resource with the given ID exists.
+func SdmMaskingPolicyDifferenceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SdmMaskingPolicyDifferenceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/sdmMaskingPolicyDifference:SdmMaskingPolicyDifference", id, state, "", opts...)
+}
+
 type sdmMaskingPolicyDifferenceArgs struct {
 	// (Updatable) The OCID of the compartment where the SDM masking policy difference resource should be created.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Core
         /// Lists the available [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) objects that you can enable for a
         /// service gateway in this region.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Core
         /// Lists the available [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) objects that you can enable for a
         /// service gateway in this region.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -66,7 +64,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the available [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) objects that you can enable for a
         /// service gateway in this region.
-        /// 
         /// 
         /// ## Example Usage
         /// 

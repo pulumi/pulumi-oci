@@ -625,6 +625,44 @@ class PssInstance(pulumi.CustomResource):
         __props__.__dict__["ui_endpoint"] = ui_endpoint
         return PssInstance(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            admin_identity_domain_user_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            identity_domain_url: pulumi.Input[Optional[_builtins.str]] = None,
+            identity_domain_web_auth_client_id: pulumi.Input[Optional[_builtins.str]] = None,
+            identity_domain_web_auth_client_secret_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            public_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            service_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            ui_endpoint: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["adminIdentityDomainUserId"] = admin_identity_domain_user_id
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["identityDomainUrl"] = identity_domain_url
+        __props__["identityDomainWebAuthClientId"] = identity_domain_web_auth_client_id
+        __props__["identityDomainWebAuthClientSecretVaultId"] = identity_domain_web_auth_client_secret_vault_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["publicIp"] = public_ip
+        __props__["serviceEndpoint"] = service_endpoint
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["uiEndpoint"] = ui_endpoint
+        return pulumi.runtime.exists_resource(None, 'oci:oci/pssInstance:PssInstance', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="adminIdentityDomainUserId")
     def admin_identity_domain_user_id(self) -> pulumi.Output[_builtins.str]:

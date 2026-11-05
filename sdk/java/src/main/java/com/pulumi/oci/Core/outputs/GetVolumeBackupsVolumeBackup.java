@@ -78,11 +78,10 @@ public final class GetVolumeBackupsVolumeBackup {
     /**
      * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
      * 
-     * @deprecated
-     * The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
+     * @deprecated The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
      * 
      */
-    @Deprecated /* The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead. */
+    @Deprecated
     private String sizeInMbs;
     private List<GetVolumeBackupsVolumeBackupSourceDetail> sourceDetails;
     /**
@@ -133,11 +132,10 @@ public final class GetVolumeBackupsVolumeBackup {
     /**
      * @return The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
      * 
-     * @deprecated
-     * The &#39;unique_size_in_mbs&#39; field has been deprecated. Please use &#39;unique_size_in_gbs&#39; instead.
+     * @deprecated The &#39;unique_size_in_mbs&#39; field has been deprecated. Please use &#39;unique_size_in_gbs&#39; instead.
      * 
      */
-    @Deprecated /* The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead. */
+    @Deprecated
     private String uniqueSizeInMbs;
     /**
      * @return The OCID of the volume group backup associated with the backup. This is an optional field. If it is not present in the response, the backup does not belong to a volume group.
@@ -238,11 +236,10 @@ public final class GetVolumeBackupsVolumeBackup {
     /**
      * @return The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `sizeInGbs`.
      * 
-     * @deprecated
-     * The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
+     * @deprecated The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
      * 
      */
-    @Deprecated /* The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead. */
+    @Deprecated
     public String sizeInMbs() {
         return this.sizeInMbs;
     }
@@ -315,11 +312,10 @@ public final class GetVolumeBackupsVolumeBackup {
     /**
      * @return The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
      * 
-     * @deprecated
-     * The &#39;unique_size_in_mbs&#39; field has been deprecated. Please use &#39;unique_size_in_gbs&#39; instead.
+     * @deprecated The &#39;unique_size_in_mbs&#39; field has been deprecated. Please use &#39;unique_size_in_gbs&#39; instead.
      * 
      */
-    @Deprecated /* The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead. */
+    @Deprecated
     public String uniqueSizeInMbs() {
         return this.uniqueSizeInMbs;
     }

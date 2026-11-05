@@ -173,6 +173,12 @@ func (ManagedDatabaseGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managedDatabaseGroupState)(nil)).Elem()
 }
 
+// ManagedDatabaseGroupExists checks whether an existing ManagedDatabaseGroup resource with the given ID exists.
+func ManagedDatabaseGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedDatabaseGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/managedDatabaseGroup:ManagedDatabaseGroup", id, state, "", opts...)
+}
+
 type managedDatabaseGroupArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the Managed Database Group resides.
 	CompartmentId string `pulumi:"compartmentId"`

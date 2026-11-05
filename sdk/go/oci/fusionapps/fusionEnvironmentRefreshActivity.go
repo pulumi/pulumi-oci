@@ -186,6 +186,12 @@ func (FusionEnvironmentRefreshActivityState) ElementType() reflect.Type {
 	return reflect.TypeOf((*fusionEnvironmentRefreshActivityState)(nil)).Elem()
 }
 
+// FusionEnvironmentRefreshActivityExists checks whether an existing FusionEnvironmentRefreshActivity resource with the given ID exists.
+func FusionEnvironmentRefreshActivityExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FusionEnvironmentRefreshActivityState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FusionApps/fusionEnvironmentRefreshActivity:FusionEnvironmentRefreshActivity", id, state, "", opts...)
+}
+
 type fusionEnvironmentRefreshActivityArgs struct {
 	// unique FusionEnvironment identifier
 	FusionEnvironmentId string `pulumi:"fusionEnvironmentId"`

@@ -1043,6 +1043,56 @@ class SubsettingPolicy(pulumi.CustomResource):
         __props__.__dict__["unrelated_tables_action"] = unrelated_tables_action
         return SubsettingPolicy(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            check_type: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            generate_health_report_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            is_redo_logging_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_refresh_stats_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parallel_degree: pulumi.Input[Optional[_builtins.str]] = None,
+            post_subsetting_script: pulumi.Input[Optional[_builtins.str]] = None,
+            pre_subsetting_script: pulumi.Input[Optional[_builtins.str]] = None,
+            recompile: pulumi.Input[Optional[_builtins.str]] = None,
+            schema_source: pulumi.Input[Optional[Union['SubsettingPolicySchemaSourceArgs', 'SubsettingPolicySchemaSourceArgsDict', 'outputs.SubsettingPolicySchemaSource']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            tablespace: pulumi.Input[Optional[_builtins.str]] = None,
+            target_credentials: pulumi.Input[Optional[Union['SubsettingPolicyTargetCredentialsArgs', 'SubsettingPolicyTargetCredentialsArgsDict', 'outputs.SubsettingPolicyTargetCredentials']]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            unrelated_tables_action: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["checkType"] = check_type
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["generateHealthReportTrigger"] = generate_health_report_trigger
+        __props__["isRedoLoggingEnabled"] = is_redo_logging_enabled
+        __props__["isRefreshStatsEnabled"] = is_refresh_stats_enabled
+        __props__["maskingPolicyId"] = masking_policy_id
+        __props__["parallelDegree"] = parallel_degree
+        __props__["postSubsettingScript"] = post_subsetting_script
+        __props__["preSubsettingScript"] = pre_subsetting_script
+        __props__["recompile"] = recompile
+        __props__["schemaSource"] = schema_source
+        __props__["state"] = state
+        __props__["tablespace"] = tablespace
+        __props__["targetCredentials"] = target_credentials
+        __props__["targetId"] = target_id
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["unrelatedTablesAction"] = unrelated_tables_action
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/subsettingPolicy:SubsettingPolicy', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="checkType")
     def check_type(self) -> pulumi.Output[Optional[_builtins.str]]:

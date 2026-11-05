@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Gets a list of AiDataPlatforms.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Gets a list of AiDataPlatforms.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Ai Data Platforms in Oracle Cloud Infrastructure Ai Data Platform service.
         /// 
         /// Gets a list of AiDataPlatforms.
-        /// 
         /// 
         /// ## Example Usage
         /// 

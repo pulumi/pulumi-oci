@@ -16,7 +16,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// Returns the binary contents of the availability catalog. Can be saved as a csv file.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// Returns the binary contents of the availability catalog. Can be saved as a csv file.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// This data source provides details about a specific Occ Availability Catalog Content resource in Oracle Cloud Infrastructure Capacity Management service.
         /// 
         /// Returns the binary contents of the availability catalog. Can be saved as a csv file.
-        /// 
         /// 
         /// ## Example Usage
         /// 

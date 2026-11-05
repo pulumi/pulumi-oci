@@ -138,6 +138,12 @@ func (CalculateAuditVolumeAvailableState) ElementType() reflect.Type {
 	return reflect.TypeOf((*calculateAuditVolumeAvailableState)(nil)).Elem()
 }
 
+// CalculateAuditVolumeAvailableExists checks whether an existing CalculateAuditVolumeAvailable resource with the given ID exists.
+func CalculateAuditVolumeAvailableExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CalculateAuditVolumeAvailableState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/calculateAuditVolumeAvailable:CalculateAuditVolumeAvailable", id, state, "", opts...)
+}
+
 type calculateAuditVolumeAvailableArgs struct {
 	// The date from which the audit trail must start collecting data in UTC, in the format defined by RFC3339. If not specified, this will default to the date based on the retention period.
 	AuditCollectionStartTime *string `pulumi:"auditCollectionStartTime"`

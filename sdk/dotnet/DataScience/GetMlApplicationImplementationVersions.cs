@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// Returns a list of MlApplicationImplementationVersions.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// Returns a list of MlApplicationImplementationVersions.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.DataScience
         /// This data source provides the list of Ml Application Implementation Versions in Oracle Cloud Infrastructure Data Science service.
         /// 
         /// Returns a list of MlApplicationImplementationVersions.
-        /// 
         /// 
         /// ## Example Usage
         /// 

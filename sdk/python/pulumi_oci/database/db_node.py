@@ -828,6 +828,74 @@ class DbNode(pulumi.CustomResource):
         __props__.__dict__["vnic_id"] = vnic_id
         return DbNode(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            additional_details: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_ip_id: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_ipv6id: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_vnic2id: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_vnic_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_count: pulumi.Input[Optional[_builtins.int]] = None,
+            compute_model: pulumi.Input[Optional[_builtins.str]] = None,
+            cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+            db_node_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_node_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            db_server_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            fault_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            host_ip_id: pulumi.Input[Optional[_builtins.str]] = None,
+            host_ipv6id: pulumi.Input[Optional[_builtins.str]] = None,
+            hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            is_os_patch_reboot_required: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            maintenance_type: pulumi.Input[Optional[_builtins.str]] = None,
+            memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            software_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_maintenance_window_end: pulumi.Input[Optional[_builtins.str]] = None,
+            time_maintenance_window_start: pulumi.Input[Optional[_builtins.str]] = None,
+            total_cpu_core_count: pulumi.Input[Optional[_builtins.int]] = None,
+            vnic2id: pulumi.Input[Optional[_builtins.str]] = None,
+            vnic_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["additionalDetails"] = additional_details
+        __props__["backupIpId"] = backup_ip_id
+        __props__["backupIpv6id"] = backup_ipv6id
+        __props__["backupVnic2id"] = backup_vnic2id
+        __props__["backupVnicId"] = backup_vnic_id
+        __props__["computeCount"] = compute_count
+        __props__["computeModel"] = compute_model
+        __props__["cpuCoreCount"] = cpu_core_count
+        __props__["dbNodeId"] = db_node_id
+        __props__["dbNodeStorageSizeInGbs"] = db_node_storage_size_in_gbs
+        __props__["dbServerId"] = db_server_id
+        __props__["dbSystemId"] = db_system_id
+        __props__["definedTags"] = defined_tags
+        __props__["faultDomain"] = fault_domain
+        __props__["freeformTags"] = freeform_tags
+        __props__["hostIpId"] = host_ip_id
+        __props__["hostIpv6id"] = host_ipv6id
+        __props__["hostname"] = hostname
+        __props__["isOsPatchRebootRequired"] = is_os_patch_reboot_required
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["maintenanceType"] = maintenance_type
+        __props__["memorySizeInGbs"] = memory_size_in_gbs
+        __props__["softwareStorageSizeInGb"] = software_storage_size_in_gb
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeMaintenanceWindowEnd"] = time_maintenance_window_end
+        __props__["timeMaintenanceWindowStart"] = time_maintenance_window_start
+        __props__["totalCpuCoreCount"] = total_cpu_core_count
+        __props__["vnic2id"] = vnic2id
+        __props__["vnicId"] = vnic_id
+        return pulumi.runtime.exists_resource(None, 'oci:Database/dbNode:DbNode', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="additionalDetails")
     def additional_details(self) -> pulumi.Output[_builtins.str]:

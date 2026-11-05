@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Retrieves the general information for a specific MySQL Database.
         /// 
         /// MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
-        /// 
         /// 
         /// ## Example Usage
         /// 

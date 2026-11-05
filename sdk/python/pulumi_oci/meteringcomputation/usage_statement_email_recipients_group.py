@@ -355,6 +355,22 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
         __props__.__dict__["subscription_id"] = subscription_id
         return UsageStatementEmailRecipientsGroup(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            email_recipients_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            recipients_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageStatementEmailRecipientsGroupRecipientsListArgs', 'UsageStatementEmailRecipientsGroupRecipientsListArgsDict', 'outputs.UsageStatementEmailRecipientsGroupRecipientsList']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subscription_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["emailRecipientsGroupId"] = email_recipients_group_id
+        __props__["recipientsLists"] = recipients_lists
+        __props__["state"] = state
+        __props__["subscriptionId"] = subscription_id
+        return pulumi.runtime.exists_resource(None, 'oci:MeteringComputation/usageStatementEmailRecipientsGroup:UsageStatementEmailRecipientsGroup', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

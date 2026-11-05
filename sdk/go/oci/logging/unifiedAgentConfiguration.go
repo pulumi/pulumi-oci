@@ -157,6 +157,12 @@ func (UnifiedAgentConfigurationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*unifiedAgentConfigurationState)(nil)).Elem()
 }
 
+// UnifiedAgentConfigurationExists checks whether an existing UnifiedAgentConfiguration resource with the given ID exists.
+func UnifiedAgentConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UnifiedAgentConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Logging/unifiedAgentConfiguration:UnifiedAgentConfiguration", id, state, "", opts...)
+}
+
 type unifiedAgentConfigurationArgs struct {
 	// (Updatable) The OCID of the compartment that the resource belongs to.
 	CompartmentId string `pulumi:"compartmentId"`

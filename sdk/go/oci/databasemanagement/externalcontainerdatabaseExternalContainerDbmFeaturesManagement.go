@@ -140,6 +140,12 @@ func (ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState) Elem
 	return reflect.TypeOf((*externalcontainerdatabaseExternalContainerDbmFeaturesManagementState)(nil)).Elem()
 }
 
+// ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementExists checks whether an existing ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement resource with the given ID exists.
+func ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalcontainerdatabaseExternalContainerDbmFeaturesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/externalcontainerdatabaseExternalContainerDbmFeaturesManagement:ExternalcontainerdatabaseExternalContainerDbmFeaturesManagement", id, state, "", opts...)
+}
+
 type externalcontainerdatabaseExternalContainerDbmFeaturesManagementArgs struct {
 	CanDisableAllPdbs *bool `pulumi:"canDisableAllPdbs"`
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.

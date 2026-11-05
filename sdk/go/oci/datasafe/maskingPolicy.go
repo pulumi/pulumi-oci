@@ -263,6 +263,12 @@ func (MaskingPolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*maskingPolicyState)(nil)).Elem()
 }
 
+// MaskingPolicyExists checks whether an existing MaskingPolicy resource with the given ID exists.
+func MaskingPolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MaskingPolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/maskingPolicy:MaskingPolicy", id, state, "", opts...)
+}
+
 type maskingPolicyArgs struct {
 	// (Updatable) An optional property when incremented triggers Add Masking Columns From Sdm. Could be set to any integer value.
 	AddMaskingColumnsFromSdmTrigger *int `pulumi:"addMaskingColumnsFromSdmTrigger"`

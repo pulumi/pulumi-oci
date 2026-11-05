@@ -163,8 +163,7 @@ namespace Pulumi.Oci.CapacityManagement
         public Output<string> TargetCompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you. 
-        /// 
+        /// (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -311,8 +310,7 @@ namespace Pulumi.Oci.CapacityManagement
         public Input<string>? TargetCompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you. 
-        /// 
+        /// (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -451,8 +449,7 @@ namespace Pulumi.Oci.CapacityManagement
         public Input<string>? TargetCompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you. 
-        /// 
+        /// (Updatable) the date before which you would ideally like the Oracle Cloud Infrastructure resource to be delivered to you.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

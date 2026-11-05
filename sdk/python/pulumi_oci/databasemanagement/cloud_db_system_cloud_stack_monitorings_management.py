@@ -318,6 +318,20 @@ class CloudDbSystemCloudStackMonitoringsManagement(pulumi.CustomResource):
         __props__.__dict__["metadata"] = metadata
         return CloudDbSystemCloudStackMonitoringsManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cloud_db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_cloud_stack_monitoring: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            metadata: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["cloudDbSystemId"] = cloud_db_system_id
+        __props__["enableCloudStackMonitoring"] = enable_cloud_stack_monitoring
+        __props__["isEnabled"] = is_enabled
+        __props__["metadata"] = metadata
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseManagement/cloudDbSystemCloudStackMonitoringsManagement:CloudDbSystemCloudStackMonitoringsManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="cloudDbSystemId")
     def cloud_db_system_id(self) -> pulumi.Output[_builtins.str]:

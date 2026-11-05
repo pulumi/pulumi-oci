@@ -147,7 +147,7 @@ namespace Pulumi.Oci.ObjectStorage
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// The ID of the subnet that the private endpoint VNIC will be created and reside in. 
+        /// The ID of the subnet that the private endpoint VNIC will be created and reside in.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -330,7 +330,7 @@ namespace Pulumi.Oci.ObjectStorage
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The ID of the subnet that the private endpoint VNIC will be created and reside in. 
+        /// The ID of the subnet that the private endpoint VNIC will be created and reside in.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -475,7 +475,7 @@ namespace Pulumi.Oci.ObjectStorage
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The ID of the subnet that the private endpoint VNIC will be created and reside in. 
+        /// The ID of the subnet that the private endpoint VNIC will be created and reside in.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

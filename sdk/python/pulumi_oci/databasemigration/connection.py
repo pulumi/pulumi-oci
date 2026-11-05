@@ -1709,6 +1709,94 @@ class Connection(pulumi.CustomResource):
         __props__.__dict__["wallet"] = wallet
         return Connection(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            additional_attributes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionAdditionalAttributeArgs', 'ConnectionAdditionalAttributeArgsDict', 'outputs.ConnectionAdditionalAttribute']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_string: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_type: pulumi.Input[Optional[_builtins.str]] = None,
+            database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_name: pulumi.Input[Optional[_builtins.str]] = None,
+            db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            host: pulumi.Input[Optional[_builtins.str]] = None,
+            ingress_ips: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConnectionIngressIpArgs', 'ConnectionIngressIpArgsDict', 'outputs.ConnectionIngressIp']]]]] = None,
+            key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            private_endpoint_id: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_password: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_username: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            security_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            ssh_host: pulumi.Input[Optional[_builtins.str]] = None,
+            ssh_key: pulumi.Input[Optional[_builtins.str]] = None,
+            ssh_sudo_location: pulumi.Input[Optional[_builtins.str]] = None,
+            ssh_user: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_ca: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_cert: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_crl: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_key: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            technology_type: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            username: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+            wallet: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["additionalAttributes"] = additional_attributes
+        __props__["compartmentId"] = compartment_id
+        __props__["connectionString"] = connection_string
+        __props__["connectionType"] = connection_type
+        __props__["databaseId"] = database_id
+        __props__["databaseName"] = database_name
+        __props__["dbSystemId"] = db_system_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["host"] = host
+        __props__["ingressIps"] = ingress_ips
+        __props__["keyId"] = key_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["nsgIds"] = nsg_ids
+        __props__["password"] = password
+        __props__["port"] = port
+        __props__["privateEndpointId"] = private_endpoint_id
+        __props__["replicationPassword"] = replication_password
+        __props__["replicationUsername"] = replication_username
+        __props__["secretId"] = secret_id
+        __props__["securityProtocol"] = security_protocol
+        __props__["sshHost"] = ssh_host
+        __props__["sshKey"] = ssh_key
+        __props__["sshSudoLocation"] = ssh_sudo_location
+        __props__["sshUser"] = ssh_user
+        __props__["sslCa"] = ssl_ca
+        __props__["sslCert"] = ssl_cert
+        __props__["sslCrl"] = ssl_crl
+        __props__["sslKey"] = ssl_key
+        __props__["sslMode"] = ssl_mode
+        __props__["state"] = state
+        __props__["subnetId"] = subnet_id
+        __props__["systemTags"] = system_tags
+        __props__["technologyType"] = technology_type
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["username"] = username
+        __props__["vaultId"] = vault_id
+        __props__["wallet"] = wallet
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseMigration/connection:Connection', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="additionalAttributes")
     def additional_attributes(self) -> pulumi.Output[Sequence['outputs.ConnectionAdditionalAttribute']]:

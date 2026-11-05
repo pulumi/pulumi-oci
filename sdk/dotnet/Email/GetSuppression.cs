@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Email
         /// Gets the details of a suppressed recipient email address for a given
         /// `suppressionId`. Each suppression is given a unique OCID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Email
         /// Gets the details of a suppressed recipient email address for a given
         /// `suppressionId`. Each suppression is given a unique OCID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -72,7 +70,6 @@ namespace Pulumi.Oci.Email
         /// 
         /// Gets the details of a suppressed recipient email address for a given
         /// `suppressionId`. Each suppression is given a unique OCID.
-        /// 
         /// 
         /// ## Example Usage
         /// 

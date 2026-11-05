@@ -220,6 +220,12 @@ func (OperatorControlState) ElementType() reflect.Type {
 	return reflect.TypeOf((*operatorControlState)(nil)).Elem()
 }
 
+// OperatorControlExists checks whether an existing OperatorControl resource with the given ID exists.
+func OperatorControlExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OperatorControlState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OperatorAccessControl/operatorControl:OperatorControl", id, state, "", opts...)
+}
+
 type operatorControlArgs struct {
 	// (Updatable) List of user groups who can approve an access request associated with a resource governed by this operator control.
 	ApproverGroupsLists []string `pulumi:"approverGroupsLists"`

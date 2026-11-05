@@ -151,6 +151,12 @@ func (NamespaceLookupsUpdateDataManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*namespaceLookupsUpdateDataManagementState)(nil)).Elem()
 }
 
+// NamespaceLookupsUpdateDataManagementExists checks whether an existing NamespaceLookupsUpdateDataManagement resource with the given ID exists.
+func NamespaceLookupsUpdateDataManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NamespaceLookupsUpdateDataManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LogAnalytics/namespaceLookupsUpdateDataManagement:NamespaceLookupsUpdateDataManagement", id, state, "", opts...)
+}
+
 type namespaceLookupsUpdateDataManagementArgs struct {
 	// The character encoding of the uploaded file.
 	CharEncoding *string `pulumi:"charEncoding"`

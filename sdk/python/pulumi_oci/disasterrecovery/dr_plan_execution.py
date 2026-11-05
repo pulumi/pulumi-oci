@@ -753,6 +753,58 @@ class DrPlanExecution(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return DrPlanExecution(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            automatic_execution_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DrPlanExecutionAutomaticExecutionDetailArgs', 'DrPlanExecutionAutomaticExecutionDetailArgsDict', 'outputs.DrPlanExecutionAutomaticExecutionDetail']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dr_protection_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            execution_duration_in_sec: pulumi.Input[Optional[_builtins.int]] = None,
+            execution_options: pulumi.Input[Optional[Union['DrPlanExecutionExecutionOptionsArgs', 'DrPlanExecutionExecutionOptionsArgsDict', 'outputs.DrPlanExecutionExecutionOptions']]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            group_executions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DrPlanExecutionGroupExecutionArgs', 'DrPlanExecutionGroupExecutionArgsDict', 'outputs.DrPlanExecutionGroupExecution']]]]] = None,
+            is_automatic: pulumi.Input[Optional[_builtins.bool]] = None,
+            life_cycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            log_locations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DrPlanExecutionLogLocationArgs', 'DrPlanExecutionLogLocationArgsDict', 'outputs.DrPlanExecutionLogLocation']]]]] = None,
+            peer_dr_protection_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_region: pulumi.Input[Optional[_builtins.str]] = None,
+            plan_execution_type: pulumi.Input[Optional[_builtins.str]] = None,
+            plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            step_status_counts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DrPlanExecutionStepStatusCountArgs', 'DrPlanExecutionStepStatusCountArgsDict', 'outputs.DrPlanExecutionStepStatusCount']]]]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_ended: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["automaticExecutionDetails"] = automatic_execution_details
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["drProtectionGroupId"] = dr_protection_group_id
+        __props__["executionDurationInSec"] = execution_duration_in_sec
+        __props__["executionOptions"] = execution_options
+        __props__["freeformTags"] = freeform_tags
+        __props__["groupExecutions"] = group_executions
+        __props__["isAutomatic"] = is_automatic
+        __props__["lifeCycleDetails"] = life_cycle_details
+        __props__["logLocations"] = log_locations
+        __props__["peerDrProtectionGroupId"] = peer_dr_protection_group_id
+        __props__["peerRegion"] = peer_region
+        __props__["planExecutionType"] = plan_execution_type
+        __props__["planId"] = plan_id
+        __props__["state"] = state
+        __props__["stepStatusCounts"] = step_status_counts
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeEnded"] = time_ended
+        __props__["timeStarted"] = time_started
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:DisasterRecovery/drPlanExecution:DrPlanExecution', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="automaticExecutionDetails")
     def automatic_execution_details(self) -> pulumi.Output[Sequence['outputs.DrPlanExecutionAutomaticExecutionDetail']]:

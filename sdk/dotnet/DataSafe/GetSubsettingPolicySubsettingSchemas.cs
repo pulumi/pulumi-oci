@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of subsetting schemas present in the specified subsetting policy and based on the specified query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of subsetting schemas present in the specified subsetting policy and based on the specified query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Subsetting Policy Subsetting Schemas in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets a list of subsetting schemas present in the specified subsetting policy and based on the specified query parameters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

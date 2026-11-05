@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ApmTraces
         /// 
         /// Retrieve a scheduled query in the APM Domain.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.ApmTraces
         /// 
         /// Retrieve a scheduled query in the APM Domain.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.ApmTraces
         /// This data source provides details about a specific Scheduled Query resource in Oracle Cloud Infrastructure Apm Traces service.
         /// 
         /// Retrieve a scheduled query in the APM Domain.
-        /// 
         /// 
         /// ## Example Usage
         /// 

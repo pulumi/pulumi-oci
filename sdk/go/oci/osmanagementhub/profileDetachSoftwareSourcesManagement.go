@@ -124,6 +124,12 @@ func (ProfileDetachSoftwareSourcesManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*profileDetachSoftwareSourcesManagementState)(nil)).Elem()
 }
 
+// ProfileDetachSoftwareSourcesManagementExists checks whether an existing ProfileDetachSoftwareSourcesManagement resource with the given ID exists.
+func ProfileDetachSoftwareSourcesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProfileDetachSoftwareSourcesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/profileDetachSoftwareSourcesManagement:ProfileDetachSoftwareSourcesManagement", id, state, "", opts...)
+}
+
 type profileDetachSoftwareSourcesManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the registration profile.
 	ProfileId string `pulumi:"profileId"`

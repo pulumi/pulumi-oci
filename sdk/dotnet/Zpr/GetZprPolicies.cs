@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Zpr
         /// 
         /// Gets a list of ZprPolicies.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Zpr
         /// 
         /// Gets a list of ZprPolicies.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.Zpr
         /// This data source provides the list of Zpr Policies in Oracle Cloud Infrastructure Zpr service.
         /// 
         /// Gets a list of ZprPolicies.
-        /// 
         /// 
         /// ## Example Usage
         /// 

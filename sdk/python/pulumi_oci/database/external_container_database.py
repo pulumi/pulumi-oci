@@ -640,6 +640,50 @@ class ExternalContainerDatabase(pulumi.CustomResource):
         __props__.__dict__["time_zone"] = time_zone
         return ExternalContainerDatabase(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            character_set: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_configuration: pulumi.Input[Optional[_builtins.str]] = None,
+            database_edition: pulumi.Input[Optional[_builtins.str]] = None,
+            database_management_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalContainerDatabaseDatabaseManagementConfigArgs', 'ExternalContainerDatabaseDatabaseManagementConfigArgsDict', 'outputs.ExternalContainerDatabaseDatabaseManagementConfig']]]]] = None,
+            database_version: pulumi.Input[Optional[_builtins.str]] = None,
+            db_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_packs: pulumi.Input[Optional[_builtins.str]] = None,
+            db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            ncharacter_set: pulumi.Input[Optional[_builtins.str]] = None,
+            stack_monitoring_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExternalContainerDatabaseStackMonitoringConfigArgs', 'ExternalContainerDatabaseStackMonitoringConfigArgsDict', 'outputs.ExternalContainerDatabaseStackMonitoringConfig']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_zone: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["characterSet"] = character_set
+        __props__["compartmentId"] = compartment_id
+        __props__["databaseConfiguration"] = database_configuration
+        __props__["databaseEdition"] = database_edition
+        __props__["databaseManagementConfigs"] = database_management_configs
+        __props__["databaseVersion"] = database_version
+        __props__["dbId"] = db_id
+        __props__["dbPacks"] = db_packs
+        __props__["dbUniqueName"] = db_unique_name
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["ncharacterSet"] = ncharacter_set
+        __props__["stackMonitoringConfigs"] = stack_monitoring_configs
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeZone"] = time_zone
+        return pulumi.runtime.exists_resource(None, 'oci:Database/externalContainerDatabase:ExternalContainerDatabase', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="characterSet")
     def character_set(self) -> pulumi.Output[_builtins.str]:

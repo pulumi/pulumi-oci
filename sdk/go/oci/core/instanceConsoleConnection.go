@@ -182,6 +182,12 @@ func (InstanceConsoleConnectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*instanceConsoleConnectionState)(nil)).Elem()
 }
 
+// InstanceConsoleConnectionExists checks whether an existing InstanceConsoleConnection resource with the given ID exists.
+func InstanceConsoleConnectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *InstanceConsoleConnectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/instanceConsoleConnection:InstanceConsoleConnection", id, state, "", opts...)
+}
+
 type instanceConsoleConnectionArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`

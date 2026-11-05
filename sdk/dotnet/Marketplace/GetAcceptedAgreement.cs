@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// Gets the details of a specific, previously accepted terms of use agreement.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Marketplace
         /// 
         /// Gets the details of a specific, previously accepted terms of use agreement.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Marketplace
         /// This data source provides details about a specific Accepted Agreement resource in Oracle Cloud Infrastructure Marketplace service.
         /// 
         /// Gets the details of a specific, previously accepted terms of use agreement.
-        /// 
         /// 
         /// ## Example Usage
         /// 

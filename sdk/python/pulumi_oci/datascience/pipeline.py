@@ -783,6 +783,52 @@ class Pipeline(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return Pipeline(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configuration_details: pulumi.Input[Optional[Union['PipelineConfigurationDetailsArgs', 'PipelineConfigurationDetailsArgsDict', 'outputs.PipelineConfigurationDetails']]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            delete_related_pipeline_runs: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            infrastructure_configuration_details: pulumi.Input[Optional[Union['PipelineInfrastructureConfigurationDetailsArgs', 'PipelineInfrastructureConfigurationDetailsArgsDict', 'outputs.PipelineInfrastructureConfigurationDetails']]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            log_configuration_details: pulumi.Input[Optional[Union['PipelineLogConfigurationDetailsArgs', 'PipelineLogConfigurationDetailsArgsDict', 'outputs.PipelineLogConfigurationDetails']]] = None,
+            parameters: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            step_artifacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStepArtifactArgs', 'PipelineStepArtifactArgsDict', 'outputs.PipelineStepArtifact']]]]] = None,
+            step_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStepDetailArgs', 'PipelineStepDetailArgsDict', 'outputs.PipelineStepDetail']]]]] = None,
+            storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineStorageMountConfigurationDetailsListArgs', 'PipelineStorageMountConfigurationDetailsListArgsDict', 'outputs.PipelineStorageMountConfigurationDetailsList']]]]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["configurationDetails"] = configuration_details
+        __props__["createdBy"] = created_by
+        __props__["definedTags"] = defined_tags
+        __props__["deleteRelatedPipelineRuns"] = delete_related_pipeline_runs
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["infrastructureConfigurationDetails"] = infrastructure_configuration_details
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["logConfigurationDetails"] = log_configuration_details
+        __props__["parameters"] = parameters
+        __props__["projectId"] = project_id
+        __props__["state"] = state
+        __props__["stepArtifacts"] = step_artifacts
+        __props__["stepDetails"] = step_details
+        __props__["storageMountConfigurationDetailsLists"] = storage_mount_configuration_details_lists
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:DataScience/pipeline:Pipeline', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

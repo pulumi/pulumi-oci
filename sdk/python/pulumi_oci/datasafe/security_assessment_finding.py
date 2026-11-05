@@ -664,6 +664,58 @@ class SecurityAssessmentFinding(pulumi.CustomResource):
         __props__.__dict__["title"] = title
         return SecurityAssessmentFinding(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            category: pulumi.Input[Optional[_builtins.str]] = None,
+            details: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            doclink: pulumi.Input[Optional[_builtins.str]] = None,
+            has_target_db_risk_level_changed: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_risk_modified: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_top_finding: pulumi.Input[Optional[_builtins.bool]] = None,
+            justification: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            oneline: pulumi.Input[Optional[_builtins.str]] = None,
+            oracle_defined_severity: pulumi.Input[Optional[_builtins.str]] = None,
+            patch_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentFindingPatchOperationArgs', 'SecurityAssessmentFindingPatchOperationArgsDict', 'outputs.SecurityAssessmentFindingPatchOperation']]]]] = None,
+            references: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecurityAssessmentFindingReferenceArgs', 'SecurityAssessmentFindingReferenceArgsDict', 'outputs.SecurityAssessmentFindingReference']]]]] = None,
+            remarks: pulumi.Input[Optional[_builtins.str]] = None,
+            security_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            severity: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            summary: pulumi.Input[Optional[_builtins.str]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            time_valid_until: pulumi.Input[Optional[_builtins.str]] = None,
+            title: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["assessmentId"] = assessment_id
+        __props__["category"] = category
+        __props__["details"] = details
+        __props__["doclink"] = doclink
+        __props__["hasTargetDbRiskLevelChanged"] = has_target_db_risk_level_changed
+        __props__["isRiskModified"] = is_risk_modified
+        __props__["isTopFinding"] = is_top_finding
+        __props__["justification"] = justification
+        __props__["key"] = key
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["oneline"] = oneline
+        __props__["oracleDefinedSeverity"] = oracle_defined_severity
+        __props__["patchOperations"] = patch_operations
+        __props__["references"] = references
+        __props__["remarks"] = remarks
+        __props__["securityAssessmentId"] = security_assessment_id
+        __props__["severity"] = severity
+        __props__["state"] = state
+        __props__["summary"] = summary
+        __props__["targetId"] = target_id
+        __props__["timeUpdated"] = time_updated
+        __props__["timeValidUntil"] = time_valid_until
+        __props__["title"] = title
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/securityAssessmentFinding:SecurityAssessmentFinding', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="assessmentId")
     def assessment_id(self) -> pulumi.Output[_builtins.str]:

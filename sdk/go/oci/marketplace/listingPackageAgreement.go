@@ -150,6 +150,12 @@ func (ListingPackageAgreementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*listingPackageAgreementState)(nil)).Elem()
 }
 
+// ListingPackageAgreementExists checks whether an existing ListingPackageAgreement resource with the given ID exists.
+func ListingPackageAgreementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ListingPackageAgreementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Marketplace/listingPackageAgreement:ListingPackageAgreement", id, state, "", opts...)
+}
+
 type listingPackageAgreementArgs struct {
 	// The unique identifier for the agreement.
 	AgreementId string `pulumi:"agreementId"`

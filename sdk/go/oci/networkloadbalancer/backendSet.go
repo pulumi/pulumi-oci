@@ -219,6 +219,12 @@ func (BackendSetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*backendSetState)(nil)).Elem()
 }
 
+// BackendSetExists checks whether an existing BackendSet resource with the given ID exists.
+func BackendSetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BackendSetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:NetworkLoadBalancer/backendSet:BackendSet", id, state, "", opts...)
+}
+
 type backendSetArgs struct {
 	// (Updatable) If enabled, NLB supports active-standby backends, with the initial standby being the configured backup backend. The standby backend becomes active and takes over serving traffic when the current active backend becomes unhealthy.   The new active backend continues to serve the traffic while healthy even when the old active backend becomes healthy.
 	AreOperationallyActiveBackendsPreferred *bool `pulumi:"areOperationallyActiveBackendsPreferred"`

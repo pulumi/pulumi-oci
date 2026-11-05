@@ -345,6 +345,12 @@ func (MaintenanceRunState) ElementType() reflect.Type {
 	return reflect.TypeOf((*maintenanceRunState)(nil)).Elem()
 }
 
+// MaintenanceRunExists checks whether an existing MaintenanceRun resource with the given ID exists.
+func MaintenanceRunExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MaintenanceRunState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/maintenanceRun:MaintenanceRun", id, state, "", opts...)
+}
+
 type maintenanceRunArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the Maintenance Run.
 	CompartmentId *string `pulumi:"compartmentId"`

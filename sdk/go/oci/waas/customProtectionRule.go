@@ -227,6 +227,12 @@ func (CustomProtectionRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*customProtectionRuleState)(nil)).Elem()
 }
 
+// CustomProtectionRuleExists checks whether an existing CustomProtectionRule resource with the given ID exists.
+func CustomProtectionRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CustomProtectionRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Waas/customProtectionRule:CustomProtectionRule", id, state, "", opts...)
+}
+
 type customProtectionRuleArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the custom protection rule.
 	CompartmentId string `pulumi:"compartmentId"`

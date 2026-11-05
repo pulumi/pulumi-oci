@@ -16,7 +16,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Gets a list of inventoryDetails.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Gets a list of inventoryDetails.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// This data source provides the list of Inventory Records in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
         /// Gets a list of inventoryDetails.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Lists all managed instances for a specified managed instance group. Filter the list against a variety of criteria including but not limited to the managed instance name. The results list all managed instances that have already been added to the group.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Lists all managed instances for a specified managed instance group. Filter the list against a variety of criteria including but not limited to the managed instance name. The results list all managed instances that have already been added to the group.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides the list of Managed Instance Group Managed Instances in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Lists all managed instances for a specified managed instance group. Filter the list against a variety of criteria including but not limited to the managed instance name. The results list all managed instances that have already been added to the group.
-        /// 
         /// 
         /// ## Example Usage
         /// 

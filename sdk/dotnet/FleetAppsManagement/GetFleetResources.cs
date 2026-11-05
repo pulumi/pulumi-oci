@@ -16,7 +16,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// List resources for a fleet in Fleet Application Management.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// List resources for a fleet in Fleet Application Management.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// This data source provides the list of Fleet Resources in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
         /// List resources for a fleet in Fleet Application Management.
-        /// 
         /// 
         /// ## Example Usage
         /// 

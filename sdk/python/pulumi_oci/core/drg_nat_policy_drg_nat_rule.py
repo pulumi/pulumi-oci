@@ -402,6 +402,24 @@ class DrgNatPolicyDrgNatRule(pulumi.CustomResource):
         __props__.__dict__["translated_source"] = translated_source
         return DrgNatPolicyDrgNatRule(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            drg_nat_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            drg_nat_rule_priority: pulumi.Input[Optional[_builtins.int]] = None,
+            original_destination: pulumi.Input[Optional[_builtins.str]] = None,
+            original_source: pulumi.Input[Optional[_builtins.str]] = None,
+            translated_destination: pulumi.Input[Optional[_builtins.str]] = None,
+            translated_source: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["drgNatPolicyId"] = drg_nat_policy_id
+        __props__["drgNatRulePriority"] = drg_nat_rule_priority
+        __props__["originalDestination"] = original_destination
+        __props__["originalSource"] = original_source
+        __props__["translatedDestination"] = translated_destination
+        __props__["translatedSource"] = translated_source
+        return pulumi.runtime.exists_resource(None, 'oci:Core/drgNatPolicyDrgNatRule:DrgNatPolicyDrgNatRule', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="drgNatPolicyId")
     def drg_nat_policy_id(self) -> pulumi.Output[_builtins.str]:

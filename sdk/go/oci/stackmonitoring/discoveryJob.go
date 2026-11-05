@@ -227,6 +227,12 @@ func (DiscoveryJobState) ElementType() reflect.Type {
 	return reflect.TypeOf((*discoveryJobState)(nil)).Elem()
 }
 
+// DiscoveryJobExists checks whether an existing DiscoveryJob resource with the given ID exists.
+func DiscoveryJobExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DiscoveryJobState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:StackMonitoring/discoveryJob:DiscoveryJob", id, state, "", opts...)
+}
+
 type discoveryJobArgs struct {
 	// The OCID of Compartment
 	CompartmentId string `pulumi:"compartmentId"`

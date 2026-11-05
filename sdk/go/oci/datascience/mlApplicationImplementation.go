@@ -262,6 +262,12 @@ func (MlApplicationImplementationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*mlApplicationImplementationState)(nil)).Elem()
 }
 
+// MlApplicationImplementationExists checks whether an existing MlApplicationImplementation resource with the given ID exists.
+func MlApplicationImplementationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MlApplicationImplementationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataScience/mlApplicationImplementation:MlApplicationImplementation", id, state, "", opts...)
+}
+
 type mlApplicationImplementationArgs struct {
 	// (Updatable) List of ML Application Implementation OCIDs for which migration from this implementation is allowed. Migration means that if consumers change implementation for their instances to implementation with OCID from this list, instance components will be updated in place otherwise new instance components are created based on the new implementation and old instance components are removed.
 	AllowedMigrationDestinations []string `pulumi:"allowedMigrationDestinations"`

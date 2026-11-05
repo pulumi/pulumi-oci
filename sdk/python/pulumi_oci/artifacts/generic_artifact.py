@@ -476,6 +476,36 @@ class GenericArtifact(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return GenericArtifact(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            artifact_id: pulumi.Input[Optional[_builtins.str]] = None,
+            artifact_path: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            repository_id: pulumi.Input[Optional[_builtins.str]] = None,
+            sha256: pulumi.Input[Optional[_builtins.str]] = None,
+            size_in_bytes: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["artifactId"] = artifact_id
+        __props__["artifactPath"] = artifact_path
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["repositoryId"] = repository_id
+        __props__["sha256"] = sha256
+        __props__["sizeInBytes"] = size_in_bytes
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'oci:Artifacts/genericArtifact:GenericArtifact', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="artifactId")
     def artifact_id(self) -> pulumi.Output[_builtins.str]:

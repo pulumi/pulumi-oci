@@ -916,6 +916,54 @@ class AutonomousExadataInfrastructure(pulumi.CustomResource):
         __props__.__dict__["zone_id"] = zone_id
         return AutonomousExadataInfrastructure(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            create_async: pulumi.Input[Optional[_builtins.bool]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            domain: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            last_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
+            license_model: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            maintenance_window_details: pulumi.Input[Optional[Union['AutonomousExadataInfrastructureMaintenanceWindowDetailsArgs', 'AutonomousExadataInfrastructureMaintenanceWindowDetailsArgsDict', 'outputs.AutonomousExadataInfrastructureMaintenanceWindowDetails']]] = None,
+            maintenance_windows: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousExadataInfrastructureMaintenanceWindowArgs', 'AutonomousExadataInfrastructureMaintenanceWindowArgsDict', 'outputs.AutonomousExadataInfrastructureMaintenanceWindow']]]]] = None,
+            next_maintenance_run_id: pulumi.Input[Optional[_builtins.str]] = None,
+            nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            scan_dns_name: pulumi.Input[Optional[_builtins.str]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            zone_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availabilityDomain"] = availability_domain
+        __props__["compartmentId"] = compartment_id
+        __props__["createAsync"] = create_async
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["domain"] = domain
+        __props__["freeformTags"] = freeform_tags
+        __props__["hostname"] = hostname
+        __props__["lastMaintenanceRunId"] = last_maintenance_run_id
+        __props__["licenseModel"] = license_model
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["maintenanceWindowDetails"] = maintenance_window_details
+        __props__["maintenanceWindows"] = maintenance_windows
+        __props__["nextMaintenanceRunId"] = next_maintenance_run_id
+        __props__["nsgIds"] = nsg_ids
+        __props__["scanDnsName"] = scan_dns_name
+        __props__["shape"] = shape
+        __props__["state"] = state
+        __props__["subnetId"] = subnet_id
+        __props__["timeCreated"] = time_created
+        __props__["zoneId"] = zone_id
+        return pulumi.runtime.exists_resource(None, 'oci:Database/autonomousExadataInfrastructure:AutonomousExadataInfrastructure', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
     @_utilities.deprecated("""Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""")

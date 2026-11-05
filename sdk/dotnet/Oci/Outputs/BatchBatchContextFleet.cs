@@ -30,8 +30,7 @@ namespace Pulumi.Oci.Oci.Outputs
         /// </summary>
         public readonly Outputs.BatchBatchContextFleetShape Shape;
         /// <summary>
-        /// (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`. 
-        /// 
+        /// (Updatable) The target state for the Batch Context. Could be set to `ACTIVE` or `INACTIVE`.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

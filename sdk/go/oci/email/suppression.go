@@ -163,6 +163,12 @@ func (SuppressionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*suppressionState)(nil)).Elem()
 }
 
+// SuppressionExists checks whether an existing Suppression resource with the given ID exists.
+func SuppressionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SuppressionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Email/suppression:Suppression", id, state, "", opts...)
+}
+
 type suppressionArgs struct {
 	// The OCID of the compartment to contain the suppression. Since suppressions are at the customer level, this must be the tenancy OCID.
 	CompartmentId string `pulumi:"compartmentId"`

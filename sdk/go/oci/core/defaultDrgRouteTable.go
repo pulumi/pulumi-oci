@@ -169,6 +169,12 @@ func (DefaultDrgRouteTableState) ElementType() reflect.Type {
 	return reflect.TypeOf((*defaultDrgRouteTableState)(nil)).Elem()
 }
 
+// DefaultDrgRouteTableExists checks whether an existing DefaultDrgRouteTable resource with the given ID exists.
+func DefaultDrgRouteTableExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DefaultDrgRouteTableState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/defaultDrgRouteTable:DefaultDrgRouteTable", id, state, "", opts...)
+}
+
 type defaultDrgRouteTableArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment the DRG is in. The DRG route table is always in the same compartment as the DRG.
 	CompartmentId *string `pulumi:"compartmentId"`

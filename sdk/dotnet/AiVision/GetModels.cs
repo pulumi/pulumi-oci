@@ -16,7 +16,6 @@ namespace Pulumi.Oci.AiVision
         /// 
         /// Returns a list of models in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.AiVision
         /// 
         /// Returns a list of models in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.AiVision
         /// This data source provides the list of Models in Oracle Cloud Infrastructure Ai Vision service.
         /// 
         /// Returns a list of models in a compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

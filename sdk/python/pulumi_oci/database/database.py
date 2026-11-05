@@ -1215,6 +1215,96 @@ class Database(pulumi.CustomResource):
         __props__.__dict__["vm_cluster_id"] = vm_cluster_id
         return Database(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            action_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            character_set: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseConnectionStringArgs', 'DatabaseConnectionStringArgsDict', 'outputs.DatabaseConnectionString']]]]] = None,
+            data_guard_action: pulumi.Input[Optional[_builtins.str]] = None,
+            data_guard_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseDataGuardGroupArgs', 'DatabaseDataGuardGroupArgsDict', 'outputs.DatabaseDataGuardGroup']]]]] = None,
+            database: pulumi.Input[Optional[Union['DatabaseDatabaseArgs', 'DatabaseDatabaseArgsDict', 'outputs.DatabaseDatabase']]] = None,
+            database_management_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseDatabaseManagementConfigArgs', 'DatabaseDatabaseManagementConfigArgsDict', 'outputs.DatabaseDatabaseManagementConfig']]]]] = None,
+            database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_backup_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseDbBackupConfigArgs', 'DatabaseDbBackupConfigArgsDict', 'outputs.DatabaseDbBackupConfig']]]]] = None,
+            db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_name: pulumi.Input[Optional[_builtins.str]] = None,
+            db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+            db_version: pulumi.Input[Optional[_builtins.str]] = None,
+            db_workload: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_cdb: pulumi.Input[Optional[_builtins.bool]] = None,
+            key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_store_wallet_name: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_migration: pulumi.Input[Optional[_builtins.bool]] = None,
+            kms_key_rotation: pulumi.Input[Optional[_builtins.int]] = None,
+            kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            last_backup_duration_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            last_backup_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+            last_failed_backup_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            managed_software_update_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseManagedSoftwareUpdateDetailArgs', 'DatabaseManagedSoftwareUpdateDetailArgsDict', 'outputs.DatabaseManagedSoftwareUpdateDetail']]]]] = None,
+            ncharacter_set: pulumi.Input[Optional[_builtins.str]] = None,
+            patch_version: pulumi.Input[Optional[_builtins.str]] = None,
+            pdb_name: pulumi.Input[Optional[_builtins.str]] = None,
+            sid_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            source_database_point_in_time_recovery_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            storage_size_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseStorageSizeDetailArgs', 'DatabaseStorageSizeDetailArgsDict', 'outputs.DatabaseStorageSizeDetail']]]]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["actionTrigger"] = action_trigger
+        __props__["characterSet"] = character_set
+        __props__["compartmentId"] = compartment_id
+        __props__["connectionStrings"] = connection_strings
+        __props__["dataGuardAction"] = data_guard_action
+        __props__["dataGuardGroups"] = data_guard_groups
+        __props__["database"] = database
+        __props__["databaseManagementConfigs"] = database_management_configs
+        __props__["databaseSoftwareImageId"] = database_software_image_id
+        __props__["dbBackupConfigs"] = db_backup_configs
+        __props__["dbHomeId"] = db_home_id
+        __props__["dbName"] = db_name
+        __props__["dbSystemId"] = db_system_id
+        __props__["dbUniqueName"] = db_unique_name
+        __props__["dbVersion"] = db_version
+        __props__["dbWorkload"] = db_workload
+        __props__["definedTags"] = defined_tags
+        __props__["freeformTags"] = freeform_tags
+        __props__["isCdb"] = is_cdb
+        __props__["keyStoreId"] = key_store_id
+        __props__["keyStoreWalletName"] = key_store_wallet_name
+        __props__["kmsKeyId"] = kms_key_id
+        __props__["kmsKeyMigration"] = kms_key_migration
+        __props__["kmsKeyRotation"] = kms_key_rotation
+        __props__["kmsKeyVersionId"] = kms_key_version_id
+        __props__["lastBackupDurationInSeconds"] = last_backup_duration_in_seconds
+        __props__["lastBackupTimestamp"] = last_backup_timestamp
+        __props__["lastFailedBackupTimestamp"] = last_failed_backup_timestamp
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["managedSoftwareUpdateDetails"] = managed_software_update_details
+        __props__["ncharacterSet"] = ncharacter_set
+        __props__["patchVersion"] = patch_version
+        __props__["pdbName"] = pdb_name
+        __props__["sidPrefix"] = sid_prefix
+        __props__["source"] = source
+        __props__["sourceDatabasePointInTimeRecoveryTimestamp"] = source_database_point_in_time_recovery_timestamp
+        __props__["state"] = state
+        __props__["storageSizeDetails"] = storage_size_details
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["vaultId"] = vault_id
+        __props__["vmClusterId"] = vm_cluster_id
+        return pulumi.runtime.exists_resource(None, 'oci:Database/database:Database', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="actionTrigger")
     def action_trigger(self) -> pulumi.Output[Optional[_builtins.int]]:

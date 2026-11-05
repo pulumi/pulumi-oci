@@ -23,14 +23,14 @@ public final class DbHomeDatabaseArgs extends com.pulumi.resources.ResourceArgs 
     public static final DbHomeDatabaseArgs Empty = new DbHomeDatabaseArgs();
 
     /**
-     * A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
+     * A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, &#92;#, or -.
      * 
      */
     @Import(name="adminPassword", required=true)
     private Output<String> adminPassword;
 
     /**
-     * @return A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
+     * @return A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, &#92;#, or -.
      * 
      */
     public Output<String> adminPassword() {
@@ -420,14 +420,14 @@ public final class DbHomeDatabaseArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \#, or -.
+     * The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, &#92;#, or -.
      * 
      */
     @Import(name="tdeWalletPassword")
     private @Nullable Output<String> tdeWalletPassword;
 
     /**
-     * @return The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \#, or -.
+     * @return The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, &#92;#, or -.
      * 
      */
     public Optional<Output<String>> tdeWalletPassword() {
@@ -550,7 +550,7 @@ public final class DbHomeDatabaseArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param adminPassword A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
+         * @param adminPassword A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, &#92;#, or -.
          * 
          * @return builder
          * 
@@ -561,7 +561,7 @@ public final class DbHomeDatabaseArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param adminPassword A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
+         * @param adminPassword A strong password for SYS, SYSTEM, PDB Admin and TDE Wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, &#92;#, or -.
          * 
          * @return builder
          * 
@@ -1125,7 +1125,7 @@ public final class DbHomeDatabaseArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param tdeWalletPassword The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \#, or -.
+         * @param tdeWalletPassword The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, &#92;#, or -.
          * 
          * @return builder
          * 
@@ -1136,7 +1136,7 @@ public final class DbHomeDatabaseArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param tdeWalletPassword The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, \#, or -.
+         * @param tdeWalletPassword The optional password to open the TDE wallet. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numeric, and two special characters. The special characters must be _, &#92;#, or -.
          * 
          * @return builder
          * 

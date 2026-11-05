@@ -937,6 +937,50 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["vcn_id"] = vcn_id
         return Cluster(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            available_kubernetes_upgrades: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            cluster_pod_network_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterClusterPodNetworkOptionArgs', 'ClusterClusterPodNetworkOptionArgsDict', 'outputs.ClusterClusterPodNetworkOption']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            endpoint_config: pulumi.Input[Optional[Union['ClusterEndpointConfigArgs', 'ClusterEndpointConfigArgsDict', 'outputs.ClusterEndpointConfig']]] = None,
+            endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterEndpointArgs', 'ClusterEndpointArgsDict', 'outputs.ClusterEndpoint']]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            image_policy_config: pulumi.Input[Optional[Union['ClusterImagePolicyConfigArgs', 'ClusterImagePolicyConfigArgsDict', 'outputs.ClusterImagePolicyConfig']]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            kubernetes_version: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterMetadataArgs', 'ClusterMetadataArgsDict', 'outputs.ClusterMetadata']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            open_id_connect_discovery_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            open_id_connect_discovery_key: pulumi.Input[Optional[_builtins.str]] = None,
+            options: pulumi.Input[Optional[Union['ClusterOptionsArgs', 'ClusterOptionsArgsDict', 'outputs.ClusterOptions']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            vcn_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availableKubernetesUpgrades"] = available_kubernetes_upgrades
+        __props__["clusterPodNetworkOptions"] = cluster_pod_network_options
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["endpointConfig"] = endpoint_config
+        __props__["endpoints"] = endpoints
+        __props__["freeformTags"] = freeform_tags
+        __props__["imagePolicyConfig"] = image_policy_config
+        __props__["kmsKeyId"] = kms_key_id
+        __props__["kubernetesVersion"] = kubernetes_version
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["metadatas"] = metadatas
+        __props__["name"] = name
+        __props__["openIdConnectDiscoveryEndpoint"] = open_id_connect_discovery_endpoint
+        __props__["openIdConnectDiscoveryKey"] = open_id_connect_discovery_key
+        __props__["options"] = options
+        __props__["state"] = state
+        __props__["type"] = type
+        __props__["vcnId"] = vcn_id
+        return pulumi.runtime.exists_resource(None, 'oci:ContainerEngine/cluster:Cluster', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="availableKubernetesUpgrades")
     def available_kubernetes_upgrades(self) -> pulumi.Output[Sequence[_builtins.str]]:

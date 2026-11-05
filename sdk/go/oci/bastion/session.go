@@ -203,6 +203,12 @@ func (SessionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*sessionState)(nil)).Elem()
 }
 
+// SessionExists checks whether an existing Session resource with the given ID exists.
+func SessionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SessionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Bastion/session:Session", id, state, "", opts...)
+}
+
 type sessionArgs struct {
 	// The unique identifier (OCID) of the bastion on which to create this session.
 	BastionId string `pulumi:"bastionId"`

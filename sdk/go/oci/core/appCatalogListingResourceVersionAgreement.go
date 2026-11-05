@@ -126,6 +126,12 @@ func (AppCatalogListingResourceVersionAgreementState) ElementType() reflect.Type
 	return reflect.TypeOf((*appCatalogListingResourceVersionAgreementState)(nil)).Elem()
 }
 
+// AppCatalogListingResourceVersionAgreementExists checks whether an existing AppCatalogListingResourceVersionAgreement resource with the given ID exists.
+func AppCatalogListingResourceVersionAgreementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppCatalogListingResourceVersionAgreementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/appCatalogListingResourceVersionAgreement:AppCatalogListingResourceVersionAgreement", id, state, "", opts...)
+}
+
 type appCatalogListingResourceVersionAgreementArgs struct {
 	// The OCID of the listing.
 	ListingId string `pulumi:"listingId"`

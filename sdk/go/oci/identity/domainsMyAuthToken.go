@@ -710,6 +710,12 @@ func (DomainsMyAuthTokenState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsMyAuthTokenState)(nil)).Elem()
 }
 
+// DomainsMyAuthTokenExists checks whether an existing DomainsMyAuthToken resource with the given ID exists.
+func DomainsMyAuthTokenExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsMyAuthTokenState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsMyAuthToken:DomainsMyAuthToken", id, state, "", opts...)
+}
+
 type domainsMyAuthTokenArgs struct {
 	// The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization *string `pulumi:"authorization"`

@@ -182,6 +182,12 @@ func (ReplicationScheduleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*replicationScheduleState)(nil)).Elem()
 }
 
+// ReplicationScheduleExists checks whether an existing ReplicationSchedule resource with the given ID exists.
+func ReplicationScheduleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ReplicationScheduleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CloudMigrations/replicationSchedule:ReplicationSchedule", id, state, "", opts...)
+}
+
 type replicationScheduleArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the replication schedule should be created.
 	CompartmentId string `pulumi:"compartmentId"`

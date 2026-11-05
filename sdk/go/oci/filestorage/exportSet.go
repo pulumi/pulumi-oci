@@ -177,6 +177,12 @@ func (ExportSetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*exportSetState)(nil)).Elem()
 }
 
+// ExportSetExists checks whether an existing ExportSet resource with the given ID exists.
+func ExportSetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExportSetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FileStorage/exportSet:ExportSet", id, state, "", opts...)
+}
+
 type exportSetArgs struct {
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My export set`
 	DisplayName *string `pulumi:"displayName"`

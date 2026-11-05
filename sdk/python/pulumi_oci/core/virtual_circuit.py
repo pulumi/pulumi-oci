@@ -1374,6 +1374,78 @@ class VirtualCircuit(pulumi.CustomResource):
         __props__.__dict__["virtual_circuit_redundancy_metadatas"] = virtual_circuit_redundancy_metadatas
         return VirtualCircuit(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            bandwidth_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+            bgp_admin_state: pulumi.Input[Optional[_builtins.str]] = None,
+            bgp_ipv6session_state: pulumi.Input[Optional[_builtins.str]] = None,
+            bgp_management: pulumi.Input[Optional[_builtins.str]] = None,
+            bgp_session_state: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cross_connect_mappings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitCrossConnectMappingArgs', 'VirtualCircuitCrossConnectMappingArgsDict', 'outputs.VirtualCircuitCrossConnectMapping']]]]] = None,
+            customer_asn: pulumi.Input[Optional[_builtins.str]] = None,
+            customer_bgp_asn: pulumi.Input[Optional[_builtins.int]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            gateway_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_mtu: pulumi.Input[Optional[_builtins.str]] = None,
+            is_bfd_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_transport_mode: pulumi.Input[Optional[_builtins.bool]] = None,
+            oracle_bgp_asn: pulumi.Input[Optional[_builtins.int]] = None,
+            provider_remote_region: pulumi.Input[Optional[_builtins.str]] = None,
+            provider_service_id: pulumi.Input[Optional[_builtins.str]] = None,
+            provider_service_key_name: pulumi.Input[Optional[_builtins.str]] = None,
+            provider_state: pulumi.Input[Optional[_builtins.str]] = None,
+            public_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitPublicPrefixArgs', 'VirtualCircuitPublicPrefixArgsDict', 'outputs.VirtualCircuitPublicPrefix']]]]] = None,
+            reference_comment: pulumi.Input[Optional[_builtins.str]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            remote_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            routing_policies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            service_type: pulumi.Input[Optional[_builtins.str]] = None,
+            shared_connection_uuid: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            traffic_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            virtual_circuit_redundancy_metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VirtualCircuitVirtualCircuitRedundancyMetadataArgs', 'VirtualCircuitVirtualCircuitRedundancyMetadataArgsDict', 'outputs.VirtualCircuitVirtualCircuitRedundancyMetadata']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["bandwidthShapeName"] = bandwidth_shape_name
+        __props__["bgpAdminState"] = bgp_admin_state
+        __props__["bgpIpv6sessionState"] = bgp_ipv6session_state
+        __props__["bgpManagement"] = bgp_management
+        __props__["bgpSessionState"] = bgp_session_state
+        __props__["compartmentId"] = compartment_id
+        __props__["crossConnectMappings"] = cross_connect_mappings
+        __props__["customerAsn"] = customer_asn
+        __props__["customerBgpAsn"] = customer_bgp_asn
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["gatewayId"] = gateway_id
+        __props__["ipMtu"] = ip_mtu
+        __props__["isBfdEnabled"] = is_bfd_enabled
+        __props__["isTransportMode"] = is_transport_mode
+        __props__["oracleBgpAsn"] = oracle_bgp_asn
+        __props__["providerRemoteRegion"] = provider_remote_region
+        __props__["providerServiceId"] = provider_service_id
+        __props__["providerServiceKeyName"] = provider_service_key_name
+        __props__["providerState"] = provider_state
+        __props__["publicPrefixes"] = public_prefixes
+        __props__["referenceComment"] = reference_comment
+        __props__["region"] = region
+        __props__["remoteAccountId"] = remote_account_id
+        __props__["routingPolicies"] = routing_policies
+        __props__["serviceType"] = service_type
+        __props__["sharedConnectionUuid"] = shared_connection_uuid
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["trafficMode"] = traffic_mode
+        __props__["type"] = type
+        __props__["virtualCircuitRedundancyMetadatas"] = virtual_circuit_redundancy_metadatas
+        return pulumi.runtime.exists_resource(None, 'oci:Core/virtualCircuit:VirtualCircuit', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="bandwidthShapeName")
     def bandwidth_shape_name(self) -> pulumi.Output[_builtins.str]:

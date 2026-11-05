@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Gets a list of ApiMetadata Grouped By Entity Types.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Gets a list of ApiMetadata Grouped By Entity Types.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Api Metadata By Entity Types in Oracle Cloud Infrastructure Apiaccesscontrol service.
         /// 
         /// Gets a list of ApiMetadata Grouped By Entity Types.
-        /// 
         /// 
         /// ## Example Usage
         /// 

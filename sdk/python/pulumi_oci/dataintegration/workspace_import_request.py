@@ -689,6 +689,46 @@ class WorkspaceImportRequest(pulumi.CustomResource):
         __props__.__dict__["workspace_id"] = workspace_id
         return WorkspaceImportRequest(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            are_data_asset_references_included: pulumi.Input[Optional[_builtins.bool]] = None,
+            bucket: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            error_messages: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            file_name: pulumi.Input[Optional[_builtins.str]] = None,
+            import_conflict_resolution: pulumi.Input[Optional[Union['WorkspaceImportRequestImportConflictResolutionArgs', 'WorkspaceImportRequestImportConflictResolutionArgsDict', 'outputs.WorkspaceImportRequestImportConflictResolution']]] = None,
+            imported_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceImportRequestImportedObjectArgs', 'WorkspaceImportRequestImportedObjectArgsDict', 'outputs.WorkspaceImportRequestImportedObject']]]]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            object_key_for_import: pulumi.Input[Optional[_builtins.str]] = None,
+            object_storage_region: pulumi.Input[Optional[_builtins.str]] = None,
+            object_storage_tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            time_ended_in_millis: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started_in_millis: pulumi.Input[Optional[_builtins.str]] = None,
+            total_imported_object_count: pulumi.Input[Optional[_builtins.int]] = None,
+            workspace_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["areDataAssetReferencesIncluded"] = are_data_asset_references_included
+        __props__["bucket"] = bucket
+        __props__["createdBy"] = created_by
+        __props__["errorMessages"] = error_messages
+        __props__["fileName"] = file_name
+        __props__["importConflictResolution"] = import_conflict_resolution
+        __props__["importedObjects"] = imported_objects
+        __props__["key"] = key
+        __props__["name"] = name
+        __props__["objectKeyForImport"] = object_key_for_import
+        __props__["objectStorageRegion"] = object_storage_region
+        __props__["objectStorageTenancyId"] = object_storage_tenancy_id
+        __props__["status"] = status
+        __props__["timeEndedInMillis"] = time_ended_in_millis
+        __props__["timeStartedInMillis"] = time_started_in_millis
+        __props__["totalImportedObjectCount"] = total_imported_object_count
+        __props__["workspaceId"] = workspace_id
+        return pulumi.runtime.exists_resource(None, 'oci:DataIntegration/workspaceImportRequest:WorkspaceImportRequest', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="areDataAssetReferencesIncluded")
     def are_data_asset_references_included(self) -> pulumi.Output[_builtins.bool]:

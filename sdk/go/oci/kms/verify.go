@@ -180,6 +180,12 @@ func (VerifyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*verifyState)(nil)).Elem()
 }
 
+// VerifyExists checks whether an existing Verify resource with the given ID exists.
+func VerifyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VerifyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Kms/verify:Verify", id, state, "", opts...)
+}
+
 type verifyArgs struct {
 	// The service endpoint to perform cryptographic operations against. Cryptographic operations include 'Encrypt,' 'Decrypt,', 'GenerateDataEncryptionKey', 'Sign' and 'Verify' operations. see Vault Crypto endpoint.
 	CryptoEndpoint string `pulumi:"cryptoEndpoint"`

@@ -1136,6 +1136,58 @@ class JobRun(pulumi.CustomResource):
         __props__.__dict__["time_started"] = time_started
         return JobRun(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            asynchronous: pulumi.Input[Optional[_builtins.bool]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            job_configuration_override_details: pulumi.Input[Optional[Union['JobRunJobConfigurationOverrideDetailsArgs', 'JobRunJobConfigurationOverrideDetailsArgsDict', 'outputs.JobRunJobConfigurationOverrideDetails']]] = None,
+            job_environment_configuration_override_details: pulumi.Input[Optional[Union['JobRunJobEnvironmentConfigurationOverrideDetailsArgs', 'JobRunJobEnvironmentConfigurationOverrideDetailsArgsDict', 'outputs.JobRunJobEnvironmentConfigurationOverrideDetails']]] = None,
+            job_id: pulumi.Input[Optional[_builtins.str]] = None,
+            job_infrastructure_configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobRunJobInfrastructureConfigurationDetailArgs', 'JobRunJobInfrastructureConfigurationDetailArgsDict', 'outputs.JobRunJobInfrastructureConfigurationDetail']]]]] = None,
+            job_infrastructure_configuration_override_details: pulumi.Input[Optional[Union['JobRunJobInfrastructureConfigurationOverrideDetailsArgs', 'JobRunJobInfrastructureConfigurationOverrideDetailsArgsDict', 'outputs.JobRunJobInfrastructureConfigurationOverrideDetails']]] = None,
+            job_log_configuration_override_details: pulumi.Input[Optional[Union['JobRunJobLogConfigurationOverrideDetailsArgs', 'JobRunJobLogConfigurationOverrideDetailsArgsDict', 'outputs.JobRunJobLogConfigurationOverrideDetails']]] = None,
+            job_node_configuration_override_details: pulumi.Input[Optional[Union['JobRunJobNodeConfigurationOverrideDetailsArgs', 'JobRunJobNodeConfigurationOverrideDetailsArgsDict', 'outputs.JobRunJobNodeConfigurationOverrideDetails']]] = None,
+            job_storage_mount_configuration_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobRunJobStorageMountConfigurationDetailsListArgs', 'JobRunJobStorageMountConfigurationDetailsListArgsDict', 'outputs.JobRunJobStorageMountConfigurationDetailsList']]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            log_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobRunLogDetailArgs', 'JobRunLogDetailArgsDict', 'outputs.JobRunLogDetail']]]]] = None,
+            node_group_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobRunNodeGroupDetailsListArgs', 'JobRunNodeGroupDetailsListArgsDict', 'outputs.JobRunNodeGroupDetailsList']]]]] = None,
+            opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_accepted: pulumi.Input[Optional[_builtins.str]] = None,
+            time_finished: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["asynchronous"] = asynchronous
+        __props__["compartmentId"] = compartment_id
+        __props__["createdBy"] = created_by
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["jobConfigurationOverrideDetails"] = job_configuration_override_details
+        __props__["jobEnvironmentConfigurationOverrideDetails"] = job_environment_configuration_override_details
+        __props__["jobId"] = job_id
+        __props__["jobInfrastructureConfigurationDetails"] = job_infrastructure_configuration_details
+        __props__["jobInfrastructureConfigurationOverrideDetails"] = job_infrastructure_configuration_override_details
+        __props__["jobLogConfigurationOverrideDetails"] = job_log_configuration_override_details
+        __props__["jobNodeConfigurationOverrideDetails"] = job_node_configuration_override_details
+        __props__["jobStorageMountConfigurationDetailsLists"] = job_storage_mount_configuration_details_lists
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["logDetails"] = log_details
+        __props__["nodeGroupDetailsLists"] = node_group_details_lists
+        __props__["opcParentRptUrl"] = opc_parent_rpt_url
+        __props__["projectId"] = project_id
+        __props__["state"] = state
+        __props__["timeAccepted"] = time_accepted
+        __props__["timeFinished"] = time_finished
+        __props__["timeStarted"] = time_started
+        return pulumi.runtime.exists_resource(None, 'oci:DataScience/jobRun:JobRun', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def asynchronous(self) -> pulumi.Output[Optional[_builtins.bool]]:

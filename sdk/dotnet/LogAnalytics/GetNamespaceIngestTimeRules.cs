@@ -16,7 +16,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Returns a list of ingest time rules in a compartment. You may limit the number of rules, provide sorting options, and filter the results.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Returns a list of ingest time rules in a compartment. You may limit the number of rules, provide sorting options, and filter the results.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -81,7 +79,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides the list of Namespace Ingest Time Rules in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// Returns a list of ingest time rules in a compartment. You may limit the number of rules, provide sorting options, and filter the results.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -171,6 +171,12 @@ func (HeatWaveClusterState) ElementType() reflect.Type {
 	return reflect.TypeOf((*heatWaveClusterState)(nil)).Elem()
 }
 
+// HeatWaveClusterExists checks whether an existing HeatWaveCluster resource with the given ID exists.
+func HeatWaveClusterExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HeatWaveClusterState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Mysql/heatWaveCluster:HeatWaveCluster", id, state, "", opts...)
+}
+
 type heatWaveClusterArgs struct {
 	// (Updatable) A change to the number of nodes in the HeatWave cluster will result in the entire cluster being torn down and re-created with the new cluster of nodes. This may result in a significant downtime for the analytics capability while the HeatWave cluster is re-provisioned.
 	ClusterSize int `pulumi:"clusterSize"`

@@ -311,6 +311,12 @@ func (BuildPipelineStageState) ElementType() reflect.Type {
 	return reflect.TypeOf((*buildPipelineStageState)(nil)).Elem()
 }
 
+// BuildPipelineStageExists checks whether an existing BuildPipelineStage resource with the given ID exists.
+func BuildPipelineStageExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BuildPipelineStageState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DevOps/buildPipelineStage:BuildPipelineStage", id, state, "", opts...)
+}
+
 type buildPipelineStageArgs struct {
 	// The OCID of the build pipeline.
 	BuildPipelineId string `pulumi:"buildPipelineId"`

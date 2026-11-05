@@ -111,22 +111,20 @@ public final class RecoveryServiceSubnetArgs extends com.pulumi.resources.Resour
     /**
      * Deprecated. One of the subnets associated with the Recovery Service subnet.
      * 
-     * @deprecated
-     * The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnets&#39; instead.
+     * @deprecated The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnets&#39; instead.
      * 
      */
-    @Deprecated /* The 'subnet_id' field has been deprecated. Please use 'subnets' instead. */
+    @Deprecated
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
      * @return Deprecated. One of the subnets associated with the Recovery Service subnet.
      * 
-     * @deprecated
-     * The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnets&#39; instead.
+     * @deprecated The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnets&#39; instead.
      * 
      */
-    @Deprecated /* The 'subnet_id' field has been deprecated. Please use 'subnets' instead. */
+    @Deprecated
     public Optional<Output<String>> subnetId() {
         return Optional.ofNullable(this.subnetId);
     }
@@ -340,11 +338,10 @@ public final class RecoveryServiceSubnetArgs extends com.pulumi.resources.Resour
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnets&#39; instead.
+         * @deprecated The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnets&#39; instead.
          * 
          */
-        @Deprecated /* The 'subnet_id' field has been deprecated. Please use 'subnets' instead. */
+        @Deprecated
         public Builder subnetId(@Nullable Output<String> subnetId) {
             $.subnetId = subnetId;
             return this;
@@ -355,11 +352,10 @@ public final class RecoveryServiceSubnetArgs extends com.pulumi.resources.Resour
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnets&#39; instead.
+         * @deprecated The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnets&#39; instead.
          * 
          */
-        @Deprecated /* The 'subnet_id' field has been deprecated. Please use 'subnets' instead. */
+        @Deprecated
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
         }

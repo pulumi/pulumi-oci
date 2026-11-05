@@ -170,6 +170,12 @@ func (RuleSetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ruleSetState)(nil)).Elem()
 }
 
+// RuleSetExists checks whether an existing RuleSet resource with the given ID exists.
+func RuleSetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RuleSetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LoadBalancer/ruleSet:RuleSet", id, state, "", opts...)
+}
+
 type ruleSetArgs struct {
 	// (Updatable) An array of rules that compose the rule set. For more information, see [Managing Rule Sets](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrulesets.htm)
 	Items []RuleSetItem `pulumi:"items"`

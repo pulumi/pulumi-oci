@@ -37,8 +37,7 @@ namespace Pulumi.Oci.Nosql.Inputs
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// (Updatable) The timestamp of the last update to the encryption key status. RFC3339 formatted. 
-        /// 
+        /// (Updatable) The timestamp of the last update to the encryption key status. RFC3339 formatted.
         /// 
         /// ** IMPORTANT **
         /// The configuration cannot be deleted.

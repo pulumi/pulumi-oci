@@ -1006,6 +1006,54 @@ class Vtap(pulumi.CustomResource):
         __props__.__dict__["vxlan_network_identifier"] = vxlan_network_identifier
         return Vtap(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            capture_filter_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            encapsulation_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_vtap_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
+            max_packet_size: pulumi.Input[Optional[_builtins.int]] = None,
+            source_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            source_private_endpoint_subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            target_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            target_type: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            traffic_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            vcn_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vxlan_network_identifier: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["captureFilterId"] = capture_filter_id
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["encapsulationProtocol"] = encapsulation_protocol
+        __props__["freeformTags"] = freeform_tags
+        __props__["isVtapEnabled"] = is_vtap_enabled
+        __props__["lifecycleStateDetails"] = lifecycle_state_details
+        __props__["maxPacketSize"] = max_packet_size
+        __props__["sourceId"] = source_id
+        __props__["sourcePrivateEndpointIp"] = source_private_endpoint_ip
+        __props__["sourcePrivateEndpointSubnetId"] = source_private_endpoint_subnet_id
+        __props__["sourceType"] = source_type
+        __props__["state"] = state
+        __props__["targetId"] = target_id
+        __props__["targetIp"] = target_ip
+        __props__["targetType"] = target_type
+        __props__["timeCreated"] = time_created
+        __props__["trafficMode"] = traffic_mode
+        __props__["vcnId"] = vcn_id
+        __props__["vxlanNetworkIdentifier"] = vxlan_network_identifier
+        return pulumi.runtime.exists_resource(None, 'oci:Core/vtap:Vtap', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="captureFilterId")
     def capture_filter_id(self) -> pulumi.Output[_builtins.str]:

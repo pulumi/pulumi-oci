@@ -459,6 +459,12 @@ func (DataccInfrastructureState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dataccInfrastructureState)(nil)).Elem()
 }
 
+// DataccInfrastructureExists checks whether an existing DataccInfrastructure resource with the given ID exists.
+func DataccInfrastructureExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DataccInfrastructureState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/dataccInfrastructure:DataccInfrastructure", id, state, "", opts...)
+}
+
 type dataccInfrastructureArgs struct {
 	// (Updatable) The amount of storage (in GB) in the DATA disk group that is reserved for creating local storage for VM Clusters and application VMs.
 	AcfsFileSystemStorageInGbs *float64 `pulumi:"acfsFileSystemStorageInGbs"`

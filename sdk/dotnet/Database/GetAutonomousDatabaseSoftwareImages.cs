@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of the Autonomous AI Database Software Images in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of the Autonomous AI Database Software Images in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Autonomous Database Software Images in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets a list of the Autonomous AI Database Software Images in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

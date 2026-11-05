@@ -167,6 +167,12 @@ func (ConnectionAssignmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*connectionAssignmentState)(nil)).Elem()
 }
 
+// ConnectionAssignmentExists checks whether an existing ConnectionAssignment resource with the given ID exists.
+func ConnectionAssignmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ConnectionAssignmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:GoldenGate/connectionAssignment:ConnectionAssignment", id, state, "", opts...)
+}
+
 type connectionAssignmentArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	ConnectionId string `pulumi:"connectionId"`

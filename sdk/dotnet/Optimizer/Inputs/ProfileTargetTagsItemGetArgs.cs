@@ -40,7 +40,6 @@ namespace Pulumi.Oci.Optimizer.Inputs
         /// <summary>
         /// (Updatable) The list of tag values. The tag value is the value that the user applying the tag adds to the tag key.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

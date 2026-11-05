@@ -185,6 +185,12 @@ func (ComputeCapacityTopologyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*computeCapacityTopologyState)(nil)).Elem()
 }
 
+// ComputeCapacityTopologyExists checks whether an existing ComputeCapacityTopology resource with the given ID exists.
+func ComputeCapacityTopologyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ComputeCapacityTopologyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/computeCapacityTopology:ComputeCapacityTopology", id, state, "", opts...)
+}
+
 type computeCapacityTopologyArgs struct {
 	// The availability domain of this compute capacity topology.  Example: `Uocm:US-CHICAGO-1-AD-2`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`

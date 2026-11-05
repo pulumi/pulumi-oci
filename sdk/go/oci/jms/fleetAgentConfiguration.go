@@ -219,6 +219,12 @@ func (FleetAgentConfigurationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*fleetAgentConfigurationState)(nil)).Elem()
 }
 
+// FleetAgentConfigurationExists checks whether an existing FleetAgentConfiguration resource with the given ID exists.
+func FleetAgentConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FleetAgentConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Jms/fleetAgentConfiguration:FleetAgentConfiguration", id, state, "", opts...)
+}
+
 type fleetAgentConfigurationArgs struct {
 	// (Updatable) Agent polling interval in minutes
 	AgentPollingIntervalInMinutes *int `pulumi:"agentPollingIntervalInMinutes"`

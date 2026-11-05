@@ -183,6 +183,12 @@ func (AgentProvisionedCapacityState) ElementType() reflect.Type {
 	return reflect.TypeOf((*agentProvisionedCapacityState)(nil)).Elem()
 }
 
+// AgentProvisionedCapacityExists checks whether an existing AgentProvisionedCapacity resource with the given ID exists.
+func AgentProvisionedCapacityExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AgentProvisionedCapacityState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:GenerativeAi/agentProvisionedCapacity:AgentProvisionedCapacity", id, state, "", opts...)
+}
+
 type agentProvisionedCapacityArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the endpoint in.
 	CompartmentId string `pulumi:"compartmentId"`

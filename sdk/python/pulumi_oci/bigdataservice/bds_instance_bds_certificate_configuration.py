@@ -760,6 +760,46 @@ class BdsInstanceBdsCertificateConfiguration(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return BdsInstanceBdsCertificateConfiguration(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            certificate_authority_id: pulumi.Input[Optional[_builtins.str]] = None,
+            certificate_type: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            is_default_configuration: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_missing_nodes_only: pulumi.Input[Optional[_builtins.bool]] = None,
+            issue_certificate_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+            renew_certificate_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            set_default_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_refreshed_or_generated: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["bdsInstanceId"] = bds_instance_id
+        __props__["certificateAuthorityId"] = certificate_authority_id
+        __props__["certificateType"] = certificate_type
+        __props__["clusterAdminPassword"] = cluster_admin_password
+        __props__["compartmentId"] = compartment_id
+        __props__["displayName"] = display_name
+        __props__["isDefaultConfiguration"] = is_default_configuration
+        __props__["isMissingNodesOnly"] = is_missing_nodes_only
+        __props__["issueCertificateTrigger"] = issue_certificate_trigger
+        __props__["renewCertificateTrigger"] = renew_certificate_trigger
+        __props__["secretId"] = secret_id
+        __props__["setDefaultTrigger"] = set_default_trigger
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["timeLastRefreshedOrGenerated"] = time_last_refreshed_or_generated
+        __props__["timeUpdated"] = time_updated
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'oci:BigDataService/bdsInstanceBdsCertificateConfiguration:BdsInstanceBdsCertificateConfiguration', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="bdsInstanceId")
     def bds_instance_id(self) -> pulumi.Output[_builtins.str]:

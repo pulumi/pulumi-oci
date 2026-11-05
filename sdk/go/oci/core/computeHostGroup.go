@@ -203,6 +203,12 @@ func (ComputeHostGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*computeHostGroupState)(nil)).Elem()
 }
 
+// ComputeHostGroupExists checks whether an existing ComputeHostGroup resource with the given ID exists.
+func ComputeHostGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ComputeHostGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/computeHostGroup:ComputeHostGroup", id, state, "", opts...)
+}
+
 type computeHostGroupArgs struct {
 	// The availability domain of a host group.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`

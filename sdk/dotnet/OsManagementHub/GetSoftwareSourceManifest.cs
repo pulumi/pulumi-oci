@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Returns an archive containing the list of packages in the software source.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Returns an archive containing the list of packages in the software source.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides details about a specific Software Source Manifest resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Returns an archive containing the list of packages in the software source.
-        /// 
         /// 
         /// ## Example Usage
         /// 

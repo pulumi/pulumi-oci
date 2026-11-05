@@ -32,7 +32,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
         /// * DATABRICKS, DATABRICKS_ENGINE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Applicable to OAUTH_M2M authentication.
         /// * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-        /// Note: When provided, 'clientSecret' field must not be provided.
+        ///   Note: When provided, 'clientSecret' field must not be provided.
         /// </summary>
         public readonly string ClientSecretSecretId;
         /// <summary>

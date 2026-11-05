@@ -223,6 +223,12 @@ func (DataMaskRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dataMaskRuleState)(nil)).Elem()
 }
 
+// DataMaskRuleExists checks whether an existing DataMaskRule resource with the given ID exists.
+func DataMaskRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DataMaskRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CloudGuard/dataMaskRule:DataMaskRule", id, state, "", opts...)
+}
+
 type dataMaskRuleArgs struct {
 	// (Updatable) Compartment OCID where the resource is created
 	CompartmentId string `pulumi:"compartmentId"`

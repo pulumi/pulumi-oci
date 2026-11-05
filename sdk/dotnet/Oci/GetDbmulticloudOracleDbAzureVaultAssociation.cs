@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Retrieves the details of an Oracle DB Azure Vault Association using the specified association resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Retrieves the details of an Oracle DB Azure Vault Association using the specified association resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides details about a specific Oracle Db Azure Vault Association resource in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
         /// Retrieves the details of an Oracle DB Azure Vault Association using the specified association resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

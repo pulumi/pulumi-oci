@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Returns the Firmware Bundle matching the provided firmwareBundleId.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Returns the Firmware Bundle matching the provided firmwareBundleId.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides details about a specific Firmware Bundle resource in Oracle Cloud Infrastructure Core service.
         /// 
         /// Returns the Firmware Bundle matching the provided firmwareBundleId.
-        /// 
         /// 
         /// ## Example Usage
         /// 

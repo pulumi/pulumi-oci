@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets information about the Exadata Db server.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets information about the Exadata Db server.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Db Server resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets information about the Exadata Db server.
-        /// 
         /// 
         /// ## Example Usage
         /// 

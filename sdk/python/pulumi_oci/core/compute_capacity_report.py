@@ -326,6 +326,20 @@ class ComputeCapacityReport(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return ComputeCapacityReport(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            shape_availabilities: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ComputeCapacityReportShapeAvailabilityArgs', 'ComputeCapacityReportShapeAvailabilityArgsDict', 'outputs.ComputeCapacityReportShapeAvailability']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availabilityDomain"] = availability_domain
+        __props__["compartmentId"] = compartment_id
+        __props__["shapeAvailabilities"] = shape_availabilities
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:Core/computeCapacityReport:ComputeCapacityReport', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[_builtins.str]:

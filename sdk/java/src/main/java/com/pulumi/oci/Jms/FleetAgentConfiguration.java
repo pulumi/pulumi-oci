@@ -44,12 +44,12 @@ import javax.annotation.Nullable;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
  * 
- * public class App {
- *     public static void main(String[] args) {
+ * public class App }{{@code
+ *     public static void main(String[] args) }{{@code
  *         Pulumi.run(App::stack);
- *     }
+ *     }}{@code
  * 
- *     public static void stack(Context ctx) {
+ *     public static void stack(Context ctx) }{{@code
  *         var testFleetAgentConfiguration = new FleetAgentConfiguration("testFleetAgentConfiguration", FleetAgentConfigurationArgs.builder()
  *             .fleetId(testFleet.get("id"))
  *             .agentPollingIntervalInMinutes(10)
@@ -73,17 +73,17 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .windowsConfiguration(FleetAgentConfigurationWindowsConfigurationArgs.builder()
  *                 .excludePaths(                
- *                     "c:\\windows\\private1",
- *                     "d:\\data\\private1")
+ *                     "c:}&#92;&#92;{@code windows}&#92;&#92;{@code private1",
+ *                     "d:}&#92;&#92;{@code data}&#92;&#92;{@code private1")
  *                 .includePaths(                
- *                     "c:\\windows",
- *                     "d:\\data")
+ *                     "c:}&#92;&#92;{@code windows",
+ *                     "d:}&#92;&#92;{@code data")
  *                 .build())
  *             .workRequestValidityPeriodInDays(10)
  *             .build());
  * 
- *     }
- * }
+ *     }}{@code
+ * }}{@code
  * }
  * </pre>
  * 

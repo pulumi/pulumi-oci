@@ -470,6 +470,12 @@ func (DifStackState) ElementType() reflect.Type {
 	return reflect.TypeOf((*difStackState)(nil)).Elem()
 }
 
+// DifStackExists checks whether an existing DifStack resource with the given ID exists.
+func DifStackExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DifStackState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/difStack:DifStack", id, state, "", opts...)
+}
+
 type difStackArgs struct {
 	// (Updatable) ADB details if adb is included in the services.
 	Adbs []DifStackAdb `pulumi:"adbs"`

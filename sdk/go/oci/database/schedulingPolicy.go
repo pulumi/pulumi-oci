@@ -186,6 +186,12 @@ func (SchedulingPolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*schedulingPolicyState)(nil)).Elem()
 }
 
+// SchedulingPolicyExists checks whether an existing SchedulingPolicy resource with the given ID exists.
+func SchedulingPolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SchedulingPolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/schedulingPolicy:SchedulingPolicy", id, state, "", opts...)
+}
+
 type schedulingPolicyArgs struct {
 	// (Updatable) The cadence period.
 	Cadence string `pulumi:"cadence"`

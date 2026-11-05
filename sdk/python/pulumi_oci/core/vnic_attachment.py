@@ -542,6 +542,36 @@ class VnicAttachment(pulumi.CustomResource):
         __props__.__dict__["vnic_id"] = vnic_id
         return VnicAttachment(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            create_vnic_details: pulumi.Input[Optional[Union['VnicAttachmentCreateVnicDetailsArgs', 'VnicAttachmentCreateVnicDetailsArgsDict', 'outputs.VnicAttachmentCreateVnicDetails']]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            nic_index: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vlan_tag: pulumi.Input[Optional[_builtins.int]] = None,
+            vnic_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availabilityDomain"] = availability_domain
+        __props__["compartmentId"] = compartment_id
+        __props__["createVnicDetails"] = create_vnic_details
+        __props__["displayName"] = display_name
+        __props__["instanceId"] = instance_id
+        __props__["nicIndex"] = nic_index
+        __props__["state"] = state
+        __props__["subnetId"] = subnet_id
+        __props__["timeCreated"] = time_created
+        __props__["vlanId"] = vlan_id
+        __props__["vlanTag"] = vlan_tag
+        __props__["vnicId"] = vnic_id
+        return pulumi.runtime.exists_resource(None, 'oci:Core/vnicAttachment:VnicAttachment', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[_builtins.str]:

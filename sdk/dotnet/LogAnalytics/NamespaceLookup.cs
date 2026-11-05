@@ -234,7 +234,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// <summary>
         /// The lookup type. Valid values are Lookup, Dictionary or Module.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -391,7 +390,6 @@ namespace Pulumi.Oci.LogAnalytics
 
         /// <summary>
         /// The lookup type. Valid values are Lookup, Dictionary or Module.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -589,7 +587,6 @@ namespace Pulumi.Oci.LogAnalytics
 
         /// <summary>
         /// The lookup type. Valid values are Lookup, Dictionary or Module.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -236,6 +236,12 @@ func (ExecutionWindowState) ElementType() reflect.Type {
 	return reflect.TypeOf((*executionWindowState)(nil)).Elem()
 }
 
+// ExecutionWindowExists checks whether an existing ExecutionWindow resource with the given ID exists.
+func ExecutionWindowExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExecutionWindowState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/executionWindow:ExecutionWindow", id, state, "", opts...)
+}
+
 type executionWindowArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

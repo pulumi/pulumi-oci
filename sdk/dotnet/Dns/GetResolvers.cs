@@ -21,7 +21,6 @@ namespace Pulumi.Oci.Dns
         /// query parameter is provided, the collection does not include resolvers in the DELETED
         /// lifecycleState to be consistent with other operations of the API.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -57,7 +56,6 @@ namespace Pulumi.Oci.Dns
         /// query parameter is provided, the collection does not include resolvers in the DELETED
         /// lifecycleState to be consistent with other operations of the API.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -92,7 +90,6 @@ namespace Pulumi.Oci.Dns
         /// on creation time or displayName both in ASC or DESC order. Note that when no lifecycleState
         /// query parameter is provided, the collection does not include resolvers in the DELETED
         /// lifecycleState to be consistent with other operations of the API.
-        /// 
         /// 
         /// ## Example Usage
         /// 

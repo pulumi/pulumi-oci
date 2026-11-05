@@ -760,6 +760,36 @@ class SteeringPolicy(pulumi.CustomResource):
         __props__.__dict__["ttl"] = ttl
         return SteeringPolicy(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            answers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SteeringPolicyAnswerArgs', 'SteeringPolicyAnswerArgsDict', 'outputs.SteeringPolicyAnswer']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            health_check_monitor_id: pulumi.Input[Optional[_builtins.str]] = None,
+            rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SteeringPolicyRuleArgs', 'SteeringPolicyRuleArgsDict', 'outputs.SteeringPolicyRule']]]]] = None,
+            self: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            template: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            ttl: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["answers"] = answers
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["healthCheckMonitorId"] = health_check_monitor_id
+        __props__["rules"] = rules
+        __props__["self"] = self
+        __props__["state"] = state
+        __props__["template"] = template
+        __props__["timeCreated"] = time_created
+        __props__["ttl"] = ttl
+        return pulumi.runtime.exists_resource(None, 'oci:Dns/steeringPolicy:SteeringPolicy', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def answers(self) -> pulumi.Output[Sequence['outputs.SteeringPolicyAnswer']]:

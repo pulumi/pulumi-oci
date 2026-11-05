@@ -226,6 +226,12 @@ func (AuditArchiveRetrievalState) ElementType() reflect.Type {
 	return reflect.TypeOf((*auditArchiveRetrievalState)(nil)).Elem()
 }
 
+// AuditArchiveRetrievalExists checks whether an existing AuditArchiveRetrieval resource with the given ID exists.
+func AuditArchiveRetrievalExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AuditArchiveRetrievalState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/auditArchiveRetrieval:AuditArchiveRetrieval", id, state, "", opts...)
+}
+
 type auditArchiveRetrievalArgs struct {
 	// (Updatable) The OCID of the compartment that contains the archival retrieval.
 	CompartmentId string `pulumi:"compartmentId"`

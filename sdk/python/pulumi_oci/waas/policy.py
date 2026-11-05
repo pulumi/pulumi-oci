@@ -1054,6 +1054,38 @@ class Policy(pulumi.CustomResource):
         __props__.__dict__["waf_config"] = waf_config
         return Policy(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            additional_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            cname: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            domain: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            origin_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PolicyOriginGroupArgs', 'PolicyOriginGroupArgsDict', 'outputs.PolicyOriginGroup']]]]] = None,
+            origins: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PolicyOriginArgs', 'PolicyOriginArgsDict', 'outputs.PolicyOrigin']]]]] = None,
+            policy_config: pulumi.Input[Optional[Union['PolicyPolicyConfigArgs', 'PolicyPolicyConfigArgsDict', 'outputs.PolicyPolicyConfig']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            waf_config: pulumi.Input[Optional[Union['PolicyWafConfigArgs', 'PolicyWafConfigArgsDict', 'outputs.PolicyWafConfig']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["additionalDomains"] = additional_domains
+        __props__["cname"] = cname
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["domain"] = domain
+        __props__["freeformTags"] = freeform_tags
+        __props__["originGroups"] = origin_groups
+        __props__["origins"] = origins
+        __props__["policyConfig"] = policy_config
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["wafConfig"] = waf_config
+        return pulumi.runtime.exists_resource(None, 'oci:Waas/policy:Policy', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="additionalDomains")
     def additional_domains(self) -> pulumi.Output[Sequence[_builtins.str]]:

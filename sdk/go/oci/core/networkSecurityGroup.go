@@ -161,6 +161,12 @@ func (NetworkSecurityGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkSecurityGroupState)(nil)).Elem()
 }
 
+// NetworkSecurityGroupExists checks whether an existing NetworkSecurityGroup resource with the given ID exists.
+func NetworkSecurityGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkSecurityGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/networkSecurityGroup:NetworkSecurityGroup", id, state, "", opts...)
+}
+
 type networkSecurityGroupArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the network security group.
 	CompartmentId string `pulumi:"compartmentId"`

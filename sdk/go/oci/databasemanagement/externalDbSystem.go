@@ -207,6 +207,12 @@ func (ExternalDbSystemState) ElementType() reflect.Type {
 	return reflect.TypeOf((*externalDbSystemState)(nil)).Elem()
 }
 
+// ExternalDbSystemExists checks whether an existing ExternalDbSystem resource with the given ID exists.
+func ExternalDbSystemExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalDbSystemState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/externalDbSystem:ExternalDbSystem", id, state, "", opts...)
+}
+
 type externalDbSystemArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the external DB system resides.
 	CompartmentId string `pulumi:"compartmentId"`

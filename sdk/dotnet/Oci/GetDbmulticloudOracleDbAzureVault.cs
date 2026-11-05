@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Retrieves detailed information about an Oracle Database Azure Vault resource using its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This operation returns metadata and configuration details associated with the specified vault resource.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Retrieves detailed information about an Oracle Database Azure Vault resource using its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This operation returns metadata and configuration details associated with the specified vault resource.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides details about a specific Oracle Db Azure Vault resource in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
         /// Retrieves detailed information about an Oracle Database Azure Vault resource using its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). This operation returns metadata and configuration details associated with the specified vault resource.
-        /// 
         /// 
         /// ## Example Usage
         /// 

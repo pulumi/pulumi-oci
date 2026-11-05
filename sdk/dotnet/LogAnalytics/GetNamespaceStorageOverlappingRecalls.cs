@@ -16,7 +16,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// This API gets the list of overlapping recalls made in the given timeframe
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// This API gets the list of overlapping recalls made in the given timeframe
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides the list of Namespace Storage Overlapping Recalls in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// This API gets the list of overlapping recalls made in the given timeframe
-        /// 
         /// 
         /// ## Example Usage
         /// 

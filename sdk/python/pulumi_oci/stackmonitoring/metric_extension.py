@@ -845,6 +845,52 @@ class MetricExtension(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return MetricExtension(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            collection_method: pulumi.Input[Optional[_builtins.str]] = None,
+            collection_recurrences: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            enabled_on_resources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MetricExtensionEnabledOnResourceArgs', 'MetricExtensionEnabledOnResourceArgsDict', 'outputs.MetricExtensionEnabledOnResource']]]]] = None,
+            enabled_on_resources_count: pulumi.Input[Optional[_builtins.int]] = None,
+            last_updated_by: pulumi.Input[Optional[_builtins.str]] = None,
+            metric_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MetricExtensionMetricListArgs', 'MetricExtensionMetricListArgsDict', 'outputs.MetricExtensionMetricList']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            publish_trigger: pulumi.Input[Optional[_builtins.bool]] = None,
+            query_properties: pulumi.Input[Optional[Union['MetricExtensionQueryPropertiesArgs', 'MetricExtensionQueryPropertiesArgsDict', 'outputs.MetricExtensionQueryProperties']]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_uri: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["collectionMethod"] = collection_method
+        __props__["collectionRecurrences"] = collection_recurrences
+        __props__["compartmentId"] = compartment_id
+        __props__["createdBy"] = created_by
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["enabledOnResources"] = enabled_on_resources
+        __props__["enabledOnResourcesCount"] = enabled_on_resources_count
+        __props__["lastUpdatedBy"] = last_updated_by
+        __props__["metricLists"] = metric_lists
+        __props__["name"] = name
+        __props__["publishTrigger"] = publish_trigger
+        __props__["queryProperties"] = query_properties
+        __props__["resourceType"] = resource_type
+        __props__["resourceUri"] = resource_uri
+        __props__["state"] = state
+        __props__["status"] = status
+        __props__["tenantId"] = tenant_id
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:StackMonitoring/metricExtension:MetricExtension', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="collectionMethod")
     def collection_method(self) -> pulumi.Output[_builtins.str]:

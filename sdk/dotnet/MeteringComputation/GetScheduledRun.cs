@@ -16,7 +16,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// Returns the saved schedule run.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// Returns the saved schedule run.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// This data source provides details about a specific Scheduled Run resource in Oracle Cloud Infrastructure Metering Computation service.
         /// 
         /// Returns the saved schedule run.
-        /// 
         /// 
         /// ## Example Usage
         /// 

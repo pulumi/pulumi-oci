@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the VLANs in the specified VCN and the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the VLANs in the specified VCN and the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides the list of Vlans in Oracle Cloud Infrastructure Core service.
         /// 
         /// Lists the VLANs in the specified VCN and the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

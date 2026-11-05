@@ -1096,6 +1096,60 @@ class AssetSource(pulumi.CustomResource):
         __props__.__dict__["vcenter_endpoint"] = vcenter_endpoint
         return AssetSource(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            are_historical_metrics_collected: pulumi.Input[Optional[_builtins.bool]] = None,
+            are_realtime_metrics_collected: pulumi.Input[Optional[_builtins.bool]] = None,
+            assets_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            aws_account_key: pulumi.Input[Optional[_builtins.str]] = None,
+            aws_region: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            discovery_credentials: pulumi.Input[Optional[Union['AssetSourceDiscoveryCredentialsArgs', 'AssetSourceDiscoveryCredentialsArgsDict', 'outputs.AssetSourceDiscoveryCredentials']]] = None,
+            discovery_schedule_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            environment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            inventory_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_cost_information_collected: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            olvm_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            replication_credentials: pulumi.Input[Optional[Union['AssetSourceReplicationCredentialsArgs', 'AssetSourceReplicationCredentialsArgsDict', 'outputs.AssetSourceReplicationCredentials']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            vcenter_endpoint: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["areHistoricalMetricsCollected"] = are_historical_metrics_collected
+        __props__["areRealtimeMetricsCollected"] = are_realtime_metrics_collected
+        __props__["assetsCompartmentId"] = assets_compartment_id
+        __props__["awsAccountKey"] = aws_account_key
+        __props__["awsRegion"] = aws_region
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["discoveryCredentials"] = discovery_credentials
+        __props__["discoveryScheduleId"] = discovery_schedule_id
+        __props__["displayName"] = display_name
+        __props__["environmentId"] = environment_id
+        __props__["environmentType"] = environment_type
+        __props__["freeformTags"] = freeform_tags
+        __props__["inventoryId"] = inventory_id
+        __props__["isCostInformationCollected"] = is_cost_information_collected
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["olvmEndpoint"] = olvm_endpoint
+        __props__["replicationCredentials"] = replication_credentials
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["type"] = type
+        __props__["vcenterEndpoint"] = vcenter_endpoint
+        return pulumi.runtime.exists_resource(None, 'oci:CloudBridge/assetSource:AssetSource', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="areHistoricalMetricsCollected")
     def are_historical_metrics_collected(self) -> pulumi.Output[_builtins.bool]:

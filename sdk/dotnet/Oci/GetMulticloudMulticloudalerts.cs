@@ -20,7 +20,6 @@ namespace Pulumi.Oci.Oci
         /// Optional query parameters can be used to filter alerts by resource,
         /// subscription, severity, lifecycle state, and alert status.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -60,7 +59,6 @@ namespace Pulumi.Oci.Oci
         /// Optional query parameters can be used to filter alerts by resource,
         /// subscription, severity, lifecycle state, and alert status.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -99,7 +97,6 @@ namespace Pulumi.Oci.Oci
         /// Gets a list of Multicloud Alerts for a given root compartment.
         /// Optional query parameters can be used to filter alerts by resource,
         /// subscription, severity, lifecycle state, and alert status.
-        /// 
         /// 
         /// ## Example Usage
         /// 

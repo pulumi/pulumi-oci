@@ -17,7 +17,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// Retrieves a list of models along with their capabilities, supported features, and deployment availability.
         /// Results can be filtered by attributes such as region, realm, model identifier, supported inference APIs, serving modes, and access type.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -55,7 +54,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// Retrieves a list of models along with their capabilities, supported features, and deployment availability.
         /// Results can be filtered by attributes such as region, realm, model identifier, supported inference APIs, serving modes, and access type.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -92,7 +90,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// Retrieves a list of models along with their capabilities, supported features, and deployment availability.
         /// Results can be filtered by attributes such as region, realm, model identifier, supported inference APIs, serving modes, and access type.
-        /// 
         /// 
         /// ## Example Usage
         /// 

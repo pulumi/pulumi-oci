@@ -23,22 +23,20 @@ public final class AutonomousExadataInfrastructureState extends com.pulumi.resou
     /**
      * The availability domain where the Autonomous Exadata Infrastructure is located.
      * 
-     * @deprecated
-     * Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.
+     * @deprecated Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.
      * 
      */
-    @Deprecated /* Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead. */
+    @Deprecated
     @Import(name="availabilityDomain")
     private @Nullable Output<String> availabilityDomain;
 
     /**
      * @return The availability domain where the Autonomous Exadata Infrastructure is located.
      * 
-     * @deprecated
-     * Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.
+     * @deprecated Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.
      * 
      */
-    @Deprecated /* Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead. */
+    @Deprecated
     public Optional<Output<String>> availabilityDomain() {
         return Optional.ofNullable(this.availabilityDomain);
     }
@@ -402,11 +400,10 @@ public final class AutonomousExadataInfrastructureState extends com.pulumi.resou
          * 
          * @return builder
          * 
-         * @deprecated
-         * Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.
+         * @deprecated Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.
          * 
          */
-        @Deprecated /* Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead. */
+        @Deprecated
         public Builder availabilityDomain(@Nullable Output<String> availabilityDomain) {
             $.availabilityDomain = availabilityDomain;
             return this;
@@ -417,11 +414,10 @@ public final class AutonomousExadataInfrastructureState extends com.pulumi.resou
          * 
          * @return builder
          * 
-         * @deprecated
-         * Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.
+         * @deprecated Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.
          * 
          */
-        @Deprecated /* Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead. */
+        @Deprecated
         public Builder availabilityDomain(String availabilityDomain) {
             return availabilityDomain(Output.of(availabilityDomain));
         }

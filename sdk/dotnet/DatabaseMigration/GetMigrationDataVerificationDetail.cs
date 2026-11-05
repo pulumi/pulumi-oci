@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// The migration must already have Data Verification results.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// The migration must already have Data Verification results.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// Returns availability and report status information used by the Data Verification UI.
         /// 
         /// The migration must already have Data Verification results.
-        /// 
         /// 
         /// ## Example Usage
         /// 

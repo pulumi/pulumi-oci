@@ -20,7 +20,6 @@ namespace Pulumi.Oci.ResourceManager
         /// - If called using the compartment ID, returns all stacks in the specified compartment.
         /// - If called using the stack ID, returns the specified stack. (See also [GetStack](https://docs.cloud.oracle.com/iaas/api/#/en/resourcemanager/latest/Stack/GetStack).)
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -54,7 +53,6 @@ namespace Pulumi.Oci.ResourceManager
         /// - If called using the compartment ID, returns all stacks in the specified compartment.
         /// - If called using the stack ID, returns the specified stack. (See also [GetStack](https://docs.cloud.oracle.com/iaas/api/#/en/resourcemanager/latest/Stack/GetStack).)
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -87,7 +85,6 @@ namespace Pulumi.Oci.ResourceManager
         /// [Listing Stacks](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-stacks.htm).
         /// - If called using the compartment ID, returns all stacks in the specified compartment.
         /// - If called using the stack ID, returns the specified stack. (See also [GetStack](https://docs.cloud.oracle.com/iaas/api/#/en/resourcemanager/latest/Stack/GetStack).)
-        /// 
         /// 
         /// ## Example Usage
         /// 

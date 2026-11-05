@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the Scheduling Policy resources in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the Scheduling Policy resources in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Scheduling Policies in Oracle Cloud Infrastructure Database service.
         /// 
         /// Lists the Scheduling Policy resources in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

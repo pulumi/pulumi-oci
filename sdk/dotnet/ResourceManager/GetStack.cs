@@ -18,7 +18,6 @@ namespace Pulumi.Oci.ResourceManager
         /// For more information, see
         /// [Getting a Stack's Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.ResourceManager
         /// For more information, see
         /// [Getting a Stack's Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.ResourceManager
         /// Gets the specified stack.
         /// For more information, see
         /// [Getting a Stack's Details](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-stack.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

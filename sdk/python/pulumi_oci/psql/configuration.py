@@ -881,6 +881,50 @@ class Configuration(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return Configuration(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compatible_shapes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            config_type: pulumi.Input[Optional[_builtins.str]] = None,
+            configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigurationConfigurationDetailArgs', 'ConfigurationConfigurationDetailArgsDict', 'outputs.ConfigurationConfigurationDetail']]]]] = None,
+            db_configuration_overrides: pulumi.Input[Optional[Union['ConfigurationDbConfigurationOverridesArgs', 'ConfigurationDbConfigurationOverridesArgsDict', 'outputs.ConfigurationDbConfigurationOverrides']]] = None,
+            db_version: pulumi.Input[Optional[_builtins.str]] = None,
+            default_config_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            instance_memory_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            instance_ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+            is_flexible: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            shape: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["compatibleShapes"] = compatible_shapes
+        __props__["configType"] = config_type
+        __props__["configurationDetails"] = configuration_details
+        __props__["dbConfigurationOverrides"] = db_configuration_overrides
+        __props__["dbVersion"] = db_version
+        __props__["defaultConfigId"] = default_config_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["instanceMemorySizeInGbs"] = instance_memory_size_in_gbs
+        __props__["instanceOcpuCount"] = instance_ocpu_count
+        __props__["isFlexible"] = is_flexible
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["shape"] = shape
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:Psql/configuration:Configuration', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

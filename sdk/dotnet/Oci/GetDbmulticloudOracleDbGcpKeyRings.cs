@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Lists the all DB GCP Key Rings based on filters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Lists the all DB GCP Key Rings based on filters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Oracle Db Gcp Key Rings in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
         /// Lists the all DB GCP Key Rings based on filters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

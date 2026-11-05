@@ -837,6 +837,12 @@ func (DomainsPolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsPolicyState)(nil)).Elem()
 }
 
+// DomainsPolicyExists checks whether an existing DomainsPolicy resource with the given ID exists.
+func DomainsPolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsPolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsPolicy:DomainsPolicy", id, state, "", opts...)
+}
+
 type domainsPolicyArgs struct {
 	// (Updatable) If true, Policy is active.
 	//

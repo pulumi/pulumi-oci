@@ -20,11 +20,10 @@ public final class ClusterRemoteReindexTrustConfigRemoteSource {
     /**
      * @return (Updatable) **Deprecated** Alias for `caBundleId`; use `caBundleId` instead. The value must be an OCI Certificates service CA bundle OCID, not a certificate OCID. Existing configurations remain supported during the deprecation period; removal requires a major provider release.
      * 
-     * @deprecated
-     * Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
+     * @deprecated Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
      * 
      */
-    @Deprecated /* Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID. */
+    @Deprecated
     private @Nullable String certificateId;
     /**
      * @return (Updatable) HTTPS endpoint of the remote Elasticsearch or OpenSearch cluster. The hostname and port are used to allow remote reindexing. Use a DNS hostname, rather than an IP address, when endpointResolutionIp is specified.
@@ -48,11 +47,10 @@ public final class ClusterRemoteReindexTrustConfigRemoteSource {
     /**
      * @return (Updatable) **Deprecated** Alias for `caBundleId`; use `caBundleId` instead. The value must be an OCI Certificates service CA bundle OCID, not a certificate OCID. Existing configurations remain supported during the deprecation period; removal requires a major provider release.
      * 
-     * @deprecated
-     * Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
+     * @deprecated Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID.
      * 
      */
-    @Deprecated /* Use caBundleId instead. The value must be an OCI Certificates service CA bundle OCID. */
+    @Deprecated
     public Optional<String> certificateId() {
         return Optional.ofNullable(this.certificateId);
     }

@@ -614,6 +614,30 @@ class PathAnalysi(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return PathAnalysi(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cache_control: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            destination_endpoint: pulumi.Input[Optional[Union['PathAnalysiDestinationEndpointArgs', 'PathAnalysiDestinationEndpointArgsDict', 'outputs.PathAnalysiDestinationEndpoint']]] = None,
+            path_analyzer_test_id: pulumi.Input[Optional[_builtins.str]] = None,
+            protocol: pulumi.Input[Optional[_builtins.int]] = None,
+            protocol_parameters: pulumi.Input[Optional[Union['PathAnalysiProtocolParametersArgs', 'PathAnalysiProtocolParametersArgsDict', 'outputs.PathAnalysiProtocolParameters']]] = None,
+            query_options: pulumi.Input[Optional[Union['PathAnalysiQueryOptionsArgs', 'PathAnalysiQueryOptionsArgsDict', 'outputs.PathAnalysiQueryOptions']]] = None,
+            source_endpoint: pulumi.Input[Optional[Union['PathAnalysiSourceEndpointArgs', 'PathAnalysiSourceEndpointArgsDict', 'outputs.PathAnalysiSourceEndpoint']]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["cacheControl"] = cache_control
+        __props__["compartmentId"] = compartment_id
+        __props__["destinationEndpoint"] = destination_endpoint
+        __props__["pathAnalyzerTestId"] = path_analyzer_test_id
+        __props__["protocol"] = protocol
+        __props__["protocolParameters"] = protocol_parameters
+        __props__["queryOptions"] = query_options
+        __props__["sourceEndpoint"] = source_endpoint
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'oci:VnMonitoring/pathAnalysi:PathAnalysi', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="cacheControl")
     def cache_control(self) -> pulumi.Output[_builtins.str]:

@@ -653,6 +653,38 @@ class InternalOccmDemandSignalDelivery(pulumi.CustomResource):
         __props__.__dict__["time_delivered"] = time_delivered
         return InternalOccmDemandSignalDelivery(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            accepted_quantity: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            demand_signal_id: pulumi.Input[Optional[_builtins.str]] = None,
+            demand_signal_item_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            justification: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            notes: pulumi.Input[Optional[_builtins.str]] = None,
+            occ_customer_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_delivered: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["acceptedQuantity"] = accepted_quantity
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["demandSignalId"] = demand_signal_id
+        __props__["demandSignalItemId"] = demand_signal_item_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["justification"] = justification
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["notes"] = notes
+        __props__["occCustomerGroupId"] = occ_customer_group_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeDelivered"] = time_delivered
+        return pulumi.runtime.exists_resource(None, 'oci:CapacityManagement/internalOccmDemandSignalDelivery:InternalOccmDemandSignalDelivery', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="acceptedQuantity")
     def accepted_quantity(self) -> pulumi.Output[_builtins.str]:

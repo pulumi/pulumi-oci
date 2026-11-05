@@ -41,7 +41,7 @@ public final class BackendSetHealthChecker {
      */
     private String protocol;
     /**
-     * @return (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
+     * @return (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|&#92;s)*$`
      * 
      */
     private @Nullable String responseBodyRegex;
@@ -102,7 +102,7 @@ public final class BackendSetHealthChecker {
         return this.protocol;
     }
     /**
-     * @return (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|\s)*$`
+     * @return (Updatable) A regular expression for parsing the response body from the backend server.  Example: `^((?!false).|&#92;s)*$`
      * 
      */
     public Optional<String> responseBodyRegex() {

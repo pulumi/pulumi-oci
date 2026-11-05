@@ -267,6 +267,16 @@ class DomainReplicationToRegion(pulumi.CustomResource):
         __props__.__dict__["replica_region"] = replica_region
         return DomainReplicationToRegion(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            replica_region: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["domainId"] = domain_id
+        __props__["replicaRegion"] = replica_region
+        return pulumi.runtime.exists_resource(None, 'oci:Identity/domainReplicationToRegion:DomainReplicationToRegion', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="domainId")
     def domain_id(self) -> pulumi.Output[_builtins.str]:

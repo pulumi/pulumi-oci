@@ -163,6 +163,12 @@ func (KnowledgeBaseState) ElementType() reflect.Type {
 	return reflect.TypeOf((*knowledgeBaseState)(nil)).Elem()
 }
 
+// KnowledgeBaseExists checks whether an existing KnowledgeBase resource with the given ID exists.
+func KnowledgeBaseExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *KnowledgeBaseState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Adm/knowledgeBase:KnowledgeBase", id, state, "", opts...)
+}
+
 type knowledgeBaseArgs struct {
 	// (Updatable) The compartment Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the knowledge base.
 	CompartmentId string `pulumi:"compartmentId"`

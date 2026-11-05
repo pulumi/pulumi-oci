@@ -602,6 +602,30 @@ class Export(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return Export(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            export_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExportExportOptionArgs', 'ExportExportOptionArgsDict', 'outputs.ExportExportOption']]]]] = None,
+            export_set_id: pulumi.Input[Optional[_builtins.str]] = None,
+            file_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_idmap_groups_for_sys_auth: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ExportLockArgs', 'ExportLockArgsDict', 'outputs.ExportLock']]]]] = None,
+            path: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["exportOptions"] = export_options
+        __props__["exportSetId"] = export_set_id
+        __props__["fileSystemId"] = file_system_id
+        __props__["isIdmapGroupsForSysAuth"] = is_idmap_groups_for_sys_auth
+        __props__["isLockOverride"] = is_lock_override
+        __props__["locks"] = locks
+        __props__["path"] = path
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:FileStorage/export:Export', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="exportOptions")
     def export_options(self) -> pulumi.Output[Sequence['outputs.ExportExportOption']]:

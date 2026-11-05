@@ -235,6 +235,12 @@ func (DbHomeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dbHomeState)(nil)).Elem()
 }
 
+// DbHomeExists checks whether an existing DbHome resource with the given ID exists.
+func DbHomeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DbHomeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/dbHome:DbHome", id, state, "", opts...)
+}
+
 type dbHomeArgs struct {
 	// (Updatable) Details for creating a database.
 	//

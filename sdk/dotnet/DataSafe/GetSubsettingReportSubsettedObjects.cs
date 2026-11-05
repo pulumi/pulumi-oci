@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of subsetted tables present in the specified subsetting report and based on the specified query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of subsetted tables present in the specified subsetting report and based on the specified query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Subsetting Report Subsetted Objects in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets a list of subsetted tables present in the specified subsetting report and based on the specified query parameters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

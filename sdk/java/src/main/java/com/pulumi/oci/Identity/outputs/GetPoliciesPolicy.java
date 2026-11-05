@@ -13,11 +13,10 @@ import java.util.Objects;
 @CustomType
 public final class GetPoliciesPolicy {
     /**
-     * @deprecated
-     * The &#39;ETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;ETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     private String ETag;
     /**
      * @return The OCID of the compartment (remember that the tenancy is simply the root compartment).
@@ -50,11 +49,10 @@ public final class GetPoliciesPolicy {
      */
     private String inactiveState;
     /**
-     * @deprecated
-     * The &#39;lastUpdateETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;lastUpdateETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     private String lastUpdateETag;
     /**
      * @return A filter to only return resources that match the given name exactly.
@@ -62,11 +60,10 @@ public final class GetPoliciesPolicy {
      */
     private String name;
     /**
-     * @deprecated
-     * The &#39;policyHash&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;policyHash&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     private String policyHash;
     /**
      * @return A filter to only return resources that match the given lifecycle state.  The state value is case-insensitive.
@@ -91,11 +88,10 @@ public final class GetPoliciesPolicy {
 
     private GetPoliciesPolicy() {}
     /**
-     * @deprecated
-     * The &#39;ETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;ETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     public String ETag() {
         return this.ETag;
     }
@@ -142,11 +138,10 @@ public final class GetPoliciesPolicy {
         return this.inactiveState;
     }
     /**
-     * @deprecated
-     * The &#39;lastUpdateETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;lastUpdateETag&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     public String lastUpdateETag() {
         return this.lastUpdateETag;
     }
@@ -158,11 +153,10 @@ public final class GetPoliciesPolicy {
         return this.name;
     }
     /**
-     * @deprecated
-     * The &#39;policyHash&#39; field has been deprecated and may be removed in a future version. Do not use this field.
+     * @deprecated The &#39;policyHash&#39; field has been deprecated and may be removed in a future version. Do not use this field.
      * 
      */
-    @Deprecated /* The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field. */
+    @Deprecated
     public String policyHash() {
         return this.policyHash;
     }

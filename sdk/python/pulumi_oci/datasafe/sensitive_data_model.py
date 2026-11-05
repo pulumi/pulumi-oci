@@ -885,6 +885,50 @@ class SensitiveDataModel(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return SensitiveDataModel(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            app_suite_name: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_app_defined_relation_discovery_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_include_all_schemas: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_include_all_sensitive_types: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_sample_data_collection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            schemas_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            sensitive_type_group_ids_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            sensitive_type_ids_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tables_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SensitiveDataModelTablesForDiscoveryArgs', 'SensitiveDataModelTablesForDiscoveryArgsDict', 'outputs.SensitiveDataModelTablesForDiscovery']]]]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["appSuiteName"] = app_suite_name
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["isAppDefinedRelationDiscoveryEnabled"] = is_app_defined_relation_discovery_enabled
+        __props__["isIncludeAllSchemas"] = is_include_all_schemas
+        __props__["isIncludeAllSensitiveTypes"] = is_include_all_sensitive_types
+        __props__["isSampleDataCollectionEnabled"] = is_sample_data_collection_enabled
+        __props__["schemasForDiscoveries"] = schemas_for_discoveries
+        __props__["sensitiveTypeGroupIdsForDiscoveries"] = sensitive_type_group_ids_for_discoveries
+        __props__["sensitiveTypeIdsForDiscoveries"] = sensitive_type_ids_for_discoveries
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["tablesForDiscoveries"] = tables_for_discoveries
+        __props__["targetId"] = target_id
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/sensitiveDataModel:SensitiveDataModel', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="appSuiteName")
     def app_suite_name(self) -> pulumi.Output[_builtins.str]:

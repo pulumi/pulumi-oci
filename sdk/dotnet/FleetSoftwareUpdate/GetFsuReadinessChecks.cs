@@ -16,7 +16,6 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         /// 
         /// Returns a list of Exadata Fleet Update Readiness Checks resources in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         /// 
         /// Returns a list of Exadata Fleet Update Readiness Checks resources in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.FleetSoftwareUpdate
         /// This data source provides the list of Fsu Readiness Checks in Oracle Cloud Infrastructure Fleet Software Update service.
         /// 
         /// Returns a list of Exadata Fleet Update Readiness Checks resources in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

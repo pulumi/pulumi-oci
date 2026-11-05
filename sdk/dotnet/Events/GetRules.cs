@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Events
         /// 
         /// Lists rules for this compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Events
         /// 
         /// Lists rules for this compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.Events
         /// This data source provides the list of Rules in Oracle Cloud Infrastructure Events service.
         /// 
         /// Lists rules for this compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

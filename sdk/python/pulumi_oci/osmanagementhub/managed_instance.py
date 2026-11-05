@@ -1107,6 +1107,96 @@ class ManagedInstance(pulumi.CustomResource):
         __props__.__dict__["work_request_count"] = work_request_count
         return ManagedInstance(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            agent_version: pulumi.Input[Optional[_builtins.str]] = None,
+            architecture: pulumi.Input[Optional[_builtins.str]] = None,
+            are_sources_managed: pulumi.Input[Optional[_builtins.bool]] = None,
+            autonomous_settings: pulumi.Input[Optional[Union['ManagedInstanceAutonomousSettingsArgs', 'ManagedInstanceAutonomousSettingsArgsDict', 'outputs.ManagedInstanceAutonomousSettings']]] = None,
+            bug_updates_available: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            enhancement_updates_available: pulumi.Input[Optional[_builtins.int]] = None,
+            installed_packages: pulumi.Input[Optional[_builtins.int]] = None,
+            installed_windows_updates: pulumi.Input[Optional[_builtins.int]] = None,
+            is_managed_by_autonomous_linux: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_management_station: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_reboot_required: pulumi.Input[Optional[_builtins.bool]] = None,
+            ksplice_effective_kernel_version: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_environments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceLifecycleEnvironmentArgs', 'ManagedInstanceLifecycleEnvironmentArgsDict', 'outputs.ManagedInstanceLifecycleEnvironment']]]]] = None,
+            lifecycle_stages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceLifecycleStageArgs', 'ManagedInstanceLifecycleStageArgsDict', 'outputs.ManagedInstanceLifecycleStage']]]]] = None,
+            location: pulumi.Input[Optional[_builtins.str]] = None,
+            managed_instance_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceManagedInstanceGroupArgs', 'ManagedInstanceManagedInstanceGroupArgsDict', 'outputs.ManagedInstanceManagedInstanceGroup']]]]] = None,
+            managed_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
+            os_family: pulumi.Input[Optional[_builtins.str]] = None,
+            os_kernel_version: pulumi.Input[Optional[_builtins.str]] = None,
+            os_name: pulumi.Input[Optional[_builtins.str]] = None,
+            os_version: pulumi.Input[Optional[_builtins.str]] = None,
+            other_updates_available: pulumi.Input[Optional[_builtins.int]] = None,
+            primary_management_station_id: pulumi.Input[Optional[_builtins.str]] = None,
+            profile: pulumi.Input[Optional[_builtins.str]] = None,
+            profile_version: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_job_count: pulumi.Input[Optional[_builtins.int]] = None,
+            secondary_management_station_id: pulumi.Input[Optional[_builtins.str]] = None,
+            security_updates_available: pulumi.Input[Optional[_builtins.int]] = None,
+            software_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagedInstanceSoftwareSourceArgs', 'ManagedInstanceSoftwareSourceArgsDict', 'outputs.ManagedInstanceSoftwareSource']]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_boot: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_checkin: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_software_refresh: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            updates_available: pulumi.Input[Optional[_builtins.int]] = None,
+            work_request_count: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["agentVersion"] = agent_version
+        __props__["architecture"] = architecture
+        __props__["areSourcesManaged"] = are_sources_managed
+        __props__["autonomousSettings"] = autonomous_settings
+        __props__["bugUpdatesAvailable"] = bug_updates_available
+        __props__["compartmentId"] = compartment_id
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["enhancementUpdatesAvailable"] = enhancement_updates_available
+        __props__["installedPackages"] = installed_packages
+        __props__["installedWindowsUpdates"] = installed_windows_updates
+        __props__["isManagedByAutonomousLinux"] = is_managed_by_autonomous_linux
+        __props__["isManagementStation"] = is_management_station
+        __props__["isRebootRequired"] = is_reboot_required
+        __props__["kspliceEffectiveKernelVersion"] = ksplice_effective_kernel_version
+        __props__["lifecycleEnvironments"] = lifecycle_environments
+        __props__["lifecycleStages"] = lifecycle_stages
+        __props__["location"] = location
+        __props__["managedInstanceGroups"] = managed_instance_groups
+        __props__["managedInstanceId"] = managed_instance_id
+        __props__["notificationTopicId"] = notification_topic_id
+        __props__["osFamily"] = os_family
+        __props__["osKernelVersion"] = os_kernel_version
+        __props__["osName"] = os_name
+        __props__["osVersion"] = os_version
+        __props__["otherUpdatesAvailable"] = other_updates_available
+        __props__["primaryManagementStationId"] = primary_management_station_id
+        __props__["profile"] = profile
+        __props__["profileVersion"] = profile_version
+        __props__["scheduledJobCount"] = scheduled_job_count
+        __props__["secondaryManagementStationId"] = secondary_management_station_id
+        __props__["securityUpdatesAvailable"] = security_updates_available
+        __props__["softwareSources"] = software_sources
+        __props__["status"] = status
+        __props__["tenancyId"] = tenancy_id
+        __props__["timeCreated"] = time_created
+        __props__["timeLastBoot"] = time_last_boot
+        __props__["timeLastCheckin"] = time_last_checkin
+        __props__["timeLastSoftwareRefresh"] = time_last_software_refresh
+        __props__["timeUpdated"] = time_updated
+        __props__["updatesAvailable"] = updates_available
+        __props__["workRequestCount"] = work_request_count
+        return pulumi.runtime.exists_resource(None, 'oci:OsManagementHub/managedInstance:ManagedInstance', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="agentVersion")
     def agent_version(self) -> pulumi.Output[_builtins.str]:

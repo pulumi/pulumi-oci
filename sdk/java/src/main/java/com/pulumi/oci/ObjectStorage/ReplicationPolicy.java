@@ -85,11 +85,10 @@ public class ReplicationPolicy extends com.pulumi.resources.CustomResource {
         return this.bucket;
     }
     /**
-     * @deprecated
-     * The &#39;delete_object_in_destination_bucket&#39; field has been deprecated. It is no longer supported.
+     * @deprecated The &#39;delete_object_in_destination_bucket&#39; field has been deprecated. It is no longer supported.
      * 
      */
-    @Deprecated /* The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported. */
+    @Deprecated
     @Export(name="deleteObjectInDestinationBucket", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> deleteObjectInDestinationBucket;
 

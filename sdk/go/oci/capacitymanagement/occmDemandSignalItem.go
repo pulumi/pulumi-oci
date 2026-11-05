@@ -253,6 +253,12 @@ func (OccmDemandSignalItemState) ElementType() reflect.Type {
 	return reflect.TypeOf((*occmDemandSignalItemState)(nil)).Elem()
 }
 
+// OccmDemandSignalItemExists checks whether an existing OccmDemandSignalItem resource with the given ID exists.
+func OccmDemandSignalItemExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OccmDemandSignalItemState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CapacityManagement/occmDemandSignalItem:OccmDemandSignalItem", id, state, "", opts...)
+}
+
 type occmDemandSignalItemArgs struct {
 	// (Updatable) The name of the availability domain for which you want to request the Oracle Cloud Infrastructure resource. This is an optional parameter.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`

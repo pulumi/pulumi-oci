@@ -192,6 +192,12 @@ func (KeyStoreState) ElementType() reflect.Type {
 	return reflect.TypeOf((*keyStoreState)(nil)).Elem()
 }
 
+// KeyStoreExists checks whether an existing KeyStore resource with the given ID exists.
+func KeyStoreExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *KeyStoreState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/keyStore:KeyStore", id, state, "", opts...)
+}
+
 type keyStoreArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId         string `pulumi:"compartmentId"`

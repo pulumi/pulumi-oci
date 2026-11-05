@@ -199,6 +199,12 @@ func (ModelGroupVersionHistoryState) ElementType() reflect.Type {
 	return reflect.TypeOf((*modelGroupVersionHistoryState)(nil)).Elem()
 }
 
+// ModelGroupVersionHistoryExists checks whether an existing ModelGroupVersionHistory resource with the given ID exists.
+func ModelGroupVersionHistoryExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ModelGroupVersionHistoryState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataScience/modelGroupVersionHistory:ModelGroupVersionHistory", id, state, "", opts...)
+}
+
 type modelGroupVersionHistoryArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model group version history in.
 	CompartmentId string `pulumi:"compartmentId"`

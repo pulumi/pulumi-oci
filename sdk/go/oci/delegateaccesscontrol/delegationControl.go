@@ -267,6 +267,12 @@ func (DelegationControlState) ElementType() reflect.Type {
 	return reflect.TypeOf((*delegationControlState)(nil)).Elem()
 }
 
+// DelegationControlExists checks whether an existing DelegationControl resource with the given ID exists.
+func DelegationControlExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DelegationControlState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DelegateAccessControl/delegationControl:DelegationControl", id, state, "", opts...)
+}
+
 type delegationControlArgs struct {
 	// (Updatable) The OCID of the compartment that contains this Delegation Control.
 	CompartmentId string `pulumi:"compartmentId"`

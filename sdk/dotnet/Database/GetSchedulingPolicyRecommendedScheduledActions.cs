@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Returns a recommended Scheduled Actions configuration for a given resource, plan intent and scheduling policy.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Returns a recommended Scheduled Actions configuration for a given resource, plan intent and scheduling policy.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Scheduling Policy Recommended Scheduled Actions in Oracle Cloud Infrastructure Database service.
         /// 
         /// Returns a recommended Scheduled Actions configuration for a given resource, plan intent and scheduling policy.
-        /// 
         /// 
         /// ## Example Usage
         /// 

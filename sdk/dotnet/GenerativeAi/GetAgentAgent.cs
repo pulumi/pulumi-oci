@@ -18,7 +18,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// Gets information about an agent.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// Gets information about an agent.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// **GetAgent**
         /// 
         /// Gets information about an agent.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// Returns a list of cluster versions with associated odh and bds versions.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -40,7 +39,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// Returns a list of cluster versions with associated odh and bds versions.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -63,7 +61,6 @@ namespace Pulumi.Oci.BigDataService
         /// This data source provides the list of Bds Cluster Versions in Oracle Cloud Infrastructure Big Data Service service.
         /// 
         /// Returns a list of cluster versions with associated odh and bds versions.
-        /// 
         /// 
         /// ## Example Usage
         /// 

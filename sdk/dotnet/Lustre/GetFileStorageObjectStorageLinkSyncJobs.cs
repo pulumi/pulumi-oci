@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Lustre
         /// 
         /// Lists all sync jobs associated with the Object Storage link. Contains a unique ID for each sync job.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Lustre
         /// 
         /// Lists all sync jobs associated with the Object Storage link. Contains a unique ID for each sync job.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.Lustre
         /// This data source provides the list of Object Storage Link Sync Jobs in Oracle Cloud Infrastructure Lustre File Storage service.
         /// 
         /// Lists all sync jobs associated with the Object Storage link. Contains a unique ID for each sync job.
-        /// 
         /// 
         /// ## Example Usage
         /// 

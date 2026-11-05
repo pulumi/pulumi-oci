@@ -1396,6 +1396,70 @@ class WorkspaceApplicationTaskSchedule(pulumi.CustomResource):
         __props__.__dict__["workspace_id"] = workspace_id
         return WorkspaceApplicationTaskSchedule(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            application_key: pulumi.Input[Optional[_builtins.str]] = None,
+            auth_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            config_provider_delegate: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            end_time_millis: pulumi.Input[Optional[_builtins.str]] = None,
+            expected_duration: pulumi.Input[Optional[_builtins.float]] = None,
+            expected_duration_unit: pulumi.Input[Optional[_builtins.str]] = None,
+            identifier: pulumi.Input[Optional[_builtins.str]] = None,
+            is_backfill_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_concurrent_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            last_run_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationTaskScheduleLastRunDetailArgs', 'WorkspaceApplicationTaskScheduleLastRunDetailArgsDict', 'outputs.WorkspaceApplicationTaskScheduleLastRunDetail']]]]] = None,
+            metadatas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceApplicationTaskScheduleMetadataArgs', 'WorkspaceApplicationTaskScheduleMetadataArgsDict', 'outputs.WorkspaceApplicationTaskScheduleMetadata']]]]] = None,
+            model_type: pulumi.Input[Optional[_builtins.str]] = None,
+            model_version: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            next_run_time_millis: pulumi.Input[Optional[_builtins.str]] = None,
+            number_of_retries: pulumi.Input[Optional[_builtins.int]] = None,
+            object_status: pulumi.Input[Optional[_builtins.int]] = None,
+            object_version: pulumi.Input[Optional[_builtins.int]] = None,
+            parent_ref: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleParentRefArgs', 'WorkspaceApplicationTaskScheduleParentRefArgsDict', 'outputs.WorkspaceApplicationTaskScheduleParentRef']]] = None,
+            registry_metadata: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleRegistryMetadataArgs', 'WorkspaceApplicationTaskScheduleRegistryMetadataArgsDict', 'outputs.WorkspaceApplicationTaskScheduleRegistryMetadata']]] = None,
+            retry_attempts: pulumi.Input[Optional[_builtins.int]] = None,
+            retry_delay: pulumi.Input[Optional[_builtins.float]] = None,
+            retry_delay_unit: pulumi.Input[Optional[_builtins.str]] = None,
+            schedule_ref: pulumi.Input[Optional[Union['WorkspaceApplicationTaskScheduleScheduleRefArgs', 'WorkspaceApplicationTaskScheduleScheduleRefArgsDict', 'outputs.WorkspaceApplicationTaskScheduleScheduleRef']]] = None,
+            start_time_millis: pulumi.Input[Optional[_builtins.str]] = None,
+            workspace_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["applicationKey"] = application_key
+        __props__["authMode"] = auth_mode
+        __props__["configProviderDelegate"] = config_provider_delegate
+        __props__["description"] = description
+        __props__["endTimeMillis"] = end_time_millis
+        __props__["expectedDuration"] = expected_duration
+        __props__["expectedDurationUnit"] = expected_duration_unit
+        __props__["identifier"] = identifier
+        __props__["isBackfillEnabled"] = is_backfill_enabled
+        __props__["isConcurrentAllowed"] = is_concurrent_allowed
+        __props__["isEnabled"] = is_enabled
+        __props__["key"] = key
+        __props__["lastRunDetails"] = last_run_details
+        __props__["metadatas"] = metadatas
+        __props__["modelType"] = model_type
+        __props__["modelVersion"] = model_version
+        __props__["name"] = name
+        __props__["nextRunTimeMillis"] = next_run_time_millis
+        __props__["numberOfRetries"] = number_of_retries
+        __props__["objectStatus"] = object_status
+        __props__["objectVersion"] = object_version
+        __props__["parentRef"] = parent_ref
+        __props__["registryMetadata"] = registry_metadata
+        __props__["retryAttempts"] = retry_attempts
+        __props__["retryDelay"] = retry_delay
+        __props__["retryDelayUnit"] = retry_delay_unit
+        __props__["scheduleRef"] = schedule_ref
+        __props__["startTimeMillis"] = start_time_millis
+        __props__["workspaceId"] = workspace_id
+        return pulumi.runtime.exists_resource(None, 'oci:DataIntegration/workspaceApplicationTaskSchedule:WorkspaceApplicationTaskSchedule', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="applicationKey")
     def application_key(self) -> pulumi.Output[_builtins.str]:

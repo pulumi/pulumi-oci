@@ -16,7 +16,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Returns information about the specified package group from a software source.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// 
         /// Returns information about the specified package group from a software source.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.OsManagementHub
         /// This data source provides details about a specific Software Source Package Group resource in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
         /// Returns information about the specified package group from a software source.
-        /// 
         /// 
         /// ## Example Usage
         /// 

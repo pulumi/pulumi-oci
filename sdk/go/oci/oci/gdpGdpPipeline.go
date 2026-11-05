@@ -285,6 +285,12 @@ func (GdpGdpPipelineState) ElementType() reflect.Type {
 	return reflect.TypeOf((*gdpGdpPipelineState)(nil)).Elem()
 }
 
+// GdpGdpPipelineExists checks whether an existing GdpGdpPipeline resource with the given ID exists.
+func GdpGdpPipelineExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GdpGdpPipelineState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/gdpGdpPipeline:GdpGdpPipeline", id, state, "", opts...)
+}
+
 type gdpGdpPipelineArgs struct {
 	// (Updatable) The KMS vault OCID used for cryptographic approvals of transfers.
 	ApprovalKeyVaultId *string `pulumi:"approvalKeyVaultId"`

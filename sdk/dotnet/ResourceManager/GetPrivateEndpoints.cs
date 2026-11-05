@@ -20,7 +20,6 @@ namespace Pulumi.Oci.ResourceManager
         /// - For `compartmentId`, lists all private endpoints in the matching compartment.
         /// - For `privateEndpointId`, lists the matching private endpoint.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -54,7 +53,6 @@ namespace Pulumi.Oci.ResourceManager
         /// - For `compartmentId`, lists all private endpoints in the matching compartment.
         /// - For `privateEndpointId`, lists the matching private endpoint.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -87,7 +85,6 @@ namespace Pulumi.Oci.ResourceManager
         /// [Listing Private Endpoints](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/list-private-endpoints.htm).
         /// - For `compartmentId`, lists all private endpoints in the matching compartment.
         /// - For `privateEndpointId`, lists the matching private endpoint.
-        /// 
         /// 
         /// ## Example Usage
         /// 

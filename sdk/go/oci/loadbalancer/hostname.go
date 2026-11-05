@@ -112,6 +112,12 @@ func (HostnameState) ElementType() reflect.Type {
 	return reflect.TypeOf((*hostnameState)(nil)).Elem()
 }
 
+// HostnameExists checks whether an existing Hostname resource with the given ID exists.
+func HostnameExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HostnameState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LoadBalancer/hostname:Hostname", id, state, "", opts...)
+}
+
 type hostnameArgs struct {
 	// (Updatable) A virtual hostname. For more information about virtual hostname string construction, see [Managing Request Routing](https://docs.cloud.oracle.com/iaas/Content/Balance/Tasks/managingrequest.htm#routing).  Example: `app.example.com`
 	Hostname string `pulumi:"hostname"`

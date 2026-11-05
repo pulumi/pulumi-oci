@@ -173,6 +173,12 @@ func (PluggableDatabaseSnapshotState) ElementType() reflect.Type {
 	return reflect.TypeOf((*pluggableDatabaseSnapshotState)(nil)).Elem()
 }
 
+// PluggableDatabaseSnapshotExists checks whether an existing PluggableDatabaseSnapshot resource with the given ID exists.
+func PluggableDatabaseSnapshotExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PluggableDatabaseSnapshotState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/pluggableDatabaseSnapshot:PluggableDatabaseSnapshot", id, state, "", opts...)
+}
+
 type pluggableDatabaseSnapshotArgs struct {
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]string `pulumi:"definedTags"`

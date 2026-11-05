@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Audit
         /// Returns all the audit events processed for the specified compartment within the specified
         /// time range.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Audit
         /// Returns all the audit events processed for the specified compartment within the specified
         /// time range.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -76,7 +74,6 @@ namespace Pulumi.Oci.Audit
         /// 
         /// Returns all the audit events processed for the specified compartment within the specified
         /// time range.
-        /// 
         /// 
         /// ## Example Usage
         /// 

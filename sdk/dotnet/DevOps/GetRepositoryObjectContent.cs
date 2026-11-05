@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Retrieve contents of a specified object.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Retrieve contents of a specified object.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.DevOps
         /// This data source provides details about a specific Repository Object Content resource in Oracle Cloud Infrastructure Devops service.
         /// 
         /// Retrieve contents of a specified object.
-        /// 
         /// 
         /// ## Example Usage
         /// 

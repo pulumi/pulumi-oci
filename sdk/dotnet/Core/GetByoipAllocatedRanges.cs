@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Core
         /// Lists the subranges of a BYOIP CIDR block currently allocated to an IP pool.
         /// Each `ByoipAllocatedRange` object also lists the IP pool where it is allocated.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Core
         /// Lists the subranges of a BYOIP CIDR block currently allocated to an IP pool.
         /// Each `ByoipAllocatedRange` object also lists the IP pool where it is allocated.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -72,7 +70,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the subranges of a BYOIP CIDR block currently allocated to an IP pool.
         /// Each `ByoipAllocatedRange` object also lists the IP pool where it is allocated.
-        /// 
         /// 
         /// ## Example Usage
         /// 

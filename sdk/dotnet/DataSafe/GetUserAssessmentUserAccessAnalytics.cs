@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of aggregated user access analytics in the specified target in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of aggregated user access analytics in the specified target in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of User Assessment User Access Analytics in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets a list of aggregated user access analytics in the specified target in a compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

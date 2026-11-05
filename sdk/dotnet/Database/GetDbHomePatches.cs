@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists patches applicable to the requested Database Home.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists patches applicable to the requested Database Home.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Db Home Patches in Oracle Cloud Infrastructure Database service.
         /// 
         /// Lists patches applicable to the requested Database Home.
-        /// 
         /// 
         /// ## Example Usage
         /// 

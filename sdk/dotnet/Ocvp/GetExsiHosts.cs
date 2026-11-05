@@ -24,7 +24,6 @@ namespace Pulumi.Oci.Ocvp
         /// ESXi hosts, you can specify the OCID of the Compute instance, not the
         /// ESXi host OCID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -66,7 +65,6 @@ namespace Pulumi.Oci.Ocvp
         /// ESXi hosts, you can specify the OCID of the Compute instance, not the
         /// ESXi host OCID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -107,7 +105,6 @@ namespace Pulumi.Oci.Ocvp
         /// the Compute instance (`computeInstanceId`). When filtering the list of
         /// ESXi hosts, you can specify the OCID of the Compute instance, not the
         /// ESXi host OCID.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Returns an array of schemas based on mapping rules for a pipeline.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Returns an array of schemas based on mapping rules for a pipeline.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.GoldenGate
         /// This data source provides the list of Pipeline Schemas in Oracle Cloud Infrastructure Golden Gate service.
         /// 
         /// Returns an array of schemas based on mapping rules for a pipeline.
-        /// 
         /// 
         /// ## Example Usage
         /// 

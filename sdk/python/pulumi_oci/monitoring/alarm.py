@@ -1523,6 +1523,68 @@ class Alarm(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return Alarm(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            alarm_summary: pulumi.Input[Optional[_builtins.str]] = None,
+            body: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            destinations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            evaluation_slack_duration: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_notifications_per_metric_dimension_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            message_format: pulumi.Input[Optional[_builtins.str]] = None,
+            metric_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            metric_compartment_id_in_subtree: pulumi.Input[Optional[_builtins.bool]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_title: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_version: pulumi.Input[Optional[_builtins.str]] = None,
+            overrides: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AlarmOverrideArgs', 'AlarmOverrideArgsDict', 'outputs.AlarmOverride']]]]] = None,
+            pending_duration: pulumi.Input[Optional[_builtins.str]] = None,
+            query: pulumi.Input[Optional[_builtins.str]] = None,
+            repeat_notification_duration: pulumi.Input[Optional[_builtins.str]] = None,
+            resolution: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            rule_name: pulumi.Input[Optional[_builtins.str]] = None,
+            severity: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            suppression: pulumi.Input[Optional[Union['AlarmSuppressionArgs', 'AlarmSuppressionArgsDict', 'outputs.AlarmSuppression']]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["alarmSummary"] = alarm_summary
+        __props__["body"] = body
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["destinations"] = destinations
+        __props__["displayName"] = display_name
+        __props__["evaluationSlackDuration"] = evaluation_slack_duration
+        __props__["freeformTags"] = freeform_tags
+        __props__["isEnabled"] = is_enabled
+        __props__["isNotificationsPerMetricDimensionEnabled"] = is_notifications_per_metric_dimension_enabled
+        __props__["messageFormat"] = message_format
+        __props__["metricCompartmentId"] = metric_compartment_id
+        __props__["metricCompartmentIdInSubtree"] = metric_compartment_id_in_subtree
+        __props__["namespace"] = namespace
+        __props__["notificationTitle"] = notification_title
+        __props__["notificationVersion"] = notification_version
+        __props__["overrides"] = overrides
+        __props__["pendingDuration"] = pending_duration
+        __props__["query"] = query
+        __props__["repeatNotificationDuration"] = repeat_notification_duration
+        __props__["resolution"] = resolution
+        __props__["resourceGroup"] = resource_group
+        __props__["ruleName"] = rule_name
+        __props__["severity"] = severity
+        __props__["state"] = state
+        __props__["suppression"] = suppression
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Monitoring/alarm:Alarm', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="alarmSummary")
     def alarm_summary(self) -> pulumi.Output[_builtins.str]:

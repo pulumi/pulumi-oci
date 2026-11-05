@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Oci
         /// Lists activated Multicloud subscriptions in the specified compartment. For more information, see
         /// [Listing Multicloud Subscriptions](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-subscriptions.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Oci
         /// Lists activated Multicloud subscriptions in the specified compartment. For more information, see
         /// [Listing Multicloud Subscriptions](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-subscriptions.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -74,7 +72,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Lists activated Multicloud subscriptions in the specified compartment. For more information, see
         /// [Listing Multicloud Subscriptions](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/list-subscriptions.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

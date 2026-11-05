@@ -190,6 +190,12 @@ func (ReportState) ElementType() reflect.Type {
 	return reflect.TypeOf((*reportState)(nil)).Elem()
 }
 
+// ReportExists checks whether an existing Report resource with the given ID exists.
+func ReportExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ReportState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/report:Report", id, state, "", opts...)
+}
+
 type reportArgs struct {
 	// (Updatable) The OCID of the compartment containing the report.
 	CompartmentId *string `pulumi:"compartmentId"`

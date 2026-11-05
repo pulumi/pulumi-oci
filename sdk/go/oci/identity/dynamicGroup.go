@@ -191,6 +191,12 @@ func (DynamicGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dynamicGroupState)(nil)).Elem()
 }
 
+// DynamicGroupExists checks whether an existing DynamicGroup resource with the given ID exists.
+func DynamicGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DynamicGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/dynamicGroup:DynamicGroup", id, state, "", opts...)
+}
+
 type dynamicGroupArgs struct {
 	// The OCID of the tenancy containing the group.
 	CompartmentId string `pulumi:"compartmentId"`

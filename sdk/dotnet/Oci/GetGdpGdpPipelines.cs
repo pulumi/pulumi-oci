@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Returns a list of pipelines.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Returns a list of pipelines.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Gdp Pipelines in Oracle Cloud Infrastructure Gdp service.
         /// 
         /// Returns a list of pipelines.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -196,6 +196,12 @@ func (CloudDbNodeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudDbNodeState)(nil)).Elem()
 }
 
+// CloudDbNodeExists checks whether an existing CloudDbNode resource with the given ID exists.
+func CloudDbNodeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudDbNodeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/cloudDbNode:CloudDbNode", id, state, "", opts...)
+}
+
 type cloudDbNodeArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
 	CloudConnectorId *string `pulumi:"cloudConnectorId"`

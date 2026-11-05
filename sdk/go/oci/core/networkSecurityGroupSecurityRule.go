@@ -236,6 +236,12 @@ func (NetworkSecurityGroupSecurityRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkSecurityGroupSecurityRuleState)(nil)).Elem()
 }
 
+// NetworkSecurityGroupSecurityRuleExists checks whether an existing NetworkSecurityGroupSecurityRule resource with the given ID exists.
+func NetworkSecurityGroupSecurityRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkSecurityGroupSecurityRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/networkSecurityGroupSecurityRule:NetworkSecurityGroupSecurityRule", id, state, "", opts...)
+}
+
 type networkSecurityGroupSecurityRuleArgs struct {
 	// An optional description of your choice for the rule.
 	Description *string `pulumi:"description"`

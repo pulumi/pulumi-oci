@@ -235,6 +235,12 @@ func (ProductCatalogInternalProductState) ElementType() reflect.Type {
 	return reflect.TypeOf((*productCatalogInternalProductState)(nil)).Elem()
 }
 
+// ProductCatalogInternalProductExists checks whether an existing ProductCatalogInternalProduct resource with the given ID exists.
+func ProductCatalogInternalProductExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProductCatalogInternalProductState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/productCatalogInternalProduct:ProductCatalogInternalProduct", id, state, "", opts...)
+}
+
 type productCatalogInternalProductArgs struct {
 	// Optional create-time signal that marks the product as eligible for the backfill flow in existing Alloy regions. Omit this field to preserve the current create behavior. Final runtime backfill and auto-enable decisions remain worker-side.
 	BackfillEligibility *string `pulumi:"backfillEligibility"`

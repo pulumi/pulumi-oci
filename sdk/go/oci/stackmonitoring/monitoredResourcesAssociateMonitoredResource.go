@@ -185,6 +185,12 @@ func (MonitoredResourcesAssociateMonitoredResourceState) ElementType() reflect.T
 	return reflect.TypeOf((*monitoredResourcesAssociateMonitoredResourceState)(nil)).Elem()
 }
 
+// MonitoredResourcesAssociateMonitoredResourceExists checks whether an existing MonitoredResourcesAssociateMonitoredResource resource with the given ID exists.
+func MonitoredResourcesAssociateMonitoredResourceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MonitoredResourcesAssociateMonitoredResourceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:StackMonitoring/monitoredResourcesAssociateMonitoredResource:MonitoredResourcesAssociateMonitoredResource", id, state, "", opts...)
+}
+
 type monitoredResourcesAssociateMonitoredResourceArgs struct {
 	// Association type to be created between source and destination resources.
 	AssociationType string `pulumi:"associationType"`

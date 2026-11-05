@@ -3377,6 +3377,90 @@ class DomainsIdentityPropagationTrust(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return DomainsIdentityPropagationTrust(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            active: pulumi.Input[Optional[_builtins.bool]] = None,
+            allow_impersonation: pulumi.Input[Optional[_builtins.bool]] = None,
+            attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            attributes: pulumi.Input[Optional[_builtins.str]] = None,
+            authorization: pulumi.Input[Optional[_builtins.str]] = None,
+            ca_cert_chain: pulumi.Input[Optional[Union['DomainsIdentityPropagationTrustCaCertChainArgs', 'DomainsIdentityPropagationTrustCaCertChainArgsDict', 'outputs.DomainsIdentityPropagationTrustCaCertChain']]] = None,
+            claim_propagations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            claim_validations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustClaimValidationArgs', 'DomainsIdentityPropagationTrustClaimValidationArgsDict', 'outputs.DomainsIdentityPropagationTrustClaimValidation']]]]] = None,
+            client_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
+            client_claim_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            clock_skew_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustIdcsCreatedByArgs', 'DomainsIdentityPropagationTrustIdcsCreatedByArgsDict', 'outputs.DomainsIdentityPropagationTrustIdcsCreatedBy']]]]] = None,
+            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustIdcsLastModifiedByArgs', 'DomainsIdentityPropagationTrustIdcsLastModifiedByArgsDict', 'outputs.DomainsIdentityPropagationTrustIdcsLastModifiedBy']]]]] = None,
+            idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            impersonating_resource: pulumi.Input[Optional[_builtins.str]] = None,
+            impersonation_service_users: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustImpersonationServiceUserArgs', 'DomainsIdentityPropagationTrustImpersonationServiceUserArgsDict', 'outputs.DomainsIdentityPropagationTrustImpersonationServiceUser']]]]] = None,
+            issuer: pulumi.Input[Optional[_builtins.str]] = None,
+            keytab: pulumi.Input[Optional[Union['DomainsIdentityPropagationTrustKeytabArgs', 'DomainsIdentityPropagationTrustKeytabArgsDict', 'outputs.DomainsIdentityPropagationTrustKeytab']]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustMetaArgs', 'DomainsIdentityPropagationTrustMetaArgsDict', 'outputs.DomainsIdentityPropagationTrustMeta']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            oauth_clients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            public_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+            public_key_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            subject_claim_name: pulumi.Input[Optional[_builtins.str]] = None,
+            subject_mapping_attribute: pulumi.Input[Optional[_builtins.str]] = None,
+            subject_type: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentityPropagationTrustTagArgs', 'DomainsIdentityPropagationTrustTagArgsDict', 'outputs.DomainsIdentityPropagationTrustTag']]]]] = None,
+            tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["accountId"] = account_id
+        __props__["active"] = active
+        __props__["allowImpersonation"] = allow_impersonation
+        __props__["attributeSets"] = attribute_sets
+        __props__["attributes"] = attributes
+        __props__["authorization"] = authorization
+        __props__["caCertChain"] = ca_cert_chain
+        __props__["claimPropagations"] = claim_propagations
+        __props__["claimValidations"] = claim_validations
+        __props__["clientClaimName"] = client_claim_name
+        __props__["clientClaimValues"] = client_claim_values
+        __props__["clockSkewSeconds"] = clock_skew_seconds
+        __props__["compartmentOcid"] = compartment_ocid
+        __props__["deleteInProgress"] = delete_in_progress
+        __props__["description"] = description
+        __props__["domainOcid"] = domain_ocid
+        __props__["idcsCreatedBies"] = idcs_created_bies
+        __props__["idcsEndpoint"] = idcs_endpoint
+        __props__["idcsLastModifiedBies"] = idcs_last_modified_bies
+        __props__["idcsLastUpgradedInRelease"] = idcs_last_upgraded_in_release
+        __props__["idcsPreventedOperations"] = idcs_prevented_operations
+        __props__["impersonatingResource"] = impersonating_resource
+        __props__["impersonationServiceUsers"] = impersonation_service_users
+        __props__["issuer"] = issuer
+        __props__["keytab"] = keytab
+        __props__["metas"] = metas
+        __props__["name"] = name
+        __props__["oauthClients"] = oauth_clients
+        __props__["ocid"] = ocid
+        __props__["publicCertificate"] = public_certificate
+        __props__["publicKeyEndpoint"] = public_key_endpoint
+        __props__["resourceTypeSchemaVersion"] = resource_type_schema_version
+        __props__["schemas"] = schemas
+        __props__["subjectClaimName"] = subject_claim_name
+        __props__["subjectMappingAttribute"] = subject_mapping_attribute
+        __props__["subjectType"] = subject_type
+        __props__["tags"] = tags
+        __props__["tenancyOcid"] = tenancy_ocid
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'oci:Identity/domainsIdentityPropagationTrust:DomainsIdentityPropagationTrust', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="accountId")
     def account_id(self) -> pulumi.Output[_builtins.str]:

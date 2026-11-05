@@ -182,6 +182,12 @@ func (SecurityPolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*securityPolicyState)(nil)).Elem()
 }
 
+// SecurityPolicyExists checks whether an existing SecurityPolicy resource with the given ID exists.
+func SecurityPolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SecurityPolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/securityPolicy:SecurityPolicy", id, state, "", opts...)
+}
+
 type securityPolicyArgs struct {
 	// (Updatable) The OCID of the compartment in which to create the security policy.
 	CompartmentId string `pulumi:"compartmentId"`

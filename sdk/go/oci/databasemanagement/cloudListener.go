@@ -256,6 +256,12 @@ func (CloudListenerState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudListenerState)(nil)).Elem()
 }
 
+// CloudListenerExists checks whether an existing CloudListener resource with the given ID exists.
+func CloudListenerExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudListenerState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/cloudListener:CloudListener", id, state, "", opts...)
+}
+
 type cloudListenerArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud connector.
 	CloudConnectorId *string `pulumi:"cloudConnectorId"`

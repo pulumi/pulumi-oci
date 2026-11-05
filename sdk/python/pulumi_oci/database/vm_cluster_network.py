@@ -793,6 +793,46 @@ class VmClusterNetwork(pulumi.CustomResource):
         __props__.__dict__["vm_networks"] = vm_networks
         return VmClusterNetwork(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            dr_scans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterNetworkDrScanArgs', 'VmClusterNetworkDrScanArgsDict', 'outputs.VmClusterNetworkDrScan']]]]] = None,
+            exadata_infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            ntps: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            scans: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterNetworkScanArgs', 'VmClusterNetworkScanArgsDict', 'outputs.VmClusterNetworkScan']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            validate_vm_cluster_network: pulumi.Input[Optional[_builtins.bool]] = None,
+            vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_networks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VmClusterNetworkVmNetworkArgs', 'VmClusterNetworkVmNetworkArgsDict', 'outputs.VmClusterNetworkVmNetwork']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["action"] = action
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["dns"] = dns
+        __props__["drScans"] = dr_scans
+        __props__["exadataInfrastructureId"] = exadata_infrastructure_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["ntps"] = ntps
+        __props__["scans"] = scans
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["validateVmClusterNetwork"] = validate_vm_cluster_network
+        __props__["vmClusterId"] = vm_cluster_id
+        __props__["vmNetworks"] = vm_networks
+        return pulumi.runtime.exists_resource(None, 'oci:Database/vmClusterNetwork:VmClusterNetwork', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def action(self) -> pulumi.Output[Optional[_builtins.str]]:

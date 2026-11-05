@@ -204,6 +204,12 @@ func (NetworkSourceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkSourceState)(nil)).Elem()
 }
 
+// NetworkSourceExists checks whether an existing NetworkSource resource with the given ID exists.
+func NetworkSourceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkSourceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/networkSource:NetworkSource", id, state, "", opts...)
+}
+
 type networkSourceArgs struct {
 	// The OCID of the tenancy (root compartment) containing the network source object.
 	CompartmentId string `pulumi:"compartmentId"`

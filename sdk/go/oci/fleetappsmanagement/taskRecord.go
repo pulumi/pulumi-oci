@@ -254,6 +254,12 @@ func (TaskRecordState) ElementType() reflect.Type {
 	return reflect.TypeOf((*taskRecordState)(nil)).Elem()
 }
 
+// TaskRecordExists checks whether an existing TaskRecord resource with the given ID exists.
+func TaskRecordExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *TaskRecordState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FleetAppsManagement/taskRecord:TaskRecord", id, state, "", opts...)
+}
+
 type taskRecordArgs struct {
 	// (Updatable)
 	CompartmentId string `pulumi:"compartmentId"`

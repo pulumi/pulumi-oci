@@ -951,6 +951,64 @@ class VolumeAttachment(pulumi.CustomResource):
         __props__.__dict__["volume_id"] = volume_id
         return VolumeAttachment(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            chap_secret: pulumi.Input[Optional[_builtins.str]] = None,
+            chap_username: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            device: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            encryption_in_transit_type: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ipv4: pulumi.Input[Optional[_builtins.str]] = None,
+            ipv6: pulumi.Input[Optional[_builtins.str]] = None,
+            iqn: pulumi.Input[Optional[_builtins.str]] = None,
+            is_agent_auto_iscsi_login_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_encryption_in_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_multipath: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_pv_encryption_in_transit_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_read_only: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_shareable: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_volume_created_during_launch: pulumi.Input[Optional[_builtins.bool]] = None,
+            iscsi_login_state: pulumi.Input[Optional[_builtins.str]] = None,
+            multipath_devices: pulumi.Input[Optional[Sequence[pulumi.Input[Union['VolumeAttachmentMultipathDeviceArgs', 'VolumeAttachmentMultipathDeviceArgsDict', 'outputs.VolumeAttachmentMultipathDevice']]]]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            use_chap: pulumi.Input[Optional[_builtins.bool]] = None,
+            volume_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["attachmentType"] = attachment_type
+        __props__["availabilityDomain"] = availability_domain
+        __props__["chapSecret"] = chap_secret
+        __props__["chapUsername"] = chap_username
+        __props__["compartmentId"] = compartment_id
+        __props__["device"] = device
+        __props__["displayName"] = display_name
+        __props__["encryptionInTransitType"] = encryption_in_transit_type
+        __props__["instanceId"] = instance_id
+        __props__["ipv4"] = ipv4
+        __props__["ipv6"] = ipv6
+        __props__["iqn"] = iqn
+        __props__["isAgentAutoIscsiLoginEnabled"] = is_agent_auto_iscsi_login_enabled
+        __props__["isEncryptionInTransitEnabled"] = is_encryption_in_transit_enabled
+        __props__["isMultipath"] = is_multipath
+        __props__["isPvEncryptionInTransitEnabled"] = is_pv_encryption_in_transit_enabled
+        __props__["isReadOnly"] = is_read_only
+        __props__["isShareable"] = is_shareable
+        __props__["isVolumeCreatedDuringLaunch"] = is_volume_created_during_launch
+        __props__["iscsiLoginState"] = iscsi_login_state
+        __props__["multipathDevices"] = multipath_devices
+        __props__["port"] = port
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["useChap"] = use_chap
+        __props__["volumeId"] = volume_id
+        return pulumi.runtime.exists_resource(None, 'oci:Core/volumeAttachment:VolumeAttachment', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="attachmentType")
     def attachment_type(self) -> pulumi.Output[_builtins.str]:

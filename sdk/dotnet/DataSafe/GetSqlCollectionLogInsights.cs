@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Retrieves a list of the SQL collection log analytics.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Retrieves a list of the SQL collection log analytics.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Sql Collection Log Insights in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Retrieves a list of the SQL collection log analytics.
-        /// 
         /// 
         /// ## Example Usage
         /// 

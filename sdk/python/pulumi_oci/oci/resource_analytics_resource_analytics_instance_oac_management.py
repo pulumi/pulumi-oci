@@ -336,6 +336,22 @@ class ResourceAnalyticsResourceAnalyticsInstanceOacManagement(pulumi.CustomResou
         __props__.__dict__["state"] = state
         return ResourceAnalyticsResourceAnalyticsInstanceOacManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            attachment_details: pulumi.Input[Optional[Union['ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgs', 'ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetailsArgsDict', 'outputs.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails']]] = None,
+            attachment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_oac: pulumi.Input[Optional[_builtins.bool]] = None,
+            resource_analytics_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["attachmentDetails"] = attachment_details
+        __props__["attachmentType"] = attachment_type
+        __props__["enableOac"] = enable_oac
+        __props__["resourceAnalyticsInstanceId"] = resource_analytics_instance_id
+        __props__["state"] = state
+        return pulumi.runtime.exists_resource(None, 'oci:oci/resourceAnalyticsResourceAnalyticsInstanceOacManagement:ResourceAnalyticsResourceAnalyticsInstanceOacManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="attachmentDetails")
     def attachment_details(self) -> pulumi.Output['outputs.ResourceAnalyticsResourceAnalyticsInstanceOacManagementAttachmentDetails']:

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Retrieves detailed information about a Multicloud discovered resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Retrieves detailed information about a Multicloud discovered resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides details about a specific Multi Cloud Resource Discovery resource in Oracle Cloud Infrastructure Dbmulticloud service.
         /// 
         /// Retrieves detailed information about a Multicloud discovered resource by specifying its unique resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

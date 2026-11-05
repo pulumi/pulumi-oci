@@ -139,6 +139,12 @@ func (VolumeBackupPolicyAssignmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*volumeBackupPolicyAssignmentState)(nil)).Elem()
 }
 
+// VolumeBackupPolicyAssignmentExists checks whether an existing VolumeBackupPolicyAssignment resource with the given ID exists.
+func VolumeBackupPolicyAssignmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VolumeBackupPolicyAssignmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/volumeBackupPolicyAssignment:VolumeBackupPolicyAssignment", id, state, "", opts...)
+}
+
 type volumeBackupPolicyAssignmentArgs struct {
 	// The OCID of the volume or volume group to assign the policy to.
 	AssetId string `pulumi:"assetId"`

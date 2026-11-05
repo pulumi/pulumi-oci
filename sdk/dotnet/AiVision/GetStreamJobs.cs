@@ -16,7 +16,6 @@ namespace Pulumi.Oci.AiVision
         /// 
         /// Get list of stream jobs
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.AiVision
         /// 
         /// Get list of stream jobs
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.AiVision
         /// This data source provides the list of Stream Jobs in Oracle Cloud Infrastructure Ai Vision service.
         /// 
         /// Get list of stream jobs
-        /// 
         /// 
         /// ## Example Usage
         /// 

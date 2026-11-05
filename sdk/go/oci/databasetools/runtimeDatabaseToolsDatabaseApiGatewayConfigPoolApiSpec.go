@@ -172,6 +172,12 @@ func (RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecState) ElementType(
 	return reflect.TypeOf((*runtimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecState)(nil)).Elem()
 }
 
+// RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecExists checks whether an existing RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec resource with the given ID exists.
+func RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec:RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec", id, state, "", opts...)
+}
+
 type runtimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpecArgs struct {
 	// (Updatable) The content of a string-escaped Open API spec in JSON format.
 	Content string `pulumi:"content"`

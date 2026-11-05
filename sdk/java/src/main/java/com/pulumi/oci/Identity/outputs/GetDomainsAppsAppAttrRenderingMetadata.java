@@ -68,7 +68,7 @@ public final class GetDomainsAppsAppAttrRenderingMetadata {
      */
     private String regexp;
     /**
-     * @return If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \&#34;isRequired\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to &#92;&#34;isRequired&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      */
     private Boolean required;
@@ -167,7 +167,7 @@ public final class GetDomainsAppsAppAttrRenderingMetadata {
         return this.regexp;
     }
     /**
-     * @return If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \&#34;isRequired\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to &#92;&#34;isRequired&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      */
     public Boolean required() {

@@ -19,11 +19,10 @@ public final class RuleActions {
     /**
      * @return (Updatable) Deprecated. Use `action` instead. This nested block is retained for backward compatibility.
      * 
-     * @deprecated
-     * Use action instead. This field is retained for backward compatibility.
+     * @deprecated Use action instead. This field is retained for backward compatibility.
      * 
      */
-    @Deprecated /* Use action instead. This field is retained for backward compatibility. */
+    @Deprecated
     private @Nullable List<RuleActionsAction> actions;
 
     private RuleActions() {}
@@ -37,11 +36,10 @@ public final class RuleActions {
     /**
      * @return (Updatable) Deprecated. Use `action` instead. This nested block is retained for backward compatibility.
      * 
-     * @deprecated
-     * Use action instead. This field is retained for backward compatibility.
+     * @deprecated Use action instead. This field is retained for backward compatibility.
      * 
      */
-    @Deprecated /* Use action instead. This field is retained for backward compatibility. */
+    @Deprecated
     public List<RuleActionsAction> actions() {
         return this.actions == null ? List.of() : this.actions;
     }

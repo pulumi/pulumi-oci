@@ -1029,6 +1029,58 @@ class GdpGdpPipeline(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return GdpGdpPipeline(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            approval_key_vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+            authorization_details: pulumi.Input[Optional[_builtins.str]] = None,
+            bucket_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['GdpGdpPipelineBucketDetailArgs', 'GdpGdpPipelineBucketDetailArgsDict', 'outputs.GdpGdpPipelineBucketDetail']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            env: pulumi.Input[Optional[_builtins.str]] = None,
+            file_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_approval_needed: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_chunking_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_file_override_in_destination_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_scanning_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            peered_gdp_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+            peering_region: pulumi.Input[Optional[_builtins.str]] = None,
+            pipeline_type: pulumi.Input[Optional[_builtins.str]] = None,
+            service_log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["approvalKeyVaultId"] = approval_key_vault_id
+        __props__["authorizationDetails"] = authorization_details
+        __props__["bucketDetails"] = bucket_details
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["env"] = env
+        __props__["fileTypes"] = file_types
+        __props__["freeformTags"] = freeform_tags
+        __props__["isApprovalNeeded"] = is_approval_needed
+        __props__["isChunkingEnabled"] = is_chunking_enabled
+        __props__["isFileOverrideInDestinationEnabled"] = is_file_override_in_destination_enabled
+        __props__["isScanningEnabled"] = is_scanning_enabled
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["peeredGdpPipelineId"] = peered_gdp_pipeline_id
+        __props__["peeringRegion"] = peering_region
+        __props__["pipelineType"] = pipeline_type
+        __props__["serviceLogGroupId"] = service_log_group_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:oci/gdpGdpPipeline:GdpGdpPipeline', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="approvalKeyVaultId")
     def approval_key_vault_id(self) -> pulumi.Output[_builtins.str]:

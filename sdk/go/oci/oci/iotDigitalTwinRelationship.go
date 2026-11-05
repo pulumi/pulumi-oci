@@ -207,6 +207,12 @@ func (IotDigitalTwinRelationshipState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iotDigitalTwinRelationshipState)(nil)).Elem()
 }
 
+// IotDigitalTwinRelationshipExists checks whether an existing IotDigitalTwinRelationship resource with the given ID exists.
+func IotDigitalTwinRelationshipExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IotDigitalTwinRelationshipState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/iotDigitalTwinRelationship:IotDigitalTwinRelationship", id, state, "", opts...)
+}
+
 type iotDigitalTwinRelationshipArgs struct {
 	// (Updatable) The value(s) of the relationship properties defined in the source digital twin model.
 	Content *string `pulumi:"content"`

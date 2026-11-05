@@ -278,6 +278,12 @@ func (VolumeBackupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*volumeBackupState)(nil)).Elem()
 }
 
+// VolumeBackupExists checks whether an existing VolumeBackup resource with the given ID exists.
+func VolumeBackupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VolumeBackupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/volumeBackup:VolumeBackup", id, state, "", opts...)
+}
+
 type volumeBackupArgs struct {
 	// (Updatable) The OCID of the compartment that contains the volume backup.
 	CompartmentId *string `pulumi:"compartmentId"`

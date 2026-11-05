@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Core
         /// Lists the IPSec connections for the specified compartment. You can filter the
         /// results by DRG or CPE.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Core
         /// Lists the IPSec connections for the specified compartment. You can filter the
         /// results by DRG or CPE.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -76,7 +74,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the IPSec connections for the specified compartment. You can filter the
         /// results by DRG or CPE.
-        /// 
         /// 
         /// ## Example Usage
         /// 

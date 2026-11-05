@@ -153,6 +153,12 @@ func (DbNodeSnapshotManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dbNodeSnapshotManagementState)(nil)).Elem()
 }
 
+// DbNodeSnapshotManagementExists checks whether an existing DbNodeSnapshotManagement resource with the given ID exists.
+func DbNodeSnapshotManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DbNodeSnapshotManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/dbNodeSnapshotManagement:DbNodeSnapshotManagement", id, state, "", opts...)
+}
+
 type dbNodeSnapshotManagementArgs struct {
 	// Defined tags for the Exadata Database Node Snapshots. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]string `pulumi:"definedTags"`

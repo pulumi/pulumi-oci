@@ -337,6 +337,12 @@ func (VmClusterAddVirtualNetworkState) ElementType() reflect.Type {
 	return reflect.TypeOf((*vmClusterAddVirtualNetworkState)(nil)).Elem()
 }
 
+// VmClusterAddVirtualNetworkExists checks whether an existing VmClusterAddVirtualNetwork resource with the given ID exists.
+func VmClusterAddVirtualNetworkExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VmClusterAddVirtualNetworkState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/vmClusterAddVirtualNetwork:VmClusterAddVirtualNetwork", id, state, "", opts...)
+}
+
 type vmClusterAddVirtualNetworkArgs struct {
 	// The list of Exacc DB servers for the cluster to be added.
 	DbServers []VmClusterAddVirtualNetworkDbServer `pulumi:"dbServers"`

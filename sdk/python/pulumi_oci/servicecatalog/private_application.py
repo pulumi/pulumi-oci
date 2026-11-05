@@ -638,6 +638,40 @@ class PrivateApplication(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return PrivateApplication(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            logo_file_base64encoded: pulumi.Input[Optional[_builtins.str]] = None,
+            logos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PrivateApplicationLogoArgs', 'PrivateApplicationLogoArgsDict', 'outputs.PrivateApplicationLogo']]]]] = None,
+            long_description: pulumi.Input[Optional[_builtins.str]] = None,
+            package_details: pulumi.Input[Optional[Union['PrivateApplicationPackageDetailsArgs', 'PrivateApplicationPackageDetailsArgsDict', 'outputs.PrivateApplicationPackageDetails']]] = None,
+            package_type: pulumi.Input[Optional[_builtins.str]] = None,
+            short_description: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["logoFileBase64encoded"] = logo_file_base64encoded
+        __props__["logos"] = logos
+        __props__["longDescription"] = long_description
+        __props__["packageDetails"] = package_details
+        __props__["packageType"] = package_type
+        __props__["shortDescription"] = short_description
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:ServiceCatalog/privateApplication:PrivateApplication', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

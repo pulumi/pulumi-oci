@@ -510,6 +510,34 @@ class AdhocQuery(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return AdhocQuery(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            adhoc_query_details: pulumi.Input[Optional[Union['AdhocQueryAdhocQueryDetailsArgs', 'AdhocQueryAdhocQueryDetailsArgsDict', 'outputs.AdhocQueryAdhocQueryDetails']]] = None,
+            adhoc_query_regional_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AdhocQueryAdhocQueryRegionalDetailArgs', 'AdhocQueryAdhocQueryRegionalDetailArgsDict', 'outputs.AdhocQueryAdhocQueryRegionalDetail']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            error_message: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["adhocQueryDetails"] = adhoc_query_details
+        __props__["adhocQueryRegionalDetails"] = adhoc_query_regional_details
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["errorMessage"] = error_message
+        __props__["freeformTags"] = freeform_tags
+        __props__["state"] = state
+        __props__["status"] = status
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:CloudGuard/adhocQuery:AdhocQuery', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="adhocQueryDetails")
     def adhoc_query_details(self) -> pulumi.Output['outputs.AdhocQueryAdhocQueryDetails']:

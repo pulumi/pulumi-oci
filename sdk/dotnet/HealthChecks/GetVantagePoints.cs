@@ -16,7 +16,6 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// Gets information about all vantage points available to the user.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.HealthChecks
         /// 
         /// Gets information about all vantage points available to the user.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.HealthChecks
         /// This data source provides the list of Vantage Points in Oracle Cloud Infrastructure Health Checks service.
         /// 
         /// Gets information about all vantage points available to the user.
-        /// 
         /// 
         /// ## Example Usage
         /// 

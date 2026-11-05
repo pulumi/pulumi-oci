@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Optionally, you can specify a date-time range (of seven days) to obtain the list of executions that fall within the specified time range.
         /// If the date-time range is not specified, then the executions in the last seven days are listed.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Optionally, you can specify a date-time range (of seven days) to obtain the list of executions that fall within the specified time range.
         /// If the date-time range is not specified, then the executions in the last seven days are listed.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Lists the details of the Optimizer Statistics Advisor task executions, such as their duration, and the number of findings, if any.
         /// Optionally, you can specify a date-time range (of seven days) to obtain the list of executions that fall within the specified time range.
         /// If the date-time range is not specified, then the executions in the last seven days are listed.
-        /// 
         /// 
         /// ## Example Usage
         /// 

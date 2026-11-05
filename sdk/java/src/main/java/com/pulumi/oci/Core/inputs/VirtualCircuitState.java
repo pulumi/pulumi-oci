@@ -70,22 +70,20 @@ public final class VirtualCircuitState extends com.pulumi.resources.ResourceArgs
     /**
      * Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
      * 
-     * @deprecated
-     * The &#39;bgp_management&#39; field has been deprecated. Please use the &#39;oci_core_fast_connect_provider_service&#39; data source instead.
+     * @deprecated The &#39;bgp_management&#39; field has been deprecated. Please use the &#39;oci_core_fast_connect_provider_service&#39; data source instead.
      * 
      */
-    @Deprecated /* The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead. */
+    @Deprecated
     @Import(name="bgpManagement")
     private @Nullable Output<String> bgpManagement;
 
     /**
      * @return Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
      * 
-     * @deprecated
-     * The &#39;bgp_management&#39; field has been deprecated. Please use the &#39;oci_core_fast_connect_provider_service&#39; data source instead.
+     * @deprecated The &#39;bgp_management&#39; field has been deprecated. Please use the &#39;oci_core_fast_connect_provider_service&#39; data source instead.
      * 
      */
-    @Deprecated /* The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead. */
+    @Deprecated
     public Optional<Output<String>> bgpManagement() {
         return Optional.ofNullable(this.bgpManagement);
     }
@@ -153,22 +151,20 @@ public final class VirtualCircuitState extends com.pulumi.resources.ResourceArgs
     /**
      * (Updatable) Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
      * 
-     * @deprecated
-     * The &#39;customer_bgp_asn&#39; field has been deprecated. Please use &#39;customer_asn&#39; instead.
+     * @deprecated The &#39;customer_bgp_asn&#39; field has been deprecated. Please use &#39;customer_asn&#39; instead.
      * 
      */
-    @Deprecated /* The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead. */
+    @Deprecated
     @Import(name="customerBgpAsn")
     private @Nullable Output<Integer> customerBgpAsn;
 
     /**
      * @return (Updatable) Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
      * 
-     * @deprecated
-     * The &#39;customer_bgp_asn&#39; field has been deprecated. Please use &#39;customer_asn&#39; instead.
+     * @deprecated The &#39;customer_bgp_asn&#39; field has been deprecated. Please use &#39;customer_asn&#39; instead.
      * 
      */
-    @Deprecated /* The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead. */
+    @Deprecated
     public Optional<Output<Integer>> customerBgpAsn() {
         return Optional.ofNullable(this.customerBgpAsn);
     }
@@ -663,11 +659,10 @@ public final class VirtualCircuitState extends com.pulumi.resources.ResourceArgs
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;bgp_management&#39; field has been deprecated. Please use the &#39;oci_core_fast_connect_provider_service&#39; data source instead.
+         * @deprecated The &#39;bgp_management&#39; field has been deprecated. Please use the &#39;oci_core_fast_connect_provider_service&#39; data source instead.
          * 
          */
-        @Deprecated /* The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead. */
+        @Deprecated
         public Builder bgpManagement(@Nullable Output<String> bgpManagement) {
             $.bgpManagement = bgpManagement;
             return this;
@@ -678,11 +673,10 @@ public final class VirtualCircuitState extends com.pulumi.resources.ResourceArgs
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;bgp_management&#39; field has been deprecated. Please use the &#39;oci_core_fast_connect_provider_service&#39; data source instead.
+         * @deprecated The &#39;bgp_management&#39; field has been deprecated. Please use the &#39;oci_core_fast_connect_provider_service&#39; data source instead.
          * 
          */
-        @Deprecated /* The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead. */
+        @Deprecated
         public Builder bgpManagement(String bgpManagement) {
             return bgpManagement(Output.of(bgpManagement));
         }
@@ -786,11 +780,10 @@ public final class VirtualCircuitState extends com.pulumi.resources.ResourceArgs
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;customer_bgp_asn&#39; field has been deprecated. Please use &#39;customer_asn&#39; instead.
+         * @deprecated The &#39;customer_bgp_asn&#39; field has been deprecated. Please use &#39;customer_asn&#39; instead.
          * 
          */
-        @Deprecated /* The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead. */
+        @Deprecated
         public Builder customerBgpAsn(@Nullable Output<Integer> customerBgpAsn) {
             $.customerBgpAsn = customerBgpAsn;
             return this;
@@ -801,11 +794,10 @@ public final class VirtualCircuitState extends com.pulumi.resources.ResourceArgs
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;customer_bgp_asn&#39; field has been deprecated. Please use &#39;customer_asn&#39; instead.
+         * @deprecated The &#39;customer_bgp_asn&#39; field has been deprecated. Please use &#39;customer_asn&#39; instead.
          * 
          */
-        @Deprecated /* The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead. */
+        @Deprecated
         public Builder customerBgpAsn(Integer customerBgpAsn) {
             return customerBgpAsn(Output.of(customerBgpAsn));
         }

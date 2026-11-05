@@ -772,6 +772,54 @@ class PluggableDatabaseManagementsManagement(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return PluggableDatabaseManagementsManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PluggableDatabaseManagementsManagementConnectionStringArgs', 'PluggableDatabaseManagementsManagementConnectionStringArgsDict', 'outputs.PluggableDatabaseManagementsManagementConnectionString']]]]] = None,
+            container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            credential_details: pulumi.Input[Optional[Union['PluggableDatabaseManagementsManagementCredentialDetailsArgs', 'PluggableDatabaseManagementsManagementCredentialDetailsArgsDict', 'outputs.PluggableDatabaseManagementsManagementCredentialDetails']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            enable_pluggabledatabasemanagement: pulumi.Input[Optional[_builtins.bool]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_restricted: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            open_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            pdb_name: pulumi.Input[Optional[_builtins.str]] = None,
+            pluggable_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pluggable_database_management_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgs', 'PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfigArgsDict', 'outputs.PluggableDatabaseManagementsManagementPluggableDatabaseManagementConfig']]]]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            private_end_point_id: pulumi.Input[Optional[_builtins.str]] = None,
+            protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            role: pulumi.Input[Optional[_builtins.str]] = None,
+            service_name: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["connectionStrings"] = connection_strings
+        __props__["containerDatabaseId"] = container_database_id
+        __props__["credentialDetails"] = credential_details
+        __props__["definedTags"] = defined_tags
+        __props__["enablePluggabledatabasemanagement"] = enable_pluggabledatabasemanagement
+        __props__["freeformTags"] = freeform_tags
+        __props__["isRestricted"] = is_restricted
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["openMode"] = open_mode
+        __props__["pdbName"] = pdb_name
+        __props__["pluggableDatabaseId"] = pluggable_database_id
+        __props__["pluggableDatabaseManagementConfigs"] = pluggable_database_management_configs
+        __props__["port"] = port
+        __props__["privateEndPointId"] = private_end_point_id
+        __props__["protocol"] = protocol
+        __props__["role"] = role
+        __props__["serviceName"] = service_name
+        __props__["sslSecretId"] = ssl_secret_id
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:Database/pluggableDatabaseManagementsManagement:PluggableDatabaseManagementsManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

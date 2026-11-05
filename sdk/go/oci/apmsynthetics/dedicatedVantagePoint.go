@@ -198,6 +198,12 @@ func (DedicatedVantagePointState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dedicatedVantagePointState)(nil)).Elem()
 }
 
+// DedicatedVantagePointExists checks whether an existing DedicatedVantagePoint resource with the given ID exists.
+func DedicatedVantagePointExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DedicatedVantagePointState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ApmSynthetics/dedicatedVantagePoint:DedicatedVantagePoint", id, state, "", opts...)
+}
+
 type dedicatedVantagePointArgs struct {
 	// (Updatable) The APM domain ID the request is intended for.
 	ApmDomainId string `pulumi:"apmDomainId"`

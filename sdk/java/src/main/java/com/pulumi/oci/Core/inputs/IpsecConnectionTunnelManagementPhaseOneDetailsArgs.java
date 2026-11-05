@@ -153,20 +153,18 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetailsArgs extends co
     }
 
     /**
-     * @deprecated
-     * The &#39;phase_one_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_one_details.0.remaining_lifetime_int&#39; instead.
+     * @deprecated The &#39;phase_one_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_one_details.0.remaining_lifetime_int&#39; instead.
      * 
      */
-    @Deprecated /* The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead. */
+    @Deprecated
     @Import(name="remainingLifetime")
     private @Nullable Output<String> remainingLifetime;
 
     /**
-     * @deprecated
-     * The &#39;phase_one_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_one_details.0.remaining_lifetime_int&#39; instead.
+     * @deprecated The &#39;phase_one_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_one_details.0.remaining_lifetime_int&#39; instead.
      * 
      */
-    @Deprecated /* The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead. */
+    @Deprecated
     public Optional<Output<String>> remainingLifetime() {
         return Optional.ofNullable(this.remainingLifetime);
     }
@@ -428,11 +426,10 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetailsArgs extends co
         /**
          * @return builder
          * 
-         * @deprecated
-         * The &#39;phase_one_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_one_details.0.remaining_lifetime_int&#39; instead.
+         * @deprecated The &#39;phase_one_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_one_details.0.remaining_lifetime_int&#39; instead.
          * 
          */
-        @Deprecated /* The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead. */
+        @Deprecated
         public Builder remainingLifetime(@Nullable Output<String> remainingLifetime) {
             $.remainingLifetime = remainingLifetime;
             return this;
@@ -441,11 +438,10 @@ public final class IpsecConnectionTunnelManagementPhaseOneDetailsArgs extends co
         /**
          * @return builder
          * 
-         * @deprecated
-         * The &#39;phase_one_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_one_details.0.remaining_lifetime_int&#39; instead.
+         * @deprecated The &#39;phase_one_details.0.remaining_lifetime&#39; field has been deprecated. Please use &#39;phase_one_details.0.remaining_lifetime_int&#39; instead.
          * 
          */
-        @Deprecated /* The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead. */
+        @Deprecated
         public Builder remainingLifetime(String remainingLifetime) {
             return remainingLifetime(Output.of(remainingLifetime));
         }

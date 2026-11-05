@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists all database connection bundles that match the query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists all database connection bundles that match the query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Db Connection Bundles in Oracle Cloud Infrastructure Database service.
         /// 
         /// Lists all database connection bundles that match the query parameters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

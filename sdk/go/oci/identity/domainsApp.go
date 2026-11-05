@@ -4322,6 +4322,12 @@ func (DomainsAppState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsAppState)(nil)).Elem()
 }
 
+// DomainsAppExists checks whether an existing DomainsApp resource with the given ID exists.
+func DomainsAppExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsAppState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsApp:DomainsApp", id, state, "", opts...)
+}
+
 type domainsAppArgs struct {
 	// (Updatable) Expiry-time in seconds for an Access Token. Any token that allows access to this App will expire after the specified duration.
 	//

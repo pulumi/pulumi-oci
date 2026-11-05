@@ -702,6 +702,34 @@ class NetworkLoadBalancersBackendSetsUnified(pulumi.CustomResource):
         __props__.__dict__["policy"] = policy
         return NetworkLoadBalancersBackendSetsUnified(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            are_operationally_active_backends_preferred: pulumi.Input[Optional[_builtins.bool]] = None,
+            backends: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkLoadBalancersBackendSetsUnifiedBackendArgs', 'NetworkLoadBalancersBackendSetsUnifiedBackendArgsDict', 'outputs.NetworkLoadBalancersBackendSetsUnifiedBackend']]]]] = None,
+            health_checker: pulumi.Input[Optional[Union['NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgs', 'NetworkLoadBalancersBackendSetsUnifiedHealthCheckerArgsDict', 'outputs.NetworkLoadBalancersBackendSetsUnifiedHealthChecker']]] = None,
+            ip_version: pulumi.Input[Optional[_builtins.str]] = None,
+            is_fail_open: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_instant_failover_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_instant_failover_tcp_reset_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_preserve_source: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+            policy: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["areOperationallyActiveBackendsPreferred"] = are_operationally_active_backends_preferred
+        __props__["backends"] = backends
+        __props__["healthChecker"] = health_checker
+        __props__["ipVersion"] = ip_version
+        __props__["isFailOpen"] = is_fail_open
+        __props__["isInstantFailoverEnabled"] = is_instant_failover_enabled
+        __props__["isInstantFailoverTcpResetEnabled"] = is_instant_failover_tcp_reset_enabled
+        __props__["isPreserveSource"] = is_preserve_source
+        __props__["name"] = name
+        __props__["networkLoadBalancerId"] = network_load_balancer_id
+        __props__["policy"] = policy
+        return pulumi.runtime.exists_resource(None, 'oci:NetworkLoadBalancer/networkLoadBalancersBackendSetsUnified:NetworkLoadBalancersBackendSetsUnified', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="areOperationallyActiveBackendsPreferred")
     def are_operationally_active_backends_preferred(self) -> pulumi.Output[_builtins.bool]:

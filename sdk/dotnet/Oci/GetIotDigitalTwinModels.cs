@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Retrieves a list of digital twin models within the specified IoT domain.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Retrieves a list of digital twin models within the specified IoT domain.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Digital Twin Models in Oracle Cloud Infrastructure Iot service.
         /// 
         /// Retrieves a list of digital twin models within the specified IoT domain.
-        /// 
         /// 
         /// ## Example Usage
         /// 

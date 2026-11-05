@@ -301,6 +301,12 @@ func (ManagementAgentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managementAgentState)(nil)).Elem()
 }
 
+// ManagementAgentExists checks whether an existing ManagementAgent resource with the given ID exists.
+func ManagementAgentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagementAgentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ManagementAgent/managementAgent:ManagementAgent", id, state, "", opts...)
+}
+
 type managementAgentArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`

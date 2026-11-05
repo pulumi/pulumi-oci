@@ -209,6 +209,12 @@ func (EkmsPrivateEndpointState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ekmsPrivateEndpointState)(nil)).Elem()
 }
 
+// EkmsPrivateEndpointExists checks whether an existing EkmsPrivateEndpoint resource with the given ID exists.
+func EkmsPrivateEndpointExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *EkmsPrivateEndpointState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Kms/ekmsPrivateEndpoint:EkmsPrivateEndpoint", id, state, "", opts...)
+}
+
 type ekmsPrivateEndpointArgs struct {
 	// CABundle to validate TLS certificate of the external key manager system in PEM format
 	CaBundle string `pulumi:"caBundle"`

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Redis
         /// 
         /// Lists the Oracle Cloud Infrastructure Cache Config Sets in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Redis
         /// 
         /// Lists the Oracle Cloud Infrastructure Cache Config Sets in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.Redis
         /// This data source provides the list of Oci Cache Config Sets in Oracle Cloud Infrastructure Redis service.
         /// 
         /// Lists the Oracle Cloud Infrastructure Cache Config Sets in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

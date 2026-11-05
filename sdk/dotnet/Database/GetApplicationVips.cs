@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of application virtual IP (VIP) addresses on a cloud VM cluster.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of application virtual IP (VIP) addresses on a cloud VM cluster.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Application Vips in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets a list of application virtual IP (VIP) addresses on a cloud VM cluster.
-        /// 
         /// 
         /// ## Example Usage
         /// 

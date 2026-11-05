@@ -206,7 +206,7 @@ namespace Pulumi.Oci.Monitoring
         public Output<string> NotificationVersion { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A set of overrides that control evaluations of the alarm. 
+        /// (Updatable) A set of overrides that control evaluations of the alarm.
         /// 
         /// Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
         /// </summary>
@@ -232,15 +232,15 @@ namespace Pulumi.Oci.Monitoring
         /// 
         /// Example of threshold alarm:
         /// 
-        /// -----
+        /// ***
         /// 
         /// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) &gt; 85
         /// 
-        /// -----
+        /// ***
         /// 
         /// Example of absence alarm:
         /// 
-        /// -----
+        /// ***
         /// 
         /// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
         /// 
@@ -480,7 +480,7 @@ namespace Pulumi.Oci.Monitoring
         private InputList<Inputs.AlarmOverrideArgs>? _overrides;
 
         /// <summary>
-        /// (Updatable) A set of overrides that control evaluations of the alarm. 
+        /// (Updatable) A set of overrides that control evaluations of the alarm.
         /// 
         /// Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
         /// </summary>
@@ -509,15 +509,15 @@ namespace Pulumi.Oci.Monitoring
         /// 
         /// Example of threshold alarm:
         /// 
-        /// -----
+        /// ***
         /// 
         /// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) &gt; 85
         /// 
-        /// -----
+        /// ***
         /// 
         /// Example of absence alarm:
         /// 
-        /// -----
+        /// ***
         /// 
         /// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
         /// 
@@ -701,7 +701,7 @@ namespace Pulumi.Oci.Monitoring
         private InputList<Inputs.AlarmOverrideGetArgs>? _overrides;
 
         /// <summary>
-        /// (Updatable) A set of overrides that control evaluations of the alarm. 
+        /// (Updatable) A set of overrides that control evaluations of the alarm.
         /// 
         /// Each override can specify values for query, severity, body, and pending duration. When an alarm contains overrides, the Monitoring service evaluates each override in order, beginning with the first override in the array (index position `0`), and then evaluates the alarm's base values (`ruleName` value of `BASE`).
         /// </summary>
@@ -730,15 +730,15 @@ namespace Pulumi.Oci.Monitoring
         /// 
         /// Example of threshold alarm:
         /// 
-        /// -----
+        /// ***
         /// 
         /// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) &gt; 85
         /// 
-        /// -----
+        /// ***
         /// 
         /// Example of absence alarm:
         /// 
-        /// -----
+        /// ***
         /// 
         /// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
         /// 

@@ -211,6 +211,12 @@ func (DbmulticloudMultiCloudResourceDiscoveryState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dbmulticloudMultiCloudResourceDiscoveryState)(nil)).Elem()
 }
 
+// DbmulticloudMultiCloudResourceDiscoveryExists checks whether an existing DbmulticloudMultiCloudResourceDiscovery resource with the given ID exists.
+func DbmulticloudMultiCloudResourceDiscoveryExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DbmulticloudMultiCloudResourceDiscoveryState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/dbmulticloudMultiCloudResourceDiscovery:DbmulticloudMultiCloudResourceDiscovery", id, state, "", opts...)
+}
+
 type dbmulticloudMultiCloudResourceDiscoveryArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains Multicloud Resource Discovery resource.
 	CompartmentId string `pulumi:"compartmentId"`

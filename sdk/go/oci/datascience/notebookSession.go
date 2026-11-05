@@ -249,6 +249,12 @@ func (NotebookSessionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*notebookSessionState)(nil)).Elem()
 }
 
+// NotebookSessionExists checks whether an existing NotebookSession resource with the given ID exists.
+func NotebookSessionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NotebookSessionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataScience/notebookSession:NotebookSession", id, state, "", opts...)
+}
+
 type notebookSessionArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the notebook session.
 	CompartmentId string `pulumi:"compartmentId"`

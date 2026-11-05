@@ -13,11 +13,10 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DefaultRouteTableRouteRule {
     /**
-     * @deprecated
-     * The &#39;cidr_block&#39; field has been deprecated. Please use &#39;destination&#39; instead.
+     * @deprecated The &#39;cidr_block&#39; field has been deprecated. Please use &#39;destination&#39; instead.
      * 
      */
-    @Deprecated /* The 'cidr_block' field has been deprecated. Please use 'destination' instead. */
+    @Deprecated
     private @Nullable String cidrBlock;
     private @Nullable String description;
     private @Nullable String destination;
@@ -27,11 +26,10 @@ public final class DefaultRouteTableRouteRule {
 
     private DefaultRouteTableRouteRule() {}
     /**
-     * @deprecated
-     * The &#39;cidr_block&#39; field has been deprecated. Please use &#39;destination&#39; instead.
+     * @deprecated The &#39;cidr_block&#39; field has been deprecated. Please use &#39;destination&#39; instead.
      * 
      */
-    @Deprecated /* The 'cidr_block' field has been deprecated. Please use 'destination' instead. */
+    @Deprecated
     public Optional<String> cidrBlock() {
         return Optional.ofNullable(this.cidrBlock);
     }

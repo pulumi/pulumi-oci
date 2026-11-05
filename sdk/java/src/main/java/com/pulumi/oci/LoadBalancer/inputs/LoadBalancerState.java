@@ -100,11 +100,10 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
      * An array of IP addresses. Deprecated: use ipAddressDetails instead
      * *
      * 
-     * @deprecated
-     * The &#39;ip_addresses&#39; field has been deprecated. Please use &#39;ip_address_details&#39; instead.
+     * @deprecated The &#39;ip_addresses&#39; field has been deprecated. Please use &#39;ip_address_details&#39; instead.
      * 
      */
-    @Deprecated /* The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead. */
+    @Deprecated
     @Import(name="ipAddresses")
     private @Nullable Output<List<String>> ipAddresses;
 
@@ -112,11 +111,10 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
      * @return An array of IP addresses. Deprecated: use ipAddressDetails instead
      * *
      * 
-     * @deprecated
-     * The &#39;ip_addresses&#39; field has been deprecated. Please use &#39;ip_address_details&#39; instead.
+     * @deprecated The &#39;ip_addresses&#39; field has been deprecated. Please use &#39;ip_address_details&#39; instead.
      * 
      */
-    @Deprecated /* The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead. */
+    @Deprecated
     public Optional<Output<List<String>>> ipAddresses() {
         return Optional.ofNullable(this.ipAddresses);
     }
@@ -617,11 +615,10 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;ip_addresses&#39; field has been deprecated. Please use &#39;ip_address_details&#39; instead.
+         * @deprecated The &#39;ip_addresses&#39; field has been deprecated. Please use &#39;ip_address_details&#39; instead.
          * 
          */
-        @Deprecated /* The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead. */
+        @Deprecated
         public Builder ipAddresses(@Nullable Output<List<String>> ipAddresses) {
             $.ipAddresses = ipAddresses;
             return this;
@@ -633,11 +630,10 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;ip_addresses&#39; field has been deprecated. Please use &#39;ip_address_details&#39; instead.
+         * @deprecated The &#39;ip_addresses&#39; field has been deprecated. Please use &#39;ip_address_details&#39; instead.
          * 
          */
-        @Deprecated /* The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead. */
+        @Deprecated
         public Builder ipAddresses(List<String> ipAddresses) {
             return ipAddresses(Output.of(ipAddresses));
         }
@@ -648,11 +644,10 @@ public final class LoadBalancerState extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;ip_addresses&#39; field has been deprecated. Please use &#39;ip_address_details&#39; instead.
+         * @deprecated The &#39;ip_addresses&#39; field has been deprecated. Please use &#39;ip_address_details&#39; instead.
          * 
          */
-        @Deprecated /* The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead. */
+        @Deprecated
         public Builder ipAddresses(String... ipAddresses) {
             return ipAddresses(List.of(ipAddresses));
         }

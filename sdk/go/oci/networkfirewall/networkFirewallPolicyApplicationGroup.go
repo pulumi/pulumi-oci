@@ -150,6 +150,12 @@ func (NetworkFirewallPolicyApplicationGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkFirewallPolicyApplicationGroupState)(nil)).Elem()
 }
 
+// NetworkFirewallPolicyApplicationGroupExists checks whether an existing NetworkFirewallPolicyApplicationGroup resource with the given ID exists.
+func NetworkFirewallPolicyApplicationGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkFirewallPolicyApplicationGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:NetworkFirewall/networkFirewallPolicyApplicationGroup:NetworkFirewallPolicyApplicationGroup", id, state, "", opts...)
+}
+
 type networkFirewallPolicyApplicationGroupArgs struct {
 	// (Updatable) Collection of application names.
 	Apps []string `pulumi:"apps"`

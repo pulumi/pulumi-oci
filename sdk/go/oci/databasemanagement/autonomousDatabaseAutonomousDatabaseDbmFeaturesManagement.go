@@ -147,6 +147,12 @@ func (AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementState) ElementTyp
 	return reflect.TypeOf((*autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementState)(nil)).Elem()
 }
 
+// AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementExists checks whether an existing AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement resource with the given ID exists.
+func AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/autonomousDatabaseAutonomousDatabaseDbmFeaturesManagement:AutonomousDatabaseAutonomousDatabaseDbmFeaturesManagement", id, state, "", opts...)
+}
+
 type autonomousDatabaseAutonomousDatabaseDbmFeaturesManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
 	AutonomousDatabaseId string `pulumi:"autonomousDatabaseId"`

@@ -22,11 +22,10 @@ public final class ConnectionStorage {
     /**
      * @return (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by &#34;accountKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
+     * @deprecated The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead. */
+    @Deprecated
     private @Nullable String accountKey;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
@@ -71,11 +70,10 @@ public final class ConnectionStorage {
     /**
      * @return (Updatable) Secret Access Key from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API. Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+     * @deprecated The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
+    @Deprecated
     private @Nullable String secretAccessKey;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
@@ -85,11 +83,10 @@ public final class ConnectionStorage {
     /**
      * @return (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by &#34;serviceAccountKeyFileSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
+     * @deprecated The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead. */
+    @Deprecated
     private @Nullable String serviceAccountKeyFile;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored, which contains the credentials required to use Google Cloud Storage.
@@ -120,11 +117,10 @@ public final class ConnectionStorage {
     /**
      * @return (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by &#34;accountKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
+     * @deprecated The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead. */
+    @Deprecated
     public Optional<String> accountKey() {
         return Optional.ofNullable(this.accountKey);
     }
@@ -187,11 +183,10 @@ public final class ConnectionStorage {
     /**
      * @return (Updatable) Secret Access Key from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API. Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+     * @deprecated The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
+    @Deprecated
     public Optional<String> secretAccessKey() {
         return Optional.ofNullable(this.secretAccessKey);
     }
@@ -205,11 +200,10 @@ public final class ConnectionStorage {
     /**
      * @return (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by &#34;serviceAccountKeyFileSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
+     * @deprecated The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead. */
+    @Deprecated
     public Optional<String> serviceAccountKeyFile() {
         return Optional.ofNullable(this.serviceAccountKeyFile);
     }

@@ -818,6 +818,54 @@ class SqlFirewallPolicy(pulumi.CustomResource):
         __props__.__dict__["violation_audit"] = violation_audit
         return SqlFirewallPolicy(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            allowed_client_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            allowed_client_os_usernames: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            allowed_client_programs: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_user_name: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            enforcement_scope: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            sql_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            sql_level: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            violation_action: pulumi.Input[Optional[_builtins.str]] = None,
+            violation_audit: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["allowedClientIps"] = allowed_client_ips
+        __props__["allowedClientOsUsernames"] = allowed_client_os_usernames
+        __props__["allowedClientPrograms"] = allowed_client_programs
+        __props__["compartmentId"] = compartment_id
+        __props__["dbUserName"] = db_user_name
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["enforcementScope"] = enforcement_scope
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["securityPolicyId"] = security_policy_id
+        __props__["sqlFirewallPolicyId"] = sql_firewall_policy_id
+        __props__["sqlLevel"] = sql_level
+        __props__["state"] = state
+        __props__["status"] = status
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["violationAction"] = violation_action
+        __props__["violationAudit"] = violation_audit
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/sqlFirewallPolicy:SqlFirewallPolicy', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="allowedClientIps")
     def allowed_client_ips(self) -> pulumi.Output[Sequence[_builtins.str]]:

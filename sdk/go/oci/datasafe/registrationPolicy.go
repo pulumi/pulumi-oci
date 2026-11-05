@@ -254,6 +254,12 @@ func (RegistrationPolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*registrationPolicyState)(nil)).Elem()
 }
 
+// RegistrationPolicyExists checks whether an existing RegistrationPolicy resource with the given ID exists.
+func RegistrationPolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RegistrationPolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/registrationPolicy:RegistrationPolicy", id, state, "", opts...)
+}
+
 type registrationPolicyArgs struct {
 	// (Updatable) Indicates whether features will be overridden for all targets.
 	CanOverrideFeatures *bool `pulumi:"canOverrideFeatures"`

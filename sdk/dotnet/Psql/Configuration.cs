@@ -169,7 +169,7 @@ namespace Pulumi.Oci.Psql
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// The name of the shape for the configuration. 
+        /// The name of the shape for the configuration.
         /// 
         /// For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
         /// </summary>
@@ -183,8 +183,7 @@ namespace Pulumi.Oci.Psql
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-        /// 
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -333,7 +332,7 @@ namespace Pulumi.Oci.Psql
         public Input<bool>? IsFlexible { get; set; }
 
         /// <summary>
-        /// The name of the shape for the configuration. 
+        /// The name of the shape for the configuration.
         /// 
         /// For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
         /// </summary>
@@ -344,8 +343,7 @@ namespace Pulumi.Oci.Psql
         private InputMap<string>? _systemTags;
 
         /// <summary>
-        /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-        /// 
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -483,7 +481,7 @@ namespace Pulumi.Oci.Psql
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// The name of the shape for the configuration. 
+        /// The name of the shape for the configuration.
         /// 
         /// For multi-shape enabled configurations, it is set to PostgreSQL.X86 or similar. Please use compatibleShapes property to set the list of supported shapes.
         /// </summary>
@@ -500,8 +498,7 @@ namespace Pulumi.Oci.Psql
         private InputMap<string>? _systemTags;
 
         /// <summary>
-        /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
-        /// 
+        /// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

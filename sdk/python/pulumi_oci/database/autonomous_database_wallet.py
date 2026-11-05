@@ -435,6 +435,24 @@ class AutonomousDatabaseWallet(pulumi.CustomResource):
         __props__.__dict__["password"] = password
         return AutonomousDatabaseWallet(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            base64_encode_content: pulumi.Input[Optional[_builtins.bool]] = None,
+            content: pulumi.Input[Optional[_builtins.str]] = None,
+            generate_type: pulumi.Input[Optional[_builtins.str]] = None,
+            is_regional: pulumi.Input[Optional[_builtins.bool]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["autonomousDatabaseId"] = autonomous_database_id
+        __props__["base64EncodeContent"] = base64_encode_content
+        __props__["content"] = content
+        __props__["generateType"] = generate_type
+        __props__["isRegional"] = is_regional
+        __props__["password"] = password
+        return pulumi.runtime.exists_resource(None, 'oci:Database/autonomousDatabaseWallet:AutonomousDatabaseWallet', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> pulumi.Output[_builtins.str]:

@@ -210,6 +210,12 @@ func (ProfileState) ElementType() reflect.Type {
 	return reflect.TypeOf((*profileState)(nil)).Elem()
 }
 
+// ProfileExists checks whether an existing Profile resource with the given ID exists.
+func ProfileExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProfileState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Optimizer/profile:Profile", id, state, "", opts...)
+}
+
 type profileArgs struct {
 	// (Updatable) The time period over which to collect data for the recommendations, measured in number of days.
 	AggregationIntervalInDays *int `pulumi:"aggregationIntervalInDays"`

@@ -192,6 +192,12 @@ func (RecommendationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*recommendationState)(nil)).Elem()
 }
 
+// RecommendationExists checks whether an existing Recommendation resource with the given ID exists.
+func RecommendationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RecommendationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Optimizer/recommendation:Recommendation", id, state, "", opts...)
+}
+
 type recommendationArgs struct {
 	// The unique OCID associated with the recommendation.
 	RecommendationId string `pulumi:"recommendationId"`

@@ -148,6 +148,12 @@ func (ModelDefinedMetadataArtifactState) ElementType() reflect.Type {
 	return reflect.TypeOf((*modelDefinedMetadataArtifactState)(nil)).Elem()
 }
 
+// ModelDefinedMetadataArtifactExists checks whether an existing ModelDefinedMetadataArtifact resource with the given ID exists.
+func ModelDefinedMetadataArtifactExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ModelDefinedMetadataArtifactState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataScience/modelDefinedMetadataArtifact:ModelDefinedMetadataArtifact", id, state, "", opts...)
+}
+
 type modelDefinedMetadataArtifactArgs struct {
 	// (Updatable) This header allows you to specify a filename during upload. This file name is used to dispose of the file contents while downloading the file. If this optional field is not populated in the request, then the OCID of the model is used for the file name when downloading. Example: `{"Content-Disposition": "attachment" "filename"="model.tar.gz" "Content-Length": "2347" "Content-Type": "application/gzip"}`
 	ContentDisposition *string `pulumi:"contentDisposition"`

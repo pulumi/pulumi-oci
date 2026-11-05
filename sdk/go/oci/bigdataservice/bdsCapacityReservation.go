@@ -176,6 +176,12 @@ func (BdsCapacityReservationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*bdsCapacityReservationState)(nil)).Elem()
 }
 
+// BdsCapacityReservationExists checks whether an existing BdsCapacityReservation resource with the given ID exists.
+func BdsCapacityReservationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BdsCapacityReservationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:BigDataService/bdsCapacityReservation:BdsCapacityReservation", id, state, "", opts...)
+}
+
 type bdsCapacityReservationArgs struct {
 	// (Updatable) The OCID of the compartment in which to create the BDS capacity reservation.
 	CompartmentId string `pulumi:"compartmentId"`

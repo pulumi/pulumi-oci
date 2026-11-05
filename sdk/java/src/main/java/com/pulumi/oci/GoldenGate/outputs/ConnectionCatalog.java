@@ -30,11 +30,10 @@ public final class ConnectionCatalog {
     /**
      * @return (Updatable) Client secret required to connect to Polaris.
      * 
-     * @deprecated
-     * The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
+     * @deprecated The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
+    @Deprecated
     private @Nullable String clientSecret;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect to Polaris.
@@ -59,11 +58,10 @@ public final class ConnectionCatalog {
     /**
      * @return (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
      * 
-     * @deprecated
-     * The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
+     * @deprecated The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'properties' field has been deprecated. Please use 'properties_secret_id' instead. */
+    @Deprecated
     private @Nullable String properties;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the configuration file containing additional properties for the REST catalog. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
@@ -101,11 +99,10 @@ public final class ConnectionCatalog {
     /**
      * @return (Updatable) Client secret required to connect to Polaris.
      * 
-     * @deprecated
-     * The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
+     * @deprecated The &#39;client_secret&#39; field has been deprecated. Please use &#39;client_secret_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'client_secret' field has been deprecated. Please use 'client_secret_secret_id' instead. */
+    @Deprecated
     public Optional<String> clientSecret() {
         return Optional.ofNullable(this.clientSecret);
     }
@@ -140,11 +137,10 @@ public final class ConnectionCatalog {
     /**
      * @return (Updatable) The base64 encoded content of the configuration file containing additional properties for the REST catalog.
      * 
-     * @deprecated
-     * The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
+     * @deprecated The &#39;properties&#39; field has been deprecated. Please use &#39;properties_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'properties' field has been deprecated. Please use 'properties_secret_id' instead. */
+    @Deprecated
     public Optional<String> properties() {
         return Optional.ofNullable(this.properties);
     }

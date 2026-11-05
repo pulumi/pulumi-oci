@@ -211,6 +211,12 @@ func (VnicAttachmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*vnicAttachmentState)(nil)).Elem()
 }
 
+// VnicAttachmentExists checks whether an existing VnicAttachment resource with the given ID exists.
+func VnicAttachmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VnicAttachmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/vnicAttachment:VnicAttachment", id, state, "", opts...)
+}
+
 type vnicAttachmentArgs struct {
 	// (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
 	CreateVnicDetails VnicAttachmentCreateVnicDetails `pulumi:"createVnicDetails"`

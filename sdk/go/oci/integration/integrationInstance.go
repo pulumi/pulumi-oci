@@ -422,6 +422,12 @@ func (IntegrationInstanceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*integrationInstanceState)(nil)).Elem()
 }
 
+// IntegrationInstanceExists checks whether an existing IntegrationInstance resource with the given ID exists.
+func IntegrationInstanceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IntegrationInstanceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Integration/integrationInstance:IntegrationInstance", id, state, "", opts...)
+}
+
 type integrationInstanceArgs struct {
 	// (Updatable) A list of alternate custom endpoints to be used for the integration instance URL (contact Oracle for alternateCustomEndpoints availability for a specific instance).
 	AlternateCustomEndpoints []IntegrationInstanceAlternateCustomEndpoint `pulumi:"alternateCustomEndpoints"`

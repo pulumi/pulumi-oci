@@ -230,6 +230,12 @@ func (OperationsInsightsPrivateEndpointState) ElementType() reflect.Type {
 	return reflect.TypeOf((*operationsInsightsPrivateEndpointState)(nil)).Elem()
 }
 
+// OperationsInsightsPrivateEndpointExists checks whether an existing OperationsInsightsPrivateEndpoint resource with the given ID exists.
+func OperationsInsightsPrivateEndpointExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OperationsInsightsPrivateEndpointState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Opsi/operationsInsightsPrivateEndpoint:OperationsInsightsPrivateEndpoint", id, state, "", opts...)
+}
+
 type operationsInsightsPrivateEndpointArgs struct {
 	// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
 	CompartmentId string `pulumi:"compartmentId"`

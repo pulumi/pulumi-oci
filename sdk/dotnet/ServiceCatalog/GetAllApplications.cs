@@ -17,7 +17,6 @@ namespace Pulumi.Oci.ServiceCatalog
         /// Lists all the available listings and private applications in a compartment.
         /// A new API for catalog manager use when creating/updating a service catalog.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -52,7 +51,6 @@ namespace Pulumi.Oci.ServiceCatalog
         /// Lists all the available listings and private applications in a compartment.
         /// A new API for catalog manager use when creating/updating a service catalog.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -86,7 +84,6 @@ namespace Pulumi.Oci.ServiceCatalog
         /// 
         /// Lists all the available listings and private applications in a compartment.
         /// A new API for catalog manager use when creating/updating a service catalog.
-        /// 
         /// 
         /// ## Example Usage
         /// 

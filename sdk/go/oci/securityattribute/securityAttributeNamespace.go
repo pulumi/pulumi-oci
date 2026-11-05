@@ -192,6 +192,12 @@ func (SecurityAttributeNamespaceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*securityAttributeNamespaceState)(nil)).Elem()
 }
 
+// SecurityAttributeNamespaceExists checks whether an existing SecurityAttributeNamespace resource with the given ID exists.
+func SecurityAttributeNamespaceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SecurityAttributeNamespaceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:SecurityAttribute/securityAttributeNamespace:SecurityAttributeNamespace", id, state, "", opts...)
+}
+
 type securityAttributeNamespaceArgs struct {
 	// (Updatable) The OCID of the tenancy containing the security attribute namespace.
 	CompartmentId string `pulumi:"compartmentId"`

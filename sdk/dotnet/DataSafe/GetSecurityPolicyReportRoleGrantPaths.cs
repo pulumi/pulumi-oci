@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// The ListRoleGrantPaths operation returns only the role grant paths for the specified security policy report.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// The ListRoleGrantPaths operation returns only the role grant paths for the specified security policy report.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.DataSafe
         /// Retrieves a list of all role grant paths for a particular user.
         /// 
         /// The ListRoleGrantPaths operation returns only the role grant paths for the specified security policy report.
-        /// 
         /// 
         /// ## Example Usage
         /// 

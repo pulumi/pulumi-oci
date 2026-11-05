@@ -847,6 +847,12 @@ func (DomainsMyRequestState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsMyRequestState)(nil)).Elem()
 }
 
+// DomainsMyRequestExists checks whether an existing DomainsMyRequest resource with the given ID exists.
+func DomainsMyRequestExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsMyRequestState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsMyRequest:DomainsMyRequest", id, state, "", opts...)
+}
+
 type domainsMyRequestArgs struct {
 	// Requestor can set action to CANCEL to cancel the request or to ESCALATE to escalate the request while the request status is IN_PROGRESS. Requestor can't escalate the request if canceling or escalation is in progress.
 	//

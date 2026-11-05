@@ -202,6 +202,12 @@ func (UsageCarbonEmissionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*usageCarbonEmissionState)(nil)).Elem()
 }
 
+// UsageCarbonEmissionExists checks whether an existing UsageCarbonEmission resource with the given ID exists.
+func UsageCarbonEmissionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UsageCarbonEmissionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission", id, state, "", opts...)
+}
+
 type usageCarbonEmissionArgs struct {
 	// The compartment depth level.
 	CompartmentDepth *int `pulumi:"compartmentDepth"`

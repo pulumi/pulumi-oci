@@ -147,6 +147,12 @@ func (LoadBalancerRoutingPolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*loadBalancerRoutingPolicyState)(nil)).Elem()
 }
 
+// LoadBalancerRoutingPolicyExists checks whether an existing LoadBalancerRoutingPolicy resource with the given ID exists.
+func LoadBalancerRoutingPolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LoadBalancerRoutingPolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LoadBalancer/loadBalancerRoutingPolicy:LoadBalancerRoutingPolicy", id, state, "", opts...)
+}
+
 type loadBalancerRoutingPolicyArgs struct {
 	// (Updatable) The version of the language in which `condition` of `rules` are composed.
 	ConditionLanguageVersion string `pulumi:"conditionLanguageVersion"`

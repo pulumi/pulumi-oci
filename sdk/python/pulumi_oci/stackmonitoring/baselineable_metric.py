@@ -617,6 +617,44 @@ class BaselineableMetric(pulumi.CustomResource):
         __props__.__dict__["time_last_updated"] = time_last_updated
         return BaselineableMetric(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            column: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_out_of_box: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_updated_by: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["column"] = column
+        __props__["compartmentId"] = compartment_id
+        __props__["createdBy"] = created_by
+        __props__["definedTags"] = defined_tags
+        __props__["freeformTags"] = freeform_tags
+        __props__["isOutOfBox"] = is_out_of_box
+        __props__["lastUpdatedBy"] = last_updated_by
+        __props__["name"] = name
+        __props__["namespace"] = namespace
+        __props__["resourceGroup"] = resource_group
+        __props__["resourceType"] = resource_type
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["tenancyId"] = tenancy_id
+        __props__["timeCreated"] = time_created
+        __props__["timeLastUpdated"] = time_last_updated
+        return pulumi.runtime.exists_resource(None, 'oci:StackMonitoring/baselineableMetric:BaselineableMetric', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def column(self) -> pulumi.Output[_builtins.str]:

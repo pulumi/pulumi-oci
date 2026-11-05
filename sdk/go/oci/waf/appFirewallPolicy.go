@@ -342,6 +342,12 @@ func (AppFirewallPolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appFirewallPolicyState)(nil)).Elem()
 }
 
+// AppFirewallPolicyExists checks whether an existing AppFirewallPolicy resource with the given ID exists.
+func AppFirewallPolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppFirewallPolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Waf/appFirewallPolicy:AppFirewallPolicy", id, state, "", opts...)
+}
+
 type appFirewallPolicyArgs struct {
 	// (Updatable) Predefined actions for use in multiple different rules. Not all actions are supported in every module. Some actions terminate further execution of modules and rules in a module and some do not. Actions names must be unique within this array.
 	Actions []AppFirewallPolicyAction `pulumi:"actions"`

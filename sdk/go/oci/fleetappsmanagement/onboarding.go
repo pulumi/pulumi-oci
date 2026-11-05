@@ -180,6 +180,12 @@ func (OnboardingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*onboardingState)(nil)).Elem()
 }
 
+// OnboardingExists checks whether an existing Onboarding resource with the given ID exists.
+func OnboardingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OnboardingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FleetAppsManagement/onboarding:Onboarding", id, state, "", opts...)
+}
+
 type onboardingArgs struct {
 	// Tenancy OCID
 	// <<<<<<< ours

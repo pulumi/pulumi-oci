@@ -130,6 +130,12 @@ func (BdsCapacityReportState) ElementType() reflect.Type {
 	return reflect.TypeOf((*bdsCapacityReportState)(nil)).Elem()
 }
 
+// BdsCapacityReportExists checks whether an existing BdsCapacityReport resource with the given ID exists.
+func BdsCapacityReportExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BdsCapacityReportState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:BigDataService/bdsCapacityReport:BdsCapacityReport", id, state, "", opts...)
+}
+
 type bdsCapacityReportArgs struct {
 	// The OCID for the compartment. This should always be the root compartment.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -117,6 +117,12 @@ func (NamespaceStorageArchivalConfigState) ElementType() reflect.Type {
 	return reflect.TypeOf((*namespaceStorageArchivalConfigState)(nil)).Elem()
 }
 
+// NamespaceStorageArchivalConfigExists checks whether an existing NamespaceStorageArchivalConfig resource with the given ID exists.
+func NamespaceStorageArchivalConfigExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NamespaceStorageArchivalConfigState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LogAnalytics/namespaceStorageArchivalConfig:NamespaceStorageArchivalConfig", id, state, "", opts...)
+}
+
 type namespaceStorageArchivalConfigArgs struct {
 	// (Updatable) This is the configuration for data archiving in object storage
 	ArchivingConfiguration NamespaceStorageArchivalConfigArchivingConfiguration `pulumi:"archivingConfiguration"`

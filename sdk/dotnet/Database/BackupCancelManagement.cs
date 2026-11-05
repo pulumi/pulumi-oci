@@ -52,7 +52,6 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// When changed to a different integer, re-triggers cancel backup on the backup specified by the BackupId
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -114,7 +113,6 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// When changed to a different integer, re-triggers cancel backup on the backup specified by the BackupId
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -137,7 +135,6 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// When changed to a different integer, re-triggers cancel backup on the backup specified by the BackupId
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

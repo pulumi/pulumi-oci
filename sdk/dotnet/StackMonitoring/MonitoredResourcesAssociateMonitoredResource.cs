@@ -91,8 +91,7 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<ImmutableArray<Outputs.MonitoredResourcesAssociateMonitoredResourceSourceResourceDetail>> SourceResourceDetails { get; private set; } = null!;
 
         /// <summary>
-        /// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). 
-        /// 
+        /// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -177,8 +176,7 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string> DestinationResourceId { get; set; } = null!;
 
         /// <summary>
-        /// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). 
-        /// 
+        /// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -246,8 +244,7 @@ namespace Pulumi.Oci.StackMonitoring
         }
 
         /// <summary>
-        /// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). 
-        /// 
+        /// Source Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

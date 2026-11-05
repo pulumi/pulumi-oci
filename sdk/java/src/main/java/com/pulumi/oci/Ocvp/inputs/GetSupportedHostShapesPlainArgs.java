@@ -88,22 +88,20 @@ public final class GetSupportedHostShapesPlainArgs extends com.pulumi.resources.
     /**
      * (Optional) A filter to return only resources that match the given SDDC type exactly.
      * 
-     * @deprecated
-     * The &#39;sddc_type&#39; field has been deprecated. Please use &#39;is_single_host_sddc_supported&#39; instead.
+     * @deprecated The &#39;sddc_type&#39; field has been deprecated. Please use &#39;is_single_host_sddc_supported&#39; instead.
      * 
      */
-    @Deprecated /* The 'sddc_type' field has been deprecated. Please use 'is_single_host_sddc_supported' instead. */
+    @Deprecated
     @Import(name="sddcType")
     private @Nullable String sddcType;
 
     /**
      * @return (Optional) A filter to return only resources that match the given SDDC type exactly.
      * 
-     * @deprecated
-     * The &#39;sddc_type&#39; field has been deprecated. Please use &#39;is_single_host_sddc_supported&#39; instead.
+     * @deprecated The &#39;sddc_type&#39; field has been deprecated. Please use &#39;is_single_host_sddc_supported&#39; instead.
      * 
      */
-    @Deprecated /* The 'sddc_type' field has been deprecated. Please use 'is_single_host_sddc_supported' instead. */
+    @Deprecated
     public Optional<String> sddcType() {
         return Optional.ofNullable(this.sddcType);
     }
@@ -195,11 +193,10 @@ public final class GetSupportedHostShapesPlainArgs extends com.pulumi.resources.
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;sddc_type&#39; field has been deprecated. Please use &#39;is_single_host_sddc_supported&#39; instead.
+         * @deprecated The &#39;sddc_type&#39; field has been deprecated. Please use &#39;is_single_host_sddc_supported&#39; instead.
          * 
          */
-        @Deprecated /* The 'sddc_type' field has been deprecated. Please use 'is_single_host_sddc_supported' instead. */
+        @Deprecated
         public Builder sddcType(@Nullable String sddcType) {
             $.sddcType = sddcType;
             return this;

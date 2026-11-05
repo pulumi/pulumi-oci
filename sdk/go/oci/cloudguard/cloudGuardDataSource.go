@@ -235,6 +235,12 @@ func (CloudGuardDataSourceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudGuardDataSourceState)(nil)).Elem()
 }
 
+// CloudGuardDataSourceExists checks whether an existing CloudGuardDataSource resource with the given ID exists.
+func CloudGuardDataSourceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudGuardDataSourceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CloudGuard/cloudGuardDataSource:CloudGuardDataSource", id, state, "", opts...)
+}
+
 type cloudGuardDataSourceArgs struct {
 	// (Updatable) Compartment OCID of the data source
 	CompartmentId string `pulumi:"compartmentId"`

@@ -1060,6 +1060,72 @@ class ApiaccesscontrolPrivilegedApiRequest(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return ApiaccesscontrolPrivilegedApiRequest(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            approver_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestApproverDetailArgs', 'ApiaccesscontrolPrivilegedApiRequestApproverDetailArgsDict', 'outputs.ApiaccesscontrolPrivilegedApiRequestApproverDetail']]]]] = None,
+            closure_comment: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            duration_in_hrs: pulumi.Input[Optional[_builtins.int]] = None,
+            entity_type: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
+            number_of_approvers_required: pulumi.Input[Optional[_builtins.int]] = None,
+            privileged_api_control_id: pulumi.Input[Optional[_builtins.str]] = None,
+            privileged_api_control_name: pulumi.Input[Optional[_builtins.str]] = None,
+            privileged_operation_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgs', 'ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationListArgsDict', 'outputs.ApiaccesscontrolPrivilegedApiRequestPrivilegedOperationList']]]]] = None,
+            reason_detail: pulumi.Input[Optional[_builtins.str]] = None,
+            reason_summary: pulumi.Input[Optional[_builtins.str]] = None,
+            request_id: pulumi.Input[Optional[_builtins.str]] = None,
+            requested_bies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_name_: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            severity: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            state_details: pulumi.Input[Optional[_builtins.str]] = None,
+            sub_resource_name_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ticket_numbers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_requested_for_future_access: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["approverDetails"] = approver_details
+        __props__["closureComment"] = closure_comment
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["durationInHrs"] = duration_in_hrs
+        __props__["entityType"] = entity_type
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["notificationTopicId"] = notification_topic_id
+        __props__["numberOfApproversRequired"] = number_of_approvers_required
+        __props__["privilegedApiControlId"] = privileged_api_control_id
+        __props__["privilegedApiControlName"] = privileged_api_control_name
+        __props__["privilegedOperationLists"] = privileged_operation_lists
+        __props__["reasonDetail"] = reason_detail
+        __props__["reasonSummary"] = reason_summary
+        __props__["requestId"] = request_id
+        __props__["requestedBies"] = requested_bies
+        __props__["resourceId"] = resource_id
+        __props__["resourceName"] = resource_name_
+        __props__["resourceType"] = resource_type
+        __props__["severity"] = severity
+        __props__["state"] = state
+        __props__["stateDetails"] = state_details
+        __props__["subResourceNameLists"] = sub_resource_name_lists
+        __props__["systemTags"] = system_tags
+        __props__["ticketNumbers"] = ticket_numbers
+        __props__["timeCreated"] = time_created
+        __props__["timeRequestedForFutureAccess"] = time_requested_for_future_access
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:oci/apiaccesscontrolPrivilegedApiRequest:ApiaccesscontrolPrivilegedApiRequest', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="approverDetails")
     def approver_details(self) -> pulumi.Output[Sequence['outputs.ApiaccesscontrolPrivilegedApiRequestApproverDetail']]:

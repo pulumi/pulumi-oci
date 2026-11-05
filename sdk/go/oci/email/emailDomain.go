@@ -192,6 +192,12 @@ func (EmailDomainState) ElementType() reflect.Type {
 	return reflect.TypeOf((*emailDomainState)(nil)).Elem()
 }
 
+// EmailDomainExists checks whether an existing EmailDomain resource with the given ID exists.
+func EmailDomainExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *EmailDomainState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Email/emailDomain:EmailDomain", id, state, "", opts...)
+}
+
 type emailDomainArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment for this email domain.
 	CompartmentId string `pulumi:"compartmentId"`

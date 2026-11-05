@@ -741,6 +741,50 @@ class WorkspaceExportRequest(pulumi.CustomResource):
         __props__.__dict__["workspace_id"] = workspace_id
         return WorkspaceExportRequest(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            are_references_included: pulumi.Input[Optional[_builtins.bool]] = None,
+            bucket: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            error_messages: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            exported_items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['WorkspaceExportRequestExportedItemArgs', 'WorkspaceExportRequestExportedItemArgsDict', 'outputs.WorkspaceExportRequestExportedItem']]]]] = None,
+            file_name: pulumi.Input[Optional[_builtins.str]] = None,
+            filters: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            is_object_overwrite_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            object_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            object_storage_region: pulumi.Input[Optional[_builtins.str]] = None,
+            object_storage_tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            referenced_items: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            time_ended_in_millis: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started_in_millis: pulumi.Input[Optional[_builtins.str]] = None,
+            total_exported_object_count: pulumi.Input[Optional[_builtins.int]] = None,
+            workspace_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["areReferencesIncluded"] = are_references_included
+        __props__["bucket"] = bucket
+        __props__["createdBy"] = created_by
+        __props__["errorMessages"] = error_messages
+        __props__["exportedItems"] = exported_items
+        __props__["fileName"] = file_name
+        __props__["filters"] = filters
+        __props__["isObjectOverwriteEnabled"] = is_object_overwrite_enabled
+        __props__["key"] = key
+        __props__["name"] = name
+        __props__["objectKeys"] = object_keys
+        __props__["objectStorageRegion"] = object_storage_region
+        __props__["objectStorageTenancyId"] = object_storage_tenancy_id
+        __props__["referencedItems"] = referenced_items
+        __props__["status"] = status
+        __props__["timeEndedInMillis"] = time_ended_in_millis
+        __props__["timeStartedInMillis"] = time_started_in_millis
+        __props__["totalExportedObjectCount"] = total_exported_object_count
+        __props__["workspaceId"] = workspace_id
+        return pulumi.runtime.exists_resource(None, 'oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="areReferencesIncluded")
     def are_references_included(self) -> pulumi.Output[_builtins.bool]:

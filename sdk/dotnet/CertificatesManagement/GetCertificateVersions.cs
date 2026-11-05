@@ -17,7 +17,6 @@ namespace Pulumi.Oci.CertificatesManagement
         /// Lists all certificate versions for the specified certificate.
         /// Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the result set to a single item that matches the specified version number.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.CertificatesManagement
         /// Lists all certificate versions for the specified certificate.
         /// Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the result set to a single item that matches the specified version number.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -74,7 +72,6 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// Lists all certificate versions for the specified certificate.
         /// Optionally, you can use the parameter `FilterByVersionNumberQueryParam` to limit the result set to a single item that matches the specified version number.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -1418,6 +1418,12 @@ func (DomainsIdentityPropagationTrustState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsIdentityPropagationTrustState)(nil)).Elem()
 }
 
+// DomainsIdentityPropagationTrustExists checks whether an existing DomainsIdentityPropagationTrust resource with the given ID exists.
+func DomainsIdentityPropagationTrustExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsIdentityPropagationTrustState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsIdentityPropagationTrust:DomainsIdentityPropagationTrust", id, state, "", opts...)
+}
+
 type domainsIdentityPropagationTrustArgs struct {
 	// (Updatable) The Identity cloud provider service identifier, for example, the Azure Tenancy ID, AWS Account ID, or GCP Project ID.
 	//

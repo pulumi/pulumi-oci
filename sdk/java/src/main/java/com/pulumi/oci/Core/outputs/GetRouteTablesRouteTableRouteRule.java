@@ -13,11 +13,10 @@ public final class GetRouteTablesRouteTableRouteRule {
     /**
      * @return Deprecated. Instead use `destination` and `destinationType`. Requests that include both `cidrBlock` and `destination` will be rejected.
      * 
-     * @deprecated
-     * The &#39;cidr_block&#39; field has been deprecated. Please use &#39;destination&#39; instead.
+     * @deprecated The &#39;cidr_block&#39; field has been deprecated. Please use &#39;destination&#39; instead.
      * 
      */
-    @Deprecated /* The 'cidr_block' field has been deprecated. Please use 'destination' instead. */
+    @Deprecated
     private String cidrBlock;
     /**
      * @return An optional description of your choice for the rule.
@@ -51,11 +50,10 @@ public final class GetRouteTablesRouteTableRouteRule {
     /**
      * @return Deprecated. Instead use `destination` and `destinationType`. Requests that include both `cidrBlock` and `destination` will be rejected.
      * 
-     * @deprecated
-     * The &#39;cidr_block&#39; field has been deprecated. Please use &#39;destination&#39; instead.
+     * @deprecated The &#39;cidr_block&#39; field has been deprecated. Please use &#39;destination&#39; instead.
      * 
      */
-    @Deprecated /* The 'cidr_block' field has been deprecated. Please use 'destination' instead. */
+    @Deprecated
     public String cidrBlock() {
         return this.cidrBlock;
     }

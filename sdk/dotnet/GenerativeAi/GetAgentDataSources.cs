@@ -16,7 +16,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// Gets a list of data sources.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// Gets a list of data sources.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// This data source provides the list of Data Sources in Oracle Cloud Infrastructure Generative Ai Agent service.
         /// 
         /// Gets a list of data sources.
-        /// 
         /// 
         /// ## Example Usage
         /// 

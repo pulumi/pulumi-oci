@@ -17,7 +17,6 @@ namespace Pulumi.Oci.ComputeCloud
         /// Gets a Compute Cloud@Customer infrastructure using the infrastructure
         /// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.ComputeCloud
         /// Gets a Compute Cloud@Customer infrastructure using the infrastructure
         /// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -72,7 +70,6 @@ namespace Pulumi.Oci.ComputeCloud
         /// 
         /// Gets a Compute Cloud@Customer infrastructure using the infrastructure
         /// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// List the Oracle Cloud Infrastructure services available for Private Service Access catalog in the region, sorted by service name.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// List the Oracle Cloud Infrastructure services available for Private Service Access catalog in the region, sorted by service name.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Psa Services in Oracle Cloud Infrastructure Psa service.
         /// 
         /// List the Oracle Cloud Infrastructure services available for Private Service Access catalog in the region, sorted by service name.
-        /// 
         /// 
         /// ## Example Usage
         /// 

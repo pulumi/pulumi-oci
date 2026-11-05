@@ -97,8 +97,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<bool> IsIncludeAllSensitiveTypes { get; private set; } = null!;
 
         /// <summary>
-        /// The OCIDs of the sensitive types used to create sensitive types export. 
-        /// 
+        /// The OCIDs of the sensitive types used to create sensitive types export.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -228,8 +227,7 @@ namespace Pulumi.Oci.DataSafe
         private InputList<string>? _sensitiveTypeIdsForExports;
 
         /// <summary>
-        /// The OCIDs of the sensitive types used to create sensitive types export. 
-        /// 
+        /// The OCIDs of the sensitive types used to create sensitive types export.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -300,8 +298,7 @@ namespace Pulumi.Oci.DataSafe
         private InputList<string>? _sensitiveTypeIdsForExports;
 
         /// <summary>
-        /// The OCIDs of the sensitive types used to create sensitive types export. 
-        /// 
+        /// The OCIDs of the sensitive types used to create sensitive types export.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

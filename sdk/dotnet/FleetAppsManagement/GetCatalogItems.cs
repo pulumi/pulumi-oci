@@ -16,7 +16,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Gets a list of Catalog Items in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Gets a list of Catalog Items in a compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -83,7 +81,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// This data source provides the list of Catalog Items in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
         /// Gets a list of Catalog Items in a compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

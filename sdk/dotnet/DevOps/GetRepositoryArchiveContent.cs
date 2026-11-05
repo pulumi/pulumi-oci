@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Returns the archived repository information.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Returns the archived repository information.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.DevOps
         /// This data source provides details about a specific Repository Archive Content resource in Oracle Cloud Infrastructure Devops service.
         /// 
         /// Returns the archived repository information.
-        /// 
         /// 
         /// ## Example Usage
         /// 

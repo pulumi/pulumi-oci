@@ -56,7 +56,7 @@ namespace Pulumi.Oci.Waf.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// (Updatable) 
+        /// (Updatable)
         /// * **CHECK** is a non-terminating action that does not stop the execution of rules in current module, just emits a log message documenting result of rule execution.
         /// * **ALLOW** is a non-terminating action which upon matching rule skips all remaining rules in the current module.
         /// * **RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a defined HTTP response.

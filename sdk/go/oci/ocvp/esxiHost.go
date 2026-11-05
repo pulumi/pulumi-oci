@@ -415,6 +415,12 @@ func (EsxiHostState) ElementType() reflect.Type {
 	return reflect.TypeOf((*esxiHostState)(nil)).Elem()
 }
 
+// EsxiHostExists checks whether an existing EsxiHost resource with the given ID exists.
+func EsxiHostExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *EsxiHostState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Ocvp/esxiHost:EsxiHost", id, state, "", opts...)
+}
+
 type esxiHostArgs struct {
 	AttachDatastoreClusterIds []string `pulumi:"attachDatastoreClusterIds"`
 	// (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.

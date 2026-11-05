@@ -89,8 +89,7 @@ namespace Pulumi.Oci.Analytics
         public Output<string> PrivateKey { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) PEM certificate for HTTPS connections. 
-        /// 
+        /// (Updatable) PEM certificate for HTTPS connections.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -212,8 +211,7 @@ namespace Pulumi.Oci.Analytics
         }
 
         /// <summary>
-        /// (Updatable) PEM certificate for HTTPS connections. 
-        /// 
+        /// (Updatable) PEM certificate for HTTPS connections.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -292,8 +290,7 @@ namespace Pulumi.Oci.Analytics
         }
 
         /// <summary>
-        /// (Updatable) PEM certificate for HTTPS connections. 
-        /// 
+        /// (Updatable) PEM certificate for HTTPS connections.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

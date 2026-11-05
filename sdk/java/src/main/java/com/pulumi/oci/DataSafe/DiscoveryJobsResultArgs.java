@@ -17,22 +17,20 @@ public final class DiscoveryJobsResultArgs extends com.pulumi.resources.Resource
     /**
      * The OCID of the discovery job.
      * 
-     * @deprecated
-     * The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
+     * @deprecated The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
      * 
      */
-    @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
+    @Deprecated
     @Import(name="discoveryJobId", required=true)
     private Output<String> discoveryJobId;
 
     /**
      * @return The OCID of the discovery job.
      * 
-     * @deprecated
-     * The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
+     * @deprecated The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
      * 
      */
-    @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
+    @Deprecated
     public Output<String> discoveryJobId() {
         return this.discoveryJobId;
     }
@@ -66,11 +64,10 @@ public final class DiscoveryJobsResultArgs extends com.pulumi.resources.Resource
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
+         * @deprecated The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
          * 
          */
-        @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
+        @Deprecated
         public Builder discoveryJobId(Output<String> discoveryJobId) {
             $.discoveryJobId = discoveryJobId;
             return this;
@@ -81,11 +78,10 @@ public final class DiscoveryJobsResultArgs extends com.pulumi.resources.Resource
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
+         * @deprecated The &#39;oci_data_safe_discovery_jobs_result&#39; resource has been deprecated. It is no longer supported.
          * 
          */
-        @Deprecated /* The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported. */
+        @Deprecated
         public Builder discoveryJobId(String discoveryJobId) {
             return discoveryJobId(Output.of(discoveryJobId));
         }

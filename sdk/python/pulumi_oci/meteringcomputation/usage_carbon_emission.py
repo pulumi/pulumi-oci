@@ -652,6 +652,36 @@ class UsageCarbonEmission(pulumi.CustomResource):
         __props__.__dict__["usage_carbon_emission_filter"] = usage_carbon_emission_filter
         return UsageCarbonEmission(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_depth: pulumi.Input[Optional[_builtins.int]] = None,
+            emission_calculation_method: pulumi.Input[Optional[_builtins.str]] = None,
+            emission_type: pulumi.Input[Optional[_builtins.str]] = None,
+            granularity: pulumi.Input[Optional[_builtins.str]] = None,
+            group_bies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            group_by_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageCarbonEmissionGroupByTagArgs', 'UsageCarbonEmissionGroupByTagArgsDict', 'outputs.UsageCarbonEmissionGroupByTag']]]]] = None,
+            is_aggregate_by_time: pulumi.Input[Optional[_builtins.bool]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageCarbonEmissionItemArgs', 'UsageCarbonEmissionItemArgsDict', 'outputs.UsageCarbonEmissionItem']]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_usage_ended: pulumi.Input[Optional[_builtins.str]] = None,
+            time_usage_started: pulumi.Input[Optional[_builtins.str]] = None,
+            usage_carbon_emission_filter: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentDepth"] = compartment_depth
+        __props__["emissionCalculationMethod"] = emission_calculation_method
+        __props__["emissionType"] = emission_type
+        __props__["granularity"] = granularity
+        __props__["groupBies"] = group_bies
+        __props__["groupByTags"] = group_by_tags
+        __props__["isAggregateByTime"] = is_aggregate_by_time
+        __props__["items"] = items
+        __props__["tenantId"] = tenant_id
+        __props__["timeUsageEnded"] = time_usage_ended
+        __props__["timeUsageStarted"] = time_usage_started
+        __props__["usageCarbonEmissionFilter"] = usage_carbon_emission_filter
+        return pulumi.runtime.exists_resource(None, 'oci:MeteringComputation/usageCarbonEmission:UsageCarbonEmission', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentDepth")
     def compartment_depth(self) -> pulumi.Output[_builtins.int]:

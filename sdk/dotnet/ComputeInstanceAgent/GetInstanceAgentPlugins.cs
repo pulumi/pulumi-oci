@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// 
         /// Gets information about the Oracle Cloud Agent plugins that are available on a specific compute instance.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// 
         /// Gets information about the Oracle Cloud Agent plugins that are available on a specific compute instance.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.ComputeInstanceAgent
         /// This data source provides the list of Instance Agent Plugins in Oracle Cloud Infrastructure Compute Instance Agent service.
         /// 
         /// Gets information about the Oracle Cloud Agent plugins that are available on a specific compute instance.
-        /// 
         /// 
         /// ## Example Usage
         /// 

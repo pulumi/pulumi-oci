@@ -16,7 +16,6 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// Gets a list of protection policies based on the specified parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.RecoveryMod
         /// 
         /// Gets a list of protection policies based on the specified parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.RecoveryMod
         /// This data source provides the list of Protection Policies in Oracle Cloud Infrastructure Recovery service.
         /// 
         /// Gets a list of protection policies based on the specified parameters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

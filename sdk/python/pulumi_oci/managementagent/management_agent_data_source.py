@@ -869,6 +869,52 @@ class ManagementAgentDataSource(pulumi.CustomResource):
         __props__.__dict__["url"] = url
         return ManagementAgentDataSource(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            allow_metrics: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+            data_source_key: pulumi.Input[Optional[_builtins.str]] = None,
+            is_daemon_set: pulumi.Input[Optional[_builtins.bool]] = None,
+            management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            metric_dimensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementAgentDataSourceMetricDimensionArgs', 'ManagementAgentDataSourceMetricDimensionArgsDict', 'outputs.ManagementAgentDataSourceMetricDimension']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            proxy_url: pulumi.Input[Optional[_builtins.str]] = None,
+            read_data_limit: pulumi.Input[Optional[_builtins.int]] = None,
+            read_data_limit_in_kilobytes: pulumi.Input[Optional[_builtins.int]] = None,
+            read_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+            resource_group: pulumi.Input[Optional[_builtins.str]] = None,
+            schedule_mins: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            url: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["allowMetrics"] = allow_metrics
+        __props__["compartmentId"] = compartment_id
+        __props__["connectionTimeout"] = connection_timeout
+        __props__["dataSourceKey"] = data_source_key
+        __props__["isDaemonSet"] = is_daemon_set
+        __props__["managementAgentId"] = management_agent_id
+        __props__["metricDimensions"] = metric_dimensions
+        __props__["name"] = name
+        __props__["namespace"] = namespace
+        __props__["proxyUrl"] = proxy_url
+        __props__["readDataLimit"] = read_data_limit
+        __props__["readDataLimitInKilobytes"] = read_data_limit_in_kilobytes
+        __props__["readTimeout"] = read_timeout
+        __props__["resourceGroup"] = resource_group
+        __props__["scheduleMins"] = schedule_mins
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["type"] = type
+        __props__["url"] = url
+        return pulumi.runtime.exists_resource(None, 'oci:ManagementAgent/managementAgentDataSource:ManagementAgentDataSource', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="allowMetrics")
     def allow_metrics(self) -> pulumi.Output[_builtins.str]:

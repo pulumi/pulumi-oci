@@ -1346,6 +1346,76 @@ class Cluster(pulumi.CustomResource):
         __props__.__dict__["workload_network_cidr"] = workload_network_cidr
         return Cluster(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            actual_esxi_hosts_count: pulumi.Input[Optional[_builtins.int]] = None,
+            attach_datastore_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            capacity_reservation_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_byol_allocation_details: pulumi.Input[Optional[Union['ClusterClusterByolAllocationDetailsArgs', 'ClusterClusterByolAllocationDetailsArgsDict', 'outputs.ClusterClusterByolAllocationDetails']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            datastore_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            datastores: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterDatastoreArgs', 'ClusterDatastoreArgsDict', 'outputs.ClusterDatastore']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            detach_datastore_cluster_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            esxi_hosts_count: pulumi.Input[Optional[_builtins.int]] = None,
+            esxi_software_version: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            initial_commitment: pulumi.Input[Optional[_builtins.str]] = None,
+            initial_fault_domain_host_distribution: pulumi.Input[Optional[_builtins.str]] = None,
+            initial_host_ocpu_count: pulumi.Input[Optional[_builtins.float]] = None,
+            initial_host_shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+            initial_vcf_byol_allocation_id: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_display_name_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            is_shielded_instance_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            network_configuration: pulumi.Input[Optional[Union['ClusterNetworkConfigurationArgs', 'ClusterNetworkConfigurationArgsDict', 'outputs.ClusterNetworkConfiguration']]] = None,
+            sddc_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            upgrade_licenses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterUpgradeLicenseArgs', 'ClusterUpgradeLicenseArgsDict', 'outputs.ClusterUpgradeLicense']]]]] = None,
+            vmware_software_version: pulumi.Input[Optional[_builtins.str]] = None,
+            vsphere_type: pulumi.Input[Optional[_builtins.str]] = None,
+            vsphere_upgrade_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ClusterVsphereUpgradeObjectArgs', 'ClusterVsphereUpgradeObjectArgsDict', 'outputs.ClusterVsphereUpgradeObject']]]]] = None,
+            workload_network_cidr: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["actualEsxiHostsCount"] = actual_esxi_hosts_count
+        __props__["attachDatastoreClusterIds"] = attach_datastore_cluster_ids
+        __props__["capacityReservationId"] = capacity_reservation_id
+        __props__["clusterByolAllocationDetails"] = cluster_byol_allocation_details
+        __props__["compartmentId"] = compartment_id
+        __props__["computeAvailabilityDomain"] = compute_availability_domain
+        __props__["datastoreClusterIds"] = datastore_cluster_ids
+        __props__["datastores"] = datastores
+        __props__["definedTags"] = defined_tags
+        __props__["detachDatastoreClusterIds"] = detach_datastore_cluster_ids
+        __props__["displayName"] = display_name
+        __props__["esxiHostsCount"] = esxi_hosts_count
+        __props__["esxiSoftwareVersion"] = esxi_software_version
+        __props__["freeformTags"] = freeform_tags
+        __props__["initialCommitment"] = initial_commitment
+        __props__["initialFaultDomainHostDistribution"] = initial_fault_domain_host_distribution
+        __props__["initialHostOcpuCount"] = initial_host_ocpu_count
+        __props__["initialHostShapeName"] = initial_host_shape_name
+        __props__["initialVcfByolAllocationId"] = initial_vcf_byol_allocation_id
+        __props__["instanceDisplayNamePrefix"] = instance_display_name_prefix
+        __props__["isShieldedInstanceEnabled"] = is_shielded_instance_enabled
+        __props__["networkConfiguration"] = network_configuration
+        __props__["sddcId"] = sddc_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["upgradeLicenses"] = upgrade_licenses
+        __props__["vmwareSoftwareVersion"] = vmware_software_version
+        __props__["vsphereType"] = vsphere_type
+        __props__["vsphereUpgradeObjects"] = vsphere_upgrade_objects
+        __props__["workloadNetworkCidr"] = workload_network_cidr
+        return pulumi.runtime.exists_resource(None, 'oci:Ocvp/cluster:Cluster', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="actualEsxiHostsCount")
     def actual_esxi_hosts_count(self) -> pulumi.Output[_builtins.int]:

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the console connections for the specified database node.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the console connections for the specified database node.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Db Node Console Connections in Oracle Cloud Infrastructure Database service.
         /// 
         /// Lists the console connections for the specified database node.
-        /// 
         /// 
         /// ## Example Usage
         /// 

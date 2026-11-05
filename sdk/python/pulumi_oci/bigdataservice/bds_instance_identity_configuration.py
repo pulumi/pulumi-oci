@@ -732,6 +732,44 @@ class BdsInstanceIdentityConfiguration(pulumi.CustomResource):
         __props__.__dict__["upst_configurations"] = upst_configurations
         return BdsInstanceIdentityConfiguration(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            activate_iam_user_sync_configuration_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+            activate_upst_configuration_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+            bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            confidential_application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            iam_user_sync_configuration_details: pulumi.Input[Optional[Union['BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgs', 'BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetailsArgsDict', 'outputs.BdsInstanceIdentityConfigurationIamUserSyncConfigurationDetails']]] = None,
+            iam_user_sync_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgs', 'BdsInstanceIdentityConfigurationIamUserSyncConfigurationArgsDict', 'outputs.BdsInstanceIdentityConfigurationIamUserSyncConfiguration']]]]] = None,
+            identity_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            refresh_confidential_application_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+            refresh_upst_token_exchange_keytab_trigger: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            upst_configuration_details: pulumi.Input[Optional[Union['BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgs', 'BdsInstanceIdentityConfigurationUpstConfigurationDetailsArgsDict', 'outputs.BdsInstanceIdentityConfigurationUpstConfigurationDetails']]] = None,
+            upst_configurations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceIdentityConfigurationUpstConfigurationArgs', 'BdsInstanceIdentityConfigurationUpstConfigurationArgsDict', 'outputs.BdsInstanceIdentityConfigurationUpstConfiguration']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["activateIamUserSyncConfigurationTrigger"] = activate_iam_user_sync_configuration_trigger
+        __props__["activateUpstConfigurationTrigger"] = activate_upst_configuration_trigger
+        __props__["bdsInstanceId"] = bds_instance_id
+        __props__["clusterAdminPassword"] = cluster_admin_password
+        __props__["confidentialApplicationId"] = confidential_application_id
+        __props__["displayName"] = display_name
+        __props__["iamUserSyncConfigurationDetails"] = iam_user_sync_configuration_details
+        __props__["iamUserSyncConfigurations"] = iam_user_sync_configurations
+        __props__["identityDomainId"] = identity_domain_id
+        __props__["refreshConfidentialApplicationTrigger"] = refresh_confidential_application_trigger
+        __props__["refreshUpstTokenExchangeKeytabTrigger"] = refresh_upst_token_exchange_keytab_trigger
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["upstConfigurationDetails"] = upst_configuration_details
+        __props__["upstConfigurations"] = upst_configurations
+        return pulumi.runtime.exists_resource(None, 'oci:BigDataService/bdsInstanceIdentityConfiguration:BdsInstanceIdentityConfiguration', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="activateIamUserSyncConfigurationTrigger")
     def activate_iam_user_sync_configuration_trigger(self) -> pulumi.Output[Optional[_builtins.str]]:

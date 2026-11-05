@@ -214,6 +214,12 @@ func (DatastoreState) ElementType() reflect.Type {
 	return reflect.TypeOf((*datastoreState)(nil)).Elem()
 }
 
+// DatastoreExists checks whether an existing Datastore resource with the given ID exists.
+func DatastoreExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DatastoreState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Ocvp/datastore:Datastore", id, state, "", opts...)
+}
+
 type datastoreArgs struct {
 	// The availability domain to create the Datastore in.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`

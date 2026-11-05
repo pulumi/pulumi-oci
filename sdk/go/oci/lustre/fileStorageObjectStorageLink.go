@@ -252,6 +252,12 @@ func (FileStorageObjectStorageLinkState) ElementType() reflect.Type {
 	return reflect.TypeOf((*fileStorageObjectStorageLinkState)(nil)).Elem()
 }
 
+// FileStorageObjectStorageLinkExists checks whether an existing FileStorageObjectStorageLink resource with the given ID exists.
+func FileStorageObjectStorageLinkExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FileStorageObjectStorageLinkState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Lustre/fileStorageObjectStorageLink:FileStorageObjectStorageLink", id, state, "", opts...)
+}
+
 type fileStorageObjectStorageLinkArgs struct {
 	// The availability domain that the Lustre file system is in. May be unset as a blank or NULL value.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`

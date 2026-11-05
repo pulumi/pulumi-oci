@@ -133,6 +133,12 @@ func (UtilsSubscriptionAcknowledgmentConfigurationState) ElementType() reflect.T
 	return reflect.TypeOf((*utilsSubscriptionAcknowledgmentConfigurationState)(nil)).Elem()
 }
 
+// UtilsSubscriptionAcknowledgmentConfigurationExists checks whether an existing UtilsSubscriptionAcknowledgmentConfiguration resource with the given ID exists.
+func UtilsSubscriptionAcknowledgmentConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UtilsSubscriptionAcknowledgmentConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Jms/utilsSubscriptionAcknowledgmentConfiguration:UtilsSubscriptionAcknowledgmentConfiguration", id, state, "", opts...)
+}
+
 type utilsSubscriptionAcknowledgmentConfigurationArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
 	CompartmentId string `pulumi:"compartmentId"`

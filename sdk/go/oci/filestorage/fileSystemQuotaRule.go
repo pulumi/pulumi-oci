@@ -177,6 +177,12 @@ func (FileSystemQuotaRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*fileSystemQuotaRuleState)(nil)).Elem()
 }
 
+// FileSystemQuotaRuleExists checks whether an existing FileSystemQuotaRule resource with the given ID exists.
+func FileSystemQuotaRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FileSystemQuotaRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FileStorage/fileSystemQuotaRule:FileSystemQuotaRule", id, state, "", opts...)
+}
+
 type fileSystemQuotaRuleArgs struct {
 	AreViolatorsOnly *bool `pulumi:"areViolatorsOnly"`
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information. Example: `UserXYZ's quota`

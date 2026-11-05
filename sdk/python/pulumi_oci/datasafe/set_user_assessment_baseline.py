@@ -251,6 +251,16 @@ class SetUserAssessmentBaseline(pulumi.CustomResource):
         __props__.__dict__["user_assessment_id"] = user_assessment_id
         return SetUserAssessmentBaseline(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            assessment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            user_assessment_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["assessmentIds"] = assessment_ids
+        __props__["userAssessmentId"] = user_assessment_id
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="assessmentIds")
     def assessment_ids(self) -> pulumi.Output[Sequence[_builtins.str]]:

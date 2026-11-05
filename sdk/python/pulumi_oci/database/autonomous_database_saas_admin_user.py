@@ -438,6 +438,26 @@ class AutonomousDatabaseSaasAdminUser(pulumi.CustomResource):
         __props__.__dict__["time_saas_admin_user_enabled"] = time_saas_admin_user_enabled
         return AutonomousDatabaseSaasAdminUser(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            access_type: pulumi.Input[Optional[_builtins.str]] = None,
+            autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            duration: pulumi.Input[Optional[_builtins.int]] = None,
+            password: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_version_number: pulumi.Input[Optional[_builtins.int]] = None,
+            time_saas_admin_user_enabled: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["accessType"] = access_type
+        __props__["autonomousDatabaseId"] = autonomous_database_id
+        __props__["duration"] = duration
+        __props__["password"] = password
+        __props__["secretId"] = secret_id
+        __props__["secretVersionNumber"] = secret_version_number
+        __props__["timeSaasAdminUserEnabled"] = time_saas_admin_user_enabled
+        return pulumi.runtime.exists_resource(None, 'oci:Database/autonomousDatabaseSaasAdminUser:AutonomousDatabaseSaasAdminUser', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="accessType")
     def access_type(self) -> pulumi.Output[Optional[_builtins.str]]:

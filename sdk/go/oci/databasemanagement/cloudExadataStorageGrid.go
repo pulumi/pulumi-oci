@@ -181,6 +181,12 @@ func (CloudExadataStorageGridState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudExadataStorageGridState)(nil)).Elem()
 }
 
+// CloudExadataStorageGridExists checks whether an existing CloudExadataStorageGrid resource with the given ID exists.
+func CloudExadataStorageGridExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudExadataStorageGridState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/cloudExadataStorageGrid:CloudExadataStorageGrid", id, state, "", opts...)
+}
+
 type cloudExadataStorageGridArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata storage grid.
 	CloudExadataStorageGridId string `pulumi:"cloudExadataStorageGridId"`

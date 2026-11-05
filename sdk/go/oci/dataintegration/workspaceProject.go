@@ -205,6 +205,12 @@ func (WorkspaceProjectState) ElementType() reflect.Type {
 	return reflect.TypeOf((*workspaceProjectState)(nil)).Elem()
 }
 
+// WorkspaceProjectExists checks whether an existing WorkspaceProject resource with the given ID exists.
+func WorkspaceProjectExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WorkspaceProjectState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataIntegration/workspaceProject:WorkspaceProject", id, state, "", opts...)
+}
+
 type workspaceProjectArgs struct {
 	// (Updatable) A user defined description for the project.
 	Description *string `pulumi:"description"`

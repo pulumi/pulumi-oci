@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Ocvp
         /// Lists the versions of bundled VMware software supported by the Oracle Cloud
         /// VMware Solution.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Ocvp
         /// Lists the versions of bundled VMware software supported by the Oracle Cloud
         /// VMware Solution.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -78,7 +76,6 @@ namespace Pulumi.Oci.Ocvp
         /// 
         /// Lists the versions of bundled VMware software supported by the Oracle Cloud
         /// VMware Solution.
-        /// 
         /// 
         /// ## Example Usage
         /// 

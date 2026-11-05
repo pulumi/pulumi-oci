@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the virtual cloud networks (VCNs) in the specified compartment.
         /// 
-        /// 
         /// ## Supported Aliases
         /// 
         /// * `oci.Core.getVirtualNetworks`
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the virtual cloud networks (VCNs) in the specified compartment.
         /// 
-        /// 
         /// ## Supported Aliases
         /// 
         /// * `oci.Core.getVirtualNetworks`
@@ -81,7 +79,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides the list of Vcns in Oracle Cloud Infrastructure Core service.
         /// 
         /// Lists the virtual cloud networks (VCNs) in the specified compartment.
-        /// 
         /// 
         /// ## Supported Aliases
         /// 

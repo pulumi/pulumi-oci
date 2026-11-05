@@ -486,6 +486,36 @@ class FleetProperty(pulumi.CustomResource):
         __props__.__dict__["value_type"] = value_type
         return FleetProperty(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            allowed_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            property_id: pulumi.Input[Optional[_builtins.str]] = None,
+            selection_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            value: pulumi.Input[Optional[_builtins.str]] = None,
+            value_type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["allowedValues"] = allowed_values
+        __props__["compartmentId"] = compartment_id
+        __props__["displayName"] = display_name
+        __props__["fleetId"] = fleet_id
+        __props__["propertyId"] = property_id
+        __props__["selectionType"] = selection_type
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["value"] = value
+        __props__["valueType"] = value_type
+        return pulumi.runtime.exists_resource(None, 'oci:FleetAppsManagement/fleetProperty:FleetProperty', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="allowedValues")
     def allowed_values(self) -> pulumi.Output[Sequence[_builtins.str]]:

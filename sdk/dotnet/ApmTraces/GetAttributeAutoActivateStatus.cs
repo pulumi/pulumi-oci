@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ApmTraces
         /// 
         /// Get autoactivation status for a private data key or public data key in the APM Domain.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.ApmTraces
         /// 
         /// Get autoactivation status for a private data key or public data key in the APM Domain.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.ApmTraces
         /// This data source provides details about a specific Attribute Auto Activate Status resource in Oracle Cloud Infrastructure Apm Traces service.
         /// 
         /// Get autoactivation status for a private data key or public data key in the APM Domain.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Core
         /// Lists the volume groups in the specified compartment and availability domain.
         /// For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Core
         /// Lists the volume groups in the specified compartment and availability domain.
         /// For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -78,7 +76,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the volume groups in the specified compartment and availability domain.
         /// For more information, see [Volume Groups](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/volumegroups.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

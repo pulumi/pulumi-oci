@@ -136,8 +136,7 @@ namespace Pulumi.Oci.Oci
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// Type of domain group. DEVELOPMENT uses fewer resources and has a higher Recovery Time Objective (RTO), making it suitable for development and testing. PRODUCTION is recommended for production workloads.  LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION respectively and will be removed  in a future release. 
-        /// 
+        /// Type of domain group. DEVELOPMENT uses fewer resources and has a higher Recovery Time Objective (RTO), making it suitable for development and testing. PRODUCTION is recommended for production workloads.  LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION respectively and will be removed  in a future release.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -234,8 +233,7 @@ namespace Pulumi.Oci.Oci
         }
 
         /// <summary>
-        /// Type of domain group. DEVELOPMENT uses fewer resources and has a higher Recovery Time Objective (RTO), making it suitable for development and testing. PRODUCTION is recommended for production workloads.  LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION respectively and will be removed  in a future release. 
-        /// 
+        /// Type of domain group. DEVELOPMENT uses fewer resources and has a higher Recovery Time Objective (RTO), making it suitable for development and testing. PRODUCTION is recommended for production workloads.  LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION respectively and will be removed  in a future release.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -354,8 +352,7 @@ namespace Pulumi.Oci.Oci
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// Type of domain group. DEVELOPMENT uses fewer resources and has a higher Recovery Time Objective (RTO), making it suitable for development and testing. PRODUCTION is recommended for production workloads.  LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION respectively and will be removed  in a future release. 
-        /// 
+        /// Type of domain group. DEVELOPMENT uses fewer resources and has a higher Recovery Time Objective (RTO), making it suitable for development and testing. PRODUCTION is recommended for production workloads.  LIGHTWEIGHT and STANDARD are deprecated aliases for DEVELOPMENT and PRODUCTION respectively and will be removed  in a future release.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Limits
         /// Returns the list of supported services. If subscription ID is provided then only services supported by subscription will be returned.
         /// This includes the programmatic service name, along with the friendly service name.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Limits
         /// Returns the list of supported services. If subscription ID is provided then only services supported by subscription will be returned.
         /// This includes the programmatic service name, along with the friendly service name.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -74,7 +72,6 @@ namespace Pulumi.Oci.Limits
         /// 
         /// Returns the list of supported services. If subscription ID is provided then only services supported by subscription will be returned.
         /// This includes the programmatic service name, along with the friendly service name.
-        /// 
         /// 
         /// ## Example Usage
         /// 

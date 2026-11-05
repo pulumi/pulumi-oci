@@ -182,6 +182,12 @@ func (ManagedKafkaKafkaClusterAddonState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managedKafkaKafkaClusterAddonState)(nil)).Elem()
 }
 
+// ManagedKafkaKafkaClusterAddonExists checks whether an existing ManagedKafkaKafkaClusterAddon resource with the given ID exists.
+func ManagedKafkaKafkaClusterAddonExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedKafkaKafkaClusterAddonState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/managedKafkaKafkaClusterAddon:ManagedKafkaKafkaClusterAddon", id, state, "", opts...)
+}
+
 type managedKafkaKafkaClusterAddonArgs struct {
 	// (Updatable) This is Addon Type of Oracle Cloud Infrastructure kafka cluster
 	AddonType string `pulumi:"addonType"`

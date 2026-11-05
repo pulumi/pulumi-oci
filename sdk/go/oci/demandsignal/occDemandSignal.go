@@ -215,6 +215,12 @@ func (OccDemandSignalState) ElementType() reflect.Type {
 	return reflect.TypeOf((*occDemandSignalState)(nil)).Elem()
 }
 
+// OccDemandSignalExists checks whether an existing OccDemandSignal resource with the given ID exists.
+func OccDemandSignalExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OccDemandSignalState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DemandSignal/occDemandSignal:OccDemandSignal", id, state, "", opts...)
+}
+
 type occDemandSignalArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the OccDemandSignal in.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -268,6 +268,12 @@ func (AuditProfileState) ElementType() reflect.Type {
 	return reflect.TypeOf((*auditProfileState)(nil)).Elem()
 }
 
+// AuditProfileExists checks whether an existing AuditProfile resource with the given ID exists.
+func AuditProfileExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AuditProfileState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/auditProfile:AuditProfile", id, state, "", opts...)
+}
+
 type auditProfileArgs struct {
 	// (Updatable) An optional property when incremented triggers Change Retention. Could be set to any integer value.
 	//

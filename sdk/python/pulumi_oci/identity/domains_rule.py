@@ -2131,6 +2131,66 @@ class DomainsRule(pulumi.CustomResource):
         __props__.__dict__["tenancy_ocid"] = tenancy_ocid
         return DomainsRule(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            active: pulumi.Input[Optional[_builtins.bool]] = None,
+            attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            attributes: pulumi.Input[Optional[_builtins.str]] = None,
+            authorization: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            condition: pulumi.Input[Optional[_builtins.str]] = None,
+            condition_group: pulumi.Input[Optional[Union['DomainsRuleConditionGroupArgs', 'DomainsRuleConditionGroupArgsDict', 'outputs.DomainsRuleConditionGroup']]] = None,
+            delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            external_id: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsRuleIdcsCreatedByArgs', 'DomainsRuleIdcsCreatedByArgsDict', 'outputs.DomainsRuleIdcsCreatedBy']]]]] = None,
+            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsRuleIdcsLastModifiedByArgs', 'DomainsRuleIdcsLastModifiedByArgsDict', 'outputs.DomainsRuleIdcsLastModifiedBy']]]]] = None,
+            idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            locked: pulumi.Input[Optional[_builtins.bool]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsRuleMetaArgs', 'DomainsRuleMetaArgsDict', 'outputs.DomainsRuleMeta']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            policy_type: pulumi.Input[Optional[Union['DomainsRulePolicyTypeArgs', 'DomainsRulePolicyTypeArgsDict', 'outputs.DomainsRulePolicyType']]] = None,
+            resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+            returns: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsRuleReturnArgs', 'DomainsRuleReturnArgsDict', 'outputs.DomainsRuleReturn']]]]] = None,
+            rule_groovy: pulumi.Input[Optional[_builtins.str]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsRuleTagArgs', 'DomainsRuleTagArgsDict', 'outputs.DomainsRuleTag']]]]] = None,
+            tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["active"] = active
+        __props__["attributeSets"] = attribute_sets
+        __props__["attributes"] = attributes
+        __props__["authorization"] = authorization
+        __props__["compartmentOcid"] = compartment_ocid
+        __props__["condition"] = condition
+        __props__["conditionGroup"] = condition_group
+        __props__["deleteInProgress"] = delete_in_progress
+        __props__["description"] = description
+        __props__["domainOcid"] = domain_ocid
+        __props__["externalId"] = external_id
+        __props__["idcsCreatedBies"] = idcs_created_bies
+        __props__["idcsEndpoint"] = idcs_endpoint
+        __props__["idcsLastModifiedBies"] = idcs_last_modified_bies
+        __props__["idcsLastUpgradedInRelease"] = idcs_last_upgraded_in_release
+        __props__["idcsPreventedOperations"] = idcs_prevented_operations
+        __props__["locked"] = locked
+        __props__["metas"] = metas
+        __props__["name"] = name
+        __props__["ocid"] = ocid
+        __props__["policyType"] = policy_type
+        __props__["resourceTypeSchemaVersion"] = resource_type_schema_version
+        __props__["returns"] = returns
+        __props__["ruleGroovy"] = rule_groovy
+        __props__["schemas"] = schemas
+        __props__["tags"] = tags
+        __props__["tenancyOcid"] = tenancy_ocid
+        return pulumi.runtime.exists_resource(None, 'oci:Identity/domainsRule:DomainsRule', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def active(self) -> pulumi.Output[_builtins.bool]:

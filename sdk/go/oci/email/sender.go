@@ -185,6 +185,12 @@ func (SenderState) ElementType() reflect.Type {
 	return reflect.TypeOf((*senderState)(nil)).Elem()
 }
 
+// SenderExists checks whether an existing Sender resource with the given ID exists.
+func SenderExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SenderState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Email/sender:Sender", id, state, "", opts...)
+}
+
 type senderArgs struct {
 	// (Updatable) The OCID of the compartment that contains the sender.
 	CompartmentId string `pulumi:"compartmentId"`

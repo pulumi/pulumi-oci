@@ -383,6 +383,12 @@ func (JobRunState) ElementType() reflect.Type {
 	return reflect.TypeOf((*jobRunState)(nil)).Elem()
 }
 
+// JobRunExists checks whether an existing JobRun resource with the given ID exists.
+func JobRunExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *JobRunState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataScience/jobRun:JobRun", id, state, "", opts...)
+}
+
 type jobRunArgs struct {
 	// If set to true, do not wait for the JobRun to reach completion prior to returning. Can be useful for JobRuns with a long duration.
 	Asynchronous *bool `pulumi:"asynchronous"`

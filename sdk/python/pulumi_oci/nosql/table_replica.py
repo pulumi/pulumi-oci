@@ -375,6 +375,22 @@ class TableReplica(pulumi.CustomResource):
         __props__.__dict__["table_name_or_id"] = table_name_or_id
         return TableReplica(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            max_read_units: pulumi.Input[Optional[_builtins.int]] = None,
+            max_write_units: pulumi.Input[Optional[_builtins.int]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            table_name_or_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["maxReadUnits"] = max_read_units
+        __props__["maxWriteUnits"] = max_write_units
+        __props__["region"] = region
+        __props__["tableNameOrId"] = table_name_or_id
+        return pulumi.runtime.exists_resource(None, 'oci:Nosql/tableReplica:TableReplica', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

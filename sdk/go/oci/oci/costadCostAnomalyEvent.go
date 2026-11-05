@@ -190,6 +190,12 @@ func (CostadCostAnomalyEventState) ElementType() reflect.Type {
 	return reflect.TypeOf((*costadCostAnomalyEventState)(nil)).Elem()
 }
 
+// CostadCostAnomalyEventExists checks whether an existing CostadCostAnomalyEvent resource with the given ID exists.
+func CostadCostAnomalyEventExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CostadCostAnomalyEventState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/costadCostAnomalyEvent:CostadCostAnomalyEvent", id, state, "", opts...)
+}
+
 type costadCostAnomalyEventArgs struct {
 	// The unique costAnomalyEventId OCID.
 	CostAnomalyEventId string `pulumi:"costAnomalyEventId"`

@@ -746,6 +746,50 @@ class OciCacheBackup(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return OciCacheBackup(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            backup_size_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+            backup_source: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_type: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_memory_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+            cluster_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            export_to_object_storage_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+            shard_count: pulumi.Input[Optional[_builtins.int]] = None,
+            software_version: pulumi.Input[Optional[_builtins.str]] = None,
+            source_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["backupSizeInGbs"] = backup_size_in_gbs
+        __props__["backupSource"] = backup_source
+        __props__["backupType"] = backup_type
+        __props__["clusterMemoryInGbs"] = cluster_memory_in_gbs
+        __props__["clusterMode"] = cluster_mode
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["exportToObjectStorageTrigger"] = export_to_object_storage_trigger
+        __props__["freeformTags"] = freeform_tags
+        __props__["retentionPeriodInDays"] = retention_period_in_days
+        __props__["shardCount"] = shard_count
+        __props__["softwareVersion"] = software_version
+        __props__["sourceClusterId"] = source_cluster_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Redis/ociCacheBackup:OciCacheBackup', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="backupSizeInGbs")
     def backup_size_in_gbs(self) -> pulumi.Output[_builtins.float]:

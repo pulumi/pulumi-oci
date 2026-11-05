@@ -95,7 +95,6 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// * `RAG_TOOL_CONFIG`: The config for rag Tool.
         /// * FUNCTION_CALLING_TOOL_CONFIG: The config for Function calling Tool.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

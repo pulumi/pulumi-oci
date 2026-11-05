@@ -217,6 +217,12 @@ func (StreamCdnConfigState) ElementType() reflect.Type {
 	return reflect.TypeOf((*streamCdnConfigState)(nil)).Elem()
 }
 
+// StreamCdnConfigExists checks whether an existing StreamCdnConfig resource with the given ID exists.
+func StreamCdnConfigExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *StreamCdnConfigState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:MediaServices/streamCdnConfig:StreamCdnConfig", id, state, "", opts...)
+}
+
 type streamCdnConfigArgs struct {
 	// (Updatable) Base fields of the StreamCdnConfig configuration object.
 	Config StreamCdnConfigConfig `pulumi:"config"`

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Get resource usage details for the specified Autonomous Container Database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Get resource usage details for the specified Autonomous Container Database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Autonomous Container Database Resource Usage resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Get resource usage details for the specified Autonomous Container Database.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -119,8 +119,7 @@ namespace Pulumi.Oci.DataCatalog
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of subnet to which the reverse connection is to be created 
-        /// 
+        /// The OCID of subnet to which the reverse connection is to be created
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -253,8 +252,7 @@ namespace Pulumi.Oci.DataCatalog
         }
 
         /// <summary>
-        /// The OCID of subnet to which the reverse connection is to be created 
-        /// 
+        /// The OCID of subnet to which the reverse connection is to be created
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -367,8 +365,7 @@ namespace Pulumi.Oci.DataCatalog
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The OCID of subnet to which the reverse connection is to be created 
-        /// 
+        /// The OCID of subnet to which the reverse connection is to be created
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

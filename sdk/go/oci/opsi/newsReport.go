@@ -263,6 +263,12 @@ func (NewsReportState) ElementType() reflect.Type {
 	return reflect.TypeOf((*newsReportState)(nil)).Elem()
 }
 
+// NewsReportExists checks whether an existing NewsReport resource with the given ID exists.
+func NewsReportExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NewsReportState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Opsi/newsReport:NewsReport", id, state, "", opts...)
+}
+
 type newsReportArgs struct {
 	// (Updatable) A flag to consider the resources within a given compartment and all sub-compartments.
 	AreChildCompartmentsIncluded *bool `pulumi:"areChildCompartmentsIncluded"`

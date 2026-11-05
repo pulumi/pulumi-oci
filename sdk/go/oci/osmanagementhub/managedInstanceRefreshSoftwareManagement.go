@@ -114,6 +114,12 @@ func (ManagedInstanceRefreshSoftwareManagementState) ElementType() reflect.Type 
 	return reflect.TypeOf((*managedInstanceRefreshSoftwareManagementState)(nil)).Elem()
 }
 
+// ManagedInstanceRefreshSoftwareManagementExists checks whether an existing ManagedInstanceRefreshSoftwareManagement resource with the given ID exists.
+func ManagedInstanceRefreshSoftwareManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedInstanceRefreshSoftwareManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/managedInstanceRefreshSoftwareManagement:ManagedInstanceRefreshSoftwareManagement", id, state, "", opts...)
+}
+
 type managedInstanceRefreshSoftwareManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
 	//

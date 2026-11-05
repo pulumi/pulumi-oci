@@ -173,6 +173,12 @@ func (DatabaseSnapshotState) ElementType() reflect.Type {
 	return reflect.TypeOf((*databaseSnapshotState)(nil)).Elem()
 }
 
+// DatabaseSnapshotExists checks whether an existing DatabaseSnapshot resource with the given ID exists.
+func DatabaseSnapshotExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DatabaseSnapshotState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/databaseSnapshot:DatabaseSnapshot", id, state, "", opts...)
+}
+
 type databaseSnapshotArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database.
 	DatabaseId string `pulumi:"databaseId"`

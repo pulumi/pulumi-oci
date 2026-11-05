@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Gets the line-by-line difference between file on different commits.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.DevOps
         /// 
         /// Gets the line-by-line difference between file on different commits.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.DevOps
         /// This data source provides details about a specific Repository File Diff resource in Oracle Cloud Infrastructure Devops service.
         /// 
         /// Gets the line-by-line difference between file on different commits.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DataSafe
         /// If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
         /// is equivalent to accessLevel "ACCESSIBLE" by default.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -55,7 +54,6 @@ namespace Pulumi.Oci.DataSafe
         /// If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
         /// is equivalent to accessLevel "ACCESSIBLE" by default.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -91,7 +89,6 @@ namespace Pulumi.Oci.DataSafe
         /// Gets consolidated discovery analytics data based on the specified query parameters.
         /// If CompartmentIdInSubtreeQueryParam is specified as true, the behaviour
         /// is equivalent to accessLevel "ACCESSIBLE" by default.
-        /// 
         /// 
         /// ## Example Usage
         /// 

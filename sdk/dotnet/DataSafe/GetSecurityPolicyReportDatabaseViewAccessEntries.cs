@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// The ListDatabaseViewAccessEntries operation returns only the database view access objects for the specified security policy report.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// The ListDatabaseViewAccessEntries operation returns only the database view access objects for the specified security policy report.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.DataSafe
         /// Retrieves a list of all database view access entries in Data Safe.
         /// 
         /// The ListDatabaseViewAccessEntries operation returns only the database view access objects for the specified security policy report.
-        /// 
         /// 
         /// ## Example Usage
         /// 

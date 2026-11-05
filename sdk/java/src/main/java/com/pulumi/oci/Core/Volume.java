@@ -163,11 +163,10 @@ public class Volume extends com.pulumi.resources.CustomResource {
     /**
      * If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned. This field is deprecated. Use the `oci.Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume.
      * 
-     * @deprecated
-     * The &#39;backup_policy_id&#39; field has been deprecated. Please use the &#39;oci_core_volume_backup_policy_assignment&#39; resource instead.
+     * @deprecated The &#39;backup_policy_id&#39; field has been deprecated. Please use the &#39;oci_core_volume_backup_policy_assignment&#39; resource instead.
      * 
      */
-    @Deprecated /* The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead. */
+    @Deprecated
     @Export(name="backupPolicyId", refs={String.class}, tree="[0]")
     private Output<String> backupPolicyId;
 
@@ -341,11 +340,10 @@ public class Volume extends com.pulumi.resources.CustomResource {
     /**
      * The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use sizeInGBs instead.
      * 
-     * @deprecated
-     * The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
+     * @deprecated The &#39;size_in_mbs&#39; field has been deprecated. Please use &#39;size_in_gbs&#39; instead.
      * 
      */
-    @Deprecated /* The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead. */
+    @Deprecated
     @Export(name="sizeInMbs", refs={String.class}, tree="[0]")
     private Output<String> sizeInMbs;
 

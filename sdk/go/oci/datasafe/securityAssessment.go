@@ -300,6 +300,12 @@ func (SecurityAssessmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*securityAssessmentState)(nil)).Elem()
 }
 
+// SecurityAssessmentExists checks whether an existing SecurityAssessment resource with the given ID exists.
+func SecurityAssessmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SecurityAssessmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/securityAssessment:SecurityAssessment", id, state, "", opts...)
+}
+
 type securityAssessmentArgs struct {
 	// (Updatable) An optional property when incremented triggers Apply Template. Could be set to any integer value.
 	ApplyTemplateTrigger *int `pulumi:"applyTemplateTrigger"`

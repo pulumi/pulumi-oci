@@ -241,6 +241,12 @@ func (CaptureFilterState) ElementType() reflect.Type {
 	return reflect.TypeOf((*captureFilterState)(nil)).Elem()
 }
 
+// CaptureFilterExists checks whether an existing CaptureFilter resource with the given ID exists.
+func CaptureFilterExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CaptureFilterState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/captureFilter:CaptureFilter", id, state, "", opts...)
+}
+
 type captureFilterArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the capture filter.
 	CompartmentId string `pulumi:"compartmentId"`

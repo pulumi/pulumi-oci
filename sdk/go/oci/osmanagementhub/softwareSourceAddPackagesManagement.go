@@ -136,6 +136,12 @@ func (SoftwareSourceAddPackagesManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*softwareSourceAddPackagesManagementState)(nil)).Elem()
 }
 
+// SoftwareSourceAddPackagesManagementExists checks whether an existing SoftwareSourceAddPackagesManagement resource with the given ID exists.
+func SoftwareSourceAddPackagesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SoftwareSourceAddPackagesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/softwareSourceAddPackagesManagement:SoftwareSourceAddPackagesManagement", id, state, "", opts...)
+}
+
 type softwareSourceAddPackagesManagementArgs struct {
 	// Indicates whether the service should generate a custom software source when the package list contains invalid values. When set to true, the service ignores any invalid packages and generates the custom software source with using the valid packages.
 	IsContinueOnMissingPackages *bool `pulumi:"isContinueOnMissingPackages"`

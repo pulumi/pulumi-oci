@@ -187,6 +187,12 @@ func (InternalOccmDemandSignalState) ElementType() reflect.Type {
 	return reflect.TypeOf((*internalOccmDemandSignalState)(nil)).Elem()
 }
 
+// InternalOccmDemandSignalExists checks whether an existing InternalOccmDemandSignal resource with the given ID exists.
+func InternalOccmDemandSignalExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *InternalOccmDemandSignalState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CapacityManagement/internalOccmDemandSignal:InternalOccmDemandSignal", id, state, "", opts...)
+}
+
 type internalOccmDemandSignalArgs struct {
 	// (Updatable) The subset of demand signal states available for operators for updating the demand signal.
 	//

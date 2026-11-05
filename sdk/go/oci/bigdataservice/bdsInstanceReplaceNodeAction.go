@@ -149,6 +149,12 @@ func (BdsInstanceReplaceNodeActionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*bdsInstanceReplaceNodeActionState)(nil)).Elem()
 }
 
+// BdsInstanceReplaceNodeActionExists checks whether an existing BdsInstanceReplaceNodeAction resource with the given ID exists.
+func BdsInstanceReplaceNodeActionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BdsInstanceReplaceNodeActionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:BigDataService/bdsInstanceReplaceNodeAction:BdsInstanceReplaceNodeAction", id, state, "", opts...)
+}
+
 type bdsInstanceReplaceNodeActionArgs struct {
 	// The OCID of the Big Data Service cluster.
 	BdsInstanceId string `pulumi:"bdsInstanceId"`

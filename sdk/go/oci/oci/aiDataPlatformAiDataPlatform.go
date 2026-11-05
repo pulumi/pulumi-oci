@@ -236,6 +236,12 @@ func (AiDataPlatformAiDataPlatformState) ElementType() reflect.Type {
 	return reflect.TypeOf((*aiDataPlatformAiDataPlatformState)(nil)).Elem()
 }
 
+// AiDataPlatformAiDataPlatformExists checks whether an existing AiDataPlatformAiDataPlatform resource with the given ID exists.
+func AiDataPlatformAiDataPlatformExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AiDataPlatformAiDataPlatformState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/aiDataPlatformAiDataPlatform:AiDataPlatformAiDataPlatform", id, state, "", opts...)
+}
+
 type aiDataPlatformAiDataPlatformArgs struct {
 	// (Updatable) The AiDataPlatform type.
 	AiDataPlatformType *string `pulumi:"aiDataPlatformType"`

@@ -49,11 +49,10 @@ public final class GetLoadBalancersLoadBalancer {
     /**
      * @return An array of IP addresses. Deprecated: use ipAddressDetails instead.
      * 
-     * @deprecated
-     * The &#39;ip_addresses&#39; field has been deprecated. Please use &#39;ip_address_details&#39; instead.
+     * @deprecated The &#39;ip_addresses&#39; field has been deprecated. Please use &#39;ip_address_details&#39; instead.
      * 
      */
-    @Deprecated /* The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead. */
+    @Deprecated
     private List<String> ipAddresses;
     private String ipMode;
     private String ipv6subnetCidr;
@@ -165,11 +164,10 @@ public final class GetLoadBalancersLoadBalancer {
     /**
      * @return An array of IP addresses. Deprecated: use ipAddressDetails instead.
      * 
-     * @deprecated
-     * The &#39;ip_addresses&#39; field has been deprecated. Please use &#39;ip_address_details&#39; instead.
+     * @deprecated The &#39;ip_addresses&#39; field has been deprecated. Please use &#39;ip_address_details&#39; instead.
      * 
      */
-    @Deprecated /* The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead. */
+    @Deprecated
     public List<String> ipAddresses() {
         return this.ipAddresses;
     }

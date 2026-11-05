@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets an Autonomous Database dataguard assocation for the specified Autonomous Database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets an Autonomous Database dataguard assocation for the specified Autonomous Database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides details about a specific Autonomous Database Dataguard Association resource in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets an Autonomous Database dataguard assocation for the specified Autonomous Database.
-        /// 
         /// 
         /// ## Example Usage
         /// 

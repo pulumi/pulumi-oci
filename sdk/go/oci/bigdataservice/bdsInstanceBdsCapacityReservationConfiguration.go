@@ -164,6 +164,12 @@ func (BdsInstanceBdsCapacityReservationConfigurationState) ElementType() reflect
 	return reflect.TypeOf((*bdsInstanceBdsCapacityReservationConfigurationState)(nil)).Elem()
 }
 
+// BdsInstanceBdsCapacityReservationConfigurationExists checks whether an existing BdsInstanceBdsCapacityReservationConfiguration resource with the given ID exists.
+func BdsInstanceBdsCapacityReservationConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BdsInstanceBdsCapacityReservationConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:BigDataService/bdsInstanceBdsCapacityReservationConfiguration:BdsInstanceBdsCapacityReservationConfiguration", id, state, "", opts...)
+}
+
 type bdsInstanceBdsCapacityReservationConfigurationArgs struct {
 	// (Updatable) An optional property that triggers Activate when its value is increased. If set during creation, Activate is called after the configuration is created.
 	ActivateTrigger *int `pulumi:"activateTrigger"`

@@ -260,6 +260,16 @@ class SoftwareSourceReplacePackagesManagement(pulumi.CustomResource):
         __props__.__dict__["software_source_id"] = software_source_id
         return SoftwareSourceReplacePackagesManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            packages: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            software_source_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["packages"] = packages
+        __props__["softwareSourceId"] = software_source_id
+        return pulumi.runtime.exists_resource(None, 'oci:OsManagementHub/softwareSourceReplacePackagesManagement:SoftwareSourceReplacePackagesManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def packages(self) -> pulumi.Output[Sequence[_builtins.str]]:

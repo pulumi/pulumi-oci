@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Gets the specified network source's information.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Identity
         /// 
         /// Gets the specified network source's information.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Identity
         /// This data source provides details about a specific Network Source resource in Oracle Cloud Infrastructure Identity service.
         /// 
         /// Gets the specified network source's information.
-        /// 
         /// 
         /// ## Example Usage
         /// 

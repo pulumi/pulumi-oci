@@ -495,6 +495,38 @@ class ResourceAnalyticsTenancyAttachment(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return ResourceAnalyticsTenancyAttachment(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            data_population_status: pulumi.Input[Optional[_builtins.str]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            is_reporting_tenancy: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            monitored_regions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ResourceAnalyticsTenancyAttachmentMonitoredRegionArgs', 'ResourceAnalyticsTenancyAttachmentMonitoredRegionArgsDict', 'outputs.ResourceAnalyticsTenancyAttachmentMonitoredRegion']]]]] = None,
+            resource_analytics_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_data_population_ended: pulumi.Input[Optional[_builtins.str]] = None,
+            time_data_population_started: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["dataPopulationStatus"] = data_population_status
+        __props__["description"] = description
+        __props__["isReportingTenancy"] = is_reporting_tenancy
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["monitoredRegions"] = monitored_regions
+        __props__["resourceAnalyticsInstanceId"] = resource_analytics_instance_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["tenancyId"] = tenancy_id
+        __props__["timeCreated"] = time_created
+        __props__["timeDataPopulationEnded"] = time_data_population_ended
+        __props__["timeDataPopulationStarted"] = time_data_population_started
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:oci/resourceAnalyticsTenancyAttachment:ResourceAnalyticsTenancyAttachment', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="dataPopulationStatus")
     def data_population_status(self) -> pulumi.Output[_builtins.str]:

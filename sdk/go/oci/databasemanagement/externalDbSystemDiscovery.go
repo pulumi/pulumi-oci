@@ -207,6 +207,12 @@ func (ExternalDbSystemDiscoveryState) ElementType() reflect.Type {
 	return reflect.TypeOf((*externalDbSystemDiscoveryState)(nil)).Elem()
 }
 
+// ExternalDbSystemDiscoveryExists checks whether an existing ExternalDbSystemDiscovery resource with the given ID exists.
+func ExternalDbSystemDiscoveryExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalDbSystemDiscoveryState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/externalDbSystemDiscovery:ExternalDbSystemDiscovery", id, state, "", opts...)
+}
+
 type externalDbSystemDiscoveryArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system discovery.
 	AgentId string `pulumi:"agentId"`

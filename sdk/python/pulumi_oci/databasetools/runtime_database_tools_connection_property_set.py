@@ -833,6 +833,48 @@ class RuntimeDatabaseToolsConnectionPropertySet(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return RuntimeDatabaseToolsConnectionPropertySet(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            authentication_substitutions: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            autonomous_database_resource_principal_status: pulumi.Input[Optional[_builtins.str]] = None,
+            credential_key: pulumi.Input[Optional[_builtins.str]] = None,
+            database_tools_connection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            function_id: pulumi.Input[Optional[_builtins.str]] = None,
+            identity_provider: pulumi.Input[Optional[Union['RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgs', 'RuntimeDatabaseToolsConnectionPropertySetIdentityProviderArgsDict', 'outputs.RuntimeDatabaseToolsConnectionPropertySetIdentityProvider']]] = None,
+            instance_dbms_credential_enabled: pulumi.Input[Optional[_builtins.str]] = None,
+            invoke_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            is_mutable: pulumi.Input[Optional[_builtins.bool]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            object_storage_bucket_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            object_storage_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            object_storage_namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            prerequisites_checks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgs', 'RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheckArgsDict', 'outputs.RuntimeDatabaseToolsConnectionPropertySetPrerequisitesCheck']]]]] = None,
+            print_server_type: pulumi.Input[Optional[_builtins.str]] = None,
+            property_set_key: pulumi.Input[Optional[_builtins.str]] = None,
+            user_key: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["authenticationSubstitutions"] = authentication_substitutions
+        __props__["autonomousDatabaseResourcePrincipalStatus"] = autonomous_database_resource_principal_status
+        __props__["credentialKey"] = credential_key
+        __props__["databaseToolsConnectionId"] = database_tools_connection_id
+        __props__["functionId"] = function_id
+        __props__["identityProvider"] = identity_provider
+        __props__["instanceDbmsCredentialEnabled"] = instance_dbms_credential_enabled
+        __props__["invokeEndpoint"] = invoke_endpoint
+        __props__["isMutable"] = is_mutable
+        __props__["key"] = key
+        __props__["objectStorageBucketCompartmentId"] = object_storage_bucket_compartment_id
+        __props__["objectStorageEndpoint"] = object_storage_endpoint
+        __props__["objectStorageNamespace"] = object_storage_namespace
+        __props__["prerequisitesChecks"] = prerequisites_checks
+        __props__["printServerType"] = print_server_type
+        __props__["propertySetKey"] = property_set_key
+        __props__["userKey"] = user_key
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseTools/runtimeDatabaseToolsConnectionPropertySet:RuntimeDatabaseToolsConnectionPropertySet', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="authenticationSubstitutions")
     def authentication_substitutions(self) -> pulumi.Output[Mapping[str, _builtins.str]]:

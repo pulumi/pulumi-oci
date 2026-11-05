@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// Return the Metadata definition for Named Credentials supported by Management Agent.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// Return the Metadata definition for Named Credentials supported by Management Agent.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// This data source provides details about a specific Management Agent Named Credentials Metadata resource in Oracle Cloud Infrastructure Management Agent service.
         /// 
         /// Return the Metadata definition for Named Credentials supported by Management Agent.
-        /// 
         /// 
         /// ## Example Usage
         /// 

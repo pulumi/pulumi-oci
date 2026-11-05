@@ -14,9 +14,8 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// This data source provides the list of Firmware Bundles in Oracle Cloud Infrastructure Core service.
         /// 
-        /// Gets a list of all Firmware Bundles in a compartment for specified platform. Can filter results to include 
+        /// Gets a list of all Firmware Bundles in a compartment for specified platform. Can filter results to include
         /// only the default (recommended) Firmware Bundle for the given platform.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -45,9 +44,8 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// This data source provides the list of Firmware Bundles in Oracle Cloud Infrastructure Core service.
         /// 
-        /// Gets a list of all Firmware Bundles in a compartment for specified platform. Can filter results to include 
+        /// Gets a list of all Firmware Bundles in a compartment for specified platform. Can filter results to include
         /// only the default (recommended) Firmware Bundle for the given platform.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -76,9 +74,8 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// This data source provides the list of Firmware Bundles in Oracle Cloud Infrastructure Core service.
         /// 
-        /// Gets a list of all Firmware Bundles in a compartment for specified platform. Can filter results to include 
+        /// Gets a list of all Firmware Bundles in a compartment for specified platform. Can filter results to include
         /// only the default (recommended) Firmware Bundle for the given platform.
-        /// 
         /// 
         /// ## Example Usage
         /// 

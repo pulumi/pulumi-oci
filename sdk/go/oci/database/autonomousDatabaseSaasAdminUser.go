@@ -153,6 +153,12 @@ func (AutonomousDatabaseSaasAdminUserState) ElementType() reflect.Type {
 	return reflect.TypeOf((*autonomousDatabaseSaasAdminUserState)(nil)).Elem()
 }
 
+// AutonomousDatabaseSaasAdminUserExists checks whether an existing AutonomousDatabaseSaasAdminUser resource with the given ID exists.
+func AutonomousDatabaseSaasAdminUserExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutonomousDatabaseSaasAdminUserState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/autonomousDatabaseSaasAdminUser:AutonomousDatabaseSaasAdminUser", id, state, "", opts...)
+}
+
 type autonomousDatabaseSaasAdminUserArgs struct {
 	// The access type for the SaaS administrative user. If no access type is specified, the READ_ONLY access type is used.
 	AccessType *string `pulumi:"accessType"`

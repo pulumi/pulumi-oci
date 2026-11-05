@@ -179,6 +179,12 @@ func (BdsInstanceResourcePrincipalConfigurationState) ElementType() reflect.Type
 	return reflect.TypeOf((*bdsInstanceResourcePrincipalConfigurationState)(nil)).Elem()
 }
 
+// BdsInstanceResourcePrincipalConfigurationExists checks whether an existing BdsInstanceResourcePrincipalConfiguration resource with the given ID exists.
+func BdsInstanceResourcePrincipalConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BdsInstanceResourcePrincipalConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:BigDataService/bdsInstanceResourcePrincipalConfiguration:BdsInstanceResourcePrincipalConfiguration", id, state, "", opts...)
+}
+
 type bdsInstanceResourcePrincipalConfigurationArgs struct {
 	// The OCID of the cluster.
 	BdsInstanceId string `pulumi:"bdsInstanceId"`

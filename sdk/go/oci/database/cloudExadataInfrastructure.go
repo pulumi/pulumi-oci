@@ -410,6 +410,12 @@ func (CloudExadataInfrastructureState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudExadataInfrastructureState)(nil)).Elem()
 }
 
+// CloudExadataInfrastructureExists checks whether an existing CloudExadataInfrastructure resource with the given ID exists.
+func CloudExadataInfrastructureExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudExadataInfrastructureState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/cloudExadataInfrastructure:CloudExadataInfrastructure", id, state, "", opts...)
+}
+
 type cloudExadataInfrastructureArgs struct {
 	// The availability domain where the cloud Exadata infrastructure is located.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`

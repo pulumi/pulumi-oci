@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Use the `ListDrgRouteRules` operation to retrieve the route rules in a table.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Use the `ListDrgRouteRules` operation to retrieve the route rules in a table.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -81,7 +79,6 @@ namespace Pulumi.Oci.Core
         /// Lists the DRG route tables for the specified DRG.
         /// 
         /// Use the `ListDrgRouteRules` operation to retrieve the route rules in a table.
-        /// 
         /// 
         /// ## Example Usage
         /// 

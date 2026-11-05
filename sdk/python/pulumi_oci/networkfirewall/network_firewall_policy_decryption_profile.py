@@ -723,6 +723,40 @@ class NetworkFirewallPolicyDecryptionProfile(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return NetworkFirewallPolicyDecryptionProfile(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            are_certificate_extensions_restricted: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            is_auto_include_alt_name: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_expired_certificate_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_out_of_capacity_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_revocation_status_timeout_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_unknown_revocation_status_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_unsupported_cipher_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_unsupported_version_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_untrusted_issuer_blocked: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["areCertificateExtensionsRestricted"] = are_certificate_extensions_restricted
+        __props__["description"] = description
+        __props__["isAutoIncludeAltName"] = is_auto_include_alt_name
+        __props__["isExpiredCertificateBlocked"] = is_expired_certificate_blocked
+        __props__["isOutOfCapacityBlocked"] = is_out_of_capacity_blocked
+        __props__["isRevocationStatusTimeoutBlocked"] = is_revocation_status_timeout_blocked
+        __props__["isUnknownRevocationStatusBlocked"] = is_unknown_revocation_status_blocked
+        __props__["isUnsupportedCipherBlocked"] = is_unsupported_cipher_blocked
+        __props__["isUnsupportedVersionBlocked"] = is_unsupported_version_blocked
+        __props__["isUntrustedIssuerBlocked"] = is_untrusted_issuer_blocked
+        __props__["name"] = name
+        __props__["networkFirewallPolicyId"] = network_firewall_policy_id
+        __props__["parentResourceId"] = parent_resource_id
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'oci:NetworkFirewall/networkFirewallPolicyDecryptionProfile:NetworkFirewallPolicyDecryptionProfile', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="areCertificateExtensionsRestricted")
     def are_certificate_extensions_restricted(self) -> pulumi.Output[_builtins.bool]:

@@ -205,6 +205,12 @@ func (ManagementAgentInstallKeyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managementAgentInstallKeyState)(nil)).Elem()
 }
 
+// ManagementAgentInstallKeyExists checks whether an existing ManagementAgentInstallKey resource with the given ID exists.
+func ManagementAgentInstallKeyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagementAgentInstallKeyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey", id, state, "", opts...)
+}
+
 type managementAgentInstallKeyArgs struct {
 	// Total number of install for this keys
 	AllowedKeyInstallCount *int `pulumi:"allowedKeyInstallCount"`

@@ -1338,6 +1338,72 @@ class DataccVmInstance(pulumi.CustomResource):
         __props__.__dict__["vm_network_id"] = vm_network_id
         return DataccVmInstance(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            boot_storage_size_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cpus_enabled: pulumi.Input[Optional[_builtins.int]] = None,
+            data_storage_size_in_gb: pulumi.Input[Optional[_builtins.float]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dns_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            domain_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            gateway: pulumi.Input[Optional[_builtins.str]] = None,
+            hostname: pulumi.Input[Optional[_builtins.str]] = None,
+            image_id: pulumi.Input[Optional[_builtins.str]] = None,
+            infrastructure_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            memory_size_in_gbs: pulumi.Input[Optional[_builtins.float]] = None,
+            metadata: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            netmask: pulumi.Input[Optional[_builtins.str]] = None,
+            ntp_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            server_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ssh_public_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            userdata: pulumi.Input[Optional[_builtins.str]] = None,
+            vlan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_network_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["bootStorageSizeInGbs"] = boot_storage_size_in_gbs
+        __props__["compartmentId"] = compartment_id
+        __props__["cpusEnabled"] = cpus_enabled
+        __props__["dataStorageSizeInGb"] = data_storage_size_in_gb
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["dnsServers"] = dns_servers
+        __props__["domainName"] = domain_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["gateway"] = gateway
+        __props__["hostname"] = hostname
+        __props__["imageId"] = image_id
+        __props__["infrastructureId"] = infrastructure_id
+        __props__["ipAddress"] = ip_address
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["memorySizeInGbs"] = memory_size_in_gbs
+        __props__["metadata"] = metadata
+        __props__["netmask"] = netmask
+        __props__["ntpServers"] = ntp_servers
+        __props__["serverId"] = server_id
+        __props__["sshPublicKeys"] = ssh_public_keys
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["timeZone"] = time_zone
+        __props__["userdata"] = userdata
+        __props__["vlanId"] = vlan_id
+        __props__["vmNetworkId"] = vm_network_id
+        return pulumi.runtime.exists_resource(None, 'oci:oci/dataccVmInstance:DataccVmInstance', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="bootStorageSizeInGbs")
     def boot_storage_size_in_gbs(self) -> pulumi.Output[_builtins.float]:

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Returns an array of tables under the given schemas of the pipeline for given source and target schemas passed as query params.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Returns an array of tables under the given schemas of the pipeline for given source and target schemas passed as query params.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.GoldenGate
         /// This data source provides the list of Pipeline Schema Tables in Oracle Cloud Infrastructure Golden Gate service.
         /// 
         /// Returns an array of tables under the given schemas of the pipeline for given source and target schemas passed as query params.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -17,7 +17,7 @@ public final class GetDomainsAppScope {
      */
     private String description;
     /**
-     * @return Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return Display name of the flatfile bundle configuration property. This attribute maps to &#92;&#34;displayName&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      */
     private String displayName;
@@ -51,7 +51,7 @@ public final class GetDomainsAppScope {
         return this.description;
     }
     /**
-     * @return Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return Display name of the flatfile bundle configuration property. This attribute maps to &#92;&#34;displayName&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      */
     public String displayName() {

@@ -212,6 +212,12 @@ func (DbmulticloudOracleDbAzureBlobContainerState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dbmulticloudOracleDbAzureBlobContainerState)(nil)).Elem()
 }
 
+// DbmulticloudOracleDbAzureBlobContainerExists checks whether an existing DbmulticloudOracleDbAzureBlobContainer resource with the given ID exists.
+func DbmulticloudOracleDbAzureBlobContainerExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DbmulticloudOracleDbAzureBlobContainerState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/dbmulticloudOracleDbAzureBlobContainer:DbmulticloudOracleDbAzureBlobContainer", id, state, "", opts...)
+}
+
 type dbmulticloudOracleDbAzureBlobContainerArgs struct {
 	// (Updatable) Azure Storage account name.
 	AzureStorageAccountName string `pulumi:"azureStorageAccountName"`

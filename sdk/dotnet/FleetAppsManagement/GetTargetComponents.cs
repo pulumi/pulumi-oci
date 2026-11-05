@@ -16,7 +16,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Gets a list of target component for the specified target.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Gets a list of target component for the specified target.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// This data source provides the list of Target Components in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
         /// Gets a list of target component for the specified target.
-        /// 
         /// 
         /// ## Example Usage
         /// 

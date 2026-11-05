@@ -125,6 +125,12 @@ func (MetricExtensionMetricExtensionOnGivenResourcesManagementState) ElementType
 	return reflect.TypeOf((*metricExtensionMetricExtensionOnGivenResourcesManagementState)(nil)).Elem()
 }
 
+// MetricExtensionMetricExtensionOnGivenResourcesManagementExists checks whether an existing MetricExtensionMetricExtensionOnGivenResourcesManagement resource with the given ID exists.
+func MetricExtensionMetricExtensionOnGivenResourcesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MetricExtensionMetricExtensionOnGivenResourcesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:StackMonitoring/metricExtensionMetricExtensionOnGivenResourcesManagement:MetricExtensionMetricExtensionOnGivenResourcesManagement", id, state, "", opts...)
+}
+
 type metricExtensionMetricExtensionOnGivenResourcesManagementArgs struct {
 	// (Updatable) A required field when set to `true` calls enable action and when set to `false` calls disable action.
 	//

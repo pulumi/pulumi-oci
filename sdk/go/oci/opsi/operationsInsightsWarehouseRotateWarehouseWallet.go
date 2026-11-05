@@ -114,6 +114,12 @@ func (OperationsInsightsWarehouseRotateWarehouseWalletState) ElementType() refle
 	return reflect.TypeOf((*operationsInsightsWarehouseRotateWarehouseWalletState)(nil)).Elem()
 }
 
+// OperationsInsightsWarehouseRotateWarehouseWalletExists checks whether an existing OperationsInsightsWarehouseRotateWarehouseWallet resource with the given ID exists.
+func OperationsInsightsWarehouseRotateWarehouseWalletExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OperationsInsightsWarehouseRotateWarehouseWalletState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Opsi/operationsInsightsWarehouseRotateWarehouseWallet:OperationsInsightsWarehouseRotateWarehouseWallet", id, state, "", opts...)
+}
+
 type operationsInsightsWarehouseRotateWarehouseWalletArgs struct {
 	// Unique Ops Insights Warehouse identifier
 	//

@@ -28,7 +28,6 @@ namespace Pulumi.Oci.Nosql.Outputs
         /// <summary>
         /// (Updatable) Maximum sustained write throughput limit for the table.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that is not identified as "Updateable" will force the destruction and recreation of the resource with the new property values.
         /// </summary>

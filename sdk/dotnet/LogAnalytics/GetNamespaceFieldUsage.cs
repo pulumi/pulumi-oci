@@ -16,7 +16,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Gets usage information about the field with the specified name.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Gets usage information about the field with the specified name.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides details about a specific Namespace Field Usage resource in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// Gets usage information about the field with the specified name.
-        /// 
         /// 
         /// ## Example Usage
         /// 

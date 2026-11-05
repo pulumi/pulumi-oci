@@ -17,7 +17,6 @@ namespace Pulumi.Oci.CertificatesManagement
         /// Lists all associations that match the query parameters.
         /// Optionally, you can use the parameter `FilterByAssociationIdQueryParam` to limit the result set to a single item that matches the specified association.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.CertificatesManagement
         /// Lists all associations that match the query parameters.
         /// Optionally, you can use the parameter `FilterByAssociationIdQueryParam` to limit the result set to a single item that matches the specified association.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -82,7 +80,6 @@ namespace Pulumi.Oci.CertificatesManagement
         /// 
         /// Lists all associations that match the query parameters.
         /// Optionally, you can use the parameter `FilterByAssociationIdQueryParam` to limit the result set to a single item that matches the specified association.
-        /// 
         /// 
         /// ## Example Usage
         /// 

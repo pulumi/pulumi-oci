@@ -1370,6 +1370,66 @@ class Config(pulumi.CustomResource):
         __props__.__dict__["vantage_points"] = vantage_points
         return Config(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            availability_configuration: pulumi.Input[Optional[Union['ConfigAvailabilityConfigurationArgs', 'ConfigAvailabilityConfigurationArgsDict', 'outputs.ConfigAvailabilityConfiguration']]] = None,
+            batch_interval_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            configuration: pulumi.Input[Optional[Union['ConfigConfigurationArgs', 'ConfigConfigurationArgsDict', 'outputs.ConfigConfiguration']]] = None,
+            content_type: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_ipv6: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_run_now: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_run_once: pulumi.Input[Optional[_builtins.bool]] = None,
+            last_updated_by: pulumi.Input[Optional[_builtins.str]] = None,
+            maintenance_window_schedule: pulumi.Input[Optional[Union['ConfigMaintenanceWindowScheduleArgs', 'ConfigMaintenanceWindowScheduleArgsDict', 'outputs.ConfigMaintenanceWindowSchedule']]] = None,
+            monitor_type: pulumi.Input[Optional[_builtins.str]] = None,
+            repeat_interval_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            scheduling_policy: pulumi.Input[Optional[_builtins.str]] = None,
+            script_id: pulumi.Input[Optional[_builtins.str]] = None,
+            script_name: pulumi.Input[Optional[_builtins.str]] = None,
+            script_parameters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigScriptParameterArgs', 'ConfigScriptParameterArgsDict', 'outputs.ConfigScriptParameter']]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            target: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            timeout_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            vantage_point_count: pulumi.Input[Optional[_builtins.int]] = None,
+            vantage_points: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ConfigVantagePointArgs', 'ConfigVantagePointArgsDict', 'outputs.ConfigVantagePoint']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["apmDomainId"] = apm_domain_id
+        __props__["availabilityConfiguration"] = availability_configuration
+        __props__["batchIntervalInSeconds"] = batch_interval_in_seconds
+        __props__["configuration"] = configuration
+        __props__["contentType"] = content_type
+        __props__["createdBy"] = created_by
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["isIpv6"] = is_ipv6
+        __props__["isRunNow"] = is_run_now
+        __props__["isRunOnce"] = is_run_once
+        __props__["lastUpdatedBy"] = last_updated_by
+        __props__["maintenanceWindowSchedule"] = maintenance_window_schedule
+        __props__["monitorType"] = monitor_type
+        __props__["repeatIntervalInSeconds"] = repeat_interval_in_seconds
+        __props__["schedulingPolicy"] = scheduling_policy
+        __props__["scriptId"] = script_id
+        __props__["scriptName"] = script_name
+        __props__["scriptParameters"] = script_parameters
+        __props__["status"] = status
+        __props__["target"] = target
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["timeoutInSeconds"] = timeout_in_seconds
+        __props__["vantagePointCount"] = vantage_point_count
+        __props__["vantagePoints"] = vantage_points
+        return pulumi.runtime.exists_resource(None, 'oci:ApmSynthetics/config:Config', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="apmDomainId")
     def apm_domain_id(self) -> pulumi.Output[_builtins.str]:

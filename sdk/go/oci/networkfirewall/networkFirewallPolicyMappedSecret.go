@@ -180,6 +180,12 @@ func (NetworkFirewallPolicyMappedSecretState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkFirewallPolicyMappedSecretState)(nil)).Elem()
 }
 
+// NetworkFirewallPolicyMappedSecretExists checks whether an existing NetworkFirewallPolicyMappedSecret resource with the given ID exists.
+func NetworkFirewallPolicyMappedSecretExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkFirewallPolicyMappedSecretState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret", id, state, "", opts...)
+}
+
 type networkFirewallPolicyMappedSecretArgs struct {
 	// (Updatable) The description of the mapped secret. This field can be used to add additional info.
 	Description *string `pulumi:"description"`

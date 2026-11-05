@@ -1160,6 +1160,62 @@ class MonitoredResource(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return MonitoredResource(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            additional_aliases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalAliasArgs', 'MonitoredResourceAdditionalAliasArgsDict', 'outputs.MonitoredResourceAdditionalAlias']]]]] = None,
+            additional_credentials: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourceAdditionalCredentialArgs', 'MonitoredResourceAdditionalCredentialArgsDict', 'outputs.MonitoredResourceAdditionalCredential']]]]] = None,
+            aliases: pulumi.Input[Optional[Union['MonitoredResourceAliasesArgs', 'MonitoredResourceAliasesArgsDict', 'outputs.MonitoredResourceAliases']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            credentials: pulumi.Input[Optional[Union['MonitoredResourceCredentialsArgs', 'MonitoredResourceCredentialsArgsDict', 'outputs.MonitoredResourceCredentials']]] = None,
+            database_connection_details: pulumi.Input[Optional[Union['MonitoredResourceDatabaseConnectionDetailsArgs', 'MonitoredResourceDatabaseConnectionDetailsArgsDict', 'outputs.MonitoredResourceDatabaseConnectionDetails']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            external_id: pulumi.Input[Optional[_builtins.str]] = None,
+            external_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            host_name: pulumi.Input[Optional[_builtins.str]] = None,
+            license: pulumi.Input[Optional[_builtins.str]] = None,
+            management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcePropertyArgs', 'MonitoredResourcePropertyArgsDict', 'outputs.MonitoredResourceProperty']]]]] = None,
+            resource_category: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            source_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["additionalAliases"] = additional_aliases
+        __props__["additionalCredentials"] = additional_credentials
+        __props__["aliases"] = aliases
+        __props__["compartmentId"] = compartment_id
+        __props__["credentials"] = credentials
+        __props__["databaseConnectionDetails"] = database_connection_details
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["externalId"] = external_id
+        __props__["externalResourceId"] = external_resource_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["hostName"] = host_name
+        __props__["license"] = license
+        __props__["managementAgentId"] = management_agent_id
+        __props__["name"] = name
+        __props__["properties"] = properties
+        __props__["resourceCategory"] = resource_category
+        __props__["resourceTimeZone"] = resource_time_zone
+        __props__["sourceType"] = source_type
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["tenantId"] = tenant_id
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'oci:StackMonitoring/monitoredResource:MonitoredResource', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="additionalAliases")
     def additional_aliases(self) -> pulumi.Output[Optional[Sequence['outputs.MonitoredResourceAdditionalAlias']]]:

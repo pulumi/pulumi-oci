@@ -358,6 +358,12 @@ func (DatabaseSnapshotStandbyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*databaseSnapshotStandbyState)(nil)).Elem()
 }
 
+// DatabaseSnapshotStandbyExists checks whether an existing DatabaseSnapshotStandby resource with the given ID exists.
+func DatabaseSnapshotStandbyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DatabaseSnapshotStandbyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/databaseSnapshotStandby:DatabaseSnapshotStandby", id, state, "", opts...)
+}
+
 type databaseSnapshotStandbyArgs struct {
 	// The administrator password of the primary database in this Data Guard association.
 	//

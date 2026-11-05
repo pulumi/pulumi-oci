@@ -835,6 +835,48 @@ class FsuCollection(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return FsuCollection(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            active_fsu_cycles: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FsuCollectionActiveFsuCycleArgs', 'FsuCollectionActiveFsuCycleArgsDict', 'outputs.FsuCollectionActiveFsuCycle']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            components: pulumi.Input[Optional[Sequence[pulumi.Input[Union['FsuCollectionComponentArgs', 'FsuCollectionComponentArgsDict', 'outputs.FsuCollectionComponent']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            fleet_discovery: pulumi.Input[Optional[Union['FsuCollectionFleetDiscoveryArgs', 'FsuCollectionFleetDiscoveryArgsDict', 'outputs.FsuCollectionFleetDiscovery']]] = None,
+            fleet_software_update_fsu_collection_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            last_completed_fsu_cycle_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            service_type: pulumi.Input[Optional[_builtins.str]] = None,
+            source_major_version: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_count: pulumi.Input[Optional[_builtins.int]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["activeFsuCycles"] = active_fsu_cycles
+        __props__["compartmentId"] = compartment_id
+        __props__["components"] = components
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["fleetDiscovery"] = fleet_discovery
+        __props__["fleetSoftwareUpdateFsuCollectionId"] = fleet_software_update_fsu_collection_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["lastCompletedFsuCycleId"] = last_completed_fsu_cycle_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["serviceType"] = service_type
+        __props__["sourceMajorVersion"] = source_major_version
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["targetCount"] = target_count
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'oci:FleetSoftwareUpdate/fsuCollection:FsuCollection', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="activeFsuCycles")
     def active_fsu_cycles(self) -> pulumi.Output[Sequence['outputs.FsuCollectionActiveFsuCycle']]:

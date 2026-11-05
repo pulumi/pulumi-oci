@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the maintenance updates that can be applied to the specified Exadata VM cluster on Exascale Infrastructure.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the maintenance updates that can be applied to the specified Exadata VM cluster on Exascale Infrastructure.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Exadb Vm Cluster Updates in Oracle Cloud Infrastructure Database service.
         /// 
         /// Lists the maintenance updates that can be applied to the specified Exadata VM cluster on Exascale Infrastructure.
-        /// 
         /// 
         /// ## Example Usage
         /// 

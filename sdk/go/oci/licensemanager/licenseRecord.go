@@ -232,6 +232,12 @@ func (LicenseRecordState) ElementType() reflect.Type {
 	return reflect.TypeOf((*licenseRecordState)(nil)).Elem()
 }
 
+// LicenseRecordExists checks whether an existing LicenseRecord resource with the given ID exists.
+func LicenseRecordExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LicenseRecordState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LicenseManager/licenseRecord:LicenseRecord", id, state, "", opts...)
+}
+
 type licenseRecordArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`

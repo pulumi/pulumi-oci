@@ -378,6 +378,28 @@ class Suppression(pulumi.CustomResource):
         __props__.__dict__["time_last_suppressed"] = time_last_suppressed
         return Suppression(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            email_address: pulumi.Input[Optional[_builtins.str]] = None,
+            error_detail: pulumi.Input[Optional[_builtins.str]] = None,
+            error_source: pulumi.Input[Optional[_builtins.str]] = None,
+            message_id: pulumi.Input[Optional[_builtins.str]] = None,
+            reason: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_suppressed: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["emailAddress"] = email_address
+        __props__["errorDetail"] = error_detail
+        __props__["errorSource"] = error_source
+        __props__["messageId"] = message_id
+        __props__["reason"] = reason
+        __props__["timeCreated"] = time_created
+        __props__["timeLastSuppressed"] = time_last_suppressed
+        return pulumi.runtime.exists_resource(None, 'oci:Email/suppression:Suppression', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

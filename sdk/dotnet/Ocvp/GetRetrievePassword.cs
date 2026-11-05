@@ -14,7 +14,6 @@ namespace Pulumi.Oci.Ocvp
         /// <summary>
         /// This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -40,7 +39,6 @@ namespace Pulumi.Oci.Ocvp
         /// <summary>
         /// This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -65,7 +63,6 @@ namespace Pulumi.Oci.Ocvp
 
         /// <summary>
         /// This data source retrieves the SDDC password in Oracle Cloud Infrastructure Oracle Cloud VMware Solution service.
-        /// 
         /// 
         /// ## Example Usage
         /// 

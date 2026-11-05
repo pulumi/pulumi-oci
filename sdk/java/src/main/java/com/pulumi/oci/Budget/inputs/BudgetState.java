@@ -262,22 +262,20 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
     /**
      * This is DEPRECATED. Set the target compartment ID in targets instead.
      * 
-     * @deprecated
-     * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;targets&#39; instead.
+     * @deprecated The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;targets&#39; instead.
      * 
      */
-    @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'targets' instead. */
+    @Deprecated
     @Import(name="targetCompartmentId")
     private @Nullable Output<String> targetCompartmentId;
 
     /**
      * @return This is DEPRECATED. Set the target compartment ID in targets instead.
      * 
-     * @deprecated
-     * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;targets&#39; instead.
+     * @deprecated The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;targets&#39; instead.
      * 
      */
-    @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'targets' instead. */
+    @Deprecated
     public Optional<Output<String>> targetCompartmentId() {
         return Optional.ofNullable(this.targetCompartmentId);
     }
@@ -765,11 +763,10 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;targets&#39; instead.
+         * @deprecated The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;targets&#39; instead.
          * 
          */
-        @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'targets' instead. */
+        @Deprecated
         public Builder targetCompartmentId(@Nullable Output<String> targetCompartmentId) {
             $.targetCompartmentId = targetCompartmentId;
             return this;
@@ -780,11 +777,10 @@ public final class BudgetState extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;targets&#39; instead.
+         * @deprecated The &#39;target_compartment_id&#39; field has been deprecated. Please use &#39;targets&#39; instead.
          * 
          */
-        @Deprecated /* The 'target_compartment_id' field has been deprecated. Please use 'targets' instead. */
+        @Deprecated
         public Builder targetCompartmentId(String targetCompartmentId) {
             return targetCompartmentId(Output.of(targetCompartmentId));
         }

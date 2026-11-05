@@ -163,6 +163,12 @@ func (AuthTokenState) ElementType() reflect.Type {
 	return reflect.TypeOf((*authTokenState)(nil)).Elem()
 }
 
+// AuthTokenExists checks whether an existing AuthToken resource with the given ID exists.
+func AuthTokenExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AuthTokenState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/authToken:AuthToken", id, state, "", opts...)
+}
+
 type authTokenArgs struct {
 	// (Updatable) The description you assign to the auth token during creation. Does not have to be unique, and it's changeable.
 	Description string `pulumi:"description"`

@@ -33,8 +33,7 @@ namespace Pulumi.Oci.Events.Outputs
         /// </summary>
         public readonly string? Id;
         /// <summary>
-        /// (Updatable) Whether or not this rule is currently enabled.  Example: `True` 
-        /// 
+        /// (Updatable) Whether or not this rule is currently enabled.  Example: `True`
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

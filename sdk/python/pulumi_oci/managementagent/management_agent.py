@@ -894,6 +894,72 @@ class ManagementAgent(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return ManagementAgent(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            availability_status: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            data_source_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementAgentDataSourceListArgs', 'ManagementAgentDataSourceListArgsDict', 'outputs.ManagementAgentDataSourceList']]]]] = None,
+            data_source_summary_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementAgentDataSourceSummaryListArgs', 'ManagementAgentDataSourceSummaryListArgsDict', 'outputs.ManagementAgentDataSourceSummaryList']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            deploy_plugins_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            host: pulumi.Input[Optional[_builtins.str]] = None,
+            host_id: pulumi.Input[Optional[_builtins.str]] = None,
+            install_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            install_path: pulumi.Input[Optional[_builtins.str]] = None,
+            install_type: pulumi.Input[Optional[_builtins.str]] = None,
+            is_agent_auto_upgradable: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_customer_deployed: pulumi.Input[Optional[_builtins.bool]] = None,
+            latest_supported_version: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            managed_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            management_agent_properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementAgentManagementAgentPropertyArgs', 'ManagementAgentManagementAgentPropertyArgsDict', 'outputs.ManagementAgentManagementAgentProperty']]]]] = None,
+            platform_name: pulumi.Input[Optional[_builtins.str]] = None,
+            platform_type: pulumi.Input[Optional[_builtins.str]] = None,
+            platform_version: pulumi.Input[Optional[_builtins.str]] = None,
+            plugin_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ManagementAgentPluginListArgs', 'ManagementAgentPluginListArgsDict', 'outputs.ManagementAgentPluginList']]]]] = None,
+            resource_artifact_version: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_heartbeat: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availabilityStatus"] = availability_status
+        __props__["compartmentId"] = compartment_id
+        __props__["dataSourceLists"] = data_source_lists
+        __props__["dataSourceSummaryLists"] = data_source_summary_lists
+        __props__["definedTags"] = defined_tags
+        __props__["deployPluginsIds"] = deploy_plugins_ids
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["host"] = host
+        __props__["hostId"] = host_id
+        __props__["installKeyId"] = install_key_id
+        __props__["installPath"] = install_path
+        __props__["installType"] = install_type
+        __props__["isAgentAutoUpgradable"] = is_agent_auto_upgradable
+        __props__["isCustomerDeployed"] = is_customer_deployed
+        __props__["latestSupportedVersion"] = latest_supported_version
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["managedAgentId"] = managed_agent_id
+        __props__["managementAgentProperties"] = management_agent_properties
+        __props__["platformName"] = platform_name
+        __props__["platformType"] = platform_type
+        __props__["platformVersion"] = platform_version
+        __props__["pluginLists"] = plugin_lists
+        __props__["resourceArtifactVersion"] = resource_artifact_version
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeLastHeartbeat"] = time_last_heartbeat
+        __props__["timeUpdated"] = time_updated
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'oci:ManagementAgent/managementAgent:ManagementAgent', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="availabilityStatus")
     def availability_status(self) -> pulumi.Output[_builtins.str]:

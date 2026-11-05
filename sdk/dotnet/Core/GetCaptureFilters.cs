@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the capture filters in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the capture filters in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides the list of Capture Filters in Oracle Cloud Infrastructure Core service.
         /// 
         /// Lists the capture filters in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Returns a list of parser actions. You may limit the number of results and provide sorting order.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Returns a list of parser actions. You may limit the number of results and provide sorting order.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides the list of Namespace Parser Actions in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// Returns a list of parser actions. You may limit the number of results and provide sorting order.
-        /// 
         /// 
         /// ## Example Usage
         /// 

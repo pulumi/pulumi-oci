@@ -17,7 +17,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Gets the number of database table objects grouped by different statuses such as
         /// Not Stale Stats, Stale Stats, and No Stats. This also includes the percentage of each status.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Gets the number of database table objects grouped by different statuses such as
         /// Not Stale Stats, Stale Stats, and No Stats. This also includes the percentage of each status.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -72,7 +70,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Gets the number of database table objects grouped by different statuses such as
         /// Not Stale Stats, Stale Stats, and No Stats. This also includes the percentage of each status.
-        /// 
         /// 
         /// ## Example Usage
         /// 

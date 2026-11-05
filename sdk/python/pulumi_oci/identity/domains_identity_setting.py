@@ -2029,6 +2029,68 @@ class DomainsIdentitySetting(pulumi.CustomResource):
         __props__.__dict__["user_allowed_to_set_recovery_email"] = user_allowed_to_set_recovery_email
         return DomainsIdentitySetting(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            attributes: pulumi.Input[Optional[_builtins.str]] = None,
+            authorization: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            emit_locked_message_when_user_is_locked: pulumi.Input[Optional[_builtins.bool]] = None,
+            external_id: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentitySettingIdcsCreatedByArgs', 'DomainsIdentitySettingIdcsCreatedByArgsDict', 'outputs.DomainsIdentitySettingIdcsCreatedBy']]]]] = None,
+            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentitySettingIdcsLastModifiedByArgs', 'DomainsIdentitySettingIdcsLastModifiedByArgsDict', 'outputs.DomainsIdentitySettingIdcsLastModifiedBy']]]]] = None,
+            idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            identity_setting_id: pulumi.Input[Optional[_builtins.str]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentitySettingMetaArgs', 'DomainsIdentitySettingMetaArgsDict', 'outputs.DomainsIdentitySettingMeta']]]]] = None,
+            my_profile: pulumi.Input[Optional[Union['DomainsIdentitySettingMyProfileArgs', 'DomainsIdentitySettingMyProfileArgsDict', 'outputs.DomainsIdentitySettingMyProfile']]] = None,
+            ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            posix_gid: pulumi.Input[Optional[Union['DomainsIdentitySettingPosixGidArgs', 'DomainsIdentitySettingPosixGidArgsDict', 'outputs.DomainsIdentitySettingPosixGid']]] = None,
+            posix_uid: pulumi.Input[Optional[Union['DomainsIdentitySettingPosixUidArgs', 'DomainsIdentitySettingPosixUidArgsDict', 'outputs.DomainsIdentitySettingPosixUid']]] = None,
+            primary_email_required: pulumi.Input[Optional[_builtins.bool]] = None,
+            remove_invalid_emails: pulumi.Input[Optional[_builtins.bool]] = None,
+            resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+            return_inactive_over_locked_message: pulumi.Input[Optional[_builtins.bool]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentitySettingTagArgs', 'DomainsIdentitySettingTagArgsDict', 'outputs.DomainsIdentitySettingTag']]]]] = None,
+            tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            tokens: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsIdentitySettingTokenArgs', 'DomainsIdentitySettingTokenArgsDict', 'outputs.DomainsIdentitySettingToken']]]]] = None,
+            user_allowed_to_set_recovery_email: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["attributeSets"] = attribute_sets
+        __props__["attributes"] = attributes
+        __props__["authorization"] = authorization
+        __props__["compartmentOcid"] = compartment_ocid
+        __props__["deleteInProgress"] = delete_in_progress
+        __props__["domainOcid"] = domain_ocid
+        __props__["emitLockedMessageWhenUserIsLocked"] = emit_locked_message_when_user_is_locked
+        __props__["externalId"] = external_id
+        __props__["idcsCreatedBies"] = idcs_created_bies
+        __props__["idcsEndpoint"] = idcs_endpoint
+        __props__["idcsLastModifiedBies"] = idcs_last_modified_bies
+        __props__["idcsLastUpgradedInRelease"] = idcs_last_upgraded_in_release
+        __props__["idcsPreventedOperations"] = idcs_prevented_operations
+        __props__["identitySettingId"] = identity_setting_id
+        __props__["metas"] = metas
+        __props__["myProfile"] = my_profile
+        __props__["ocid"] = ocid
+        __props__["posixGid"] = posix_gid
+        __props__["posixUid"] = posix_uid
+        __props__["primaryEmailRequired"] = primary_email_required
+        __props__["removeInvalidEmails"] = remove_invalid_emails
+        __props__["resourceTypeSchemaVersion"] = resource_type_schema_version
+        __props__["returnInactiveOverLockedMessage"] = return_inactive_over_locked_message
+        __props__["schemas"] = schemas
+        __props__["tags"] = tags
+        __props__["tenancyOcid"] = tenancy_ocid
+        __props__["tokens"] = tokens
+        __props__["userAllowedToSetRecoveryEmail"] = user_allowed_to_set_recovery_email
+        return pulumi.runtime.exists_resource(None, 'oci:Identity/domainsIdentitySetting:DomainsIdentitySetting', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="attributeSets")
     def attribute_sets(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

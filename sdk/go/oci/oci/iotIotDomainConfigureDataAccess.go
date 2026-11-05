@@ -148,6 +148,12 @@ func (IotIotDomainConfigureDataAccessState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iotIotDomainConfigureDataAccessState)(nil)).Elem()
 }
 
+// IotIotDomainConfigureDataAccessExists checks whether an existing IotIotDomainConfigureDataAccess resource with the given ID exists.
+func IotIotDomainConfigureDataAccessExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IotIotDomainConfigureDataAccessState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/iotIotDomainConfigureDataAccess:IotIotDomainConfigureDataAccess", id, state, "", opts...)
+}
+
 type iotIotDomainConfigureDataAccessArgs struct {
 	// List of IAM groups of form described in [here](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/mnqmn/#GUID-3634D6C9-A7F1-4875-9925-BAEA2D3C5197) that are allowed to directly connect to the data host.
 	DbAllowListedIdentityGroupNames []string `pulumi:"dbAllowListedIdentityGroupNames"`

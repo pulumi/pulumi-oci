@@ -226,6 +226,12 @@ func (ExecutionActionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*executionActionState)(nil)).Elem()
 }
 
+// ExecutionActionExists checks whether an existing ExecutionAction resource with the given ID exists.
+func ExecutionActionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExecutionActionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/executionAction:ExecutionAction", id, state, "", opts...)
+}
+
 type executionActionArgs struct {
 	// (Updatable) List of action members of this execution action.
 	ActionMembers []ExecutionActionActionMember `pulumi:"actionMembers"`

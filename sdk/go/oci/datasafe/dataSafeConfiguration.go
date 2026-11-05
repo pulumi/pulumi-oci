@@ -159,6 +159,12 @@ func (DataSafeConfigurationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dataSafeConfigurationState)(nil)).Elem()
 }
 
+// DataSafeConfigurationExists checks whether an existing DataSafeConfiguration resource with the given ID exists.
+func DataSafeConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DataSafeConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/dataSafeConfiguration:DataSafeConfiguration", id, state, "", opts...)
+}
+
 type dataSafeConfigurationArgs struct {
 	// (Updatable) A filter to return only resources that match the specified compartment OCID.
 	CompartmentId *string `pulumi:"compartmentId"`

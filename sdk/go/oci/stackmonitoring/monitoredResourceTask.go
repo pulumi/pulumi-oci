@@ -246,6 +246,12 @@ func (MonitoredResourceTaskState) ElementType() reflect.Type {
 	return reflect.TypeOf((*monitoredResourceTaskState)(nil)).Elem()
 }
 
+// MonitoredResourceTaskExists checks whether an existing MonitoredResourceTask resource with the given ID exists.
+func MonitoredResourceTaskExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MonitoredResourceTaskState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:StackMonitoring/monitoredResourceTask:MonitoredResourceTask", id, state, "", opts...)
+}
+
 type monitoredResourceTaskArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment identifier.
 	CompartmentId string `pulumi:"compartmentId"`

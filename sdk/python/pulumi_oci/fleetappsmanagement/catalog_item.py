@@ -953,6 +953,58 @@ class CatalogItem(pulumi.CustomResource):
         __props__.__dict__["version_description"] = version_description
         return CatalogItem(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            catalog_result_payloads: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CatalogItemCatalogResultPayloadArgs', 'CatalogItemCatalogResultPayloadArgsDict', 'outputs.CatalogItemCatalogResultPayload']]]]] = None,
+            catalog_source_payload: pulumi.Input[Optional[Union['CatalogItemCatalogSourcePayloadArgs', 'CatalogItemCatalogSourcePayloadArgsDict', 'outputs.CatalogItemCatalogSourcePayload']]] = None,
+            clone_catalog_item_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config_source_type: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            listing_id: pulumi.Input[Optional[_builtins.str]] = None,
+            listing_version: pulumi.Input[Optional[_builtins.str]] = None,
+            package_type: pulumi.Input[Optional[_builtins.str]] = None,
+            short_description: pulumi.Input[Optional[_builtins.str]] = None,
+            should_list_public_items: pulumi.Input[Optional[_builtins.bool]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_backfill_last_checked: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_checked: pulumi.Input[Optional[_builtins.str]] = None,
+            time_released: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            version_description: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["catalogResultPayloads"] = catalog_result_payloads
+        __props__["catalogSourcePayload"] = catalog_source_payload
+        __props__["cloneCatalogItemTrigger"] = clone_catalog_item_trigger
+        __props__["compartmentId"] = compartment_id
+        __props__["configSourceType"] = config_source_type
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["listingId"] = listing_id
+        __props__["listingVersion"] = listing_version
+        __props__["packageType"] = package_type
+        __props__["shortDescription"] = short_description
+        __props__["shouldListPublicItems"] = should_list_public_items
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeBackfillLastChecked"] = time_backfill_last_checked
+        __props__["timeCreated"] = time_created
+        __props__["timeLastChecked"] = time_last_checked
+        __props__["timeReleased"] = time_released
+        __props__["timeUpdated"] = time_updated
+        __props__["versionDescription"] = version_description
+        return pulumi.runtime.exists_resource(None, 'oci:FleetAppsManagement/catalogItem:CatalogItem', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="catalogResultPayloads")
     def catalog_result_payloads(self) -> pulumi.Output[Sequence['outputs.CatalogItemCatalogResultPayload']]:

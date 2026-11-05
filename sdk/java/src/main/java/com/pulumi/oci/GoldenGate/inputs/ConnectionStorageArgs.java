@@ -38,22 +38,20 @@ public final class ConnectionStorageArgs extends com.pulumi.resources.ResourceAr
     /**
      * (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by &#34;accountKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
+     * @deprecated The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead. */
+    @Deprecated
     @Import(name="accountKey")
     private @Nullable Output<String> accountKey;
 
     /**
      * @return (Updatable) Azure storage account key. This property is required when &#39;authenticationType&#39; is set to &#39;SHARED_KEY&#39;. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ== Deprecated: This field is deprecated and replaced by &#34;accountKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
+     * @deprecated The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead. */
+    @Deprecated
     public Optional<Output<String>> accountKey() {
         return Optional.ofNullable(this.accountKey);
     }
@@ -181,22 +179,20 @@ public final class ConnectionStorageArgs extends com.pulumi.resources.ResourceAr
     /**
      * (Updatable) Secret Access Key from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API. Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+     * @deprecated The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
+    @Deprecated
     @Import(name="secretAccessKey")
     private @Nullable Output<String> secretAccessKey;
 
     /**
      * @return (Updatable) Secret Access Key from the Oracle Cloud Infrastructure IAM user&#39;s Customer Secret Key pair used to authenticate to Oracle Cloud Infrastructure Object Storage via the S3 Compatibility API. Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+     * @deprecated The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
+    @Deprecated
     public Optional<Output<String>> secretAccessKey() {
         return Optional.ofNullable(this.secretAccessKey);
     }
@@ -219,22 +215,20 @@ public final class ConnectionStorageArgs extends com.pulumi.resources.ResourceAr
     /**
      * (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by &#34;serviceAccountKeyFileSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
+     * @deprecated The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead. */
+    @Deprecated
     @Import(name="serviceAccountKeyFile")
     private @Nullable Output<String> serviceAccountKeyFile;
 
     /**
      * @return (Updatable) The base64 encoded content of the service account key file containing the credentials required to use Google Cloud Storage. Deprecated: This field is deprecated and replaced by &#34;serviceAccountKeyFileSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
+     * @deprecated The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead. */
+    @Deprecated
     public Optional<Output<String>> serviceAccountKeyFile() {
         return Optional.ofNullable(this.serviceAccountKeyFile);
     }
@@ -347,11 +341,10 @@ public final class ConnectionStorageArgs extends com.pulumi.resources.ResourceAr
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
+         * @deprecated The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
          * 
          */
-        @Deprecated /* The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead. */
+        @Deprecated
         public Builder accountKey(@Nullable Output<String> accountKey) {
             $.accountKey = accountKey;
             return this;
@@ -362,11 +355,10 @@ public final class ConnectionStorageArgs extends com.pulumi.resources.ResourceAr
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
+         * @deprecated The &#39;account_key&#39; field has been deprecated. Please use &#39;account_key_secret_id&#39; instead.
          * 
          */
-        @Deprecated /* The 'account_key' field has been deprecated. Please use 'account_key_secret_id' instead. */
+        @Deprecated
         public Builder accountKey(String accountKey) {
             return accountKey(Output.of(accountKey));
         }
@@ -544,11 +536,10 @@ public final class ConnectionStorageArgs extends com.pulumi.resources.ResourceAr
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+         * @deprecated The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
          * 
          */
-        @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
+        @Deprecated
         public Builder secretAccessKey(@Nullable Output<String> secretAccessKey) {
             $.secretAccessKey = secretAccessKey;
             return this;
@@ -559,11 +550,10 @@ public final class ConnectionStorageArgs extends com.pulumi.resources.ResourceAr
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+         * @deprecated The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
          * 
          */
-        @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
+        @Deprecated
         public Builder secretAccessKey(String secretAccessKey) {
             return secretAccessKey(Output.of(secretAccessKey));
         }
@@ -594,11 +584,10 @@ public final class ConnectionStorageArgs extends com.pulumi.resources.ResourceAr
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
+         * @deprecated The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
          * 
          */
-        @Deprecated /* The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead. */
+        @Deprecated
         public Builder serviceAccountKeyFile(@Nullable Output<String> serviceAccountKeyFile) {
             $.serviceAccountKeyFile = serviceAccountKeyFile;
             return this;
@@ -609,11 +598,10 @@ public final class ConnectionStorageArgs extends com.pulumi.resources.ResourceAr
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
+         * @deprecated The &#39;service_account_key_file&#39; field has been deprecated. Please use &#39;service_account_key_file_secret_id&#39; instead.
          * 
          */
-        @Deprecated /* The 'service_account_key_file' field has been deprecated. Please use 'service_account_key_file_secret_id' instead. */
+        @Deprecated
         public Builder serviceAccountKeyFile(String serviceAccountKeyFile) {
             return serviceAccountKeyFile(Output.of(serviceAccountKeyFile));
         }

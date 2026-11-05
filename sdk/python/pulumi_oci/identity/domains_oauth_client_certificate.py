@@ -1872,6 +1872,64 @@ class DomainsOauthClientCertificate(pulumi.CustomResource):
         __props__.__dict__["x509base64certificate"] = x509base64certificate
         return DomainsOauthClientCertificate(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            authorization: pulumi.Input[Optional[_builtins.str]] = None,
+            cert_end_date: pulumi.Input[Optional[_builtins.str]] = None,
+            cert_start_date: pulumi.Input[Optional[_builtins.str]] = None,
+            certificate_alias: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            external_id: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsOauthClientCertificateIdcsCreatedByArgs', 'DomainsOauthClientCertificateIdcsCreatedByArgsDict', 'outputs.DomainsOauthClientCertificateIdcsCreatedBy']]]]] = None,
+            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsOauthClientCertificateIdcsLastModifiedByArgs', 'DomainsOauthClientCertificateIdcsLastModifiedByArgsDict', 'outputs.DomainsOauthClientCertificateIdcsLastModifiedBy']]]]] = None,
+            idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_store_name: pulumi.Input[Optional[_builtins.str]] = None,
+            key_store_password: pulumi.Input[Optional[_builtins.str]] = None,
+            map: pulumi.Input[Optional[_builtins.str]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsOauthClientCertificateMetaArgs', 'DomainsOauthClientCertificateMetaArgsDict', 'outputs.DomainsOauthClientCertificateMeta']]]]] = None,
+            ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            sha1thumbprint: pulumi.Input[Optional[_builtins.str]] = None,
+            sha256thumbprint: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsOauthClientCertificateTagArgs', 'DomainsOauthClientCertificateTagArgsDict', 'outputs.DomainsOauthClientCertificateTag']]]]] = None,
+            tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            x509base64certificate: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["authorization"] = authorization
+        __props__["certEndDate"] = cert_end_date
+        __props__["certStartDate"] = cert_start_date
+        __props__["certificateAlias"] = certificate_alias
+        __props__["compartmentOcid"] = compartment_ocid
+        __props__["deleteInProgress"] = delete_in_progress
+        __props__["domainOcid"] = domain_ocid
+        __props__["externalId"] = external_id
+        __props__["idcsCreatedBies"] = idcs_created_bies
+        __props__["idcsEndpoint"] = idcs_endpoint
+        __props__["idcsLastModifiedBies"] = idcs_last_modified_bies
+        __props__["idcsLastUpgradedInRelease"] = idcs_last_upgraded_in_release
+        __props__["idcsPreventedOperations"] = idcs_prevented_operations
+        __props__["keyStoreId"] = key_store_id
+        __props__["keyStoreName"] = key_store_name
+        __props__["keyStorePassword"] = key_store_password
+        __props__["map"] = map
+        __props__["metas"] = metas
+        __props__["ocid"] = ocid
+        __props__["resourceTypeSchemaVersion"] = resource_type_schema_version
+        __props__["schemas"] = schemas
+        __props__["sha1thumbprint"] = sha1thumbprint
+        __props__["sha256thumbprint"] = sha256thumbprint
+        __props__["tags"] = tags
+        __props__["tenancyOcid"] = tenancy_ocid
+        __props__["x509base64certificate"] = x509base64certificate
+        return pulumi.runtime.exists_resource(None, 'oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def authorization(self) -> pulumi.Output[Optional[_builtins.str]]:

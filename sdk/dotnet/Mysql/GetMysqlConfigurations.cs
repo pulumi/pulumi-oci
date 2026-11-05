@@ -23,7 +23,6 @@ namespace Pulumi.Oci.Mysql
         ///   - DEFAULT-before-CUSTOM
         ///   - displayName ascending
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -62,7 +61,6 @@ namespace Pulumi.Oci.Mysql
         ///   - DEFAULT-before-CUSTOM
         ///   - displayName ascending
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -100,7 +98,6 @@ namespace Pulumi.Oci.Mysql
         ///   - shapeName, ascending
         ///   - DEFAULT-before-CUSTOM
         ///   - displayName ascending
-        /// 
         /// 
         /// ## Example Usage
         /// 

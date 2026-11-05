@@ -824,6 +824,56 @@ class BackupDestination(pulumi.CustomResource):
         __props__.__dict__["vpc_users"] = vpc_users
         return BackupDestination(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            associated_databases: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BackupDestinationAssociatedDatabaseArgs', 'BackupDestinationAssociatedDatabaseArgsDict', 'outputs.BackupDestinationAssociatedDatabase']]]]] = None,
+            associated_long_term_backup_count: pulumi.Input[Optional[_builtins.int]] = None,
+            associated_long_term_backups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BackupDestinationAssociatedLongTermBackupArgs', 'BackupDestinationAssociatedLongTermBackupArgsDict', 'outputs.BackupDestinationAssociatedLongTermBackup']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_string: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            local_mount_point_path: pulumi.Input[Optional[_builtins.str]] = None,
+            mount_type_details: pulumi.Input[Optional[Union['BackupDestinationMountTypeDetailsArgs', 'BackupDestinationMountTypeDetailsArgsDict', 'outputs.BackupDestinationMountTypeDetails']]] = None,
+            nfs_mount_type: pulumi.Input[Optional[_builtins.str]] = None,
+            nfs_server_export: pulumi.Input[Optional[_builtins.str]] = None,
+            nfs_servers: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_at_which_storage_details_are_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            total_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            utilized_storage_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            vpc_users: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["associatedDatabases"] = associated_databases
+        __props__["associatedLongTermBackupCount"] = associated_long_term_backup_count
+        __props__["associatedLongTermBackups"] = associated_long_term_backups
+        __props__["compartmentId"] = compartment_id
+        __props__["connectionString"] = connection_string
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["localMountPointPath"] = local_mount_point_path
+        __props__["mountTypeDetails"] = mount_type_details
+        __props__["nfsMountType"] = nfs_mount_type
+        __props__["nfsServerExport"] = nfs_server_export
+        __props__["nfsServers"] = nfs_servers
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeAtWhichStorageDetailsAreUpdated"] = time_at_which_storage_details_are_updated
+        __props__["timeCreated"] = time_created
+        __props__["totalStorageSizeInGbs"] = total_storage_size_in_gbs
+        __props__["type"] = type
+        __props__["utilizedStorageSizeInGbs"] = utilized_storage_size_in_gbs
+        __props__["vpcUsers"] = vpc_users
+        return pulumi.runtime.exists_resource(None, 'oci:Database/backupDestination:BackupDestination', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="associatedDatabases")
     def associated_databases(self) -> pulumi.Output[Sequence['outputs.BackupDestinationAssociatedDatabase']]:

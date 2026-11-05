@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Lists all the security checks in the specified compartment for security assessment of type TEMPLATE.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Lists all the security checks in the specified compartment for security assessment of type TEMPLATE.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -81,7 +79,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Security Assessment Checks in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Lists all the security checks in the specified compartment for security assessment of type TEMPLATE.
-        /// 
         /// 
         /// ## Example Usage
         /// 

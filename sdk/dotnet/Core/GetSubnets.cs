@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Core
         /// Lists the subnets in the specified VCN and the specified compartment.
         /// If the VCN ID is not provided, then the list includes the subnets from all VCNs in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Core
         /// Lists the subnets in the specified VCN and the specified compartment.
         /// If the VCN ID is not provided, then the list includes the subnets from all VCNs in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -78,7 +76,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the subnets in the specified VCN and the specified compartment.
         /// If the VCN ID is not provided, then the list includes the subnets from all VCNs in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

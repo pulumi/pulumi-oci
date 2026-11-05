@@ -612,6 +612,12 @@ func (MysqlDbSystemState) ElementType() reflect.Type {
 	return reflect.TypeOf((*mysqlDbSystemState)(nil)).Elem()
 }
 
+// MysqlDbSystemExists checks whether an existing MysqlDbSystem resource with the given ID exists.
+func MysqlDbSystemExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MysqlDbSystemState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Mysql/mysqlDbSystem:MysqlDbSystem", id, state, "", opts...)
+}
+
 type mysqlDbSystemArgs struct {
 	// (Updatable) The access mode indicating if the database access will be restricted only to administrators or not:
 	// * UNRESTRICTED (default): the access to the database is not restricted;

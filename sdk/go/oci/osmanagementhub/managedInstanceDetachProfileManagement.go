@@ -115,6 +115,12 @@ func (ManagedInstanceDetachProfileManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managedInstanceDetachProfileManagementState)(nil)).Elem()
 }
 
+// ManagedInstanceDetachProfileManagementExists checks whether an existing ManagedInstanceDetachProfileManagement resource with the given ID exists.
+func ManagedInstanceDetachProfileManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedInstanceDetachProfileManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/managedInstanceDetachProfileManagement:ManagedInstanceDetachProfileManagement", id, state, "", opts...)
+}
+
 type managedInstanceDetachProfileManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
 	//

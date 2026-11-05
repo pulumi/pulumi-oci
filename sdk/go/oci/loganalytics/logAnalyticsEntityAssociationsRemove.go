@@ -134,6 +134,12 @@ func (LogAnalyticsEntityAssociationsRemoveState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logAnalyticsEntityAssociationsRemoveState)(nil)).Elem()
 }
 
+// LogAnalyticsEntityAssociationsRemoveExists checks whether an existing LogAnalyticsEntityAssociationsRemove resource with the given ID exists.
+func LogAnalyticsEntityAssociationsRemoveExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogAnalyticsEntityAssociationsRemoveState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LogAnalytics/logAnalyticsEntityAssociationsRemove:LogAnalyticsEntityAssociationsRemove", id, state, "", opts...)
+}
+
 type logAnalyticsEntityAssociationsRemoveArgs struct {
 	// Destination entities OCIDs with which associations are to be deleted
 	AssociationEntities []string `pulumi:"associationEntities"`

@@ -45,7 +45,7 @@ public final class GetDomainsSettingResult {
      */
     private List<String> allowedForgotPasswordFlowReturnUrls;
     /**
-     * @return If specified, indicates the set of allowed notification redirect Urls which can be specified as the value of \&#34;notificationRedirectUrl\&#34; in the POST .../admin/v1/MePasswordResetRequestor request payload, which will then be included in the reset password email notification sent to a user as part of the forgot password / password reset flow.
+     * @return If specified, indicates the set of allowed notification redirect Urls which can be specified as the value of &#92;&#34;notificationRedirectUrl&#92;&#34; in the POST .../admin/v1/MePasswordResetRequestor request payload, which will then be included in the reset password email notification sent to a user as part of the forgot password / password reset flow.
      * 
      */
     private List<String> allowedNotificationRedirectUrls;
@@ -284,7 +284,7 @@ public final class GetDomainsSettingResult {
      */
     private List<GetDomainsSettingPurgeConfig> purgeConfigs;
     /**
-     * @return If reAuthWhenChangingMyAuthenticationFactors is true (default), this attribute specifies which re-authentication factor to use. Allowed value is \&#34;password\&#34;.
+     * @return If reAuthWhenChangingMyAuthenticationFactors is true (default), this attribute specifies which re-authentication factor to use. Allowed value is &#92;&#34;password&#92;&#34;.
      * 
      */
     private List<String> reAuthFactors;
@@ -295,7 +295,7 @@ public final class GetDomainsSettingResult {
     private Boolean reAuthWhenChangingMyAuthenticationFactors;
     private @Nullable String resourceTypeSchemaVersion;
     /**
-     * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard &#92;&#34;enterprise&#92;&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
     private List<String> schemas;
@@ -364,7 +364,7 @@ public final class GetDomainsSettingResult {
         return this.allowedForgotPasswordFlowReturnUrls;
     }
     /**
-     * @return If specified, indicates the set of allowed notification redirect Urls which can be specified as the value of \&#34;notificationRedirectUrl\&#34; in the POST .../admin/v1/MePasswordResetRequestor request payload, which will then be included in the reset password email notification sent to a user as part of the forgot password / password reset flow.
+     * @return If specified, indicates the set of allowed notification redirect Urls which can be specified as the value of &#92;&#34;notificationRedirectUrl&#92;&#34; in the POST .../admin/v1/MePasswordResetRequestor request payload, which will then be included in the reset password email notification sent to a user as part of the forgot password / password reset flow.
      * 
      */
     public List<String> allowedNotificationRedirectUrls() {
@@ -705,7 +705,7 @@ public final class GetDomainsSettingResult {
         return this.purgeConfigs;
     }
     /**
-     * @return If reAuthWhenChangingMyAuthenticationFactors is true (default), this attribute specifies which re-authentication factor to use. Allowed value is \&#34;password\&#34;.
+     * @return If reAuthWhenChangingMyAuthenticationFactors is true (default), this attribute specifies which re-authentication factor to use. Allowed value is &#92;&#34;password&#92;&#34;.
      * 
      */
     public List<String> reAuthFactors() {
@@ -722,7 +722,7 @@ public final class GetDomainsSettingResult {
         return Optional.ofNullable(this.resourceTypeSchemaVersion);
     }
     /**
-     * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard &#92;&#34;enterprise&#92;&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
     public List<String> schemas() {

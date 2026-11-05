@@ -912,6 +912,54 @@ class DelegationControl(pulumi.CustomResource):
         __props__.__dict__["vault_key_id"] = vault_key_id
         return DelegationControl(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            delegation_subscription_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_auto_approve_during_maintenance: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_message_format: pulumi.Input[Optional[_builtins.str]] = None,
+            notification_topic_id: pulumi.Input[Optional[_builtins.str]] = None,
+            num_approvals_required: pulumi.Input[Optional[_builtins.int]] = None,
+            pre_approved_service_provider_action_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            resource_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_deleted: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_key_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["delegationSubscriptionIds"] = delegation_subscription_ids
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["isAutoApproveDuringMaintenance"] = is_auto_approve_during_maintenance
+        __props__["lifecycleStateDetails"] = lifecycle_state_details
+        __props__["notificationMessageFormat"] = notification_message_format
+        __props__["notificationTopicId"] = notification_topic_id
+        __props__["numApprovalsRequired"] = num_approvals_required
+        __props__["preApprovedServiceProviderActionNames"] = pre_approved_service_provider_action_names
+        __props__["resourceIds"] = resource_ids
+        __props__["resourceType"] = resource_type
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeDeleted"] = time_deleted
+        __props__["timeUpdated"] = time_updated
+        __props__["vaultId"] = vault_id
+        __props__["vaultKeyId"] = vault_key_id
+        return pulumi.runtime.exists_resource(None, 'oci:DelegateAccessControl/delegationControl:DelegationControl', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

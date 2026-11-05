@@ -740,6 +740,12 @@ func (DomainsMySmtpCredentialState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsMySmtpCredentialState)(nil)).Elem()
 }
 
+// DomainsMySmtpCredentialExists checks whether an existing DomainsMySmtpCredential resource with the given ID exists.
+func DomainsMySmtpCredentialExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsMySmtpCredentialState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsMySmtpCredential:DomainsMySmtpCredential", id, state, "", opts...)
+}
+
 type domainsMySmtpCredentialArgs struct {
 	// The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization *string `pulumi:"authorization"`

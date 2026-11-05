@@ -353,6 +353,12 @@ func (ExadataInfrastructureComputeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*exadataInfrastructureComputeState)(nil)).Elem()
 }
 
+// ExadataInfrastructureComputeExists checks whether an existing ExadataInfrastructureCompute resource with the given ID exists.
+func ExadataInfrastructureComputeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExadataInfrastructureComputeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/exadataInfrastructureCompute:ExadataInfrastructureCompute", id, state, "", opts...)
+}
+
 type exadataInfrastructureComputeArgs struct {
 	// (Updatable) The activation zip file. If provided in config, exadata infrastructure will be activated after creation. Updates are not allowed on activated exadata infrastructure.
 	ActivationFile *string `pulumi:"activationFile"`

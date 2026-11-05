@@ -1071,6 +1071,58 @@ class DatabaseToolsMcpToolset(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return DatabaseToolsMcpToolset(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            allowed_roles: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_tools_mcp_server_id: pulumi.Input[Optional[_builtins.str]] = None,
+            default_execution_type: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            generative_ai_semantic_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetLockArgs', 'DatabaseToolsMcpToolsetLockArgsDict', 'outputs.DatabaseToolsMcpToolsetLock']]]]] = None,
+            reports: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetReportArgs', 'DatabaseToolsMcpToolsetReportArgsDict', 'outputs.DatabaseToolsMcpToolsetReport']]]]] = None,
+            source: pulumi.Input[Optional[Union['DatabaseToolsMcpToolsetSourceArgs', 'DatabaseToolsMcpToolsetSourceArgsDict', 'outputs.DatabaseToolsMcpToolsetSource']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            tool_description: pulumi.Input[Optional[_builtins.str]] = None,
+            tool_name: pulumi.Input[Optional[_builtins.str]] = None,
+            tools: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetToolArgs', 'DatabaseToolsMcpToolsetToolArgsDict', 'outputs.DatabaseToolsMcpToolsetTool']]]]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            variables: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseToolsMcpToolsetVariableArgs', 'DatabaseToolsMcpToolsetVariableArgsDict', 'outputs.DatabaseToolsMcpToolsetVariable']]]]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["allowedRoles"] = allowed_roles
+        __props__["compartmentId"] = compartment_id
+        __props__["databaseToolsMcpServerId"] = database_tools_mcp_server_id
+        __props__["defaultExecutionType"] = default_execution_type
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["generativeAiSemanticStoreId"] = generative_ai_semantic_store_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["locks"] = locks
+        __props__["reports"] = reports
+        __props__["source"] = source
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["toolDescription"] = tool_description
+        __props__["toolName"] = tool_name
+        __props__["tools"] = tools
+        __props__["type"] = type
+        __props__["variables"] = variables
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseTools/databaseToolsMcpToolset:DatabaseToolsMcpToolset', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="allowedRoles")
     def allowed_roles(self) -> pulumi.Output[Sequence[_builtins.str]]:

@@ -64,6 +64,17 @@ export class HttpMonitor extends pulumi.CustomResource {
         return new HttpMonitor(name, <any>state, { ...opts, id: id });
     }
 
+    /**
+     * Check whether an existing HttpMonitor resource with the given ID exists.
+     *
+     * @param id The _unique_ provider ID of the resource to check.
+     * @param state Any extra arguments used during the lookup.
+     * @param opts Optional settings to control the behavior of the CustomResource.
+     */
+    public static exists(id: pulumi.Input<string>, state?: HttpMonitorState, opts?: pulumi.CustomResourceOptions): pulumi.Output<boolean> {
+        return pulumi.runtime.existsResource("oci:HealthChecks/httpMonitor:HttpMonitor", id, <any>state || {}, { ...opts }, undefined);
+    }
+
     /** @internal */
     public static readonly __pulumiType = 'oci:HealthChecks/httpMonitor:HttpMonitor';
 

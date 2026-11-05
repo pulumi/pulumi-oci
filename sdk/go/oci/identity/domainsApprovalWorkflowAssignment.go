@@ -703,6 +703,12 @@ func (DomainsApprovalWorkflowAssignmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsApprovalWorkflowAssignmentState)(nil)).Elem()
 }
 
+// DomainsApprovalWorkflowAssignmentExists checks whether an existing DomainsApprovalWorkflowAssignment resource with the given ID exists.
+func DomainsApprovalWorkflowAssignmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsApprovalWorkflowAssignmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsApprovalWorkflowAssignment:DomainsApprovalWorkflowAssignment", id, state, "", opts...)
+}
+
 type domainsApprovalWorkflowAssignmentArgs struct {
 	// Details of the Approval Workflow
 	//

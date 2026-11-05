@@ -20,22 +20,20 @@ public final class GetAutonomousDatabaseWalletArgs extends com.pulumi.resources.
     /**
      * The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
-     * @deprecated
-     * The &#39;data.oci_database_autonomous_database_wallet&#39; resource has been deprecated. Please use &#39;oci_database_autonomous_database_wallet&#39; instead.
+     * @deprecated The &#39;data.oci_database_autonomous_database_wallet&#39; resource has been deprecated. Please use &#39;oci_database_autonomous_database_wallet&#39; instead.
      * 
      */
-    @Deprecated /* The 'data.oci_database_autonomous_database_wallet' resource has been deprecated. Please use 'oci_database_autonomous_database_wallet' instead. */
+    @Deprecated
     @Import(name="autonomousDatabaseId", required=true)
     private Output<String> autonomousDatabaseId;
 
     /**
      * @return The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
-     * @deprecated
-     * The &#39;data.oci_database_autonomous_database_wallet&#39; resource has been deprecated. Please use &#39;oci_database_autonomous_database_wallet&#39; instead.
+     * @deprecated The &#39;data.oci_database_autonomous_database_wallet&#39; resource has been deprecated. Please use &#39;oci_database_autonomous_database_wallet&#39; instead.
      * 
      */
-    @Deprecated /* The 'data.oci_database_autonomous_database_wallet' resource has been deprecated. Please use 'oci_database_autonomous_database_wallet' instead. */
+    @Deprecated
     public Output<String> autonomousDatabaseId() {
         return this.autonomousDatabaseId;
     }
@@ -129,11 +127,10 @@ public final class GetAutonomousDatabaseWalletArgs extends com.pulumi.resources.
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;data.oci_database_autonomous_database_wallet&#39; resource has been deprecated. Please use &#39;oci_database_autonomous_database_wallet&#39; instead.
+         * @deprecated The &#39;data.oci_database_autonomous_database_wallet&#39; resource has been deprecated. Please use &#39;oci_database_autonomous_database_wallet&#39; instead.
          * 
          */
-        @Deprecated /* The 'data.oci_database_autonomous_database_wallet' resource has been deprecated. Please use 'oci_database_autonomous_database_wallet' instead. */
+        @Deprecated
         public Builder autonomousDatabaseId(Output<String> autonomousDatabaseId) {
             $.autonomousDatabaseId = autonomousDatabaseId;
             return this;
@@ -144,11 +141,10 @@ public final class GetAutonomousDatabaseWalletArgs extends com.pulumi.resources.
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;data.oci_database_autonomous_database_wallet&#39; resource has been deprecated. Please use &#39;oci_database_autonomous_database_wallet&#39; instead.
+         * @deprecated The &#39;data.oci_database_autonomous_database_wallet&#39; resource has been deprecated. Please use &#39;oci_database_autonomous_database_wallet&#39; instead.
          * 
          */
-        @Deprecated /* The 'data.oci_database_autonomous_database_wallet' resource has been deprecated. Please use 'oci_database_autonomous_database_wallet' instead. */
+        @Deprecated
         public Builder autonomousDatabaseId(String autonomousDatabaseId) {
             return autonomousDatabaseId(Output.of(autonomousDatabaseId));
         }

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Opensearch
         /// 
         /// Returns a list of OpensearchClusterPipelines.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.Opensearch
         /// 
         /// Returns a list of OpensearchClusterPipelines.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.Opensearch
         /// This data source provides the list of Opensearch Cluster Pipelines in Oracle Cloud Infrastructure Opensearch service.
         /// 
         /// Returns a list of OpensearchClusterPipelines.
-        /// 
         /// 
         /// ## Example Usage
         /// 

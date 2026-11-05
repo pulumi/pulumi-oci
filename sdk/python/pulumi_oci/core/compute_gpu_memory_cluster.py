@@ -701,6 +701,40 @@ class ComputeGpuMemoryCluster(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return ComputeGpuMemoryCluster(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            availability_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            gpu_memory_cluster_scale_config: pulumi.Input[Optional[Union['ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgs', 'ComputeGpuMemoryClusterGpuMemoryClusterScaleConfigArgsDict', 'outputs.ComputeGpuMemoryClusterGpuMemoryClusterScaleConfig']]] = None,
+            gpu_memory_fabric_id: pulumi.Input[Optional[_builtins.str]] = None,
+            instance_configuration_id: pulumi.Input[Optional[_builtins.str]] = None,
+            private_ip_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            size: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availabilityDomain"] = availability_domain
+        __props__["compartmentId"] = compartment_id
+        __props__["computeClusterId"] = compute_cluster_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["gpuMemoryClusterScaleConfig"] = gpu_memory_cluster_scale_config
+        __props__["gpuMemoryFabricId"] = gpu_memory_fabric_id
+        __props__["instanceConfigurationId"] = instance_configuration_id
+        __props__["privateIpIds"] = private_ip_ids
+        __props__["size"] = size
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:Core/computeGpuMemoryCluster:ComputeGpuMemoryCluster', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
     def availability_domain(self) -> pulumi.Output[_builtins.str]:

@@ -219,6 +219,12 @@ func (AnnouncementSubscriptionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*announcementSubscriptionState)(nil)).Elem()
 }
 
+// AnnouncementSubscriptionExists checks whether an existing AnnouncementSubscription resource with the given ID exists.
+func AnnouncementSubscriptionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AnnouncementSubscriptionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:AnnouncementsService/announcementSubscription:AnnouncementSubscription", id, state, "", opts...)
+}
+
 type announcementSubscriptionArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the announcement subscription.
 	CompartmentId string `pulumi:"compartmentId"`

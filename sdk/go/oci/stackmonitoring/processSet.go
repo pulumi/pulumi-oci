@@ -182,6 +182,12 @@ func (ProcessSetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*processSetState)(nil)).Elem()
 }
 
+// ProcessSetExists checks whether an existing ProcessSet resource with the given ID exists.
+func ProcessSetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProcessSetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:StackMonitoring/processSet:ProcessSet", id, state, "", opts...)
+}
+
 type processSetArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

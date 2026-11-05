@@ -221,6 +221,20 @@ class AutonomousContainerDatabaseDataguardRoleChange(pulumi.CustomResource):
         __props__.__dict__["role"] = role
         return AutonomousContainerDatabaseDataguardRoleChange(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            autonomous_container_database_dataguard_association_id: pulumi.Input[Optional[_builtins.str]] = None,
+            autonomous_container_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_strings_type: pulumi.Input[Optional[_builtins.str]] = None,
+            role: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["autonomousContainerDatabaseDataguardAssociationId"] = autonomous_container_database_dataguard_association_id
+        __props__["autonomousContainerDatabaseId"] = autonomous_container_database_id
+        __props__["connectionStringsType"] = connection_strings_type
+        __props__["role"] = role
+        return pulumi.runtime.exists_resource(None, 'oci:Database/autonomousContainerDatabaseDataguardRoleChange:AutonomousContainerDatabaseDataguardRoleChange', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="autonomousContainerDatabaseDataguardAssociationId")
     def autonomous_container_database_dataguard_association_id(self) -> pulumi.Output[_builtins.str]:

@@ -879,6 +879,12 @@ func (DomainsOauth2clientCredentialState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsOauth2clientCredentialState)(nil)).Elem()
 }
 
+// DomainsOauth2clientCredentialExists checks whether an existing DomainsOauth2clientCredential resource with the given ID exists.
+func DomainsOauth2clientCredentialExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsOauth2clientCredentialState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsOauth2clientCredential:DomainsOauth2clientCredential", id, state, "", opts...)
+}
+
 type domainsOauth2clientCredentialArgs struct {
 	// A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets []string `pulumi:"attributeSets"`

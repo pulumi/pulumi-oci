@@ -204,6 +204,12 @@ func (ResourceActionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*resourceActionState)(nil)).Elem()
 }
 
+// ResourceActionExists checks whether an existing ResourceAction resource with the given ID exists.
+func ResourceActionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ResourceActionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Optimizer/resourceAction:ResourceAction", id, state, "", opts...)
+}
+
 type resourceActionArgs struct {
 	// The unique OCID associated with the resource action.
 	ResourceActionId string `pulumi:"resourceActionId"`

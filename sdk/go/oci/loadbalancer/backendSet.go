@@ -315,6 +315,12 @@ func (BackendSetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*backendSetState)(nil)).Elem()
 }
 
+// BackendSetExists checks whether an existing BackendSet resource with the given ID exists.
+func BackendSetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BackendSetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LoadBalancer/backendSet:BackendSet", id, state, "", opts...)
+}
+
 type backendSetArgs struct {
 	// (Updatable) The maximum number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting. If this is not set or set to 0 then the number of simultaneous connections the load balancer can make to any backend in the backend set unless the backend has its own maxConnections setting is unlimited.
 	//

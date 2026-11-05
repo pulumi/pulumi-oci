@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Oci
         /// For more information, see
         /// [Getting a Network Anchor's Details](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-network-anchor.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.Oci
         /// For more information, see
         /// [Getting a Network Anchor's Details](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-network-anchor.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -83,7 +81,6 @@ namespace Pulumi.Oci.Oci
         /// Gets details for the specified network anchor. The subscription OCID and service name are required.
         /// For more information, see
         /// [Getting a Network Anchor's Details](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-network-anchor.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

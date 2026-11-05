@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Core
         /// Lists the local peering gateways (LPGs) for the specified VCN and specified compartment.
         /// If the VCN ID is not provided, then the list includes the LPGs from all VCNs in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Core
         /// Lists the local peering gateways (LPGs) for the specified VCN and specified compartment.
         /// If the VCN ID is not provided, then the list includes the LPGs from all VCNs in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -74,7 +72,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the local peering gateways (LPGs) for the specified VCN and specified compartment.
         /// If the VCN ID is not provided, then the list includes the LPGs from all VCNs in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

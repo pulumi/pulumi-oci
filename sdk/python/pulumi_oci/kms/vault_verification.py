@@ -302,6 +302,24 @@ class VaultVerification(pulumi.CustomResource):
         __props__.__dict__["vault_replica_status"] = vault_replica_status
         return VaultVerification(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            crypto_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            management_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            replica_region: pulumi.Input[Optional[_builtins.str]] = None,
+            replica_vault_metadata: pulumi.Input[Optional[Union['VaultVerificationReplicaVaultMetadataArgs', 'VaultVerificationReplicaVaultMetadataArgsDict', 'outputs.VaultVerificationReplicaVaultMetadata']]] = None,
+            vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_replica_status: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["cryptoEndpoint"] = crypto_endpoint
+        __props__["managementEndpoint"] = management_endpoint
+        __props__["replicaRegion"] = replica_region
+        __props__["replicaVaultMetadata"] = replica_vault_metadata
+        __props__["vaultId"] = vault_id
+        __props__["vaultReplicaStatus"] = vault_replica_status
+        return pulumi.runtime.exists_resource(None, 'oci:Kms/vaultVerification:VaultVerification', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="cryptoEndpoint")
     def crypto_endpoint(self) -> pulumi.Output[_builtins.str]:

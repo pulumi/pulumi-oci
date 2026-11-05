@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Gets a list of Performance tuning Analysis.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Gets a list of Performance tuning Analysis.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.Jms
         /// This data source provides the list of Performance Tuning Analysis in Oracle Cloud Infrastructure Jms Utils service.
         /// 
         /// Gets a list of Performance tuning Analysis.
-        /// 
         /// 
         /// ## Example Usage
         /// 

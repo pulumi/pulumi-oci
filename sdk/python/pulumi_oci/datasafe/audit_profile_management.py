@@ -914,6 +914,58 @@ class AuditProfileManagement(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return AuditProfileManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            audit_collected_volume: pulumi.Input[Optional[_builtins.str]] = None,
+            audit_trails: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AuditProfileManagementAuditTrailArgs', 'AuditProfileManagementAuditTrailArgsDict', 'outputs.AuditProfileManagementAuditTrail']]]]] = None,
+            change_retention_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_override_global_paid_usage: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_override_global_retention_setting: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_paid_usage_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            offline_months: pulumi.Input[Optional[_builtins.int]] = None,
+            offline_months_source: pulumi.Input[Optional[_builtins.str]] = None,
+            online_months: pulumi.Input[Optional[_builtins.int]] = None,
+            online_months_source: pulumi.Input[Optional[_builtins.str]] = None,
+            paid_usage_source: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            target_type: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["auditCollectedVolume"] = audit_collected_volume
+        __props__["auditTrails"] = audit_trails
+        __props__["changeRetentionTrigger"] = change_retention_trigger
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["isOverrideGlobalPaidUsage"] = is_override_global_paid_usage
+        __props__["isOverrideGlobalRetentionSetting"] = is_override_global_retention_setting
+        __props__["isPaidUsageEnabled"] = is_paid_usage_enabled
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["offlineMonths"] = offline_months
+        __props__["offlineMonthsSource"] = offline_months_source
+        __props__["onlineMonths"] = online_months
+        __props__["onlineMonthsSource"] = online_months_source
+        __props__["paidUsageSource"] = paid_usage_source
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["targetId"] = target_id
+        __props__["targetType"] = target_type
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/auditProfileManagement:AuditProfileManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="auditCollectedVolume")
     def audit_collected_volume(self) -> pulumi.Output[_builtins.str]:

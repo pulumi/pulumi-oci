@@ -18,8 +18,7 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// Log analytics entity type property name. 
-        /// 
+        /// Log analytics entity type property name.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

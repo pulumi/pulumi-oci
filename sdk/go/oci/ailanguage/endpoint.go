@@ -206,6 +206,12 @@ func (EndpointState) ElementType() reflect.Type {
 	return reflect.TypeOf((*endpointState)(nil)).Elem()
 }
 
+// EndpointExists checks whether an existing Endpoint resource with the given ID exists.
+func EndpointExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *EndpointState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:AiLanguage/endpoint:Endpoint", id, state, "", opts...)
+}
+
 type endpointArgs struct {
 	// (Updatable) Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
 	Alias *string `pulumi:"alias"`

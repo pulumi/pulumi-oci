@@ -557,6 +557,12 @@ func (DataGuardAssociationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dataGuardAssociationState)(nil)).Elem()
 }
 
+// DataGuardAssociationExists checks whether an existing DataGuardAssociation resource with the given ID exists.
+func DataGuardAssociationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DataGuardAssociationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/dataGuardAssociation:DataGuardAssociation", id, state, "", opts...)
+}
+
 type dataGuardAssociationArgs struct {
 	// The name of the availability domain that the standby database DB system will be located in. For example- "Uocm:PHX-AD-1".
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`

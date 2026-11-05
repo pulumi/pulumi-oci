@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of masking errors in a masking run based on the specified query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of masking errors in a masking run based on the specified query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Masking Report Masking Errors in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets a list of masking errors in a masking run based on the specified query parameters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

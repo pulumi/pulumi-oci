@@ -425,6 +425,12 @@ func (MigrationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*migrationState)(nil)).Elem()
 }
 
+// MigrationExists checks whether an existing Migration resource with the given ID exists.
+func MigrationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MigrationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseMigration/migration:Migration", id, state, "", opts...)
+}
+
 type migrationArgs struct {
 	// (Updatable) List of Migration Parameter objects.
 	AdvancedParameters []MigrationAdvancedParameter `pulumi:"advancedParameters"`

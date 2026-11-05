@@ -157,6 +157,12 @@ func (PublicIpPoolState) ElementType() reflect.Type {
 	return reflect.TypeOf((*publicIpPoolState)(nil)).Elem()
 }
 
+// PublicIpPoolExists checks whether an existing PublicIpPool resource with the given ID exists.
+func PublicIpPoolExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PublicIpPoolState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/publicIpPool:PublicIpPool", id, state, "", opts...)
+}
+
 type publicIpPoolArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP pool.
 	CompartmentId string `pulumi:"compartmentId"`

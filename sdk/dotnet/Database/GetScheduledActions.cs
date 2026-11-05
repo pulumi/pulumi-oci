@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the Scheduled Action resources in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Lists the Scheduled Action resources in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Scheduled Actions in Oracle Cloud Infrastructure Database service.
         /// 
         /// Lists the Scheduled Action resources in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

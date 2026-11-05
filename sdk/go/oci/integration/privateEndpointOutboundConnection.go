@@ -74,6 +74,12 @@ func (PrivateEndpointOutboundConnectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*privateEndpointOutboundConnectionState)(nil)).Elem()
 }
 
+// PrivateEndpointOutboundConnectionExists checks whether an existing PrivateEndpointOutboundConnection resource with the given ID exists.
+func PrivateEndpointOutboundConnectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PrivateEndpointOutboundConnectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Integration/privateEndpointOutboundConnection:PrivateEndpointOutboundConnection", id, state, "", opts...)
+}
+
 type privateEndpointOutboundConnectionArgs struct {
 	IntegrationInstanceId string   `pulumi:"integrationInstanceId"`
 	NsgIds                []string `pulumi:"nsgIds"`

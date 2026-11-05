@@ -174,6 +174,12 @@ func (LogSavedSearchState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logSavedSearchState)(nil)).Elem()
 }
 
+// LogSavedSearchExists checks whether an existing LogSavedSearch resource with the given ID exists.
+func LogSavedSearchExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogSavedSearchState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Logging/logSavedSearch:LogSavedSearch", id, state, "", opts...)
+}
+
 type logSavedSearchArgs struct {
 	// (Updatable) The OCID of the compartment that the resource belongs to.
 	CompartmentId string `pulumi:"compartmentId"`

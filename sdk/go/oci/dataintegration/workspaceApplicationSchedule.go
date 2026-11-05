@@ -241,6 +241,12 @@ func (WorkspaceApplicationScheduleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*workspaceApplicationScheduleState)(nil)).Elem()
 }
 
+// WorkspaceApplicationScheduleExists checks whether an existing WorkspaceApplicationSchedule resource with the given ID exists.
+func WorkspaceApplicationScheduleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WorkspaceApplicationScheduleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataIntegration/workspaceApplicationSchedule:WorkspaceApplicationSchedule", id, state, "", opts...)
+}
+
 type workspaceApplicationScheduleArgs struct {
 	// The application key.
 	ApplicationKey string `pulumi:"applicationKey"`

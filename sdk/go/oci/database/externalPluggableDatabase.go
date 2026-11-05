@@ -254,6 +254,12 @@ func (ExternalPluggableDatabaseState) ElementType() reflect.Type {
 	return reflect.TypeOf((*externalPluggableDatabaseState)(nil)).Elem()
 }
 
+// ExternalPluggableDatabaseExists checks whether an existing ExternalPluggableDatabase resource with the given ID exists.
+func ExternalPluggableDatabaseExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalPluggableDatabaseState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/externalPluggableDatabase:ExternalPluggableDatabase", id, state, "", opts...)
+}
+
 type externalPluggableDatabaseArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -1008,6 +1008,70 @@ class MysqlBackup(pulumi.CustomResource):
         __props__.__dict__["validate_trigger"] = validate_trigger
         return MysqlBackup(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            backup_size_in_gbs: pulumi.Input[Optional[_builtins.int]] = None,
+            backup_type: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_validation_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlBackupBackupValidationDetailArgs', 'MysqlBackupBackupValidationDetailArgsDict', 'outputs.MysqlBackupBackupValidationDetail']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            creation_type: pulumi.Input[Optional[_builtins.str]] = None,
+            data_storage_size_in_gb: pulumi.Input[Optional[_builtins.int]] = None,
+            db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_system_snapshot_summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlBackupDbSystemSnapshotSummaryArgs', 'MysqlBackupDbSystemSnapshotSummaryArgsDict', 'outputs.MysqlBackupDbSystemSnapshotSummary']]]]] = None,
+            db_system_snapshots: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlBackupDbSystemSnapshotArgs', 'MysqlBackupDbSystemSnapshotArgsDict', 'outputs.MysqlBackupDbSystemSnapshot']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            encrypt_data: pulumi.Input[Optional[Union['MysqlBackupEncryptDataArgs', 'MysqlBackupEncryptDataArgsDict', 'outputs.MysqlBackupEncryptData']]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            immediate_source_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            mysql_version: pulumi.Input[Optional[_builtins.str]] = None,
+            original_source_backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+            retention_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+            shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+            soft_delete: pulumi.Input[Optional[_builtins.str]] = None,
+            source_details: pulumi.Input[Optional[Union['MysqlBackupSourceDetailsArgs', 'MysqlBackupSourceDetailsArgsDict', 'outputs.MysqlBackupSourceDetails']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_copy_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            validate_backup_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MysqlBackupValidateBackupDetailArgs', 'MysqlBackupValidateBackupDetailArgsDict', 'outputs.MysqlBackupValidateBackupDetail']]]]] = None,
+            validate_trigger: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["backupSizeInGbs"] = backup_size_in_gbs
+        __props__["backupType"] = backup_type
+        __props__["backupValidationDetails"] = backup_validation_details
+        __props__["compartmentId"] = compartment_id
+        __props__["creationType"] = creation_type
+        __props__["dataStorageSizeInGb"] = data_storage_size_in_gb
+        __props__["dbSystemId"] = db_system_id
+        __props__["dbSystemSnapshotSummaries"] = db_system_snapshot_summaries
+        __props__["dbSystemSnapshots"] = db_system_snapshots
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["encryptData"] = encrypt_data
+        __props__["freeformTags"] = freeform_tags
+        __props__["immediateSourceBackupId"] = immediate_source_backup_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["mysqlVersion"] = mysql_version
+        __props__["originalSourceBackupId"] = original_source_backup_id
+        __props__["retentionInDays"] = retention_in_days
+        __props__["shapeName"] = shape_name
+        __props__["softDelete"] = soft_delete
+        __props__["sourceDetails"] = source_details
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCopyCreated"] = time_copy_created
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["validateBackupDetails"] = validate_backup_details
+        __props__["validateTrigger"] = validate_trigger
+        return pulumi.runtime.exists_resource(None, 'oci:Mysql/mysqlBackup:MysqlBackup', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="backupSizeInGbs")
     def backup_size_in_gbs(self) -> pulumi.Output[_builtins.int]:

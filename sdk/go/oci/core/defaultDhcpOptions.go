@@ -89,6 +89,12 @@ func (DefaultDhcpOptionsState) ElementType() reflect.Type {
 	return reflect.TypeOf((*defaultDhcpOptionsState)(nil)).Elem()
 }
 
+// DefaultDhcpOptionsExists checks whether an existing DefaultDhcpOptions resource with the given ID exists.
+func DefaultDhcpOptionsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DefaultDhcpOptionsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/defaultDhcpOptions:DefaultDhcpOptions", id, state, "", opts...)
+}
+
 type defaultDhcpOptionsArgs struct {
 	CompartmentId           *string                    `pulumi:"compartmentId"`
 	DefinedTags             map[string]string          `pulumi:"definedTags"`

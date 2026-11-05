@@ -725,6 +725,50 @@ class Certificate(pulumi.CustomResource):
         __props__.__dict__["version"] = version
         return Certificate(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            certificate_data: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            extensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateExtensionArgs', 'CertificateExtensionArgsDict', 'outputs.CertificateExtension']]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_trust_verification_disabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            issued_by: pulumi.Input[Optional[_builtins.str]] = None,
+            issuer_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateIssuerNameArgs', 'CertificateIssuerNameArgsDict', 'outputs.CertificateIssuerName']]]]] = None,
+            private_key_data: pulumi.Input[Optional[_builtins.str]] = None,
+            public_key_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificatePublicKeyInfoArgs', 'CertificatePublicKeyInfoArgsDict', 'outputs.CertificatePublicKeyInfo']]]]] = None,
+            serial_number: pulumi.Input[Optional[_builtins.str]] = None,
+            signature_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subject_names: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateSubjectNameArgs', 'CertificateSubjectNameArgsDict', 'outputs.CertificateSubjectName']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_not_valid_after: pulumi.Input[Optional[_builtins.str]] = None,
+            time_not_valid_before: pulumi.Input[Optional[_builtins.str]] = None,
+            version: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["certificateData"] = certificate_data
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["extensions"] = extensions
+        __props__["freeformTags"] = freeform_tags
+        __props__["isTrustVerificationDisabled"] = is_trust_verification_disabled
+        __props__["issuedBy"] = issued_by
+        __props__["issuerNames"] = issuer_names
+        __props__["privateKeyData"] = private_key_data
+        __props__["publicKeyInfos"] = public_key_infos
+        __props__["serialNumber"] = serial_number
+        __props__["signatureAlgorithm"] = signature_algorithm
+        __props__["state"] = state
+        __props__["subjectNames"] = subject_names
+        __props__["timeCreated"] = time_created
+        __props__["timeNotValidAfter"] = time_not_valid_after
+        __props__["timeNotValidBefore"] = time_not_valid_before
+        __props__["version"] = version
+        return pulumi.runtime.exists_resource(None, 'oci:Waas/certificate:Certificate', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="certificateData")
     def certificate_data(self) -> pulumi.Output[_builtins.str]:

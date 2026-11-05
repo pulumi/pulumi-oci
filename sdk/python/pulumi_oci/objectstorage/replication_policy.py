@@ -494,6 +494,32 @@ class ReplicationPolicy(pulumi.CustomResource):
         __props__.__dict__["time_last_sync"] = time_last_sync
         return ReplicationPolicy(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            bucket: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_object_in_destination_bucket: pulumi.Input[Optional[_builtins.str]] = None,
+            destination_bucket_name: pulumi.Input[Optional[_builtins.str]] = None,
+            destination_region_name: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            status_message: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_sync: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["bucket"] = bucket
+        __props__["deleteObjectInDestinationBucket"] = delete_object_in_destination_bucket
+        __props__["destinationBucketName"] = destination_bucket_name
+        __props__["destinationRegionName"] = destination_region_name
+        __props__["name"] = name
+        __props__["namespace"] = namespace
+        __props__["status"] = status
+        __props__["statusMessage"] = status_message
+        __props__["timeCreated"] = time_created
+        __props__["timeLastSync"] = time_last_sync
+        return pulumi.runtime.exists_resource(None, 'oci:ObjectStorage/replicationPolicy:ReplicationPolicy', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def bucket(self) -> pulumi.Output[_builtins.str]:

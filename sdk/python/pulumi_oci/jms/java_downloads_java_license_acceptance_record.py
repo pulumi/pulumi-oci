@@ -473,6 +473,34 @@ class JavaDownloadsJavaLicenseAcceptanceRecord(pulumi.CustomResource):
         __props__.__dict__["time_last_updated"] = time_last_updated
         return JavaDownloadsJavaLicenseAcceptanceRecord(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgs', 'JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArgsDict', 'outputs.JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            last_updated_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgs', 'JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedByArgsDict', 'outputs.JavaDownloadsJavaLicenseAcceptanceRecordLastUpdatedBy']]]]] = None,
+            license_acceptance_status: pulumi.Input[Optional[_builtins.str]] = None,
+            license_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_accepted: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["createdBies"] = created_bies
+        __props__["definedTags"] = defined_tags
+        __props__["freeformTags"] = freeform_tags
+        __props__["lastUpdatedBies"] = last_updated_bies
+        __props__["licenseAcceptanceStatus"] = license_acceptance_status
+        __props__["licenseType"] = license_type
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeAccepted"] = time_accepted
+        __props__["timeLastUpdated"] = time_last_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Jms/javaDownloadsJavaLicenseAcceptanceRecord:JavaDownloadsJavaLicenseAcceptanceRecord', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

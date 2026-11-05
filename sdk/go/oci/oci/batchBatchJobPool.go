@@ -180,6 +180,12 @@ func (BatchBatchJobPoolState) ElementType() reflect.Type {
 	return reflect.TypeOf((*batchBatchJobPoolState)(nil)).Elem()
 }
 
+// BatchBatchJobPoolExists checks whether an existing BatchBatchJobPool resource with the given ID exists.
+func BatchBatchJobPoolExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BatchBatchJobPoolState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/batchBatchJobPool:BatchBatchJobPool", id, state, "", opts...)
+}
+
 type batchBatchJobPoolArgs struct {
 	// The OCID of batch context.
 	BatchContextId string `pulumi:"batchContextId"`

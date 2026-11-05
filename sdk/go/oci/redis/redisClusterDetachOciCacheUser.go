@@ -120,6 +120,12 @@ func (RedisClusterDetachOciCacheUserState) ElementType() reflect.Type {
 	return reflect.TypeOf((*redisClusterDetachOciCacheUserState)(nil)).Elem()
 }
 
+// RedisClusterDetachOciCacheUserExists checks whether an existing RedisClusterDetachOciCacheUser resource with the given ID exists.
+func RedisClusterDetachOciCacheUserExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RedisClusterDetachOciCacheUserState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Redis/redisClusterDetachOciCacheUser:RedisClusterDetachOciCacheUser", id, state, "", opts...)
+}
+
 type redisClusterDetachOciCacheUserArgs struct {
 	// List of Oracle Cloud Infrastructure cache user unique IDs (OCIDs).
 	OciCacheUsers []string `pulumi:"ociCacheUsers"`

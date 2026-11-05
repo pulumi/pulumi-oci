@@ -610,6 +610,44 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
         __props__.__dict__["time_start"] = time_start
         return JavaDownloadsJavaDownloadReport(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            checksum_type: pulumi.Input[Optional[_builtins.str]] = None,
+            checksum_value: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JavaDownloadsJavaDownloadReportCreatedByArgs', 'JavaDownloadsJavaDownloadReportCreatedByArgsDict', 'outputs.JavaDownloadsJavaDownloadReportCreatedBy']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            file_size_in_bytes: pulumi.Input[Optional[_builtins.str]] = None,
+            format: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            sort_by: pulumi.Input[Optional[_builtins.str]] = None,
+            sort_order: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_end: pulumi.Input[Optional[_builtins.str]] = None,
+            time_start: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["checksumType"] = checksum_type
+        __props__["checksumValue"] = checksum_value
+        __props__["compartmentId"] = compartment_id
+        __props__["createdBies"] = created_bies
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["fileSizeInBytes"] = file_size_in_bytes
+        __props__["format"] = format
+        __props__["freeformTags"] = freeform_tags
+        __props__["sortBy"] = sort_by
+        __props__["sortOrder"] = sort_order
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeEnd"] = time_end
+        __props__["timeStart"] = time_start
+        return pulumi.runtime.exists_resource(None, 'oci:Jms/javaDownloadsJavaDownloadReport:JavaDownloadsJavaDownloadReport', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="checksumType")
     def checksum_type(self) -> pulumi.Output[_builtins.str]:

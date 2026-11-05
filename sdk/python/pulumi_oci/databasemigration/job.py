@@ -572,6 +572,44 @@ class Job(pulumi.CustomResource):
         __props__.__dict__["unsupported_objects"] = unsupported_objects
         return Job(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            collect_traces_datas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobCollectTracesDataArgs', 'JobCollectTracesDataArgsDict', 'outputs.JobCollectTracesData']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            job_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            migration_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parameter_file_versions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobParameterFileVersionArgs', 'JobParameterFileVersionArgsDict', 'outputs.JobParameterFileVersion']]]]] = None,
+            progresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobProgressArgs', 'JobProgressArgsDict', 'outputs.JobProgress']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            suspend_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            unsupported_objects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobUnsupportedObjectArgs', 'JobUnsupportedObjectArgsDict', 'outputs.JobUnsupportedObject']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["collectTracesDatas"] = collect_traces_datas
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["jobId"] = job_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["migrationId"] = migration_id
+        __props__["parameterFileVersions"] = parameter_file_versions
+        __props__["progresses"] = progresses
+        __props__["state"] = state
+        __props__["suspendTrigger"] = suspend_trigger
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["type"] = type
+        __props__["unsupportedObjects"] = unsupported_objects
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseMigration/job:Job', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="collectTracesDatas")
     def collect_traces_datas(self) -> pulumi.Output[Sequence['outputs.JobCollectTracesData']]:

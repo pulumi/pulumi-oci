@@ -545,6 +545,30 @@ class NetworkFirewallPolicySecurityRule(pulumi.CustomResource):
         __props__.__dict__["priority_order"] = priority_order
         return NetworkFirewallPolicySecurityRule(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            condition: pulumi.Input[Optional[Union['NetworkFirewallPolicySecurityRuleConditionArgs', 'NetworkFirewallPolicySecurityRuleConditionArgsDict', 'outputs.NetworkFirewallPolicySecurityRuleCondition']]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            inspection: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            positions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NetworkFirewallPolicySecurityRulePositionArgs', 'NetworkFirewallPolicySecurityRulePositionArgsDict', 'outputs.NetworkFirewallPolicySecurityRulePosition']]]]] = None,
+            priority_order: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["action"] = action
+        __props__["condition"] = condition
+        __props__["description"] = description
+        __props__["inspection"] = inspection
+        __props__["name"] = name
+        __props__["networkFirewallPolicyId"] = network_firewall_policy_id
+        __props__["parentResourceId"] = parent_resource_id
+        __props__["positions"] = positions
+        __props__["priorityOrder"] = priority_order
+        return pulumi.runtime.exists_resource(None, 'oci:NetworkFirewall/networkFirewallPolicySecurityRule:NetworkFirewallPolicySecurityRule', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def action(self) -> pulumi.Output[_builtins.str]:

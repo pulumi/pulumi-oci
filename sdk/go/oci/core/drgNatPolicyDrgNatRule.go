@@ -145,6 +145,12 @@ func (DrgNatPolicyDrgNatRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*drgNatPolicyDrgNatRuleState)(nil)).Elem()
 }
 
+// DrgNatPolicyDrgNatRuleExists checks whether an existing DrgNatPolicyDrgNatRule resource with the given ID exists.
+func DrgNatPolicyDrgNatRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DrgNatPolicyDrgNatRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/drgNatPolicyDrgNatRule:DrgNatPolicyDrgNatRule", id, state, "", opts...)
+}
+
 type drgNatPolicyDrgNatRuleArgs struct {
 	// The DrgNatPolicy's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
 	DrgNatPolicyId string `pulumi:"drgNatPolicyId"`

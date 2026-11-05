@@ -492,6 +492,28 @@ class NetworkFirewallPolicyMappedSecret(pulumi.CustomResource):
         __props__.__dict__["version_number"] = version_number
         return NetworkFirewallPolicyMappedSecret(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_firewall_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            version_number: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["description"] = description
+        __props__["name"] = name
+        __props__["networkFirewallPolicyId"] = network_firewall_policy_id
+        __props__["parentResourceId"] = parent_resource_id
+        __props__["source"] = source
+        __props__["type"] = type
+        __props__["vaultSecretId"] = vault_secret_id
+        __props__["versionNumber"] = version_number
+        return pulumi.runtime.exists_resource(None, 'oci:NetworkFirewall/networkFirewallPolicyMappedSecret:NetworkFirewallPolicyMappedSecret', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Output[Optional[_builtins.str]]:

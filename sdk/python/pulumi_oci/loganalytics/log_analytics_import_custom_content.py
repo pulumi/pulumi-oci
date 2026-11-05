@@ -428,6 +428,30 @@ class LogAnalyticsImportCustomContent(pulumi.CustomResource):
         __props__.__dict__["source_names"] = source_names
         return LogAnalyticsImportCustomContent(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            change_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LogAnalyticsImportCustomContentChangeListArgs', 'LogAnalyticsImportCustomContentChangeListArgsDict', 'outputs.LogAnalyticsImportCustomContentChangeList']]]]] = None,
+            content_name: pulumi.Input[Optional[_builtins.str]] = None,
+            expect: pulumi.Input[Optional[_builtins.str]] = None,
+            field_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            import_custom_content_file: pulumi.Input[Optional[_builtins.str]] = None,
+            is_overwrite: pulumi.Input[Optional[_builtins.bool]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            parser_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            source_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["changeLists"] = change_lists
+        __props__["contentName"] = content_name
+        __props__["expect"] = expect
+        __props__["fieldNames"] = field_names
+        __props__["importCustomContentFile"] = import_custom_content_file
+        __props__["isOverwrite"] = is_overwrite
+        __props__["namespace"] = namespace
+        __props__["parserNames"] = parser_names
+        __props__["sourceNames"] = source_names
+        return pulumi.runtime.exists_resource(None, 'oci:LogAnalytics/logAnalyticsImportCustomContent:LogAnalyticsImportCustomContent', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="changeLists")
     def change_lists(self) -> pulumi.Output[Sequence['outputs.LogAnalyticsImportCustomContentChangeList']]:

@@ -326,6 +326,20 @@ class AssessmentAssessorAction(pulumi.CustomResource):
         __props__.__dict__["items"] = items
         return AssessmentAssessorAction(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            assessor_action: pulumi.Input[Optional[_builtins.str]] = None,
+            assessor_name: pulumi.Input[Optional[_builtins.str]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AssessmentAssessorActionItemArgs', 'AssessmentAssessorActionItemArgsDict', 'outputs.AssessmentAssessorActionItem']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["assessmentId"] = assessment_id
+        __props__["assessorAction"] = assessor_action
+        __props__["assessorName"] = assessor_name
+        __props__["items"] = items
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseMigration/assessmentAssessorAction:AssessmentAssessorAction', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="assessmentId")
     def assessment_id(self) -> pulumi.Output[_builtins.str]:

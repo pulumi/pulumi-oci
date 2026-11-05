@@ -16,7 +16,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Lists the Pipelines in the compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Lists the Pipelines in the compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.GoldenGate
         /// This data source provides the list of Pipelines in Oracle Cloud Infrastructure Golden Gate service.
         /// 
         /// Lists the Pipelines in the compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

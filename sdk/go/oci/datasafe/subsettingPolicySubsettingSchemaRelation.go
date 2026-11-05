@@ -212,6 +212,12 @@ func (SubsettingPolicySubsettingSchemaRelationState) ElementType() reflect.Type 
 	return reflect.TypeOf((*subsettingPolicySubsettingSchemaRelationState)(nil)).Elem()
 }
 
+// SubsettingPolicySubsettingSchemaRelationExists checks whether an existing SubsettingPolicySubsettingSchemaRelation resource with the given ID exists.
+func SubsettingPolicySubsettingSchemaRelationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SubsettingPolicySubsettingSchemaRelationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/subsettingPolicySubsettingSchemaRelation:SubsettingPolicySubsettingSchemaRelation", id, state, "", opts...)
+}
+
 type subsettingPolicySubsettingSchemaRelationArgs struct {
 	// Unique identifiers identifying the child columns in the relation.
 	ChildColumns []string `pulumi:"childColumns"`

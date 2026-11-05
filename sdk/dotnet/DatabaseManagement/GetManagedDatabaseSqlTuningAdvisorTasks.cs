@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Lists the SQL Tuning Advisor tasks for the specified Managed Database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Lists the SQL Tuning Advisor tasks for the specified Managed Database.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// This data source provides the list of Managed Database Sql Tuning Advisor Tasks in Oracle Cloud Infrastructure Database Management service.
         /// 
         /// Lists the SQL Tuning Advisor tasks for the specified Managed Database.
-        /// 
         /// 
         /// ## Example Usage
         /// 

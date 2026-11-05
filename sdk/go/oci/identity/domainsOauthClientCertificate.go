@@ -927,6 +927,12 @@ func (DomainsOauthClientCertificateState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsOauthClientCertificateState)(nil)).Elem()
 }
 
+// DomainsOauthClientCertificateExists checks whether an existing DomainsOauthClientCertificate resource with the given ID exists.
+func DomainsOauthClientCertificateExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsOauthClientCertificateState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsOauthClientCertificate:DomainsOauthClientCertificate", id, state, "", opts...)
+}
+
 type domainsOauthClientCertificateArgs struct {
 	// The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization *string `pulumi:"authorization"`

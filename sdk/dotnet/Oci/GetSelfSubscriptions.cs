@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Oci
         /// Lists the subscriptions which have been created in the specified compartment.
         /// You can filter results by specifying query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Oci
         /// Lists the subscriptions which have been created in the specified compartment.
         /// You can filter results by specifying query parameters.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -78,7 +76,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Lists the subscriptions which have been created in the specified compartment.
         /// You can filter results by specifying query parameters.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -136,6 +136,12 @@ func (ConfigurationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*configurationState)(nil)).Elem()
 }
 
+// ConfigurationExists checks whether an existing Configuration resource with the given ID exists.
+func ConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LicenseManager/configuration:Configuration", id, state, "", opts...)
+}
+
 type configurationArgs struct {
 	// (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) used for the license record, product license, and configuration.
 	CompartmentId string `pulumi:"compartmentId"`

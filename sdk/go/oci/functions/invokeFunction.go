@@ -166,6 +166,12 @@ func (InvokeFunctionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*invokeFunctionState)(nil)).Elem()
 }
 
+// InvokeFunctionExists checks whether an existing InvokeFunction resource with the given ID exists.
+func InvokeFunctionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *InvokeFunctionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Functions/invokeFunction:InvokeFunction", id, state, "", opts...)
+}
+
 type invokeFunctionArgs struct {
 	// Encodes the response returned, if any, in base64. It is recommended to set this to `true` to avoid corrupting the returned response, if any, in Terraform state. The default value is `false`.
 	Base64EncodeContent *bool `pulumi:"base64EncodeContent"`

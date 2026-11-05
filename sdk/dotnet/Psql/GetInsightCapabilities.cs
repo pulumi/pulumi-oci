@@ -19,8 +19,7 @@ namespace Pulumi.Oci.Psql
         /// - Supported insight types
         /// - Supported insight data types for each insight type
         /// - Filters, sorting, pagination, limits, and data contracts
-        /// required to use the unified insights API.
-        /// 
+        ///   required to use the unified insights API.
         /// 
         /// ## Example Usage
         /// 
@@ -48,8 +47,7 @@ namespace Pulumi.Oci.Psql
         /// - Supported insight types
         /// - Supported insight data types for each insight type
         /// - Filters, sorting, pagination, limits, and data contracts
-        /// required to use the unified insights API.
-        /// 
+        ///   required to use the unified insights API.
         /// 
         /// ## Example Usage
         /// 
@@ -77,8 +75,7 @@ namespace Pulumi.Oci.Psql
         /// - Supported insight types
         /// - Supported insight data types for each insight type
         /// - Filters, sorting, pagination, limits, and data contracts
-        /// required to use the unified insights API.
-        /// 
+        ///   required to use the unified insights API.
         /// 
         /// ## Example Usage
         /// 

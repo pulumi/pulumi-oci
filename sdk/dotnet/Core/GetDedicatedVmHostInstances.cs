@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Returns the list of instances on the dedicated virtual machine hosts that match the specified criteria.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Returns the list of instances on the dedicated virtual machine hosts that match the specified criteria.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides the list of Dedicated Vm Hosts Instances in Oracle Cloud Infrastructure Core service.
         /// 
         /// Returns the list of instances on the dedicated virtual machine hosts that match the specified criteria.
-        /// 
         /// 
         /// ## Example Usage
         /// 

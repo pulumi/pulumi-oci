@@ -808,6 +808,32 @@ class BackendSet(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         return BackendSet(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            backend_max_connections: pulumi.Input[Optional[_builtins.int]] = None,
+            backends: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BackendSetBackendArgs', 'BackendSetBackendArgsDict', 'outputs.BackendSetBackend']]]]] = None,
+            health_checker: pulumi.Input[Optional[Union['BackendSetHealthCheckerArgs', 'BackendSetHealthCheckerArgsDict', 'outputs.BackendSetHealthChecker']]] = None,
+            lb_cookie_session_persistence_configuration: pulumi.Input[Optional[Union['BackendSetLbCookieSessionPersistenceConfigurationArgs', 'BackendSetLbCookieSessionPersistenceConfigurationArgsDict', 'outputs.BackendSetLbCookieSessionPersistenceConfiguration']]] = None,
+            load_balancer_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            policy: pulumi.Input[Optional[_builtins.str]] = None,
+            session_persistence_configuration: pulumi.Input[Optional[Union['BackendSetSessionPersistenceConfigurationArgs', 'BackendSetSessionPersistenceConfigurationArgsDict', 'outputs.BackendSetSessionPersistenceConfiguration']]] = None,
+            ssl_configuration: pulumi.Input[Optional[Union['BackendSetSslConfigurationArgs', 'BackendSetSslConfigurationArgsDict', 'outputs.BackendSetSslConfiguration']]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["backendMaxConnections"] = backend_max_connections
+        __props__["backends"] = backends
+        __props__["healthChecker"] = health_checker
+        __props__["lbCookieSessionPersistenceConfiguration"] = lb_cookie_session_persistence_configuration
+        __props__["loadBalancerId"] = load_balancer_id
+        __props__["name"] = name
+        __props__["policy"] = policy
+        __props__["sessionPersistenceConfiguration"] = session_persistence_configuration
+        __props__["sslConfiguration"] = ssl_configuration
+        __props__["state"] = state
+        return pulumi.runtime.exists_resource(None, 'oci:LoadBalancer/backendSet:BackendSet', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="backendMaxConnections")
     def backend_max_connections(self) -> pulumi.Output[_builtins.int]:

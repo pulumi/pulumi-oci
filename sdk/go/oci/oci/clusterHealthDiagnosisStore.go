@@ -195,6 +195,12 @@ func (ClusterHealthDiagnosisStoreState) ElementType() reflect.Type {
 	return reflect.TypeOf((*clusterHealthDiagnosisStoreState)(nil)).Elem()
 }
 
+// ClusterHealthDiagnosisStoreExists checks whether an existing ClusterHealthDiagnosisStore resource with the given ID exists.
+func ClusterHealthDiagnosisStoreExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ClusterHealthDiagnosisStoreState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/clusterHealthDiagnosisStore:ClusterHealthDiagnosisStore", id, state, "", opts...)
+}
+
 type clusterHealthDiagnosisStoreArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the Diagnosis in.
 	CompartmentId string `pulumi:"compartmentId"`

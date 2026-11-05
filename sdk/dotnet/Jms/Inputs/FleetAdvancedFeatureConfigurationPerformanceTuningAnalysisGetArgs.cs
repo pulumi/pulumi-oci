@@ -15,7 +15,6 @@ namespace Pulumi.Oci.Jms.Inputs
         /// <summary>
         /// (Updatable) PerformanceTuningAnalysis flag to store enabled or disabled status
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

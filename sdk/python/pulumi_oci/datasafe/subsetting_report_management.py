@@ -923,6 +923,68 @@ class SubsettingReportManagement(pulumi.CustomResource):
         __props__.__dict__["total_subsetted_schemas"] = total_subsetted_schemas
         return SubsettingReportManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_size_after_subsetting_in_kbs: pulumi.Input[Optional[_builtins.str]] = None,
+            database_size_before_subsetting_in_kbs: pulumi.Input[Optional[_builtins.str]] = None,
+            is_redo_logging_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_refresh_stats_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_rerun: pulumi.Input[Optional[_builtins.bool]] = None,
+            masking: pulumi.Input[Optional[_builtins.str]] = None,
+            masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            masking_report_id: pulumi.Input[Optional[_builtins.str]] = None,
+            masking_work_request_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parallel_degree: pulumi.Input[Optional[_builtins.str]] = None,
+            re_run_from_step: pulumi.Input[Optional[_builtins.str]] = None,
+            recompile: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subsetting_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            subsetting_status: pulumi.Input[Optional[_builtins.str]] = None,
+            subsetting_work_request_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tablespace: pulumi.Input[Optional[_builtins.str]] = None,
+            target_credentials: pulumi.Input[Optional[Union['SubsettingReportManagementTargetCredentialsArgs', 'SubsettingReportManagementTargetCredentialsArgsDict', 'outputs.SubsettingReportManagementTargetCredentials']]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_subsetting_finished: pulumi.Input[Optional[_builtins.str]] = None,
+            time_subsetting_started: pulumi.Input[Optional[_builtins.str]] = None,
+            total_post_subsetting_script_errors: pulumi.Input[Optional[_builtins.str]] = None,
+            total_pre_subsetting_script_errors: pulumi.Input[Optional[_builtins.str]] = None,
+            total_subsetted_objects: pulumi.Input[Optional[_builtins.str]] = None,
+            total_subsetted_rows: pulumi.Input[Optional[_builtins.str]] = None,
+            total_subsetted_schemas: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["databaseSizeAfterSubsettingInKbs"] = database_size_after_subsetting_in_kbs
+        __props__["databaseSizeBeforeSubsettingInKbs"] = database_size_before_subsetting_in_kbs
+        __props__["isRedoLoggingEnabled"] = is_redo_logging_enabled
+        __props__["isRefreshStatsEnabled"] = is_refresh_stats_enabled
+        __props__["isRerun"] = is_rerun
+        __props__["masking"] = masking
+        __props__["maskingPolicyId"] = masking_policy_id
+        __props__["maskingReportId"] = masking_report_id
+        __props__["maskingWorkRequestId"] = masking_work_request_id
+        __props__["parallelDegree"] = parallel_degree
+        __props__["reRunFromStep"] = re_run_from_step
+        __props__["recompile"] = recompile
+        __props__["state"] = state
+        __props__["subsettingPolicyId"] = subsetting_policy_id
+        __props__["subsettingStatus"] = subsetting_status
+        __props__["subsettingWorkRequestId"] = subsetting_work_request_id
+        __props__["tablespace"] = tablespace
+        __props__["targetCredentials"] = target_credentials
+        __props__["targetId"] = target_id
+        __props__["timeCreated"] = time_created
+        __props__["timeSubsettingFinished"] = time_subsetting_finished
+        __props__["timeSubsettingStarted"] = time_subsetting_started
+        __props__["totalPostSubsettingScriptErrors"] = total_post_subsetting_script_errors
+        __props__["totalPreSubsettingScriptErrors"] = total_pre_subsetting_script_errors
+        __props__["totalSubsettedObjects"] = total_subsetted_objects
+        __props__["totalSubsettedRows"] = total_subsetted_rows
+        __props__["totalSubsettedSchemas"] = total_subsetted_schemas
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/subsettingReportManagement:SubsettingReportManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

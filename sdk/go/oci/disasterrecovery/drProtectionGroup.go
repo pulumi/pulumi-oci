@@ -430,6 +430,12 @@ func (DrProtectionGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*drProtectionGroupState)(nil)).Elem()
 }
 
+// DrProtectionGroupExists checks whether an existing DrProtectionGroup resource with the given ID exists.
+func DrProtectionGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DrProtectionGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DisasterRecovery/drProtectionGroup:DrProtectionGroup", id, state, "", opts...)
+}
+
 type drProtectionGroupArgs struct {
 	// The details for associating a DR protection group with a peer DR protection group.
 	Association *DrProtectionGroupAssociation `pulumi:"association"`

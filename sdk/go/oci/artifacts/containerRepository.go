@@ -217,6 +217,12 @@ func (ContainerRepositoryState) ElementType() reflect.Type {
 	return reflect.TypeOf((*containerRepositoryState)(nil)).Elem()
 }
 
+// ContainerRepositoryExists checks whether an existing ContainerRepository resource with the given ID exists.
+func ContainerRepositoryExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ContainerRepositoryState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Artifacts/containerRepository:ContainerRepository", id, state, "", opts...)
+}
+
 type containerRepositoryArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the resource.
 	CompartmentId string `pulumi:"compartmentId"`

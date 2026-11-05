@@ -200,6 +200,14 @@ class IotIotFlowRuntimeActivate(pulumi.CustomResource):
         __props__.__dict__["iot_flow_runtime_id"] = iot_flow_runtime_id
         return IotIotFlowRuntimeActivate(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            iot_flow_runtime_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["iotFlowRuntimeId"] = iot_flow_runtime_id
+        return pulumi.runtime.exists_resource(None, 'oci:oci/iotIotFlowRuntimeActivate:IotIotFlowRuntimeActivate', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="iotFlowRuntimeId")
     def iot_flow_runtime_id(self) -> pulumi.Output[_builtins.str]:

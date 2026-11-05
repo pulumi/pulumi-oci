@@ -191,6 +191,12 @@ func (RuntimeDatabaseToolsConnectionCredentialState) ElementType() reflect.Type 
 	return reflect.TypeOf((*runtimeDatabaseToolsConnectionCredentialState)(nil)).Elem()
 }
 
+// RuntimeDatabaseToolsConnectionCredentialExists checks whether an existing RuntimeDatabaseToolsConnectionCredential resource with the given ID exists.
+func RuntimeDatabaseToolsConnectionCredentialExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RuntimeDatabaseToolsConnectionCredentialState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseTools/runtimeDatabaseToolsConnectionCredential:RuntimeDatabaseToolsConnectionCredential", id, state, "", opts...)
+}
+
 type runtimeDatabaseToolsConnectionCredentialArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Database Tools connection.
 	DatabaseToolsConnectionId string `pulumi:"databaseToolsConnectionId"`

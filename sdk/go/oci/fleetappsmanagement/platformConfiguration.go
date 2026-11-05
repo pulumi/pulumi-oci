@@ -251,6 +251,12 @@ func (PlatformConfigurationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*platformConfigurationState)(nil)).Elem()
 }
 
+// PlatformConfigurationExists checks whether an existing PlatformConfiguration resource with the given ID exists.
+func PlatformConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PlatformConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FleetAppsManagement/platformConfiguration:PlatformConfiguration", id, state, "", opts...)
+}
+
 type platformConfigurationArgs struct {
 	// (Updatable) Compartment OCID
 	CompartmentId string `pulumi:"compartmentId"`

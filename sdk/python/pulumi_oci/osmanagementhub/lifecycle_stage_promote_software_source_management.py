@@ -286,6 +286,18 @@ class LifecycleStagePromoteSoftwareSourceManagement(pulumi.CustomResource):
         __props__.__dict__["work_request_details"] = work_request_details
         return LifecycleStagePromoteSoftwareSourceManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            lifecycle_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+            software_source_id: pulumi.Input[Optional[_builtins.str]] = None,
+            work_request_details: pulumi.Input[Optional[Union['LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs', 'LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgsDict', 'outputs.LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetails']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["lifecycleStageId"] = lifecycle_stage_id
+        __props__["softwareSourceId"] = software_source_id
+        __props__["workRequestDetails"] = work_request_details
+        return pulumi.runtime.exists_resource(None, 'oci:OsManagementHub/lifecycleStagePromoteSoftwareSourceManagement:LifecycleStagePromoteSoftwareSourceManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="lifecycleStageId")
     def lifecycle_stage_id(self) -> pulumi.Output[_builtins.str]:

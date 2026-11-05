@@ -169,6 +169,12 @@ func (MonitoredResourcesSearchAssociationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*monitoredResourcesSearchAssociationState)(nil)).Elem()
 }
 
+// MonitoredResourcesSearchAssociationExists checks whether an existing MonitoredResourcesSearchAssociation resource with the given ID exists.
+func MonitoredResourcesSearchAssociationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MonitoredResourcesSearchAssociationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:StackMonitoring/monitoredResourcesSearchAssociation:MonitoredResourcesSearchAssociation", id, state, "", opts...)
+}
+
 type monitoredResourcesSearchAssociationArgs struct {
 	// Association type filter to search associated resources.
 	AssociationType *string `pulumi:"associationType"`

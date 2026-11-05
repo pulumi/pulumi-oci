@@ -251,6 +251,12 @@ func (ManagementApplianceState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managementApplianceState)(nil)).Elem()
 }
 
+// ManagementApplianceExists checks whether an existing ManagementAppliance resource with the given ID exists.
+func ManagementApplianceExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagementApplianceState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Ocvp/managementAppliance:ManagementAppliance", id, state, "", opts...)
+}
+
 type managementApplianceArgs struct {
 	// (Updatable) Configuration of management appliance.
 	Configuration ManagementApplianceConfiguration `pulumi:"configuration"`

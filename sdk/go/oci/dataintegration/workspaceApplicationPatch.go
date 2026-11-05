@@ -262,6 +262,12 @@ func (WorkspaceApplicationPatchState) ElementType() reflect.Type {
 	return reflect.TypeOf((*workspaceApplicationPatchState)(nil)).Elem()
 }
 
+// WorkspaceApplicationPatchExists checks whether an existing WorkspaceApplicationPatch resource with the given ID exists.
+func WorkspaceApplicationPatchExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WorkspaceApplicationPatchState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataIntegration/workspaceApplicationPatch:WorkspaceApplicationPatch", id, state, "", opts...)
+}
+
 type workspaceApplicationPatchArgs struct {
 	// The application key.
 	ApplicationKey string `pulumi:"applicationKey"`

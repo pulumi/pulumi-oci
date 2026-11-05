@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of all target-alert policy associations.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -52,7 +51,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of all target-alert policy associations.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -87,7 +85,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Target Alert Policy Associations in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets a list of all target-alert policy associations.
-        /// 
         /// 
         /// ## Example Usage
         /// 

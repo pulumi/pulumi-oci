@@ -719,6 +719,38 @@ class FleetAgentConfiguration(pulumi.CustomResource):
         __props__.__dict__["work_request_validity_period_in_days"] = work_request_validity_period_in_days
         return FleetAgentConfiguration(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            agent_polling_interval_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+            fleet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_capturing_ip_address_and_fqdn_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_collecting_managed_instance_metrics_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_collecting_usernames_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_libraries_scan_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            java_usage_tracker_processing_frequency_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+            jre_scan_frequency_in_minutes: pulumi.Input[Optional[_builtins.int]] = None,
+            linux_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationLinuxConfigurationArgs', 'FleetAgentConfigurationLinuxConfigurationArgsDict', 'outputs.FleetAgentConfigurationLinuxConfiguration']]] = None,
+            mac_os_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationMacOsConfigurationArgs', 'FleetAgentConfigurationMacOsConfigurationArgsDict', 'outputs.FleetAgentConfigurationMacOsConfiguration']]] = None,
+            time_last_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            windows_configuration: pulumi.Input[Optional[Union['FleetAgentConfigurationWindowsConfigurationArgs', 'FleetAgentConfigurationWindowsConfigurationArgsDict', 'outputs.FleetAgentConfigurationWindowsConfiguration']]] = None,
+            work_request_validity_period_in_days: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["agentPollingIntervalInMinutes"] = agent_polling_interval_in_minutes
+        __props__["fleetId"] = fleet_id
+        __props__["isCapturingIpAddressAndFqdnEnabled"] = is_capturing_ip_address_and_fqdn_enabled
+        __props__["isCollectingManagedInstanceMetricsEnabled"] = is_collecting_managed_instance_metrics_enabled
+        __props__["isCollectingUsernamesEnabled"] = is_collecting_usernames_enabled
+        __props__["isLibrariesScanEnabled"] = is_libraries_scan_enabled
+        __props__["javaUsageTrackerProcessingFrequencyInMinutes"] = java_usage_tracker_processing_frequency_in_minutes
+        __props__["jreScanFrequencyInMinutes"] = jre_scan_frequency_in_minutes
+        __props__["linuxConfiguration"] = linux_configuration
+        __props__["macOsConfiguration"] = mac_os_configuration
+        __props__["timeLastModified"] = time_last_modified
+        __props__["windowsConfiguration"] = windows_configuration
+        __props__["workRequestValidityPeriodInDays"] = work_request_validity_period_in_days
+        return pulumi.runtime.exists_resource(None, 'oci:Jms/fleetAgentConfiguration:FleetAgentConfiguration', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="agentPollingIntervalInMinutes")
     def agent_polling_interval_in_minutes(self) -> pulumi.Output[_builtins.int]:

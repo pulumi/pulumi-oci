@@ -1162,6 +1162,62 @@ class PipelineRun(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return PipelineRun(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configuration_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineRunConfigurationDetailArgs', 'PipelineRunConfigurationDetailArgsDict', 'outputs.PipelineRunConfigurationDetail']]]]] = None,
+            configuration_override_details: pulumi.Input[Optional[Union['PipelineRunConfigurationOverrideDetailsArgs', 'PipelineRunConfigurationOverrideDetailsArgsDict', 'outputs.PipelineRunConfigurationOverrideDetails']]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            delete_related_job_runs: pulumi.Input[Optional[_builtins.bool]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            infrastructure_configuration_override_details: pulumi.Input[Optional[Union['PipelineRunInfrastructureConfigurationOverrideDetailsArgs', 'PipelineRunInfrastructureConfigurationOverrideDetailsArgsDict', 'outputs.PipelineRunInfrastructureConfigurationOverrideDetails']]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            log_configuration_override_details: pulumi.Input[Optional[Union['PipelineRunLogConfigurationOverrideDetailsArgs', 'PipelineRunLogConfigurationOverrideDetailsArgsDict', 'outputs.PipelineRunLogConfigurationOverrideDetails']]] = None,
+            log_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineRunLogDetailArgs', 'PipelineRunLogDetailArgsDict', 'outputs.PipelineRunLogDetail']]]]] = None,
+            opc_parent_rpt_url: pulumi.Input[Optional[_builtins.str]] = None,
+            parameters_override: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            step_override_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineRunStepOverrideDetailArgs', 'PipelineRunStepOverrideDetailArgsDict', 'outputs.PipelineRunStepOverrideDetail']]]]] = None,
+            step_runs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineRunStepRunArgs', 'PipelineRunStepRunArgsDict', 'outputs.PipelineRunStepRun']]]]] = None,
+            storage_mount_configuration_override_details_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PipelineRunStorageMountConfigurationOverrideDetailsListArgs', 'PipelineRunStorageMountConfigurationOverrideDetailsListArgsDict', 'outputs.PipelineRunStorageMountConfigurationOverrideDetailsList']]]]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_accepted: pulumi.Input[Optional[_builtins.str]] = None,
+            time_finished: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["configurationDetails"] = configuration_details
+        __props__["configurationOverrideDetails"] = configuration_override_details
+        __props__["createdBy"] = created_by
+        __props__["definedTags"] = defined_tags
+        __props__["deleteRelatedJobRuns"] = delete_related_job_runs
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["infrastructureConfigurationOverrideDetails"] = infrastructure_configuration_override_details
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["logConfigurationOverrideDetails"] = log_configuration_override_details
+        __props__["logDetails"] = log_details
+        __props__["opcParentRptUrl"] = opc_parent_rpt_url
+        __props__["parametersOverride"] = parameters_override
+        __props__["pipelineId"] = pipeline_id
+        __props__["projectId"] = project_id
+        __props__["state"] = state
+        __props__["stepOverrideDetails"] = step_override_details
+        __props__["stepRuns"] = step_runs
+        __props__["storageMountConfigurationOverrideDetailsLists"] = storage_mount_configuration_override_details_lists
+        __props__["systemTags"] = system_tags
+        __props__["timeAccepted"] = time_accepted
+        __props__["timeFinished"] = time_finished
+        __props__["timeStarted"] = time_started
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:DataScience/pipelineRun:PipelineRun', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

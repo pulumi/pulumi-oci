@@ -224,6 +224,12 @@ func (SecurityPolicyDeploymentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*securityPolicyDeploymentState)(nil)).Elem()
 }
 
+// SecurityPolicyDeploymentExists checks whether an existing SecurityPolicyDeployment resource with the given ID exists.
+func SecurityPolicyDeploymentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SecurityPolicyDeploymentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/securityPolicyDeployment:SecurityPolicyDeployment", id, state, "", opts...)
+}
+
 type securityPolicyDeploymentArgs struct {
 	// (Updatable) The OCID of the compartment in which to create the unified audit policy.
 	CompartmentId string `pulumi:"compartmentId"`

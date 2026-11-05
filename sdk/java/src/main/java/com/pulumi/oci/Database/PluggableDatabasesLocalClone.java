@@ -200,14 +200,14 @@ public class PluggableDatabasesLocalClone extends com.pulumi.resources.CustomRes
         return this.openMode;
     }
     /**
-     * A strong password for PDB Admin of the newly cloned PDB. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
+     * A strong password for PDB Admin of the newly cloned PDB. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, &#92;#, or -.
      * 
      */
     @Export(name="pdbAdminPassword", refs={String.class}, tree="[0]")
     private Output<String> pdbAdminPassword;
 
     /**
-     * @return A strong password for PDB Admin of the newly cloned PDB. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, \#, or -.
+     * @return A strong password for PDB Admin of the newly cloned PDB. The password must be at least nine characters and contain at least two uppercase, two lowercase, two numbers, and two special characters. The special characters must be _, &#92;#, or -.
      * 
      */
     public Output<String> pdbAdminPassword() {

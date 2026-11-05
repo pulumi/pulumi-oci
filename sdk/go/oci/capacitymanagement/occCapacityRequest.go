@@ -296,6 +296,12 @@ func (OccCapacityRequestState) ElementType() reflect.Type {
 	return reflect.TypeOf((*occCapacityRequestState)(nil)).Elem()
 }
 
+// OccCapacityRequestExists checks whether an existing OccCapacityRequest resource with the given ID exists.
+func OccCapacityRequestExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OccCapacityRequestState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CapacityManagement/occCapacityRequest:OccCapacityRequest", id, state, "", opts...)
+}
+
 type occCapacityRequestArgs struct {
 	// The availability domain (AD) in which the new resource is to be placed. If this is specified then the capacity will be validated and fulfilled within the scope of this AD. Note that this field is NOT required for Capacity request Transfer requests.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`

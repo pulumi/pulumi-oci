@@ -22,7 +22,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// If an optional compartmentId query parameter is provided, GetNamespace returns the namespace name of the corresponding
         /// tenancy, provided the user has access to it.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -55,7 +54,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// If an optional compartmentId query parameter is provided, GetNamespace returns the namespace name of the corresponding
         /// tenancy, provided the user has access to it.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -87,7 +85,6 @@ namespace Pulumi.Oci.ObjectStorage
         /// GetNamespace returns the name of the Object Storage namespace for the user making the request.
         /// If an optional compartmentId query parameter is provided, GetNamespace returns the namespace name of the corresponding
         /// tenancy, provided the user has access to it.
-        /// 
         /// 
         /// ## Example Usage
         /// 

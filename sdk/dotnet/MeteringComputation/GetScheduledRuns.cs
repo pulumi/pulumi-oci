@@ -16,7 +16,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// Returns the schedule history list.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// Returns the schedule history list.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// This data source provides the list of Scheduled Runs in Oracle Cloud Infrastructure Metering Computation service.
         /// 
         /// Returns the schedule history list.
-        /// 
         /// 
         /// ## Example Usage
         /// 

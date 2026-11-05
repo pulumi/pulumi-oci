@@ -17,7 +17,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Retrieves information about the high availability members of a specific MySQL server's replication group.
         /// MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// Retrieves information about the high availability members of a specific MySQL server's replication group.
         /// MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -72,7 +70,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// 
         /// Retrieves information about the high availability members of a specific MySQL server's replication group.
         /// MySQL support within Oracle Cloud Infrastructure Database Management service has been deprecated as of January 29, 2026.
-        /// 
         /// 
         /// ## Example Usage
         /// 

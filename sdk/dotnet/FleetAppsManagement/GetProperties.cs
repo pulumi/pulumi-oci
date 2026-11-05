@@ -17,7 +17,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// Returns a list of all the Properties in the specified compartment.
         /// The query parameter `compartmentId` is required unless the query parameter `Id` is specified.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// Returns a list of all the Properties in the specified compartment.
         /// The query parameter `compartmentId` is required unless the query parameter `Id` is specified.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -82,7 +80,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Returns a list of all the Properties in the specified compartment.
         /// The query parameter `compartmentId` is required unless the query parameter `Id` is specified.
-        /// 
         /// 
         /// ## Example Usage
         /// 

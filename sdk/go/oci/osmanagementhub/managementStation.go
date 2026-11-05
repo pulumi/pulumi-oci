@@ -325,6 +325,12 @@ func (ManagementStationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managementStationState)(nil)).Elem()
 }
 
+// ManagementStationExists checks whether an existing ManagementStation resource with the given ID exists.
+func ManagementStationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagementStationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/managementStation:ManagementStation", id, state, "", opts...)
+}
+
 type managementStationArgs struct {
 	// (Updatable) The architecture type.
 	ArchType *string `pulumi:"archType"`

@@ -538,6 +538,32 @@ class AnalyticsInstancePrivateAccessChannel(pulumi.CustomResource):
         __props__.__dict__["vcn_id"] = vcn_id
         return AnalyticsInstancePrivateAccessChannel(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            analytics_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            egress_source_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            network_security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            private_source_dns_zones: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs', 'AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgsDict', 'outputs.AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZone']]]]] = None,
+            private_source_scan_hosts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgs', 'AnalyticsInstancePrivateAccessChannelPrivateSourceScanHostArgsDict', 'outputs.AnalyticsInstancePrivateAccessChannelPrivateSourceScanHost']]]]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vcn_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["analyticsInstanceId"] = analytics_instance_id
+        __props__["displayName"] = display_name
+        __props__["egressSourceIpAddresses"] = egress_source_ip_addresses
+        __props__["ipAddress"] = ip_address
+        __props__["key"] = key
+        __props__["networkSecurityGroupIds"] = network_security_group_ids
+        __props__["privateSourceDnsZones"] = private_source_dns_zones
+        __props__["privateSourceScanHosts"] = private_source_scan_hosts
+        __props__["subnetId"] = subnet_id
+        __props__["vcnId"] = vcn_id
+        return pulumi.runtime.exists_resource(None, 'oci:Analytics/analyticsInstancePrivateAccessChannel:AnalyticsInstancePrivateAccessChannel', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="analyticsInstanceId")
     def analytics_instance_id(self) -> pulumi.Output[_builtins.str]:

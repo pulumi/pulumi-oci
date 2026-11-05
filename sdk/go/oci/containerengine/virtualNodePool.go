@@ -276,6 +276,12 @@ func (VirtualNodePoolState) ElementType() reflect.Type {
 	return reflect.TypeOf((*virtualNodePoolState)(nil)).Elem()
 }
 
+// VirtualNodePoolExists checks whether an existing VirtualNodePool resource with the given ID exists.
+func VirtualNodePoolExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VirtualNodePoolState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ContainerEngine/virtualNodePool:VirtualNodePool", id, state, "", opts...)
+}
+
 type virtualNodePoolArgs struct {
 	// The cluster the virtual node pool is associated with. A virtual node pool can only be associated with one cluster.
 	ClusterId string `pulumi:"clusterId"`

@@ -213,6 +213,12 @@ func (LogState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logState)(nil)).Elem()
 }
 
+// LogExists checks whether an existing Log resource with the given ID exists.
+func LogExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Logging/log:Log", id, state, "", opts...)
+}
+
 type logArgs struct {
 	// Log object configuration.
 	Configuration *LogConfiguration `pulumi:"configuration"`

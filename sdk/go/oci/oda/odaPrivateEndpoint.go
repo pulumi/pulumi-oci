@@ -191,6 +191,12 @@ func (OdaPrivateEndpointState) ElementType() reflect.Type {
 	return reflect.TypeOf((*odaPrivateEndpointState)(nil)).Elem()
 }
 
+// OdaPrivateEndpointExists checks whether an existing OdaPrivateEndpoint resource with the given ID exists.
+func OdaPrivateEndpointExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OdaPrivateEndpointState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Oda/odaPrivateEndpoint:OdaPrivateEndpoint", id, state, "", opts...)
+}
+
 type odaPrivateEndpointArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that the ODA private endpoint belongs to.
 	CompartmentId string `pulumi:"compartmentId"`

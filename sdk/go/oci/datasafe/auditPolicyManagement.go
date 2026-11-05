@@ -209,6 +209,12 @@ func (AuditPolicyManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*auditPolicyManagementState)(nil)).Elem()
 }
 
+// AuditPolicyManagementExists checks whether an existing AuditPolicyManagement resource with the given ID exists.
+func AuditPolicyManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AuditPolicyManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/auditPolicyManagement:AuditPolicyManagement", id, state, "", opts...)
+}
+
 type auditPolicyManagementArgs struct {
 	// Required when provisionTrigger is set. Lists the audit policy provisioning conditions for the target database.
 	AuditConditions []AuditPolicyManagementAuditCondition `pulumi:"auditConditions"`

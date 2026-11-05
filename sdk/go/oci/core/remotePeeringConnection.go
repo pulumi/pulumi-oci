@@ -193,6 +193,12 @@ func (RemotePeeringConnectionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*remotePeeringConnectionState)(nil)).Elem()
 }
 
+// RemotePeeringConnectionExists checks whether an existing RemotePeeringConnection resource with the given ID exists.
+func RemotePeeringConnectionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RemotePeeringConnectionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/remotePeeringConnection:RemotePeeringConnection", id, state, "", opts...)
+}
+
 type remotePeeringConnectionArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the RPC.
 	CompartmentId string `pulumi:"compartmentId"`

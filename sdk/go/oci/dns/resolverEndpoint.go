@@ -255,6 +255,12 @@ func (ResolverEndpointState) ElementType() reflect.Type {
 	return reflect.TypeOf((*resolverEndpointState)(nil)).Elem()
 }
 
+// ResolverEndpointExists checks whether an existing ResolverEndpoint resource with the given ID exists.
+func ResolverEndpointExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ResolverEndpointState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Dns/resolverEndpoint:ResolverEndpoint", id, state, "", opts...)
+}
+
 type resolverEndpointArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	//

@@ -32,7 +32,6 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// (Updatable) Base64 encoded string of trust store file content.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

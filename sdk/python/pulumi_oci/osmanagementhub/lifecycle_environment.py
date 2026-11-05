@@ -712,6 +712,42 @@ class LifecycleEnvironment(pulumi.CustomResource):
         __props__.__dict__["vendor_name"] = vendor_name
         return LifecycleEnvironment(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            arch_type: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            location: pulumi.Input[Optional[_builtins.str]] = None,
+            managed_instance_ids: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LifecycleEnvironmentManagedInstanceIdArgs', 'LifecycleEnvironmentManagedInstanceIdArgsDict', 'outputs.LifecycleEnvironmentManagedInstanceId']]]]] = None,
+            os_family: pulumi.Input[Optional[_builtins.str]] = None,
+            stages: pulumi.Input[Optional[Sequence[pulumi.Input[Union['LifecycleEnvironmentStageArgs', 'LifecycleEnvironmentStageArgsDict', 'outputs.LifecycleEnvironmentStage']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_modified: pulumi.Input[Optional[_builtins.str]] = None,
+            vendor_name: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["archType"] = arch_type
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["location"] = location
+        __props__["managedInstanceIds"] = managed_instance_ids
+        __props__["osFamily"] = os_family
+        __props__["stages"] = stages
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeModified"] = time_modified
+        __props__["vendorName"] = vendor_name
+        return pulumi.runtime.exists_resource(None, 'oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="archType")
     def arch_type(self) -> pulumi.Output[_builtins.str]:

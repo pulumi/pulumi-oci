@@ -32,20 +32,18 @@ public final class ReplicationPolicyArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * @deprecated
-     * The &#39;delete_object_in_destination_bucket&#39; field has been deprecated. It is no longer supported.
+     * @deprecated The &#39;delete_object_in_destination_bucket&#39; field has been deprecated. It is no longer supported.
      * 
      */
-    @Deprecated /* The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported. */
+    @Deprecated
     @Import(name="deleteObjectInDestinationBucket")
     private @Nullable Output<String> deleteObjectInDestinationBucket;
 
     /**
-     * @deprecated
-     * The &#39;delete_object_in_destination_bucket&#39; field has been deprecated. It is no longer supported.
+     * @deprecated The &#39;delete_object_in_destination_bucket&#39; field has been deprecated. It is no longer supported.
      * 
      */
-    @Deprecated /* The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported. */
+    @Deprecated
     public Optional<Output<String>> deleteObjectInDestinationBucket() {
         return Optional.ofNullable(this.deleteObjectInDestinationBucket);
     }
@@ -169,11 +167,10 @@ public final class ReplicationPolicyArgs extends com.pulumi.resources.ResourceAr
         /**
          * @return builder
          * 
-         * @deprecated
-         * The &#39;delete_object_in_destination_bucket&#39; field has been deprecated. It is no longer supported.
+         * @deprecated The &#39;delete_object_in_destination_bucket&#39; field has been deprecated. It is no longer supported.
          * 
          */
-        @Deprecated /* The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported. */
+        @Deprecated
         public Builder deleteObjectInDestinationBucket(@Nullable Output<String> deleteObjectInDestinationBucket) {
             $.deleteObjectInDestinationBucket = deleteObjectInDestinationBucket;
             return this;
@@ -182,11 +179,10 @@ public final class ReplicationPolicyArgs extends com.pulumi.resources.ResourceAr
         /**
          * @return builder
          * 
-         * @deprecated
-         * The &#39;delete_object_in_destination_bucket&#39; field has been deprecated. It is no longer supported.
+         * @deprecated The &#39;delete_object_in_destination_bucket&#39; field has been deprecated. It is no longer supported.
          * 
          */
-        @Deprecated /* The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported. */
+        @Deprecated
         public Builder deleteObjectInDestinationBucket(String deleteObjectInDestinationBucket) {
             return deleteObjectInDestinationBucket(Output.of(deleteObjectInDestinationBucket));
         }

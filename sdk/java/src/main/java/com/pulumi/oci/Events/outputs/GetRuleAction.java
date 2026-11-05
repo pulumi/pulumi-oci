@@ -15,11 +15,10 @@ public final class GetRuleAction {
     /**
      * @return A list of one or more Action objects.
      * 
-     * @deprecated
-     * Use action instead. This field is retained for backward compatibility.
+     * @deprecated Use action instead. This field is retained for backward compatibility.
      * 
      */
-    @Deprecated /* Use action instead. This field is retained for backward compatibility. */
+    @Deprecated
     private List<GetRuleActionAction> actions;
 
     private GetRuleAction() {}
@@ -29,11 +28,10 @@ public final class GetRuleAction {
     /**
      * @return A list of one or more Action objects.
      * 
-     * @deprecated
-     * Use action instead. This field is retained for backward compatibility.
+     * @deprecated Use action instead. This field is retained for backward compatibility.
      * 
      */
-    @Deprecated /* Use action instead. This field is retained for backward compatibility. */
+    @Deprecated
     public List<GetRuleActionAction> actions() {
         return this.actions;
     }

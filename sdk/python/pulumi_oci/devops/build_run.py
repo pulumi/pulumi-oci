@@ -643,6 +643,44 @@ class BuildRun(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return BuildRun(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            build_outputs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BuildRunBuildOutputArgs', 'BuildRunBuildOutputArgsDict', 'outputs.BuildRunBuildOutput']]]]] = None,
+            build_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+            build_run_arguments: pulumi.Input[Optional[Union['BuildRunBuildRunArgumentsArgs', 'BuildRunBuildRunArgumentsArgsDict', 'outputs.BuildRunBuildRunArguments']]] = None,
+            build_run_progresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BuildRunBuildRunProgressArgs', 'BuildRunBuildRunProgressArgsDict', 'outputs.BuildRunBuildRunProgress']]]]] = None,
+            build_run_sources: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BuildRunBuildRunSourceArgs', 'BuildRunBuildRunSourceArgsDict', 'outputs.BuildRunBuildRunSource']]]]] = None,
+            commit_info: pulumi.Input[Optional[Union['BuildRunCommitInfoArgs', 'BuildRunCommitInfoArgsDict', 'outputs.BuildRunCommitInfo']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["buildOutputs"] = build_outputs
+        __props__["buildPipelineId"] = build_pipeline_id
+        __props__["buildRunArguments"] = build_run_arguments
+        __props__["buildRunProgresses"] = build_run_progresses
+        __props__["buildRunSources"] = build_run_sources
+        __props__["commitInfo"] = commit_info
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["projectId"] = project_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:DevOps/buildRun:BuildRun', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="buildOutputs")
     def build_outputs(self) -> pulumi.Output[Sequence['outputs.BuildRunBuildOutput']]:

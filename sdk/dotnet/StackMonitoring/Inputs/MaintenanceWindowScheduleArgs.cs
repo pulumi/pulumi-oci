@@ -37,8 +37,7 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public Input<string>? TimeMaintenanceWindowEnd { get; set; }
 
         /// <summary>
-        /// (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string 
-        /// 
+        /// (Updatable) Start time of Maintenance window. A RFC3339 formatted datetime string
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

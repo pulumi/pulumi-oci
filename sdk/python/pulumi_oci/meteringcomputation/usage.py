@@ -653,6 +653,36 @@ class Usage(pulumi.CustomResource):
         __props__.__dict__["time_usage_started"] = time_usage_started
         return Usage(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_depth: pulumi.Input[Optional[_builtins.float]] = None,
+            filter: pulumi.Input[Optional[_builtins.str]] = None,
+            forecast: pulumi.Input[Optional[Union['UsageForecastArgs', 'UsageForecastArgsDict', 'outputs.UsageForecast']]] = None,
+            granularity: pulumi.Input[Optional[_builtins.str]] = None,
+            group_bies: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            group_by_tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageGroupByTagArgs', 'UsageGroupByTagArgsDict', 'outputs.UsageGroupByTag']]]]] = None,
+            is_aggregate_by_time: pulumi.Input[Optional[_builtins.bool]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UsageItemArgs', 'UsageItemArgsDict', 'outputs.UsageItem']]]]] = None,
+            query_type: pulumi.Input[Optional[_builtins.str]] = None,
+            tenant_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_usage_ended: pulumi.Input[Optional[_builtins.str]] = None,
+            time_usage_started: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentDepth"] = compartment_depth
+        __props__["filter"] = filter
+        __props__["forecast"] = forecast
+        __props__["granularity"] = granularity
+        __props__["groupBies"] = group_bies
+        __props__["groupByTags"] = group_by_tags
+        __props__["isAggregateByTime"] = is_aggregate_by_time
+        __props__["items"] = items
+        __props__["queryType"] = query_type
+        __props__["tenantId"] = tenant_id
+        __props__["timeUsageEnded"] = time_usage_ended
+        __props__["timeUsageStarted"] = time_usage_started
+        return pulumi.runtime.exists_resource(None, 'oci:MeteringComputation/usage:Usage', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentDepth")
     def compartment_depth(self) -> pulumi.Output[_builtins.float]:

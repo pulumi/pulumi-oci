@@ -39,7 +39,7 @@ import javax.annotation.Nullable;
  * 
  * ##### {Compartment-Name} - Name of  your compartment
  * 
- * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm\
+ * For latest documentation on OpenSearch use please refer to https://docs.oracle.com/en-us/iaas/Content/search-opensearch/home.htm&#92;
  * Required permissions: https://docs.oracle.com/en-us/iaas/Content/search-opensearch/Concepts/ocisearchpermissions.htm
  * 
  * ## Import

@@ -218,6 +218,12 @@ func (ComputeGpuMemoryFabricState) ElementType() reflect.Type {
 	return reflect.TypeOf((*computeGpuMemoryFabricState)(nil)).Elem()
 }
 
+// ComputeGpuMemoryFabricExists checks whether an existing ComputeGpuMemoryFabric resource with the given ID exists.
+func ComputeGpuMemoryFabricExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ComputeGpuMemoryFabricState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/computeGpuMemoryFabric:ComputeGpuMemoryFabric", id, state, "", opts...)
+}
+
 type computeGpuMemoryFabricArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment. This should always be the root compartment.
 	CompartmentId *string `pulumi:"compartmentId"`

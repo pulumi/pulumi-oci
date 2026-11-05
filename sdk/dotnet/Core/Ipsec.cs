@@ -220,13 +220,11 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
         /// 
-        /// Example: `
-        /// TunnelConfiguration {
+        /// Example: `TunnelConfiguration {
         /// OracleTunnelIp = "10.1.5.5"
         /// AssociatedVirtualCircuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
         /// DrgRouteTableId = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
         /// }`
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -370,13 +368,11 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
         /// 
-        /// Example: `
-        /// TunnelConfiguration {
+        /// Example: `TunnelConfiguration {
         /// OracleTunnelIp = "10.1.5.5"
         /// AssociatedVirtualCircuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
         /// DrgRouteTableId = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
         /// }`
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -503,13 +499,11 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// (Non-updatable) Tunnel configuration for private ipsec connection over fastconnect.
         /// 
-        /// Example: `
-        /// TunnelConfiguration {
+        /// Example: `TunnelConfiguration {
         /// OracleTunnelIp = "10.1.5.5"
         /// AssociatedVirtualCircuits = [oci_core_virtual_circuit.test_ipsec_over_fc_virtual_circuit.id]
         /// DrgRouteTableId = oci_core_drg_route_table.test_drg_ipsec_over_fc_route_table.id
         /// }`
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

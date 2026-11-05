@@ -131,6 +131,12 @@ func (ExternalMySqlDatabaseState) ElementType() reflect.Type {
 	return reflect.TypeOf((*externalMySqlDatabaseState)(nil)).Elem()
 }
 
+// ExternalMySqlDatabaseExists checks whether an existing ExternalMySqlDatabase resource with the given ID exists.
+func ExternalMySqlDatabaseExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalMySqlDatabaseState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/externalMySqlDatabase:ExternalMySqlDatabase", id, state, "", opts...)
+}
+
 type externalMySqlDatabaseArgs struct {
 	// OCID of compartment for the External MySQL Database.
 	CompartmentId string `pulumi:"compartmentId"`

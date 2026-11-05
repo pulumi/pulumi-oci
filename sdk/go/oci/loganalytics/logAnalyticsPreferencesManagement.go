@@ -122,6 +122,12 @@ func (LogAnalyticsPreferencesManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logAnalyticsPreferencesManagementState)(nil)).Elem()
 }
 
+// LogAnalyticsPreferencesManagementExists checks whether an existing LogAnalyticsPreferencesManagement resource with the given ID exists.
+func LogAnalyticsPreferencesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogAnalyticsPreferencesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LogAnalytics/logAnalyticsPreferencesManagement:LogAnalyticsPreferencesManagement", id, state, "", opts...)
+}
+
 type logAnalyticsPreferencesManagementArgs struct {
 	// An array of tenant preference details.
 	Items []LogAnalyticsPreferencesManagementItem `pulumi:"items"`

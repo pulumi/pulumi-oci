@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// <summary>
         /// (Updatable) Specifies whether the Data Safe service account on the target database should be excluded in the unified audit policy.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

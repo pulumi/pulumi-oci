@@ -192,6 +192,12 @@ func (DbmulticloudOracleDbAwsKeyPoolState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dbmulticloudOracleDbAwsKeyPoolState)(nil)).Elem()
 }
 
+// DbmulticloudOracleDbAwsKeyPoolExists checks whether an existing DbmulticloudOracleDbAwsKeyPool resource with the given ID exists.
+func DbmulticloudOracleDbAwsKeyPoolExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DbmulticloudOracleDbAwsKeyPoolState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/dbmulticloudOracleDbAwsKeyPool:DbmulticloudOracleDbAwsKeyPool", id, state, "", opts...)
+}
+
 type dbmulticloudOracleDbAwsKeyPoolArgs struct {
 	// (Updatable) The Compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) that contains this Oracle DB AWS Pool resource.
 	CompartmentId string `pulumi:"compartmentId"`

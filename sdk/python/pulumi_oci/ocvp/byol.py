@@ -782,6 +782,44 @@ class Byol(pulumi.CustomResource):
         __props__.__dict__["total_units"] = total_units
         return Byol(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            available_units: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            entitlement_key: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            site_id: pulumi.Input[Optional[_builtins.str]] = None,
+            software_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_term_end: pulumi.Input[Optional[_builtins.str]] = None,
+            time_term_start: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            total_units: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["availableUnits"] = available_units
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["entitlementKey"] = entitlement_key
+        __props__["freeformTags"] = freeform_tags
+        __props__["siteId"] = site_id
+        __props__["softwareType"] = software_type
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeTermEnd"] = time_term_end
+        __props__["timeTermStart"] = time_term_start
+        __props__["timeUpdated"] = time_updated
+        __props__["totalUnits"] = total_units
+        return pulumi.runtime.exists_resource(None, 'oci:Ocvp/byol:Byol', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="availableUnits")
     def available_units(self) -> pulumi.Output[_builtins.int]:

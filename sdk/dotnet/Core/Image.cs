@@ -205,7 +205,6 @@ namespace Pulumi.Oci.Core
         /// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         /// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -357,7 +356,6 @@ namespace Pulumi.Oci.Core
         /// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         /// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -458,7 +456,6 @@ namespace Pulumi.Oci.Core
         /// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
         /// * `ACCELERATEDPV` - VM instances launch with accelerated paravirtualized networking type.
         /// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

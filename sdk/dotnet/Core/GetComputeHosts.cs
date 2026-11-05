@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Generates a list of summary host details
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Generates a list of summary host details
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -83,7 +81,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides the list of Compute Hosts in Oracle Cloud Infrastructure Core service.
         /// 
         /// Generates a list of summary host details
-        /// 
         /// 
         /// ## Example Usage
         /// 

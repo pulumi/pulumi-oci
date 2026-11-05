@@ -225,6 +225,12 @@ func (OpsiConfigurationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*opsiConfigurationState)(nil)).Elem()
 }
 
+// OpsiConfigurationExists checks whether an existing OpsiConfiguration resource with the given ID exists.
+func OpsiConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OpsiConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Opsi/opsiConfiguration:OpsiConfiguration", id, state, "", opts...)
+}
+
 type opsiConfigurationArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`

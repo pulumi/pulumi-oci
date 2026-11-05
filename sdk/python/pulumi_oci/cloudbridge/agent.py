@@ -712,6 +712,48 @@ class Agent(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return Agent(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            agent_pub_key: pulumi.Input[Optional[_builtins.str]] = None,
+            agent_type: pulumi.Input[Optional[_builtins.str]] = None,
+            agent_version: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            environment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            heart_beat_status: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            os_version: pulumi.Input[Optional[_builtins.str]] = None,
+            plugin_lists: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AgentPluginListArgs', 'AgentPluginListArgsDict', 'outputs.AgentPluginList']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_expire_agent_key_in_ms: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_sync_received: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["agentPubKey"] = agent_pub_key
+        __props__["agentType"] = agent_type
+        __props__["agentVersion"] = agent_version
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["environmentId"] = environment_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["heartBeatStatus"] = heart_beat_status
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["osVersion"] = os_version
+        __props__["pluginLists"] = plugin_lists
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeExpireAgentKeyInMs"] = time_expire_agent_key_in_ms
+        __props__["timeLastSyncReceived"] = time_last_sync_received
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:CloudBridge/agent:Agent', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="agentPubKey")
     def agent_pub_key(self) -> pulumi.Output[_builtins.str]:

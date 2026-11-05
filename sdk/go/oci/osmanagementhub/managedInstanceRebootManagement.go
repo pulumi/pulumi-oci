@@ -123,6 +123,12 @@ func (ManagedInstanceRebootManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managedInstanceRebootManagementState)(nil)).Elem()
 }
 
+// ManagedInstanceRebootManagementExists checks whether an existing ManagedInstanceRebootManagement resource with the given ID exists.
+func ManagedInstanceRebootManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedInstanceRebootManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/managedInstanceRebootManagement:ManagedInstanceRebootManagement", id, state, "", opts...)
+}
+
 type managedInstanceRebootManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance.
 	ManagedInstanceId string `pulumi:"managedInstanceId"`

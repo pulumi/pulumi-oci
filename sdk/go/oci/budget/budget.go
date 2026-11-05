@@ -276,6 +276,12 @@ func (BudgetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*budgetState)(nil)).Elem()
 }
 
+// BudgetExists checks whether an existing Budget resource with the given ID exists.
+func BudgetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BudgetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Budget/budget:Budget", id, state, "", opts...)
+}
+
 type budgetArgs struct {
 	// (Updatable) The amount of the budget expressed as a whole number in the currency of the customer's rate card.
 	Amount int `pulumi:"amount"`

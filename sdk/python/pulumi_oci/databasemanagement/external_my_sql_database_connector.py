@@ -715,6 +715,56 @@ class ExternalMySqlDatabaseConnector(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return ExternalMySqlDatabaseConnector(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            associated_services: pulumi.Input[Optional[_builtins.str]] = None,
+            check_connection_status_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_status: pulumi.Input[Optional[_builtins.str]] = None,
+            connector_details: pulumi.Input[Optional[Union['ExternalMySqlDatabaseConnectorConnectorDetailsArgs', 'ExternalMySqlDatabaseConnectorConnectorDetailsArgsDict', 'outputs.ExternalMySqlDatabaseConnectorConnectorDetails']]] = None,
+            connector_type: pulumi.Input[Optional[_builtins.str]] = None,
+            credential_type: pulumi.Input[Optional[_builtins.str]] = None,
+            external_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            host_name: pulumi.Input[Optional[_builtins.str]] = None,
+            is_test_connection_param: pulumi.Input[Optional[_builtins.bool]] = None,
+            macs_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            network_protocol: pulumi.Input[Optional[_builtins.str]] = None,
+            port: pulumi.Input[Optional[_builtins.int]] = None,
+            source_database: pulumi.Input[Optional[_builtins.str]] = None,
+            source_database_type: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_secret_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ssl_secret_name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_connection_status_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["associatedServices"] = associated_services
+        __props__["checkConnectionStatusTrigger"] = check_connection_status_trigger
+        __props__["compartmentId"] = compartment_id
+        __props__["connectionStatus"] = connection_status
+        __props__["connectorDetails"] = connector_details
+        __props__["connectorType"] = connector_type
+        __props__["credentialType"] = credential_type
+        __props__["externalDatabaseId"] = external_database_id
+        __props__["hostName"] = host_name
+        __props__["isTestConnectionParam"] = is_test_connection_param
+        __props__["macsAgentId"] = macs_agent_id
+        __props__["name"] = name
+        __props__["networkProtocol"] = network_protocol
+        __props__["port"] = port
+        __props__["sourceDatabase"] = source_database
+        __props__["sourceDatabaseType"] = source_database_type
+        __props__["sslSecretId"] = ssl_secret_id
+        __props__["sslSecretName"] = ssl_secret_name
+        __props__["state"] = state
+        __props__["timeConnectionStatusUpdated"] = time_connection_status_updated
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseManagement/externalMySqlDatabaseConnector:ExternalMySqlDatabaseConnector', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="associatedServices")
     def associated_services(self) -> pulumi.Output[_builtins.str]:

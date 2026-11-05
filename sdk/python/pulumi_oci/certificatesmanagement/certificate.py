@@ -834,6 +834,52 @@ class Certificate(pulumi.CustomResource):
         __props__.__dict__["time_of_deletion"] = time_of_deletion
         return Certificate(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            certificate_config: pulumi.Input[Optional[Union['CertificateCertificateConfigArgs', 'CertificateCertificateConfigArgsDict', 'outputs.CertificateCertificateConfig']]] = None,
+            certificate_profile_type: pulumi.Input[Optional[_builtins.str]] = None,
+            certificate_revocation_list_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateCertificateRevocationListDetailArgs', 'CertificateCertificateRevocationListDetailArgsDict', 'outputs.CertificateCertificateRevocationListDetail']]]]] = None,
+            certificate_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateCertificateRuleArgs', 'CertificateCertificateRuleArgsDict', 'outputs.CertificateCertificateRule']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config_type: pulumi.Input[Optional[_builtins.str]] = None,
+            current_version_number: pulumi.Input[Optional[_builtins.str]] = None,
+            current_versions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateCurrentVersionArgs', 'CertificateCurrentVersionArgsDict', 'outputs.CertificateCurrentVersion']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            issuer_certificate_authority_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            signature_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subjects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateSubjectArgs', 'CertificateSubjectArgsDict', 'outputs.CertificateSubject']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["certificateConfig"] = certificate_config
+        __props__["certificateProfileType"] = certificate_profile_type
+        __props__["certificateRevocationListDetails"] = certificate_revocation_list_details
+        __props__["certificateRules"] = certificate_rules
+        __props__["compartmentId"] = compartment_id
+        __props__["configType"] = config_type
+        __props__["currentVersionNumber"] = current_version_number
+        __props__["currentVersions"] = current_versions
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["freeformTags"] = freeform_tags
+        __props__["issuerCertificateAuthorityId"] = issuer_certificate_authority_id
+        __props__["keyAlgorithm"] = key_algorithm
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["name"] = name
+        __props__["signatureAlgorithm"] = signature_algorithm
+        __props__["state"] = state
+        __props__["subjects"] = subjects
+        __props__["timeCreated"] = time_created
+        __props__["timeOfDeletion"] = time_of_deletion
+        return pulumi.runtime.exists_resource(None, 'oci:CertificatesManagement/certificate:Certificate', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="certificateConfig")
     def certificate_config(self) -> pulumi.Output['outputs.CertificateCertificateConfig']:

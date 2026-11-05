@@ -1768,6 +1768,64 @@ class DomainsMyUserDbCredential(pulumi.CustomResource):
         __props__.__dict__["user"] = user
         return DomainsMyUserDbCredential(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            authorization: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            db_password: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            expired: pulumi.Input[Optional[_builtins.bool]] = None,
+            expires_on: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialIdcsCreatedByArgs', 'DomainsMyUserDbCredentialIdcsCreatedByArgsDict', 'outputs.DomainsMyUserDbCredentialIdcsCreatedBy']]]]] = None,
+            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialIdcsLastModifiedByArgs', 'DomainsMyUserDbCredentialIdcsLastModifiedByArgsDict', 'outputs.DomainsMyUserDbCredentialIdcsLastModifiedBy']]]]] = None,
+            idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            last_set_date: pulumi.Input[Optional[_builtins.str]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialMetaArgs', 'DomainsMyUserDbCredentialMetaArgsDict', 'outputs.DomainsMyUserDbCredentialMeta']]]]] = None,
+            mixed_db_password: pulumi.Input[Optional[_builtins.str]] = None,
+            mixed_salt: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+            salt: pulumi.Input[Optional[_builtins.str]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsMyUserDbCredentialTagArgs', 'DomainsMyUserDbCredentialTagArgsDict', 'outputs.DomainsMyUserDbCredentialTag']]]]] = None,
+            tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            user: pulumi.Input[Optional[Union['DomainsMyUserDbCredentialUserArgs', 'DomainsMyUserDbCredentialUserArgsDict', 'outputs.DomainsMyUserDbCredentialUser']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["authorization"] = authorization
+        __props__["compartmentOcid"] = compartment_ocid
+        __props__["dbPassword"] = db_password
+        __props__["deleteInProgress"] = delete_in_progress
+        __props__["description"] = description
+        __props__["domainOcid"] = domain_ocid
+        __props__["expired"] = expired
+        __props__["expiresOn"] = expires_on
+        __props__["idcsCreatedBies"] = idcs_created_bies
+        __props__["idcsEndpoint"] = idcs_endpoint
+        __props__["idcsLastModifiedBies"] = idcs_last_modified_bies
+        __props__["idcsLastUpgradedInRelease"] = idcs_last_upgraded_in_release
+        __props__["idcsPreventedOperations"] = idcs_prevented_operations
+        __props__["lastSetDate"] = last_set_date
+        __props__["metas"] = metas
+        __props__["mixedDbPassword"] = mixed_db_password
+        __props__["mixedSalt"] = mixed_salt
+        __props__["name"] = name
+        __props__["ocid"] = ocid
+        __props__["resourceTypeSchemaVersion"] = resource_type_schema_version
+        __props__["salt"] = salt
+        __props__["schemas"] = schemas
+        __props__["status"] = status
+        __props__["tags"] = tags
+        __props__["tenancyOcid"] = tenancy_ocid
+        __props__["user"] = user
+        return pulumi.runtime.exists_resource(None, 'oci:Identity/domainsMyUserDbCredential:DomainsMyUserDbCredential', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def authorization(self) -> pulumi.Output[Optional[_builtins.str]]:

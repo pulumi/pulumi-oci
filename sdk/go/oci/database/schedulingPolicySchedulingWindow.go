@@ -186,6 +186,12 @@ func (SchedulingPolicySchedulingWindowState) ElementType() reflect.Type {
 	return reflect.TypeOf((*schedulingPolicySchedulingWindowState)(nil)).Elem()
 }
 
+// SchedulingPolicySchedulingWindowExists checks whether an existing SchedulingPolicySchedulingWindow resource with the given ID exists.
+func SchedulingPolicySchedulingWindowExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SchedulingPolicySchedulingWindowState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/schedulingPolicySchedulingWindow:SchedulingPolicySchedulingWindow", id, state, "", opts...)
+}
+
 type schedulingPolicySchedulingWindowArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`

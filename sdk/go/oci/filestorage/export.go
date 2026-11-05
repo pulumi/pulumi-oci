@@ -231,6 +231,12 @@ func (ExportState) ElementType() reflect.Type {
 	return reflect.TypeOf((*exportState)(nil)).Elem()
 }
 
+// ExportExists checks whether an existing Export resource with the given ID exists.
+func ExportExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExportState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FileStorage/export:Export", id, state, "", opts...)
+}
+
 type exportArgs struct {
 	// (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
 	//

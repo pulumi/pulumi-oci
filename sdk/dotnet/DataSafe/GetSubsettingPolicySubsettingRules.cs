@@ -19,7 +19,6 @@ namespace Pulumi.Oci.DataSafe
         /// It is the entry point for the subset. Data Safe uses this rule, along with the propagation setting,
         /// to determine the related rows that must also be retained across parent and child tables.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.DataSafe
         /// It is the entry point for the subset. Data Safe uses this rule, along with the propagation setting,
         /// to determine the related rows that must also be retained across parent and child tables.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -82,7 +80,6 @@ namespace Pulumi.Oci.DataSafe
         /// A subsetting rule is the criteria that tells Data Safe which rows to retain from the selected starting table for a subsetting operation.
         /// It is the entry point for the subset. Data Safe uses this rule, along with the propagation setting,
         /// to determine the related rows that must also be retained across parent and child tables.
-        /// 
         /// 
         /// ## Example Usage
         /// 

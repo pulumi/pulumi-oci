@@ -14,22 +14,22 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty {
     /**
-     * @return If true, this flatfile bundle configuration property value is confidential and will be encrypted in Oracle Identity Cloud Service. This attribute maps to \&#34;isConfidential\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return If true, this flatfile bundle configuration property value is confidential and will be encrypted in Oracle Identity Cloud Service. This attribute maps to &#92;&#34;isConfidential&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      */
     private Boolean confidential;
     /**
-     * @return Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return Display name of the flatfile bundle configuration property. This attribute maps to &#92;&#34;displayName&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      */
     private String displayName;
     /**
-     * @return Help message of the flatfile bundle configuration property. This attribute maps to \&#34;helpMessage\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return Help message of the flatfile bundle configuration property. This attribute maps to &#92;&#34;helpMessage&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      */
     private String helpMessage;
     /**
-     * @return ICF data type of flatfile the bundle configuration property. This attribute maps to \&#34;type\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return ICF data type of flatfile the bundle configuration property. This attribute maps to &#92;&#34;type&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      */
     private String icfType;
@@ -44,7 +44,7 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionm
      */
     private Integer order;
     /**
-     * @return If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \&#34;isRequired\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to &#92;&#34;isRequired&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      */
     private Boolean required;
@@ -56,28 +56,28 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionm
 
     private GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileBundleConfigurationProperty() {}
     /**
-     * @return If true, this flatfile bundle configuration property value is confidential and will be encrypted in Oracle Identity Cloud Service. This attribute maps to \&#34;isConfidential\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return If true, this flatfile bundle configuration property value is confidential and will be encrypted in Oracle Identity Cloud Service. This attribute maps to &#92;&#34;isConfidential&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      */
     public Boolean confidential() {
         return this.confidential;
     }
     /**
-     * @return Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return Display name of the flatfile bundle configuration property. This attribute maps to &#92;&#34;displayName&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return Help message of the flatfile bundle configuration property. This attribute maps to \&#34;helpMessage\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return Help message of the flatfile bundle configuration property. This attribute maps to &#92;&#34;helpMessage&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      */
     public String helpMessage() {
         return this.helpMessage;
     }
     /**
-     * @return ICF data type of flatfile the bundle configuration property. This attribute maps to \&#34;type\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return ICF data type of flatfile the bundle configuration property. This attribute maps to &#92;&#34;type&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      */
     public String icfType() {
@@ -98,7 +98,7 @@ public final class GetDomainsAppsAppUrnietfparamsscimschemasoracleidcsextensionm
         return this.order;
     }
     /**
-     * @return If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \&#34;isRequired\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to &#92;&#34;isRequired&#92;&#34; attribute in &#92;&#34;ConfigurationProperty&#92;&#34; in ICF.
      * 
      */
     public Boolean required() {

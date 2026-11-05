@@ -71,6 +71,12 @@ func (MaskDataState) ElementType() reflect.Type {
 	return reflect.TypeOf((*maskDataState)(nil)).Elem()
 }
 
+// MaskDataExists checks whether an existing MaskData resource with the given ID exists.
+func MaskDataExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MaskDataState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/maskData:MaskData", id, state, "", opts...)
+}
+
 type maskDataArgs struct {
 	MaskingPolicyId   string                     `pulumi:"maskingPolicyId"`
 	TargetCredentials *MaskDataTargetCredentials `pulumi:"targetCredentials"`

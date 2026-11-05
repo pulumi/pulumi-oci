@@ -43,11 +43,10 @@ public final class ConnectionArtifactLocationConfiguration {
     /**
      * @return (Updatable) A pre-authenticated request (PAR) URL that provides access to the artifact location. Deprecated: This field is deprecated and replaced by &#34;parUrlSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;par_url&#39; field has been deprecated. Please use &#39;par_url_secret_id&#39; instead.
+     * @deprecated The &#39;par_url&#39; field has been deprecated. Please use &#39;par_url_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'par_url' field has been deprecated. Please use 'par_url_secret_id' instead. */
+    @Deprecated
     private @Nullable String parUrl;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the pre-authenticated request (PAR) URL. Note: When provided, `parUrl` must not be provided.
@@ -62,11 +61,10 @@ public final class ConnectionArtifactLocationConfiguration {
     /**
      * @return (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by &#34;privateKeyFileSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
+     * @deprecated The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead. */
+    @Deprecated
     private @Nullable String privateKeyFile;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, &#39;privateKeyFile&#39; field must not be provided.
@@ -76,11 +74,10 @@ public final class ConnectionArtifactLocationConfiguration {
     /**
      * @return (Updatable) The passphrase of the private key. Deprecated: This field is deprecated and replaced by &#34;privateKeyPassphraseSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
+     * @deprecated The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead. */
+    @Deprecated
     private @Nullable String privateKeyPassphrase;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the passphrase of the private key. Note: When provided, &#39;privateKeyPassphrase&#39; field must not be provided.
@@ -100,11 +97,10 @@ public final class ConnectionArtifactLocationConfiguration {
     /**
      * @return (Updatable) Secret access key used for Oracle Cloud Infrastructure Object Storage secret-key authentication. Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+     * @deprecated The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
+    @Deprecated
     private @Nullable String secretAccessKey;
     /**
      * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the secret access key. Note: When provided, `secretAccessKey` must not be provided.
@@ -162,11 +158,10 @@ public final class ConnectionArtifactLocationConfiguration {
     /**
      * @return (Updatable) A pre-authenticated request (PAR) URL that provides access to the artifact location. Deprecated: This field is deprecated and replaced by &#34;parUrlSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;par_url&#39; field has been deprecated. Please use &#39;par_url_secret_id&#39; instead.
+     * @deprecated The &#39;par_url&#39; field has been deprecated. Please use &#39;par_url_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'par_url' field has been deprecated. Please use 'par_url_secret_id' instead. */
+    @Deprecated
     public Optional<String> parUrl() {
         return Optional.ofNullable(this.parUrl);
     }
@@ -187,11 +182,10 @@ public final class ConnectionArtifactLocationConfiguration {
     /**
      * @return (Updatable) The base64 encoded content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated: This field is deprecated and replaced by &#34;privateKeyFileSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
+     * @deprecated The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead. */
+    @Deprecated
     public Optional<String> privateKeyFile() {
         return Optional.ofNullable(this.privateKeyFile);
     }
@@ -205,11 +199,10 @@ public final class ConnectionArtifactLocationConfiguration {
     /**
      * @return (Updatable) The passphrase of the private key. Deprecated: This field is deprecated and replaced by &#34;privateKeyPassphraseSecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
+     * @deprecated The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead. */
+    @Deprecated
     public Optional<String> privateKeyPassphrase() {
         return Optional.ofNullable(this.privateKeyPassphrase);
     }
@@ -237,11 +230,10 @@ public final class ConnectionArtifactLocationConfiguration {
     /**
      * @return (Updatable) Secret access key used for Oracle Cloud Infrastructure Object Storage secret-key authentication. Deprecated: This field is deprecated and replaced by &#34;secretAccessKeySecretId&#34;. This change follows the GoldenGate &#34;Plain Text Fields in Connections&#34; deprecation: https://docs.oracle.com/en-us/iaas/Content/servicechanges.htm#servicechanges_topic-GoldenGate
      * 
-     * @deprecated
-     * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+     * @deprecated The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
+    @Deprecated
     public Optional<String> secretAccessKey() {
         return Optional.ofNullable(this.secretAccessKey);
     }

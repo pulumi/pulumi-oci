@@ -151,6 +151,12 @@ func (NamespaceLookupsAppendDataManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*namespaceLookupsAppendDataManagementState)(nil)).Elem()
 }
 
+// NamespaceLookupsAppendDataManagementExists checks whether an existing NamespaceLookupsAppendDataManagement resource with the given ID exists.
+func NamespaceLookupsAppendDataManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NamespaceLookupsAppendDataManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LogAnalytics/namespaceLookupsAppendDataManagement:NamespaceLookupsAppendDataManagement", id, state, "", opts...)
+}
+
 type namespaceLookupsAppendDataManagementArgs struct {
 	// Path to the file containing data for the lookup append.
 	AppendLookupFile string `pulumi:"appendLookupFile"`

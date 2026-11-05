@@ -16,7 +16,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// This GET call is used to list all demand signals delivery resources within the compartment passed as a query param.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// This GET call is used to list all demand signals delivery resources within the compartment passed as a query param.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// This data source provides the list of Occm Demand Signal Deliveries in Oracle Cloud Infrastructure Capacity Management service.
         /// 
         /// This GET call is used to list all demand signals delivery resources within the compartment passed as a query param.
-        /// 
         /// 
         /// ## Example Usage
         /// 

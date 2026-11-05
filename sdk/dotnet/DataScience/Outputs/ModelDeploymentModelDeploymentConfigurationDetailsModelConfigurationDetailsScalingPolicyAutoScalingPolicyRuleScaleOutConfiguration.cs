@@ -28,11 +28,11 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// 
         /// Example of threshold alarm:
         /// 
-        /// -----
+        /// ***
         /// 
         /// CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() &lt; 25 CPUUtilization[1m]{resourceId = "MODEL_DEPLOYMENT_OCID"}.grouping().mean() &gt; 75
         /// 
-        /// -----
+        /// ***
         /// </summary>
         public readonly string? Query;
         /// <summary>

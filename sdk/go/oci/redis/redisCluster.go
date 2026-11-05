@@ -291,6 +291,12 @@ func (RedisClusterState) ElementType() reflect.Type {
 	return reflect.TypeOf((*redisClusterState)(nil)).Elem()
 }
 
+// RedisClusterExists checks whether an existing RedisCluster resource with the given ID exists.
+func RedisClusterExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RedisClusterState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Redis/redisCluster:RedisCluster", id, state, "", opts...)
+}
+
 type redisClusterArgs struct {
 	// The ID of the Oracle Cloud Infrastructure Cache Backup from which this cluster was created.Mutually exclusive with 'importFromObjectStorageDetails'.
 	BackupId *string `pulumi:"backupId"`

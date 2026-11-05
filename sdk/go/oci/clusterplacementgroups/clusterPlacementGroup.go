@@ -237,6 +237,12 @@ func (ClusterPlacementGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*clusterPlacementGroupState)(nil)).Elem()
 }
 
+// ClusterPlacementGroupExists checks whether an existing ClusterPlacementGroup resource with the given ID exists.
+func ClusterPlacementGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ClusterPlacementGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ClusterPlacementGroups/clusterPlacementGroup:ClusterPlacementGroup", id, state, "", opts...)
+}
+
 type clusterPlacementGroupArgs struct {
 	// The availability domain where you want to create the cluster placement group.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`

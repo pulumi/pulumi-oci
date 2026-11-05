@@ -212,6 +212,12 @@ func (InternalOccmDemandSignalDeliveryState) ElementType() reflect.Type {
 	return reflect.TypeOf((*internalOccmDemandSignalDeliveryState)(nil)).Elem()
 }
 
+// InternalOccmDemandSignalDeliveryExists checks whether an existing InternalOccmDemandSignalDelivery resource with the given ID exists.
+func InternalOccmDemandSignalDeliveryExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *InternalOccmDemandSignalDeliveryState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CapacityManagement/internalOccmDemandSignalDelivery:InternalOccmDemandSignalDelivery", id, state, "", opts...)
+}
+
 type internalOccmDemandSignalDeliveryArgs struct {
 	// (Updatable) The quantity of the resource that Oracle Cloud Infrastructure will supply to the customer.
 	AcceptedQuantity string `pulumi:"acceptedQuantity"`

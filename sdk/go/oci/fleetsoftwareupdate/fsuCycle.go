@@ -333,6 +333,12 @@ func (FsuCycleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*fsuCycleState)(nil)).Elem()
 }
 
+// FsuCycleExists checks whether an existing FsuCycle resource with the given ID exists.
+func FsuCycleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *FsuCycleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FleetSoftwareUpdate/fsuCycle:FsuCycle", id, state, "", opts...)
+}
+
 type fsuCycleArgs struct {
 	// Scheduling related details for the Exadata Fleet Update Action during create operations. The specified time should not conflict with existing Exadata Infrastructure maintenance windows. Null scheduleDetails for Stage and Apply Actions in Exadata Fleet Update Cycle creation would not create Actions. Null scheduleDetails for CreateAction would execute the Exadata Fleet Update Action as soon as possible.
 	ApplyActionSchedule *FsuCycleApplyActionSchedule `pulumi:"applyActionSchedule"`

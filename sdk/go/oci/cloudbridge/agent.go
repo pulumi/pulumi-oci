@@ -242,6 +242,12 @@ func (AgentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*agentState)(nil)).Elem()
 }
 
+// AgentExists checks whether an existing Agent resource with the given ID exists.
+func AgentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AgentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CloudBridge/agent:Agent", id, state, "", opts...)
+}
+
 type agentArgs struct {
 	// Agent identifier.
 	AgentType string `pulumi:"agentType"`

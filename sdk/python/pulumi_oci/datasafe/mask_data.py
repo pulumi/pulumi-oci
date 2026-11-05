@@ -193,6 +193,18 @@ class MaskData(pulumi.CustomResource):
         __props__.__dict__["target_id"] = target_id
         return MaskData(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            target_credentials: pulumi.Input[Optional[Union['MaskDataTargetCredentialsArgs', 'MaskDataTargetCredentialsArgsDict', 'outputs.MaskDataTargetCredentials']]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["maskingPolicyId"] = masking_policy_id
+        __props__["targetCredentials"] = target_credentials
+        __props__["targetId"] = target_id
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/maskData:MaskData', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="maskingPolicyId")
     def masking_policy_id(self) -> pulumi.Output[_builtins.str]:

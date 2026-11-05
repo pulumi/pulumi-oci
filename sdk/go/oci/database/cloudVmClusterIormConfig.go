@@ -141,6 +141,12 @@ func (CloudVmClusterIormConfigState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudVmClusterIormConfigState)(nil)).Elem()
 }
 
+// CloudVmClusterIormConfigExists checks whether an existing CloudVmClusterIormConfig resource with the given ID exists.
+func CloudVmClusterIormConfigExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudVmClusterIormConfigState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/cloudVmClusterIormConfig:CloudVmClusterIormConfig", id, state, "", opts...)
+}
+
 type cloudVmClusterIormConfigArgs struct {
 	// The Cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CloudVmClusterId string `pulumi:"cloudVmClusterId"`

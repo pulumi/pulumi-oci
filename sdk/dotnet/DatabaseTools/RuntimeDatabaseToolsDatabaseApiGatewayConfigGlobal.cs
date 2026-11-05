@@ -156,7 +156,6 @@ namespace Pulumi.Oci.DatabaseTools
         /// <summary>
         /// (Updatable) The type of the Database Tools database API gateway config global settings resource.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -278,7 +277,6 @@ namespace Pulumi.Oci.DatabaseTools
         /// <summary>
         /// (Updatable) The type of the Database Tools database API gateway config global settings resource.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -385,7 +383,6 @@ namespace Pulumi.Oci.DatabaseTools
 
         /// <summary>
         /// (Updatable) The type of the Database Tools database API gateway config global settings resource.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

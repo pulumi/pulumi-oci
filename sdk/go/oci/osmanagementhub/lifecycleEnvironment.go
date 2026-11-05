@@ -237,6 +237,12 @@ func (LifecycleEnvironmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*lifecycleEnvironmentState)(nil)).Elem()
 }
 
+// LifecycleEnvironmentExists checks whether an existing LifecycleEnvironment resource with the given ID exists.
+func LifecycleEnvironmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LifecycleEnvironmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/lifecycleEnvironment:LifecycleEnvironment", id, state, "", opts...)
+}
+
 type lifecycleEnvironmentArgs struct {
 	// The CPU architecture of the managed instances in the lifecycle environment.
 	ArchType string `pulumi:"archType"`

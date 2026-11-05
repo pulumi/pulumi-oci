@@ -335,6 +335,12 @@ func (ManagementSavedSearchState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managementSavedSearchState)(nil)).Elem()
 }
 
+// ManagementSavedSearchExists checks whether an existing ManagementSavedSearch resource with the given ID exists.
+func ManagementSavedSearchExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagementSavedSearchState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ManagementDashboard/managementSavedSearch:ManagementSavedSearch", id, state, "", opts...)
+}
+
 type managementSavedSearchArgs struct {
 	// (Updatable) OCID of the compartment in which the saved search resides.
 	CompartmentId string `pulumi:"compartmentId"`

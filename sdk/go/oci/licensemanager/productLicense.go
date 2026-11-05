@@ -253,6 +253,12 @@ func (ProductLicenseState) ElementType() reflect.Type {
 	return reflect.TypeOf((*productLicenseState)(nil)).Elem()
 }
 
+// ProductLicenseExists checks whether an existing ProductLicense resource with the given ID exists.
+func ProductLicenseExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProductLicenseState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LicenseManager/productLicense:ProductLicense", id, state, "", opts...)
+}
+
 type productLicenseArgs struct {
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) where product licenses are created.
 	CompartmentId string `pulumi:"compartmentId"`

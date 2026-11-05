@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Opsi
         /// Gets a list of Ops Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
         /// When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -49,7 +48,6 @@ namespace Pulumi.Oci.Opsi
         /// Gets a list of Ops Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
         /// When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -80,7 +78,6 @@ namespace Pulumi.Oci.Opsi
         /// 
         /// Gets a list of Ops Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
         /// When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
-        /// 
         /// 
         /// ## Example Usage
         /// 

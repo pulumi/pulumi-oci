@@ -1342,6 +1342,12 @@ func (DomainsSelfRegistrationProfileState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsSelfRegistrationProfileState)(nil)).Elem()
 }
 
+// DomainsSelfRegistrationProfileExists checks whether an existing DomainsSelfRegistrationProfile resource with the given ID exists.
+func DomainsSelfRegistrationProfileExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsSelfRegistrationProfileState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsSelfRegistrationProfile:DomainsSelfRegistrationProfile", id, state, "", opts...)
+}
+
 type domainsSelfRegistrationProfileArgs struct {
 	// (Updatable) **SCIM++ Properties:**
 	// * caseExact: false

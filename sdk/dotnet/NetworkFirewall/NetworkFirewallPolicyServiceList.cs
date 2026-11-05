@@ -74,8 +74,7 @@ namespace Pulumi.Oci.NetworkFirewall
         public Output<string> ParentResourceId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list. 
-        /// 
+        /// (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -157,8 +156,7 @@ namespace Pulumi.Oci.NetworkFirewall
         private InputList<string>? _services;
 
         /// <summary>
-        /// (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list. 
-        /// 
+        /// (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -205,8 +203,7 @@ namespace Pulumi.Oci.NetworkFirewall
         private InputList<string>? _services;
 
         /// <summary>
-        /// (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list. 
-        /// 
+        /// (Updatable) Collection of service names. The services referenced in the service list must already be present in the policy before being used in the service list.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

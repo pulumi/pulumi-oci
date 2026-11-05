@@ -831,6 +831,54 @@ class MediaWorkflowJob(pulumi.CustomResource):
         __props__.__dict__["workflow_identifier_type"] = workflow_identifier_type
         return MediaWorkflowJob(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaWorkflowJobLockArgs', 'MediaWorkflowJobLockArgsDict', 'outputs.MediaWorkflowJobLock']]]]] = None,
+            media_workflow_configuration_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            media_workflow_id: pulumi.Input[Optional[_builtins.str]] = None,
+            media_workflow_name: pulumi.Input[Optional[_builtins.str]] = None,
+            outputs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaWorkflowJobOutputArgs', 'MediaWorkflowJobOutputArgsDict', 'outputs.MediaWorkflowJobOutput']]]]] = None,
+            parameters: pulumi.Input[Optional[_builtins.str]] = None,
+            runnable: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            task_lifecycle_states: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MediaWorkflowJobTaskLifecycleStateArgs', 'MediaWorkflowJobTaskLifecycleStateArgsDict', 'outputs.MediaWorkflowJobTaskLifecycleState']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_ended: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            workflow_identifier_type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["isLockOverride"] = is_lock_override
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["locks"] = locks
+        __props__["mediaWorkflowConfigurationIds"] = media_workflow_configuration_ids
+        __props__["mediaWorkflowId"] = media_workflow_id
+        __props__["mediaWorkflowName"] = media_workflow_name
+        __props__["outputs"] = outputs
+        __props__["parameters"] = parameters
+        __props__["runnable"] = runnable
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["taskLifecycleStates"] = task_lifecycle_states
+        __props__["timeCreated"] = time_created
+        __props__["timeEnded"] = time_ended
+        __props__["timeStarted"] = time_started
+        __props__["timeUpdated"] = time_updated
+        __props__["workflowIdentifierType"] = workflow_identifier_type
+        return pulumi.runtime.exists_resource(None, 'oci:MediaServices/mediaWorkflowJob:MediaWorkflowJob', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

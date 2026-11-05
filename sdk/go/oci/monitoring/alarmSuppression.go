@@ -259,6 +259,12 @@ func (AlarmSuppressionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*alarmSuppressionState)(nil)).Elem()
 }
 
+// AlarmSuppressionExists checks whether an existing AlarmSuppression resource with the given ID exists.
+func AlarmSuppressionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AlarmSuppressionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Monitoring/alarmSuppression:AlarmSuppression", id, state, "", opts...)
+}
+
 type alarmSuppressionArgs struct {
 	// The target of the alarm suppression.
 	AlarmSuppressionTarget AlarmSuppressionAlarmSuppressionTarget `pulumi:"alarmSuppressionTarget"`

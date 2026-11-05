@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of Autonomous AI Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.Database
         /// 
         /// Gets a list of Autonomous AI Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -85,7 +83,6 @@ namespace Pulumi.Oci.Database
         /// This data source provides the list of Autonomous Database Backups in Oracle Cloud Infrastructure Database service.
         /// 
         /// Gets a list of Autonomous AI Database backups based on either the `autonomousDatabaseId` or `compartmentId` specified as a query parameter.
-        /// 
         /// 
         /// ## Example Usage
         /// 

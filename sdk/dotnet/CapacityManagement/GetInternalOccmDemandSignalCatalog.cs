@@ -16,7 +16,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// This API helps in getting the details about a specific occm demand signal catalog.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// This API helps in getting the details about a specific occm demand signal catalog.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// This data source provides details about a specific Internal Occm Demand Signal Catalog resource in Oracle Cloud Infrastructure Capacity Management service.
         /// 
         /// This API helps in getting the details about a specific occm demand signal catalog.
-        /// 
         /// 
         /// ## Example Usage
         /// 

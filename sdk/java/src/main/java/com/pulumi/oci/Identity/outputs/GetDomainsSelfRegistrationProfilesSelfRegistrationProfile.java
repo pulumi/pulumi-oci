@@ -189,7 +189,7 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfile {
      */
     private String ocid;
     /**
-     * @return This URL will be replaced in email notification sent to user. When activation email required is set to true, user is created in \&#34;pending verification\&#34; state, upon clicking this link user will be able to activate himself. When activation email required is set to false, user is created in \&#34;verified\&#34; state, this link will be used to verify user&#39;s email.
+     * @return This URL will be replaced in email notification sent to user. When activation email required is set to true, user is created in &#92;&#34;pending verification&#92;&#34; state, upon clicking this link user will be able to activate himself. When activation email required is set to false, user is created in &#92;&#34;verified&#92;&#34; state, this link will be used to verify user&#39;s email.
      * 
      */
     private String redirectUrl;
@@ -199,7 +199,7 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfile {
      */
     private String resourceTypeSchemaVersion;
     /**
-     * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard &#92;&#34;enterprise&#92;&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
     private List<String> schemas;
@@ -459,7 +459,7 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfile {
         return this.ocid;
     }
     /**
-     * @return This URL will be replaced in email notification sent to user. When activation email required is set to true, user is created in \&#34;pending verification\&#34; state, upon clicking this link user will be able to activate himself. When activation email required is set to false, user is created in \&#34;verified\&#34; state, this link will be used to verify user&#39;s email.
+     * @return This URL will be replaced in email notification sent to user. When activation email required is set to true, user is created in &#92;&#34;pending verification&#92;&#34; state, upon clicking this link user will be able to activate himself. When activation email required is set to false, user is created in &#92;&#34;verified&#92;&#34; state, this link will be used to verify user&#39;s email.
      * 
      */
     public String redirectUrl() {
@@ -473,7 +473,7 @@ public final class GetDomainsSelfRegistrationProfilesSelfRegistrationProfile {
         return this.resourceTypeSchemaVersion;
     }
     /**
-     * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * @return REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard &#92;&#34;enterprise&#92;&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      */
     public List<String> schemas() {

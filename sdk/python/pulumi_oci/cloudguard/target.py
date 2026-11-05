@@ -800,6 +800,46 @@ class Target(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return Target(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            inherited_by_compartments: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            lifecyle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            recipe_count: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            target_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetTargetDetailArgs', 'TargetTargetDetailArgsDict', 'outputs.TargetTargetDetail']]]]] = None,
+            target_detector_recipes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetTargetDetectorRecipeArgs', 'TargetTargetDetectorRecipeArgsDict', 'outputs.TargetTargetDetectorRecipe']]]]] = None,
+            target_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            target_resource_type: pulumi.Input[Optional[_builtins.str]] = None,
+            target_responder_recipes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TargetTargetResponderRecipeArgs', 'TargetTargetResponderRecipeArgsDict', 'outputs.TargetTargetResponderRecipe']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["inheritedByCompartments"] = inherited_by_compartments
+        __props__["lifecyleDetails"] = lifecyle_details
+        __props__["recipeCount"] = recipe_count
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["targetDetails"] = target_details
+        __props__["targetDetectorRecipes"] = target_detector_recipes
+        __props__["targetResourceId"] = target_resource_id
+        __props__["targetResourceType"] = target_resource_type
+        __props__["targetResponderRecipes"] = target_responder_recipes
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:CloudGuard/target:Target', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

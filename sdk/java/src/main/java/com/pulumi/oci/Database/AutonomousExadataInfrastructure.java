@@ -102,11 +102,10 @@ public class AutonomousExadataInfrastructure extends com.pulumi.resources.Custom
     /**
      * The availability domain where the Autonomous Exadata Infrastructure is located.
      * 
-     * @deprecated
-     * Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.
+     * @deprecated Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.
      * 
      */
-    @Deprecated /* Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead. */
+    @Deprecated
     @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 

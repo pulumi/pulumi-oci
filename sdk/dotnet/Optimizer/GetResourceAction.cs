@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// Gets the resource action that corresponds to the specified OCID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.Optimizer
         /// 
         /// Gets the resource action that corresponds to the specified OCID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.Optimizer
         /// This data source provides details about a specific Resource Action resource in Oracle Cloud Infrastructure Optimizer service.
         /// 
         /// Gets the resource action that corresponds to the specified OCID.
-        /// 
         /// 
         /// ## Example Usage
         /// 

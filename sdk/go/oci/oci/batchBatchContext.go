@@ -245,6 +245,12 @@ func (BatchBatchContextState) ElementType() reflect.Type {
 	return reflect.TypeOf((*batchBatchContextState)(nil)).Elem()
 }
 
+// BatchBatchContextExists checks whether an existing BatchBatchContext resource with the given ID exists.
+func BatchBatchContextExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BatchBatchContextState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/batchBatchContext:BatchBatchContext", id, state, "", opts...)
+}
+
 type batchBatchContextArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

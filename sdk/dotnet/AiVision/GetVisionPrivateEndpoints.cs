@@ -16,7 +16,6 @@ namespace Pulumi.Oci.AiVision
         /// 
         /// Returns a list of visionPrivateEndpoints.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.AiVision
         /// 
         /// Returns a list of visionPrivateEndpoints.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.AiVision
         /// This data source provides the list of Vision Private Endpoints in Oracle Cloud Infrastructure Ai Vision service.
         /// 
         /// Returns a list of visionPrivateEndpoints.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -779,6 +779,48 @@ class ScheduledQuery(pulumi.CustomResource):
         __props__.__dict__["system_tags"] = system_tags
         return ScheduledQuery(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            apm_domain_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            opc_dry_run: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_query_description: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_query_instances: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_query_maximum_runtime_in_seconds: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_query_name: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_query_next_run_in_ms: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_query_processing_configuration: pulumi.Input[Optional[Union['ScheduledQueryScheduledQueryProcessingConfigurationArgs', 'ScheduledQueryScheduledQueryProcessingConfigurationArgsDict', 'outputs.ScheduledQueryScheduledQueryProcessingConfiguration']]] = None,
+            scheduled_query_processing_sub_type: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_query_processing_type: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_query_retention_criteria: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_query_retention_period_in_ms: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_query_schedule: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_query_text: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["apmDomainId"] = apm_domain_id
+        __props__["definedTags"] = defined_tags
+        __props__["freeformTags"] = freeform_tags
+        __props__["opcDryRun"] = opc_dry_run
+        __props__["scheduledQueryDescription"] = scheduled_query_description
+        __props__["scheduledQueryInstances"] = scheduled_query_instances
+        __props__["scheduledQueryMaximumRuntimeInSeconds"] = scheduled_query_maximum_runtime_in_seconds
+        __props__["scheduledQueryName"] = scheduled_query_name
+        __props__["scheduledQueryNextRunInMs"] = scheduled_query_next_run_in_ms
+        __props__["scheduledQueryProcessingConfiguration"] = scheduled_query_processing_configuration
+        __props__["scheduledQueryProcessingSubType"] = scheduled_query_processing_sub_type
+        __props__["scheduledQueryProcessingType"] = scheduled_query_processing_type
+        __props__["scheduledQueryRetentionCriteria"] = scheduled_query_retention_criteria
+        __props__["scheduledQueryRetentionPeriodInMs"] = scheduled_query_retention_period_in_ms
+        __props__["scheduledQuerySchedule"] = scheduled_query_schedule
+        __props__["scheduledQueryText"] = scheduled_query_text
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        return pulumi.runtime.exists_resource(None, 'oci:ApmTraces/scheduledQuery:ScheduledQuery', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="apmDomainId")
     def apm_domain_id(self) -> pulumi.Output[_builtins.str]:

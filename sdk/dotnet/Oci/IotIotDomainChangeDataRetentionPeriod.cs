@@ -57,8 +57,7 @@ namespace Pulumi.Oci.Oci
         public Output<string> IotDomainId { get; private set; } = null!;
 
         /// <summary>
-        /// The type of data retention period to apply. Allowed values are RAW_DATA, REJECTED_DATA, HISTORIZED_DATA, and RAW_COMMAND_DATA. 
-        /// 
+        /// The type of data retention period to apply. Allowed values are RAW_DATA, REJECTED_DATA, HISTORIZED_DATA, and RAW_COMMAND_DATA.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -125,8 +124,7 @@ namespace Pulumi.Oci.Oci
         public Input<string> IotDomainId { get; set; } = null!;
 
         /// <summary>
-        /// The type of data retention period to apply. Allowed values are RAW_DATA, REJECTED_DATA, HISTORIZED_DATA, and RAW_COMMAND_DATA. 
-        /// 
+        /// The type of data retention period to apply. Allowed values are RAW_DATA, REJECTED_DATA, HISTORIZED_DATA, and RAW_COMMAND_DATA.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -155,8 +153,7 @@ namespace Pulumi.Oci.Oci
         public Input<string>? IotDomainId { get; set; }
 
         /// <summary>
-        /// The type of data retention period to apply. Allowed values are RAW_DATA, REJECTED_DATA, HISTORIZED_DATA, and RAW_COMMAND_DATA. 
-        /// 
+        /// The type of data retention period to apply. Allowed values are RAW_DATA, REJECTED_DATA, HISTORIZED_DATA, and RAW_COMMAND_DATA.
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

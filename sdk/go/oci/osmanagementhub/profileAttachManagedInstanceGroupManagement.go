@@ -124,6 +124,12 @@ func (ProfileAttachManagedInstanceGroupManagementState) ElementType() reflect.Ty
 	return reflect.TypeOf((*profileAttachManagedInstanceGroupManagementState)(nil)).Elem()
 }
 
+// ProfileAttachManagedInstanceGroupManagementExists checks whether an existing ProfileAttachManagedInstanceGroupManagement resource with the given ID exists.
+func ProfileAttachManagedInstanceGroupManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProfileAttachManagedInstanceGroupManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/profileAttachManagedInstanceGroupManagement:ProfileAttachManagedInstanceGroupManagement", id, state, "", opts...)
+}
+
 type profileAttachManagedInstanceGroupManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group that the instance will be associated with.
 	ManagedInstanceGroupId string `pulumi:"managedInstanceGroupId"`

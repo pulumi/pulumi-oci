@@ -16,7 +16,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// Retrieves an Generative AI private endpoint using a `privateEndpointId`.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// Retrieves an Generative AI private endpoint using a `privateEndpointId`.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// This data source provides details about a specific Generative Ai Private Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
         /// 
         /// Retrieves an Generative AI private endpoint using a `privateEndpointId`.
-        /// 
         /// 
         /// ## Example Usage
         /// 

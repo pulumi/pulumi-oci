@@ -202,6 +202,12 @@ func (AwrHubState) ElementType() reflect.Type {
 	return reflect.TypeOf((*awrHubState)(nil)).Elem()
 }
 
+// AwrHubExists checks whether an existing AwrHub resource with the given ID exists.
+func AwrHubExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AwrHubState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Opsi/awrHub:AwrHub", id, state, "", opts...)
+}
+
 type awrHubArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

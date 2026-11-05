@@ -191,6 +191,12 @@ func (ApplicationVipState) ElementType() reflect.Type {
 	return reflect.TypeOf((*applicationVipState)(nil)).Elem()
 }
 
+// ApplicationVipExists checks whether an existing ApplicationVip resource with the given ID exists.
+func ApplicationVipExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ApplicationVipState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/applicationVip:ApplicationVip", id, state, "", opts...)
+}
+
 type applicationVipArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud VM cluster associated with the application virtual IP (VIP) address.
 	CloudVmClusterId string `pulumi:"cloudVmClusterId"`

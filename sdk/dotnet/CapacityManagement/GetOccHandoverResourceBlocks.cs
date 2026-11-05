@@ -16,7 +16,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// List Occ Handover Resource blocks.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// 
         /// List Occ Handover Resource blocks.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.CapacityManagement
         /// This data source provides the list of Occ Handover Resource Blocks in Oracle Cloud Infrastructure Capacity Management service.
         /// 
         /// List Occ Handover Resource blocks.
-        /// 
         /// 
         /// ## Example Usage
         /// 

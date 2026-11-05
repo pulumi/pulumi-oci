@@ -222,6 +222,20 @@ class DataPatch(pulumi.CustomResource):
         __props__.__dict__["pluggable_databases"] = pluggable_databases
         return DataPatch(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            action: pulumi.Input[Optional[_builtins.str]] = None,
+            data_patch_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DataPatchDataPatchOptionArgs', 'DataPatchDataPatchOptionArgsDict', 'outputs.DataPatchDataPatchOption']]]]] = None,
+            database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            pluggable_databases: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["action"] = action
+        __props__["dataPatchOptions"] = data_patch_options
+        __props__["databaseId"] = database_id
+        __props__["pluggableDatabases"] = pluggable_databases
+        return pulumi.runtime.exists_resource(None, 'oci:Database/dataPatch:DataPatch', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def action(self) -> pulumi.Output[_builtins.str]:

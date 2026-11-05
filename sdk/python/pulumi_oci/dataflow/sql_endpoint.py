@@ -1195,6 +1195,66 @@ class SqlEndpoint(pulumi.CustomResource):
         __props__.__dict__["warehouse_bucket_uri"] = warehouse_bucket_uri
         return SqlEndpoint(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            driver_shape: pulumi.Input[Optional[_builtins.str]] = None,
+            driver_shape_config: pulumi.Input[Optional[Union['SqlEndpointDriverShapeConfigArgs', 'SqlEndpointDriverShapeConfigArgsDict', 'outputs.SqlEndpointDriverShapeConfig']]] = None,
+            executor_shape: pulumi.Input[Optional[_builtins.str]] = None,
+            executor_shape_config: pulumi.Input[Optional[Union['SqlEndpointExecutorShapeConfigArgs', 'SqlEndpointExecutorShapeConfigArgsDict', 'outputs.SqlEndpointExecutorShapeConfig']]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            jdbc_endpoint_url: pulumi.Input[Optional[_builtins.str]] = None,
+            lake_id: pulumi.Input[Optional[_builtins.str]] = None,
+            log_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            log_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            log_retention_duration: pulumi.Input[Optional[_builtins.int]] = None,
+            max_executor_count: pulumi.Input[Optional[_builtins.int]] = None,
+            metastore_id: pulumi.Input[Optional[_builtins.str]] = None,
+            min_executor_count: pulumi.Input[Optional[_builtins.int]] = None,
+            network_configuration: pulumi.Input[Optional[Union['SqlEndpointNetworkConfigurationArgs', 'SqlEndpointNetworkConfigurationArgsDict', 'outputs.SqlEndpointNetworkConfiguration']]] = None,
+            spark_advanced_configurations: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            sql_endpoint_version: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            state_message: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            warehouse_bucket_uri: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["driverShape"] = driver_shape
+        __props__["driverShapeConfig"] = driver_shape_config
+        __props__["executorShape"] = executor_shape
+        __props__["executorShapeConfig"] = executor_shape_config
+        __props__["freeformTags"] = freeform_tags
+        __props__["jdbcEndpointUrl"] = jdbc_endpoint_url
+        __props__["lakeId"] = lake_id
+        __props__["logCompartmentId"] = log_compartment_id
+        __props__["logDisplayName"] = log_display_name
+        __props__["logGroupId"] = log_group_id
+        __props__["logRetentionDuration"] = log_retention_duration
+        __props__["maxExecutorCount"] = max_executor_count
+        __props__["metastoreId"] = metastore_id
+        __props__["minExecutorCount"] = min_executor_count
+        __props__["networkConfiguration"] = network_configuration
+        __props__["sparkAdvancedConfigurations"] = spark_advanced_configurations
+        __props__["sqlEndpointVersion"] = sql_endpoint_version
+        __props__["state"] = state
+        __props__["stateMessage"] = state_message
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["warehouseBucketUri"] = warehouse_bucket_uri
+        return pulumi.runtime.exists_resource(None, 'oci:DataFlow/sqlEndpoint:SqlEndpoint', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

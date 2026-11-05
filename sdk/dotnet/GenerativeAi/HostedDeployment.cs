@@ -67,7 +67,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Hosted Application. The ID may refer to either an IAM-authenticated or non-IAM Hosted Application.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -189,7 +188,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Hosted Application. The ID may refer to either an IAM-authenticated or non-IAM Hosted Application.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -260,7 +258,6 @@ namespace Pulumi.Oci.GenerativeAi
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent Hosted Application. The ID may refer to either an IAM-authenticated or non-IAM Hosted Application.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

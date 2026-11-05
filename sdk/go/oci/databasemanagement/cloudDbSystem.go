@@ -220,6 +220,12 @@ func (CloudDbSystemState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cloudDbSystemState)(nil)).Elem()
 }
 
+// CloudDbSystemExists checks whether an existing CloudDbSystem resource with the given ID exists.
+func CloudDbSystemExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudDbSystemState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/cloudDbSystem:CloudDbSystem", id, state, "", opts...)
+}
+
 type cloudDbSystemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the cloud DB system resides.
 	CompartmentId string `pulumi:"compartmentId"`

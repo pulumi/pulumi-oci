@@ -114,6 +114,12 @@ func (MaintenanceWindowsStopState) ElementType() reflect.Type {
 	return reflect.TypeOf((*maintenanceWindowsStopState)(nil)).Elem()
 }
 
+// MaintenanceWindowsStopExists checks whether an existing MaintenanceWindowsStop resource with the given ID exists.
+func MaintenanceWindowsStopExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MaintenanceWindowsStopState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:StackMonitoring/maintenanceWindowsStop:MaintenanceWindowsStop", id, state, "", opts...)
+}
+
 type maintenanceWindowsStopArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of maintenance window.
 	//

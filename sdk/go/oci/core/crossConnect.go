@@ -294,6 +294,12 @@ func (CrossConnectState) ElementType() reflect.Type {
 	return reflect.TypeOf((*crossConnectState)(nil)).Elem()
 }
 
+// CrossConnectExists checks whether an existing CrossConnect resource with the given ID exists.
+func CrossConnectExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CrossConnectState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/crossConnect:CrossConnect", id, state, "", opts...)
+}
+
 type crossConnectArgs struct {
 	// (Updatable) The OCID of the compartment to contain the cross-connect.
 	CompartmentId string `pulumi:"compartmentId"`

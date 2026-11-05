@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of all alerts.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Gets a list of all alerts.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -79,7 +77,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Alerts in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Gets a list of all alerts.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -160,9 +157,9 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// **Example:** | (timeCreated ge "2021-06-04T01:00:26.000Z") and (targetNames eq "Target1") (featureDetails.userName eq "user") and (targetNames eq "Target1") Supported fields: severity status alertType targetIds targetNames operationTime lifecycleState displayName timeCreated timeUpdated featureDetails.* (* can be any field in nestedStrMap in Feature Attributes in Alert Summary. For example -  userName,object,clientHostname,osUserName,clientIPs,clientId,commandText,commandParam,clientProgram,objectType,targetOwner)
-        /// =======
+        /// ===
         /// **Example:** | query=(timeCreated ge "2021-06-04T01:00:26.000Z") and (targetNames eq "Target1") query=(featureDetails.userName eq "user") and (targetNames eq "Target1") Supported fields: severity status alertType targetIds targetNames operationTime lifecycleState displayName timeCreated timeUpdated featureDetails.* (* can be any field in nestedStrMap in Feature Attributes in Alert Summary. For example -  userName,object,clientHostname,osUserName,clientIPs,clientId,commandText,commandParam,clientProgram,objectType,targetOwner)
-        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
+        /// &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
         /// </summary>
         [Input("scimQuery")]
         public string? ScimQuery { get; set; }
@@ -224,9 +221,9 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; ours
         /// **Example:** | (timeCreated ge "2021-06-04T01:00:26.000Z") and (targetNames eq "Target1") (featureDetails.userName eq "user") and (targetNames eq "Target1") Supported fields: severity status alertType targetIds targetNames operationTime lifecycleState displayName timeCreated timeUpdated featureDetails.* (* can be any field in nestedStrMap in Feature Attributes in Alert Summary. For example -  userName,object,clientHostname,osUserName,clientIPs,clientId,commandText,commandParam,clientProgram,objectType,targetOwner)
-        /// =======
+        /// ===
         /// **Example:** | query=(timeCreated ge "2021-06-04T01:00:26.000Z") and (targetNames eq "Target1") query=(featureDetails.userName eq "user") and (targetNames eq "Target1") Supported fields: severity status alertType targetIds targetNames operationTime lifecycleState displayName timeCreated timeUpdated featureDetails.* (* can be any field in nestedStrMap in Feature Attributes in Alert Summary. For example -  userName,object,clientHostname,osUserName,clientIPs,clientId,commandText,commandParam,clientProgram,objectType,targetOwner)
-        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; theirs
+        /// &gt; &gt; &gt; &gt; &gt; &gt; &gt; theirs
         /// </summary>
         [Input("scimQuery")]
         public Input<string>? ScimQuery { get; set; }

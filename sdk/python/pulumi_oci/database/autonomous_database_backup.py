@@ -798,6 +798,62 @@ class AutonomousDatabaseBackup(pulumi.CustomResource):
         __props__.__dict__["vault_id"] = vault_id
         return AutonomousDatabaseBackup(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            autonomous_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_destination_details: pulumi.Input[Optional[Union['AutonomousDatabaseBackupBackupDestinationDetailsArgs', 'AutonomousDatabaseBackupBackupDestinationDetailsArgsDict', 'outputs.AutonomousDatabaseBackupBackupDestinationDetails']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+            db_version: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            infrastructure_type: pulumi.Input[Optional[_builtins.str]] = None,
+            is_automatic: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_long_term_backup: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_restorable: pulumi.Input[Optional[_builtins.bool]] = None,
+            key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_store_wallet_name: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            region: pulumi.Input[Optional[_builtins.str]] = None,
+            retention_period_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+            size_in_tbs: pulumi.Input[Optional[_builtins.float]] = None,
+            source_database_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['AutonomousDatabaseBackupSourceDatabaseDetailArgs', 'AutonomousDatabaseBackupSourceDatabaseDetailArgsDict', 'outputs.AutonomousDatabaseBackupSourceDatabaseDetail']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_available_till: pulumi.Input[Optional[_builtins.str]] = None,
+            time_ended: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["autonomousDatabaseId"] = autonomous_database_id
+        __props__["backupDestinationDetails"] = backup_destination_details
+        __props__["compartmentId"] = compartment_id
+        __props__["databaseSizeInTbs"] = database_size_in_tbs
+        __props__["dbVersion"] = db_version
+        __props__["displayName"] = display_name
+        __props__["infrastructureType"] = infrastructure_type
+        __props__["isAutomatic"] = is_automatic
+        __props__["isLongTermBackup"] = is_long_term_backup
+        __props__["isRestorable"] = is_restorable
+        __props__["keyStoreId"] = key_store_id
+        __props__["keyStoreWalletName"] = key_store_wallet_name
+        __props__["kmsKeyId"] = kms_key_id
+        __props__["kmsKeyVersionId"] = kms_key_version_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["region"] = region
+        __props__["retentionPeriodInDays"] = retention_period_in_days
+        __props__["sizeInTbs"] = size_in_tbs
+        __props__["sourceDatabaseDetails"] = source_database_details
+        __props__["state"] = state
+        __props__["timeAvailableTill"] = time_available_till
+        __props__["timeEnded"] = time_ended
+        __props__["timeStarted"] = time_started
+        __props__["type"] = type
+        __props__["vaultId"] = vault_id
+        return pulumi.runtime.exists_resource(None, 'oci:Database/autonomousDatabaseBackup:AutonomousDatabaseBackup', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="autonomousDatabaseId")
     def autonomous_database_id(self) -> pulumi.Output[_builtins.str]:

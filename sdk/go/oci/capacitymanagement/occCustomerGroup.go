@@ -201,6 +201,12 @@ func (OccCustomerGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*occCustomerGroupState)(nil)).Elem()
 }
 
+// OccCustomerGroupExists checks whether an existing OccCustomerGroup resource with the given ID exists.
+func OccCustomerGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OccCustomerGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CapacityManagement/occCustomerGroup:OccCustomerGroup", id, state, "", opts...)
+}
+
 type occCustomerGroupArgs struct {
 	// Since all resources are at tenancy level hence this will be the ocid of the tenancy where operation is to be performed.
 	CompartmentId string `pulumi:"compartmentId"`

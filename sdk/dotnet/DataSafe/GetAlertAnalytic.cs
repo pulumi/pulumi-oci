@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Returns aggregation details of alerts.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Returns aggregation details of alerts.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -85,7 +83,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides details about a specific Alert Analytic resource in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Returns aggregation details of alerts.
-        /// 
         /// 
         /// ## Example Usage
         /// 

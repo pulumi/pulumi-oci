@@ -193,6 +193,12 @@ func (CompartmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*compartmentState)(nil)).Elem()
 }
 
+// CompartmentExists checks whether an existing Compartment resource with the given ID exists.
+func CompartmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CompartmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/compartment:Compartment", id, state, "", opts...)
+}
+
 type compartmentArgs struct {
 	// (Updatable) The OCID of the parent compartment containing the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`

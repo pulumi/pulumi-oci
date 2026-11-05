@@ -133,7 +133,6 @@ namespace Pulumi.Oci.BigDataService
         /// <summary>
         /// Any change to this value triggers the set default certificate configuration action.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -293,7 +292,6 @@ namespace Pulumi.Oci.BigDataService
         /// <summary>
         /// Any change to this value triggers the set default certificate configuration action.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -386,7 +384,6 @@ namespace Pulumi.Oci.BigDataService
 
         /// <summary>
         /// Any change to this value triggers the set default certificate configuration action.
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

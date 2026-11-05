@@ -531,6 +531,12 @@ func (AutonomousContainerDatabaseAddStandbyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*autonomousContainerDatabaseAddStandbyState)(nil)).Elem()
 }
 
+// AutonomousContainerDatabaseAddStandbyExists checks whether an existing AutonomousContainerDatabaseAddStandby resource with the given ID exists.
+func AutonomousContainerDatabaseAddStandbyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutonomousContainerDatabaseAddStandbyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/autonomousContainerDatabaseAddStandby:AutonomousContainerDatabaseAddStandby", id, state, "", opts...)
+}
+
 type autonomousContainerDatabaseAddStandbyArgs struct {
 	// The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousContainerDatabaseId string `pulumi:"autonomousContainerDatabaseId"`

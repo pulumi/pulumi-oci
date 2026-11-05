@@ -596,6 +596,40 @@ class EmailIpPool(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return EmailIpPool(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            last_ip_drain_period_in_hours: pulumi.Input[Optional[_builtins.int]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EmailIpPoolLockArgs', 'EmailIpPoolLockArgsDict', 'outputs.EmailIpPoolLock']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            outbound_ips: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            outbound_ips_responses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['EmailIpPoolOutboundIpsResponseArgs', 'EmailIpPoolOutboundIpsResponseArgsDict', 'outputs.EmailIpPoolOutboundIpsResponse']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["freeformTags"] = freeform_tags
+        __props__["lastIpDrainPeriodInHours"] = last_ip_drain_period_in_hours
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["locks"] = locks
+        __props__["name"] = name
+        __props__["outboundIps"] = outbound_ips
+        __props__["outboundIpsResponses"] = outbound_ips_responses
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Email/emailIpPool:EmailIpPool', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

@@ -215,6 +215,12 @@ func (BaselineableMetricState) ElementType() reflect.Type {
 	return reflect.TypeOf((*baselineableMetricState)(nil)).Elem()
 }
 
+// BaselineableMetricExists checks whether an existing BaselineableMetric resource with the given ID exists.
+func BaselineableMetricExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BaselineableMetricState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:StackMonitoring/baselineableMetric:BaselineableMetric", id, state, "", opts...)
+}
+
 type baselineableMetricArgs struct {
 	// (Updatable) metric column name
 	Column string `pulumi:"column"`

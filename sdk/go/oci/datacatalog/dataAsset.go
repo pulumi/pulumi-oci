@@ -208,6 +208,12 @@ func (DataAssetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dataAssetState)(nil)).Elem()
 }
 
+// DataAssetExists checks whether an existing DataAsset resource with the given ID exists.
+func DataAssetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DataAssetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataCatalog/dataAsset:DataAsset", id, state, "", opts...)
+}
+
 type dataAssetArgs struct {
 	// Unique catalog identifier.
 	CatalogId string `pulumi:"catalogId"`

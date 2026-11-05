@@ -1141,6 +1141,58 @@ class MonitoredResourcesSearch(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         return MonitoredResourcesSearch(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            exclude_fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            external_id: pulumi.Input[Optional[_builtins.str]] = None,
+            fields: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            host_name: pulumi.Input[Optional[_builtins.str]] = None,
+            host_name_contains: pulumi.Input[Optional[_builtins.str]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MonitoredResourcesSearchItemArgs', 'MonitoredResourcesSearchItemArgsDict', 'outputs.MonitoredResourcesSearchItem']]]]] = None,
+            license: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_states: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            management_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            name_contains: pulumi.Input[Optional[_builtins.str]] = None,
+            property_equals: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            resource_category: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
+            source_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created_greater_than_or_equal_to: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created_less_than: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated_greater_than_or_equal_to: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated_less_than: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["compartmentIds"] = compartment_ids
+        __props__["excludeFields"] = exclude_fields
+        __props__["externalId"] = external_id
+        __props__["fields"] = fields
+        __props__["hostName"] = host_name
+        __props__["hostNameContains"] = host_name_contains
+        __props__["items"] = items
+        __props__["license"] = license
+        __props__["lifecycleStates"] = lifecycle_states
+        __props__["managementAgentId"] = management_agent_id
+        __props__["name"] = name
+        __props__["nameContains"] = name_contains
+        __props__["propertyEquals"] = property_equals
+        __props__["resourceCategory"] = resource_category
+        __props__["resourceTimeZone"] = resource_time_zone
+        __props__["sourceType"] = source_type
+        __props__["state"] = state
+        __props__["timeCreatedGreaterThanOrEqualTo"] = time_created_greater_than_or_equal_to
+        __props__["timeCreatedLessThan"] = time_created_less_than
+        __props__["timeUpdatedGreaterThanOrEqualTo"] = time_updated_greater_than_or_equal_to
+        __props__["timeUpdatedLessThan"] = time_updated_less_than
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'oci:StackMonitoring/monitoredResourcesSearch:MonitoredResourcesSearch', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

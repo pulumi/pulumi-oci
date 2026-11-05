@@ -382,11 +382,10 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     private Boolean isScheduleAdUpdateToEarliest;
     private Boolean isScheduleDbVersionUpgradeToEarliest;
     /**
-     * @deprecated
-     * The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
+     * @deprecated The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
      * 
      */
-    @Deprecated /* The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead. */
+    @Deprecated
     private Boolean isShrinkOnly;
     /**
      * @return Key History Entry.
@@ -1315,11 +1314,10 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.isScheduleDbVersionUpgradeToEarliest;
     }
     /**
-     * @deprecated
-     * The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
+     * @deprecated The &#39;is_shrink_only&#39; field has been deprecated. Please use &#39;shrink_adb_trigger&#39; instead.
      * 
      */
-    @Deprecated /* The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead. */
+    @Deprecated
     public Boolean isShrinkOnly() {
         return this.isShrinkOnly;
     }

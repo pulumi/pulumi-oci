@@ -624,6 +624,38 @@ class SubsettingPolicySubsettingSchemaRelation(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return SubsettingPolicySubsettingSchemaRelation(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            child_columns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            child_object_key: pulumi.Input[Optional[_builtins.str]] = None,
+            child_object_name: pulumi.Input[Optional[_builtins.str]] = None,
+            child_schema_name: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_columns: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            parent_object_key: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_object_name: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_schema_name: pulumi.Input[Optional[_builtins.str]] = None,
+            relation_type: pulumi.Input[Optional[_builtins.str]] = None,
+            subsetting_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["childColumns"] = child_columns
+        __props__["childObjectKey"] = child_object_key
+        __props__["childObjectName"] = child_object_name
+        __props__["childSchemaName"] = child_schema_name
+        __props__["key"] = key
+        __props__["parentColumns"] = parent_columns
+        __props__["parentObjectKey"] = parent_object_key
+        __props__["parentObjectName"] = parent_object_name
+        __props__["parentSchemaName"] = parent_schema_name
+        __props__["relationType"] = relation_type
+        __props__["subsettingPolicyId"] = subsetting_policy_id
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/subsettingPolicySubsettingSchemaRelation:SubsettingPolicySubsettingSchemaRelation', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="childColumns")
     def child_columns(self) -> pulumi.Output[Sequence[_builtins.str]]:

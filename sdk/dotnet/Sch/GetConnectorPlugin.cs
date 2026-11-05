@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Sch
         /// 
         /// Gets the specified connector plugin configuration information.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Sch
         /// 
         /// Gets the specified connector plugin configuration information.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Sch
         /// This data source provides details about a specific Connector Plugin resource in Oracle Cloud Infrastructure Service Connector Hub service.
         /// 
         /// Gets the specified connector plugin configuration information.
-        /// 
         /// 
         /// ## Example Usage
         /// 

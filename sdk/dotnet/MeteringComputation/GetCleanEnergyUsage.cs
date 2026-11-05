@@ -16,7 +16,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// Returns the clean energy usage summary by region.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// 
         /// Returns the clean energy usage summary by region.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.MeteringComputation
         /// This data source provides details about a specific Clean Energy Usage resource in Oracle Cloud Infrastructure Metering Computation service.
         /// 
         /// Returns the clean energy usage summary by region.
-        /// 
         /// 
         /// ## Example Usage
         /// 

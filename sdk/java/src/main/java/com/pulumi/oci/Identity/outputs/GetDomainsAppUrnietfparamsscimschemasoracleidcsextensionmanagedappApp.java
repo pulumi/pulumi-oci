@@ -21,7 +21,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp {
     /**
-     * @return If true, then the account form will be displayed in the Oracle Identity Cloud Service UI to interactively create or update an account for this App. If a value is not specified for this attribute, a default value of \&#34;false\&#34; will be assumed as the value for this attribute.
+     * @return If true, then the account form will be displayed in the Oracle Identity Cloud Service UI to interactively create or update an account for this App. If a value is not specified for this attribute, a default value of &#92;&#34;false&#92;&#34; will be assumed as the value for this attribute.
      * 
      */
     private Boolean accountFormVisible;
@@ -143,7 +143,7 @@ public final class GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanag
 
     private GetDomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp() {}
     /**
-     * @return If true, then the account form will be displayed in the Oracle Identity Cloud Service UI to interactively create or update an account for this App. If a value is not specified for this attribute, a default value of \&#34;false\&#34; will be assumed as the value for this attribute.
+     * @return If true, then the account form will be displayed in the Oracle Identity Cloud Service UI to interactively create or update an account for this App. If a value is not specified for this attribute, a default value of &#92;&#34;false&#92;&#34; will be assumed as the value for this attribute.
      * 
      */
     public Boolean accountFormVisible() {

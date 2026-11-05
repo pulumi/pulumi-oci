@@ -22,7 +22,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp {
     /**
-     * @return (Updatable) If true, then the account form will be displayed in the Oracle Identity Cloud Service UI to interactively create or update an account for this App. If a value is not specified for this attribute, a default value of \&#34;false\&#34; will be assumed as the value for this attribute.
+     * @return (Updatable) If true, then the account form will be displayed in the Oracle Identity Cloud Service UI to interactively create or update an account for this App. If a value is not specified for this attribute, a default value of &#92;&#34;false&#92;&#34; will be assumed as the value for this attribute.
      * 
      * **Added In:** 18.4.2
      * 
@@ -401,7 +401,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
 
     private DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappApp() {}
     /**
-     * @return (Updatable) If true, then the account form will be displayed in the Oracle Identity Cloud Service UI to interactively create or update an account for this App. If a value is not specified for this attribute, a default value of \&#34;false\&#34; will be assumed as the value for this attribute.
+     * @return (Updatable) If true, then the account form will be displayed in the Oracle Identity Cloud Service UI to interactively create or update an account for this App. If a value is not specified for this attribute, a default value of &#92;&#34;false&#92;&#34; will be assumed as the value for this attribute.
      * 
      * **Added In:** 18.4.2
      * 

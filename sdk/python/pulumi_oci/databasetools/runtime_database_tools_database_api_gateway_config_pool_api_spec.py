@@ -438,6 +438,28 @@ class RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec(pulumi.CustomResou
         __props__.__dict__["type"] = type
         return RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            content: pulumi.Input[Optional[_builtins.str]] = None,
+            database_tools_database_api_gateway_config_id: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            pool_key: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["content"] = content
+        __props__["databaseToolsDatabaseApiGatewayConfigId"] = database_tools_database_api_gateway_config_id
+        __props__["displayName"] = display_name
+        __props__["key"] = key
+        __props__["poolKey"] = pool_key
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["type"] = type
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseTools/runtimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec:RuntimeDatabaseToolsDatabaseApiGatewayConfigPoolApiSpec', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def content(self) -> pulumi.Output[_builtins.str]:

@@ -807,6 +807,52 @@ class MlApplicationImplementation(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return MlApplicationImplementation(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            allowed_migration_destinations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            application_components: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MlApplicationImplementationApplicationComponentArgs', 'MlApplicationImplementationApplicationComponentArgsDict', 'outputs.MlApplicationImplementationApplicationComponent']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configuration_schemas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MlApplicationImplementationConfigurationSchemaArgs', 'MlApplicationImplementationConfigurationSchemaArgsDict', 'outputs.MlApplicationImplementationConfigurationSchema']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            logging: pulumi.Input[Optional[Union['MlApplicationImplementationLoggingArgs', 'MlApplicationImplementationLoggingArgsDict', 'outputs.MlApplicationImplementationLogging']]] = None,
+            ml_application_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ml_application_name: pulumi.Input[Optional[_builtins.str]] = None,
+            ml_application_package: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            ml_application_package_arguments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['MlApplicationImplementationMlApplicationPackageArgumentArgs', 'MlApplicationImplementationMlApplicationPackageArgumentArgsDict', 'outputs.MlApplicationImplementationMlApplicationPackageArgument']]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            opc_ml_app_package_args: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            package_version: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["allowedMigrationDestinations"] = allowed_migration_destinations
+        __props__["applicationComponents"] = application_components
+        __props__["compartmentId"] = compartment_id
+        __props__["configurationSchemas"] = configuration_schemas
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["logging"] = logging
+        __props__["mlApplicationId"] = ml_application_id
+        __props__["mlApplicationName"] = ml_application_name
+        __props__["mlApplicationPackage"] = ml_application_package
+        __props__["mlApplicationPackageArguments"] = ml_application_package_arguments
+        __props__["name"] = name
+        __props__["opcMlAppPackageArgs"] = opc_ml_app_package_args
+        __props__["packageVersion"] = package_version
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:DataScience/mlApplicationImplementation:MlApplicationImplementation', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="allowedMigrationDestinations")
     def allowed_migration_destinations(self) -> pulumi.Output[Sequence[_builtins.str]]:

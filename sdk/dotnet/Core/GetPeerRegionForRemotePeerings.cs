@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Core
         /// Lists the regions that support remote VCN peering (which is peering across regions).
         /// For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -42,7 +41,6 @@ namespace Pulumi.Oci.Core
         /// Lists the regions that support remote VCN peering (which is peering across regions).
         /// For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -66,7 +64,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the regions that support remote VCN peering (which is peering across regions).
         /// For more information, see [VCN Peering](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/VCNpeering.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -778,6 +778,48 @@ class DbmulticloudOracleDbGcpIdentityConnector(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return DbmulticloudOracleDbGcpIdentityConnector(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            gcp_identity_connectivity_status: pulumi.Input[Optional[_builtins.str]] = None,
+            gcp_location: pulumi.Input[Optional[_builtins.str]] = None,
+            gcp_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgs', 'DbmulticloudOracleDbGcpIdentityConnectorGcpNodeArgsDict', 'outputs.DbmulticloudOracleDbGcpIdentityConnectorGcpNode']]]]] = None,
+            gcp_resource_service_agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            gcp_workload_identity_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
+            gcp_workload_identity_provider_id: pulumi.Input[Optional[_builtins.str]] = None,
+            issuer_url: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_state_details: pulumi.Input[Optional[_builtins.str]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["gcpIdentityConnectivityStatus"] = gcp_identity_connectivity_status
+        __props__["gcpLocation"] = gcp_location
+        __props__["gcpNodes"] = gcp_nodes
+        __props__["gcpResourceServiceAgentId"] = gcp_resource_service_agent_id
+        __props__["gcpWorkloadIdentityPoolId"] = gcp_workload_identity_pool_id
+        __props__["gcpWorkloadIdentityProviderId"] = gcp_workload_identity_provider_id
+        __props__["issuerUrl"] = issuer_url
+        __props__["lifecycleStateDetails"] = lifecycle_state_details
+        __props__["projectId"] = project_id
+        __props__["resourceId"] = resource_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:oci/dbmulticloudOracleDbGcpIdentityConnector:DbmulticloudOracleDbGcpIdentityConnector', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

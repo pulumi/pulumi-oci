@@ -660,6 +660,42 @@ class ChargebackPlan(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return ChargebackPlan(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            entity_source: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_customizable: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            plan_category: pulumi.Input[Optional[_builtins.str]] = None,
+            plan_custom_items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ChargebackPlanPlanCustomItemArgs', 'ChargebackPlanPlanCustomItemArgsDict', 'outputs.ChargebackPlanPlanCustomItem']]]]] = None,
+            plan_description: pulumi.Input[Optional[_builtins.str]] = None,
+            plan_name: pulumi.Input[Optional[_builtins.str]] = None,
+            plan_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["entitySource"] = entity_source
+        __props__["freeformTags"] = freeform_tags
+        __props__["isCustomizable"] = is_customizable
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["planCategory"] = plan_category
+        __props__["planCustomItems"] = plan_custom_items
+        __props__["planDescription"] = plan_description
+        __props__["planName"] = plan_name
+        __props__["planType"] = plan_type
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Opsi/chargebackPlan:ChargebackPlan', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

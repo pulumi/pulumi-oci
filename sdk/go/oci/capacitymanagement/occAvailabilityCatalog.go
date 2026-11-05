@@ -230,6 +230,12 @@ func (OccAvailabilityCatalogState) ElementType() reflect.Type {
 	return reflect.TypeOf((*occAvailabilityCatalogState)(nil)).Elem()
 }
 
+// OccAvailabilityCatalogExists checks whether an existing OccAvailabilityCatalog resource with the given ID exists.
+func OccAvailabilityCatalogExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OccAvailabilityCatalogState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CapacityManagement/occAvailabilityCatalog:OccAvailabilityCatalog", id, state, "", opts...)
+}
+
 type occAvailabilityCatalogArgs struct {
 	// The base 64 encoded string corresponding to the catalog file contents.
 	Base64encodedCatalogDetails string `pulumi:"base64encodedCatalogDetails"`

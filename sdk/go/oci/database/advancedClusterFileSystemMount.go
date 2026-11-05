@@ -62,6 +62,12 @@ func (AdvancedClusterFileSystemMountState) ElementType() reflect.Type {
 	return reflect.TypeOf((*advancedClusterFileSystemMountState)(nil)).Elem()
 }
 
+// AdvancedClusterFileSystemMountExists checks whether an existing AdvancedClusterFileSystemMount resource with the given ID exists.
+func AdvancedClusterFileSystemMountExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AdvancedClusterFileSystemMountState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/advancedClusterFileSystemMount:AdvancedClusterFileSystemMount", id, state, "", opts...)
+}
+
 type advancedClusterFileSystemMountArgs struct {
 	AdvancedClusterFileSystemId string `pulumi:"advancedClusterFileSystemId"`
 }

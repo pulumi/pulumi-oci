@@ -324,6 +324,20 @@ class ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(pulumi.Cus
         __props__.__dict__["feature_details"] = feature_details
         return ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            enable_external_pluggable_dbm_feature: pulumi.Input[Optional[_builtins.bool]] = None,
+            external_pluggable_database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            feature: pulumi.Input[Optional[_builtins.str]] = None,
+            feature_details: pulumi.Input[Optional[Union['ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgs', 'ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetailsArgsDict', 'outputs.ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagementFeatureDetails']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["enableExternalPluggableDbmFeature"] = enable_external_pluggable_dbm_feature
+        __props__["externalPluggableDatabaseId"] = external_pluggable_database_id
+        __props__["feature"] = feature
+        __props__["featureDetails"] = feature_details
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseManagement/externalpluggabledatabaseExternalPluggableDbmFeaturesManagement:ExternalpluggabledatabaseExternalPluggableDbmFeaturesManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="enableExternalPluggableDbmFeature")
     def enable_external_pluggable_dbm_feature(self) -> pulumi.Output[_builtins.bool]:

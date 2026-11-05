@@ -1007,6 +1007,82 @@ class DatabaseSnapshotStandby(pulumi.CustomResource):
         __props__.__dict__["vm_cluster_id"] = vm_cluster_id
         return DatabaseSnapshotStandby(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            character_set: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connection_strings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyConnectionStringArgs', 'DatabaseSnapshotStandbyConnectionStringArgsDict', 'outputs.DatabaseSnapshotStandbyConnectionString']]]]] = None,
+            data_guard_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyDataGuardGroupArgs', 'DatabaseSnapshotStandbyDataGuardGroupArgsDict', 'outputs.DatabaseSnapshotStandbyDataGuardGroup']]]]] = None,
+            database_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            database_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_management_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyDatabaseManagementConfigArgs', 'DatabaseSnapshotStandbyDatabaseManagementConfigArgsDict', 'outputs.DatabaseSnapshotStandbyDatabaseManagementConfig']]]]] = None,
+            database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_backup_configs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DatabaseSnapshotStandbyDbBackupConfigArgs', 'DatabaseSnapshotStandbyDbBackupConfigArgsDict', 'outputs.DatabaseSnapshotStandbyDbBackupConfig']]]]] = None,
+            db_home_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_name: pulumi.Input[Optional[_builtins.str]] = None,
+            db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_unique_name: pulumi.Input[Optional[_builtins.str]] = None,
+            db_workload: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_cdb: pulumi.Input[Optional[_builtins.bool]] = None,
+            key_store_id: pulumi.Input[Optional[_builtins.str]] = None,
+            key_store_wallet_name: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            last_backup_duration_in_seconds: pulumi.Input[Optional[_builtins.int]] = None,
+            last_backup_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+            last_failed_backup_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            ncharacter_set: pulumi.Input[Optional[_builtins.str]] = None,
+            pdb_name: pulumi.Input[Optional[_builtins.str]] = None,
+            sid_prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            snapshot_duration_in_days: pulumi.Input[Optional[_builtins.int]] = None,
+            source_database_point_in_time_recovery_timestamp: pulumi.Input[Optional[_builtins.str]] = None,
+            standby_conversion_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            vault_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["characterSet"] = character_set
+        __props__["compartmentId"] = compartment_id
+        __props__["connectionStrings"] = connection_strings
+        __props__["dataGuardGroups"] = data_guard_groups
+        __props__["databaseAdminPassword"] = database_admin_password
+        __props__["databaseId"] = database_id
+        __props__["databaseManagementConfigs"] = database_management_configs
+        __props__["databaseSoftwareImageId"] = database_software_image_id
+        __props__["dbBackupConfigs"] = db_backup_configs
+        __props__["dbHomeId"] = db_home_id
+        __props__["dbName"] = db_name
+        __props__["dbSystemId"] = db_system_id
+        __props__["dbUniqueName"] = db_unique_name
+        __props__["dbWorkload"] = db_workload
+        __props__["definedTags"] = defined_tags
+        __props__["freeformTags"] = freeform_tags
+        __props__["isCdb"] = is_cdb
+        __props__["keyStoreId"] = key_store_id
+        __props__["keyStoreWalletName"] = key_store_wallet_name
+        __props__["kmsKeyId"] = kms_key_id
+        __props__["kmsKeyVersionId"] = kms_key_version_id
+        __props__["lastBackupDurationInSeconds"] = last_backup_duration_in_seconds
+        __props__["lastBackupTimestamp"] = last_backup_timestamp
+        __props__["lastFailedBackupTimestamp"] = last_failed_backup_timestamp
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["ncharacterSet"] = ncharacter_set
+        __props__["pdbName"] = pdb_name
+        __props__["sidPrefix"] = sid_prefix
+        __props__["snapshotDurationInDays"] = snapshot_duration_in_days
+        __props__["sourceDatabasePointInTimeRecoveryTimestamp"] = source_database_point_in_time_recovery_timestamp
+        __props__["standbyConversionType"] = standby_conversion_type
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["vaultId"] = vault_id
+        __props__["vmClusterId"] = vm_cluster_id
+        return pulumi.runtime.exists_resource(None, 'oci:Database/databaseSnapshotStandby:DatabaseSnapshotStandby', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="characterSet")
     def character_set(self) -> pulumi.Output[_builtins.str]:

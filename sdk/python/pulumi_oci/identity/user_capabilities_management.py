@@ -413,6 +413,24 @@ class UserCapabilitiesManagement(pulumi.CustomResource):
         __props__.__dict__["user_id"] = user_id
         return UserCapabilitiesManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            can_use_api_keys: pulumi.Input[Optional[_builtins.bool]] = None,
+            can_use_auth_tokens: pulumi.Input[Optional[_builtins.bool]] = None,
+            can_use_console_password: pulumi.Input[Optional[_builtins.bool]] = None,
+            can_use_customer_secret_keys: pulumi.Input[Optional[_builtins.bool]] = None,
+            can_use_smtp_credentials: pulumi.Input[Optional[_builtins.bool]] = None,
+            user_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["canUseApiKeys"] = can_use_api_keys
+        __props__["canUseAuthTokens"] = can_use_auth_tokens
+        __props__["canUseConsolePassword"] = can_use_console_password
+        __props__["canUseCustomerSecretKeys"] = can_use_customer_secret_keys
+        __props__["canUseSmtpCredentials"] = can_use_smtp_credentials
+        __props__["userId"] = user_id
+        return pulumi.runtime.exists_resource(None, 'oci:Identity/userCapabilitiesManagement:UserCapabilitiesManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="canUseApiKeys")
     def can_use_api_keys(self) -> pulumi.Output[_builtins.bool]:

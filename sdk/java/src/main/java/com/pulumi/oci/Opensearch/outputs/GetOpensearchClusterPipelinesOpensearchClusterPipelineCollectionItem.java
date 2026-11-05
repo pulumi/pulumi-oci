@@ -21,7 +21,7 @@ public final class GetOpensearchClusterPipelinesOpensearchClusterPipelineCollect
      */
     private String compartmentId;
     /**
-     * @return The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \.
+     * @return The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with &#92;.
      * 
      */
     private String dataPrepperConfigurationBody;
@@ -82,7 +82,7 @@ public final class GetOpensearchClusterPipelinesOpensearchClusterPipelineCollect
      */
     private String opensearchPipelinePrivateIp;
     /**
-     * @return The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \.
+     * @return The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with &#92;.
      * 
      */
     private String pipelineConfigurationBody;
@@ -146,7 +146,7 @@ public final class GetOpensearchClusterPipelinesOpensearchClusterPipelineCollect
         return this.compartmentId;
     }
     /**
-     * @return The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \.
+     * @return The data prepper config in YAML format. The command accepts the data prepper config as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with &#92;.
      * 
      */
     public String dataPrepperConfigurationBody() {
@@ -233,7 +233,7 @@ public final class GetOpensearchClusterPipelinesOpensearchClusterPipelineCollect
         return this.opensearchPipelinePrivateIp;
     }
     /**
-     * @return The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with \.
+     * @return The pipeline configuration in YAML format. The command accepts the pipeline configuration as a string or within a .yaml file. If you provide the configuration as a string, each new line must be escaped with &#92;.
      * 
      */
     public String pipelineConfigurationBody() {

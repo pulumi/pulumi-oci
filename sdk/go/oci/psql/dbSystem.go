@@ -376,6 +376,12 @@ func (DbSystemState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dbSystemState)(nil)).Elem()
 }
 
+// DbSystemExists checks whether an existing DbSystem resource with the given ID exists.
+func DbSystemExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DbSystemState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Psql/dbSystem:DbSystem", id, state, "", opts...)
+}
+
 type dbSystemArgs struct {
 	// (Updatable) Whether to allow in-place major version upgrades. Defaults to `false`. When this flag is known to be `true` at plan time, changing `dbVersion` to a higher major version upgrades the existing database system; a downgrade is rejected. If the flag is omitted, `false`, or unknown, a `dbVersion` change forces replacement. The flag can remain `true` for subsequent upgrades. Changing the flag alone does not upgrade the database system, and setting it on creation does not run a separate upgrade operation.
 	AllowMajorVersionUpgrade *bool `pulumi:"allowMajorVersionUpgrade"`

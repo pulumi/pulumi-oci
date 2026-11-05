@@ -850,6 +850,48 @@ class Image(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return Image(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            agent_features: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImageAgentFeatureArgs', 'ImageAgentFeatureArgsDict', 'outputs.ImageAgentFeature']]]]] = None,
+            base_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+            billable_size_in_gbs: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            create_image_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            image_source_details: pulumi.Input[Optional[Union['ImageImageSourceDetailsArgs', 'ImageImageSourceDetailsArgsDict', 'outputs.ImageImageSourceDetails']]] = None,
+            instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            launch_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            launch_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ImageLaunchOptionArgs', 'ImageLaunchOptionArgsDict', 'outputs.ImageLaunchOption']]]]] = None,
+            listing_type: pulumi.Input[Optional[_builtins.str]] = None,
+            operating_system: pulumi.Input[Optional[_builtins.str]] = None,
+            operating_system_version: pulumi.Input[Optional[_builtins.str]] = None,
+            size_in_mbs: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["agentFeatures"] = agent_features
+        __props__["baseImageId"] = base_image_id
+        __props__["billableSizeInGbs"] = billable_size_in_gbs
+        __props__["compartmentId"] = compartment_id
+        __props__["createImageAllowed"] = create_image_allowed
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["imageSourceDetails"] = image_source_details
+        __props__["instanceId"] = instance_id
+        __props__["launchMode"] = launch_mode
+        __props__["launchOptions"] = launch_options
+        __props__["listingType"] = listing_type
+        __props__["operatingSystem"] = operating_system
+        __props__["operatingSystemVersion"] = operating_system_version
+        __props__["sizeInMbs"] = size_in_mbs
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:Core/image:Image', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="agentFeatures")
     def agent_features(self) -> pulumi.Output[Sequence['outputs.ImageAgentFeature']]:

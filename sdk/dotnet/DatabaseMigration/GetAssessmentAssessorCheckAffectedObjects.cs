@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// Display Check Affected objects.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// Display Check Affected objects.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// This data source provides the list of Assessment Assessor Check Affected Objects in Oracle Cloud Infrastructure Database Migration service.
         /// 
         /// Display Check Affected objects.
-        /// 
         /// 
         /// ## Example Usage
         /// 

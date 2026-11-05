@@ -455,6 +455,12 @@ func (LoadBalancerState) ElementType() reflect.Type {
 	return reflect.TypeOf((*loadBalancerState)(nil)).Elem()
 }
 
+// LoadBalancerExists checks whether an existing LoadBalancer resource with the given ID exists.
+func LoadBalancerExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LoadBalancerState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LoadBalancer/loadBalancer:LoadBalancer", id, state, "", opts...)
+}
+
 type loadBalancerArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to create the load balancer.
 	CompartmentId string `pulumi:"compartmentId"`

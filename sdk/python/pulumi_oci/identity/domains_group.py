@@ -1874,6 +1874,68 @@ class DomainsGroup(pulumi.CustomResource):
         __props__.__dict__["urnietfparamsscimschemasoracleidcsextensionrequestable_group"] = urnietfparamsscimschemasoracleidcsextensionrequestable_group
         return DomainsGroup(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            attributes: pulumi.Input[Optional[_builtins.str]] = None,
+            authorization: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            external_id: pulumi.Input[Optional[_builtins.str]] = None,
+            force_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsGroupIdcsCreatedByArgs', 'DomainsGroupIdcsCreatedByArgsDict', 'outputs.DomainsGroupIdcsCreatedBy']]]]] = None,
+            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsGroupIdcsLastModifiedByArgs', 'DomainsGroupIdcsLastModifiedByArgsDict', 'outputs.DomainsGroupIdcsLastModifiedBy']]]]] = None,
+            idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            members: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsGroupMemberArgs', 'DomainsGroupMemberArgsDict', 'outputs.DomainsGroupMember']]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsGroupMetaArgs', 'DomainsGroupMetaArgsDict', 'outputs.DomainsGroupMeta']]]]] = None,
+            non_unique_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsGroupTagArgs', 'DomainsGroupTagArgsDict', 'outputs.DomainsGroupTag']]]]] = None,
+            tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            urnietfparamsscimschemasoracleidcsextension_oci_tags: pulumi.Input[Optional[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTagsArgsDict', 'outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionOciTags']]] = None,
+            urnietfparamsscimschemasoracleidcsextensiondbcs_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroupArgsDict', 'outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondbcsGroup']]]]] = None,
+            urnietfparamsscimschemasoracleidcsextensiondynamic_group: pulumi.Input[Optional[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroupArgsDict', 'outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiondynamicGroup']]] = None,
+            urnietfparamsscimschemasoracleidcsextensiongroup_group: pulumi.Input[Optional[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupArgsDict', 'outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroup']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionposix_group: pulumi.Input[Optional[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroupArgsDict', 'outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionposixGroup']]] = None,
+            urnietfparamsscimschemasoracleidcsextensionrequestable_group: pulumi.Input[Optional[Union['DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgs', 'DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroupArgsDict', 'outputs.DomainsGroupUrnietfparamsscimschemasoracleidcsextensionrequestableGroup']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["attributeSets"] = attribute_sets
+        __props__["attributes"] = attributes
+        __props__["authorization"] = authorization
+        __props__["compartmentOcid"] = compartment_ocid
+        __props__["deleteInProgress"] = delete_in_progress
+        __props__["displayName"] = display_name
+        __props__["domainOcid"] = domain_ocid
+        __props__["externalId"] = external_id
+        __props__["forceDelete"] = force_delete
+        __props__["idcsCreatedBies"] = idcs_created_bies
+        __props__["idcsEndpoint"] = idcs_endpoint
+        __props__["idcsLastModifiedBies"] = idcs_last_modified_bies
+        __props__["idcsLastUpgradedInRelease"] = idcs_last_upgraded_in_release
+        __props__["idcsPreventedOperations"] = idcs_prevented_operations
+        __props__["members"] = members
+        __props__["metas"] = metas
+        __props__["nonUniqueDisplayName"] = non_unique_display_name
+        __props__["ocid"] = ocid
+        __props__["resourceTypeSchemaVersion"] = resource_type_schema_version
+        __props__["schemas"] = schemas
+        __props__["tags"] = tags
+        __props__["tenancyOcid"] = tenancy_ocid
+        __props__["urnietfparamsscimschemasoracleidcsextensionOciTags"] = urnietfparamsscimschemasoracleidcsextension_oci_tags
+        __props__["urnietfparamsscimschemasoracleidcsextensiondbcsGroups"] = urnietfparamsscimschemasoracleidcsextensiondbcs_groups
+        __props__["urnietfparamsscimschemasoracleidcsextensiondynamicGroup"] = urnietfparamsscimschemasoracleidcsextensiondynamic_group
+        __props__["urnietfparamsscimschemasoracleidcsextensiongroupGroup"] = urnietfparamsscimschemasoracleidcsextensiongroup_group
+        __props__["urnietfparamsscimschemasoracleidcsextensionposixGroup"] = urnietfparamsscimschemasoracleidcsextensionposix_group
+        __props__["urnietfparamsscimschemasoracleidcsextensionrequestableGroup"] = urnietfparamsscimschemasoracleidcsextensionrequestable_group
+        return pulumi.runtime.exists_resource(None, 'oci:Identity/domainsGroup:DomainsGroup', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="attributeSets")
     def attribute_sets(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

@@ -170,6 +170,12 @@ func (AddressListState) ElementType() reflect.Type {
 	return reflect.TypeOf((*addressListState)(nil)).Elem()
 }
 
+// AddressListExists checks whether an existing AddressList resource with the given ID exists.
+func AddressListExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AddressListState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Waas/addressList:AddressList", id, state, "", opts...)
+}
+
 type addressListArgs struct {
 	// (Updatable) A list of IP addresses or CIDR notations.
 	Addresses []string `pulumi:"addresses"`

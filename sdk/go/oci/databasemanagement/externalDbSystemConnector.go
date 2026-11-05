@@ -209,6 +209,12 @@ func (ExternalDbSystemConnectorState) ElementType() reflect.Type {
 	return reflect.TypeOf((*externalDbSystemConnectorState)(nil)).Elem()
 }
 
+// ExternalDbSystemConnectorExists checks whether an existing ExternalDbSystemConnector resource with the given ID exists.
+func ExternalDbSystemConnectorExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ExternalDbSystemConnectorState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/externalDbSystemConnector:ExternalDbSystemConnector", id, state, "", opts...)
+}
+
 type externalDbSystemConnectorArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the management agent used for the external DB system connector.
 	AgentId *string `pulumi:"agentId"`

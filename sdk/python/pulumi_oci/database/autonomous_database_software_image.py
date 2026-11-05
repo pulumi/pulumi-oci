@@ -562,6 +562,38 @@ class AutonomousDatabaseSoftwareImage(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return AutonomousDatabaseSoftwareImage(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            autonomous_dsi_one_off_patches: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database_version: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            image_shape_family: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            release_update: pulumi.Input[Optional[_builtins.str]] = None,
+            source_cdb_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["autonomousDsiOneOffPatches"] = autonomous_dsi_one_off_patches
+        __props__["compartmentId"] = compartment_id
+        __props__["databaseVersion"] = database_version
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["imageShapeFamily"] = image_shape_family
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["releaseUpdate"] = release_update
+        __props__["sourceCdbId"] = source_cdb_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:Database/autonomousDatabaseSoftwareImage:AutonomousDatabaseSoftwareImage', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="autonomousDsiOneOffPatches")
     def autonomous_dsi_one_off_patches(self) -> pulumi.Output[Sequence[_builtins.str]]:

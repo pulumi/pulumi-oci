@@ -204,6 +204,12 @@ func (CostadCostAnomalyMonitorState) ElementType() reflect.Type {
 	return reflect.TypeOf((*costadCostAnomalyMonitorState)(nil)).Elem()
 }
 
+// CostadCostAnomalyMonitorExists checks whether an existing CostadCostAnomalyMonitor resource with the given ID exists.
+func CostadCostAnomalyMonitorExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CostadCostAnomalyMonitorState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/costadCostAnomalyMonitor:CostadCostAnomalyMonitor", id, state, "", opts...)
+}
+
 type costadCostAnomalyMonitorArgs struct {
 	// The OCID of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

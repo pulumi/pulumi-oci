@@ -18,7 +18,6 @@ namespace Pulumi.Oci.FileStorage
         /// set. You must specify an export set ID, a file system ID, and
         /// / or a compartment ID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.FileStorage
         /// set. You must specify an export set ID, a file system ID, and
         /// / or a compartment ID.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -83,7 +81,6 @@ namespace Pulumi.Oci.FileStorage
         /// Lists export resources by compartment, file system, or export
         /// set. You must specify an export set ID, a file system ID, and
         /// / or a compartment ID.
-        /// 
         /// 
         /// ## Example Usage
         /// 

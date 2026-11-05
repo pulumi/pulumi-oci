@@ -190,6 +190,12 @@ func (ScheduledQueryState) ElementType() reflect.Type {
 	return reflect.TypeOf((*scheduledQueryState)(nil)).Elem()
 }
 
+// ScheduledQueryExists checks whether an existing ScheduledQuery resource with the given ID exists.
+func ScheduledQueryExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ScheduledQueryState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ApmTraces/scheduledQuery:ScheduledQuery", id, state, "", opts...)
+}
+
 type scheduledQueryArgs struct {
 	// (Updatable) The APM Domain ID for the intended request.
 	ApmDomainId string `pulumi:"apmDomainId"`

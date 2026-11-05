@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the customer-premises equipment objects (CPEs) in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the customer-premises equipment objects (CPEs) in the specified compartment.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Core
         /// This data source provides the list of Cpes in Oracle Cloud Infrastructure Core service.
         /// 
         /// Lists the customer-premises equipment objects (CPEs) in the specified compartment.
-        /// 
         /// 
         /// ## Example Usage
         /// 

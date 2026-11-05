@@ -16,7 +16,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// Returns a list of managementAgentPlugins.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// 
         /// Returns a list of managementAgentPlugins.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.ManagementAgent
         /// This data source provides the list of Management Agent Plugins in Oracle Cloud Infrastructure Management Agent service.
         /// 
         /// Returns a list of managementAgentPlugins.
-        /// 
         /// 
         /// ## Example Usage
         /// 

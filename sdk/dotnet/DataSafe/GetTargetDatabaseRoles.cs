@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Returns a list of role metadata objects.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.DataSafe
         /// 
         /// Returns a list of role metadata objects.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.DataSafe
         /// This data source provides the list of Target Database Roles in Oracle Cloud Infrastructure Data Safe service.
         /// 
         /// Returns a list of role metadata objects.
-        /// 
         /// 
         /// ## Example Usage
         /// 

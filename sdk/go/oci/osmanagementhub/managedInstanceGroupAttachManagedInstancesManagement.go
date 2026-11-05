@@ -125,6 +125,12 @@ func (ManagedInstanceGroupAttachManagedInstancesManagementState) ElementType() r
 	return reflect.TypeOf((*managedInstanceGroupAttachManagedInstancesManagementState)(nil)).Elem()
 }
 
+// ManagedInstanceGroupAttachManagedInstancesManagementExists checks whether an existing ManagedInstanceGroupAttachManagedInstancesManagement resource with the given ID exists.
+func ManagedInstanceGroupAttachManagedInstancesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedInstanceGroupAttachManagedInstancesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/managedInstanceGroupAttachManagedInstancesManagement:ManagedInstanceGroupAttachManagedInstancesManagement", id, state, "", opts...)
+}
+
 type managedInstanceGroupAttachManagedInstancesManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the managed instance group.
 	ManagedInstanceGroupId string `pulumi:"managedInstanceGroupId"`

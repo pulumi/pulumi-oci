@@ -456,6 +456,30 @@ class HeatWaveCluster(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return HeatWaveCluster(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            cluster_nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['HeatWaveClusterClusterNodeArgs', 'HeatWaveClusterClusterNodeArgsDict', 'outputs.HeatWaveClusterClusterNode']]]]] = None,
+            cluster_size: pulumi.Input[Optional[_builtins.int]] = None,
+            db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_lakehouse_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["clusterNodes"] = cluster_nodes
+        __props__["clusterSize"] = cluster_size
+        __props__["dbSystemId"] = db_system_id
+        __props__["isLakehouseEnabled"] = is_lakehouse_enabled
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["shapeName"] = shape_name
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:Mysql/heatWaveCluster:HeatWaveCluster', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="clusterNodes")
     def cluster_nodes(self) -> pulumi.Output[Sequence['outputs.HeatWaveClusterClusterNode']]:

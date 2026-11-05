@@ -119,6 +119,12 @@ func (VirtualNetworkState) ElementType() reflect.Type {
 	return reflect.TypeOf((*virtualNetworkState)(nil)).Elem()
 }
 
+// VirtualNetworkExists checks whether an existing VirtualNetwork resource with the given ID exists.
+func VirtualNetworkExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VirtualNetworkState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/virtualNetwork:VirtualNetwork", id, state, "", opts...)
+}
+
 type virtualNetworkArgs struct {
 	Byoipv6cidrDetails           []VirtualNetworkByoipv6cidrDetail `pulumi:"byoipv6cidrDetails"`
 	CidrBlock                    *string                           `pulumi:"cidrBlock"`

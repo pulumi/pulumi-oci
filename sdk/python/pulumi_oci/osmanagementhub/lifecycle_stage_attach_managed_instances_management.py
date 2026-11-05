@@ -248,6 +248,16 @@ class LifecycleStageAttachManagedInstancesManagement(pulumi.CustomResource):
         __props__.__dict__["managed_instance_details"] = managed_instance_details
         return LifecycleStageAttachManagedInstancesManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            lifecycle_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+            managed_instance_details: pulumi.Input[Optional[Union['LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgs', 'LifecycleStageAttachManagedInstancesManagementManagedInstanceDetailsArgsDict', 'outputs.LifecycleStageAttachManagedInstancesManagementManagedInstanceDetails']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["lifecycleStageId"] = lifecycle_stage_id
+        __props__["managedInstanceDetails"] = managed_instance_details
+        return pulumi.runtime.exists_resource(None, 'oci:OsManagementHub/lifecycleStageAttachManagedInstancesManagement:LifecycleStageAttachManagedInstancesManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="lifecycleStageId")
     def lifecycle_stage_id(self) -> pulumi.Output[_builtins.str]:

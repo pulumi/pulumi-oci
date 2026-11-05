@@ -135,22 +135,20 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Deprecated. The &#39;image&#39; field has been deprecated. Use `source_details.image` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then &#39;source_details.image&#39; will be used. Example: `phx.ocir.io/ten/functions/function:0.0.1`
      * 
-     * @deprecated
-     * The &#39;image&#39; field has been deprecated. Please use &#39;source_details.image&#39; instead. If both fields are specified, then &#39;source_details.image&#39; will be used.
+     * @deprecated The &#39;image&#39; field has been deprecated. Please use &#39;source_details.image&#39; instead. If both fields are specified, then &#39;source_details.image&#39; will be used.
      * 
      */
-    @Deprecated /* The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used. */
+    @Deprecated
     @Import(name="image")
     private @Nullable Output<String> image;
 
     /**
      * @return (Updatable) Deprecated. The &#39;image&#39; field has been deprecated. Use `source_details.image` in a `CONTAINER_IMAGE` sourceDetails block instead. If both fields are specified, then &#39;source_details.image&#39; will be used. Example: `phx.ocir.io/ten/functions/function:0.0.1`
      * 
-     * @deprecated
-     * The &#39;image&#39; field has been deprecated. Please use &#39;source_details.image&#39; instead. If both fields are specified, then &#39;source_details.image&#39; will be used.
+     * @deprecated The &#39;image&#39; field has been deprecated. Please use &#39;source_details.image&#39; instead. If both fields are specified, then &#39;source_details.image&#39; will be used.
      * 
      */
-    @Deprecated /* The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used. */
+    @Deprecated
     public Optional<Output<String>> image() {
         return Optional.ofNullable(this.image);
     }
@@ -454,11 +452,10 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;image&#39; field has been deprecated. Please use &#39;source_details.image&#39; instead. If both fields are specified, then &#39;source_details.image&#39; will be used.
+         * @deprecated The &#39;image&#39; field has been deprecated. Please use &#39;source_details.image&#39; instead. If both fields are specified, then &#39;source_details.image&#39; will be used.
          * 
          */
-        @Deprecated /* The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used. */
+        @Deprecated
         public Builder image(@Nullable Output<String> image) {
             $.image = image;
             return this;
@@ -469,11 +466,10 @@ public final class FunctionArgs extends com.pulumi.resources.ResourceArgs {
          * 
          * @return builder
          * 
-         * @deprecated
-         * The &#39;image&#39; field has been deprecated. Please use &#39;source_details.image&#39; instead. If both fields are specified, then &#39;source_details.image&#39; will be used.
+         * @deprecated The &#39;image&#39; field has been deprecated. Please use &#39;source_details.image&#39; instead. If both fields are specified, then &#39;source_details.image&#39; will be used.
          * 
          */
-        @Deprecated /* The 'image' field has been deprecated. Please use 'source_details.image' instead. If both fields are specified, then 'source_details.image' will be used. */
+        @Deprecated
         public Builder image(String image) {
             return image(Output.of(image));
         }

@@ -230,6 +230,12 @@ func (CompliancePolicyRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*compliancePolicyRuleState)(nil)).Elem()
 }
 
+// CompliancePolicyRuleExists checks whether an existing CompliancePolicyRule resource with the given ID exists.
+func CompliancePolicyRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CompliancePolicyRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FleetAppsManagement/compliancePolicyRule:CompliancePolicyRule", id, state, "", opts...)
+}
+
 type compliancePolicyRuleArgs struct {
 	// Unique OCID of the CompliancePolicy this CompliancePolicyRule belongs to.
 	CompliancePolicyId string `pulumi:"compliancePolicyId"`

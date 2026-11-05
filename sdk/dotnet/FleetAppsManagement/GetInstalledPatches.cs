@@ -17,7 +17,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// Gets a list of installed patches for the specified target.
         /// CompartmentId should be the compartment OCID of the resource (Containing the target).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// Gets a list of installed patches for the specified target.
         /// CompartmentId should be the compartment OCID of the resource (Containing the target).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -82,7 +80,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Gets a list of installed patches for the specified target.
         /// CompartmentId should be the compartment OCID of the resource (Containing the target).
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -1325,6 +1325,12 @@ func (AutonomousDatabaseState) ElementType() reflect.Type {
 	return reflect.TypeOf((*autonomousDatabaseState)(nil)).Elem()
 }
 
+// AutonomousDatabaseExists checks whether an existing AutonomousDatabase resource with the given ID exists.
+func AutonomousDatabaseExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutonomousDatabaseState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/autonomousDatabase:AutonomousDatabase", id, state, "", opts...)
+}
+
 type autonomousDatabaseArgs struct {
 	// (Updatable) The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing. The password is mandatory if source value is "BACKUP_FROM_ID", "BACKUP_FROM_TIMESTAMP", "DATABASE" or "NONE".
 	AdminPassword *string `pulumi:"adminPassword"`

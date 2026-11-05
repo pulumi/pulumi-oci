@@ -20,7 +20,6 @@ namespace Pulumi.Oci.GenerativeAi.Inputs
         /// 
         /// The order of entries is preserved. Duplicate entries are not allowed.
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

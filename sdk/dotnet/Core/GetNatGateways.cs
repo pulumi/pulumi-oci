@@ -17,7 +17,6 @@ namespace Pulumi.Oci.Core
         /// Lists the NAT gateways in the specified compartment. You may optionally specify a VCN OCID
         /// to filter the results by VCN.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -48,7 +47,6 @@ namespace Pulumi.Oci.Core
         /// Lists the NAT gateways in the specified compartment. You may optionally specify a VCN OCID
         /// to filter the results by VCN.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -78,7 +76,6 @@ namespace Pulumi.Oci.Core
         /// 
         /// Lists the NAT gateways in the specified compartment. You may optionally specify a VCN OCID
         /// to filter the results by VCN.
-        /// 
         /// 
         /// ## Example Usage
         /// 

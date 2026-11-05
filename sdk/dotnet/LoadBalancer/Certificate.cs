@@ -97,8 +97,6 @@ namespace Pulumi.Oci.LoadBalancer
         /// ...
         /// -----END CERTIFICATE-----
         /// 
-        /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -242,8 +240,6 @@ namespace Pulumi.Oci.LoadBalancer
         /// ...
         /// -----END CERTIFICATE-----
         /// 
-        /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
@@ -340,8 +336,6 @@ namespace Pulumi.Oci.LoadBalancer
         /// YiBDQTEjMCEGCSqGSIb3DQEJARYUc3VwcG9ydEBmc..mFuazRkZC5jb20wH
         /// ...
         /// -----END CERTIFICATE-----
-        /// 
-        /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

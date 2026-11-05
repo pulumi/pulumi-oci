@@ -557,6 +557,48 @@ class MaskingReportManagement(pulumi.CustomResource):
         __props__.__dict__["total_masked_values"] = total_masked_values
         return MaskingReportManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_drop_temp_tables_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_redo_logging_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_refresh_stats_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            masking_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            masking_work_request_id: pulumi.Input[Optional[_builtins.str]] = None,
+            parallel_degree: pulumi.Input[Optional[_builtins.str]] = None,
+            recompile: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_masking_finished: pulumi.Input[Optional[_builtins.str]] = None,
+            time_masking_started: pulumi.Input[Optional[_builtins.str]] = None,
+            total_masked_columns: pulumi.Input[Optional[_builtins.str]] = None,
+            total_masked_objects: pulumi.Input[Optional[_builtins.str]] = None,
+            total_masked_schemas: pulumi.Input[Optional[_builtins.str]] = None,
+            total_masked_sensitive_types: pulumi.Input[Optional[_builtins.str]] = None,
+            total_masked_values: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["isDropTempTablesEnabled"] = is_drop_temp_tables_enabled
+        __props__["isRedoLoggingEnabled"] = is_redo_logging_enabled
+        __props__["isRefreshStatsEnabled"] = is_refresh_stats_enabled
+        __props__["maskingPolicyId"] = masking_policy_id
+        __props__["maskingWorkRequestId"] = masking_work_request_id
+        __props__["parallelDegree"] = parallel_degree
+        __props__["recompile"] = recompile
+        __props__["state"] = state
+        __props__["targetId"] = target_id
+        __props__["timeCreated"] = time_created
+        __props__["timeMaskingFinished"] = time_masking_finished
+        __props__["timeMaskingStarted"] = time_masking_started
+        __props__["totalMaskedColumns"] = total_masked_columns
+        __props__["totalMaskedObjects"] = total_masked_objects
+        __props__["totalMaskedSchemas"] = total_masked_schemas
+        __props__["totalMaskedSensitiveTypes"] = total_masked_sensitive_types
+        __props__["totalMaskedValues"] = total_masked_values
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/maskingReportManagement:MaskingReportManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

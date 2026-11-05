@@ -246,6 +246,12 @@ func (SecurityListState) ElementType() reflect.Type {
 	return reflect.TypeOf((*securityListState)(nil)).Elem()
 }
 
+// SecurityListExists checks whether an existing SecurityList resource with the given ID exists.
+func SecurityListExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SecurityListState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/securityList:SecurityList", id, state, "", opts...)
+}
+
 type securityListArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the security list.
 	CompartmentId string `pulumi:"compartmentId"`

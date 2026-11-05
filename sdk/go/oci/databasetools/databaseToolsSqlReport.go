@@ -244,6 +244,12 @@ func (DatabaseToolsSqlReportState) ElementType() reflect.Type {
 	return reflect.TypeOf((*databaseToolsSqlReportState)(nil)).Elem()
 }
 
+// DatabaseToolsSqlReportExists checks whether an existing DatabaseToolsSqlReport resource with the given ID exists.
+func DatabaseToolsSqlReportExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DatabaseToolsSqlReportState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseTools/databaseToolsSqlReport:DatabaseToolsSqlReport", id, state, "", opts...)
+}
+
 type databaseToolsSqlReportArgs struct {
 	// (Updatable) Descriptive information on columns referenced in the Database Tools SQL Report source.
 	Columns []DatabaseToolsSqlReportColumn `pulumi:"columns"`

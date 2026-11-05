@@ -60,7 +60,6 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// <summary>
         /// (Updatable) Inventory asset Id of the vnic profile
         /// 
-        /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>

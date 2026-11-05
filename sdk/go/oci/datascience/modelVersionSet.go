@@ -192,6 +192,12 @@ func (ModelVersionSetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*modelVersionSetState)(nil)).Elem()
 }
 
+// ModelVersionSetExists checks whether an existing ModelVersionSet resource with the given ID exists.
+func ModelVersionSetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ModelVersionSetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataScience/modelVersionSet:ModelVersionSet", id, state, "", opts...)
+}
+
 type modelVersionSetArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the model version set in.
 	CompartmentId string `pulumi:"compartmentId"`

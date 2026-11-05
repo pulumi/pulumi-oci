@@ -889,6 +889,60 @@ class DeploymentBackup(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return DeploymentBackup(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            backup_source_type: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_type: pulumi.Input[Optional[_builtins.str]] = None,
+            bucket: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_automatic: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_lock_override: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_metadata_only: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            locks: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentBackupLockArgs', 'DeploymentBackupLockArgsDict', 'outputs.DeploymentBackupLock']]]]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            object: pulumi.Input[Optional[_builtins.str]] = None,
+            ogg_version: pulumi.Input[Optional[_builtins.str]] = None,
+            size_in_bytes: pulumi.Input[Optional[_builtins.float]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_backup_finished: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_backup: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["backupSourceType"] = backup_source_type
+        __props__["backupType"] = backup_type
+        __props__["bucket"] = bucket
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["deploymentId"] = deployment_id
+        __props__["deploymentType"] = deployment_type
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["isAutomatic"] = is_automatic
+        __props__["isLockOverride"] = is_lock_override
+        __props__["isMetadataOnly"] = is_metadata_only
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["locks"] = locks
+        __props__["namespace"] = namespace
+        __props__["object"] = object
+        __props__["oggVersion"] = ogg_version
+        __props__["sizeInBytes"] = size_in_bytes
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeBackupFinished"] = time_backup_finished
+        __props__["timeCreated"] = time_created
+        __props__["timeOfBackup"] = time_of_backup
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:GoldenGate/deploymentBackup:DeploymentBackup', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="backupSourceType")
     def backup_source_type(self) -> pulumi.Output[_builtins.str]:

@@ -214,6 +214,12 @@ func (Ipv6State) ElementType() reflect.Type {
 	return reflect.TypeOf((*ipv6State)(nil)).Elem()
 }
 
+// Ipv6Exists checks whether an existing Ipv6 resource with the given ID exists.
+func Ipv6Exists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *Ipv6State, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/ipv6:Ipv6", id, state, "", opts...)
+}
+
 type ipv6Args struct {
 	// Length of cidr range. Optional field to specify flexible cidr.
 	CidrPrefixLength *int `pulumi:"cidrPrefixLength"`

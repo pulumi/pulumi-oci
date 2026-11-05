@@ -21,7 +21,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// If the deployment type is not specified or if it is `ONPREMISE`, then the management option is not
         /// considered and Managed Databases with `ADVANCED` management option are listed.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -58,7 +57,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// If the deployment type is not specified or if it is `ONPREMISE`, then the management option is not
         /// considered and Managed Databases with `ADVANCED` management option are listed.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -94,7 +92,6 @@ namespace Pulumi.Oci.DatabaseManagement
         /// are listed. Managed Databases can also be filtered based on the deployment type and management option.
         /// If the deployment type is not specified or if it is `ONPREMISE`, then the management option is not
         /// considered and Managed Databases with `ADVANCED` management option are listed.
-        /// 
         /// 
         /// ## Example Usage
         /// 

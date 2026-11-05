@@ -497,6 +497,28 @@ class BdsInstanceOperationCertificateManagementsManagement(pulumi.CustomResource
         __props__.__dict__["services"] = services
         return BdsInstanceOperationCertificateManagementsManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            bds_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+            cluster_admin_password: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_operation_certificate_management: pulumi.Input[Optional[_builtins.bool]] = None,
+            host_cert_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs', 'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgsDict', 'outputs.BdsInstanceOperationCertificateManagementsManagementHostCertDetail']]]]] = None,
+            renew_operation_certificate_management: pulumi.Input[Optional[_builtins.bool]] = None,
+            root_certificate: pulumi.Input[Optional[_builtins.str]] = None,
+            server_key_password: pulumi.Input[Optional[_builtins.str]] = None,
+            services: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["bdsInstanceId"] = bds_instance_id
+        __props__["clusterAdminPassword"] = cluster_admin_password
+        __props__["enableOperationCertificateManagement"] = enable_operation_certificate_management
+        __props__["hostCertDetails"] = host_cert_details
+        __props__["renewOperationCertificateManagement"] = renew_operation_certificate_management
+        __props__["rootCertificate"] = root_certificate
+        __props__["serverKeyPassword"] = server_key_password
+        __props__["services"] = services
+        return pulumi.runtime.exists_resource(None, 'oci:BigDataService/bdsInstanceOperationCertificateManagementsManagement:BdsInstanceOperationCertificateManagementsManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="bdsInstanceId")
     def bds_instance_id(self) -> pulumi.Output[_builtins.str]:

@@ -125,6 +125,12 @@ func (UtilsAnalyzeApplicationsConfigurationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*utilsAnalyzeApplicationsConfigurationState)(nil)).Elem()
 }
 
+// UtilsAnalyzeApplicationsConfigurationExists checks whether an existing UtilsAnalyzeApplicationsConfiguration resource with the given ID exists.
+func UtilsAnalyzeApplicationsConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *UtilsAnalyzeApplicationsConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Jms/utilsAnalyzeApplicationsConfiguration:UtilsAnalyzeApplicationsConfiguration", id, state, "", opts...)
+}
+
 type utilsAnalyzeApplicationsConfigurationArgs struct {
 	// (Updatable) The name of the bucket used for analyzing applications.
 	Bucket *string `pulumi:"bucket"`

@@ -130,6 +130,12 @@ func (MarketplaceExternalAttestedMetadataState) ElementType() reflect.Type {
 	return reflect.TypeOf((*marketplaceExternalAttestedMetadataState)(nil)).Elem()
 }
 
+// MarketplaceExternalAttestedMetadataExists checks whether an existing MarketplaceExternalAttestedMetadata resource with the given ID exists.
+func MarketplaceExternalAttestedMetadataExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MarketplaceExternalAttestedMetadataState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Marketplace/marketplaceExternalAttestedMetadata:MarketplaceExternalAttestedMetadata", id, state, "", opts...)
+}
+
 type marketplaceExternalAttestedMetadataArgs struct {
 	// compartment that associated instance is in
 	CompartmentId string `pulumi:"compartmentId"`

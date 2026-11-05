@@ -116,6 +116,12 @@ func (OciCacheConfigSetlistAssociatedOciCacheClusterState) ElementType() reflect
 	return reflect.TypeOf((*ociCacheConfigSetlistAssociatedOciCacheClusterState)(nil)).Elem()
 }
 
+// OciCacheConfigSetlistAssociatedOciCacheClusterExists checks whether an existing OciCacheConfigSetlistAssociatedOciCacheCluster resource with the given ID exists.
+func OciCacheConfigSetlistAssociatedOciCacheClusterExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *OciCacheConfigSetlistAssociatedOciCacheClusterState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Redis/ociCacheConfigSetlistAssociatedOciCacheCluster:OciCacheConfigSetlistAssociatedOciCacheCluster", id, state, "", opts...)
+}
+
 type ociCacheConfigSetlistAssociatedOciCacheClusterArgs struct {
 	// Unique Oracle Cloud Infrastructure Cache Config Set identifier.
 	//

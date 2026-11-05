@@ -302,6 +302,12 @@ func (NamespaceLookupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*namespaceLookupState)(nil)).Elem()
 }
 
+// NamespaceLookupExists checks whether an existing NamespaceLookup resource with the given ID exists.
+func NamespaceLookupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NamespaceLookupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LogAnalytics/namespaceLookup:NamespaceLookup", id, state, "", opts...)
+}
+
 type namespaceLookupArgs struct {
 	// (Updatable) An array of categories to assign to the lookup. Specifying the name attribute for each category would suffice. Oracle-defined category assignments cannot be removed.
 	Categories []NamespaceLookupCategory `pulumi:"categories"`

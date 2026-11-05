@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Gets a list of KafkaClusterConfigs.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Gets a list of KafkaClusterConfigs.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Kafka Cluster Configs in Oracle Cloud Infrastructure Managed Kafka service.
         /// 
         /// Gets a list of KafkaClusterConfigs.
-        /// 
         /// 
         /// ## Example Usage
         /// 

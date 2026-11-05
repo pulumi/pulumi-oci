@@ -14,9 +14,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Software Source Available Software Packages in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists software packages that are available to be added to a custom software source of type MANIFEST.  Filter the list against a variety of criteria 
+        /// Lists software packages that are available to be added to a custom software source of type MANIFEST.  Filter the list against a variety of criteria
         /// including but not limited to its name.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -45,9 +44,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Software Source Available Software Packages in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists software packages that are available to be added to a custom software source of type MANIFEST.  Filter the list against a variety of criteria 
+        /// Lists software packages that are available to be added to a custom software source of type MANIFEST.  Filter the list against a variety of criteria
         /// including but not limited to its name.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -76,9 +74,8 @@ namespace Pulumi.Oci.OsManagementHub
         /// <summary>
         /// This data source provides the list of Software Source Available Software Packages in Oracle Cloud Infrastructure Os Management Hub service.
         /// 
-        /// Lists software packages that are available to be added to a custom software source of type MANIFEST.  Filter the list against a variety of criteria 
+        /// Lists software packages that are available to be added to a custom software source of type MANIFEST.  Filter the list against a variety of criteria
         /// including but not limited to its name.
-        /// 
         /// 
         /// ## Example Usage
         /// 

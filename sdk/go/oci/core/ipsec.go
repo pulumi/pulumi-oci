@@ -328,6 +328,12 @@ func (IpsecState) ElementType() reflect.Type {
 	return reflect.TypeOf((*ipsecState)(nil)).Elem()
 }
 
+// IpsecExists checks whether an existing Ipsec resource with the given ID exists.
+func IpsecExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IpsecState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/ipsec:Ipsec", id, state, "", opts...)
+}
+
 type ipsecArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
 	CompartmentId string `pulumi:"compartmentId"`

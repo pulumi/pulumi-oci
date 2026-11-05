@@ -202,6 +202,12 @@ func (AppAccelerationPolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*appAccelerationPolicyState)(nil)).Elem()
 }
 
+// AppAccelerationPolicyExists checks whether an existing AppAccelerationPolicy resource with the given ID exists.
+func AppAccelerationPolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AppAccelerationPolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Waa/appAccelerationPolicy:AppAccelerationPolicy", id, state, "", opts...)
+}
+
 type appAccelerationPolicyArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

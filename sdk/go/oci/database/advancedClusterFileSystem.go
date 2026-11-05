@@ -208,6 +208,12 @@ func (AdvancedClusterFileSystemState) ElementType() reflect.Type {
 	return reflect.TypeOf((*advancedClusterFileSystemState)(nil)).Elem()
 }
 
+// AdvancedClusterFileSystemExists checks whether an existing AdvancedClusterFileSystem resource with the given ID exists.
+func AdvancedClusterFileSystemExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AdvancedClusterFileSystemState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/advancedClusterFileSystem:AdvancedClusterFileSystem", id, state, "", opts...)
+}
+
 type advancedClusterFileSystemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`

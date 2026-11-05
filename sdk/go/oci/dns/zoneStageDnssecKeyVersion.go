@@ -131,6 +131,12 @@ func (ZoneStageDnssecKeyVersionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*zoneStageDnssecKeyVersionState)(nil)).Elem()
 }
 
+// ZoneStageDnssecKeyVersionExists checks whether an existing ZoneStageDnssecKeyVersion resource with the given ID exists.
+func ZoneStageDnssecKeyVersionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ZoneStageDnssecKeyVersionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Dns/zoneStageDnssecKeyVersion:ZoneStageDnssecKeyVersion", id, state, "", opts...)
+}
+
 type zoneStageDnssecKeyVersionArgs struct {
 	// The UUID of the `DnssecKeyVersion` for which a new successor should be generated.
 	PredecessorDnssecKeyVersionUuid string `pulumi:"predecessorDnssecKeyVersionUuid"`

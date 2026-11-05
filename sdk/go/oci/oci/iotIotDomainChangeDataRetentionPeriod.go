@@ -130,6 +130,12 @@ func (IotIotDomainChangeDataRetentionPeriodState) ElementType() reflect.Type {
 	return reflect.TypeOf((*iotIotDomainChangeDataRetentionPeriodState)(nil)).Elem()
 }
 
+// IotIotDomainChangeDataRetentionPeriodExists checks whether an existing IotIotDomainChangeDataRetentionPeriod resource with the given ID exists.
+func IotIotDomainChangeDataRetentionPeriodExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *IotIotDomainChangeDataRetentionPeriodState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/iotIotDomainChangeDataRetentionPeriod:IotIotDomainChangeDataRetentionPeriod", id, state, "", opts...)
+}
+
 type iotIotDomainChangeDataRetentionPeriodArgs struct {
 	// The duration (in days) for which data will be retained in the IoT domain.
 	DataRetentionPeriodInDays int `pulumi:"dataRetentionPeriodInDays"`

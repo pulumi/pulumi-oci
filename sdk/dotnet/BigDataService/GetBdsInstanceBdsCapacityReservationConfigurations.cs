@@ -16,7 +16,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// Returns a list of BDS capacity reservation configurations for the specified BDS cluster.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.BigDataService
         /// 
         /// Returns a list of BDS capacity reservation configurations for the specified BDS cluster.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.BigDataService
         /// This data source provides the list of Bds Instance Bds Capacity Reservation Configurations in Oracle Cloud Infrastructure Big Data Service service.
         /// 
         /// Returns a list of BDS capacity reservation configurations for the specified BDS cluster.
-        /// 
         /// 
         /// ## Example Usage
         /// 

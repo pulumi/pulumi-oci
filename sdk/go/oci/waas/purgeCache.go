@@ -118,6 +118,12 @@ func (PurgeCacheState) ElementType() reflect.Type {
 	return reflect.TypeOf((*purgeCacheState)(nil)).Elem()
 }
 
+// PurgeCacheExists checks whether an existing PurgeCache resource with the given ID exists.
+func PurgeCacheExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *PurgeCacheState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Waas/purgeCache:PurgeCache", id, state, "", opts...)
+}
+
 type purgeCacheArgs struct {
 	// A resource to purge, specified by either a hostless absolute path starting with a single slash (Example: `/path/to/resource`) or by a relative path in which the first component will be interpreted as a domain protected by the WAAS policy (Example: `example.com/path/to/resource`).
 	Resources []string `pulumi:"resources"`

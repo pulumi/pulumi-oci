@@ -354,6 +354,26 @@ class RunStatement(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         return RunStatement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            code: pulumi.Input[Optional[_builtins.str]] = None,
+            outputs: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RunStatementOutputArgs', 'RunStatementOutputArgsDict', 'outputs.RunStatementOutput']]]]] = None,
+            progress: pulumi.Input[Optional[_builtins.float]] = None,
+            run_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_completed: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["code"] = code
+        __props__["outputs"] = outputs
+        __props__["progress"] = progress
+        __props__["runId"] = run_id
+        __props__["state"] = state
+        __props__["timeCompleted"] = time_completed
+        __props__["timeCreated"] = time_created
+        return pulumi.runtime.exists_resource(None, 'oci:DataFlow/runStatement:RunStatement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def code(self) -> pulumi.Output[_builtins.str]:

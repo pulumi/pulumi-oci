@@ -68,6 +68,12 @@ func (MaskingPoliciesApplyDifferenceToMaskingColumnsState) ElementType() reflect
 	return reflect.TypeOf((*maskingPoliciesApplyDifferenceToMaskingColumnsState)(nil)).Elem()
 }
 
+// MaskingPoliciesApplyDifferenceToMaskingColumnsExists checks whether an existing MaskingPoliciesApplyDifferenceToMaskingColumns resource with the given ID exists.
+func MaskingPoliciesApplyDifferenceToMaskingColumnsExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MaskingPoliciesApplyDifferenceToMaskingColumnsState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/maskingPoliciesApplyDifferenceToMaskingColumns:MaskingPoliciesApplyDifferenceToMaskingColumns", id, state, "", opts...)
+}
+
 type maskingPoliciesApplyDifferenceToMaskingColumnsArgs struct {
 	MaskingPolicyId              string `pulumi:"maskingPolicyId"`
 	SdmMaskingPolicyDifferenceId string `pulumi:"sdmMaskingPolicyDifferenceId"`

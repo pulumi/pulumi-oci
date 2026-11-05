@@ -252,6 +252,16 @@ class ProfileAttachManagedInstanceGroupManagement(pulumi.CustomResource):
         __props__.__dict__["profile_id"] = profile_id
         return ProfileAttachManagedInstanceGroupManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            managed_instance_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            profile_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["managedInstanceGroupId"] = managed_instance_group_id
+        __props__["profileId"] = profile_id
+        return pulumi.runtime.exists_resource(None, 'oci:OsManagementHub/profileAttachManagedInstanceGroupManagement:ProfileAttachManagedInstanceGroupManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="managedInstanceGroupId")
     def managed_instance_group_id(self) -> pulumi.Output[_builtins.str]:

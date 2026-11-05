@@ -220,6 +220,12 @@ func (StreamPackagingConfigState) ElementType() reflect.Type {
 	return reflect.TypeOf((*streamPackagingConfigState)(nil)).Elem()
 }
 
+// StreamPackagingConfigExists checks whether an existing StreamPackagingConfig resource with the given ID exists.
+func StreamPackagingConfigExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *StreamPackagingConfigState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:MediaServices/streamPackagingConfig:StreamPackagingConfig", id, state, "", opts...)
+}
+
 type streamPackagingConfigArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`

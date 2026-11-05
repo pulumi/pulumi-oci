@@ -18,7 +18,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// The migration must already have Data Verification results.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -52,7 +51,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// The migration must already have Data Verification results.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -85,7 +83,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// Lists table row count comparison results for a migration.
         /// 
         /// The migration must already have Data Verification results.
-        /// 
         /// 
         /// ## Example Usage
         /// 

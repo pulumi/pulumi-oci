@@ -190,6 +190,12 @@ func (QuotaState) ElementType() reflect.Type {
 	return reflect.TypeOf((*quotaState)(nil)).Elem()
 }
 
+// QuotaExists checks whether an existing Quota resource with the given ID exists.
+func QuotaExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *QuotaState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Limits/quota:Quota", id, state, "", opts...)
+}
+
 type quotaArgs struct {
 	// The OCID of the compartment containing the resource this quota applies to.
 	CompartmentId string `pulumi:"compartmentId"`

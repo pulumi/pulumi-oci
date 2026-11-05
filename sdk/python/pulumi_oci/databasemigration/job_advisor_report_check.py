@@ -336,6 +336,22 @@ class JobAdvisorReportCheck(pulumi.CustomResource):
         __props__.__dict__["summaries"] = summaries
         return JobAdvisorReportCheck(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            advisor_report_check_id: pulumi.Input[Optional[_builtins.str]] = None,
+            is_reviewed: pulumi.Input[Optional[_builtins.bool]] = None,
+            items: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobAdvisorReportCheckItemArgs', 'JobAdvisorReportCheckItemArgsDict', 'outputs.JobAdvisorReportCheckItem']]]]] = None,
+            job_id: pulumi.Input[Optional[_builtins.str]] = None,
+            summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['JobAdvisorReportCheckSummaryArgs', 'JobAdvisorReportCheckSummaryArgsDict', 'outputs.JobAdvisorReportCheckSummary']]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["advisorReportCheckId"] = advisor_report_check_id
+        __props__["isReviewed"] = is_reviewed
+        __props__["items"] = items
+        __props__["jobId"] = job_id
+        __props__["summaries"] = summaries
+        return pulumi.runtime.exists_resource(None, 'oci:DatabaseMigration/jobAdvisorReportCheck:JobAdvisorReportCheck', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="advisorReportCheckId")
     def advisor_report_check_id(self) -> pulumi.Output[_builtins.str]:

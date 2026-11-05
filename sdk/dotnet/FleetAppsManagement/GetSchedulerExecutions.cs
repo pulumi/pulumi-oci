@@ -16,7 +16,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Returns a list of all executions that are scheduled.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -54,7 +53,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// 
         /// Returns a list of all executions that are scheduled.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -91,7 +89,6 @@ namespace Pulumi.Oci.FleetAppsManagement
         /// This data source provides the list of Scheduler Executions in Oracle Cloud Infrastructure Fleet Apps Management service.
         /// 
         /// Returns a list of all executions that are scheduled.
-        /// 
         /// 
         /// ## Example Usage
         /// 

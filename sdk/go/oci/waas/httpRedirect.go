@@ -175,6 +175,12 @@ func (HttpRedirectState) ElementType() reflect.Type {
 	return reflect.TypeOf((*httpRedirectState)(nil)).Elem()
 }
 
+// HttpRedirectExists checks whether an existing HttpRedirect resource with the given ID exists.
+func HttpRedirectExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HttpRedirectState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Waas/httpRedirect:HttpRedirect", id, state, "", opts...)
+}
+
 type httpRedirectArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HTTP Redirects compartment.
 	CompartmentId string `pulumi:"compartmentId"`

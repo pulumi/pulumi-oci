@@ -1922,6 +1922,64 @@ class DomainsNotificationSetting(pulumi.CustomResource):
         __props__.__dict__["test_recipients"] = test_recipients
         return DomainsNotificationSetting(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            attribute_sets: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            attributes: pulumi.Input[Optional[_builtins.str]] = None,
+            authorization: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            delete_in_progress: pulumi.Input[Optional[_builtins.bool]] = None,
+            domain_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            event_settings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsNotificationSettingEventSettingArgs', 'DomainsNotificationSettingEventSettingArgsDict', 'outputs.DomainsNotificationSettingEventSetting']]]]] = None,
+            external_id: pulumi.Input[Optional[_builtins.str]] = None,
+            from_email_address: pulumi.Input[Optional[Union['DomainsNotificationSettingFromEmailAddressArgs', 'DomainsNotificationSettingFromEmailAddressArgsDict', 'outputs.DomainsNotificationSettingFromEmailAddress']]] = None,
+            idcs_created_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsNotificationSettingIdcsCreatedByArgs', 'DomainsNotificationSettingIdcsCreatedByArgsDict', 'outputs.DomainsNotificationSettingIdcsCreatedBy']]]]] = None,
+            idcs_endpoint: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_last_modified_bies: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsNotificationSettingIdcsLastModifiedByArgs', 'DomainsNotificationSettingIdcsLastModifiedByArgsDict', 'outputs.DomainsNotificationSettingIdcsLastModifiedBy']]]]] = None,
+            idcs_last_upgraded_in_release: pulumi.Input[Optional[_builtins.str]] = None,
+            idcs_prevented_operations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            metas: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsNotificationSettingMetaArgs', 'DomainsNotificationSettingMetaArgsDict', 'outputs.DomainsNotificationSettingMeta']]]]] = None,
+            notification_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            notification_setting_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            resource_type_schema_version: pulumi.Input[Optional[_builtins.str]] = None,
+            schemas: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            send_notification_to_old_and_new_primary_emails_when_admin_changes_primary_email: pulumi.Input[Optional[_builtins.bool]] = None,
+            send_notifications_to_secondary_email: pulumi.Input[Optional[_builtins.bool]] = None,
+            tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainsNotificationSettingTagArgs', 'DomainsNotificationSettingTagArgsDict', 'outputs.DomainsNotificationSettingTag']]]]] = None,
+            tenancy_ocid: pulumi.Input[Optional[_builtins.str]] = None,
+            test_mode_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            test_recipients: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["attributeSets"] = attribute_sets
+        __props__["attributes"] = attributes
+        __props__["authorization"] = authorization
+        __props__["compartmentOcid"] = compartment_ocid
+        __props__["deleteInProgress"] = delete_in_progress
+        __props__["domainOcid"] = domain_ocid
+        __props__["eventSettings"] = event_settings
+        __props__["externalId"] = external_id
+        __props__["fromEmailAddress"] = from_email_address
+        __props__["idcsCreatedBies"] = idcs_created_bies
+        __props__["idcsEndpoint"] = idcs_endpoint
+        __props__["idcsLastModifiedBies"] = idcs_last_modified_bies
+        __props__["idcsLastUpgradedInRelease"] = idcs_last_upgraded_in_release
+        __props__["idcsPreventedOperations"] = idcs_prevented_operations
+        __props__["metas"] = metas
+        __props__["notificationEnabled"] = notification_enabled
+        __props__["notificationSettingId"] = notification_setting_id
+        __props__["ocid"] = ocid
+        __props__["resourceTypeSchemaVersion"] = resource_type_schema_version
+        __props__["schemas"] = schemas
+        __props__["sendNotificationToOldAndNewPrimaryEmailsWhenAdminChangesPrimaryEmail"] = send_notification_to_old_and_new_primary_emails_when_admin_changes_primary_email
+        __props__["sendNotificationsToSecondaryEmail"] = send_notifications_to_secondary_email
+        __props__["tags"] = tags
+        __props__["tenancyOcid"] = tenancy_ocid
+        __props__["testModeEnabled"] = test_mode_enabled
+        __props__["testRecipients"] = test_recipients
+        return pulumi.runtime.exists_resource(None, 'oci:Identity/domainsNotificationSetting:DomainsNotificationSetting', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="attributeSets")
     def attribute_sets(self) -> pulumi.Output[Optional[Sequence[_builtins.str]]]:

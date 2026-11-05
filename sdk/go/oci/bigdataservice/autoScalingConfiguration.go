@@ -253,6 +253,12 @@ func (AutoScalingConfigurationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*autoScalingConfigurationState)(nil)).Elem()
 }
 
+// AutoScalingConfigurationExists checks whether an existing AutoScalingConfiguration resource with the given ID exists.
+func AutoScalingConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutoScalingConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:BigDataService/autoScalingConfiguration:AutoScalingConfiguration", id, state, "", opts...)
+}
+
 type autoScalingConfigurationArgs struct {
 	// The OCID of the cluster.
 	BdsInstanceId string `pulumi:"bdsInstanceId"`

@@ -15,14 +15,14 @@ public final class GetManagementDashboardsExportArgs extends com.pulumi.resource
     public static final GetManagementDashboardsExportArgs Empty = new GetManagementDashboardsExportArgs();
 
     /**
-     * List of dashboardIds in plain text. The syntax is &#39;{&#34;dashboardIds&#34;:[&#34;dashboardId1&#34;, &#34;dashboardId2&#34;, ...]}&#39;. Escaping is needed when using in Oracle Cloud Infrastructure CLI. For example, &#34;{\&#34;dashboardIds\&#34;:[\&#34;ocid1.managementdashboard.oc1..dashboardId1\&#34;]}&#34; .
+     * List of dashboardIds in plain text. The syntax is &#39;{&#34;dashboardIds&#34;:[&#34;dashboardId1&#34;, &#34;dashboardId2&#34;, ...]}&#39;. Escaping is needed when using in Oracle Cloud Infrastructure CLI. For example, &#34;{&#92;&#34;dashboardIds&#92;&#34;:[&#92;&#34;ocid1.managementdashboard.oc1..dashboardId1&#92;&#34;]}&#34; .
      * 
      */
     @Import(name="exportDashboardId", required=true)
     private Output<String> exportDashboardId;
 
     /**
-     * @return List of dashboardIds in plain text. The syntax is &#39;{&#34;dashboardIds&#34;:[&#34;dashboardId1&#34;, &#34;dashboardId2&#34;, ...]}&#39;. Escaping is needed when using in Oracle Cloud Infrastructure CLI. For example, &#34;{\&#34;dashboardIds\&#34;:[\&#34;ocid1.managementdashboard.oc1..dashboardId1\&#34;]}&#34; .
+     * @return List of dashboardIds in plain text. The syntax is &#39;{&#34;dashboardIds&#34;:[&#34;dashboardId1&#34;, &#34;dashboardId2&#34;, ...]}&#39;. Escaping is needed when using in Oracle Cloud Infrastructure CLI. For example, &#34;{&#92;&#34;dashboardIds&#92;&#34;:[&#92;&#34;ocid1.managementdashboard.oc1..dashboardId1&#92;&#34;]}&#34; .
      * 
      */
     public Output<String> exportDashboardId() {
@@ -54,7 +54,7 @@ public final class GetManagementDashboardsExportArgs extends com.pulumi.resource
         }
 
         /**
-         * @param exportDashboardId List of dashboardIds in plain text. The syntax is &#39;{&#34;dashboardIds&#34;:[&#34;dashboardId1&#34;, &#34;dashboardId2&#34;, ...]}&#39;. Escaping is needed when using in Oracle Cloud Infrastructure CLI. For example, &#34;{\&#34;dashboardIds\&#34;:[\&#34;ocid1.managementdashboard.oc1..dashboardId1\&#34;]}&#34; .
+         * @param exportDashboardId List of dashboardIds in plain text. The syntax is &#39;{&#34;dashboardIds&#34;:[&#34;dashboardId1&#34;, &#34;dashboardId2&#34;, ...]}&#39;. Escaping is needed when using in Oracle Cloud Infrastructure CLI. For example, &#34;{&#92;&#34;dashboardIds&#92;&#34;:[&#92;&#34;ocid1.managementdashboard.oc1..dashboardId1&#92;&#34;]}&#34; .
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetManagementDashboardsExportArgs extends com.pulumi.resource
         }
 
         /**
-         * @param exportDashboardId List of dashboardIds in plain text. The syntax is &#39;{&#34;dashboardIds&#34;:[&#34;dashboardId1&#34;, &#34;dashboardId2&#34;, ...]}&#39;. Escaping is needed when using in Oracle Cloud Infrastructure CLI. For example, &#34;{\&#34;dashboardIds\&#34;:[\&#34;ocid1.managementdashboard.oc1..dashboardId1\&#34;]}&#34; .
+         * @param exportDashboardId List of dashboardIds in plain text. The syntax is &#39;{&#34;dashboardIds&#34;:[&#34;dashboardId1&#34;, &#34;dashboardId2&#34;, ...]}&#39;. Escaping is needed when using in Oracle Cloud Infrastructure CLI. For example, &#34;{&#92;&#34;dashboardIds&#92;&#34;:[&#92;&#34;ocid1.managementdashboard.oc1..dashboardId1&#92;&#34;]}&#34; .
          * 
          * @return builder
          * 

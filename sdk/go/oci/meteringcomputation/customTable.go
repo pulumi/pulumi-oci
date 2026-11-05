@@ -147,6 +147,12 @@ func (CustomTableState) ElementType() reflect.Type {
 	return reflect.TypeOf((*customTableState)(nil)).Elem()
 }
 
+// CustomTableExists checks whether an existing CustomTable resource with the given ID exists.
+func CustomTableExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CustomTableState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:MeteringComputation/customTable:CustomTable", id, state, "", opts...)
+}
+
 type customTableArgs struct {
 	// The compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`

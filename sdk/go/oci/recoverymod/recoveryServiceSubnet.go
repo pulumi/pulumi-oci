@@ -216,6 +216,12 @@ func (RecoveryServiceSubnetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*recoveryServiceSubnetState)(nil)).Elem()
 }
 
+// RecoveryServiceSubnetExists checks whether an existing RecoveryServiceSubnet resource with the given ID exists.
+func RecoveryServiceSubnetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RecoveryServiceSubnetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:RecoveryMod/recoveryServiceSubnet:RecoveryServiceSubnet", id, state, "", opts...)
+}
+
 type recoveryServiceSubnetArgs struct {
 	// (Updatable) The compartment OCID.
 	CompartmentId string `pulumi:"compartmentId"`

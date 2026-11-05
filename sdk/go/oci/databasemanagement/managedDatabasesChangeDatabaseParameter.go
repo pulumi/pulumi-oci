@@ -180,6 +180,12 @@ func (ManagedDatabasesChangeDatabaseParameterState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managedDatabasesChangeDatabaseParameterState)(nil)).Elem()
 }
 
+// ManagedDatabasesChangeDatabaseParameterExists checks whether an existing ManagedDatabasesChangeDatabaseParameter resource with the given ID exists.
+func ManagedDatabasesChangeDatabaseParameterExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedDatabasesChangeDatabaseParameterState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/managedDatabasesChangeDatabaseParameter:ManagedDatabasesChangeDatabaseParameter", id, state, "", opts...)
+}
+
 type managedDatabasesChangeDatabaseParameterArgs struct {
 	// The database credentials used to perform management activity. Provide one of the following attribute set. (userName, password, role) OR (userName, secretId, role) OR (namedCredentialId)
 	Credentials *ManagedDatabasesChangeDatabaseParameterCredentials `pulumi:"credentials"`

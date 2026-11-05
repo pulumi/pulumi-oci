@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Psql
         /// 
         /// Returns a list of backups.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.Psql
         /// 
         /// Returns a list of backups.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -83,7 +81,6 @@ namespace Pulumi.Oci.Psql
         /// This data source provides the list of Backups in Oracle Cloud Infrastructure Psql service.
         /// 
         /// Returns a list of backups.
-        /// 
         /// 
         /// ## Example Usage
         /// 

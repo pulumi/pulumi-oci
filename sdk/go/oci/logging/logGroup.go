@@ -168,6 +168,12 @@ func (LogGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logGroupState)(nil)).Elem()
 }
 
+// LogGroupExists checks whether an existing LogGroup resource with the given ID exists.
+func LogGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Logging/logGroup:LogGroup", id, state, "", opts...)
+}
+
 type logGroupArgs struct {
 	// (Updatable) The OCID of the compartment that the resource belongs to.
 	CompartmentId string `pulumi:"compartmentId"`

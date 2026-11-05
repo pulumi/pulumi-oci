@@ -199,6 +199,12 @@ func (ManagedListState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managedListState)(nil)).Elem()
 }
 
+// ManagedListExists checks whether an existing ManagedList resource with the given ID exists.
+func ManagedListExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedListState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CloudGuard/managedList:ManagedList", id, state, "", opts...)
+}
+
 type managedListArgs struct {
 	// (Updatable) Compartment OCID
 	CompartmentId string `pulumi:"compartmentId"`

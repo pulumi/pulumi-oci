@@ -970,6 +970,62 @@ class DiscoveryMod(pulumi.CustomResource):
         __props__.__dict__["total_schemas_scanned"] = total_schemas_scanned
         return DiscoveryMod(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            discovery_type: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_app_defined_relation_discovery_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_include_all_schemas: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_include_all_sensitive_types: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_sample_data_collection_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            schemas_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            sensitive_data_model_id: pulumi.Input[Optional[_builtins.str]] = None,
+            sensitive_type_group_ids_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            sensitive_type_ids_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            tables_for_discoveries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DiscoveryModTablesForDiscoveryArgs', 'DiscoveryModTablesForDiscoveryArgsDict', 'outputs.DiscoveryModTablesForDiscovery']]]]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_finished: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started: pulumi.Input[Optional[_builtins.str]] = None,
+            total_columns_scanned: pulumi.Input[Optional[_builtins.str]] = None,
+            total_deleted_sensitive_columns: pulumi.Input[Optional[_builtins.str]] = None,
+            total_modified_sensitive_columns: pulumi.Input[Optional[_builtins.str]] = None,
+            total_new_sensitive_columns: pulumi.Input[Optional[_builtins.str]] = None,
+            total_objects_scanned: pulumi.Input[Optional[_builtins.str]] = None,
+            total_schemas_scanned: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["discoveryType"] = discovery_type
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["isAppDefinedRelationDiscoveryEnabled"] = is_app_defined_relation_discovery_enabled
+        __props__["isIncludeAllSchemas"] = is_include_all_schemas
+        __props__["isIncludeAllSensitiveTypes"] = is_include_all_sensitive_types
+        __props__["isSampleDataCollectionEnabled"] = is_sample_data_collection_enabled
+        __props__["schemasForDiscoveries"] = schemas_for_discoveries
+        __props__["sensitiveDataModelId"] = sensitive_data_model_id
+        __props__["sensitiveTypeGroupIdsForDiscoveries"] = sensitive_type_group_ids_for_discoveries
+        __props__["sensitiveTypeIdsForDiscoveries"] = sensitive_type_ids_for_discoveries
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["tablesForDiscoveries"] = tables_for_discoveries
+        __props__["targetId"] = target_id
+        __props__["timeFinished"] = time_finished
+        __props__["timeStarted"] = time_started
+        __props__["totalColumnsScanned"] = total_columns_scanned
+        __props__["totalDeletedSensitiveColumns"] = total_deleted_sensitive_columns
+        __props__["totalModifiedSensitiveColumns"] = total_modified_sensitive_columns
+        __props__["totalNewSensitiveColumns"] = total_new_sensitive_columns
+        __props__["totalObjectsScanned"] = total_objects_scanned
+        __props__["totalSchemasScanned"] = total_schemas_scanned
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/discoveryMod:DiscoveryMod', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

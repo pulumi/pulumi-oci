@@ -254,6 +254,16 @@ class CompareUserAssessment(pulumi.CustomResource):
         __props__.__dict__["user_assessment_id"] = user_assessment_id
         return CompareUserAssessment(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            comparison_user_assessment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            user_assessment_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["comparisonUserAssessmentId"] = comparison_user_assessment_id
+        __props__["userAssessmentId"] = user_assessment_id
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/compareUserAssessment:CompareUserAssessment', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="comparisonUserAssessmentId")
     def comparison_user_assessment_id(self) -> pulumi.Output[_builtins.str]:

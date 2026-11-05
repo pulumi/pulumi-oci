@@ -16,7 +16,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Retrieves a Connection.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.GoldenGate
         /// 
         /// Retrieves a Connection.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.GoldenGate
         /// This data source provides details about a specific Connection resource in Oracle Cloud Infrastructure Golden Gate service.
         /// 
         /// Retrieves a Connection.
-        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -208,7 +205,7 @@ namespace Pulumi.Oci.GoldenGate
         /// * AZURE_DATA_LAKE_STORAGE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
         /// * DATABRICKS, DATABRICKS_ENGINE: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored. Applicable to OAUTH_M2M authentication.
         /// * MICROSOFT_FABRIC: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
-        /// Note: When provided, 'clientSecret' field must not be provided.
+        ///   Note: When provided, 'clientSecret' field must not be provided.
         /// </summary>
         public readonly string ClientSecretSecretId;
         /// <summary>

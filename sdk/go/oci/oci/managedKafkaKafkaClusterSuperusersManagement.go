@@ -129,6 +129,12 @@ func (ManagedKafkaKafkaClusterSuperusersManagementState) ElementType() reflect.T
 	return reflect.TypeOf((*managedKafkaKafkaClusterSuperusersManagementState)(nil)).Elem()
 }
 
+// ManagedKafkaKafkaClusterSuperusersManagementExists checks whether an existing ManagedKafkaKafkaClusterSuperusersManagement resource with the given ID exists.
+func ManagedKafkaKafkaClusterSuperusersManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedKafkaKafkaClusterSuperusersManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:oci/managedKafkaKafkaClusterSuperusersManagement:ManagedKafkaKafkaClusterSuperusersManagement", id, state, "", opts...)
+}
+
 type managedKafkaKafkaClusterSuperusersManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the superuser secret.
 	CompartmentId *string `pulumi:"compartmentId"`

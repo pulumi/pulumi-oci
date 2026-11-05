@@ -88,8 +88,7 @@ namespace Pulumi.Oci.LogAnalytics
         public Output<ImmutableDictionary<string, string>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-        /// 
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -198,8 +197,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
 
         /// <summary>
-        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-        /// 
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -258,8 +256,7 @@ namespace Pulumi.Oci.LogAnalytics
         }
 
         /// <summary>
-        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get' 
-        /// 
+        /// The Log Analytics namespace used for the request. The namespace can be obtained by running 'oci os ns get'
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

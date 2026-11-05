@@ -273,6 +273,12 @@ func (MaskingPoliciesMaskingColumnState) ElementType() reflect.Type {
 	return reflect.TypeOf((*maskingPoliciesMaskingColumnState)(nil)).Elem()
 }
 
+// MaskingPoliciesMaskingColumnExists checks whether an existing MaskingPoliciesMaskingColumn resource with the given ID exists.
+func MaskingPoliciesMaskingColumnExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MaskingPoliciesMaskingColumnState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/maskingPoliciesMaskingColumn:MaskingPoliciesMaskingColumn", id, state, "", opts...)
+}
+
 type maskingPoliciesMaskingColumnArgs struct {
 	// The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
 	ColumnName string `pulumi:"columnName"`

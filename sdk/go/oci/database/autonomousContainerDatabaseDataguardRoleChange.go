@@ -77,6 +77,12 @@ func (AutonomousContainerDatabaseDataguardRoleChangeState) ElementType() reflect
 	return reflect.TypeOf((*autonomousContainerDatabaseDataguardRoleChangeState)(nil)).Elem()
 }
 
+// AutonomousContainerDatabaseDataguardRoleChangeExists checks whether an existing AutonomousContainerDatabaseDataguardRoleChange resource with the given ID exists.
+func AutonomousContainerDatabaseDataguardRoleChangeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutonomousContainerDatabaseDataguardRoleChangeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/autonomousContainerDatabaseDataguardRoleChange:AutonomousContainerDatabaseDataguardRoleChange", id, state, "", opts...)
+}
+
 type autonomousContainerDatabaseDataguardRoleChangeArgs struct {
 	AutonomousContainerDatabaseDataguardAssociationId string  `pulumi:"autonomousContainerDatabaseDataguardAssociationId"`
 	AutonomousContainerDatabaseId                     string  `pulumi:"autonomousContainerDatabaseId"`

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudBridge.Outputs
     public sealed class GetAssetSourcesAssetSourceCollectionItemDiscoveryCredentialResult
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC`, the secret must contain the username and password in JSON format, which is in the form of `{ "username": "&lt;VMwareUser&gt;", "password": "&lt;VMwarePassword&gt;" }`.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "&lt;VMwareUser&gt;", "password": "&lt;VMwarePassword&gt;" }`.
         /// </summary>
         public readonly string SecretId;
         /// <summary>

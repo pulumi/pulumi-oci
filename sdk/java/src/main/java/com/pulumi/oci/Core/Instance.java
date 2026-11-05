@@ -120,12 +120,12 @@ import javax.annotation.Nullable;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
  * 
- * public class App {
- *     public static void main(String[] args) {
+ * public class App }{{@code
+ *     public static void main(String[] args) }{{@code
  *         Pulumi.run(App::stack);
- *     }
+ *     }}{@code
  * 
- *     public static void stack(Context ctx) {
+ *     public static void stack(Context ctx) }{{@code
  *         var testInstance = new Instance("testInstance", InstanceArgs.builder()
  *             .availabilityDomain(instanceAvailabilityDomain)
  *             .compartmentId(compartmentId)
@@ -172,7 +172,7 @@ import javax.annotation.Nullable;
  *             .displayName(instanceDisplayName)
  *             .extendedMetadata(Map.ofEntries(
  *                 Map.entry("some_string", "stringA"),
- *                 Map.entry("nested_object", "{\"some_string\": \"stringB\", \"object\": {\"some_string\": \"stringC\"}}")
+ *                 Map.entry("nested_object", "}{&#92;{@code "some_string}&#92;{@code ": }&#92;{@code "stringB}&#92;{@code ", }&#92;{@code "object}&#92;{@code ": }{&#92;{@code "some_string}&#92;{@code ": }&#92;{@code "stringC}&#92;{@code "}}}{@code ")
  *             ))
  *             .faultDomain(instanceFaultDomain)
  *             .freeformTags(Map.of("Department", "Finance"))
@@ -270,8 +270,8 @@ import javax.annotation.Nullable;
  *             .preserveBootVolume(false)
  *             .build());
  * 
- *     }
- * }
+ *     }}{@code
+ * }}{@code
  * }
  * </pre>
  * 
@@ -545,11 +545,10 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
      * 
-     * @deprecated
-     * The &#39;hostname_label&#39; field has been deprecated. Please use &#39;hostname_label under create_vnic_details&#39; instead.
+     * @deprecated The &#39;hostname_label&#39; field has been deprecated. Please use &#39;hostname_label under create_vnic_details&#39; instead.
      * 
      */
-    @Deprecated /* The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead. */
+    @Deprecated
     @Export(name="hostnameLabel", refs={String.class}, tree="[0]")
     private Output<String> hostnameLabel;
 
@@ -563,11 +562,10 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Deprecated. Use `sourceDetails` with [InstanceSourceViaImageDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/InstanceSourceViaImageDetails) source type instead. If you specify values for both, the values must match.
      * 
-     * @deprecated
-     * The &#39;image&#39; field has been deprecated. Please use &#39;source_details&#39; instead. If both fields are specified, then &#39;source_details&#39; will be used.
+     * @deprecated The &#39;image&#39; field has been deprecated. Please use &#39;source_details&#39; instead. If both fields are specified, then &#39;source_details&#39; will be used.
      * 
      */
-    @Deprecated /* The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used. */
+    @Deprecated
     @Export(name="image", refs={String.class}, tree="[0]")
     private Output<String> image;
 
@@ -1039,11 +1037,10 @@ public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Deprecated. Instead use `subnetId` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). At least one of them is required; if you provide both, the values must match.
      * 
-     * @deprecated
-     * The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnet_id under create_vnic_details&#39; instead.
+     * @deprecated The &#39;subnet_id&#39; field has been deprecated. Please use &#39;subnet_id under create_vnic_details&#39; instead.
      * 
      */
-    @Deprecated /* The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead. */
+    @Deprecated
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 

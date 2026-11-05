@@ -256,6 +256,12 @@ func (VmClusterNetworkState) ElementType() reflect.Type {
 	return reflect.TypeOf((*vmClusterNetworkState)(nil)).Elem()
 }
 
+// VmClusterNetworkExists checks whether an existing VmClusterNetwork resource with the given ID exists.
+func VmClusterNetworkExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *VmClusterNetworkState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/vmClusterNetwork:VmClusterNetwork", id, state, "", opts...)
+}
+
 type vmClusterNetworkArgs struct {
 	Action *string `pulumi:"action"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.

@@ -2473,6 +2473,12 @@ func (DomainsSettingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsSettingState)(nil)).Elem()
 }
 
+// DomainsSettingExists checks whether an existing DomainsSetting resource with the given ID exists.
+func DomainsSettingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsSettingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsSetting:DomainsSetting", id, state, "", opts...)
+}
+
 type domainsSettingArgs struct {
 	// (Updatable) Indicates whether all the Apps in this customer tenancy should trust each other. A value of true overrides the 'defaultTrustScope' attribute here in Settings, as well as any App-specific 'trustScope' attribute, to force in effect 'trustScope=Account' for every App in this customer tenancy.
 	//

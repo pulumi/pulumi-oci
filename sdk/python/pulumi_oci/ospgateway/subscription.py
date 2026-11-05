@@ -772,6 +772,64 @@ class Subscription(pulumi.CustomResource):
         __props__.__dict__["upgrade_state_details"] = upgrade_state_details
         return Subscription(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            account_type: pulumi.Input[Optional[_builtins.str]] = None,
+            bill_to_cust_account_id: pulumi.Input[Optional[_builtins.str]] = None,
+            billing_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubscriptionBillingAddressArgs', 'SubscriptionBillingAddressArgsDict', 'outputs.SubscriptionBillingAddress']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            currency_code: pulumi.Input[Optional[_builtins.str]] = None,
+            email: pulumi.Input[Optional[_builtins.str]] = None,
+            gsi_org_code: pulumi.Input[Optional[_builtins.str]] = None,
+            is_corporate_conversion_allowed: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_intent_to_pay: pulumi.Input[Optional[_builtins.bool]] = None,
+            language_code: pulumi.Input[Optional[_builtins.str]] = None,
+            organization_id: pulumi.Input[Optional[_builtins.str]] = None,
+            osp_home_region: pulumi.Input[Optional[_builtins.str]] = None,
+            payment_gateways: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubscriptionPaymentGatewayArgs', 'SubscriptionPaymentGatewayArgsDict', 'outputs.SubscriptionPaymentGateway']]]]] = None,
+            payment_options: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubscriptionPaymentOptionArgs', 'SubscriptionPaymentOptionArgsDict', 'outputs.SubscriptionPaymentOption']]]]] = None,
+            plan_type: pulumi.Input[Optional[_builtins.str]] = None,
+            ship_to_cust_acct_role_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ship_to_cust_acct_site_id: pulumi.Input[Optional[_builtins.str]] = None,
+            subscription: pulumi.Input[Optional[Union['SubscriptionSubscriptionArgs', 'SubscriptionSubscriptionArgsDict', 'outputs.SubscriptionSubscription']]] = None,
+            subscription_id: pulumi.Input[Optional[_builtins.str]] = None,
+            subscription_plan_number: pulumi.Input[Optional[_builtins.str]] = None,
+            tax_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SubscriptionTaxInfoArgs', 'SubscriptionTaxInfoArgsDict', 'outputs.SubscriptionTaxInfo']]]]] = None,
+            time_personal_to_corporate_conv: pulumi.Input[Optional[_builtins.str]] = None,
+            time_plan_upgrade: pulumi.Input[Optional[_builtins.str]] = None,
+            time_start: pulumi.Input[Optional[_builtins.str]] = None,
+            upgrade_state: pulumi.Input[Optional[_builtins.str]] = None,
+            upgrade_state_details: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["accountType"] = account_type
+        __props__["billToCustAccountId"] = bill_to_cust_account_id
+        __props__["billingAddresses"] = billing_addresses
+        __props__["compartmentId"] = compartment_id
+        __props__["currencyCode"] = currency_code
+        __props__["email"] = email
+        __props__["gsiOrgCode"] = gsi_org_code
+        __props__["isCorporateConversionAllowed"] = is_corporate_conversion_allowed
+        __props__["isIntentToPay"] = is_intent_to_pay
+        __props__["languageCode"] = language_code
+        __props__["organizationId"] = organization_id
+        __props__["ospHomeRegion"] = osp_home_region
+        __props__["paymentGateways"] = payment_gateways
+        __props__["paymentOptions"] = payment_options
+        __props__["planType"] = plan_type
+        __props__["shipToCustAcctRoleId"] = ship_to_cust_acct_role_id
+        __props__["shipToCustAcctSiteId"] = ship_to_cust_acct_site_id
+        __props__["subscription"] = subscription
+        __props__["subscriptionId"] = subscription_id
+        __props__["subscriptionPlanNumber"] = subscription_plan_number
+        __props__["taxInfos"] = tax_infos
+        __props__["timePersonalToCorporateConv"] = time_personal_to_corporate_conv
+        __props__["timePlanUpgrade"] = time_plan_upgrade
+        __props__["timeStart"] = time_start
+        __props__["upgradeState"] = upgrade_state
+        __props__["upgradeStateDetails"] = upgrade_state_details
+        return pulumi.runtime.exists_resource(None, 'oci:OspGateway/subscription:Subscription', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="accountType")
     def account_type(self) -> pulumi.Output[_builtins.str]:

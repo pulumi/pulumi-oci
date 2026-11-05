@@ -294,6 +294,16 @@ class Query(pulumi.CustomResource):
         __props__.__dict__["query_definition"] = query_definition
         return Query(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            query_definition: pulumi.Input[Optional[Union['QueryQueryDefinitionArgs', 'QueryQueryDefinitionArgsDict', 'outputs.QueryQueryDefinition']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["queryDefinition"] = query_definition
+        return pulumi.runtime.exists_resource(None, 'oci:MeteringComputation/query:Query', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

@@ -136,7 +136,7 @@ public final class DomainsSettingState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) If specified, indicates the set of allowed notification redirect Urls which can be specified as the value of \&#34;notificationRedirectUrl\&#34; in the POST .../admin/v1/MePasswordResetRequestor request payload, which will then be included in the reset password email notification sent to a user as part of the forgot password / password reset flow.
+     * (Updatable) If specified, indicates the set of allowed notification redirect Urls which can be specified as the value of &#92;&#34;notificationRedirectUrl&#92;&#34; in the POST .../admin/v1/MePasswordResetRequestor request payload, which will then be included in the reset password email notification sent to a user as part of the forgot password / password reset flow.
      * 
      * **Added In:** 2009041201
      * 
@@ -154,7 +154,7 @@ public final class DomainsSettingState extends com.pulumi.resources.ResourceArgs
     private @Nullable Output<List<String>> allowedNotificationRedirectUrls;
 
     /**
-     * @return (Updatable) If specified, indicates the set of allowed notification redirect Urls which can be specified as the value of \&#34;notificationRedirectUrl\&#34; in the POST .../admin/v1/MePasswordResetRequestor request payload, which will then be included in the reset password email notification sent to a user as part of the forgot password / password reset flow.
+     * @return (Updatable) If specified, indicates the set of allowed notification redirect Urls which can be specified as the value of &#92;&#34;notificationRedirectUrl&#92;&#34; in the POST .../admin/v1/MePasswordResetRequestor request payload, which will then be included in the reset password email notification sent to a user as part of the forgot password / password reset flow.
      * 
      * **Added In:** 2009041201
      * 
@@ -1841,7 +1841,7 @@ public final class DomainsSettingState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) If reAuthWhenChangingMyAuthenticationFactors is true (default), this attribute specifies which re-authentication factor to use. Allowed value is \&#34;password\&#34;.
+     * (Updatable) If reAuthWhenChangingMyAuthenticationFactors is true (default), this attribute specifies which re-authentication factor to use. Allowed value is &#92;&#34;password&#92;&#34;.
      * 
      * **Added In:** 20.1.3
      * 
@@ -1857,7 +1857,7 @@ public final class DomainsSettingState extends com.pulumi.resources.ResourceArgs
     private @Nullable Output<List<String>> reAuthFactors;
 
     /**
-     * @return (Updatable) If reAuthWhenChangingMyAuthenticationFactors is true (default), this attribute specifies which re-authentication factor to use. Allowed value is \&#34;password\&#34;.
+     * @return (Updatable) If reAuthWhenChangingMyAuthenticationFactors is true (default), this attribute specifies which re-authentication factor to use. Allowed value is &#92;&#34;password&#92;&#34;.
      * 
      * **Added In:** 20.1.3
      * 
@@ -1926,7 +1926,7 @@ public final class DomainsSettingState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard &#92;&#34;enterprise&#92;&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -1943,7 +1943,7 @@ public final class DomainsSettingState extends com.pulumi.resources.ResourceArgs
     private @Nullable Output<List<String>> schemas;
 
     /**
-     * @return (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+     * @return (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard &#92;&#34;enterprise&#92;&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -2515,7 +2515,7 @@ public final class DomainsSettingState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param allowedNotificationRedirectUrls (Updatable) If specified, indicates the set of allowed notification redirect Urls which can be specified as the value of \&#34;notificationRedirectUrl\&#34; in the POST .../admin/v1/MePasswordResetRequestor request payload, which will then be included in the reset password email notification sent to a user as part of the forgot password / password reset flow.
+         * @param allowedNotificationRedirectUrls (Updatable) If specified, indicates the set of allowed notification redirect Urls which can be specified as the value of &#92;&#34;notificationRedirectUrl&#92;&#34; in the POST .../admin/v1/MePasswordResetRequestor request payload, which will then be included in the reset password email notification sent to a user as part of the forgot password / password reset flow.
          * 
          * **Added In:** 2009041201
          * 
@@ -2537,7 +2537,7 @@ public final class DomainsSettingState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param allowedNotificationRedirectUrls (Updatable) If specified, indicates the set of allowed notification redirect Urls which can be specified as the value of \&#34;notificationRedirectUrl\&#34; in the POST .../admin/v1/MePasswordResetRequestor request payload, which will then be included in the reset password email notification sent to a user as part of the forgot password / password reset flow.
+         * @param allowedNotificationRedirectUrls (Updatable) If specified, indicates the set of allowed notification redirect Urls which can be specified as the value of &#92;&#34;notificationRedirectUrl&#92;&#34; in the POST .../admin/v1/MePasswordResetRequestor request payload, which will then be included in the reset password email notification sent to a user as part of the forgot password / password reset flow.
          * 
          * **Added In:** 2009041201
          * 
@@ -2558,7 +2558,7 @@ public final class DomainsSettingState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param allowedNotificationRedirectUrls (Updatable) If specified, indicates the set of allowed notification redirect Urls which can be specified as the value of \&#34;notificationRedirectUrl\&#34; in the POST .../admin/v1/MePasswordResetRequestor request payload, which will then be included in the reset password email notification sent to a user as part of the forgot password / password reset flow.
+         * @param allowedNotificationRedirectUrls (Updatable) If specified, indicates the set of allowed notification redirect Urls which can be specified as the value of &#92;&#34;notificationRedirectUrl&#92;&#34; in the POST .../admin/v1/MePasswordResetRequestor request payload, which will then be included in the reset password email notification sent to a user as part of the forgot password / password reset flow.
          * 
          * **Added In:** 2009041201
          * 
@@ -4785,7 +4785,7 @@ public final class DomainsSettingState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param reAuthFactors (Updatable) If reAuthWhenChangingMyAuthenticationFactors is true (default), this attribute specifies which re-authentication factor to use. Allowed value is \&#34;password\&#34;.
+         * @param reAuthFactors (Updatable) If reAuthWhenChangingMyAuthenticationFactors is true (default), this attribute specifies which re-authentication factor to use. Allowed value is &#92;&#34;password&#92;&#34;.
          * 
          * **Added In:** 20.1.3
          * 
@@ -4805,7 +4805,7 @@ public final class DomainsSettingState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param reAuthFactors (Updatable) If reAuthWhenChangingMyAuthenticationFactors is true (default), this attribute specifies which re-authentication factor to use. Allowed value is \&#34;password\&#34;.
+         * @param reAuthFactors (Updatable) If reAuthWhenChangingMyAuthenticationFactors is true (default), this attribute specifies which re-authentication factor to use. Allowed value is &#92;&#34;password&#92;&#34;.
          * 
          * **Added In:** 20.1.3
          * 
@@ -4824,7 +4824,7 @@ public final class DomainsSettingState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param reAuthFactors (Updatable) If reAuthWhenChangingMyAuthenticationFactors is true (default), this attribute specifies which re-authentication factor to use. Allowed value is \&#34;password\&#34;.
+         * @param reAuthFactors (Updatable) If reAuthWhenChangingMyAuthenticationFactors is true (default), this attribute specifies which re-authentication factor to use. Allowed value is &#92;&#34;password&#92;&#34;.
          * 
          * **Added In:** 20.1.3
          * 
@@ -4907,7 +4907,7 @@ public final class DomainsSettingState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+         * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard &#92;&#34;enterprise&#92;&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -4928,7 +4928,7 @@ public final class DomainsSettingState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+         * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard &#92;&#34;enterprise&#92;&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -4948,7 +4948,7 @@ public final class DomainsSettingState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \&#34;enterprise\&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
+         * @param schemas (Updatable) REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard &#92;&#34;enterprise&#92;&#34; extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false

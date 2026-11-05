@@ -190,6 +190,12 @@ func (NetworkAddressListState) ElementType() reflect.Type {
 	return reflect.TypeOf((*networkAddressListState)(nil)).Elem()
 }
 
+// NetworkAddressListExists checks whether an existing NetworkAddressList resource with the given ID exists.
+func NetworkAddressListExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *NetworkAddressListState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Waf/networkAddressList:NetworkAddressList", id, state, "", opts...)
+}
+
 type networkAddressListArgs struct {
 	// (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
 	Addresses []string `pulumi:"addresses"`

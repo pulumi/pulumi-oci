@@ -342,6 +342,12 @@ func (LogAnalyticsObjectCollectionRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*logAnalyticsObjectCollectionRuleState)(nil)).Elem()
 }
 
+// LogAnalyticsObjectCollectionRuleExists checks whether an existing LogAnalyticsObjectCollectionRule resource with the given ID exists.
+func LogAnalyticsObjectCollectionRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *LogAnalyticsObjectCollectionRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:LogAnalytics/logAnalyticsObjectCollectionRule:LogAnalyticsObjectCollectionRule", id, state, "", opts...)
+}
+
 type logAnalyticsObjectCollectionRuleArgs struct {
 	// (Updatable) An optional character encoding to aid in detecting the character encoding of the contents of the objects while processing. It is recommended to set this value as ISO_8589_1 when configuring content of the objects having more numeric characters, and very few alphabets. For e.g. this applies when configuring VCN Flow Logs.
 	CharEncoding *string `pulumi:"charEncoding"`

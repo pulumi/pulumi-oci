@@ -455,6 +455,12 @@ func (AlarmState) ElementType() reflect.Type {
 	return reflect.TypeOf((*alarmState)(nil)).Elem()
 }
 
+// AlarmExists checks whether an existing Alarm resource with the given ID exists.
+func AlarmExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AlarmState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Monitoring/alarm:Alarm", id, state, "", opts...)
+}
+
 type alarmArgs struct {
 	// (Updatable) Customizable alarm summary (`alarmSummary` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The alarm summary appears within the body of the alarm message and in responses to  [ListAlarmStatus](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmStatusSummary/ListAlarmsStatus)  [GetAlarmHistory](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmHistoryCollection/GetAlarmHistory) and [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
 	AlarmSummary *string `pulumi:"alarmSummary"`

@@ -260,6 +260,12 @@ func (BootVolumeBackupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*bootVolumeBackupState)(nil)).Elem()
 }
 
+// BootVolumeBackupExists checks whether an existing BootVolumeBackup resource with the given ID exists.
+func BootVolumeBackupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BootVolumeBackupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/bootVolumeBackup:BootVolumeBackup", id, state, "", opts...)
+}
+
 type bootVolumeBackupArgs struct {
 	// The OCID of the boot volume that needs to be backed up. Cannot be defined if `sourceDetails` is defined.
 	BootVolumeId *string `pulumi:"bootVolumeId"`

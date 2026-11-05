@@ -214,6 +214,12 @@ func (ManagedDatabaseState) ElementType() reflect.Type {
 	return reflect.TypeOf((*managedDatabaseState)(nil)).Elem()
 }
 
+// ManagedDatabaseExists checks whether an existing ManagedDatabase resource with the given ID exists.
+func ManagedDatabaseExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ManagedDatabaseState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/managedDatabase:ManagedDatabase", id, state, "", opts...)
+}
+
 type managedDatabaseArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`

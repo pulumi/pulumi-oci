@@ -188,6 +188,12 @@ func (ByoasnState) ElementType() reflect.Type {
 	return reflect.TypeOf((*byoasnState)(nil)).Elem()
 }
 
+// ByoasnExists checks whether an existing Byoasn resource with the given ID exists.
+func ByoasnExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ByoasnState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/byoasn:Byoasn", id, state, "", opts...)
+}
+
 type byoasnArgs struct {
 	// The Autonomous System Number (ASN) you are importing to the Oracle cloud.
 	Asn string `pulumi:"asn"`

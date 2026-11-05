@@ -134,6 +134,12 @@ func (MonitoredResourcesListMemberState) ElementType() reflect.Type {
 	return reflect.TypeOf((*monitoredResourcesListMemberState)(nil)).Elem()
 }
 
+// MonitoredResourcesListMemberExists checks whether an existing MonitoredResourcesListMember resource with the given ID exists.
+func MonitoredResourcesListMemberExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *MonitoredResourcesListMemberState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:StackMonitoring/monitoredResourcesListMember:MonitoredResourcesListMember", id, state, "", opts...)
+}
+
 type monitoredResourcesListMemberArgs struct {
 	// Destination Monitored Resource Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DestinationResourceId *string `pulumi:"destinationResourceId"`

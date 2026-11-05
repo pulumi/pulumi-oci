@@ -125,6 +125,12 @@ func (CloudExadataInfrastructureManagedexadataManagementState) ElementType() ref
 	return reflect.TypeOf((*cloudExadataInfrastructureManagedexadataManagementState)(nil)).Elem()
 }
 
+// CloudExadataInfrastructureManagedexadataManagementExists checks whether an existing CloudExadataInfrastructureManagedexadataManagement resource with the given ID exists.
+func CloudExadataInfrastructureManagedexadataManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CloudExadataInfrastructureManagedexadataManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DatabaseManagement/cloudExadataInfrastructureManagedexadataManagement:CloudExadataInfrastructureManagedexadataManagement", id, state, "", opts...)
+}
+
 type cloudExadataInfrastructureManagedexadataManagementArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata infrastructure.
 	CloudExadataInfrastructureId string `pulumi:"cloudExadataInfrastructureId"`

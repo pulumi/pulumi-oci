@@ -115,6 +115,12 @@ func (AwrHubSourceAwrhubsourcesManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*awrHubSourceAwrhubsourcesManagementState)(nil)).Elem()
 }
 
+// AwrHubSourceAwrhubsourcesManagementExists checks whether an existing AwrHubSourceAwrhubsourcesManagement resource with the given ID exists.
+func AwrHubSourceAwrhubsourcesManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AwrHubSourceAwrhubsourcesManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Opsi/awrHubSourceAwrhubsourcesManagement:AwrHubSourceAwrhubsourcesManagement", id, state, "", opts...)
+}
+
 type awrHubSourceAwrhubsourcesManagementArgs struct {
 	// Unique Awr Hub Source identifier
 	AwrHubSourceId string `pulumi:"awrHubSourceId"`

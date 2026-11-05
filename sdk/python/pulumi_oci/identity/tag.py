@@ -620,6 +620,32 @@ class Tag(pulumi.CustomResource):
         __props__.__dict__["validator"] = validator
         return Tag(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_cost_tracking: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_retired: pulumi.Input[Optional[_builtins.bool]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            tag_namespace_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            validator: pulumi.Input[Optional[Union['TagValidatorArgs', 'TagValidatorArgsDict', 'outputs.TagValidator']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["freeformTags"] = freeform_tags
+        __props__["isCostTracking"] = is_cost_tracking
+        __props__["isRetired"] = is_retired
+        __props__["name"] = name
+        __props__["state"] = state
+        __props__["tagNamespaceId"] = tag_namespace_id
+        __props__["timeCreated"] = time_created
+        __props__["validator"] = validator
+        return pulumi.runtime.exists_resource(None, 'oci:Identity/tag:Tag', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:

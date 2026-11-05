@@ -1028,6 +1028,60 @@ class OpensearchClusterPipeline(pulumi.CustomResource):
         __props__.__dict__["vcn_id"] = vcn_id
         return OpensearchClusterPipeline(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            data_prepper_configuration_body: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            memory_gb: pulumi.Input[Optional[_builtins.int]] = None,
+            node_count: pulumi.Input[Optional[_builtins.int]] = None,
+            node_shape: pulumi.Input[Optional[_builtins.str]] = None,
+            nsg_id: pulumi.Input[Optional[_builtins.str]] = None,
+            ocpu_count: pulumi.Input[Optional[_builtins.int]] = None,
+            opc_dry_run: pulumi.Input[Optional[_builtins.bool]] = None,
+            opensearch_pipeline_fqdn: pulumi.Input[Optional[_builtins.str]] = None,
+            opensearch_pipeline_private_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            pipeline_configuration_body: pulumi.Input[Optional[_builtins.str]] = None,
+            pipeline_mode: pulumi.Input[Optional[_builtins.str]] = None,
+            reverse_connection_endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OpensearchClusterPipelineReverseConnectionEndpointArgs', 'OpensearchClusterPipelineReverseConnectionEndpointArgsDict', 'outputs.OpensearchClusterPipelineReverseConnectionEndpoint']]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            vcn_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            vcn_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["dataPrepperConfigurationBody"] = data_prepper_configuration_body
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["memoryGb"] = memory_gb
+        __props__["nodeCount"] = node_count
+        __props__["nodeShape"] = node_shape
+        __props__["nsgId"] = nsg_id
+        __props__["ocpuCount"] = ocpu_count
+        __props__["opcDryRun"] = opc_dry_run
+        __props__["opensearchPipelineFqdn"] = opensearch_pipeline_fqdn
+        __props__["opensearchPipelinePrivateIp"] = opensearch_pipeline_private_ip
+        __props__["pipelineConfigurationBody"] = pipeline_configuration_body
+        __props__["pipelineMode"] = pipeline_mode
+        __props__["reverseConnectionEndpoints"] = reverse_connection_endpoints
+        __props__["state"] = state
+        __props__["subnetCompartmentId"] = subnet_compartment_id
+        __props__["subnetId"] = subnet_id
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["vcnCompartmentId"] = vcn_compartment_id
+        __props__["vcnId"] = vcn_id
+        return pulumi.runtime.exists_resource(None, 'oci:Opensearch/opensearchClusterPipeline:OpensearchClusterPipeline', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

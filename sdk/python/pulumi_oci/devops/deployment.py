@@ -789,6 +789,54 @@ class Deployment(pulumi.CustomResource):
         __props__.__dict__["trigger_new_devops_deployment"] = trigger_new_devops_deployment
         return Deployment(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            deploy_artifact_override_arguments: pulumi.Input[Optional[Union['DeploymentDeployArtifactOverrideArgumentsArgs', 'DeploymentDeployArtifactOverrideArgumentsArgsDict', 'outputs.DeploymentDeployArtifactOverrideArguments']]] = None,
+            deploy_pipeline_artifacts: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentDeployPipelineArtifactArgs', 'DeploymentDeployPipelineArtifactArgsDict', 'outputs.DeploymentDeployPipelineArtifact']]]]] = None,
+            deploy_pipeline_environments: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentDeployPipelineEnvironmentArgs', 'DeploymentDeployPipelineEnvironmentArgsDict', 'outputs.DeploymentDeployPipelineEnvironment']]]]] = None,
+            deploy_pipeline_id: pulumi.Input[Optional[_builtins.str]] = None,
+            deploy_stage_id: pulumi.Input[Optional[_builtins.str]] = None,
+            deploy_stage_override_arguments: pulumi.Input[Optional[Union['DeploymentDeployStageOverrideArgumentsArgs', 'DeploymentDeployStageOverrideArgumentsArgsDict', 'outputs.DeploymentDeployStageOverrideArguments']]] = None,
+            deployment_arguments: pulumi.Input[Optional[Union['DeploymentDeploymentArgumentsArgs', 'DeploymentDeploymentArgumentsArgsDict', 'outputs.DeploymentDeploymentArguments']]] = None,
+            deployment_execution_progresses: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DeploymentDeploymentExecutionProgressArgs', 'DeploymentDeploymentExecutionProgressArgsDict', 'outputs.DeploymentDeploymentExecutionProgress']]]]] = None,
+            deployment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            previous_deployment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            project_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            trigger_new_devops_deployment: pulumi.Input[Optional[_builtins.bool]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["deployArtifactOverrideArguments"] = deploy_artifact_override_arguments
+        __props__["deployPipelineArtifacts"] = deploy_pipeline_artifacts
+        __props__["deployPipelineEnvironments"] = deploy_pipeline_environments
+        __props__["deployPipelineId"] = deploy_pipeline_id
+        __props__["deployStageId"] = deploy_stage_id
+        __props__["deployStageOverrideArguments"] = deploy_stage_override_arguments
+        __props__["deploymentArguments"] = deployment_arguments
+        __props__["deploymentExecutionProgresses"] = deployment_execution_progresses
+        __props__["deploymentType"] = deployment_type
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["previousDeploymentId"] = previous_deployment_id
+        __props__["projectId"] = project_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["triggerNewDevopsDeployment"] = trigger_new_devops_deployment
+        return pulumi.runtime.exists_resource(None, 'oci:DevOps/deployment:Deployment', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

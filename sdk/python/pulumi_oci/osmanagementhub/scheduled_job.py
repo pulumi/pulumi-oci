@@ -1249,6 +1249,64 @@ class ScheduledJob(pulumi.CustomResource):
         __props__.__dict__["work_request_ids"] = work_request_ids
         return ScheduledJob(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dynamic_set_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_managed_by_autonomous_linux: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_restricted: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_subcompartment_included: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_stage_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            locations: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            managed_compartment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            managed_instance_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            managed_instance_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ScheduledJobOperationArgs', 'ScheduledJobOperationArgsDict', 'outputs.ScheduledJobOperation']]]]] = None,
+            recurring_rule: pulumi.Input[Optional[_builtins.str]] = None,
+            retry_intervals: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+            schedule_type: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_execution: pulumi.Input[Optional[_builtins.str]] = None,
+            time_next_execution: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            work_request_id: pulumi.Input[Optional[_builtins.str]] = None,
+            work_request_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["dynamicSetIds"] = dynamic_set_ids
+        __props__["freeformTags"] = freeform_tags
+        __props__["isManagedByAutonomousLinux"] = is_managed_by_autonomous_linux
+        __props__["isRestricted"] = is_restricted
+        __props__["isSubcompartmentIncluded"] = is_subcompartment_included
+        __props__["lifecycleStageIds"] = lifecycle_stage_ids
+        __props__["locations"] = locations
+        __props__["managedCompartmentIds"] = managed_compartment_ids
+        __props__["managedInstanceGroupIds"] = managed_instance_group_ids
+        __props__["managedInstanceIds"] = managed_instance_ids
+        __props__["operations"] = operations
+        __props__["recurringRule"] = recurring_rule
+        __props__["retryIntervals"] = retry_intervals
+        __props__["scheduleType"] = schedule_type
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeLastExecution"] = time_last_execution
+        __props__["timeNextExecution"] = time_next_execution
+        __props__["timeUpdated"] = time_updated
+        __props__["workRequestId"] = work_request_id
+        __props__["workRequestIds"] = work_request_ids
+        return pulumi.runtime.exists_resource(None, 'oci:OsManagementHub/scheduledJob:ScheduledJob', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

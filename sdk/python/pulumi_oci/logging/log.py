@@ -629,6 +629,38 @@ class Log(pulumi.CustomResource):
         __props__.__dict__["time_last_modified"] = time_last_modified
         return Log(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            configuration: pulumi.Input[Optional[Union['LogConfigurationArgs', 'LogConfigurationArgsDict', 'outputs.LogConfiguration']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            log_type: pulumi.Input[Optional[_builtins.str]] = None,
+            retention_duration: pulumi.Input[Optional[_builtins.int]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            tenancy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_modified: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["configuration"] = configuration
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["isEnabled"] = is_enabled
+        __props__["logGroupId"] = log_group_id
+        __props__["logType"] = log_type
+        __props__["retentionDuration"] = retention_duration
+        __props__["state"] = state
+        __props__["tenancyId"] = tenancy_id
+        __props__["timeCreated"] = time_created
+        __props__["timeLastModified"] = time_last_modified
+        return pulumi.runtime.exists_resource(None, 'oci:Logging/log:Log', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

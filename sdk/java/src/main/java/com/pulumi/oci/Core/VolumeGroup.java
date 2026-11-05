@@ -115,11 +115,10 @@ public class VolumeGroup extends com.pulumi.resources.CustomResource {
     /**
      * If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `oci.Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
      * 
-     * @deprecated
-     * The &#39;backup_policy_id&#39; field has been deprecated. Please use the &#39;oci_core_volume_backup_policy_assignment&#39; resource instead.
+     * @deprecated The &#39;backup_policy_id&#39; field has been deprecated. Please use the &#39;oci_core_volume_backup_policy_assignment&#39; resource instead.
      * 
      */
-    @Deprecated /* The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead. */
+    @Deprecated
     @Export(name="backupPolicyId", refs={String.class}, tree="[0]")
     private Output<String> backupPolicyId;
 

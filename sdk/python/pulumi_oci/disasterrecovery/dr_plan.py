@@ -705,6 +705,48 @@ class DrPlan(pulumi.CustomResource):
         __props__.__dict__["verify_trigger"] = verify_trigger
         return DrPlan(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            dr_protection_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            life_cycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_sub_state: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_dr_protection_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            peer_region: pulumi.Input[Optional[_builtins.str]] = None,
+            plan_groups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DrPlanPlanGroupArgs', 'DrPlanPlanGroupArgsDict', 'outputs.DrPlanPlanGroup']]]]] = None,
+            refresh_trigger: pulumi.Input[Optional[_builtins.int]] = None,
+            source_plan_id: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            type: pulumi.Input[Optional[_builtins.str]] = None,
+            verify_trigger: pulumi.Input[Optional[_builtins.int]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["drProtectionGroupId"] = dr_protection_group_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["lifeCycleDetails"] = life_cycle_details
+        __props__["lifecycleSubState"] = lifecycle_sub_state
+        __props__["peerDrProtectionGroupId"] = peer_dr_protection_group_id
+        __props__["peerRegion"] = peer_region
+        __props__["planGroups"] = plan_groups
+        __props__["refreshTrigger"] = refresh_trigger
+        __props__["sourcePlanId"] = source_plan_id
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["type"] = type
+        __props__["verifyTrigger"] = verify_trigger
+        return pulumi.runtime.exists_resource(None, 'oci:DisasterRecovery/drPlan:DrPlan', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

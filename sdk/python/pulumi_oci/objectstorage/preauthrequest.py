@@ -586,6 +586,36 @@ class Preauthrequest(pulumi.CustomResource):
         __props__.__dict__["time_expires"] = time_expires
         return Preauthrequest(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            access_type: pulumi.Input[Optional[_builtins.str]] = None,
+            access_uri: pulumi.Input[Optional[_builtins.str]] = None,
+            bucket: pulumi.Input[Optional[_builtins.str]] = None,
+            bucket_listing_action: pulumi.Input[Optional[_builtins.str]] = None,
+            full_path: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            object: pulumi.Input[Optional[_builtins.str]] = None,
+            object_name: pulumi.Input[Optional[_builtins.str]] = None,
+            par_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_expires: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["accessType"] = access_type
+        __props__["accessUri"] = access_uri
+        __props__["bucket"] = bucket
+        __props__["bucketListingAction"] = bucket_listing_action
+        __props__["fullPath"] = full_path
+        __props__["name"] = name
+        __props__["namespace"] = namespace
+        __props__["object"] = object
+        __props__["objectName"] = object_name
+        __props__["parId"] = par_id
+        __props__["timeCreated"] = time_created
+        __props__["timeExpires"] = time_expires
+        return pulumi.runtime.exists_resource(None, 'oci:ObjectStorage/preauthrequest:Preauthrequest', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="accessType")
     def access_type(self) -> pulumi.Output[_builtins.str]:

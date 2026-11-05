@@ -148,6 +148,12 @@ func (AnalyticsInstanceResourceGroupState) ElementType() reflect.Type {
 	return reflect.TypeOf((*analyticsInstanceResourceGroupState)(nil)).Elem()
 }
 
+// AnalyticsInstanceResourceGroupExists checks whether an existing AnalyticsInstanceResourceGroup resource with the given ID exists.
+func AnalyticsInstanceResourceGroupExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AnalyticsInstanceResourceGroupState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Analytics/analyticsInstanceResourceGroup:AnalyticsInstanceResourceGroup", id, state, "", opts...)
+}
+
 type analyticsInstanceResourceGroupArgs struct {
 	// The OCID of the Analytics instance.
 	AnalyticsInstanceId string `pulumi:"analyticsInstanceId"`

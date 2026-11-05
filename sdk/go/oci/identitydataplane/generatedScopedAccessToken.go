@@ -130,6 +130,12 @@ func (GeneratedScopedAccessTokenState) ElementType() reflect.Type {
 	return reflect.TypeOf((*generatedScopedAccessTokenState)(nil)).Elem()
 }
 
+// GeneratedScopedAccessTokenExists checks whether an existing GeneratedScopedAccessToken resource with the given ID exists.
+func GeneratedScopedAccessTokenExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *GeneratedScopedAccessTokenState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:IdentityDataPlane/generatedScopedAccessToken:GeneratedScopedAccessToken", id, state, "", opts...)
+}
+
 type generatedScopedAccessTokenArgs struct {
 	// A temporary public key, owned by the service. The service also owns the corresponding private key. This public key will by put inside the security token by the auth service after successful validation of the certificate.
 	PublicKey string `pulumi:"publicKey"`

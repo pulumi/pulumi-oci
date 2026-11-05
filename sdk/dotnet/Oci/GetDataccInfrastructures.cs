@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Obtain a list of Database Infrastructures.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Obtain a list of Database Infrastructures.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Infrastructures in Oracle Cloud Infrastructure Datacc service.
         /// 
         /// Obtain a list of Database Infrastructures.
-        /// 
         /// 
         /// ## Example Usage
         /// 

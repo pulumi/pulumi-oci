@@ -34,15 +34,15 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// 
         /// Example of threshold alarm:
         /// 
-        /// -----
+        /// ***
         /// 
         /// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.groupBy(availabilityDomain).percentile(0.9) &gt; 85
         /// 
-        /// -----
+        /// ***
         /// 
         /// Example of absence alarm:
         /// 
-        /// -----
+        /// ***
         /// 
         /// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
         /// 

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// List all Assessments.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// List all Assessments.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.DatabaseMigration
         /// This data source provides the list of Assessments in Oracle Cloud Infrastructure Database Migration service.
         /// 
         /// List all Assessments.
-        /// 
         /// 
         /// ## Example Usage
         /// 

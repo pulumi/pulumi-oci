@@ -268,6 +268,12 @@ func (DbNodeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*dbNodeState)(nil)).Elem()
 }
 
+// DbNodeExists checks whether an existing DbNode resource with the given ID exists.
+func DbNodeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DbNodeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/dbNode:DbNode", id, state, "", opts...)
+}
+
 type dbNodeArgs struct {
 	// The database node [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DbNodeId string `pulumi:"dbNodeId"`

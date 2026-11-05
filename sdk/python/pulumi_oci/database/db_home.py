@@ -919,6 +919,56 @@ class DbHome(pulumi.CustomResource):
         __props__.__dict__["vm_cluster_id"] = vm_cluster_id
         return DbHome(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            database: pulumi.Input[Optional[Union['DbHomeDatabaseArgs', 'DbHomeDatabaseArgsDict', 'outputs.DbHomeDatabase']]] = None,
+            database_software_image_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_home_location: pulumi.Input[Optional[_builtins.str]] = None,
+            db_system_id: pulumi.Input[Optional[_builtins.str]] = None,
+            db_version: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            enable_database_delete: pulumi.Input[Optional[_builtins.bool]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            home_type: pulumi.Input[Optional[_builtins.str]] = None,
+            is_desupported_version: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_unified_auditing_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_version_id: pulumi.Input[Optional[_builtins.str]] = None,
+            last_patch_history_entry_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            vm_cluster_id: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["database"] = database
+        __props__["databaseSoftwareImageId"] = database_software_image_id
+        __props__["dbHomeLocation"] = db_home_location
+        __props__["dbSystemId"] = db_system_id
+        __props__["dbVersion"] = db_version
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["enableDatabaseDelete"] = enable_database_delete
+        __props__["freeformTags"] = freeform_tags
+        __props__["homeType"] = home_type
+        __props__["isDesupportedVersion"] = is_desupported_version
+        __props__["isUnifiedAuditingEnabled"] = is_unified_auditing_enabled
+        __props__["kmsKeyId"] = kms_key_id
+        __props__["kmsKeyVersionId"] = kms_key_version_id
+        __props__["lastPatchHistoryEntryId"] = last_patch_history_entry_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["source"] = source
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["vmClusterId"] = vm_cluster_id
+        return pulumi.runtime.exists_resource(None, 'oci:Database/dbHome:DbHome', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

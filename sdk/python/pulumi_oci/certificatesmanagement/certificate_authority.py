@@ -724,6 +724,50 @@ class CertificateAuthority(pulumi.CustomResource):
         __props__.__dict__["time_of_deletion"] = time_of_deletion
         return CertificateAuthority(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            certificate_authority_config: pulumi.Input[Optional[Union['CertificateAuthorityCertificateAuthorityConfigArgs', 'CertificateAuthorityCertificateAuthorityConfigArgsDict', 'outputs.CertificateAuthorityCertificateAuthorityConfig']]] = None,
+            certificate_authority_rules: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateAuthorityCertificateAuthorityRuleArgs', 'CertificateAuthorityCertificateAuthorityRuleArgsDict', 'outputs.CertificateAuthorityCertificateAuthorityRule']]]]] = None,
+            certificate_revocation_list_details: pulumi.Input[Optional[Union['CertificateAuthorityCertificateRevocationListDetailsArgs', 'CertificateAuthorityCertificateRevocationListDetailsArgsDict', 'outputs.CertificateAuthorityCertificateRevocationListDetails']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            config_type: pulumi.Input[Optional[_builtins.str]] = None,
+            current_versions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateAuthorityCurrentVersionArgs', 'CertificateAuthorityCurrentVersionArgsDict', 'outputs.CertificateAuthorityCurrentVersion']]]]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            external_key_description: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            issuer_certificate_authority_id: pulumi.Input[Optional[_builtins.str]] = None,
+            kms_key_id: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            signing_algorithm: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subjects: pulumi.Input[Optional[Sequence[pulumi.Input[Union['CertificateAuthoritySubjectArgs', 'CertificateAuthoritySubjectArgsDict', 'outputs.CertificateAuthoritySubject']]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_of_deletion: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["certificateAuthorityConfig"] = certificate_authority_config
+        __props__["certificateAuthorityRules"] = certificate_authority_rules
+        __props__["certificateRevocationListDetails"] = certificate_revocation_list_details
+        __props__["compartmentId"] = compartment_id
+        __props__["configType"] = config_type
+        __props__["currentVersions"] = current_versions
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["externalKeyDescription"] = external_key_description
+        __props__["freeformTags"] = freeform_tags
+        __props__["issuerCertificateAuthorityId"] = issuer_certificate_authority_id
+        __props__["kmsKeyId"] = kms_key_id
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["name"] = name
+        __props__["signingAlgorithm"] = signing_algorithm
+        __props__["state"] = state
+        __props__["subjects"] = subjects
+        __props__["timeCreated"] = time_created
+        __props__["timeOfDeletion"] = time_of_deletion
+        return pulumi.runtime.exists_resource(None, 'oci:CertificatesManagement/certificateAuthority:CertificateAuthority', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="certificateAuthorityConfig")
     def certificate_authority_config(self) -> pulumi.Output['outputs.CertificateAuthorityCertificateAuthorityConfig']:

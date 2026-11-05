@@ -16,7 +16,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Returns a list of effective properties for the specified resource.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Returns a list of effective properties for the specified resource.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -83,7 +81,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides the list of Namespace Effective Properties in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// Returns a list of effective properties for the specified resource.
-        /// 
         /// 
         /// ## Example Usage
         /// 

@@ -215,6 +215,12 @@ func (AutomaticDrConfigurationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*automaticDrConfigurationState)(nil)).Elem()
 }
 
+// AutomaticDrConfigurationExists checks whether an existing AutomaticDrConfiguration resource with the given ID exists.
+func AutomaticDrConfigurationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutomaticDrConfigurationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DisasterRecovery/automaticDrConfiguration:AutomaticDrConfiguration", id, state, "", opts...)
+}
+
 type automaticDrConfigurationArgs struct {
 	// (Updatable) The unique id of a Failover DR Plan.  Example: `ocid1.drplan.oc1..uniqueID`
 	DefaultFailoverDrPlanId *string `pulumi:"defaultFailoverDrPlanId"`

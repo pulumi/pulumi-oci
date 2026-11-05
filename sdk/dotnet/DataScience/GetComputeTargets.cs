@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// List all compute targets in the specified compartment. Supports queries on various other parameters in the query alongside compartmentId (must be included).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -46,7 +45,6 @@ namespace Pulumi.Oci.DataScience
         /// 
         /// List all compute targets in the specified compartment. Supports queries on various other parameters in the query alongside compartmentId (must be included).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -75,7 +73,6 @@ namespace Pulumi.Oci.DataScience
         /// This data source provides the list of Compute Targets in Oracle Cloud Infrastructure Data Science service.
         /// 
         /// List all compute targets in the specified compartment. Supports queries on various other parameters in the query alongside compartmentId (must be included).
-        /// 
         /// 
         /// ## Example Usage
         /// 

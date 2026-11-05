@@ -212,6 +212,12 @@ func (SchedulingPlanState) ElementType() reflect.Type {
 	return reflect.TypeOf((*schedulingPlanState)(nil)).Elem()
 }
 
+// SchedulingPlanExists checks whether an existing SchedulingPlan resource with the given ID exists.
+func SchedulingPlanExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SchedulingPlanState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/schedulingPlan:SchedulingPlan", id, state, "", opts...)
+}
+
 type schedulingPlanArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

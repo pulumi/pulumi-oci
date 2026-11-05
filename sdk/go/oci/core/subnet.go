@@ -406,6 +406,12 @@ func (SubnetState) ElementType() reflect.Type {
 	return reflect.TypeOf((*subnetState)(nil)).Elem()
 }
 
+// SubnetExists checks whether an existing Subnet resource with the given ID exists.
+func SubnetExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SubnetState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/subnet:Subnet", id, state, "", opts...)
+}
+
 type subnetArgs struct {
 	// Controls whether the subnet is regional or specific to an availability domain. Oracle recommends creating regional subnets because they're more flexible and make it easier to implement failover across availability domains. Originally, AD-specific subnets were the only kind available to use.
 	//

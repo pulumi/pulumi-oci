@@ -575,6 +575,42 @@ class ManagementAgentInstallKey(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return ManagementAgentInstallKey(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            allowed_key_install_count: pulumi.Input[Optional[_builtins.int]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by_principal_id: pulumi.Input[Optional[_builtins.str]] = None,
+            current_key_install_count: pulumi.Input[Optional[_builtins.int]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_unlimited: pulumi.Input[Optional[_builtins.bool]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_expires: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["allowedKeyInstallCount"] = allowed_key_install_count
+        __props__["compartmentId"] = compartment_id
+        __props__["createdByPrincipalId"] = created_by_principal_id
+        __props__["currentKeyInstallCount"] = current_key_install_count
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["isUnlimited"] = is_unlimited
+        __props__["key"] = key
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeExpires"] = time_expires
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:ManagementAgent/managementAgentInstallKey:ManagementAgentInstallKey', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="allowedKeyInstallCount")
     def allowed_key_install_count(self) -> pulumi.Output[_builtins.int]:

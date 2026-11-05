@@ -121,6 +121,12 @@ func (SetSecurityAssessmentBaselineState) ElementType() reflect.Type {
 	return reflect.TypeOf((*setSecurityAssessmentBaselineState)(nil)).Elem()
 }
 
+// SetSecurityAssessmentBaselineExists checks whether an existing SetSecurityAssessmentBaseline resource with the given ID exists.
+func SetSecurityAssessmentBaselineExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SetSecurityAssessmentBaselineState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/setSecurityAssessmentBaseline:SetSecurityAssessmentBaseline", id, state, "", opts...)
+}
+
 type setSecurityAssessmentBaselineArgs struct {
 	// The list of OCIDs for the security assessments that need to be updated while setting the baseline.
 	AssessmentIds []string `pulumi:"assessmentIds"`

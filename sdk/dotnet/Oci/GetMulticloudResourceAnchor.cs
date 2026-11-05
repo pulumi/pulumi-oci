@@ -18,7 +18,6 @@ namespace Pulumi.Oci.Oci
         /// For more information, see
         /// [Getting a Resource Anchor's Details (OCI)](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-resource-anchor.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.Oci
         /// For more information, see
         /// [Getting a Resource Anchor's Details (OCI)](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-resource-anchor.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -81,7 +79,6 @@ namespace Pulumi.Oci.Oci
         /// Gets details for the specified resource anchor. The subscription OCID and service name are required.
         /// For more information, see
         /// [Getting a Resource Anchor's Details (OCI)](https://docs.cloud.oracle.com/iaas/Content/multicloud-hub/get-resource-anchor.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

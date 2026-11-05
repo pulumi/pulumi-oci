@@ -813,6 +813,56 @@ class OdaInstance(pulumi.CustomResource):
         __props__.__dict__["web_app_url"] = web_app_url
         return OdaInstance(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            attachment_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            attachment_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            connector_url: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            identity_app_console_url: pulumi.Input[Optional[_builtins.str]] = None,
+            identity_app_guid: pulumi.Input[Optional[_builtins.str]] = None,
+            identity_domain: pulumi.Input[Optional[_builtins.str]] = None,
+            imported_package_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            imported_package_names: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            is_role_based_access: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_sub_state: pulumi.Input[Optional[_builtins.str]] = None,
+            restricted_operations: pulumi.Input[Optional[Sequence[pulumi.Input[Union['OdaInstanceRestrictedOperationArgs', 'OdaInstanceRestrictedOperationArgsDict', 'outputs.OdaInstanceRestrictedOperation']]]]] = None,
+            shape_name: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            state_message: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            web_app_url: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["attachmentIds"] = attachment_ids
+        __props__["attachmentTypes"] = attachment_types
+        __props__["compartmentId"] = compartment_id
+        __props__["connectorUrl"] = connector_url
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["freeformTags"] = freeform_tags
+        __props__["identityAppConsoleUrl"] = identity_app_console_url
+        __props__["identityAppGuid"] = identity_app_guid
+        __props__["identityDomain"] = identity_domain
+        __props__["importedPackageIds"] = imported_package_ids
+        __props__["importedPackageNames"] = imported_package_names
+        __props__["isRoleBasedAccess"] = is_role_based_access
+        __props__["lifecycleSubState"] = lifecycle_sub_state
+        __props__["restrictedOperations"] = restricted_operations
+        __props__["shapeName"] = shape_name
+        __props__["state"] = state
+        __props__["stateMessage"] = state_message
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["webAppUrl"] = web_app_url
+        return pulumi.runtime.exists_resource(None, 'oci:Oda/odaInstance:OdaInstance', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="attachmentIds")
     def attachment_ids(self) -> pulumi.Output[Sequence[_builtins.str]]:

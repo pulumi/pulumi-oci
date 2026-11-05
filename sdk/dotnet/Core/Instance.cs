@@ -523,7 +523,6 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// (Updatable) The platform configuration requested for the instance.
         /// 
-        /// 
         /// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `Shape` that you specify. If you don't provide the parameter, the default values for the `Shape` are used.
         /// 
         /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `Shape`, an error is returned.
@@ -943,7 +942,6 @@ namespace Pulumi.Oci.Core
         /// <summary>
         /// (Updatable) The platform configuration requested for the instance.
         /// 
-        /// 
         /// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `Shape` that you specify. If you don't provide the parameter, the default values for the `Shape` are used.
         /// 
         /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `Shape`, an error is returned.
@@ -1311,7 +1309,6 @@ namespace Pulumi.Oci.Core
 
         /// <summary>
         /// (Updatable) The platform configuration requested for the instance.
-        /// 
         /// 
         /// If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `Shape` that you specify. If you don't provide the parameter, the default values for the `Shape` are used.
         /// 

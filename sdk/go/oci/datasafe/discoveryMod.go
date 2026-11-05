@@ -278,6 +278,12 @@ func (DiscoveryModState) ElementType() reflect.Type {
 	return reflect.TypeOf((*discoveryModState)(nil)).Elem()
 }
 
+// DiscoveryModExists checks whether an existing DiscoveryMod resource with the given ID exists.
+func DiscoveryModExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DiscoveryModState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/discoveryMod:DiscoveryMod", id, state, "", opts...)
+}
+
 type discoveryModArgs struct {
 	// (Updatable) The OCID of the compartment where the discovery job resource should be created.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -19,7 +19,6 @@ namespace Pulumi.Oci.DataSafe
         /// the other library masking formats that have the sensitiveTypeIds attribute containing
         /// the OCID of the sensitive type.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,7 +50,6 @@ namespace Pulumi.Oci.DataSafe
         /// the other library masking formats that have the sensitiveTypeIds attribute containing
         /// the OCID of the sensitive type.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -82,7 +80,6 @@ namespace Pulumi.Oci.DataSafe
         /// For each sensitive type, it returns the assigned default masking format as well as
         /// the other library masking formats that have the sensitiveTypeIds attribute containing
         /// the OCID of the sensitive type.
-        /// 
         /// 
         /// ## Example Usage
         /// 

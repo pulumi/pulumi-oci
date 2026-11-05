@@ -170,6 +170,12 @@ func (DrgRouteDistributionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*drgRouteDistributionState)(nil)).Elem()
 }
 
+// DrgRouteDistributionExists checks whether an existing DrgRouteDistribution resource with the given ID exists.
+func DrgRouteDistributionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DrgRouteDistributionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Core/drgRouteDistribution:DrgRouteDistribution", id, state, "", opts...)
+}
+
 type drgRouteDistributionArgs struct {
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]string `pulumi:"definedTags"`

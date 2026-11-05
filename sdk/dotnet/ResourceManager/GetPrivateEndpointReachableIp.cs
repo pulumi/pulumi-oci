@@ -19,7 +19,6 @@ namespace Pulumi.Oci.ResourceManager
         /// For more information, see
         /// [Getting the Reachable IP Address for a Private Endpoint](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoint-reachable-ip.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -50,7 +49,6 @@ namespace Pulumi.Oci.ResourceManager
         /// For more information, see
         /// [Getting the Reachable IP Address for a Private Endpoint](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoint-reachable-ip.htm).
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -80,7 +78,6 @@ namespace Pulumi.Oci.ResourceManager
         /// Resource Manager uses this IP address to connect to nonpublic resources through the associated private endpoint.
         /// For more information, see
         /// [Getting the Reachable IP Address for a Private Endpoint](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/get-private-endpoint-reachable-ip.htm).
-        /// 
         /// 
         /// ## Example Usage
         /// 

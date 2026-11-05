@@ -233,6 +233,12 @@ func (AgentDependencyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*agentDependencyState)(nil)).Elem()
 }
 
+// AgentDependencyExists checks whether an existing AgentDependency resource with the given ID exists.
+func AgentDependencyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AgentDependencyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:CloudBridge/agentDependency:AgentDependency", id, state, "", opts...)
+}
+
 type agentDependencyArgs struct {
 	// (Updatable) Object storage bucket where the dependency is uploaded.
 	Bucket string `pulumi:"bucket"`

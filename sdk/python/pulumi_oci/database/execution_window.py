@@ -697,6 +697,50 @@ class ExecutionWindow(pulumi.CustomResource):
         __props__.__dict__["window_type"] = window_type
         return ExecutionWindow(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            estimated_time_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
+            execution_resource_id: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_enforced_duration: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_substate: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_ended: pulumi.Input[Optional[_builtins.str]] = None,
+            time_scheduled: pulumi.Input[Optional[_builtins.str]] = None,
+            time_started: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            total_time_taken_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
+            window_duration_in_mins: pulumi.Input[Optional[_builtins.int]] = None,
+            window_type: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["estimatedTimeInMins"] = estimated_time_in_mins
+        __props__["executionResourceId"] = execution_resource_id
+        __props__["freeformTags"] = freeform_tags
+        __props__["isEnforcedDuration"] = is_enforced_duration
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["lifecycleSubstate"] = lifecycle_substate
+        __props__["state"] = state
+        __props__["timeCreated"] = time_created
+        __props__["timeEnded"] = time_ended
+        __props__["timeScheduled"] = time_scheduled
+        __props__["timeStarted"] = time_started
+        __props__["timeUpdated"] = time_updated
+        __props__["totalTimeTakenInMins"] = total_time_taken_in_mins
+        __props__["windowDurationInMins"] = window_duration_in_mins
+        __props__["windowType"] = window_type
+        return pulumi.runtime.exists_resource(None, 'oci:Database/executionWindow:ExecutionWindow', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[_builtins.str]:

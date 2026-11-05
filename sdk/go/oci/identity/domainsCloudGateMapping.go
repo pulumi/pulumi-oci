@@ -970,6 +970,12 @@ func (DomainsCloudGateMappingState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsCloudGateMappingState)(nil)).Elem()
 }
 
+// DomainsCloudGateMappingExists checks whether an existing DomainsCloudGateMapping resource with the given ID exists.
+func DomainsCloudGateMappingExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsCloudGateMappingState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsCloudGateMapping:DomainsCloudGateMapping", id, state, "", opts...)
+}
+
 type domainsCloudGateMappingArgs struct {
 	// (Updatable) A multi-valued list of strings indicating the return type of attribute definition. The specified set of attributes can be fetched by the return type of the attribute. One or more values can be given together to fetch more than one group of attributes. If 'attributes' query parameter is also available, union of the two is fetched. Valid values - all, always, never, request, default. Values are case-insensitive.
 	AttributeSets []string `pulumi:"attributeSets"`

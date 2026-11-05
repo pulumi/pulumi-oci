@@ -811,6 +811,48 @@ class PrivateEndpoint(pulumi.CustomResource):
         __props__.__dict__["time_modified"] = time_modified
         return PrivateEndpoint(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            access_targets: pulumi.Input[Optional[Sequence[pulumi.Input[Union['PrivateEndpointAccessTargetArgs', 'PrivateEndpointAccessTargetArgsDict', 'outputs.PrivateEndpointAccessTarget']]]]] = None,
+            additional_prefixes: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            created_by: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            etag: pulumi.Input[Optional[_builtins.str]] = None,
+            fqdns: pulumi.Input[Optional[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]]]]]]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            name: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            nsg_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            prefix: pulumi.Input[Optional[_builtins.str]] = None,
+            private_endpoint_ip: pulumi.Input[Optional[_builtins.str]] = None,
+            security_attributes: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_modified: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["accessTargets"] = access_targets
+        __props__["additionalPrefixes"] = additional_prefixes
+        __props__["compartmentId"] = compartment_id
+        __props__["createdBy"] = created_by
+        __props__["definedTags"] = defined_tags
+        __props__["etag"] = etag
+        __props__["fqdns"] = fqdns
+        __props__["freeformTags"] = freeform_tags
+        __props__["name"] = name
+        __props__["namespace"] = namespace
+        __props__["nsgIds"] = nsg_ids
+        __props__["prefix"] = prefix
+        __props__["privateEndpointIp"] = private_endpoint_ip
+        __props__["securityAttributes"] = security_attributes
+        __props__["state"] = state
+        __props__["subnetId"] = subnet_id
+        __props__["timeCreated"] = time_created
+        __props__["timeModified"] = time_modified
+        return pulumi.runtime.exists_resource(None, 'oci:ObjectStorage/privateEndpoint:PrivateEndpoint', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="accessTargets")
     def access_targets(self) -> pulumi.Output[Sequence['outputs.PrivateEndpointAccessTarget']]:

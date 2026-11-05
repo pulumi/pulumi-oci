@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Gets a list of MonitoredRegions.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.Oci
         /// 
         /// Gets a list of MonitoredRegions.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.Oci
         /// This data source provides the list of Monitored Regions in Oracle Cloud Infrastructure Resource Analytics service.
         /// 
         /// Gets a list of MonitoredRegions.
-        /// 
         /// 
         /// ## Example Usage
         /// 

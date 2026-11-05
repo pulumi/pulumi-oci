@@ -236,6 +236,12 @@ func (ConfigState) ElementType() reflect.Type {
 	return reflect.TypeOf((*configState)(nil)).Elem()
 }
 
+// ConfigExists checks whether an existing Config resource with the given ID exists.
+func ConfigExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ConfigState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:StackMonitoring/config:Config", id, state, "", opts...)
+}
+
 type configArgs struct {
 	// (Updatable) Property Details
 	AdditionalConfigurations *ConfigAdditionalConfigurations `pulumi:"additionalConfigurations"`

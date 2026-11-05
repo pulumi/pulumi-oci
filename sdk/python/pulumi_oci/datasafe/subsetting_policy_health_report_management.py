@@ -586,6 +586,40 @@ class SubsettingPolicyHealthReportManagement(pulumi.CustomResource):
         __props__.__dict__["warning_count"] = warning_count
         return SubsettingPolicyHealthReportManagement(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            check_type: pulumi.Input[Optional[_builtins.str]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            error_count: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            subsetting_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
+            tablespace: pulumi.Input[Optional[_builtins.str]] = None,
+            target_credentials: pulumi.Input[Optional[Union['SubsettingPolicyHealthReportManagementTargetCredentialsArgs', 'SubsettingPolicyHealthReportManagementTargetCredentialsArgsDict', 'outputs.SubsettingPolicyHealthReportManagementTargetCredentials']]] = None,
+            target_id: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            warning_count: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["checkType"] = check_type
+        __props__["compartmentId"] = compartment_id
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["errorCount"] = error_count
+        __props__["freeformTags"] = freeform_tags
+        __props__["state"] = state
+        __props__["subsettingPolicyId"] = subsetting_policy_id
+        __props__["tablespace"] = tablespace
+        __props__["targetCredentials"] = target_credentials
+        __props__["targetId"] = target_id
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["warningCount"] = warning_count
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/subsettingPolicyHealthReportManagement:SubsettingPolicyHealthReportManagement', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="checkType")
     def check_type(self) -> pulumi.Output[Optional[_builtins.str]]:

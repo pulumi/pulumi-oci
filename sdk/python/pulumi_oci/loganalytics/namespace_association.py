@@ -751,6 +751,54 @@ class NamespaceAssociation(pulumi.CustomResource):
         __props__.__dict__["time_last_attempted"] = time_last_attempted
         return NamespaceAssociation(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            agent_entity_name: pulumi.Input[Optional[_builtins.str]] = None,
+            agent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            association_properties: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NamespaceAssociationAssociationPropertyArgs', 'NamespaceAssociationAssociationPropertyArgsDict', 'outputs.NamespaceAssociationAssociationProperty']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_id: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_name: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_type_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            entity_type_name: pulumi.Input[Optional[_builtins.str]] = None,
+            failure_message: pulumi.Input[Optional[_builtins.str]] = None,
+            host: pulumi.Input[Optional[_builtins.str]] = None,
+            is_from_republish: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_state: pulumi.Input[Optional[_builtins.str]] = None,
+            log_group_compartment: pulumi.Input[Optional[_builtins.str]] = None,
+            log_group_id: pulumi.Input[Optional[_builtins.str]] = None,
+            log_group_name: pulumi.Input[Optional[_builtins.str]] = None,
+            namespace: pulumi.Input[Optional[_builtins.str]] = None,
+            retry_count: pulumi.Input[Optional[_builtins.int]] = None,
+            source_display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            source_name: pulumi.Input[Optional[_builtins.str]] = None,
+            source_type_name: pulumi.Input[Optional[_builtins.str]] = None,
+            time_last_attempted: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["agentEntityName"] = agent_entity_name
+        __props__["agentId"] = agent_id
+        __props__["associationProperties"] = association_properties
+        __props__["compartmentId"] = compartment_id
+        __props__["entityId"] = entity_id
+        __props__["entityName"] = entity_name
+        __props__["entityTypeDisplayName"] = entity_type_display_name
+        __props__["entityTypeName"] = entity_type_name
+        __props__["failureMessage"] = failure_message
+        __props__["host"] = host
+        __props__["isFromRepublish"] = is_from_republish
+        __props__["lifecycleState"] = lifecycle_state
+        __props__["logGroupCompartment"] = log_group_compartment
+        __props__["logGroupId"] = log_group_id
+        __props__["logGroupName"] = log_group_name
+        __props__["namespace"] = namespace
+        __props__["retryCount"] = retry_count
+        __props__["sourceDisplayName"] = source_display_name
+        __props__["sourceName"] = source_name
+        __props__["sourceTypeName"] = source_type_name
+        __props__["timeLastAttempted"] = time_last_attempted
+        return pulumi.runtime.exists_resource(None, 'oci:LogAnalytics/namespaceAssociation:NamespaceAssociation', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="agentEntityName")
     def agent_entity_name(self) -> pulumi.Output[_builtins.str]:

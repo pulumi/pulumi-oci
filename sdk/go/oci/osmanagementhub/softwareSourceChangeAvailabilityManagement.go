@@ -111,6 +111,12 @@ func (SoftwareSourceChangeAvailabilityManagementState) ElementType() reflect.Typ
 	return reflect.TypeOf((*softwareSourceChangeAvailabilityManagementState)(nil)).Elem()
 }
 
+// SoftwareSourceChangeAvailabilityManagementExists checks whether an existing SoftwareSourceChangeAvailabilityManagement resource with the given ID exists.
+func SoftwareSourceChangeAvailabilityManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SoftwareSourceChangeAvailabilityManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:OsManagementHub/softwareSourceChangeAvailabilityManagement:SoftwareSourceChangeAvailabilityManagement", id, state, "", opts...)
+}
+
 type softwareSourceChangeAvailabilityManagementArgs struct {
 	// List of vendor software sources and their availability statuses.
 	SoftwareSourceAvailabilities []SoftwareSourceChangeAvailabilityManagementSoftwareSourceAvailability `pulumi:"softwareSourceAvailabilities"`

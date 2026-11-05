@@ -237,6 +237,12 @@ func (ByolAllocationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*byolAllocationState)(nil)).Elem()
 }
 
+// ByolAllocationExists checks whether an existing ByolAllocation resource with the given ID exists.
+func ByolAllocationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ByolAllocationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Ocvp/byolAllocation:ByolAllocation", id, state, "", opts...)
+}
+
 type byolAllocationArgs struct {
 	// (Updatable) The quantity of licensed units that allocated to this region.
 	AllocatedUnits int `pulumi:"allocatedUnits"`

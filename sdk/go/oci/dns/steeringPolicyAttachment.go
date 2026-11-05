@@ -178,6 +178,12 @@ func (SteeringPolicyAttachmentState) ElementType() reflect.Type {
 	return reflect.TypeOf((*steeringPolicyAttachmentState)(nil)).Elem()
 }
 
+// SteeringPolicyAttachmentExists checks whether an existing SteeringPolicyAttachment resource with the given ID exists.
+func SteeringPolicyAttachmentExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *SteeringPolicyAttachmentState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Dns/steeringPolicyAttachment:SteeringPolicyAttachment", id, state, "", opts...)
+}
+
 type steeringPolicyAttachmentArgs struct {
 	// (Updatable) A user-friendly name for the steering policy attachment. Does not have to be unique and can be changed. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`

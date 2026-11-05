@@ -927,6 +927,60 @@ class SensitiveDataModelsSensitiveColumn(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return SensitiveDataModelsSensitiveColumn(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            app_defined_child_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            app_name: pulumi.Input[Optional[_builtins.str]] = None,
+            column_groups: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            column_name: pulumi.Input[Optional[_builtins.str]] = None,
+            confidence_level: pulumi.Input[Optional[_builtins.str]] = None,
+            confidence_level_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgs', 'SensitiveDataModelsSensitiveColumnConfidenceLevelDetailArgsDict', 'outputs.SensitiveDataModelsSensitiveColumnConfidenceLevelDetail']]]]] = None,
+            data_type: pulumi.Input[Optional[_builtins.str]] = None,
+            db_defined_child_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            estimated_data_value_count: pulumi.Input[Optional[_builtins.str]] = None,
+            key: pulumi.Input[Optional[_builtins.str]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            object: pulumi.Input[Optional[_builtins.str]] = None,
+            object_type: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_column_keys: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            relation_type: pulumi.Input[Optional[_builtins.str]] = None,
+            sample_data_values: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            schema_name: pulumi.Input[Optional[_builtins.str]] = None,
+            sensitive_data_model_id: pulumi.Input[Optional[_builtins.str]] = None,
+            sensitive_type_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            status: pulumi.Input[Optional[_builtins.str]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["appDefinedChildColumnKeys"] = app_defined_child_column_keys
+        __props__["appName"] = app_name
+        __props__["columnGroups"] = column_groups
+        __props__["columnName"] = column_name
+        __props__["confidenceLevel"] = confidence_level
+        __props__["confidenceLevelDetails"] = confidence_level_details
+        __props__["dataType"] = data_type
+        __props__["dbDefinedChildColumnKeys"] = db_defined_child_column_keys
+        __props__["estimatedDataValueCount"] = estimated_data_value_count
+        __props__["key"] = key
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["object"] = object
+        __props__["objectType"] = object_type
+        __props__["parentColumnKeys"] = parent_column_keys
+        __props__["relationType"] = relation_type
+        __props__["sampleDataValues"] = sample_data_values
+        __props__["schemaName"] = schema_name
+        __props__["sensitiveDataModelId"] = sensitive_data_model_id
+        __props__["sensitiveTypeId"] = sensitive_type_id
+        __props__["source"] = source
+        __props__["state"] = state
+        __props__["status"] = status
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/sensitiveDataModelsSensitiveColumn:SensitiveDataModelsSensitiveColumn', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="appDefinedChildColumnKeys")
     def app_defined_child_column_keys(self) -> pulumi.Output[Sequence[_builtins.str]]:

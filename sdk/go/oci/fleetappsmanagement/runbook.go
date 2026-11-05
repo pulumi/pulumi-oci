@@ -412,6 +412,12 @@ func (RunbookState) ElementType() reflect.Type {
 	return reflect.TypeOf((*runbookState)(nil)).Elem()
 }
 
+// RunbookExists checks whether an existing Runbook resource with the given ID exists.
+func RunbookExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *RunbookState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FleetAppsManagement/runbook:Runbook", id, state, "", opts...)
+}
+
 type runbookArgs struct {
 	// (Updatable)
 	CompartmentId string `pulumi:"compartmentId"`

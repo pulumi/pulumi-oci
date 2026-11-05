@@ -142,6 +142,12 @@ func (ObjectLifecyclePolicyState) ElementType() reflect.Type {
 	return reflect.TypeOf((*objectLifecyclePolicyState)(nil)).Elem()
 }
 
+// ObjectLifecyclePolicyExists checks whether an existing ObjectLifecyclePolicy resource with the given ID exists.
+func ObjectLifecyclePolicyExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ObjectLifecyclePolicyState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:ObjectStorage/objectLifecyclePolicy:ObjectLifecyclePolicy", id, state, "", opts...)
+}
+
 type objectLifecyclePolicyArgs struct {
 	// The name of the bucket. Avoid entering confidential information. Example: `my-new-bucket1`
 	Bucket string `pulumi:"bucket"`

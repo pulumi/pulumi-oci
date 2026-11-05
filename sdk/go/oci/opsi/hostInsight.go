@@ -238,6 +238,12 @@ func (HostInsightState) ElementType() reflect.Type {
 	return reflect.TypeOf((*hostInsightState)(nil)).Elem()
 }
 
+// HostInsightExists checks whether an existing HostInsight resource with the given ID exists.
+func HostInsightExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *HostInsightState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Opsi/hostInsight:HostInsight", id, state, "", opts...)
+}
+
 type hostInsightArgs struct {
 	// (Updatable) Compartment Identifier of host
 	CompartmentId string `pulumi:"compartmentId"`

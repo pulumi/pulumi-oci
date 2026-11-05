@@ -16,7 +16,6 @@ namespace Pulumi.Oci.DataFlow
         /// 
         /// Lists all statements for a Session run.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.DataFlow
         /// 
         /// Lists all statements for a Session run.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.DataFlow
         /// This data source provides the list of Run Statements in Oracle Cloud Infrastructure Data Flow service.
         /// 
         /// Lists all statements for a Session run.
-        /// 
         /// 
         /// ## Example Usage
         /// 

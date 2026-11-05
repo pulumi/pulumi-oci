@@ -1503,6 +1503,62 @@ class Asset(pulumi.CustomResource):
         __props__.__dict__["vmware_vm"] = vmware_vm
         return Asset(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            asset_class_name: pulumi.Input[Optional[_builtins.str]] = None,
+            asset_class_version: pulumi.Input[Optional[_builtins.str]] = None,
+            asset_details: pulumi.Input[Optional[_builtins.str]] = None,
+            asset_source_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            asset_type: pulumi.Input[Optional[_builtins.str]] = None,
+            attached_ebs_volumes_cost: pulumi.Input[Optional[Union['AssetAttachedEbsVolumesCostArgs', 'AssetAttachedEbsVolumesCostArgsDict', 'outputs.AssetAttachedEbsVolumesCost']]] = None,
+            aws_ebs: pulumi.Input[Optional[Union['AssetAwsEbsArgs', 'AssetAwsEbsArgsDict', 'outputs.AssetAwsEbs']]] = None,
+            aws_ec2: pulumi.Input[Optional[Union['AssetAwsEc2Args', 'AssetAwsEc2ArgsDict', 'outputs.AssetAwsEc2']]] = None,
+            aws_ec2cost: pulumi.Input[Optional[Union['AssetAwsEc2costArgs', 'AssetAwsEc2costArgsDict', 'outputs.AssetAwsEc2cost']]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compute: pulumi.Input[Optional[Union['AssetComputeArgs', 'AssetComputeArgsDict', 'outputs.AssetCompute']]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            environment_type: pulumi.Input[Optional[_builtins.str]] = None,
+            external_asset_key: pulumi.Input[Optional[_builtins.str]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            inventory_id: pulumi.Input[Optional[_builtins.str]] = None,
+            source_key: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None,
+            vm: pulumi.Input[Optional[Union['AssetVmArgs', 'AssetVmArgsDict', 'outputs.AssetVm']]] = None,
+            vmware_vcenter: pulumi.Input[Optional[Union['AssetVmwareVcenterArgs', 'AssetVmwareVcenterArgsDict', 'outputs.AssetVmwareVcenter']]] = None,
+            vmware_vm: pulumi.Input[Optional[Union['AssetVmwareVmArgs', 'AssetVmwareVmArgsDict', 'outputs.AssetVmwareVm']]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["assetClassName"] = asset_class_name
+        __props__["assetClassVersion"] = asset_class_version
+        __props__["assetDetails"] = asset_details
+        __props__["assetSourceIds"] = asset_source_ids
+        __props__["assetType"] = asset_type
+        __props__["attachedEbsVolumesCost"] = attached_ebs_volumes_cost
+        __props__["awsEbs"] = aws_ebs
+        __props__["awsEc2"] = aws_ec2
+        __props__["awsEc2cost"] = aws_ec2cost
+        __props__["compartmentId"] = compartment_id
+        __props__["compute"] = compute
+        __props__["definedTags"] = defined_tags
+        __props__["displayName"] = display_name
+        __props__["environmentType"] = environment_type
+        __props__["externalAssetKey"] = external_asset_key
+        __props__["freeformTags"] = freeform_tags
+        __props__["inventoryId"] = inventory_id
+        __props__["sourceKey"] = source_key
+        __props__["state"] = state
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        __props__["vm"] = vm
+        __props__["vmwareVcenter"] = vmware_vcenter
+        __props__["vmwareVm"] = vmware_vm
+        return pulumi.runtime.exists_resource(None, 'oci:CloudBridge/asset:Asset', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter(name="assetClassName")
     def asset_class_name(self) -> pulumi.Output[_builtins.str]:

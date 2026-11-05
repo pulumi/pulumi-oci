@@ -16,7 +16,6 @@ namespace Pulumi.Oci.AiLanguage
         /// 
         /// Returns a list of models.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -47,7 +46,6 @@ namespace Pulumi.Oci.AiLanguage
         /// 
         /// Returns a list of models.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -77,7 +75,6 @@ namespace Pulumi.Oci.AiLanguage
         /// This data source provides the list of Models in Oracle Cloud Infrastructure Ai Language service.
         /// 
         /// Returns a list of models.
-        /// 
         /// 
         /// ## Example Usage
         /// 

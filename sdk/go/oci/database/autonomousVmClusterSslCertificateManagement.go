@@ -138,6 +138,12 @@ func (AutonomousVmClusterSslCertificateManagementState) ElementType() reflect.Ty
 	return reflect.TypeOf((*autonomousVmClusterSslCertificateManagementState)(nil)).Elem()
 }
 
+// AutonomousVmClusterSslCertificateManagementExists checks whether an existing AutonomousVmClusterSslCertificateManagement resource with the given ID exists.
+func AutonomousVmClusterSslCertificateManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *AutonomousVmClusterSslCertificateManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/autonomousVmClusterSslCertificateManagement:AutonomousVmClusterSslCertificateManagement", id, state, "", opts...)
+}
+
 type autonomousVmClusterSslCertificateManagementArgs struct {
 	// The autonomous VM cluster [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	AutonomousVmClusterId string `pulumi:"autonomousVmClusterId"`

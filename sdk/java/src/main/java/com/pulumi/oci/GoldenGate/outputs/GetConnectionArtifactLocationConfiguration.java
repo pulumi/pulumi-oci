@@ -36,11 +36,10 @@ public final class GetConnectionArtifactLocationConfiguration {
      */
     private String namespace;
     /**
-     * @deprecated
-     * The &#39;par_url&#39; field has been deprecated. Please use &#39;par_url_secret_id&#39; instead.
+     * @deprecated The &#39;par_url&#39; field has been deprecated. Please use &#39;par_url_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'par_url' field has been deprecated. Please use 'par_url_secret_id' instead. */
+    @Deprecated
     private String parUrl;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the pre-authenticated request (PAR) URL. Note: When provided, `parUrl` must not be provided.
@@ -54,11 +53,10 @@ public final class GetConnectionArtifactLocationConfiguration {
      */
     private String path;
     /**
-     * @deprecated
-     * The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
+     * @deprecated The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead. */
+    @Deprecated
     private String privateKeyFile;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When provided, &#39;privateKeyFile&#39; field must not be provided.
@@ -66,11 +64,10 @@ public final class GetConnectionArtifactLocationConfiguration {
      */
     private String privateKeyFileSecretId;
     /**
-     * @deprecated
-     * The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
+     * @deprecated The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead. */
+    @Deprecated
     private String privateKeyPassphrase;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret that stores the password for the private key file. Note: When provided, &#39;privateKeyPassphrase&#39; field must not be provided.
@@ -88,11 +85,10 @@ public final class GetConnectionArtifactLocationConfiguration {
      */
     private String region;
     /**
-     * @deprecated
-     * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+     * @deprecated The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
+    @Deprecated
     private String secretAccessKey;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the Secret Access Key used for Oracle Cloud Infrastructure Object Storage S3 Compatibility authentication.
@@ -146,11 +142,10 @@ public final class GetConnectionArtifactLocationConfiguration {
         return this.namespace;
     }
     /**
-     * @deprecated
-     * The &#39;par_url&#39; field has been deprecated. Please use &#39;par_url_secret_id&#39; instead.
+     * @deprecated The &#39;par_url&#39; field has been deprecated. Please use &#39;par_url_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'par_url' field has been deprecated. Please use 'par_url_secret_id' instead. */
+    @Deprecated
     public String parUrl() {
         return this.parUrl;
     }
@@ -170,11 +165,10 @@ public final class GetConnectionArtifactLocationConfiguration {
         return this.path;
     }
     /**
-     * @deprecated
-     * The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
+     * @deprecated The &#39;private_key_file&#39; field has been deprecated. Please use &#39;private_key_file_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'private_key_file' field has been deprecated. Please use 'private_key_file_secret_id' instead. */
+    @Deprecated
     public String privateKeyFile() {
         return this.privateKeyFile;
     }
@@ -186,11 +180,10 @@ public final class GetConnectionArtifactLocationConfiguration {
         return this.privateKeyFileSecretId;
     }
     /**
-     * @deprecated
-     * The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
+     * @deprecated The &#39;private_key_passphrase&#39; field has been deprecated. Please use &#39;private_key_passphrase_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'private_key_passphrase' field has been deprecated. Please use 'private_key_passphrase_secret_id' instead. */
+    @Deprecated
     public String privateKeyPassphrase() {
         return this.privateKeyPassphrase;
     }
@@ -216,11 +209,10 @@ public final class GetConnectionArtifactLocationConfiguration {
         return this.region;
     }
     /**
-     * @deprecated
-     * The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
+     * @deprecated The &#39;secret_access_key&#39; field has been deprecated. Please use &#39;secret_access_key_secret_id&#39; instead.
      * 
      */
-    @Deprecated /* The 'secret_access_key' field has been deprecated. Please use 'secret_access_key_secret_id' instead. */
+    @Deprecated
     public String secretAccessKey() {
         return this.secretAccessKey;
     }

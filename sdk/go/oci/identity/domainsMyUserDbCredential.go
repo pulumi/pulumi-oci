@@ -895,6 +895,12 @@ func (DomainsMyUserDbCredentialState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsMyUserDbCredentialState)(nil)).Elem()
 }
 
+// DomainsMyUserDbCredentialExists checks whether an existing DomainsMyUserDbCredential resource with the given ID exists.
+func DomainsMyUserDbCredentialExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsMyUserDbCredentialState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsMyUserDbCredential:DomainsMyUserDbCredential", id, state, "", opts...)
+}
+
 type domainsMyUserDbCredentialArgs struct {
 	// The Authorization field value consists of credentials containing the authentication information of the user agent for the realm of the resource being requested.
 	Authorization *string `pulumi:"authorization"`

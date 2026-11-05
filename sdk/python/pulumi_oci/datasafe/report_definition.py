@@ -987,6 +987,68 @@ class ReportDefinition(pulumi.CustomResource):
         __props__.__dict__["time_updated"] = time_updated
         return ReportDefinition(resource_name, opts=opts, __props__=__props__)
 
+    @staticmethod
+    def exists(id: pulumi.Input[str],
+            opts: Optional[pulumi.ResourceOptions] = None,
+            category: pulumi.Input[Optional[_builtins.str]] = None,
+            column_filters: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReportDefinitionColumnFilterArgs', 'ReportDefinitionColumnFilterArgsDict', 'outputs.ReportDefinitionColumnFilter']]]]] = None,
+            column_infos: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReportDefinitionColumnInfoArgs', 'ReportDefinitionColumnInfoArgsDict', 'outputs.ReportDefinitionColumnInfo']]]]] = None,
+            column_sortings: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReportDefinitionColumnSortingArgs', 'ReportDefinitionColumnSortingArgsDict', 'outputs.ReportDefinitionColumnSorting']]]]] = None,
+            compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            compliance_standards: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            data_source: pulumi.Input[Optional[_builtins.str]] = None,
+            defined_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            description: pulumi.Input[Optional[_builtins.str]] = None,
+            display_name: pulumi.Input[Optional[_builtins.str]] = None,
+            display_order: pulumi.Input[Optional[_builtins.int]] = None,
+            freeform_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            is_schedule_pagination_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+            is_seeded: pulumi.Input[Optional[_builtins.bool]] = None,
+            lifecycle_details: pulumi.Input[Optional[_builtins.str]] = None,
+            parent_id: pulumi.Input[Optional[_builtins.str]] = None,
+            record_time_span: pulumi.Input[Optional[_builtins.str]] = None,
+            schedule: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_report_compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_report_mime_type: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_report_name: pulumi.Input[Optional[_builtins.str]] = None,
+            scheduled_report_row_limit: pulumi.Input[Optional[_builtins.int]] = None,
+            scim_filter: pulumi.Input[Optional[_builtins.str]] = None,
+            state: pulumi.Input[Optional[_builtins.str]] = None,
+            summaries: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ReportDefinitionSummaryArgs', 'ReportDefinitionSummaryArgsDict', 'outputs.ReportDefinitionSummary']]]]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None,
+            time_created: pulumi.Input[Optional[_builtins.str]] = None,
+            time_updated: pulumi.Input[Optional[_builtins.str]] = None) -> pulumi.Output[bool]:
+        __props__: dict = {}
+        __props__["category"] = category
+        __props__["columnFilters"] = column_filters
+        __props__["columnInfos"] = column_infos
+        __props__["columnSortings"] = column_sortings
+        __props__["compartmentId"] = compartment_id
+        __props__["complianceStandards"] = compliance_standards
+        __props__["dataSource"] = data_source
+        __props__["definedTags"] = defined_tags
+        __props__["description"] = description
+        __props__["displayName"] = display_name
+        __props__["displayOrder"] = display_order
+        __props__["freeformTags"] = freeform_tags
+        __props__["isSchedulePaginationEnabled"] = is_schedule_pagination_enabled
+        __props__["isSeeded"] = is_seeded
+        __props__["lifecycleDetails"] = lifecycle_details
+        __props__["parentId"] = parent_id
+        __props__["recordTimeSpan"] = record_time_span
+        __props__["schedule"] = schedule
+        __props__["scheduledReportCompartmentId"] = scheduled_report_compartment_id
+        __props__["scheduledReportMimeType"] = scheduled_report_mime_type
+        __props__["scheduledReportName"] = scheduled_report_name
+        __props__["scheduledReportRowLimit"] = scheduled_report_row_limit
+        __props__["scimFilter"] = scim_filter
+        __props__["state"] = state
+        __props__["summaries"] = summaries
+        __props__["systemTags"] = system_tags
+        __props__["timeCreated"] = time_created
+        __props__["timeUpdated"] = time_updated
+        return pulumi.runtime.exists_resource(None, 'oci:DataSafe/reportDefinition:ReportDefinition', id, __props__, opts or pulumi.ResourceOptions())
+
     @_builtins.property
     @pulumi.getter
     def category(self) -> pulumi.Output[_builtins.str]:

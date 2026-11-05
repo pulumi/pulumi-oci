@@ -267,6 +267,12 @@ func (BackupDestinationState) ElementType() reflect.Type {
 	return reflect.TypeOf((*backupDestinationState)(nil)).Elem()
 }
 
+// BackupDestinationExists checks whether an existing BackupDestination resource with the given ID exists.
+func BackupDestinationExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BackupDestinationState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Database/backupDestination:BackupDestination", id, state, "", opts...)
+}
+
 type backupDestinationArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`

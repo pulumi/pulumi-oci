@@ -82,6 +82,12 @@ func (BdsInstanceExecuteBootstrapScriptActionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*bdsInstanceExecuteBootstrapScriptActionState)(nil)).Elem()
 }
 
+// BdsInstanceExecuteBootstrapScriptActionExists checks whether an existing BdsInstanceExecuteBootstrapScriptAction resource with the given ID exists.
+func BdsInstanceExecuteBootstrapScriptActionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *BdsInstanceExecuteBootstrapScriptActionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:BigDataService/bdsInstanceExecuteBootstrapScriptAction:BdsInstanceExecuteBootstrapScriptAction", id, state, "", opts...)
+}
+
 type bdsInstanceExecuteBootstrapScriptActionArgs struct {
 	BdsInstanceId        string  `pulumi:"bdsInstanceId"`
 	BootstrapScriptUrl   *string `pulumi:"bootstrapScriptUrl"`

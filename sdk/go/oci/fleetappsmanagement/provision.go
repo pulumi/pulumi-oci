@@ -300,6 +300,12 @@ func (ProvisionState) ElementType() reflect.Type {
 	return reflect.TypeOf((*provisionState)(nil)).Elem()
 }
 
+// ProvisionExists checks whether an existing Provision resource with the given ID exists.
+func ProvisionExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProvisionState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:FleetAppsManagement/provision:Provision", id, state, "", opts...)
+}
+
 type provisionArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the FamProvision in.
 	CompartmentId string `pulumi:"compartmentId"`

@@ -16,7 +16,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// Gets a list of knowledge bases.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -45,7 +44,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// Gets a list of knowledge bases.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -73,7 +71,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// This data source provides the list of Knowledge Bases in Oracle Cloud Infrastructure Generative Ai Agent service.
         /// 
         /// Gets a list of knowledge bases.
-        /// 
         /// 
         /// ## Example Usage
         /// 

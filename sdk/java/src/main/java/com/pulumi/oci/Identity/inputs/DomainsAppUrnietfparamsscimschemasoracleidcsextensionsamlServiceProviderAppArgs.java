@@ -786,7 +786,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServ
     }
 
     /**
-     * (Updatable) Indicates which part of the response should be signed.  A value of \&#34;Assertion\&#34; indicates that the Assertion should be signed.  A value of \&#34;Response\&#34; indicates that the SSO Response should be signed. A value of \&#34;AssertionAndResponse\&#34; indicates that both the Assertion and the SSO Response should be signed.
+     * (Updatable) Indicates which part of the response should be signed.  A value of &#92;&#34;Assertion&#92;&#34; indicates that the Assertion should be signed.  A value of &#92;&#34;Response&#92;&#34; indicates that the SSO Response should be signed. A value of &#92;&#34;AssertionAndResponse&#92;&#34; indicates that both the Assertion and the SSO Response should be signed.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -803,7 +803,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServ
     private @Nullable Output<String> signResponseOrAssertion;
 
     /**
-     * @return (Updatable) Indicates which part of the response should be signed.  A value of \&#34;Assertion\&#34; indicates that the Assertion should be signed.  A value of \&#34;Response\&#34; indicates that the SSO Response should be signed. A value of \&#34;AssertionAndResponse\&#34; indicates that both the Assertion and the SSO Response should be signed.
+     * @return (Updatable) Indicates which part of the response should be signed.  A value of &#92;&#34;Assertion&#92;&#34; indicates that the Assertion should be signed.  A value of &#92;&#34;Response&#92;&#34; indicates that the SSO Response should be signed. A value of &#92;&#34;AssertionAndResponse&#92;&#34; indicates that both the Assertion and the SSO Response should be signed.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -1994,7 +1994,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServ
         }
 
         /**
-         * @param signResponseOrAssertion (Updatable) Indicates which part of the response should be signed.  A value of \&#34;Assertion\&#34; indicates that the Assertion should be signed.  A value of \&#34;Response\&#34; indicates that the SSO Response should be signed. A value of \&#34;AssertionAndResponse\&#34; indicates that both the Assertion and the SSO Response should be signed.
+         * @param signResponseOrAssertion (Updatable) Indicates which part of the response should be signed.  A value of &#92;&#34;Assertion&#92;&#34; indicates that the Assertion should be signed.  A value of &#92;&#34;Response&#92;&#34; indicates that the SSO Response should be signed. A value of &#92;&#34;AssertionAndResponse&#92;&#34; indicates that both the Assertion and the SSO Response should be signed.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -2015,7 +2015,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServ
         }
 
         /**
-         * @param signResponseOrAssertion (Updatable) Indicates which part of the response should be signed.  A value of \&#34;Assertion\&#34; indicates that the Assertion should be signed.  A value of \&#34;Response\&#34; indicates that the SSO Response should be signed. A value of \&#34;AssertionAndResponse\&#34; indicates that both the Assertion and the SSO Response should be signed.
+         * @param signResponseOrAssertion (Updatable) Indicates which part of the response should be signed.  A value of &#92;&#34;Assertion&#92;&#34; indicates that the Assertion should be signed.  A value of &#92;&#34;Response&#92;&#34; indicates that the SSO Response should be signed. A value of &#92;&#34;AssertionAndResponse&#92;&#34; indicates that both the Assertion and the SSO Response should be signed.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true

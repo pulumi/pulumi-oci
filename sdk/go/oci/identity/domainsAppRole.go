@@ -1063,6 +1063,12 @@ func (DomainsAppRoleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*domainsAppRoleState)(nil)).Elem()
 }
 
+// DomainsAppRoleExists checks whether an existing DomainsAppRole resource with the given ID exists.
+func DomainsAppRoleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *DomainsAppRoleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Identity/domainsAppRole:DomainsAppRole", id, state, "", opts...)
+}
+
 type domainsAppRoleArgs struct {
 	// If true, the role provides administrative access privileges.
 	//

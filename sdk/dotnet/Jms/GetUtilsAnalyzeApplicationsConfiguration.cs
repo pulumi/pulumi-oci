@@ -16,7 +16,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Returns the configuration for analyzing applications.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -43,7 +42,6 @@ namespace Pulumi.Oci.Jms
         /// 
         /// Returns the configuration for analyzing applications.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -69,7 +67,6 @@ namespace Pulumi.Oci.Jms
         /// This data source provides details about a specific Analyze Applications Configuration resource in Oracle Cloud Infrastructure Jms Utils service.
         /// 
         /// Returns the configuration for analyzing applications.
-        /// 
         /// 
         /// ## Example Usage
         /// 

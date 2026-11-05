@@ -159,6 +159,12 @@ func (ProtectionRuleState) ElementType() reflect.Type {
 	return reflect.TypeOf((*protectionRuleState)(nil)).Elem()
 }
 
+// ProtectionRuleExists checks whether an existing ProtectionRule resource with the given ID exists.
+func ProtectionRuleExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *ProtectionRuleState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Waas/protectionRule:ProtectionRule", id, state, "", opts...)
+}
+
 type protectionRuleArgs struct {
 	// (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
 	Action *string `pulumi:"action"`

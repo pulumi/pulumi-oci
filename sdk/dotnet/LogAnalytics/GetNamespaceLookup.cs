@@ -16,7 +16,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Gets detailed information about the lookup with the specified name.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -44,7 +43,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// 
         /// Gets detailed information about the lookup with the specified name.
         /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -71,7 +69,6 @@ namespace Pulumi.Oci.LogAnalytics
         /// This data source provides details about a specific Namespace Lookup resource in Oracle Cloud Infrastructure Log Analytics service.
         /// 
         /// Gets detailed information about the lookup with the specified name.
-        /// 
         /// 
         /// ## Example Usage
         /// 

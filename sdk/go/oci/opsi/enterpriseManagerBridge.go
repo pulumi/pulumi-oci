@@ -201,6 +201,12 @@ func (EnterpriseManagerBridgeState) ElementType() reflect.Type {
 	return reflect.TypeOf((*enterpriseManagerBridgeState)(nil)).Elem()
 }
 
+// EnterpriseManagerBridgeExists checks whether an existing EnterpriseManagerBridge resource with the given ID exists.
+func EnterpriseManagerBridgeExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *EnterpriseManagerBridgeState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:Opsi/enterpriseManagerBridge:EnterpriseManagerBridge", id, state, "", opts...)
+}
+
 type enterpriseManagerBridgeArgs struct {
 	// (Updatable) Compartment identifier of the Enterprise Manager bridge
 	CompartmentId string `pulumi:"compartmentId"`

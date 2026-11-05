@@ -140,6 +140,12 @@ func (CryptoAssessmentManagementState) ElementType() reflect.Type {
 	return reflect.TypeOf((*cryptoAssessmentManagementState)(nil)).Elem()
 }
 
+// CryptoAssessmentManagementExists checks whether an existing CryptoAssessmentManagement resource with the given ID exists.
+func CryptoAssessmentManagementExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *CryptoAssessmentManagementState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataSafe/cryptoAssessmentManagement:CryptoAssessmentManagement", id, state, "", opts...)
+}
+
 type cryptoAssessmentManagementArgs struct {
 	CompartmentId         *string           `pulumi:"compartmentId"`
 	CryptoAssessmentId    string            `pulumi:"cryptoAssessmentId"`

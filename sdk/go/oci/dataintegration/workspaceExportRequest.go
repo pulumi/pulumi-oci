@@ -233,6 +233,12 @@ func (WorkspaceExportRequestState) ElementType() reflect.Type {
 	return reflect.TypeOf((*workspaceExportRequestState)(nil)).Elem()
 }
 
+// WorkspaceExportRequestExists checks whether an existing WorkspaceExportRequest resource with the given ID exists.
+func WorkspaceExportRequestExists(ctx *pulumi.Context,
+	id pulumi.StringInput, state *WorkspaceExportRequestState, opts ...pulumi.ResourceOption) pulumi.BoolOutput {
+	return ctx.ExistsResource("oci:DataIntegration/workspaceExportRequest:WorkspaceExportRequest", id, state, "", opts...)
+}
+
 type workspaceExportRequestArgs struct {
 	// This field controls if the references will be exported along with the objects
 	AreReferencesIncluded *bool `pulumi:"areReferencesIncluded"`

@@ -37,6 +37,10 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
      * 
      */
     private @Nullable Integer maximumBandwidthMbps;
+    /**
+     * @return (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+     * 
+     */
     private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration modelDeploymentResourceConfiguration;
     /**
      * @return The scaling policy to apply to each model of the deployment.
@@ -76,6 +80,10 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
     public Optional<Integer> maximumBandwidthMbps() {
         return Optional.ofNullable(this.maximumBandwidthMbps);
     }
+    /**
+     * @return (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+     * 
+     */
     public Optional<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration> modelDeploymentResourceConfiguration() {
         return Optional.ofNullable(this.modelDeploymentResourceConfiguration);
     }

@@ -34,7 +34,9 @@ import (
 //				CompartmentIdInSubtree: pulumi.BoolRef(containerRepositoryCompartmentIdInSubtree),
 //				DisplayName:            pulumi.StringRef(containerRepositoryDisplayName),
 //				IsPublic:               pulumi.BoolRef(containerRepositoryIsPublic),
+//				IsTopLevel:             pulumi.BoolRef(containerRepositoryIsTopLevel),
 //				RepositoryId:           pulumi.StringRef(testRepository.Id),
+//				RepositoryType:         pulumi.StringRef(containerRepositoryRepositoryType),
 //				State:                  pulumi.StringRef(containerRepositoryState),
 //			}, nil)
 //			if err != nil {
@@ -66,8 +68,12 @@ type GetContainerRepositoriesArgs struct {
 	Filters     []GetContainerRepositoriesFilter `pulumi:"filters"`
 	// A filter to return resources that match the isPublic value.
 	IsPublic *bool `pulumi:"isPublic"`
+	// A filter to return resources that match the isTopLevel value.
+	IsTopLevel *bool `pulumi:"isTopLevel"`
 	// A filter to return container images only for the specified container repository OCID.
 	RepositoryId *string `pulumi:"repositoryId"`
+	// A filter to return only resources that match the given repository type exactly.
+	RepositoryType *string `pulumi:"repositoryType"`
 	// A filter to return only resources that match the given lifecycle state name exactly.
 	State *string `pulumi:"state"`
 }
@@ -85,8 +91,12 @@ type GetContainerRepositoriesResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// Whether the repository is public. A public repository allows unauthenticated access.
-	IsPublic     *bool   `pulumi:"isPublic"`
+	IsPublic *bool `pulumi:"isPublic"`
+	// Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+	IsTopLevel   *bool   `pulumi:"isTopLevel"`
 	RepositoryId *string `pulumi:"repositoryId"`
+	// The type of container repository. This determines the repository behavior and required settings.
+	RepositoryType *string `pulumi:"repositoryType"`
 	// The current state of the container repository.
 	State *string `pulumi:"state"`
 }
@@ -107,8 +117,12 @@ type GetContainerRepositoriesOutputArgs struct {
 	Filters     GetContainerRepositoriesFilterArrayInput `pulumi:"filters"`
 	// A filter to return resources that match the isPublic value.
 	IsPublic pulumi.BoolPtrInput `pulumi:"isPublic"`
+	// A filter to return resources that match the isTopLevel value.
+	IsTopLevel pulumi.BoolPtrInput `pulumi:"isTopLevel"`
 	// A filter to return container images only for the specified container repository OCID.
 	RepositoryId pulumi.StringPtrInput `pulumi:"repositoryId"`
+	// A filter to return only resources that match the given repository type exactly.
+	RepositoryType pulumi.StringPtrInput `pulumi:"repositoryType"`
 	// A filter to return only resources that match the given lifecycle state name exactly.
 	State pulumi.StringPtrInput `pulumi:"state"`
 }
@@ -167,8 +181,18 @@ func (o GetContainerRepositoriesResultOutput) IsPublic() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetContainerRepositoriesResult) *bool { return v.IsPublic }).(pulumi.BoolPtrOutput)
 }
 
+// Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+func (o GetContainerRepositoriesResultOutput) IsTopLevel() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesResult) *bool { return v.IsTopLevel }).(pulumi.BoolPtrOutput)
+}
+
 func (o GetContainerRepositoriesResultOutput) RepositoryId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetContainerRepositoriesResult) *string { return v.RepositoryId }).(pulumi.StringPtrOutput)
+}
+
+// The type of container repository. This determines the repository behavior and required settings.
+func (o GetContainerRepositoriesResultOutput) RepositoryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesResult) *string { return v.RepositoryType }).(pulumi.StringPtrOutput)
 }
 
 // The current state of the container repository.

@@ -17,9 +17,6 @@ type ContainerRepositoryReadme struct {
 	// (Updatable) Readme content. Avoid entering confidential information.
 	Content string `pulumi:"content"`
 	// (Updatable) Readme format. Supported formats are text/plain and text/markdown.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Format string `pulumi:"format"`
 }
 
@@ -38,9 +35,6 @@ type ContainerRepositoryReadmeArgs struct {
 	// (Updatable) Readme content. Avoid entering confidential information.
 	Content pulumi.StringInput `pulumi:"content"`
 	// (Updatable) Readme format. Supported formats are text/plain and text/markdown.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Format pulumi.StringInput `pulumi:"format"`
 }
 
@@ -127,9 +121,6 @@ func (o ContainerRepositoryReadmeOutput) Content() pulumi.StringOutput {
 }
 
 // (Updatable) Readme format. Supported formats are text/plain and text/markdown.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ContainerRepositoryReadmeOutput) Format() pulumi.StringOutput {
 	return o.ApplyT(func(v ContainerRepositoryReadme) string { return v.Format }).(pulumi.StringOutput)
 }
@@ -169,9 +160,6 @@ func (o ContainerRepositoryReadmePtrOutput) Content() pulumi.StringPtrOutput {
 }
 
 // (Updatable) Readme format. Supported formats are text/plain and text/markdown.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ContainerRepositoryReadmePtrOutput) Format() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ContainerRepositoryReadme) *string {
 		if v == nil {
@@ -1277,14 +1265,20 @@ type GetContainerRepositoriesContainerRepositoryCollectionItem struct {
 	IsImmutable bool `pulumi:"isImmutable"`
 	// A filter to return resources that match the isPublic value.
 	IsPublic bool `pulumi:"isPublic"`
+	// A filter to return resources that match the isTopLevel value.
+	IsTopLevel bool `pulumi:"isTopLevel"`
 	// Total number of layers.
 	LayerCount int `pulumi:"layerCount"`
 	// Total size of layers.
 	LayersSizeInBytes string `pulumi:"layersSizeInBytes"`
+	// List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, us-phoenix-1). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created.
+	MultiRegionPeers []string `pulumi:"multiRegionPeers"`
 	// The tenancy namespace used in the container repository path.
 	Namespace string `pulumi:"namespace"`
 	// Container repository readme.
 	Readmes []GetContainerRepositoriesContainerRepositoryCollectionItemReadme `pulumi:"readmes"`
+	// A filter to return only resources that match the given repository type exactly.
+	RepositoryType string `pulumi:"repositoryType"`
 	// A filter to return only resources that match the given lifecycle state name exactly.
 	State string `pulumi:"state"`
 	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -1293,6 +1287,12 @@ type GetContainerRepositoriesContainerRepositoryCollectionItem struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// An RFC 3339 timestamp indicating when an image was last pushed to the repository.
 	TimeLastPushed string `pulumi:"timeLastPushed"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository.
+	UpstreamSecretId string `pulumi:"upstreamSecretId"`
+	// The upstream registry URL for a pull-through cache repository.
+	UpstreamUrl string `pulumi:"upstreamUrl"`
+	// The upstream registry username for a pull-through cache repository.
+	UpstreamUsername string `pulumi:"upstreamUsername"`
 }
 
 // GetContainerRepositoriesContainerRepositoryCollectionItemInput is an input type that accepts GetContainerRepositoriesContainerRepositoryCollectionItemArgs and GetContainerRepositoriesContainerRepositoryCollectionItemOutput values.
@@ -1327,14 +1327,20 @@ type GetContainerRepositoriesContainerRepositoryCollectionItemArgs struct {
 	IsImmutable pulumi.BoolInput `pulumi:"isImmutable"`
 	// A filter to return resources that match the isPublic value.
 	IsPublic pulumi.BoolInput `pulumi:"isPublic"`
+	// A filter to return resources that match the isTopLevel value.
+	IsTopLevel pulumi.BoolInput `pulumi:"isTopLevel"`
 	// Total number of layers.
 	LayerCount pulumi.IntInput `pulumi:"layerCount"`
 	// Total size of layers.
 	LayersSizeInBytes pulumi.StringInput `pulumi:"layersSizeInBytes"`
+	// List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, us-phoenix-1). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created.
+	MultiRegionPeers pulumi.StringArrayInput `pulumi:"multiRegionPeers"`
 	// The tenancy namespace used in the container repository path.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// Container repository readme.
 	Readmes GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArrayInput `pulumi:"readmes"`
+	// A filter to return only resources that match the given repository type exactly.
+	RepositoryType pulumi.StringInput `pulumi:"repositoryType"`
 	// A filter to return only resources that match the given lifecycle state name exactly.
 	State pulumi.StringInput `pulumi:"state"`
 	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -1343,6 +1349,12 @@ type GetContainerRepositoriesContainerRepositoryCollectionItemArgs struct {
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
 	// An RFC 3339 timestamp indicating when an image was last pushed to the repository.
 	TimeLastPushed pulumi.StringInput `pulumi:"timeLastPushed"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository.
+	UpstreamSecretId pulumi.StringInput `pulumi:"upstreamSecretId"`
+	// The upstream registry URL for a pull-through cache repository.
+	UpstreamUrl pulumi.StringInput `pulumi:"upstreamUrl"`
+	// The upstream registry username for a pull-through cache repository.
+	UpstreamUsername pulumi.StringInput `pulumi:"upstreamUsername"`
 }
 
 func (GetContainerRepositoriesContainerRepositoryCollectionItemArgs) ElementType() reflect.Type {
@@ -1450,6 +1462,11 @@ func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) IsPubli
 	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) bool { return v.IsPublic }).(pulumi.BoolOutput)
 }
 
+// A filter to return resources that match the isTopLevel value.
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) IsTopLevel() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) bool { return v.IsTopLevel }).(pulumi.BoolOutput)
+}
+
 // Total number of layers.
 func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) LayerCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) int { return v.LayerCount }).(pulumi.IntOutput)
@@ -1458,6 +1475,11 @@ func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) LayerCo
 // Total size of layers.
 func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) LayersSizeInBytes() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) string { return v.LayersSizeInBytes }).(pulumi.StringOutput)
+}
+
+// List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, us-phoenix-1). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created.
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) MultiRegionPeers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) []string { return v.MultiRegionPeers }).(pulumi.StringArrayOutput)
 }
 
 // The tenancy namespace used in the container repository path.
@@ -1470,6 +1492,11 @@ func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) Readmes
 	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) []GetContainerRepositoriesContainerRepositoryCollectionItemReadme {
 		return v.Readmes
 	}).(GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArrayOutput)
+}
+
+// A filter to return only resources that match the given repository type exactly.
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) RepositoryType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) string { return v.RepositoryType }).(pulumi.StringOutput)
 }
 
 // A filter to return only resources that match the given lifecycle state name exactly.
@@ -1492,6 +1519,21 @@ func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) TimeCre
 // An RFC 3339 timestamp indicating when an image was last pushed to the repository.
 func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) TimeLastPushed() pulumi.StringOutput {
 	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) string { return v.TimeLastPushed }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository.
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) UpstreamSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) string { return v.UpstreamSecretId }).(pulumi.StringOutput)
+}
+
+// The upstream registry URL for a pull-through cache repository.
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) UpstreamUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) string { return v.UpstreamUrl }).(pulumi.StringOutput)
+}
+
+// The upstream registry username for a pull-through cache repository.
+func (o GetContainerRepositoriesContainerRepositoryCollectionItemOutput) UpstreamUsername() pulumi.StringOutput {
+	return o.ApplyT(func(v GetContainerRepositoriesContainerRepositoryCollectionItem) string { return v.UpstreamUsername }).(pulumi.StringOutput)
 }
 
 type GetContainerRepositoriesContainerRepositoryCollectionItemArrayOutput struct{ *pulumi.OutputState }

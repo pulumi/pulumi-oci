@@ -26,7 +26,11 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly int? MaximumBandwidthMbps;
         /// <summary>
-        /// (Updatable) The OCID of the model you want to deploy.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+        /// </summary>
+        public readonly string? ModelArtifactSignatureId;
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
         /// </summary>
         public readonly string? ModelId;
         /// <summary>
@@ -42,6 +46,8 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             int? maximumBandwidthMbps,
 
+            string? modelArtifactSignatureId,
+
             string? modelId,
 
             Outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy? scalingPolicy)
@@ -49,6 +55,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             BandwidthMbps = bandwidthMbps;
             InstanceConfiguration = instanceConfiguration;
             MaximumBandwidthMbps = maximumBandwidthMbps;
+            ModelArtifactSignatureId = modelArtifactSignatureId;
             ModelId = modelId;
             ScalingPolicy = scalingPolicy;
         }

@@ -18,9 +18,6 @@ public final class ContainerRepositoryReadme {
     /**
      * @return (Updatable) Readme format. Supported formats are text/plain and text/markdown.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     private String format;
 
@@ -34,9 +31,6 @@ public final class ContainerRepositoryReadme {
     }
     /**
      * @return (Updatable) Readme format. Supported formats are text/plain and text/markdown.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String format() {

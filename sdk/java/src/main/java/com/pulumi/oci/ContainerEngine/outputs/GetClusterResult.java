@@ -114,6 +114,11 @@ public final class GetClusterResult {
      */
     private String state;
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,String> systemTags;
+    /**
      * @return Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
      * 
      */
@@ -258,6 +263,13 @@ public final class GetClusterResult {
         return this.state;
     }
     /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
+    /**
      * @return Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
      * 
      */
@@ -301,6 +313,7 @@ public final class GetClusterResult {
         private List<GetClusterOption> options;
         private @Nullable Boolean shouldIncludeOidcConfigFile;
         private String state;
+        private Map<String,String> systemTags;
         private String type;
         private String vcnId;
         public Builder() {}
@@ -326,6 +339,7 @@ public final class GetClusterResult {
     	      this.options = defaults.options;
     	      this.shouldIncludeOidcConfigFile = defaults.shouldIncludeOidcConfigFile;
     	      this.state = defaults.state;
+    	      this.systemTags = defaults.systemTags;
     	      this.type = defaults.type;
     	      this.vcnId = defaults.vcnId;
         }
@@ -510,6 +524,14 @@ public final class GetClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetClusterResult", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
+        @CustomType.Setter
         public Builder type(String type) {
             if (type == null) {
               throw new MissingRequiredPropertyException("GetClusterResult", "type");
@@ -547,6 +569,7 @@ public final class GetClusterResult {
             _resultValue.options = options;
             _resultValue.shouldIncludeOidcConfigFile = shouldIncludeOidcConfigFile;
             _resultValue.state = state;
+            _resultValue.systemTags = systemTags;
             _resultValue.type = type;
             _resultValue.vcnId = vcnId;
             return _resultValue;

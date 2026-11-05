@@ -32602,7 +32602,7 @@
                 },
                 "format": {
                     "type": "string",
-                    "description": "(Updatable) Readme format. Supported formats are text/plain and text/markdown.\n\n\n** IMPORTANT **\nAny change to a property that does not support update will force the destruction and recreation of the resource with the new property values\n"
+                    "description": "(Updatable) Readme format. Supported formats are text/plain and text/markdown.\n"
                 }
             },
             "type": "object",
@@ -32978,6 +32978,10 @@
                     "type": "boolean",
                     "description": "A filter to return resources that match the isPublic value.\n"
                 },
+                "isTopLevel": {
+                    "type": "boolean",
+                    "description": "A filter to return resources that match the isTopLevel value.\n"
+                },
                 "layerCount": {
                     "type": "integer",
                     "description": "Total number of layers.\n"
@@ -32985,6 +32989,13 @@
                 "layersSizeInBytes": {
                     "type": "string",
                     "description": "Total size of layers.\n"
+                },
+                "multiRegionPeers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, us-phoenix-1). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created.\n"
                 },
                 "namespace": {
                     "type": "string",
@@ -32996,6 +33007,10 @@
                         "$ref": "#/types/oci:Artifacts/getContainerRepositoriesContainerRepositoryCollectionItemReadme:getContainerRepositoriesContainerRepositoryCollectionItemReadme"
                     },
                     "description": "Container repository readme.\n"
+                },
+                "repositoryType": {
+                    "type": "string",
+                    "description": "A filter to return only resources that match the given repository type exactly.\n"
                 },
                 "state": {
                     "type": "string",
@@ -33015,6 +33030,18 @@
                 "timeLastPushed": {
                     "type": "string",
                     "description": "An RFC 3339 timestamp indicating when an image was last pushed to the repository.\n"
+                },
+                "upstreamSecretId": {
+                    "type": "string",
+                    "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository.\n"
+                },
+                "upstreamUrl": {
+                    "type": "string",
+                    "description": "The upstream registry URL for a pull-through cache repository.\n"
+                },
+                "upstreamUsername": {
+                    "type": "string",
+                    "description": "The upstream registry username for a pull-through cache repository.\n"
                 }
             },
             "type": "object",
@@ -33029,14 +33056,20 @@
                 "imageCount",
                 "isImmutable",
                 "isPublic",
+                "isTopLevel",
                 "layerCount",
                 "layersSizeInBytes",
+                "multiRegionPeers",
                 "namespace",
                 "readmes",
+                "repositoryType",
                 "state",
                 "systemTags",
                 "timeCreated",
-                "timeLastPushed"
+                "timeLastPushed",
+                "upstreamSecretId",
+                "upstreamUrl",
+                "upstreamUsername"
             ],
             "language": {
                 "nodejs": {
@@ -78211,6 +78244,13 @@
                 "subnetId": {
                     "type": "string",
                     "description": "the ocid of the subnet to create the vnic in\n"
+                },
+                "systemTags": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{\"orcl-cloud.free-tier-retained\": \"true\"}`\n"
                 }
             },
             "type": "object",
@@ -78230,7 +78270,8 @@
                         "privateIp",
                         "publicIp",
                         "state",
-                        "subnetId"
+                        "subnetId",
+                        "systemTags"
                     ]
                 }
             }
@@ -80026,6 +80067,13 @@
                     "type": "string",
                     "description": "A cluster lifecycle state to filter on. Can have multiple parameters of this name.\n"
                 },
+                "systemTags": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{\"orcl-cloud.free-tier-retained\": \"true\"}`\n"
+                },
                 "type": {
                     "type": "string",
                     "description": "Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)\n"
@@ -80055,6 +80103,7 @@
                 "openIdConnectDiscoveryKey",
                 "options",
                 "state",
+                "systemTags",
                 "type",
                 "vcnId"
             ],
@@ -80691,6 +80740,13 @@
                 "subnetId": {
                     "type": "string",
                     "description": "the ocid of the subnet to create the vnic in\n"
+                },
+                "systemTags": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{\"orcl-cloud.free-tier-retained\": \"true\"}`\n"
                 }
             },
             "type": "object",
@@ -80708,7 +80764,8 @@
                 "privateIp",
                 "publicIp",
                 "state",
-                "subnetId"
+                "subnetId",
+                "systemTags"
             ],
             "language": {
                 "nodejs": {
@@ -81446,6 +81503,13 @@
                         "type": "string"
                     },
                     "description": "The OCIDs of the subnets in which to place nodes for this node pool.\n"
+                },
+                "systemTags": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{\"orcl-cloud.free-tier-retained\": \"true\"}`\n"
                 }
             },
             "type": "object",
@@ -81477,7 +81541,8 @@
                 "secondaryVnics",
                 "sshPublicKey",
                 "state",
-                "subnetIds"
+                "subnetIds",
+                "systemTags"
             ],
             "language": {
                 "nodejs": {
@@ -81568,6 +81633,13 @@
                 "subnetId": {
                     "type": "string",
                     "description": "the ocid of the subnet to create the vnic in\n"
+                },
+                "systemTags": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{\"orcl-cloud.free-tier-retained\": \"true\"}`\n"
                 }
             },
             "type": "object",
@@ -81585,7 +81657,8 @@
                 "privateIp",
                 "publicIp",
                 "state",
-                "subnetId"
+                "subnetId",
+                "systemTags"
             ],
             "language": {
                 "nodejs": {
@@ -169807,7 +169880,8 @@
                     "description": "The maximum network bandwidth for the model deployment.\n"
                 },
                 "modelDeploymentResourceConfiguration": {
-                    "$ref": "#/types/oci:DataScience/ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration:ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration"
+                    "$ref": "#/types/oci:DataScience/ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration:ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration",
+                    "description": "(Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.\n"
                 },
                 "scalingPolicy": {
                     "$ref": "#/types/oci:DataScience/ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy:ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy",
@@ -169832,6 +169906,12 @@
         },
         "oci:DataScience/ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration:ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration": {
             "properties": {
+                "capacityReservationIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "instanceShapeName": {
                     "type": "string",
                     "description": "The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.\n"
@@ -169860,6 +169940,7 @@
             "language": {
                 "nodejs": {
                     "requiredOutputs": [
+                        "capacityReservationIds",
                         "instanceShapeName",
                         "modelDeploymentInstanceShapeConfigDetails",
                         "networkAccessType",
@@ -169898,10 +169979,12 @@
         "oci:DataScience/ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration:ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration": {
             "properties": {
                 "resourceLimitConfiguration": {
-                    "$ref": "#/types/oci:DataScience/ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfiguration:ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfiguration"
+                    "$ref": "#/types/oci:DataScience/ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfiguration:ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfiguration",
+                    "description": "(Updatable) Resource limit configuration details for workload on managed compute cluster type compute target\n"
                 },
                 "resourceRequestConfiguration": {
-                    "$ref": "#/types/oci:DataScience/ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration:ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration"
+                    "$ref": "#/types/oci:DataScience/ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration:ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration",
+                    "description": "(Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.\n"
                 }
             },
             "type": "object",
@@ -169937,7 +170020,8 @@
         "oci:DataScience/ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration:ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration": {
             "properties": {
                 "gpus": {
-                    "type": "integer"
+                    "type": "integer",
+                    "description": "(Updatable) The total number of gpus required to be allocated to the workload.\n"
                 },
                 "memoryInGbs": {
                     "type": "number",
@@ -170261,9 +170345,13 @@
                     "type": "integer",
                     "description": "(Updatable) The maximum network bandwidth for the model deployment.\n"
                 },
+                "modelArtifactSignatureId": {
+                    "type": "string",
+                    "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.\n"
+                },
                 "modelId": {
                     "type": "string",
-                    "description": "(Updatable) The OCID of the model you want to deploy.\n"
+                    "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.\n"
                 },
                 "scalingPolicy": {
                     "$ref": "#/types/oci:DataScience/ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy:ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy",
@@ -170277,6 +170365,7 @@
                         "bandwidthMbps",
                         "instanceConfiguration",
                         "maximumBandwidthMbps",
+                        "modelArtifactSignatureId",
                         "modelId",
                         "scalingPolicy"
                     ]
@@ -170285,6 +170374,12 @@
         },
         "oci:DataScience/ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration:ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration": {
             "properties": {
+                "capacityReservationIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "instanceShapeName": {
                     "type": "string",
                     "description": "(Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.\n"
@@ -170310,6 +170405,7 @@
             "language": {
                 "nodejs": {
                     "requiredOutputs": [
+                        "capacityReservationIds",
                         "instanceShapeName",
                         "modelDeploymentInstanceShapeConfigDetails",
                         "networkAccessType",
@@ -179947,6 +180043,132 @@
                 }
             }
         },
+        "oci:DataScience/getModelArtifactSignaturesFilter:getModelArtifactSignaturesFilter": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "regex": {
+                    "type": "boolean"
+                },
+                "values": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "type": "object",
+            "required": [
+                "name",
+                "values"
+            ]
+        },
+        "oci:DataScience/getModelArtifactSignaturesModelArtifactSignature:getModelArtifactSignaturesModelArtifactSignature": {
+            "properties": {
+                "compartmentId": {
+                    "type": "string",
+                    "description": "\u003cb\u003eFilter\u003c/b\u003e results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.\n"
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.\n"
+                },
+                "definedTags": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Operations.CostCenter\": \"42\"}`\n"
+                },
+                "digest": {
+                    "type": "string",
+                    "description": "The digest of the model artifact.\n"
+                },
+                "displayName": {
+                    "type": "string",
+                    "description": "\u003cb\u003eFilter\u003c/b\u003e results by its user-friendly name.\n"
+                },
+                "freeformTags": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Department\": \"Finance\"}`\n"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model artifact signature.\n"
+                },
+                "kmsKeyId": {
+                    "type": "string",
+                    "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key from Oracle Cloud Infrastructure KMS.\n"
+                },
+                "kmsKeyVersionId": {
+                    "type": "string",
+                    "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key version from Oracle Cloud Infrastructure KMS.\n"
+                },
+                "modelId": {
+                    "type": "string",
+                    "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.\n"
+                },
+                "signature": {
+                    "type": "string",
+                    "description": "The signature of the digest generated using kmsKeyId, kmsKeyVersion Id and signingAlgorithm.\n"
+                },
+                "signingAlgorithm": {
+                    "type": "string",
+                    "description": "The algorithm used for signing.\n"
+                },
+                "state": {
+                    "type": "string",
+                    "description": "\u003cb\u003eFilter\u003c/b\u003e results by the specified lifecycle state. Must be a valid state for the resource type.\n"
+                },
+                "systemTags": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{\"orcl-cloud.free-tier-retained\": \"true\"}`\n"
+                },
+                "timeCreated": {
+                    "type": "string",
+                    "description": "The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z\n"
+                },
+                "timeUpdated": {
+                    "type": "string",
+                    "description": "The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z\n"
+                },
+                "verifyTrigger": {
+                    "type": "integer"
+                }
+            },
+            "type": "object",
+            "required": [
+                "compartmentId",
+                "createdBy",
+                "definedTags",
+                "digest",
+                "displayName",
+                "freeformTags",
+                "id",
+                "kmsKeyId",
+                "kmsKeyVersionId",
+                "modelId",
+                "signature",
+                "signingAlgorithm",
+                "state",
+                "systemTags",
+                "timeCreated",
+                "timeUpdated",
+                "verifyTrigger"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
         "oci:DataScience/getModelBackupOperationDetail:getModelBackupOperationDetail": {
             "properties": {
                 "backupState": {
@@ -180380,6 +180602,12 @@
         },
         "oci:DataScience/getModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration:getModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration": {
             "properties": {
+                "capacityReservationIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "instanceShapeName": {
                     "type": "string",
                     "description": "The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.\n"
@@ -180406,6 +180634,7 @@
             },
             "type": "object",
             "required": [
+                "capacityReservationIds",
                 "instanceShapeName",
                 "modelDeploymentInstanceShapeConfigDetails",
                 "networkAccessType",
@@ -180833,9 +181062,13 @@
                     "type": "integer",
                     "description": "The maximum network bandwidth for the model deployment.\n"
                 },
+                "modelArtifactSignatureId": {
+                    "type": "string",
+                    "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.\n"
+                },
                 "modelId": {
                     "type": "string",
-                    "description": "The OCID of the model you want to deploy.\n"
+                    "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.\n"
                 },
                 "scalingPolicies": {
                     "type": "array",
@@ -180850,6 +181083,7 @@
                 "bandwidthMbps",
                 "instanceConfigurations",
                 "maximumBandwidthMbps",
+                "modelArtifactSignatureId",
                 "modelId",
                 "scalingPolicies"
             ],
@@ -180861,6 +181095,12 @@
         },
         "oci:DataScience/getModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration:getModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration": {
             "properties": {
+                "capacityReservationIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "instanceShapeName": {
                     "type": "string",
                     "description": "The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.\n"
@@ -180887,6 +181127,7 @@
             },
             "type": "object",
             "required": [
+                "capacityReservationIds",
                 "instanceShapeName",
                 "modelDeploymentInstanceShapeConfigDetails",
                 "networkAccessType",
@@ -181714,6 +181955,12 @@
         },
         "oci:DataScience/getModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration:getModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration": {
             "properties": {
+                "capacityReservationIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "instanceShapeName": {
                     "type": "string",
                     "description": "The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.\n"
@@ -181740,6 +181987,7 @@
             },
             "type": "object",
             "required": [
+                "capacityReservationIds",
                 "instanceShapeName",
                 "modelDeploymentInstanceShapeConfigDetails",
                 "networkAccessType",
@@ -182167,9 +182415,13 @@
                     "type": "integer",
                     "description": "The maximum network bandwidth for the model deployment.\n"
                 },
+                "modelArtifactSignatureId": {
+                    "type": "string",
+                    "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.\n"
+                },
                 "modelId": {
                     "type": "string",
-                    "description": "The OCID of the model you want to deploy.\n"
+                    "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.\n"
                 },
                 "scalingPolicies": {
                     "type": "array",
@@ -182184,6 +182436,7 @@
                 "bandwidthMbps",
                 "instanceConfigurations",
                 "maximumBandwidthMbps",
+                "modelArtifactSignatureId",
                 "modelId",
                 "scalingPolicies"
             ],
@@ -182195,6 +182448,12 @@
         },
         "oci:DataScience/getModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration:getModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration": {
             "properties": {
+                "capacityReservationIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
                 "instanceShapeName": {
                     "type": "string",
                     "description": "The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.\n"
@@ -182221,6 +182480,7 @@
             },
             "type": "object",
             "required": [
+                "capacityReservationIds",
                 "instanceShapeName",
                 "modelDeploymentInstanceShapeConfigDetails",
                 "networkAccessType",
@@ -560988,7 +561248,7 @@
             }
         },
         "oci:Artifacts/containerRepository:ContainerRepository": {
-            "description": "This resource provides the Container Repository resource in Oracle Cloud Infrastructure Artifacts service.\nApi doc link for the resource: https://docs.oracle.com/iaas/api/#/en/registry/latest/ContainerRepository\n\nExample terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/artifacts\n\nCreate a new empty container repository. Avoid entering confidential information.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as oci from \"@pulumi/oci\";\n\nconst testContainerRepository = new oci.artifacts.ContainerRepository(\"test_container_repository\", {\n    compartmentId: compartmentId,\n    displayName: containerRepositoryDisplayName,\n    definedTags: {\n        \"Operations.CostCenter\": \"42\",\n    },\n    freeformTags: {\n        Department: \"Finance\",\n    },\n    isImmutable: containerRepositoryIsImmutable,\n    isPublic: containerRepositoryIsPublic,\n    readme: {\n        content: containerRepositoryReadmeContent,\n        format: containerRepositoryReadmeFormat,\n    },\n});\n```\n```python\nimport pulumi\nimport pulumi_oci as oci\n\ntest_container_repository = oci.artifacts.ContainerRepository(\"test_container_repository\",\n    compartment_id=compartment_id,\n    display_name=container_repository_display_name,\n    defined_tags={\n        \"Operations.CostCenter\": \"42\",\n    },\n    freeform_tags={\n        \"Department\": \"Finance\",\n    },\n    is_immutable=container_repository_is_immutable,\n    is_public=container_repository_is_public,\n    readme={\n        \"content\": container_repository_readme_content,\n        \"format\": container_repository_readme_format,\n    })\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Oci = Pulumi.Oci;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var testContainerRepository = new Oci.Artifacts.ContainerRepository(\"test_container_repository\", new()\n    {\n        CompartmentId = compartmentId,\n        DisplayName = containerRepositoryDisplayName,\n        DefinedTags = \n        {\n            { \"Operations.CostCenter\", \"42\" },\n        },\n        FreeformTags = \n        {\n            { \"Department\", \"Finance\" },\n        },\n        IsImmutable = containerRepositoryIsImmutable,\n        IsPublic = containerRepositoryIsPublic,\n        Readme = new Oci.Artifacts.Inputs.ContainerRepositoryReadmeArgs\n        {\n            Content = containerRepositoryReadmeContent,\n            Format = containerRepositoryReadmeFormat,\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/artifacts\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := artifacts.NewContainerRepository(ctx, \"test_container_repository\", \u0026artifacts.ContainerRepositoryArgs{\n\t\t\tCompartmentId: pulumi.Any(compartmentId),\n\t\t\tDisplayName:   pulumi.Any(containerRepositoryDisplayName),\n\t\t\tDefinedTags: pulumi.StringMap{\n\t\t\t\t\"Operations.CostCenter\": pulumi.String(\"42\"),\n\t\t\t},\n\t\t\tFreeformTags: pulumi.StringMap{\n\t\t\t\t\"Department\": pulumi.String(\"Finance\"),\n\t\t\t},\n\t\t\tIsImmutable: pulumi.Any(containerRepositoryIsImmutable),\n\t\t\tIsPublic:    pulumi.Any(containerRepositoryIsPublic),\n\t\t\tReadme: \u0026artifacts.ContainerRepositoryReadmeArgs{\n\t\t\t\tContent: pulumi.Any(containerRepositoryReadmeContent),\n\t\t\t\tFormat:  pulumi.Any(containerRepositoryReadmeFormat),\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\nterraform {\n  required_providers {\n    oci = {\n      source = \"pulumi/oci\"\n    }\n  }\n}\n\nresource \"oci_artifacts_container_repository\" \"test_container_repository\" {\n  lifecycle {\n    create_before_destroy = true\n  }\n  compartment_id = compartmentId\n  display_name   = containerRepositoryDisplayName\n  defined_tags = {\n    \"Operations.CostCenter\" = \"42\"\n  }\n  freeform_tags = {\n    \"Department\" = \"Finance\"\n  }\n  is_immutable = containerRepositoryIsImmutable\n  is_public    = containerRepositoryIsPublic\n  readme {\n    content = containerRepositoryReadmeContent\n    format  = containerRepositoryReadmeFormat\n  }\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.oci.Artifacts.ContainerRepository;\nimport com.pulumi.oci.Artifacts.ContainerRepositoryArgs;\nimport com.pulumi.oci.Artifacts.inputs.ContainerRepositoryReadmeArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var testContainerRepository = new ContainerRepository(\"testContainerRepository\", ContainerRepositoryArgs.builder()\n            .compartmentId(compartmentId)\n            .displayName(containerRepositoryDisplayName)\n            .definedTags(Map.of(\"Operations.CostCenter\", \"42\"))\n            .freeformTags(Map.of(\"Department\", \"Finance\"))\n            .isImmutable(containerRepositoryIsImmutable)\n            .isPublic(containerRepositoryIsPublic)\n            .readme(ContainerRepositoryReadmeArgs.builder()\n                .content(containerRepositoryReadmeContent)\n                .format(containerRepositoryReadmeFormat)\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  testContainerRepository:\n    type: oci:Artifacts:ContainerRepository\n    name: test_container_repository\n    properties:\n      compartmentId: ${compartmentId}\n      displayName: ${containerRepositoryDisplayName}\n      definedTags:\n        Operations.CostCenter: '42'\n      freeformTags:\n        Department: Finance\n      isImmutable: ${containerRepositoryIsImmutable}\n      isPublic: ${containerRepositoryIsPublic}\n      readme:\n        content: ${containerRepositoryReadmeContent}\n        format: ${containerRepositoryReadmeFormat}\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\nContainerRepositories can be imported using the \u003cspan pulumi-lang-nodejs=\"`id`\" pulumi-lang-dotnet=\"`Id`\" pulumi-lang-go=\"`id`\" pulumi-lang-python=\"`id`\" pulumi-lang-yaml=\"`id`\" pulumi-lang-java=\"`id`\" pulumi-lang-hcl=\"`id`\"\u003e`id`\u003c/span\u003e, e.g.\n\n```sh\n$ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository \"{repositoryId}\"\n```\n\n",
+            "description": "This resource provides the Container Repository resource in Oracle Cloud Infrastructure Artifacts service.\nApi doc link for the resource: https://docs.oracle.com/iaas/api/#/en/registry/latest/ContainerRepository\n\nExample terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/artifacts\n\nCreate a new empty container repository. Avoid entering confidential information.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as oci from \"@pulumi/oci\";\n\nconst testContainerRepository = new oci.artifacts.ContainerRepository(\"test_container_repository\", {\n    compartmentId: compartmentId,\n    displayName: containerRepositoryDisplayName,\n    definedTags: {\n        \"Operations.CostCenter\": \"42\",\n    },\n    freeformTags: {\n        Department: \"Finance\",\n    },\n    isImmutable: containerRepositoryIsImmutable,\n    isPublic: containerRepositoryIsPublic,\n    isTopLevel: containerRepositoryIsTopLevel,\n    multiRegionPeers: containerRepositoryMultiRegionPeers,\n    readme: {\n        content: containerRepositoryReadmeContent,\n        format: containerRepositoryReadmeFormat,\n    },\n    repositoryType: containerRepositoryRepositoryType,\n    upstreamSecretId: containerRepositoryUpstreamSecretId,\n    upstreamUrl: containerRepositoryUpstreamUrl,\n    upstreamUsername: containerRepositoryUpstreamUsername,\n});\n```\n```python\nimport pulumi\nimport pulumi_oci as oci\n\ntest_container_repository = oci.artifacts.ContainerRepository(\"test_container_repository\",\n    compartment_id=compartment_id,\n    display_name=container_repository_display_name,\n    defined_tags={\n        \"Operations.CostCenter\": \"42\",\n    },\n    freeform_tags={\n        \"Department\": \"Finance\",\n    },\n    is_immutable=container_repository_is_immutable,\n    is_public=container_repository_is_public,\n    is_top_level=container_repository_is_top_level,\n    multi_region_peers=container_repository_multi_region_peers,\n    readme={\n        \"content\": container_repository_readme_content,\n        \"format\": container_repository_readme_format,\n    },\n    repository_type=container_repository_repository_type,\n    upstream_secret_id=container_repository_upstream_secret_id,\n    upstream_url=container_repository_upstream_url,\n    upstream_username=container_repository_upstream_username)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Oci = Pulumi.Oci;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var testContainerRepository = new Oci.Artifacts.ContainerRepository(\"test_container_repository\", new()\n    {\n        CompartmentId = compartmentId,\n        DisplayName = containerRepositoryDisplayName,\n        DefinedTags = \n        {\n            { \"Operations.CostCenter\", \"42\" },\n        },\n        FreeformTags = \n        {\n            { \"Department\", \"Finance\" },\n        },\n        IsImmutable = containerRepositoryIsImmutable,\n        IsPublic = containerRepositoryIsPublic,\n        IsTopLevel = containerRepositoryIsTopLevel,\n        MultiRegionPeers = containerRepositoryMultiRegionPeers,\n        Readme = new Oci.Artifacts.Inputs.ContainerRepositoryReadmeArgs\n        {\n            Content = containerRepositoryReadmeContent,\n            Format = containerRepositoryReadmeFormat,\n        },\n        RepositoryType = containerRepositoryRepositoryType,\n        UpstreamSecretId = containerRepositoryUpstreamSecretId,\n        UpstreamUrl = containerRepositoryUpstreamUrl,\n        UpstreamUsername = containerRepositoryUpstreamUsername,\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/artifacts\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := artifacts.NewContainerRepository(ctx, \"test_container_repository\", \u0026artifacts.ContainerRepositoryArgs{\n\t\t\tCompartmentId: pulumi.Any(compartmentId),\n\t\t\tDisplayName:   pulumi.Any(containerRepositoryDisplayName),\n\t\t\tDefinedTags: pulumi.StringMap{\n\t\t\t\t\"Operations.CostCenter\": pulumi.String(\"42\"),\n\t\t\t},\n\t\t\tFreeformTags: pulumi.StringMap{\n\t\t\t\t\"Department\": pulumi.String(\"Finance\"),\n\t\t\t},\n\t\t\tIsImmutable:      pulumi.Any(containerRepositoryIsImmutable),\n\t\t\tIsPublic:         pulumi.Any(containerRepositoryIsPublic),\n\t\t\tIsTopLevel:       pulumi.Any(containerRepositoryIsTopLevel),\n\t\t\tMultiRegionPeers: pulumi.Any(containerRepositoryMultiRegionPeers),\n\t\t\tReadme: \u0026artifacts.ContainerRepositoryReadmeArgs{\n\t\t\t\tContent: pulumi.Any(containerRepositoryReadmeContent),\n\t\t\t\tFormat:  pulumi.Any(containerRepositoryReadmeFormat),\n\t\t\t},\n\t\t\tRepositoryType:   pulumi.Any(containerRepositoryRepositoryType),\n\t\t\tUpstreamSecretId: pulumi.Any(containerRepositoryUpstreamSecretId),\n\t\t\tUpstreamUrl:      pulumi.Any(containerRepositoryUpstreamUrl),\n\t\t\tUpstreamUsername: pulumi.Any(containerRepositoryUpstreamUsername),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\nterraform {\n  required_providers {\n    oci = {\n      source = \"pulumi/oci\"\n    }\n  }\n}\n\nresource \"oci_artifacts_container_repository\" \"test_container_repository\" {\n  lifecycle {\n    create_before_destroy = true\n  }\n  compartment_id = compartmentId\n  display_name   = containerRepositoryDisplayName\n  defined_tags = {\n    \"Operations.CostCenter\" = \"42\"\n  }\n  freeform_tags = {\n    \"Department\" = \"Finance\"\n  }\n  is_immutable       = containerRepositoryIsImmutable\n  is_public          = containerRepositoryIsPublic\n  is_top_level       = containerRepositoryIsTopLevel\n  multi_region_peers = containerRepositoryMultiRegionPeers\n  readme {\n    content = containerRepositoryReadmeContent\n    format  = containerRepositoryReadmeFormat\n  }\n  #Required\n  repository_type    = containerRepositoryRepositoryType\n  upstream_secret_id = containerRepositoryUpstreamSecretId\n  upstream_url       = containerRepositoryUpstreamUrl\n  upstream_username  = containerRepositoryUpstreamUsername\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.oci.Artifacts.ContainerRepository;\nimport com.pulumi.oci.Artifacts.ContainerRepositoryArgs;\nimport com.pulumi.oci.Artifacts.inputs.ContainerRepositoryReadmeArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var testContainerRepository = new ContainerRepository(\"testContainerRepository\", ContainerRepositoryArgs.builder()\n            .compartmentId(compartmentId)\n            .displayName(containerRepositoryDisplayName)\n            .definedTags(Map.of(\"Operations.CostCenter\", \"42\"))\n            .freeformTags(Map.of(\"Department\", \"Finance\"))\n            .isImmutable(containerRepositoryIsImmutable)\n            .isPublic(containerRepositoryIsPublic)\n            .isTopLevel(containerRepositoryIsTopLevel)\n            .multiRegionPeers(containerRepositoryMultiRegionPeers)\n            .readme(ContainerRepositoryReadmeArgs.builder()\n                .content(containerRepositoryReadmeContent)\n                .format(containerRepositoryReadmeFormat)\n                .build())\n            .repositoryType(containerRepositoryRepositoryType)\n            .upstreamSecretId(containerRepositoryUpstreamSecretId)\n            .upstreamUrl(containerRepositoryUpstreamUrl)\n            .upstreamUsername(containerRepositoryUpstreamUsername)\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  testContainerRepository:\n    type: oci:Artifacts:ContainerRepository\n    name: test_container_repository\n    properties:\n      compartmentId: ${compartmentId}\n      displayName: ${containerRepositoryDisplayName}\n      definedTags:\n        Operations.CostCenter: '42'\n      freeformTags:\n        Department: Finance\n      isImmutable: ${containerRepositoryIsImmutable}\n      isPublic: ${containerRepositoryIsPublic}\n      isTopLevel: ${containerRepositoryIsTopLevel}\n      multiRegionPeers: ${containerRepositoryMultiRegionPeers}\n      readme:\n        content: ${containerRepositoryReadmeContent}\n        format: ${containerRepositoryReadmeFormat}\n      repositoryType: ${containerRepositoryRepositoryType}\n      upstreamSecretId: ${containerRepositoryUpstreamSecretId}\n      upstreamUrl: ${containerRepositoryUpstreamUrl}\n      upstreamUsername: ${containerRepositoryUpstreamUsername}\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\nContainerRepositories can be imported using the \u003cspan pulumi-lang-nodejs=\"`id`\" pulumi-lang-dotnet=\"`Id`\" pulumi-lang-go=\"`id`\" pulumi-lang-python=\"`id`\" pulumi-lang-yaml=\"`id`\" pulumi-lang-java=\"`id`\" pulumi-lang-hcl=\"`id`\"\u003e`id`\u003c/span\u003e, e.g.\n\n```sh\n$ pulumi import oci:Artifacts/containerRepository:ContainerRepository test_container_repository \"{repositoryId}\"\n```\n\n",
             "properties": {
                 "billableSizeInGbs": {
                     "type": "string",
@@ -561026,11 +561286,15 @@
                 },
                 "isImmutable": {
                     "type": "boolean",
-                    "description": "(Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.\n"
+                    "description": "(Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.\n"
                 },
                 "isPublic": {
                     "type": "boolean",
                     "description": "(Updatable) Whether the repository is public. A public repository allows unauthenticated access.\n"
+                },
+                "isTopLevel": {
+                    "type": "boolean",
+                    "description": "Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.\n"
                 },
                 "layerCount": {
                     "type": "integer",
@@ -561040,6 +561304,13 @@
                     "type": "string",
                     "description": "Total storage in bytes consumed by layers.\n"
                 },
+                "multiRegionPeers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.\n"
+                },
                 "namespace": {
                     "type": "string",
                     "description": "The tenancy namespace used in the container repository path.\n"
@@ -561047,6 +561318,10 @@
                 "readme": {
                     "$ref": "#/types/oci:Artifacts/ContainerRepositoryReadme:ContainerRepositoryReadme",
                     "description": "(Updatable) Container repository readme.\n"
+                },
+                "repositoryType": {
+                    "type": "string",
+                    "description": "The type of container repository. This determines the repository behavior and required settings.\n"
                 },
                 "state": {
                     "type": "string",
@@ -561066,6 +561341,18 @@
                 "timeLastPushed": {
                     "type": "string",
                     "description": "An RFC 3339 timestamp indicating when an image was last pushed to the repository.\n"
+                },
+                "upstreamSecretId": {
+                    "type": "string",
+                    "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`\n"
+                },
+                "upstreamUrl": {
+                    "type": "string",
+                    "description": "The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.\n\nIf isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/\u003cupstreamNamespace\u003e/library/ubuntu`\n\nIf isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/\u003cupstreamNamespace\u003e/library` or `iad.ocir.io/\u003cupstreamNamespace\u003e`\n"
+                },
+                "upstreamUsername": {
+                    "type": "string",
+                    "description": "(Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.\n\n\n** IMPORTANT **\nAny change to a property that does not support update will force the destruction and recreation of the resource with the new property values\n"
                 }
             },
             "required": [
@@ -561078,14 +561365,20 @@
                 "imageCount",
                 "isImmutable",
                 "isPublic",
+                "isTopLevel",
                 "layerCount",
                 "layersSizeInBytes",
+                "multiRegionPeers",
                 "namespace",
                 "readme",
+                "repositoryType",
                 "state",
                 "systemTags",
                 "timeCreated",
-                "timeLastPushed"
+                "timeLastPushed",
+                "upstreamSecretId",
+                "upstreamUrl",
+                "upstreamUsername"
             ],
             "inputProperties": {
                 "compartmentId": {
@@ -561113,15 +561406,46 @@
                 },
                 "isImmutable": {
                     "type": "boolean",
-                    "description": "(Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.\n"
+                    "description": "(Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.\n"
                 },
                 "isPublic": {
                     "type": "boolean",
                     "description": "(Updatable) Whether the repository is public. A public repository allows unauthenticated access.\n"
                 },
+                "isTopLevel": {
+                    "type": "boolean",
+                    "description": "Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.\n",
+                    "willReplaceOnChanges": true
+                },
+                "multiRegionPeers": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.\n",
+                    "willReplaceOnChanges": true
+                },
                 "readme": {
                     "$ref": "#/types/oci:Artifacts/ContainerRepositoryReadme:ContainerRepositoryReadme",
                     "description": "(Updatable) Container repository readme.\n"
+                },
+                "repositoryType": {
+                    "type": "string",
+                    "description": "The type of container repository. This determines the repository behavior and required settings.\n",
+                    "willReplaceOnChanges": true
+                },
+                "upstreamSecretId": {
+                    "type": "string",
+                    "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`\n"
+                },
+                "upstreamUrl": {
+                    "type": "string",
+                    "description": "The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.\n\nIf isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/\u003cupstreamNamespace\u003e/library/ubuntu`\n\nIf isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/\u003cupstreamNamespace\u003e/library` or `iad.ocir.io/\u003cupstreamNamespace\u003e`\n",
+                    "willReplaceOnChanges": true
+                },
+                "upstreamUsername": {
+                    "type": "string",
+                    "description": "(Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.\n\n\n** IMPORTANT **\nAny change to a property that does not support update will force the destruction and recreation of the resource with the new property values\n"
                 }
             },
             "requiredInputs": [
@@ -561168,11 +561492,16 @@
                     },
                     "isImmutable": {
                         "type": "boolean",
-                        "description": "(Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.\n"
+                        "description": "(Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.\n"
                     },
                     "isPublic": {
                         "type": "boolean",
                         "description": "(Updatable) Whether the repository is public. A public repository allows unauthenticated access.\n"
+                    },
+                    "isTopLevel": {
+                        "type": "boolean",
+                        "description": "Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.\n",
+                        "willReplaceOnChanges": true
                     },
                     "layerCount": {
                         "type": "integer",
@@ -561182,6 +561511,14 @@
                         "type": "string",
                         "description": "Total storage in bytes consumed by layers.\n"
                     },
+                    "multiRegionPeers": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.\n",
+                        "willReplaceOnChanges": true
+                    },
                     "namespace": {
                         "type": "string",
                         "description": "The tenancy namespace used in the container repository path.\n"
@@ -561189,6 +561526,11 @@
                     "readme": {
                         "$ref": "#/types/oci:Artifacts/ContainerRepositoryReadme:ContainerRepositoryReadme",
                         "description": "(Updatable) Container repository readme.\n"
+                    },
+                    "repositoryType": {
+                        "type": "string",
+                        "description": "The type of container repository. This determines the repository behavior and required settings.\n",
+                        "willReplaceOnChanges": true
                     },
                     "state": {
                         "type": "string",
@@ -561208,6 +561550,19 @@
                     "timeLastPushed": {
                         "type": "string",
                         "description": "An RFC 3339 timestamp indicating when an image was last pushed to the repository.\n"
+                    },
+                    "upstreamSecretId": {
+                        "type": "string",
+                        "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`\n"
+                    },
+                    "upstreamUrl": {
+                        "type": "string",
+                        "description": "The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.\n\nIf isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/\u003cupstreamNamespace\u003e/library/ubuntu`\n\nIf isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/\u003cupstreamNamespace\u003e/library` or `iad.ocir.io/\u003cupstreamNamespace\u003e`\n",
+                        "willReplaceOnChanges": true
+                    },
+                    "upstreamUsername": {
+                        "type": "string",
+                        "description": "(Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.\n\n\n** IMPORTANT **\nAny change to a property that does not support update will force the destruction and recreation of the resource with the new property values\n"
                     }
                 },
                 "type": "object"
@@ -575700,6 +576055,13 @@
                     "type": "string",
                     "description": "The state of the cluster masters.\n"
                 },
+                "systemTags": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{\"orcl-cloud.free-tier-retained\": \"true\"}`\n"
+                },
                 "type": {
                     "type": "string",
                     "description": "(Updatable) Type of cluster\n"
@@ -575726,6 +576088,7 @@
                 "openIdConnectDiscoveryKey",
                 "options",
                 "state",
+                "systemTags",
                 "type",
                 "vcnId"
             ],
@@ -575888,6 +576251,13 @@
                     "state": {
                         "type": "string",
                         "description": "The state of the cluster masters.\n"
+                    },
+                    "systemTags": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "description": "Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{\"orcl-cloud.free-tier-retained\": \"true\"}`\n"
                     },
                     "type": {
                         "type": "string",
@@ -576690,6 +577060,13 @@
                         "type": "string"
                     },
                     "description": "(Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. \n\n\n** IMPORTANT **\nAny change to a property that does not support update will force the destruction and recreation of the resource with the new property values\n"
+                },
+                "systemTags": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{\"orcl-cloud.free-tier-retained\": \"true\"}`\n"
                 }
             },
             "required": [
@@ -576717,7 +577094,8 @@
                 "quantityPerSubnet",
                 "sshPublicKey",
                 "state",
-                "subnetIds"
+                "subnetIds",
+                "systemTags"
             ],
             "inputProperties": {
                 "clusterId": {
@@ -576974,6 +577352,13 @@
                             "type": "string"
                         },
                         "description": "(Updatable) The OCIDs of the subnets in which to place nodes for this node pool. When used, quantityPerSubnet can be provided. This property is deprecated, use nodeConfigDetails. Exactly one of the subnetIds or nodeConfigDetails properties must be specified. \n\n\n** IMPORTANT **\nAny change to a property that does not support update will force the destruction and recreation of the resource with the new property values\n"
+                    },
+                    "systemTags": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "description": "Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{\"orcl-cloud.free-tier-retained\": \"true\"}`\n"
                     }
                 },
                 "type": "object"
@@ -616325,6 +616710,239 @@
                     "namespace": {
                         "type": "string",
                         "willReplaceOnChanges": true
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "oci:DataScience/modelArtifactSignature:ModelArtifactSignature": {
+            "description": "This resource provides the Model Artifact Signature resource in Oracle Cloud Infrastructure Data Science service.\nApi doc link for the resource: https://docs.oracle.com/iaas/api/#/en/data-science/latest/ArtifactSignature\n\nExample terraform configs related to the resource : https://github.com/oracle/terraform-provider-oci/tree/master/examples/datascience\n\nCreate model artifact signature for the specified model\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as oci from \"@pulumi/oci\";\n\nconst testModelArtifactSignature = new oci.datascience.ModelArtifactSignature(\"test_model_artifact_signature\", {\n    compartmentId: compartmentId,\n    kmsKeyId: testKey.id,\n    kmsKeyVersionId: testKeyVersion.id,\n    modelId: testModel.id,\n    signingAlgorithm: modelArtifactSignatureSigningAlgorithm,\n    definedTags: {\n        \"Operations.CostCenter\": \"42\",\n    },\n    displayName: modelArtifactSignatureDisplayName,\n    freeformTags: {\n        Department: \"Finance\",\n    },\n});\n```\n```python\nimport pulumi\nimport pulumi_oci as oci\n\ntest_model_artifact_signature = oci.datascience.ModelArtifactSignature(\"test_model_artifact_signature\",\n    compartment_id=compartment_id,\n    kms_key_id=test_key[\"id\"],\n    kms_key_version_id=test_key_version[\"id\"],\n    model_id=test_model[\"id\"],\n    signing_algorithm=model_artifact_signature_signing_algorithm,\n    defined_tags={\n        \"Operations.CostCenter\": \"42\",\n    },\n    display_name=model_artifact_signature_display_name,\n    freeform_tags={\n        \"Department\": \"Finance\",\n    })\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Oci = Pulumi.Oci;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var testModelArtifactSignature = new Oci.DataScience.ModelArtifactSignature(\"test_model_artifact_signature\", new()\n    {\n        CompartmentId = compartmentId,\n        KmsKeyId = testKey.Id,\n        KmsKeyVersionId = testKeyVersion.Id,\n        ModelId = testModel.Id,\n        SigningAlgorithm = modelArtifactSignatureSigningAlgorithm,\n        DefinedTags = \n        {\n            { \"Operations.CostCenter\", \"42\" },\n        },\n        DisplayName = modelArtifactSignatureDisplayName,\n        FreeformTags = \n        {\n            { \"Department\", \"Finance\" },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/datascience\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := datascience.NewModelArtifactSignature(ctx, \"test_model_artifact_signature\", \u0026datascience.ModelArtifactSignatureArgs{\n\t\t\tCompartmentId:    pulumi.Any(compartmentId),\n\t\t\tKmsKeyId:         pulumi.Any(testKey.Id),\n\t\t\tKmsKeyVersionId:  pulumi.Any(testKeyVersion.Id),\n\t\t\tModelId:          pulumi.Any(testModel.Id),\n\t\t\tSigningAlgorithm: pulumi.Any(modelArtifactSignatureSigningAlgorithm),\n\t\t\tDefinedTags: pulumi.StringMap{\n\t\t\t\t\"Operations.CostCenter\": pulumi.String(\"42\"),\n\t\t\t},\n\t\t\tDisplayName: pulumi.Any(modelArtifactSignatureDisplayName),\n\t\t\tFreeformTags: pulumi.StringMap{\n\t\t\t\t\"Department\": pulumi.String(\"Finance\"),\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\nterraform {\n  required_providers {\n    oci = {\n      source = \"pulumi/oci\"\n    }\n  }\n}\n\nresource \"oci_data_science_model_artifact_signature\" \"test_model_artifact_signature\" {\n  lifecycle {\n    create_before_destroy = true\n  }\n  compartment_id     = compartmentId\n  kms_key_id         = testKey.id\n  kms_key_version_id = testKeyVersion.id\n  model_id           = testModel.id\n  signing_algorithm  = modelArtifactSignatureSigningAlgorithm\n  defined_tags = {\n    \"Operations.CostCenter\" = \"42\"\n  }\n  display_name = modelArtifactSignatureDisplayName\n  freeform_tags = {\n    \"Department\" = \"Finance\"\n  }\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.oci.DataScience.ModelArtifactSignature;\nimport com.pulumi.oci.DataScience.ModelArtifactSignatureArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var testModelArtifactSignature = new ModelArtifactSignature(\"testModelArtifactSignature\", ModelArtifactSignatureArgs.builder()\n            .compartmentId(compartmentId)\n            .kmsKeyId(testKey.get(\"id\"))\n            .kmsKeyVersionId(testKeyVersion.get(\"id\"))\n            .modelId(testModel.get(\"id\"))\n            .signingAlgorithm(modelArtifactSignatureSigningAlgorithm)\n            .definedTags(Map.of(\"Operations.CostCenter\", \"42\"))\n            .displayName(modelArtifactSignatureDisplayName)\n            .freeformTags(Map.of(\"Department\", \"Finance\"))\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  testModelArtifactSignature:\n    type: oci:DataScience:ModelArtifactSignature\n    name: test_model_artifact_signature\n    properties:\n      compartmentId: ${compartmentId}\n      kmsKeyId: ${testKey.id}\n      kmsKeyVersionId: ${testKeyVersion.id}\n      modelId: ${testModel.id}\n      signingAlgorithm: ${modelArtifactSignatureSigningAlgorithm}\n      definedTags:\n        Operations.CostCenter: '42'\n      displayName: ${modelArtifactSignatureDisplayName}\n      freeformTags:\n        Department: Finance\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\nModelArtifactSignatures can be imported using the \u003cspan pulumi-lang-nodejs=\"`id`\" pulumi-lang-dotnet=\"`Id`\" pulumi-lang-go=\"`id`\" pulumi-lang-python=\"`id`\" pulumi-lang-yaml=\"`id`\" pulumi-lang-java=\"`id`\" pulumi-lang-hcl=\"`id`\"\u003e`id`\u003c/span\u003e, e.g.\n\n```sh\n$ pulumi import oci:DataScience/modelArtifactSignature:ModelArtifactSignature test_model_artifact_signature \"models/{modelId}/artifactSignatures/{artifactSignatureId}\"\n```\n\n",
+            "properties": {
+                "compartmentId": {
+                    "type": "string",
+                    "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resource.\n"
+                },
+                "createdBy": {
+                    "type": "string",
+                    "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.\n"
+                },
+                "definedTags": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Operations.CostCenter\": \"42\"}`\n"
+                },
+                "digest": {
+                    "type": "string",
+                    "description": "Base64 encoded string representing the model artifact digest.\n"
+                },
+                "displayName": {
+                    "type": "string",
+                    "description": "(Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My Model Artifact Signature`\n"
+                },
+                "freeformTags": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Department\": \"Finance\"}`\n"
+                },
+                "kmsKeyId": {
+                    "type": "string",
+                    "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key from Oracle Cloud Infrastructure KMS.\n"
+                },
+                "kmsKeyVersionId": {
+                    "type": "string",
+                    "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key version from Oracle Cloud Infrastructure KMS.\n"
+                },
+                "modelId": {
+                    "type": "string",
+                    "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.\n"
+                },
+                "signature": {
+                    "type": "string",
+                    "description": "The signature of the digest generated using kmsKeyId, kmsKeyVersion Id and signingAlgorithm.\n"
+                },
+                "signingAlgorithm": {
+                    "type": "string",
+                    "description": "The algorithm used for signing.\n"
+                },
+                "state": {
+                    "type": "string",
+                    "description": "The lifecycle state of the model artifact signature\n"
+                },
+                "systemTags": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{\"orcl-cloud.free-tier-retained\": \"true\"}`\n"
+                },
+                "timeCreated": {
+                    "type": "string",
+                    "description": "The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z\n"
+                },
+                "timeUpdated": {
+                    "type": "string",
+                    "description": "The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z\n"
+                },
+                "verifyTrigger": {
+                    "type": "integer",
+                    "description": "(Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.\n\n\n** IMPORTANT **\nAny change to a property that does not support update will force the destruction and recreation of the resource with the new property values\n"
+                }
+            },
+            "required": [
+                "compartmentId",
+                "createdBy",
+                "definedTags",
+                "digest",
+                "displayName",
+                "freeformTags",
+                "kmsKeyId",
+                "kmsKeyVersionId",
+                "modelId",
+                "signature",
+                "signingAlgorithm",
+                "state",
+                "systemTags",
+                "timeCreated",
+                "timeUpdated"
+            ],
+            "inputProperties": {
+                "compartmentId": {
+                    "type": "string",
+                    "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resource.\n"
+                },
+                "definedTags": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Operations.CostCenter\": \"42\"}`\n"
+                },
+                "displayName": {
+                    "type": "string",
+                    "description": "(Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My Model Artifact Signature`\n"
+                },
+                "freeformTags": {
+                    "type": "object",
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Department\": \"Finance\"}`\n"
+                },
+                "kmsKeyId": {
+                    "type": "string",
+                    "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key from Oracle Cloud Infrastructure KMS.\n",
+                    "willReplaceOnChanges": true
+                },
+                "kmsKeyVersionId": {
+                    "type": "string",
+                    "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key version from Oracle Cloud Infrastructure KMS.\n",
+                    "willReplaceOnChanges": true
+                },
+                "modelId": {
+                    "type": "string",
+                    "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.\n",
+                    "willReplaceOnChanges": true
+                },
+                "signingAlgorithm": {
+                    "type": "string",
+                    "description": "The algorithm used for signing.\n",
+                    "willReplaceOnChanges": true
+                },
+                "verifyTrigger": {
+                    "type": "integer",
+                    "description": "(Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.\n\n\n** IMPORTANT **\nAny change to a property that does not support update will force the destruction and recreation of the resource with the new property values\n"
+                }
+            },
+            "requiredInputs": [
+                "compartmentId",
+                "kmsKeyId",
+                "kmsKeyVersionId",
+                "modelId",
+                "signingAlgorithm"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering ModelArtifactSignature resources.\n",
+                "properties": {
+                    "compartmentId": {
+                        "type": "string",
+                        "description": "(Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resource.\n"
+                    },
+                    "createdBy": {
+                        "type": "string",
+                        "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.\n"
+                    },
+                    "definedTags": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "description": "(Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Operations.CostCenter\": \"42\"}`\n"
+                    },
+                    "digest": {
+                        "type": "string",
+                        "description": "Base64 encoded string representing the model artifact digest.\n"
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "description": "(Updatable) A user-friendly display name for the resource. It does not have to be unique and can be modified. Avoid entering confidential information. Example: `My Model Artifact Signature`\n"
+                    },
+                    "freeformTags": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "description": "(Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Department\": \"Finance\"}`\n"
+                    },
+                    "kmsKeyId": {
+                        "type": "string",
+                        "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key from Oracle Cloud Infrastructure KMS.\n",
+                        "willReplaceOnChanges": true
+                    },
+                    "kmsKeyVersionId": {
+                        "type": "string",
+                        "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key version from Oracle Cloud Infrastructure KMS.\n",
+                        "willReplaceOnChanges": true
+                    },
+                    "modelId": {
+                        "type": "string",
+                        "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.\n",
+                        "willReplaceOnChanges": true
+                    },
+                    "signature": {
+                        "type": "string",
+                        "description": "The signature of the digest generated using kmsKeyId, kmsKeyVersion Id and signingAlgorithm.\n"
+                    },
+                    "signingAlgorithm": {
+                        "type": "string",
+                        "description": "The algorithm used for signing.\n",
+                        "willReplaceOnChanges": true
+                    },
+                    "state": {
+                        "type": "string",
+                        "description": "The lifecycle state of the model artifact signature\n"
+                    },
+                    "systemTags": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "description": "Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{\"orcl-cloud.free-tier-retained\": \"true\"}`\n"
+                    },
+                    "timeCreated": {
+                        "type": "string",
+                        "description": "The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z\n"
+                    },
+                    "timeUpdated": {
+                        "type": "string",
+                        "description": "The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z\n"
+                    },
+                    "verifyTrigger": {
+                        "type": "integer",
+                        "description": "(Updatable) An optional property when incremented triggers Verify. Could be set to any integer value.\n\n\n** IMPORTANT **\nAny change to a property that does not support update will force the destruction and recreation of the resource with the new property values\n"
                     }
                 },
                 "type": "object"
@@ -789598,7 +790216,7 @@
             }
         },
         "oci:Artifacts/getContainerRepositories:getContainerRepositories": {
-            "description": "This data source provides the list of Container Repositories in Oracle Cloud Infrastructure Artifacts service.\n\nList container repositories in a compartment.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as oci from \"@pulumi/oci\";\n\nconst testContainerRepositories = oci.artifacts.getContainerRepositories({\n    compartmentId: compartmentId,\n    compartmentIdInSubtree: containerRepositoryCompartmentIdInSubtree,\n    displayName: containerRepositoryDisplayName,\n    isPublic: containerRepositoryIsPublic,\n    repositoryId: testRepository.id,\n    state: containerRepositoryState,\n});\n```\n```python\nimport pulumi\nimport pulumi_oci as oci\n\ntest_container_repositories = oci.artifacts.get_container_repositories(compartment_id=compartment_id,\n    compartment_id_in_subtree=container_repository_compartment_id_in_subtree,\n    display_name=container_repository_display_name,\n    is_public=container_repository_is_public,\n    repository_id=test_repository[\"id\"],\n    state=container_repository_state)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Oci = Pulumi.Oci;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var testContainerRepositories = Oci.Artifacts.GetContainerRepositories.Invoke(new()\n    {\n        CompartmentId = compartmentId,\n        CompartmentIdInSubtree = containerRepositoryCompartmentIdInSubtree,\n        DisplayName = containerRepositoryDisplayName,\n        IsPublic = containerRepositoryIsPublic,\n        RepositoryId = testRepository.Id,\n        State = containerRepositoryState,\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/artifacts\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := artifacts.GetContainerRepositories(ctx, \u0026artifacts.GetContainerRepositoriesArgs{\n\t\t\tCompartmentId:          compartmentId,\n\t\t\tCompartmentIdInSubtree: pulumi.BoolRef(containerRepositoryCompartmentIdInSubtree),\n\t\t\tDisplayName:            pulumi.StringRef(containerRepositoryDisplayName),\n\t\t\tIsPublic:               pulumi.BoolRef(containerRepositoryIsPublic),\n\t\t\tRepositoryId:           pulumi.StringRef(testRepository.Id),\n\t\t\tState:                  pulumi.StringRef(containerRepositoryState),\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\nterraform {\n  required_providers {\n    oci = {\n      source = \"pulumi/oci\"\n    }\n  }\n}\n\ndata \"oci_artifacts_container_repositories\" \"testContainerRepositories\" {\n  compartment_id            = compartmentId\n  compartment_id_in_subtree = containerRepositoryCompartmentIdInSubtree\n  display_name              = containerRepositoryDisplayName\n  is_public                 = containerRepositoryIsPublic\n  repository_id             = testRepository.id\n  state                     = containerRepositoryState\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.oci.Artifacts.ArtifactsFunctions;\nimport com.pulumi.oci.Artifacts.inputs.GetContainerRepositoriesArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var testContainerRepositories = ArtifactsFunctions.getContainerRepositories(GetContainerRepositoriesArgs.builder()\n            .compartmentId(compartmentId)\n            .compartmentIdInSubtree(containerRepositoryCompartmentIdInSubtree)\n            .displayName(containerRepositoryDisplayName)\n            .isPublic(containerRepositoryIsPublic)\n            .repositoryId(testRepository.get(\"id\"))\n            .state(containerRepositoryState)\n            .build());\n\n    }\n}\n```\n```yaml\nvariables:\n  testContainerRepositories:\n    fn::invoke:\n      function: oci:Artifacts:getContainerRepositories\n      arguments:\n        compartmentId: ${compartmentId}\n        compartmentIdInSubtree: ${containerRepositoryCompartmentIdInSubtree}\n        displayName: ${containerRepositoryDisplayName}\n        isPublic: ${containerRepositoryIsPublic}\n        repositoryId: ${testRepository.id}\n        state: ${containerRepositoryState}\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
+            "description": "This data source provides the list of Container Repositories in Oracle Cloud Infrastructure Artifacts service.\n\nList container repositories in a compartment.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as oci from \"@pulumi/oci\";\n\nconst testContainerRepositories = oci.artifacts.getContainerRepositories({\n    compartmentId: compartmentId,\n    compartmentIdInSubtree: containerRepositoryCompartmentIdInSubtree,\n    displayName: containerRepositoryDisplayName,\n    isPublic: containerRepositoryIsPublic,\n    isTopLevel: containerRepositoryIsTopLevel,\n    repositoryId: testRepository.id,\n    repositoryType: containerRepositoryRepositoryType,\n    state: containerRepositoryState,\n});\n```\n```python\nimport pulumi\nimport pulumi_oci as oci\n\ntest_container_repositories = oci.artifacts.get_container_repositories(compartment_id=compartment_id,\n    compartment_id_in_subtree=container_repository_compartment_id_in_subtree,\n    display_name=container_repository_display_name,\n    is_public=container_repository_is_public,\n    is_top_level=container_repository_is_top_level,\n    repository_id=test_repository[\"id\"],\n    repository_type=container_repository_repository_type,\n    state=container_repository_state)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Oci = Pulumi.Oci;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var testContainerRepositories = Oci.Artifacts.GetContainerRepositories.Invoke(new()\n    {\n        CompartmentId = compartmentId,\n        CompartmentIdInSubtree = containerRepositoryCompartmentIdInSubtree,\n        DisplayName = containerRepositoryDisplayName,\n        IsPublic = containerRepositoryIsPublic,\n        IsTopLevel = containerRepositoryIsTopLevel,\n        RepositoryId = testRepository.Id,\n        RepositoryType = containerRepositoryRepositoryType,\n        State = containerRepositoryState,\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/artifacts\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := artifacts.GetContainerRepositories(ctx, \u0026artifacts.GetContainerRepositoriesArgs{\n\t\t\tCompartmentId:          compartmentId,\n\t\t\tCompartmentIdInSubtree: pulumi.BoolRef(containerRepositoryCompartmentIdInSubtree),\n\t\t\tDisplayName:            pulumi.StringRef(containerRepositoryDisplayName),\n\t\t\tIsPublic:               pulumi.BoolRef(containerRepositoryIsPublic),\n\t\t\tIsTopLevel:             pulumi.BoolRef(containerRepositoryIsTopLevel),\n\t\t\tRepositoryId:           pulumi.StringRef(testRepository.Id),\n\t\t\tRepositoryType:         pulumi.StringRef(containerRepositoryRepositoryType),\n\t\t\tState:                  pulumi.StringRef(containerRepositoryState),\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\nterraform {\n  required_providers {\n    oci = {\n      source = \"pulumi/oci\"\n    }\n  }\n}\n\ndata \"oci_artifacts_container_repositories\" \"testContainerRepositories\" {\n  compartment_id            = compartmentId\n  compartment_id_in_subtree = containerRepositoryCompartmentIdInSubtree\n  display_name              = containerRepositoryDisplayName\n  is_public                 = containerRepositoryIsPublic\n  is_top_level              = containerRepositoryIsTopLevel\n  repository_id             = testRepository.id\n  repository_type           = containerRepositoryRepositoryType\n  state                     = containerRepositoryState\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.oci.Artifacts.ArtifactsFunctions;\nimport com.pulumi.oci.Artifacts.inputs.GetContainerRepositoriesArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var testContainerRepositories = ArtifactsFunctions.getContainerRepositories(GetContainerRepositoriesArgs.builder()\n            .compartmentId(compartmentId)\n            .compartmentIdInSubtree(containerRepositoryCompartmentIdInSubtree)\n            .displayName(containerRepositoryDisplayName)\n            .isPublic(containerRepositoryIsPublic)\n            .isTopLevel(containerRepositoryIsTopLevel)\n            .repositoryId(testRepository.get(\"id\"))\n            .repositoryType(containerRepositoryRepositoryType)\n            .state(containerRepositoryState)\n            .build());\n\n    }\n}\n```\n```yaml\nvariables:\n  testContainerRepositories:\n    fn::invoke:\n      function: oci:Artifacts:getContainerRepositories\n      arguments:\n        compartmentId: ${compartmentId}\n        compartmentIdInSubtree: ${containerRepositoryCompartmentIdInSubtree}\n        displayName: ${containerRepositoryDisplayName}\n        isPublic: ${containerRepositoryIsPublic}\n        isTopLevel: ${containerRepositoryIsTopLevel}\n        repositoryId: ${testRepository.id}\n        repositoryType: ${containerRepositoryRepositoryType}\n        state: ${containerRepositoryState}\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
             "inputs": {
                 "description": "A collection of arguments for invoking getContainerRepositories.\n",
                 "properties": {
@@ -789625,9 +790243,17 @@
                         "type": "boolean",
                         "description": "A filter to return resources that match the isPublic value.\n"
                     },
+                    "isTopLevel": {
+                        "type": "boolean",
+                        "description": "A filter to return resources that match the isTopLevel value.\n"
+                    },
                     "repositoryId": {
                         "type": "string",
                         "description": "A filter to return container images only for the specified container repository OCID.\n"
+                    },
+                    "repositoryType": {
+                        "type": "string",
+                        "description": "A filter to return only resources that match the given repository type exactly.\n"
                     },
                     "state": {
                         "type": "string",
@@ -789674,7 +790300,15 @@
                         "description": "Whether the repository is public. A public repository allows unauthenticated access.\n",
                         "type": "boolean"
                     },
+                    "isTopLevel": {
+                        "description": "Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.\n",
+                        "type": "boolean"
+                    },
                     "repositoryId": {
+                        "type": "string"
+                    },
+                    "repositoryType": {
+                        "description": "The type of container repository. This determines the repository behavior and required settings.\n",
                         "type": "string"
                     },
                     "state": {
@@ -789754,6 +790388,10 @@
                         "description": "Whether the repository is public. A public repository allows unauthenticated access.\n",
                         "type": "boolean"
                     },
+                    "isTopLevel": {
+                        "description": "Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.\n",
+                        "type": "boolean"
+                    },
                     "layerCount": {
                         "description": "Total number of layers.\n",
                         "type": "integer"
@@ -789761,6 +790399,13 @@
                     "layersSizeInBytes": {
                         "description": "Total storage in bytes consumed by layers.\n",
                         "type": "string"
+                    },
+                    "multiRegionPeers": {
+                        "description": "List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, us-phoenix-1). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
                     },
                     "namespace": {
                         "description": "The tenancy namespace used in the container repository path.\n",
@@ -789774,6 +790419,10 @@
                         "type": "array"
                     },
                     "repositoryId": {
+                        "type": "string"
+                    },
+                    "repositoryType": {
+                        "description": "The type of container repository. This determines the repository behavior and required settings.\n",
                         "type": "string"
                     },
                     "state": {
@@ -789794,6 +790443,18 @@
                     "timeLastPushed": {
                         "description": "An RFC 3339 timestamp indicating when an image was last pushed to the repository.\n",
                         "type": "string"
+                    },
+                    "upstreamSecretId": {
+                        "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository.\n",
+                        "type": "string"
+                    },
+                    "upstreamUrl": {
+                        "description": "The upstream registry URL for a pull-through cache repository.\n",
+                        "type": "string"
+                    },
+                    "upstreamUsername": {
+                        "description": "The upstream registry username for a pull-through cache repository.\n",
+                        "type": "string"
                     }
                 },
                 "required": [
@@ -789807,15 +790468,21 @@
                     "imageCount",
                     "isImmutable",
                     "isPublic",
+                    "isTopLevel",
                     "layerCount",
                     "layersSizeInBytes",
+                    "multiRegionPeers",
                     "namespace",
                     "readmes",
                     "repositoryId",
+                    "repositoryType",
                     "state",
                     "systemTags",
                     "timeCreated",
-                    "timeLastPushed"
+                    "timeLastPushed",
+                    "upstreamSecretId",
+                    "upstreamUrl",
+                    "upstreamUsername"
                 ],
                 "type": "object"
             }
@@ -805949,6 +806616,13 @@
                         "description": "The state of the cluster masters.\n",
                         "type": "string"
                     },
+                    "systemTags": {
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "description": "Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{\"orcl-cloud.free-tier-retained\": \"true\"}`\n",
+                        "type": "object"
+                    },
                     "type": {
                         "description": "Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)\n",
                         "type": "string"
@@ -805978,6 +806652,7 @@
                     "openIdConnectDiscoveryKey",
                     "options",
                     "state",
+                    "systemTags",
                     "type",
                     "vcnId"
                 ],
@@ -806625,6 +807300,13 @@
                             "type": "string"
                         },
                         "type": "array"
+                    },
+                    "systemTags": {
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "description": "Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{\"orcl-cloud.free-tier-retained\": \"true\"}`\n",
+                        "type": "object"
                     }
                 },
                 "required": [
@@ -806655,7 +807337,8 @@
                     "secondaryVnics",
                     "sshPublicKey",
                     "state",
-                    "subnetIds"
+                    "subnetIds",
+                    "systemTags"
                 ],
                 "type": "object"
             }
@@ -850723,6 +851406,221 @@
                     "state",
                     "timeCreated",
                     "versionLabel"
+                ],
+                "type": "object"
+            }
+        },
+        "oci:DataScience/getModelArtifactSignature:getModelArtifactSignature": {
+            "description": "This data source provides details about a specific Model Artifact Signature resource in Oracle Cloud Infrastructure Data Science service.\n\nGets the specified artifact signature for a model\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as oci from \"@pulumi/oci\";\n\nconst testModelArtifactSignature = oci.datascience.getModelArtifactSignature({\n    artifactSignatureId: testArtifactSignature.id,\n    modelId: testModel.id,\n});\n```\n```python\nimport pulumi\nimport pulumi_oci as oci\n\ntest_model_artifact_signature = oci.datascience.get_model_artifact_signature(artifact_signature_id=test_artifact_signature[\"id\"],\n    model_id=test_model[\"id\"])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Oci = Pulumi.Oci;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var testModelArtifactSignature = Oci.DataScience.GetModelArtifactSignature.Invoke(new()\n    {\n        ArtifactSignatureId = testArtifactSignature.Id,\n        ModelId = testModel.Id,\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/datascience\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := datascience.GetModelArtifactSignature(ctx, \u0026datascience.GetModelArtifactSignatureArgs{\n\t\t\tArtifactSignatureId: testArtifactSignature.Id,\n\t\t\tModelId:             testModel.Id,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\nterraform {\n  required_providers {\n    oci = {\n      source = \"pulumi/oci\"\n    }\n  }\n}\n\ndata \"oci_data_science_model_artifact_signature\" \"testModelArtifactSignature\" {\n  artifact_signature_id = testArtifactSignature.id\n  model_id              = testModel.id\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.oci.DataScience.DataScienceFunctions;\nimport com.pulumi.oci.DataScience.inputs.GetModelArtifactSignatureArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var testModelArtifactSignature = DataScienceFunctions.getModelArtifactSignature(GetModelArtifactSignatureArgs.builder()\n            .artifactSignatureId(testArtifactSignature.get(\"id\"))\n            .modelId(testModel.get(\"id\"))\n            .build());\n\n    }\n}\n```\n```yaml\nvariables:\n  testModelArtifactSignature:\n    fn::invoke:\n      function: oci:DataScience:getModelArtifactSignature\n      arguments:\n        artifactSignatureId: ${testArtifactSignature.id}\n        modelId: ${testModel.id}\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getModelArtifactSignature.\n",
+                "properties": {
+                    "artifactSignatureId": {
+                        "type": "string",
+                        "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model artifact signature.\n"
+                    },
+                    "modelId": {
+                        "type": "string",
+                        "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "artifactSignatureId",
+                    "modelId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getModelArtifactSignature.\n",
+                "properties": {
+                    "artifactSignatureId": {
+                        "type": "string"
+                    },
+                    "compartmentId": {
+                        "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resource.\n",
+                        "type": "string"
+                    },
+                    "createdBy": {
+                        "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.\n",
+                        "type": "string"
+                    },
+                    "definedTags": {
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "description": "Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Operations.CostCenter\": \"42\"}`\n",
+                        "type": "object"
+                    },
+                    "digest": {
+                        "description": "Base64 encoded string representing the model artifact digest.\n",
+                        "type": "string"
+                    },
+                    "displayName": {
+                        "description": "A user-friendly display name for the resource.\n",
+                        "type": "string"
+                    },
+                    "freeformTags": {
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "description": "Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{\"Department\": \"Finance\"}`\n",
+                        "type": "object"
+                    },
+                    "id": {
+                        "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model artifact signature.\n",
+                        "type": "string"
+                    },
+                    "kmsKeyId": {
+                        "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key from Oracle Cloud Infrastructure KMS.\n",
+                        "type": "string"
+                    },
+                    "kmsKeyVersionId": {
+                        "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key version from Oracle Cloud Infrastructure KMS.\n",
+                        "type": "string"
+                    },
+                    "modelId": {
+                        "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model whose artifact has to be signed.\n",
+                        "type": "string"
+                    },
+                    "signature": {
+                        "description": "The signature of the digest generated using kmsKeyId, kmsKeyVersion Id and signingAlgorithm.\n",
+                        "type": "string"
+                    },
+                    "signingAlgorithm": {
+                        "description": "The algorithm used for signing.\n",
+                        "type": "string"
+                    },
+                    "state": {
+                        "description": "The lifecycle state of the model artifact signature\n",
+                        "type": "string"
+                    },
+                    "systemTags": {
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "description": "Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{\"orcl-cloud.free-tier-retained\": \"true\"}`\n",
+                        "type": "object"
+                    },
+                    "timeCreated": {
+                        "description": "The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z\n",
+                        "type": "string"
+                    },
+                    "timeUpdated": {
+                        "description": "The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z\n",
+                        "type": "string"
+                    },
+                    "verifyTrigger": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "artifactSignatureId",
+                    "compartmentId",
+                    "createdBy",
+                    "definedTags",
+                    "digest",
+                    "displayName",
+                    "freeformTags",
+                    "id",
+                    "kmsKeyId",
+                    "kmsKeyVersionId",
+                    "modelId",
+                    "signature",
+                    "signingAlgorithm",
+                    "state",
+                    "systemTags",
+                    "timeCreated",
+                    "timeUpdated",
+                    "verifyTrigger"
+                ],
+                "type": "object"
+            }
+        },
+        "oci:DataScience/getModelArtifactSignatures:getModelArtifactSignatures": {
+            "description": "This data source provides the list of Model Artifact Signatures in Oracle Cloud Infrastructure Data Science service.\n\nList model artifact signatures of a model in the specified compartment\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as oci from \"@pulumi/oci\";\n\nconst testModelArtifactSignatures = oci.datascience.getModelArtifactSignatures({\n    compartmentId: compartmentId,\n    modelId: testModel.id,\n    digest: modelArtifactSignatureDigest,\n    displayName: modelArtifactSignatureDisplayName,\n    state: modelArtifactSignatureState,\n});\n```\n```python\nimport pulumi\nimport pulumi_oci as oci\n\ntest_model_artifact_signatures = oci.datascience.get_model_artifact_signatures(compartment_id=compartment_id,\n    model_id=test_model[\"id\"],\n    digest=model_artifact_signature_digest,\n    display_name=model_artifact_signature_display_name,\n    state=model_artifact_signature_state)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Oci = Pulumi.Oci;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var testModelArtifactSignatures = Oci.DataScience.GetModelArtifactSignatures.Invoke(new()\n    {\n        CompartmentId = compartmentId,\n        ModelId = testModel.Id,\n        Digest = modelArtifactSignatureDigest,\n        DisplayName = modelArtifactSignatureDisplayName,\n        State = modelArtifactSignatureState,\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/datascience\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := datascience.GetModelArtifactSignatures(ctx, \u0026datascience.GetModelArtifactSignaturesArgs{\n\t\t\tCompartmentId: compartmentId,\n\t\t\tModelId:       testModel.Id,\n\t\t\tDigest:        pulumi.StringRef(modelArtifactSignatureDigest),\n\t\t\tDisplayName:   pulumi.StringRef(modelArtifactSignatureDisplayName),\n\t\t\tState:         pulumi.StringRef(modelArtifactSignatureState),\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\nterraform {\n  required_providers {\n    oci = {\n      source = \"pulumi/oci\"\n    }\n  }\n}\n\ndata \"oci_data_science_model_artifact_signatures\" \"testModelArtifactSignatures\" {\n  compartment_id = compartmentId\n  model_id       = testModel.id\n  digest         = modelArtifactSignatureDigest\n  display_name   = modelArtifactSignatureDisplayName\n  state          = modelArtifactSignatureState\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.oci.DataScience.DataScienceFunctions;\nimport com.pulumi.oci.DataScience.inputs.GetModelArtifactSignaturesArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var testModelArtifactSignatures = DataScienceFunctions.getModelArtifactSignatures(GetModelArtifactSignaturesArgs.builder()\n            .compartmentId(compartmentId)\n            .modelId(testModel.get(\"id\"))\n            .digest(modelArtifactSignatureDigest)\n            .displayName(modelArtifactSignatureDisplayName)\n            .state(modelArtifactSignatureState)\n            .build());\n\n    }\n}\n```\n```yaml\nvariables:\n  testModelArtifactSignatures:\n    fn::invoke:\n      function: oci:DataScience:getModelArtifactSignatures\n      arguments:\n        compartmentId: ${compartmentId}\n        modelId: ${testModel.id}\n        digest: ${modelArtifactSignatureDigest}\n        displayName: ${modelArtifactSignatureDisplayName}\n        state: ${modelArtifactSignatureState}\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getModelArtifactSignatures.\n",
+                "properties": {
+                    "compartmentId": {
+                        "type": "string",
+                        "description": "\u003cb\u003eFilter\u003c/b\u003e results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.\n"
+                    },
+                    "digest": {
+                        "type": "string",
+                        "description": "The digest of the model artifact.\n"
+                    },
+                    "displayName": {
+                        "type": "string",
+                        "description": "\u003cb\u003eFilter\u003c/b\u003e results by its user-friendly name.\n"
+                    },
+                    "filters": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/oci:DataScience/getModelArtifactSignaturesFilter:getModelArtifactSignaturesFilter"
+                        },
+                        "willReplaceOnChanges": true
+                    },
+                    "modelId": {
+                        "type": "string",
+                        "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.\n"
+                    },
+                    "state": {
+                        "type": "string",
+                        "description": "\u003cb\u003eFilter\u003c/b\u003e results by the specified lifecycle state. Must be a valid state for the resource type.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "compartmentId",
+                    "modelId"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getModelArtifactSignatures.\n",
+                "properties": {
+                    "compartmentId": {
+                        "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the resource.\n",
+                        "type": "string"
+                    },
+                    "digest": {
+                        "description": "Base64 encoded string representing the model artifact digest.\n",
+                        "type": "string"
+                    },
+                    "displayName": {
+                        "description": "A user-friendly display name for the resource.\n",
+                        "type": "string"
+                    },
+                    "filters": {
+                        "items": {
+                            "$ref": "#/types/oci:DataScience/getModelArtifactSignaturesFilter:getModelArtifactSignaturesFilter"
+                        },
+                        "type": "array"
+                    },
+                    "id": {
+                        "description": "The provider-assigned unique ID for this managed resource.",
+                        "type": "string"
+                    },
+                    "modelArtifactSignatures": {
+                        "description": "The list of model_artifact_signatures.\n",
+                        "items": {
+                            "$ref": "#/types/oci:DataScience/getModelArtifactSignaturesModelArtifactSignature:getModelArtifactSignaturesModelArtifactSignature"
+                        },
+                        "type": "array"
+                    },
+                    "modelId": {
+                        "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model whose artifact has to be signed.\n",
+                        "type": "string"
+                    },
+                    "state": {
+                        "description": "The lifecycle state of the model artifact signature\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "compartmentId",
+                    "modelArtifactSignatures",
+                    "modelId",
+                    "id"
                 ],
                 "type": "object"
             }
@@ -1009641,7 +1010539,7 @@
             }
         },
         "oci:Zpr/getConfiguration:getConfiguration": {
-            "description": "This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Zpr service.\n\nRetrieves the ZPR configuration details for the root compartment (the root compartment is the tenancy).\nReturns ZPR configuration for root compartment (the root compartment is the tenancy).\n\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as oci from \"@pulumi/oci\";\n\nconst testConfiguration = oci.zpr.getConfiguration({\n    compartmentId: tenancyOcid,\n});\n```\n```python\nimport pulumi\nimport pulumi_oci as oci\n\ntest_configuration = oci.zpr.get_configuration(compartment_id=tenancy_ocid)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Oci = Pulumi.Oci;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var testConfiguration = Oci.Zpr.GetConfiguration.Invoke(new()\n    {\n        CompartmentId = tenancyOcid,\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/zpr\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := zpr.GetConfiguration(ctx, \u0026zpr.GetConfigurationArgs{\n\t\t\tCompartmentId: tenancyOcid,\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\nterraform {\n  required_providers {\n    oci = {\n      source = \"pulumi/oci\"\n    }\n  }\n}\n\ndata \"oci_zpr_configuration\" \"testConfiguration\" {\n  compartment_id = tenancyOcid\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.oci.Zpr.ZprFunctions;\nimport com.pulumi.oci.Zpr.inputs.GetConfigurationArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var testConfiguration = ZprFunctions.getConfiguration(GetConfigurationArgs.builder()\n            .compartmentId(tenancyOcid)\n            .build());\n\n    }\n}\n```\n```yaml\nvariables:\n  testConfiguration:\n    fn::invoke:\n      function: oci:Zpr:getConfiguration\n      arguments:\n        compartmentId: ${tenancyOcid}\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
+            "description": "This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Zpr service.\n\nRetrieves the ZPR configuration details for the root compartment (the root compartment is the tenancy).\nReturns ZPR configuration for root compartment (the root compartment is the tenancy).\n\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as oci from \"@pulumi/oci\";\n\nconst testConfiguration = oci.zpr.getConfiguration({\n    compartmentId: tenancyOcid,\n});\n```\n```python\nimport pulumi\nimport pulumi_oci as oci\n\ntest_configuration = oci.zpr.get_configuration(compartment_id=tenancy_ocid)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Oci = Pulumi.Oci;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var testConfiguration = Oci.Zpr.GetConfiguration.Invoke(new()\n    {\n        CompartmentId = tenancyOcid,\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/pulumi/pulumi-oci/sdk/v5/go/oci/zpr\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := zpr.GetConfiguration(ctx, \u0026zpr.GetConfigurationArgs{\n\t\t\tCompartmentId: pulumi.StringRef(tenancyOcid),\n\t\t}, nil)\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\nterraform {\n  required_providers {\n    oci = {\n      source = \"pulumi/oci\"\n    }\n  }\n}\n\ndata \"oci_zpr_configuration\" \"testConfiguration\" {\n  compartment_id = tenancyOcid\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.pulumi.oci.Zpr.ZprFunctions;\nimport com.pulumi.oci.Zpr.inputs.GetConfigurationArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        final var testConfiguration = ZprFunctions.getConfiguration(GetConfigurationArgs.builder()\n            .compartmentId(tenancyOcid)\n            .build());\n\n    }\n}\n```\n```yaml\nvariables:\n  testConfiguration:\n    fn::invoke:\n      function: oci:Zpr:getConfiguration\n      arguments:\n        compartmentId: ${tenancyOcid}\n```\n\u003c!--End PulumiCodeChooser --\u003e\n",
             "inputs": {
                 "description": "A collection of arguments for invoking getConfiguration.\n",
                 "properties": {
@@ -1009650,10 +1010548,7 @@
                         "description": "The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.\n"
                     }
                 },
-                "type": "object",
-                "required": [
-                    "compartmentId"
-                ]
+                "type": "object"
             },
             "outputs": {
                 "description": "A collection of values returned by getConfiguration.\n",
@@ -1009709,7 +1010604,6 @@
                     }
                 },
                 "required": [
-                    "compartmentId",
                     "definedTags",
                     "freeformTags",
                     "id",

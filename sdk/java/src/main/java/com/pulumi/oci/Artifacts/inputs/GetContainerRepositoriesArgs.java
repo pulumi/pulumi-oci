@@ -87,6 +87,21 @@ public final class GetContainerRepositoriesArgs extends com.pulumi.resources.Inv
     }
 
     /**
+     * A filter to return resources that match the isTopLevel value.
+     * 
+     */
+    @Import(name="isTopLevel")
+    private @Nullable Output<Boolean> isTopLevel;
+
+    /**
+     * @return A filter to return resources that match the isTopLevel value.
+     * 
+     */
+    public Optional<Output<Boolean>> isTopLevel() {
+        return Optional.ofNullable(this.isTopLevel);
+    }
+
+    /**
      * A filter to return container images only for the specified container repository OCID.
      * 
      */
@@ -99,6 +114,21 @@ public final class GetContainerRepositoriesArgs extends com.pulumi.resources.Inv
      */
     public Optional<Output<String>> repositoryId() {
         return Optional.ofNullable(this.repositoryId);
+    }
+
+    /**
+     * A filter to return only resources that match the given repository type exactly.
+     * 
+     */
+    @Import(name="repositoryType")
+    private @Nullable Output<String> repositoryType;
+
+    /**
+     * @return A filter to return only resources that match the given repository type exactly.
+     * 
+     */
+    public Optional<Output<String>> repositoryType() {
+        return Optional.ofNullable(this.repositoryType);
     }
 
     /**
@@ -124,7 +154,9 @@ public final class GetContainerRepositoriesArgs extends com.pulumi.resources.Inv
         this.displayName = $.displayName;
         this.filters = $.filters;
         this.isPublic = $.isPublic;
+        this.isTopLevel = $.isTopLevel;
         this.repositoryId = $.repositoryId;
+        this.repositoryType = $.repositoryType;
         this.state = $.state;
     }
 
@@ -244,6 +276,27 @@ public final class GetContainerRepositoriesArgs extends com.pulumi.resources.Inv
         }
 
         /**
+         * @param isTopLevel A filter to return resources that match the isTopLevel value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isTopLevel(@Nullable Output<Boolean> isTopLevel) {
+            $.isTopLevel = isTopLevel;
+            return this;
+        }
+
+        /**
+         * @param isTopLevel A filter to return resources that match the isTopLevel value.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isTopLevel(Boolean isTopLevel) {
+            return isTopLevel(Output.of(isTopLevel));
+        }
+
+        /**
          * @param repositoryId A filter to return container images only for the specified container repository OCID.
          * 
          * @return builder
@@ -262,6 +315,27 @@ public final class GetContainerRepositoriesArgs extends com.pulumi.resources.Inv
          */
         public Builder repositoryId(String repositoryId) {
             return repositoryId(Output.of(repositoryId));
+        }
+
+        /**
+         * @param repositoryType A filter to return only resources that match the given repository type exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder repositoryType(@Nullable Output<String> repositoryType) {
+            $.repositoryType = repositoryType;
+            return this;
+        }
+
+        /**
+         * @param repositoryType A filter to return only resources that match the given repository type exactly.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder repositoryType(String repositoryType) {
+            return repositoryType(Output.of(repositoryType));
         }
 
         /**

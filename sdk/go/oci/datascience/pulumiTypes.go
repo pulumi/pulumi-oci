@@ -13898,7 +13898,8 @@ type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurati
 	// The model deployment instance configuration.
 	InstanceConfiguration *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration `pulumi:"instanceConfiguration"`
 	// The maximum network bandwidth for the model deployment.
-	MaximumBandwidthMbps                 *int                                                                                                                      `pulumi:"maximumBandwidthMbps"`
+	MaximumBandwidthMbps *int `pulumi:"maximumBandwidthMbps"`
+	// (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
 	ModelDeploymentResourceConfiguration *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration `pulumi:"modelDeploymentResourceConfiguration"`
 	// The scaling policy to apply to each model of the deployment.
 	ScalingPolicy *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicy `pulumi:"scalingPolicy"`
@@ -13924,7 +13925,8 @@ type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurati
 	// The model deployment instance configuration.
 	InstanceConfiguration ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationPtrInput `pulumi:"instanceConfiguration"`
 	// The maximum network bandwidth for the model deployment.
-	MaximumBandwidthMbps                 pulumi.IntPtrInput                                                                                                               `pulumi:"maximumBandwidthMbps"`
+	MaximumBandwidthMbps pulumi.IntPtrInput `pulumi:"maximumBandwidthMbps"`
+	// (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
 	ModelDeploymentResourceConfiguration ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationPtrInput `pulumi:"modelDeploymentResourceConfiguration"`
 	// The scaling policy to apply to each model of the deployment.
 	ScalingPolicy ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsScalingPolicyPtrInput `pulumi:"scalingPolicy"`
@@ -14041,6 +14043,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 	}).(pulumi.IntPtrOutput)
 }
 
+// (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsOutput) ModelDeploymentResourceConfiguration() ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationPtrOutput {
 	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails) *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration {
 		return v.ModelDeploymentResourceConfiguration
@@ -14127,6 +14130,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 	}).(pulumi.IntPtrOutput)
 }
 
+// (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsPtrOutput) ModelDeploymentResourceConfiguration() ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationPtrOutput {
 	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetails) *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration {
 		if v == nil {
@@ -14147,6 +14151,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration struct {
+	CapacityReservationIds []string `pulumi:"capacityReservationIds"`
 	// The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName string `pulumi:"instanceShapeName"`
 	// Details for the model-deployment instance shape configuration.
@@ -14171,6 +14176,7 @@ type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurati
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationArgs struct {
+	CapacityReservationIds pulumi.StringArrayInput `pulumi:"capacityReservationIds"`
 	// The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName pulumi.StringInput `pulumi:"instanceShapeName"`
 	// Details for the model-deployment instance shape configuration.
@@ -14260,6 +14266,12 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationPtrOutput)
 }
 
+func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationOutput) CapacityReservationIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration) []string {
+		return v.CapacityReservationIds
+	}).(pulumi.StringArrayOutput)
+}
+
 // The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationOutput) InstanceShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration) string {
@@ -14317,6 +14329,15 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 		var ret ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration
 		return ret
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationOutput)
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationPtrOutput) CapacityReservationIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration) []string {
+		if v == nil {
+			return nil
+		}
+		return v.CapacityReservationIds
+	}).(pulumi.StringArrayOutput)
 }
 
 // The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
@@ -14551,7 +14572,9 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration struct {
-	ResourceLimitConfiguration   *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfiguration  `pulumi:"resourceLimitConfiguration"`
+	// (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+	ResourceLimitConfiguration *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfiguration `pulumi:"resourceLimitConfiguration"`
+	// (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
 	ResourceRequestConfiguration ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration `pulumi:"resourceRequestConfiguration"`
 }
 
@@ -14567,8 +14590,10 @@ type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurati
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs struct {
-	ResourceLimitConfiguration   ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationPtrInput `pulumi:"resourceLimitConfiguration"`
-	ResourceRequestConfiguration ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationInput  `pulumi:"resourceRequestConfiguration"`
+	// (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+	ResourceLimitConfiguration ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationPtrInput `pulumi:"resourceLimitConfiguration"`
+	// (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
+	ResourceRequestConfiguration ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationInput `pulumi:"resourceRequestConfiguration"`
 }
 
 func (ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs) ElementType() reflect.Type {
@@ -14648,12 +14673,14 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationPtrOutput)
 }
 
+// (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
 func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationOutput) ResourceLimitConfiguration() ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationPtrOutput {
 	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration) *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfiguration {
 		return v.ResourceLimitConfiguration
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationPtrOutput)
 }
 
+// (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationOutput) ResourceRequestConfiguration() ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationOutput {
 	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration) ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration {
 		return v.ResourceRequestConfiguration
@@ -14684,6 +14711,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationOutput)
 }
 
+// (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
 func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationPtrOutput) ResourceLimitConfiguration() ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationPtrOutput {
 	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration) *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfiguration {
 		if v == nil {
@@ -14693,6 +14721,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfigurationPtrOutput)
 }
 
+// (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationPtrOutput) ResourceRequestConfiguration() ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationPtrOutput {
 	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration) *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration {
 		if v == nil {
@@ -14863,6 +14892,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration struct {
+	// (Updatable) The total number of gpus required to be allocated to the workload.
 	Gpus *int `pulumi:"gpus"`
 	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 	MemoryInGbs float64 `pulumi:"memoryInGbs"`
@@ -14882,6 +14912,7 @@ type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurati
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationArgs struct {
+	// (Updatable) The total number of gpus required to be allocated to the workload.
 	Gpus pulumi.IntPtrInput `pulumi:"gpus"`
 	// A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
 	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
@@ -14966,6 +14997,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationPtrOutput)
 }
 
+// (Updatable) The total number of gpus required to be allocated to the workload.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationOutput) Gpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration) *int {
 		return v.Gpus
@@ -15010,6 +15042,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigur
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationOutput)
 }
 
+// (Updatable) The total number of gpus required to be allocated to the workload.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationPtrOutput) Gpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration) *int {
 		if v == nil {
@@ -16570,7 +16603,9 @@ type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails
 	InstanceConfiguration *ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration `pulumi:"instanceConfiguration"`
 	// (Updatable) The maximum network bandwidth for the model deployment.
 	MaximumBandwidthMbps *int `pulumi:"maximumBandwidthMbps"`
-	// (Updatable) The OCID of the model you want to deploy.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+	ModelArtifactSignatureId *string `pulumi:"modelArtifactSignatureId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
 	ModelId *string `pulumi:"modelId"`
 	// (Updatable) The scaling policy to apply to each model of the deployment.
 	ScalingPolicy *ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicy `pulumi:"scalingPolicy"`
@@ -16594,7 +16629,9 @@ type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails
 	InstanceConfiguration ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationPtrInput `pulumi:"instanceConfiguration"`
 	// (Updatable) The maximum network bandwidth for the model deployment.
 	MaximumBandwidthMbps pulumi.IntPtrInput `pulumi:"maximumBandwidthMbps"`
-	// (Updatable) The OCID of the model you want to deploy.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+	ModelArtifactSignatureId pulumi.StringPtrInput `pulumi:"modelArtifactSignatureId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
 	ModelId pulumi.StringPtrInput `pulumi:"modelId"`
 	// (Updatable) The scaling policy to apply to each model of the deployment.
 	ScalingPolicy ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyPtrInput `pulumi:"scalingPolicy"`
@@ -16698,7 +16735,14 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The OCID of the model you want to deploy.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsOutput) ModelArtifactSignatureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails) *string {
+		return v.ModelArtifactSignatureId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsOutput) ModelId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails) *string {
 		return v.ModelId
@@ -16766,7 +16810,17 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The OCID of the model you want to deploy.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsPtrOutput) ModelArtifactSignatureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ModelArtifactSignatureId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsPtrOutput) ModelId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails) *string {
 		if v == nil {
@@ -16787,6 +16841,7 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration struct {
+	CapacityReservationIds []string `pulumi:"capacityReservationIds"`
 	// (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName *string `pulumi:"instanceShapeName"`
 	// (Updatable) Details for the model-deployment instance shape configuration.
@@ -16811,6 +16866,7 @@ type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails
 }
 
 type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationArgs struct {
+	CapacityReservationIds pulumi.StringArrayInput `pulumi:"capacityReservationIds"`
 	// (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName pulumi.StringPtrInput `pulumi:"instanceShapeName"`
 	// (Updatable) Details for the model-deployment instance shape configuration.
@@ -16900,6 +16956,12 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationPtrOutput)
 }
 
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationOutput) CapacityReservationIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration) []string {
+		return v.CapacityReservationIds
+	}).(pulumi.StringArrayOutput)
+}
+
 // (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationOutput) InstanceShapeName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration) *string {
@@ -16957,6 +17019,15 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 		var ret ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration
 		return ret
 	}).(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationOutput)
+}
+
+func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationPtrOutput) CapacityReservationIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration) []string {
+		if v == nil {
+			return nil
+		}
+		return v.CapacityReservationIds
+	}).(pulumi.StringArrayOutput)
 }
 
 // (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
@@ -54950,6 +55021,350 @@ func (o GetMlApplicationsMlApplicationCollectionItemArrayOutput) Index(i pulumi.
 	}).(GetMlApplicationsMlApplicationCollectionItemOutput)
 }
 
+type GetModelArtifactSignaturesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetModelArtifactSignaturesFilterInput is an input type that accepts GetModelArtifactSignaturesFilterArgs and GetModelArtifactSignaturesFilterOutput values.
+// You can construct a concrete instance of `GetModelArtifactSignaturesFilterInput` via:
+//
+//	GetModelArtifactSignaturesFilterArgs{...}
+type GetModelArtifactSignaturesFilterInput interface {
+	pulumi.Input
+
+	ToGetModelArtifactSignaturesFilterOutput() GetModelArtifactSignaturesFilterOutput
+	ToGetModelArtifactSignaturesFilterOutputWithContext(context.Context) GetModelArtifactSignaturesFilterOutput
+}
+
+type GetModelArtifactSignaturesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetModelArtifactSignaturesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelArtifactSignaturesFilter)(nil)).Elem()
+}
+
+func (i GetModelArtifactSignaturesFilterArgs) ToGetModelArtifactSignaturesFilterOutput() GetModelArtifactSignaturesFilterOutput {
+	return i.ToGetModelArtifactSignaturesFilterOutputWithContext(context.Background())
+}
+
+func (i GetModelArtifactSignaturesFilterArgs) ToGetModelArtifactSignaturesFilterOutputWithContext(ctx context.Context) GetModelArtifactSignaturesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelArtifactSignaturesFilterOutput)
+}
+
+// GetModelArtifactSignaturesFilterArrayInput is an input type that accepts GetModelArtifactSignaturesFilterArray and GetModelArtifactSignaturesFilterArrayOutput values.
+// You can construct a concrete instance of `GetModelArtifactSignaturesFilterArrayInput` via:
+//
+//	GetModelArtifactSignaturesFilterArray{ GetModelArtifactSignaturesFilterArgs{...} }
+type GetModelArtifactSignaturesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetModelArtifactSignaturesFilterArrayOutput() GetModelArtifactSignaturesFilterArrayOutput
+	ToGetModelArtifactSignaturesFilterArrayOutputWithContext(context.Context) GetModelArtifactSignaturesFilterArrayOutput
+}
+
+type GetModelArtifactSignaturesFilterArray []GetModelArtifactSignaturesFilterInput
+
+func (GetModelArtifactSignaturesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelArtifactSignaturesFilter)(nil)).Elem()
+}
+
+func (i GetModelArtifactSignaturesFilterArray) ToGetModelArtifactSignaturesFilterArrayOutput() GetModelArtifactSignaturesFilterArrayOutput {
+	return i.ToGetModelArtifactSignaturesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelArtifactSignaturesFilterArray) ToGetModelArtifactSignaturesFilterArrayOutputWithContext(ctx context.Context) GetModelArtifactSignaturesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelArtifactSignaturesFilterArrayOutput)
+}
+
+type GetModelArtifactSignaturesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetModelArtifactSignaturesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelArtifactSignaturesFilter)(nil)).Elem()
+}
+
+func (o GetModelArtifactSignaturesFilterOutput) ToGetModelArtifactSignaturesFilterOutput() GetModelArtifactSignaturesFilterOutput {
+	return o
+}
+
+func (o GetModelArtifactSignaturesFilterOutput) ToGetModelArtifactSignaturesFilterOutputWithContext(ctx context.Context) GetModelArtifactSignaturesFilterOutput {
+	return o
+}
+
+func (o GetModelArtifactSignaturesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelArtifactSignaturesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetModelArtifactSignaturesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetModelArtifactSignaturesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetModelArtifactSignaturesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetModelArtifactSignaturesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetModelArtifactSignaturesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelArtifactSignaturesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelArtifactSignaturesFilter)(nil)).Elem()
+}
+
+func (o GetModelArtifactSignaturesFilterArrayOutput) ToGetModelArtifactSignaturesFilterArrayOutput() GetModelArtifactSignaturesFilterArrayOutput {
+	return o
+}
+
+func (o GetModelArtifactSignaturesFilterArrayOutput) ToGetModelArtifactSignaturesFilterArrayOutputWithContext(ctx context.Context) GetModelArtifactSignaturesFilterArrayOutput {
+	return o
+}
+
+func (o GetModelArtifactSignaturesFilterArrayOutput) Index(i pulumi.IntInput) GetModelArtifactSignaturesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelArtifactSignaturesFilter {
+		return vs[0].([]GetModelArtifactSignaturesFilter)[vs[1].(int)]
+	}).(GetModelArtifactSignaturesFilterOutput)
+}
+
+type GetModelArtifactSignaturesModelArtifactSignature struct {
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId string `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
+	CreatedBy string `pulumi:"createdBy"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags map[string]string `pulumi:"definedTags"`
+	// The digest of the model artifact.
+	Digest string `pulumi:"digest"`
+	// <b>Filter</b> results by its user-friendly name.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags map[string]string `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model artifact signature.
+	Id string `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key from Oracle Cloud Infrastructure KMS.
+	KmsKeyId string `pulumi:"kmsKeyId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key version from Oracle Cloud Infrastructure KMS.
+	KmsKeyVersionId string `pulumi:"kmsKeyVersionId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+	ModelId string `pulumi:"modelId"`
+	// The signature of the digest generated using kmsKeyId, kmsKeyVersion Id and signingAlgorithm.
+	Signature string `pulumi:"signature"`
+	// The algorithm used for signing.
+	SigningAlgorithm string `pulumi:"signingAlgorithm"`
+	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+	State string `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
+	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+	TimeCreated string `pulumi:"timeCreated"`
+	// The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+	TimeUpdated   string `pulumi:"timeUpdated"`
+	VerifyTrigger int    `pulumi:"verifyTrigger"`
+}
+
+// GetModelArtifactSignaturesModelArtifactSignatureInput is an input type that accepts GetModelArtifactSignaturesModelArtifactSignatureArgs and GetModelArtifactSignaturesModelArtifactSignatureOutput values.
+// You can construct a concrete instance of `GetModelArtifactSignaturesModelArtifactSignatureInput` via:
+//
+//	GetModelArtifactSignaturesModelArtifactSignatureArgs{...}
+type GetModelArtifactSignaturesModelArtifactSignatureInput interface {
+	pulumi.Input
+
+	ToGetModelArtifactSignaturesModelArtifactSignatureOutput() GetModelArtifactSignaturesModelArtifactSignatureOutput
+	ToGetModelArtifactSignaturesModelArtifactSignatureOutputWithContext(context.Context) GetModelArtifactSignaturesModelArtifactSignatureOutput
+}
+
+type GetModelArtifactSignaturesModelArtifactSignatureArgs struct {
+	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+	DefinedTags pulumi.StringMapInput `pulumi:"definedTags"`
+	// The digest of the model artifact.
+	Digest pulumi.StringInput `pulumi:"digest"`
+	// <b>Filter</b> results by its user-friendly name.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.StringMapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model artifact signature.
+	Id pulumi.StringInput `pulumi:"id"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key from Oracle Cloud Infrastructure KMS.
+	KmsKeyId pulumi.StringInput `pulumi:"kmsKeyId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key version from Oracle Cloud Infrastructure KMS.
+	KmsKeyVersionId pulumi.StringInput `pulumi:"kmsKeyVersionId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+	ModelId pulumi.StringInput `pulumi:"modelId"`
+	// The signature of the digest generated using kmsKeyId, kmsKeyVersion Id and signingAlgorithm.
+	Signature pulumi.StringInput `pulumi:"signature"`
+	// The algorithm used for signing.
+	SigningAlgorithm pulumi.StringInput `pulumi:"signingAlgorithm"`
+	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+	State pulumi.StringInput `pulumi:"state"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.StringMapInput `pulumi:"systemTags"`
+	// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+	TimeUpdated   pulumi.StringInput `pulumi:"timeUpdated"`
+	VerifyTrigger pulumi.IntInput    `pulumi:"verifyTrigger"`
+}
+
+func (GetModelArtifactSignaturesModelArtifactSignatureArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelArtifactSignaturesModelArtifactSignature)(nil)).Elem()
+}
+
+func (i GetModelArtifactSignaturesModelArtifactSignatureArgs) ToGetModelArtifactSignaturesModelArtifactSignatureOutput() GetModelArtifactSignaturesModelArtifactSignatureOutput {
+	return i.ToGetModelArtifactSignaturesModelArtifactSignatureOutputWithContext(context.Background())
+}
+
+func (i GetModelArtifactSignaturesModelArtifactSignatureArgs) ToGetModelArtifactSignaturesModelArtifactSignatureOutputWithContext(ctx context.Context) GetModelArtifactSignaturesModelArtifactSignatureOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelArtifactSignaturesModelArtifactSignatureOutput)
+}
+
+// GetModelArtifactSignaturesModelArtifactSignatureArrayInput is an input type that accepts GetModelArtifactSignaturesModelArtifactSignatureArray and GetModelArtifactSignaturesModelArtifactSignatureArrayOutput values.
+// You can construct a concrete instance of `GetModelArtifactSignaturesModelArtifactSignatureArrayInput` via:
+//
+//	GetModelArtifactSignaturesModelArtifactSignatureArray{ GetModelArtifactSignaturesModelArtifactSignatureArgs{...} }
+type GetModelArtifactSignaturesModelArtifactSignatureArrayInput interface {
+	pulumi.Input
+
+	ToGetModelArtifactSignaturesModelArtifactSignatureArrayOutput() GetModelArtifactSignaturesModelArtifactSignatureArrayOutput
+	ToGetModelArtifactSignaturesModelArtifactSignatureArrayOutputWithContext(context.Context) GetModelArtifactSignaturesModelArtifactSignatureArrayOutput
+}
+
+type GetModelArtifactSignaturesModelArtifactSignatureArray []GetModelArtifactSignaturesModelArtifactSignatureInput
+
+func (GetModelArtifactSignaturesModelArtifactSignatureArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelArtifactSignaturesModelArtifactSignature)(nil)).Elem()
+}
+
+func (i GetModelArtifactSignaturesModelArtifactSignatureArray) ToGetModelArtifactSignaturesModelArtifactSignatureArrayOutput() GetModelArtifactSignaturesModelArtifactSignatureArrayOutput {
+	return i.ToGetModelArtifactSignaturesModelArtifactSignatureArrayOutputWithContext(context.Background())
+}
+
+func (i GetModelArtifactSignaturesModelArtifactSignatureArray) ToGetModelArtifactSignaturesModelArtifactSignatureArrayOutputWithContext(ctx context.Context) GetModelArtifactSignaturesModelArtifactSignatureArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetModelArtifactSignaturesModelArtifactSignatureArrayOutput)
+}
+
+type GetModelArtifactSignaturesModelArtifactSignatureOutput struct{ *pulumi.OutputState }
+
+func (GetModelArtifactSignaturesModelArtifactSignatureOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetModelArtifactSignaturesModelArtifactSignature)(nil)).Elem()
+}
+
+func (o GetModelArtifactSignaturesModelArtifactSignatureOutput) ToGetModelArtifactSignaturesModelArtifactSignatureOutput() GetModelArtifactSignaturesModelArtifactSignatureOutput {
+	return o
+}
+
+func (o GetModelArtifactSignaturesModelArtifactSignatureOutput) ToGetModelArtifactSignaturesModelArtifactSignatureOutputWithContext(ctx context.Context) GetModelArtifactSignaturesModelArtifactSignatureOutput {
+	return o
+}
+
+// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+func (o GetModelArtifactSignaturesModelArtifactSignatureOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelArtifactSignaturesModelArtifactSignature) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
+func (o GetModelArtifactSignaturesModelArtifactSignatureOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelArtifactSignaturesModelArtifactSignature) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+func (o GetModelArtifactSignaturesModelArtifactSignatureOutput) DefinedTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetModelArtifactSignaturesModelArtifactSignature) map[string]string { return v.DefinedTags }).(pulumi.StringMapOutput)
+}
+
+// The digest of the model artifact.
+func (o GetModelArtifactSignaturesModelArtifactSignatureOutput) Digest() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelArtifactSignaturesModelArtifactSignature) string { return v.Digest }).(pulumi.StringOutput)
+}
+
+// <b>Filter</b> results by its user-friendly name.
+func (o GetModelArtifactSignaturesModelArtifactSignatureOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelArtifactSignaturesModelArtifactSignature) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+func (o GetModelArtifactSignaturesModelArtifactSignatureOutput) FreeformTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetModelArtifactSignaturesModelArtifactSignature) map[string]string { return v.FreeformTags }).(pulumi.StringMapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model artifact signature.
+func (o GetModelArtifactSignaturesModelArtifactSignatureOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelArtifactSignaturesModelArtifactSignature) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key from Oracle Cloud Infrastructure KMS.
+func (o GetModelArtifactSignaturesModelArtifactSignatureOutput) KmsKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelArtifactSignaturesModelArtifactSignature) string { return v.KmsKeyId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key version from Oracle Cloud Infrastructure KMS.
+func (o GetModelArtifactSignaturesModelArtifactSignatureOutput) KmsKeyVersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelArtifactSignaturesModelArtifactSignature) string { return v.KmsKeyVersionId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+func (o GetModelArtifactSignaturesModelArtifactSignatureOutput) ModelId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelArtifactSignaturesModelArtifactSignature) string { return v.ModelId }).(pulumi.StringOutput)
+}
+
+// The signature of the digest generated using kmsKeyId, kmsKeyVersion Id and signingAlgorithm.
+func (o GetModelArtifactSignaturesModelArtifactSignatureOutput) Signature() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelArtifactSignaturesModelArtifactSignature) string { return v.Signature }).(pulumi.StringOutput)
+}
+
+// The algorithm used for signing.
+func (o GetModelArtifactSignaturesModelArtifactSignatureOutput) SigningAlgorithm() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelArtifactSignaturesModelArtifactSignature) string { return v.SigningAlgorithm }).(pulumi.StringOutput)
+}
+
+// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+func (o GetModelArtifactSignaturesModelArtifactSignatureOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelArtifactSignaturesModelArtifactSignature) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetModelArtifactSignaturesModelArtifactSignatureOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v GetModelArtifactSignaturesModelArtifactSignature) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
+}
+
+// The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+func (o GetModelArtifactSignaturesModelArtifactSignatureOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelArtifactSignaturesModelArtifactSignature) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+func (o GetModelArtifactSignaturesModelArtifactSignatureOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelArtifactSignaturesModelArtifactSignature) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+func (o GetModelArtifactSignaturesModelArtifactSignatureOutput) VerifyTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetModelArtifactSignaturesModelArtifactSignature) int { return v.VerifyTrigger }).(pulumi.IntOutput)
+}
+
+type GetModelArtifactSignaturesModelArtifactSignatureArrayOutput struct{ *pulumi.OutputState }
+
+func (GetModelArtifactSignaturesModelArtifactSignatureArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetModelArtifactSignaturesModelArtifactSignature)(nil)).Elem()
+}
+
+func (o GetModelArtifactSignaturesModelArtifactSignatureArrayOutput) ToGetModelArtifactSignaturesModelArtifactSignatureArrayOutput() GetModelArtifactSignaturesModelArtifactSignatureArrayOutput {
+	return o
+}
+
+func (o GetModelArtifactSignaturesModelArtifactSignatureArrayOutput) ToGetModelArtifactSignaturesModelArtifactSignatureArrayOutputWithContext(ctx context.Context) GetModelArtifactSignaturesModelArtifactSignatureArrayOutput {
+	return o
+}
+
+func (o GetModelArtifactSignaturesModelArtifactSignatureArrayOutput) Index(i pulumi.IntInput) GetModelArtifactSignaturesModelArtifactSignatureOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetModelArtifactSignaturesModelArtifactSignature {
+		return vs[0].([]GetModelArtifactSignaturesModelArtifactSignature)[vs[1].(int)]
+	}).(GetModelArtifactSignaturesModelArtifactSignatureOutput)
+}
+
 type GetModelBackupOperationDetail struct {
 	// The backup status of the model.
 	BackupState string `pulumi:"backupState"`
@@ -56483,6 +56898,7 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfig
 }
 
 type GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration struct {
+	CapacityReservationIds []string `pulumi:"capacityReservationIds"`
 	// The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName string `pulumi:"instanceShapeName"`
 	// Details for the model-deployment instance shape configuration.
@@ -56507,6 +56923,7 @@ type GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigura
 }
 
 type GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationArgs struct {
+	CapacityReservationIds pulumi.StringArrayInput `pulumi:"capacityReservationIds"`
 	// The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName pulumi.StringInput `pulumi:"instanceShapeName"`
 	// Details for the model-deployment instance shape configuration.
@@ -56568,6 +56985,12 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfig
 
 func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationOutput {
 	return o
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationOutput) CapacityReservationIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration) []string {
+		return v.CapacityReservationIds
+	}).(pulumi.StringArrayOutput)
 }
 
 // The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
@@ -58181,7 +58604,9 @@ type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetai
 	InstanceConfigurations []GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration `pulumi:"instanceConfigurations"`
 	// The maximum network bandwidth for the model deployment.
 	MaximumBandwidthMbps int `pulumi:"maximumBandwidthMbps"`
-	// The OCID of the model you want to deploy.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+	ModelArtifactSignatureId string `pulumi:"modelArtifactSignatureId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
 	ModelId string `pulumi:"modelId"`
 	// The scaling policy to apply to each model of the deployment.
 	ScalingPolicies []GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy `pulumi:"scalingPolicies"`
@@ -58205,7 +58630,9 @@ type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetai
 	InstanceConfigurations GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArrayInput `pulumi:"instanceConfigurations"`
 	// The maximum network bandwidth for the model deployment.
 	MaximumBandwidthMbps pulumi.IntInput `pulumi:"maximumBandwidthMbps"`
-	// The OCID of the model you want to deploy.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+	ModelArtifactSignatureId pulumi.StringInput `pulumi:"modelArtifactSignatureId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
 	ModelId pulumi.StringInput `pulumi:"modelId"`
 	// The scaling policy to apply to each model of the deployment.
 	ScalingPolicies GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArrayInput `pulumi:"scalingPolicies"`
@@ -58283,7 +58710,14 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDe
 	}).(pulumi.IntOutput)
 }
 
-// The OCID of the model you want to deploy.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailOutput) ModelArtifactSignatureId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail) string {
+		return v.ModelArtifactSignatureId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
 func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailOutput) ModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail) string {
 		return v.ModelId
@@ -58318,6 +58752,7 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDe
 }
 
 type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration struct {
+	CapacityReservationIds []string `pulumi:"capacityReservationIds"`
 	// The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName string `pulumi:"instanceShapeName"`
 	// Details for the model-deployment instance shape configuration.
@@ -58342,6 +58777,7 @@ type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetai
 }
 
 type GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs struct {
+	CapacityReservationIds pulumi.StringArrayInput `pulumi:"capacityReservationIds"`
 	// The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName pulumi.StringInput `pulumi:"instanceShapeName"`
 	// Details for the model-deployment instance shape configuration.
@@ -58403,6 +58839,12 @@ func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDe
 
 func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationOutput) ToGetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationOutputWithContext(ctx context.Context) GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationOutput {
 	return o
+}
+
+func (o GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationOutput) CapacityReservationIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration) []string {
+		return v.CapacityReservationIds
+	}).(pulumi.StringArrayOutput)
 }
 
 // The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
@@ -61296,6 +61738,7 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfr
 }
 
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration struct {
+	CapacityReservationIds []string `pulumi:"capacityReservationIds"`
 	// The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName string `pulumi:"instanceShapeName"`
 	// Details for the model-deployment instance shape configuration.
@@ -61320,6 +61763,7 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrast
 }
 
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationArgs struct {
+	CapacityReservationIds pulumi.StringArrayInput `pulumi:"capacityReservationIds"`
 	// The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName pulumi.StringInput `pulumi:"instanceShapeName"`
 	// Details for the model-deployment instance shape configuration.
@@ -61381,6 +61825,12 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfr
 
 func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationOutput {
 	return o
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfigurationOutput) CapacityReservationIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration) []string {
+		return v.CapacityReservationIds
+	}).(pulumi.StringArrayOutput)
 }
 
 // The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
@@ -62994,7 +63444,9 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelCo
 	InstanceConfigurations []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration `pulumi:"instanceConfigurations"`
 	// The maximum network bandwidth for the model deployment.
 	MaximumBandwidthMbps int `pulumi:"maximumBandwidthMbps"`
-	// The OCID of the model you want to deploy.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+	ModelArtifactSignatureId string `pulumi:"modelArtifactSignatureId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
 	ModelId string `pulumi:"modelId"`
 	// The scaling policy to apply to each model of the deployment.
 	ScalingPolicies []GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy `pulumi:"scalingPolicies"`
@@ -63018,7 +63470,9 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelCo
 	InstanceConfigurations GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArrayInput `pulumi:"instanceConfigurations"`
 	// The maximum network bandwidth for the model deployment.
 	MaximumBandwidthMbps pulumi.IntInput `pulumi:"maximumBandwidthMbps"`
-	// The OCID of the model you want to deploy.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+	ModelArtifactSignatureId pulumi.StringInput `pulumi:"modelArtifactSignatureId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
 	ModelId pulumi.StringInput `pulumi:"modelId"`
 	// The scaling policy to apply to each model of the deployment.
 	ScalingPolicies GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicyArrayInput `pulumi:"scalingPolicies"`
@@ -63096,7 +63550,14 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailMode
 	}).(pulumi.IntOutput)
 }
 
-// The OCID of the model you want to deploy.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailOutput) ModelArtifactSignatureId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail) string {
+		return v.ModelArtifactSignatureId
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
 func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailOutput) ModelId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail) string {
 		return v.ModelId
@@ -63131,6 +63592,7 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailMode
 }
 
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration struct {
+	CapacityReservationIds []string `pulumi:"capacityReservationIds"`
 	// The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName string `pulumi:"instanceShapeName"`
 	// Details for the model-deployment instance shape configuration.
@@ -63155,6 +63617,7 @@ type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelCo
 }
 
 type GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationArgs struct {
+	CapacityReservationIds pulumi.StringArrayInput `pulumi:"capacityReservationIds"`
 	// The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
 	InstanceShapeName pulumi.StringInput `pulumi:"instanceShapeName"`
 	// Details for the model-deployment instance shape configuration.
@@ -63216,6 +63679,12 @@ func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailMode
 
 func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationOutput) ToGetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationOutputWithContext(ctx context.Context) GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationOutput {
 	return o
+}
+
+func (o GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfigurationOutput) CapacityReservationIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration) []string {
+		return v.CapacityReservationIds
+	}).(pulumi.StringArrayOutput)
 }
 
 // The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
@@ -74527,292 +74996,6 @@ func (o GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorS
 	}).(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput)
 }
 
-type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail struct {
-	// The size of the block storage volume to attach to the instance.
-	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
-	// The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
-	BlockStorageSizeInGbsParameterized string `pulumi:"blockStorageSizeInGbsParameterized"`
-	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-	ShapeConfigDetails []GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail `pulumi:"shapeConfigDetails"`
-	// The shape used to launch the instance for all step runs in the pipeline.
-	ShapeName string `pulumi:"shapeName"`
-	// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
-	SubnetId string `pulumi:"subnetId"`
-}
-
-// GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailInput is an input type that accepts GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArgs and GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput values.
-// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailInput` via:
-//
-//	GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArgs{...}
-type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput
-	ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput
-}
-
-type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArgs struct {
-	// The size of the block storage volume to attach to the instance.
-	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
-	// The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
-	BlockStorageSizeInGbsParameterized pulumi.StringInput `pulumi:"blockStorageSizeInGbsParameterized"`
-	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-	ShapeConfigDetails GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayInput `pulumi:"shapeConfigDetails"`
-	// The shape used to launch the instance for all step runs in the pipeline.
-	ShapeName pulumi.StringInput `pulumi:"shapeName"`
-	// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
-	SubnetId pulumi.StringInput `pulumi:"subnetId"`
-}
-
-func (GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArgs) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput {
-	return i.ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArgs) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput)
-}
-
-// GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayInput is an input type that accepts GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArray and GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput values.
-// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayInput` via:
-//
-//	GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArray{ GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArgs{...} }
-type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput
-	ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput
-}
-
-type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArray []GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailInput
-
-func (GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArray) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput {
-	return i.ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArray) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput)
-}
-
-type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput {
-	return o
-}
-
-// The size of the block storage volume to attach to the instance.
-func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput) BlockStorageSizeInGbs() pulumi.IntOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail) int {
-		return v.BlockStorageSizeInGbs
-	}).(pulumi.IntOutput)
-}
-
-// The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
-func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput) BlockStorageSizeInGbsParameterized() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail) string {
-		return v.BlockStorageSizeInGbsParameterized
-	}).(pulumi.StringOutput)
-}
-
-// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
-func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput) ShapeConfigDetails() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail) []GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail {
-		return v.ShapeConfigDetails
-	}).(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput)
-}
-
-// The shape used to launch the instance for all step runs in the pipeline.
-func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput) ShapeName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail) string {
-		return v.ShapeName
-	}).(pulumi.StringOutput)
-}
-
-// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
-func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput) SubnetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail) string {
-		return v.SubnetId
-	}).(pulumi.StringOutput)
-}
-
-type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail {
-		return vs[0].([]GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail)[vs[1].(int)]
-	}).(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput)
-}
-
-type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail struct {
-	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-	CpuBaseline string `pulumi:"cpuBaseline"`
-	// The total amount of memory available to the pipeline step run instance GBs.
-	MemoryInGbs float64 `pulumi:"memoryInGbs"`
-	// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
-	MemoryInGbsParameterized string `pulumi:"memoryInGbsParameterized"`
-	// The total number of OCPUs available to the pipeline step run instance.
-	Ocpus float64 `pulumi:"ocpus"`
-	// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
-	OcpusParameterized string `pulumi:"ocpusParameterized"`
-}
-
-// GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailInput is an input type that accepts GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs and GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput values.
-// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailInput` via:
-//
-//	GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs{...}
-type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput
-	ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput
-}
-
-type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs struct {
-	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-	CpuBaseline pulumi.StringInput `pulumi:"cpuBaseline"`
-	// The total amount of memory available to the pipeline step run instance GBs.
-	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
-	// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
-	MemoryInGbsParameterized pulumi.StringInput `pulumi:"memoryInGbsParameterized"`
-	// The total number of OCPUs available to the pipeline step run instance.
-	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
-	// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
-	OcpusParameterized pulumi.StringInput `pulumi:"ocpusParameterized"`
-}
-
-func (GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput {
-	return i.ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput)
-}
-
-// GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayInput is an input type that accepts GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArray and GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput values.
-// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayInput` via:
-//
-//	GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArray{ GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs{...} }
-type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayInput interface {
-	pulumi.Input
-
-	ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput
-	ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput
-}
-
-type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArray []GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailInput
-
-func (GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArray) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail)(nil)).Elem()
-}
-
-func (i GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArray) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput {
-	return i.ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutputWithContext(context.Background())
-}
-
-func (i GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArray) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput)
-}
-
-type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput {
-	return o
-}
-
-// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
-func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput) CpuBaseline() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail) string {
-		return v.CpuBaseline
-	}).(pulumi.StringOutput)
-}
-
-// The total amount of memory available to the pipeline step run instance GBs.
-func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail) float64 {
-		return v.MemoryInGbs
-	}).(pulumi.Float64Output)
-}
-
-// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
-func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput) MemoryInGbsParameterized() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail) string {
-		return v.MemoryInGbsParameterized
-	}).(pulumi.StringOutput)
-}
-
-// The total number of OCPUs available to the pipeline step run instance.
-func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail) float64 {
-		return v.Ocpus
-	}).(pulumi.Float64Output)
-}
-
-// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
-func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput) OcpusParameterized() pulumi.StringOutput {
-	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail) string {
-		return v.OcpusParameterized
-	}).(pulumi.StringOutput)
-}
-
-type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
-
-func (GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail)(nil)).Elem()
-}
-
-func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput {
-	return o
-}
-
-func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput {
-	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail {
-		return vs[0].([]GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail)[vs[1].(int)]
-	}).(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput)
-}
-
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeTargetComputeConfigurationDetailsInput)(nil)).Elem(), ComputeTargetComputeConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ComputeTargetComputeConfigurationDetailsPtrInput)(nil)).Elem(), ComputeTargetComputeConfigurationDetailsArgs{})
@@ -75513,6 +75696,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationsMlApplicationCollectionArrayInput)(nil)).Elem(), GetMlApplicationsMlApplicationCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationsMlApplicationCollectionItemInput)(nil)).Elem(), GetMlApplicationsMlApplicationCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMlApplicationsMlApplicationCollectionItemArrayInput)(nil)).Elem(), GetMlApplicationsMlApplicationCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelArtifactSignaturesFilterInput)(nil)).Elem(), GetModelArtifactSignaturesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelArtifactSignaturesFilterArrayInput)(nil)).Elem(), GetModelArtifactSignaturesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelArtifactSignaturesModelArtifactSignatureInput)(nil)).Elem(), GetModelArtifactSignaturesModelArtifactSignatureArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetModelArtifactSignaturesModelArtifactSignatureArrayInput)(nil)).Elem(), GetModelArtifactSignaturesModelArtifactSignatureArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelBackupOperationDetailInput)(nil)).Elem(), GetModelBackupOperationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelBackupOperationDetailArrayInput)(nil)).Elem(), GetModelBackupOperationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetModelBackupSettingInput)(nil)).Elem(), GetModelBackupSettingArgs{})
@@ -75805,10 +75992,6 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArray{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArray{})
 	pulumi.RegisterOutputType(ComputeTargetComputeConfigurationDetailsOutput{})
 	pulumi.RegisterOutputType(ComputeTargetComputeConfigurationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ComputeTargetComputeConfigurationDetailsInstanceConfigurationOutput{})
@@ -76508,6 +76691,10 @@ func init() {
 	pulumi.RegisterOutputType(GetMlApplicationsMlApplicationCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMlApplicationsMlApplicationCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetMlApplicationsMlApplicationCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetModelArtifactSignaturesFilterOutput{})
+	pulumi.RegisterOutputType(GetModelArtifactSignaturesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetModelArtifactSignaturesModelArtifactSignatureOutput{})
+	pulumi.RegisterOutputType(GetModelArtifactSignaturesModelArtifactSignatureArrayOutput{})
 	pulumi.RegisterOutputType(GetModelBackupOperationDetailOutput{})
 	pulumi.RegisterOutputType(GetModelBackupOperationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetModelBackupSettingOutput{})
@@ -76800,8 +76987,4 @@ func init() {
 	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailDriverShapeConfigDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepDataflowConfigurationDetailExecutorShapeConfigDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput{})
-	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput{})
 }

@@ -254,6 +254,12 @@ namespace Pulumi.Oci.ContainerEngine
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        [Output("systemTags")]
+        public Output<ImmutableDictionary<string, string>> SystemTags { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Type of cluster
         /// </summary>
         [Output("type")]
@@ -552,6 +558,18 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        [Input("systemTags")]
+        private InputMap<string>? _systemTags;
+
+        /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public InputMap<string> SystemTags
+        {
+            get => _systemTags ?? (_systemTags = new InputMap<string>());
+            set => _systemTags = value;
+        }
 
         /// <summary>
         /// (Updatable) Type of cluster

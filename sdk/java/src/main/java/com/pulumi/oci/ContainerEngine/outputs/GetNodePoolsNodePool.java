@@ -157,6 +157,11 @@ public final class GetNodePoolsNodePool {
      * 
      */
     private List<String> subnetIds;
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,String> systemTags;
 
     private GetNodePoolsNodePool() {}
     /**
@@ -349,6 +354,13 @@ public final class GetNodePoolsNodePool {
     public List<String> subnetIds() {
         return this.subnetIds;
     }
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -387,6 +399,7 @@ public final class GetNodePoolsNodePool {
         private String sshPublicKey;
         private String state;
         private List<String> subnetIds;
+        private Map<String,String> systemTags;
         public Builder() {}
         public Builder(GetNodePoolsNodePool defaults) {
     	      Objects.requireNonNull(defaults);
@@ -418,6 +431,7 @@ public final class GetNodePoolsNodePool {
     	      this.sshPublicKey = defaults.sshPublicKey;
     	      this.state = defaults.state;
     	      this.subnetIds = defaults.subnetIds;
+    	      this.systemTags = defaults.systemTags;
         }
 
         @CustomType.Setter
@@ -677,6 +691,14 @@ public final class GetNodePoolsNodePool {
         public Builder subnetIds(String... subnetIds) {
             return subnetIds(List.of(subnetIds));
         }
+        @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsNodePool", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
         public GetNodePoolsNodePool build() {
             final var _resultValue = new GetNodePoolsNodePool();
             _resultValue.clusterId = clusterId;
@@ -707,6 +729,7 @@ public final class GetNodePoolsNodePool {
             _resultValue.sshPublicKey = sshPublicKey;
             _resultValue.state = state;
             _resultValue.subnetIds = subnetIds;
+            _resultValue.systemTags = systemTags;
             return _resultValue;
         }
     }

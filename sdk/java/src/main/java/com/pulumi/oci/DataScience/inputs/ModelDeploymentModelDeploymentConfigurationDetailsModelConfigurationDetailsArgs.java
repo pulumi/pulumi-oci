@@ -64,14 +64,29 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
     }
 
     /**
-     * (Updatable) The OCID of the model you want to deploy.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+     * 
+     */
+    @Import(name="modelArtifactSignatureId")
+    private @Nullable Output<String> modelArtifactSignatureId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+     * 
+     */
+    public Optional<Output<String>> modelArtifactSignatureId() {
+        return Optional.ofNullable(this.modelArtifactSignatureId);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
      * 
      */
     @Import(name="modelId")
     private @Nullable Output<String> modelId;
 
     /**
-     * @return (Updatable) The OCID of the model you want to deploy.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
      * 
      */
     public Optional<Output<String>> modelId() {
@@ -99,6 +114,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
         this.bandwidthMbps = $.bandwidthMbps;
         this.instanceConfiguration = $.instanceConfiguration;
         this.maximumBandwidthMbps = $.maximumBandwidthMbps;
+        this.modelArtifactSignatureId = $.modelArtifactSignatureId;
         this.modelId = $.modelId;
         this.scalingPolicy = $.scalingPolicy;
     }
@@ -185,7 +201,28 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
         }
 
         /**
-         * @param modelId (Updatable) The OCID of the model you want to deploy.
+         * @param modelArtifactSignatureId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelArtifactSignatureId(@Nullable Output<String> modelArtifactSignatureId) {
+            $.modelArtifactSignatureId = modelArtifactSignatureId;
+            return this;
+        }
+
+        /**
+         * @param modelArtifactSignatureId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder modelArtifactSignatureId(String modelArtifactSignatureId) {
+            return modelArtifactSignatureId(Output.of(modelArtifactSignatureId));
+        }
+
+        /**
+         * @param modelId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
          * 
          * @return builder
          * 
@@ -196,7 +233,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
         }
 
         /**
-         * @param modelId (Updatable) The OCID of the model you want to deploy.
+         * @param modelId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
          * 
          * @return builder
          * 

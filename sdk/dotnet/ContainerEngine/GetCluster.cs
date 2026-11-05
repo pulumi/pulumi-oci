@@ -213,6 +213,10 @@ namespace Pulumi.Oci.ContainerEngine
         /// </summary>
         public readonly string State;
         /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string> SystemTags;
+        /// <summary>
         /// Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
         /// </summary>
         public readonly string Type;
@@ -263,6 +267,8 @@ namespace Pulumi.Oci.ContainerEngine
 
             string state,
 
+            ImmutableDictionary<string, string> systemTags,
+
             string type,
 
             string vcnId)
@@ -287,6 +293,7 @@ namespace Pulumi.Oci.ContainerEngine
             Options = options;
             ShouldIncludeOidcConfigFile = shouldIncludeOidcConfigFile;
             State = state;
+            SystemTags = systemTags;
             Type = type;
             VcnId = vcnId;
         }

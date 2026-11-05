@@ -61,6 +61,92 @@ public final class ZprFunctions {
      * </pre>
      * 
      */
+    public static Output<GetConfigurationResult> getConfiguration() {
+        return getConfiguration(GetConfigurationArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Zpr service.
+     * 
+     * Retrieves the ZPR configuration details for the root compartment (the root compartment is the tenancy).
+     * Returns ZPR configuration for root compartment (the root compartment is the tenancy).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Zpr.ZprFunctions;
+     * import com.pulumi.oci.Zpr.inputs.GetConfigurationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = ZprFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .compartmentId(tenancyOcid)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetConfigurationResult> getConfigurationPlain() {
+        return getConfigurationPlain(GetConfigurationPlainArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Configuration resource in Oracle Cloud Infrastructure Zpr service.
+     * 
+     * Retrieves the ZPR configuration details for the root compartment (the root compartment is the tenancy).
+     * Returns ZPR configuration for root compartment (the root compartment is the tenancy).
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Zpr.ZprFunctions;
+     * import com.pulumi.oci.Zpr.inputs.GetConfigurationArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testConfiguration = ZprFunctions.getConfiguration(GetConfigurationArgs.builder()
+     *             .compartmentId(tenancyOcid)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
     public static Output<GetConfigurationResult> getConfiguration(GetConfigurationArgs args) {
         return getConfiguration(args, InvokeOptions.Empty);
     }

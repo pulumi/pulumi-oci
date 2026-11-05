@@ -30,7 +30,12 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
      */
     private Integer maximumBandwidthMbps;
     /**
-     * @return The OCID of the model you want to deploy.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+     * 
+     */
+    private String modelArtifactSignatureId;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
      * 
      */
     private String modelId;
@@ -63,7 +68,14 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
         return this.maximumBandwidthMbps;
     }
     /**
-     * @return The OCID of the model you want to deploy.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+     * 
+     */
+    public String modelArtifactSignatureId() {
+        return this.modelArtifactSignatureId;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
      * 
      */
     public String modelId() {
@@ -89,6 +101,7 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
         private Integer bandwidthMbps;
         private List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration> instanceConfigurations;
         private Integer maximumBandwidthMbps;
+        private String modelArtifactSignatureId;
         private String modelId;
         private List<GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailScalingPolicy> scalingPolicies;
         public Builder() {}
@@ -97,6 +110,7 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
     	      this.bandwidthMbps = defaults.bandwidthMbps;
     	      this.instanceConfigurations = defaults.instanceConfigurations;
     	      this.maximumBandwidthMbps = defaults.maximumBandwidthMbps;
+    	      this.modelArtifactSignatureId = defaults.modelArtifactSignatureId;
     	      this.modelId = defaults.modelId;
     	      this.scalingPolicies = defaults.scalingPolicies;
         }
@@ -129,6 +143,14 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
             return this;
         }
         @CustomType.Setter
+        public Builder modelArtifactSignatureId(String modelArtifactSignatureId) {
+            if (modelArtifactSignatureId == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail", "modelArtifactSignatureId");
+            }
+            this.modelArtifactSignatureId = modelArtifactSignatureId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder modelId(String modelId) {
             if (modelId == null) {
               throw new MissingRequiredPropertyException("GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetail", "modelId");
@@ -152,6 +174,7 @@ public final class GetModelDeploymentModelDeploymentConfigurationDetailModelConf
             _resultValue.bandwidthMbps = bandwidthMbps;
             _resultValue.instanceConfigurations = instanceConfigurations;
             _resultValue.maximumBandwidthMbps = maximumBandwidthMbps;
+            _resultValue.modelArtifactSignatureId = modelArtifactSignatureId;
             _resultValue.modelId = modelId;
             _resultValue.scalingPolicies = scalingPolicies;
             return _resultValue;

@@ -105,6 +105,16 @@ export const getModel: typeof import("./getModel").getModel = null as any;
 export const getModelOutput: typeof import("./getModel").getModelOutput = null as any;
 utilities.lazyLoad(exports, ["getModel","getModelOutput"], () => require("./getModel"));
 
+export { GetModelArtifactSignatureArgs, GetModelArtifactSignatureResult, GetModelArtifactSignatureOutputArgs } from "./getModelArtifactSignature";
+export const getModelArtifactSignature: typeof import("./getModelArtifactSignature").getModelArtifactSignature = null as any;
+export const getModelArtifactSignatureOutput: typeof import("./getModelArtifactSignature").getModelArtifactSignatureOutput = null as any;
+utilities.lazyLoad(exports, ["getModelArtifactSignature","getModelArtifactSignatureOutput"], () => require("./getModelArtifactSignature"));
+
+export { GetModelArtifactSignaturesArgs, GetModelArtifactSignaturesResult, GetModelArtifactSignaturesOutputArgs } from "./getModelArtifactSignatures";
+export const getModelArtifactSignatures: typeof import("./getModelArtifactSignatures").getModelArtifactSignatures = null as any;
+export const getModelArtifactSignaturesOutput: typeof import("./getModelArtifactSignatures").getModelArtifactSignaturesOutput = null as any;
+utilities.lazyLoad(exports, ["getModelArtifactSignatures","getModelArtifactSignaturesOutput"], () => require("./getModelArtifactSignatures"));
+
 export { GetModelCustomMetadataArtifactContentArgs, GetModelCustomMetadataArtifactContentResult, GetModelCustomMetadataArtifactContentOutputArgs } from "./getModelCustomMetadataArtifactContent";
 export const getModelCustomMetadataArtifactContent: typeof import("./getModelCustomMetadataArtifactContent").getModelCustomMetadataArtifactContent = null as any;
 export const getModelCustomMetadataArtifactContentOutput: typeof import("./getModelCustomMetadataArtifactContent").getModelCustomMetadataArtifactContentOutput = null as any;
@@ -290,6 +300,11 @@ export type ModelArtifactImport = import("./modelArtifactImport").ModelArtifactI
 export const ModelArtifactImport: typeof import("./modelArtifactImport").ModelArtifactImport = null as any;
 utilities.lazyLoad(exports, ["ModelArtifactImport"], () => require("./modelArtifactImport"));
 
+export { ModelArtifactSignatureArgs, ModelArtifactSignatureState } from "./modelArtifactSignature";
+export type ModelArtifactSignature = import("./modelArtifactSignature").ModelArtifactSignature;
+export const ModelArtifactSignature: typeof import("./modelArtifactSignature").ModelArtifactSignature = null as any;
+utilities.lazyLoad(exports, ["ModelArtifactSignature"], () => require("./modelArtifactSignature"));
+
 export { ModelCustomMetadataArtifactArgs, ModelCustomMetadataArtifactState } from "./modelCustomMetadataArtifact";
 export type ModelCustomMetadataArtifact = import("./modelCustomMetadataArtifact").ModelCustomMetadataArtifact;
 export const ModelCustomMetadataArtifact: typeof import("./modelCustomMetadataArtifact").ModelCustomMetadataArtifact = null as any;
@@ -383,6 +398,8 @@ const _module = {
                 return new ModelArtifactExport(name, <any>undefined, { urn })
             case "oci:DataScience/modelArtifactImport:ModelArtifactImport":
                 return new ModelArtifactImport(name, <any>undefined, { urn })
+            case "oci:DataScience/modelArtifactSignature:ModelArtifactSignature":
+                return new ModelArtifactSignature(name, <any>undefined, { urn })
             case "oci:DataScience/modelCustomMetadataArtifact:ModelCustomMetadataArtifact":
                 return new ModelCustomMetadataArtifact(name, <any>undefined, { urn })
             case "oci:DataScience/modelDefinedMetadataArtifact:ModelDefinedMetadataArtifact":
@@ -425,6 +442,7 @@ pulumi.runtime.registerResourceModule("oci", "DataScience/mlApplicationInstance"
 pulumi.runtime.registerResourceModule("oci", "DataScience/model", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/modelArtifactExport", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/modelArtifactImport", _module)
+pulumi.runtime.registerResourceModule("oci", "DataScience/modelArtifactSignature", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/modelCustomMetadataArtifact", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/modelDefinedMetadataArtifact", _module)
 pulumi.runtime.registerResourceModule("oci", "DataScience/modelDeployment", _module)

@@ -1654,6 +1654,9 @@
                 "current": "oci:Artifacts/containerRepository:ContainerRepository",
                 "majorVersion": 5,
                 "fields": {
+                    "multi_region_peers": {
+                        "maxItemsOne": false
+                    },
                     "readme": {
                         "maxItemsOne": true
                     }
@@ -11457,6 +11460,10 @@
                 "current": "oci:DataScience/modelArtifactImport:ModelArtifactImport",
                 "majorVersion": 5
             },
+            "oci_datascience_model_artifact_signature": {
+                "current": "oci:DataScience/modelArtifactSignature:ModelArtifactSignature",
+                "majorVersion": 5
+            },
             "oci_datascience_model_custom_metadata_artifact": {
                 "current": "oci:DataScience/modelCustomMetadataArtifact:ModelCustomMetadataArtifact",
                 "majorVersion": 5
@@ -11517,6 +11524,9 @@
                                                 "maxItemsOne": true,
                                                 "elem": {
                                                     "fields": {
+                                                        "capacity_reservation_ids": {
+                                                            "maxItemsOne": false
+                                                        },
                                                         "model_deployment_instance_shape_config_details": {
                                                             "maxItemsOne": true
                                                         }
@@ -11583,6 +11593,9 @@
                                                 "maxItemsOne": true,
                                                 "elem": {
                                                     "fields": {
+                                                        "capacity_reservation_ids": {
+                                                            "maxItemsOne": false
+                                                        },
                                                         "model_deployment_instance_shape_config_details": {
                                                             "maxItemsOne": true
                                                         }
@@ -29407,6 +29420,9 @@
                                     "maxItemsOne": false,
                                     "elem": {
                                         "fields": {
+                                            "multi_region_peers": {
+                                                "maxItemsOne": false
+                                            },
                                             "readme": {
                                                 "maxItemsOne": false
                                             }
@@ -29432,6 +29448,9 @@
                 "current": "oci:Artifacts/getContainerRepository:getContainerRepository",
                 "majorVersion": 5,
                 "fields": {
+                    "multi_region_peers": {
+                        "maxItemsOne": false
+                    },
                     "readme": {
                         "maxItemsOne": false
                     }
@@ -62702,6 +62721,29 @@
                     }
                 }
             },
+            "oci_datascience_model_artifact_signature": {
+                "current": "oci:DataScience/getModelArtifactSignature:getModelArtifactSignature",
+                "majorVersion": 5
+            },
+            "oci_datascience_model_artifact_signatures": {
+                "current": "oci:DataScience/getModelArtifactSignatures:getModelArtifactSignatures",
+                "majorVersion": 5,
+                "fields": {
+                    "filter": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "values": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    },
+                    "model_artifact_signatures": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "oci_datascience_model_custom_metadata_artifact_content": {
                 "current": "oci:DataScience/getModelCustomMetadataArtifactContent:getModelCustomMetadataArtifactContent",
                 "majorVersion": 5
@@ -62762,6 +62804,9 @@
                                                 "maxItemsOne": false,
                                                 "elem": {
                                                     "fields": {
+                                                        "capacity_reservation_ids": {
+                                                            "maxItemsOne": false
+                                                        },
                                                         "model_deployment_instance_shape_config_details": {
                                                             "maxItemsOne": false
                                                         }
@@ -62828,6 +62873,9 @@
                                                 "maxItemsOne": false,
                                                 "elem": {
                                                     "fields": {
+                                                        "capacity_reservation_ids": {
+                                                            "maxItemsOne": false
+                                                        },
                                                         "model_deployment_instance_shape_config_details": {
                                                             "maxItemsOne": false
                                                         }
@@ -62979,6 +63027,9 @@
                                                             "maxItemsOne": false,
                                                             "elem": {
                                                                 "fields": {
+                                                                    "capacity_reservation_ids": {
+                                                                        "maxItemsOne": false
+                                                                    },
                                                                     "model_deployment_instance_shape_config_details": {
                                                                         "maxItemsOne": false
                                                                     }
@@ -63045,6 +63096,9 @@
                                                             "maxItemsOne": false,
                                                             "elem": {
                                                                 "fields": {
+                                                                    "capacity_reservation_ids": {
+                                                                        "maxItemsOne": false
+                                                                    },
                                                                     "model_deployment_instance_shape_config_details": {
                                                                         "maxItemsOne": false
                                                                     }

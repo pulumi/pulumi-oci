@@ -13,6 +13,292 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail struct {
+	// The size of the block storage volume to attach to the instance.
+	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
+	// The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+	BlockStorageSizeInGbsParameterized string `pulumi:"blockStorageSizeInGbsParameterized"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	ShapeConfigDetails []GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail `pulumi:"shapeConfigDetails"`
+	// The shape used to launch the instance for all step runs in the pipeline.
+	ShapeName string `pulumi:"shapeName"`
+	// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailInput is an input type that accepts GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArgs and GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailInput` via:
+//
+//	GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArgs{...}
+type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput
+	ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput
+}
+
+type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArgs struct {
+	// The size of the block storage volume to attach to the instance.
+	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
+	// The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+	BlockStorageSizeInGbsParameterized pulumi.StringInput `pulumi:"blockStorageSizeInGbsParameterized"`
+	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	ShapeConfigDetails GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayInput `pulumi:"shapeConfigDetails"`
+	// The shape used to launch the instance for all step runs in the pipeline.
+	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+	// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArgs) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput {
+	return i.ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArgs) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput)
+}
+
+// GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayInput is an input type that accepts GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArray and GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayInput` via:
+//
+//	GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArray{ GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArgs{...} }
+type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput
+	ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput
+}
+
+type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArray []GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailInput
+
+func (GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArray) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput {
+	return i.ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArray) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput {
+	return o
+}
+
+// The size of the block storage volume to attach to the instance.
+func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput) BlockStorageSizeInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail) int {
+		return v.BlockStorageSizeInGbs
+	}).(pulumi.IntOutput)
+}
+
+// The size of the block storage volume to attach to the pipeline step run instance specified as a parameter. This overrides the blockStorageSizeInGBs value. The request will fail if the parameters used are null or invalid.
+func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput) BlockStorageSizeInGbsParameterized() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail) string {
+		return v.BlockStorageSizeInGbsParameterized
+	}).(pulumi.StringOutput)
+}
+
+// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput) ShapeConfigDetails() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail) []GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail {
+		return v.ShapeConfigDetails
+	}).(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput)
+}
+
+// The shape used to launch the instance for all step runs in the pipeline.
+func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput) ShapeName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail) string {
+		return v.ShapeName
+	}).(pulumi.StringOutput)
+}
+
+// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail) string {
+		return v.SubnetId
+	}).(pulumi.StringOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail {
+		return vs[0].([]GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetail)[vs[1].(int)]
+	}).(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline string `pulumi:"cpuBaseline"`
+	// The total amount of memory available to the pipeline step run instance GBs.
+	MemoryInGbs float64 `pulumi:"memoryInGbs"`
+	// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+	MemoryInGbsParameterized string `pulumi:"memoryInGbsParameterized"`
+	// The total number of OCPUs available to the pipeline step run instance.
+	Ocpus float64 `pulumi:"ocpus"`
+	// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+	OcpusParameterized string `pulumi:"ocpusParameterized"`
+}
+
+// GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailInput is an input type that accepts GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs and GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailInput` via:
+//
+//	GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs{...}
+type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput
+	ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput
+}
+
+type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs struct {
+	// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+	CpuBaseline pulumi.StringInput `pulumi:"cpuBaseline"`
+	// The total amount of memory available to the pipeline step run instance GBs.
+	MemoryInGbs pulumi.Float64Input `pulumi:"memoryInGbs"`
+	// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+	MemoryInGbsParameterized pulumi.StringInput `pulumi:"memoryInGbsParameterized"`
+	// The total number of OCPUs available to the pipeline step run instance.
+	Ocpus pulumi.Float64Input `pulumi:"ocpus"`
+	// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+	OcpusParameterized pulumi.StringInput `pulumi:"ocpusParameterized"`
+}
+
+func (GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput {
+	return i.ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput)
+}
+
+// GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayInput is an input type that accepts GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArray and GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayInput` via:
+//
+//	GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArray{ GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs{...} }
+type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput
+	ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput
+}
+
+type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArray []GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailInput
+
+func (GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArray) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput {
+	return i.ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArray) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput {
+	return o
+}
+
+// The baseline OCPU utilization for a subcore burstable VM instance. If this attribute is left blank, it will default to `BASELINE_1_1`. The following values are supported: BASELINE_1_8 - baseline usage is 1/8 of an OCPU. BASELINE_1_2 - baseline usage is 1/2 of an OCPU. BASELINE_1_1 - baseline usage is an entire OCPU. This represents a non-burstable instance.
+func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput) CpuBaseline() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail) string {
+		return v.CpuBaseline
+	}).(pulumi.StringOutput)
+}
+
+// The total amount of memory available to the pipeline step run instance GBs.
+func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput) MemoryInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail) float64 {
+		return v.MemoryInGbs
+	}).(pulumi.Float64Output)
+}
+
+// The total amount of memory available to the pipeline step run instance in GBs specified as a parameter. This overrides the memoryInGBs value. The request will fail if the parameters used are null or invalid.
+func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput) MemoryInGbsParameterized() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail) string {
+		return v.MemoryInGbsParameterized
+	}).(pulumi.StringOutput)
+}
+
+// The total number of OCPUs available to the pipeline step run instance.
+func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput) Ocpus() pulumi.Float64Output {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail) float64 {
+		return v.Ocpus
+	}).(pulumi.Float64Output)
+}
+
+// The total number of OCPUs available to the pipeline step run instance specified as a parameter. This overrides the ocpus value. The request will fail if the parameters used are null or invalid.
+func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput) OcpusParameterized() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail) string {
+		return v.OcpusParameterized
+	}).(pulumi.StringOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput() GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail {
+		return vs[0].([]GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetail)[vs[1].(int)]
+	}).(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput)
+}
+
 type GetPipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsList struct {
 	// The object storage bucket
 	Bucket string `pulumi:"bucket"`
@@ -13402,6 +13688,10 @@ func (o GetSchedulesScheduleTriggerArrayOutput) Index(i pulumi.IntInput) GetSche
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepRunInput)(nil)).Elem(), GetPipelineRunStepRunArgs{})
@@ -13586,6 +13876,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleLogDetailArrayInput)(nil)).Elem(), GetSchedulesScheduleLogDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleTriggerInput)(nil)).Elem(), GetSchedulesScheduleTriggerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetSchedulesScheduleTriggerArrayInput)(nil)).Elem(), GetSchedulesScheduleTriggerArray{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepStorageMountConfigurationDetailsListArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunStepRunOutput{})

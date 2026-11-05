@@ -69,6 +69,10 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// the ocid of the subnet to create the vnic in
         /// </summary>
         public readonly string? SubnetId;
+        /// <summary>
+        /// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        /// </summary>
+        public readonly ImmutableDictionary<string, string>? SystemTags;
 
         [OutputConstructor]
         private NodePoolNode(
@@ -98,7 +102,9 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
 
             string? state,
 
-            string? subnetId)
+            string? subnetId,
+
+            ImmutableDictionary<string, string>? systemTags)
         {
             AvailabilityDomain = availabilityDomain;
             DefinedTags = definedTags;
@@ -114,6 +120,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
             PublicIp = publicIp;
             State = state;
             SubnetId = subnetId;
+            SystemTags = systemTags;
         }
     }
 }

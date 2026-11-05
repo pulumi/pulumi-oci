@@ -45,6 +45,10 @@ import com.pulumi.oci.DataScience.inputs.GetMlApplicationPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetMlApplicationsArgs;
 import com.pulumi.oci.DataScience.inputs.GetMlApplicationsPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelArtifactSignatureArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelArtifactSignaturePlainArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelArtifactSignaturesArgs;
+import com.pulumi.oci.DataScience.inputs.GetModelArtifactSignaturesPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelCustomMetadataArtifactContentArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelCustomMetadataArtifactContentPlainArgs;
 import com.pulumi.oci.DataScience.inputs.GetModelDefinedMetadataArtifactContentArgs;
@@ -122,6 +126,8 @@ import com.pulumi.oci.DataScience.outputs.GetMlApplicationInstanceResult;
 import com.pulumi.oci.DataScience.outputs.GetMlApplicationInstancesResult;
 import com.pulumi.oci.DataScience.outputs.GetMlApplicationResult;
 import com.pulumi.oci.DataScience.outputs.GetMlApplicationsResult;
+import com.pulumi.oci.DataScience.outputs.GetModelArtifactSignatureResult;
+import com.pulumi.oci.DataScience.outputs.GetModelArtifactSignaturesResult;
 import com.pulumi.oci.DataScience.outputs.GetModelCustomMetadataArtifactContentResult;
 import com.pulumi.oci.DataScience.outputs.GetModelDefinedMetadataArtifactContentResult;
 import com.pulumi.oci.DataScience.outputs.GetModelDeploymentModelStatesResult;
@@ -4401,6 +4407,451 @@ public final class DataScienceFunctions {
      */
     public static CompletableFuture<GetModelResult> getModelPlain(GetModelPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataScience/getModel:getModel", TypeShape.of(GetModelResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Artifact Signature resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets the specified artifact signature for a model
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelArtifactSignatureArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelArtifactSignature = DataScienceFunctions.getModelArtifactSignature(GetModelArtifactSignatureArgs.builder()
+     *             .artifactSignatureId(testArtifactSignature.get("id"))
+     *             .modelId(testModel.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetModelArtifactSignatureResult> getModelArtifactSignature(GetModelArtifactSignatureArgs args) {
+        return getModelArtifactSignature(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Model Artifact Signature resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets the specified artifact signature for a model
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelArtifactSignatureArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelArtifactSignature = DataScienceFunctions.getModelArtifactSignature(GetModelArtifactSignatureArgs.builder()
+     *             .artifactSignatureId(testArtifactSignature.get("id"))
+     *             .modelId(testModel.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetModelArtifactSignatureResult> getModelArtifactSignaturePlain(GetModelArtifactSignaturePlainArgs args) {
+        return getModelArtifactSignaturePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Model Artifact Signature resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets the specified artifact signature for a model
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelArtifactSignatureArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelArtifactSignature = DataScienceFunctions.getModelArtifactSignature(GetModelArtifactSignatureArgs.builder()
+     *             .artifactSignatureId(testArtifactSignature.get("id"))
+     *             .modelId(testModel.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetModelArtifactSignatureResult> getModelArtifactSignature(GetModelArtifactSignatureArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelArtifactSignature:getModelArtifactSignature", TypeShape.of(GetModelArtifactSignatureResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Artifact Signature resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets the specified artifact signature for a model
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelArtifactSignatureArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelArtifactSignature = DataScienceFunctions.getModelArtifactSignature(GetModelArtifactSignatureArgs.builder()
+     *             .artifactSignatureId(testArtifactSignature.get("id"))
+     *             .modelId(testModel.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetModelArtifactSignatureResult> getModelArtifactSignature(GetModelArtifactSignatureArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelArtifactSignature:getModelArtifactSignature", TypeShape.of(GetModelArtifactSignatureResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Model Artifact Signature resource in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * Gets the specified artifact signature for a model
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelArtifactSignatureArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelArtifactSignature = DataScienceFunctions.getModelArtifactSignature(GetModelArtifactSignatureArgs.builder()
+     *             .artifactSignatureId(testArtifactSignature.get("id"))
+     *             .modelId(testModel.get("id"))
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetModelArtifactSignatureResult> getModelArtifactSignaturePlain(GetModelArtifactSignaturePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getModelArtifactSignature:getModelArtifactSignature", TypeShape.of(GetModelArtifactSignatureResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Model Artifact Signatures in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List model artifact signatures of a model in the specified compartment
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelArtifactSignaturesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelArtifactSignatures = DataScienceFunctions.getModelArtifactSignatures(GetModelArtifactSignaturesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .modelId(testModel.get("id"))
+     *             .digest(modelArtifactSignatureDigest)
+     *             .displayName(modelArtifactSignatureDisplayName)
+     *             .state(modelArtifactSignatureState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetModelArtifactSignaturesResult> getModelArtifactSignatures(GetModelArtifactSignaturesArgs args) {
+        return getModelArtifactSignatures(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Model Artifact Signatures in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List model artifact signatures of a model in the specified compartment
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelArtifactSignaturesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelArtifactSignatures = DataScienceFunctions.getModelArtifactSignatures(GetModelArtifactSignaturesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .modelId(testModel.get("id"))
+     *             .digest(modelArtifactSignatureDigest)
+     *             .displayName(modelArtifactSignatureDisplayName)
+     *             .state(modelArtifactSignatureState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetModelArtifactSignaturesResult> getModelArtifactSignaturesPlain(GetModelArtifactSignaturesPlainArgs args) {
+        return getModelArtifactSignaturesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Model Artifact Signatures in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List model artifact signatures of a model in the specified compartment
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelArtifactSignaturesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelArtifactSignatures = DataScienceFunctions.getModelArtifactSignatures(GetModelArtifactSignaturesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .modelId(testModel.get("id"))
+     *             .digest(modelArtifactSignatureDigest)
+     *             .displayName(modelArtifactSignatureDisplayName)
+     *             .state(modelArtifactSignatureState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetModelArtifactSignaturesResult> getModelArtifactSignatures(GetModelArtifactSignaturesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelArtifactSignatures:getModelArtifactSignatures", TypeShape.of(GetModelArtifactSignaturesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Model Artifact Signatures in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List model artifact signatures of a model in the specified compartment
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelArtifactSignaturesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelArtifactSignatures = DataScienceFunctions.getModelArtifactSignatures(GetModelArtifactSignaturesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .modelId(testModel.get("id"))
+     *             .digest(modelArtifactSignatureDigest)
+     *             .displayName(modelArtifactSignatureDisplayName)
+     *             .state(modelArtifactSignatureState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static Output<GetModelArtifactSignaturesResult> getModelArtifactSignatures(GetModelArtifactSignaturesArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("oci:DataScience/getModelArtifactSignatures:getModelArtifactSignatures", TypeShape.of(GetModelArtifactSignaturesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Model Artifact Signatures in Oracle Cloud Infrastructure Data Science service.
+     * 
+     * List model artifact signatures of a model in the specified compartment
+     * 
+     * ## Example Usage
+     * 
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataScience.DataScienceFunctions;
+     * import com.pulumi.oci.DataScience.inputs.GetModelArtifactSignaturesArgs;
+     * import java.util.ArrayList;
+     * import java.util.Arrays;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testModelArtifactSignatures = DataScienceFunctions.getModelArtifactSignatures(GetModelArtifactSignaturesArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .modelId(testModel.get("id"))
+     *             .digest(modelArtifactSignatureDigest)
+     *             .displayName(modelArtifactSignatureDisplayName)
+     *             .state(modelArtifactSignatureState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * 
+     */
+    public static CompletableFuture<GetModelArtifactSignaturesResult> getModelArtifactSignaturesPlain(GetModelArtifactSignaturesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataScience/getModelArtifactSignatures:getModelArtifactSignatures", TypeShape.of(GetModelArtifactSignaturesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides details about a specific Model Custom Metadata Artifact Content resource in Oracle Cloud Infrastructure Data Science service.

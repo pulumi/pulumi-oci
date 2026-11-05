@@ -31,7 +31,13 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<int>? MaximumBandwidthMbps { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the model you want to deploy.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+        /// </summary>
+        [Input("modelArtifactSignatureId")]
+        public Input<string>? ModelArtifactSignatureId { get; set; }
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
         /// </summary>
         [Input("modelId")]
         public Input<string>? ModelId { get; set; }

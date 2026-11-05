@@ -35,7 +35,7 @@ namespace Pulumi.Oci.Zpr
         /// });
         /// ```
         /// </summary>
-        public static Task<GetConfigurationResult> InvokeAsync(GetConfigurationArgs args, InvokeOptions? options = null)
+        public static Task<GetConfigurationResult> InvokeAsync(GetConfigurationArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetConfigurationResult>("oci:Zpr/getConfiguration:getConfiguration", args ?? new GetConfigurationArgs(), options.WithDefaults());
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.Zpr
         /// });
         /// ```
         /// </summary>
-        public static Output<GetConfigurationResult> Invoke(GetConfigurationInvokeArgs args, InvokeOptions? options = null)
+        public static Output<GetConfigurationResult> Invoke(GetConfigurationInvokeArgs? args = null, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetConfigurationResult>("oci:Zpr/getConfiguration:getConfiguration", args ?? new GetConfigurationInvokeArgs(), options.WithDefaults());
 
         /// <summary>
@@ -99,8 +99,8 @@ namespace Pulumi.Oci.Zpr
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
-        [Input("compartmentId", required: true)]
-        public string CompartmentId { get; set; } = null!;
+        [Input("compartmentId")]
+        public string? CompartmentId { get; set; }
 
         public GetConfigurationArgs()
         {
@@ -113,8 +113,8 @@ namespace Pulumi.Oci.Zpr
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which to list resources.
         /// </summary>
-        [Input("compartmentId", required: true)]
-        public Input<string> CompartmentId { get; set; } = null!;
+        [Input("compartmentId")]
+        public Input<string>? CompartmentId { get; set; }
 
         public GetConfigurationInvokeArgs()
         {
@@ -129,7 +129,7 @@ namespace Pulumi.Oci.Zpr
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenancy into which ZPR will be onboarded.
         /// </summary>
-        public readonly string CompartmentId;
+        public readonly string? CompartmentId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
@@ -169,7 +169,7 @@ namespace Pulumi.Oci.Zpr
 
         [OutputConstructor]
         private GetConfigurationResult(
-            string compartmentId,
+            string? compartmentId,
 
             ImmutableDictionary<string, string> definedTags,
 

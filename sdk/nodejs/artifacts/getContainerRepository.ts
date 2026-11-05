@@ -84,6 +84,10 @@ export interface GetContainerRepositoryResult {
      */
     readonly isPublic: boolean;
     /**
+     * Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+     */
+    readonly isTopLevel: boolean;
+    /**
      * Total number of layers.
      */
     readonly layerCount: number;
@@ -91,6 +95,10 @@ export interface GetContainerRepositoryResult {
      * Total storage in bytes consumed by layers.
      */
     readonly layersSizeInBytes: string;
+    /**
+     * List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, us-phoenix-1). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created.
+     */
+    readonly multiRegionPeers: string[];
     /**
      * The tenancy namespace used in the container repository path.
      */
@@ -100,6 +108,10 @@ export interface GetContainerRepositoryResult {
      */
     readonly readmes: outputs.Artifacts.GetContainerRepositoryReadme[];
     readonly repositoryId: string;
+    /**
+     * The type of container repository. This determines the repository behavior and required settings.
+     */
+    readonly repositoryType: string;
     /**
      * The current state of the container repository.
      */
@@ -116,6 +128,18 @@ export interface GetContainerRepositoryResult {
      * An RFC 3339 timestamp indicating when an image was last pushed to the repository.
      */
     readonly timeLastPushed: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository.
+     */
+    readonly upstreamSecretId: string;
+    /**
+     * The upstream registry URL for a pull-through cache repository.
+     */
+    readonly upstreamUrl: string;
+    /**
+     * The upstream registry username for a pull-through cache repository.
+     */
+    readonly upstreamUsername: string;
 }
 /**
  * This data source provides details about a specific Container Repository resource in Oracle Cloud Infrastructure Artifacts service.

@@ -17609,9 +17609,6 @@ export namespace Artifacts {
         content: string;
         /**
          * (Updatable) Readme format. Supported formats are text/plain and text/markdown.
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         format: string;
     }
@@ -17835,6 +17832,10 @@ export namespace Artifacts {
          */
         isPublic: boolean;
         /**
+         * A filter to return resources that match the isTopLevel value.
+         */
+        isTopLevel: boolean;
+        /**
          * Total number of layers.
          */
         layerCount: number;
@@ -17843,6 +17844,10 @@ export namespace Artifacts {
          */
         layersSizeInBytes: string;
         /**
+         * List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, us-phoenix-1). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created.
+         */
+        multiRegionPeers: string[];
+        /**
          * The tenancy namespace used in the container repository path.
          */
         namespace: string;
@@ -17850,6 +17855,10 @@ export namespace Artifacts {
          * Container repository readme.
          */
         readmes: outputs.Artifacts.GetContainerRepositoriesContainerRepositoryCollectionItemReadme[];
+        /**
+         * A filter to return only resources that match the given repository type exactly.
+         */
+        repositoryType: string;
         /**
          * A filter to return only resources that match the given lifecycle state name exactly.
          */
@@ -17866,6 +17875,18 @@ export namespace Artifacts {
          * An RFC 3339 timestamp indicating when an image was last pushed to the repository.
          */
         timeLastPushed: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository.
+         */
+        upstreamSecretId: string;
+        /**
+         * The upstream registry URL for a pull-through cache repository.
+         */
+        upstreamUrl: string;
+        /**
+         * The upstream registry username for a pull-through cache repository.
+         */
+        upstreamUsername: string;
     }
 
     export interface GetContainerRepositoriesContainerRepositoryCollectionItemReadme {
@@ -43567,6 +43588,10 @@ export namespace ContainerEngine {
          */
         state: string;
         /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
          * Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
          */
         type: string;
@@ -43922,6 +43947,10 @@ export namespace ContainerEngine {
          * the ocid of the subnet to create the vnic in
          */
         subnetId: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
     }
 
     export interface GetNodePoolNodeConfigDetail {
@@ -44333,6 +44362,10 @@ export namespace ContainerEngine {
          * The OCIDs of the subnets in which to place nodes for this node pool.
          */
         subnetIds: string[];
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
     }
 
     export interface GetNodePoolsNodePoolInitialNodeLabel {
@@ -44388,6 +44421,10 @@ export namespace ContainerEngine {
          * the ocid of the subnet to create the vnic in
          */
         subnetId: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
     }
 
     export interface GetNodePoolsNodePoolNodeConfigDetail {
@@ -45162,6 +45199,10 @@ export namespace ContainerEngine {
          * the ocid of the subnet to create the vnic in
          */
         subnetId: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
     }
 
     export interface NodePoolNodeConfigDetails {
@@ -96108,6 +96149,80 @@ export namespace DataScience {
         timeUpdated: string;
     }
 
+    export interface GetModelArtifactSignaturesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetModelArtifactSignaturesModelArtifactSignature {
+        /**
+         * <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
+         */
+        compartmentId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user who created the model.
+         */
+        createdBy: string;
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
+         */
+        definedTags: {[key: string]: string};
+        /**
+         * The digest of the model artifact.
+         */
+        digest: string;
+        /**
+         * <b>Filter</b> results by its user-friendly name.
+         */
+        displayName: string;
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
+         */
+        freeformTags: {[key: string]: string};
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model artifact signature.
+         */
+        id: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key from Oracle Cloud Infrastructure KMS.
+         */
+        kmsKeyId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key version from Oracle Cloud Infrastructure KMS.
+         */
+        kmsKeyVersionId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the model.
+         */
+        modelId: string;
+        /**
+         * The signature of the digest generated using kmsKeyId, kmsKeyVersion Id and signingAlgorithm.
+         */
+        signature: string;
+        /**
+         * The algorithm used for signing.
+         */
+        signingAlgorithm: string;
+        /**
+         * <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
+         */
+        state: string;
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+         */
+        systemTags: {[key: string]: string};
+        /**
+         * The date and time the resource was created in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+         */
+        timeCreated: string;
+        /**
+         * The date and time the resource was updated in the timestamp format defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Example: 2019-08-25T21:10:29.41Z
+         */
+        timeUpdated: string;
+        verifyTrigger: number;
+    }
+
     export interface GetModelBackupOperationDetail {
         /**
          * The backup status of the model.
@@ -96358,6 +96473,7 @@ export namespace DataScience {
     }
 
     export interface GetModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration {
+        capacityReservationIds: string[];
         /**
          * The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
          */
@@ -96594,7 +96710,11 @@ export namespace DataScience {
          */
         maximumBandwidthMbps: number;
         /**
-         * The OCID of the model you want to deploy.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+         */
+        modelArtifactSignatureId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
          */
         modelId: string;
         /**
@@ -96604,6 +96724,7 @@ export namespace DataScience {
     }
 
     export interface GetModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration {
+        capacityReservationIds: string[];
         /**
          * The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
          */
@@ -97057,6 +97178,7 @@ export namespace DataScience {
     }
 
     export interface GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailInfrastructureConfigurationDetailInstanceConfiguration {
+        capacityReservationIds: string[];
         /**
          * The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
          */
@@ -97293,7 +97415,11 @@ export namespace DataScience {
          */
         maximumBandwidthMbps: number;
         /**
-         * The OCID of the model you want to deploy.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+         */
+        modelArtifactSignatureId: string;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
          */
         modelId: string;
         /**
@@ -97303,6 +97429,7 @@ export namespace DataScience {
     }
 
     export interface GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailModelConfigurationDetailInstanceConfiguration {
+        capacityReservationIds: string[];
         /**
          * The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
          */
@@ -102894,6 +103021,9 @@ export namespace DataScience {
          * The maximum network bandwidth for the model deployment.
          */
         maximumBandwidthMbps: number;
+        /**
+         * (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+         */
         modelDeploymentResourceConfiguration: outputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration;
         /**
          * The scaling policy to apply to each model of the deployment.
@@ -102902,6 +103032,7 @@ export namespace DataScience {
     }
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration {
+        capacityReservationIds: string[];
         /**
          * The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
          */
@@ -102940,7 +103071,13 @@ export namespace DataScience {
     }
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration {
+        /**
+         * (Updatable) Resource limit configuration details for workload on managed compute cluster type compute target
+         */
         resourceLimitConfiguration: outputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceLimitConfiguration;
+        /**
+         * (Updatable) Resource request configuration to run workload on managed compute cluster type compute target compute target.
+         */
         resourceRequestConfiguration: outputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration;
     }
 
@@ -102956,6 +103093,9 @@ export namespace DataScience {
     }
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfiguration {
+        /**
+         * (Updatable) The total number of gpus required to be allocated to the workload.
+         */
         gpus: number;
         /**
          * A model-deployment instance of type VM.Standard.E3.Flex or VM.Standard.E4.Flex allows the memory to be specified with in the range of 6 to 1024 GB. VM.Standard3.Flex memory range is between 6 to 512 GB and VM.Optimized3.Flex memory range is between 6 to 256 GB.
@@ -103138,7 +103278,11 @@ export namespace DataScience {
          */
         maximumBandwidthMbps: number;
         /**
-         * (Updatable) The OCID of the model you want to deploy.
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model artifact signature.
+         */
+        modelArtifactSignatureId: string;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a model.
          */
         modelId: string;
         /**
@@ -103148,6 +103292,7 @@ export namespace DataScience {
     }
 
     export interface ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration {
+        capacityReservationIds: string[];
         /**
          * (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
          */

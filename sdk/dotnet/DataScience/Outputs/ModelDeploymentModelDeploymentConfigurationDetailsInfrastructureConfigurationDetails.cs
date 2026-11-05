@@ -30,6 +30,9 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// The maximum network bandwidth for the model deployment.
         /// </summary>
         public readonly int? MaximumBandwidthMbps;
+        /// <summary>
+        /// (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+        /// </summary>
         public readonly Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfiguration? ModelDeploymentResourceConfiguration;
         /// <summary>
         /// The scaling policy to apply to each model of the deployment.

@@ -32,18 +32,12 @@ public final class ContainerRepositoryReadmeArgs extends com.pulumi.resources.Re
     /**
      * (Updatable) Readme format. Supported formats are text/plain and text/markdown.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="format", required=true)
     private Output<String> format;
 
     /**
      * @return (Updatable) Readme format. Supported formats are text/plain and text/markdown.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> format() {
@@ -99,9 +93,6 @@ public final class ContainerRepositoryReadmeArgs extends com.pulumi.resources.Re
         /**
          * @param format (Updatable) Readme format. Supported formats are text/plain and text/markdown.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -112,9 +103,6 @@ public final class ContainerRepositoryReadmeArgs extends com.pulumi.resources.Re
 
         /**
          * @param format (Updatable) Readme format. Supported formats are text/plain and text/markdown.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

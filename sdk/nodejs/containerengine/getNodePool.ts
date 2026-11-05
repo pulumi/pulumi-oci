@@ -159,6 +159,10 @@ export interface GetNodePoolResult {
      * The OCIDs of the subnets in which to place nodes for this node pool.
      */
     readonly subnetIds: string[];
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    readonly systemTags: {[key: string]: string};
 }
 /**
  * This data source provides details about a specific Node Pool resource in Oracle Cloud Infrastructure Container Engine service.

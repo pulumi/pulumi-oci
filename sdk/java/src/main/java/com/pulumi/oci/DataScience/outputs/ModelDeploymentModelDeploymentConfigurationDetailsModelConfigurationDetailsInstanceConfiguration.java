@@ -6,12 +6,14 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.DataScience.outputs.ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
 @CustomType
 public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration {
+    private @Nullable List<String> capacityReservationIds;
     /**
      * @return (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
      * 
@@ -39,6 +41,9 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
     private @Nullable String subnetId;
 
     private ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration() {}
+    public List<String> capacityReservationIds() {
+        return this.capacityReservationIds == null ? List.of() : this.capacityReservationIds;
+    }
     /**
      * @return (Updatable) The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
      * 
@@ -84,6 +89,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable List<String> capacityReservationIds;
         private @Nullable String instanceShapeName;
         private @Nullable ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails modelDeploymentInstanceShapeConfigDetails;
         private @Nullable String networkAccessType;
@@ -92,6 +98,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
         public Builder() {}
         public Builder(ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.capacityReservationIds = defaults.capacityReservationIds;
     	      this.instanceShapeName = defaults.instanceShapeName;
     	      this.modelDeploymentInstanceShapeConfigDetails = defaults.modelDeploymentInstanceShapeConfigDetails;
     	      this.networkAccessType = defaults.networkAccessType;
@@ -99,6 +106,15 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
     	      this.subnetId = defaults.subnetId;
         }
 
+        @CustomType.Setter
+        public Builder capacityReservationIds(@Nullable List<String> capacityReservationIds) {
+
+            this.capacityReservationIds = capacityReservationIds;
+            return this;
+        }
+        public Builder capacityReservationIds(String... capacityReservationIds) {
+            return capacityReservationIds(List.of(capacityReservationIds));
+        }
         @CustomType.Setter
         public Builder instanceShapeName(@Nullable String instanceShapeName) {
 
@@ -131,6 +147,7 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsModelConfig
         }
         public ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration build() {
             final var _resultValue = new ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsInstanceConfiguration();
+            _resultValue.capacityReservationIds = capacityReservationIds;
             _resultValue.instanceShapeName = instanceShapeName;
             _resultValue.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
             _resultValue.networkAccessType = networkAccessType;

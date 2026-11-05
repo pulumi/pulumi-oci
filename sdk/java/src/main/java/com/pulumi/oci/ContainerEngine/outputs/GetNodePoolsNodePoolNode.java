@@ -63,6 +63,11 @@ public final class GetNodePoolsNodePoolNode {
      * 
      */
     private String subnetId;
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    private Map<String,String> systemTags;
 
     private GetNodePoolsNodePoolNode() {}
     /**
@@ -143,6 +148,13 @@ public final class GetNodePoolsNodePoolNode {
     public String subnetId() {
         return this.subnetId;
     }
+    /**
+     * @return Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
+     * 
+     */
+    public Map<String,String> systemTags() {
+        return this.systemTags;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -167,6 +179,7 @@ public final class GetNodePoolsNodePoolNode {
         private String publicIp;
         private String state;
         private String subnetId;
+        private Map<String,String> systemTags;
         public Builder() {}
         public Builder(GetNodePoolsNodePoolNode defaults) {
     	      Objects.requireNonNull(defaults);
@@ -184,6 +197,7 @@ public final class GetNodePoolsNodePoolNode {
     	      this.publicIp = defaults.publicIp;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
+    	      this.systemTags = defaults.systemTags;
         }
 
         @CustomType.Setter
@@ -301,6 +315,14 @@ public final class GetNodePoolsNodePoolNode {
             this.subnetId = subnetId;
             return this;
         }
+        @CustomType.Setter
+        public Builder systemTags(Map<String,String> systemTags) {
+            if (systemTags == null) {
+              throw new MissingRequiredPropertyException("GetNodePoolsNodePoolNode", "systemTags");
+            }
+            this.systemTags = systemTags;
+            return this;
+        }
         public GetNodePoolsNodePoolNode build() {
             final var _resultValue = new GetNodePoolsNodePoolNode();
             _resultValue.availabilityDomain = availabilityDomain;
@@ -317,6 +339,7 @@ public final class GetNodePoolsNodePoolNode {
             _resultValue.publicIp = publicIp;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
+            _resultValue.systemTags = systemTags;
             return _resultValue;
         }
     }

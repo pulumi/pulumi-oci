@@ -418,7 +418,8 @@ class _NodePoolState:
                  secondary_vnics: pulumi.Input[Optional[Sequence[pulumi.Input['NodePoolSecondaryVnicArgs']]]] = None,
                  ssh_public_key: pulumi.Input[Optional[_builtins.str]] = None,
                  state: pulumi.Input[Optional[_builtins.str]] = None,
-                 subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+                 subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None):
         """
         Input properties used for looking up and filtering NodePool resources.
 
@@ -451,6 +452,7 @@ class _NodePoolState:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         if cluster_id is not None:
             pulumi.set(__self__, "cluster_id", cluster_id)
@@ -510,6 +512,8 @@ class _NodePoolState:
             pulumi.set(__self__, "state", state)
         if subnet_ids is not None:
             pulumi.set(__self__, "subnet_ids", subnet_ids)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
 
     @_builtins.property
     @pulumi.getter(name="clusterId")
@@ -827,6 +831,18 @@ class _NodePoolState:
     @subnet_ids.setter
     def subnet_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
         pulumi.set(self, "subnet_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
+    @system_tags.setter
+    def system_tags(self, value: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "system_tags", value)
 
 
 @pulumi.type_token("oci:ContainerEngine/nodePool:NodePool")
@@ -1224,6 +1240,7 @@ class NodePool(pulumi.CustomResource):
             __props__.__dict__["node_sources"] = None
             __props__.__dict__["nodes"] = None
             __props__.__dict__["state"] = None
+            __props__.__dict__["system_tags"] = None
         super(NodePool, __self__).__init__(
             'oci:ContainerEngine/nodePool:NodePool',
             resource_name,
@@ -1259,7 +1276,8 @@ class NodePool(pulumi.CustomResource):
             secondary_vnics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict', 'outputs.NodePoolSecondaryVnic']]]]] = None,
             ssh_public_key: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> 'NodePool':
+            subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None) -> 'NodePool':
         """
         Get an existing NodePool resource's state with the given name, id, and optional extra
         properties used to qualify the lookup.
@@ -1296,6 +1314,7 @@ class NodePool(pulumi.CustomResource):
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Mapping[str, pulumi.Input[_builtins.str]]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -1327,6 +1346,7 @@ class NodePool(pulumi.CustomResource):
         __props__.__dict__["ssh_public_key"] = ssh_public_key
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_ids"] = subnet_ids
+        __props__.__dict__["system_tags"] = system_tags
         return NodePool(resource_name, opts=opts, __props__=__props__)
 
     @staticmethod
@@ -1357,7 +1377,8 @@ class NodePool(pulumi.CustomResource):
             secondary_vnics: pulumi.Input[Optional[Sequence[pulumi.Input[Union['NodePoolSecondaryVnicArgs', 'NodePoolSecondaryVnicArgsDict', 'outputs.NodePoolSecondaryVnic']]]]] = None,
             ssh_public_key: pulumi.Input[Optional[_builtins.str]] = None,
             state: pulumi.Input[Optional[_builtins.str]] = None,
-            subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
+            subnet_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+            system_tags: pulumi.Input[Optional[Mapping[str, pulumi.Input[_builtins.str]]]] = None) -> pulumi.Output[bool]:
         __props__: dict = {}
         __props__["clusterId"] = cluster_id
         __props__["compartmentId"] = compartment_id
@@ -1385,6 +1406,7 @@ class NodePool(pulumi.CustomResource):
         __props__["sshPublicKey"] = ssh_public_key
         __props__["state"] = state
         __props__["subnetIds"] = subnet_ids
+        __props__["systemTags"] = system_tags
         return pulumi.runtime.exists_resource(None, 'oci:ContainerEngine/nodePool:NodePool', id, __props__, opts or pulumi.ResourceOptions())
 
     @_builtins.property
@@ -1599,4 +1621,12 @@ class NodePool(pulumi.CustomResource):
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "subnet_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> pulumi.Output[Mapping[str, _builtins.str]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 

@@ -78,15 +78,21 @@ type LookupContainerRepositoryResult struct {
 	IsImmutable bool `pulumi:"isImmutable"`
 	// Whether the repository is public. A public repository allows unauthenticated access.
 	IsPublic bool `pulumi:"isPublic"`
+	// Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+	IsTopLevel bool `pulumi:"isTopLevel"`
 	// Total number of layers.
 	LayerCount int `pulumi:"layerCount"`
 	// Total storage in bytes consumed by layers.
 	LayersSizeInBytes string `pulumi:"layersSizeInBytes"`
+	// List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, us-phoenix-1). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created.
+	MultiRegionPeers []string `pulumi:"multiRegionPeers"`
 	// The tenancy namespace used in the container repository path.
 	Namespace string `pulumi:"namespace"`
 	// Container repository readme.
 	Readmes      []GetContainerRepositoryReadme `pulumi:"readmes"`
 	RepositoryId string                         `pulumi:"repositoryId"`
+	// The type of container repository. This determines the repository behavior and required settings.
+	RepositoryType string `pulumi:"repositoryType"`
 	// The current state of the container repository.
 	State string `pulumi:"state"`
 	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -95,6 +101,12 @@ type LookupContainerRepositoryResult struct {
 	TimeCreated string `pulumi:"timeCreated"`
 	// An RFC 3339 timestamp indicating when an image was last pushed to the repository.
 	TimeLastPushed string `pulumi:"timeLastPushed"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository.
+	UpstreamSecretId string `pulumi:"upstreamSecretId"`
+	// The upstream registry URL for a pull-through cache repository.
+	UpstreamUrl string `pulumi:"upstreamUrl"`
+	// The upstream registry username for a pull-through cache repository.
+	UpstreamUsername string `pulumi:"upstreamUsername"`
 }
 
 func LookupContainerRepositoryOutput(ctx *pulumi.Context, args LookupContainerRepositoryOutputArgs, opts ...pulumi.InvokeOption) LookupContainerRepositoryResultOutput {
@@ -177,6 +189,11 @@ func (o LookupContainerRepositoryResultOutput) IsPublic() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupContainerRepositoryResult) bool { return v.IsPublic }).(pulumi.BoolOutput)
 }
 
+// Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+func (o LookupContainerRepositoryResultOutput) IsTopLevel() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) bool { return v.IsTopLevel }).(pulumi.BoolOutput)
+}
+
 // Total number of layers.
 func (o LookupContainerRepositoryResultOutput) LayerCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupContainerRepositoryResult) int { return v.LayerCount }).(pulumi.IntOutput)
@@ -185,6 +202,11 @@ func (o LookupContainerRepositoryResultOutput) LayerCount() pulumi.IntOutput {
 // Total storage in bytes consumed by layers.
 func (o LookupContainerRepositoryResultOutput) LayersSizeInBytes() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupContainerRepositoryResult) string { return v.LayersSizeInBytes }).(pulumi.StringOutput)
+}
+
+// List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, us-phoenix-1). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created.
+func (o LookupContainerRepositoryResultOutput) MultiRegionPeers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) []string { return v.MultiRegionPeers }).(pulumi.StringArrayOutput)
 }
 
 // The tenancy namespace used in the container repository path.
@@ -199,6 +221,11 @@ func (o LookupContainerRepositoryResultOutput) Readmes() GetContainerRepositoryR
 
 func (o LookupContainerRepositoryResultOutput) RepositoryId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupContainerRepositoryResult) string { return v.RepositoryId }).(pulumi.StringOutput)
+}
+
+// The type of container repository. This determines the repository behavior and required settings.
+func (o LookupContainerRepositoryResultOutput) RepositoryType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) string { return v.RepositoryType }).(pulumi.StringOutput)
 }
 
 // The current state of the container repository.
@@ -219,6 +246,21 @@ func (o LookupContainerRepositoryResultOutput) TimeCreated() pulumi.StringOutput
 // An RFC 3339 timestamp indicating when an image was last pushed to the repository.
 func (o LookupContainerRepositoryResultOutput) TimeLastPushed() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupContainerRepositoryResult) string { return v.TimeLastPushed }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository.
+func (o LookupContainerRepositoryResultOutput) UpstreamSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) string { return v.UpstreamSecretId }).(pulumi.StringOutput)
+}
+
+// The upstream registry URL for a pull-through cache repository.
+func (o LookupContainerRepositoryResultOutput) UpstreamUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) string { return v.UpstreamUrl }).(pulumi.StringOutput)
+}
+
+// The upstream registry username for a pull-through cache repository.
+func (o LookupContainerRepositoryResultOutput) UpstreamUsername() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupContainerRepositoryResult) string { return v.UpstreamUsername }).(pulumi.StringOutput)
 }
 
 func init() {

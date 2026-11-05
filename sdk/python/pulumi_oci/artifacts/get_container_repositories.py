@@ -28,7 +28,7 @@ class GetContainerRepositoriesResult:
     """
     A collection of values returned by getContainerRepositories.
     """
-    def __init__(__self__, compartment_id=None, compartment_id_in_subtree=None, container_repository_collections=None, display_name=None, filters=None, id=None, is_public=None, repository_id=None, state=None):
+    def __init__(__self__, compartment_id=None, compartment_id_in_subtree=None, container_repository_collections=None, display_name=None, filters=None, id=None, is_public=None, is_top_level=None, repository_id=None, repository_type=None, state=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -50,9 +50,15 @@ class GetContainerRepositoriesResult:
         if is_public and not isinstance(is_public, bool):
             raise TypeError("Expected argument 'is_public' to be a bool")
         pulumi.set(__self__, "is_public", is_public)
+        if is_top_level and not isinstance(is_top_level, bool):
+            raise TypeError("Expected argument 'is_top_level' to be a bool")
+        pulumi.set(__self__, "is_top_level", is_top_level)
         if repository_id and not isinstance(repository_id, str):
             raise TypeError("Expected argument 'repository_id' to be a str")
         pulumi.set(__self__, "repository_id", repository_id)
+        if repository_type and not isinstance(repository_type, str):
+            raise TypeError("Expected argument 'repository_type' to be a str")
+        pulumi.set(__self__, "repository_type", repository_type)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -108,9 +114,25 @@ class GetContainerRepositoriesResult:
         return pulumi.get(self, "is_public")
 
     @_builtins.property
+    @pulumi.getter(name="isTopLevel")
+    def is_top_level(self) -> Optional[_builtins.bool]:
+        """
+        Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+        """
+        return pulumi.get(self, "is_top_level")
+
+    @_builtins.property
     @pulumi.getter(name="repositoryId")
     def repository_id(self) -> Optional[_builtins.str]:
         return pulumi.get(self, "repository_id")
+
+    @_builtins.property
+    @pulumi.getter(name="repositoryType")
+    def repository_type(self) -> Optional[_builtins.str]:
+        """
+        The type of container repository. This determines the repository behavior and required settings.
+        """
+        return pulumi.get(self, "repository_type")
 
     @_builtins.property
     @pulumi.getter
@@ -134,7 +156,9 @@ class AwaitableGetContainerRepositoriesResult(GetContainerRepositoriesResult):
             filters=self.filters,
             id=self.id,
             is_public=self.is_public,
+            is_top_level=self.is_top_level,
             repository_id=self.repository_id,
+            repository_type=self.repository_type,
             state=self.state)
 
 
@@ -143,7 +167,9 @@ def get_container_repositories(compartment_id: Optional[_builtins.str] = None,
                                display_name: Optional[_builtins.str] = None,
                                filters: Optional[Sequence[Union['GetContainerRepositoriesFilterArgs', 'GetContainerRepositoriesFilterArgsDict', 'outputs.GetContainerRepositoriesFilterResult']]] = None,
                                is_public: Optional[_builtins.bool] = None,
+                               is_top_level: Optional[_builtins.bool] = None,
                                repository_id: Optional[_builtins.str] = None,
+                               repository_type: Optional[_builtins.str] = None,
                                state: Optional[_builtins.str] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetContainerRepositoriesResult:
     """
@@ -161,7 +187,9 @@ def get_container_repositories(compartment_id: Optional[_builtins.str] = None,
         compartment_id_in_subtree=container_repository_compartment_id_in_subtree,
         display_name=container_repository_display_name,
         is_public=container_repository_is_public,
+        is_top_level=container_repository_is_top_level,
         repository_id=test_repository["id"],
+        repository_type=container_repository_repository_type,
         state=container_repository_state)
     ```
 
@@ -170,7 +198,9 @@ def get_container_repositories(compartment_id: Optional[_builtins.str] = None,
     :param _builtins.bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are inspected depending on the the setting of `accessLevel`. Default is false. Can only be set to true when calling the API on the tenancy (root compartment).
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
     :param _builtins.bool is_public: A filter to return resources that match the isPublic value.
+    :param _builtins.bool is_top_level: A filter to return resources that match the isTopLevel value.
     :param _builtins.str repository_id: A filter to return container images only for the specified container repository OCID.
+    :param _builtins.str repository_type: A filter to return only resources that match the given repository type exactly.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state name exactly.
     """
     __args__ = dict()
@@ -179,7 +209,9 @@ def get_container_repositories(compartment_id: Optional[_builtins.str] = None,
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['isPublic'] = is_public
+    __args__['isTopLevel'] = is_top_level
     __args__['repositoryId'] = repository_id
+    __args__['repositoryType'] = repository_type
     __args__['state'] = state
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Artifacts/getContainerRepositories:getContainerRepositories', __args__, opts=opts, typ=GetContainerRepositoriesResult).value
@@ -192,14 +224,18 @@ def get_container_repositories(compartment_id: Optional[_builtins.str] = None,
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         is_public=pulumi.get(__ret__, 'is_public'),
+        is_top_level=pulumi.get(__ret__, 'is_top_level'),
         repository_id=pulumi.get(__ret__, 'repository_id'),
+        repository_type=pulumi.get(__ret__, 'repository_type'),
         state=pulumi.get(__ret__, 'state'))
 def get_container_repositories_output(compartment_id: pulumi.Input[Optional[_builtins.str]] = None,
                                       compartment_id_in_subtree: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                       display_name: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       filters: pulumi.Input[Optional[Optional[Sequence[Union['GetContainerRepositoriesFilterArgs', 'GetContainerRepositoriesFilterArgsDict', 'outputs.GetContainerRepositoriesFilterResult']]]]] = None,
                                       is_public: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
+                                      is_top_level: pulumi.Input[Optional[Optional[_builtins.bool]]] = None,
                                       repository_id: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
+                                      repository_type: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       state: pulumi.Input[Optional[Optional[_builtins.str]]] = None,
                                       opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetContainerRepositoriesResult]:
     """
@@ -217,7 +253,9 @@ def get_container_repositories_output(compartment_id: pulumi.Input[Optional[_bui
         compartment_id_in_subtree=container_repository_compartment_id_in_subtree,
         display_name=container_repository_display_name,
         is_public=container_repository_is_public,
+        is_top_level=container_repository_is_top_level,
         repository_id=test_repository["id"],
+        repository_type=container_repository_repository_type,
         state=container_repository_state)
     ```
 
@@ -226,7 +264,9 @@ def get_container_repositories_output(compartment_id: pulumi.Input[Optional[_bui
     :param _builtins.bool compartment_id_in_subtree: When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are inspected depending on the the setting of `accessLevel`. Default is false. Can only be set to true when calling the API on the tenancy (root compartment).
     :param _builtins.str display_name: A filter to return only resources that match the given display name exactly.
     :param _builtins.bool is_public: A filter to return resources that match the isPublic value.
+    :param _builtins.bool is_top_level: A filter to return resources that match the isTopLevel value.
     :param _builtins.str repository_id: A filter to return container images only for the specified container repository OCID.
+    :param _builtins.str repository_type: A filter to return only resources that match the given repository type exactly.
     :param _builtins.str state: A filter to return only resources that match the given lifecycle state name exactly.
     """
     __args__ = dict()
@@ -235,7 +275,9 @@ def get_container_repositories_output(compartment_id: pulumi.Input[Optional[_bui
     __args__['displayName'] = display_name
     __args__['filters'] = filters
     __args__['isPublic'] = is_public
+    __args__['isTopLevel'] = is_top_level
     __args__['repositoryId'] = repository_id
+    __args__['repositoryType'] = repository_type
     __args__['state'] = state
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke_output('oci:Artifacts/getContainerRepositories:getContainerRepositories', __args__, opts=opts, typ=GetContainerRepositoriesResult)
@@ -247,5 +289,7 @@ def get_container_repositories_output(compartment_id: pulumi.Input[Optional[_bui
         filters=pulumi.get(__response__, 'filters'),
         id=pulumi.get(__response__, 'id'),
         is_public=pulumi.get(__response__, 'is_public'),
+        is_top_level=pulumi.get(__response__, 'is_top_level'),
         repository_id=pulumi.get(__response__, 'repository_id'),
+        repository_type=pulumi.get(__response__, 'repository_type'),
         state=pulumi.get(__response__, 'state')))

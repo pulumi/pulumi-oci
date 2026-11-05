@@ -3147,6 +3147,8 @@ class NodePoolNode(dict):
             suggest = "public_ip"
         elif key == "subnetId":
             suggest = "subnet_id"
+        elif key == "systemTags":
+            suggest = "system_tags"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in NodePoolNode. Access the value via the '{suggest}' property getter instead.")
@@ -3173,7 +3175,8 @@ class NodePoolNode(dict):
                  private_ip: Optional[_builtins.str] = None,
                  public_ip: Optional[_builtins.str] = None,
                  state: Optional[_builtins.str] = None,
-                 subnet_id: Optional[_builtins.str] = None):
+                 subnet_id: Optional[_builtins.str] = None,
+                 system_tags: Optional[Mapping[str, _builtins.str]] = None):
         """
         :param _builtins.str availability_domain: The name of the availability domain in which this node is placed.
         :param Mapping[str, _builtins.str] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -3189,6 +3192,7 @@ class NodePoolNode(dict):
         :param _builtins.str public_ip: The public IP address of this node.
         :param _builtins.str state: The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengmonitoringclusters.htm)
         :param _builtins.str subnet_id: the ocid of the subnet to create the vnic in
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         if availability_domain is not None:
             pulumi.set(__self__, "availability_domain", availability_domain)
@@ -3218,6 +3222,8 @@ class NodePoolNode(dict):
             pulumi.set(__self__, "state", state)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+        if system_tags is not None:
+            pulumi.set(__self__, "system_tags", system_tags)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -3330,6 +3336,14 @@ class NodePoolNode(dict):
         the ocid of the subnet to create the vnic in
         """
         return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Optional[Mapping[str, _builtins.str]]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
 
 @pulumi.output_type
@@ -6247,6 +6261,7 @@ class GetClustersClusterResult(dict):
                  open_id_connect_discovery_key: _builtins.str,
                  options: Sequence['outputs.GetClustersClusterOptionResult'],
                  state: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str],
                  type: _builtins.str,
                  vcn_id: _builtins.str):
         """
@@ -6268,6 +6283,7 @@ class GetClustersClusterResult(dict):
         :param _builtins.str open_id_connect_discovery_key: The cluster-specific OpenID Connect Discovery Key to derive the DiscoveryEndpoint
         :param Sequence['GetClustersClusterOptionArgs'] options: Optional attributes for the cluster.
         :param _builtins.str state: A cluster lifecycle state to filter on. Can have multiple parameters of this name.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str type: Type of cluster. Values can be BASIC_CLUSTER or ENHANCED_CLUSTER. For more information, see [Cluster Types](https://docs.cloud.oracle.com/iaas/Content/ContEng/Tasks/contengcomparingenhancedwithbasicclusters_topic.htm)
         :param _builtins.str vcn_id: The OCID of the virtual cloud network (VCN) in which the cluster exists.
         """
@@ -6289,6 +6305,7 @@ class GetClustersClusterResult(dict):
         pulumi.set(__self__, "open_id_connect_discovery_key", open_id_connect_discovery_key)
         pulumi.set(__self__, "options", options)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "type", type)
         pulumi.set(__self__, "vcn_id", vcn_id)
 
@@ -6435,6 +6452,14 @@ class GetClustersClusterResult(dict):
         A cluster lifecycle state to filter on. Can have multiple parameters of this name.
         """
         return pulumi.get(self, "state")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
     @_builtins.property
     @pulumi.getter
@@ -7252,7 +7277,8 @@ class GetNodePoolNodeResult(dict):
                  private_ip: _builtins.str,
                  public_ip: _builtins.str,
                  state: _builtins.str,
-                 subnet_id: _builtins.str):
+                 subnet_id: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str]):
         """
         :param _builtins.str availability_domain: The name of the availability domain in which this node is placed.
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -7268,6 +7294,7 @@ class GetNodePoolNodeResult(dict):
         :param _builtins.str public_ip: The public IP address of this node.
         :param _builtins.str state: The state of the nodepool.
         :param _builtins.str subnet_id: the ocid of the subnet to create the vnic in
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -7283,6 +7310,7 @@ class GetNodePoolNodeResult(dict):
         pulumi.set(__self__, "public_ip", public_ip)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "system_tags", system_tags)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -7395,6 +7423,14 @@ class GetNodePoolNodeResult(dict):
         the ocid of the subnet to create the vnic in
         """
         return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
 
 @pulumi.output_type
@@ -8243,7 +8279,8 @@ class GetNodePoolsNodePoolResult(dict):
                  secondary_vnics: Sequence['outputs.GetNodePoolsNodePoolSecondaryVnicResult'],
                  ssh_public_key: _builtins.str,
                  state: _builtins.str,
-                 subnet_ids: Sequence[_builtins.str]):
+                 subnet_ids: Sequence[_builtins.str],
+                 system_tags: Mapping[str, _builtins.str]):
         """
         :param _builtins.str cluster_id: The OCID of the cluster.
         :param _builtins.str compartment_id: The OCID of the compartment.
@@ -8270,6 +8307,7 @@ class GetNodePoolsNodePoolResult(dict):
         :param _builtins.str ssh_public_key: The SSH public key on each node in the node pool on launch.
         :param _builtins.str state: A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
         :param Sequence[_builtins.str] subnet_ids: The OCIDs of the subnets in which to place nodes for this node pool.
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         pulumi.set(__self__, "cluster_id", cluster_id)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -8299,6 +8337,7 @@ class GetNodePoolsNodePoolResult(dict):
         pulumi.set(__self__, "ssh_public_key", ssh_public_key)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_ids", subnet_ids)
+        pulumi.set(__self__, "system_tags", system_tags)
 
     @_builtins.property
     @pulumi.getter(name="clusterId")
@@ -8517,6 +8556,14 @@ class GetNodePoolsNodePoolResult(dict):
         """
         return pulumi.get(self, "subnet_ids")
 
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
 
 @pulumi.output_type
 class GetNodePoolsNodePoolInitialNodeLabelResult(dict):
@@ -8563,7 +8610,8 @@ class GetNodePoolsNodePoolNodeResult(dict):
                  private_ip: _builtins.str,
                  public_ip: _builtins.str,
                  state: _builtins.str,
-                 subnet_id: _builtins.str):
+                 subnet_id: _builtins.str,
+                 system_tags: Mapping[str, _builtins.str]):
         """
         :param _builtins.str availability_domain: The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
         :param Mapping[str, _builtins.str] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
@@ -8574,6 +8622,7 @@ class GetNodePoolsNodePoolNodeResult(dict):
         :param _builtins.str name: The name to filter on.
         :param _builtins.str state: A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR logic). eg. [ACTIVE, DELETING]
         :param _builtins.str subnet_id: the ocid of the subnet to create the vnic in
+        :param Mapping[str, _builtins.str] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         pulumi.set(__self__, "availability_domain", availability_domain)
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -8589,6 +8638,7 @@ class GetNodePoolsNodePoolNodeResult(dict):
         pulumi.set(__self__, "public_ip", public_ip)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "system_tags", system_tags)
 
     @_builtins.property
     @pulumi.getter(name="availabilityDomain")
@@ -8686,6 +8736,14 @@ class GetNodePoolsNodePoolNodeResult(dict):
         the ocid of the subnet to create the vnic in
         """
         return pulumi.get(self, "subnet_id")
+
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
 
 
 @pulumi.output_type

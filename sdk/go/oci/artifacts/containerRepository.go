@@ -42,12 +42,18 @@ import (
 //				FreeformTags: pulumi.StringMap{
 //					"Department": pulumi.String("Finance"),
 //				},
-//				IsImmutable: pulumi.Any(containerRepositoryIsImmutable),
-//				IsPublic:    pulumi.Any(containerRepositoryIsPublic),
+//				IsImmutable:      pulumi.Any(containerRepositoryIsImmutable),
+//				IsPublic:         pulumi.Any(containerRepositoryIsPublic),
+//				IsTopLevel:       pulumi.Any(containerRepositoryIsTopLevel),
+//				MultiRegionPeers: pulumi.Any(containerRepositoryMultiRegionPeers),
 //				Readme: &artifacts.ContainerRepositoryReadmeArgs{
 //					Content: pulumi.Any(containerRepositoryReadmeContent),
 //					Format:  pulumi.Any(containerRepositoryReadmeFormat),
 //				},
+//				RepositoryType:   pulumi.Any(containerRepositoryRepositoryType),
+//				UpstreamSecretId: pulumi.Any(containerRepositoryUpstreamSecretId),
+//				UpstreamUrl:      pulumi.Any(containerRepositoryUpstreamUrl),
+//				UpstreamUsername: pulumi.Any(containerRepositoryUpstreamUsername),
 //			})
 //			if err != nil {
 //				return err
@@ -82,18 +88,24 @@ type ContainerRepository struct {
 	FreeformTags pulumi.StringMapOutput `pulumi:"freeformTags"`
 	// Total number of images.
 	ImageCount pulumi.IntOutput `pulumi:"imageCount"`
-	// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+	// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
 	IsImmutable pulumi.BoolOutput `pulumi:"isImmutable"`
 	// (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
 	IsPublic pulumi.BoolOutput `pulumi:"isPublic"`
+	// Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+	IsTopLevel pulumi.BoolOutput `pulumi:"isTopLevel"`
 	// Total number of layers.
 	LayerCount pulumi.IntOutput `pulumi:"layerCount"`
 	// Total storage in bytes consumed by layers.
 	LayersSizeInBytes pulumi.StringOutput `pulumi:"layersSizeInBytes"`
+	// List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.
+	MultiRegionPeers pulumi.StringArrayOutput `pulumi:"multiRegionPeers"`
 	// The tenancy namespace used in the container repository path.
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// (Updatable) Container repository readme.
 	Readme ContainerRepositoryReadmeOutput `pulumi:"readme"`
+	// The type of container repository. This determines the repository behavior and required settings.
+	RepositoryType pulumi.StringOutput `pulumi:"repositoryType"`
 	// The current state of the container repository.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -102,6 +114,19 @@ type ContainerRepository struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// An RFC 3339 timestamp indicating when an image was last pushed to the repository.
 	TimeLastPushed pulumi.StringOutput `pulumi:"timeLastPushed"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+	UpstreamSecretId pulumi.StringOutput `pulumi:"upstreamSecretId"`
+	// The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.
+	//
+	// If isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/<upstreamNamespace>/library/ubuntu`
+	//
+	// If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/<upstreamNamespace>/library` or `iad.ocir.io/<upstreamNamespace>`
+	UpstreamUrl pulumi.StringOutput `pulumi:"upstreamUrl"`
+	// (Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	UpstreamUsername pulumi.StringOutput `pulumi:"upstreamUsername"`
 }
 
 // NewContainerRepository registers a new resource with the given unique name, arguments, and options.
@@ -154,18 +179,24 @@ type containerRepositoryState struct {
 	FreeformTags map[string]string `pulumi:"freeformTags"`
 	// Total number of images.
 	ImageCount *int `pulumi:"imageCount"`
-	// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+	// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
 	IsImmutable *bool `pulumi:"isImmutable"`
 	// (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
 	IsPublic *bool `pulumi:"isPublic"`
+	// Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+	IsTopLevel *bool `pulumi:"isTopLevel"`
 	// Total number of layers.
 	LayerCount *int `pulumi:"layerCount"`
 	// Total storage in bytes consumed by layers.
 	LayersSizeInBytes *string `pulumi:"layersSizeInBytes"`
+	// List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.
+	MultiRegionPeers []string `pulumi:"multiRegionPeers"`
 	// The tenancy namespace used in the container repository path.
 	Namespace *string `pulumi:"namespace"`
 	// (Updatable) Container repository readme.
 	Readme *ContainerRepositoryReadme `pulumi:"readme"`
+	// The type of container repository. This determines the repository behavior and required settings.
+	RepositoryType *string `pulumi:"repositoryType"`
 	// The current state of the container repository.
 	State *string `pulumi:"state"`
 	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -174,6 +205,19 @@ type containerRepositoryState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// An RFC 3339 timestamp indicating when an image was last pushed to the repository.
 	TimeLastPushed *string `pulumi:"timeLastPushed"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+	UpstreamSecretId *string `pulumi:"upstreamSecretId"`
+	// The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.
+	//
+	// If isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/<upstreamNamespace>/library/ubuntu`
+	//
+	// If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/<upstreamNamespace>/library` or `iad.ocir.io/<upstreamNamespace>`
+	UpstreamUrl *string `pulumi:"upstreamUrl"`
+	// (Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	UpstreamUsername *string `pulumi:"upstreamUsername"`
 }
 
 type ContainerRepositoryState struct {
@@ -191,18 +235,24 @@ type ContainerRepositoryState struct {
 	FreeformTags pulumi.StringMapInput
 	// Total number of images.
 	ImageCount pulumi.IntPtrInput
-	// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+	// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
 	IsImmutable pulumi.BoolPtrInput
 	// (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
 	IsPublic pulumi.BoolPtrInput
+	// Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+	IsTopLevel pulumi.BoolPtrInput
 	// Total number of layers.
 	LayerCount pulumi.IntPtrInput
 	// Total storage in bytes consumed by layers.
 	LayersSizeInBytes pulumi.StringPtrInput
+	// List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.
+	MultiRegionPeers pulumi.StringArrayInput
 	// The tenancy namespace used in the container repository path.
 	Namespace pulumi.StringPtrInput
 	// (Updatable) Container repository readme.
 	Readme ContainerRepositoryReadmePtrInput
+	// The type of container repository. This determines the repository behavior and required settings.
+	RepositoryType pulumi.StringPtrInput
 	// The current state of the container repository.
 	State pulumi.StringPtrInput
 	// The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -211,6 +261,19 @@ type ContainerRepositoryState struct {
 	TimeCreated pulumi.StringPtrInput
 	// An RFC 3339 timestamp indicating when an image was last pushed to the repository.
 	TimeLastPushed pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+	UpstreamSecretId pulumi.StringPtrInput
+	// The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.
+	//
+	// If isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/<upstreamNamespace>/library/ubuntu`
+	//
+	// If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/<upstreamNamespace>/library` or `iad.ocir.io/<upstreamNamespace>`
+	UpstreamUrl pulumi.StringPtrInput
+	// (Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	UpstreamUsername pulumi.StringPtrInput
 }
 
 func (ContainerRepositoryState) ElementType() reflect.Type {
@@ -232,12 +295,31 @@ type containerRepositoryArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]string `pulumi:"freeformTags"`
-	// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+	// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
 	IsImmutable *bool `pulumi:"isImmutable"`
 	// (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
 	IsPublic *bool `pulumi:"isPublic"`
+	// Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+	IsTopLevel *bool `pulumi:"isTopLevel"`
+	// List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.
+	MultiRegionPeers []string `pulumi:"multiRegionPeers"`
 	// (Updatable) Container repository readme.
 	Readme *ContainerRepositoryReadme `pulumi:"readme"`
+	// The type of container repository. This determines the repository behavior and required settings.
+	RepositoryType *string `pulumi:"repositoryType"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+	UpstreamSecretId *string `pulumi:"upstreamSecretId"`
+	// The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.
+	//
+	// If isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/<upstreamNamespace>/library/ubuntu`
+	//
+	// If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/<upstreamNamespace>/library` or `iad.ocir.io/<upstreamNamespace>`
+	UpstreamUrl *string `pulumi:"upstreamUrl"`
+	// (Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	UpstreamUsername *string `pulumi:"upstreamUsername"`
 }
 
 // The set of arguments for constructing a ContainerRepository resource.
@@ -250,12 +332,31 @@ type ContainerRepositoryArgs struct {
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.StringMapInput
-	// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+	// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
 	IsImmutable pulumi.BoolPtrInput
 	// (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
 	IsPublic pulumi.BoolPtrInput
+	// Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+	IsTopLevel pulumi.BoolPtrInput
+	// List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.
+	MultiRegionPeers pulumi.StringArrayInput
 	// (Updatable) Container repository readme.
 	Readme ContainerRepositoryReadmePtrInput
+	// The type of container repository. This determines the repository behavior and required settings.
+	RepositoryType pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+	UpstreamSecretId pulumi.StringPtrInput
+	// The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.
+	//
+	// If isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/<upstreamNamespace>/library/ubuntu`
+	//
+	// If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/<upstreamNamespace>/library` or `iad.ocir.io/<upstreamNamespace>`
+	UpstreamUrl pulumi.StringPtrInput
+	// (Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	UpstreamUsername pulumi.StringPtrInput
 }
 
 func (ContainerRepositoryArgs) ElementType() reflect.Type {
@@ -380,7 +481,7 @@ func (o ContainerRepositoryOutput) ImageCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *ContainerRepository) pulumi.IntOutput { return v.ImageCount }).(pulumi.IntOutput)
 }
 
-// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+// (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
 func (o ContainerRepositoryOutput) IsImmutable() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ContainerRepository) pulumi.BoolOutput { return v.IsImmutable }).(pulumi.BoolOutput)
 }
@@ -388,6 +489,11 @@ func (o ContainerRepositoryOutput) IsImmutable() pulumi.BoolOutput {
 // (Updatable) Whether the repository is public. A public repository allows unauthenticated access.
 func (o ContainerRepositoryOutput) IsPublic() pulumi.BoolOutput {
 	return o.ApplyT(func(v *ContainerRepository) pulumi.BoolOutput { return v.IsPublic }).(pulumi.BoolOutput)
+}
+
+// Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+func (o ContainerRepositoryOutput) IsTopLevel() pulumi.BoolOutput {
+	return o.ApplyT(func(v *ContainerRepository) pulumi.BoolOutput { return v.IsTopLevel }).(pulumi.BoolOutput)
 }
 
 // Total number of layers.
@@ -400,6 +506,11 @@ func (o ContainerRepositoryOutput) LayersSizeInBytes() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerRepository) pulumi.StringOutput { return v.LayersSizeInBytes }).(pulumi.StringOutput)
 }
 
+// List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.
+func (o ContainerRepositoryOutput) MultiRegionPeers() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ContainerRepository) pulumi.StringArrayOutput { return v.MultiRegionPeers }).(pulumi.StringArrayOutput)
+}
+
 // The tenancy namespace used in the container repository path.
 func (o ContainerRepositoryOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerRepository) pulumi.StringOutput { return v.Namespace }).(pulumi.StringOutput)
@@ -408,6 +519,11 @@ func (o ContainerRepositoryOutput) Namespace() pulumi.StringOutput {
 // (Updatable) Container repository readme.
 func (o ContainerRepositoryOutput) Readme() ContainerRepositoryReadmeOutput {
 	return o.ApplyT(func(v *ContainerRepository) ContainerRepositoryReadmeOutput { return v.Readme }).(ContainerRepositoryReadmeOutput)
+}
+
+// The type of container repository. This determines the repository behavior and required settings.
+func (o ContainerRepositoryOutput) RepositoryType() pulumi.StringOutput {
+	return o.ApplyT(func(v *ContainerRepository) pulumi.StringOutput { return v.RepositoryType }).(pulumi.StringOutput)
 }
 
 // The current state of the container repository.
@@ -428,6 +544,28 @@ func (o ContainerRepositoryOutput) TimeCreated() pulumi.StringOutput {
 // An RFC 3339 timestamp indicating when an image was last pushed to the repository.
 func (o ContainerRepositoryOutput) TimeLastPushed() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerRepository) pulumi.StringOutput { return v.TimeLastPushed }).(pulumi.StringOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+func (o ContainerRepositoryOutput) UpstreamSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v *ContainerRepository) pulumi.StringOutput { return v.UpstreamSecretId }).(pulumi.StringOutput)
+}
+
+// The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.
+//
+// If isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/<upstreamNamespace>/library/ubuntu`
+//
+// If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/<upstreamNamespace>/library` or `iad.ocir.io/<upstreamNamespace>`
+func (o ContainerRepositoryOutput) UpstreamUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v *ContainerRepository) pulumi.StringOutput { return v.UpstreamUrl }).(pulumi.StringOutput)
+}
+
+// (Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o ContainerRepositoryOutput) UpstreamUsername() pulumi.StringOutput {
+	return o.ApplyT(func(v *ContainerRepository) pulumi.StringOutput { return v.UpstreamUsername }).(pulumi.StringOutput)
 }
 
 type ContainerRepositoryArrayOutput struct{ *pulumi.OutputState }

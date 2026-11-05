@@ -27,7 +27,7 @@ class GetNodePoolResult:
     """
     A collection of values returned by getNodePool.
     """
-    def __init__(__self__, cluster_id=None, compartment_id=None, defined_tags=None, freeform_tags=None, id=None, initial_node_labels=None, kubernetes_version=None, lifecycle_details=None, name=None, network_launch_type=None, node_config_details=None, node_eviction_node_pool_settings=None, node_image_id=None, node_image_name=None, node_metadata=None, node_pool_cycling_details=None, node_pool_id=None, node_shape=None, node_shape_configs=None, node_source_details=None, node_sources=None, nodes=None, primary_vnics=None, quantity_per_subnet=None, secondary_vnics=None, ssh_public_key=None, state=None, subnet_ids=None):
+    def __init__(__self__, cluster_id=None, compartment_id=None, defined_tags=None, freeform_tags=None, id=None, initial_node_labels=None, kubernetes_version=None, lifecycle_details=None, name=None, network_launch_type=None, node_config_details=None, node_eviction_node_pool_settings=None, node_image_id=None, node_image_name=None, node_metadata=None, node_pool_cycling_details=None, node_pool_id=None, node_shape=None, node_shape_configs=None, node_source_details=None, node_sources=None, nodes=None, primary_vnics=None, quantity_per_subnet=None, secondary_vnics=None, ssh_public_key=None, state=None, subnet_ids=None, system_tags=None):
         if cluster_id and not isinstance(cluster_id, str):
             raise TypeError("Expected argument 'cluster_id' to be a str")
         pulumi.set(__self__, "cluster_id", cluster_id)
@@ -112,6 +112,9 @@ class GetNodePoolResult:
         if subnet_ids and not isinstance(subnet_ids, list):
             raise TypeError("Expected argument 'subnet_ids' to be a list")
         pulumi.set(__self__, "subnet_ids", subnet_ids)
+        if system_tags and not isinstance(system_tags, dict):
+            raise TypeError("Expected argument 'system_tags' to be a dict")
+        pulumi.set(__self__, "system_tags", system_tags)
 
     @_builtins.property
     @pulumi.getter(name="clusterId")
@@ -339,6 +342,14 @@ class GetNodePoolResult:
         """
         return pulumi.get(self, "subnet_ids")
 
+    @_builtins.property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, _builtins.str]:
+        """
+        Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        """
+        return pulumi.get(self, "system_tags")
+
 
 class AwaitableGetNodePoolResult(GetNodePoolResult):
     # pylint: disable=using-constant-test
@@ -373,7 +384,8 @@ class AwaitableGetNodePoolResult(GetNodePoolResult):
             secondary_vnics=self.secondary_vnics,
             ssh_public_key=self.ssh_public_key,
             state=self.state,
-            subnet_ids=self.subnet_ids)
+            subnet_ids=self.subnet_ids,
+            system_tags=self.system_tags)
 
 
 def get_node_pool(node_pool_id: Optional[_builtins.str] = None,
@@ -428,7 +440,8 @@ def get_node_pool(node_pool_id: Optional[_builtins.str] = None,
         secondary_vnics=pulumi.get(__ret__, 'secondary_vnics'),
         ssh_public_key=pulumi.get(__ret__, 'ssh_public_key'),
         state=pulumi.get(__ret__, 'state'),
-        subnet_ids=pulumi.get(__ret__, 'subnet_ids'))
+        subnet_ids=pulumi.get(__ret__, 'subnet_ids'),
+        system_tags=pulumi.get(__ret__, 'system_tags'))
 def get_node_pool_output(node_pool_id: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetNodePoolResult]:
     """
@@ -480,4 +493,5 @@ def get_node_pool_output(node_pool_id: pulumi.Input[Optional[_builtins.str]] = N
         secondary_vnics=pulumi.get(__response__, 'secondary_vnics'),
         ssh_public_key=pulumi.get(__response__, 'ssh_public_key'),
         state=pulumi.get(__response__, 'state'),
-        subnet_ids=pulumi.get(__response__, 'subnet_ids')))
+        subnet_ids=pulumi.get(__response__, 'subnet_ids'),
+        system_tags=pulumi.get(__response__, 'system_tags')))

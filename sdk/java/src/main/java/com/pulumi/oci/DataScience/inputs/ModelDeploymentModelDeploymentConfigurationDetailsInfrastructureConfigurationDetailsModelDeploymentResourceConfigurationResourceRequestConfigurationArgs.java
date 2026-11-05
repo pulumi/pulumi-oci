@@ -17,9 +17,17 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
 
     public static final ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationArgs Empty = new ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationArgs();
 
+    /**
+     * (Updatable) The total number of gpus required to be allocated to the workload.
+     * 
+     */
     @Import(name="gpus")
     private @Nullable Output<Integer> gpus;
 
+    /**
+     * @return (Updatable) The total number of gpus required to be allocated to the workload.
+     * 
+     */
     public Optional<Output<Integer>> gpus() {
         return Optional.ofNullable(this.gpus);
     }
@@ -80,11 +88,23 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
             $ = new ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationResourceRequestConfigurationArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param gpus (Updatable) The total number of gpus required to be allocated to the workload.
+         * 
+         * @return builder
+         * 
+         */
         public Builder gpus(@Nullable Output<Integer> gpus) {
             $.gpus = gpus;
             return this;
         }
 
+        /**
+         * @param gpus (Updatable) The total number of gpus required to be allocated to the workload.
+         * 
+         * @return builder
+         * 
+         */
         public Builder gpus(Integer gpus) {
             return gpus(Output.of(gpus));
         }

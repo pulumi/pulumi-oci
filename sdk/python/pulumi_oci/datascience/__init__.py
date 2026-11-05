@@ -26,6 +26,8 @@ from .get_ml_application_instance import *
 from .get_ml_application_instances import *
 from .get_ml_applications import *
 from .get_model import *
+from .get_model_artifact_signature import *
+from .get_model_artifact_signatures import *
 from .get_model_custom_metadata_artifact_content import *
 from .get_model_defined_metadata_artifact_content import *
 from .get_model_deployment import *
@@ -63,6 +65,7 @@ from .ml_application_instance import *
 from .model import *
 from .model_artifact_export import *
 from .model_artifact_import import *
+from .model_artifact_signature import *
 from .model_custom_metadata_artifact import *
 from .model_defined_metadata_artifact import *
 from .model_deployment import *

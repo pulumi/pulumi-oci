@@ -87,9 +87,17 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
         return Optional.ofNullable(this.maximumBandwidthMbps);
     }
 
+    /**
+     * (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+     * 
+     */
     @Import(name="modelDeploymentResourceConfiguration")
     private @Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs> modelDeploymentResourceConfiguration;
 
+    /**
+     * @return (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+     * 
+     */
     public Optional<Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs>> modelDeploymentResourceConfiguration() {
         return Optional.ofNullable(this.modelDeploymentResourceConfiguration);
     }
@@ -232,11 +240,23 @@ public final class ModelDeploymentModelDeploymentConfigurationDetailsInfrastruct
             return maximumBandwidthMbps(Output.of(maximumBandwidthMbps));
         }
 
+        /**
+         * @param modelDeploymentResourceConfiguration (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+         * 
+         * @return builder
+         * 
+         */
         public Builder modelDeploymentResourceConfiguration(@Nullable Output<ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs> modelDeploymentResourceConfiguration) {
             $.modelDeploymentResourceConfiguration = modelDeploymentResourceConfiguration;
             return this;
         }
 
+        /**
+         * @param modelDeploymentResourceConfiguration (Updatable) Resource configuration details for model deploy on managed compute cluster type compute target.
+         * 
+         * @return builder
+         * 
+         */
         public Builder modelDeploymentResourceConfiguration(ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsModelDeploymentResourceConfigurationArgs modelDeploymentResourceConfiguration) {
             return modelDeploymentResourceConfiguration(Output.of(modelDeploymentResourceConfiguration));
         }

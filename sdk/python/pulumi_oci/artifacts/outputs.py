@@ -48,9 +48,6 @@ class ContainerRepositoryReadme(dict):
         """
         :param _builtins.str content: (Updatable) Readme content. Avoid entering confidential information.
         :param _builtins.str format: (Updatable) Readme format. Supported formats are text/plain and text/markdown.
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "content", content)
         pulumi.set(__self__, "format", format)
@@ -68,9 +65,6 @@ class ContainerRepositoryReadme(dict):
     def format(self) -> _builtins.str:
         """
         (Updatable) Readme format. Supported formats are text/plain and text/markdown.
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "format")
 
@@ -583,14 +577,20 @@ class GetContainerRepositoriesContainerRepositoryCollectionItemResult(dict):
                  image_count: _builtins.int,
                  is_immutable: _builtins.bool,
                  is_public: _builtins.bool,
+                 is_top_level: _builtins.bool,
                  layer_count: _builtins.int,
                  layers_size_in_bytes: _builtins.str,
+                 multi_region_peers: Sequence[_builtins.str],
                  namespace: _builtins.str,
                  readmes: Sequence['outputs.GetContainerRepositoriesContainerRepositoryCollectionItemReadmeResult'],
+                 repository_type: _builtins.str,
                  state: _builtins.str,
                  system_tags: Mapping[str, _builtins.str],
                  time_created: _builtins.str,
-                 time_last_pushed: _builtins.str):
+                 time_last_pushed: _builtins.str,
+                 upstream_secret_id: _builtins.str,
+                 upstream_url: _builtins.str,
+                 upstream_username: _builtins.str):
         """
         :param _builtins.str billable_size_in_gbs: Total storage size in GBs that will be charged.
         :param _builtins.str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
@@ -602,14 +602,20 @@ class GetContainerRepositoriesContainerRepositoryCollectionItemResult(dict):
         :param _builtins.int image_count: Total number of images.
         :param _builtins.bool is_immutable: Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
         :param _builtins.bool is_public: A filter to return resources that match the isPublic value.
+        :param _builtins.bool is_top_level: A filter to return resources that match the isTopLevel value.
         :param _builtins.int layer_count: Total number of layers.
         :param _builtins.str layers_size_in_bytes: Total size of layers.
+        :param Sequence[_builtins.str] multi_region_peers: List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, us-phoenix-1). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created.
         :param _builtins.str namespace: The tenancy namespace used in the container repository path.
         :param Sequence['GetContainerRepositoriesContainerRepositoryCollectionItemReadmeArgs'] readmes: Container repository readme.
+        :param _builtins.str repository_type: A filter to return only resources that match the given repository type exactly.
         :param _builtins.str state: A filter to return only resources that match the given lifecycle state name exactly.
         :param Mapping[str, _builtins.str] system_tags: The system tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param _builtins.str time_created: An RFC 3339 timestamp indicating when the repository was created.
         :param _builtins.str time_last_pushed: An RFC 3339 timestamp indicating when an image was last pushed to the repository.
+        :param _builtins.str upstream_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository.
+        :param _builtins.str upstream_url: The upstream registry URL for a pull-through cache repository.
+        :param _builtins.str upstream_username: The upstream registry username for a pull-through cache repository.
         """
         pulumi.set(__self__, "billable_size_in_gbs", billable_size_in_gbs)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -621,14 +627,20 @@ class GetContainerRepositoriesContainerRepositoryCollectionItemResult(dict):
         pulumi.set(__self__, "image_count", image_count)
         pulumi.set(__self__, "is_immutable", is_immutable)
         pulumi.set(__self__, "is_public", is_public)
+        pulumi.set(__self__, "is_top_level", is_top_level)
         pulumi.set(__self__, "layer_count", layer_count)
         pulumi.set(__self__, "layers_size_in_bytes", layers_size_in_bytes)
+        pulumi.set(__self__, "multi_region_peers", multi_region_peers)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "readmes", readmes)
+        pulumi.set(__self__, "repository_type", repository_type)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_last_pushed", time_last_pushed)
+        pulumi.set(__self__, "upstream_secret_id", upstream_secret_id)
+        pulumi.set(__self__, "upstream_url", upstream_url)
+        pulumi.set(__self__, "upstream_username", upstream_username)
 
     @_builtins.property
     @pulumi.getter(name="billableSizeInGbs")
@@ -711,6 +723,14 @@ class GetContainerRepositoriesContainerRepositoryCollectionItemResult(dict):
         return pulumi.get(self, "is_public")
 
     @_builtins.property
+    @pulumi.getter(name="isTopLevel")
+    def is_top_level(self) -> _builtins.bool:
+        """
+        A filter to return resources that match the isTopLevel value.
+        """
+        return pulumi.get(self, "is_top_level")
+
+    @_builtins.property
     @pulumi.getter(name="layerCount")
     def layer_count(self) -> _builtins.int:
         """
@@ -727,6 +747,14 @@ class GetContainerRepositoriesContainerRepositoryCollectionItemResult(dict):
         return pulumi.get(self, "layers_size_in_bytes")
 
     @_builtins.property
+    @pulumi.getter(name="multiRegionPeers")
+    def multi_region_peers(self) -> Sequence[_builtins.str]:
+        """
+        List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, us-phoenix-1). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created.
+        """
+        return pulumi.get(self, "multi_region_peers")
+
+    @_builtins.property
     @pulumi.getter
     def namespace(self) -> _builtins.str:
         """
@@ -741,6 +769,14 @@ class GetContainerRepositoriesContainerRepositoryCollectionItemResult(dict):
         Container repository readme.
         """
         return pulumi.get(self, "readmes")
+
+    @_builtins.property
+    @pulumi.getter(name="repositoryType")
+    def repository_type(self) -> _builtins.str:
+        """
+        A filter to return only resources that match the given repository type exactly.
+        """
+        return pulumi.get(self, "repository_type")
 
     @_builtins.property
     @pulumi.getter
@@ -773,6 +809,30 @@ class GetContainerRepositoriesContainerRepositoryCollectionItemResult(dict):
         An RFC 3339 timestamp indicating when an image was last pushed to the repository.
         """
         return pulumi.get(self, "time_last_pushed")
+
+    @_builtins.property
+    @pulumi.getter(name="upstreamSecretId")
+    def upstream_secret_id(self) -> _builtins.str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository.
+        """
+        return pulumi.get(self, "upstream_secret_id")
+
+    @_builtins.property
+    @pulumi.getter(name="upstreamUrl")
+    def upstream_url(self) -> _builtins.str:
+        """
+        The upstream registry URL for a pull-through cache repository.
+        """
+        return pulumi.get(self, "upstream_url")
+
+    @_builtins.property
+    @pulumi.getter(name="upstreamUsername")
+    def upstream_username(self) -> _builtins.str:
+        """
+        The upstream registry username for a pull-through cache repository.
+        """
+        return pulumi.get(self, "upstream_username")
 
 
 @pulumi.output_type

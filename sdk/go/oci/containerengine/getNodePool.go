@@ -118,6 +118,8 @@ type LookupNodePoolResult struct {
 	State string `pulumi:"state"`
 	// The OCIDs of the subnets in which to place nodes for this node pool.
 	SubnetIds []string `pulumi:"subnetIds"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]string `pulumi:"systemTags"`
 }
 
 func LookupNodePoolOutput(ctx *pulumi.Context, args LookupNodePoolOutputArgs, opts ...pulumi.InvokeOption) LookupNodePoolResultOutput {
@@ -294,6 +296,11 @@ func (o LookupNodePoolResultOutput) State() pulumi.StringOutput {
 // The OCIDs of the subnets in which to place nodes for this node pool.
 func (o LookupNodePoolResultOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupNodePoolResult) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o LookupNodePoolResultOutput) SystemTags() pulumi.StringMapOutput {
+	return o.ApplyT(func(v LookupNodePoolResult) map[string]string { return v.SystemTags }).(pulumi.StringMapOutput)
 }
 
 func init() {

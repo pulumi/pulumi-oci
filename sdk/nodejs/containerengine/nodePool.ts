@@ -283,6 +283,10 @@ export class NodePool extends pulumi.CustomResource {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     declare public readonly subnetIds: pulumi.Output<string[]>;
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    declare public /*out*/ readonly systemTags: pulumi.Output<{[key: string]: string}>;
 
     /**
      * Create a NodePool resource with the given unique name, arguments, and options.
@@ -323,6 +327,7 @@ export class NodePool extends pulumi.CustomResource {
             resourceInputs["sshPublicKey"] = state?.sshPublicKey;
             resourceInputs["state"] = state?.state;
             resourceInputs["subnetIds"] = state?.subnetIds;
+            resourceInputs["systemTags"] = state?.systemTags;
         } else {
             const args = argsOrState as NodePoolArgs | undefined;
             if (args?.clusterId === undefined && !opts.urn) {
@@ -360,6 +365,7 @@ export class NodePool extends pulumi.CustomResource {
             resourceInputs["nodeSources"] = undefined /*out*/;
             resourceInputs["nodes"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["systemTags"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(NodePool.__pulumiType, name, resourceInputs, opts);
@@ -481,6 +487,10 @@ export interface NodePoolState {
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     subnetIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+     */
+    systemTags?: pulumi.Input<{[key: string]: pulumi.Input<string>} | undefined>;
 }
 
 /**

@@ -13,6 +13,7 @@ namespace Pulumi.Oci.DataScience.Outputs
     [OutputType]
     public sealed class ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration
     {
+        public readonly ImmutableArray<string> CapacityReservationIds;
         /// <summary>
         /// The shape used to launch the model deployment instances.  When using service managed open source foundation model, the supported shapes can be retrieved using get model api /models/{modelId}/definedMetadata/deploymentConfiguration/artifact/content.
         /// </summary>
@@ -36,6 +37,8 @@ namespace Pulumi.Oci.DataScience.Outputs
 
         [OutputConstructor]
         private ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfiguration(
+            ImmutableArray<string> capacityReservationIds,
+
             string instanceShapeName,
 
             Outputs.ModelDeploymentModelDeploymentConfigurationDetailsInfrastructureConfigurationDetailsInstanceConfigurationModelDeploymentInstanceShapeConfigDetails? modelDeploymentInstanceShapeConfigDetails,
@@ -46,6 +49,7 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             string? subnetId)
         {
+            CapacityReservationIds = capacityReservationIds;
             InstanceShapeName = instanceShapeName;
             ModelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
             NetworkAccessType = networkAccessType;

@@ -9,6 +9,7 @@ import com.pulumi.oci.Artifacts.inputs.ContainerRepositoryReadmeArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -125,14 +126,14 @@ public final class ContainerRepositoryState extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+     * (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
      * 
      */
     @Import(name="isImmutable")
     private @Nullable Output<Boolean> isImmutable;
 
     /**
-     * @return (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+     * @return (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
      * 
      */
     public Optional<Output<Boolean>> isImmutable() {
@@ -152,6 +153,21 @@ public final class ContainerRepositoryState extends com.pulumi.resources.Resourc
      */
     public Optional<Output<Boolean>> isPublic() {
         return Optional.ofNullable(this.isPublic);
+    }
+
+    /**
+     * Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+     * 
+     */
+    @Import(name="isTopLevel")
+    private @Nullable Output<Boolean> isTopLevel;
+
+    /**
+     * @return Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+     * 
+     */
+    public Optional<Output<Boolean>> isTopLevel() {
+        return Optional.ofNullable(this.isTopLevel);
     }
 
     /**
@@ -185,6 +201,21 @@ public final class ContainerRepositoryState extends com.pulumi.resources.Resourc
     }
 
     /**
+     * List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.
+     * 
+     */
+    @Import(name="multiRegionPeers")
+    private @Nullable Output<List<String>> multiRegionPeers;
+
+    /**
+     * @return List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.
+     * 
+     */
+    public Optional<Output<List<String>>> multiRegionPeers() {
+        return Optional.ofNullable(this.multiRegionPeers);
+    }
+
+    /**
      * The tenancy namespace used in the container repository path.
      * 
      */
@@ -212,6 +243,21 @@ public final class ContainerRepositoryState extends com.pulumi.resources.Resourc
      */
     public Optional<Output<ContainerRepositoryReadmeArgs>> readme() {
         return Optional.ofNullable(this.readme);
+    }
+
+    /**
+     * The type of container repository. This determines the repository behavior and required settings.
+     * 
+     */
+    @Import(name="repositoryType")
+    private @Nullable Output<String> repositoryType;
+
+    /**
+     * @return The type of container repository. This determines the repository behavior and required settings.
+     * 
+     */
+    public Optional<Output<String>> repositoryType() {
+        return Optional.ofNullable(this.repositoryType);
     }
 
     /**
@@ -274,6 +320,65 @@ public final class ContainerRepositoryState extends com.pulumi.resources.Resourc
         return Optional.ofNullable(this.timeLastPushed);
     }
 
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+     * 
+     */
+    @Import(name="upstreamSecretId")
+    private @Nullable Output<String> upstreamSecretId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+     * 
+     */
+    public Optional<Output<String>> upstreamSecretId() {
+        return Optional.ofNullable(this.upstreamSecretId);
+    }
+
+    /**
+     * The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.
+     * 
+     * If isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/&lt;upstreamNamespace&gt;/library/ubuntu`
+     * 
+     * If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/&lt;upstreamNamespace&gt;/library` or `iad.ocir.io/&lt;upstreamNamespace&gt;`
+     * 
+     */
+    @Import(name="upstreamUrl")
+    private @Nullable Output<String> upstreamUrl;
+
+    /**
+     * @return The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.
+     * 
+     * If isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/&lt;upstreamNamespace&gt;/library/ubuntu`
+     * 
+     * If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/&lt;upstreamNamespace&gt;/library` or `iad.ocir.io/&lt;upstreamNamespace&gt;`
+     * 
+     */
+    public Optional<Output<String>> upstreamUrl() {
+        return Optional.ofNullable(this.upstreamUrl);
+    }
+
+    /**
+     * (Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="upstreamUsername")
+    private @Nullable Output<String> upstreamUsername;
+
+    /**
+     * @return (Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> upstreamUsername() {
+        return Optional.ofNullable(this.upstreamUsername);
+    }
+
     private ContainerRepositoryState() {}
 
     private ContainerRepositoryState(ContainerRepositoryState $) {
@@ -286,14 +391,20 @@ public final class ContainerRepositoryState extends com.pulumi.resources.Resourc
         this.imageCount = $.imageCount;
         this.isImmutable = $.isImmutable;
         this.isPublic = $.isPublic;
+        this.isTopLevel = $.isTopLevel;
         this.layerCount = $.layerCount;
         this.layersSizeInBytes = $.layersSizeInBytes;
+        this.multiRegionPeers = $.multiRegionPeers;
         this.namespace = $.namespace;
         this.readme = $.readme;
+        this.repositoryType = $.repositoryType;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
         this.timeLastPushed = $.timeLastPushed;
+        this.upstreamSecretId = $.upstreamSecretId;
+        this.upstreamUrl = $.upstreamUrl;
+        this.upstreamUsername = $.upstreamUsername;
     }
 
     public static Builder builder() {
@@ -462,7 +573,7 @@ public final class ContainerRepositoryState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param isImmutable (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+         * @param isImmutable (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
          * 
          * @return builder
          * 
@@ -473,7 +584,7 @@ public final class ContainerRepositoryState extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param isImmutable (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository.
+         * @param isImmutable (Updatable) Whether the repository is immutable. Images cannot be overwritten in an immutable repository. Currently, setting this flag is not supported yet and is set to false by default.
          * 
          * @return builder
          * 
@@ -501,6 +612,27 @@ public final class ContainerRepositoryState extends com.pulumi.resources.Resourc
          */
         public Builder isPublic(Boolean isPublic) {
             return isPublic(Output.of(isPublic));
+        }
+
+        /**
+         * @param isTopLevel Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isTopLevel(@Nullable Output<Boolean> isTopLevel) {
+            $.isTopLevel = isTopLevel;
+            return this;
+        }
+
+        /**
+         * @param isTopLevel Whether the repository is top-level. A top-level repository reserves its name in namespace as a prefix and allows images to be hosted under child paths of that prefix.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isTopLevel(Boolean isTopLevel) {
+            return isTopLevel(Output.of(isTopLevel));
         }
 
         /**
@@ -546,6 +678,37 @@ public final class ContainerRepositoryState extends com.pulumi.resources.Resourc
         }
 
         /**
+         * @param multiRegionPeers List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder multiRegionPeers(@Nullable Output<List<String>> multiRegionPeers) {
+            $.multiRegionPeers = multiRegionPeers;
+            return this;
+        }
+
+        /**
+         * @param multiRegionPeers List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder multiRegionPeers(List<String> multiRegionPeers) {
+            return multiRegionPeers(Output.of(multiRegionPeers));
+        }
+
+        /**
+         * @param multiRegionPeers List of peer regions that define the multi-region group. Peer regions must be specified using canonical region names (for example, `us-phoenix-1`). The peer set must match a supported multi-region endpoint group and MUST include the local OCIR region where the repository is created. Required when repositoryType is MULTI_REGION.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder multiRegionPeers(String... multiRegionPeers) {
+            return multiRegionPeers(List.of(multiRegionPeers));
+        }
+
+        /**
          * @param namespace The tenancy namespace used in the container repository path.
          * 
          * @return builder
@@ -585,6 +748,27 @@ public final class ContainerRepositoryState extends com.pulumi.resources.Resourc
          */
         public Builder readme(ContainerRepositoryReadmeArgs readme) {
             return readme(Output.of(readme));
+        }
+
+        /**
+         * @param repositoryType The type of container repository. This determines the repository behavior and required settings.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder repositoryType(@Nullable Output<String> repositoryType) {
+            $.repositoryType = repositoryType;
+            return this;
+        }
+
+        /**
+         * @param repositoryType The type of container repository. This determines the repository behavior and required settings.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder repositoryType(String repositoryType) {
+            return repositoryType(Output.of(repositoryType));
         }
 
         /**
@@ -669,6 +853,83 @@ public final class ContainerRepositoryState extends com.pulumi.resources.Resourc
          */
         public Builder timeLastPushed(String timeLastPushed) {
             return timeLastPushed(Output.of(timeLastPushed));
+        }
+
+        /**
+         * @param upstreamSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder upstreamSecretId(@Nullable Output<String> upstreamSecretId) {
+            $.upstreamSecretId = upstreamSecretId;
+            return this;
+        }
+
+        /**
+         * @param upstreamSecretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure Vault secret that contains the upstream registry password as base64 encoded string for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.  Example: `ocid1.vaultsecret.oc1..exampleuniqueID`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder upstreamSecretId(String upstreamSecretId) {
+            return upstreamSecretId(Output.of(upstreamSecretId));
+        }
+
+        /**
+         * @param upstreamUrl The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.
+         * 
+         * If isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/&lt;upstreamNamespace&gt;/library/ubuntu`
+         * 
+         * If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/&lt;upstreamNamespace&gt;/library` or `iad.ocir.io/&lt;upstreamNamespace&gt;`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder upstreamUrl(@Nullable Output<String> upstreamUrl) {
+            $.upstreamUrl = upstreamUrl;
+            return this;
+        }
+
+        /**
+         * @param upstreamUrl The upstream registry URL for a pull-through cache repository. Required when repositoryType is PULL_THROUGH. The value must include the registry endpoint and repository path, and must not include a tag or digest.
+         * 
+         * If isTopLevel is false, the value must be an exact upstream image full path. Example: `iad.ocir.io/&lt;upstreamNamespace&gt;/library/ubuntu`
+         * 
+         * If isTopLevel is true, the value must be an upstream repository path prefix, allowing OCIR to pull multiple repositories under that prefix. Example: `iad.ocir.io/&lt;upstreamNamespace&gt;/library` or `iad.ocir.io/&lt;upstreamNamespace&gt;`
+         * 
+         * @return builder
+         * 
+         */
+        public Builder upstreamUrl(String upstreamUrl) {
+            return upstreamUrl(Output.of(upstreamUrl));
+        }
+
+        /**
+         * @param upstreamUsername (Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder upstreamUsername(@Nullable Output<String> upstreamUsername) {
+            $.upstreamUsername = upstreamUsername;
+            return this;
+        }
+
+        /**
+         * @param upstreamUsername (Updatable) The upstream registry username for a pull-through cache repository. Required when repositoryType is PULL_THROUGH.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder upstreamUsername(String upstreamUsername) {
+            return upstreamUsername(Output.of(upstreamUsername));
         }
 
         public ContainerRepositoryState build() {
